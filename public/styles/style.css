@@ -97,12 +97,15 @@ input:hover {
             padding-right: 20px;
             border: none;
             overflow-y: scroll;
+
+            grid-template-columns: 1fr 1fr;
+            grid-auto-rows: minmax(min-content, max-content);
+            grid-gap: 20px;
         }
 
             .search-result{
                 padding: 20px;
                 border: darkgrey 1px solid;
-                margin-bottom: 20px;
             }
 
                 .search-result:hover {

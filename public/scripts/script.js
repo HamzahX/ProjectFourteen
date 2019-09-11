@@ -46,7 +46,7 @@ socket.on('search results', function(results){
     $("#loading").css("display","none");
     $("#search-screen").css("display","flex");
     $("#search-filters").css("display","block");
-    $("#search-results").css("display","block");
+    $("#search-results").css("display","grid");
 });
 
 function getStats(elem){
