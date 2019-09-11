@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Under The Radar</title>
+        <link rel="stylesheet" type="text/css" href="styles/style.css">
+    </head>
+    <body>
+        <div id="main">
+            <div id="searchbar-container">
+                <form id="searchbar" onsubmit="return search()">
+                    <input type="text" id="query" placeholder="Search for a player" autocomplete="off">
+                </form>
+            </div>
+            <div id="loading">
+
+            </div>
+            <div class="main" id="search-screen">
+                <div class="filter" id="search-filters">
+                    <h2>Filter Search Results</h2>
+                    <h3>by Club</h3>
+                    <input type="text" class="search-filter-input" id="filterByClub">
+                    <br>
+                    <h3>by Nationality</h3>
+                    <input type="text" class="search-filter-input" id="filterByNationality">
+                </div>
+                <div class="result" id="search-results">
+                </div>
+            </div>
+            <div class="main" id="content-screen">
+                <div class="filter" id="radar-filters">
+                    <div id="options">
+                        <h3>Template</h3>
+                        <form id="templates">
+                            <input type="radio" name="template" value="FW" checked> Forward<br><br>
+                            <input type="radio" name="template" value="MF"> Midfielder<br><br>
+                            <input type="radio" name="template" value="FB"> Fullback<br><br>
+                            <input type="radio" name="template" value="DF"> Defender<br><br>
+                        </form>
+                        <h3>Seasons</h3>
+                        <form id="competitions" onsubmit="return updateRadar()">
+
+                        </form>
+                    </div>
+                    <div id="filter-buttons">
+                        <div class="filter-button">
+                            <button type="button" onclick="selectAllSeasons()">Select All Seasons</button>
+                        </div>
+                        <div class="filter-button">
+                            <button type="button" onclick="clearAllSeasons()">Clear All Seasons</button>
+                        </div>
+                        <div class="filter-button">
+                            <button type="button" onclick="updateRadar()">Update Radar</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="result" id="radar">
+
+                </div>
+            </div>
+        </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.3/socket.io.js"></script>
+        <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
+        <script src="https://github.highcharts.com/highcharts.js"></script>
+        <script src="https://github.highcharts.com/highcharts-more.js"></script>
+        <script src="https://github.highcharts.com/modules/parallel-coordinates.js"></script>
+        <script src="https://code.highcharts.com/modules/exporting.js"></script>
+        <script src="https://code.highcharts.com/modules/export-data.js"></script>
+        <script src="scripts/script.js"></script>
+    </body>
+</html>
