@@ -21,68 +21,70 @@ let browser;
 let setup = async () => {
     return new Promise(async function(resolve, reject){
         browser = await puppeteer.launch({ headless: true, args: ['--no-sandbox', '--disable-setuid-sandbox'] });
+        let page = await browser.newPage();
         resolve(browser);
     });
 
 };
 
 //launch the browser and wait for socket events
-setup().then(
-    io.on('connection', function(socket){
-        console.log(socket.id);
-
-        socket.on('search', async(aQuery) => {
-            console.log(aQuery);
-            let page = await browser.newPage();
-            getSearchResults(page, aQuery).then((searchResults) => {
-                page.close();
-                for (let i=0; i<searchResults.length; i++){
-                    let countryISO = searchResults[i]["nationality"];
-                    searchResults[i]["nationality"] = countryCodes.getCountryName(countryISO.toUpperCase());
-                }
-                console.log(searchResults);
-                socket.emit('search results', searchResults);
-            }).catch(error => {
-                socket.emit('error');
-            });
-        });
-
-        socket.on('scrape stats', async(aURL) => {
-            console.log(aURL);
-            let rawData = [];
-            let stats = {};
-            let page1 = await browser.newPage();
-            let page2 = await browser.newPage();
-            let page3 = await browser.newPage();
-            try {
-                let rawDataTemp = await Promise.all([
-                    getStats1(page1, aURL),
-                    getStats2(page2, aURL),
-                    getStats3(page3, aURL)
-                ]);
-                page1.close();
-                page2.close();
-                page3.close();
-                for (let i = 0; i < rawDataTemp.length; i++) {
-                    rawData = rawData.concat(rawDataTemp[i]);
-                }
-                for (let key in rawData[0]) {
-                    stats[key] = {};
-                }
-                for (let i = 0; i < rawData.length; i++) {
-                    for (let key in rawData[i]) {
-                        Object.assign(stats[key], rawData[i][key]);
-                    }
-                }
-                console.log(stats);
-                socket.emit('stats scraped', stats);
-            }
-            catch (anError) {
-                socket.emit('error');
-            }
-        });
-    })
-);
+setup();
+//     .then(
+//     io.on('connection', function(socket){
+//         console.log(socket.id);
+//
+//         socket.on('search', async(aQuery) => {
+//             console.log(aQuery);
+//             let page = await browser.newPage();
+//             getSearchResults(page, aQuery).then((searchResults) => {
+//                 page.close();
+//                 for (let i=0; i<searchResults.length; i++){
+//                     let countryISO = searchResults[i]["nationality"];
+//                     searchResults[i]["nationality"] = countryCodes.getCountryName(countryISO.toUpperCase());
+//                 }
+//                 console.log(searchResults);
+//                 socket.emit('search results', searchResults);
+//             }).catch(error => {
+//                 socket.emit('error');
+//             });
+//         });
+//
+//         socket.on('scrape stats', async(aURL) => {
+//             console.log(aURL);
+//             let rawData = [];
+//             let stats = {};
+//             let page1 = await browser.newPage();
+//             let page2 = await browser.newPage();
+//             let page3 = await browser.newPage();
+//             try {
+//                 let rawDataTemp = await Promise.all([
+//                     getStats1(page1, aURL),
+//                     getStats2(page2, aURL),
+//                     getStats3(page3, aURL)
+//                 ]);
+//                 page1.close();
+//                 page2.close();
+//                 page3.close();
+//                 for (let i = 0; i < rawDataTemp.length; i++) {
+//                     rawData = rawData.concat(rawDataTemp[i]);
+//                 }
+//                 for (let key in rawData[0]) {
+//                     stats[key] = {};
+//                 }
+//                 for (let i = 0; i < rawData.length; i++) {
+//                     for (let key in rawData[i]) {
+//                         Object.assign(stats[key], rawData[i][key]);
+//                     }
+//                 }
+//                 console.log(stats);
+//                 socket.emit('stats scraped', stats);
+//             }
+//             catch (anError) {
+//                 socket.emit('error');
+//             }
+//         });
+//     })
+// );
 
 let getSearchResults = async (page, aQuery) => {
     URL = "https://www.whoscored.com/Search/?t=" + aQuery.replace(' ', '+');
