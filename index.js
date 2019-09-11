@@ -22,13 +22,14 @@ let setup = async () => {
     return new Promise(async function(resolve, reject){
         browser = await puppeteer.launch({ headless: true, args: ['--no-sandbox', '--disable-setuid-sandbox'] });
         let page = await browser.newPage();
+        console.log("setting up...");
         resolve(browser);
     });
-
 };
 
 //launch the browser and wait for socket events
 setup();
+
 //     .then(
 //     io.on('connection', function(socket){
 //         console.log(socket.id);
@@ -85,39 +86,39 @@ setup();
 //         });
 //     })
 // );
-
-let getSearchResults = async (page, aQuery) => {
-    URL = "https://www.whoscored.com/Search/?t=" + aQuery.replace(' ', '+');
-    await page.goto(URL, {waitUntil: 'networkidle0'});
-
-    return await page.evaluate(() => {
-        let searchResults = [];
-        const as = Array.from(document.querySelectorAll('.search-result table tr td a'));
-        for (let i=0; i<as.length; i++){
-            let result = {};
-            if (as[i].outerHTML.startsWith('<a href="/Players')) {
-                result["name"] = as[i].innerText;
-                let countryISO = as[i].outerHTML.substring(
-                    as[i].outerHTML.indexOf("country flg") + 12,
-                    as[i].outerHTML.indexOf("</span>") - 2
-                );
-                result["nationality"] = countryISO;
-                result["club"] = "N/A";
-                if (i !== as.length-1 && as[i + 1].outerHTML.startsWith('<a style')) {
-                    result["club"] = as[i + 1].innerText;
-                }
-                let URL = as[i].outerHTML.substring(
-                    as[i].outerHTML.indexOf("a href=") + 8,
-                    as[i].outerHTML.indexOf(" class=") - 1
-                );
-                result["URL"] = "https://www.whoscored.com" + URL.replace("Show", "History");
-                searchResults.push(result);
-            }
-        }
-        return searchResults;
-    });
-
-};
+//
+// let getSearchResults = async (page, aQuery) => {
+//     URL = "https://www.whoscored.com/Search/?t=" + aQuery.replace(' ', '+');
+//     await page.goto(URL, {waitUntil: 'networkidle0'});
+//
+//     return await page.evaluate(() => {
+//         let searchResults = [];
+//         const as = Array.from(document.querySelectorAll('.search-result table tr td a'));
+//         for (let i=0; i<as.length; i++){
+//             let result = {};
+//             if (as[i].outerHTML.startsWith('<a href="/Players')) {
+//                 result["name"] = as[i].innerText;
+//                 let countryISO = as[i].outerHTML.substring(
+//                     as[i].outerHTML.indexOf("country flg") + 12,
+//                     as[i].outerHTML.indexOf("</span>") - 2
+//                 );
+//                 result["nationality"] = countryISO;
+//                 result["club"] = "N/A";
+//                 if (i !== as.length-1 && as[i + 1].outerHTML.startsWith('<a style')) {
+//                     result["club"] = as[i + 1].innerText;
+//                 }
+//                 let URL = as[i].outerHTML.substring(
+//                     as[i].outerHTML.indexOf("a href=") + 8,
+//                     as[i].outerHTML.indexOf(" class=") - 1
+//                 );
+//                 result["URL"] = "https://www.whoscored.com" + URL.replace("Show", "History");
+//                 searchResults.push(result);
+//             }
+//         }
+//         return searchResults;
+//     });
+//
+// };
 
 let getStats1 = async (page, URL) => {
 
