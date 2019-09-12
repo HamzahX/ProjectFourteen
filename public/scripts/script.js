@@ -222,7 +222,7 @@ function drawRadar(stats, subtitle, categories, yAxis){
             },
             polar: true,
             maxWidth: 1000,
-            hideDelay: 200
+            hideDelay: 0
         },
         title: {
             // text: name + ' | ' + club + ' & ' + nationality,
@@ -266,7 +266,7 @@ function drawRadar(stats, subtitle, categories, yAxis){
             return {
                 name: name,
                 data: set,
-                stickyTracking: false
+                stickyTracking: true
             };
         })
     });
@@ -275,10 +275,10 @@ function drawRadar(stats, subtitle, categories, yAxis){
 function drawRadarFW(stats){
     let subtitle = 'FW / AM Template  |  per 90';
     let categories = [
-        'Non-penalty goals',
-        'Non-penalty shots',
+        'Non-Penalty Goals',
+        'Non-Penalty Shots',
         'Conversion Rate',
-        'Passing %',
+        '% Passes Completed',
         'Assists',
         'Key Passes',
         'Through Balls',
@@ -304,15 +304,15 @@ function drawRadarFW(stats){
 function drawRadarMF(stats){
     let subtitle = 'CM / DM Template  |  per 90';
     let categories = [
-        'Passing %',
+        '% Passes Completed',
         'Assists',
         'Key Passes',
         'Through Balls',
         'Successful Dribbles',
         'Possession Losses',
-        'Fouls',
-        'Tackle Success %',
-        'Tackles',
+        'Fouls Committed',
+        '% Tackles Won',
+        'Tackles Won',
         'Interceptions',
         'Long Balls'
     ];
@@ -335,18 +335,18 @@ function drawRadarMF(stats){
 function drawRadarFB(stats){
     let subtitle = 'FB Template  |  per 90';
     let categories = [
-        'Tackles',
+        'Tackles Won',
         'Interceptions',
-        'Passing %',
+        '% Passes Completed',
         'Assists',
         'Key Passes',
-        'Completed Crosses',
-        'Crossing %',
+        'Successful Crosses',
+        '% Crosses Completed',
         'Successful Dribbles',
         'Possession Losses',
         'Aerial Duels Won',
-        'Tackle Success %',
-        'Fouls'
+        '% Tackles Won',
+        'Fouls Committed'
     ];
     let yAxis = [
         {min: 0, max: 5},
@@ -368,13 +368,13 @@ function drawRadarFB(stats){
 function drawRadarDF(stats){
     let subtitle = 'CB Template  |  per 90';
     let categories = [
-        'Passing %',
-        'Tackle Success %',
-        'Tackles',
+        '% Passes Completed',
+        '% Tackles Won',
+        'Tackles Won',
         'Interceptions',
         'Clearances',
-        'Fouls',
-        'Aerial Success %',
+        'Fouls Committed',
+        '% Aerial Duels Won',
         'Aerial Duels Won',
         'Long Balls',
     ];
