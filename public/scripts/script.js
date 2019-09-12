@@ -8,21 +8,21 @@ let club;
 let nationality;
 
 function search(){
-    if ($('#loading').css('display') === 'none') {
+    if ($('#loading-screen').css('display') === 'none') {
         $('.highcharts-data-table').remove();
         let query = $('#query').val();
         socket.emit('search', query);
         $("#search-screen").css("display", "none");
         $("#content-screen").css("display", "none");
-        $('#loading').empty();
-        $('#loading').append('Searching');
-        $('#loading').append('<br><br>');
-        $('#loading').append('<div id="circularG"> <div id="circularG_1" class="circularG"></div> ' +
+        $('#loading-screen').empty();
+        $('#loading-screen').append('Searching');
+        $('#loading-screen').append('<br><br>');
+        $('#loading-screen').append('<div id="circularG"> <div id="circularG_1" class="circularG"></div> ' +
             '<div id="circularG_2" class="circularG"></div> <div id="circularG_3" class="circularG"></div> ' +
             '<div id="circularG_4" class="circularG"></div> <div id="circularG_5" class="circularG"></div> ' +
             '<div id="circularG_6" class="circularG"></div> <div id="circularG_7" class="circularG"></div> ' +
             '<div id="circularG_8" class="circularG"></div> </div>');
-        $("#loading").css("display", "flex");
+        $("#loading-screen").css("display", "flex");
     }
 }
 
@@ -43,7 +43,7 @@ socket.on('search results', function(results){
             '</div>'
         );
     }
-    $("#loading").css("display","none");
+    $("#loading-screen").css("display","none");
     $("#search-screen").css("display","flex");
     $("#search-filters").css("display","block");
     $("#search-results").css("display","grid");
@@ -58,15 +58,15 @@ function getStats(elem){
     nationality = $(elem).find('.nationality').text().substring(13);
     socket.emit('scrape stats', url);
     $("#search-screen").css("display","none");
-    $('#loading').empty();
-    $('#loading').append('Retrieving Stats');
-    $('#loading').append('<br><br>');
-    $('#loading').append('<div id="circularG"> <div id="circularG_1" class="circularG"></div> ' +
+    $('#loading-screen').empty();
+    $('#loading-screen').append('Retrieving Stats');
+    $('#loading-screen').append('<br><br>');
+    $('#loading-screen').append('<div id="circularG"> <div id="circularG_1" class="circularG"></div> ' +
         '<div id="circularG_2" class="circularG"></div> <div id="circularG_3" class="circularG"></div> ' +
         '<div id="circularG_4" class="circularG"></div> <div id="circularG_5" class="circularG"></div> ' +
         '<div id="circularG_6" class="circularG"></div> <div id="circularG_7" class="circularG"></div> ' +
         '<div id="circularG_8" class="circularG"></div> </div>');
-    $("#loading").css("display","flex");
+    $("#loading-screen").css("display","flex");
 }
 
 socket.on('stats scraped', function(someStats){
@@ -76,7 +76,7 @@ socket.on('stats scraped', function(someStats){
         $('#competitions').append('<input class="competition" type="checkbox" value=' + competitions[i] + ' checked> ' + competitions[i] + '<br><br>');
     }
     $('#radar').empty();
-    $("#loading").css("display","none");
+    $("#loading-screen").css("display","none");
     $("#content-screen").css("display","flex");
     updateRadar();
 });

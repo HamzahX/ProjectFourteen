@@ -46,7 +46,7 @@ input:hover {
                 color: #222222;
             }
 
-    #loading {
+    #loading-screen {
         display: none;
         flex: 1 1 90%;
         max-height: 90%;
