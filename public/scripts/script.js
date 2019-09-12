@@ -273,7 +273,7 @@ function drawRadar(stats, subtitle, categories, yAxis){
 }
 
 function drawRadarFW(stats){
-    let subtitle = 'Forward Template | per 90';
+    let subtitle = 'FW / AM Template  |  per 90';
     let categories = [
         'Non-penalty goals',
         'Non-penalty shots',
@@ -282,19 +282,19 @@ function drawRadarFW(stats){
         'Assists',
         'Key Passes',
         'Through Balls',
-        'Tackles+Interceptions',
+        'Recoveries',
         'Possession Losses',
         'Successful Dribbles'
     ];
     let yAxis = [
         {min: 0, max: 1},
         {min: 0, max: 7},
-        {min: 0, max: 50},
+        {min: 0, max: 35},
         {min: 50, max: 100},
         {min: 0, max: 0.6},
         {min: 0, max: 4},
         {min: 0, max: 0.6},
-        {min: 0, max: 4},
+        {min: 0, max: 3.3},
         {min: 0, max: 7, reversed: true},
         {min: 0, max: 6}
     ];
@@ -302,7 +302,7 @@ function drawRadarFW(stats){
 }
 
 function drawRadarMF(stats){
-    let subtitle = 'Midfielder Template | per 90';
+    let subtitle = 'CM / DM Template  |  per 90';
     let categories = [
         'Passing %',
         'Assists',
@@ -318,22 +318,22 @@ function drawRadarMF(stats){
     ];
     let yAxis = [
         {min: 50, max: 100},
-        {min: 0, max: 0.6},
-        {min: 0, max: 4},
-        {min: 0, max: 0.6},
-        {min: 0, max: 6},
-        {min: 0, max: 6, reversed: true},
-        {min: 0, max: 5, reversed: true},
+        {min: 0, max: 0.5},
+        {min: 0, max: 3},
+        {min: 0, max: 0.4},
+        {min: 0, max: 3},
+        {min: 0, max: 4.5, reversed: true},
+        {min: 0, max: 3.3, reversed: true},
         {min: 30, max: 75},
         {min: 0, max: 5},
-        {min: 0, max: 4},
-        {min: 0, max: 10}
+        {min: 0, max: 5},
+        {min: 0, max: 9}
     ];
     drawRadar(stats, subtitle, categories, yAxis);
 }
 
 function drawRadarFB(stats){
-    let subtitle = 'Fullback Template | per 90';
+    let subtitle = 'FB Template  |  per 90';
     let categories = [
         'Tackles',
         'Interceptions',
@@ -352,21 +352,21 @@ function drawRadarFB(stats){
         {min: 0, max: 5},
         {min: 0, max: 4},
         {min: 50, max: 100},
-        {min: 0, max: 0.6},
-        {min: 0, max: 4},
+        {min: 0, max: 0.45},
+        {min: 0, max: 2.5},
         {min: 0, max: 1.5},
         {min: 0, max: 40},
-        {min: 0, max: 4},
-        {min: 0, max: 3, reversed: true},
+        {min: 0, max: 2.5},
+        {min: 0, max: 4, reversed: true},
         {min: 0, max: 2},
         {min: 30, max: 85},
-        {min: 0, max: 4, reversed: true},
+        {min: 0, max: 3, reversed: true},
     ];
     drawRadar(stats, subtitle, categories, yAxis);
 }
 
 function drawRadarDF(stats){
-    let subtitle = 'Central Defender Template | per 90';
+    let subtitle = 'CB Template  |  per 90';
     let categories = [
         'Passing %',
         'Tackle Success %',
@@ -380,14 +380,14 @@ function drawRadarDF(stats){
     ];
     let yAxis = [
         {min: 50, max: 100},
-        {min: 30, max: 75},
-        {min: 0, max: 5},
+        {min: 45, max: 100},
         {min: 0, max: 4},
+        {min: 0, max: 3},
         {min: 0, max: 10},
-        {min: 0, max: 3, reversed: true},
-        {min: 30, max: 100},
+        {min: 0, max: 2.5, reversed: true},
+        {min: 40, max: 85},
         {min: 0, max: 5},
-        {min: 0, max: 6},
+        {min: 0, max: 8.5},
     ];
     drawRadar(stats, subtitle, categories, yAxis);
 }
