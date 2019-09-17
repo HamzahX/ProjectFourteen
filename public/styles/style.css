@@ -10,7 +10,7 @@ html {
 
 body {
     margin: 0 auto;
-    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+    font-family: "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
 input {
@@ -22,6 +22,28 @@ input {
 input:hover {
     border: dimgrey 1px solid;
 }
+
+.highcharts-data-table{
+    border: darkgrey 1px solid;
+    margin: 10px 20px 20px 0;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.highcharts-data-table table{
+    text-align: center;
+    border-spacing: 0 20px;
+}
+
+.highcharts-data-table table caption, .highcharts-data-table table thead {
+    display: none;
+}
+
+.highcharts-data-table table tr{
+    text-align: center;
+    vertical-align: middle;
+}
+
 
 #main {
     display: flex;
@@ -45,19 +67,6 @@ input:hover {
                 font-size: 1.8em;
                 color: #222222;
             }
-
-    #loading-screen {
-        display: none;
-        flex: 1 1 90%;
-        max-height: 90%;
-        width: 100vw;
-        text-align: center;
-        padding-bottom: 10%;
-
-        flex-direction: column;
-        justify-content: center;
-        font: 2em "Lucida Grande", Helvetica, Arial, sans-serif;
-    }
 
     .main {
         flex: 1 1 90%;
@@ -160,7 +169,7 @@ input:hover {
                         border: none;
                         background-color: #cecece;
                         color: black;
-                        font-size: 1.3em;
+                        font-size: 1em;
                     }
 
                         #filter-buttons .filter-button button:hover {
@@ -171,6 +180,19 @@ input:hover {
         #radar {
             padding: 10px;
         }
+
+    #loading-screen {
+        display: none;
+        flex: 1 1 90%;
+        max-height: 90%;
+        width: 100vw;
+        text-align: center;
+        padding-bottom: 10%;
+
+        flex-direction: column;
+        justify-content: center;
+        font: 2em "Lucida Grande", Helvetica, Arial, sans-serif;
+    }
 
 /*Loading Screen Animation*/
 #circularG{

@@ -21,7 +21,6 @@ let browser;
 let setup = async () => {
     return new Promise(async function(resolve, reject){
         browser = await puppeteer.launch({ headless: true, args: ['--no-sandbox', '--disable-setuid-sandbox'] });
-        let page = await browser.newPage();
         resolve(browser);
     });
 };
@@ -29,10 +28,12 @@ let setup = async () => {
 //launch the browser and wait for socket events
 setup().then(
     io.on('connection', function(socket){
-        console.log(socket.id);
+        console.log("Number of users currently online: " + Object.keys(io.sockets.sockets).length);
 
         socket.on('search', async(aQuery) => {
-            console.log(aQuery);
+            console.log(socket.id + " | Searching for: " + aQuery);
+
+            console.time(socket.id + " | Time taken to return search results");
             let page = await browser.newPage();
             getSearchResults(page, aQuery).then((searchResults) => {
                 page.close();
@@ -40,15 +41,18 @@ setup().then(
                     let countryISO = searchResults[i]["nationality"];
                     searchResults[i]["nationality"] = countryCodes.getCountryName(countryISO.toUpperCase());
                 }
-                console.log(searchResults);
+                console.timeEnd(socket.id + " | Time taken to return search results");
                 socket.emit('search results', searchResults);
-            }).catch(error => {
-                socket.emit('error');
+            }).catch(anError => {
+                console.log(socket.id + " | " + anError);
+                socket.emit('alert error', anError.name);
             });
         });
 
         socket.on('scrape stats', async(aURL) => {
-            console.log(aURL);
+            console.log(socket.id + " | Retrieving stats from: " + aURL);
+
+            console.time(socket.id + " | Time taken to return stats");
             let rawData = [];
             let stats = {};
             let page1 = await browser.newPage();
@@ -74,13 +78,18 @@ setup().then(
                         Object.assign(stats[key], rawData[i][key]);
                     }
                 }
-                console.log(stats);
+                console.timeEnd(socket.id + " | Time taken to return stats");
                 socket.emit('stats scraped', stats);
             }
             catch (anError) {
-                socket.emit('error');
+                console.log(socket.id + " | " + anError);
+                socket.emit('alert error', anError.name);
             }
         });
+
+        socket.on('disconnect', function(){
+            console.log("Number of users currently online: " + Object.keys(io.sockets.sockets).length);
+        })
     })
 );
 

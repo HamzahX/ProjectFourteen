@@ -1,5 +1,7 @@
 var socket = io();
 
+let radar;
+
 let stats = {};
 let competitions = [];
 
@@ -50,6 +52,8 @@ socket.on('search results', function(results){
 });
 
 function getStats(elem){
+    $('#filterByClub').empty();
+    $('#filterByNationality').empty();
     $('#radar').empty();
     $('#competitions').empty();
     let url = $(elem).find('.url').text();
@@ -81,8 +85,9 @@ socket.on('stats scraped', function(someStats){
     updateRadar();
 });
 
-socket.on('error', function(){
-    alert('An error has occurred. Please reload the page and try again');
+socket.on('alert error', function(anError){
+    alert(anError + "\nPlease wait for the page to reload and try again");
+    location.reload();
 });
 
 function updateRadar(){
@@ -206,7 +211,7 @@ function filterStats(stats){
 function drawRadar(stats, subtitle, categories, yAxis){
     let series = [stats];
     $('.highcharts-data-table').remove();
-    Highcharts.chart('radar', {
+    radar = Highcharts.chart('radar', {
         chart: {
             parallelCoordinates: true,
             parallelAxes: {
@@ -221,11 +226,18 @@ function drawRadar(stats, subtitle, categories, yAxis){
                 showLastLabel: false
             },
             polar: true,
+            type: 'line',
             maxWidth: 1000,
-            hideDelay: 0
+            hideDelay: 0,
+            marginLeft: 100,
+            marginRight: 100
+        },
+        plotOptions: {
+            series: {
+                softThreshold: false
+            }
         },
         title: {
-            // text: name + ' | ' + club + ' & ' + nationality,
             text: name,
             style: {
                 fontSize: '2em'
@@ -287,16 +299,16 @@ function drawRadarFW(stats){
         'Successful Dribbles'
     ];
     let yAxis = [
-        {min: 0, max: 1},
-        {min: 0, max: 7},
-        {min: 0, max: 35},
-        {min: 50, max: 100},
-        {min: 0, max: 0.6},
-        {min: 0, max: 4},
-        {min: 0, max: 0.6},
-        {min: 0, max: 3.3},
-        {min: 0, max: 7, reversed: true},
-        {min: 0, max: 6}
+        {softMin: 0, softMax: 1},
+        {softMin: 0, softMax: 7},
+        {softMin: 0, softMax: 35},
+        {softMin: 50, softMax: 100},
+        {softMin: 0, softMax: 0.6},
+        {softMin: 0, softMax: 4},
+        {softMin: 0, softMax: 0.6},
+        {softMin: 0, softMax: 3.3},
+        {softMin: 0, softMax: 7, reversed: true},
+        {softMin: 0, softMax: 6}
     ];
     drawRadar(stats, subtitle, categories, yAxis);
 }
@@ -317,17 +329,17 @@ function drawRadarMF(stats){
         'Long Balls'
     ];
     let yAxis = [
-        {min: 50, max: 100},
-        {min: 0, max: 0.5},
-        {min: 0, max: 3},
-        {min: 0, max: 0.4},
-        {min: 0, max: 3},
-        {min: 0, max: 4.5, reversed: true},
-        {min: 0, max: 3.3, reversed: true},
-        {min: 30, max: 75},
-        {min: 0, max: 5},
-        {min: 0, max: 5},
-        {min: 0, max: 9}
+        {softMin: 50, softMax: 100},
+        {softMin: 0, softMax: 0.5},
+        {softMin: 0, softMax: 3},
+        {softMin: 0, softMax: 0.4},
+        {softMin: 0, softMax: 3},
+        {softMin: 0, softMax: 4.5, reversed: true},
+        {softMin: 0, softMax: 3.3, reversed: true},
+        {softMin: 30, softMax: 75},
+        {softMin: 0, softMax: 5},
+        {softMin: 0, softMax: 5},
+        {softMin: 0, softMax: 9}
     ];
     drawRadar(stats, subtitle, categories, yAxis);
 }
@@ -349,18 +361,18 @@ function drawRadarFB(stats){
         'Fouls Committed'
     ];
     let yAxis = [
-        {min: 0, max: 5},
-        {min: 0, max: 4},
-        {min: 50, max: 100},
-        {min: 0, max: 0.45},
-        {min: 0, max: 2.5},
-        {min: 0, max: 1.5},
-        {min: 0, max: 40},
-        {min: 0, max: 2.5},
-        {min: 0, max: 4, reversed: true},
-        {min: 0, max: 2},
-        {min: 30, max: 85},
-        {min: 0, max: 3, reversed: true},
+        {softMin: 0, softMax: 5},
+        {softMin: 0, softMax: 4},
+        {softMin: 50, softMax: 100},
+        {softMin: 0, softMax: 0.45},
+        {softMin: 0, softMax: 2.5},
+        {softMin: 0, softMax: 1.5},
+        {softMin: 0, softMax: 40},
+        {softMin: 0, softMax: 2.5},
+        {softMin: 0, softMax: 4, reversed: true},
+        {softMin: 0, softMax: 2},
+        {softMin: 30, softMax: 85},
+        {softMin: 0, softMax: 3, reversed: true},
     ];
     drawRadar(stats, subtitle, categories, yAxis);
 }
@@ -379,15 +391,15 @@ function drawRadarDF(stats){
         'Long Balls',
     ];
     let yAxis = [
-        {min: 50, max: 100},
-        {min: 45, max: 100},
-        {min: 0, max: 4},
-        {min: 0, max: 3},
-        {min: 0, max: 10},
-        {min: 0, max: 2.5, reversed: true},
-        {min: 40, max: 85},
-        {min: 0, max: 5},
-        {min: 0, max: 8.5},
+        {softMin: 50, softMax: 100},
+        {softMin: 45, softMax: 100},
+        {softMin: 0, softMax: 4},
+        {softMin: 0, softMax: 3},
+        {softMin: 0, softMax: 10},
+        {softMin: 0, softMax: 2.5, reversed: true},
+        {softMin: 40, softMax: 85},
+        {softMin: 0, softMax: 5},
+        {softMin: 0, softMax: 8.5},
     ];
     drawRadar(stats, subtitle, categories, yAxis);
 }
@@ -409,12 +421,7 @@ $("#competitions").submit(function(e) {
 });
 
 $(document).ready(function(){
-    $("#filterByClub").on("keyup", function() {
-        let value = $(this).val().toLowerCase();
-        $("#search-results .search-result").filter(function() {
-            $(this).toggle($(this).children(".club").text().toLowerCase().indexOf(value) > -1)
-        });
-    });
+
 });
 
 $(document).ready(function(){
@@ -424,6 +431,12 @@ $(document).ready(function(){
             $(this).toggle($(this).children(".nationality").text().toLowerCase().indexOf(value) > -1)
         });
     });
+
+    $("#filterByClub").on("keyup", function() {
+        let value = $(this).val().toLowerCase();
+        $("#search-results .search-result").filter(function() {
+            $(this).toggle($(this).children(".club").text().toLowerCase().indexOf(value) > -1)
+        });
+    });
+
 });
-
-
