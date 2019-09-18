@@ -52,8 +52,8 @@ socket.on('search results', function(results){
 });
 
 function getStats(elem){
-    $('#filterByClub').empty();
-    $('#filterByNationality').empty();
+    $('#filterByClub').val("");
+    $('#filterByNationality').val("");
     $('#radar').empty();
     $('#competitions').empty();
     let url = $(elem).find('.url').text();
@@ -418,10 +418,6 @@ $("#searchbar").submit(function(e) {
 
 $("#competitions").submit(function(e) {
     e.preventDefault();
-});
-
-$(document).ready(function(){
-
 });
 
 $(document).ready(function(){
