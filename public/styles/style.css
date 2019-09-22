@@ -194,6 +194,28 @@ input:hover {
         font: 2em "Lucida Grande", Helvetica, Arial, sans-serif;
     }
 
+/*@media only screen and (max-width: 850px) {*/
+/*    #content-screen {*/
+/*        flex-direction: column;*/
+/*    }*/
+/*    .main {*/
+/*        flex: 1 1 90%;*/
+/*        max-height: unset;*/
+/*        width: unset;*/
+/*    }*/
+
+/*    .filter {*/
+/*        flex: 1 1 20%;*/
+/*        margin: 10px 10px 20px 20px;*/
+/*    }*/
+
+/*    .result {*/
+/*        flex: 1 1 80%;*/
+/*        margin: 10px 20px 20px 10px;*/
+/*        border: darkgrey 1px solid;*/
+/*    }*/
+/*}*/
+
 /*Loading Screen Animation*/
 #circularG{
     position:relative;
