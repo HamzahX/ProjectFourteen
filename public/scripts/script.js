@@ -74,6 +74,7 @@ function getStats(elem){
 }
 
 socket.on('stats scraped', function(someStats){
+    console.log(someStats);
     competitions = Object.keys(someStats);
     stats = someStats;
     for (let i=0; i<competitions.length; i++){
@@ -217,7 +218,7 @@ function drawRadar(stats, subtitle, categories, yAxis){
             parallelAxes: {
                 labels: {
                     style: {
-                        color: 'black'
+                        color: 'gray'
                     }
                 },
                 gridLineWidth: 0,
@@ -277,9 +278,23 @@ function drawRadar(stats, subtitle, categories, yAxis){
             return {
                 name: name,
                 data: set,
-                stickyTracking: true
+                stickyTracking: false
             };
-        })
+        }),
+        exporting: {
+            scale: 1,
+            sourceWidth: 1366,
+            sourceHeight: 768,
+            // chartOptions: {
+            //     plotOptions: {
+            //         series: {
+            //             dataLabels: {
+            //                 enabled: true
+            //             }
+            //         }
+            //     }
+            // }
+        }
     });
 }
 

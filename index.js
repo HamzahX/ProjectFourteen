@@ -20,7 +20,9 @@ http.listen(port, function(){
 let browser;
 let setup = async () => {
     return new Promise(async function(resolve, reject){
+        console.time('browser launch');
         browser = await puppeteer.launch({ headless: true, args: ['--no-sandbox', '--disable-setuid-sandbox'] });
+        console.timeEnd('browser launch');
         resolve(browser);
     });
 };
@@ -64,9 +66,9 @@ setup().then(
                     getStats2(page2, aURL),
                     getStats3(page3, aURL)
                 ]);
-                page1.close();
-                page2.close();
-                page3.close();
+                await page1.close();
+                await page2.close();
+                await page3.close();
                 for (let i = 0; i < rawDataTemp.length; i++) {
                     rawData = rawData.concat(rawDataTemp[i]);
                 }
@@ -79,6 +81,7 @@ setup().then(
                     }
                 }
                 console.timeEnd(socket.id + " | Time taken to return stats");
+                // console.log(stats);
                 socket.emit('stats scraped', stats);
             }
             catch (anError) {
