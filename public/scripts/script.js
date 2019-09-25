@@ -225,7 +225,7 @@ function drawRadar(stats, subtitle, categories, yAxis){
                 lineWidth: 1,
             },
             polar: true,
-            type: 'line',
+            type: 'area',
             maxWidth: 1000,
             hideDelay: 0,
             marginLeft: 100,
@@ -234,7 +234,8 @@ function drawRadar(stats, subtitle, categories, yAxis){
         },
         plotOptions: {
             series: {
-                softThreshold: false
+                softThreshold: false,
+                fillColor: Highcharts.Color(Highcharts.getOptions().colors[0]).setOpacity(0.35).get()
             }
         },
         title: {
@@ -262,17 +263,20 @@ function drawRadar(stats, subtitle, categories, yAxis){
             verticalAlign: 'bottom',
             layout: 'horizontal'
         },
+        yAxis: yAxis,
         xAxis: {
             categories: categories,
             labels: {
-                distance: 67,
+                distance: 30,
+                padding: 0,
+                overflow: 'allow',
+                zIndex: 0,
                 style: {
-                    fontSize: '1em'
+                    fontSize: '1.3em'
                 }
             },
             gridLineWidth: 0
         },
-        yAxis: yAxis,
         series:
             series.map(function (set, i) {
             return {
@@ -285,15 +289,6 @@ function drawRadar(stats, subtitle, categories, yAxis){
             scale: 1,
             sourceWidth: 1366,
             sourceHeight: 768,
-            // chartOptions: {
-            //     plotOptions: {
-            //         series: {
-            //             dataLabels: {
-            //                 enabled: true
-            //             }
-            //         }
-            //     }
-            // }
         }
     });
 }

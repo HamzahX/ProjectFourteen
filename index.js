@@ -27,74 +27,82 @@ let setup = async () => {
     });
 };
 
+let browsers = {};
+
 //launch the browser and wait for socket events
-setup().then(
-    io.on('connection', function(socket){
+io.on('connection', async(socket) => {
+    browsers[socket.id] = await setup();
+
+    console.log("Number of users currently online: " + Object.keys(io.sockets.sockets).length);
+
+    socket.on('search', async(aQuery) => {
+        let browser = browsers[socket.id];
+
+        console.log(socket.id + " | Searching for: " + aQuery);
+
+        console.time(socket.id + " | Time taken to return search results");
+        let page = await browser.newPage();
+        getSearchResults(page, aQuery).then((searchResults) => {
+            page.close();
+            for (let i=0; i<searchResults.length; i++){
+                let countryISO = searchResults[i]["nationality"];
+                searchResults[i]["nationality"] = countryCodes.getCountryName(countryISO.toUpperCase());
+            }
+            console.timeEnd(socket.id + " | Time taken to return search results");
+            socket.emit('search results', searchResults);
+        }).catch(anError => {
+            console.log(socket.id + " | " + anError);
+            socket.emit('alert error', anError.name);
+        });
+    });
+
+    socket.on('scrape stats', async(aURL) => {
+        let browser = browsers[socket.id];
+
+        console.log(socket.id + " | Retrieving stats from: " + aURL);
+
+        console.time(socket.id + " | Time taken to return stats");
+        let rawData = [];
+        let stats = {};
+        let page1 = await browser.newPage();
+        let page2 = await browser.newPage();
+        let page3 = await browser.newPage();
+        try {
+            let rawDataTemp = await Promise.all([
+                getStats1(page1, aURL),
+                getStats2(page2, aURL),
+                getStats3(page3, aURL)
+            ]);
+            await page1.close();
+            await page2.close();
+            await page3.close();
+            for (let i = 0; i < rawDataTemp.length; i++) {
+                rawData = rawData.concat(rawDataTemp[i]);
+            }
+            for (let key in rawData[0]) {
+                stats[key] = {};
+            }
+            for (let i = 0; i < rawData.length; i++) {
+                for (let key in rawData[i]) {
+                    Object.assign(stats[key], rawData[i][key]);
+                }
+            }
+            console.timeEnd(socket.id + " | Time taken to return stats");
+            // console.log(stats);
+            socket.emit('stats scraped', stats);
+        }
+        catch (anError) {
+            console.log(socket.id + " | " + anError);
+            socket.emit('alert error', anError.name);
+        }
+    });
+
+    socket.on('disconnect', function(){
         console.log("Number of users currently online: " + Object.keys(io.sockets.sockets).length);
-
-        socket.on('search', async(aQuery) => {
-            console.log(socket.id + " | Searching for: " + aQuery);
-
-            console.time(socket.id + " | Time taken to return search results");
-            let page = await browser.newPage();
-            getSearchResults(page, aQuery).then((searchResults) => {
-                page.close();
-                for (let i=0; i<searchResults.length; i++){
-                    let countryISO = searchResults[i]["nationality"];
-                    searchResults[i]["nationality"] = countryCodes.getCountryName(countryISO.toUpperCase());
-                }
-                console.timeEnd(socket.id + " | Time taken to return search results");
-                socket.emit('search results', searchResults);
-            }).catch(anError => {
-                console.log(socket.id + " | " + anError);
-                socket.emit('alert error', anError.name);
-            });
-        });
-
-        socket.on('scrape stats', async(aURL) => {
-            console.log(socket.id + " | Retrieving stats from: " + aURL);
-
-            console.time(socket.id + " | Time taken to return stats");
-            let rawData = [];
-            let stats = {};
-            let page1 = await browser.newPage();
-            let page2 = await browser.newPage();
-            let page3 = await browser.newPage();
-            try {
-                let rawDataTemp = await Promise.all([
-                    getStats1(page1, aURL),
-                    getStats2(page2, aURL),
-                    getStats3(page3, aURL)
-                ]);
-                await page1.close();
-                await page2.close();
-                await page3.close();
-                for (let i = 0; i < rawDataTemp.length; i++) {
-                    rawData = rawData.concat(rawDataTemp[i]);
-                }
-                for (let key in rawData[0]) {
-                    stats[key] = {};
-                }
-                for (let i = 0; i < rawData.length; i++) {
-                    for (let key in rawData[i]) {
-                        Object.assign(stats[key], rawData[i][key]);
-                    }
-                }
-                console.timeEnd(socket.id + " | Time taken to return stats");
-                // console.log(stats);
-                socket.emit('stats scraped', stats);
-            }
-            catch (anError) {
-                console.log(socket.id + " | " + anError);
-                socket.emit('alert error', anError.name);
-            }
-        });
-
-        socket.on('disconnect', function(){
-            console.log("Number of users currently online: " + Object.keys(io.sockets.sockets).length);
-        })
+        let browser = browsers[socket.id];
+        browser.close();
     })
-);
+})
 
 let getSearchResults = async (page, aQuery) => {
     URL = "https://www.whoscored.com/Search/?t=" + aQuery.replace(' ', '+');
