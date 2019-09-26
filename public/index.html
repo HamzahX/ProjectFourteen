@@ -34,10 +34,10 @@
                     <div id="options">
                         <h3>Template</h3>
                         <form id="templates">
-                            <input type="radio" name="template" value="FW" checked> FW / AM<br><br>
-                            <input type="radio" name="template" value="MF"> CM / DM<br><br>
-                            <input type="radio" name="template" value="FB"> FB<br><br>
-                            <input type="radio" name="template" value="DF"> CB<br><br>
+                            <input type="radio" name="template" value="FW" onchange="updateRadar()" checked> FW / AM<br><br>
+                            <input type="radio" name="template" value="MF" onchange="updateRadar()"> CM / DM<br><br>
+                            <input type="radio" name="template" value="FB" onchange="updateRadar()"> FB<br><br>
+                            <input type="radio" name="template" value="DF" onchange="updateRadar()"> CB<br><br>
                         </form>
                         <h3>Seasons</h3>
                         <form id="competitions">
@@ -68,6 +68,7 @@
         <script src="https://code.highcharts.com/modules/parallel-coordinates.js"></script>
         <script src="https://code.highcharts.com/modules/exporting.js"></script>
         <script src="https://code.highcharts.com/modules/export-data.js"></script>
+        <script src="https://code.highcharts.com/modules/no-data-to-display.js"></script>
         <script src="scripts/script.js"></script>
     </body>
 </html>

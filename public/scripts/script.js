@@ -78,7 +78,7 @@ socket.on('stats scraped', function(someStats){
     competitions = Object.keys(someStats);
     stats = someStats;
     for (let i=0; i<competitions.length; i++){
-        $('#competitions').append('<input class="competition" type="checkbox" value=' + competitions[i] + ' checked> ' + competitions[i] + '<br><br>');
+        $('#competitions').append('<input class="competition" type="checkbox" value=' + competitions[i] + ' checked onchange="updateRadar()"> ' + competitions[i] + '<br><br>');
     }
     $('#radar').empty();
     $("#loading-screen").css("display","none");
@@ -228,14 +228,15 @@ function drawRadar(stats, subtitle, categories, yAxis){
             type: 'area',
             maxWidth: 1000,
             hideDelay: 0,
-            marginLeft: 100,
-            marginRight: 100,
-            marginBottom: 50
+            marginLeft: 50,
+            marginRight: 50,
+            marginBottom: 25
         },
         plotOptions: {
             series: {
                 softThreshold: false,
-                fillColor: Highcharts.Color(Highcharts.getOptions().colors[0]).setOpacity(0.35).get()
+                color: Highcharts.Color(Highcharts.getOptions().colors[0]).setOpacity(0.8).get(),
+                fillColor: Highcharts.Color(Highcharts.getOptions().colors[0]).setOpacity(0.25).get(),
             }
         },
         title: {
@@ -243,6 +244,9 @@ function drawRadar(stats, subtitle, categories, yAxis){
             style: {
                 fontSize: '2em'
             }
+        },
+        lang: {
+            noData: "No data to display"
         },
         subtitle: {
             text: subtitle,
@@ -268,27 +272,26 @@ function drawRadar(stats, subtitle, categories, yAxis){
             categories: categories,
             labels: {
                 distance: 30,
-                padding: 0,
-                overflow: 'allow',
-                zIndex: 0,
                 style: {
-                    fontSize: '1.3em'
-                }
+                    fontSize: '1em'
+                },
+                padding: 0,
             },
-            gridLineWidth: 0
+            margin: 0,
+            gridLineWidth: 0,
         },
         series:
             series.map(function (set, i) {
             return {
                 name: name,
                 data: set,
-                stickyTracking: false
+                stickyTracking: true
             };
         }),
         exporting: {
             scale: 1,
-            sourceWidth: 1366,
-            sourceHeight: 768,
+            sourceWidth: 1600,
+            sourceHeight: 900,
         }
     });
 }
@@ -415,10 +418,12 @@ function drawRadarDF(stats){
 
 function selectAllSeasons(){
     $('#competitions').trigger("reset");
+    updateRadar();
 }
 
 function clearAllSeasons(){
     $('input:checkbox').prop("checked", false);
+    updateRadar();
 }
 
 $("#searchbar").submit(function(e) {

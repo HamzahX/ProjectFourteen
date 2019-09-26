@@ -118,7 +118,7 @@ input:hover {
             }
 
                 .search-result:hover {
-                    box-shadow: 3px 3px 3px lightgray;
+                    box-shadow: 0 3px 3px lightgray;
                 }
 
                 .search-result .name{
@@ -193,6 +193,11 @@ input:hover {
         justify-content: center;
         font: 2em "Lucida Grande", Helvetica, Arial, sans-serif;
     }
+
+/*Axis labels override*/
+.highcharts-yaxis-labels text {
+    opacity: 1;
+}
 
 /*@media only screen and (max-width: 850px) {*/
 /*    #content-screen {*/
