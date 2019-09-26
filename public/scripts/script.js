@@ -232,6 +232,10 @@ function drawRadar(stats, subtitle, categories, yAxis){
             marginRight: 50,
             marginBottom: 25
         },
+        credits: {
+            text: 'All data is taken from whoscored.com',
+            href: 'http://www.whoscored.com'
+        },
         plotOptions: {
             series: {
                 softThreshold: false,
@@ -423,7 +427,6 @@ function selectAllSeasons(){
 
 function clearAllSeasons(){
     $('input:checkbox').prop("checked", false);
-    updateRadar();
 }
 
 $("#searchbar").submit(function(e) {
