@@ -28,6 +28,9 @@ input:hover {
     margin: 10px 20px 20px 0;
     padding-left: 10px;
     padding-right: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .highcharts-data-table table{
@@ -196,6 +199,7 @@ input:hover {
 
 /*Axis labels override*/
 .highcharts-yaxis-labels text {
+    font-family: "Lucida Grande", Helvetica, Arial, sans-serif;
     opacity: 1;
 }
 

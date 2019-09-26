@@ -290,8 +290,8 @@ function drawRadar(stats, subtitle, categories, yAxis){
         }),
         exporting: {
             scale: 1,
-            sourceWidth: 1600,
-            sourceHeight: 900,
+            sourceWidth: 1366,
+            sourceHeight: 768,
         }
     });
 }
@@ -311,16 +311,16 @@ function drawRadarFW(stats){
         'Successful Dribbles'
     ];
     let yAxis = [
-        {softMin: 0, softMax: 1, maxPadding: 0, endOnTick: false, tickPositions: [0, 0.25, 0.5, 0.75, 1], showFirstLabel: false, showLastLabel: true},
-        {softMin: 0, softMax: 6, maxPadding: 0, endOnTick: false, tickPositions: [0, 1.5, 3, 4.5, 6], showFirstLabel: false, showLastLabel: true},
-        {softMin: 0, softMax: 30, maxPadding: 0, endOnTick: false, tickPositions: [0, 7.5, 15, 22.5, 30], showFirstLabel: false, showLastLabel: true},
-        {softMin: 60, softMax: 100, maxPadding: 0, endOnTick: false, tickPositions: [60, 70, 80, 90, 100], showFirstLabel: false, showLastLabel: true},
-        {softMin: 0, softMax: 0.6, maxPadding: 0, endOnTick: false, tickPositions: [0, 0.15, 0.3, 0.45, 0.6], showFirstLabel: false, showLastLabel: true},
-        {softMin: 0, softMax: 4, maxPadding: 0, endOnTick: false, tickPositions: [0, 1, 2, 3, 4], showFirstLabel: false, showLastLabel: true},
-        {softMin: 0, softMax: 0.6, maxPadding: 0, endOnTick: false, tickPositions: [0, 0.15, 0.3, 0.45, 0.6], showFirstLabel: false, showLastLabel: true},
-        {softMin: 0, softMax: 3, maxPadding: 0, endOnTick: false, tickPositions: [0, 0.75, 1.5, 2.25, 3], showFirstLabel: false, showLastLabel: true},
-        {softMin: 0, softMax: 6, reversed: true, maxPadding: 0, endOnTick: false, tickPositions: [0, 1.5, 3, 4.5, 6], showFirstLabel: true, showLastLabel: false},
-        {softMin: 0, softMax: 6, maxPadding: 0, endOnTick: false, tickPositions: [0, 1.5, 3, 4.5, 6], showFirstLabel: false, showLastLabel: true}
+        {softMin: 0, softMax: 1, maxPadding: 0, endOnTick: false, tickPositions: [0, 0.25, 0.5, 0.75, 1], showFirstLabel: false, showLastLabel: true, labels: {style: {fontSize: "13px"}}},
+        {softMin: 0, softMax: 6, maxPadding: 0, endOnTick: false, tickPositions: [0, 1.5, 3, 4.5, 6], showFirstLabel: false, showLastLabel: true, labels: {style: {fontSize: "13px"}}},
+        {softMin: 0, softMax: 30, maxPadding: 0, endOnTick: false, tickPositions: [0, 7.5, 15, 22.5, 30], showFirstLabel: false, showLastLabel: true, labels: {style: {fontSize: "13px"}}},
+        {softMin: 60, softMax: 100, maxPadding: 0, endOnTick: false, tickPositions: [60, 70, 80, 90, 100], showFirstLabel: false, showLastLabel: true, labels: {style: {fontSize: "13px"}}},
+        {softMin: 0, softMax: 0.6, maxPadding: 0, endOnTick: false, tickPositions: [0, 0.15, 0.3, 0.45, 0.6], showFirstLabel: false, showLastLabel: true, labels: {style: {fontSize: "13px"}}},
+        {softMin: 0, softMax: 4, maxPadding: 0, endOnTick: false, tickPositions: [0, 1, 2, 3, 4], showFirstLabel: false, showLastLabel: true, labels: {style: {fontSize: "13px"}}},
+        {softMin: 0, softMax: 0.6, maxPadding: 0, endOnTick: false, tickPositions: [0, 0.15, 0.3, 0.45, 0.6], showFirstLabel: false, showLastLabel: true, labels: {style: {fontSize: "13px"}}},
+        {softMin: 0, softMax: 3, maxPadding: 0, endOnTick: false, tickPositions: [0, 0.75, 1.5, 2.25, 3], showFirstLabel: false, showLastLabel: true, labels: {style: {fontSize: "13px"}}},
+        {softMin: 0, softMax: 6, reversed: true, maxPadding: 0, endOnTick: false, tickPositions: [0, 1.5, 3, 4.5, 6], showFirstLabel: true, showLastLabel: false, labels: {style: {fontSize: "13px"}}},
+        {softMin: 0, softMax: 6, maxPadding: 0, endOnTick: false, tickPositions: [0, 1.5, 3, 4.5, 6], showFirstLabel: false, showLastLabel: true, labels: {style: {fontSize: "13px"}}}
     ];
     drawRadar(stats, subtitle, categories, yAxis);
 }
@@ -341,17 +341,17 @@ function drawRadarMF(stats){
         'Long Balls'
     ];
     let yAxis = [
-        {softMin: 60, softMax: 100, maxPadding: 0, endOnTick: false, tickPositions: [60, 70, 80, 90, 100], showFirstLabel: false, showLastLabel: true},
-        {softMin: 0, softMax: 0.4, maxPadding: 0, endOnTick: false, tickPositions: [0, 0.1, 0.2, 0.3, 0.4], showFirstLabel: false, showLastLabel: true},
-        {softMin: 0, softMax: 3, maxPadding: 0, endOnTick: false, tickPositions: [0, 0.75, 1.5, 2.25, 3], showFirstLabel: false, showLastLabel: true},
-        {softMin: 0, softMax: 0.4, maxPadding: 0, endOnTick: false, tickPositions: [0, 0.1, 0.2, 0.3, 0.4], showFirstLabel: false, showLastLabel: true},
-        {softMin: 0, softMax: 3, maxPadding: 0, endOnTick: false, tickPositions: [0, 0.75, 1.5, 2.25, 3], showFirstLabel: false, showLastLabel: true},
-        {softMin: 0, softMax: 4, reversed: true, maxPadding: 0, endOnTick: false, tickPositions: [0, 1, 2, 3, 4], showFirstLabel: true, showLastLabel: false},
-        {softMin: 0, softMax: 2, reversed: true, maxPadding: 0, endOnTick: false, tickPositions: [0, 0.5, 1, 1.5, 2], showFirstLabel: true, showLastLabel: false},
-        {softMin: 35, softMax: 75, maxPadding: 0, endOnTick: false, tickPositions: [35, 45, 55, 65, 75], showFirstLabel: false, showLastLabel: true},
-        {softMin: 0, softMax: 4, maxPadding: 0, endOnTick: false, tickPositions: [0, 1, 2, 3, 4], showFirstLabel: false, showLastLabel: true},
-        {softMin: 0, softMax: 4, maxPadding: 0, endOnTick: false, tickPositions: [0, 1, 2, 3, 4], showFirstLabel: false, showLastLabel: true},
-        {softMin: 0, softMax: 8, maxPadding: 0, endOnTick: false, tickPositions: [0, 2, 4, 6, 8], showFirstLabel: false, showLastLabel: true}
+        {softMin: 60, softMax: 100, maxPadding: 0, endOnTick: false, tickPositions: [60, 70, 80, 90, 100], showFirstLabel: false, showLastLabel: true, labels: {style: {fontSize: "13px"}}},
+        {softMin: 0, softMax: 0.4, maxPadding: 0, endOnTick: false, tickPositions: [0, 0.1, 0.2, 0.3, 0.4], showFirstLabel: false, showLastLabel: true, labels: {style: {fontSize: "13px"}}},
+        {softMin: 0, softMax: 3, maxPadding: 0, endOnTick: false, tickPositions: [0, 0.75, 1.5, 2.25, 3], showFirstLabel: false, showLastLabel: true, labels: {style: {fontSize: "13px"}}},
+        {softMin: 0, softMax: 0.4, maxPadding: 0, endOnTick: false, tickPositions: [0, 0.1, 0.2, 0.3, 0.4], showFirstLabel: false, showLastLabel: true, labels: {style: {fontSize: "13px"}}},
+        {softMin: 0, softMax: 3, maxPadding: 0, endOnTick: false, tickPositions: [0, 0.75, 1.5, 2.25, 3], showFirstLabel: false, showLastLabel: true, labels: {style: {fontSize: "13px"}}},
+        {softMin: 0, softMax: 4, reversed: true, maxPadding: 0, endOnTick: false, tickPositions: [0, 1, 2, 3, 4], showFirstLabel: true, showLastLabel: false, labels: {style: {fontSize: "13px"}}},
+        {softMin: 0, softMax: 2, reversed: true, maxPadding: 0, endOnTick: false, tickPositions: [0, 0.5, 1, 1.5, 2], showFirstLabel: true, showLastLabel: false, labels: {style: {fontSize: "13px"}}},
+        {softMin: 35, softMax: 75, maxPadding: 0, endOnTick: false, tickPositions: [35, 45, 55, 65, 75], showFirstLabel: false, showLastLabel: true, labels: {style: {fontSize: "13px"}}},
+        {softMin: 0, softMax: 4, maxPadding: 0, endOnTick: false, tickPositions: [0, 1, 2, 3, 4], showFirstLabel: false, showLastLabel: true, labels: {style: {fontSize: "13px"}}},
+        {softMin: 0, softMax: 4, maxPadding: 0, endOnTick: false, tickPositions: [0, 1, 2, 3, 4], showFirstLabel: false, showLastLabel: true, labels: {style: {fontSize: "13px"}}},
+        {softMin: 0, softMax: 8, maxPadding: 0, endOnTick: false, tickPositions: [0, 2, 4, 6, 8], showFirstLabel: false, showLastLabel: true, labels: {style: {fontSize: "13px"}}}
     ];
     drawRadar(stats, subtitle, categories, yAxis);
 }
@@ -373,18 +373,18 @@ function drawRadarFB(stats){
         'Fouls Committed'
     ];
     let yAxis = [
-        {softMin: 0, softMax: 4, maxPadding: 0, endOnTick: false, tickPositions: [0, 1, 2, 3, 4], showFirstLabel: false, showLastLabel: true},
-        {softMin: 0, softMax: 4, maxPadding: 0, endOnTick: false, tickPositions: [0, 1, 2, 3, 4], showFirstLabel: false, showLastLabel: true},
-        {softMin: 60, softMax: 100, maxPadding: 0, endOnTick: false, tickPositions: [60, 70, 80, 90, 100], showFirstLabel: false, showLastLabel: true},
-        {softMin: 0, softMax: 0.4, maxPadding: 0, endOnTick: false, tickPositions: [0, 0.1, 0.2, 0.3, 0.4], showFirstLabel: false, showLastLabel: true},
-        {softMin: 0, softMax: 2, maxPadding: 0, endOnTick: false, tickPositions: [0, 0.5, 1, 1.5, 2], showFirstLabel: false, showLastLabel: true},
-        {softMin: 0, softMax: 2, maxPadding: 0, endOnTick: false, tickPositions: [0, 0.5, 1, 1.5, 2], showFirstLabel: false, showLastLabel: true},
-        {softMin: 0, softMax: 40, maxPadding: 0, endOnTick: false, tickPositions: [0, 10, 20, 30, 40], showFirstLabel: false, showLastLabel: true},
-        {softMin: 0, softMax: 2, maxPadding: 0, endOnTick: false, tickPositions: [0, 0.5, 1, 1.5, 2], showFirstLabel: false, showLastLabel: true},
-        {softMin: 0, softMax: 4, reversed: true, maxPadding: 0, endOnTick: false, tickPositions: [0, 1, 2, 3, 4], showFirstLabel: true, showLastLabel: false},
-        {softMin: 0, softMax: 2, maxPadding: 0, endOnTick: false, tickPositions: [0, 0.5, 1, 1.5, 2], showFirstLabel: false, showLastLabel: true},
-        {softMin: 45, softMax: 85, maxPadding: 0, endOnTick: false, tickPositions: [45, 55, 65, 75, 85], showFirstLabel: false, showLastLabel: true},
-        {softMin: 0, softMax: 2, reversed: true, maxPadding: 0, endOnTick: false, tickPositions: [0, 0.5, 1, 1.5, 2], showFirstLabel: true, showLastLabel: false}
+        {softMin: 0, softMax: 4, maxPadding: 0, endOnTick: false, tickPositions: [0, 1, 2, 3, 4], showFirstLabel: false, showLastLabel: true, labels: {style: {fontSize: "13px"}}},
+        {softMin: 0, softMax: 4, maxPadding: 0, endOnTick: false, tickPositions: [0, 1, 2, 3, 4], showFirstLabel: false, showLastLabel: true, labels: {style: {fontSize: "13px"}}},
+        {softMin: 60, softMax: 100, maxPadding: 0, endOnTick: false, tickPositions: [60, 70, 80, 90, 100], showFirstLabel: false, showLastLabel: true, labels: {style: {fontSize: "13px"}}},
+        {softMin: 0, softMax: 0.4, maxPadding: 0, endOnTick: false, tickPositions: [0, 0.1, 0.2, 0.3, 0.4], showFirstLabel: false, showLastLabel: true, labels: {style: {fontSize: "13px"}}},
+        {softMin: 0, softMax: 2, maxPadding: 0, endOnTick: false, tickPositions: [0, 0.5, 1, 1.5, 2], showFirstLabel: false, showLastLabel: true, labels: {style: {fontSize: "13px"}}},
+        {softMin: 0, softMax: 2, maxPadding: 0, endOnTick: false, tickPositions: [0, 0.5, 1, 1.5, 2], showFirstLabel: false, showLastLabel: true, labels: {style: {fontSize: "13px"}}},
+        {softMin: 0, softMax: 40, maxPadding: 0, endOnTick: false, tickPositions: [0, 10, 20, 30, 40], showFirstLabel: false, showLastLabel: true, labels: {style: {fontSize: "13px"}}},
+        {softMin: 0, softMax: 2, maxPadding: 0, endOnTick: false, tickPositions: [0, 0.5, 1, 1.5, 2], showFirstLabel: false, showLastLabel: true, labels: {style: {fontSize: "13px"}}},
+        {softMin: 0, softMax: 4, reversed: true, maxPadding: 0, endOnTick: false, tickPositions: [0, 1, 2, 3, 4], showFirstLabel: true, showLastLabel: false, labels: {style: {fontSize: "13px"}}},
+        {softMin: 0, softMax: 2, maxPadding: 0, endOnTick: false, tickPositions: [0, 0.5, 1, 1.5, 2], showFirstLabel: false, showLastLabel: true, labels: {style: {fontSize: "13px"}}},
+        {softMin: 45, softMax: 85, maxPadding: 0, endOnTick: false, tickPositions: [45, 55, 65, 75, 85], showFirstLabel: false, showLastLabel: true, labels: {style: {fontSize: "13px"}}},
+        {softMin: 0, softMax: 2, reversed: true, maxPadding: 0, endOnTick: false, tickPositions: [0, 0.5, 1, 1.5, 2], showFirstLabel: true, showLastLabel: false, labels: {style: {fontSize: "13px"}}}
     ];
     drawRadar(stats, subtitle, categories, yAxis);
 }
@@ -403,15 +403,15 @@ function drawRadarDF(stats){
         'Long Balls',
     ];
     let yAxis = [
-        {softMin: 60, softMax: 100, maxPadding: 0, endOnTick: false, tickPositions: [60, 70, 80, 90, 100], showFirstLabel: false, showLastLabel: true},
-        {softMin: 60, softMax: 100, maxPadding: 0, endOnTick: false, tickPositions: [60, 70, 80, 90, 100], showFirstLabel: false, showLastLabel: true},
-        {softMin: 0, softMax: 4, maxPadding: 0, endOnTick: false, tickPositions: [0, 1, 2, 3, 4], showFirstLabel: false, showLastLabel: true},
-        {softMin: 0, softMax: 3, maxPadding: 0, endOnTick: false, tickPositions: [0, 0.75, 1.5, 2.25, 3], showFirstLabel: false, showLastLabel: true},
-        {softMin: 0, softMax: 8, maxPadding: 0, endOnTick: false, tickPositions: [0, 2, 4, 6, 8], showFirstLabel: false, showLastLabel: true},
-        {softMin: 0, softMax: 2, reversed: true, maxPadding: 0, endOnTick: false, tickPositions: [0, 0.5, 1, 1.5, 2], showFirstLabel: true, showLastLabel: false},
-        {softMin: 45, softMax: 85, maxPadding: 0, endOnTick: false, tickPositions: [45, 55, 65, 75, 85], showFirstLabel: false, showLastLabel: true},
-        {softMin: 0, softMax: 4, maxPadding: 0, endOnTick: false, tickPositions: [0, 1, 2, 3, 4], showFirstLabel: false, showLastLabel: true},
-        {softMin: 0, softMax: 8, maxPadding: 0, endOnTick: false, tickPositions: [0, 2, 4, 6, 8], showFirstLabel: false, showLastLabel: true}
+        {softMin: 60, softMax: 100, maxPadding: 0, endOnTick: false, tickPositions: [60, 70, 80, 90, 100], showFirstLabel: false, showLastLabel: true, labels: {style: {fontSize: "13px"}}},
+        {softMin: 60, softMax: 100, maxPadding: 0, endOnTick: false, tickPositions: [60, 70, 80, 90, 100], showFirstLabel: false, showLastLabel: true, labels: {style: {fontSize: "13px"}}},
+        {softMin: 0, softMax: 4, maxPadding: 0, endOnTick: false, tickPositions: [0, 1, 2, 3, 4], showFirstLabel: false, showLastLabel: true, labels: {style: {fontSize: "13px"}}},
+        {softMin: 0, softMax: 3, maxPadding: 0, endOnTick: false, tickPositions: [0, 0.75, 1.5, 2.25, 3], showFirstLabel: false, showLastLabel: true, labels: {style: {fontSize: "13px"}}},
+        {softMin: 0, softMax: 8, maxPadding: 0, endOnTick: false, tickPositions: [0, 2, 4, 6, 8], showFirstLabel: false, showLastLabel: true, labels: {style: {fontSize: "13px"}}},
+        {softMin: 0, softMax: 2, reversed: true, maxPadding: 0, endOnTick: false, tickPositions: [0, 0.5, 1, 1.5, 2], showFirstLabel: true, showLastLabel: false, labels: {style: {fontSize: "13px"}}},
+        {softMin: 45, softMax: 85, maxPadding: 0, endOnTick: false, tickPositions: [45, 55, 65, 75, 85], showFirstLabel: false, showLastLabel: true, labels: {style: {fontSize: "13px"}}},
+        {softMin: 0, softMax: 4, maxPadding: 0, endOnTick: false, tickPositions: [0, 1, 2, 3, 4], showFirstLabel: false, showLastLabel: true, labels: {style: {fontSize: "13px"}}},
+        {softMin: 0, softMax: 8, maxPadding: 0, endOnTick: false, tickPositions: [0, 2, 4, 6, 8], showFirstLabel: false, showLastLabel: true, labels: {style: {fontSize: "13px"}}}
     ];
     drawRadar(stats, subtitle, categories, yAxis);
 }
