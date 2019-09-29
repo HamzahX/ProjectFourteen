@@ -20,11 +20,15 @@ input {
 }
 
 input:hover {
-    border: dimgrey 1px solid;
+    border: grey 1px solid;
+}
+
+button:focus, input:focus {
+    outline-color: dimgrey;
 }
 
 .highcharts-data-table{
-    border: darkgrey 1px solid;
+    /*border: darkgrey 1px solid;*/
     margin: 10px 20px 20px 0;
     padding-left: 10px;
     padding-right: 10px;
@@ -181,6 +185,7 @@ input:hover {
                         }
 
         #radar {
+            border: none;
             padding: 10px;
         }
 
