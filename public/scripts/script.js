@@ -109,6 +109,7 @@ function updateRadar(isNew = true){
         if ($('.highcharts-data-table').length){
             $('.highcharts-data-table').empty();
         }
+        subtitle = '';
         drawRadar([]);
         $(".highcharts-axis-line").attr("stroke-width", "0");
     }
