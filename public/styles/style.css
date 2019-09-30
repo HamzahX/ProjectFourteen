@@ -103,7 +103,7 @@ button:focus, input:focus {
 
             .search-filter-input{
                 width: 100%;
-                font-size: 1.3em;
+                font-size: 1.2em;
                 padding: 15px;
             }
 
@@ -133,7 +133,7 @@ button:focus, input:focus {
                 }
 
                 .search-result .club, .search-result .nationality{
-                    font-size: 1.3em;
+                    font-size: 1.2em;
                     color: dimgrey;
                 }
 
@@ -197,7 +197,7 @@ button:focus, input:focus {
 
         flex-direction: column;
         justify-content: center;
-        font: 2em "Lucida Grande", Helvetica, Arial, sans-serif;
+        font: 1.5em "Lucida Grande", Helvetica, Arial, sans-serif;
     }
 
 /*Axis labels override*/
