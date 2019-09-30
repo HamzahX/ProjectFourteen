@@ -16,16 +16,16 @@ let browser;
 let setup = async () => {
     return new Promise(async function(resolve, reject){
         console.time('browser launch');
-
+        browser = await puppeteer.launch({ headless: true, args: ['--no-sandbox', '--disable-setuid-sandbox'] });
         console.timeEnd('browser launch');
         resolve(browser);
     });
 };
 
-//start server
+//launch a browser and then start listening on the port
 setup().then(
     http.listen(port, function () {
-        console.log('listening on *:3000');
+        console.log('listening on port ' + port);
     })
 );
 
@@ -34,13 +34,12 @@ io.on('connection', function(socket){
     console.log("Number of users currently online: " + Object.keys(io.sockets.sockets).length);
 
     socket.on('search', async(aQuery) => {
-        browser = await puppeteer.launch({ headless: true, args: ['--no-sandbox', '--disable-setuid-sandbox'] });
         console.log(socket.id + " | Searching for: " + aQuery);
 
         console.time(socket.id + " | Time taken to return search results");
         let page = await browser.newPage();
-        getSearchResults(page, aQuery).then((searchResults) => {
-            browser.close();
+        getSearchResults(page, aQuery).then(async (searchResults) => {
+            await page.close();
             for (let i=0; i<searchResults.length; i++){
                 let countryISO = searchResults[i]["nationality"];
                 searchResults[i]["nationality"] = countryCodes.getCountryName(countryISO.toUpperCase());
@@ -54,7 +53,6 @@ io.on('connection', function(socket){
     });
 
     socket.on('scrape stats', async(aURL) => {
-        browser = await puppeteer.launch({ headless: true, args: ['--no-sandbox', '--disable-setuid-sandbox'] });
         console.log(socket.id + " | Retrieving stats from: " + aURL);
 
         console.time(socket.id + " | Time taken to return stats");
@@ -69,7 +67,9 @@ io.on('connection', function(socket){
                 getStats2(page2, aURL),
                 getStats3(page3, aURL)
             ]);
-            browser.close();
+            await page1.close();
+            await page2.close();
+            await page3.close();
             for (let i = 0; i < rawDataTemp.length; i++) {
                 rawData = rawData.concat(rawDataTemp[i]);
             }

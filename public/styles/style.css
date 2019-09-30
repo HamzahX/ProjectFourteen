@@ -30,7 +30,6 @@ button:focus, input:focus {
 .highcharts-data-table{
     /*border: darkgrey 1px solid;*/
     margin: 10px 20px 20px 0;
-    padding-left: 10px;
     padding-right: 10px;
     display: flex;
     flex-direction: column;
@@ -114,7 +113,7 @@ button:focus, input:focus {
             border: none;
             overflow-y: scroll;
 
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 1fr 1fr 1fr;
             grid-auto-rows: minmax(min-content, max-content);
             grid-gap: 20px;
         }
@@ -181,7 +180,6 @@ button:focus, input:focus {
 
                         #filter-buttons .filter-button button:hover {
                             background-color: #a7a7a7;
-                            color: black;
                         }
 
         #radar {

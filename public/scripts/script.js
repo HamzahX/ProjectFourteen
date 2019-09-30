@@ -1,6 +1,4 @@
-var socket = io();
-
-let radar;
+const socket = io();
 
 let stats = {};
 let competitions = [];
@@ -8,6 +6,11 @@ let competitions = [];
 let name;
 let club;
 let nationality;
+
+let radar;
+let subtitle;
+let categories;
+let yAxis;
 
 socket.on('search results', function(results){
     $('.search-filter-input').empty();
@@ -26,22 +29,21 @@ socket.on('search results', function(results){
             '</div>'
         );
     }
-    $("#loading-screen").css("display","none");
-    $("#search-screen").css("display","flex");
-    $("#search-filters").css("display","block");
-    $("#search-results").css("display","grid");
+    $("#loading-screen").css("display", "none");
+    $("#search-screen").css("display", "flex");
+    $("#search-filters").css("display", "block");
+    $("#search-results").css("display", "grid");
 });
 
-socket.on('stats scraped', function(someStats){
-    console.log(someStats);
-    stats = someStats;
-    competitions = Object.keys(someStats);
+socket.on('stats scraped', function(scrapedStats){
+    stats = scrapedStats;
+    competitions = Object.keys(stats);
     for (let i=0; i<competitions.length; i++){
         $('#competitions').append('<input class="competition" type="checkbox" value=' + competitions[i] + ' onchange="updateRadar(false)" checked> ' + competitions[i] + '<br><br>');
     }
     $('#radar').empty();
-    $("#loading-screen").css("display","none");
-    $("#content-screen").css("display","flex");
+    $("#loading-screen").css("display", "none");
+    $("#content-screen").css("display", "flex");
     updateRadar();
 });
 
@@ -66,12 +68,12 @@ function getStats(elem){
     $('#filterByNationality').val("");
     $('#radar').empty();
     $('#competitions').empty();
-    let url = $(elem).find('.url').text();
     name = $(elem).find('.name').text();
     club = $(elem).find('.club').text().substring(6);
     nationality = $(elem).find('.nationality').text().substring(13);
+    let url = $(elem).find('.url').text();
     socket.emit('scrape stats', url);
-    $("#search-screen").css("display","none");
+    $("#search-screen").css("display", "none");
     drawLoadingScreen("getStats");
 }
 
@@ -81,7 +83,7 @@ function drawLoadingScreen(type){
         '<div id="circularG_2" class="circularG"></div> <div id="circularG_3" class="circularG"></div> ' +
         '<div id="circularG_4" class="circularG"></div> <div id="circularG_5" class="circularG"></div> ' +
         '<div id="circularG_6" class="circularG"></div> <div id="circularG_7" class="circularG"></div> ' +
-        '<div id="circularG_8" class="circularG"></div> </div>');
+        '<div id="circularG_8" class="circularG"></div> </div><br>');
     switch(type){
         case "search":
             $('#loading-screen').append('Searching');
@@ -90,7 +92,7 @@ function drawLoadingScreen(type){
             $('#loading-screen').append('Retrieving Stats');
             break;
     }
-    $("#loading-screen").css("display","flex");
+    $("#loading-screen").css("display", "flex");
 }
 
 function updateRadar(isNew = true){
@@ -104,22 +106,51 @@ function updateRadar(isNew = true){
     let template = $("input[name='template']:checked").val();
     let filteredStats = filterStats(stats);
     if (Object.keys(filteredStats).length === 0){
-        console.log("empty");
-        drawRadar([], '', [], []);
+        if ($('.highcharts-data-table').length){
+            $('.highcharts-data-table').empty();
+        }
+        drawRadar([]);
+        $(".highcharts-axis-line").attr("stroke-width", "0");
     }
     else {
-        if (template === 'FW') {
-            let fwStats = calculateForwardStats(filteredStats);
-            drawRadarFW(fwStats, isNew);
-        } else if (template === 'MF') {
-            let mfStats = calculateMidfielderStats(filteredStats);
-            drawRadarMF(mfStats, isNew);
-        } else if (template === 'FB') {
-            let fbStats = calculateFullbackStats(filteredStats);
-            drawRadarFB(fbStats, isNew);
-        } else {
-            let dfStats = calculateDefenderStats(filteredStats);
-            drawRadarDF(dfStats, isNew);
+        let selectedStats;
+        switch (template){
+            case 'FW':
+                selectedStats = calculateForwardStats(filteredStats);
+                setForwardTemplate();
+                break;
+            case 'MF':
+                selectedStats = calculateMidfielderStats(filteredStats);
+                setMidfieldTemplate();
+                break;
+            case 'FB':
+                selectedStats = calculateFullbackStats(filteredStats);
+                setFullbackTemplate();
+                break;
+            case 'DF':
+                selectedStats = calculateDefenderStats(filteredStats);
+                setDefenderTemplate();
+                break;
+        }
+        if (isNew) {
+            if ($('.highcharts-data-table').length){
+                $('.highcharts-data-table').remove();
+                drawRadar(selectedStats, subtitle, categories, yAxis);
+                radar.viewData();
+                radar.reflow();
+            }
+            else {
+                drawRadar(selectedStats, subtitle, categories, yAxis);
+            }
+        }
+        else {
+            $.each(radar.series[0].data, function (i, point) {
+                point.update(selectedStats[i], false);
+            });
+            radar.redraw();
+            if ($('.highcharts-data-table').length){
+                radar.viewData();
+            }
         }
     }
 }
@@ -152,9 +183,7 @@ function calculateForwardStats(filteredStats){
     statsPer90['tacklesAndInterceptions'] = (filteredStats['tackles'] / (filteredStats['minutes']/90)) + (filteredStats['interceptions'] / (filteredStats['minutes']/90));
     statsPer90['possessionLosses'] = filteredStats['possessionLosses'] / (filteredStats['minutes']/90);
     statsPer90['dribbles'] = filteredStats['dribbles'] / (filteredStats['minutes']/90);
-    for (stat in statsPer90){
-        statsPer90[stat] = Math.round(statsPer90[stat] * 100) / 100;
-    }
+    statsPer90 = roundTo2Decimals(statsPer90);
     return Object.values(statsPer90);
 }
 
@@ -171,9 +200,7 @@ function calculateMidfielderStats(filteredStats){
     statsPer90['tackles'] = (filteredStats['tackles'] / (filteredStats['minutes']/90));
     statsPer90['interceptions'] = (filteredStats['interceptions'] / (filteredStats['minutes']/90));
     statsPer90['longPasses'] = (filteredStats['longPasses'] / (filteredStats['minutes']/90));
-    for (stat in statsPer90){
-        statsPer90[stat] = Math.round(statsPer90[stat] * 100) / 100;
-    }
+    statsPer90 = roundTo2Decimals(statsPer90);
     return Object.values(statsPer90);
 }
 
@@ -191,9 +218,7 @@ function calculateFullbackStats(filteredStats){
     statsPer90['succAerialDuels'] = filteredStats['succAerialDuels'] / (filteredStats['minutes']/90);
     statsPer90['tacklePct'] = (filteredStats['tackles'] / (filteredStats['tackles'] + filteredStats['dribbledPast'])) *100;
     statsPer90['fouls'] = filteredStats['fouls'] / (filteredStats['minutes']/90);
-    for (stat in statsPer90){
-        statsPer90[stat] = Math.round(statsPer90[stat] * 100) / 100;
-    }
+    statsPer90 = roundTo2Decimals(statsPer90);
     return Object.values(statsPer90);
 }
 
@@ -208,15 +233,20 @@ function calculateDefenderStats(filteredStats){
     statsPer90['aerialDuelPct'] = (filteredStats['succAerialDuels'] / filteredStats['totalAerialDuels']) * 100;
     statsPer90['succAerialDuels'] = filteredStats['succAerialDuels'] / (filteredStats['minutes']/90);
     statsPer90['longPasses'] = (filteredStats['longPasses'] / (filteredStats['minutes']/90));
-    for (stat in statsPer90){
-        statsPer90[stat] = Math.round(statsPer90[stat] * 100) / 100;
-    }
+    statsPer90 = roundTo2Decimals(statsPer90);
     return Object.values(statsPer90);
 }
 
-function drawRadarFW(stats, isNew){
-    let subtitle = 'FW / AM Template  |  per 90';
-    let categories = [
+function roundTo2Decimals(someStats){
+    for (let stat in someStats){
+        someStats[stat] = Math.round(someStats[stat] * 100) / 100;
+    }
+    return someStats;
+}
+
+function setForwardTemplate(){
+    subtitle = 'FW / AM Template  |  per 90';
+    categories = [
         'Non-Penalty Goals',
         'Non-Penalty Shots',
         'Conversion Rate',
@@ -228,7 +258,7 @@ function drawRadarFW(stats, isNew){
         'Possession Losses',
         'Successful Dribbles'
     ];
-    let yAxis = [
+    yAxis = [
         {softMin: 0, softMax: 1, maxPadding: 0, endOnTick: false, tickPositions: [0, 0.25, 0.5, 0.75, 1], showFirstLabel: false, showLastLabel: true, labels: {style: {fontSize: "13px"}}},
         {softMin: 0, softMax: 6, maxPadding: 0, endOnTick: false, tickPositions: [0, 1.5, 3, 4.5, 6], showFirstLabel: false, showLastLabel: true, labels: {style: {fontSize: "13px"}}},
         {softMin: 0, softMax: 30, maxPadding: 0, endOnTick: false, tickPositions: [0, 7.5, 15, 22.5, 30], showFirstLabel: false, showLastLabel: true, labels: {style: {fontSize: "13px"}}},
@@ -240,27 +270,11 @@ function drawRadarFW(stats, isNew){
         {softMin: 0, softMax: 6, reversed: true, maxPadding: 0, endOnTick: false, tickPositions: [0, 1.5, 3, 4.5, 6], showFirstLabel: true, showLastLabel: false, labels: {style: {fontSize: "13px"}}},
         {softMin: 0, softMax: 6, maxPadding: 0, endOnTick: false, tickPositions: [0, 1.5, 3, 4.5, 6], showFirstLabel: false, showLastLabel: true, labels: {style: {fontSize: "13px"}}}
     ];
-    if (isNew) {
-        drawRadar(stats, subtitle, categories, yAxis);
-        if ($('.highcharts-data-table').length){
-            $('.highcharts-data-table').remove();
-        }
-    }
-    else {
-        $.each(radar.series[0].data, function (i, point) {
-            point.update(stats[i], false);
-        });
-        radar.redraw();
-        if ($('.highcharts-data-table').length){
-            radar.viewData();
-        }
-    }
-    radar.reflow();
 }
 
-function drawRadarMF(stats, isNew){
-    let subtitle = 'CM / DM Template  |  per 90';
-    let categories = [
+function setMidfieldTemplate(){
+    subtitle = 'CM / DM Template  |  per 90';
+    categories = [
         '% Passes Completed',
         'Assists',
         'Key Passes',
@@ -273,7 +287,7 @@ function drawRadarMF(stats, isNew){
         'Interceptions',
         'Long Balls'
     ];
-    let yAxis = [
+    yAxis = [
         {softMin: 60, softMax: 100, maxPadding: 0, endOnTick: false, tickPositions: [60, 70, 80, 90, 100], showFirstLabel: false, showLastLabel: true, labels: {style: {fontSize: "13px"}}},
         {softMin: 0, softMax: 0.4, maxPadding: 0, endOnTick: false, tickPositions: [0, 0.1, 0.2, 0.3, 0.4], showFirstLabel: false, showLastLabel: true, labels: {style: {fontSize: "13px"}}},
         {softMin: 0, softMax: 3, maxPadding: 0, endOnTick: false, tickPositions: [0, 0.75, 1.5, 2.25, 3], showFirstLabel: false, showLastLabel: true, labels: {style: {fontSize: "13px"}}},
@@ -286,27 +300,11 @@ function drawRadarMF(stats, isNew){
         {softMin: 0, softMax: 4, maxPadding: 0, endOnTick: false, tickPositions: [0, 1, 2, 3, 4], showFirstLabel: false, showLastLabel: true, labels: {style: {fontSize: "13px"}}},
         {softMin: 0, softMax: 8, maxPadding: 0, endOnTick: false, tickPositions: [0, 2, 4, 6, 8], showFirstLabel: false, showLastLabel: true, labels: {style: {fontSize: "13px"}}}
     ];
-    if (isNew) {
-        drawRadar(stats, subtitle, categories, yAxis);
-        if ($('.highcharts-data-table').length){
-            $('.highcharts-data-table').remove();
-        }
-    }
-    else {
-        $.each(radar.series[0].data, function (i, point) {
-            point.update(stats[i], false);
-        });
-        radar.redraw();
-        if ($('.highcharts-data-table').length){
-            radar.viewData();
-        }
-    }
-    radar.reflow();
 }
 
-function drawRadarFB(stats, isNew){
-    let subtitle = 'FB Template  |  per 90';
-    let categories = [
+function setFullbackTemplate(){
+    subtitle = 'FB Template  |  per 90';
+    categories = [
         'Tackles Won',
         'Interceptions',
         '% Passes Completed',
@@ -320,7 +318,7 @@ function drawRadarFB(stats, isNew){
         '% Tackles Won',
         'Fouls Committed'
     ];
-    let yAxis = [
+    yAxis = [
         {softMin: 0, softMax: 4, maxPadding: 0, endOnTick: false, tickPositions: [0, 1, 2, 3, 4], showFirstLabel: false, showLastLabel: true, labels: {style: {fontSize: "13px"}}},
         {softMin: 0, softMax: 4, maxPadding: 0, endOnTick: false, tickPositions: [0, 1, 2, 3, 4], showFirstLabel: false, showLastLabel: true, labels: {style: {fontSize: "13px"}}},
         {softMin: 60, softMax: 100, maxPadding: 0, endOnTick: false, tickPositions: [60, 70, 80, 90, 100], showFirstLabel: false, showLastLabel: true, labels: {style: {fontSize: "13px"}}},
@@ -334,27 +332,11 @@ function drawRadarFB(stats, isNew){
         {softMin: 45, softMax: 85, maxPadding: 0, endOnTick: false, tickPositions: [45, 55, 65, 75, 85], showFirstLabel: false, showLastLabel: true, labels: {style: {fontSize: "13px"}}},
         {softMin: 0, softMax: 2, reversed: true, maxPadding: 0, endOnTick: false, tickPositions: [0, 0.5, 1, 1.5, 2], showFirstLabel: true, showLastLabel: false, labels: {style: {fontSize: "13px"}}}
     ];
-    if (isNew) {
-        drawRadar(stats, subtitle, categories, yAxis);
-        if ($('.highcharts-data-table').length){
-            $('.highcharts-data-table').remove();
-        }
-    }
-    else {
-        $.each(radar.series[0].data, function (i, point) {
-            point.update(stats[i], false);
-        });
-        radar.redraw();
-        if ($('.highcharts-data-table').length){
-            radar.viewData();
-        }
-    }
-    radar.reflow();
 }
 
-function drawRadarDF(stats, isNew){
-    let subtitle = 'CB Template  |  per 90';
-    let categories = [
+function setDefenderTemplate(){
+    subtitle = 'CB Template  |  per 90';
+    categories = [
         '% Passes Completed',
         '% Tackles Won',
         'Tackles Won',
@@ -365,7 +347,7 @@ function drawRadarDF(stats, isNew){
         'Aerial Duels Won',
         'Long Balls',
     ];
-    let yAxis = [
+    yAxis = [
         {softMin: 60, softMax: 100, maxPadding: 0, endOnTick: false, tickPositions: [60, 70, 80, 90, 100], showFirstLabel: false, showLastLabel: true, labels: {style: {fontSize: "13px"}}},
         {softMin: 60, softMax: 100, maxPadding: 0, endOnTick: false, tickPositions: [60, 70, 80, 90, 100], showFirstLabel: false, showLastLabel: true, labels: {style: {fontSize: "13px"}}},
         {softMin: 0, softMax: 4, maxPadding: 0, endOnTick: false, tickPositions: [0, 1, 2, 3, 4], showFirstLabel: false, showLastLabel: true, labels: {style: {fontSize: "13px"}}},
@@ -376,31 +358,15 @@ function drawRadarDF(stats, isNew){
         {softMin: 0, softMax: 4, maxPadding: 0, endOnTick: false, tickPositions: [0, 1, 2, 3, 4], showFirstLabel: false, showLastLabel: true, labels: {style: {fontSize: "13px"}}},
         {softMin: 0, softMax: 8, maxPadding: 0, endOnTick: false, tickPositions: [0, 2, 4, 6, 8], showFirstLabel: false, showLastLabel: true, labels: {style: {fontSize: "13px"}}}
     ];
-    if (isNew) {
-        drawRadar(stats, subtitle, categories, yAxis);
-        if ($('.highcharts-data-table').length){
-            $('.highcharts-data-table').remove();
-        }
-    }
-    else {
-        $.each(radar.series[0].data, function (i, point) {
-            point.update(stats[i], false);
-        });
-        radar.redraw();
-        if ($('.highcharts-data-table').length){
-            radar.viewData();
-        }
-    }
-    radar.reflow();
 }
 
-function drawRadar(stats, subtitle, categories, yAxis){
+function drawRadar(selectedStats){
     let series;
-    if (stats === []){
+    if (selectedStats === []){
         series = [];
     }
     else {
-        series = [stats];
+        series = [selectedStats];
     }
     radar = Highcharts.chart('radar', {
         chart: {
@@ -521,7 +487,7 @@ function selectAllSeasons(){
 function clearAllSeasons(){
     $('input:checkbox').prop("checked", false);
     if ($('.highcharts-data-table').length){
-        $('.highcharts-data-table').remove();
+        $('.highcharts-data-table').empty();
     }
     updateRadar();
 }
@@ -548,5 +514,4 @@ $(document).ready(function(){
             $(this).toggle($(this).children(".club").text().toLowerCase().indexOf(value) > -1)
         });
     });
-
 });
