@@ -13,12 +13,25 @@ server.use(express.static(path.join(__dirname, '/public')));
 
 //function to launch a browser using puppeteer
 let browser;
+let context;
 let setup = async () => {
     return new Promise(async function(resolve, reject){
         console.time('browser launch');
-        browser = await puppeteer.launch({ headless: true, args: ['--no-sandbox', '--disable-setuid-sandbox'] });
+        browser = await puppeteer.launch({
+            headless: true,
+            args: [
+                '--no-sandbox',
+                '--disable-setuid-sandbox',
+                '--incognito'
+                // '--disable-dev-shm-usage',
+                // '--disable-accelerated-2d-canvas',
+                // '--disable-gpu',
+                // '--window-size=1920x1080',
+            ]
+        });
+        context = await browser.createIncognitoBrowserContext();
         console.timeEnd('browser launch');
-        resolve(browser);
+        resolve(context);
     });
 };
 
@@ -35,10 +48,10 @@ io.on('connection', function(socket){
 
     socket.on('search', async(aQuery) => {
         console.log(socket.id + " | Searching for: " + aQuery);
-
         console.time(socket.id + " | Time taken to return search results");
-        let page = await browser.newPage();
-        getSearchResults(page, aQuery).then(async (searchResults) => {
+        let URL = "https://www.whoscored.com/Search/?t=" + aQuery.replace(' ', '+');
+        let page = await context.newPage();
+        getSearchResults(page, URL).then(async (searchResults) => {
             await page.close();
             for (let i=0; i<searchResults.length; i++){
                 let countryISO = searchResults[i]["nationality"];
@@ -54,25 +67,13 @@ io.on('connection', function(socket){
 
     socket.on('scrape stats', async(aURL) => {
         console.log(socket.id + " | Retrieving stats from: " + aURL);
-
         console.time(socket.id + " | Time taken to return stats");
-        let rawData = [];
         let stats = {};
-        let page1 = await browser.newPage();
-        let page2 = await browser.newPage();
-        let page3 = await browser.newPage();
+        let rawData  = [];
         try {
-            let rawDataTemp = await Promise.all([
-                getStats1(page1, aURL),
-                getStats2(page2, aURL),
-                getStats3(page3, aURL)
-            ]);
-            await page1.close();
-            await page2.close();
-            await page3.close();
-            for (let i = 0; i < rawDataTemp.length; i++) {
-                rawData = rawData.concat(rawDataTemp[i]);
-            }
+            let page = await context.newPage();
+            rawData = await getStats(page, aURL);
+            await page.close();
             for (let key in rawData[0]) {
                 stats[key] = {};
             }
@@ -95,8 +96,8 @@ io.on('connection', function(socket){
     })
 });
 
-let getSearchResults = async (page, aQuery) => {
-    URL = "https://www.whoscored.com/Search/?t=" + aQuery.replace(' ', '+');
+let getSearchResults = async (page, URL) => {
+
     await page.goto(URL, {waitUntil: 'networkidle0'});
 
     return await page.evaluate(() => {
@@ -128,18 +129,24 @@ let getSearchResults = async (page, aQuery) => {
 
 };
 
-let getStats1 = async (page, URL) => {
-
+let pageSetup = async(page, URL) => {
     await page.goto(URL, {waitUntil: 'networkidle0'});
 
     // navigate to 'detailed' tab
     let selector1 = 'a[href="#player-tournament-stats-detailed"]';
+    await page.waitForSelector(selector1);
     await page.evaluate((selector) => document.querySelector(selector).click(), selector1);
-    await page.waitForFunction('document.querySelector("#statistics-table-detailed-loading").style.display == "none"');
+    // await page.waitForFunction('document.querySelector("#statistics-table-detailed-loading").style.display == "none"');
+    await page.waitForSelector('#statistics-table-detailed');
 
     // select 'total' from 'accumulation' drop-down
     await page.select('#statsAccumulationType', '2');
     await page.waitForFunction('document.querySelector("#statistics-table-detailed-loading").style.display == "none"');
+};
+
+let getStats = async (page, URL) => {
+
+    await pageSetup(page, URL);
 
     //initialize data structure to hold all data
     let rawData = [];
@@ -156,85 +163,40 @@ let getStats1 = async (page, URL) => {
                         rawData.push(assists);
                         scrapeKeyPasses(page).then((keyPasses) => {
                             rawData.push(keyPasses);
-                            resolve(rawData);
+                            scrapeThroughBalls(page).then((throughBalls) => {
+                                rawData.push(throughBalls);
+                                scrapeTackles(page).then((tackles) => {
+                                    rawData.push(tackles);
+                                    scrapeInterceptions(page).then((interceptions) => {
+                                        rawData.push(interceptions);
+                                        scrapePossessionLosses(page).then((possessionLosses) => {
+                                            rawData.push(possessionLosses);
+                                            scrapeDribbles(page).then((dribbles) => {
+                                                rawData.push(dribbles);
+                                                scrapeClearances(page).then((clearances) => {
+                                                    rawData.push(clearances);
+                                                    scrapeAerialDuels(page).then((aerialDuels) => {
+                                                        rawData.push(aerialDuels);
+                                                        scrapeCrosses(page).then((crosses) => {
+                                                            rawData.push(crosses);
+                                                            scrapeFouls(page).then((fouls) => {
+                                                                rawData.push(fouls);
+                                                                // console.log(rawData);
+                                                                resolve(rawData);
+                                                            })
+                                                        })
+                                                    })
+                                                })
+                                            })
+                                        })
+                                    })
+                                })
+                            })
                         })
                     })
                 })
             })
         });
-    });
-
-};
-
-let getStats2 = async (page, URL) => {
-
-    await page.goto(URL, {waitUntil: 'networkidle0'});
-
-    // navigate to 'detailed' tab
-    let selector1 = 'a[href="#player-tournament-stats-detailed"]';
-    await page.evaluate((selector) => document.querySelector(selector).click(), selector1);
-    await page.waitForFunction('document.querySelector("#statistics-table-detailed-loading").style.display == "none"');
-
-    // select 'total' from 'accumulation' drop-down
-    await page.select('#statsAccumulationType', '2');
-    await page.waitForFunction('document.querySelector("#statistics-table-detailed-loading").style.display == "none"');
-
-    //initialize data structure to hold all data
-    let rawData = [];
-
-    //scrape needed data
-    return new Promise(function(resolve, reject){
-        scrapeThroughBalls(page).then((throughBalls) => {
-            rawData.push(throughBalls);
-            scrapeTackles(page).then((tackles) => {
-                rawData.push(tackles);
-                scrapeInterceptions(page).then((interceptions) => {
-                    rawData.push(interceptions);
-                    scrapePossessionLosses(page).then((possessionLosses) => {
-                        rawData.push(possessionLosses);
-                        scrapeDribbles(page).then((dribbles) => {
-                            rawData.push(dribbles);
-                            resolve(rawData);
-                        })
-                    })
-                })
-            })
-        });
-    });
-
-};
-
-let getStats3 = async (page, URL) => {
-
-    await page.goto(URL, {waitUntil: 'networkidle0'});
-
-    // navigate to 'detailed' tab
-    let selector1 = 'a[href="#player-tournament-stats-detailed"]';
-    await page.evaluate((selector) => document.querySelector(selector).click(), selector1);
-    await page.waitForFunction('document.querySelector("#statistics-table-detailed-loading").style.display == "none"');
-
-    // select 'total' from 'accumulation' drop-down
-    await page.select('#statsAccumulationType', '2');
-    await page.waitForFunction('document.querySelector("#statistics-table-detailed-loading").style.display == "none"');
-
-    //initialize data structure to hold all data
-    let rawData = [];
-
-    //scrape needed data
-    return new Promise(function(resolve, reject){
-        scrapeClearances(page).then((clearances) => {
-            rawData.push(clearances);
-            scrapeAerialDuels(page).then((aerialDuels) => {
-                rawData.push(aerialDuels);
-                scrapeCrosses(page).then((crosses) => {
-                    rawData.push(crosses);
-                    scrapeFouls(page).then((fouls) => {
-                        rawData.push(fouls);
-                        resolve(rawData);
-                    })
-                })
-            })
-        })
     });
 
 };
@@ -242,11 +204,13 @@ let getStats3 = async (page, URL) => {
 let scrapeGoalsAndMinutes = async (page) => {
     // select 'goals' from 'category' drop-down
     await page.select('#category', 'goals');
-    await page.waitForFunction('document.querySelector("#statistics-table-detailed-loading").style.display == "none"');
+    // await page.waitForFunction('document.querySelector("#statistics-table-detailed-loading").style.display == "none"');
+    await page.waitForSelector('.goalTotal   ');
 
     // select 'situations' from 'sub category' drop-down
     await page.select('#subcategory', 'situations');
-    await page.waitForFunction('document.querySelector("#statistics-table-detailed-loading").style.display == "none"');
+    // await page.waitForFunction('document.querySelector("#statistics-table-detailed-loading").style.display == "none"');
+    await page.waitForSelector('.goalNormal   ');
 
     return await page.evaluate(() => {
         // initialize data structure to store all scraped data
@@ -281,11 +245,13 @@ let scrapeGoalsAndMinutes = async (page) => {
 let scrapeShots = async (page) => {
     // select 'shots' from 'category' drop-down
     await page.select('#category', 'shots');
-    await page.waitForFunction('document.querySelector("#statistics-table-detailed-loading").style.display == "none"');
+    // await page.waitForFunction('document.querySelector("#statistics-table-detailed-loading").style.display == "none"');
+    await page.waitForSelector('.shotsTotal   ');
 
     // select 'situations' from 'sub category' drop-down
     await page.select('#subcategory', 'situations');
-    await page.waitForFunction('document.querySelector("#statistics-table-detailed-loading").style.display == "none"');
+    // await page.waitForFunction('document.querySelector("#statistics-table-detailed-loading").style.display == "none"');
+    await page.waitForSelector('.shotOpenPlay   ');
 
     return await page.evaluate(() => {
         // initialize data structure to store all scraped data
@@ -319,7 +285,8 @@ let scrapeShots = async (page) => {
 let scrapePasses = async (page) => {
     // select 'passes' from 'category' drop-down
     await page.select('#category', 'passes');
-    await page.waitForFunction('document.querySelector("#statistics-table-detailed-loading").style.display == "none"');
+    // await page.waitForFunction('document.querySelector("#statistics-table-detailed-loading").style.display == "none"');
+    await page.waitForSelector('.passTotal   ');
 
     return await page.evaluate(() => {
         // initialize data structure to store all scraped data
@@ -360,7 +327,8 @@ let scrapePasses = async (page) => {
 let scrapeAssists = async (page) => {
     // select 'assists' from 'category' drop-down
     await page.select('#category', 'assists');
-    await page.waitForFunction('document.querySelector("#statistics-table-detailed-loading").style.display == "none"');
+    // await page.waitForFunction('document.querySelector("#statistics-table-detailed-loading").style.display == "none"');
+    await page.waitForSelector('.assist   ');
 
     return await page.evaluate(() => {
         // initialize data structure to store all scraped data
@@ -388,7 +356,8 @@ let scrapeAssists = async (page) => {
 let scrapeKeyPasses = async (page) => {
     // select 'key passes' from 'category' drop-down
     await page.select('#category', 'key-passes');
-    await page.waitForFunction('document.querySelector("#statistics-table-detailed-loading").style.display == "none"');
+    // await page.waitForFunction('document.querySelector("#statistics-table-detailed-loading").style.display == "none"');
+    await page.waitForSelector('.keyPassesTotal   ');
 
     return await page.evaluate(() => {
         // initialize data structure to store all scraped data
@@ -416,11 +385,13 @@ let scrapeKeyPasses = async (page) => {
 let scrapeThroughBalls = async (page) => {
     // select 'passes' from 'category' drop-down
     await page.select('#category', 'key-passes');
-    await page.waitForFunction('document.querySelector("#statistics-table-detailed-loading").style.display == "none"');
+    // await page.waitForFunction('document.querySelector("#statistics-table-detailed-loading").style.display == "none"');
+    await page.waitForSelector('.keyPassesTotal   ');
 
     // select 'type' from 'sub-category' drop-down
     await page.select('#subcategory', 'type');
-    await page.waitForFunction('document.querySelector("#statistics-table-detailed-loading").style.display == "none"');
+    // await page.waitForFunction('document.querySelector("#statistics-table-detailed-loading").style.display == "none"');
+    await page.waitForSelector('.keyPassThroughball   ');
 
     return await page.evaluate(() => {
         // initialize data structure to store all scraped data
@@ -448,7 +419,8 @@ let scrapeThroughBalls = async (page) => {
 let scrapeTackles = async (page) => {
     // select 'tackles' from 'category' drop-down
     await page.select('#category', 'tackles');
-    await page.waitForFunction('document.querySelector("#statistics-table-detailed-loading").style.display == "none"');
+    // await page.waitForFunction('document.querySelector("#statistics-table-detailed-loading").style.display == "none"');
+    await page.waitForSelector('.tackleWonTotal   ');
 
     return await page.evaluate(() => {
         // initialize data structure to store all scraped data
@@ -483,7 +455,8 @@ let scrapeTackles = async (page) => {
 let scrapeInterceptions = async (page) => {
     // select 'interception' from 'category' drop-down
     await page.select('#category', 'interception');
-    await page.waitForFunction('document.querySelector("#statistics-table-detailed-loading").style.display == "none"');
+    // await page.waitForFunction('document.querySelector("#statistics-table-detailed-loading").style.display == "none"');
+    await page.waitForSelector('.interceptionAll   ');
 
     return await page.evaluate(() => {
         // initialize data structure to store all scraped data
@@ -511,7 +484,8 @@ let scrapeInterceptions = async (page) => {
 let scrapePossessionLosses = async (page) => {
     // select 'possession loss' from 'category' drop-down
     await page.select('#category', 'possession-loss');
-    await page.waitForFunction('document.querySelector("#statistics-table-detailed-loading").style.display == "none"');
+    // await page.waitForFunction('document.querySelector("#statistics-table-detailed-loading").style.display == "none"');
+    await page.waitForSelector('.turnover   ');
 
     return await page.evaluate(() => {
         // initialize data structure to store all scraped data
@@ -544,7 +518,8 @@ let scrapePossessionLosses = async (page) => {
 let scrapeDribbles = async (page) => {
     // select 'dribbles' from 'category' drop-down
     await page.select('#category', 'dribbles');
-    await page.waitForFunction('document.querySelector("#statistics-table-detailed-loading").style.display == "none"');
+    // await page.waitForFunction('document.querySelector("#statistics-table-detailed-loading").style.display == "none"');
+    await page.waitForSelector('.dribbleWon  ');
 
     return await page.evaluate(() => {
         // initialize data structure to store all scraped data
@@ -572,7 +547,8 @@ let scrapeDribbles = async (page) => {
 let scrapeClearances = async (page) => {
     // select 'clearances' from 'category' drop-down
     await page.select('#category', 'clearances');
-    await page.waitForFunction('document.querySelector("#statistics-table-detailed-loading").style.display == "none"');
+    // await page.waitForFunction('document.querySelector("#statistics-table-detailed-loading").style.display == "none"');
+    await page.waitForSelector('.clearanceTotal   ');
 
     return await page.evaluate(() => {
         // initialize data structure to store all scraped data
@@ -600,7 +576,8 @@ let scrapeClearances = async (page) => {
 let scrapeAerialDuels = async (page) => {
     // select 'aerial' from 'category' drop-down
     await page.select('#category', 'aerial');
-    await page.waitForFunction('document.querySelector("#statistics-table-detailed-loading").style.display == "none"');
+    // await page.waitForFunction('document.querySelector("#statistics-table-detailed-loading").style.display == "none"');
+    await page.waitForSelector('.duelAerialWon   ');
 
     return await page.evaluate(() => {
         // initialize data structure to store all scraped data
@@ -635,10 +612,13 @@ let scrapeAerialDuels = async (page) => {
 let scrapeCrosses = async (page) => {
     // select 'aerial' from 'category' drop-down
     await page.select('#category', 'passes');
-    await page.waitForFunction('document.querySelector("#statistics-table-detailed-loading").style.display == "none"');
+    // await page.waitForFunction('document.querySelector("#statistics-table-detailed-loading").style.display == "none"');
+    await page.waitForSelector('.passTotal   ');
 
+    //select 'type' from 'sub-category' drop-down
     await page.select('#subcategory', 'type');
-    await page.waitForFunction('document.querySelector("#statistics-table-detailed-loading").style.display == "none"');
+    // await page.waitForFunction('document.querySelector("#statistics-table-detailed-loading").style.display == "none"');
+    await page.waitForSelector('.passCrossAccurate   ');
 
     return await page.evaluate(() => {
         // initialize data structure to store all scraped data
@@ -676,7 +656,8 @@ let scrapeCrosses = async (page) => {
 let scrapeFouls = async (page) => {
     // select 'aerial' from 'category' drop-down
     await page.select('#category', 'fouls');
-    await page.waitForFunction('document.querySelector("#statistics-table-detailed-loading").style.display == "none"');
+    // await page.waitForFunction('document.querySelector("#statistics-table-detailed-loading").style.display == "none"');
+    await page.waitForSelector('.foulCommitted   ');
 
     return await page.evaluate(() => {
         // initialize data structure to store all scraped data
