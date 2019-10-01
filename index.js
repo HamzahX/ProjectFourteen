@@ -59,20 +59,21 @@ io.on('connection', function(socket){
             }
             console.timeEnd(socket.id + " | Time taken to return search results");
             socket.emit('search results', searchResults);
-        }).catch(anError => {
+        }).catch(async(anError) => {
             console.log(socket.id + " | " + anError);
+            await page.close();
             socket.emit('alert error', anError.name);
         });
     });
 
-    socket.on('scrape stats', async(aURL) => {
-        console.log(socket.id + " | Retrieving stats from: " + aURL);
+    socket.on('scrape stats', async(URL) => {
+        console.log(socket.id + " | Retrieving stats from: " + URL);
         console.time(socket.id + " | Time taken to return stats");
         let stats = {};
         let rawData  = [];
-        try {
-            let page = await context.newPage();
-            rawData = await getStats(page, aURL);
+        let page = await context.newPage();
+        getStats(page, URL).then(async (returnedData) => {
+            rawData = returnedData;
             await page.close();
             for (let key in rawData[0]) {
                 stats[key] = {};
@@ -84,11 +85,11 @@ io.on('connection', function(socket){
             }
             console.timeEnd(socket.id + " | Time taken to return stats");
             socket.emit('stats scraped', stats);
-        }
-        catch (anError) {
+        }).catch(async(anError) => {
             console.log(socket.id + " | " + anError);
+            await page.close();
             socket.emit('alert error', anError.name);
-        }
+        });
     });
 
     socket.on('disconnect', function(){
