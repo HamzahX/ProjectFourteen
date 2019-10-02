@@ -152,9 +152,9 @@ let getStats = async (page, URL) => {
     //initialize data structure to hold all data
     let rawData = [];
 
-    //TODO: Refactor this ugly piece of shit
+    //TODO: Refactor this ugly piece of shit code
     //scrape needed data
-    return new Promise.all(function(resolve, reject){
+    return new Promise(function(resolve, reject){
         scrapeGoalsAndMinutes(page).then((goals) => {
             rawData.push(goals);
             scrapeShots(page).then((shots) => {
