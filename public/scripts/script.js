@@ -48,8 +48,9 @@ socket.on('stats scraped', function(scrapedStats){
 });
 
 socket.on('alert error', function(anError){
-    alert(anError + "\nPlease wait for the page to reload and try again");
-    location.reload();
+    // alert(anError + "\nPlease press OK to reload the page and try again");
+    // location.reload();
+    drawLoadingScreen("error", anError)
 });
 
 function search(){
@@ -77,7 +78,7 @@ function getStats(elem){
     drawLoadingScreen("getStats");
 }
 
-function drawLoadingScreen(type){
+function drawLoadingScreen(type, anError=""){
     $('#loading-screen').empty();
     $('#loading-screen').append('<div id="circularG"> <div id="circularG_1" class="circularG"></div> ' +
         '<div id="circularG_2" class="circularG"></div> <div id="circularG_3" class="circularG"></div> ' +
@@ -91,6 +92,11 @@ function drawLoadingScreen(type){
         case "getStats":
             $('#loading-screen').append('Retrieving Stats');
             break;
+        case "error":
+            $('.circularG').remove();
+            $('#loading-screen').append(anError);
+            $('#loading-screen').append("Please reload the page and try again");
+
     }
     $("#loading-screen").css("display", "flex");
 }

@@ -182,22 +182,49 @@ let getStats = async (page, URL) => {
                                                             rawData.push(crosses);
                                                             scrapeFouls(page).then((fouls) => {
                                                                 rawData.push(fouls);
-                                                                // console.log(rawData);
                                                                 resolve(rawData);
+                                                            }).catch(async(anError) => {
+                                                                reject(anError);
                                                             })
+                                                        }).catch(async(anError) => {
+                                                            reject(anError);
                                                         })
+                                                    }).catch(async(anError) => {
+                                                        reject(anError);
                                                     })
+                                                }).catch(async(anError) => {
+                                                    reject(anError);
                                                 })
+                                            }).catch(async(anError) => {
+                                                reject(anError);
                                             })
+                                        }).catch(async(anError) => {
+                                            reject(anError);
                                         })
+                                    }).catch(async(anError) => {
+                                        reject(anError);
                                     })
+                                }).catch(async(anError) => {
+                                    reject(anError);
                                 })
+                            }).catch(async(anError) => {
+                                reject(anError);
                             })
+                        }).catch(async(anError) => {
+                            reject(anError);
                         })
+                    }).catch(async(anError) => {
+                        reject(anError);
                     })
+                }).catch(async(anError) => {
+                    reject(anError);
                 })
+            }).catch(async(anError) => {
+                reject(anError);
             })
-        });
+        }).catch(async(anError) => {
+            reject(anError);
+        })
     });
 
 };
