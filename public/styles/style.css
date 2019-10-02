@@ -27,6 +27,15 @@ button:focus, input:focus {
     outline-color: dimgrey;
 }
 
+h2 {
+    font-size: 1.6em;
+    font-weight: bold;
+}
+
+h3 {
+    font-size: 1.2em;
+}
+
 .highcharts-data-table{
     /*border: darkgrey 1px solid;*/
     margin: 10px 20px 20px 0;
@@ -128,7 +137,7 @@ button:focus, input:focus {
                 }
 
                 .search-result .name{
-                    font-size: 1.8em;
+                    font-size: 1.6em;
                     font-weight: bold;
                 }
 
