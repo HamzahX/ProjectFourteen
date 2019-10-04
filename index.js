@@ -14,6 +14,9 @@ server.use(express.static(path.join(__dirname, '/public')));
 //function to launch a browser using puppeteer
 let browser;
 let context;
+
+let firstRequest = true;
+
 let setup = async () => {
     return new Promise(async function(resolve, reject){
         console.time('browser launch');
@@ -25,7 +28,6 @@ let setup = async () => {
                 '--disable-dev-shm-usage',
                 '--disable-accelerated-2d-canvas',
                 '--disable-gpu',
-                // '--window-size=1920x1080',
             ]
         });
         context = await browser.createIncognitoBrowserContext();
@@ -34,8 +36,8 @@ let setup = async () => {
         let selector1 = '#qcCmpButtons > button:nth-child(2)';
         await page.waitForSelector(selector1);
         await page.evaluate((selector) => document.querySelector(selector).click(), selector1);
-        // await page.waitForFunction('document.querySelector("body").class != "qc-cmp-ui-showing"');
-        // await page.close();
+        let pages = await browser.pages();
+        pages[0].close();
         console.timeEnd('browser launch');
         resolve(context);
     });
@@ -59,6 +61,11 @@ io.on('connection', function(socket){
         console.time(socket.id + " | Time taken to return search results");
         let URL = "https://www.whoscored.com/Search/?t=" + aQuery.replace(' ', '+');
         let page = await context.newPage();
+        if (firstRequest){
+            let pages = await browser.pages();
+            await pages[0].goto("about:blank", {waitUntil: 'networkidle0'});
+            firstRequest = false;
+        }
         getSearchResults(page, URL).then(async (searchResults) => {
             await page.close();
             for (let i=0; i<searchResults.length; i++){
@@ -79,6 +86,11 @@ io.on('connection', function(socket){
         console.time(socket.id + " | Time taken to return stats");
         let stats = {};
         let page = await context.newPage();
+        if (firstRequest){
+            let pages = await browser.pages();
+            await pages[0].goto("about:blank", {waitUntil: 'networkidle0'});
+            firstRequest = false;
+        }
         getStats(page, URL).then(async (rawData) => {
             await page.close();
             for (let key in rawData[0]) {
