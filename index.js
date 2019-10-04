@@ -22,25 +22,33 @@ let setup = async () => {
             args: [
                 '--no-sandbox',
                 '--disable-setuid-sandbox',
-                '--incognito'
-                // '--disable-dev-shm-usage',
-                // '--disable-accelerated-2d-canvas',
-                // '--disable-gpu',
+                '--disable-dev-shm-usage',
+                '--disable-accelerated-2d-canvas',
+                '--disable-gpu',
                 // '--window-size=1920x1080',
             ]
         });
         context = await browser.createIncognitoBrowserContext();
+        let page = await context.newPage();
+        await page.goto("https://www.whoscored.com", {waitUntil: 'networkidle0'});
+        let selector1 = '#qcCmpButtons > button:nth-child(2)';
+        await page.waitForSelector(selector1);
+        await page.evaluate((selector) => document.querySelector(selector).click(), selector1);
+        // await page.waitForFunction('document.querySelector("body").class != "qc-cmp-ui-showing"');
+        // await page.close();
         console.timeEnd('browser launch');
         resolve(context);
     });
 };
 
 //launch a browser and then start listening on the port
-setup().then(
+setup().then(() => {
     http.listen(port, function () {
         console.log('listening on port ' + port);
     })
-);
+}).catch(async(anError) => {
+    console.log(anError);
+});
 
 //wait for socket events
 io.on('connection', function(socket){
@@ -70,10 +78,8 @@ io.on('connection', function(socket){
         console.log(socket.id + " | Retrieving stats from: " + URL);
         console.time(socket.id + " | Time taken to return stats");
         let stats = {};
-        let rawData  = [];
         let page = await context.newPage();
-        getStats(page, URL).then(async (returnedData) => {
-            rawData = returnedData;
+        getStats(page, URL).then(async (rawData) => {
             await page.close();
             for (let key in rawData[0]) {
                 stats[key] = {};
@@ -233,36 +239,37 @@ let getStats = async (page, URL) => {
 let scrapeGoalsAndMinutes = async (page) => {
     // select 'goals' from 'category' drop-down
     await page.select('#category', 'goals');
-    // await page.waitForFunction('document.querySelector("#statistics-table-detailed-loading").style.display == "none"');
     await page.waitForSelector('.goalTotal   ');
 
     // select 'situations' from 'sub category' drop-down
     await page.select('#subcategory', 'situations');
-    // await page.waitForFunction('document.querySelector("#statistics-table-detailed-loading").style.display == "none"');
     await page.waitForSelector('.goalNormal   ');
+
+    await page.waitForSelector('#player-tournament-stats-detailed #top-player-stats-summary-grid tr td:not(:empty)');
 
     return await page.evaluate(() => {
         // initialize data structure to store all scraped data
         var goals = {};
         let currentSeason = '';
-        const tds = Array.from(document.querySelectorAll('#player-tournament-stats-detailed #top-player-stats-summary-grid tr td'));
-        for (let i = 0; i < tds.length; i++) {
-            if (tds[i].className === 'rank tournament') {
-                currentSeason = tds[i].innerText + '-' + tds[i + 2].innerText;
-                goals[currentSeason] = {};
-            } else {
-                if (tds[i].className === 'goalNormal   ') {
-                    if (tds[i].innerText === '-') {
-                        goals[currentSeason]['goals'] = 0;
-                    } else {
-                        goals[currentSeason]['goals'] = parseInt(tds[i].innerText, 10);
-                    }
-                }
-                else if (tds[i].className === 'minsPlayed   ') {
-                    if (tds[i].innerText === '-') {
-                        goals[currentSeason]['minutes'] = 0;
-                    } else {
-                        goals[currentSeason]['minutes'] = parseInt(tds[i].innerText, 10);
+        while (goals[currentSeason] === undefined || goals[currentSeason] === {}) {
+            const tds = Array.from(document.querySelectorAll('#player-tournament-stats-detailed #top-player-stats-summary-grid tr td'));
+            for (let i = 0; i < tds.length; i++) {
+                if (tds[i].className === 'rank tournament') {
+                    currentSeason = tds[i].innerText + '-' + tds[i + 2].innerText;
+                    goals[currentSeason] = {};
+                } else {
+                    if (tds[i].className === 'goalNormal   ') {
+                        if (tds[i].innerText === '-') {
+                            goals[currentSeason]['goals'] = 0;
+                        } else {
+                            goals[currentSeason]['goals'] = parseInt(tds[i].innerText, 10);
+                        }
+                    } else if (tds[i].className === 'minsPlayed   ') {
+                        if (tds[i].innerText === '-') {
+                            goals[currentSeason]['minutes'] = 0;
+                        } else {
+                            goals[currentSeason]['minutes'] = parseInt(tds[i].innerText, 10);
+                        }
                     }
                 }
             }
@@ -274,35 +281,37 @@ let scrapeGoalsAndMinutes = async (page) => {
 let scrapeShots = async (page) => {
     // select 'shots' from 'category' drop-down
     await page.select('#category', 'shots');
-    // await page.waitForFunction('document.querySelector("#statistics-table-detailed-loading").style.display == "none"');
     await page.waitForSelector('.shotsTotal   ');
 
     // select 'situations' from 'sub category' drop-down
     await page.select('#subcategory', 'situations');
-    // await page.waitForFunction('document.querySelector("#statistics-table-detailed-loading").style.display == "none"');
     await page.waitForSelector('.shotOpenPlay   ');
+
+    await page.waitForSelector('#player-tournament-stats-detailed #top-player-stats-summary-grid tr td:not(:empty)');
 
     return await page.evaluate(() => {
         // initialize data structure to store all scraped data
         var shots = {};
         let currentSeason = '';
-        const tds = Array.from(document.querySelectorAll('#player-tournament-stats-detailed #top-player-stats-summary-grid tr td'));
-        for (let i = 0; i < tds.length; i++) {
-            if (tds[i].className === 'rank tournament') {
-                currentSeason = tds[i].innerText + '-' + tds[i + 2].innerText;
-                shots[currentSeason] = {};
-            } else {
-                if (tds[i].className === 'shotsTotal   ') {
-                    if (tds[i].innerText === '-') {
-                        shots[currentSeason]['shots'] = 0;
-                    } else {
-                        let totalShots = parseInt(tds[i].innerText, 10);
-                        let penalties = tds[i+4].innerText;
-                        if (penalties === '-'){
-                            penalties = '0';
+        while (shots[currentSeason] === undefined || shots[currentSeason] === {}) {
+            const tds = Array.from(document.querySelectorAll('#player-tournament-stats-detailed #top-player-stats-summary-grid tr td'));
+            for (let i = 0; i < tds.length; i++) {
+                if (tds[i].className === 'rank tournament') {
+                    currentSeason = tds[i].innerText + '-' + tds[i + 2].innerText;
+                    shots[currentSeason] = {};
+                } else {
+                    if (tds[i].className === 'shotsTotal   ') {
+                        if (tds[i].innerText === '-') {
+                            shots[currentSeason]['shots'] = 0;
+                        } else {
+                            let totalShots = parseInt(tds[i].innerText, 10);
+                            let penalties = tds[i + 4].innerText;
+                            if (penalties === '-') {
+                                penalties = '0';
+                            }
+                            let nonPenaltyShots = totalShots - parseInt(penalties, 10);
+                            shots[currentSeason]['shots'] = nonPenaltyShots;
                         }
-                        let nonPenaltyShots = totalShots - parseInt(penalties, 10);
-                        shots[currentSeason]['shots'] = nonPenaltyShots;
                     }
                 }
             }
@@ -314,37 +323,40 @@ let scrapeShots = async (page) => {
 let scrapePasses = async (page) => {
     // select 'passes' from 'category' drop-down
     await page.select('#category', 'passes');
-    // await page.waitForFunction('document.querySelector("#statistics-table-detailed-loading").style.display == "none"');
     await page.waitForSelector('.passTotal   ');
+
+    await page.waitForSelector('#player-tournament-stats-detailed #top-player-stats-summary-grid tr td:not(:empty)');
 
     return await page.evaluate(() => {
         // initialize data structure to store all scraped data
         var passes = {};
         let currentSeason = '';
-        const tds = Array.from(document.querySelectorAll('#player-tournament-stats-detailed #top-player-stats-summary-grid tr td'));
-        for (let i = 0; i < tds.length; i++) {
-            if (tds[i].className === 'rank tournament') {
-                currentSeason = tds[i].innerText + '-' + tds[i + 2].innerText;
-                passes[currentSeason] = {};
-            } else {
-                if (tds[i].className === 'passTotal   ') {
-                    if (tds[i].innerText === '-') {
-                        passes[currentSeason]['succPasses'] = 0;
-                        passes[currentSeason]['totalPasses'] = 0;
-                    } else {
-                        let totalPasses = parseInt(tds[i].innerText, 10);
-                        let accLB = tds[i+1].innerText;
-                        if (accLB === '-'){
-                            accLB = '0';
+        while (passes[currentSeason] === undefined || passes[currentSeason] === {}) {
+            const tds = Array.from(document.querySelectorAll('#player-tournament-stats-detailed #top-player-stats-summary-grid tr td'));
+            for (let i = 0; i < tds.length; i++) {
+                if (tds[i].className === 'rank tournament') {
+                    currentSeason = tds[i].innerText + '-' + tds[i + 2].innerText;
+                    passes[currentSeason] = {};
+                } else {
+                    if (tds[i].className === 'passTotal   ') {
+                        if (tds[i].innerText === '-') {
+                            passes[currentSeason]['succPasses'] = 0;
+                            passes[currentSeason]['totalPasses'] = 0;
+                        } else {
+                            let totalPasses = parseInt(tds[i].innerText, 10);
+                            let accLB = tds[i + 1].innerText;
+                            if (accLB === '-') {
+                                accLB = '0';
+                            }
+                            let accSP = tds[i + 3].innerText;
+                            if (accSP === '-') {
+                                accSP = '0';
+                            }
+                            let successfulPasses = parseInt(accLB, 10) + parseInt(accSP, 10);
+                            passes[currentSeason]['succPasses'] = successfulPasses;
+                            passes[currentSeason]['totalPasses'] = totalPasses;
+                            passes[currentSeason]['longPasses'] = parseInt(accLB, 10)
                         }
-                        let accSP = tds[i+3].innerText;
-                        if (accSP === '-'){
-                            accSP = '0';
-                        }
-                        let successfulPasses = parseInt(accLB, 10) + parseInt(accSP, 10);
-                        passes[currentSeason]['succPasses'] = successfulPasses;
-                        passes[currentSeason]['totalPasses'] = totalPasses;
-                        passes[currentSeason]['longPasses'] = parseInt(accLB, 10)
                     }
                 }
             }
@@ -356,24 +368,27 @@ let scrapePasses = async (page) => {
 let scrapeAssists = async (page) => {
     // select 'assists' from 'category' drop-down
     await page.select('#category', 'assists');
-    // await page.waitForFunction('document.querySelector("#statistics-table-detailed-loading").style.display == "none"');
     await page.waitForSelector('.assist   ');
+
+    await page.waitForSelector('#player-tournament-stats-detailed #top-player-stats-summary-grid tr td:not(:empty)');
 
     return await page.evaluate(() => {
         // initialize data structure to store all scraped data
         var assists = {};
         let currentSeason = '';
-        const tds = Array.from(document.querySelectorAll('#player-tournament-stats-detailed #top-player-stats-summary-grid tr td'));
-        for (let i = 0; i < tds.length; i++) {
-            if (tds[i].className === 'rank tournament') {
-                currentSeason = tds[i].innerText + '-' + tds[i + 2].innerText;
-                assists[currentSeason] = {};
-            } else {
-                if (tds[i].className === 'assist   ') {
-                    if (tds[i].innerText === '-') {
-                        assists[currentSeason]['assists'] = 0;
-                    } else {
-                        assists[currentSeason]['assists'] = parseInt(tds[i].innerText, 10);
+        while (assists[currentSeason] === undefined || assists[currentSeason] === {}) {
+            const tds = Array.from(document.querySelectorAll('#player-tournament-stats-detailed #top-player-stats-summary-grid tr td'));
+            for (let i = 0; i < tds.length; i++) {
+                if (tds[i].className === 'rank tournament') {
+                    currentSeason = tds[i].innerText + '-' + tds[i + 2].innerText;
+                    assists[currentSeason] = {};
+                } else {
+                    if (tds[i].className === 'assist   ') {
+                        if (tds[i].innerText === '-') {
+                            assists[currentSeason]['assists'] = 0;
+                        } else {
+                            assists[currentSeason]['assists'] = parseInt(tds[i].innerText, 10);
+                        }
                     }
                 }
             }
@@ -385,24 +400,27 @@ let scrapeAssists = async (page) => {
 let scrapeKeyPasses = async (page) => {
     // select 'key passes' from 'category' drop-down
     await page.select('#category', 'key-passes');
-    // await page.waitForFunction('document.querySelector("#statistics-table-detailed-loading").style.display == "none"');
     await page.waitForSelector('.keyPassesTotal   ');
+
+    await page.waitForSelector('#player-tournament-stats-detailed #top-player-stats-summary-grid tr td:not(:empty)');
 
     return await page.evaluate(() => {
         // initialize data structure to store all scraped data
         var keyPasses = {};
         let currentSeason = '';
-        const tds = Array.from(document.querySelectorAll('#player-tournament-stats-detailed #top-player-stats-summary-grid tr td'));
-        for (let i = 0; i < tds.length; i++) {
-            if (tds[i].className === 'rank tournament') {
-                currentSeason = tds[i].innerText + '-' + tds[i + 2].innerText;
-                keyPasses[currentSeason] = {};
-            } else {
-                if (tds[i].className === 'keyPassesTotal   ') {
-                    if (tds[i].innerText === '-') {
-                        keyPasses[currentSeason]['keyPasses']= 0;
-                    } else {
-                        keyPasses[currentSeason]['keyPasses'] = parseInt(tds[i].innerText, 10);
+        while (keyPasses[currentSeason] === undefined || keyPasses[currentSeason] === {}) {
+            const tds = Array.from(document.querySelectorAll('#player-tournament-stats-detailed #top-player-stats-summary-grid tr td'));
+            for (let i = 0; i < tds.length; i++) {
+                if (tds[i].className === 'rank tournament') {
+                    currentSeason = tds[i].innerText + '-' + tds[i + 2].innerText;
+                    keyPasses[currentSeason] = {};
+                } else {
+                    if (tds[i].className === 'keyPassesTotal   ') {
+                        if (tds[i].innerText === '-') {
+                            keyPasses[currentSeason]['keyPasses'] = 0;
+                        } else {
+                            keyPasses[currentSeason]['keyPasses'] = parseInt(tds[i].innerText, 10);
+                        }
                     }
                 }
             }
@@ -414,29 +432,31 @@ let scrapeKeyPasses = async (page) => {
 let scrapeThroughBalls = async (page) => {
     // select 'passes' from 'category' drop-down
     await page.select('#category', 'key-passes');
-    // await page.waitForFunction('document.querySelector("#statistics-table-detailed-loading").style.display == "none"');
     await page.waitForSelector('.keyPassesTotal   ');
 
     // select 'type' from 'sub-category' drop-down
     await page.select('#subcategory', 'type');
-    // await page.waitForFunction('document.querySelector("#statistics-table-detailed-loading").style.display == "none"');
     await page.waitForSelector('.keyPassThroughball   ');
+
+    await page.waitForSelector('#player-tournament-stats-detailed #top-player-stats-summary-grid tr td:not(:empty)');
 
     return await page.evaluate(() => {
         // initialize data structure to store all scraped data
         var throughBalls = {};
         let currentSeason = '';
-        const tds = Array.from(document.querySelectorAll('#player-tournament-stats-detailed #top-player-stats-summary-grid tr td'));
-        for (let i = 0; i < tds.length; i++) {
-            if (tds[i].className === 'rank tournament') {
-                currentSeason = tds[i].innerText + '-' + tds[i + 2].innerText;
-                throughBalls[currentSeason] = {};
-            } else {
-                if (tds[i].className === 'keyPassThroughball   ') {
-                    if (tds[i].innerText === '-') {
-                        throughBalls[currentSeason]['throughBalls'] = 0;
-                    } else {
-                        throughBalls[currentSeason]['throughBalls'] = parseInt(tds[i].innerText, 10);
+        while (throughBalls[currentSeason] === undefined || Object.keys(throughBalls[currentSeason]).length === 0) {
+            const tds = Array.from(document.querySelectorAll('#player-tournament-stats-detailed #top-player-stats-summary-grid tr td'));
+            for (let i = 0; i < tds.length; i++) {
+                if (tds[i].className === 'rank tournament') {
+                    currentSeason = tds[i].innerText + '-' + tds[i + 2].innerText;
+                    throughBalls[currentSeason] = {};
+                } else {
+                    if (tds[i].className === 'keyPassThroughball   ') {
+                        if (tds[i].innerText === '-') {
+                            throughBalls[currentSeason]['throughBalls'] = 0;
+                        } else {
+                            throughBalls[currentSeason]['throughBalls'] = parseInt(tds[i].innerText, 10);
+                        }
                     }
                 }
             }
@@ -448,31 +468,33 @@ let scrapeThroughBalls = async (page) => {
 let scrapeTackles = async (page) => {
     // select 'tackles' from 'category' drop-down
     await page.select('#category', 'tackles');
-    // await page.waitForFunction('document.querySelector("#statistics-table-detailed-loading").style.display == "none"');
     await page.waitForSelector('.tackleWonTotal   ');
+
+    await page.waitForSelector('#player-tournament-stats-detailed #top-player-stats-summary-grid tr td:not(:empty)');
 
     return await page.evaluate(() => {
         // initialize data structure to store all scraped data
         var tackles = {};
         let currentSeason = '';
-        const tds = Array.from(document.querySelectorAll('#player-tournament-stats-detailed #top-player-stats-summary-grid tr td'));
-        for (let i = 0; i < tds.length; i++) {
-            if (tds[i].className === 'rank tournament') {
-                currentSeason = tds[i].innerText + '-' + tds[i + 2].innerText;
-                tackles[currentSeason] = {};
-            } else {
-                if (tds[i].className === 'tackleWonTotal   ') {
-                    if (tds[i].innerText === '-') {
-                        tackles[currentSeason]['tackles'] = 0;
-                    } else {
-                        tackles[currentSeason]['tackles'] = parseInt(tds[i].innerText, 10);
-                    }
-                }
-                else if (tds[i].className === 'challengeLost   '){
-                    if (tds[i].innerText === '-') {
-                        tackles[currentSeason]['dribbledPast'] = 0;
-                    } else {
-                        tackles[currentSeason]['dribbledPast'] = parseInt(tds[i].innerText, 10);
+        while (tackles[currentSeason] === undefined || tackles[currentSeason] === {}) {
+            const tds = Array.from(document.querySelectorAll('#player-tournament-stats-detailed #top-player-stats-summary-grid tr td'));
+            for (let i = 0; i < tds.length; i++) {
+                if (tds[i].className === 'rank tournament') {
+                    currentSeason = tds[i].innerText + '-' + tds[i + 2].innerText;
+                    tackles[currentSeason] = {};
+                } else {
+                    if (tds[i].className === 'tackleWonTotal   ') {
+                        if (tds[i].innerText === '-') {
+                            tackles[currentSeason]['tackles'] = 0;
+                        } else {
+                            tackles[currentSeason]['tackles'] = parseInt(tds[i].innerText, 10);
+                        }
+                    } else if (tds[i].className === 'challengeLost   ') {
+                        if (tds[i].innerText === '-') {
+                            tackles[currentSeason]['dribbledPast'] = 0;
+                        } else {
+                            tackles[currentSeason]['dribbledPast'] = parseInt(tds[i].innerText, 10);
+                        }
                     }
                 }
             }
@@ -484,24 +506,27 @@ let scrapeTackles = async (page) => {
 let scrapeInterceptions = async (page) => {
     // select 'interception' from 'category' drop-down
     await page.select('#category', 'interception');
-    // await page.waitForFunction('document.querySelector("#statistics-table-detailed-loading").style.display == "none"');
     await page.waitForSelector('.interceptionAll   ');
+
+    await page.waitForSelector('#player-tournament-stats-detailed #top-player-stats-summary-grid tr td:not(:empty)');
 
     return await page.evaluate(() => {
         // initialize data structure to store all scraped data
         var interceptions = {};
         let currentSeason = '';
-        const tds = Array.from(document.querySelectorAll('#player-tournament-stats-detailed #top-player-stats-summary-grid tr td'));
-        for (let i = 0; i < tds.length; i++) {
-            if (tds[i].className === 'rank tournament') {
-                currentSeason = tds[i].innerText + '-' + tds[i + 2].innerText;
-                interceptions[currentSeason] = {};
-            } else {
-                if (tds[i].className === 'interceptionAll   ') {
-                    if (tds[i].innerText === '-') {
-                        interceptions[currentSeason]['interceptions'] = 0;
-                    } else {
-                        interceptions[currentSeason]['interceptions'] = parseInt(tds[i].innerText, 10);
+        while (interceptions[currentSeason] === undefined || interceptions[currentSeason] === {}) {
+            const tds = Array.from(document.querySelectorAll('#player-tournament-stats-detailed #top-player-stats-summary-grid tr td'));
+            for (let i = 0; i < tds.length; i++) {
+                if (tds[i].className === 'rank tournament') {
+                    currentSeason = tds[i].innerText + '-' + tds[i + 2].innerText;
+                    interceptions[currentSeason] = {};
+                } else {
+                    if (tds[i].className === 'interceptionAll   ') {
+                        if (tds[i].innerText === '-') {
+                            interceptions[currentSeason]['interceptions'] = 0;
+                        } else {
+                            interceptions[currentSeason]['interceptions'] = parseInt(tds[i].innerText, 10);
+                        }
                     }
                 }
             }
@@ -513,30 +538,33 @@ let scrapeInterceptions = async (page) => {
 let scrapePossessionLosses = async (page) => {
     // select 'possession loss' from 'category' drop-down
     await page.select('#category', 'possession-loss');
-    // await page.waitForFunction('document.querySelector("#statistics-table-detailed-loading").style.display == "none"');
     await page.waitForSelector('.turnover   ');
+
+    await page.waitForSelector('#player-tournament-stats-detailed #top-player-stats-summary-grid tr td:not(:empty)');
 
     return await page.evaluate(() => {
         // initialize data structure to store all scraped data
         var possessionLosses = {};
         let currentSeason = '';
-        const tds = Array.from(document.querySelectorAll('#player-tournament-stats-detailed #top-player-stats-summary-grid tr td'));
-        for (let i = 0; i < tds.length; i++) {
-            if (tds[i].className === 'rank tournament') {
-                currentSeason = tds[i].innerText + '-' + tds[i + 2].innerText;
-                possessionLosses[currentSeason] = {};
-            } else {
-                if (tds[i].className === 'turnover   ') {
-                    let unsuccessfulTouches = tds[i].innerText;
-                    if (unsuccessfulTouches === '-'){
-                        unsuccessfulTouches = '0';
+        while (possessionLosses[currentSeason] === undefined || possessionLosses[currentSeason] === {}) {
+            const tds = Array.from(document.querySelectorAll('#player-tournament-stats-detailed #top-player-stats-summary-grid tr td'));
+            for (let i = 0; i < tds.length; i++) {
+                if (tds[i].className === 'rank tournament') {
+                    currentSeason = tds[i].innerText + '-' + tds[i + 2].innerText;
+                    possessionLosses[currentSeason] = {};
+                } else {
+                    if (tds[i].className === 'turnover   ') {
+                        let unsuccessfulTouches = tds[i].innerText;
+                        if (unsuccessfulTouches === '-') {
+                            unsuccessfulTouches = '0';
+                        }
+                        let dispossessions = tds[i + 1].innerText;
+                        if (dispossessions === '-') {
+                            dispossessions = '0';
+                        }
+                        let totalLostPossessions = parseInt(unsuccessfulTouches, 10) + parseInt(dispossessions, 10);
+                        possessionLosses[currentSeason]['possessionLosses'] = totalLostPossessions;
                     }
-                    let dispossessions = tds[i+1].innerText;
-                    if (dispossessions === '-'){
-                        dispossessions = '0';
-                    }
-                    let totalLostPossessions = parseInt(unsuccessfulTouches, 10) + parseInt(dispossessions, 10);
-                    possessionLosses[currentSeason]['possessionLosses'] = totalLostPossessions;
                 }
             }
         }
@@ -547,24 +575,27 @@ let scrapePossessionLosses = async (page) => {
 let scrapeDribbles = async (page) => {
     // select 'dribbles' from 'category' drop-down
     await page.select('#category', 'dribbles');
-    // await page.waitForFunction('document.querySelector("#statistics-table-detailed-loading").style.display == "none"');
     await page.waitForSelector('.dribbleWon  ');
+
+    await page.waitForSelector('#player-tournament-stats-detailed #top-player-stats-summary-grid tr td:not(:empty)');
 
     return await page.evaluate(() => {
         // initialize data structure to store all scraped data
         var dribbles = {};
         let currentSeason = '';
-        const tds = Array.from(document.querySelectorAll('#player-tournament-stats-detailed #top-player-stats-summary-grid tr td'));
-        for (let i = 0; i < tds.length; i++) {
-            if (tds[i].className === 'rank tournament') {
-                currentSeason = tds[i].innerText + '-' + tds[i + 2].innerText;
-                dribbles[currentSeason] = {};
-            } else {
-                if (tds[i].className === 'dribbleWon   ') {
-                    if (tds[i].innerText === '-') {
-                        dribbles[currentSeason]['dribbles'] = 0;
-                    } else {
-                        dribbles[currentSeason]['dribbles'] = parseInt(tds[i].innerText, 10);
+        while (dribbles[currentSeason] === undefined || dribbles[currentSeason] === {}) {
+            const tds = Array.from(document.querySelectorAll('#player-tournament-stats-detailed #top-player-stats-summary-grid tr td'));
+            for (let i = 0; i < tds.length; i++) {
+                if (tds[i].className === 'rank tournament') {
+                    currentSeason = tds[i].innerText + '-' + tds[i + 2].innerText;
+                    dribbles[currentSeason] = {};
+                } else {
+                    if (tds[i].className === 'dribbleWon   ') {
+                        if (tds[i].innerText === '-') {
+                            dribbles[currentSeason]['dribbles'] = 0;
+                        } else {
+                            dribbles[currentSeason]['dribbles'] = parseInt(tds[i].innerText, 10);
+                        }
                     }
                 }
             }
@@ -576,24 +607,27 @@ let scrapeDribbles = async (page) => {
 let scrapeClearances = async (page) => {
     // select 'clearances' from 'category' drop-down
     await page.select('#category', 'clearances');
-    // await page.waitForFunction('document.querySelector("#statistics-table-detailed-loading").style.display == "none"');
     await page.waitForSelector('.clearanceTotal   ');
+
+    await page.waitForSelector('#player-tournament-stats-detailed #top-player-stats-summary-grid tr td:not(:empty)');
 
     return await page.evaluate(() => {
         // initialize data structure to store all scraped data
         var clearances = {};
         let currentSeason = '';
-        const tds = Array.from(document.querySelectorAll('#player-tournament-stats-detailed #top-player-stats-summary-grid tr td'));
-        for (let i = 0; i < tds.length; i++) {
-            if (tds[i].className === 'rank tournament') {
-                currentSeason = tds[i].innerText + '-' + tds[i + 2].innerText;
-                clearances[currentSeason] = {};
-            } else {
-                if (tds[i].className === 'clearanceTotal   ') {
-                    if (tds[i].innerText === '-') {
-                        clearances[currentSeason]['clearances'] = 0;
-                    } else {
-                        clearances[currentSeason]['clearances'] = parseInt(tds[i].innerText, 10);
+        while (clearances[currentSeason] === undefined || clearances[currentSeason] === {}) {
+            const tds = Array.from(document.querySelectorAll('#player-tournament-stats-detailed #top-player-stats-summary-grid tr td'));
+            for (let i = 0; i < tds.length; i++) {
+                if (tds[i].className === 'rank tournament') {
+                    currentSeason = tds[i].innerText + '-' + tds[i + 2].innerText;
+                    clearances[currentSeason] = {};
+                } else {
+                    if (tds[i].className === 'clearanceTotal   ') {
+                        if (tds[i].innerText === '-') {
+                            clearances[currentSeason]['clearances'] = 0;
+                        } else {
+                            clearances[currentSeason]['clearances'] = parseInt(tds[i].innerText, 10);
+                        }
                     }
                 }
             }
@@ -605,31 +639,33 @@ let scrapeClearances = async (page) => {
 let scrapeAerialDuels = async (page) => {
     // select 'aerial' from 'category' drop-down
     await page.select('#category', 'aerial');
-    // await page.waitForFunction('document.querySelector("#statistics-table-detailed-loading").style.display == "none"');
     await page.waitForSelector('.duelAerialWon   ');
+
+    await page.waitForSelector('#player-tournament-stats-detailed #top-player-stats-summary-grid tr td:not(:empty)');
 
     return await page.evaluate(() => {
         // initialize data structure to store all scraped data
         var aerialDuels = {};
         let currentSeason = '';
-        const tds = Array.from(document.querySelectorAll('#player-tournament-stats-detailed #top-player-stats-summary-grid tr td'));
-        for (let i = 0; i < tds.length; i++) {
-            if (tds[i].className === 'rank tournament') {
-                currentSeason = tds[i].innerText + '-' + tds[i + 2].innerText;
-                aerialDuels[currentSeason] = {};
-            } else {
-                if (tds[i].className === 'duelAerialWon   ') {
-                    if (tds[i].innerText === '-') {
-                        aerialDuels[currentSeason]['succAerialDuels'] = 0;
-                    } else {
-                        aerialDuels[currentSeason]['succAerialDuels'] = parseInt(tds[i].innerText, 10);
-                    }
-                }
-                else if (tds[i].className === 'duelAerialTotal   ') {
-                    if (tds[i].innerText === '-') {
-                        aerialDuels[currentSeason]['totalAerialDuels'] = 0;
-                    } else {
-                        aerialDuels[currentSeason]['totalAerialDuels'] = parseInt(tds[i].innerText, 10);
+        while (aerialDuels[currentSeason] === undefined || aerialDuels[currentSeason] === {}) {
+            const tds = Array.from(document.querySelectorAll('#player-tournament-stats-detailed #top-player-stats-summary-grid tr td'));
+            for (let i = 0; i < tds.length; i++) {
+                if (tds[i].className === 'rank tournament') {
+                    currentSeason = tds[i].innerText + '-' + tds[i + 2].innerText;
+                    aerialDuels[currentSeason] = {};
+                } else {
+                    if (tds[i].className === 'duelAerialWon   ') {
+                        if (tds[i].innerText === '-') {
+                            aerialDuels[currentSeason]['succAerialDuels'] = 0;
+                        } else {
+                            aerialDuels[currentSeason]['succAerialDuels'] = parseInt(tds[i].innerText, 10);
+                        }
+                    } else if (tds[i].className === 'duelAerialTotal   ') {
+                        if (tds[i].innerText === '-') {
+                            aerialDuels[currentSeason]['totalAerialDuels'] = 0;
+                        } else {
+                            aerialDuels[currentSeason]['totalAerialDuels'] = parseInt(tds[i].innerText, 10);
+                        }
                     }
                 }
             }
@@ -641,40 +677,41 @@ let scrapeAerialDuels = async (page) => {
 let scrapeCrosses = async (page) => {
     // select 'aerial' from 'category' drop-down
     await page.select('#category', 'passes');
-    // await page.waitForFunction('document.querySelector("#statistics-table-detailed-loading").style.display == "none"');
     await page.waitForSelector('.passTotal   ');
 
     //select 'type' from 'sub-category' drop-down
     await page.select('#subcategory', 'type');
-    // await page.waitForFunction('document.querySelector("#statistics-table-detailed-loading").style.display == "none"');
     await page.waitForSelector('.passCrossAccurate   ');
+
+    await page.waitForSelector('#player-tournament-stats-detailed #top-player-stats-summary-grid tr td:not(:empty)');
 
     return await page.evaluate(() => {
         // initialize data structure to store all scraped data
         var crosses = {};
         let currentSeason = '';
-        const tds = Array.from(document.querySelectorAll('#player-tournament-stats-detailed #top-player-stats-summary-grid tr td'));
-        for (let i = 0; i < tds.length; i++) {
-            if (tds[i].className === 'rank tournament') {
-                currentSeason = tds[i].innerText + '-' + tds[i + 2].innerText;
-                crosses[currentSeason] = {};
-            }
-            else {
-                if (tds[i].className === 'passCrossAccurate   ') {
-                    let successfulCrosses = tds[i].innerText;
-                    let unsuccessfulCrosses = tds[i + 1].innerText;
-                    if (successfulCrosses === "-") {
-                        successfulCrosses = 0;
-                    } else {
-                        successfulCrosses = parseInt(tds[i].innerText, 10);
+        while (crosses[currentSeason] === undefined || crosses[currentSeason] === {}) {
+            const tds = Array.from(document.querySelectorAll('#player-tournament-stats-detailed #top-player-stats-summary-grid tr td'));
+            for (let i = 0; i < tds.length; i++) {
+                if (tds[i].className === 'rank tournament') {
+                    currentSeason = tds[i].innerText + '-' + tds[i + 2].innerText;
+                    crosses[currentSeason] = {};
+                } else {
+                    if (tds[i].className === 'passCrossAccurate   ') {
+                        let successfulCrosses = tds[i].innerText;
+                        let unsuccessfulCrosses = tds[i + 1].innerText;
+                        if (successfulCrosses === "-") {
+                            successfulCrosses = 0;
+                        } else {
+                            successfulCrosses = parseInt(tds[i].innerText, 10);
+                        }
+                        if (unsuccessfulCrosses === "-") {
+                            unsuccessfulCrosses = 0;
+                        } else {
+                            unsuccessfulCrosses = parseInt(tds[i + 1].innerText, 10);
+                        }
+                        crosses[currentSeason]['succCrosses'] = successfulCrosses;
+                        crosses[currentSeason]['totalCrosses'] = successfulCrosses + unsuccessfulCrosses;
                     }
-                    if (unsuccessfulCrosses === "-") {
-                        unsuccessfulCrosses = 0;
-                    } else {
-                        unsuccessfulCrosses = parseInt(tds[i + 1].innerText, 10);
-                    }
-                    crosses[currentSeason]['succCrosses'] = successfulCrosses;
-                    crosses[currentSeason]['totalCrosses'] = successfulCrosses + unsuccessfulCrosses;
                 }
             }
         }
@@ -685,24 +722,27 @@ let scrapeCrosses = async (page) => {
 let scrapeFouls = async (page) => {
     // select 'aerial' from 'category' drop-down
     await page.select('#category', 'fouls');
-    // await page.waitForFunction('document.querySelector("#statistics-table-detailed-loading").style.display == "none"');
     await page.waitForSelector('.foulCommitted   ');
+
+    await page.waitForSelector('#player-tournament-stats-detailed #top-player-stats-summary-grid tr td:not(:empty)');
 
     return await page.evaluate(() => {
         // initialize data structure to store all scraped data
         var fouls = {};
         let currentSeason = '';
-        const tds = Array.from(document.querySelectorAll('#player-tournament-stats-detailed #top-player-stats-summary-grid tr td'));
-        for (let i = 0; i < tds.length; i++) {
-            if (tds[i].className === 'rank tournament') {
-                currentSeason = tds[i].innerText + '-' + tds[i + 2].innerText;
-                fouls[currentSeason] = {};
-            } else {
-                if (tds[i].className === 'foulCommitted   ') {
-                    if (tds[i].innerText === '-') {
-                        fouls[currentSeason]['fouls'] = 0;
-                    } else {
-                        fouls[currentSeason]['fouls'] = parseInt(tds[i].innerText, 10);
+        while (fouls[currentSeason] === undefined || fouls[currentSeason] === {}) {
+            const tds = Array.from(document.querySelectorAll('#player-tournament-stats-detailed #top-player-stats-summary-grid tr td'));
+            for (let i = 0; i < tds.length; i++) {
+                if (tds[i].className === 'rank tournament') {
+                    currentSeason = tds[i].innerText + '-' + tds[i + 2].innerText;
+                    fouls[currentSeason] = {};
+                } else {
+                    if (tds[i].className === 'foulCommitted   ') {
+                        if (tds[i].innerText === '-') {
+                            fouls[currentSeason]['fouls'] = 0;
+                        } else {
+                            fouls[currentSeason]['fouls'] = parseInt(tds[i].innerText, 10);
+                        }
                     }
                 }
             }

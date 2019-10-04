@@ -95,7 +95,7 @@ function drawLoadingScreen(type, anError=""){
         case "error":
             $('.circularG').remove();
             $('#loading-screen').append(anError);
-            $('#loading-screen').append("Please reload the page and try again");
+            $('#loading-screen').append("<br>Please reload the page and try again");
 
     }
     $("#loading-screen").css("display", "flex");
