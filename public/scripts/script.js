@@ -31,8 +31,6 @@ socket.on('search results', function(results){
     }
     $("#loading-screen").css("display", "none");
     $("#search-screen").css("display", "flex");
-    $("#search-filters").css("display", "block");
-    $("#search-results").css("display", "grid");
 });
 
 socket.on('stats scraped', function(scrapedStats){
