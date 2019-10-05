@@ -125,9 +125,8 @@ h3 {
 
         #search-results {
             display: grid;
-            padding-right: 20px;
             border: none;
-            overflow-y: scroll;
+            overflow-y: auto;
 
             grid-template-columns: 1fr 1fr 1fr;
             grid-auto-rows: minmax(min-content, max-content);
@@ -166,7 +165,7 @@ h3 {
                 flex: 1 1 70%;
                 padding: 0 20px;
                 border: darkgrey 1px solid;
-                overflow-y: scroll;
+                overflow-y: auto;
             }
 
                 #options h1 {
@@ -242,11 +241,9 @@ h3 {
 
         .result {
             margin: 10px 20px 20px;
-            border: darkgrey 1px solid;
         }
 
     #search-filters{
-        padding-bottom: 20px;
         justify-content: center;
     }
 
@@ -254,6 +251,11 @@ h3 {
             flex-direction: row;
             max-height: 100%;
         }
+
+            #search-filter-inputs input {
+                margin-left: 20px;
+                margin-right: 20px;
+            }
 
     #search-results {
         grid-template-columns: 1fr;
@@ -264,15 +266,9 @@ h3 {
     }
 
         #options {
-            flex: 1 1 70%;
-            padding: 0 20px;
-            border: darkgrey 1px solid;
-            overflow-y: scroll;
-
             display: flex;
             flex-direction: row;
             justify-content: space-evenly;
-
             max-height: 100%;
         }
 
@@ -280,10 +276,15 @@ h3 {
         }
 
             #filter-buttons .filter-button {
-                padding-top: 0;
-                flex: 1 1 33.3%;
+                padding: 0;
+                margin-left: 20px;
+            }
+
+            #filter-buttons .filter-button:not(:last-child) {
                 border-bottom: black 1px solid;
             }
+
+
 }
 
 /*Loading Screen Animation*/
