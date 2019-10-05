@@ -57,10 +57,10 @@ function search(){
     if ($('#loading-screen').css('display') === 'none') {
         $('.highcharts-data-table').remove();
         let query = $('#query').val();
-        socket.emit('search', query);
         $("#search-screen").css("display", "none");
         $("#content-screen").css("display", "none");
         drawLoadingScreen("search");
+        socket.emit('search', query);
     }
 }
 
@@ -73,9 +73,9 @@ function getStats(elem){
     club = $(elem).find('.club').text().substring(6);
     nationality = $(elem).find('.nationality').text().substring(13);
     let url = $(elem).find('.url').text();
-    socket.emit('scrape stats', url);
     $("#search-screen").css("display", "none");
     drawLoadingScreen("getStats");
+    socket.emit('scrape stats', url);
 }
 
 function drawLoadingScreen(type, anError=""){

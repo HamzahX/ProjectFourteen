@@ -11,12 +11,11 @@ const port = process.env.PORT || 3000;
 //set up express path
 server.use(express.static(path.join(__dirname, '/public')));
 
+let firstRequest = true;
+
 //function to launch a browser using puppeteer
 let browser;
 let context;
-
-let firstRequest = true;
-
 let setup = async () => {
     return new Promise(async function(resolve, reject){
         console.time('browser launch');
@@ -32,12 +31,13 @@ let setup = async () => {
         });
         context = await browser.createIncognitoBrowserContext();
         let page = await context.newPage();
+        let pages = await browser.pages();
+        pages[0].close();
+        await disableImages(page);
         await page.goto("https://www.whoscored.com", {waitUntil: 'networkidle0'});
         let selector1 = '#qcCmpButtons > button:nth-child(2)';
         await page.waitForSelector(selector1);
         await page.evaluate((selector) => document.querySelector(selector).click(), selector1);
-        let pages = await browser.pages();
-        pages[0].close();
         console.timeEnd('browser launch');
         resolve(context);
     });
@@ -54,6 +54,7 @@ setup().then(() => {
 
 //wait for socket events
 io.on('connection', function(socket){
+
     console.log("Number of users currently online: " + Object.keys(io.sockets.sockets).length);
 
     socket.on('search', async(aQuery) => {
@@ -113,9 +114,26 @@ io.on('connection', function(socket){
     socket.on('disconnect', function(){
         console.log("Number of users currently online: " + Object.keys(io.sockets.sockets).length);
     })
+
 });
 
+let disableImages = async(page) => {
+
+    await page.setRequestInterception(true);
+    page.on('request', (req) => {
+        if(req.resourceType() === 'stylesheet' || req.resourceType() === 'font' || req.resourceType() === 'image'){
+            req.abort();
+        }
+        else {
+            req.continue();
+        }
+    });
+
+};
+
 let getSearchResults = async (page, URL) => {
+
+    await disableImages(page);
 
     await page.goto(URL, {waitUntil: 'networkidle0'});
 
@@ -149,18 +167,20 @@ let getSearchResults = async (page, URL) => {
 };
 
 let pageSetup = async(page, URL) => {
+
+    await disableImages(page);
     await page.goto(URL, {waitUntil: 'networkidle0'});
 
     // navigate to 'detailed' tab
     let selector1 = 'a[href="#player-tournament-stats-detailed"]';
     await page.waitForSelector(selector1);
     await page.evaluate((selector) => document.querySelector(selector).click(), selector1);
-    // await page.waitForFunction('document.querySelector("#statistics-table-detailed-loading").style.display == "none"');
     await page.waitForSelector('#statistics-table-detailed');
 
     // select 'total' from 'accumulation' drop-down
     await page.select('#statsAccumulationType', '2');
     await page.waitForFunction('document.querySelector("#statistics-table-detailed-loading").style.display == "none"');
+
 };
 
 let getStats = async (page, URL) => {
@@ -249,6 +269,7 @@ let getStats = async (page, URL) => {
 };
 
 let scrapeGoalsAndMinutes = async (page) => {
+
     // select 'goals' from 'category' drop-down
     await page.select('#category', 'goals');
     await page.waitForSelector('.goalTotal   ');
@@ -261,7 +282,7 @@ let scrapeGoalsAndMinutes = async (page) => {
 
     return await page.evaluate(() => {
         // initialize data structure to store all scraped data
-        var goals = {};
+        let goals = {};
         let currentSeason = '';
         while (goals[currentSeason] === undefined || goals[currentSeason] === {}) {
             const tds = Array.from(document.querySelectorAll('#player-tournament-stats-detailed #top-player-stats-summary-grid tr td'));
@@ -288,9 +309,11 @@ let scrapeGoalsAndMinutes = async (page) => {
         }
         return goals;
     });
+
 };
 
 let scrapeShots = async (page) => {
+
     // select 'shots' from 'category' drop-down
     await page.select('#category', 'shots');
     await page.waitForSelector('.shotsTotal   ');
@@ -303,7 +326,7 @@ let scrapeShots = async (page) => {
 
     return await page.evaluate(() => {
         // initialize data structure to store all scraped data
-        var shots = {};
+        let shots = {};
         let currentSeason = '';
         while (shots[currentSeason] === undefined || shots[currentSeason] === {}) {
             const tds = Array.from(document.querySelectorAll('#player-tournament-stats-detailed #top-player-stats-summary-grid tr td'));
@@ -330,9 +353,11 @@ let scrapeShots = async (page) => {
         }
         return shots;
     });
+
 };
 
 let scrapePasses = async (page) => {
+
     // select 'passes' from 'category' drop-down
     await page.select('#category', 'passes');
     await page.waitForSelector('.passTotal   ');
@@ -341,7 +366,7 @@ let scrapePasses = async (page) => {
 
     return await page.evaluate(() => {
         // initialize data structure to store all scraped data
-        var passes = {};
+        let passes = {};
         let currentSeason = '';
         while (passes[currentSeason] === undefined || passes[currentSeason] === {}) {
             const tds = Array.from(document.querySelectorAll('#player-tournament-stats-detailed #top-player-stats-summary-grid tr td'));
@@ -375,9 +400,11 @@ let scrapePasses = async (page) => {
         }
         return passes;
     });
+
 };
 
 let scrapeAssists = async (page) => {
+
     // select 'assists' from 'category' drop-down
     await page.select('#category', 'assists');
     await page.waitForSelector('.assist   ');
@@ -386,7 +413,7 @@ let scrapeAssists = async (page) => {
 
     return await page.evaluate(() => {
         // initialize data structure to store all scraped data
-        var assists = {};
+        let assists = {};
         let currentSeason = '';
         while (assists[currentSeason] === undefined || assists[currentSeason] === {}) {
             const tds = Array.from(document.querySelectorAll('#player-tournament-stats-detailed #top-player-stats-summary-grid tr td'));
@@ -407,9 +434,11 @@ let scrapeAssists = async (page) => {
         }
         return assists;
     });
+
 };
 
 let scrapeKeyPasses = async (page) => {
+
     // select 'key passes' from 'category' drop-down
     await page.select('#category', 'key-passes');
     await page.waitForSelector('.keyPassesTotal   ');
@@ -418,7 +447,7 @@ let scrapeKeyPasses = async (page) => {
 
     return await page.evaluate(() => {
         // initialize data structure to store all scraped data
-        var keyPasses = {};
+        let keyPasses = {};
         let currentSeason = '';
         while (keyPasses[currentSeason] === undefined || keyPasses[currentSeason] === {}) {
             const tds = Array.from(document.querySelectorAll('#player-tournament-stats-detailed #top-player-stats-summary-grid tr td'));
@@ -439,9 +468,11 @@ let scrapeKeyPasses = async (page) => {
         }
         return keyPasses;
     });
+
 };
 
 let scrapeThroughBalls = async (page) => {
+
     // select 'passes' from 'category' drop-down
     await page.select('#category', 'key-passes');
     await page.waitForSelector('.keyPassesTotal   ');
@@ -454,7 +485,7 @@ let scrapeThroughBalls = async (page) => {
 
     return await page.evaluate(() => {
         // initialize data structure to store all scraped data
-        var throughBalls = {};
+        let throughBalls = {};
         let currentSeason = '';
         while (throughBalls[currentSeason] === undefined || Object.keys(throughBalls[currentSeason]).length === 0) {
             const tds = Array.from(document.querySelectorAll('#player-tournament-stats-detailed #top-player-stats-summary-grid tr td'));
@@ -475,9 +506,11 @@ let scrapeThroughBalls = async (page) => {
         }
         return throughBalls;
     });
+
 };
 
 let scrapeTackles = async (page) => {
+
     // select 'tackles' from 'category' drop-down
     await page.select('#category', 'tackles');
     await page.waitForSelector('.tackleWonTotal   ');
@@ -486,7 +519,7 @@ let scrapeTackles = async (page) => {
 
     return await page.evaluate(() => {
         // initialize data structure to store all scraped data
-        var tackles = {};
+        let tackles = {};
         let currentSeason = '';
         while (tackles[currentSeason] === undefined || tackles[currentSeason] === {}) {
             const tds = Array.from(document.querySelectorAll('#player-tournament-stats-detailed #top-player-stats-summary-grid tr td'));
@@ -513,9 +546,11 @@ let scrapeTackles = async (page) => {
         }
         return tackles;
     });
+
 };
 
 let scrapeInterceptions = async (page) => {
+
     // select 'interception' from 'category' drop-down
     await page.select('#category', 'interception');
     await page.waitForSelector('.interceptionAll   ');
@@ -524,7 +559,7 @@ let scrapeInterceptions = async (page) => {
 
     return await page.evaluate(() => {
         // initialize data structure to store all scraped data
-        var interceptions = {};
+        let interceptions = {};
         let currentSeason = '';
         while (interceptions[currentSeason] === undefined || interceptions[currentSeason] === {}) {
             const tds = Array.from(document.querySelectorAll('#player-tournament-stats-detailed #top-player-stats-summary-grid tr td'));
@@ -545,9 +580,11 @@ let scrapeInterceptions = async (page) => {
         }
         return interceptions;
     });
+
 };
 
 let scrapePossessionLosses = async (page) => {
+
     // select 'possession loss' from 'category' drop-down
     await page.select('#category', 'possession-loss');
     await page.waitForSelector('.turnover   ');
@@ -556,7 +593,7 @@ let scrapePossessionLosses = async (page) => {
 
     return await page.evaluate(() => {
         // initialize data structure to store all scraped data
-        var possessionLosses = {};
+        let possessionLosses = {};
         let currentSeason = '';
         while (possessionLosses[currentSeason] === undefined || possessionLosses[currentSeason] === {}) {
             const tds = Array.from(document.querySelectorAll('#player-tournament-stats-detailed #top-player-stats-summary-grid tr td'));
@@ -582,9 +619,11 @@ let scrapePossessionLosses = async (page) => {
         }
         return possessionLosses;
     });
+
 };
 
 let scrapeDribbles = async (page) => {
+
     // select 'dribbles' from 'category' drop-down
     await page.select('#category', 'dribbles');
     await page.waitForSelector('.dribbleWon  ');
@@ -593,7 +632,7 @@ let scrapeDribbles = async (page) => {
 
     return await page.evaluate(() => {
         // initialize data structure to store all scraped data
-        var dribbles = {};
+        let dribbles = {};
         let currentSeason = '';
         while (dribbles[currentSeason] === undefined || dribbles[currentSeason] === {}) {
             const tds = Array.from(document.querySelectorAll('#player-tournament-stats-detailed #top-player-stats-summary-grid tr td'));
@@ -614,9 +653,11 @@ let scrapeDribbles = async (page) => {
         }
         return dribbles;
     });
+
 };
 
 let scrapeClearances = async (page) => {
+
     // select 'clearances' from 'category' drop-down
     await page.select('#category', 'clearances');
     await page.waitForSelector('.clearanceTotal   ');
@@ -625,7 +666,7 @@ let scrapeClearances = async (page) => {
 
     return await page.evaluate(() => {
         // initialize data structure to store all scraped data
-        var clearances = {};
+        let clearances = {};
         let currentSeason = '';
         while (clearances[currentSeason] === undefined || clearances[currentSeason] === {}) {
             const tds = Array.from(document.querySelectorAll('#player-tournament-stats-detailed #top-player-stats-summary-grid tr td'));
@@ -646,9 +687,11 @@ let scrapeClearances = async (page) => {
         }
         return clearances;
     });
+
 };
 
 let scrapeAerialDuels = async (page) => {
+
     // select 'aerial' from 'category' drop-down
     await page.select('#category', 'aerial');
     await page.waitForSelector('.duelAerialWon   ');
@@ -657,7 +700,7 @@ let scrapeAerialDuels = async (page) => {
 
     return await page.evaluate(() => {
         // initialize data structure to store all scraped data
-        var aerialDuels = {};
+        let aerialDuels = {};
         let currentSeason = '';
         while (aerialDuels[currentSeason] === undefined || aerialDuels[currentSeason] === {}) {
             const tds = Array.from(document.querySelectorAll('#player-tournament-stats-detailed #top-player-stats-summary-grid tr td'));
@@ -684,9 +727,11 @@ let scrapeAerialDuels = async (page) => {
         }
         return aerialDuels;
     });
+
 };
 
 let scrapeCrosses = async (page) => {
+
     // select 'aerial' from 'category' drop-down
     await page.select('#category', 'passes');
     await page.waitForSelector('.passTotal   ');
@@ -699,7 +744,7 @@ let scrapeCrosses = async (page) => {
 
     return await page.evaluate(() => {
         // initialize data structure to store all scraped data
-        var crosses = {};
+        let crosses = {};
         let currentSeason = '';
         while (crosses[currentSeason] === undefined || crosses[currentSeason] === {}) {
             const tds = Array.from(document.querySelectorAll('#player-tournament-stats-detailed #top-player-stats-summary-grid tr td'));
@@ -729,9 +774,11 @@ let scrapeCrosses = async (page) => {
         }
         return crosses;
     });
+
 };
 
 let scrapeFouls = async (page) => {
+
     // select 'aerial' from 'category' drop-down
     await page.select('#category', 'fouls');
     await page.waitForSelector('.foulCommitted   ');
@@ -740,7 +787,7 @@ let scrapeFouls = async (page) => {
 
     return await page.evaluate(() => {
         // initialize data structure to store all scraped data
-        var fouls = {};
+        let fouls = {};
         let currentSeason = '';
         while (fouls[currentSeason] === undefined || fouls[currentSeason] === {}) {
             const tds = Array.from(document.querySelectorAll('#player-tournament-stats-detailed #top-player-stats-summary-grid tr td'));
@@ -761,4 +808,5 @@ let scrapeFouls = async (page) => {
         }
         return fouls;
     });
+
 };
