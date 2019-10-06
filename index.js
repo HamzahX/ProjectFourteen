@@ -121,7 +121,7 @@ let disableImages = async(page) => {
 
     await page.setRequestInterception(true);
     page.on('request', (req) => {
-        if(req.resourceType() === 'stylesheet' || req.resourceType() === 'font' || req.resourceType() === 'image'){
+        if(req.resourceType() === 'image'){
             req.abort();
         }
         else {
@@ -144,11 +144,10 @@ let getSearchResults = async (page, URL) => {
             let result = {};
             if (as[i].outerHTML.startsWith('<a href="/Players')) {
                 result["name"] = as[i].innerText;
-                let countryISO = as[i].outerHTML.substring(
+                result["nationality"] = as[i].outerHTML.substring(
                     as[i].outerHTML.indexOf("country flg") + 12,
                     as[i].outerHTML.indexOf("</span>") - 2
                 );
-                result["nationality"] = countryISO;
                 result["club"] = "N/A";
                 if (i !== as.length-1 && as[i + 1].outerHTML.startsWith('<a style')) {
                     result["club"] = as[i + 1].innerText;
@@ -344,8 +343,7 @@ let scrapeShots = async (page) => {
                             if (penalties === '-') {
                                 penalties = '0';
                             }
-                            let nonPenaltyShots = totalShots - parseInt(penalties, 10);
-                            shots[currentSeason]['shots'] = nonPenaltyShots;
+                            shots[currentSeason]['shots'] = totalShots - parseInt(penalties, 10);
                         }
                     }
                 }
@@ -389,8 +387,7 @@ let scrapePasses = async (page) => {
                             if (accSP === '-') {
                                 accSP = '0';
                             }
-                            let successfulPasses = parseInt(accLB, 10) + parseInt(accSP, 10);
-                            passes[currentSeason]['succPasses'] = successfulPasses;
+                            passes[currentSeason]['succPasses'] = parseInt(accLB, 10) + parseInt(accSP, 10);
                             passes[currentSeason]['totalPasses'] = totalPasses;
                             passes[currentSeason]['longPasses'] = parseInt(accLB, 10)
                         }
@@ -611,8 +608,7 @@ let scrapePossessionLosses = async (page) => {
                         if (dispossessions === '-') {
                             dispossessions = '0';
                         }
-                        let totalLostPossessions = parseInt(unsuccessfulTouches, 10) + parseInt(dispossessions, 10);
-                        possessionLosses[currentSeason]['possessionLosses'] = totalLostPossessions;
+                        possessionLosses[currentSeason]['possessionLosses'] = parseInt(unsuccessfulTouches, 10) + parseInt(dispossessions, 10);
                     }
                 }
             }

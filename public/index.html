@@ -20,11 +20,9 @@
                 <div class="filter" id="search-filters">
                     <h2>Filter Search Results</h2>
                     <div id="search-filter-inputs">
-                        <h3>by Club</h3>
-                        <input type="text" class="search-filter-input" id="filterByClub">
+                        <input type="text" class="search-filter-input" id="filterByClub" placeholder="by club">
                         <br>
-                        <h3>by Nationality</h3>
-                        <input type="text" class="search-filter-input" id="filterByNationality">
+                        <input type="text" class="search-filter-input" id="filterByNationality" placeholder="by nationality">
                     </div>
                 </div>
                 <div class="result" id="search-results">
@@ -34,19 +32,15 @@
             <div class="main" id="content-screen">
                 <div class="filter" id="radar-filters">
                     <div id="options">
-                        <div>
-                            <h3>Template</h3>
-                            <form id="templates">
-                                <input type="radio" name="template" value="FW" onchange="updateRadar()" checked> FW / AM<br><br>
-                                <input type="radio" name="template" value="MF" onchange="updateRadar()"> CM / DM<br><br>
-                                <input type="radio" name="template" value="FB" onchange="updateRadar()"> FB<br><br>
-                                <input type="radio" name="template" value="DF" onchange="updateRadar()"> CB<br><br>
-                            </form>
-                        </div>
-                        <div>
-                            <h3>Seasons</h3>
-                            <form id="competitions"></form>
-                        </div>
+                        <h3>Template</h3>
+                        <form id="templates">
+                            <label><input type="radio" name="template" value="FW" onchange="updateRadar()" checked> FW / AM</label>
+                            <label><input type="radio" name="template" value="MF" onchange="updateRadar()"> CM / DM</label>
+                            <label><input type="radio" name="template" value="FB" onchange="updateRadar()"> FB</label>
+                            <label><input type="radio" name="template" value="DF" onchange="updateRadar()"> CB</label>
+                        </form>
+                        <h3>Seasons</h3>
+                        <form id="competitions"></form>
                     </div>
                     <div id="filter-buttons">
                         <div class="filter-button">

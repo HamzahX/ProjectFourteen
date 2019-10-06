@@ -13,15 +13,16 @@ let categories;
 let yAxis;
 
 socket.on('search results', function(results){
+    let searchResults = $('#search-results');
     $('.search-filter-input').empty();
-    $('#search-results').empty();
+    searchResults.empty();
     for (let i=0; i<results.length; i++){
         let resultID = "result" + i;
         let name = results[i]["name"];
         let nationality = results[i]["nationality"];
         let club = results[i]["club"];
         let url = results[i]["URL"];
-        $('#search-results').append('<div onclick="return getStats(this)" class="search-result" id="' + resultID + '">' +
+        searchResults.append('<div onclick="return getStats(this)" class="search-result" id="' + resultID + '">' +
             '<div class="name">' + name + '</div>' +
             '<div class="club">Club: ' + club + '</div>' +
             '<div class="nationality">Nationality: ' + nationality + '</div>' +
@@ -37,7 +38,7 @@ socket.on('stats scraped', function(scrapedStats){
     stats = scrapedStats;
     competitions = Object.keys(stats);
     for (let i=0; i<competitions.length; i++){
-        $('#competitions').append('<input class="competition" type="checkbox" value=' + competitions[i] + ' onchange="updateRadar(false)" checked> ' + competitions[i] + '<br><br>');
+        $('#competitions').append('<label><input class="competition" type="checkbox" value=' + competitions[i] + ' onchange="updateRadar(false)" checked> ' + competitions[i] + '</label>');
     }
     $('#radar').empty();
     $("#loading-screen").css("display", "none");
@@ -46,8 +47,6 @@ socket.on('stats scraped', function(scrapedStats){
 });
 
 socket.on('alert error', function(anError){
-    // alert(anError + "\nPlease press OK to reload the page and try again");
-    // location.reload();
     drawLoadingScreen("error", anError)
 });
 
@@ -77,29 +76,31 @@ function getStats(elem){
 }
 
 function drawLoadingScreen(type, anError=""){
-    $('#loading-screen').empty();
-    $('#loading-screen').append('<div id="circularG"> <div id="circularG_1" class="circularG"></div> ' +
+    let loadingScreen = $('#loading-screen');
+    loadingScreen.empty();
+    loadingScreen.append('<div id="circularG"> <div id="circularG_1" class="circularG"></div> ' +
         '<div id="circularG_2" class="circularG"></div> <div id="circularG_3" class="circularG"></div> ' +
         '<div id="circularG_4" class="circularG"></div> <div id="circularG_5" class="circularG"></div> ' +
         '<div id="circularG_6" class="circularG"></div> <div id="circularG_7" class="circularG"></div> ' +
         '<div id="circularG_8" class="circularG"></div> </div><br>');
     switch(type){
         case "search":
-            $('#loading-screen').append('Searching');
+            loadingScreen.append('Searching');
             break;
         case "getStats":
-            $('#loading-screen').append('Retrieving Stats');
+            loadingScreen.append('Retrieving Stats');
             break;
         case "error":
             $('.circularG').remove();
-            $('#loading-screen').append(anError);
-            $('#loading-screen').append("<br>Please reload the page and try again");
+            loadingScreen.append(anError);
+            loadingScreen.append("<br>Please reload the page and try again");
 
     }
-    $("#loading-screen").css("display", "flex");
+    loadingScreen.css("display", "flex");
 }
 
 function updateRadar(isNew = true){
+    let dataTable = $('.highcharts-data-table');
     if (competitions.length === 0){
         isNew = true;
     }
@@ -110,8 +111,8 @@ function updateRadar(isNew = true){
     let template = $("input[name='template']:checked").val();
     let filteredStats = filterStats(stats);
     if (Object.keys(filteredStats).length === 0){
-        if ($('.highcharts-data-table').length){
-            $('.highcharts-data-table').empty();
+        if (dataTable.length){
+            dataTable.empty();
         }
         subtitle = '';
         drawRadar([]);
@@ -138,8 +139,8 @@ function updateRadar(isNew = true){
                 break;
         }
         if (isNew) {
-            if ($('.highcharts-data-table').length){
-                $('.highcharts-data-table').remove();
+            if (dataTable.length){
+                dataTable.remove();
                 drawRadar(selectedStats, subtitle, categories, yAxis);
                 radar.viewData();
                 radar.reflow();
@@ -153,7 +154,7 @@ function updateRadar(isNew = true){
                 point.update(selectedStats[i], false);
             });
             radar.redraw();
-            if ($('.highcharts-data-table').length){
+            if (dataTable.length){
                 radar.viewData();
             }
         }
@@ -474,8 +475,9 @@ function drawRadar(selectedStats){
 }
 
 function toggleDataTable(){
-    if ($('.highcharts-data-table').length){
-        $('.highcharts-data-table').remove();
+    let dataTable = $('.highcharts-data-table');
+    if (dataTable.length){
+        dataTable.remove();
     }
     else {
         updateRadar();
@@ -490,9 +492,10 @@ function selectAllSeasons(){
 }
 
 function clearAllSeasons(){
+    let dataTable = $('.highcharts-data-table');
     $('input:checkbox').prop("checked", false);
-    if ($('.highcharts-data-table').length){
-        $('.highcharts-data-table').empty();
+    if (dataTable.length){
+        dataTable.empty();
     }
     updateRadar();
 }

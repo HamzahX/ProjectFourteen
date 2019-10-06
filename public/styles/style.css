@@ -1,7 +1,7 @@
 * {
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
     box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
 }
 
 html {
@@ -172,6 +172,14 @@ h3 {
                     text-align: center;
                 }
 
+                #options form {
+                }
+
+                    #options form label {
+                        display: block;
+                        margin-bottom: 20px;
+                    }
+
             #filter-buttons {
                 flex: 1 1 30%;
 
@@ -201,6 +209,8 @@ h3 {
         #radar {
             border: none;
             padding: 10px;
+            display: flex;
+            flex-direction: row;
         }
 
     #loading-screen {
@@ -222,13 +232,7 @@ h3 {
     opacity: 1;
 }
 
-@media only screen and (max-width: 1366px) {
-    #search-results {
-        grid-template-columns: 1fr 1fr;
-    }
-}
-
-@media only screen and (max-width: 800px), (pointer:none), (pointer:coarse) {
+@media (max-width: 800px), (pointer:none), (pointer:coarse) {
 
     .main {
         flex-direction: column;
@@ -266,11 +270,18 @@ h3 {
     }
 
         #options {
-            display: flex;
-            flex-direction: row;
-            justify-content: space-evenly;
             max-height: 100%;
         }
+
+            #options form {
+                column-count: 2;
+                -webkit-column-count: 2;
+                -moz-column-count: 2;
+            }
+
+                #options form input {
+                    display: inline-block;
+                }
 
         #filter-buttons {
         }
@@ -280,9 +291,52 @@ h3 {
                 margin-left: 20px;
             }
 
-            #filter-buttons .filter-button:not(:last-child) {
-                border-bottom: black 1px solid;
+            #filter-buttons .filter-button:first-child {
+                padding-bottom: 10px;
             }
+
+            #filter-buttons .filter-button:nth-child(2) {
+                padding-top: 10px;
+            }
+
+            #filter-buttons .filter-button:last-child {
+                display: none;
+            }
+
+}
+
+@media (pointer:none), (pointer:coarse) {
+    #query {
+        font-size: 2.5vh;
+    }
+
+    h2 {
+        font-size: 2.5vh;
+    }
+
+    h3 {
+        font-size: 2vh
+    }
+
+    #search-filter-inputs input {
+        font-size: 2.5vh;
+    }
+
+    .search-result .name {
+        font-size: 2.5vh;
+    }
+
+    .search-result .club, .search-result .nationality{
+        font-size: 2vh;
+    }
+
+    #options form label {
+        font-size: 1.5vh;
+    }
+
+    #filter-buttons .filter-button button {
+        font-size: 1.5vh;
+    }
 
 
 }
