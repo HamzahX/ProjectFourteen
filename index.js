@@ -33,7 +33,7 @@ let setup = async () => {
         let page = await context.newPage();
         let pages = await browser.pages();
         pages[0].close();
-        await disableImages(page);
+        // await disableImages(page);
         await page.goto("https://www.whoscored.com", {waitUntil: 'networkidle0'});
         let selector1 = '#qcCmpButtons > button:nth-child(2)';
         await page.waitForSelector(selector1);
@@ -68,12 +68,13 @@ io.on('connection', function(socket){
             firstRequest = false;
         }
         getSearchResults(page, URL).then(async (searchResults) => {
+            console.timeEnd(socket.id + " | Time taken to return search results");
             await page.close();
             for (let i=0; i<searchResults.length; i++){
                 let countryISO = searchResults[i]["nationality"];
                 searchResults[i]["nationality"] = countryCodes.getCountryName(countryISO.toUpperCase());
             }
-            console.timeEnd(socket.id + " | Time taken to return search results");
+
             socket.emit('search results', searchResults);
         }).catch(async(anError) => {
             console.log(socket.id + " | " + anError);
@@ -133,7 +134,7 @@ let disableImages = async(page) => {
 
 let getSearchResults = async (page, URL) => {
 
-    await disableImages(page);
+    // await disableImages(page);
 
     await page.goto(URL, {waitUntil: 'networkidle0'});
 
@@ -167,7 +168,7 @@ let getSearchResults = async (page, URL) => {
 
 let pageSetup = async(page, URL) => {
 
-    await disableImages(page);
+    // await disableImages(page);
     await page.goto(URL, {waitUntil: 'networkidle0'});
 
     // navigate to 'detailed' tab

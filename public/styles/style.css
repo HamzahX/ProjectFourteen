@@ -303,31 +303,47 @@ h3 {
                 display: none;
             }
 
+    .highcharts-xaxis-labels text {
+        font-size: 2vw !important;
+    }
 }
 
 @media (pointer:none), (pointer:coarse) {
     #query {
-        font-size: 2.5vh;
+        font-size: 2.2vh;
     }
 
     h2 {
-        font-size: 2.5vh;
+        font-size: 2.1vh;
     }
 
     h3 {
         font-size: 2vh
     }
 
+    #search-filter-inputs {
+        flex-direction: column;
+    }
+
     #search-filter-inputs input {
-        font-size: 2.5vh;
+        margin: 0;
+    }
+
+    #search-filter-inputs input {
+        font-size: 2vh;
+    }
+
+    .search-result {
+        padding-top: 40px;
+        padding-bottom: 40px;
     }
 
     .search-result .name {
-        font-size: 2.5vh;
+        font-size: 2.1vh;
     }
 
     .search-result .club, .search-result .nationality{
-        font-size: 2vh;
+        font-size: 1.7vh;
     }
 
     #options form label {
@@ -335,14 +351,17 @@ h3 {
     }
 
     #filter-buttons .filter-button button {
-        font-size: 1.5vh;
+        font-size: 1.8vh;
     }
 
+    #loading-screen {
+        font-size: 2vh;
+    }
 
 }
 
 /*Loading Screen Animation*/
-#circularG{
+#circularG {
     position:relative;
     width:58px;
     height:58px;
