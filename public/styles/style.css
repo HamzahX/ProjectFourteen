@@ -321,14 +321,6 @@ h3 {
         font-size: 2vh
     }
 
-    #search-filter-inputs {
-        flex-direction: column;
-    }
-
-    #search-filter-inputs input {
-        margin: 0;
-    }
-
     #search-filter-inputs input {
         font-size: 2vh;
     }
