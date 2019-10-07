@@ -134,8 +134,7 @@ let disableImages = async(page) => {
 
 let getSearchResults = async (page, URL) => {
 
-    // await disableImages(page);
-
+    await disableImages(page);
     await page.goto(URL, {waitUntil: 'networkidle0'});
 
     return await page.evaluate(() => {
@@ -168,7 +167,7 @@ let getSearchResults = async (page, URL) => {
 
 let pageSetup = async(page, URL) => {
 
-    // await disableImages(page);
+    await disableImages(page);
     await page.goto(URL, {waitUntil: 'networkidle0'});
 
     // navigate to 'detailed' tab
