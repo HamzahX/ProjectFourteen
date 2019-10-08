@@ -22,7 +22,7 @@ socket.on('search results', function(results){
         let nationality = results[i]["nationality"];
         let club = results[i]["club"];
         let url = results[i]["URL"];
-        searchResults.append('<div onclick="return getStats(this)" class="search-result" id="' + resultID + '">' +
+        searchResults.append('<div onclick="return getStats(this)" tabindex="0" class="search-result" id="' + resultID + '">' +
             '<div class="name">' + name + '</div>' +
             '<div class="club">Club: ' + club + '</div>' +
             '<div class="nationality">Nationality: ' + nationality + '</div>' +
@@ -54,6 +54,7 @@ function search(){
     if ($('#loading-screen').css('display') === 'none') {
         $('.highcharts-data-table').remove();
         let query = $('#query').val();
+        $("#landing").css("display", "none");
         $("#search-screen").css("display", "none");
         $("#content-screen").css("display", "none");
         drawLoadingScreen("search");
