@@ -38,6 +38,7 @@ let setup = async () => {
         let selector1 = '#qcCmpButtons > button:nth-child(2)';
         await page.waitForSelector(selector1);
         await page.evaluate((selector) => document.querySelector(selector).click(), selector1);
+        await page.waitForFunction('document.querySelector("body").class !== "qc-cmp-ui-showing"');
         console.timeEnd('browser launch');
         resolve(context);
     });
