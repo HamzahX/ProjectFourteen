@@ -303,9 +303,6 @@ h3 {
                 display: none;
             }
 
-    .highcharts-xaxis-labels text {
-        font-size: 2vw !important;
-    }
 }
 
 @media (pointer:none), (pointer:coarse) {
@@ -349,6 +346,10 @@ h3 {
     #loading-screen {
         font-size: 2vh;
     }
+
+    /*.highcharts-xaxis-labels text {*/
+    /*    font-size: 2vw !important;*/
+    /*}*/
 
 }
 
