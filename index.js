@@ -284,25 +284,23 @@ let scrapeGoalsAndMinutes = async (page) => {
         // initialize data structure to store all scraped data
         let goals = {};
         let currentSeason = '';
-        while (goals[currentSeason] === undefined || goals[currentSeason] === {}) {
-            const tds = Array.from(document.querySelectorAll('#player-tournament-stats-detailed #top-player-stats-summary-grid tr td'));
-            for (let i = 0; i < tds.length; i++) {
-                if (tds[i].className === 'rank tournament') {
-                    currentSeason = tds[i].innerText + '-' + tds[i + 2].innerText;
-                    goals[currentSeason] = {};
-                } else {
-                    if (tds[i].className === 'goalNormal   ') {
-                        if (tds[i].innerText === '-') {
-                            goals[currentSeason]['goals'] = 0;
-                        } else {
-                            goals[currentSeason]['goals'] = parseInt(tds[i].innerText, 10);
-                        }
-                    } else if (tds[i].className === 'minsPlayed   ') {
-                        if (tds[i].innerText === '-') {
-                            goals[currentSeason]['minutes'] = 0;
-                        } else {
-                            goals[currentSeason]['minutes'] = parseInt(tds[i].innerText, 10);
-                        }
+        const tds = Array.from(document.querySelectorAll('#player-tournament-stats-detailed #top-player-stats-summary-grid tr td'));
+        for (let i = 0; i < tds.length; i++) {
+            if (tds[i].className === 'rank tournament') {
+                currentSeason = tds[i].innerText + '-' + tds[i + 2].innerText;
+                goals[currentSeason] = {};
+            } else {
+                if (tds[i].className === 'goalNormal   ') {
+                    if (tds[i].innerText === '-') {
+                        goals[currentSeason]['goals'] = 0;
+                    } else {
+                        goals[currentSeason]['goals'] = parseInt(tds[i].innerText, 10);
+                    }
+                } else if (tds[i].className === 'minsPlayed   ') {
+                    if (tds[i].innerText === '-') {
+                        goals[currentSeason]['minutes'] = 0;
+                    } else {
+                        goals[currentSeason]['minutes'] = parseInt(tds[i].innerText, 10);
                     }
                 }
             }
@@ -328,24 +326,22 @@ let scrapeShots = async (page) => {
         // initialize data structure to store all scraped data
         let shots = {};
         let currentSeason = '';
-        while (shots[currentSeason] === undefined || shots[currentSeason] === {}) {
-            const tds = Array.from(document.querySelectorAll('#player-tournament-stats-detailed #top-player-stats-summary-grid tr td'));
-            for (let i = 0; i < tds.length; i++) {
-                if (tds[i].className === 'rank tournament') {
-                    currentSeason = tds[i].innerText + '-' + tds[i + 2].innerText;
-                    shots[currentSeason] = {};
-                } else {
-                    if (tds[i].className === 'shotsTotal   ') {
-                        if (tds[i].innerText === '-') {
-                            shots[currentSeason]['shots'] = 0;
-                        } else {
-                            let totalShots = parseInt(tds[i].innerText, 10);
-                            let penalties = tds[i + 4].innerText;
-                            if (penalties === '-') {
-                                penalties = '0';
-                            }
-                            shots[currentSeason]['shots'] = totalShots - parseInt(penalties, 10);
+        const tds = Array.from(document.querySelectorAll('#player-tournament-stats-detailed #top-player-stats-summary-grid tr td'));
+        for (let i = 0; i < tds.length; i++) {
+            if (tds[i].className === 'rank tournament') {
+                currentSeason = tds[i].innerText + '-' + tds[i + 2].innerText;
+                shots[currentSeason] = {};
+            } else {
+                if (tds[i].className === 'shotsTotal   ') {
+                    if (tds[i].innerText === '-') {
+                        shots[currentSeason]['shots'] = 0;
+                    } else {
+                        let totalShots = parseInt(tds[i].innerText, 10);
+                        let penalties = tds[i + 4].innerText;
+                        if (penalties === '-') {
+                            penalties = '0';
                         }
+                        shots[currentSeason]['shots'] = totalShots - parseInt(penalties, 10);
                     }
                 }
             }
@@ -367,31 +363,29 @@ let scrapePasses = async (page) => {
         // initialize data structure to store all scraped data
         let passes = {};
         let currentSeason = '';
-        while (passes[currentSeason] === undefined || passes[currentSeason] === {}) {
-            const tds = Array.from(document.querySelectorAll('#player-tournament-stats-detailed #top-player-stats-summary-grid tr td'));
-            for (let i = 0; i < tds.length; i++) {
-                if (tds[i].className === 'rank tournament') {
-                    currentSeason = tds[i].innerText + '-' + tds[i + 2].innerText;
-                    passes[currentSeason] = {};
-                } else {
-                    if (tds[i].className === 'passTotal   ') {
-                        if (tds[i].innerText === '-') {
-                            passes[currentSeason]['succPasses'] = 0;
-                            passes[currentSeason]['totalPasses'] = 0;
-                        } else {
-                            let totalPasses = parseInt(tds[i].innerText, 10);
-                            let accLB = tds[i + 1].innerText;
-                            if (accLB === '-') {
-                                accLB = '0';
-                            }
-                            let accSP = tds[i + 3].innerText;
-                            if (accSP === '-') {
-                                accSP = '0';
-                            }
-                            passes[currentSeason]['succPasses'] = parseInt(accLB, 10) + parseInt(accSP, 10);
-                            passes[currentSeason]['totalPasses'] = totalPasses;
-                            passes[currentSeason]['longPasses'] = parseInt(accLB, 10)
+        const tds = Array.from(document.querySelectorAll('#player-tournament-stats-detailed #top-player-stats-summary-grid tr td'));
+        for (let i = 0; i < tds.length; i++) {
+            if (tds[i].className === 'rank tournament') {
+                currentSeason = tds[i].innerText + '-' + tds[i + 2].innerText;
+                passes[currentSeason] = {};
+            } else {
+                if (tds[i].className === 'passTotal   ') {
+                    if (tds[i].innerText === '-') {
+                        passes[currentSeason]['succPasses'] = 0;
+                        passes[currentSeason]['totalPasses'] = 0;
+                    } else {
+                        let totalPasses = parseInt(tds[i].innerText, 10);
+                        let accLB = tds[i + 1].innerText;
+                        if (accLB === '-') {
+                            accLB = '0';
                         }
+                        let accSP = tds[i + 3].innerText;
+                        if (accSP === '-') {
+                            accSP = '0';
+                        }
+                        passes[currentSeason]['succPasses'] = parseInt(accLB, 10) + parseInt(accSP, 10);
+                        passes[currentSeason]['totalPasses'] = totalPasses;
+                        passes[currentSeason]['longPasses'] = parseInt(accLB, 10)
                     }
                 }
             }
@@ -413,19 +407,17 @@ let scrapeAssists = async (page) => {
         // initialize data structure to store all scraped data
         let assists = {};
         let currentSeason = '';
-        while (assists[currentSeason] === undefined || assists[currentSeason] === {}) {
-            const tds = Array.from(document.querySelectorAll('#player-tournament-stats-detailed #top-player-stats-summary-grid tr td'));
-            for (let i = 0; i < tds.length; i++) {
-                if (tds[i].className === 'rank tournament') {
-                    currentSeason = tds[i].innerText + '-' + tds[i + 2].innerText;
-                    assists[currentSeason] = {};
-                } else {
-                    if (tds[i].className === 'assist   ') {
-                        if (tds[i].innerText === '-') {
-                            assists[currentSeason]['assists'] = 0;
-                        } else {
-                            assists[currentSeason]['assists'] = parseInt(tds[i].innerText, 10);
-                        }
+        const tds = Array.from(document.querySelectorAll('#player-tournament-stats-detailed #top-player-stats-summary-grid tr td'));
+        for (let i = 0; i < tds.length; i++) {
+            if (tds[i].className === 'rank tournament') {
+                currentSeason = tds[i].innerText + '-' + tds[i + 2].innerText;
+                assists[currentSeason] = {};
+            } else {
+                if (tds[i].className === 'assist   ') {
+                    if (tds[i].innerText === '-') {
+                        assists[currentSeason]['assists'] = 0;
+                    } else {
+                        assists[currentSeason]['assists'] = parseInt(tds[i].innerText, 10);
                     }
                 }
             }
@@ -447,19 +439,17 @@ let scrapeKeyPasses = async (page) => {
         // initialize data structure to store all scraped data
         let keyPasses = {};
         let currentSeason = '';
-        while (keyPasses[currentSeason] === undefined || keyPasses[currentSeason] === {}) {
-            const tds = Array.from(document.querySelectorAll('#player-tournament-stats-detailed #top-player-stats-summary-grid tr td'));
-            for (let i = 0; i < tds.length; i++) {
-                if (tds[i].className === 'rank tournament') {
-                    currentSeason = tds[i].innerText + '-' + tds[i + 2].innerText;
-                    keyPasses[currentSeason] = {};
-                } else {
-                    if (tds[i].className === 'keyPassesTotal   ') {
-                        if (tds[i].innerText === '-') {
-                            keyPasses[currentSeason]['keyPasses'] = 0;
-                        } else {
-                            keyPasses[currentSeason]['keyPasses'] = parseInt(tds[i].innerText, 10);
-                        }
+        const tds = Array.from(document.querySelectorAll('#player-tournament-stats-detailed #top-player-stats-summary-grid tr td'));
+        for (let i = 0; i < tds.length; i++) {
+            if (tds[i].className === 'rank tournament') {
+                currentSeason = tds[i].innerText + '-' + tds[i + 2].innerText;
+                keyPasses[currentSeason] = {};
+            } else {
+                if (tds[i].className === 'keyPassesTotal   ') {
+                    if (tds[i].innerText === '-') {
+                        keyPasses[currentSeason]['keyPasses'] = 0;
+                    } else {
+                        keyPasses[currentSeason]['keyPasses'] = parseInt(tds[i].innerText, 10);
                     }
                 }
             }
@@ -485,19 +475,17 @@ let scrapeThroughBalls = async (page) => {
         // initialize data structure to store all scraped data
         let throughBalls = {};
         let currentSeason = '';
-        while (throughBalls[currentSeason] === undefined || Object.keys(throughBalls[currentSeason]).length === 0) {
-            const tds = Array.from(document.querySelectorAll('#player-tournament-stats-detailed #top-player-stats-summary-grid tr td'));
-            for (let i = 0; i < tds.length; i++) {
-                if (tds[i].className === 'rank tournament') {
-                    currentSeason = tds[i].innerText + '-' + tds[i + 2].innerText;
-                    throughBalls[currentSeason] = {};
-                } else {
-                    if (tds[i].className === 'keyPassThroughball   ') {
-                        if (tds[i].innerText === '-') {
-                            throughBalls[currentSeason]['throughBalls'] = 0;
-                        } else {
-                            throughBalls[currentSeason]['throughBalls'] = parseInt(tds[i].innerText, 10);
-                        }
+        const tds = Array.from(document.querySelectorAll('#player-tournament-stats-detailed #top-player-stats-summary-grid tr td'));
+        for (let i = 0; i < tds.length; i++) {
+            if (tds[i].className === 'rank tournament') {
+                currentSeason = tds[i].innerText + '-' + tds[i + 2].innerText;
+                throughBalls[currentSeason] = {};
+            } else {
+                if (tds[i].className === 'keyPassThroughball   ') {
+                    if (tds[i].innerText === '-') {
+                        throughBalls[currentSeason]['throughBalls'] = 0;
+                    } else {
+                        throughBalls[currentSeason]['throughBalls'] = parseInt(tds[i].innerText, 10);
                     }
                 }
             }
@@ -519,25 +507,23 @@ let scrapeTackles = async (page) => {
         // initialize data structure to store all scraped data
         let tackles = {};
         let currentSeason = '';
-        while (tackles[currentSeason] === undefined || tackles[currentSeason] === {}) {
-            const tds = Array.from(document.querySelectorAll('#player-tournament-stats-detailed #top-player-stats-summary-grid tr td'));
-            for (let i = 0; i < tds.length; i++) {
-                if (tds[i].className === 'rank tournament') {
-                    currentSeason = tds[i].innerText + '-' + tds[i + 2].innerText;
-                    tackles[currentSeason] = {};
-                } else {
-                    if (tds[i].className === 'tackleWonTotal   ') {
-                        if (tds[i].innerText === '-') {
-                            tackles[currentSeason]['tackles'] = 0;
-                        } else {
-                            tackles[currentSeason]['tackles'] = parseInt(tds[i].innerText, 10);
-                        }
-                    } else if (tds[i].className === 'challengeLost   ') {
-                        if (tds[i].innerText === '-') {
-                            tackles[currentSeason]['dribbledPast'] = 0;
-                        } else {
-                            tackles[currentSeason]['dribbledPast'] = parseInt(tds[i].innerText, 10);
-                        }
+        const tds = Array.from(document.querySelectorAll('#player-tournament-stats-detailed #top-player-stats-summary-grid tr td'));
+        for (let i = 0; i < tds.length; i++) {
+            if (tds[i].className === 'rank tournament') {
+                currentSeason = tds[i].innerText + '-' + tds[i + 2].innerText;
+                tackles[currentSeason] = {};
+            } else {
+                if (tds[i].className === 'tackleWonTotal   ') {
+                    if (tds[i].innerText === '-') {
+                        tackles[currentSeason]['tackles'] = 0;
+                    } else {
+                        tackles[currentSeason]['tackles'] = parseInt(tds[i].innerText, 10);
+                    }
+                } else if (tds[i].className === 'challengeLost   ') {
+                    if (tds[i].innerText === '-') {
+                        tackles[currentSeason]['dribbledPast'] = 0;
+                    } else {
+                        tackles[currentSeason]['dribbledPast'] = parseInt(tds[i].innerText, 10);
                     }
                 }
             }
@@ -559,19 +545,17 @@ let scrapeInterceptions = async (page) => {
         // initialize data structure to store all scraped data
         let interceptions = {};
         let currentSeason = '';
-        while (interceptions[currentSeason] === undefined || interceptions[currentSeason] === {}) {
-            const tds = Array.from(document.querySelectorAll('#player-tournament-stats-detailed #top-player-stats-summary-grid tr td'));
-            for (let i = 0; i < tds.length; i++) {
-                if (tds[i].className === 'rank tournament') {
-                    currentSeason = tds[i].innerText + '-' + tds[i + 2].innerText;
-                    interceptions[currentSeason] = {};
-                } else {
-                    if (tds[i].className === 'interceptionAll   ') {
-                        if (tds[i].innerText === '-') {
-                            interceptions[currentSeason]['interceptions'] = 0;
-                        } else {
-                            interceptions[currentSeason]['interceptions'] = parseInt(tds[i].innerText, 10);
-                        }
+        const tds = Array.from(document.querySelectorAll('#player-tournament-stats-detailed #top-player-stats-summary-grid tr td'));
+        for (let i = 0; i < tds.length; i++) {
+            if (tds[i].className === 'rank tournament') {
+                currentSeason = tds[i].innerText + '-' + tds[i + 2].innerText;
+                interceptions[currentSeason] = {};
+            } else {
+                if (tds[i].className === 'interceptionAll   ') {
+                    if (tds[i].innerText === '-') {
+                        interceptions[currentSeason]['interceptions'] = 0;
+                    } else {
+                        interceptions[currentSeason]['interceptions'] = parseInt(tds[i].innerText, 10);
                     }
                 }
             }
@@ -593,24 +577,22 @@ let scrapePossessionLosses = async (page) => {
         // initialize data structure to store all scraped data
         let possessionLosses = {};
         let currentSeason = '';
-        while (possessionLosses[currentSeason] === undefined || possessionLosses[currentSeason] === {}) {
-            const tds = Array.from(document.querySelectorAll('#player-tournament-stats-detailed #top-player-stats-summary-grid tr td'));
-            for (let i = 0; i < tds.length; i++) {
-                if (tds[i].className === 'rank tournament') {
-                    currentSeason = tds[i].innerText + '-' + tds[i + 2].innerText;
-                    possessionLosses[currentSeason] = {};
-                } else {
-                    if (tds[i].className === 'turnover   ') {
-                        let unsuccessfulTouches = tds[i].innerText;
-                        if (unsuccessfulTouches === '-') {
-                            unsuccessfulTouches = '0';
-                        }
-                        let dispossessions = tds[i + 1].innerText;
-                        if (dispossessions === '-') {
-                            dispossessions = '0';
-                        }
-                        possessionLosses[currentSeason]['possessionLosses'] = parseInt(unsuccessfulTouches, 10) + parseInt(dispossessions, 10);
+        const tds = Array.from(document.querySelectorAll('#player-tournament-stats-detailed #top-player-stats-summary-grid tr td'));
+        for (let i = 0; i < tds.length; i++) {
+            if (tds[i].className === 'rank tournament') {
+                currentSeason = tds[i].innerText + '-' + tds[i + 2].innerText;
+                possessionLosses[currentSeason] = {};
+            } else {
+                if (tds[i].className === 'turnover   ') {
+                    let unsuccessfulTouches = tds[i].innerText;
+                    if (unsuccessfulTouches === '-') {
+                        unsuccessfulTouches = '0';
                     }
+                    let dispossessions = tds[i + 1].innerText;
+                    if (dispossessions === '-') {
+                        dispossessions = '0';
+                    }
+                    possessionLosses[currentSeason]['possessionLosses'] = parseInt(unsuccessfulTouches, 10) + parseInt(dispossessions, 10);
                 }
             }
         }
@@ -631,19 +613,17 @@ let scrapeDribbles = async (page) => {
         // initialize data structure to store all scraped data
         let dribbles = {};
         let currentSeason = '';
-        while (dribbles[currentSeason] === undefined || dribbles[currentSeason] === {}) {
-            const tds = Array.from(document.querySelectorAll('#player-tournament-stats-detailed #top-player-stats-summary-grid tr td'));
-            for (let i = 0; i < tds.length; i++) {
-                if (tds[i].className === 'rank tournament') {
-                    currentSeason = tds[i].innerText + '-' + tds[i + 2].innerText;
-                    dribbles[currentSeason] = {};
-                } else {
-                    if (tds[i].className === 'dribbleWon   ') {
-                        if (tds[i].innerText === '-') {
-                            dribbles[currentSeason]['dribbles'] = 0;
-                        } else {
-                            dribbles[currentSeason]['dribbles'] = parseInt(tds[i].innerText, 10);
-                        }
+        const tds = Array.from(document.querySelectorAll('#player-tournament-stats-detailed #top-player-stats-summary-grid tr td'));
+        for (let i = 0; i < tds.length; i++) {
+            if (tds[i].className === 'rank tournament') {
+                currentSeason = tds[i].innerText + '-' + tds[i + 2].innerText;
+                dribbles[currentSeason] = {};
+            } else {
+                if (tds[i].className === 'dribbleWon   ') {
+                    if (tds[i].innerText === '-') {
+                        dribbles[currentSeason]['dribbles'] = 0;
+                    } else {
+                        dribbles[currentSeason]['dribbles'] = parseInt(tds[i].innerText, 10);
                     }
                 }
             }
@@ -665,19 +645,17 @@ let scrapeClearances = async (page) => {
         // initialize data structure to store all scraped data
         let clearances = {};
         let currentSeason = '';
-        while (clearances[currentSeason] === undefined || clearances[currentSeason] === {}) {
-            const tds = Array.from(document.querySelectorAll('#player-tournament-stats-detailed #top-player-stats-summary-grid tr td'));
-            for (let i = 0; i < tds.length; i++) {
-                if (tds[i].className === 'rank tournament') {
-                    currentSeason = tds[i].innerText + '-' + tds[i + 2].innerText;
-                    clearances[currentSeason] = {};
-                } else {
-                    if (tds[i].className === 'clearanceTotal   ') {
-                        if (tds[i].innerText === '-') {
-                            clearances[currentSeason]['clearances'] = 0;
-                        } else {
-                            clearances[currentSeason]['clearances'] = parseInt(tds[i].innerText, 10);
-                        }
+        const tds = Array.from(document.querySelectorAll('#player-tournament-stats-detailed #top-player-stats-summary-grid tr td'));
+        for (let i = 0; i < tds.length; i++) {
+            if (tds[i].className === 'rank tournament') {
+                currentSeason = tds[i].innerText + '-' + tds[i + 2].innerText;
+                clearances[currentSeason] = {};
+            } else {
+                if (tds[i].className === 'clearanceTotal   ') {
+                    if (tds[i].innerText === '-') {
+                        clearances[currentSeason]['clearances'] = 0;
+                    } else {
+                        clearances[currentSeason]['clearances'] = parseInt(tds[i].innerText, 10);
                     }
                 }
             }
@@ -699,25 +677,23 @@ let scrapeAerialDuels = async (page) => {
         // initialize data structure to store all scraped data
         let aerialDuels = {};
         let currentSeason = '';
-        while (aerialDuels[currentSeason] === undefined || aerialDuels[currentSeason] === {}) {
-            const tds = Array.from(document.querySelectorAll('#player-tournament-stats-detailed #top-player-stats-summary-grid tr td'));
-            for (let i = 0; i < tds.length; i++) {
-                if (tds[i].className === 'rank tournament') {
-                    currentSeason = tds[i].innerText + '-' + tds[i + 2].innerText;
-                    aerialDuels[currentSeason] = {};
-                } else {
-                    if (tds[i].className === 'duelAerialWon   ') {
-                        if (tds[i].innerText === '-') {
-                            aerialDuels[currentSeason]['succAerialDuels'] = 0;
-                        } else {
-                            aerialDuels[currentSeason]['succAerialDuels'] = parseInt(tds[i].innerText, 10);
-                        }
-                    } else if (tds[i].className === 'duelAerialTotal   ') {
-                        if (tds[i].innerText === '-') {
-                            aerialDuels[currentSeason]['totalAerialDuels'] = 0;
-                        } else {
-                            aerialDuels[currentSeason]['totalAerialDuels'] = parseInt(tds[i].innerText, 10);
-                        }
+        const tds = Array.from(document.querySelectorAll('#player-tournament-stats-detailed #top-player-stats-summary-grid tr td'));
+        for (let i = 0; i < tds.length; i++) {
+            if (tds[i].className === 'rank tournament') {
+                currentSeason = tds[i].innerText + '-' + tds[i + 2].innerText;
+                aerialDuels[currentSeason] = {};
+            } else {
+                if (tds[i].className === 'duelAerialWon   ') {
+                    if (tds[i].innerText === '-') {
+                        aerialDuels[currentSeason]['succAerialDuels'] = 0;
+                    } else {
+                        aerialDuels[currentSeason]['succAerialDuels'] = parseInt(tds[i].innerText, 10);
+                    }
+                } else if (tds[i].className === 'duelAerialTotal   ') {
+                    if (tds[i].innerText === '-') {
+                        aerialDuels[currentSeason]['totalAerialDuels'] = 0;
+                    } else {
+                        aerialDuels[currentSeason]['totalAerialDuels'] = parseInt(tds[i].innerText, 10);
                     }
                 }
             }
@@ -743,29 +719,27 @@ let scrapeCrosses = async (page) => {
         // initialize data structure to store all scraped data
         let crosses = {};
         let currentSeason = '';
-        while (crosses[currentSeason] === undefined || crosses[currentSeason] === {}) {
-            const tds = Array.from(document.querySelectorAll('#player-tournament-stats-detailed #top-player-stats-summary-grid tr td'));
-            for (let i = 0; i < tds.length; i++) {
-                if (tds[i].className === 'rank tournament') {
-                    currentSeason = tds[i].innerText + '-' + tds[i + 2].innerText;
-                    crosses[currentSeason] = {};
-                } else {
-                    if (tds[i].className === 'passCrossAccurate   ') {
-                        let successfulCrosses = tds[i].innerText;
-                        let unsuccessfulCrosses = tds[i + 1].innerText;
-                        if (successfulCrosses === "-") {
-                            successfulCrosses = 0;
-                        } else {
-                            successfulCrosses = parseInt(tds[i].innerText, 10);
-                        }
-                        if (unsuccessfulCrosses === "-") {
-                            unsuccessfulCrosses = 0;
-                        } else {
-                            unsuccessfulCrosses = parseInt(tds[i + 1].innerText, 10);
-                        }
-                        crosses[currentSeason]['succCrosses'] = successfulCrosses;
-                        crosses[currentSeason]['totalCrosses'] = successfulCrosses + unsuccessfulCrosses;
+        const tds = Array.from(document.querySelectorAll('#player-tournament-stats-detailed #top-player-stats-summary-grid tr td'));
+        for (let i = 0; i < tds.length; i++) {
+            if (tds[i].className === 'rank tournament') {
+                currentSeason = tds[i].innerText + '-' + tds[i + 2].innerText;
+                crosses[currentSeason] = {};
+            } else {
+                if (tds[i].className === 'passCrossAccurate   ') {
+                    let successfulCrosses = tds[i].innerText;
+                    let unsuccessfulCrosses = tds[i + 1].innerText;
+                    if (successfulCrosses === "-") {
+                        successfulCrosses = 0;
+                    } else {
+                        successfulCrosses = parseInt(tds[i].innerText, 10);
                     }
+                    if (unsuccessfulCrosses === "-") {
+                        unsuccessfulCrosses = 0;
+                    } else {
+                        unsuccessfulCrosses = parseInt(tds[i + 1].innerText, 10);
+                    }
+                    crosses[currentSeason]['succCrosses'] = successfulCrosses;
+                    crosses[currentSeason]['totalCrosses'] = successfulCrosses + unsuccessfulCrosses;
                 }
             }
         }
@@ -786,19 +760,17 @@ let scrapeFouls = async (page) => {
         // initialize data structure to store all scraped data
         let fouls = {};
         let currentSeason = '';
-        while (fouls[currentSeason] === undefined || fouls[currentSeason] === {}) {
-            const tds = Array.from(document.querySelectorAll('#player-tournament-stats-detailed #top-player-stats-summary-grid tr td'));
-            for (let i = 0; i < tds.length; i++) {
-                if (tds[i].className === 'rank tournament') {
-                    currentSeason = tds[i].innerText + '-' + tds[i + 2].innerText;
-                    fouls[currentSeason] = {};
-                } else {
-                    if (tds[i].className === 'foulCommitted   ') {
-                        if (tds[i].innerText === '-') {
-                            fouls[currentSeason]['fouls'] = 0;
-                        } else {
-                            fouls[currentSeason]['fouls'] = parseInt(tds[i].innerText, 10);
-                        }
+        const tds = Array.from(document.querySelectorAll('#player-tournament-stats-detailed #top-player-stats-summary-grid tr td'));
+        for (let i = 0; i < tds.length; i++) {
+            if (tds[i].className === 'rank tournament') {
+                currentSeason = tds[i].innerText + '-' + tds[i + 2].innerText;
+                fouls[currentSeason] = {};
+            } else {
+                if (tds[i].className === 'foulCommitted   ') {
+                    if (tds[i].innerText === '-') {
+                        fouls[currentSeason]['fouls'] = 0;
+                    } else {
+                        fouls[currentSeason]['fouls'] = parseInt(tds[i].innerText, 10);
                     }
                 }
             }
