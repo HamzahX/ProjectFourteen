@@ -30,15 +30,6 @@ let setup = async () => {
             ]
         });
         context = await browser.createIncognitoBrowserContext();
-        let page = await context.newPage();
-        let pages = await browser.pages();
-        pages[0].close();
-        // await disableImages(page);
-        await page.goto("https://www.whoscored.com", {waitUntil: 'networkidle0'});
-        let selector1 = '#qcCmpButtons > button:nth-child(2)';
-        await page.waitForSelector(selector1);
-        await page.evaluate((selector) => document.querySelector(selector).click(), selector1);
-        await page.waitForFunction('document.querySelector("body").class !== "qc-cmp-ui-showing"');
         console.timeEnd('browser launch');
         resolve(context);
     });
@@ -65,7 +56,9 @@ io.on('connection', function(socket){
         let page = await context.newPage();
         if (firstRequest){
             let pages = await browser.pages();
-            await pages[0].goto("about:blank", {waitUntil: 'networkidle0'});
+            await pages[0].close();
+            let blankPage = await context.newPage();
+            await blankPage.goto("about:blank", {waitUntil: 'networkidle0'});
             firstRequest = false;
         }
         getSearchResults(page, URL).then(async (searchResults) => {
@@ -91,7 +84,9 @@ io.on('connection', function(socket){
         let page = await context.newPage();
         if (firstRequest){
             let pages = await browser.pages();
-            await pages[0].goto("about:blank", {waitUntil: 'networkidle0'});
+            await pages[0].close();
+            let blankPage = await context.newPage();
+            await blankPage.goto("about:blank", {waitUntil: 'networkidle0'});
             firstRequest = false;
         }
         getStats(page, URL).then(async (rawData) => {
@@ -379,13 +374,18 @@ let scrapePasses = async (page) => {
                         if (accLB === '-') {
                             accLB = '0';
                         }
+                        let inAccLB = tds[i + 2].innerText;
+                        if (inAccLB === '-') {
+                            inAccLB = '0';
+                        }
                         let accSP = tds[i + 3].innerText;
                         if (accSP === '-') {
                             accSP = '0';
                         }
                         passes[currentSeason]['succPasses'] = parseInt(accLB, 10) + parseInt(accSP, 10);
                         passes[currentSeason]['totalPasses'] = totalPasses;
-                        passes[currentSeason]['longPasses'] = parseInt(accLB, 10)
+                        passes[currentSeason]['succLongPasses'] = parseInt(accLB, 10);
+                        passes[currentSeason]['totalLongPasses'] = parseInt(inAccLB, 10); + parseInt(accLB, 10);
                     }
                 }
             }
@@ -584,15 +584,11 @@ let scrapePossessionLosses = async (page) => {
                 possessionLosses[currentSeason] = {};
             } else {
                 if (tds[i].className === 'turnover   ') {
-                    let unsuccessfulTouches = tds[i].innerText;
-                    if (unsuccessfulTouches === '-') {
-                        unsuccessfulTouches = '0';
-                    }
                     let dispossessions = tds[i + 1].innerText;
                     if (dispossessions === '-') {
                         dispossessions = '0';
                     }
-                    possessionLosses[currentSeason]['possessionLosses'] = parseInt(unsuccessfulTouches, 10) + parseInt(dispossessions, 10);
+                    possessionLosses[currentSeason]['possessionLosses'] = parseInt(dispossessions, 10);
                 }
             }
         }
