@@ -1,6 +1,7 @@
 //initialize constants
 const puppeteer = require('puppeteer');
 const countryCodes = require('./serverUtils/countryCodes.js');
+const sampleResults = require('./serverUtils/sampleResults');
 const path = require('path');
 const express = require('express');
 const server = express();
@@ -20,7 +21,7 @@ let setup = async () => {
     return new Promise(async function(resolve, reject){
         console.time('browser launch');
         browser = await puppeteer.launch({
-            headless: true,
+            headless: false,
             args: [
                 '--no-sandbox',
                 '--disable-setuid-sandbox',
@@ -49,63 +50,66 @@ io.on('connection', function(socket){
 
     console.log("Number of users currently online: " + Object.keys(io.sockets.sockets).length);
 
-    socket.on('search', async(aQuery) => {
-        console.log(socket.id + " | Searching for: " + aQuery);
-        console.time(socket.id + " | Time taken to return search results");
-        let URL = "https://www.whoscored.com/Search/?t=" + aQuery.replace(' ', '+');
-        let page = await context.newPage();
-        if (firstRequest){
-            let pages = await browser.pages();
-            await pages[0].close();
-            let blankPage = await context.newPage();
-            await blankPage.goto("about:blank", {waitUntil: 'networkidle0'});
-            firstRequest = false;
-        }
-        getSearchResults(page, URL).then(async (searchResults) => {
-            console.timeEnd(socket.id + " | Time taken to return search results");
-            await page.close();
-            for (let i=0; i<searchResults.length; i++){
-                let countryISO = searchResults[i]["nationality"];
-                searchResults[i]["nationality"] = countryCodes.getCountryName(countryISO.toUpperCase());
+    socket.on('search', async(aQuery, isTest) => {
+        if (!isTest) {
+            console.log(socket.id + " | Searching for: " + aQuery);
+            console.time(socket.id + " | Time taken to return search results");
+            let URL = "https://www.whoscored.com/Search/?t=" + aQuery.replace(' ', '+');
+            let page = await context.newPage();
+            if (firstRequest) {
+                await handleFirstRequest();
             }
-
+            getSearchResults(page, URL).then(async (searchResults) => {
+                await page.close();
+                for (let i = 0; i < searchResults.length; i++) {
+                    let countryISO = searchResults[i]["nationality"];
+                    searchResults[i]["nationality"] = countryCodes.getCountryName(countryISO.toUpperCase());
+                }
+                console.timeEnd(socket.id + " | Time taken to return search results");
+                socket.emit('search results', searchResults);
+            }).catch(async (anError) => {
+                console.log(socket.id + " | " + anError);
+                await page.close();
+                socket.emit('alert error', anError.name);
+            });
+        }
+        else {
+            let searchResults = sampleResults.searchResults;
             socket.emit('search results', searchResults);
-        }).catch(async(anError) => {
-            console.log(socket.id + " | " + anError);
-            await page.close();
-            socket.emit('alert error', anError.name);
-        });
+        }
     });
 
-    socket.on('scrape stats', async(URL) => {
-        console.log(socket.id + " | Retrieving stats from: " + URL);
-        console.time(socket.id + " | Time taken to return stats");
-        let stats = {};
-        let page = await context.newPage();
-        if (firstRequest){
-            let pages = await browser.pages();
-            await pages[0].close();
-            let blankPage = await context.newPage();
-            await blankPage.goto("about:blank", {waitUntil: 'networkidle0'});
-            firstRequest = false;
-        }
-        getStats(page, URL).then(async (rawData) => {
-            await page.close();
-            for (let key in rawData[0]) {
-                stats[key] = {};
+    socket.on('scrape stats', async(URL, isTest) => {
+        if (!isTest) {
+            console.log(socket.id + " | Retrieving stats from: " + URL);
+            console.time(socket.id + " | Time taken to return stats");
+            let stats = {};
+            let page = await context.newPage();
+            if (firstRequest) {
+                await handleFirstRequest();
             }
-            for (let i = 0; i < rawData.length; i++) {
-                for (let key in rawData[i]) {
-                    Object.assign(stats[key], rawData[i][key]);
+            getStats(page, URL).then(async (rawData) => {
+                await page.close();
+                for (let key in rawData[0]) {
+                    stats[key] = {};
                 }
-            }
-            console.timeEnd(socket.id + " | Time taken to return stats");
+                for (let i = 0; i < rawData.length; i++) {
+                    for (let key in rawData[i]) {
+                        Object.assign(stats[key], rawData[i][key]);
+                    }
+                }
+                console.timeEnd(socket.id + " | Time taken to return stats");
+                socket.emit('stats scraped', stats);
+            }).catch(async (anError) => {
+                console.log(socket.id + " | " + anError);
+                await page.close();
+                socket.emit('alert error', anError.name);
+            });
+        }
+        else {
+            let stats = sampleResults.stats;
             socket.emit('stats scraped', stats);
-        }).catch(async(anError) => {
-            console.log(socket.id + " | " + anError);
-            await page.close();
-            socket.emit('alert error', anError.name);
-        });
+        }
     });
 
     socket.on('disconnect', function(){
@@ -113,6 +117,16 @@ io.on('connection', function(socket){
     })
 
 });
+
+let handleFirstRequest = async() => {
+
+    let pages = await browser.pages();
+    await pages[0].close();
+    let blankPage = await context.newPage();
+    await blankPage.goto("about:blank", {waitUntil: 'networkidle0'});
+    firstRequest = false;
+
+};
 
 let disableImages = async(page) => {
 
@@ -181,8 +195,6 @@ let pageSetup = async(page, URL) => {
 let getStats = async (page, URL) => {
 
     await pageSetup(page, URL);
-
-    //initialize data structure to hold all data
     let rawData = [];
 
     //TODO: Refactor this ugly piece of shit code
@@ -276,13 +288,12 @@ let scrapeGoalsAndMinutes = async (page) => {
     await page.waitForSelector('#player-tournament-stats-detailed #top-player-stats-summary-grid tr td:not(:empty)');
 
     return await page.evaluate(() => {
-        // initialize data structure to store all scraped data
         let goals = {};
         let currentSeason = '';
         const tds = Array.from(document.querySelectorAll('#player-tournament-stats-detailed #top-player-stats-summary-grid tr td'));
         for (let i = 0; i < tds.length; i++) {
             if (tds[i].className === 'rank tournament') {
-                currentSeason = tds[i].innerText + '-' + tds[i + 2].innerText;
+                currentSeason = tds[i].innerText + '|' + tds[i + 2].innerText + '|' + tds[i + 1].innerText;
                 goals[currentSeason] = {};
             } else {
                 if (tds[i].className === 'goalNormal   ') {
@@ -318,13 +329,12 @@ let scrapeShots = async (page) => {
     await page.waitForSelector('#player-tournament-stats-detailed #top-player-stats-summary-grid tr td:not(:empty)');
 
     return await page.evaluate(() => {
-        // initialize data structure to store all scraped data
         let shots = {};
         let currentSeason = '';
         const tds = Array.from(document.querySelectorAll('#player-tournament-stats-detailed #top-player-stats-summary-grid tr td'));
         for (let i = 0; i < tds.length; i++) {
             if (tds[i].className === 'rank tournament') {
-                currentSeason = tds[i].innerText + '-' + tds[i + 2].innerText;
+                currentSeason = tds[i].innerText + '|' + tds[i + 2].innerText + '|' + tds[i + 1].innerText;
                 shots[currentSeason] = {};
             } else {
                 if (tds[i].className === 'shotsTotal   ') {
@@ -355,13 +365,12 @@ let scrapePasses = async (page) => {
     await page.waitForSelector('#player-tournament-stats-detailed #top-player-stats-summary-grid tr td:not(:empty)');
 
     return await page.evaluate(() => {
-        // initialize data structure to store all scraped data
         let passes = {};
         let currentSeason = '';
         const tds = Array.from(document.querySelectorAll('#player-tournament-stats-detailed #top-player-stats-summary-grid tr td'));
         for (let i = 0; i < tds.length; i++) {
             if (tds[i].className === 'rank tournament') {
-                currentSeason = tds[i].innerText + '-' + tds[i + 2].innerText;
+                currentSeason = tds[i].innerText + '|' + tds[i + 2].innerText + '|' + tds[i + 1].innerText;
                 passes[currentSeason] = {};
             } else {
                 if (tds[i].className === 'passTotal   ') {
@@ -385,7 +394,7 @@ let scrapePasses = async (page) => {
                         passes[currentSeason]['succPasses'] = parseInt(accLB, 10) + parseInt(accSP, 10);
                         passes[currentSeason]['totalPasses'] = totalPasses;
                         passes[currentSeason]['succLongPasses'] = parseInt(accLB, 10);
-                        passes[currentSeason]['totalLongPasses'] = parseInt(inAccLB, 10); + parseInt(accLB, 10);
+                        passes[currentSeason]['totalLongPasses'] = parseInt(inAccLB, 10) + parseInt(accLB, 10);
                     }
                 }
             }
@@ -404,13 +413,12 @@ let scrapeAssists = async (page) => {
     await page.waitForSelector('#player-tournament-stats-detailed #top-player-stats-summary-grid tr td:not(:empty)');
 
     return await page.evaluate(() => {
-        // initialize data structure to store all scraped data
         let assists = {};
         let currentSeason = '';
         const tds = Array.from(document.querySelectorAll('#player-tournament-stats-detailed #top-player-stats-summary-grid tr td'));
         for (let i = 0; i < tds.length; i++) {
             if (tds[i].className === 'rank tournament') {
-                currentSeason = tds[i].innerText + '-' + tds[i + 2].innerText;
+                currentSeason = tds[i].innerText + '|' + tds[i + 2].innerText + '|' + tds[i + 1].innerText;
                 assists[currentSeason] = {};
             } else {
                 if (tds[i].className === 'assist   ') {
@@ -436,13 +444,12 @@ let scrapeKeyPasses = async (page) => {
     await page.waitForSelector('#player-tournament-stats-detailed #top-player-stats-summary-grid tr td:not(:empty)');
 
     return await page.evaluate(() => {
-        // initialize data structure to store all scraped data
         let keyPasses = {};
         let currentSeason = '';
         const tds = Array.from(document.querySelectorAll('#player-tournament-stats-detailed #top-player-stats-summary-grid tr td'));
         for (let i = 0; i < tds.length; i++) {
             if (tds[i].className === 'rank tournament') {
-                currentSeason = tds[i].innerText + '-' + tds[i + 2].innerText;
+                currentSeason = tds[i].innerText + '|' + tds[i + 2].innerText + '|' + tds[i + 1].innerText;
                 keyPasses[currentSeason] = {};
             } else {
                 if (tds[i].className === 'keyPassesTotal   ') {
@@ -472,13 +479,12 @@ let scrapeThroughBalls = async (page) => {
     await page.waitForSelector('#player-tournament-stats-detailed #top-player-stats-summary-grid tr td:not(:empty)');
 
     return await page.evaluate(() => {
-        // initialize data structure to store all scraped data
         let throughBalls = {};
         let currentSeason = '';
         const tds = Array.from(document.querySelectorAll('#player-tournament-stats-detailed #top-player-stats-summary-grid tr td'));
         for (let i = 0; i < tds.length; i++) {
             if (tds[i].className === 'rank tournament') {
-                currentSeason = tds[i].innerText + '-' + tds[i + 2].innerText;
+                currentSeason = tds[i].innerText + '|' + tds[i + 2].innerText + '|' + tds[i + 1].innerText;
                 throughBalls[currentSeason] = {};
             } else {
                 if (tds[i].className === 'keyPassThroughball   ') {
@@ -504,13 +510,12 @@ let scrapeTackles = async (page) => {
     await page.waitForSelector('#player-tournament-stats-detailed #top-player-stats-summary-grid tr td:not(:empty)');
 
     return await page.evaluate(() => {
-        // initialize data structure to store all scraped data
         let tackles = {};
         let currentSeason = '';
         const tds = Array.from(document.querySelectorAll('#player-tournament-stats-detailed #top-player-stats-summary-grid tr td'));
         for (let i = 0; i < tds.length; i++) {
             if (tds[i].className === 'rank tournament') {
-                currentSeason = tds[i].innerText + '-' + tds[i + 2].innerText;
+                currentSeason = tds[i].innerText + '|' + tds[i + 2].innerText + '|' + tds[i + 1].innerText;
                 tackles[currentSeason] = {};
             } else {
                 if (tds[i].className === 'tackleWonTotal   ') {
@@ -542,13 +547,12 @@ let scrapeInterceptions = async (page) => {
     await page.waitForSelector('#player-tournament-stats-detailed #top-player-stats-summary-grid tr td:not(:empty)');
 
     return await page.evaluate(() => {
-        // initialize data structure to store all scraped data
         let interceptions = {};
         let currentSeason = '';
         const tds = Array.from(document.querySelectorAll('#player-tournament-stats-detailed #top-player-stats-summary-grid tr td'));
         for (let i = 0; i < tds.length; i++) {
             if (tds[i].className === 'rank tournament') {
-                currentSeason = tds[i].innerText + '-' + tds[i + 2].innerText;
+                currentSeason = tds[i].innerText + '|' + tds[i + 2].innerText + '|' + tds[i + 1].innerText;
                 interceptions[currentSeason] = {};
             } else {
                 if (tds[i].className === 'interceptionAll   ') {
@@ -574,13 +578,12 @@ let scrapePossessionLosses = async (page) => {
     await page.waitForSelector('#player-tournament-stats-detailed #top-player-stats-summary-grid tr td:not(:empty)');
 
     return await page.evaluate(() => {
-        // initialize data structure to store all scraped data
         let possessionLosses = {};
         let currentSeason = '';
         const tds = Array.from(document.querySelectorAll('#player-tournament-stats-detailed #top-player-stats-summary-grid tr td'));
         for (let i = 0; i < tds.length; i++) {
             if (tds[i].className === 'rank tournament') {
-                currentSeason = tds[i].innerText + '-' + tds[i + 2].innerText;
+                currentSeason = tds[i].innerText + '|' + tds[i + 2].innerText + '|' + tds[i + 1].innerText;
                 possessionLosses[currentSeason] = {};
             } else {
                 if (tds[i].className === 'turnover   ') {
@@ -606,13 +609,12 @@ let scrapeDribbles = async (page) => {
     await page.waitForSelector('#player-tournament-stats-detailed #top-player-stats-summary-grid tr td:not(:empty)');
 
     return await page.evaluate(() => {
-        // initialize data structure to store all scraped data
         let dribbles = {};
         let currentSeason = '';
         const tds = Array.from(document.querySelectorAll('#player-tournament-stats-detailed #top-player-stats-summary-grid tr td'));
         for (let i = 0; i < tds.length; i++) {
             if (tds[i].className === 'rank tournament') {
-                currentSeason = tds[i].innerText + '-' + tds[i + 2].innerText;
+                currentSeason = tds[i].innerText + '|' + tds[i + 2].innerText + '|' + tds[i + 1].innerText;
                 dribbles[currentSeason] = {};
             } else {
                 if (tds[i].className === 'dribbleWon   ') {
@@ -638,13 +640,12 @@ let scrapeClearances = async (page) => {
     await page.waitForSelector('#player-tournament-stats-detailed #top-player-stats-summary-grid tr td:not(:empty)');
 
     return await page.evaluate(() => {
-        // initialize data structure to store all scraped data
         let clearances = {};
         let currentSeason = '';
         const tds = Array.from(document.querySelectorAll('#player-tournament-stats-detailed #top-player-stats-summary-grid tr td'));
         for (let i = 0; i < tds.length; i++) {
             if (tds[i].className === 'rank tournament') {
-                currentSeason = tds[i].innerText + '-' + tds[i + 2].innerText;
+                currentSeason = tds[i].innerText + '|' + tds[i + 2].innerText + '|' + tds[i + 1].innerText;
                 clearances[currentSeason] = {};
             } else {
                 if (tds[i].className === 'clearanceTotal   ') {
@@ -670,13 +671,12 @@ let scrapeAerialDuels = async (page) => {
     await page.waitForSelector('#player-tournament-stats-detailed #top-player-stats-summary-grid tr td:not(:empty)');
 
     return await page.evaluate(() => {
-        // initialize data structure to store all scraped data
         let aerialDuels = {};
         let currentSeason = '';
         const tds = Array.from(document.querySelectorAll('#player-tournament-stats-detailed #top-player-stats-summary-grid tr td'));
         for (let i = 0; i < tds.length; i++) {
             if (tds[i].className === 'rank tournament') {
-                currentSeason = tds[i].innerText + '-' + tds[i + 2].innerText;
+                currentSeason = tds[i].innerText + '|' + tds[i + 2].innerText + '|' + tds[i + 1].innerText;
                 aerialDuels[currentSeason] = {};
             } else {
                 if (tds[i].className === 'duelAerialWon   ') {
@@ -712,13 +712,12 @@ let scrapeCrosses = async (page) => {
     await page.waitForSelector('#player-tournament-stats-detailed #top-player-stats-summary-grid tr td:not(:empty)');
 
     return await page.evaluate(() => {
-        // initialize data structure to store all scraped data
         let crosses = {};
         let currentSeason = '';
         const tds = Array.from(document.querySelectorAll('#player-tournament-stats-detailed #top-player-stats-summary-grid tr td'));
         for (let i = 0; i < tds.length; i++) {
             if (tds[i].className === 'rank tournament') {
-                currentSeason = tds[i].innerText + '-' + tds[i + 2].innerText;
+                currentSeason = tds[i].innerText + '|' + tds[i + 2].innerText + '|' + tds[i + 1].innerText;
                 crosses[currentSeason] = {};
             } else {
                 if (tds[i].className === 'passCrossAccurate   ') {
@@ -753,13 +752,12 @@ let scrapeFouls = async (page) => {
     await page.waitForSelector('#player-tournament-stats-detailed #top-player-stats-summary-grid tr td:not(:empty)');
 
     return await page.evaluate(() => {
-        // initialize data structure to store all scraped data
         let fouls = {};
         let currentSeason = '';
         const tds = Array.from(document.querySelectorAll('#player-tournament-stats-detailed #top-player-stats-summary-grid tr td'));
         for (let i = 0; i < tds.length; i++) {
             if (tds[i].className === 'rank tournament') {
-                currentSeason = tds[i].innerText + '-' + tds[i + 2].innerText;
+                currentSeason = tds[i].innerText + '|' + tds[i + 2].innerText + '|' + tds[i + 1].innerText;
                 fouls[currentSeason] = {};
             } else {
                 if (tds[i].className === 'foulCommitted   ') {

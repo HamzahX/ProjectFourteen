@@ -2,8 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e889636d-fdc9-4b77-9962-9f42b1dfd172" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/serverUtils/sampleResults.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/scripts/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/scripts/script.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/styles/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/styles/style.css" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -16,11 +20,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="514">
-              <caret line="387" column="112" selection-start-line="387" selection-start-column="112" selection-end-line="387" selection-end-column="112" />
+            <state relative-caret-position="10931">
+              <caret line="760" column="42" lean-forward="true" selection-start-line="760" selection-start-column="42" selection-end-line="760" selection-end-column="42" />
             </state>
           </provider>
         </entry>
@@ -28,17 +32,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="24" column="11" selection-start-line="24" selection-start-column="11" selection-end-line="24" selection-end-column="11" />
+            <state relative-caret-position="554">
+              <caret line="46" column="45" lean-forward="true" selection-start-line="46" selection-start-column="45" selection-end-line="46" selection-end-column="45" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/scripts/script.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="357" column="23" lean-forward="true" selection-start-line="357" selection-start-column="23" selection-end-line="357" selection-end-column="23" />
+            <state relative-caret-position="238">
+              <caret line="14" column="18" selection-start-line="14" selection-start-column="18" selection-end-line="14" selection-end-column="18" />
               <folding>
                 <element signature="n#style#0;n#div#3;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
@@ -50,8 +54,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/styles/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2397">
-              <caret line="141" column="34" selection-start-line="141" selection-start-column="34" selection-end-line="141" selection-end-column="34" />
+            <state relative-caret-position="442">
+              <caret line="163" lean-forward="true" selection-start-line="163" selection-end-line="163" />
             </state>
           </provider>
         </entry>
@@ -62,8 +66,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="HTML File" />
-        <option value="JavaScript File" />
         <option value="package.json" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -92,6 +96,10 @@
       <find>: auto</find>
       <find>flex: 1 1</find>
       <find>button</find>
+      <find>Defender</find>
+      <find>currentSeason = tds[i].innerText + '-' + tds[i + 2].innerText + '-' + tds[i + 1].innerText;</find>
+      <find>currentSeason = tds[i].innerText + '|' + tds[i + 2].innerText + '|' + tds[i + 1].innerText;</find>
+      <find>// initialize data structure to store all scraped data</find>
     </findStrings>
     <replaceStrings>
       <replace>'</replace>
@@ -104,6 +112,9 @@
       <replace>reject(anError)</replace>
       <replace>: auto</replace>
       <replace>flex: 0 0</replace>
+      <replace>currentSeason = tds[i].innerText + ' | ' + tds[i + 2].innerText + ' | ' + tds[i + 1].innerText;</replace>
+      <replace>currentSeason = tds[i].innerText + '|' + tds[i + 2].innerText + '|' + tds[i + 1].innerText;</replace>
+      <replace>Centerback</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -119,14 +130,15 @@
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/gitignore" />
         <option value="$PROJECT_DIR$/public/index.html" />
-        <option value="$PROJECT_DIR$/public/styles/style.css" />
+        <option value="$PROJECT_DIR$/serverUtils/sampleResults.js" />
         <option value="$PROJECT_DIR$/index.js" />
+        <option value="$PROJECT_DIR$/public/styles/style.css" />
         <option value="$PROJECT_DIR$/public/scripts/script.js" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-7" />
+    <option name="x" value="953" />
     <option name="width" value="974" />
     <option name="height" value="1057" />
   </component>
@@ -153,6 +165,11 @@
               <item name="UnderTheRadar" type="462c0819:PsiDirectoryNode" />
               <item name="public" type="462c0819:PsiDirectoryNode" />
               <item name="scripts" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="UnderTheRadar" type="b2602c69:ProjectViewProjectNode" />
+              <item name="UnderTheRadar" type="462c0819:PsiDirectoryNode" />
+              <item name="serverUtils" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -228,12 +245,12 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="468411000" />
+    <option name="totallyTimeSpent" value="496457000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.015806112" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.10906217" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -263,13 +280,6 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/routes/users.js" />
     <entry file="file://$PROJECT_DIR$/routes/index.js" />
-    <entry file="file://$PROJECT_DIR$/serverUtils/countryCodes.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1042">
-          <caret line="167" column="18" selection-start-line="167" selection-start-column="18" selection-end-line="167" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/package-lock.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="237">
@@ -291,35 +301,49 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/styles/style.css">
+    <entry file="file://$PROJECT_DIR$/serverUtils/countryCodes.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2397">
-          <caret line="141" column="34" selection-start-line="141" selection-start-column="34" selection-end-line="141" selection-end-column="34" />
+        <state relative-caret-position="520">
+          <caret line="259" column="8" selection-start-line="259" selection-end-line="261" selection-end-column="2" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.js">
+    <entry file="file://$PROJECT_DIR$/serverUtils/sampleResults.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="514">
-          <caret line="387" column="112" selection-start-line="387" selection-start-column="112" selection-end-line="387" selection-end-column="112" />
+        <state relative-caret-position="15368">
+          <caret line="904" column="29" lean-forward="true" selection-start-line="904" selection-start-column="29" selection-end-line="904" selection-end-column="29" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="24" column="11" selection-start-line="24" selection-start-column="11" selection-end-line="24" selection-end-column="11" />
+        <state relative-caret-position="554">
+          <caret line="46" column="45" lean-forward="true" selection-start-line="46" selection-start-column="45" selection-end-line="46" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/styles/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="163" lean-forward="true" selection-start-line="163" selection-end-line="163" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/scripts/script.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="357" column="23" lean-forward="true" selection-start-line="357" selection-start-column="23" selection-end-line="357" selection-end-column="23" />
+        <state relative-caret-position="238">
+          <caret line="14" column="18" selection-start-line="14" selection-start-column="18" selection-end-line="14" selection-end-column="18" />
           <folding>
             <element signature="n#style#0;n#div#3;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="10931">
+          <caret line="760" column="42" lean-forward="true" selection-start-line="760" selection-start-column="42" selection-end-line="760" selection-end-column="42" />
         </state>
       </provider>
     </entry>

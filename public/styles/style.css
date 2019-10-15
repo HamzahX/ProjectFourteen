@@ -19,6 +19,14 @@ input {
     border: darkgrey 1px solid;
 }
 
+input[type=radio] {
+    transform: scale(1.2);
+}
+
+input[type=checkbox] {
+    transform: scale(1.25);
+}
+
 input:hover {
     border: grey 1px solid;
 }
@@ -34,6 +42,7 @@ h2 {
 
 h3 {
     font-size: 1.2em;
+    margin-bottom: 10px;
 }
 
 .highcharts-data-table{
@@ -140,7 +149,7 @@ h3 {
 
                 .search-result:hover, .search-result:focus {
                     outline: none;
-                    box-shadow: 0 3px 3px lightgray;
+                    box-shadow: 0 0 6px darkgray;
                 }
 
                 .search-result .name{
@@ -164,8 +173,9 @@ h3 {
 
             #options {
                 flex: 1 1 70%;
-                padding: 0 20px;
+                padding: 0 20px 15px;
                 border: darkgrey 1px solid;
+                white-space: nowrap;
                 overflow-y: auto;
             }
 
@@ -178,12 +188,16 @@ h3 {
 
                     #options form label {
                         display: block;
-                        margin-bottom: 20px;
+                        margin-bottom: 5px;
+                        padding: 5px;
+                    }
+
+                    #options form label:hover {
+                        box-shadow: 0 0 6px lightgray;
                     }
 
             #filter-buttons {
                 flex: 1 1 30%;
-
                 display: flex;
                 flex-direction: column;
             }
@@ -227,6 +241,11 @@ h3 {
 .highcharts-yaxis-labels text {
     font-family: "Lucida Grande", Helvetica, Arial, sans-serif;
     opacity: 1;
+}
+@media (max-width: 1500px){
+    #search-results {
+        grid-template-columns: 1fr 1fr;
+    }
 }
 
 @media (max-width: 800px), (pointer:none), (pointer:coarse) {
@@ -276,8 +295,9 @@ h3 {
                 -moz-column-count: 2;
             }
 
-                #options form input {
-                    display: inline-block;
+                #options form label {
+                    /*display: inline-block;*/
+                    break-inside: avoid-column;
                 }
 
         #filter-buttons {

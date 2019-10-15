@@ -12,6 +12,8 @@ let subtitle;
 let categories;
 let yAxis;
 
+let isTest = false;
+
 socket.on('search results', function(results){
     let searchResults = $('#search-results');
     $('.search-filter-input').empty();
@@ -39,7 +41,7 @@ socket.on('stats scraped', function(scrapedStats){
     console.log(stats);
     competitions = Object.keys(stats);
     for (let i=0; i<competitions.length; i++){
-        $('#competitions').append('<label><input class="competition" type="checkbox" value=' + competitions[i] + ' onchange="updateRadar(false)" checked> ' + competitions[i] + '</label>');
+        $('#competitions').append('<label><input class="competition" type="checkbox" value="' + competitions[i] + '" onchange="updateRadar(false)" checked> ' + competitions[i].split("|").join("<br>") + '</label>');
     }
     $('#radar').empty();
     $("#loading-screen").css("display", "none");
@@ -59,7 +61,7 @@ function search(){
         $("#search-screen").css("display", "none");
         $("#content-screen").css("display", "none");
         drawLoadingScreen("search");
-        socket.emit('search', query);
+        socket.emit('search', query, isTest);
     }
 }
 
@@ -74,7 +76,7 @@ function getStats(elem){
     let url = $(elem).find('.url').text();
     $("#search-screen").css("display", "none");
     drawLoadingScreen("getStats");
-    socket.emit('scrape stats', url);
+    socket.emit('scrape stats', url, isTest);
 }
 
 function drawLoadingScreen(type, anError=""){
@@ -114,36 +116,41 @@ function updateRadar(isNew = true){
     let filteredStats = filterStats(stats);
     if (Object.keys(filteredStats).length === 0){
         if (dataTable.length){
-            dataTable.empty();
+            dataTable.css("opacity", 0);
         }
         subtitle = '';
         drawRadar([]);
         $(".highcharts-axis-line").attr("stroke-width", "0");
     }
     else {
+        dataTable.css("opacity", 1);
         let selectedStats;
         switch (template){
             case 'FW':
                 selectedStats = calculateForwardStats(filteredStats);
                 setForwardTemplate();
+                subtitle = 'FW / AM Template | Sample size: ';
                 break;
             case 'MF':
                 selectedStats = calculateMidfielderStats(filteredStats);
                 setMidfieldTemplate();
+                subtitle = 'CM / DM Template | Sample size: ';
                 break;
             case 'FB':
                 selectedStats = calculateFullbackStats(filteredStats);
                 setFullbackTemplate();
+                subtitle = 'FB Template | Sample size: ';
                 break;
-            case 'DF':
-                selectedStats = calculateDefenderStats(filteredStats);
-                setDefenderTemplate();
+            case 'CB':
+                selectedStats = calculateCenterbackStats(filteredStats);
+                setCenterbackTemplate();
+                subtitle = 'FW / AM Template | Sample size: ';
                 break;
         }
         if (isNew) {
             if (dataTable.length){
                 dataTable.remove();
-                drawRadar(selectedStats, subtitle, categories, yAxis);
+                drawRadar(selectedStats);
                 radar.viewData();
                 radar.reflow();
             }
@@ -160,6 +167,7 @@ function updateRadar(isNew = true){
                 radar.viewData();
             }
         }
+        radar.setTitle(null, { text: subtitle + filteredStats['minutes'].toLocaleString() + ' minutes'});
     }
 }
 
@@ -198,7 +206,6 @@ function calculateForwardStats(filteredStats){
 function calculateMidfielderStats(filteredStats){
     let statsPer90 = {};
     statsPer90['passingPct'] = (filteredStats['succPasses'] / filteredStats['totalPasses']) * 100;
-    statsPer90['assists'] = filteredStats['assists'] / (filteredStats['minutes']/90);
     statsPer90['keyPasses'] = filteredStats['keyPasses'] / (filteredStats['minutes']/90);
     statsPer90['throughBalls'] = filteredStats['throughBalls'] / (filteredStats['minutes']/90);
     statsPer90['goalsPlusAssists'] = (filteredStats['goals'] + filteredStats['assists']) / (filteredStats['minutes']/90);
@@ -231,7 +238,7 @@ function calculateFullbackStats(filteredStats){
     return Object.values(statsPer90);
 }
 
-function calculateDefenderStats(filteredStats){
+function calculateCenterbackStats(filteredStats){
     let statsPer90 = {};
     statsPer90['passingPct'] = (filteredStats['succPasses'] / filteredStats['totalPasses']) * 100;
     statsPer90['tacklePct'] = (filteredStats['tackles'] / (filteredStats['tackles'] + filteredStats['dribbledPast'])) *100;
@@ -255,7 +262,6 @@ function roundTo2Decimals(someStats){
 }
 
 function setForwardTemplate(){
-    subtitle = 'FW / AM Template  |  per 90';
     categories = [
         'Non-Penalty Goals',
         'Non-Penalty Shots',
@@ -283,7 +289,6 @@ function setForwardTemplate(){
 }
 
 function setMidfieldTemplate(){
-    subtitle = 'CM / DM Template  |  per 90';
     categories = [
         '% Passes Completed',
         'Key Passes',
@@ -301,9 +306,9 @@ function setMidfieldTemplate(){
         {softMin: 60, softMax: 100, maxPadding: 0, endOnTick: false, tickPositions: [60, 70, 80, 90, 100], showFirstLabel: false, showLastLabel: true, labels: {style: {fontSize: "13px"}}},
         {softMin: 0, softMax: 3, maxPadding: 0, endOnTick: false, tickPositions: [0, 0.75, 1.5, 2.25, 3], showFirstLabel: false, showLastLabel: true, labels: {style: {fontSize: "13px"}}},
         {softMin: 0, softMax: 0.4, maxPadding: 0, endOnTick: false, tickPositions: [0, 0.1, 0.2, 0.3, 0.4], showFirstLabel: false, showLastLabel: true, labels: {style: {fontSize: "13px"}}},
-        {softMin: 0, softMax: 0.4, maxPadding: 0, endOnTick: false, tickPositions: [0, 0.15, 0.3, 0.45, 0.6], showFirstLabel: false, showLastLabel: true, labels: {style: {fontSize: "13px"}}},
+        {softMin: 0, softMax: 0.6, maxPadding: 0, endOnTick: false, tickPositions: [0, 0.15, 0.3, 0.45, 0.6], showFirstLabel: false, showLastLabel: true, labels: {style: {fontSize: "13px"}}},
         {softMin: 0, softMax: 3, maxPadding: 0, endOnTick: false, tickPositions: [0, 0.75, 1.5, 2.25, 3], showFirstLabel: false, showLastLabel: true, labels: {style: {fontSize: "13px"}}},
-        {softMin: 0, softMax: 2, reversed: true, maxPadding: 0, endOnTick: false, tickPositions: [0, 0.5, 1, 1.5, 1], showFirstLabel: true, showLastLabel: false, labels: {style: {fontSize: "13px"}}},
+        {softMin: 0, softMax: 2, reversed: true, maxPadding: 0, endOnTick: false, tickPositions: [0, 0.5, 1, 1.5, 2], showFirstLabel: true, showLastLabel: false, labels: {style: {fontSize: "13px"}}},
         {softMin: 0, softMax: 2, reversed: true, maxPadding: 0, endOnTick: false, tickPositions: [0, 0.5, 1, 1.5, 2], showFirstLabel: true, showLastLabel: false, labels: {style: {fontSize: "13px"}}},
         {softMin: 35, softMax: 75, maxPadding: 0, endOnTick: false, tickPositions: [35, 45, 55, 65, 75], showFirstLabel: false, showLastLabel: true, labels: {style: {fontSize: "13px"}}},
         {softMin: 0, softMax: 4, maxPadding: 0, endOnTick: false, tickPositions: [0, 1, 2, 3, 4], showFirstLabel: false, showLastLabel: true, labels: {style: {fontSize: "13px"}}},
@@ -313,7 +318,6 @@ function setMidfieldTemplate(){
 }
 
 function setFullbackTemplate(){
-    subtitle = 'FB Template  |  per 90';
     categories = [
         'Tackles Won',
         'Interceptions',
@@ -344,8 +348,7 @@ function setFullbackTemplate(){
     ];
 }
 
-function setDefenderTemplate(){
-    subtitle = 'CB Template  |  per 90';
+function setCenterbackTemplate(){
     categories = [
         '% Passes Completed',
         '% Tackles Won',
@@ -428,7 +431,7 @@ function drawRadar(selectedStats){
             }
         },
         subtitle: {
-            text: subtitle,
+            text: '|',
             style: {
                 fontSize: '1.5em'
             }
@@ -500,9 +503,9 @@ function selectAllSeasons(){
 function clearAllSeasons(){
     let dataTable = $('.highcharts-data-table');
     $('input:checkbox').prop("checked", false);
-    if (dataTable.length){
-        dataTable.empty();
-    }
+    // if (dataTable.length){
+    //     dataTable.css("opacity", 0);
+    // }
     updateRadar();
 }
 
