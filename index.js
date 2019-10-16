@@ -21,13 +21,10 @@ let setup = async () => {
     return new Promise(async function(resolve, reject){
         console.time('browser launch');
         browser = await puppeteer.launch({
-            headless: true,
+            headless: false,
             args: [
                 '--no-sandbox',
-                '--disable-setuid-sandbox',
-                '--disable-dev-shm-usage',
-                '--disable-accelerated-2d-canvas',
-                '--disable-gpu',
+                '--disable-setuid-sandbox'
             ]
         });
         context = await browser.createIncognitoBrowserContext();
