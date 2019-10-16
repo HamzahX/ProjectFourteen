@@ -22,7 +22,7 @@ let setup = async () => {
         console.time('browser launch');
         browser = await puppeteer.launch({
             headless: false,
-            args: ["--no-sandbox", "--disable-setuid-sandbox"]
+            args: ["--no-sandbox", "--disable-setuid-sandbox", '--disable-gpu']
         });
         context = await browser.createIncognitoBrowserContext();
         console.timeEnd('browser launch');
