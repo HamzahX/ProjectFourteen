@@ -20,13 +20,7 @@ let setup = async () => {
         console.time('browser launch');
         browser = await puppeteer.launch({
             headless: false,
-            args: [
-                '--no-sandbox',
-                '--disable-setuid-sandbox',
-                '--disable-dev-shm-usage',
-                '--disable-accelerated-2d-canvas',
-                '--disable-gpu',
-            ]
+            args: ["--no-sandbox", "--disable-setuid-sandbox", '--disable-gpu']
         });
         context = await browser.createIncognitoBrowserContext();
         let blankPage = await context.newPage();
