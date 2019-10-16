@@ -317,7 +317,7 @@ const searchResults = [ { name: 'Ronaldo',
         URL:
             'https://www.whoscored.com/Players/336896/History/Ronaldo-Pah-Paul' } ];
 
-const stats = { '2019/2020|ISA|Juventus':
+const stats = { '2019/2020 - ISA|Juventus':
         { minutes: 540,
             goals: 2,
             shots: 35,
@@ -339,7 +339,7 @@ const stats = { '2019/2020|ISA|Juventus':
             succCrosses: 0,
             totalCrosses: 3,
             fouls: 1 },
-    '2019/2020|UCL|Juventus':
+    '2019/2020 - UCL|Juventus':
         { minutes: 180,
             goals: 1,
             shots: 8,
@@ -361,7 +361,7 @@ const stats = { '2019/2020|ISA|Juventus':
             succCrosses: 0,
             totalCrosses: 5,
             fouls: 2 },
-    '2018/2019|ISA|Juventus':
+    '2018/2019 - ISA|Juventus':
         { minutes: 2689,
             goals: 16,
             shots: 171,
@@ -383,7 +383,7 @@ const stats = { '2019/2020|ISA|Juventus':
             succCrosses: 17,
             totalCrosses: 58,
             fouls: 19 },
-    '2018/2019|UCL|Juventus':
+    '2018/2019 - UCL|Juventus':
         { minutes: 749,
             goals: 5,
             shots: 47,
@@ -405,7 +405,7 @@ const stats = { '2019/2020|ISA|Juventus':
             succCrosses: 2,
             totalCrosses: 19,
             fouls: 7 },
-    '2018/2019|UNL|Portugal':
+    '2018/2019 - UNL|Portugal':
         { minutes: 180,
             goals: 3,
             shots: 8,
@@ -427,7 +427,7 @@ const stats = { '2019/2020|ISA|Juventus':
             succCrosses: 0,
             totalCrosses: 2,
             fouls: 1 },
-    '2017/2018|SLL|Real Madrid':
+    '2017/2018 - SLL|Real Madrid':
         { minutes: 2293,
             goals: 23,
             shots: 174,
@@ -449,7 +449,7 @@ const stats = { '2019/2020|ISA|Juventus':
             succCrosses: 7,
             totalCrosses: 34,
             fouls: 19 },
-    '2017/2018|UCL|Real Madrid':
+    '2017/2018 - UCL|Real Madrid':
         { minutes: 1170,
             goals: 11,
             shots: 78,
@@ -471,7 +471,7 @@ const stats = { '2019/2020|ISA|Juventus':
             succCrosses: 1,
             totalCrosses: 12,
             fouls: 6 },
-    '2016/2017|SLL|Real Madrid':
+    '2016/2017 - SLL|Real Madrid':
         { minutes: 2544,
             goals: 19,
             shots: 154,
@@ -493,7 +493,7 @@ const stats = { '2019/2020|ISA|Juventus':
             succCrosses: 10,
             totalCrosses: 35,
             fouls: 18 },
-    '2016/2017|UCL|Real Madrid':
+    '2016/2017 - UCL|Real Madrid':
         { minutes: 1170,
             goals: 10,
             shots: 69,
@@ -515,7 +515,7 @@ const stats = { '2019/2020|ISA|Juventus':
             succCrosses: 6,
             totalCrosses: 18,
             fouls: 9 },
-    '2018|WC|Portugal':
+    '2018 - WC|Portugal':
         { minutes: 360,
             goals: 3,
             shots: 19,
@@ -537,7 +537,7 @@ const stats = { '2019/2020|ISA|Juventus':
             succCrosses: 0,
             totalCrosses: 2,
             fouls: 3 },
-    '2015/2016|SLL|Real Madrid':
+    '2015/2016 - SLL|Real Madrid':
         { minutes: 3185,
             goals: 29,
             shots: 218,
@@ -559,7 +559,7 @@ const stats = { '2019/2020|ISA|Juventus':
             succCrosses: 9,
             totalCrosses: 48,
             fouls: 22 },
-    '2015/2016|UCL|Real Madrid':
+    '2015/2016 - UCL|Real Madrid':
         { minutes: 1079,
             goals: 14,
             shots: 90,
@@ -581,7 +581,7 @@ const stats = { '2019/2020|ISA|Juventus':
             succCrosses: 6,
             totalCrosses: 16,
             fouls: 12 },
-    '2014/2015|SLL|Real Madrid':
+    '2014/2015 - SLL|Real Madrid':
         { minutes: 3099,
             goals: 38,
             shots: 213,
@@ -603,7 +603,7 @@ const stats = { '2019/2020|ISA|Juventus':
             succCrosses: 22,
             totalCrosses: 81,
             fouls: 26 },
-    '2014/2015|UCL|Real Madrid':
+    '2014/2015 - UCL|Real Madrid':
         { minutes: 1065,
             goals: 7,
             shots: 67,
@@ -625,7 +625,7 @@ const stats = { '2019/2020|ISA|Juventus':
             succCrosses: 4,
             totalCrosses: 20,
             fouls: 9 },
-    '2016|UEC|Portugal':
+    '2016 - UEC|Portugal':
         { minutes: 565,
             goals: 3,
             shots: 43,
@@ -647,7 +647,7 @@ const stats = { '2019/2020|ISA|Juventus':
             succCrosses: 1,
             totalCrosses: 1,
             fouls: 6 },
-    '2013/2014|SLL|Real Madrid':
+    '2013/2014 - SLL|Real Madrid':
         { minutes: 2545,
             goals: 25,
             shots: 210,
@@ -669,7 +669,7 @@ const stats = { '2019/2020|ISA|Juventus':
             succCrosses: 10,
             totalCrosses: 49,
             fouls: 20 },
-    '2013/2014|UCL|Real Madrid':
+    '2013/2014 - UCL|Real Madrid':
         { minutes: 963,
             goals: 15,
             shots: 71,
@@ -691,7 +691,7 @@ const stats = { '2019/2020|ISA|Juventus':
             succCrosses: 1,
             totalCrosses: 10,
             fouls: 8 },
-    '2014|WC|Portugal':
+    '2014 - WC|Portugal':
         { minutes: 270,
             goals: 1,
             shots: 22,
@@ -713,7 +713,7 @@ const stats = { '2019/2020|ISA|Juventus':
             succCrosses: 1,
             totalCrosses: 5,
             fouls: 3 },
-    '2012/2013|SLL|Real Madrid':
+    '2012/2013 - SLL|Real Madrid':
         { minutes: 2721,
             goals: 28,
             shots: 228,
@@ -735,7 +735,7 @@ const stats = { '2019/2020|ISA|Juventus':
             succCrosses: 11,
             totalCrosses: 74,
             fouls: 27 },
-    '2012/2013|UCL|Real Madrid':
+    '2012/2013 - UCL|Real Madrid':
         { minutes: 1080,
             goals: 12,
             shots: 81,
@@ -757,7 +757,7 @@ const stats = { '2019/2020|ISA|Juventus':
             succCrosses: 3,
             totalCrosses: 21,
             fouls: 7 },
-    '2012|UEC|Portugal':
+    '2012 - UEC|Portugal':
         { minutes: 450,
             goals: 3,
             shots: 37,
@@ -779,7 +779,7 @@ const stats = { '2019/2020|ISA|Juventus':
             succCrosses: 1,
             totalCrosses: 11,
             fouls: 4 },
-    '2011/2012|SLL|Real Madrid':
+    '2011/2012 - SLL|Real Madrid':
         { minutes: 3354,
             goals: 34,
             shots: 251,
@@ -801,7 +801,7 @@ const stats = { '2019/2020|ISA|Juventus':
             succCrosses: 22,
             totalCrosses: 86,
             fouls: 32 },
-    '2011/2012|UCL|Real Madrid':
+    '2011/2012 - UCL|Real Madrid':
         { minutes: 900,
             goals: 8,
             shots: 70,
@@ -823,7 +823,7 @@ const stats = { '2019/2020|ISA|Juventus':
             succCrosses: 3,
             totalCrosses: 28,
             fouls: 4 },
-    '2010/2011|SLL|Real Madrid':
+    '2010/2011 - SLL|Real Madrid':
         { minutes: 2913,
             goals: 32,
             shots: 242,
@@ -845,7 +845,7 @@ const stats = { '2019/2020|ISA|Juventus':
             succCrosses: 9,
             totalCrosses: 91,
             fouls: 24 },
-    '2010/2011|UCL|Real Madrid':
+    '2010/2011 - UCL|Real Madrid':
         { minutes: 1021,
             goals: 5,
             shots: 72,
@@ -867,7 +867,7 @@ const stats = { '2019/2020|ISA|Juventus':
             succCrosses: 1,
             totalCrosses: 24,
             fouls: 13 },
-    '2009/2010|SLL|Real Madrid':
+    '2009/2010 - SLL|Real Madrid':
         { minutes: 2490,
             goals: 22,
             shots: 206,
@@ -889,7 +889,7 @@ const stats = { '2019/2020|ISA|Juventus':
             succCrosses: 17,
             totalCrosses: 108,
             fouls: 39 },
-    '2009/2010|UCL|Real Madrid':
+    '2009/2010 - UCL|Real Madrid':
         { minutes: 450,
             goals: 7,
             shots: 32,
@@ -910,7 +910,8 @@ const stats = { '2019/2020|ISA|Juventus':
             succAerialDuels: 11,
             succCrosses: 1,
             totalCrosses: 13,
-            fouls: 3 } };
+            fouls: 3 } }
+
 
 module.exports = {
     searchResults, stats

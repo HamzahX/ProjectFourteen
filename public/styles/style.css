@@ -214,6 +214,7 @@ h3 {
                         background-color: #cecece;
                         color: black;
                         font-size: 1em;
+                        transition: 0.3s;
                     }
 
                         #filter-buttons .filter-button button:hover {
