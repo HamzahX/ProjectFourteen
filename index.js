@@ -21,7 +21,7 @@ let setup = async () => {
     return new Promise(async function(resolve, reject){
         console.time('browser launch');
         browser = await puppeteer.launch({
-            headless: false,
+            headless: true,
             args: [
                 '--no-sandbox',
                 '--disable-setuid-sandbox',
