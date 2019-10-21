@@ -128,25 +128,26 @@ function updateRadar(isNew = true){
         switch (template){
             case 'FW':
                 selectedStats = calculateForwardStats(filteredStats);
-                setForwardTemplate();
-                subtitle = 'FW / AM Template | Sample size: ';
+                setForwardTemplate(selectedStats);
+                subtitle = 'FW / AM Template';
                 break;
             case 'MF':
                 selectedStats = calculateMidfielderStats(filteredStats);
-                setMidfieldTemplate();
-                subtitle = 'CM / DM Template | Sample size: ';
+                setMidfieldTemplate(selectedStats);
+                subtitle = 'CM / DM Template';
                 break;
             case 'FB':
                 selectedStats = calculateFullbackStats(filteredStats);
-                setFullbackTemplate();
-                subtitle = 'FB Template | Sample size: ';
+                setFullbackTemplate(selectedStats);
+                subtitle = 'FB Template';
                 break;
             case 'CB':
                 selectedStats = calculateCenterbackStats(filteredStats);
-                setCenterbackTemplate();
-                subtitle = 'FW / AM Template | Sample size: ';
+                setCenterbackTemplate(selectedStats);
+                subtitle = 'FW / AM Template';
                 break;
         }
+        subtitle += ' | per 90 | Sample Size: ';
         if (isNew) {
             if (dataTable.length){
                 dataTable.remove();
@@ -190,8 +191,8 @@ function filterStats(stats){
 function calculateForwardStats(filteredStats){
     let statsPer90 = {};
     statsPer90['goals'] = filteredStats['goals'] / (filteredStats['minutes']/90);
-    statsPer90['shots'] = filteredStats['shots'] / (filteredStats['minutes']/90);
-    statsPer90['conversionRate'] = (filteredStats['goals'] / filteredStats['shots']) * 100;
+    statsPer90['shots'] = (filteredStats['shots']  - filteredStats['penaltiesTaken']) / (filteredStats['minutes']/90);
+    statsPer90['shootingAccuracy'] = ((filteredStats['shotsOnTarget'] - filteredStats['penaltiesTaken']) / (filteredStats['shots'] - filteredStats['penaltiesTaken'])) * 100;
     statsPer90['passingPct'] = (filteredStats['succPasses'] / filteredStats['totalPasses']) * 100;
     statsPer90['assists'] = filteredStats['assists'] / (filteredStats['minutes']/90);
     statsPer90['keyPasses'] = filteredStats['keyPasses'] / (filteredStats['minutes']/90);
@@ -199,6 +200,7 @@ function calculateForwardStats(filteredStats){
     statsPer90['tacklesAndInterceptions'] = (filteredStats['tackles'] / (filteredStats['minutes']/90)) + (filteredStats['interceptions'] / (filteredStats['minutes']/90));
     statsPer90['possessionLosses'] = filteredStats['possessionLosses'] / (filteredStats['minutes']/90);
     statsPer90['dribbles'] = filteredStats['dribbles'] / (filteredStats['minutes']/90);
+    statsPer90['conversionRate'] = (filteredStats['goals'] / (filteredStats['shots']  - filteredStats['penaltiesTaken'])) * 100;
     statsPer90 = roundTo2Decimals(statsPer90);
     return Object.values(statsPer90);
 }
@@ -225,7 +227,6 @@ function calculateFullbackStats(filteredStats){
     statsPer90['tackles'] = (filteredStats['tackles'] / (filteredStats['minutes']/90));
     statsPer90['interceptions'] = (filteredStats['interceptions'] / (filteredStats['minutes']/90));
     statsPer90['passingPct'] = (filteredStats['succPasses'] / filteredStats['totalPasses']) * 100;
-    statsPer90['assists'] = filteredStats['assists'] / (filteredStats['minutes']/90);
     statsPer90['keyPasses'] = filteredStats['keyPasses'] / (filteredStats['minutes']/90);
     statsPer90['succCrosses'] = filteredStats['succCrosses'] / (filteredStats['minutes']/90);
     statsPer90['crossingPct'] = (filteredStats['succCrosses'] / filteredStats['totalCrosses']) * 100;
@@ -244,6 +245,7 @@ function calculateCenterbackStats(filteredStats){
     statsPer90['tacklePct'] = (filteredStats['tackles'] / (filteredStats['tackles'] + filteredStats['dribbledPast'])) *100;
     statsPer90['tackles'] = (filteredStats['tackles'] / (filteredStats['minutes']/90));
     statsPer90['interceptions'] = (filteredStats['interceptions'] / (filteredStats['minutes']/90));
+    statsPer90['blocks'] = (filteredStats['blocks'] / (filteredStats['minutes']/90));
     statsPer90['clearances'] = filteredStats['clearances'] / (filteredStats['minutes']/90);
     statsPer90['fouls'] = filteredStats['fouls'] / (filteredStats['minutes']/90);
     statsPer90['aerialDuelPct'] = (filteredStats['succAerialDuels'] / filteredStats['totalAerialDuels']) * 100;
@@ -256,39 +258,46 @@ function calculateCenterbackStats(filteredStats){
 
 function roundTo2Decimals(someStats){
     for (let stat in someStats){
-        someStats[stat] = Math.round(someStats[stat] * 100) / 100;
+        if (isFinite(someStats[stat])) {
+            someStats[stat] = Math.round(someStats[stat] * 100) / 100;
+        }
+        else {
+            someStats[stat] = 0;
+        }
     }
     return someStats;
 }
 
-function setForwardTemplate(){
+function setForwardTemplate(selectedStats){
     categories = [
         'Non-Penalty Goals',
         'Non-Penalty Shots',
-        'Conversion Rate',
+        '% Shots on Target',
         '% Passes Completed',
         'Assists',
         'Key Passes',
         'Through Balls',
         'Recoveries',
         'Possession Losses',
-        'Successful Dribbles'
+        'Successful Dribbles',
+        'Conversion Rate',
     ];
     yAxis = [
-        {softMin: 0, softMax: 1, maxPadding: 0, endOnTick: false, tickPositions: [0, 0.25, 0.5, 0.75, 1], showFirstLabel: false, showLastLabel: true, labels: {style: {fontSize: "13px"}}},
-        {softMin: 0, softMax: 6, maxPadding: 0, endOnTick: false, tickPositions: [0, 1.5, 3, 4.5, 6], showFirstLabel: false, showLastLabel: true, labels: {style: {fontSize: "13px"}}},
-        {softMin: 0, softMax: 30, maxPadding: 0, endOnTick: false, tickPositions: [0, 7.5, 15, 22.5, 30], showFirstLabel: false, showLastLabel: true, labels: {style: {fontSize: "13px"}}},
-        {softMin: 60, softMax: 100, maxPadding: 0, endOnTick: false, tickPositions: [60, 70, 80, 90, 100], showFirstLabel: false, showLastLabel: true, labels: {style: {fontSize: "13px"}}},
-        {softMin: 0, softMax: 0.6, maxPadding: 0, endOnTick: false, tickPositions: [0, 0.15, 0.3, 0.45, 0.6], showFirstLabel: false, showLastLabel: true, labels: {style: {fontSize: "13px"}}},
-        {softMin: 0, softMax: 4, maxPadding: 0, endOnTick: false, tickPositions: [0, 1, 2, 3, 4], showFirstLabel: false, showLastLabel: true, labels: {style: {fontSize: "13px"}}},
-        {softMin: 0, softMax: 0.6, maxPadding: 0, endOnTick: false, tickPositions: [0, 0.15, 0.3, 0.45, 0.6], showFirstLabel: false, showLastLabel: true, labels: {style: {fontSize: "13px"}}},
-        {softMin: 0, softMax: 3, maxPadding: 0, endOnTick: false, tickPositions: [0, 0.75, 1.5, 2.25, 3], showFirstLabel: false, showLastLabel: true, labels: {style: {fontSize: "13px"}}},
-        {softMin: 0, softMax: 4, reversed: true, maxPadding: 0, endOnTick: false, tickPositions: [0, 1, 2, 3, 4], showFirstLabel: true, showLastLabel: false, labels: {style: {fontSize: "13px"}}},
-        {softMin: 0, softMax: 6, maxPadding: 0, endOnTick: false, tickPositions: [0, 1.5, 3, 4.5, 6], showFirstLabel: false, showLastLabel: true, labels: {style: {fontSize: "13px"}}}
+        {softMin: 0.12, softMax: 0.6, tickPositioner: function () {return placeTicks(selectedStats[0], 0.12, 0.6)},  showFirstLabel: false, showLastLabel: true},
+        {softMin: 1.7, softMax: 4.5, tickPositioner: function () {return placeTicks(selectedStats[1], 1.7, 4.5)}, showFirstLabel: false, showLastLabel: true},
+        {softMin: 27, softMax: 55, tickPositioner: function () {return placeTicks(selectedStats[2], 27, 55)}, showFirstLabel: false, showLastLabel: true},
+        {softMin: 65, softMax: 85, tickPositioner: function () {return placeTicks(selectedStats[3], 65, 85)}, showFirstLabel: false, showLastLabel: true},
+        {softMin: 0.08, softMax: 0.4, tickPositioner: function () {return placeTicks(selectedStats[4], 0.08, 0.4)}, showFirstLabel: false, showLastLabel: true},
+        {softMin: 1.12, softMax: 3, tickPositioner: function () {return placeTicks(selectedStats[5], 1.12, 3)}, showFirstLabel: false, showLastLabel: true},
+        {softMin: 0.13, softMax: 0.65, tickPositioner: function () {return placeTicks(selectedStats[6], 0.13, 0.65)}, showFirstLabel: false, showLastLabel: true},
+        {softMin: 1.3, softMax: 4.5, tickPositioner: function () {return placeTicks(selectedStats[7], 1.3, 4.5)}, showFirstLabel: false, showLastLabel: true},
+        {softMin: 1, softMax: 3, reversed: true, tickPositioner: function () {return placeTicks(selectedStats[8], 1, 3)}, showFirstLabel: true, showLastLabel: false},
+        {softMin: 0.7, softMax: 2.5, tickPositioner: function () {return placeTicks(selectedStats[9], 0.7, 2.5)}, showFirstLabel: false, showLastLabel: true},
+        {softMin: 4.5, softMax: 22.5, tickPositioner: function () {return placeTicks(selectedStats[10], 4.5, 22.5)}, showFirstLabel: false, showLastLabel: true},
     ];
 }
 
-function setMidfieldTemplate(){
+function setMidfieldTemplate(selectedStats){
     categories = [
         '% Passes Completed',
         'Key Passes',
@@ -303,26 +312,25 @@ function setMidfieldTemplate(){
         'Long Balls'
     ];
     yAxis = [
-        {softMin: 60, softMax: 100, maxPadding: 0, endOnTick: false, tickPositions: [60, 70, 80, 90, 100], showFirstLabel: false, showLastLabel: true, labels: {style: {fontSize: "13px"}}},
-        {softMin: 0, softMax: 3, maxPadding: 0, endOnTick: false, tickPositions: [0, 0.75, 1.5, 2.25, 3], showFirstLabel: false, showLastLabel: true, labels: {style: {fontSize: "13px"}}},
-        {softMin: 0, softMax: 0.4, maxPadding: 0, endOnTick: false, tickPositions: [0, 0.1, 0.2, 0.3, 0.4], showFirstLabel: false, showLastLabel: true, labels: {style: {fontSize: "13px"}}},
-        {softMin: 0, softMax: 0.6, maxPadding: 0, endOnTick: false, tickPositions: [0, 0.15, 0.3, 0.45, 0.6], showFirstLabel: false, showLastLabel: true, labels: {style: {fontSize: "13px"}}},
-        {softMin: 0, softMax: 3, maxPadding: 0, endOnTick: false, tickPositions: [0, 0.75, 1.5, 2.25, 3], showFirstLabel: false, showLastLabel: true, labels: {style: {fontSize: "13px"}}},
-        {softMin: 0, softMax: 2, reversed: true, maxPadding: 0, endOnTick: false, tickPositions: [0, 0.5, 1, 1.5, 2], showFirstLabel: true, showLastLabel: false, labels: {style: {fontSize: "13px"}}},
-        {softMin: 0, softMax: 2, reversed: true, maxPadding: 0, endOnTick: false, tickPositions: [0, 0.5, 1, 1.5, 2], showFirstLabel: true, showLastLabel: false, labels: {style: {fontSize: "13px"}}},
-        {softMin: 35, softMax: 75, maxPadding: 0, endOnTick: false, tickPositions: [35, 45, 55, 65, 75], showFirstLabel: false, showLastLabel: true, labels: {style: {fontSize: "13px"}}},
-        {softMin: 0, softMax: 4, maxPadding: 0, endOnTick: false, tickPositions: [0, 1, 2, 3, 4], showFirstLabel: false, showLastLabel: true, labels: {style: {fontSize: "13px"}}},
-        {softMin: 0, softMax: 4, maxPadding: 0, endOnTick: false, tickPositions: [0, 1, 2, 3, 4], showFirstLabel: false, showLastLabel: true, labels: {style: {fontSize: "13px"}}},
-        {softMin: 0, softMax: 8, maxPadding: 0, endOnTick: false, tickPositions: [0, 2, 4, 6, 8], showFirstLabel: false, showLastLabel: true, labels: {style: {fontSize: "13px"}}}
+        {softMin: 74, softMax: 90, tickPositioner: function () {return placeTicks(selectedStats[0], 74, 90)}, showFirstLabel: false, showLastLabel: true},
+        {softMin: 0.7, softMax: 2.5, tickPositioner: function () {return placeTicks(selectedStats[1], 0.7, 2.5)}, showFirstLabel: false, showLastLabel: true},
+        {softMin: 0.1, softMax: 0.5, tickPositioner: function () {return placeTicks(selectedStats[2], 0.1, 0.5)}, showFirstLabel: false, showLastLabel: true},
+        {softMin: 0.1, softMax: 0.5, tickPositioner: function () {return placeTicks(selectedStats[3], 0.1, 0.5)}, showFirstLabel: false, showLastLabel: true},
+        {softMin: 0.5, softMax: 2.1, tickPositioner: function () {return placeTicks(selectedStats[4], 0.5, 2.1)}, showFirstLabel: false, showLastLabel: true},
+        {softMin: 0.5, softMax: 2.47, reversed: true, tickPositioner: function () {return placeTicks(selectedStats[5], 0.5, 2.47)}, showFirstLabel: true, showLastLabel: false},
+        {softMin: 0.6, softMax: 2.36, reversed: true, tickPositioner: function () {return placeTicks(selectedStats[6], 0.6, 2.36)}, showFirstLabel: true, showLastLabel: false},
+        {softMin: 45, softMax: 85, tickPositioner: function () {return placeTicks(selectedStats[7], 45, 85)}, showFirstLabel: false, showLastLabel: true},
+        {softMin: 1.65, softMax: 4.25, tickPositioner: function () {return placeTicks(selectedStats[8], 1.65, 4.25)}, showFirstLabel: false, showLastLabel: true},
+        {softMin: 1.31, softMax: 3.55, tickPositioner: function () {return placeTicks(selectedStats[9], 1.31, 3.55)}, showFirstLabel: false, showLastLabel: true},
+        {softMin: 2, softMax: 8, tickPositioner: function () {return placeTicks(selectedStats[10], 2, 8)}, showFirstLabel: false, showLastLabel: true}
     ];
 }
 
-function setFullbackTemplate(){
+function setFullbackTemplate(selectedStats){
     categories = [
         'Tackles Won',
         'Interceptions',
         '% Passes Completed',
-        'Assists',
         'Key Passes',
         'Successful Crosses',
         '% Crosses Completed',
@@ -333,27 +341,27 @@ function setFullbackTemplate(){
         'Fouls Committed'
     ];
     yAxis = [
-        {softMin: 0, softMax: 4, maxPadding: 0, endOnTick: false, tickPositions: [0, 1, 2, 3, 4], showFirstLabel: false, showLastLabel: true, labels: {style: {fontSize: "13px"}}},
-        {softMin: 0, softMax: 4, maxPadding: 0, endOnTick: false, tickPositions: [0, 1, 2, 3, 4], showFirstLabel: false, showLastLabel: true, labels: {style: {fontSize: "13px"}}},
-        {softMin: 60, softMax: 100, maxPadding: 0, endOnTick: false, tickPositions: [60, 70, 80, 90, 100], showFirstLabel: false, showLastLabel: true, labels: {style: {fontSize: "13px"}}},
-        {softMin: 0, softMax: 0.4, maxPadding: 0, endOnTick: false, tickPositions: [0, 0.1, 0.2, 0.3, 0.4], showFirstLabel: false, showLastLabel: true, labels: {style: {fontSize: "13px"}}},
-        {softMin: 0, softMax: 2, maxPadding: 0, endOnTick: false, tickPositions: [0, 0.5, 1, 1.5, 2], showFirstLabel: false, showLastLabel: true, labels: {style: {fontSize: "13px"}}},
-        {softMin: 0, softMax: 2, maxPadding: 0, endOnTick: false, tickPositions: [0, 0.5, 1, 1.5, 2], showFirstLabel: false, showLastLabel: true, labels: {style: {fontSize: "13px"}}},
-        {softMin: 0, softMax: 40, maxPadding: 0, endOnTick: false, tickPositions: [0, 10, 20, 30, 40], showFirstLabel: false, showLastLabel: true, labels: {style: {fontSize: "13px"}}},
-        {softMin: 0, softMax: 2, maxPadding: 0, endOnTick: false, tickPositions: [0, 0.5, 1, 1.5, 2], showFirstLabel: false, showLastLabel: true, labels: {style: {fontSize: "13px"}}},
-        {softMin: 0, softMax: 2, reversed: true, maxPadding: 0, endOnTick: false, tickPositions: [0, 0.5, 1, 1.5, 2], showFirstLabel: true, showLastLabel: false, labels: {style: {fontSize: "13px"}}},
-        {softMin: 30, softMax: 70, maxPadding: 0, endOnTick: false, tickPositions: [30, 40, 50, 60, 70], showFirstLabel: false, showLastLabel: true, labels: {style: {fontSize: "13px"}}},
-        {softMin: 45, softMax: 85, maxPadding: 0, endOnTick: false, tickPositions: [45, 55, 65, 75, 85], showFirstLabel: false, showLastLabel: true, labels: {style: {fontSize: "13px"}}},
-        {softMin: 0, softMax: 2, reversed: true, maxPadding: 0, endOnTick: false, tickPositions: [0, 0.5, 1, 1.5, 2], showFirstLabel: true, showLastLabel: false, labels: {style: {fontSize: "13px"}}}
+        {softMin: 1.73, softMax: 4.11, tickPositioner: function () {return placeTicks(selectedStats[0], 1.73, 4.11)}, showFirstLabel: false, showLastLabel: true},
+        {softMin: 1.5, softMax: 3.7, tickPositioner: function () {return placeTicks(selectedStats[1], 1.5, 3.7)}, showFirstLabel: false, showLastLabel: true},
+        {softMin: 70, softMax: 87, tickPositioner: function () {return placeTicks(selectedStats[2], 70, 87)}, showFirstLabel: false, showLastLabel: true},
+        {softMin: 0.47, softMax: 1.46, tickPositioner: function () {return placeTicks(selectedStats[3], 0.47, 1.46)}, showFirstLabel: false, showLastLabel: true},
+        {softMin: 0.32, softMax: 1.21, tickPositioner: function () {return placeTicks(selectedStats[4], 0.32, 1.21)}, showFirstLabel: false, showLastLabel: true},
+        {softMin: 14.84, softMax: 33, tickPositioner: function () {return placeTicks(selectedStats[5], 14.84, 33)}, showFirstLabel: false, showLastLabel: true},
+        {softMin: 0.4, softMax: 1.62, tickPositioner: function () {return placeTicks(selectedStats[6], 0.4, 1.62)}, showFirstLabel: false, showLastLabel: true},
+        {softMin: 0.23, softMax: 1.17, reversed: true, tickPositioner: function () {return placeTicks(selectedStats[7], 0.23, 1.17)}, showFirstLabel: true, showLastLabel: false},
+        {softMin: 30, softMax: 70, tickPositioner: function () {return placeTicks(selectedStats[8], 30, 70)}, showFirstLabel: false, showLastLabel: true},
+        {softMin: 45, softMax: 85, tickPositioner: function () {return placeTicks(selectedStats[9], 45, 85)}, showFirstLabel: false, showLastLabel: true},
+        {softMin: 0.54, softMax: 1.76, reversed: true, tickPositioner: function () {return placeTicks(selectedStats[10], 0.54, 1.76)}, showFirstLabel: true, showLastLabel: false}
     ];
 }
 
-function setCenterbackTemplate(){
+function setCenterbackTemplate(selectedStats){
     categories = [
         '% Passes Completed',
         '% Tackles Won',
         'Tackles Won',
         'Interceptions',
+        'Blocks',
         'Clearances',
         'Fouls Committed',
         '% Aerial Duels Won',
@@ -362,17 +370,35 @@ function setCenterbackTemplate(){
         'Long Balls',
     ];
     yAxis = [
-        {softMin: 60, softMax: 100, maxPadding: 0, endOnTick: false, tickPositions: [60, 70, 80, 90, 100], showFirstLabel: false, showLastLabel: true, labels: {style: {fontSize: "13px"}}},
-        {softMin: 60, softMax: 100, maxPadding: 0, endOnTick: false, tickPositions: [60, 70, 80, 90, 100], showFirstLabel: false, showLastLabel: true, labels: {style: {fontSize: "13px"}}},
-        {softMin: 0, softMax: 4, maxPadding: 0, endOnTick: false, tickPositions: [0, 1, 2, 3, 4], showFirstLabel: false, showLastLabel: true, labels: {style: {fontSize: "13px"}}},
-        {softMin: 0, softMax: 3, maxPadding: 0, endOnTick: false, tickPositions: [0, 0.75, 1.5, 2.25, 3], showFirstLabel: false, showLastLabel: true, labels: {style: {fontSize: "13px"}}},
-        {softMin: 0, softMax: 8, maxPadding: 0, endOnTick: false, tickPositions: [0, 2, 4, 6, 8], showFirstLabel: false, showLastLabel: true, labels: {style: {fontSize: "13px"}}},
-        {softMin: 0, softMax: 2, reversed: true, maxPadding: 0, endOnTick: false, tickPositions: [0, 0.5, 1, 1.5, 2], showFirstLabel: true, showLastLabel: false, labels: {style: {fontSize: "13px"}}},
-        {softMin: 45, softMax: 85, maxPadding: 0, endOnTick: false, tickPositions: [45, 55, 65, 75, 85], showFirstLabel: false, showLastLabel: true, labels: {style: {fontSize: "13px"}}},
-        {softMin: 0, softMax: 4, maxPadding: 0, endOnTick: false, tickPositions: [0, 1, 2, 3, 4], showFirstLabel: false, showLastLabel: true, labels: {style: {fontSize: "13px"}}},
-        {softMin: 40, softMax: 80, maxPadding: 0, endOnTick: false, tickPositions: [40, 50, 60, 70, 80], showFirstLabel: false, showLastLabel: true, labels: {style: {fontSize: "13px"}}},
-        {softMin: 0, softMax: 8, maxPadding: 0, endOnTick: false, tickPositions: [0, 2, 4, 6, 8], showFirstLabel: false, showLastLabel: true, labels: {style: {fontSize: "13px"}}}
+        {softMin: 72.72, softMax: 90, tickPositioner: function () {return placeTicks(selectedStats[0], 72.72, 90)}, showFirstLabel: false, showLastLabel: true},
+        {softMin: 60, softMax: 100, tickPositioner: function () {return placeTicks(selectedStats[1], 60, 100)}, showFirstLabel: false, showLastLabel: true},
+        {softMin: 1.4, softMax: 3.43, tickPositioner: function () {return placeTicks(selectedStats[2], 1.4, 3.43)}, showFirstLabel: false, showLastLabel: true},
+        {softMin: 1.6, softMax: 4, tickPositioner: function () {return placeTicks(selectedStats[3], 1.6, 4)}, showFirstLabel: false, showLastLabel: true},
+        {softMin: 0.47, softMax: 1.17, tickPositioner: function () {return placeTicks(selectedStats[4], 0.47, 1.17)}, showFirstLabel: false, showLastLabel: true},
+        {softMin: 4.62, softMax: 10.4, tickPositioner: function () {return placeTicks(selectedStats[5], 4.62, 10.4)}, showFirstLabel: false, showLastLabel: true},
+        {softMin: 0.5, softMax: 1.7, reversed: true, tickPositioner: function () {return placeTicks(selectedStats[6], 0.5, 1.7)}, showFirstLabel: true, showLastLabel: false},
+        {softMin: 53.6, softMax: 76, tickPositioner: function () {return placeTicks(selectedStats[7], 53.6, 76)}, showFirstLabel: false, showLastLabel: true},
+        {softMin: 1.3, softMax: 3.93, tickPositioner: function () {return placeTicks(selectedStats[8], 1.3, 3.93)}, showFirstLabel: false, showLastLabel: true},
+        {softMin: 48.68, softMax: 77.2, tickPositioner: function () {return placeTicks(selectedStats[9], 48.68, 77.2)}, showFirstLabel: false, showLastLabel: true},
+        {softMin: 2.74, softMax: 7.05, tickPositioner: function () {return placeTicks(selectedStats[10], 2.74, 7.05)}, showFirstLabel: false, showLastLabel: true}
     ];
+}
+
+function placeTicks(value, min, max){
+    let positions = [];
+    if (value > max) {
+        max = value;
+    }
+    else if (value < min) {
+        min = value;
+    }
+    let increment = (max - min) / 4;
+    let currentTick = min;
+    while (currentTick <= max + increment){
+        positions.push(Math.round(currentTick * 100) / 100);
+        currentTick += increment;
+    }
+    return positions;
 }
 
 function drawRadar(selectedStats){
@@ -389,11 +415,14 @@ function drawRadar(selectedStats){
             parallelAxes: {
                 labels: {
                     style: {
-                        color: 'gray'
+                        color: 'gray',
+                        fontSize: "11.5px"
                     }
                 },
                 gridLineWidth: 0,
                 lineWidth: 1,
+                maxPadding: 0, 
+                endOnTick: false,
             },
             polar: true,
             type: 'area',
@@ -419,6 +448,9 @@ function drawRadar(selectedStats){
             style: {
                 fontSize: '2em'
             }
+        },
+        pane: {
+            startAngle: -16.3636363636363636363
         },
         lang: {
             noData: "No data to display"

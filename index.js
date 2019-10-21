@@ -23,8 +23,7 @@ let setup = async () => {
             args: ["--no-sandbox", "--disable-setuid-sandbox", '--disable-gpu']
         });
         context = await browser.createIncognitoBrowserContext();
-        let blankPage = await context.newPage();
-        await blankPage.goto("about:blank", {waitUntil: 'networkidle0'});
+        await context.newPage();
         let pages = await browser.pages();
         await pages[0].close();
         console.timeEnd('browser launch');
@@ -157,10 +156,106 @@ let getSearchResults = async (page, URL) => {
 
 };
 
-let pageSetup = async(page, URL) => {
+let getStats = async (page, URL) => {
 
     await disableImages(page);
     await page.goto(URL, {waitUntil: 'networkidle0'});
+
+    let rawData = [];
+
+    //scrape needed data
+    return new Promise(function(resolve, reject){
+        scrapeAssistsAndMinutes(page)
+        .then((assists) =>
+            (rawData.push(assists), scrapeGoals(page))
+        )
+        .then((goals) =>
+            (rawData.push(goals), scrapePasses(page))
+        )
+        .then((passes) =>
+            (rawData.push(passes), scrapeShots(page))
+        )
+        .then((shots) =>
+            (rawData.push(shots), scrapeKeyPasses(page))
+        )
+        .then((keyPasses) =>
+            (rawData.push(keyPasses), scrapeShotsOnTarget(page))
+        )
+        .then((shotsOnTarget) =>
+            (rawData.push(shotsOnTarget), scrapeFouls(page))
+        )
+        .then((fouls) =>
+            (rawData.push(fouls), scrapeTackles(page))
+        )
+        .then((tackles) =>
+            (rawData.push(tackles), scrapeInterceptions(page))
+        )
+        .then((interceptions) =>
+            (rawData.push(interceptions), scrapePossessionLosses(page))
+        )
+        .then((possessionLosses) =>
+            (rawData.push(possessionLosses), scrapeDribbles(page))
+        )
+        .then((dribbles) =>
+            (rawData.push(dribbles), scrapeClearances(page))
+        )
+        .then((clearances) =>
+            (rawData.push(clearances), scrapeAerialDuels(page))
+        )
+        .then((aerialDuels) =>
+            (rawData.push(aerialDuels), scrapeCrosses(page))
+        )
+        .then((crosses) =>
+            (rawData.push(crosses), scrapeThroughBalls(page))
+        )
+        .then((throughballs) =>
+            (rawData.push(throughballs), scrapeBlocks(page))
+        )
+        .then((blocks) =>
+            (rawData.push(blocks), resolve(rawData))
+        )
+        .catch(async(anError) => {
+            reject(anError);
+        })
+    });
+
+};
+
+let scrapeAssistsAndMinutes = async (page) => {
+
+    await page.waitForFunction('document.querySelector("#statistics-table-summary-loading").style.display == "none"');
+
+    return await page.evaluate(() => {
+        let assists = {};
+        let currentSeason = '';
+        const tds = Array.from(document.querySelectorAll('#player-tournament-stats-summary #top-player-stats-summary-grid tr td'));
+        for (let i = 0; i < tds.length; i++) {
+            if (tds[i].className === 'rank tournament') {
+                currentSeason = tds[i].innerText + ' - ' + tds[i + 2].innerText + '|' + tds[i + 1].innerText;
+                assists[currentSeason] = {};
+            } else {
+                if (tds[i].className === 'assistTotal   ') {
+                    if (tds[i].innerText === '-') {
+                        assists[currentSeason]['assists'] = 0;
+                    } else {
+                        assists[currentSeason]['assists'] = parseInt(tds[i].innerText, 10);
+                    }
+                }
+                if (tds[i].className === 'minsPlayed   ') {
+                    if (tds[i].innerText === '-') {
+                        assists[currentSeason]['minutes'] = 0;
+                    } else {
+                        assists[currentSeason]['minutes'] = parseInt(tds[i].innerText, 10);
+                    }
+                }
+            }
+        }
+        return assists;
+    });
+
+};
+
+let scrapeGoals = async (page) => {
 
     // navigate to 'detailed' tab
     let selector1 = 'a[href="#player-tournament-stats-detailed"]';
@@ -171,93 +266,6 @@ let pageSetup = async(page, URL) => {
     // select 'total' from 'accumulation' drop-down
     await page.select('#statsAccumulationType', '2');
     await page.waitForFunction('document.querySelector("#statistics-table-detailed-loading").style.display == "none"');
-
-};
-
-let getStats = async (page, URL) => {
-
-    await pageSetup(page, URL);
-    let rawData = [];
-
-    //TODO: Refactor this ugly piece of shit code
-    //scrape needed data
-    return new Promise(function(resolve, reject){
-        scrapeGoalsAndMinutes(page).then((goals) => {
-            rawData.push(goals);
-            scrapeShots(page).then((shots) => {
-                rawData.push(shots);
-                scrapePasses(page).then((passes) => {
-                    rawData.push(passes);
-                    scrapeAssists(page).then((assists) => {
-                        rawData.push(assists);
-                        scrapeKeyPasses(page).then((keyPasses) => {
-                            rawData.push(keyPasses);
-                            scrapeThroughBalls(page).then((throughBalls) => {
-                                rawData.push(throughBalls);
-                                scrapeTackles(page).then((tackles) => {
-                                    rawData.push(tackles);
-                                    scrapeInterceptions(page).then((interceptions) => {
-                                        rawData.push(interceptions);
-                                        scrapePossessionLosses(page).then((possessionLosses) => {
-                                            rawData.push(possessionLosses);
-                                            scrapeDribbles(page).then((dribbles) => {
-                                                rawData.push(dribbles);
-                                                scrapeClearances(page).then((clearances) => {
-                                                    rawData.push(clearances);
-                                                    scrapeAerialDuels(page).then((aerialDuels) => {
-                                                        rawData.push(aerialDuels);
-                                                        scrapeCrosses(page).then((crosses) => {
-                                                            rawData.push(crosses);
-                                                            scrapeFouls(page).then((fouls) => {
-                                                                rawData.push(fouls);
-                                                                resolve(rawData);
-                                                            }).catch(async(anError) => {
-                                                                reject(anError);
-                                                            })
-                                                        }).catch(async(anError) => {
-                                                            reject(anError);
-                                                        })
-                                                    }).catch(async(anError) => {
-                                                        reject(anError);
-                                                    })
-                                                }).catch(async(anError) => {
-                                                    reject(anError);
-                                                })
-                                            }).catch(async(anError) => {
-                                                reject(anError);
-                                            })
-                                        }).catch(async(anError) => {
-                                            reject(anError);
-                                        })
-                                    }).catch(async(anError) => {
-                                        reject(anError);
-                                    })
-                                }).catch(async(anError) => {
-                                    reject(anError);
-                                })
-                            }).catch(async(anError) => {
-                                reject(anError);
-                            })
-                        }).catch(async(anError) => {
-                            reject(anError);
-                        })
-                    }).catch(async(anError) => {
-                        reject(anError);
-                    })
-                }).catch(async(anError) => {
-                    reject(anError);
-                })
-            }).catch(async(anError) => {
-                reject(anError);
-            })
-        }).catch(async(anError) => {
-            reject(anError);
-        })
-    });
-
-};
-
-let scrapeGoalsAndMinutes = async (page) => {
 
     // select 'goals' from 'category' drop-down
     await page.select('#category', 'goals');
@@ -283,12 +291,6 @@ let scrapeGoalsAndMinutes = async (page) => {
                         goals[currentSeason]['goals'] = 0;
                     } else {
                         goals[currentSeason]['goals'] = parseInt(tds[i].innerText, 10);
-                    }
-                } else if (tds[i].className === 'minsPlayed   ') {
-                    if (tds[i].innerText === '-') {
-                        goals[currentSeason]['minutes'] = 0;
-                    } else {
-                        goals[currentSeason]['minutes'] = parseInt(tds[i].innerText, 10);
                     }
                 }
             }
@@ -328,7 +330,44 @@ let scrapeShots = async (page) => {
                         if (penalties === '-') {
                             penalties = '0';
                         }
-                        shots[currentSeason]['shots'] = totalShots - parseInt(penalties, 10);
+                        shots[currentSeason]['shots'] = totalShots;
+                        shots[currentSeason]['penaltiesTaken'] = parseInt(penalties, 10);
+                    }
+                }
+            }
+        }
+        return shots;
+    });
+
+};
+
+let scrapeShotsOnTarget = async (page) => {
+
+    // select 'shots' from 'category' drop-down
+    await page.select('#category', 'shots');
+    await page.waitForSelector('.shotsTotal   ');
+
+    // select 'situations' from 'sub category' drop-down
+    await page.select('#subcategory', 'accuracy');
+    await page.waitForSelector('.shotOnTarget   ');
+
+    await page.waitForSelector('#player-tournament-stats-detailed #top-player-stats-summary-grid tr td:not(:empty)');
+
+    return await page.evaluate(() => {
+        let shots = {};
+        let currentSeason = '';
+        const tds = Array.from(document.querySelectorAll('#player-tournament-stats-detailed #top-player-stats-summary-grid tr td'));
+        for (let i = 0; i < tds.length; i++) {
+            if (tds[i].className === 'rank tournament') {
+                currentSeason = tds[i].innerText + ' - ' + tds[i + 2].innerText + '|' + tds[i + 1].innerText;
+                shots[currentSeason] = {};
+            } else {
+                if (tds[i].className === 'shotOnTarget   ') {
+                    if (tds[i].innerText === '-') {
+                        shots[currentSeason]['shotsOnTarget'] = 0;
+                    } else {
+                        let shotsOnTarget = parseInt(tds[i].innerText, 10);
+                        shots[currentSeason]['shotsOnTarget'] = shotsOnTarget;
                     }
                 }
             }
@@ -386,37 +425,6 @@ let scrapePasses = async (page) => {
 
 };
 
-let scrapeAssists = async (page) => {
-
-    // select 'assists' from 'category' drop-down
-    await page.select('#category', 'assists');
-    await page.waitForSelector('.assist   ');
-
-    await page.waitForSelector('#player-tournament-stats-detailed #top-player-stats-summary-grid tr td:not(:empty)');
-
-    return await page.evaluate(() => {
-        let assists = {};
-        let currentSeason = '';
-        const tds = Array.from(document.querySelectorAll('#player-tournament-stats-detailed #top-player-stats-summary-grid tr td'));
-        for (let i = 0; i < tds.length; i++) {
-            if (tds[i].className === 'rank tournament') {
-                currentSeason = tds[i].innerText + ' - ' + tds[i + 2].innerText + '|' + tds[i + 1].innerText;
-                assists[currentSeason] = {};
-            } else {
-                if (tds[i].className === 'assist   ') {
-                    if (tds[i].innerText === '-') {
-                        assists[currentSeason]['assists'] = 0;
-                    } else {
-                        assists[currentSeason]['assists'] = parseInt(tds[i].innerText, 10);
-                    }
-                }
-            }
-        }
-        return assists;
-    });
-
-};
-
 let scrapeKeyPasses = async (page) => {
 
     // select 'key passes' from 'category' drop-down
@@ -450,30 +458,38 @@ let scrapeKeyPasses = async (page) => {
 
 let scrapeThroughBalls = async (page) => {
 
-    // select 'passes' from 'category' drop-down
-    await page.select('#category', 'key-passes');
-    await page.waitForSelector('.keyPassesTotal   ');
+    let selector1 = 'a[href="#player-tournament-stats-passing"]';
+    await page.waitForSelector(selector1);
+    await page.evaluate((selector) => document.querySelector(selector).click(), selector1);
+    await page.waitForSelector('#statistics-table-passing');
 
-    // select 'type' from 'sub-category' drop-down
-    await page.select('#subcategory', 'type');
-    await page.waitForSelector('.keyPassThroughball   ');
+    await page.waitForFunction('document.querySelector("#statistics-table-passing-loading").style.display == "none"');
 
-    await page.waitForSelector('#player-tournament-stats-detailed #top-player-stats-summary-grid tr td:not(:empty)');
+    await page.waitForSelector('#player-tournament-stats-passing #top-player-stats-summary-grid tr td:not(:empty)');
 
     return await page.evaluate(() => {
         let throughBalls = {};
         let currentSeason = '';
-        const tds = Array.from(document.querySelectorAll('#player-tournament-stats-detailed #top-player-stats-summary-grid tr td'));
+        const tds = Array.from(document.querySelectorAll('#player-tournament-stats-passing #top-player-stats-summary-grid tr td'));
         for (let i = 0; i < tds.length; i++) {
             if (tds[i].className === 'rank tournament') {
                 currentSeason = tds[i].innerText + ' - ' + tds[i + 2].innerText + '|' + tds[i + 1].innerText;
                 throughBalls[currentSeason] = {};
             } else {
-                if (tds[i].className === 'keyPassThroughball   ') {
+                if (tds[i].className === 'accurateThroughBallPerGame   ') {
+                    let apps = tds[i-8].innerText;
+                    if (apps.includes('(')) {
+                        let starts = apps.substr(0, apps.indexOf('('));
+                        let subs = apps.substr(apps.indexOf('(') + 1, apps.indexOf(')') - 3);
+                        apps = parseInt(starts, 10) + parseInt(subs, 10);
+                    }
+                    else {
+                        apps = parseInt(tds[i-8].innerText, 10)
+                    }
                     if (tds[i].innerText === '-') {
                         throughBalls[currentSeason]['throughBalls'] = 0;
                     } else {
-                        throughBalls[currentSeason]['throughBalls'] = parseInt(tds[i].innerText, 10);
+                        throughBalls[currentSeason]['throughBalls'] = parseFloat(tds[i].innerText) * apps;
                     }
                 }
             }
@@ -755,3 +771,35 @@ let scrapeFouls = async (page) => {
     });
 
 };
+
+let scrapeBlocks = async (page) => {
+
+    // select 'blocks' from 'category' drop-down
+    await page.select('#category', 'blocks');
+    await page.waitForSelector('.outfielderBlock   ');
+
+    await page.waitForSelector('#player-tournament-stats-detailed #top-player-stats-summary-grid tr td:not(:empty)');
+
+    return await page.evaluate(() => {
+        let blocks = {};
+        let currentSeason = '';
+        const tds = Array.from(document.querySelectorAll('#player-tournament-stats-detailed #top-player-stats-summary-grid tr td'));
+        for (let i = 0; i < tds.length; i++) {
+            if (tds[i].className === 'rank tournament') {
+                currentSeason = tds[i].innerText + ' - ' + tds[i + 2].innerText + '|' + tds[i + 1].innerText;
+                blocks[currentSeason] = {};
+            } else {
+                if (tds[i].className === 'outfielderBlock   ') {
+                    if (tds[i].innerText === '-') {
+                        blocks[currentSeason]['blocks'] = 0;
+                    } else {
+                        blocks[currentSeason]['blocks'] = parseInt(tds[i].innerText, 10);
+                    }
+                }
+            }
+        }
+        return blocks;
+    });
+
+};
+
