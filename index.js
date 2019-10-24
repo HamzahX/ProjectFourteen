@@ -62,7 +62,7 @@ io.on('connection', function(socket){
                     searchResults[i]["nationality"] = countryCodes.getCountryName(countryISO.toUpperCase());
                 }
                 console.timeEnd(socket.id + " | Time taken to return search results");
-                // console.log(searchResults);
+                console.log(searchResults);
                 socket.emit('search results', searchResults);
             }).catch(async (anError) => {
                 await page.close();
@@ -97,7 +97,7 @@ io.on('connection', function(socket){
                     orderedStats[key] = unorderedStats[key];
                 });
                 console.timeEnd(socket.id + " | Time taken to return stats");
-                // console.log(orderedStats);
+                console.log(orderedStats);
                 socket.emit('stats scraped', orderedStats);
             }).catch(async (anError) => {
                 await page.close();

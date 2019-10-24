@@ -156,7 +156,7 @@ function updateRadar(isNew = true){
                 radar.reflow();
             }
             else {
-                drawRadar(selectedStats, subtitle, categories, yAxis);
+                drawRadar(selectedStats);
             }
         }
         else {
@@ -291,7 +291,7 @@ function setForwardTemplate(selectedStats){
         {softMin: 1.12, softMax: 3, tickPositioner: function () {return placeTicks(selectedStats[5], 1.12, 3)}, showFirstLabel: false, showLastLabel: true},
         {softMin: 0.13, softMax: 0.65, tickPositioner: function () {return placeTicks(selectedStats[6], 0.13, 0.65)}, showFirstLabel: false, showLastLabel: true},
         {softMin: 1.3, softMax: 4.5, tickPositioner: function () {return placeTicks(selectedStats[7], 1.3, 4.5)}, showFirstLabel: false, showLastLabel: true},
-        {softMin: 1, softMax: 3, reversed: true, tickPositioner: function () {return placeTicks(selectedStats[8], 1, 3)}, showFirstLabel: true, showLastLabel: false},
+        {softMin: 1, softMax: 3, reversed: true, tickPositioner: function () {return placeTicks(selectedStats[8], 1, 3, true)}, showFirstLabel: true, showLastLabel: false},
         {softMin: 0.7, softMax: 2.5, tickPositioner: function () {return placeTicks(selectedStats[9], 0.7, 2.5)}, showFirstLabel: false, showLastLabel: true},
         {softMin: 4.5, softMax: 22.5, tickPositioner: function () {return placeTicks(selectedStats[10], 4.5, 22.5)}, showFirstLabel: false, showLastLabel: true},
     ];
@@ -384,7 +384,7 @@ function setCenterbackTemplate(selectedStats){
     ];
 }
 
-function placeTicks(value, min, max){
+function placeTicks(value, min, max, isReversed = false){
     let positions = [];
     if (value > max) {
         max = value;
@@ -393,6 +393,12 @@ function placeTicks(value, min, max){
         min = value;
     }
     let increment = (max - min) / 4;
+    // if (isReversed){
+    //     max = max + increment;
+    // }
+    // else {
+    //     min = min - increment;
+    // }
     let currentTick = min;
     while (currentTick <= max + increment){
         positions.push(Math.round(currentTick * 100) / 100);
@@ -420,12 +426,12 @@ function drawRadar(selectedStats){
                     }
                 },
                 gridLineWidth: 0,
-                lineWidth: 1,
+                lineWidth: 0,
                 maxPadding: 0, 
                 endOnTick: false,
             },
             polar: true,
-            type: 'area',
+            type: 'bar',
             maxWidth: 1000,
             hideDelay: 0,
             marginLeft: 50,
@@ -439,7 +445,7 @@ function drawRadar(selectedStats){
         plotOptions: {
             series: {
                 softThreshold: false,
-                color: Highcharts.Color(Highcharts.getOptions().colors[0]).setOpacity(0.8).get(),
+                color: Highcharts.Color(Highcharts.getOptions().colors[0]).setOpacity(0.6).get(),
                 fillColor: Highcharts.Color(Highcharts.getOptions().colors[0]).setOpacity(0.25).get(),
             }
         },
@@ -485,21 +491,24 @@ function drawRadar(selectedStats){
         xAxis: {
             categories: categories,
             labels: {
-                distance: 30,
+                distance: 40,
                 style: {
                     fontSize: '1em'
                 },
                 padding: 0,
             },
             margin: 0,
-            gridLineWidth: 0,
+            gridLineWidth: 1,
+            gridLineColor: '#000000'
         },
         series:
             series.map(function (set, i) {
                 return {
+                    pointPadding: 0,
+                    groupPadding: 0,
                     name: name,
                     data: set,
-                    stickyTracking: true
+                    stickyTracking: false
                 };
             }),
         exporting: {
