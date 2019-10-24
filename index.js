@@ -97,7 +97,7 @@ io.on('connection', function(socket){
                     orderedStats[key] = unorderedStats[key];
                 });
                 console.timeEnd(socket.id + " | Time taken to return stats");
-                console.log(orderedStats);
+                // console.log(orderedStats);
                 socket.emit('stats scraped', orderedStats);
             }).catch(async (anError) => {
                 await page.close();
