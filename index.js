@@ -65,8 +65,8 @@ io.on('connection', function(socket){
                 // console.log(searchResults);
                 socket.emit('search results', searchResults);
             }).catch(async (anError) => {
-                console.log(socket.id + " | " + anError);
                 await page.close();
+                console.log(socket.id + " | " + anError);
                 socket.emit('alert error', anError.name);
             });
         }
@@ -80,24 +80,28 @@ io.on('connection', function(socket){
         else {
             console.log(socket.id + " | Retrieving stats from: " + URL);
             console.time(socket.id + " | Time taken to return stats");
-            let stats = {};
             let page = await context.newPage();
             getStats(page, URL).then(async (rawData) => {
                 await page.close();
+                let unorderedStats = {};
                 for (let key in rawData[0]) {
-                    stats[key] = {};
+                    unorderedStats[key] = {};
                 }
                 for (let i = 0; i < rawData.length; i++) {
                     for (let key in rawData[i]) {
-                        Object.assign(stats[key], rawData[i][key]);
+                        Object.assign(unorderedStats[key], rawData[i][key]);
                     }
                 }
+                let orderedStats = {};
+                Object.keys(unorderedStats).sort().reverse().forEach(function(key) {
+                    orderedStats[key] = unorderedStats[key];
+                });
                 console.timeEnd(socket.id + " | Time taken to return stats");
-                // console.log(stats);
-                socket.emit('stats scraped', stats);
+                console.log(orderedStats);
+                socket.emit('stats scraped', orderedStats);
             }).catch(async (anError) => {
-                console.log(socket.id + " | " + anError);
                 await page.close();
+                console.log(socket.id + " | " + anError);
                 socket.emit('alert error', anError.name);
             });
         }
@@ -206,13 +210,13 @@ let getStats = async (page, URL) => {
             (rawData.push(aerialDuels), scrapeCrosses(page))
         )
         .then((crosses) =>
-            (rawData.push(crosses), scrapeThroughBalls(page))
-        )
-        .then((throughballs) =>
-            (rawData.push(throughballs), scrapeBlocks(page))
+            (rawData.push(crosses), scrapeBlocks(page))
         )
         .then((blocks) =>
-            (rawData.push(blocks), resolve(rawData))
+            (rawData.push(blocks), scrapeThroughBalls(page))
+        )
+        .then((throughballs) =>
+            (rawData.push(throughballs), resolve(rawData))
         )
         .catch(async(anError) => {
             reject(anError);
@@ -480,7 +484,7 @@ let scrapeThroughBalls = async (page) => {
                     let apps = tds[i-8].innerText;
                     if (apps.includes('(')) {
                         let starts = apps.substr(0, apps.indexOf('('));
-                        let subs = apps.substr(apps.indexOf('(') + 1, apps.indexOf(')') - 3);
+                        let subs = apps.substr(apps.indexOf('(') + 1, apps.indexOf(')'));
                         apps = parseInt(starts, 10) + parseInt(subs, 10);
                     }
                     else {
@@ -489,6 +493,7 @@ let scrapeThroughBalls = async (page) => {
                     if (tds[i].innerText === '-') {
                         throughBalls[currentSeason]['throughBalls'] = 0;
                     } else {
+                        // throughBalls[currentSeason]['throughBalls'] = Math.round(parseFloat(tds[i].innerText) * apps);
                         throughBalls[currentSeason]['throughBalls'] = parseFloat(tds[i].innerText) * apps;
                     }
                 }
