@@ -171,6 +171,7 @@ function updateRadar(isNew = true){
         }
         radar.setTitle(null, { text: subtitle + filteredStats['minutes'].toLocaleString() + ' minutes'});
     }
+    radar.redraw();
 }
 
 function filterStats(stats){
@@ -454,7 +455,7 @@ function drawRadar(selectedStats){
             hideDelay: 0,
             marginLeft: 85,
             marginRight: 85,
-            marginBottom: 0
+            marginBottom: 10
         },
         style: {
             fontFamily: 'Lucida Grande'
@@ -464,7 +465,7 @@ function drawRadar(selectedStats){
         },
         plotOptions: {
             series: {
-                // softThreshold: false,
+                softThreshold: false,
                 color: Highcharts.Color(Highcharts.getOptions().colors[0]).setOpacity(0.6).get(),
             }
         },
