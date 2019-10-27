@@ -46,7 +46,7 @@ h3 {
 }
 
 .highcharts-data-table{
-    /*border: darkgrey 1px solid;*/
+    border: darkgrey 1px solid;
     margin: 10px 20px 20px 0;
     padding-right: 10px;
     display: flex;
@@ -245,6 +245,7 @@ h3 {
     font-family: "Lucida Grande", Helvetica, Arial, sans-serif;
     opacity: 1;
 }
+
 @media (max-width: 1500px){
     #search-results {
         grid-template-columns: 1fr 1fr;
