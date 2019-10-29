@@ -171,7 +171,7 @@ function updateRadar(isNew = true){
         }
         radar.setTitle(null, { text: subtitle + filteredStats['minutes'].toLocaleString() + ' minutes'});
     }
-    radar.redraw();
+    radar.render();
 }
 
 function filterStats(stats){
@@ -400,6 +400,7 @@ function placeTicks(value, min, max, isReversed = false){
     else {
         min = min - increment;
     }
+    console.log([min, value, max]);
     return [min, value, max];
 }
 
@@ -431,6 +432,11 @@ function drawRadar(selectedStats){
             },
             polar: true,
             type: 'bar',
+            maxWidth: 1000,
+            hideDelay: 0,
+            marginLeft: 50,
+            marginRight: 50,
+            marginBottom: 25,
             events: {
                 // render: function() {
                 //     var chart = this,
@@ -450,18 +456,13 @@ function drawRadar(selectedStats){
                         window.open(url, '_blank');
                     }
                 }
-            },
-            maxWidth: 1000,
-            hideDelay: 0,
-            marginLeft: 85,
-            marginRight: 85,
-            marginBottom: 10
+            }
         },
         style: {
             fontFamily: 'Lucida Grande'
         },
         credits: {
-            text: 'All data is taken from www.whoscored.com',
+            text: 'All data is taken from www.whoscored.com'
         },
         plotOptions: {
             series: {
