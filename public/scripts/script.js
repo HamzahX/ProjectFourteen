@@ -304,7 +304,7 @@ function setMidfieldTemplate(selectedStats){
         '% Passes Completed',
         'Key Passes',
         'Through Balls**',
-        'Direct Goal Involvement',
+        'Non-Penalty Goals + Assists',
         'Successful Dribbles',
         'Dispossessed',
         'Fouls Committed',
