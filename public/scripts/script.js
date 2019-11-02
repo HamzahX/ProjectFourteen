@@ -42,12 +42,12 @@ socket.on('stats scraped', function(scrapedStats){
     console.log(stats);
     competitions = Object.keys(stats);
     for (let i=0; i<competitions.length; i++){
-        $('#competitions').append('<label><input class="competition" type="checkbox" value="' + competitions[i] + '" onchange="updateRadar(false)" checked> ' + competitions[i].split("|").join("<br>") + '</label>');
+        $('#competitions').append('<label><input class="competition" type="checkbox" value="' + competitions[i] + '" onchange="drawRadar()" checked> ' + competitions[i].split("|").join("<br>") + '</label>');
     }
     $('#radar').empty();
     $("#loading-screen").css("display", "none");
     $("#content-screen").css("display", "flex");
-    updateRadar();
+    drawRadar(true);
 });
 
 socket.on('alert error', function(anError){
@@ -104,7 +104,7 @@ function drawLoadingScreen(type, anError=""){
     loadingScreen.css("display", "flex");
 }
 
-function updateRadar(isNew = true){
+function drawRadar(isNew = false){
     let dataTable = $('.highcharts-data-table');
     if (competitions.length === 0){
         isNew = true;
@@ -120,7 +120,7 @@ function updateRadar(isNew = true){
             dataTable.css("opacity", 0);
         }
         subtitle = '';
-        drawRadar([]);
+        createRadar([]);
         $(".highcharts-axis-line").attr("stroke-width", "0");
     }
     else {
@@ -152,12 +152,12 @@ function updateRadar(isNew = true){
         if (isNew) {
             if (dataTable.length){
                 dataTable.remove();
-                drawRadar(selectedStats);
+                createRadar(selectedStats);
                 radar.viewData();
                 radar.reflow();
             }
             else {
-                drawRadar(selectedStats);
+                createRadar(selectedStats);
             }
         }
         else {
@@ -165,13 +165,13 @@ function updateRadar(isNew = true){
                 point.update(selectedStats[i], false);
             });
             radar.redraw();
+            radar.render();
             if (dataTable.length){
                 radar.viewData();
             }
         }
         radar.setTitle(null, { text: subtitle + filteredStats['minutes'].toLocaleString() + ' minutes'});
     }
-    radar.render();
 }
 
 function filterStats(stats){
@@ -274,13 +274,13 @@ function setForwardTemplate(selectedStats){
     categories = [
         'Non-Penalty Goals',
         'Non-Penalty Shots',
-        '% Shots on Target',
+        '% Shots on Target**',
         '% Passes Completed',
         'Assists',
         'Key Passes',
-        'Through Balls',
+        'Through Balls**',
         'Recoveries',
-        'Possession Losses',
+        'Dispossessed',
         'Successful Dribbles',
         'Conversion Rate',
     ];
@@ -303,13 +303,13 @@ function setMidfieldTemplate(selectedStats){
     categories = [
         '% Passes Completed',
         'Key Passes',
-        'Through Balls',
+        'Through Balls**',
         'Direct Goal Involvement',
         'Successful Dribbles',
-        'Possession Losses',
+        'Dispossessed',
         'Fouls Committed',
         '% Tackles Won',
-        'Tackles Won',
+        'Successful Tackles',
         'Interceptions',
         'Long Balls'
     ];
@@ -330,14 +330,14 @@ function setMidfieldTemplate(selectedStats){
 
 function setFullbackTemplate(selectedStats){
     categories = [
-        'Tackles Won',
+        'Successful Tackles',
         'Interceptions',
         '% Passes Completed',
         'Key Passes',
         'Successful Crosses',
         '% Crosses Completed',
         'Successful Dribbles',
-        'Possession Losses',
+        'Dispossessed',
         '% Aerial Duels Won',
         '% Tackles Won',
         'Fouls Committed'
@@ -361,14 +361,14 @@ function setCenterbackTemplate(selectedStats){
     categories = [
         '% Passes Completed',
         '% Tackles Won',
-        'Tackles Won',
+        'Successful Tackles',
         'Interceptions',
         'Blocks',
         'Clearances',
         'Fouls Committed',
         '% Aerial Duels Won',
         'Aerial Duels Won',
-        '% Long Balls',
+        '% Long Balls Completed',
         'Long Balls',
     ];
     yAxis = [
@@ -400,11 +400,10 @@ function placeTicks(value, min, max, isReversed = false){
     else {
         min = min - increment;
     }
-    console.log([min, value, max]);
     return [min, value, max];
 }
 
-function drawRadar(selectedStats){
+function createRadar(selectedStats){
     let series;
     if (selectedStats === []){
         series = [];
@@ -419,7 +418,7 @@ function drawRadar(selectedStats){
                 labels: {
                     style: {
                         color: '#222222',
-                        fontSize: "1.1em",
+                        fontSize: "1.25em",
                         fontWeight: "bold"
                     }
                 },
@@ -437,32 +436,21 @@ function drawRadar(selectedStats){
             marginLeft: 50,
             marginRight: 50,
             marginBottom: 25,
+            marginTop: 100,
             events: {
-                // render: function() {
-                //     var chart = this,
-                //         middleElement = chart.middleElement;
-                //
-                //     if (middleElement) {
-                //         middleElement.destroy();
-                //     }
-                //
-                //     chart.middleElement = chart.renderer.circle(chart.plotSizeX / 2 + chart.plotLeft, chart.plotHeight / 2 + chart.plotTop, 20).attr({
-                //         zIndex: 3,
-                //         fill: '#ffffff'
-                //     }).add();
-                // },
                 load: function() {
-                    this.credits.element.onclick = function() {
+                    this.title.element.onclick = function() {
                         window.open(url, '_blank');
                     }
                 }
             }
         },
-        style: {
-            fontFamily: 'Lucida Grande'
-        },
         credits: {
-            text: 'All data is taken from www.whoscored.com'
+            text: "** The accuracy of stats marked with a double asterisk is not guaranteed",
+            style: {
+                fontSize: '1em'
+            },
+            href: ''
         },
         plotOptions: {
             series: {
@@ -475,7 +463,6 @@ function drawRadar(selectedStats){
             style: {
                 fontSize: '2em',
                 fontWeight: 'bold',
-                font: "Lucida Grande"
             }
         },
         pane: {
@@ -500,8 +487,8 @@ function drawRadar(selectedStats){
         tooltip: {
             // pointFormat: '<span style="color:{point.color}">\u25CF</span>' +
             //     '{series.name}: <b>{point.formattedValue}</b><br/>'
-            pointFormat: '<span style="color:{point.color}">\u25CF</span>' +
-                ' <b>{point.formattedValue}</b><br/>'
+            // pointFormat: '<span style="color:{point.color}">\u25CF</span>' +
+            //     ' <b>{point.formattedValue}</b><br/>'
         },
         legend: {
             enabled: false,
@@ -545,13 +532,21 @@ function drawRadar(selectedStats){
     });
 }
 
+Highcharts.setOptions({
+    chart: {
+        style: {
+            fontFamily: "sans=serif"
+        }
+    }
+});
+
 function toggleDataTable(){
     let dataTable = $('.highcharts-data-table');
     if (dataTable.length){
         dataTable.remove();
     }
     else {
-        updateRadar();
+        drawRadar(true);
         radar.viewData();
     }
     radar.reflow();
@@ -559,16 +554,13 @@ function toggleDataTable(){
 
 function selectAllSeasons(){
     $('#competitions').trigger("reset");
-    updateRadar(false);
+    drawRadar();
 }
 
 function clearAllSeasons(){
     let dataTable = $('.highcharts-data-table');
     $('input:checkbox').prop("checked", false);
-    // if (dataTable.length){
-    //     dataTable.css("opacity", 0);
-    // }
-    updateRadar();
+    drawRadar();
 }
 
 $("#searchbar").submit(function(e) {

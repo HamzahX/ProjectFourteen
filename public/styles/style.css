@@ -10,7 +10,7 @@ html {
 
 body {
     margin: 0 auto;
-    font-family: "Lucida Grande", Helvetica, Arial, sans-serif;
+    font-family: "Lucida Grande", sans-serif;
 }
 
 input {
@@ -142,17 +142,18 @@ h3 {
 
             grid-template-columns: 1fr 1fr 1fr;
             grid-auto-rows: minmax(min-content, max-content);
-            grid-gap: 20px;
+            grid-column-gap: 20px;
         }
 
             .search-result{
                 padding: 20px;
                 border: darkgrey 1px solid;
+                margin-bottom: 20px;
             }
 
                 .search-result:hover, .search-result:focus {
                     outline: none;
-                    box-shadow: 0 0 6px darkgray;
+                    box-shadow: 0 8px 6px -6px darkgray;
                 }
 
                 .search-result .name{
@@ -238,12 +239,11 @@ h3 {
         padding-bottom: 10%;
         flex-direction: column;
         justify-content: center;
-        font: 1.5em "Lucida Grande", Helvetica, Arial, sans-serif;
+        font-size: 1.5em;
     }
 
 /*Axis labels override*/
 .highcharts-yaxis-labels text {
-    font-family: "Lucida Grande", Helvetica, Arial, sans-serif;
     opacity: 1;
 }
 
