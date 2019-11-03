@@ -13,7 +13,7 @@ let subtitle;
 let categories;
 let yAxis;
 
-let isTest = true;
+let isTest = false;
 
 socket.on('search results', function(results){
     let searchResults = $('#search-results');
