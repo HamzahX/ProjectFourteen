@@ -44,7 +44,6 @@ setup().then(() => {
 io.on('connection', function(socket){
 
     console.log("Number of users currently online: " + Object.keys(io.sockets.sockets).length);
-
     socket.on('search', async(aQuery, isTest) => {
         if (isTest) {
             let searchResults = sampleResults.searchResults;
@@ -165,9 +164,8 @@ let getStats = async (page, URL) => {
     await disableImages(page);
     await page.goto(URL, {waitUntil: 'networkidle0'});
 
-    let rawData = [];
-
     //scrape needed data
+    let rawData = [];
     return new Promise(function(resolve, reject){
         scrapeAssistsAndMinutes(page)
         .then((assists) =>

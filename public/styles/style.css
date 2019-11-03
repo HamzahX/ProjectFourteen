@@ -95,7 +95,7 @@ h3 {
                 color: #222222;
             }
 
-    .main {
+    .screen {
         flex: 1 1 90%;
         max-height: 90%;
         width: 100vw;
@@ -153,7 +153,7 @@ h3 {
 
                 .search-result:hover, .search-result:focus {
                     outline: none;
-                    box-shadow: 0 8px 6px -6px darkgray;
+                    box-shadow: 0 10px 8px -8px darkgray;
                 }
 
                 .search-result .name {
@@ -175,7 +175,7 @@ h3 {
             flex-direction: column;
         }
 
-            #options {
+            #radar-filter-inputs {
                 flex: 1 1 70%;
                 padding: 0 20px 15px;
                 border: darkgrey 1px solid;
@@ -183,20 +183,20 @@ h3 {
                 overflow-y: auto;
             }
 
-                #options h1 {
+                #radar-filter-inputs h1 {
                     text-align: center;
                 }
 
-                #options form {
+                #radar-filter-inputs form {
                 }
 
-                    #options form label {
+                    #radar-filter-inputs form label {
                         display: block;
                         margin-bottom: 5px;
                         padding: 5px;
                     }
 
-                    #options form label:hover {
+                    #radar-filter-inputs form label:hover {
                         box-shadow: 0 0 6px lightgray;
                     }
 
@@ -264,7 +264,7 @@ h3 {
 
 @media (max-width: 800px), (pointer:none), (pointer:coarse) {
 
-    .main {
+    .screen {
         flex-direction: column;
     }
 
@@ -299,17 +299,17 @@ h3 {
         flex-direction: row;
     }
 
-        #options {
+        #radar-filter-inputs {
             max-height: 100%;
         }
 
-            #options form {
+            #radar-filter-inputs form {
                 column-count: 2;
                 -webkit-column-count: 2;
                 -moz-column-count: 2;
             }
 
-                #options form label {
+                #radar-filter-inputs form label {
                     break-inside: avoid-column;
                 }
 
@@ -368,7 +368,7 @@ h3 {
         font-size: 1.7vh;
     }
 
-    #options form label {
+    #radar-filter-inputs form label {
         font-size: 1.5vh;
     }
 

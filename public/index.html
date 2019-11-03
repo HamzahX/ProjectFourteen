@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Under The Radar</title>
+        <title>Organized Chaos</title>
         <meta charset="UTF-8">
         <link rel="stylesheet" type="text/css" href="styles/style.css">
     </head>
@@ -12,13 +12,13 @@
                     <input type="text" id="query" placeholder="Search for a player" autocomplete="off">
                 </form>
             </div>
-            <div class="main" id="landing">
+            <div class="screen" id="landing-screen">
 
             </div>
-            <div class="main" id="loading-screen">
+            <div class="screen" id="loading-screen">
 
             </div>
-            <div class="main" id="search-screen">
+            <div class="screen" id="search-screen">
                 <div class="filter" id="search-filters">
                     <h2>Filter Search Results</h2>
                     <div id="search-filter-inputs">
@@ -31,9 +31,9 @@
 
                 </div>
             </div>
-            <div class="main" id="content-screen">
+            <div class="screen" id="content-screen">
                 <div class="filter" id="radar-filters">
-                    <div id="options">
+                    <div id="radar-filter-inputs">
                         <h3>Template</h3>
                         <form id="templates">
                             <label><input type="radio" name="template" value="FW" onchange="drawRadar(true)" checked> FW / AM</label>

@@ -12,6 +12,7 @@ let radar;
 let subtitle;
 let categories;
 let yAxis;
+let randomColor;
 
 let isTest = false;
 
@@ -38,6 +39,7 @@ socket.on('search results', function(results){
 });
 
 socket.on('stats scraped', function(scrapedStats){
+    randomColor = Math.floor(Math.random() * 10);
     stats = scrapedStats;
     console.log(stats);
     competitions = Object.keys(stats);
@@ -58,7 +60,7 @@ function search(){
     if ($('#loading-screen').css('display') === 'none') {
         $('.highcharts-data-table').remove();
         let query = $('#query').val();
-        $("#landing").css("display", "none");
+        $("#landing-screen").css("display", "none");
         $("#search-screen").css("display", "none");
         $("#content-screen").css("display", "none");
         drawLoadingScreen("search");
@@ -166,7 +168,7 @@ function drawRadar(isNew = false){
             });
             if (dataTable.length){
                 radar.viewData();
-                radar.redraw();
+                // radar.redraw();
             }
             radar.render();
         }
@@ -507,7 +509,8 @@ function createRadar(selectedStats){
                 }
             },
             gridLineWidth: 1.5,
-            gridLineColor: '#000000'
+            gridLineColor: '#000000',
+            gridZIndex: 4
         },
         series:
             series.map(function (set, i) {
@@ -535,7 +538,7 @@ function createRadar(selectedStats){
 Highcharts.setOptions({
     chart: {
         style: {
-            fontFamily: "sans=serif"
+            fontFamily: "sans-serif"
         }
     }
 });
