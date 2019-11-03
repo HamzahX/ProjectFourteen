@@ -45,7 +45,7 @@ h3 {
     margin-bottom: 10px;
 }
 
-.highcharts-data-table{
+.highcharts-data-table {
     border: darkgrey 1px solid;
     margin: 10px 20px 20px 0;
     padding-right: 10px;
@@ -56,7 +56,7 @@ h3 {
     flex: 1 1 20%
 }
 
-.highcharts-data-table table{
+.highcharts-data-table table {
     /*border: darkgrey 1px solid;*/
     text-align: center;
     border-spacing: 0 20px;
@@ -66,7 +66,7 @@ h3 {
     display: none;
 }
 
-.highcharts-data-table table tr{
+.highcharts-data-table table tr {
     text-align: center;
     vertical-align: middle;
 }
@@ -145,7 +145,7 @@ h3 {
             grid-column-gap: 20px;
         }
 
-            .search-result{
+            .search-result {
                 padding: 20px;
                 border: darkgrey 1px solid;
                 margin-bottom: 20px;
@@ -156,12 +156,12 @@ h3 {
                     box-shadow: 0 8px 6px -6px darkgray;
                 }
 
-                .search-result .name{
+                .search-result .name {
                     font-size: 1.6em;
                     font-weight: bold;
                 }
 
-                .search-result .club, .search-result .nationality{
+                .search-result .club, .search-result .nationality {
                     font-size: 1.2em;
                     color: dimgrey;
                 }
@@ -277,7 +277,7 @@ h3 {
             margin: 10px 20px 20px;
         }
 
-    #search-filters{
+    #search-filters {
         justify-content: center;
     }
 
@@ -333,6 +333,9 @@ h3 {
                 display: none;
             }
 
+    .highcharts-data-table {
+        display: none;
+    }
 }
 
 @media (pointer:none), (pointer:coarse) {
@@ -361,7 +364,7 @@ h3 {
         font-size: 2.1vh;
     }
 
-    .search-result .club, .search-result .nationality{
+    .search-result .club, .search-result .nationality {
         font-size: 1.7vh;
     }
 
@@ -391,7 +394,7 @@ h3 {
     margin:0 auto;
 }
 
-.circularG{
+.circularG {
     position:absolute;
     background-color:rgb(0,0,0);
     width:14px;
@@ -423,7 +426,7 @@ h3 {
     -moz-animation-direction:normal;
 }
 
-#circularG_1{
+#circularG_1 {
     left:0;
     top:23px;
     animation-delay:0.41s;
@@ -433,7 +436,7 @@ h3 {
     -moz-animation-delay:0.41s;
 }
 
-#circularG_2{
+#circularG_2 {
     left:6px;
     top:6px;
     animation-delay:0.55s;
@@ -443,7 +446,7 @@ h3 {
     -moz-animation-delay:0.55s;
 }
 
-#circularG_3{
+#circularG_3 {
     top:0;
     left:23px;
     animation-delay:0.69s;
@@ -453,7 +456,7 @@ h3 {
     -moz-animation-delay:0.69s;
 }
 
-#circularG_4{
+#circularG_4 {
     right:6px;
     top:6px;
     animation-delay:0.83s;
@@ -463,7 +466,7 @@ h3 {
     -moz-animation-delay:0.83s;
 }
 
-#circularG_5{
+#circularG_5 {
     right:0;
     top:23px;
     animation-delay:0.97s;
@@ -473,7 +476,7 @@ h3 {
     -moz-animation-delay:0.97s;
 }
 
-#circularG_6{
+#circularG_6 {
     right:6px;
     bottom:6px;
     animation-delay:1.1s;
@@ -483,7 +486,7 @@ h3 {
     -moz-animation-delay:1.1s;
 }
 
-#circularG_7{
+#circularG_7 {
     left:23px;
     bottom:0;
     animation-delay:1.24s;
@@ -493,7 +496,7 @@ h3 {
     -moz-animation-delay:1.24s;
 }
 
-#circularG_8{
+#circularG_8 {
     left:6px;
     bottom:6px;
     animation-delay:1.38s;
@@ -505,7 +508,7 @@ h3 {
 
 
 
-@keyframes bounce_circularG{
+@keyframes bounce_circularG {
     0%{
         transform:scale(1);
     }
@@ -515,7 +518,7 @@ h3 {
     }
 }
 
-@-o-keyframes bounce_circularG{
+@-o-keyframes bounce_circularG {
     0%{
         -o-transform:scale(1);
     }
@@ -525,7 +528,7 @@ h3 {
     }
 }
 
-@-ms-keyframes bounce_circularG{
+@-ms-keyframes bounce_circularG {
     0%{
         -ms-transform:scale(1);
     }
@@ -535,7 +538,7 @@ h3 {
     }
 }
 
-@-webkit-keyframes bounce_circularG{
+@-webkit-keyframes bounce_circularG {
     0%{
         -webkit-transform:scale(1);
     }
@@ -545,7 +548,7 @@ h3 {
     }
 }
 
-@-moz-keyframes bounce_circularG{
+@-moz-keyframes bounce_circularG {
     0%{
         -moz-transform:scale(1);
     }
