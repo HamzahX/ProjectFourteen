@@ -13,7 +13,7 @@ let subtitle;
 let categories;
 let yAxis;
 
-let isTest = false;
+let isTest = true;
 
 socket.on('search results', function(results){
     let searchResults = $('#search-results');
@@ -116,15 +116,15 @@ function drawRadar(isNew = false){
     let template = $("input[name='template']:checked").val();
     let filteredStats = filterStats(stats);
     if (Object.keys(filteredStats).length === 0){
-        if (dataTable.length){
-            dataTable.css("opacity", 0);
-        }
+        dataTable.css("opacity", 0);
         subtitle = '';
         createRadar([]);
         $(".highcharts-axis-line").attr("stroke-width", "0");
+        $('.highcharts-yaxis-labels').css("opacity", 0);
     }
     else {
         dataTable.css("opacity", 1);
+        $('.highcharts-yaxis-labels').css("opacity", 1);
         let selectedStats;
         switch (template){
             case 'FW':
@@ -164,11 +164,11 @@ function drawRadar(isNew = false){
             $.each(radar.series[0].data, function (i, point) {
                 point.update(selectedStats[i], false);
             });
-            radar.redraw();
-            radar.render();
             if (dataTable.length){
                 radar.viewData();
+                radar.redraw();
             }
+            radar.render();
         }
         radar.setTitle(null, { text: subtitle + filteredStats['minutes'].toLocaleString() + ' minutes'});
     }
@@ -558,7 +558,6 @@ function selectAllSeasons(){
 }
 
 function clearAllSeasons(){
-    let dataTable = $('.highcharts-data-table');
     $('input:checkbox').prop("checked", false);
     drawRadar();
 }
