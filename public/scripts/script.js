@@ -544,6 +544,7 @@ function toggleDataTable(){
     let dataTable = $('.highcharts-data-table');
     if (dataTable.length){
         dataTable.remove();
+        drawRadar(true);
     }
     else {
         drawRadar(true);
