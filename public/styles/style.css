@@ -170,12 +170,12 @@ h3 {
         display: none;
     }
 
-        #radar-filters {
+        #chart-filters {
             display: flex;
             flex-direction: column;
         }
 
-            #radar-filter-inputs {
+            #chart-filter-inputs {
                 flex: 1 1 70%;
                 padding: 0 20px 15px;
                 border: darkgrey 1px solid;
@@ -183,20 +183,20 @@ h3 {
                 overflow-y: auto;
             }
 
-                #radar-filter-inputs h1 {
+                #chart-filter-inputs h1 {
                     text-align: center;
                 }
 
-                #radar-filter-inputs form {
+                #chart-filter-inputs form {
                 }
 
-                    #radar-filter-inputs form label {
+                    #chart-filter-inputs form label {
                         display: block;
                         margin-bottom: 5px;
                         padding: 5px;
                     }
 
-                    #radar-filter-inputs form label:hover {
+                    #chart-filter-inputs form label:hover {
                         box-shadow: 0 0 6px lightgray;
                     }
 
@@ -226,7 +226,7 @@ h3 {
                         }
 
 
-        #radar {
+        #chart {
             border: none;
             padding: 10px;
             display: flex;
@@ -295,21 +295,21 @@ h3 {
         grid-template-columns: 1fr;
     }
 
-    #radar-filters {
+    #chart-filters {
         flex-direction: row;
     }
 
-        #radar-filter-inputs {
+        #chart-filter-inputs {
             max-height: 100%;
         }
 
-            #radar-filter-inputs form {
+            #chart-filter-inputs form {
                 column-count: 2;
                 -webkit-column-count: 2;
                 -moz-column-count: 2;
             }
 
-                #radar-filter-inputs form label {
+                #chart-filter-inputs form label {
                     break-inside: avoid-column;
                 }
 
@@ -368,7 +368,7 @@ h3 {
         font-size: 1.7vh;
     }
 
-    #radar-filter-inputs form label {
+    #chart-filter-inputs form label {
         font-size: 1.5vh;
     }
 

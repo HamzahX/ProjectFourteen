@@ -32,14 +32,14 @@
                 </div>
             </div>
             <div class="screen" id="content-screen">
-                <div class="filter" id="radar-filters">
-                    <div id="radar-filter-inputs">
+                <div class="filter" id="chart-filters">
+                    <div id="chart-filter-inputs">
                         <h3>Template</h3>
                         <form id="templates">
-                            <label><input type="radio" name="template" value="FW" onchange="drawRadar(true)" checked> FW / AM</label>
-                            <label><input type="radio" name="template" value="MF" onchange="drawRadar(true)"> CM / DM</label>
-                            <label><input type="radio" name="template" value="FB" onchange="drawRadar(true)"> FB</label>
-                            <label><input type="radio" name="template" value="CB" onchange="drawRadar(true)"> CB</label>
+                            <label><input type="radio" name="template" value="FW" onchange="drawChart(true)" checked> FW / AM</label>
+                            <label><input type="radio" name="template" value="MF" onchange="drawChart(true)"> CM / DM</label>
+                            <label><input type="radio" name="template" value="FB" onchange="drawChart(true)"> FB</label>
+                            <label><input type="radio" name="template" value="CB" onchange="drawChart(true)"> CB</label>
                         </form>
                         <h3>Competitions</h3>
                         <form id="competitions"></form>
@@ -56,7 +56,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="result" id="radar">
+                <div class="result" id="chart">
 
                 </div>
             </div>

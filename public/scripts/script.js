@@ -8,7 +8,7 @@ let club;
 let nationality;
 let url;
 
-let radar;
+let chart;
 let subtitle;
 let categories;
 let yAxis;
@@ -44,12 +44,12 @@ socket.on('stats scraped', function(scrapedStats){
     console.log(stats);
     competitions = Object.keys(stats);
     for (let i=0; i<competitions.length; i++){
-        $('#competitions').append('<label><input class="competition" type="checkbox" value="' + competitions[i] + '" onchange="drawRadar()" checked> ' + competitions[i].split("|").join("<br>") + '</label>');
+        $('#competitions').append('<label><input class="competition" type="checkbox" value="' + competitions[i] + '" onchange="drawChart()" checked> ' + competitions[i].split("|").join("<br>") + '</label>');
     }
-    $('#radar').empty();
+    $('#chart').empty();
     $("#loading-screen").css("display", "none");
     $("#content-screen").css("display", "flex");
-    drawRadar(true);
+    drawChart(true);
 });
 
 socket.on('alert error', function(anError){
@@ -71,7 +71,7 @@ function search(){
 function getStats(elem){
     $('#filterByClub').val("");
     $('#filterByNationality').val("");
-    $('#radar').empty();
+    $('#chart').empty();
     $('#competitions').empty();
     name = $(elem).find('.name').text();
     club = $(elem).find('.club').text().substring(6);
@@ -106,7 +106,7 @@ function drawLoadingScreen(type, anError=""){
     loadingScreen.css("display", "flex");
 }
 
-function drawRadar(isNew = false){
+function drawChart(isNew = false){
     let dataTable = $('.highcharts-data-table');
     if (competitions.length === 0){
         isNew = true;
@@ -120,7 +120,7 @@ function drawRadar(isNew = false){
     if (Object.keys(filteredStats).length === 0){
         dataTable.css("opacity", 0);
         subtitle = '';
-        createRadar([]);
+        createChart([]);
         $(".highcharts-axis-line").attr("stroke-width", "0");
         $('.highcharts-yaxis-labels').css("opacity", 0);
     }
@@ -154,25 +154,25 @@ function drawRadar(isNew = false){
         if (isNew) {
             if (dataTable.length){
                 dataTable.remove();
-                createRadar(selectedStats);
-                radar.viewData();
-                radar.reflow();
+                createChart(selectedStats);
+                chart.viewData();
+                chart.reflow();
             }
             else {
-                createRadar(selectedStats);
+                createChart(selectedStats);
             }
         }
         else {
-            $.each(radar.series[0].data, function (i, point) {
+            $.each(chart.series[0].data, function (i, point) {
                 point.update(selectedStats[i], false);
             });
             if (dataTable.length){
-                radar.viewData();
-                // radar.redraw();
+                chart.viewData();
+                // chart.redraw();
             }
-            radar.render();
+            chart.render();
         }
-        radar.setTitle(null, { text: subtitle + filteredStats['minutes'].toLocaleString() + ' minutes'});
+        chart.setTitle(null, { text: subtitle + filteredStats['minutes'].toLocaleString() + ' minutes'});
     }
 }
 
@@ -405,7 +405,7 @@ function placeTicks(value, min, max, isReversed = false){
     return [min, value, max];
 }
 
-function createRadar(selectedStats){
+function createChart(selectedStats){
     let series;
     if (selectedStats === []){
         series = [];
@@ -413,7 +413,7 @@ function createRadar(selectedStats){
     else {
         series = [selectedStats];
     }
-    radar = Highcharts.chart('radar', {
+    chart = Highcharts.chart('chart', {
         chart: {
             parallelCoordinates: true,
             parallelAxes: {
@@ -547,23 +547,23 @@ function toggleDataTable(){
     let dataTable = $('.highcharts-data-table');
     if (dataTable.length){
         dataTable.remove();
-        drawRadar(true);
+        drawChart(true);
     }
     else {
-        drawRadar(true);
-        radar.viewData();
+        drawChart(true);
+        chart.viewData();
     }
-    radar.reflow();
+    chart.reflow();
 }
 
 function selectAllSeasons(){
     $('#competitions').trigger("reset");
-    drawRadar();
+    drawChart();
 }
 
 function clearAllSeasons(){
     $('input:checkbox').prop("checked", false);
-    drawRadar();
+    drawChart();
 }
 
 $("#searchbar").submit(function(e) {
