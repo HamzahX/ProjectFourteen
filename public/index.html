@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Under The Radar</title>
+        <title>Organized Chaos</title>
         <meta charset="UTF-8">
         <link rel="stylesheet" type="text/css" href="styles/style.css">
     </head>
@@ -12,13 +12,13 @@
                     <input type="text" id="query" placeholder="Search for a player" autocomplete="off">
                 </form>
             </div>
-            <div class="main" id="landing">
+            <div class="screen" id="landing-screen">
 
             </div>
-            <div class="main" id="loading-screen">
+            <div class="screen" id="loading-screen">
 
             </div>
-            <div class="main" id="search-screen">
+            <div class="screen" id="search-screen">
                 <div class="filter" id="search-filters">
                     <h2>Filter Search Results</h2>
                     <div id="search-filter-inputs">
@@ -31,15 +31,15 @@
 
                 </div>
             </div>
-            <div class="main" id="content-screen">
-                <div class="filter" id="radar-filters">
-                    <div id="options">
+            <div class="screen" id="content-screen">
+                <div class="filter" id="chart-filters">
+                    <div id="chart-filter-inputs">
                         <h3>Template</h3>
                         <form id="templates">
-                            <label><input type="radio" name="template" value="FW" onchange="updateRadar()" checked> FW / AM</label>
-                            <label><input type="radio" name="template" value="MF" onchange="updateRadar()"> CM / DM</label>
-                            <label><input type="radio" name="template" value="FB" onchange="updateRadar()"> FB</label>
-                            <label><input type="radio" name="template" value="CB" onchange="updateRadar()"> CB</label>
+                            <label><input type="radio" name="template" value="FW" onchange="drawChart(true)" checked> FW / AM</label>
+                            <label><input type="radio" name="template" value="MF" onchange="drawChart(true)"> CM / DM</label>
+                            <label><input type="radio" name="template" value="FB" onchange="drawChart(true)"> FB</label>
+                            <label><input type="radio" name="template" value="CB" onchange="drawChart(true)"> CB</label>
                         </form>
                         <h3>Competitions</h3>
                         <form id="competitions"></form>
@@ -56,7 +56,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="result" id="radar">
+                <div class="result" id="chart">
 
                 </div>
             </div>
