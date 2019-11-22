@@ -9,6 +9,8 @@ const http = require('http').Server(server);
 const io = require('socket.io')(http);
 const port = process.env.PORT || 3000;
 
+var fs = require('fs');
+
 //set up express path
 server.use(express.static(path.join(__dirname, '/public')));
 
@@ -41,7 +43,12 @@ setup().then(() => {
 });
 
 //wait for socket events
-io.on('connection', function(socket){
+io.on('connection', async function(socket){
+
+    var contents = fs.readFileSync("serverUtils/percentiles.json");
+    var percentileArrays = JSON.parse(contents);
+
+    socket.emit('percentile arrays', percentileArrays);
 
     console.log("Number of users currently online: " + Object.keys(io.sockets.sockets).length);
     socket.on('search', async(aQuery, isTest) => {

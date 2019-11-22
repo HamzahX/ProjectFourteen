@@ -1,6 +1,7 @@
 const socket = io();
 
 let stats = {};
+let percentileArrays = [];
 let competitions = [];
 
 let name;
@@ -15,6 +16,10 @@ let yAxis;
 let randomColor;
 
 let isTest = false;
+
+socket.on('percentile arrays', function(arrays){
+    percentileArrays = arrays;
+});
 
 socket.on('search results', function(results){
     let searchResults = $('#search-results');
@@ -150,7 +155,7 @@ function drawChart(isNew = false){
                 subtitle = 'FW / AM Template';
                 break;
         }
-        subtitle += ' | per 90 | Sample Size: ';
+        subtitle += ' | Percentile Ranks <br> Sample Size: ';
         if (isNew) {
             if (dataTable.length){
                 dataTable.remove();
@@ -168,10 +173,10 @@ function drawChart(isNew = false){
             });
             if (dataTable.length){
                 chart.viewData();
-                // chart.redraw();
             }
             chart.render();
         }
+        $("caption").text("Percentile Ranks");
         chart.setTitle(null, { text: subtitle + filteredStats['minutes'].toLocaleString() + ' minutes'});
     }
 }
@@ -194,19 +199,31 @@ function filterStats(stats){
 
 function calculateForwardStats(filteredStats){
     let statsPer90 = {};
+    let percentiles = {};
     statsPer90['goals'] = filteredStats['goals'] / (filteredStats['minutes']/90);
     statsPer90['shots'] = (filteredStats['shots']  - filteredStats['penaltiesTaken']) / (filteredStats['minutes']/90);
-    statsPer90['shootingAccuracy'] = ((filteredStats['shotsOnTarget'] - filteredStats['penaltiesTaken']) / (filteredStats['shots'] - filteredStats['penaltiesTaken'])) * 100;
-    statsPer90['passingPct'] = (filteredStats['succPasses'] / filteredStats['totalPasses']) * 100;
+    statsPer90['shotsOnTarget'] = ((filteredStats['shotsOnTarget'] - filteredStats['penaltiesTaken']) / (filteredStats['shots'] - filteredStats['penaltiesTaken'])) * 100;
+    statsPer90['passes'] = (filteredStats['succPasses'] / filteredStats['totalPasses']) * 100;
     statsPer90['assists'] = filteredStats['assists'] / (filteredStats['minutes']/90);
     statsPer90['keyPasses'] = filteredStats['keyPasses'] / (filteredStats['minutes']/90);
     statsPer90['throughBalls'] = filteredStats['throughBalls'] / (filteredStats['minutes']/90);
-    statsPer90['tacklesAndInterceptions'] = (filteredStats['tackles'] / (filteredStats['minutes']/90)) + (filteredStats['interceptions'] / (filteredStats['minutes']/90));
+    statsPer90['recoveries'] = (filteredStats['tackles'] / (filteredStats['minutes']/90)) + (filteredStats['interceptions'] / (filteredStats['minutes']/90));
     statsPer90['possessionLosses'] = filteredStats['possessionLosses'] / (filteredStats['minutes']/90);
     statsPer90['dribbles'] = filteredStats['dribbles'] / (filteredStats['minutes']/90);
     statsPer90['conversionRate'] = (filteredStats['goals'] / (filteredStats['shots']  - filteredStats['penaltiesTaken'])) * 100;
-    statsPer90 = roundTo2Decimals(statsPer90);
-    return Object.values(statsPer90);
+    for (let key in statsPer90){
+        percentiles[key] = percentRank(percentileArrays[key], statsPer90[key]) * 100
+    }
+    percentiles['possessionLosses'] = 100 - percentiles['possessionLosses'];
+    percentiles = roundToSigFigures(percentiles, 2);
+    statsPer90 = roundToSigFigures(statsPer90, 2);
+    let chartInput = [];
+    let i = 0;
+    for (let key in percentiles){
+        chartInput[i] = {y: percentiles[key], p90: statsPer90[key]};
+        i++;
+    }
+    return chartInput;
 }
 
 function calculateMidfielderStats(filteredStats){
@@ -222,7 +239,7 @@ function calculateMidfielderStats(filteredStats){
     statsPer90['tackles'] = (filteredStats['tackles'] / (filteredStats['minutes']/90));
     statsPer90['interceptions'] = (filteredStats['interceptions'] / (filteredStats['minutes']/90));
     statsPer90['succLongPasses'] = (filteredStats['succLongPasses'] / (filteredStats['minutes']/90));
-    statsPer90 = roundTo2Decimals(statsPer90);
+    statsPer90 = roundToSigFigures(statsPer90);
     return Object.values(statsPer90);
 }
 
@@ -239,7 +256,7 @@ function calculateFullbackStats(filteredStats){
     statsPer90['aerialDuelPct'] = (filteredStats['succAerialDuels'] / filteredStats['totalAerialDuels']) * 100;
     statsPer90['tacklePct'] = (filteredStats['tackles'] / (filteredStats['tackles'] + filteredStats['dribbledPast'])) *100;
     statsPer90['fouls'] = filteredStats['fouls'] / (filteredStats['minutes']/90);
-    statsPer90 = roundTo2Decimals(statsPer90);
+    statsPer90 = roundToSigFigures(statsPer90);
     return Object.values(statsPer90);
 }
 
@@ -256,14 +273,30 @@ function calculateCenterbackStats(filteredStats){
     statsPer90['succAerialDuels'] = filteredStats['succAerialDuels'] / (filteredStats['minutes']/90);
     statsPer90['longPassPct'] = (filteredStats['succLongPasses'] / filteredStats['totalLongPasses']) * 100;
     statsPer90['succLongPasses'] = (filteredStats['succLongPasses'] / (filteredStats['minutes']/90));
-    statsPer90 = roundTo2Decimals(statsPer90);
+    statsPer90 = roundToSigFigures(statsPer90);
     return Object.values(statsPer90);
 }
 
-function roundTo2Decimals(someStats){
+function percentRank(arr, v) {
+    for (let i = 0, l = arr.length; i < l; i++) {
+        if (v < arr[i]) {
+            while (i < l && v === arr[i]) i++;
+            if (i === 0) return 0;
+            if (v !== arr[i-1]) {
+                i += (v - arr[i-1]) / (arr[i] - arr[i-1]);
+            }
+            return i / l;
+        }
+    }
+    return 1;
+}
+
+
+function roundToSigFigures(someStats, precision){
     for (let stat in someStats){
         if (isFinite(someStats[stat])) {
-            someStats[stat] = Math.round(someStats[stat] * 100) / 100;
+            // someStats[stat] = Math.round(someStats[stat] * 100) / 100;
+            someStats[stat] = parseFloat(someStats[stat].toFixed(precision))
         }
         else {
             someStats[stat] = 0;
@@ -272,7 +305,8 @@ function roundTo2Decimals(someStats){
     return someStats;
 }
 
-function setForwardTemplate(selectedStats){
+
+function setForwardTemplate(){
     categories = [
         'Non-Penalty Goals',
         'Non-Penalty Shots',
@@ -285,19 +319,6 @@ function setForwardTemplate(selectedStats){
         'Dispossessed',
         'Successful Dribbles',
         'Conversion Rate',
-    ];
-    yAxis = [
-        {softMin: 0.12, softMax: 0.6, tickPositioner: function () {return placeTicks(selectedStats[0], 0.12, 0.6)}},
-        {softMin: 1.7, softMax: 4.5, tickPositioner: function () {return placeTicks(selectedStats[1], 1.7, 4.5)}},
-        {softMin: 27, softMax: 55, tickPositioner: function () {return placeTicks(selectedStats[2], 27, 55)}},
-        {softMin: 65, softMax: 85, tickPositioner: function () {return placeTicks(selectedStats[3], 65, 85)}},
-        {softMin: 0.08, softMax: 0.4, tickPositioner: function () {return placeTicks(selectedStats[4], 0.08, 0.4)}},
-        {softMin: 1.12, softMax: 3, tickPositioner: function () {return placeTicks(selectedStats[5], 1.12, 3)}},
-        {softMin: 0.13, softMax: 0.65, tickPositioner: function () {return placeTicks(selectedStats[6], 0.13, 0.65)}},
-        {softMin: 1.3, softMax: 4.5, tickPositioner: function () {return placeTicks(selectedStats[7], 1.3, 4.5)}},
-        {softMin: 1, softMax: 3, reversed: true, tickPositioner: function () {return placeTicks(selectedStats[8], 1, 3, true)}},
-        {softMin: 0.7, softMax: 2.5, tickPositioner: function () {return placeTicks(selectedStats[9], 0.7, 2.5)}},
-        {softMin: 4.5, softMax: 22.5, tickPositioner: function () {return placeTicks(selectedStats[10], 4.5, 22.5)}},
     ];
 }
 
@@ -419,32 +440,34 @@ function createChart(selectedStats){
             parallelAxes: {
                 labels: {
                     style: {
-                        color: '#222222',
-                        fontSize: "1.25em",
-                        fontWeight: "bold"
+                        color: '#444444',
+                        fontSize: "0.5em",
                     }
                 },
-                gridLineWidth: 0,
+                // gridLineWidth: 1,
+                gridZIndex: 5,
                 lineWidth: 0,
-                maxPadding: 0,
                 endOnTick: true,
                 showFirstLabel: false,
-                showLastLabel: false
+                showLastLabel: false,
+                min: -15,
+                max: 100,
+                tickPositions: [-15, 0, 25, 50, 75, 100]
             },
             polar: true,
             type: 'bar',
             maxWidth: 1000,
             hideDelay: 0,
-            marginLeft: 50,
-            marginRight: 50,
-            marginBottom: 25,
+            // marginLeft: 50,
+            // marginRight: 50,
+            // marginBottom: 25,
             marginTop: 100,
             events: {
                 load: function() {
                     this.title.element.onclick = function() {
                         window.open(url, '_blank');
                     }
-                }
+                },
             }
         },
         credits: {
@@ -456,7 +479,6 @@ function createChart(selectedStats){
         },
         plotOptions: {
             series: {
-                softThreshold: false,
                 color: Highcharts.Color(Highcharts.getOptions().colors[0]).setOpacity(0.6).get(),
             }
         },
@@ -471,7 +493,7 @@ function createChart(selectedStats){
             startAngle: -16.3636363636363636363
         },
         lang: {
-            noData: "No data to display"
+            noData: ""
         },
         noData: {
             style: {
@@ -487,10 +509,8 @@ function createChart(selectedStats){
             }
         },
         tooltip: {
-            // pointFormat: '<span style="color:{point.color}">\u25CF</span>' +
-            //     '{series.name}: <b>{point.formattedValue}</b><br/>'
-            // pointFormat: '<span style="color:{point.color}">\u25CF</span>' +
-            //     ' <b>{point.formattedValue}</b><br/>'
+            pointFormat: '<span style="color:{point.color}">\u25CF</span>' +
+                ' {series.name}<br>Raw Value: <b>{point.p90}</b><br/>Percentile Rank: <b>{point.formattedValue}</b>'
         },
         legend: {
             enabled: false,
@@ -503,13 +523,13 @@ function createChart(selectedStats){
         xAxis: {
             categories: categories,
             labels: {
-                distance: 40,
+                distance: 30,
                 style: {
                     fontSize: '1.15em',
                 }
             },
             gridLineWidth: 1.5,
-            gridLineColor: '#000000',
+            gridLineColor: '#333333',
             gridZIndex: 4
         },
         series:
@@ -519,7 +539,18 @@ function createChart(selectedStats){
                     groupPadding: 0,
                     name: name,
                     data: set,
-                    stickyTracking: false
+                    stickyTracking: false,
+                    zIndex: 0,
+                    dataLabels: [{
+                        enabled: true,
+                        inside: true,
+                        style: {
+                            fontSize: "1.2em",
+                            verticalAlign: 'middle'
+                        },
+                        format: '{point.p90}',
+                        padding: 0
+                    }]
                 };
             }),
         exporting: {
@@ -554,6 +585,7 @@ function toggleDataTable(){
         chart.viewData();
     }
     chart.reflow();
+    $("caption").text("Percentile Ranks");
 }
 
 function selectAllSeasons(){
