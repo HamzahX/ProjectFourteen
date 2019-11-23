@@ -177,6 +177,9 @@ function drawChart(isNew = false){
             chart.render();
         }
         $("caption").text("Percentile Ranks");
+        $.each(chart.series[0].data, function (i, point) {
+            point.update(selectedStats[i], false);
+        });
         chart.setTitle(null, { text: subtitle + filteredStats['minutes'].toLocaleString() + ' minutes'});
     }
 }
@@ -215,8 +218,8 @@ function calculateForwardStats(filteredStats){
         percentiles[key] = percentRank(percentileArrays[key], statsPer90[key]) * 100
     }
     percentiles['possessionLosses'] = 100 - percentiles['possessionLosses'];
-    percentiles = roundToSigFigures(percentiles, 2);
-    statsPer90 = roundToSigFigures(statsPer90, 2);
+    percentiles = roundNumbers(percentiles, 2);
+    statsPer90 = roundNumbers(statsPer90, 2);
     let chartInput = [];
     let i = 0;
     for (let key in percentiles){
@@ -239,7 +242,7 @@ function calculateMidfielderStats(filteredStats){
     statsPer90['tackles'] = (filteredStats['tackles'] / (filteredStats['minutes']/90));
     statsPer90['interceptions'] = (filteredStats['interceptions'] / (filteredStats['minutes']/90));
     statsPer90['succLongPasses'] = (filteredStats['succLongPasses'] / (filteredStats['minutes']/90));
-    statsPer90 = roundToSigFigures(statsPer90);
+    statsPer90 = roundNumbers(statsPer90);
     return Object.values(statsPer90);
 }
 
@@ -256,7 +259,7 @@ function calculateFullbackStats(filteredStats){
     statsPer90['aerialDuelPct'] = (filteredStats['succAerialDuels'] / filteredStats['totalAerialDuels']) * 100;
     statsPer90['tacklePct'] = (filteredStats['tackles'] / (filteredStats['tackles'] + filteredStats['dribbledPast'])) *100;
     statsPer90['fouls'] = filteredStats['fouls'] / (filteredStats['minutes']/90);
-    statsPer90 = roundToSigFigures(statsPer90);
+    statsPer90 = roundNumbers(statsPer90);
     return Object.values(statsPer90);
 }
 
@@ -273,7 +276,7 @@ function calculateCenterbackStats(filteredStats){
     statsPer90['succAerialDuels'] = filteredStats['succAerialDuels'] / (filteredStats['minutes']/90);
     statsPer90['longPassPct'] = (filteredStats['succLongPasses'] / filteredStats['totalLongPasses']) * 100;
     statsPer90['succLongPasses'] = (filteredStats['succLongPasses'] / (filteredStats['minutes']/90));
-    statsPer90 = roundToSigFigures(statsPer90);
+    statsPer90 = roundNumbers(statsPer90);
     return Object.values(statsPer90);
 }
 
@@ -292,11 +295,11 @@ function percentRank(arr, v) {
 }
 
 
-function roundToSigFigures(someStats, precision){
+function roundNumbers(someStats, precision){
     for (let stat in someStats){
         if (isFinite(someStats[stat])) {
-            // someStats[stat] = Math.round(someStats[stat] * 100) / 100;
-            someStats[stat] = parseFloat(someStats[stat].toFixed(precision))
+            // someStats[stat] = parseFloat(someStats[stat].toFixed(precision));
+            someStats[stat] = Math.round(someStats[stat] * 100) / 100;
         }
         else {
             someStats[stat] = 0;
@@ -439,6 +442,7 @@ function createChart(selectedStats){
             parallelCoordinates: true,
             parallelAxes: {
                 labels: {
+                    enabled: false,
                     style: {
                         color: '#444444',
                         fontSize: "0.5em",
@@ -525,7 +529,7 @@ function createChart(selectedStats){
             labels: {
                 distance: 30,
                 style: {
-                    fontSize: '1.15em',
+                    fontSize: '1.3em',
                 }
             },
             gridLineWidth: 1.5,

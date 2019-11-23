@@ -45,7 +45,7 @@ setup().then(() => {
 //wait for socket events
 io.on('connection', async function(socket){
 
-    var contents = fs.readFileSync("serverUtils/percentiles.json");
+    var contents = fs.readFileSync("serverUtils/forwardPercentiles.json");
     var percentileArrays = JSON.parse(contents);
 
     socket.emit('percentile arrays', percentileArrays);

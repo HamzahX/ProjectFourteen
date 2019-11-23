@@ -88,7 +88,7 @@ let processData = async (rawData) => {
         rawData[key].sort();
     }
 
-    await fs.writeFile("percentiles.json", JSON.stringify(rawData), function(err) {
+    await fs.writeFile("forwardPercentiles.json", JSON.stringify(rawData), function(err) {
         if (err) {
             console.log(err);
         }

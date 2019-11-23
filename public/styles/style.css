@@ -164,6 +164,7 @@ h3 {
                 .search-result:hover, .search-result:focus {
                     outline: none;
                     box-shadow: 0 10px 8px -8px darkgray;
+                    cursor: pointer;
                 }
 
                 .search-result .name {
@@ -249,10 +250,6 @@ h3 {
 
             .highcharts-data-label text {
                 opacity: 1 !important;
-            }
-
-            .highcharts-yaxis-labels text {
-                opacity: 0;
             }
 
             .highcharts-container  svg .highcharts-yaxis-grid path:nth-child(6){
