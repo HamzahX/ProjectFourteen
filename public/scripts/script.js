@@ -529,7 +529,7 @@ function createChart(selectedStats){
             labels: {
                 distance: 30,
                 style: {
-                    fontSize: '1.3em',
+                    fontSize: '1.15em',
                 }
             },
             gridLineWidth: 1.5,
@@ -549,7 +549,7 @@ function createChart(selectedStats){
                         enabled: true,
                         inside: true,
                         style: {
-                            fontSize: "1.2em",
+                            fontSize: "1.25em",
                             verticalAlign: 'middle'
                         },
                         format: '{point.p90}',
