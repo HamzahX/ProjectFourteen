@@ -155,7 +155,7 @@ function drawChart(isNew = false){
                 subtitle = 'FW / AM Template';
                 break;
         }
-        subtitle += ' | Percentile Ranks and per 90 stats <br> Sample Size: ';
+        subtitle += ' | Percentile Ranks (per 90 stats) <br> Sample Size: ';
         if (isNew) {
             if (dataTable.length){
                 dataTable.remove();
