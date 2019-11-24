@@ -3,14 +3,14 @@ const puppeteer = require('puppeteer');
 const countryCodes = require('./serverUtils/countryCodes.js');
 const path = require('path');
 const express = require('express');
-const index = express();
-const http = require('http').Server(index);
+const server = express();
+const http = require('http').Server(server);
 const io = require('socket.io')(http);
 const port = process.env.PORT || 3000;
 const fs = require('fs');
 
 //set up express path
-index.use(express.static(path.join(__dirname, '/public')));
+server.use(express.static(path.join(__dirname, '/public')));
 
 //function to launch a browser using puppeteer
 let browser;
