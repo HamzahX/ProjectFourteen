@@ -15,7 +15,7 @@ let categories;
 let yAxis;
 let randomColor;
 
-let isTest = false;
+let isTest = true;
 
 socket.on('percentile arrays', function(arrays){
     percentileArrays = arrays;
@@ -155,7 +155,7 @@ function drawChart(isNew = false){
                 subtitle = 'FW / AM Template';
                 break;
         }
-        subtitle += ' | Percentile Ranks (per 90 stats) <br> Sample Size: ';
+        subtitle = 'Percentile Rank Bars w/ p90 Stats | ' + subtitle + '<br> Sample Size: '
         if (isNew) {
             if (dataTable.length){
                 dataTable.remove();
@@ -177,9 +177,6 @@ function drawChart(isNew = false){
             chart.render();
         }
         $("caption").text("Percentile Ranks");
-        $.each(chart.series[0].data, function (i, point) {
-            point.update(selectedStats[i], false);
-        });
         chart.setTitle(null, { text: subtitle + filteredStats['minutes'].toLocaleString() + ' minutes'});
     }
 }

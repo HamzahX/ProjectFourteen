@@ -1,4 +1,5 @@
+.idea/
 node_modules/
+serverUtils/sampleSearchResults.json
+serverUtils/sampleStats.json
 percentileScraper.js
-sampleResults.js
-.idea/workspace.xml

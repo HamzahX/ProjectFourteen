@@ -1,15 +1,13 @@
 //initialize constants
 const puppeteer = require('puppeteer');
 const countryCodes = require('./serverUtils/countryCodes.js');
-const sampleResults = require('./serverUtils/sampleResults');
 const path = require('path');
 const express = require('express');
 const server = express();
 const http = require('http').Server(server);
 const io = require('socket.io')(http);
 const port = process.env.PORT || 3000;
-
-var fs = require('fs');
+const fs = require('fs');
 
 //set up express path
 server.use(express.static(path.join(__dirname, '/public')));
@@ -45,16 +43,17 @@ setup().then(() => {
 //wait for socket events
 io.on('connection', async function(socket){
 
-    var contents = fs.readFileSync("serverUtils/forwardPercentiles.json");
-    var percentileArrays = JSON.parse(contents);
-
+    let fileContents = fs.readFileSync(path.join(__dirname, '/serverUtils/forwardPercentiles.json'));
+    let percentileArrays = JSON.parse(fileContents);
     socket.emit('percentile arrays', percentileArrays);
 
     console.log("Number of users currently online: " + Object.keys(io.sockets.sockets).length);
+
     socket.on('search', async(aQuery, isTest) => {
         if (isTest) {
-            let searchResults = sampleResults.searchResults;
-            socket.emit('search results', searchResults);
+            let fileContents = fs.readFileSync(path.join(__dirname, '/serverUtils/sampleSearchResults.json'));
+            let sampleSearchResults = JSON.parse(fileContents);
+            socket.emit('search results', sampleSearchResults);
         }
         else {
             console.log(socket.id + " | Searching for: " + aQuery);
@@ -70,6 +69,11 @@ io.on('connection', async function(socket){
                 console.timeEnd(socket.id + " | Time taken to return search results");
                 // console.log(searchResults);
                 socket.emit('search results', searchResults);
+                // await fs.writeFile(path.join(__dirname, '/serverUtils/sampleSearchResults.json'), JSON.stringify(searchResults), function(err) {
+                //     if (err) {
+                //         console.log(err);
+                //     }
+                // });
             }).catch(async (anError) => {
                 await page.close();
                 console.log(socket.id + " | " + anError);
@@ -80,8 +84,9 @@ io.on('connection', async function(socket){
 
     socket.on('scrape stats', async(URL, isTest) => {
         if (isTest) {
-            let stats = sampleResults.stats;
-            socket.emit('stats scraped', stats);
+            let fileContents = fs.readFileSync(path.join(__dirname, '/serverUtils/sampleStats.json'));
+            let sampleStats = JSON.parse(fileContents);
+            socket.emit('stats scraped', sampleStats);
         }
         else {
             console.log(socket.id + " | Retrieving stats from: " + URL);
@@ -105,6 +110,11 @@ io.on('connection', async function(socket){
                 console.timeEnd(socket.id + " | Time taken to return stats");
                 // console.log(orderedStats);
                 socket.emit('stats scraped', orderedStats);
+                // await fs.writeFile(path.join(__dirname, '/serverUtils/sampleStats.json'), JSON.stringify(orderedStats), function(err) {
+                //     if (err) {
+                //         console.log(err);
+                //     }
+                // });
             }).catch(async (anError) => {
                 await page.close();
                 console.log(socket.id + " | " + anError);
