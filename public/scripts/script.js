@@ -484,6 +484,16 @@ function createChart(selectedStats){
         plotOptions: {
             series: {
                 color: Highcharts.Color(Highcharts.getOptions().colors[0]).setOpacity(0.6).get(),
+                dataLabels: {
+                    enabled: true,
+                    inside: true,
+                    style: {
+                        fontSize: "1.25em",
+                    },
+                    format: '{point.p90}',
+                    padding: 0,
+                    allowOverlap: true
+                }
             }
         },
         title: {
@@ -523,7 +533,6 @@ function createChart(selectedStats){
             verticalAlign: 'bottom',
             layout: 'horizontal'
         },
-        yAxis: yAxis,
         xAxis: {
             categories: categories,
             labels: {
@@ -544,17 +553,7 @@ function createChart(selectedStats){
                     name: name,
                     data: set,
                     stickyTracking: false,
-                    zIndex: 0,
-                    dataLabels: [{
-                        enabled: true,
-                        inside: true,
-                        style: {
-                            fontSize: "1.25em",
-                            verticalAlign: 'middle'
-                        },
-                        format: '{point.p90}',
-                        padding: 0
-                    }]
+                    zIndex: 0
                 };
             }),
         exporting: {
