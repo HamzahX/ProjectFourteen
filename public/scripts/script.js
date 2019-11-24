@@ -15,7 +15,7 @@ let categories;
 let yAxis;
 let randomColor;
 
-let isTest = true;
+let isTest = false;
 
 socket.on('percentile arrays', function(arrays){
     percentileArrays = arrays;
