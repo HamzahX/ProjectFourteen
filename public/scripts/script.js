@@ -277,13 +277,16 @@ function calculateCenterbackStats(filteredStats){
     return Object.values(statsPer90);
 }
 
-function percentRank(arr, v) {
-    for (let i = 0, l = arr.length; i < l; i++) {
-        if (v < arr[i]) {
-            while (i < l && v === arr[i]) i++;
+function percentRank(array, value) {
+    if (!isFinite(value)){
+        value = 0;
+    }
+    for (let i = 0, l = array.length; i < l; i++) {
+        if (value < array[i]) {
+            while (i < l && value === array[i]) i++;
             if (i === 0) return 0;
-            if (v !== arr[i-1]) {
-                i += (v - arr[i-1]) / (arr[i] - arr[i-1]);
+            if (value !== array[i-1]) {
+                i += (value - array[i-1]) / (array[i] - array[i-1]);
             }
             return i / l;
         }
@@ -296,7 +299,7 @@ function roundNumbers(someStats, precision){
     for (let stat in someStats){
         if (isFinite(someStats[stat])) {
             // someStats[stat] = parseFloat(someStats[stat].toFixed(precision));
-            someStats[stat] = Math.round(someStats[stat] * 100) / 100;
+            someStats[stat] = Math.round(someStats[stat] * (10**precision)) / (10**precision);
         }
         else {
             someStats[stat] = 0;
@@ -336,19 +339,6 @@ function setMidfieldTemplate(selectedStats){
         'Interceptions',
         'Long Balls'
     ];
-    yAxis = [
-        {softMin: 74, softMax: 90, tickPositioner: function () {return placeTicks(selectedStats[0], 74, 90)}},
-        {softMin: 0.7, softMax: 2.5, tickPositioner: function () {return placeTicks(selectedStats[1], 0.7, 2.5)}},
-        {softMin: 0.1, softMax: 0.5, tickPositioner: function () {return placeTicks(selectedStats[2], 0.1, 0.5)}},
-        {softMin: 0.1, softMax: 0.5, tickPositioner: function () {return placeTicks(selectedStats[3], 0.1, 0.5)}},
-        {softMin: 0.5, softMax: 2.1, tickPositioner: function () {return placeTicks(selectedStats[4], 0.5, 2.1)}},
-        {softMin: 0.5, softMax: 2.47, reversed: true, tickPositioner: function () {return placeTicks(selectedStats[5], 0.5, 2.47, true)}},
-        {softMin: 0.6, softMax: 2.36, reversed: true, tickPositioner: function () {return placeTicks(selectedStats[6], 0.6, 2.36, true)}},
-        {softMin: 45, softMax: 85, tickPositioner: function () {return placeTicks(selectedStats[7], 45, 85)}},
-        {softMin: 1.65, softMax: 4.25, tickPositioner: function () {return placeTicks(selectedStats[8], 1.65, 4.25)}},
-        {softMin: 1.31, softMax: 3.55, tickPositioner: function () {return placeTicks(selectedStats[9], 1.31, 3.55)}},
-        {softMin: 2, softMax: 8, tickPositioner: function () {return placeTicks(selectedStats[10], 2, 8)}}
-    ];
 }
 
 function setFullbackTemplate(selectedStats){
@@ -364,19 +354,6 @@ function setFullbackTemplate(selectedStats){
         '% Aerial Duels Won',
         '% Tackles Won',
         'Fouls Committed'
-    ];
-    yAxis = [
-        {softMin: 1.73, softMax: 4.11, tickPositioner: function () {return placeTicks(selectedStats[0], 1.73, 4.11)}},
-        {softMin: 1.5, softMax: 3.7, tickPositioner: function () {return placeTicks(selectedStats[1], 1.5, 3.7)}},
-        {softMin: 70, softMax: 87, tickPositioner: function () {return placeTicks(selectedStats[2], 70, 87)}},
-        {softMin: 0.47, softMax: 1.46, tickPositioner: function () {return placeTicks(selectedStats[3], 0.47, 1.46)}},
-        {softMin: 0.32, softMax: 1.21, tickPositioner: function () {return placeTicks(selectedStats[4], 0.32, 1.21)}},
-        {softMin: 14.84, softMax: 33, tickPositioner: function () {return placeTicks(selectedStats[5], 14.84, 33)}},
-        {softMin: 0.4, softMax: 1.62, tickPositioner: function () {return placeTicks(selectedStats[6], 0.4, 1.62)}},
-        {softMin: 0.23, softMax: 1.17, reversed: true, tickPositioner: function () {return placeTicks(selectedStats[7], 0.23, 1.17, true)}},
-        {softMin: 30, softMax: 70, tickPositioner: function () {return placeTicks(selectedStats[8], 30, 70)}},
-        {softMin: 45, softMax: 85, tickPositioner: function () {return placeTicks(selectedStats[9], 45, 85)}},
-        {softMin: 0.54, softMax: 1.76, reversed: true, tickPositioner: function () {return placeTicks(selectedStats[10], 0.54, 1.76, true)}}
     ];
 }
 
@@ -394,36 +371,6 @@ function setCenterbackTemplate(selectedStats){
         '% Long Balls Completed',
         'Long Balls',
     ];
-    yAxis = [
-        {softMin: 72.72, softMax: 90, tickPositioner: function () {return placeTicks(selectedStats[0], 72.72, 90)}},
-        {softMin: 60, softMax: 100, tickPositioner: function () {return placeTicks(selectedStats[1], 60, 100)}},
-        {softMin: 1.4, softMax: 3.43, tickPositioner: function () {return placeTicks(selectedStats[2], 1.4, 3.43)}},
-        {softMin: 1.6, softMax: 4, tickPositioner: function () {return placeTicks(selectedStats[3], 1.6, 4)}},
-        {softMin: 0.47, softMax: 1.17, tickPositioner: function () {return placeTicks(selectedStats[4], 0.47, 1.17)}},
-        {softMin: 4.62, softMax: 10.4, tickPositioner: function () {return placeTicks(selectedStats[5], 4.62, 10.4)}},
-        {softMin: 0.5, softMax: 1.7, reversed: true, tickPositioner: function () {return placeTicks(selectedStats[6], 0.5, 1.7, true)}},
-        {softMin: 53.6, softMax: 76, tickPositioner: function () {return placeTicks(selectedStats[7], 53.6, 76)}},
-        {softMin: 1.3, softMax: 3.93, tickPositioner: function () {return placeTicks(selectedStats[8], 1.3, 3.93)}},
-        {softMin: 48.68, softMax: 77.2, tickPositioner: function () {return placeTicks(selectedStats[9], 48.68, 77.2)}},
-        {softMin: 2.74, softMax: 7.05, tickPositioner: function () {return placeTicks(selectedStats[10], 2.74, 7.05)}}
-    ];
-}
-
-function placeTicks(value, min, max, isReversed = false){
-    if (value >= max){
-        max = value * 1.001;
-    }
-    if (value <= min){
-        min = value * 0.99;
-    }
-    let increment = (max - min) / 4;
-    if (isReversed){
-        max = max + increment;
-    }
-    else {
-        min = min - increment;
-    }
-    return [min, value, max];
 }
 
 function createChart(selectedStats){
@@ -483,7 +430,6 @@ function createChart(selectedStats){
                 color: Highcharts.Color(Highcharts.getOptions().colors[0]).setOpacity(0.6).get(),
                 dataLabels: {
                     enabled: true,
-                    inside: true,
                     style: {
                         fontSize: "1.25em",
                     },
@@ -533,7 +479,7 @@ function createChart(selectedStats){
         xAxis: {
             categories: categories,
             labels: {
-                distance: 30,
+                distance: 40,
                 style: {
                     fontSize: '1.15em',
                 }
