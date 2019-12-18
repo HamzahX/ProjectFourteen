@@ -12,9 +12,14 @@ const fs = require('fs');
 //set up express path
 server.use(express.static(path.join(__dirname, '/public')));
 
-//function to launch a browser using puppeteer
+//function to launch a browser using puppeteer, retreieve percentile arrays
 let browser;
 let context;
+let FWPercentiles;
+let AMPercentiles;
+let CMPercentiles;
+let FBPercentiles;
+let CBPercentiles;
 let setup = async () => {
     return new Promise(async function(resolve, reject){
         console.time('browser launch');
@@ -27,6 +32,20 @@ let setup = async () => {
         let pages = await browser.pages();
         await pages[0].close();
         console.timeEnd('browser launch');
+
+        console.time('percentile retrieval');
+        let FWPercentilesFile = fs.readFileSync(path.join(__dirname, '/serverUtils/FWPercentiles.json'));
+        FWPercentiles = JSON.parse(FWPercentilesFile);
+        let AMPercentilesFile = fs.readFileSync(path.join(__dirname, '/serverUtils/AMPercentiles.json'));
+        AMPercentiles = JSON.parse(AMPercentilesFile);
+        let CMPercentilesFile = fs.readFileSync(path.join(__dirname, '/serverUtils/CMPercentiles.json'));
+        CMPercentiles = JSON.parse(CMPercentilesFile);
+        let FBPercentilesFile = fs.readFileSync(path.join(__dirname, '/serverUtils/FBPercentiles.json'));
+        FBPercentiles = JSON.parse(FBPercentilesFile);
+        let CBPercentilesFile = fs.readFileSync(path.join(__dirname, '/serverUtils/CBPercentiles.json'));
+        CBPercentiles = JSON.parse(CBPercentilesFile);
+        console.timeEnd('percentile retrieval');
+
         resolve(context);
     });
 };
@@ -43,11 +62,9 @@ setup().then(() => {
 //wait for socket events
 io.on('connection', async function(socket){
 
-    let fileContents = fs.readFileSync(path.join(__dirname, '/serverUtils/forwardPercentiles.json'));
-    let percentileArrays = JSON.parse(fileContents);
-    socket.emit('percentile arrays', percentileArrays);
-
     console.log("Number of users currently online: " + Object.keys(io.sockets.sockets).length);
+
+    socket.emit('percentile arrays', FWPercentiles, AMPercentiles, CMPercentiles, FBPercentiles, CBPercentiles);
 
     socket.on('search', async(aQuery, isTest) => {
         if (isTest) {
@@ -636,11 +653,16 @@ let scrapeDribbles = async (page) => {
                 dribbles[currentSeason] = {};
             } else {
                 if (tds[i].className === 'dribbleWon   ') {
-                    if (tds[i].innerText === '-') {
-                        dribbles[currentSeason]['dribbles'] = 0;
-                    } else {
-                        dribbles[currentSeason]['dribbles'] = parseInt(tds[i].innerText, 10);
+                    let succDribbles = tds[i].innerText;
+                    let totalDribbles = tds[i+1].innerText;
+                    if (succDribbles === '-') {
+                        succDribbles = '0';
                     }
+                    if (totalDribbles === '-') {
+                        totalDribbles = '0';
+                    }
+                    dribbles[currentSeason]['succDribbles'] = parseInt(succDribbles, 10);
+                    dribbles[currentSeason]['totalDribbles'] = parseInt(totalDribbles, 10);
                 }
             }
         }

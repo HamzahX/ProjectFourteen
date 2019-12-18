@@ -1,8 +1,13 @@
 const socket = io();
 
 let stats = {};
-let percentileArrays = [];
 let competitions = [];
+
+let FWPercentiles = [];
+let AMPercentiles = [];
+let CMPercentiles = [];
+let FBPercentiles = [];
+let CBPercentiles = [];
 
 let name;
 let club;
@@ -17,8 +22,12 @@ let randomColor;
 
 let isTest = false;
 
-socket.on('percentile arrays', function(arrays){
-    percentileArrays = arrays;
+socket.on('percentile arrays', function(forward, attackingMidfield, centralMidfield, fullBack, centerBack){
+    FWPercentiles = forward;
+    AMPercentiles = attackingMidfield;
+    CMPercentiles = centralMidfield;
+    FBPercentiles = fullBack;
+    CBPercentiles = centerBack;
 });
 
 socket.on('search results', function(results){
@@ -136,22 +145,27 @@ function drawChart(isNew = false){
         switch (template){
             case 'FW':
                 selectedStats = calculateForwardStats(filteredStats);
-                setForwardTemplate(selectedStats);
-                subtitle = 'FW / AM Template';
+                setForwardTemplate();
+                subtitle = 'FW Template';
+                break;
+            case 'AM':
+                selectedStats = calculateAttMidfielderStats(filteredStats);
+                setAttMidfieldTemplate();
+                subtitle = 'AM Template';
                 break;
             case 'MF':
                 selectedStats = calculateMidfielderStats(filteredStats);
-                setMidfieldTemplate(selectedStats);
+                setMidfieldTemplate();
                 subtitle = 'CM / DM Template';
                 break;
             case 'FB':
                 selectedStats = calculateFullbackStats(filteredStats);
-                setFullbackTemplate(selectedStats);
+                setFullbackTemplate();
                 subtitle = 'FB Template';
                 break;
             case 'CB':
                 selectedStats = calculateCenterbackStats(filteredStats);
-                setCenterbackTemplate(selectedStats);
+                setCenterbackTemplate();
                 subtitle = 'FW / AM Template';
                 break;
         }
@@ -202,19 +216,106 @@ function calculateForwardStats(filteredStats){
     let percentiles = {};
     statsPer90['goals'] = filteredStats['goals'] / (filteredStats['minutes']/90);
     statsPer90['shots'] = (filteredStats['shots']  - filteredStats['penaltiesTaken']) / (filteredStats['minutes']/90);
+    statsPer90['conversionRate'] = (filteredStats['goals'] / (filteredStats['shots']  - filteredStats['penaltiesTaken'])) * 100;
     statsPer90['shotsOnTarget'] = ((filteredStats['shotsOnTarget'] - filteredStats['penaltiesTaken']) / (filteredStats['shots'] - filteredStats['penaltiesTaken'])) * 100;
-    statsPer90['passes'] = (filteredStats['succPasses'] / filteredStats['totalPasses']) * 100;
     statsPer90['assists'] = filteredStats['assists'] / (filteredStats['minutes']/90);
     statsPer90['keyPasses'] = filteredStats['keyPasses'] / (filteredStats['minutes']/90);
-    statsPer90['throughBalls'] = filteredStats['throughBalls'] / (filteredStats['minutes']/90);
-    statsPer90['recoveries'] = (filteredStats['tackles'] / (filteredStats['minutes']/90)) + (filteredStats['interceptions'] / (filteredStats['minutes']/90));
+    statsPer90['passingRate'] = (filteredStats['succPasses'] / filteredStats['totalPasses']) * 100;
+    statsPer90['succDribbles'] = filteredStats['succDribbles'] / (filteredStats['minutes']/90);
+    statsPer90['dribbleRate'] = (filteredStats['succDribbles'] / filteredStats['totalDribbles']) * 100;
     statsPer90['possessionLosses'] = filteredStats['possessionLosses'] / (filteredStats['minutes']/90);
-    statsPer90['dribbles'] = filteredStats['dribbles'] / (filteredStats['minutes']/90);
-    statsPer90['conversionRate'] = (filteredStats['goals'] / (filteredStats['shots']  - filteredStats['penaltiesTaken'])) * 100;
+    statsPer90['recoveries'] = (filteredStats['tackles'] / (filteredStats['minutes']/90)) + (filteredStats['interceptions'] / (filteredStats['minutes']/90));
     for (let key in statsPer90){
-        percentiles[key] = percentRank(percentileArrays[key], statsPer90[key]) * 100
+        percentiles[key] = percentRank(FWPercentiles[key], statsPer90[key]) * 100
     }
     percentiles['possessionLosses'] = 100 - percentiles['possessionLosses'];
+    return getChartInput(statsPer90, percentiles);
+}
+
+function calculateAttMidfielderStats(filteredStats){
+    let statsPer90 = {};
+    let percentiles = {};
+    statsPer90['goals'] = filteredStats['goals'] / (filteredStats['minutes']/90);
+    statsPer90['shots'] = (filteredStats['shots']  - filteredStats['penaltiesTaken']) / (filteredStats['minutes']/90);
+    statsPer90['assists'] = filteredStats['assists'] / (filteredStats['minutes']/90);
+    statsPer90['keyPasses'] = filteredStats['keyPasses'] / (filteredStats['minutes']/90);
+    statsPer90['passingRate'] = (filteredStats['succPasses'] / filteredStats['totalPasses']) * 100;
+    statsPer90['crossRate'] = (filteredStats['succCrosses'] / filteredStats['totalCrosses']) * 100;
+    statsPer90['throughBalls'] = filteredStats['throughBalls'] / (filteredStats['minutes']/90);
+    statsPer90['succDribbles'] = filteredStats['succDribbles'] / (filteredStats['minutes']/90);
+    statsPer90['dribbleRate'] = (filteredStats['succDribbles'] / filteredStats['totalDribbles']) * 100;
+    statsPer90['possessionLosses'] = filteredStats['possessionLosses'] / (filteredStats['minutes']/90);
+    statsPer90['recoveries'] = (filteredStats['tackles'] / (filteredStats['minutes']/90)) + (filteredStats['interceptions'] / (filteredStats['minutes']/90));
+    for (let key in statsPer90){
+        percentiles[key] = percentRank(AMPercentiles[key], statsPer90[key]) * 100
+    }
+    percentiles['possessionLosses'] = 100 - percentiles['possessionLosses'];
+    return getChartInput(statsPer90, percentiles);
+}
+
+function calculateMidfielderStats(filteredStats){
+    let statsPer90 = {};
+    let percentiles = {};
+    statsPer90['goalsPlusAssists'] = (filteredStats['goals'] + filteredStats['assists']) / (filteredStats['minutes']/90);
+    statsPer90['keyPasses'] = filteredStats['keyPasses'] / (filteredStats['minutes']/90);
+    statsPer90['passingRate'] = (filteredStats['succPasses'] / filteredStats['totalPasses']) * 100;
+    statsPer90['longPassingRate'] = (filteredStats['succLongPasses'] / filteredStats['totalLongPasses']) * 100;
+    statsPer90['throughBalls'] = filteredStats['throughBalls'] / (filteredStats['minutes']/90);
+    statsPer90['succDribbles'] = filteredStats['succDribbles'] / (filteredStats['minutes']/90);
+    statsPer90['dribbleRate'] = (filteredStats['succDribbles'] / filteredStats['totalDribbles']) * 100;
+    statsPer90['tackles'] = (filteredStats['tackles'] / (filteredStats['minutes']/90));
+    statsPer90['tackleRate'] = (filteredStats['tackles'] / (filteredStats['tackles'] + filteredStats['dribbledPast'])) *100;
+    statsPer90['fouls'] = filteredStats['fouls'] / (filteredStats['minutes']/90);
+    statsPer90['interceptions'] = (filteredStats['interceptions'] / (filteredStats['minutes']/90));
+    for (let key in statsPer90){
+        percentiles[key] = percentRank(CMPercentiles[key], statsPer90[key]) * 100
+    }
+    percentiles['fouls'] = 100 - percentiles['fouls'];
+    return getChartInput(statsPer90, percentiles);
+}
+
+function calculateFullbackStats(filteredStats){
+    let statsPer90 = {};
+    let percentiles = {};
+    statsPer90['assists'] = filteredStats['assists'] / (filteredStats['minutes']/90);
+    statsPer90['keyPasses'] = filteredStats['keyPasses'] / (filteredStats['minutes']/90);
+    statsPer90['passingRate'] = (filteredStats['succPasses'] / filteredStats['totalPasses']) * 100;
+    statsPer90['crossRate'] = (filteredStats['succCrosses'] / filteredStats['totalCrosses']) * 100;
+    statsPer90['succDribbles'] = filteredStats['succDribbles'] / (filteredStats['minutes']/90);
+    statsPer90['dribbleRate'] = (filteredStats['succDribbles'] / filteredStats['totalDribbles']) * 100;
+    statsPer90['tackles'] = (filteredStats['tackles'] / (filteredStats['minutes']/90));
+    statsPer90['tackleRate'] = (filteredStats['tackles'] / (filteredStats['tackles'] + filteredStats['dribbledPast'])) *100;
+    statsPer90['fouls'] = filteredStats['fouls'] / (filteredStats['minutes']/90);
+    statsPer90['interceptions'] = (filteredStats['interceptions'] / (filteredStats['minutes']/90));
+    statsPer90['aerialDuelRate'] = (filteredStats['succAerialDuels'] / filteredStats['totalAerialDuels']) * 100;
+    for (let key in statsPer90){
+        percentiles[key] = percentRank(FBPercentiles[key], statsPer90[key]) * 100
+    }
+    percentiles['fouls'] = 100 - percentiles['fouls'];
+    return getChartInput(statsPer90, percentiles);
+}
+
+function calculateCenterbackStats(filteredStats){
+    let statsPer90 = {};
+    let percentiles = {};
+    statsPer90['passingRate'] = (filteredStats['succPasses'] / filteredStats['totalPasses']) * 100;
+    statsPer90['longPassingRate'] = (filteredStats['succLongPasses'] / filteredStats['totalLongPasses']) * 100;
+    statsPer90['tackles'] = (filteredStats['tackles'] / (filteredStats['minutes']/90));
+    statsPer90['tackleRate'] = (filteredStats['tackles'] / (filteredStats['tackles'] + filteredStats['dribbledPast'])) *100;
+    statsPer90['fouls'] = filteredStats['fouls'] / (filteredStats['minutes']/90);
+    statsPer90['interceptions'] = (filteredStats['interceptions'] / (filteredStats['minutes']/90));
+    statsPer90['blocks'] = (filteredStats['blocks'] / (filteredStats['minutes']/90));
+    statsPer90['clearances'] = filteredStats['clearances'] / (filteredStats['minutes']/90);
+    statsPer90['succAerialDuels'] = filteredStats['succAerialDuels'] / (filteredStats['minutes']/90);
+    statsPer90['aerialDuelRate'] = (filteredStats['succAerialDuels'] / filteredStats['totalAerialDuels']) * 100;
+    for (let key in statsPer90){
+        percentiles[key] = percentRank(CBPercentiles[key], statsPer90[key]) * 100
+    }
+    percentiles['fouls'] = 100 - percentiles['fouls'];
+    return getChartInput(statsPer90, percentiles);
+}
+
+function getChartInput(statsPer90, percentiles) {
     percentiles = roundNumbers(percentiles, 2);
     statsPer90 = roundNumbers(statsPer90, 2);
     let chartInput = [];
@@ -224,57 +325,6 @@ function calculateForwardStats(filteredStats){
         i++;
     }
     return chartInput;
-}
-
-function calculateMidfielderStats(filteredStats){
-    let statsPer90 = {};
-    statsPer90['passingPct'] = (filteredStats['succPasses'] / filteredStats['totalPasses']) * 100;
-    statsPer90['keyPasses'] = filteredStats['keyPasses'] / (filteredStats['minutes']/90);
-    statsPer90['throughBalls'] = filteredStats['throughBalls'] / (filteredStats['minutes']/90);
-    statsPer90['goalsPlusAssists'] = (filteredStats['goals'] + filteredStats['assists']) / (filteredStats['minutes']/90);
-    statsPer90['dribbles'] = filteredStats['dribbles'] / (filteredStats['minutes']/90);
-    statsPer90['possessionLosses'] = filteredStats['possessionLosses'] / (filteredStats['minutes']/90);
-    statsPer90['fouls'] = filteredStats['fouls'] / (filteredStats['minutes']/90);
-    statsPer90['tacklePct'] = (filteredStats['tackles'] / (filteredStats['tackles'] + filteredStats['dribbledPast'])) *100;
-    statsPer90['tackles'] = (filteredStats['tackles'] / (filteredStats['minutes']/90));
-    statsPer90['interceptions'] = (filteredStats['interceptions'] / (filteredStats['minutes']/90));
-    statsPer90['succLongPasses'] = (filteredStats['succLongPasses'] / (filteredStats['minutes']/90));
-    statsPer90 = roundNumbers(statsPer90);
-    return Object.values(statsPer90);
-}
-
-function calculateFullbackStats(filteredStats){
-    let statsPer90 = {};
-    statsPer90['tackles'] = (filteredStats['tackles'] / (filteredStats['minutes']/90));
-    statsPer90['interceptions'] = (filteredStats['interceptions'] / (filteredStats['minutes']/90));
-    statsPer90['passingPct'] = (filteredStats['succPasses'] / filteredStats['totalPasses']) * 100;
-    statsPer90['keyPasses'] = filteredStats['keyPasses'] / (filteredStats['minutes']/90);
-    statsPer90['succCrosses'] = filteredStats['succCrosses'] / (filteredStats['minutes']/90);
-    statsPer90['crossingPct'] = (filteredStats['succCrosses'] / filteredStats['totalCrosses']) * 100;
-    statsPer90['dribbles'] = filteredStats['dribbles'] / (filteredStats['minutes']/90);
-    statsPer90['possessionLosses'] = filteredStats['possessionLosses'] / (filteredStats['minutes']/90);
-    statsPer90['aerialDuelPct'] = (filteredStats['succAerialDuels'] / filteredStats['totalAerialDuels']) * 100;
-    statsPer90['tacklePct'] = (filteredStats['tackles'] / (filteredStats['tackles'] + filteredStats['dribbledPast'])) *100;
-    statsPer90['fouls'] = filteredStats['fouls'] / (filteredStats['minutes']/90);
-    statsPer90 = roundNumbers(statsPer90);
-    return Object.values(statsPer90);
-}
-
-function calculateCenterbackStats(filteredStats){
-    let statsPer90 = {};
-    statsPer90['passingPct'] = (filteredStats['succPasses'] / filteredStats['totalPasses']) * 100;
-    statsPer90['tacklePct'] = (filteredStats['tackles'] / (filteredStats['tackles'] + filteredStats['dribbledPast'])) *100;
-    statsPer90['tackles'] = (filteredStats['tackles'] / (filteredStats['minutes']/90));
-    statsPer90['interceptions'] = (filteredStats['interceptions'] / (filteredStats['minutes']/90));
-    statsPer90['blocks'] = (filteredStats['blocks'] / (filteredStats['minutes']/90));
-    statsPer90['clearances'] = filteredStats['clearances'] / (filteredStats['minutes']/90);
-    statsPer90['fouls'] = filteredStats['fouls'] / (filteredStats['minutes']/90);
-    statsPer90['aerialDuelPct'] = (filteredStats['succAerialDuels'] / filteredStats['totalAerialDuels']) * 100;
-    statsPer90['succAerialDuels'] = filteredStats['succAerialDuels'] / (filteredStats['minutes']/90);
-    statsPer90['longPassPct'] = (filteredStats['succLongPasses'] / filteredStats['totalLongPasses']) * 100;
-    statsPer90['succLongPasses'] = (filteredStats['succLongPasses'] / (filteredStats['minutes']/90));
-    statsPer90 = roundNumbers(statsPer90);
-    return Object.values(statsPer90);
 }
 
 function percentRank(array, value) {
@@ -309,67 +359,82 @@ function roundNumbers(someStats, precision){
 }
 
 
-function setForwardTemplate(){
+function setForwardTemplate() {
     categories = [
         'Non-Penalty Goals',
         'Non-Penalty Shots',
-        '% Shots on Target**',
-        '% Passes Completed',
+        'Conversion Rate',
+        '% Shots on Target',
         'Assists',
         'Key Passes',
-        'Through Balls**',
+        '% Passes Completed',
+        'Successful Dribbles',
+        '% Successful Dribbles',
+        'Turnovers',
         'Recoveries',
-        'Dispossessed',
-        'Successful Dribbles',
-        'Conversion Rate',
     ];
 }
 
-function setMidfieldTemplate(selectedStats){
+function setAttMidfieldTemplate(){
     categories = [
-        '% Passes Completed',
+        'Non-Penalty Goals',
+        'Non-Penalty Shots',
+        'Assists',
         'Key Passes',
+        '% Passes Completed',
+        '% Crosses Completed',
         'Through Balls**',
-        'Non-Penalty Goals + Assists',
         'Successful Dribbles',
-        'Dispossessed',
-        'Fouls Committed',
-        '% Tackles Won',
-        'Successful Tackles',
-        'Interceptions',
-        'Long Balls'
+        '% Successful Dribbles',
+        'Turnovers',
+        'Recoveries',
     ];
 }
 
-function setFullbackTemplate(selectedStats){
+function setMidfieldTemplate(){
     categories = [
-        'Successful Tackles',
-        'Interceptions',
-        '% Passes Completed',
+        'Direct Goal Involvement',
         'Key Passes',
-        'Successful Crosses',
+        '% Passes Completed',
+        '% Long Passes Completed',
+        'Through Balls**',
+        'Successful Dribbles',
+        '% Successful Dribbles',
+        'Tackles Won',
+        '% Tackles Won',
+        'Fouls Committed',
+        'Interceptions'
+    ];
+}
+
+function setFullbackTemplate(){
+    categories = [
+        'Assists',
+        'Key Passes',
+        '% Passes Completed',
         '% Crosses Completed',
         'Successful Dribbles',
-        'Dispossessed',
-        '% Aerial Duels Won',
+        '% Successful Dribbles',
+        'Tackles Won',
         '% Tackles Won',
-        'Fouls Committed'
+        'Fouls Committed',
+        'Interceptions',
+        '% Aerial Duels Won'
     ];
 }
 
-function setCenterbackTemplate(selectedStats){
+function setCenterbackTemplate(){
     categories = [
         '% Passes Completed',
+        '% Long Passes Completed',
+        'Tackles Won',
         '% Tackles Won',
-        'Successful Tackles',
+        'Fouls Committed',
         'Interceptions',
         'Blocks',
         'Clearances',
-        'Fouls Committed',
-        '% Aerial Duels Won',
         'Aerial Duels Won',
-        '% Long Balls Completed',
-        'Long Balls',
+        '% Aerial Duels Won',
     ];
 }
 
@@ -479,7 +544,7 @@ function createChart(selectedStats){
         xAxis: {
             categories: categories,
             labels: {
-                distance: 40,
+                distance: 25,
                 style: {
                     fontSize: '1.15em',
                 }
