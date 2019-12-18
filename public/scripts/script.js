@@ -544,7 +544,7 @@ function createChart(selectedStats){
         xAxis: {
             categories: categories,
             labels: {
-                distance: 25,
+                distance: 33,
                 style: {
                     fontSize: '1.15em',
                 }
