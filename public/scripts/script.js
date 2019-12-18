@@ -316,7 +316,7 @@ function calculateCenterbackStats(filteredStats){
 }
 
 function getChartInput(statsPer90, percentiles) {
-    percentiles = roundNumbers(percentiles, 2);
+    percentiles = roundNumbers(percentiles, 0);
     statsPer90 = roundNumbers(statsPer90, 2);
     let chartInput = [];
     let i = 0;

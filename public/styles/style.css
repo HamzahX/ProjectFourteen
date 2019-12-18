@@ -48,7 +48,7 @@ h3 {
 .highcharts-data-table {
     border: darkgrey 1px solid;
     margin: 10px 20px 20px 0;
-    padding-right: 10px;
+    padding-right: 20px;
     padding-left: 10px;
     display: flex;
     flex-direction: column;
@@ -63,6 +63,8 @@ h3 {
 }
 
 .highcharts-data-table table caption {
+    font-weight: bold;
+    font-size: 1.2em;
     padding-bottom: 20px;
 }
 
@@ -74,13 +76,13 @@ h3 {
     vertical-align: middle;
 }
 
-.highcharts-data-table table th {
+.highcharts-data-table table th, td {
     text-align: right;
 }
 
-.highcharts-data-table table td {
-    text-align: left;
-}
+/*.highcharts-data-table table td {*/
+/*    text-align: right;*/
+/*}*/
 
 #main {
     display: flex;
