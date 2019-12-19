@@ -58,7 +58,7 @@ socket.on('stats scraped', function(scrapedStats){
     console.log(stats);
     competitions = Object.keys(stats);
     for (let i=0; i<competitions.length; i++){
-        $('#competitions').append('<label><input class="competition" type="checkbox" value="' + competitions[i] + '" onchange="drawChart()" checked> ' + competitions[i].split("|").join("<br>") + '</label>');
+        $('#competitions').append('<label><input class="competition" type="checkbox" value="' + competitions[i] + '" checked> ' + competitions[i].split("|").join("<br>") + '</label>');
     }
     $('#chart').empty();
     $("#loading-screen").css("display", "none");
@@ -146,30 +146,30 @@ function drawChart(isNew = false){
             case 'FW':
                 selectedStats = calculateForwardStats(filteredStats);
                 setForwardTemplate();
-                subtitle = 'FW Template';
+                subtitle = 'Forward Template';
                 break;
             case 'AM':
                 selectedStats = calculateAttMidfielderStats(filteredStats);
                 setAttMidfieldTemplate();
-                subtitle = 'AM Template';
+                subtitle = 'Attacking/Wide Midfielder Template';
                 break;
             case 'MF':
                 selectedStats = calculateMidfielderStats(filteredStats);
                 setMidfieldTemplate();
-                subtitle = 'CM / DM Template';
+                subtitle = 'Central/Defensive Midfielder Template';
                 break;
             case 'FB':
                 selectedStats = calculateFullbackStats(filteredStats);
                 setFullbackTemplate();
-                subtitle = 'FB Template';
+                subtitle = 'Full-back Template';
                 break;
             case 'CB':
                 selectedStats = calculateCenterbackStats(filteredStats);
                 setCenterbackTemplate();
-                subtitle = 'FW / AM Template';
+                subtitle = 'Center-back Template';
                 break;
         }
-        subtitle = 'Percentile Rank Bars w/ p90 Stats | ' + subtitle + '<br> Sample Size: '
+        subtitle = 'Percentile Rank Bars (with per 90 Raw Values)<br>' + subtitle + ' | Sample Size: ';
         if (isNew) {
             if (dataTable.length){
                 dataTable.remove();
