@@ -12,7 +12,6 @@ const fs = require('fs');
 //set up express path
 server.use(express.static(path.join(__dirname, '/public')));
 
-//function to launch a browser using puppeteer, retreieve percentile arrays
 let browser;
 let context;
 let FWPercentiles;
@@ -20,6 +19,8 @@ let AMPercentiles;
 let CMPercentiles;
 let FBPercentiles;
 let CBPercentiles;
+
+//function to launch a browser using puppeteer, retrieve percentile arrays
 let setup = async () => {
     return new Promise(async function(resolve, reject){
         console.time('browser launch');

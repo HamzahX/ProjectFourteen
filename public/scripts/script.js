@@ -471,8 +471,10 @@ function createChart(selectedStats){
             type: 'bar',
             maxWidth: 1000,
             hideDelay: 0,
-            // marginLeft: 50,
-            // marginRight: 50,
+            spacingLeft: 0,
+            spacingRight: 0,
+            marginLeft: 50,
+            marginRight: 50,
             // marginBottom: 25,
             marginTop: 100,
             events: {
@@ -544,7 +546,7 @@ function createChart(selectedStats){
         xAxis: {
             categories: categories,
             labels: {
-                distance: 33,
+                distance: 40,
                 style: {
                     fontSize: '1.15em',
                 }

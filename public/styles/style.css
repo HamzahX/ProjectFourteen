@@ -192,7 +192,7 @@ h3 {
                 flex: 1 1 70%;
                 padding: 0 20px 15px;
                 border: darkgrey 1px solid;
-                white-space: nowrap;
+                white-space: normal;
                 overflow-y: auto;
             }
 
@@ -201,13 +201,15 @@ h3 {
                 }
 
                 #chart-filter-inputs form {
+                    padding-bottom: 5px;
                 }
 
                     #chart-filter-inputs form label {
                         display: block;
-                        margin-bottom: 5px;
-                        padding: 5px;
+                        /*margin-bottom: 15px;*/
+                        padding: 10px;
                     }
+
 
                     #chart-filter-inputs form label:hover {
                         box-shadow: 0 0 6px lightgray;
@@ -241,7 +243,6 @@ h3 {
 
         #chart {
             border: none;
-            padding: 10px;
             display: flex;
             flex-direction: row;
         }
@@ -294,7 +295,7 @@ h3 {
     }
 }
 
-@media (max-width: 800px), (pointer:none), (pointer:coarse) {
+@media (max-width: 960px), (pointer:none), (pointer:coarse) {
 
     .screen {
         flex-direction: column;
@@ -370,53 +371,53 @@ h3 {
     }
 }
 
-@media (pointer:none), (pointer:coarse) {
-    #query {
-        font-size: 2.2vh;
-    }
+/*@media (pointer:none), (pointer:coarse) {*/
+/*    #query {*/
+/*        font-size: 2.2vh;*/
+/*    }*/
 
-    h2 {
-        font-size: 2.1vh;
-    }
+/*    h2 {*/
+/*        font-size: 2.1vh;*/
+/*    }*/
 
-    h3 {
-        font-size: 2vh
-    }
+/*    h3 {*/
+/*        font-size: 2vh*/
+/*    }*/
 
-    #search-filter-inputs input {
-        font-size: 2vh;
-    }
+/*    #search-filter-inputs input {*/
+/*        font-size: 2vh;*/
+/*    }*/
 
-    .search-result {
-        padding-top: 40px;
-        padding-bottom: 40px;
-    }
+/*    .search-result {*/
+/*        padding-top: 40px;*/
+/*        padding-bottom: 40px;*/
+/*    }*/
 
-    .search-result .name {
-        font-size: 2.1vh;
-    }
+/*    .search-result .name {*/
+/*        font-size: 2.1vh;*/
+/*    }*/
 
-    .search-result .club, .search-result .nationality {
-        font-size: 1.7vh;
-    }
+/*    .search-result .club, .search-result .nationality {*/
+/*        font-size: 1.7vh;*/
+/*    }*/
 
-    #chart-filter-inputs form label {
-        font-size: 1.5vh;
-    }
+/*    #chart-filter-inputs form label {*/
+/*        font-size: 1.5vh;*/
+/*    }*/
 
-    #filter-buttons .filter-button button {
-        font-size: 1.8vh;
-    }
+/*    #filter-buttons .filter-button button {*/
+/*        font-size: 1.8vh;*/
+/*    }*/
 
-    #loading-screen {
-        font-size: 2vh;
-    }
+/*    #loading-screen {*/
+/*        font-size: 2vh;*/
+/*    }*/
 
-    /*.highcharts-xaxis-labels text {*/
-    /*    font-size: 2vw !important;*/
-    /*}*/
+/*    !*.highcharts-xaxis-labels text {*!*/
+/*    !*    font-size: 2vw !important;*!*/
+/*    !*}*!*/
 
-}
+/*}*/
 
 /*Loading Screen Animation*/
 #circularG {
