@@ -151,12 +151,12 @@ function drawChart(isNew = false){
             case 'AM':
                 selectedStats = calculateAttMidfielderStats(filteredStats);
                 setAttMidfieldTemplate();
-                subtitle = 'Attacking/Wide Midfielder Template';
+                subtitle = 'Attacking Midfielder / Winger Template';
                 break;
             case 'MF':
                 selectedStats = calculateMidfielderStats(filteredStats);
                 setMidfieldTemplate();
-                subtitle = 'Central/Defensive Midfielder Template';
+                subtitle = 'Central / Defensive Midfielder Template';
                 break;
             case 'FB':
                 selectedStats = calculateFullbackStats(filteredStats);
