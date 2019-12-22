@@ -169,7 +169,7 @@ function drawChart(isNew = false){
                 subtitle = 'Center-back Template';
                 break;
         }
-        subtitle = 'Percentile Rank Bars (with per 90 Raw Values)<br>' + subtitle + ' | Sample Size: ';
+        subtitle = 'Percentile Rank Bars (w/ p90 Raw Values)<br>' + subtitle + ' | Sample Size: ';
         if (isNew) {
             if (dataTable.length){
                 dataTable.remove();
@@ -364,12 +364,12 @@ function setForwardTemplate() {
         'Non-Penalty Goals',
         'Non-Penalty Shots',
         'Conversion Rate',
-        '% Shots on Target',
+        'Shots on Target %',
         'Assists',
         'Key Passes',
-        '% Passes Completed',
+        'Pass Completion %',
         'Successful Dribbles',
-        '% Successful Dribbles',
+        'Dribble Success %',
         'Turnovers',
         'Recoveries',
     ];
@@ -381,11 +381,11 @@ function setAttMidfieldTemplate(){
         'Non-Penalty Shots',
         'Assists',
         'Key Passes',
-        '% Passes Completed',
-        '% Crosses Completed',
+        'Pass Completion %',
+        'Cross Completion %',
         'Through Balls**',
         'Successful Dribbles',
-        '% Successful Dribbles',
+        'Dribble Success %',
         'Turnovers',
         'Recoveries',
     ];
@@ -393,15 +393,15 @@ function setAttMidfieldTemplate(){
 
 function setMidfieldTemplate(){
     categories = [
-        'Direct Goal Involvement',
+        'Non-Penalty Goals+Assists',
         'Key Passes',
-        '% Passes Completed',
-        '% Long Passes Completed',
+        'Pass Completion %',
+        'Long Pass Completion %',
         'Through Balls**',
         'Successful Dribbles',
-        '% Successful Dribbles',
+        'Dribble Success %',
         'Tackles Won',
-        '% Tackles Won',
+        'Tackle Win %',
         'Fouls Committed',
         'Interceptions'
     ];
@@ -411,30 +411,30 @@ function setFullbackTemplate(){
     categories = [
         'Assists',
         'Key Passes',
-        '% Passes Completed',
-        '% Crosses Completed',
+        'Pass Completion %',
+        'Cross Completion %',
         'Successful Dribbles',
-        '% Successful Dribbles',
+        'Dribble Success %',
         'Tackles Won',
-        '% Tackles Won',
+        'Tackle Win %',
         'Fouls Committed',
         'Interceptions',
-        '% Aerial Duels Won'
+        'Aerial Dule Win %'
     ];
 }
 
 function setCenterbackTemplate(){
     categories = [
-        '% Passes Completed',
-        '% Long Passes Completed',
+        'Pass Completion %',
+        'Long Pass Completion %',
         'Tackles Won',
-        '% Tackles Won',
+        'Tackle Win %',
         'Fouls Committed',
         'Interceptions',
         'Blocks',
         'Clearances',
         'Aerial Duels Won',
-        '% Aerial Duels Won',
+        'Aerial Dule Win %'
     ];
 }
 
@@ -572,7 +572,7 @@ function createChart(selectedStats){
             sourceHeight: 1080,
             buttons: {
                 contextButton: {
-                    menuItems: ["viewFullscreen", "printChart", "separator", "downloadPNG", "downloadJPEG", "downloadPDF", "downloadSVG"]
+                    menuItems: ["viewFullscreen", "printChart"]
                 }
             }
         }
@@ -591,13 +591,14 @@ function toggleDataTable(){
     let dataTable = $('.highcharts-data-table');
     if (dataTable.length){
         dataTable.remove();
+        chart.reflow();
         drawChart(true);
     }
     else {
-        drawChart(true);
         chart.viewData();
+        chart.reflow();
+        drawChart(true);
     }
-    chart.reflow();
     $("caption").text("Percentile Ranks");
 }
 
