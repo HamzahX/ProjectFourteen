@@ -67,8 +67,8 @@ io.on('connection', async function(socket){
 
     socket.emit('percentile arrays', FWPercentiles, AMPercentiles, CMPercentiles, FBPercentiles, CBPercentiles);
 
-    socket.on('search', async(aQuery, isTest) => {
-        if (isTest) {
+    socket.on('search', async(aQuery) => {
+        if (aQuery.toLowerCase() === "test") {
             let fileContents = fs.readFileSync(path.join(__dirname, '/serverUtils/sampleSearchResults.json'));
             let sampleSearchResults = JSON.parse(fileContents);
             socket.emit('search results', sampleSearchResults);
@@ -85,7 +85,6 @@ io.on('connection', async function(socket){
                     searchResults[i]["nationality"] = countryCodes.getCountryName(countryISO.toUpperCase());
                 }
                 console.timeEnd(socket.id + " | Time taken to return search results");
-                // console.log(searchResults);
                 socket.emit('search results', searchResults);
                 // await fs.writeFile(path.join(__dirname, '/serverUtils/sampleSearchResults.json'), JSON.stringify(searchResults), function(err) {
                 //     if (err) {
@@ -100,8 +99,8 @@ io.on('connection', async function(socket){
         }
     });
 
-    socket.on('scrape stats', async(URL, isTest) => {
-        if (isTest) {
+    socket.on('scrape stats', async(URL) => {
+        if (URL === 'test') {
             let fileContents = fs.readFileSync(path.join(__dirname, '/serverUtils/sampleStats.json'));
             let sampleStats = JSON.parse(fileContents);
             socket.emit('stats scraped', sampleStats);
@@ -126,7 +125,6 @@ io.on('connection', async function(socket){
                     orderedStats[key] = unorderedStats[key];
                 });
                 console.timeEnd(socket.id + " | Time taken to return stats");
-                // console.log(orderedStats);
                 socket.emit('stats scraped', orderedStats);
                 // await fs.writeFile(path.join(__dirname, '/serverUtils/sampleStats.json'), JSON.stringify(orderedStats), function(err) {
                 //     if (err) {

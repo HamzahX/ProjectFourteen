@@ -20,8 +20,6 @@ let categories;
 let yAxis;
 let randomColor;
 
-let isTest = false;
-
 socket.on('percentile arrays', function(forward, attackingMidfield, centralMidfield, fullBack, centerBack){
     FWPercentiles = forward;
     AMPercentiles = attackingMidfield;
@@ -78,7 +76,7 @@ function search(){
         $("#search-screen").css("display", "none");
         $("#content-screen").css("display", "none");
         drawLoadingScreen("search");
-        socket.emit('search', query, isTest);
+        socket.emit('search', query);
     }
 }
 
@@ -93,7 +91,7 @@ function getStats(elem){
     url = $(elem).find('.url').text();
     $("#search-screen").css("display", "none");
     drawLoadingScreen("getStats");
-    socket.emit('scrape stats', url, isTest);
+    socket.emit('scrape stats', url);
 }
 
 function drawLoadingScreen(type, anError=""){
