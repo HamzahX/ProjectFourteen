@@ -267,7 +267,7 @@ h3 {
              }
 
             .highcharts-container  svg .highcharts-yaxis-grid path:not(:nth-child(2)):not(:nth-child(6)) {
-                stroke: #999999;
+                stroke: #7b7b7b;
                 opacity: 0.05
             }
 
@@ -295,7 +295,7 @@ h3 {
     }
 }
 
-@media (max-width: 960px), (pointer:none), (pointer:coarse) {
+@media (max-width: 959px), (pointer:none), (pointer:coarse) {
 
     .screen {
         flex-direction: column;

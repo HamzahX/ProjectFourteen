@@ -69,9 +69,14 @@ io.on('connection', async function(socket){
 
     socket.on('search', async(aQuery) => {
         if (aQuery.toLowerCase() === "test") {
-            let fileContents = fs.readFileSync(path.join(__dirname, '/serverUtils/sampleSearchResults.json'));
-            let sampleSearchResults = JSON.parse(fileContents);
-            socket.emit('search results', sampleSearchResults);
+            try{
+                let fileContents = fs.readFileSync(path.join(__dirname, '/serverUtils/sampleSearchResults.json'));
+                let sampleSearchResults = JSON.parse(fileContents);
+                socket.emit('search results', sampleSearchResults);
+            }
+            catch(error) {
+                socket.emit('alert error', "Invalid Search");
+            }
         }
         else {
             console.log(socket.id + " | Searching for: " + aQuery);

@@ -17,7 +17,6 @@ let url;
 let chart;
 let subtitle;
 let categories;
-let yAxis;
 let randomColor;
 
 socket.on('percentile arrays', function(forward, attackingMidfield, centralMidfield, fullBack, centerBack){
@@ -167,7 +166,7 @@ function drawChart(isNew = false){
                 subtitle = 'Center-back Template';
                 break;
         }
-        subtitle = 'Percentile Rank Bars (w/ p90 Raw Values)<br>' + subtitle + ' | Sample Size: ';
+        subtitle = 'Percentile Rank Bars (w/ p90 Raw Values)<br>' + subtitle + '\t║\tSample Size: ';
         if (isNew) {
             if (dataTable.length){
                 dataTable.remove();
@@ -417,7 +416,7 @@ function setFullbackTemplate(){
         'Tackle Win %',
         'Fouls Committed',
         'Interceptions',
-        'Aerial Dule Win %'
+        'Aerial Duel Win %'
     ];
 }
 
@@ -432,7 +431,7 @@ function setCenterbackTemplate(){
         'Blocks',
         'Clearances',
         'Aerial Duels Won',
-        'Aerial Dule Win %'
+        'Aerial Duel Win %'
     ];
 }
 
@@ -448,6 +447,7 @@ function createChart(selectedStats){
         chart: {
             parallelCoordinates: true,
             parallelAxes: {
+                // gridLineInterpolation: 'polygon',
                 labels: {
                     enabled: false,
                     style: {
@@ -495,8 +495,12 @@ function createChart(selectedStats){
                 color: Highcharts.Color(Highcharts.getOptions().colors[0]).setOpacity(0.6).get(),
                 dataLabels: {
                     enabled: true,
+                    inside: true,
                     style: {
+                        color: "black",
+                        fontWeight: '600',
                         fontSize: "1.25em",
+                        textOutline: "0.5px #d5d3d2"
                     },
                     format: '{point.p90}',
                     padding: 0,
@@ -525,7 +529,7 @@ function createChart(selectedStats){
             }
         },
         subtitle: {
-            text: '|',
+            // text: '|',
             style: {
                 fontSize: '1.5em'
             }
