@@ -500,7 +500,7 @@ function createChart(selectedStats){
                         color: "black",
                         fontWeight: '600',
                         fontSize: "1.25em",
-                        textOutline: "0.5px #d5d3d2"
+                        textOutline: "1.5px contrast"
                     },
                     format: '{point.p90}',
                     padding: 0,
