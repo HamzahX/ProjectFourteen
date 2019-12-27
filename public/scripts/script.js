@@ -103,6 +103,9 @@ function getStats(elem){
 }
 
 function drawLoadingScreen(type, anError=""){
+    $('#main2').attr("id", "main");
+    $('#searchbar-container2').attr("id", "searchbar-container");
+    $('.screen2').attr("class", "screen");
     let loadingScreen = $('#loading-screen');
     loadingScreen.empty();
     loadingScreen.append('<div id="circularG"> <div id="circularG_1" class="circularG"></div> ' +
