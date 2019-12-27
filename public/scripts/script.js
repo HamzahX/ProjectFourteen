@@ -45,6 +45,9 @@ socket.on('search results', function(results){
             '</div>'
         );
     }
+    $('#main2').attr("id", "main");
+    $('#searchbar-container2').attr("id", "searchbar-container");
+    $('.screen2').attr("class", "screen");
     $("#loading-screen").css("display", "none");
     $("#search-screen").css("display", "flex");
 });
@@ -57,6 +60,9 @@ socket.on('stats scraped', function(scrapedStats){
     for (let i=0; i<competitions.length; i++){
         $('#competitions').append('<label><input class="competition" type="checkbox" value="' + competitions[i] + '" checked> ' + competitions[i].split("|").join("<br>") + '</label>');
     }
+    $('#main').attr("id", "main2");
+    $('#searchbar-container').attr("id", "searchbar-container2");
+    $('.screen').attr("class", "screen2");
     $('#chart').empty();
     $("#loading-screen").css("display", "none");
     $("#content-screen").css("display", "flex");
@@ -64,6 +70,9 @@ socket.on('stats scraped', function(scrapedStats){
 });
 
 socket.on('alert error', function(anError){
+    $('#main2').attr("id", "main");
+    $('#searchbar-container2').attr("id", "searchbar-container");
+    $('.screen2').attr("class", "screen");
     drawLoadingScreen("error", anError)
 });
 
@@ -467,12 +476,11 @@ function createChart(selectedStats){
             },
             polar: true,
             type: 'bar',
-            maxWidth: 1000,
             hideDelay: 0,
             spacingLeft: 0,
             spacingRight: 0,
-            marginLeft: 50,
-            marginRight: 50,
+            marginLeft: 75,
+            marginRight: 75,
             // marginBottom: 25,
             marginTop: 100,
             events: {
