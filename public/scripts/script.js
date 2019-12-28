@@ -484,8 +484,7 @@ function createChart(selectedStats){
             spacingRight: 0,
             marginLeft: 75,
             marginRight: 75,
-            // marginBottom: 25,
-            marginTop: 100,
+            marginBottom: 19,
             events: {
                 load: function() {
                     this.title.element.onclick = function() {
@@ -524,7 +523,8 @@ function createChart(selectedStats){
             style: {
                 fontSize: '2em',
                 fontWeight: 'bold',
-            }
+            },
+            margin: 35
         },
         pane: {
             startAngle: -16.3636363636363636363
@@ -648,3 +648,11 @@ $(document).ready(function(){
         });
     });
 });
+
+window.addEventListener("resize", changeViewport);
+
+function changeViewport() {
+    var w = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+    var h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+    $("#main").css({"width":w,"height":h});
+};
