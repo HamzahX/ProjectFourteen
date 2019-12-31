@@ -312,7 +312,7 @@ h3 {
     }
 }
 
-@media (max-width: 960px), (pointer:none), (pointer:coarse) {
+@media (max-width: 960px) {
 
     h2 {
         text-align: center;
@@ -428,59 +428,125 @@ h3 {
 
 @media (pointer:none), (pointer:coarse) {
 
-    html, body {
+    html, body{
         margin: 0;
         height: 100%;
     }
 
+    h2 {
+        text-align: center;
+    }
+    
     #main {
         height: 100%;
     }
 
     #main2 {
-        min-height: 100%;
+        display: flex;
+        flex-direction: column;
+        height: 140%;
     }
 
-    /*#query {*/
-    /*    font-size: 2.2vh;*/
-    /*}*/
+    #searchbar-container2 {
+        flex: 1 1 5.71%;
+        /*flex: 1 1 8%*/
+    }
 
-    /*h2 {*/
-    /*    font-size: 2.1vh;*/
-    /*}*/
+    .screen {
+        flex-direction: column;
+    }
 
-    /*h3 {*/
-    /*    font-size: 2vh*/
-    /*}*/
+    .screen2 {
+        flex: 1 1 94.29%;
+        max-height: 94.29%;
+        /*flex: 1 1 92%;*/
+        /*max-height: 92%;*/
+        flex-direction: column;
+    }
 
-    /*#search-filter-inputs input {*/
-    /*    font-size: 2vh;*/
-    /*}*/
+        .filter {
+            flex: 1 1 23%;
+            max-height: 23%;
+            /*margin: 10px 20px;*/
+            margin-right: 1%;
+            margin-bottom: 1%;
+        }
 
-    /*.search-result {*/
-    /*    padding-top: 40px;*/
-    /*    padding-bottom: 40px;*/
-    /*}*/
+            #search-filters {
+                flex: none;
+                max-height: unset;
+                height: auto;
+                padding-bottom: 5%;
+            }
 
-    /*.search-result .name {*/
-    /*    font-size: 2.1vh;*/
-    /*}*/
+                #search-filter-inputs {
+                    flex-direction: row;
+                    max-height: 100%;
+                }
 
-    /*.search-result .club, .search-result .nationality {*/
-    /*    font-size: 1.7vh;*/
-    /*}*/
+                    .search-filter-input{
+                        padding: 1%;
+                    }
 
-    /*#chart-filter-inputs form label {*/
-    /*    font-size: 1.5vh;*/
-    /*}*/
+                    #search-filter-inputs input {
+                        margin-left: 20px;
+                        margin-right: 20px;
+                    }
 
-    /*#filter-buttons .filter-button button {*/
-    /*    font-size: 1.8vh;*/
-    /*}*/
+        .result {
+            /*margin: 10px 20px 20px;*/
+            margin: 0.5% 1% 1%;
+        }
 
-    /*#loading-screen {*/
-    /*    font-size: 2vh;*/
-    /*}*/
+
+    #chart-filters {
+        flex-direction: row;
+    }
+
+        #chart-filter-inputs {
+            padding: 0 2% 2%;
+            max-height: 100%;
+        }
+
+            #chart-filter-inputs form {
+                column-count: 2;
+                -webkit-column-count: 2;
+                -moz-column-count: 2;
+            }
+
+                #chart-filter-inputs form label {
+                    break-inside: avoid-column;
+                }
+
+        #filter-buttons {
+        }
+
+            #filter-buttons .filter-button {
+                padding: 0;
+                /*margin-left: 20px;*/
+                margin-left: 3.3%;
+            }
+
+            #filter-buttons .filter-button:first-child {
+                /*padding-bottom: 13px;*/
+                padding-bottom: 2.5%;
+            }
+
+            #filter-buttons .filter-button:not(:first-child):not(:last-child) {
+                /*padding-top: 7px;*/
+                /*padding-bottom: 7px;*/
+                padding-top: 1.25%;
+                padding-bottom: 1.25%;
+            }
+
+            #filter-buttons .filter-button:last-child {
+                /*padding-top: 13px;*/
+                padding-top: 2.5%;
+            }
+
+    .highcharts-data-table {
+        display: none;
+    }
 
     /*.highcharts-xaxis-labels text {*/
     /*    font-size: 2vw !important;*/
