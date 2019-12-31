@@ -425,53 +425,68 @@ h3 {
     }
 }
 
-/*@media (pointer:none), (pointer:coarse) {*/
-/*    #query {*/
-/*        font-size: 2.2vh;*/
-/*    }*/
+@media (pointer:none), (pointer:coarse) {
 
-/*    h2 {*/
-/*        font-size: 2.1vh;*/
-/*    }*/
+    body {
+        height: 100%;
+    }
 
-/*    h3 {*/
-/*        font-size: 2vh*/
-/*    }*/
+    #main {
+        min-height: 100%;
+        /*height: 100%;*/
+    }
 
-/*    #search-filter-inputs input {*/
-/*        font-size: 2vh;*/
-/*    }*/
+    #main2 {
+        /*height: unset;*/
+        min-height: 100%;
+    }
 
-/*    .search-result {*/
-/*        padding-top: 40px;*/
-/*        padding-bottom: 40px;*/
-/*    }*/
+    /*#query {*/
+    /*    font-size: 2.2vh;*/
+    /*}*/
 
-/*    .search-result .name {*/
-/*        font-size: 2.1vh;*/
-/*    }*/
+    /*h2 {*/
+    /*    font-size: 2.1vh;*/
+    /*}*/
 
-/*    .search-result .club, .search-result .nationality {*/
-/*        font-size: 1.7vh;*/
-/*    }*/
+    /*h3 {*/
+    /*    font-size: 2vh*/
+    /*}*/
 
-/*    #chart-filter-inputs form label {*/
-/*        font-size: 1.5vh;*/
-/*    }*/
+    /*#search-filter-inputs input {*/
+    /*    font-size: 2vh;*/
+    /*}*/
 
-/*    #filter-buttons .filter-button button {*/
-/*        font-size: 1.8vh;*/
-/*    }*/
+    /*.search-result {*/
+    /*    padding-top: 40px;*/
+    /*    padding-bottom: 40px;*/
+    /*}*/
 
-/*    #loading-screen {*/
-/*        font-size: 2vh;*/
-/*    }*/
+    /*.search-result .name {*/
+    /*    font-size: 2.1vh;*/
+    /*}*/
 
-/*    !*.highcharts-xaxis-labels text {*!*/
-/*    !*    font-size: 2vw !important;*!*/
-/*    !*}*!*/
+    /*.search-result .club, .search-result .nationality {*/
+    /*    font-size: 1.7vh;*/
+    /*}*/
 
-/*}*/
+    /*#chart-filter-inputs form label {*/
+    /*    font-size: 1.5vh;*/
+    /*}*/
+
+    /*#filter-buttons .filter-button button {*/
+    /*    font-size: 1.8vh;*/
+    /*}*/
+
+    /*#loading-screen {*/
+    /*    font-size: 2vh;*/
+    /*}*/
+
+    /*.highcharts-xaxis-labels text {*/
+    /*    font-size: 2vw !important;*/
+    /*}*/
+
+}
 
 /*Loading Screen Animation*/
 #circularG {
