@@ -2,4 +2,7 @@
 node_modules/
 serverUtils/sampleSearchResults.json
 serverUtils/sampleStats.json
+serverUtils/currentSeasonProcessed.json
+serverUtils/currentSeasonRaw.json
 percentileScraper.js
+currentSeasonScraper.js

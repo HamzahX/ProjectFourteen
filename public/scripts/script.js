@@ -37,11 +37,13 @@ socket.on('search results', function(results){
         let nationality = results[i]["nationality"];
         let club = results[i]["club"];
         let url = results[i]["URL"];
+        let all = results[i]["all"];
         searchResults.append('<div onclick="return getStats(this)" tabindex="0" class="search-result" id="' + resultID + '">' +
             '<div class="name">' + name + '</div>' +
             '<div class="club">Club: ' + club + '</div>' +
             '<div class="nationality">Nationality: ' + nationality + '</div>' +
             '<div style="display:none" class="url">' + url + '</div>' +
+            '<div style="display:none" class="all">' + all + '</div>' +
             '</div>'
         );
     }
@@ -97,9 +99,10 @@ function getStats(elem){
     club = $(elem).find('.club').text().substring(6);
     nationality = $(elem).find('.nationality').text().substring(13);
     url = $(elem).find('.url').text();
+    let all = $(elem).find('.all').text();
     $("#search-screen").css("display", "none");
     drawLoadingScreen("getStats");
-    socket.emit('scrape stats', url);
+    socket.emit('scrape stats', url, all);
 }
 
 function drawLoadingScreen(type, anError=""){
@@ -250,7 +253,6 @@ function calculateAttMidfielderStats(filteredStats){
     statsPer90['keyPasses'] = filteredStats['keyPasses'] / (filteredStats['minutes']/90);
     statsPer90['passingRate'] = (filteredStats['succPasses'] / filteredStats['totalPasses']) * 100;
     statsPer90['crossRate'] = (filteredStats['succCrosses'] / filteredStats['totalCrosses']) * 100;
-    statsPer90['throughBalls'] = filteredStats['throughBalls'] / (filteredStats['minutes']/90);
     statsPer90['succDribbles'] = filteredStats['succDribbles'] / (filteredStats['minutes']/90);
     statsPer90['dribbleRate'] = (filteredStats['succDribbles'] / filteredStats['totalDribbles']) * 100;
     statsPer90['possessionLosses'] = filteredStats['possessionLosses'] / (filteredStats['minutes']/90);
@@ -269,7 +271,6 @@ function calculateMidfielderStats(filteredStats){
     statsPer90['keyPasses'] = filteredStats['keyPasses'] / (filteredStats['minutes']/90);
     statsPer90['passingRate'] = (filteredStats['succPasses'] / filteredStats['totalPasses']) * 100;
     statsPer90['longPassingRate'] = (filteredStats['succLongPasses'] / filteredStats['totalLongPasses']) * 100;
-    statsPer90['throughBalls'] = filteredStats['throughBalls'] / (filteredStats['minutes']/90);
     statsPer90['succDribbles'] = filteredStats['succDribbles'] / (filteredStats['minutes']/90);
     statsPer90['dribbleRate'] = (filteredStats['succDribbles'] / filteredStats['totalDribbles']) * 100;
     statsPer90['tackles'] = (filteredStats['tackles'] / (filteredStats['minutes']/90));
@@ -392,7 +393,6 @@ function setAttMidfieldTemplate(){
         'Key Passes',
         'Pass Completion %',
         'Cross Completion %',
-        'Through Balls**',
         'Successful Dribbles',
         'Dribble Success %',
         'Turnovers',
@@ -406,7 +406,6 @@ function setMidfieldTemplate(){
         'Key Passes',
         'Pass Completion %',
         'Long Pass Completion %',
-        'Through Balls**',
         'Successful Dribbles',
         'Dribble Success %',
         'Tackles Won',

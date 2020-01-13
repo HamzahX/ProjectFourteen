@@ -8,12 +8,18 @@ const http = require('http').Server(server);
 const io = require('socket.io')(http);
 const port = process.env.PORT || 3000;
 const fs = require('fs');
+const mongoClient = require('mongodb').MongoClient;
+const mongoURI = "mongodb+srv://hamzah:containers@cluster0-wz8lb.mongodb.net/test?retryWrites=true&w=majority";
 
 //set up express path
 server.use(express.static(path.join(__dirname, '/public')));
 
-let browser;
-let context;
+var browser;
+var context;
+
+var db;
+var collection;
+
 let FWPercentiles;
 let AMPercentiles;
 let CMPercentiles;
@@ -51,14 +57,34 @@ let setup = async () => {
     });
 };
 
+let connectToDatabase = async () => {
+
+    return new Promise(function(resolve, reject) {
+
+        mongoClient.connect(mongoURI, {useUnifiedTopology: true},function (err, client) {
+            console.log("Connected to database");
+            db = client.db("ProjectFourteen");
+            collection = db.collection('CurrentSeason');
+            resolve();
+        })
+
+    });
+
+};
+
 //launch a browser and then start listening on the port
-setup().then(() => {
-    http.listen(port, function () {
-        console.log('listening on port ' + port);
-    })
-}).catch(async(anError) => {
-    console.log(anError);
-});
+setup()
+    .then(() =>
+        connectToDatabase()
+    )
+    .then(() =>
+        http.listen(port, function () {
+            console.log('Listening on port ' + port);
+        })
+    )
+    .catch(async (anError) => {
+        console.log(anError);
+    });
 
 //wait for socket events
 io.on('connection', async function(socket){
@@ -78,6 +104,32 @@ io.on('connection', async function(socket){
                 socket.emit('alert error', "Invalid Search");
             }
         }
+        else if (aQuery.includes("--all")){
+            aQuery = aQuery.replace("--all", "");
+            console.log(socket.id + " | Searching for: " + aQuery);
+            console.time(socket.id + " | Time taken to return search results");
+            let URL = "https://www.whoscored.com/Search/?t=" + aQuery.replace(' ', '+');
+            let page = await context.newPage();
+            getSearchResults(page, URL).then(async (searchResults) => {
+                await page.close();
+                for (let i = 0; i < searchResults.length; i++) {
+                    let countryISO = searchResults[i]["nationality"];
+                    searchResults[i]["nationality"] = countryCodes.getCountryName(countryISO.toUpperCase());
+                    searchResults[i]["all"] = true;
+                }
+                console.timeEnd(socket.id + " | Time taken to return search results");
+                socket.emit('search results', searchResults);
+                // await fs.writeFile(path.join(__dirname, '/serverUtils/sampleSearchResults.json'), JSON.stringify(searchResults), function(err) {
+                //     if (err) {
+                //         console.log(err);
+                //     }
+                // });
+            }).catch(async (anError) => {
+                await page.close();
+                console.log(socket.id + " | " + anError);
+                socket.emit('alert error', anError.name);
+            });
+        }
         else {
             console.log(socket.id + " | Searching for: " + aQuery);
             console.time(socket.id + " | Time taken to return search results");
@@ -88,6 +140,7 @@ io.on('connection', async function(socket){
                 for (let i = 0; i < searchResults.length; i++) {
                     let countryISO = searchResults[i]["nationality"];
                     searchResults[i]["nationality"] = countryCodes.getCountryName(countryISO.toUpperCase());
+                    searchResults[i]["all"] = false;
                 }
                 console.timeEnd(socket.id + " | Time taken to return search results");
                 socket.emit('search results', searchResults);
@@ -104,13 +157,13 @@ io.on('connection', async function(socket){
         }
     });
 
-    socket.on('scrape stats', async(URL) => {
+    socket.on('scrape stats', async(URL, all) => {
         if (URL === 'test') {
             let fileContents = fs.readFileSync(path.join(__dirname, '/serverUtils/sampleStats.json'));
             let sampleStats = JSON.parse(fileContents);
             socket.emit('stats scraped', sampleStats);
         }
-        else {
+        else if (all === "true"){
             console.log(socket.id + " | Retrieving stats from: " + URL);
             console.time(socket.id + " | Time taken to return stats");
             let page = await context.newPage();
@@ -142,6 +195,24 @@ io.on('connection', async function(socket){
                 socket.emit('alert error', anError.name);
             });
         }
+        else {
+            console.log(socket.id + " | Retrieving stats from the database");
+            console.time(socket.id + " | Time taken to return stats");
+            collection.find({"url": URL}).toArray(function(err, docs) {
+                if (err){
+                    console.log(socket.id + " | " + err);
+                    socket.emit('alert error', "An error occurred while retrieving from the database");
+                }
+                else if (docs.length === 0){
+                    console.log(socket.id + " | " + "Error: Player not found in database");
+                    socket.emit('alert error', "The player you selected was not found in the database. Sorry!");
+                }
+                else {
+                    socket.emit('stats scraped', JSON.parse(docs[0].stats));
+                    console.timeEnd(socket.id + " | Time taken to return stats");
+                }
+            });
+        }
     });
 
     socket.on('disconnect', function(){
@@ -167,7 +238,7 @@ let disableImages = async(page) => {
 let getSearchResults = async (page, URL) => {
 
     await disableImages(page);
-    await page.goto(URL, {waitUntil: 'networkidle0'});
+    await page.goto(URL, {waitUntil: 'networkidle2'});
 
     return await page.evaluate(() => {
         let searchResults = [];
@@ -200,7 +271,7 @@ let getSearchResults = async (page, URL) => {
 let getStats = async (page, URL) => {
 
     await disableImages(page);
-    await page.goto(URL, {waitUntil: 'networkidle0'});
+    await page.goto(URL, {waitUntil: 'networkidle2'});
 
     //scrape needed data
     let rawData = [];
