@@ -164,7 +164,7 @@ io.on('connection', async function(socket){
             socket.emit('stats scraped', sampleStats);
         }
         else if (all === "true"){
-            console.log(socket.id + " | Retrieving stats from: " + URL);
+            console.log(socket.id + " | Retrieving stats dynamically from: " + URL);
             console.time(socket.id + " | Time taken to return stats");
             let page = await context.newPage();
             getStats(page, URL).then(async (rawData) => {
@@ -196,7 +196,7 @@ io.on('connection', async function(socket){
             });
         }
         else {
-            console.log(socket.id + " | Retrieving stats from the database");
+            console.log(socket.id + " | Retrieving stats from the database for: " + URL);
             console.time(socket.id + " | Time taken to return stats");
             collection.find({"url": URL}).toArray(function(err, docs) {
                 if (err){
