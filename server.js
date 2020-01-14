@@ -131,28 +131,38 @@ io.on('connection', async function(socket){
             });
         }
         else {
-            console.log(socket.id + " | Searching for: " + aQuery);
+            console.log(socket.id + " | Searching the database for: " + aQuery);
             console.time(socket.id + " | Time taken to return search results");
-            let URL = "https://www.whoscored.com/Search/?t=" + aQuery.replace(' ', '+');
-            let page = await context.newPage();
-            getSearchResults(page, URL).then(async (searchResults) => {
-                await page.close();
-                for (let i = 0; i < searchResults.length; i++) {
-                    let countryISO = searchResults[i]["nationality"];
-                    searchResults[i]["nationality"] = countryCodes.getCountryName(countryISO.toUpperCase());
-                    searchResults[i]["all"] = false;
+            collection.find({$text:
+                        {
+                            $search: '\"' + aQuery + '\"',
+                            $caseSensitive: false,
+                            $diacriticSensitive: false
+                        }
+                }).toArray(function(err, docs) {
+                if (err){
+                    console.log(socket.id + " | " + err);
+                    socket.emit('alert error', "An error occurred while retrieving from the database");
                 }
-                console.timeEnd(socket.id + " | Time taken to return search results");
-                socket.emit('search results', searchResults);
-                // await fs.writeFile(path.join(__dirname, '/serverUtils/sampleSearchResults.json'), JSON.stringify(searchResults), function(err) {
-                //     if (err) {
-                //         console.log(err);
-                //     }
-                // });
-            }).catch(async (anError) => {
-                await page.close();
-                console.log(socket.id + " | " + anError);
-                socket.emit('alert error', anError.name);
+                else if (docs.length === 0){
+                    console.log(socket.id + " | " + "Error: Player not found in database");
+                    socket.emit('alert error', "The player you searched for was not found in the database. Sorry!");
+                }
+                else {
+                    let searchResults = [];
+                    for (let i=0; i<docs.length; i++){
+                        let result = {
+                            name: docs[i].name,
+                            club: docs[i].club,
+                            nationality: countryCodes.getCountryName(docs[i].countryCode.toUpperCase()),
+                            URL: docs[i].url,
+                            all: false
+                        };
+                        searchResults.push(result);
+                    }
+                    socket.emit('search results', searchResults);
+                    console.timeEnd(socket.id + " | Time taken to return search results");
+                }
             });
         }
     });

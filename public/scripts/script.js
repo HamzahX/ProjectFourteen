@@ -13,6 +13,7 @@ let name;
 let club;
 let nationality;
 let url;
+let isAll;
 
 let chart;
 let subtitle;
@@ -59,6 +60,7 @@ socket.on('stats scraped', function(scrapedStats){
     stats = scrapedStats;
     console.log(stats);
     competitions = Object.keys(stats);
+    // competitions = competitions.filter(element => element !== "countryCode" && element !== "name" && element !== "club");
     for (let i=0; i<competitions.length; i++){
         $('#competitions').append('<label><input class="competition" type="checkbox" value="' + competitions[i] + '" checked> ' + competitions[i].split("|").join("<br>") + '</label>');
     }
@@ -99,10 +101,10 @@ function getStats(elem){
     club = $(elem).find('.club').text().substring(6);
     nationality = $(elem).find('.nationality').text().substring(13);
     url = $(elem).find('.url').text();
-    let all = $(elem).find('.all').text();
+    isAll = $(elem).find('.all').text();
     $("#search-screen").css("display", "none");
     drawLoadingScreen("getStats");
-    socket.emit('scrape stats', url, all);
+    socket.emit('scrape stats', url, isAll);
 }
 
 function drawLoadingScreen(type, anError=""){
@@ -204,6 +206,9 @@ function drawChart(isNew = false){
         }
         $("caption").text("Percentile Ranks");
         chart.setTitle(null, { text: subtitle + filteredStats['minutes'].toLocaleString() + ' minutes'});
+        if (isAll === "false"){
+            chart.setTitle({ text: name + ", 19/20"});
+        }
     }
 }
 
@@ -493,7 +498,7 @@ function createChart(selectedStats){
             }
         },
         credits: {
-            text: "** The accuracy of stats marked with a double asterisk is not guaranteed",
+            text: "Percentile ranks are calculated by comparing a player to other top 5 league players who have at least 10 starts in a similar position",
             style: {
                 fontSize: '1em'
             },
