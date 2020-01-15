@@ -6,3 +6,4 @@ serverUtils/currentSeasonProcessed.json
 serverUtils/currentSeasonRaw.json
 percentileScraper.js
 currentSeasonScraper.js
+commands.txt

@@ -12,7 +12,7 @@ let CBPercentiles = [];
 let name;
 let club;
 let nationality;
-let url;
+var url;
 let isAll;
 
 let chart;
@@ -97,11 +97,14 @@ function getStats(elem){
     $('#filterByNationality').val("");
     $('#chart').empty();
     $('#competitions').empty();
+    isAll = $(elem).find('.all').text();
     name = $(elem).find('.name').text();
+    if (isAll === "false"){
+        name = $(elem).find('.name').text() + ", 19/20";
+    }
     club = $(elem).find('.club').text().substring(6);
     nationality = $(elem).find('.nationality').text().substring(13);
     url = $(elem).find('.url').text();
-    isAll = $(elem).find('.all').text();
     $("#search-screen").css("display", "none");
     drawLoadingScreen("getStats");
     socket.emit('scrape stats', url, isAll);
@@ -206,9 +209,6 @@ function drawChart(isNew = false){
         }
         $("caption").text("Percentile Ranks");
         chart.setTitle(null, { text: subtitle + filteredStats['minutes'].toLocaleString() + ' minutes'});
-        if (isAll === "false"){
-            chart.setTitle({ text: name + ", 19/20"});
-        }
     }
 }
 
@@ -488,7 +488,7 @@ function createChart(selectedStats){
             spacingRight: 0,
             marginLeft: 75,
             marginRight: 75,
-            marginBottom: 19,
+            marginBottom: 30,
             events: {
                 load: function() {
                     this.title.element.onclick = function() {

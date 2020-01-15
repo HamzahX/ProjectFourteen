@@ -104,7 +104,7 @@ io.on('connection', async function(socket){
                 socket.emit('alert error', "Invalid Search");
             }
         }
-        else if (aQuery.includes("--all")){
+        else if (aQuery.split(" ")[aQuery.split(" ").length - 1] === "--all"){
             aQuery = aQuery.replace("--all", "");
             console.log(socket.id + " | Searching for: " + aQuery);
             console.time(socket.id + " | Time taken to return search results");
@@ -136,6 +136,7 @@ io.on('connection', async function(socket){
             collection.find({$text:
                         {
                             $search: '\"' + aQuery + '\"',
+                            $language: "en",
                             $caseSensitive: false,
                             $diacriticSensitive: false
                         }
