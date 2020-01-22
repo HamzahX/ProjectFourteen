@@ -1,237 +1,3 @@
-//initialize constants
-const puppeteer = require('puppeteer');
-const countryCodes = require('./serverUtils/countryCodes.js');
-const path = require('path');
-const express = require('express');
-const server = express();
-const http = require('http').Server(server);
-const io = require('socket.io')(http);
-const port = process.env.PORT || 3000;
-const fs = require('fs');
-const mongoClient = require('mongodb').MongoClient;
-const mongoURI = "mongodb+srv://hamzah:containers@cluster0-wz8lb.mongodb.net/test?retryWrites=true&w=majority";
-
-//set up express path
-server.use(express.static(path.join(__dirname, '/public')));
-
-var browser;
-var context;
-
-var db;
-var collection;
-
-let FWPercentiles;
-let AMPercentiles;
-let CMPercentiles;
-let FBPercentiles;
-let CBPercentiles;
-
-//function to launch a browser using puppeteer, retrieve percentile arrays
-let setup = async () => {
-    return new Promise(async function(resolve, reject){
-        console.time('browser launch');
-        browser = await puppeteer.launch({
-            headless: false,
-            args: ["--no-sandbox", "--disable-setuid-sandbox", '--disable-gpu']
-        });
-        context = await browser.createIncognitoBrowserContext();
-        await context.newPage();
-        let pages = await browser.pages();
-        await pages[0].close();
-        console.timeEnd('browser launch');
-
-        console.time('percentile retrieval');
-        let FWPercentilesFile = fs.readFileSync(path.join(__dirname, '/serverUtils/FWPercentiles.json'));
-        FWPercentiles = JSON.parse(FWPercentilesFile);
-        let AMPercentilesFile = fs.readFileSync(path.join(__dirname, '/serverUtils/AMPercentiles.json'));
-        AMPercentiles = JSON.parse(AMPercentilesFile);
-        let CMPercentilesFile = fs.readFileSync(path.join(__dirname, '/serverUtils/CMPercentiles.json'));
-        CMPercentiles = JSON.parse(CMPercentilesFile);
-        let FBPercentilesFile = fs.readFileSync(path.join(__dirname, '/serverUtils/FBPercentiles.json'));
-        FBPercentiles = JSON.parse(FBPercentilesFile);
-        let CBPercentilesFile = fs.readFileSync(path.join(__dirname, '/serverUtils/CBPercentiles.json'));
-        CBPercentiles = JSON.parse(CBPercentilesFile);
-        console.timeEnd('percentile retrieval');
-
-        resolve(context);
-    });
-};
-
-let connectToDatabase = async () => {
-
-    return new Promise(function(resolve, reject) {
-
-        mongoClient.connect(mongoURI, {useUnifiedTopology: true},function (err, client) {
-            console.log("Connected to database");
-            db = client.db("ProjectFourteen");
-            collection = db.collection('CurrentSeason');
-            resolve();
-        })
-
-    });
-
-};
-
-//launch a browser and then start listening on the port
-setup()
-    .then(() =>
-        connectToDatabase()
-    )
-    .then(() =>
-        http.listen(port, function () {
-            console.log('Listening on port ' + port);
-        })
-    )
-    .catch(async (anError) => {
-        console.log(anError);
-    });
-
-//wait for socket events
-io.on('connection', async function(socket){
-
-    console.log("Number of users currently online: " + Object.keys(io.sockets.sockets).length);
-
-    socket.emit('percentile arrays', FWPercentiles, AMPercentiles, CMPercentiles, FBPercentiles, CBPercentiles);
-
-    socket.on('search', async(aQuery) => {
-        if (aQuery.toLowerCase() === "test") {
-            try{
-                let fileContents = fs.readFileSync(path.join(__dirname, '/serverUtils/sampleSearchResults.json'));
-                let sampleSearchResults = JSON.parse(fileContents);
-                socket.emit('search results', sampleSearchResults);
-            }
-            catch(error) {
-                socket.emit('alert error', "Invalid Search");
-            }
-        }
-        else if (aQuery.split(" ")[aQuery.split(" ").length - 1] === "--all"){
-            aQuery = aQuery.replace("--all", "");
-            console.log(socket.id + " | Searching for: " + aQuery);
-            console.time(socket.id + " | Time taken to return search results");
-            let URL = "https://www.whoscored.com/Search/?t=" + aQuery.replace(' ', '+');
-            let page = await context.newPage();
-            getSearchResults(page, URL).then(async (searchResults) => {
-                await page.close();
-                for (let i = 0; i < searchResults.length; i++) {
-                    let countryISO = searchResults[i]["nationality"];
-                    searchResults[i]["nationality"] = countryCodes.getCountryName(countryISO.toUpperCase());
-                    searchResults[i]["all"] = true;
-                }
-                console.timeEnd(socket.id + " | Time taken to return search results");
-                socket.emit('search results', searchResults);
-                // await fs.writeFile(path.join(__dirname, '/serverUtils/sampleSearchResults.json'), JSON.stringify(searchResults), function(err) {
-                //     if (err) {
-                //         console.log(err);
-                //     }
-                // });
-            }).catch(async (anError) => {
-                await page.close();
-                console.log(socket.id + " | " + anError);
-                socket.emit('alert error', anError.name);
-            });
-        }
-        else {
-            console.log(socket.id + " | Searching the database for: " + aQuery);
-            console.time(socket.id + " | Time taken to return search results");
-            collection.find({$text:
-                        {
-                            $search: '\"' + aQuery + '\"',
-                            $language: "en",
-                            $caseSensitive: false,
-                            $diacriticSensitive: false
-                        }
-                }).toArray(function(err, docs) {
-                if (err){
-                    console.log(socket.id + " | " + err);
-                    socket.emit('alert error', "An error occurred while retrieving from the database");
-                }
-                else if (docs.length === 0){
-                    console.log(socket.id + " | " + "Error: Player not found in database");
-                    socket.emit('alert error', "The player you searched for was not found in the database. Sorry!");
-                }
-                else {
-                    let searchResults = [];
-                    for (let i=0; i<docs.length; i++){
-                        let result = {
-                            name: docs[i].name,
-                            club: docs[i].club,
-                            nationality: countryCodes.getCountryName(docs[i].countryCode.toUpperCase()),
-                            URL: docs[i].url,
-                            all: false
-                        };
-                        searchResults.push(result);
-                    }
-                    socket.emit('search results', searchResults);
-                    console.timeEnd(socket.id + " | Time taken to return search results");
-                }
-            });
-        }
-    });
-
-    socket.on('scrape stats', async(URL, all) => {
-        if (URL === 'test') {
-            let fileContents = fs.readFileSync(path.join(__dirname, '/serverUtils/sampleStats.json'));
-            let sampleStats = JSON.parse(fileContents);
-            socket.emit('stats scraped', sampleStats);
-        }
-        else if (all === "true"){
-            console.log(socket.id + " | Retrieving stats dynamically from: " + URL);
-            console.time(socket.id + " | Time taken to return stats");
-            let page = await context.newPage();
-            getStats(page, URL).then(async (rawData) => {
-                await page.close();
-                let unorderedStats = {};
-                for (let key in rawData[0]) {
-                    unorderedStats[key] = {};
-                }
-                for (let i = 0; i < rawData.length; i++) {
-                    for (let key in rawData[i]) {
-                        Object.assign(unorderedStats[key], rawData[i][key]);
-                    }
-                }
-                let orderedStats = {};
-                Object.keys(unorderedStats).sort().reverse().forEach(function(key) {
-                    orderedStats[key] = unorderedStats[key];
-                });
-                console.timeEnd(socket.id + " | Time taken to return stats");
-                socket.emit('stats scraped', orderedStats);
-                // await fs.writeFile(path.join(__dirname, '/serverUtils/sampleStats.json'), JSON.stringify(orderedStats), function(err) {
-                //     if (err) {
-                //         console.log(err);
-                //     }
-                // });
-            }).catch(async (anError) => {
-                await page.close();
-                console.log(socket.id + " | " + anError);
-                socket.emit('alert error', anError.name);
-            });
-        }
-        else {
-            console.log(socket.id + " | Retrieving stats from the database for: " + URL);
-            console.time(socket.id + " | Time taken to return stats");
-            collection.find({"url": URL}).toArray(function(err, docs) {
-                if (err){
-                    console.log(socket.id + " | " + err);
-                    socket.emit('alert error', "An error occurred while retrieving from the database");
-                }
-                else if (docs.length === 0){
-                    console.log(socket.id + " | " + "Error: Player not found in database");
-                    socket.emit('alert error', "The player you selected was not found in the database. Sorry!");
-                }
-                else {
-                    socket.emit('stats scraped', JSON.parse(docs[0].stats));
-                    console.timeEnd(socket.id + " | Time taken to return stats");
-                }
-            });
-        }
-    });
-
-    socket.on('disconnect', function(){
-        console.log("Number of users currently online: " + Object.keys(io.sockets.sockets).length);
-    })
-
-});
-
 let disableImages = async(page) => {
 
     await page.setRequestInterception(true);
@@ -288,57 +54,57 @@ let getStats = async (page, URL) => {
     let rawData = [];
     return new Promise(function(resolve, reject){
         scrapeAssistsAndMinutes(page)
-        .then((assists) =>
-            (rawData.push(assists), scrapeGoals(page))
-        )
-        .then((goals) =>
-            (rawData.push(goals), scrapePasses(page))
-        )
-        .then((passes) =>
-            (rawData.push(passes), scrapeShots(page))
-        )
-        .then((shots) =>
-            (rawData.push(shots), scrapeKeyPasses(page))
-        )
-        .then((keyPasses) =>
-            (rawData.push(keyPasses), scrapeShotsOnTarget(page))
-        )
-        .then((shotsOnTarget) =>
-            (rawData.push(shotsOnTarget), scrapeFouls(page))
-        )
-        .then((fouls) =>
-            (rawData.push(fouls), scrapeTackles(page))
-        )
-        .then((tackles) =>
-            (rawData.push(tackles), scrapeInterceptions(page))
-        )
-        .then((interceptions) =>
-            (rawData.push(interceptions), scrapePossessionLosses(page))
-        )
-        .then((possessionLosses) =>
-            (rawData.push(possessionLosses), scrapeDribbles(page))
-        )
-        .then((dribbles) =>
-            (rawData.push(dribbles), scrapeClearances(page))
-        )
-        .then((clearances) =>
-            (rawData.push(clearances), scrapeAerialDuels(page))
-        )
-        .then((aerialDuels) =>
-            (rawData.push(aerialDuels), scrapeCrosses(page))
-        )
-        .then((crosses) =>
-            (rawData.push(crosses), scrapeBlocks(page))
-        )
-        .then((blocks) =>
-            (rawData.push(blocks), scrapeThroughBalls(page))
-        )
-        .then((throughballs) =>
-            (rawData.push(throughballs), resolve(rawData))
-        )
-        .catch(async(anError) => {
-            reject(anError);
-        })
+            .then((assists) =>
+                (rawData.push(assists), scrapeGoals(page))
+            )
+            .then((goals) =>
+                (rawData.push(goals), scrapePasses(page))
+            )
+            .then((passes) =>
+                (rawData.push(passes), scrapeShots(page))
+            )
+            .then((shots) =>
+                (rawData.push(shots), scrapeKeyPasses(page))
+            )
+            .then((keyPasses) =>
+                (rawData.push(keyPasses), scrapeShotsOnTarget(page))
+            )
+            .then((shotsOnTarget) =>
+                (rawData.push(shotsOnTarget), scrapeFouls(page))
+            )
+            .then((fouls) =>
+                (rawData.push(fouls), scrapeTackles(page))
+            )
+            .then((tackles) =>
+                (rawData.push(tackles), scrapeInterceptions(page))
+            )
+            .then((interceptions) =>
+                (rawData.push(interceptions), scrapePossessionLosses(page))
+            )
+            .then((possessionLosses) =>
+                (rawData.push(possessionLosses), scrapeDribbles(page))
+            )
+            .then((dribbles) =>
+                (rawData.push(dribbles), scrapeClearances(page))
+            )
+            .then((clearances) =>
+                (rawData.push(clearances), scrapeAerialDuels(page))
+            )
+            .then((aerialDuels) =>
+                (rawData.push(aerialDuels), scrapeCrosses(page))
+            )
+            .then((crosses) =>
+                (rawData.push(crosses), scrapeBlocks(page))
+            )
+            .then((blocks) =>
+                (rawData.push(blocks), scrapeThroughBalls(page))
+            )
+            .then((throughballs) =>
+                (rawData.push(throughballs), resolve(rawData))
+            )
+            .catch(async(anError) => {
+                reject(anError);
+            })
     });
 
 };
@@ -931,3 +697,7 @@ let scrapeBlocks = async (page) => {
 
 };
 
+module.exports = {
+    getSearchResults,
+    getStats
+};
