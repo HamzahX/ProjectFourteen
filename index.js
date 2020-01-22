@@ -195,7 +195,7 @@ let getStats = async (aURL) => {
                 let returnObject = {
                     url: url,
                     name: name,
-                    lastUpdated: dateFormat(lastUpdated, "dd/mm/yyyy, h:MM:ss TT"),
+                    lastUpdated: dateFormat(lastUpdated, "dd/mm/yyyy, h:MM:ss TT", true),
                     stats: stats
                 };
                 resolve(returnObject);

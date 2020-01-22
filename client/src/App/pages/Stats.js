@@ -452,7 +452,7 @@ class Stats extends Component {
                     }
 
                     subtitle += selectedStats['minutes'].toLocaleString();
-                    subtitle += "<br>Last Updated: " + lastUpdated + " MST";
+                    subtitle += "<br>Last Updated: " + lastUpdated + " UTC";
                 }
 
                 else {
