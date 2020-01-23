@@ -6,6 +6,7 @@ serverUtils/currentSeasonProcessed.json
 serverUtils/currentSeasonLeagueRaw.json
 serverUtils/currentSeasonCLRaw.json
 serverUtils/currentSeasonELRaw.json
+serverUtils/scraper.js
 percentileScraper.js
 currentSeasonScraper.js
 commands.txt

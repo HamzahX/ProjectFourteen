@@ -14,11 +14,9 @@ const mongoURI = "mongodb+srv://hamzah:" + process.env.MONGOPASSWORD + "@cluster
 // console.log(mongoURI);
 
 //puppeteer
-const puppeteer = require('puppeteer');
 const dateFormat = require('dateformat');
 
 //helper functions
-const scraper = require('./serverUtils/scraper');
 const countryCodes = require('./serverUtils/countryCodes.js');
 
 var db;
