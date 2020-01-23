@@ -39,7 +39,17 @@ class Stats extends Component {
             name: '',
             url: '',
             isAll: false,
-            multipleLeagues: false
+            multipleLeagues: false,
+            isMobile: this.props.isMobile,
+            fontSizes: {
+                title: this.props.isMobile === true ? '4vw' : '2em',
+                subtitle: this.props.isMobile === true ? '2.6vw' : '1.3em',
+                noData: this.props.isMobile === true ? '2.7vw' : '1.35em',
+                xAxisLabels: this.props.isMobile === true ? '2.3vw' : '1.15em',
+                dataLabels: this.props.isMobile === true ? '2.3vw' : '1.25em',
+                credits: this.props.isMobile === true ? '1.4vw' : '1em',
+                yAxisLabels: this.props.isMobile === true ? '1vw' : '0.5em',
+            }
         };
 
         this.processStats = this.processStats.bind(this);
@@ -394,7 +404,20 @@ class Stats extends Component {
 
     render() {
 
-        let {name, url, lastUpdated, selectedCompetitions, template, categories, allStats, percentiles, isLoading, multipleLeagues} = this.state;
+        let {
+            name,
+            url,
+            lastUpdated,
+            selectedCompetitions,
+            template,
+            categories,
+            allStats,
+            percentiles,
+            isLoading,
+            multipleLeagues,
+            fontSizes,
+            isMobile
+        } = this.state;
 
         if (isLoading) {
             return (
@@ -460,7 +483,6 @@ class Stats extends Component {
                     subtitle = "-<br>-<br>-";
                 }
 
-
                 var options = {
                     chart: {
                         style: {
@@ -472,14 +494,14 @@ class Stats extends Component {
                                 enabled: false,
                                 style: {
                                     color: '#444444',
-                                    fontSize: "0.5em",
+                                    fontSize: fontSizes['yAxisLabels'],
                                 }
                             },
                             gridZIndex: 5,
                             lineWidth: 0,
                             endOnTick: true,
                             showFirstLabel: false,
-                            showLastLabel: false,
+                            showLastLabel: true,
                             min: -15,
                             max: 100,
                             tickPositions: [-15, 0, 25, 50, 75, 100]
@@ -489,8 +511,8 @@ class Stats extends Component {
                         hideDelay: 0,
                         spacingLeft: 0,
                         spacingRight: 0,
-                        marginLeft: 75,
-                        marginRight: 75,
+                        marginLeft: 90,
+                        marginRight: 90,
                         marginBottom: 30,
                         events: {
                             load: function() {
@@ -503,7 +525,7 @@ class Stats extends Component {
                     credits: {
                         text: "Percentile ranks are calculated by comparing a player to other top 5 league players who have at least 10 starts in the selected template position",
                         style: {
-                            fontSize: '1em'
+                            fontSize: fontSizes['credits']
                         },
                         href: ''
                     },
@@ -516,7 +538,7 @@ class Stats extends Component {
                                 style: {
                                     color: "black",
                                     fontWeight: '600',
-                                    fontSize: "1.25em",
+                                    fontSize: fontSizes['dataLabels'],
                                     textOutline: "1.5px contrast"
                                 },
                                 format: '{point.p90}',
@@ -528,7 +550,7 @@ class Stats extends Component {
                     title: {
                         text: name + ", 19/20",
                         style: {
-                            fontSize: '2em',
+                            fontSize: fontSizes['title'],
                             fontWeight: 'bold',
                         },
                         margin: 35
@@ -537,19 +559,19 @@ class Stats extends Component {
                         startAngle: -16.3636363636363636363
                     },
                     lang: {
-                        noData: ""
+                        noData: "Select a competition"
                     },
                     noData: {
                         style: {
                             fontWeight: 'bold',
-                            fontSize: '1.35em',
+                            fontSize: fontSizes['noData'],
                             color: '#303030'
                         }
                     },
                     subtitle: {
                         text: subtitle,
                         style: {
-                            fontSize: '1.3em'
+                            fontSize: fontSizes['subtitle']
                         }
                     },
                     tooltip: {
@@ -566,10 +588,11 @@ class Stats extends Component {
                     xAxis: {
                         categories: categories,
                         labels: {
-                            distance: 40,
+                            distance: isMobile === true ? 60 : 40,
                             style: {
-                                fontSize: '1.15em',
-                            }
+                                fontSize: fontSizes['xAxisLabels'],
+                            },
+                            padding: 31
                         },
                         gridLineWidth: 1.5,
                         gridLineColor: '#333333',
