@@ -20,37 +20,33 @@ const dateFormat = require('dateformat');
 const countryCodes = require('./serverUtils/countryCodes.js');
 
 var db;
-var collection;
+var currentSeasonCollection;
+var percentilesCollection;
 
-var browser;
-var context;
+let percentiles = {
+    'fw': [],
+    'am': [],
+    'cm': [],
+    'fb': [],
+    'cb': []
+};
 
 //function to launch a browser using puppeteer, retrieve percentile arrays
 let setup = async () => {
     return new Promise(async function(resolve, reject){
-        console.time('browser launch');
-        // browser = await puppeteer.launch({
-        //     headless: false,
-        //     args: ["--no-sandbox", "--disable-setuid-sandbox", '--disable-gpu']
-        // });
-        // context = await browser.createIncognitoBrowserContext();
-        // await context.newPage();
-        // let pages = await browser.pages();
-        // await pages[0].close();
-        console.timeEnd('browser launch');
 
-        // console.time('percentile retrieval');
-        // let FWPercentilesFile = fs.readFileSync(path.join(__dirname, '/serverUtils/FWPercentiles.json'));
-        // percentiles.push(JSON.parse(FWPercentilesFile));
-        // let AMPercentilesFile = fs.readFileSync(path.join(__dirname, '/serverUtils/AMPercentiles.json'));
-        // percentiles.push(JSON.parse(AMPercentilesFile));
-        // let CMPercentilesFile = fs.readFileSync(path.join(__dirname, '/serverUtils/CMPercentiles.json'));
-        // percentiles.push(JSON.parse(CMPercentilesFile));
-        // let FBPercentilesFile = fs.readFileSync(path.join(__dirname, '/serverUtils/FBPercentiles.json'));
-        // percentiles.push(JSON.parse(FBPercentilesFile));
-        // let CBPercentilesFile = fs.readFileSync(path.join(__dirname, '/serverUtils/CBPercentiles.json'));
-        // percentiles.push(JSON.parse(CBPercentilesFile));
-        // console.timeEnd('percentile retrieval');
+        percentilesCollection.find({}).toArray(function (err, docs) {
+            if (err) {
+                reject();
+            } else if (docs.length === 0) {
+                reject();
+            } else {
+                for (let i=0; i<docs.length; i++){
+                    percentiles[docs[i].position] = docs[i].stats;
+                }
+                resolve(percentiles);
+            }
+        });
 
         resolve();
     });
@@ -63,7 +59,8 @@ let connectToDatabase = async () => {
         console.time('database connection');
         mongoClient.connect(mongoURI, {useUnifiedTopology: true},function (err, client) {
             db = client.db("ProjectFourteen");
-            collection = db.collection('CurrentSeason');
+            currentSeasonCollection = db.collection('CurrentSeason');
+            percentilesCollection = db.collection('Percentiles');
             console.timeEnd('database connection');
             resolve();
         })
@@ -72,9 +69,9 @@ let connectToDatabase = async () => {
 
 };
 
-setup()
+connectToDatabase()
     .then(() =>
-        connectToDatabase()
+        setup()
     )
     .then(() =>
         (app.listen(port), console.log('App is listening on port ' + port))
@@ -89,6 +86,12 @@ app.use(express.static(path.join(__dirname, './client/build')));
 
 app.get('/', (req,res) =>{
     res.sendFile(path.join(__dirname+'/client/build/index.html'));
+});
+
+app.post('/api/percentiles', (req, res) => {
+
+    res.json(percentiles);
+
 });
 
 app.post('/api/search', (req, res) => {
@@ -140,7 +143,7 @@ let search = async (aQuery) => {
     return new Promise(async function(resolve, reject){
         console.log("Searching the database for: " + aQuery);
         console.time("Time taken to return search results");
-        collection.find({$text:
+        currentSeasonCollection.find({$text:
                 {
                     $search: '\"' + aQuery + '\"',
                     $language: "en",
@@ -149,9 +152,11 @@ let search = async (aQuery) => {
                 }
         }).toArray(function(err, docs) {
             if (err){
+                console.timeEnd("Time taken to return search results");
                 reject();
             }
             else if (docs.length === 0){
+                console.timeEnd("Time taken to return search results");
                 reject();
             }
             else {
@@ -179,13 +184,14 @@ let getStats = async (aURL) => {
     return new Promise(async function(resolve, reject){
         console.log("Retrieving stats from the database for: " + aURL);
         console.time("Time taken to return stats");
-        collection.find({"url": aURL}).toArray(function (err, docs) {
+        currentSeasonCollection.find({"url": aURL}).toArray(function (err, docs) {
             if (err) {
+                console.timeEnd("Time taken to return search results");
                 reject();
             } else if (docs.length === 0) {
+                console.timeEnd("Time taken to return search results");
                 reject();
             } else {
-                console.timeEnd("Time taken to return stats");
                 let url = docs[0].url;
                 let stats = JSON.parse(docs[0].stats);
                 let name = docs[0].name;
@@ -196,6 +202,7 @@ let getStats = async (aURL) => {
                     lastUpdated: dateFormat(lastUpdated, "dd/mm/yyyy, h:MM:ss TT", true),
                     stats: stats
                 };
+                console.timeEnd("Time taken to return stats");
                 resolve(returnObject);
             }
         });

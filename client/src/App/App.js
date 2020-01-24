@@ -7,27 +7,16 @@ import Stats from './pages/Stats';
 
 import $ from 'jquery';
 
-import FWPercentiles from './percentiles/FWPercentiles';
-import AMPercentiles from './percentiles/AMPercentiles';
-import CMPercentiles from './percentiles/CMPercentiles';
-import FBPercentiles from './percentiles/FBPercentiles';
-import CBPercentiles from './percentiles/CBPercentiles';
-
-
 class App extends Component {
 
     constructor(props) {
+
         super(props);
-        let percentiles = [];
-        percentiles.push(FWPercentiles);
-        percentiles.push(AMPercentiles);
-        percentiles.push(CMPercentiles);
-        percentiles.push(FBPercentiles);
-        percentiles.push(CBPercentiles);
         this.state = {
-            percentiles: percentiles,
+            percentiles: {},
             isMobile: false
-        }
+        };
+
     }
 
     componentDidMount() {
@@ -51,7 +40,28 @@ class App extends Component {
 
         });
 
+        this.getPercentiles()
+
     }
+
+    getPercentiles = () => {
+
+        fetch('/api/percentiles', {
+            method: 'post',
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+
+            })
+        })
+        .then(res => {
+            return res.json()
+        })
+        .then(percentiles => this.setState({percentiles: percentiles}))
+        .catch();
+
+    };
 
     render() {
 

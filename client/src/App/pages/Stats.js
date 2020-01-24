@@ -47,6 +47,8 @@ class Stats extends Component {
                 noData: this.props.isMobile === true ? '2.7vw' : '1.35em',
                 xAxisLabels: this.props.isMobile === true ? '2.3vw' : '1.15em',
                 dataLabels: this.props.isMobile === true ? '2.3vw' : '1.25em',
+                tooltipHeader: this.props.isMobile === true ? '2.3vw' : '1em',
+                tooltip: this.props.isMobile === true ? '2.3vw' : '1.25em',
                 credits: this.props.isMobile === true ? '1.4vw' : '1em',
                 yAxisLabels: this.props.isMobile === true ? '1vw' : '0.5em',
             }
@@ -190,7 +192,7 @@ class Stats extends Component {
                 break;
             case "CM":
                 categories = [
-                    'Non-Penalty Goals+Assists',
+                    'Non-Penalty Goals + Assists',
                     'Key Passes',
                     'Completed Passes',
                     'Pass Completion %',
@@ -281,7 +283,7 @@ class Stats extends Component {
                 statsPer90['possessionLosses'] = filteredStats['possessionLosses'] / (filteredStats['minutes']/90);
                 statsPer90['recoveries'] = (filteredStats['tackles'] / (filteredStats['minutes']/90)) + (filteredStats['interceptions'] / (filteredStats['minutes']/90));
                 for (let key in statsPer90){
-                    percentiles[key] = this.percentRank(percentileArrays[0][key], statsPer90[key]) * 100
+                    percentiles[key] = this.percentRank(percentileArrays['fw'][key], statsPer90[key]) * 100
                 }
                 percentiles['possessionLosses'] = 100 - percentiles['possessionLosses'];
                 break;
@@ -299,7 +301,7 @@ class Stats extends Component {
                 statsPer90['possessionLosses'] = filteredStats['possessionLosses'] / (filteredStats['minutes']/90);
                 statsPer90['recoveries'] = (filteredStats['tackles'] / (filteredStats['minutes']/90)) + (filteredStats['interceptions'] / (filteredStats['minutes']/90));
                 for (let key in statsPer90){
-                    percentiles[key] = this.percentRank(percentileArrays[1][key], statsPer90[key]) * 100
+                    percentiles[key] = this.percentRank(percentileArrays['am'][key], statsPer90[key]) * 100
                 }
                 percentiles['possessionLosses'] = 100 - percentiles['possessionLosses'];
                 break;
@@ -317,7 +319,7 @@ class Stats extends Component {
                 statsPer90['fouls'] = filteredStats['fouls'] / (filteredStats['minutes']/90);
                 statsPer90['interceptions'] = (filteredStats['interceptions'] / (filteredStats['minutes']/90));
                 for (let key in statsPer90){
-                    percentiles[key] = this.percentRank(percentileArrays[2][key], statsPer90[key]) * 100
+                    percentiles[key] = this.percentRank(percentileArrays['cm'][key], statsPer90[key]) * 100
                 }
                 percentiles['fouls'] = 100 - percentiles['fouls'];
                 break;
@@ -335,7 +337,7 @@ class Stats extends Component {
                 statsPer90['fouls'] = filteredStats['fouls'] / (filteredStats['minutes']/90);
                 statsPer90['interceptions'] = (filteredStats['interceptions'] / (filteredStats['minutes']/90));
                 for (let key in statsPer90){
-                    percentiles[key] = this.percentRank(percentileArrays[3][key], statsPer90[key]) * 100
+                    percentiles[key] = this.percentRank(percentileArrays['fb'][key], statsPer90[key]) * 100
                 }
                 percentiles['fouls'] = 100 - percentiles['fouls'];
                 break;
@@ -353,7 +355,7 @@ class Stats extends Component {
                 statsPer90['succAerialDuels'] = filteredStats['succAerialDuels'] / (filteredStats['minutes']/90);
                 statsPer90['aerialDuelRate'] = (filteredStats['succAerialDuels'] / filteredStats['totalAerialDuels']) * 100;
                 for (let key in statsPer90){
-                    percentiles[key] = this.percentRank(percentileArrays[4][key], statsPer90[key]) * 100
+                    percentiles[key] = this.percentRank(percentileArrays['cb'][key], statsPer90[key]) * 100
                 }
                 percentiles['fouls'] = 100 - percentiles['fouls'];
                 break;
@@ -575,8 +577,12 @@ class Stats extends Component {
                         }
                     },
                     tooltip: {
+                        headerFormat: '<span style="font-size: ' + fontSizes['tooltipHeader'] + '">{point.key}</span><br/>',
                         pointFormat: '<span style="color:{point.color}">\u25CF</span>' +
-                            ' {series.name}<br>Raw Value: <b>{point.p90}</b><br/>Percentile Rank: <b>{point.formattedValue}</b>'
+                            ' {series.name}<br>Raw Value: <b>{point.p90}</b><br/>Percentile Rank: <b>{point.formattedValue}</b>',
+                        style: {
+                            fontSize: fontSizes['tooltip']
+                        }
                     },
                     legend: {
                         enabled: false,

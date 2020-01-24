@@ -236,6 +236,14 @@ h3 {
   flex-direction: column;
 }
 
+#chart-filter-inputs-laptop {
+  display: block;
+}
+
+#chart-filter-inputs-mobile {
+  display: none;
+}
+
 .chart-filter-inputs {
   flex: 1 1 70%;
   /*padding: 0 20px 15px;*/
@@ -262,12 +270,9 @@ h3 {
   box-shadow: 0 0 6px lightgray;
 }
 
-#chart-filter-inputs-laptop {
-  display: block;
-}
-
-#chart-filter-inputs-mobile {
-  display: none;
+#chart-filter-inputs-mobile form label{
+  font-size: 3.7vw;
+  padding: 20px;
 }
 
 #filter-buttons {
@@ -490,7 +495,7 @@ h3 {
   #main2 {
     display: flex;
     flex-direction: column;
-    min-height: 100%;
+    /*min-height: 100%;*/
   }
 
   #searchbar-container2 {
@@ -525,6 +530,7 @@ h3 {
     padding-bottom: 2.5%;
     display: flex;
     align-items: center;
+    font-size: 130%;
   }
 
   #search-filter-inputs{

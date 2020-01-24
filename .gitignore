@@ -7,6 +7,11 @@ serverUtils/currentSeasonLeagueRaw.json
 serverUtils/currentSeasonCLRaw.json
 serverUtils/currentSeasonELRaw.json
 serverUtils/scraper.js
+serverUtils/FWPercentiles.json
+serverUtils/AMPercentiles.json
+serverUtils/CMPercentiles.json
+serverUtils/FBPercentiles.json
+serverUtils/CBPercentiles.json
 percentileScraper.js
 currentSeasonScraper.js
 commands.txt
