@@ -270,11 +270,6 @@ h3 {
   box-shadow: 0 0 6px lightgray;
 }
 
-#chart-filter-inputs-mobile form label{
-  font-size: 3.7vw;
-  padding: 20px;
-}
-
 #filter-buttons {
   flex: 1 1 30%;
   display: flex;
@@ -572,9 +567,9 @@ h3 {
   }
 
   .chart-filter-inputs form {
-    column-count: 2;
-    -webkit-column-count: 2;
-    -moz-column-count: 2;
+    /*column-count: 2;*/
+    /*-webkit-column-count: 2;*/
+    /*-moz-column-count: 2;*/
   }
 
   .chart-filter-inputs form label {
@@ -588,6 +583,16 @@ h3 {
   #chart-filter-inputs-mobile {
     display: block;
   }
+
+  #chart-filter-inputs-mobile form label{
+    box-shadow: 0 0 6px lightgray;
+    font-size: 3vw;
+    padding: 30px;
+  }
+
+    #chart-filter-inputs-mobile form .selected-label{
+        box-shadow: 0 0 6px lightskyblue;
+    }
 
   #filter-buttons {
   }

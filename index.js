@@ -193,7 +193,7 @@ let getStats = async (aURL) => {
                 reject();
             } else {
                 let url = docs[0].url;
-                let stats = JSON.parse(docs[0].stats);
+                let stats = docs[0].stats;
                 let name = docs[0].name;
                 let lastUpdated = docs[0].lastUpdated;
                 let returnObject = {

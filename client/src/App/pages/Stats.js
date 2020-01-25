@@ -438,7 +438,7 @@ class Stats extends Component {
                     label = label.substring(0, label.indexOf("|")-1)
                 }
                 cards.push(
-                    <label>
+                    <label className={isIncluded ? "selected-label" : null}>
                         <input className="competition"
                                type="checkbox"
                                value={current}
@@ -648,18 +648,32 @@ class Stats extends Component {
                                 </form>
                             </div>
                             <div className="chart-filter-inputs" id="chart-filter-inputs-mobile">
-                                <h3>Template</h3>
-                                <form id="templates" onChange={this.changeTemplate}>
-                                    <label><input type="radio" name="template" value="FW" checked={template === "FW" ? true: null}/> FW </label>
-                                    <label><input type="radio" name="template" value="AM" checked={template === "AM" ? true: null}/> AM</label>
-                                    <label><input type="radio" name="template" value="CM" checked={template === "CM" ? true: null}/> CM / DM</label>
-                                    <label><input type="radio" name="template" value="FB" checked={template === "FB" ? true: null}/> FB </label>
-                                    <label><input type="radio" name="template" value="CB" checked={template === "CB" ? true: null}/> CB </label>
-                                </form>
-                                <h3>Competitions (19/20)</h3>
-                                <form id="competitions">
-                                    {cards}
-                                </form>
+                                <div id="templates-container">
+                                    <h3>Template</h3>
+                                    <form id="templates" onChange={this.changeTemplate}>
+                                        <label className={template === "FW" ? "selected-label" : null}>
+                                            <input type="radio" name="template" value="FW" checked={template === "FW" ? true: null}/> <span>Forward</span>
+                                        </label>
+                                        <label className={template === "AM" ? "selected-label" : null}>
+                                            <input type="radio" name="template" value="AM" checked={template === "AM" ? true: null}/> <span>Attacking Midfielder / Winger</span>
+                                        </label>
+                                        <label className={template === "CM" ? "selected-label" : null}>
+                                            <input type="radio" name="template" value="CM" checked={template === "CM" ? true: null}/> <span>Central / Defensive Midfielder</span>
+                                        </label>
+                                        <label className={template === "FB" ? "selected-label" : null}>
+                                            <input type="radio" name="template" value="FB" checked={template === "FB" ? true: null}/> <span>Full-back</span>
+                                        </label>
+                                        <label className={template === "CB" ? "selected-label" : null}>
+                                            <input type="radio" name="template" value="CB" checked={template === "CB" ? true: null}/> <span>Center-back</span>
+                                        </label>
+                                    </form>
+                                </div>
+                                <div id="competitions-container">
+                                    <h3>Competitions (19/20)</h3>
+                                    <form id="competitions">
+                                        {cards}
+                                    </form>
+                                </div>
                             </div>
                             <div id="filter-buttons">
                                 <div className="filter-button">
