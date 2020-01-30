@@ -2,27 +2,31 @@ import React, { Component } from 'react';
 
 import SearchBar from "../components/SearchBar";
 import LoadingSpinner from "../components/LoadingSpinner";
-import SearchResult from "../components/SearchResult";
+import PlayerSearchResult from "../components/PlayerSearchResult";
 
 import Select from 'react-select';
 
 
-class Search extends Component {
+class PlayerSearch extends Component {
 
     constructor(props){
         super(props);
-        let { query } = props.match.params;
+        let query = props.match.params.query;
+        let searchByClub = props.match.params.searchByClub;
         this.state = {
             isLoading: false,
             error: null,
             query: query,
+            searchByClub: searchByClub,
             searchResults: [],
             filteredSearchResults: [],
+            names: [],
             clubs: [],
             nationalities: [],
         };
 
         this.filterByClub = this.filterByClub.bind(this);
+        this.filterByName = this.filterByName.bind(this);
     }
 
     componentDidMount() {
@@ -44,17 +48,22 @@ class Search extends Component {
     }
 
     processSearchResults(searchResults){
+        let names = [];
         let clubs = [];
         let nationalities = [];
         for (let i=0; i<searchResults.length; i++){
             let currentResult = searchResults[i];
             let temp1 = {
                 value: currentResult.club,
-                label: currentResult.club
+                label: currentResult.club,
             };
             let temp2 = {
                 value: currentResult.nationality,
-                label: currentResult.nationality
+                label: currentResult.nationality,
+            };
+            let temp3 = {
+                value: currentResult.name,
+                label: currentResult.name
             };
             if (!clubs.filter(e => e.value === temp1.value).length > 0){
                 clubs.push(temp1);
@@ -62,10 +71,12 @@ class Search extends Component {
             if (!nationalities.filter(e => e.value === temp2.value).length > 0){
                 nationalities.push(temp2);
             }
+            names.push(temp3);
         }
         this.setState({
             searchResults: searchResults,
             filteredSearchResults: searchResults,
+            names: names,
             clubs: clubs,
             nationalities: nationalities,
             isLoading: false,
@@ -75,13 +86,23 @@ class Search extends Component {
 
     getSearchResults = () => {
 
+        let searchByClub = this.state.searchByClub;
+        // alert(searchByClub);
+        let type;
+        if (searchByClub === undefined){
+            type = "playerByName"
+        }
+        else {
+            type = "playerByClub"
+        }
         fetch('/api/search', {
             method: 'post',
             headers: {
                 "Content-Type": "application/json"
             },
             body: JSON.stringify({
-                "query": this.state.query
+                "query": this.state.query,
+                "type": type
             })
         })
         .then(res => {
@@ -124,8 +145,35 @@ class Search extends Component {
 
     }
 
+    filterByName(selectedOption){
+
+        let searchResults = JSON.parse(JSON.stringify(this.state.searchResults));
+        let filteredSearchResults = [];
+
+        if (selectedOption === null){
+            filteredSearchResults = searchResults;
+        }
+
+        else {
+            for (let i=0; i<searchResults.length; i++){
+                if (searchResults[i].name.toUpperCase().includes(selectedOption.value.toUpperCase())){
+                    filteredSearchResults.push(searchResults[i]);
+                }
+            }
+        }
+
+        this.setState({
+            filteredSearchResults: []
+        }, () => {
+            this.setState({
+                filteredSearchResults: filteredSearchResults
+            })
+        });
+
+    }
+
     render() {
-        let {error, isLoading, filteredSearchResults, clubs} = this.state;
+        let {error, isLoading, filteredSearchResults, clubs, names, searchByClub} = this.state;
 
         if (isLoading) {
             return (
@@ -150,7 +198,7 @@ class Search extends Component {
             for (let i=0; i<filteredSearchResults.length; i++){
                 let current = filteredSearchResults[i];
                 cards.push(
-                    <SearchResult
+                    <PlayerSearchResult
                         name={current.name}
                         club={current.club}
                         nationality={current.nationality}
@@ -159,51 +207,69 @@ class Search extends Component {
                     />
                 )
             }
+
+            const reactSelectStyle = {
+                control: (base, state) => ({
+                    ...base,
+                    boxShadow: "none",
+                    '&:hover': {
+                        borderColor: '#B23535'
+                    },
+                    '&:focus': {
+                        borderColor: '#B23535'
+                    },
+                })
+            };
+
+            const reactSelectTheme = theme => ({
+                ...theme,
+                colors: {
+                    ...theme.colors,
+                    primary25: "pink",
+                    primary: "#e75453"
+                }
+            });
+
+            let searchFilter;
+            let searchText;
+            if (searchByClub === undefined){
+                searchText = <h2>Search results for <br/>"player.name ⊃ {this.state.query}"</h2>;
+                searchFilter =
+                    <Select
+                        styles={reactSelectStyle}
+                        theme={reactSelectTheme}
+                        placeholder={"Filter by club"}
+                        onChange={this.filterByClub}
+                        isClearable
+                        options={clubs}
+                    />
+            }
+
+            else {
+                searchText = <h2>Search results for <br/>"player.club = {this.state.query}"</h2>;
+                searchFilter =
+                    <Select
+                        styles={reactSelectStyle}
+                        theme={reactSelectTheme}
+                        placeholder={"Filter by name"}
+                        onChange={this.filterByName}
+                        isClearable
+                        options={names}
+                    />
+            }
+
             return (
                 <div id="main">
-                    <SearchBar type={1} query={this.state.query}/>
+                    <SearchBar searchType={searchByClub === "all" ? "byClub" : "byName"} type={1} query={this.state.query}/>
                     <div className="screen" id="search-screen">
                         <div className="filter" id="search-filters">
-                            <h3>Filter Search Results</h3>
+                            {searchText}
                             <div id="search-filter-inputs">
-                                <Select
-                                    placeholder={"Filter by club"}
-                                    onChange={this.filterByClub}
-                                    isClearable
-                                    options={clubs}
-                                />
+                                {searchFilter}
                             </div>
                         </div>
                         <div className="result" id="search-results">
                             {cards}
-                            {/*<SearchResult*/}
-                            {/*    name={"Test"}*/}
-                            {/*    club={"Test"}*/}
-                            {/*    nationality={"Test"}*/}
-                            {/*    URL={"test"}*/}
-                            {/*    all={"test"}*/}
-                            {/*/>*/}
-                            {/*<SearchResult*/}
-                            {/*    name={"Test"}*/}
-                            {/*    club={"Test"}*/}
-                            {/*    nationality={"Test"}*/}
-                            {/*    URL={"test"}*/}
-                            {/*    all={"test"}*/}
-                            {/*/>*/}
-                            {/*<SearchResult*/}
-                            {/*    name={"Test"}*/}
-                            {/*    club={"Test"}*/}
-                            {/*    nationality={"Test"}*/}
-                            {/*    URL={"test"}*/}
-                            {/*    all={"test"}*/}
-                            {/*/>*/}
-                            {/*<SearchResult*/}
-                            {/*    name={"Test"}*/}
-                            {/*    club={"Test"}*/}
-                            {/*    nationality={"Test"}*/}
-                            {/*    URL={"test"}*/}
-                            {/*    all={"test"}*/}
-                            {/*/>*/}
                         </div>
                     </div>
                 </div>
@@ -213,4 +279,4 @@ class Search extends Component {
 
 }
 
-export default Search;
+export default PlayerSearch;

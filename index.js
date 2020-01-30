@@ -97,7 +97,8 @@ app.post('/api/percentiles', (req, res) => {
 app.post('/api/search', (req, res) => {
 
     let aQuery = req.body.query;
-    search(aQuery).then(
+    let type = req.body.type;
+    search(aQuery, type).then(
         (searchResults) => {
             setTimeout(function(){
                 res.json(searchResults);
@@ -138,43 +139,91 @@ app.get('*', (req,res) =>{
     res.sendFile(path.join(__dirname+'/client/build/index.html'));
 });
 
-let search = async (aQuery) => {
+let search = async (aQuery, type) => {
 
     return new Promise(async function(resolve, reject){
         console.log("Searching the database for: " + aQuery);
         console.time("Time taken to return search results");
-        currentSeasonCollection.find({$text:
+        if (type === "playerByName"){
+            currentSeasonCollection.find({$text:
                 {
                     $search: '\"' + aQuery + '\"',
                     $language: "en",
                     $caseSensitive: false,
                     $diacriticSensitive: false
                 }
-        }).toArray(function(err, docs) {
-            if (err){
-                console.timeEnd("Time taken to return search results");
-                reject();
-            }
-            else if (docs.length === 0){
-                console.timeEnd("Time taken to return search results");
-                reject();
-            }
-            else {
-                let searchResults = [];
-                for (let i=0; i<docs.length; i++){
-                    let result = {
-                        name: docs[i].name,
-                        club: docs[i].club,
-                        nationality: countryCodes.getCountryName(docs[i].countryCode.toUpperCase()),
-                        URL: docs[i].url,
-                        all: false
-                    };
-                    searchResults.push(result);
+            }).toArray(function(err, docs) {
+                if (err){
+                    console.timeEnd("Time taken to return search results");
+                    reject();
                 }
-                console.timeEnd("Time taken to return search results");
-                resolve(searchResults);
+                else if (docs.length === 0){
+                    console.timeEnd("Time taken to return search results");
+                    reject();
+                }
+                else {
+                    let searchResults = [];
+                    for (let i=0; i<docs.length; i++){
+                        let result = {
+                            name: docs[i].name,
+                            club: docs[i].club,
+                            nationality: countryCodes.getCountryName(docs[i].countryCode.toUpperCase()),
+                            URL: docs[i].url,
+                            all: false
+                        };
+                        searchResults.push(result);
+                    }
+                    console.timeEnd("Time taken to return search results");
+                    resolve(searchResults);
+                }
+            });
+        }
+        else if (type === "playerByClub"){
+            currentSeasonCollection.find({$text:
+                    {
+                        $search: '\"' + aQuery + '\"',
+                        $language: "en",
+                        $caseSensitive: false,
+                        $diacriticSensitive: false
+                    }
+            }).toArray(function(err, docs) {
+                if (err){
+                    console.timeEnd("Time taken to return search results");
+                    reject();
+                }
+                else if (docs.length === 0){
+                    console.timeEnd("Time taken to return search results");
+                    reject();
+                }
+                else {
+                    let searchResults = [];
+                    for (let i=0; i<docs.length; i++){
+                        let result = {
+                            name: docs[i].name,
+                            club: docs[i].club,
+                            nationality: countryCodes.getCountryName(docs[i].countryCode.toUpperCase()),
+                            URL: docs[i].url,
+                            all: false
+                        };
+                        searchResults.push(result);
+                    }
+                    console.timeEnd("Time taken to return search results");
+                    resolve(searchResults);
+                }
+            });
+        }
+        else {
+            let clubsList = await currentSeasonCollection.distinct('club');
+            let searchResults = [];
+            for (let i=0; i<clubsList.length; i++){
+                if (clubsList[i].toUpperCase().includes(aQuery.toUpperCase())){
+                    searchResults.push(clubsList[i]);
+                }
             }
-        });
+            // console.log(searchResults);
+            console.timeEnd("Time taken to return search results");
+            resolve(searchResults);
+        }
     });
 
 };

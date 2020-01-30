@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import './App.css';
 import Home from './pages/Home';
-import Search from './pages/Search';
+import ClubSearch from './pages/ClubSearch';
+import PlayerSearch from './pages/PlayerSearch';
 import Stats from './pages/Stats';
 
 import $ from 'jquery';
@@ -26,16 +27,21 @@ class App extends Component {
 
         $(function() {
 
-            if ($('body').css('background-color') === 'rgb(255, 255, 254)') {
+            if ($('body').css('background-color') === 'rgb(250, 251, 253)') {
                 isMobile = true;
             }
 
             if (isMobile){
+
                 var h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+
                 $("html, body, #root, #root-container").css({"height":h});
+                $("#home").css({"height":h});
+
                 self.setState({
                     isMobile: isMobile
                 })
+
             }
 
         });
@@ -69,7 +75,8 @@ class App extends Component {
             <div id="root-container">
                 <Switch>
                     <Route exact path='/' component={Home}/>
-                    <Route path='/search/:query' component={Search}/>
+                    <Route path='/clubSearch/:query' component={ClubSearch}/>
+                    <Route path='/playerSearch/:query/:searchByClub?' component={PlayerSearch}/>
                     <Route path='/stats/:URL' render={(props) => <Stats {...props} percentiles={this.state.percentiles} isMobile={this.state.isMobile} />}/>
                 </Switch>
             </div>

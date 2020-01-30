@@ -43,7 +43,7 @@ class Stats extends Component {
             isMobile: this.props.isMobile,
             fontSizes: {
                 title: this.props.isMobile === true ? '4vw' : '2em',
-                subtitle: this.props.isMobile === true ? '2.6vw' : '1.3em',
+                subtitle: this.props.isMobile === true ? '2.8vw' : '1.4em',
                 noData: this.props.isMobile === true ? '2.7vw' : '1.35em',
                 xAxisLabels: this.props.isMobile === true ? '2.3vw' : '1.15em',
                 dataLabels: this.props.isMobile === true ? '2.3vw' : '1.25em',
@@ -200,10 +200,10 @@ class Stats extends Component {
                     'Long Pass Completion %',
                     'Successful Dribbles',
                     'Dribble Success %',
+                    'Interceptions',
                     'Tackles Won',
                     'Tackle Win %',
-                    'Fouls Committed',
-                    'Interceptions'
+                    'Fouls Committed'
                 ];
                 break;
             case "FB":
@@ -216,11 +216,10 @@ class Stats extends Component {
                     'Cross Completion %',
                     'Successful Dribbles',
                     'Dribble Success %',
+                    'Interceptions',
                     'Tackles Won',
                     'Tackle Win %',
-                    'Fouls Committed',
-                    'Interceptions',
-                    'Aerial Duel Win %'
+                    'Fouls Committed'
                 ];
                 break;
             case "CB":
@@ -229,10 +228,10 @@ class Stats extends Component {
                     'Pass Completion %',
                     'Completed Long Passes',
                     'Long Pass Completion %',
+                    'Interceptions',
                     'Tackles Won',
                     'Tackle Win %',
                     'Fouls Committed',
-                    'Interceptions',
                     'Blocks',
                     'Clearances',
                     'Aerial Duels Won',
@@ -314,10 +313,10 @@ class Stats extends Component {
                 statsPer90['longPassingRate'] = (filteredStats['succLongPasses'] / filteredStats['totalLongPasses']) * 100;
                 statsPer90['succDribbles'] = filteredStats['succDribbles'] / (filteredStats['minutes']/90);
                 statsPer90['dribbleRate'] = (filteredStats['succDribbles'] / filteredStats['totalDribbles']) * 100;
+                statsPer90['interceptions'] = (filteredStats['interceptions'] / (filteredStats['minutes']/90));
                 statsPer90['tackles'] = (filteredStats['tackles'] / (filteredStats['minutes']/90));
                 statsPer90['tackleRate'] = (filteredStats['tackles'] / (filteredStats['tackles'] + filteredStats['dribbledPast'])) *100;
                 statsPer90['fouls'] = filteredStats['fouls'] / (filteredStats['minutes']/90);
-                statsPer90['interceptions'] = (filteredStats['interceptions'] / (filteredStats['minutes']/90));
                 for (let key in statsPer90){
                     percentiles[key] = this.percentRank(percentileArrays['cm'][key], statsPer90[key]) * 100
                 }
@@ -332,10 +331,10 @@ class Stats extends Component {
                 statsPer90['crossRate'] = (filteredStats['succCrosses'] / filteredStats['totalCrosses']) * 100;
                 statsPer90['succDribbles'] = filteredStats['succDribbles'] / (filteredStats['minutes']/90);
                 statsPer90['dribbleRate'] = (filteredStats['succDribbles'] / filteredStats['totalDribbles']) * 100;
+                statsPer90['interceptions'] = (filteredStats['interceptions'] / (filteredStats['minutes']/90));
                 statsPer90['tackles'] = (filteredStats['tackles'] / (filteredStats['minutes']/90));
                 statsPer90['tackleRate'] = (filteredStats['tackles'] / (filteredStats['tackles'] + filteredStats['dribbledPast'])) *100;
                 statsPer90['fouls'] = filteredStats['fouls'] / (filteredStats['minutes']/90);
-                statsPer90['interceptions'] = (filteredStats['interceptions'] / (filteredStats['minutes']/90));
                 for (let key in statsPer90){
                     percentiles[key] = this.percentRank(percentileArrays['fb'][key], statsPer90[key]) * 100
                 }
@@ -346,10 +345,10 @@ class Stats extends Component {
                 statsPer90['passingRate'] = (filteredStats['succPasses'] / filteredStats['totalPasses']) * 100;
                 statsPer90['succLongPasses'] = filteredStats['succLongPasses'] / (filteredStats['minutes']/90);
                 statsPer90['longPassingRate'] = (filteredStats['succLongPasses'] / filteredStats['totalLongPasses']) * 100;
+                statsPer90['interceptions'] = (filteredStats['interceptions'] / (filteredStats['minutes']/90));
                 statsPer90['tackles'] = (filteredStats['tackles'] / (filteredStats['minutes']/90));
                 statsPer90['tackleRate'] = (filteredStats['tackles'] / (filteredStats['tackles'] + filteredStats['dribbledPast'])) *100;
                 statsPer90['fouls'] = filteredStats['fouls'] / (filteredStats['minutes']/90);
-                statsPer90['interceptions'] = (filteredStats['interceptions'] / (filteredStats['minutes']/90));
                 statsPer90['blocks'] = (filteredStats['blocks'] / (filteredStats['minutes']/90));
                 statsPer90['clearances'] = filteredStats['clearances'] / (filteredStats['minutes']/90);
                 statsPer90['succAerialDuels'] = filteredStats['succAerialDuels'] / (filteredStats['minutes']/90);
@@ -393,12 +392,30 @@ class Stats extends Component {
     }
 
     insertChartInput(statsPer90, percentiles) {
+        let template = this.state.template;
+        let colors = [];
+        if (template === "FW"){
+            colors = [5, 5, 5, 5, 6, 6, 6, 6, 2, 2, 2, 0];
+        }
+        else if (template === "AM"){
+            colors = [5, 5, 6, 6, 6, 6, 6, 6, 2, 2, 2, 0];
+        }
+        else if (template === "CM"){
+            colors = [8, 6, 6, 6, 6, 6, 2, 2, 0, 0, 0, 0];
+        }
+        else if (template === "FB"){
+            colors = [6, 6, 6, 6, 6, 6, 2, 2, 0, 0, 0, 0];
+        }
+        else {
+            colors = [6, 6, 6, 6, 0, 0, 0, 0, 0, 0, 0, 0];
+        }
         statsPer90 = this.roundNumbers(statsPer90, 2);
         percentiles = this.roundNumbers(percentiles, 0);
         let chartInput = [];
         let i = 0;
         for (let key in percentiles){
-            chartInput[i] = {y: percentiles[key], p90: statsPer90[key]};
+            // chartInput[i] = {y: percentiles[key], p90: statsPer90[key], color: '#FF0000'};
+            chartInput[i] = {y: percentiles[key], p90: statsPer90[key], color: Highcharts.Color(Highcharts.getOptions().colors[colors[i]]).setOpacity(0.8).get()};
             i++;
         }
         return chartInput;
@@ -487,6 +504,7 @@ class Stats extends Component {
 
                 var options = {
                     chart: {
+                        backgroundColor: '#fafbfc',
                         style: {
                             fontFamily: 'sans-serif'
                         },
@@ -510,6 +528,8 @@ class Stats extends Component {
                         },
                         polar: true,
                         type: 'column',
+                        // plotBackgroundColor: '#F5F6F7',
+                        // plotShadow: true,
                         hideDelay: 0,
                         spacingLeft: 0,
                         spacingRight: 0,
@@ -545,13 +565,15 @@ class Stats extends Component {
                                 },
                                 format: '{point.p90}',
                                 padding: 0,
-                                allowOverlap: true
-                            }
-                        }
+                                allowOverlap: true,
+                            },
+                            // shadow: true
+                        },
                     },
                     title: {
                         text: name + ", 19/20",
                         style: {
+                            color: '#e75453',
                             fontSize: fontSizes['title'],
                             fontWeight: 'bold',
                         },
@@ -573,6 +595,7 @@ class Stats extends Component {
                     subtitle: {
                         text: subtitle,
                         style: {
+                            // color: 'black',
                             fontSize: fontSizes['subtitle']
                         }
                     },
@@ -642,7 +665,8 @@ class Stats extends Component {
                                     <label><input type="radio" name="template" value="FB" checked={template === "FB" ? true: null}/> Full-back </label>
                                     <label><input type="radio" name="template" value="CB" checked={template === "CB" ? true: null}/> Center-back </label>
                                 </form>
-                                <h3>Competitions (19/20)</h3>
+                                <h3>Competitions</h3>
+                                <h4>19/20</h4>
                                 <form id="competitions">
                                     {cards}
                                 </form>
@@ -669,7 +693,8 @@ class Stats extends Component {
                                     </form>
                                 </div>
                                 <div id="competitions-container">
-                                    <h3>Competitions (19/20)</h3>
+                                    <h3>Competitions</h3>
+                                    <h4>19/20</h4>
                                     <form id="competitions">
                                         {cards}
                                     </form>
