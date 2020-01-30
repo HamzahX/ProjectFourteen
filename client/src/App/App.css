@@ -240,9 +240,9 @@ a {
 }
 
 #searchbar select {
-    padding-left: 5%;
-    padding-right: 5%;
-    font-size: 1.2em;
+    padding-left: 2%;
+    padding-right: 2%;
+    font-size: 1.1em;
     color: dimgrey;
     background-color: transparent;
 }

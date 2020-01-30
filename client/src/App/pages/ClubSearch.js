@@ -99,7 +99,7 @@ class ClubSearch extends Component {
                     <SearchBar searchType={"byClub"} type={1} query={this.state.query}/>
                     <div className="screen" id="search-screen">
                         <div className="filter" id="search-filters">
-                            <h2>Search results for <br/>"club.name ⊃ {this.state.query}"</h2>
+                            <h2>Search results for <br/>"club.name ⊇ {this.state.query}"</h2>
                         </div>
                         <div className="result" id="search-results">
                             {cards}

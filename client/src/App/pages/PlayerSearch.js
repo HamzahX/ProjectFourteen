@@ -233,7 +233,7 @@ class PlayerSearch extends Component {
             let searchFilter;
             let searchText;
             if (searchByClub === undefined){
-                searchText = <h2>Search results for <br/>"player.name ⊃ {this.state.query}"</h2>;
+                searchText = <h2>Search results for <br/>"player.name ⊇ {this.state.query}"</h2>;
                 searchFilter =
                     <Select
                         styles={reactSelectStyle}

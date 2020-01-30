@@ -41,7 +41,7 @@ class Home extends Component {
                             <p>
                                 Simply choose from <span className="accented-p">5</span> positional templates, toggle the
                                 competitions you'd like to include, and you can visualize statistics in seconds with
-                                interactive percentile rank bar charts, powered by Highcharts.js.
+                                interactive percentile rank bar charts, powered by <a href="https://www.highcharts.com" >Highcharts.js</a>.
                             </p>
                         </div>
                         <div id="preview-image">
@@ -55,16 +55,16 @@ class Home extends Component {
                         <div id="faq-container">
                             <div className="faq-item">
                                 <p><span className="accented-p">Where do you get your data from?</span></p>
-                                <p><a href="https://www.whoscored.com">whoscored.com</a></p>
+                                <p><a href="https://www.whoscored.com" >whoscored.com</a></p>
                             </div>
                             <div className="faq-item">
                                 <p><span className="accented-p">Do you plan on adding xG data to the charts?</span></p>
                                 <p>
                                     Absolutely! I actually started this project mainly to learn and practice using browser
-                                    automation tools. <a href="https://www.whoscored.com">whoscored.com</a> was a fun
+                                    automation tools. <a href="https://www.whoscored.com" >whoscored.com</a> was a fun
                                     playground to practice on, and so I used it as my primary data source.
                                     However, I definitely plan on incorporating some more advanced data from other
-                                    sources such as <a href="https://fbref.com">FBREF.com</a> and/or the <a href="https://github.com/statsbomb">Statsbomb API</a> in the future.
+                                    sources such as <a href="https://fbref.com" >FBREF.com</a> and/or the <a href="https://github.com/statsbomb" >Statsbomb API</a> in the future.
                                 </p>
                             </div>
                             <div className="faq-item">
@@ -101,7 +101,7 @@ class Home extends Component {
                                 </p>
                                 <br/>
                                 <p>
-                                    For each of the 5 position templates, my script uses the <a href="https://whoscored.com/Statistics">
+                                    For each of the 5 position templates, my script uses the <a href="https://whoscored.com/Statistics" >
                                     whoscored.com player statistics table</a> to select all top 5 league players
                                     who have accumulated more than 10 starts this season in the said position.
                                     Their stats are then recorded in my dataset (and updated after each top 5 league
@@ -130,7 +130,7 @@ class Home extends Component {
                         <h2>Contact</h2>
                         <p>
                             For any comments, bug reports, suggestions or questions, please feel free to reach out to me on twitter
-                            <a href="https://twitter.com/DyslexicDdue"> @DyslexicDdue</a>
+                            <a href="https://twitter.com/DyslexicDdue" > @DyslexicDdue</a>
                         </p>
                     </div>
                 </div>

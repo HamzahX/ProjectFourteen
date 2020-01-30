@@ -18,6 +18,7 @@ const dateFormat = require('dateformat');
 
 //helper functions
 const countryCodes = require('./serverUtils/countryCodes.js');
+const clubsList = JSON.parse(fs.readFileSync(path.join(__dirname, '/serverUtils/clubsList.json')));
 
 var db;
 var currentSeasonCollection;
@@ -31,7 +32,7 @@ let percentiles = {
     'cb': []
 };
 
-//function to launch a browser using puppeteer, retrieve percentile arrays
+//function to retrieve percentile arrays
 let setup = async () => {
     return new Promise(async function(resolve, reject){
 
@@ -48,7 +49,7 @@ let setup = async () => {
             }
         });
 
-        resolve();
+        // resolve();
     });
 };
 
@@ -173,20 +174,14 @@ let search = async (aQuery, type) => {
                         };
                         searchResults.push(result);
                     }
+                    searchResults = searchResults.reverse();
                     console.timeEnd("Time taken to return search results");
                     resolve(searchResults);
                 }
             });
         }
         else if (type === "playerByClub"){
-            currentSeasonCollection.find({$text:
-                    {
-                        $search: '\"' + aQuery + '\"',
-                        $language: "en",
-                        $caseSensitive: false,
-                        $diacriticSensitive: false
-                    }
-            }).toArray(function(err, docs) {
+            currentSeasonCollection.find({club: aQuery}).toArray(function(err, docs) {
                 if (err){
                     console.timeEnd("Time taken to return search results");
                     reject();
@@ -207,20 +202,20 @@ let search = async (aQuery, type) => {
                         };
                         searchResults.push(result);
                     }
+                    // searchResults = searchResults.reverse();
                     console.timeEnd("Time taken to return search results");
                     resolve(searchResults);
                 }
             });
         }
         else {
-            let clubsList = await currentSeasonCollection.distinct('club');
             let searchResults = [];
             for (let i=0; i<clubsList.length; i++){
                 if (clubsList[i].toUpperCase().includes(aQuery.toUpperCase())){
                     searchResults.push(clubsList[i]);
                 }
             }
-            // console.log(searchResults);
+            // searchResults = searchResults.reverse();
             console.timeEnd("Time taken to return search results");
             resolve(searchResults);
         }
