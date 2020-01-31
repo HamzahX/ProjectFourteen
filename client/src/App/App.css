@@ -52,7 +52,7 @@ button:focus, input:focus, select:focus {
 }
 
 h1 {
-    font-family: "Didact Gothic", sans-serif;
+    font-family: "courier new", monospace;
     color: #e75453;
     font-size: 5em;
 }
@@ -109,14 +109,6 @@ a {
 .accented-p {
     margin-bottom: 0;
     color: #e75453;
-}
-
-#homepage {
-
-}
-
-.homepage-section-container {
-
 }
 
 #menu {
@@ -216,7 +208,29 @@ a {
     height: 100%;
 }
 
-#searchbar-container, #searchbar-container2 {
+.searchbar-container {
+    display: flex;
+    flex-direction: row;
+}
+
+#home-button {
+    text-align: center;
+    /*background-color: #e75453;*/
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-family: "Courier New", monospace;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #e75453;
+}
+
+#home-button:hover {
+    opacity: 0.7;
+}
+
+#searchbar-container1, #searchbar-container2 {
     background-color: whitesmoke;
     /*box-shadow: 0 20px 10px -17px lightgray;*/
     box-shadow: 0 0 10px 2px lightgray;
@@ -233,24 +247,25 @@ a {
     flex-direction: row;
 }
 
-#searchbar input {
-    /*background: url(assets/searchIcon.png) top left;*/
-    /*height: 30px;*/
-    /*padding-left: 25px;*/
+#searchbar-container1 #searchbar input, #searchbar-container2 #searchbar input {
+    max-width: 500px;
+    margin-left: 1%;
 }
 
 #searchbar select {
-    padding-left: 2%;
-    padding-right: 2%;
-    font-size: 1.1em;
+    padding-left: 0.7%;
+    padding-right: 0.7%;
+    font-size: 0.9em;
     color: dimgrey;
     background-color: transparent;
 }
 
+#searchbar-container1 #searchbar select, #searchbar-container2 #searchbar select {
+}
+
 #main #searchbar, #main2 #searchbar {
-    min-width: 600px;
-    width: 40%;
-    margin: 0 auto;
+    padding-left: 1%;
+    padding-right: 1%;
 }
 
 #query {
@@ -531,9 +546,13 @@ a {
         min-height: 140%;
     }
 
-    #searchbar-container, #searchbar-container2 {
+    #searchbar-container1 #searchbar input, #searchbar-container2 #searchbar input {
+        max-width: unset;
+    }
+
+    #searchbar-container1, #searchbar-container2 {
         padding-top: 0.5%;
-        /*flex: 1 1 4.29%;*/
+        flex: 1 1 4.29%;
         /*flex: 1 1 8%*/
         box-shadow: none;
     }
@@ -691,6 +710,10 @@ a {
         background-size: unset;
     }
 
+    #searchbar-container1 #searchbar input, #searchbar-container2 #searchbar input {
+        max-width: unset;
+    }
+
     #home #searchbar-container3 {
         min-width: 70%;
     }
@@ -720,11 +743,11 @@ a {
         /*min-height: 100%;*/
     }
 
-    #searchbar-container, #searchbar-container2 {
+    #searchbar-container1, #searchbar-container2 {
         padding-top: 0.5%;
         box-shadow: none;
         /*flex: 1 1 4.29%;*/
-        /*flex: 1 1 6%*/
+        flex: 1 1 6%
     }
 
     #main #searchbar, #main2 #searchbar {

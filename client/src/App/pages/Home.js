@@ -20,7 +20,7 @@ class Home extends Component {
                 <div id="home">
                     <Typist cursor={{show: false}} avgTypingDelay={120}>
                         {/*<Typist.Delay ms={500}/>*/}
-                        <h1>[name]<span style={{color: '#ffd700'}}>.com</span></h1>
+                        <h1>name<span style={{color: '#ffd700'}}>.com</span></h1>
                     </Typist>
                     <SearchBar type={3}/>
                 </div>

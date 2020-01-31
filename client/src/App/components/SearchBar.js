@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { withRouter } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 
 class SearchBar extends Component {
 
@@ -39,11 +39,14 @@ class SearchBar extends Component {
 
         const { type, searchType } = this.state;
         let id;
+        let homeButton;
         if (type === 1){
-            id="searchbar-container";
+            id="searchbar-container1";
+            homeButton = <Link to={'/'}><div id="home-button"><div>name<span style={{color: '#e1ba00'}}>.com</span></div></div></Link>;
         }
         else if (type === 2) {
             id="searchbar-container2";
+            homeButton = <Link to={'/'}><div id="home-button"><div>name<span style={{color: '#e1bb00'}}>.com</span></div></div></Link>;
         }
         else {
             id="searchbar-container3";
@@ -58,18 +61,14 @@ class SearchBar extends Component {
         }
 
         return (
-            <div id={id}>
+            <div className="searchbar-container" id={id}>
                 <form id="searchbar" onSubmit={this.handleSubmit}>
+                    {homeButton}
+                    <input type="text" id="query" value={this.state.query} placeholder={placeholder} autoComplete="off" onChange={this.handleChange2}/>
                     <select value={this.state.searchType} onChange={this.handleChange1}>
                         <option value="byName">By Name</option>
                         <option value="byClub">By Club</option>
                     </select>
-                    {/*<Select*/}
-                    {/*    placeholder={"Filter by club"}*/}
-                    {/*    onChange={this.filterByClub}*/}
-                    {/*    isClearable*/}
-                    {/*/>*/}
-                    <input type="text" id="query" value={this.state.query} placeholder={placeholder} autoComplete="off" onChange={this.handleChange2}/>
                 </form>
             </div>
         );

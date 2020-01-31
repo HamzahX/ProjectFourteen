@@ -38,10 +38,11 @@ class PlayerSearch extends Component {
     }
 
     componentWillReceiveProps(nextProps, nextContext) {
-        let { query } = nextProps.match.params;
+        let { query, searchByClub } = nextProps.match.params;
         this.setState({
             isLoading: true,
-            query: query
+            query: query,
+            searchByClub: searchByClub
         }, () => {
             this.getSearchResults();
         });

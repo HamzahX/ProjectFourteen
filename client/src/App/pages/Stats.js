@@ -366,14 +366,14 @@ class Stats extends Component {
         if (!isFinite(value)){
             value = 0;
         }
-        for (let i = 0, l = array.length; i < l; i++) {
+        for (let i = 0, length = array.length; i < length; i++) {
             if (value < array[i]) {
-                while (i < l && value === array[i]) i++;
+                while (i < length && value === array[i]) i++;
                 if (i === 0) return 0;
                 if (value !== array[i-1]) {
                     i += (value - array[i-1]) / (array[i] - array[i-1]);
                 }
-                return i / l;
+                return i / length;
             }
         }
         return 1;
@@ -414,7 +414,6 @@ class Stats extends Component {
         let chartInput = [];
         let i = 0;
         for (let key in percentiles){
-            // chartInput[i] = {y: percentiles[key], p90: statsPer90[key], color: '#FF0000'};
             chartInput[i] = {y: percentiles[key], p90: statsPer90[key], color: Highcharts.Color(Highcharts.getOptions().colors[colors[i]]).setOpacity(0.8).get()};
             i++;
         }
@@ -693,8 +692,8 @@ class Stats extends Component {
                                     </form>
                                 </div>
                                 <div id="competitions-container">
-                                    <h3>Competitions</h3>
-                                    <h4>19/20</h4>
+                                    <h3 style={{marginBottom: '0px'}}>Competitions</h3>
+                                    <h4 style={{marginBottom: '20px'}}>19/20</h4>
                                     <form id="competitions">
                                         {cards}
                                     </form>
