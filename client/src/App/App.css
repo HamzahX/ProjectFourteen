@@ -32,6 +32,7 @@ input {
     padding-left: 1%;
     padding-right: 1%;
     border: darkgrey 1px solid;
+    border-right: none;
 }
 
 input[type=radio], input[type=checkbox] {
