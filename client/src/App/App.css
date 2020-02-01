@@ -32,7 +32,6 @@ input {
     padding-left: 1%;
     padding-right: 1%;
     border: darkgrey 1px solid;
-    border-right: none;
 }
 
 input[type=radio], input[type=checkbox] {
@@ -163,13 +162,13 @@ a {
             box-shadow: 0 5px 10px 0 darkgray;
         }
 
-#preview, #faq, #contact {
+#preview , #faq, #contact {
     padding: 5%;
     margin: 0 auto;
     max-width: 1500px;
 }
 
-#preview {
+#preview  {
     display: flex;
     flex-direction: row;
     min-height: 100%;
@@ -253,17 +252,6 @@ a {
     margin-left: 1%;
 }
 
-#searchbar select {
-    padding-left: 0.7%;
-    padding-right: 0.7%;
-    font-size: 0.9em;
-    color: dimgrey;
-    background-color: transparent;
-}
-
-#searchbar-container1 #searchbar select, #searchbar-container2 #searchbar select {
-}
-
 #main #searchbar, #main2 #searchbar {
     padding-left: 1%;
     padding-right: 1%;
@@ -308,18 +296,22 @@ a {
     padding: 0 1% 1%;
     border: darkgrey 1px solid;
     box-shadow: 0 0 10px lightgray;
+}
+
+#search-filters h3 {
     text-align: center;
 }
 
-#search-filters h2 {
+#search-filters h3, #search-results h3 {
+    font-weight: unset;
     font-family: unset;
     font-size: 1.5em;
     margin-bottom: 10px;
     color: #000000;
 }
 
-#search-filters h3 {
-    margin-bottom: 20px;
+#search-results h3 {
+    margin-top: 10px;
 }
 
 #search-filter-inputs {
@@ -335,14 +327,15 @@ a {
 }
 
 #search-results {
-    display: grid;
     border: none;
     overflow-y: auto;
+}
 
+#player-search-results, #club-search-results {
+    display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-auto-rows: minmax(min-content, max-content);
-    /*grid-column-gap: 20px;*/
-    grid-column-gap: 1%;
+    /*grid-column-gap: 1%;*/
 }
 
 .search-result {
@@ -507,7 +500,7 @@ a {
 }
 
 @media (max-width: 1200px){
-    #search-results {
+    #player-search-results, #club-search-results {
     grid-template-columns: 1fr 1fr;
     }
 }
@@ -526,7 +519,7 @@ a {
         min-width: 400px;
     }
 
-    #preview {
+    #preview  {
         flex-direction: column;
     }
 
@@ -672,7 +665,7 @@ a {
 
 @media (max-width: 600px){
 
-    #search-results {
+    #player-search-results, #club-search-results {
         grid-template-columns: 1fr;
     }
 
@@ -719,11 +712,11 @@ a {
         min-width: 70%;
     }
 
-    #preview, #faq {
+    #preview , #faq {
         padding-top: 10%;
     }
 
-    #preview {
+    #preview  {
         flex-direction: column;
     }
 
@@ -812,7 +805,7 @@ a {
         margin: 0.5% 1% 1%;
     }
 
-    #search-results {
+    #player-search-results, #club-search-results {
         grid-template-columns: 1fr;
     }
 

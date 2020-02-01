@@ -14,7 +14,7 @@ class ClubSearchResult extends Component {
 
     render() {
         return (
-            <Link to={"/playerSearch/" + this.state.name + "/all"}>
+            <Link to={"/search/" + this.state.name + "/all"}>
                 <div tabIndex="0" className="search-result">
                     <div className="name">{this.state.name}</div>
                 </div>

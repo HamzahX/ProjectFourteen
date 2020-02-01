@@ -2,8 +2,7 @@ import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import './App.css';
 import Home from './pages/Home';
-import ClubSearch from './pages/ClubSearch';
-import PlayerSearch from './pages/PlayerSearch';
+import Search from './pages/Search';
 import Stats from './pages/Stats';
 
 import $ from 'jquery';
@@ -75,8 +74,7 @@ class App extends Component {
             <div id="root-container">
                 <Switch>
                     <Route exact path='/' component={Home}/>
-                    <Route path='/clubSearch/:query' component={ClubSearch}/>
-                    <Route path='/playerSearch/:query/:searchByClub?' component={PlayerSearch}/>
+                    <Route path='/search/:query/:searchByClub?' component={Search}/>
                     <Route path='/stats/:URL' render={(props) => <Stats {...props} percentiles={this.state.percentiles} isMobile={this.state.isMobile} />}/>
                 </Switch>
             </div>

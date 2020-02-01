@@ -633,7 +633,7 @@ class Stats extends Component {
                                 groupPadding: 0,
                                 name: name,
                                 data: set,
-                                stickyTracking: false,
+                                stickyTracking: true,
                                 zIndex: 0
                             };
                         }),

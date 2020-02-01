@@ -13,12 +13,12 @@ class Home extends Component {
             <div id="homepage">
                 <div id="menu">
                     <a href="#home">Home</a>
-                    <a href="#preview">OrganizedChaos</a>
+                    <a href="#preview">Preview</a>
                     <a href="#faq">FAQ</a>
                     <a href="#contact">Contact</a>
                 </div>
                 <div id="home">
-                    <Typist cursor={{show: false}} avgTypingDelay={120}>
+                    <Typist cursor={{show: false}} avgTypingDelay={200}>
                         {/*<Typist.Delay ms={500}/>*/}
                         <h1>name<span style={{color: '#ffd700'}}>.com</span></h1>
                     </Typist>
@@ -27,15 +27,17 @@ class Home extends Component {
                 <div className="homepage-section-container">
                     <div id="preview">
                         <div id="preview-text">
-                            <h2>OrganizedChaos</h2>
+                            <h2>Preview</h2>
                             <p>
-                                The OrganizedChaos tool is all about automation. It sifts through mounds of tables
-                                and numbers so you don't have to!
+                                The OrganizedChaos tool is all about automation. Everything from data retrieval to
+                                visualization. It sifts through <span className="accented-p">tens of thousands</span> of
+                                rows of numbers so you don't have to!
                             </p>
                             <br/>
                             <p>
                                 Explore a database of <span className="accented-p">2,500+</span> players from
-                                Europe's top <span className="accented-p">5</span> leagues as well the UEFA Champions League and Europa League.
+                                Europe's top <span className="accented-p">5</span> leagues as well the UEFA Champions
+                                League and Europa League.
                             </p>
                             <br/>
                             <p>
@@ -58,21 +60,24 @@ class Home extends Component {
                                 <p><a href="https://www.whoscored.com" >whoscored.com</a></p>
                             </div>
                             <div className="faq-item">
-                                <p><span className="accented-p">Do you plan on adding xG data to the charts?</span></p>
                                 <p>
-                                    Absolutely! I actually started this project mainly to learn and practice using browser
-                                    automation tools. <a href="https://www.whoscored.com" >whoscored.com</a> was a fun
-                                    playground to practice on, and so I used it as my primary data source.
-                                    However, I definitely plan on incorporating some more advanced data from other
-                                    sources such as <a href="https://fbref.com" >FBREF.com</a> and/or the <a href="https://github.com/statsbomb" >Statsbomb API</a> in the future.
+                                    <span className="accented-p">Do you plan on adding xG data (and other xG-based data such
+                                    as xA) to the charts?</span>
+                                </p>
+                                <p>
+                                    Absolutely! I started with whoscored because it was easier to start with just a
+                                    single source, and whoscored is pretty "self-contained". However, I'm well aware
+                                    that the quality of the stats on there isn't optimal, and I definitely plan on
+                                    incorporating some more advanced stats from other sources such
+                                    as <a href="https://fbref.com" >FBREF.com</a> in the future.
                                 </p>
                             </div>
                             <div className="faq-item">
                                 <p><span className="accented-p">How should the charts be interpreted?</span></p>
                                 <p>
-                                    Each chart consists of 12 bars. The size of the bar for each stat corresponds to
-                                    the percentile rank of the selected player with regards to the stat in question. The data labels attached to
-                                    each bar show the raw (per 90) value.
+                                    Each chart consists of 12 bars. The size of the bar for each stat corresponds to the
+                                    percentile rank of the selected player with regards to the stat represented by the
+                                    bar. The data labels attached to each bar show the raw (per 90) value.
                                 </p>
                                 <br/>
                                 <p>
@@ -83,7 +88,7 @@ class Home extends Component {
                             <div className="faq-item">
                                 <p><span className="accented-p">What do the colors on the charts mean?</span></p>
                                 <p>
-                                    The colours are meant to help group similar statistics together
+                                    The colours are meant to help group similar-ish stats together
                                     (as well as improve the charts' visual impact).
                                 </p>
                                 <ul>
@@ -92,6 +97,13 @@ class Home extends Component {
                                     <li><span style={{color: '#91d782'}}>Green</span> is for dribbling & ball retention</li>
                                     <li>and <span style={{color: '#95c3ef'}}>Blue</span> is for defensive stats</li>
                                 </ul>
+                            </div>
+                            <div className="faq-item">
+                                <p><span className="accented-p">Can you add a feature to compare players on the same chart?</span></p>
+                                <p>
+                                    Yes, player comparison is definitely a feature I plan on implementing,
+                                    although I don't have a concrete timeline for that as of right now. Stay tuned!
+                                </p>
                             </div>
                             <div className="faq-item">
                                 <p><span className="accented-p">How are the percentile ranks calculated?</span></p>
@@ -104,8 +116,8 @@ class Home extends Component {
                                     For each of the 5 position templates, my script uses the <a href="https://whoscored.com/Statistics" >
                                     whoscored.com player statistics table</a> to select all top 5 league players
                                     who have accumulated more than 10 starts this season in the said position.
-                                    Their stats are then recorded in my dataset (and updated after each top 5 league
-                                    matchday).
+                                    Their stats are then recorded in my dataset, and updated after each top 5 league
+                                    matchday.
                                 </p>
                                 <br/>
                                 <p>
@@ -113,13 +125,6 @@ class Home extends Component {
                                     of scores within the total dataset for the selected template position that are equal
                                     to or lower than the player's score. This is of course reversed for stats where a
                                     lower value is better, such as the 'fouls committed per 90' stat.
-                                </p>
-                            </div>
-                            <div className="faq-item">
-                                <p><span className="accented-p">Can you add a feature to compare players on the same chart?</span></p>
-                                <p>
-                                    Yes, player comparison is definitely a feature I plan on implementing,
-                                    although I don't have a concrete timeline for that as of right now. Stay tuned!
                                 </p>
                             </div>
                         </div>

@@ -8,36 +8,24 @@ class SearchBar extends Component {
         this.state = {
             query: this.props.query,
             type: this.props.type,
-            searchType: this.props.searchType === undefined ? "byName" : this.props.searchType
         };
 
-        this.handleChange1 = this.handleChange1.bind(this);
-        this.handleChange2 = this.handleChange2.bind(this);
+        this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
-    handleChange1(event) {
-        this.setState({searchType: event.target.value});
-    }
-
-    handleChange2(event) {
+    handleChange(event) {
         this.setState({query: event.target.value});
     }
 
     handleSubmit(event) {
         event.preventDefault();
-        const { searchType } = this.state;
-        if (searchType === "byName"){
-            this.props.history.push('/playerSearch/' + this.state.query);
-        }
-        else {
-            this.props.history.push('/clubSearch/' + this.state.query);
-        }
+        this.props.history.push('/search/' + this.state.query);
     }
 
     render() {
 
-        const { type, searchType } = this.state;
+        const { type } = this.state;
         let id;
         let homeButton;
         if (type === 1){
@@ -52,23 +40,11 @@ class SearchBar extends Component {
             id="searchbar-container3";
         }
 
-        let placeholder;
-        if (searchType === "byName"){
-            placeholder = "Search for a player..."
-        }
-        else {
-            placeholder = "Search for a club..."
-        }
-
         return (
             <div className="searchbar-container" id={id}>
                 <form id="searchbar" onSubmit={this.handleSubmit}>
                     {homeButton}
-                    <input type="text" id="query" value={this.state.query} placeholder={placeholder} autoComplete="off" onChange={this.handleChange2}/>
-                    <select value={this.state.searchType} onChange={this.handleChange1}>
-                        <option value="byName">By Name</option>
-                        <option value="byClub">By Club</option>
-                    </select>
+                    <input type="text" id="query" value={this.state.query} placeholder="Search for players, clubs..." autoComplete="off" onChange={this.handleChange}/>
                 </form>
             </div>
         );

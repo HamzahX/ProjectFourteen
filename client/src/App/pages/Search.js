@@ -5,9 +5,10 @@ import LoadingSpinner from "../components/LoadingSpinner";
 import PlayerSearchResult from "../components/PlayerSearchResult";
 
 import Select from 'react-select';
+import ClubSearchResult from "../components/ClubSearchResult";
 
 
-class PlayerSearch extends Component {
+class Search extends Component {
 
     constructor(props){
         super(props);
@@ -18,8 +19,9 @@ class PlayerSearch extends Component {
             error: null,
             query: query,
             searchByClub: searchByClub,
-            searchResults: [],
-            filteredSearchResults: [],
+            playerSearchResults: [],
+            filteredPlayerSearchResults: [],
+            clubSearchResults: [],
             names: [],
             clubs: [],
             nationalities: [],
@@ -48,42 +50,6 @@ class PlayerSearch extends Component {
         });
     }
 
-    processSearchResults(searchResults){
-        let names = [];
-        let clubs = [];
-        let nationalities = [];
-        for (let i=0; i<searchResults.length; i++){
-            let currentResult = searchResults[i];
-            let temp1 = {
-                value: currentResult.club,
-                label: currentResult.club,
-            };
-            let temp2 = {
-                value: currentResult.nationality,
-                label: currentResult.nationality,
-            };
-            let temp3 = {
-                value: currentResult.name,
-                label: currentResult.name
-            };
-            if (!clubs.filter(e => e.value === temp1.value).length > 0){
-                clubs.push(temp1);
-            }
-            if (!nationalities.filter(e => e.value === temp2.value).length > 0){
-                nationalities.push(temp2);
-            }
-            names.push(temp3);
-        }
-        this.setState({
-            searchResults: searchResults,
-            filteredSearchResults: searchResults,
-            names: names,
-            clubs: clubs,
-            nationalities: nationalities,
-            isLoading: false,
-            error: null
-        })
-    }
 
     getSearchResults = () => {
 
@@ -91,10 +57,10 @@ class PlayerSearch extends Component {
         // alert(searchByClub);
         let type;
         if (searchByClub === undefined){
-            type = "playerByName"
+            type = "playersAndClubs"
         }
         else {
-            type = "playerByClub"
+            type = "playersByClub"
         }
         fetch('/api/search', {
             method: 'post',
@@ -119,28 +85,75 @@ class PlayerSearch extends Component {
 
     };
 
+    processSearchResults(searchResults){
+        let playerSearchResults = searchResults['playerSearchResults'];
+        let clubSearchResults = searchResults['clubSearchResults'];
+
+        let names = [];
+        let clubs = [];
+        let nationalities = [];
+
+        for (let i=0; i<playerSearchResults.length; i++){
+            let currentResult = playerSearchResults[i];
+            let temp1 = {
+                value: currentResult.club,
+                label: currentResult.club,
+            };
+            let temp2 = {
+                value: currentResult.nationality,
+                label: currentResult.nationality,
+            };
+            let temp3 = {
+                value: currentResult.name,
+                label: currentResult.name
+            };
+            names.push(temp3);
+            if (!clubs.filter(e => e.value === temp1.value).length > 0){
+                clubs.push(temp1);
+            }
+            if (!nationalities.filter(e => e.value === temp2.value).length > 0){
+                nationalities.push(temp2);
+            }
+        }
+
+        this.setState({
+            playerSearchResults: playerSearchResults,
+            filteredPlayerSearchResults: playerSearchResults,
+            clubSearchResults: clubSearchResults,
+            names: names,
+            clubs: clubs,
+            nationalities: nationalities,
+            isLoading: false,
+            error: null
+        })
+    }
+
     filterByClub(selectedOption){
 
-        let searchResults = JSON.parse(JSON.stringify(this.state.searchResults));
-        let filteredSearchResults = [];
+        console.log(selectedOption);
 
-        if (selectedOption === null){
-            filteredSearchResults = searchResults;
+        let playerSearchResults = JSON.parse(JSON.stringify(this.state.playerSearchResults));
+        let filteredPlayerSearchResults = [];
+
+        if (selectedOption === null || selectedOption.length === 0){
+            filteredPlayerSearchResults = playerSearchResults;
         }
 
         else {
-            for (let i=0; i<searchResults.length; i++){
-                if (selectedOption.value === searchResults[i].club){
-                    filteredSearchResults.push(searchResults[i]);
+            for (let i=0; i<playerSearchResults.length; i++){
+                for (let j=0; j<selectedOption.length; j++){
+                    if (selectedOption[j].value === playerSearchResults[i].club){
+                        filteredPlayerSearchResults.push(playerSearchResults[i]);
+                    }
                 }
             }
         }
 
         this.setState({
-            filteredSearchResults: []
+            filteredPlayerSearchResults: []
         }, () => {
             this.setState({
-                filteredSearchResults: filteredSearchResults
+                filteredPlayerSearchResults: filteredPlayerSearchResults
             })
         });
 
@@ -148,33 +161,33 @@ class PlayerSearch extends Component {
 
     filterByName(selectedOption){
 
-        let searchResults = JSON.parse(JSON.stringify(this.state.searchResults));
-        let filteredSearchResults = [];
+        let playerSearchResults = JSON.parse(JSON.stringify(this.state.playerSearchResults));
+        let filteredPlayerSearchResults = [];
 
         if (selectedOption === null){
-            filteredSearchResults = searchResults;
+            filteredPlayerSearchResults = playerSearchResults;
         }
 
         else {
-            for (let i=0; i<searchResults.length; i++){
-                if (searchResults[i].name.toUpperCase().includes(selectedOption.value.toUpperCase())){
-                    filteredSearchResults.push(searchResults[i]);
+            for (let i=0; i<playerSearchResults.length; i++){
+                if (playerSearchResults[i].name.toUpperCase().includes(selectedOption.value.toUpperCase())){
+                    filteredPlayerSearchResults.push(playerSearchResults[i]);
                 }
             }
         }
 
         this.setState({
-            filteredSearchResults: []
+            filteredPlayerSearchResults: []
         }, () => {
             this.setState({
-                filteredSearchResults: filteredSearchResults
+                filteredPlayerSearchResults: filteredPlayerSearchResults
             })
         });
 
     }
 
     render() {
-        let {error, isLoading, filteredSearchResults, clubs, names, searchByClub} = this.state;
+        let {error, isLoading, filteredPlayerSearchResults, clubSearchResults, clubs, names, searchByClub} = this.state;
 
         if (isLoading) {
             return (
@@ -195,16 +208,26 @@ class PlayerSearch extends Component {
 
         else {
 
-            let cards = [];
-            for (let i=0; i<filteredSearchResults.length; i++){
-                let current = filteredSearchResults[i];
-                cards.push(
+            let playerCards = [];
+            for (let i=0; i<filteredPlayerSearchResults.length; i++){
+                let current = filteredPlayerSearchResults[i];
+                playerCards.push(
                     <PlayerSearchResult
                         name={current.name}
                         club={current.club}
                         nationality={current.nationality}
                         URL={current.URL}
                         all={current.all}
+                    />
+                )
+            }
+
+            let clubCards = [];
+            for (let i=0; i<clubSearchResults.length; i++){
+                let current = clubSearchResults[i];
+                clubCards.push(
+                    <ClubSearchResult
+                        name={current}
                     />
                 )
             }
@@ -234,25 +257,26 @@ class PlayerSearch extends Component {
             let searchFilter;
             let searchText;
             if (searchByClub === undefined){
-                searchText = <h2>Search results for <br/>"player.name ⊇ {this.state.query}"</h2>;
+                searchText = <h3>Search results for <br/>"{this.state.query}"</h3>;
                 searchFilter =
                     <Select
                         styles={reactSelectStyle}
                         theme={reactSelectTheme}
-                        placeholder={"Filter by club"}
+                        placeholder={"Filter players by club"}
                         onChange={this.filterByClub}
+                        isMulti
                         isClearable
                         options={clubs}
                     />
             }
 
             else {
-                searchText = <h2>Search results for <br/>"player.club = {this.state.query}"</h2>;
+                searchText = <h3>Search results for <br/>"player.club = {this.state.query}"</h3>;
                 searchFilter =
                     <Select
                         styles={reactSelectStyle}
                         theme={reactSelectTheme}
-                        placeholder={"Filter by name"}
+                        placeholder={"Filter players by name"}
                         onChange={this.filterByName}
                         isClearable
                         options={names}
@@ -261,7 +285,7 @@ class PlayerSearch extends Component {
 
             return (
                 <div id="main">
-                    <SearchBar searchType={searchByClub === "all" ? "byClub" : "byName"} type={1} query={this.state.query}/>
+                    <SearchBar type={1} query={this.state.query}/>
                     <div className="screen" id="search-screen">
                         <div className="filter" id="search-filters">
                             {searchText}
@@ -270,7 +294,14 @@ class PlayerSearch extends Component {
                             </div>
                         </div>
                         <div className="result" id="search-results">
-                            {cards}
+                            {searchByClub === undefined ? <h3>Players</h3> : null}
+                            <div id="player-search-results">
+                                {playerCards}
+                            </div>
+                            {searchByClub === undefined ? <h3>Clubs</h3> : null}
+                            <div id="club-search-results">
+                                {clubCards}
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -280,4 +311,4 @@ class PlayerSearch extends Component {
 
 }
 
-export default PlayerSearch;
+export default Search;

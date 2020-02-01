@@ -103,7 +103,7 @@ app.post('/api/search', (req, res) => {
         (searchResults) => {
             setTimeout(function(){
                 res.json(searchResults);
-            }, 500)
+            }, 100)
         },
         () => {
             setTimeout(function(){
@@ -128,7 +128,7 @@ app.post('/api/stats', (req, res) => {
                     lastUpdated: response.lastUpdated,
                     stats: response.stats
                 });
-            }, 1000)
+            }, 300)
         },
         (err) => {
 
@@ -145,7 +145,14 @@ let search = async (aQuery, type) => {
     return new Promise(async function(resolve, reject){
         console.log("Searching the database for: " + aQuery);
         console.time("Time taken to return search results");
-        if (type === "playerByName"){
+        if (type === "playersAndClubs"){
+            let clubSearchResults = [];
+            let playerSearchResults = [];
+            for (let i=0; i<clubsList.length; i++){
+                if (clubsList[i].toUpperCase().includes(aQuery.toUpperCase())){
+                    clubSearchResults.push(clubsList[i]);
+                }
+            }
             currentSeasonCollection.find({$text:
                 {
                     $search: '\"' + aQuery + '\"',
@@ -160,10 +167,13 @@ let search = async (aQuery, type) => {
                 }
                 else if (docs.length === 0){
                     console.timeEnd("Time taken to return search results");
-                    reject();
+                    let searchResults = {
+                        clubSearchResults: clubSearchResults,
+                        playerSearchResults: playerSearchResults,
+                    };
+                    resolve(searchResults);
                 }
                 else {
-                    let searchResults = [];
                     for (let i=0; i<docs.length; i++){
                         let result = {
                             name: docs[i].name,
@@ -172,15 +182,19 @@ let search = async (aQuery, type) => {
                             URL: docs[i].url,
                             all: false
                         };
-                        searchResults.push(result);
+                        playerSearchResults.push(result);
                     }
-                    searchResults = searchResults.reverse();
+                    playerSearchResults = playerSearchResults.reverse();
                     console.timeEnd("Time taken to return search results");
+                    let searchResults = {
+                        clubSearchResults: clubSearchResults,
+                        playerSearchResults: playerSearchResults,
+                    };
                     resolve(searchResults);
                 }
             });
         }
-        else if (type === "playerByClub"){
+        else if (type === "playersByClub"){
             currentSeasonCollection.find({club: aQuery}).toArray(function(err, docs) {
                 if (err){
                     console.timeEnd("Time taken to return search results");
@@ -191,7 +205,7 @@ let search = async (aQuery, type) => {
                     reject();
                 }
                 else {
-                    let searchResults = [];
+                    let playerSearchResults = [];
                     for (let i=0; i<docs.length; i++){
                         let result = {
                             name: docs[i].name,
@@ -200,24 +214,19 @@ let search = async (aQuery, type) => {
                             URL: docs[i].url,
                             all: false
                         };
-                        searchResults.push(result);
+                        playerSearchResults.push(result);
                     }
                     // searchResults = searchResults.reverse();
                     console.timeEnd("Time taken to return search results");
+                    console.log(playerSearchResults);
+                    let searchResults = {
+                        clubSearchResults: [],
+                        playerSearchResults: playerSearchResults,
+                    };
                     resolve(searchResults);
+                    resolve(playerSearchResults);
                 }
             });
-        }
-        else {
-            let searchResults = [];
-            for (let i=0; i<clubsList.length; i++){
-                if (clubsList[i].toUpperCase().includes(aQuery.toUpperCase())){
-                    searchResults.push(clubsList[i]);
-                }
-            }
-            // searchResults = searchResults.reverse();
-            console.timeEnd("Time taken to return search results");
-            resolve(searchResults);
         }
     });
 
