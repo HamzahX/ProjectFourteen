@@ -335,7 +335,7 @@ a {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-auto-rows: minmax(min-content, max-content);
-    /*grid-column-gap: 1%;*/
+    grid-column-gap: 1%;
 }
 
 .search-result {
