@@ -35,9 +35,9 @@ class Home extends Component {
                             </p>
                             <br/>
                             <p>
-                                Explore a database of <span className="accented-p">2,500+</span> players from
-                                Europe's top <span className="accented-p">5</span> leagues as well the UEFA Champions
-                                League and Europa League.
+                                Explore a database of <span className="accented-p">1,800+</span> players from
+                                Europe's top <span className="accented-p">5</span> leagues from this season, and
+                                hopefully much more in the near future.
                             </p>
                             <br/>
                             <p>
@@ -65,11 +65,8 @@ class Home extends Component {
                                     as xA) to the charts?</span>
                                 </p>
                                 <p>
-                                    Absolutely! I started with whoscored because it was easier to start with just a
-                                    single source, and whoscored is pretty "self-contained". However, I'm well aware
-                                    that the quality of the stats on there isn't optimal, and I definitely plan on
-                                    incorporating some more advanced stats from other sources such
-                                    as <a href="https://fbref.com" >FBREF.com</a> in the future.
+                                    Absolutely! I'm currently looking at incorporating some more advanced data
+                                    from <a href="https://fbref.com" >FBREF.com</a>.
                                 </p>
                             </div>
                             <div className="faq-item">
@@ -81,8 +78,8 @@ class Home extends Component {
                                 </p>
                                 <br/>
                                 <p>
-                                    **Please note that the position of a stat on the chart can change between different
-                                    position templates.**
+                                    Please note that the position of a stat on the chart can change between different
+                                    position templates.
                                 </p>
                             </div>
                             <div className="faq-item">
@@ -106,25 +103,29 @@ class Home extends Component {
                                 </p>
                             </div>
                             <div className="faq-item">
-                                <p><span className="accented-p">How are the percentile ranks calculated?</span></p>
+                                <p><span className="accented-p">What is a percentile rank? How does the OrganizedChaos Tool calculate them?</span></p>
                                 <p>
-                                    Although the OrganizedChaos tool contains data for the Champions League and the Europa
-                                    League, the percentile ranks are based only on top 5 league data.
+                                    The percentile rank of a score is the percentage of scores within a total dataset
+                                    that are equal to or lower than the score. This is of course reversed for stats where
+                                    a lower value is better, such as the 'fouls committed per 90' stat.
                                 </p>
                                 <br/>
                                 <p>
-                                    For each of the 5 position templates, my script uses the <a href="https://whoscored.com/Statistics" >
+                                    The percentile ranks for the OrganizedChaos tool are position-specific. For example,
+                                    selecting the 'forward' template compares the selected player only to other forwards in the
+                                    dataset. To obtain a list of players who play in each of the 5 template positions,
+                                    I use the <a href="https://whoscored.com/Statistics">
                                     whoscored.com player statistics table</a> to select all top 5 league players
-                                    who have accumulated more than 10 starts this season in the said position.
-                                    Their stats are then recorded in my dataset, and updated after each top 5 league
-                                    matchday.
+                                    who have accumulated 10 or more starts this season in the said position. Their stats
+                                    from all competitions are then recorded in the dataset for their position.
                                 </p>
                                 <br/>
                                 <p>
-                                    For each player's chart, the percentile ranks are then obtained by determining the percentage
-                                    of scores within the total dataset for the selected template position that are equal
-                                    to or lower than the player's score. This is of course reversed for stats where a
-                                    lower value is better, such as the 'fouls committed per 90' stat.
+                                    For each chart, the percentile ranks of the selected player are then obtained by comparing
+                                    the player to all other scores in the dataset of the selected template position.
+                                    Note that the percentile ranks are not competition-specific. In other words, the selected
+                                    player's stats are always compared to other players' stats from all competitions, regardless
+                                    of which competitions are toggled for the selected player.
                                 </p>
                             </div>
                         </div>

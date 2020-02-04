@@ -32,6 +32,23 @@ let percentiles = {
     'cb': []
 };
 
+let connectToDatabase = async () => {
+
+    return new Promise(function(resolve, reject) {
+
+        console.time('database connection');
+        mongoClient.connect(mongoURI, {useUnifiedTopology: true},function (err, client) {
+            db = client.db("ProjectFourteen");
+            currentSeasonCollection = db.collection('CurrentSeason');
+            percentilesCollection = db.collection('Percentiles2');
+            console.timeEnd('database connection');
+            resolve();
+        })
+
+    });
+
+};
+
 //function to retrieve percentile arrays
 let setup = async () => {
     return new Promise(async function(resolve, reject){
@@ -51,23 +68,6 @@ let setup = async () => {
 
         // resolve();
     });
-};
-
-let connectToDatabase = async () => {
-
-    return new Promise(function(resolve, reject) {
-
-        console.time('database connection');
-        mongoClient.connect(mongoURI, {useUnifiedTopology: true},function (err, client) {
-            db = client.db("ProjectFourteen");
-            currentSeasonCollection = db.collection('CurrentSeason');
-            percentilesCollection = db.collection('Percentiles');
-            console.timeEnd('database connection');
-            resolve();
-        })
-
-    });
-
 };
 
 connectToDatabase()
@@ -109,7 +109,7 @@ app.post('/api/search', (req, res) => {
             setTimeout(function(){
                 res.status(400);
                 res.json([]);
-            }, 500)
+            }, 200)
         });
 
 });
@@ -139,6 +139,7 @@ app.post('/api/stats', (req, res) => {
 app.get('*', (req,res) =>{
     res.sendFile(path.join(__dirname+'/client/build/index.html'));
 });
+
 
 let search = async (aQuery, type) => {
 
@@ -185,11 +186,11 @@ let search = async (aQuery, type) => {
                         playerSearchResults.push(result);
                     }
                     playerSearchResults = playerSearchResults.reverse();
-                    console.timeEnd("Time taken to return search results");
                     let searchResults = {
                         clubSearchResults: clubSearchResults,
                         playerSearchResults: playerSearchResults,
                     };
+                    console.timeEnd("Time taken to return search results");
                     resolve(searchResults);
                 }
             });
@@ -217,14 +218,12 @@ let search = async (aQuery, type) => {
                         playerSearchResults.push(result);
                     }
                     // searchResults = searchResults.reverse();
-                    console.timeEnd("Time taken to return search results");
-                    console.log(playerSearchResults);
                     let searchResults = {
                         clubSearchResults: [],
                         playerSearchResults: playerSearchResults,
                     };
+                    console.timeEnd("Time taken to return search results");
                     resolve(searchResults);
-                    resolve(playerSearchResults);
                 }
             });
         }

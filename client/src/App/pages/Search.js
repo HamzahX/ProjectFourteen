@@ -295,10 +295,12 @@ class Search extends Component {
                         </div>
                         <div className="result" id="search-results">
                             {searchByClub === undefined ? <h3>Players</h3> : null}
+                            {playerCards.length === 0 && searchByClub === undefined ? <p>No results found</p> : null}
                             <div id="player-search-results">
                                 {playerCards}
                             </div>
                             {searchByClub === undefined ? <h3>Clubs</h3> : null}
+                            {clubCards.length === 0 && searchByClub === undefined ? <p>No results found</p> : null}
                             <div id="club-search-results">
                                 {clubCards}
                             </div>

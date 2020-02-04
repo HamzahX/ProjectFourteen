@@ -503,7 +503,7 @@ class Stats extends Component {
 
                 var options = {
                     chart: {
-                        backgroundColor: '#fafbfc',
+                        backgroundColor: 'rgba(0, 0, 0, 0)',
                         style: {
                             fontFamily: 'sans-serif'
                         },
@@ -544,7 +544,7 @@ class Stats extends Component {
                         }
                     },
                     credits: {
-                        text: "Percentile ranks are calculated by comparing a player to other top 5 league players who have at least 10 starts in the selected template position",
+                        text: "Data source: whoscored.com",
                         style: {
                             fontSize: fontSizes['credits']
                         },
@@ -633,7 +633,7 @@ class Stats extends Component {
                                 groupPadding: 0,
                                 name: name,
                                 data: set,
-                                stickyTracking: true,
+                                stickyTracking: false,
                                 zIndex: 0
                             };
                         }),

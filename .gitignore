@@ -12,6 +12,12 @@ serverUtils/AMPercentiles.json
 serverUtils/CMPercentiles.json
 serverUtils/FBPercentiles.json
 serverUtils/CBPercentiles.json
+serverUtils/FWPlayers.json
+serverUtils/AMPlayers.json
+serverUtils/CMPlayers.json
+serverUtils/FBPlayers.json
+serverUtils/CBPlayers.json
 percentileScraper.js
+percentileScraper2.js
 currentSeasonScraper.js
 commands.txt
