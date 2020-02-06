@@ -162,6 +162,13 @@ a {
             box-shadow: 0 5px 10px 0 darkgray;
         }
 
+.homepage-section-container:not(:last-child) {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
 #preview , #faq, #contact {
     padding: 5%;
     margin: 0 auto;
@@ -522,6 +529,10 @@ a {
         text-align: center;
     }
 
+    .homepage-section-container:not(:last-child) {
+        justify-content: unset;
+    }
+
     #home #searchbar-container3 {
         min-width: 400px;
     }
@@ -709,6 +720,10 @@ a {
         text-align: center;
         padding-top: 30px;
         padding-bottom: 30px;
+    }
+
+    .homepage-section-container:not(:last-child) {
+        justify-content: unset;
     }
 
     #home {

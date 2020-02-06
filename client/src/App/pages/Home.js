@@ -13,9 +13,9 @@ class Home extends Component {
             <div id="homepage">
                 <div id="menu">
                     <a href="#home">Home</a>
-                    <a href="#preview">Preview</a>
-                    <a href="#faq">FAQ</a>
-                    <a href="#contact">Contact</a>
+                    <a href="#preview-container">Preview</a>
+                    <a href="#faq-container">FAQ</a>
+                    <a href="#contact-container">Contact</a>
                 </div>
                 <div id="home">
                     <Typist cursor={{show: false}} avgTypingDelay={200}>
@@ -24,7 +24,7 @@ class Home extends Component {
                     </Typist>
                     <SearchBar type={3}/>
                 </div>
-                <div className="homepage-section-container">
+                <div id="preview-container" className="homepage-section-container">
                     <div id="preview">
                         <div id="preview-text">
                             <h2>Preview</h2>
@@ -51,23 +51,28 @@ class Home extends Component {
                         </div>
                     </div>
                 </div>
-                <div style={{backgroundColor: '#f0f1f2'}} className="homepage-section-container">
+                <div id="faq-container" style={{backgroundColor: '#f0f1f2'}} className="homepage-section-container">
                     <div id="faq">
                         <h2>F.A.Q.</h2>
                         <div id="faq-container">
                             <div className="faq-item">
                                 <p><span className="accented-p">Where do you get your data from?</span></p>
-                                <p><a href="https://www.whoscored.com" >whoscored.com</a></p>
+                                <p><a href="https://www.whoscored.com" >WhoScored.com</a> and <a href="https://www.fbref.com">FBref.com</a></p>
                             </div>
                             <div className="faq-item">
+                                <p><span className="accented-p">I can't find a player, and he plays in one of the top 5 leagues. Why?</span></p>
                                 <p>
-                                    <span className="accented-p">Do you plan on adding xG data (and other xG-based data such
-                                    as xA) to the charts?</span>
+                                    This is likely due to one of two reasons:
                                 </p>
-                                <p>
-                                    Absolutely! I'm currently looking at incorporating some more advanced data
-                                    from <a href="https://fbref.com" >FBREF.com</a>.
-                                </p>
+                                <ol>
+                                    <li>
+                                        The database only includes players who've made 5 or more league appearances this season.
+                                    </li>
+                                    <li>
+                                        The search function doesn't always detect special characters such as Ø and é like it's
+                                        supposed to (I'm working on it). You can try searching by club instead.
+                                    </li>
+                                </ol>
                             </div>
                             <div className="faq-item">
                                 <p><span className="accented-p">How should the charts be interpreted?</span></p>
@@ -75,11 +80,6 @@ class Home extends Component {
                                     Each chart consists of 12 bars. The size of the bar for each stat corresponds to the
                                     percentile rank of the selected player with regards to the stat represented by the
                                     bar. The data labels attached to each bar show the raw (per 90) value.
-                                </p>
-                                <br/>
-                                <p>
-                                    Please note that the position of a stat on the chart can change between different
-                                    position templates.
                                 </p>
                             </div>
                             <div className="faq-item">
@@ -115,7 +115,7 @@ class Home extends Component {
                                     selecting the 'forward' template compares the selected player only to other forwards in the
                                     dataset. To obtain a list of players who play in each of the 5 template positions,
                                     I use the <a href="https://whoscored.com/Statistics">
-                                    whoscored.com player statistics table</a> to select all top 5 league players
+                                    WhoScored.com player statistics table</a> to select all top 5 league players
                                     who have accumulated 10 or more starts this season in the said position. Their stats
                                     from all competitions are then recorded in the dataset for their position.
                                 </p>
@@ -131,7 +131,7 @@ class Home extends Component {
                         </div>
                     </div>
                 </div>
-                <div className="homepage-section-container">
+                <div id="contact-container" className="homepage-section-container">
                     <div id="contact">
                         <h2>Contact</h2>
                         <p>

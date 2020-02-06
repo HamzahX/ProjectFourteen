@@ -16,11 +16,11 @@ class Stats extends Component {
         super(props);
         let categories = [
             'Non-Penalty Goals',
-            'Non-Penalty Shots',
+            'Non-Penalty xG',
             'Conversion Rate',
             'Shots on Target %',
             'Assists',
-            'Key Passes',
+            'xA',
             'Completed Passes',
             'Pass Completion %',
             'Successful Dribbles',
@@ -161,11 +161,11 @@ class Stats extends Component {
             case "FW":
                 categories = [
                     'Non-Penalty Goals',
-                    'Non-Penalty Shots',
+                    'Non-Penalty xG',
                     'Conversion Rate',
                     'Shots on Target %',
                     'Assists',
-                    'Key Passes',
+                    'xA',
                     'Completed Passes',
                     'Pass Completion %',
                     'Successful Dribbles',
@@ -177,9 +177,9 @@ class Stats extends Component {
             case "AM":
                 categories = [
                     'Non-Penalty Goals',
-                    'Non-Penalty Shots',
+                    'Non-Penalty xG',
                     'Assists',
-                    'Key Passes',
+                    'xA',
                     'Completed Passes',
                     'Pass Completion %',
                     'Completed Crosses',
@@ -193,7 +193,7 @@ class Stats extends Component {
             case "CM":
                 categories = [
                     'Non-Penalty Goals + Assists',
-                    'Key Passes',
+                    'xA',
                     'Completed Passes',
                     'Pass Completion %',
                     'Completed Long Passes',
@@ -209,7 +209,7 @@ class Stats extends Component {
             case "FB":
                 categories = [
                     'Assists',
-                    'Key Passes',
+                    'xA',
                     'Completed Passes',
                     'Pass Completion %',
                     'Completed Crosses',
@@ -270,11 +270,13 @@ class Stats extends Component {
         switch (template){
             case "FW":
                 statsPer90['goals'] = filteredStats['goals'] / (filteredStats['minutes']/90);
-                statsPer90['shots'] = (filteredStats['shots']  - filteredStats['penaltiesTaken']) / (filteredStats['minutes']/90);
+                // statsPer90['shots'] = (filteredStats['shots']  - filteredStats['penaltiesTaken']) / (filteredStats['minutes']/90);
+                statsPer90['xG'] = filteredStats['xG'] / (filteredStats['minutes']/90);
                 statsPer90['conversionRate'] = (filteredStats['goals'] / (filteredStats['shots']  - filteredStats['penaltiesTaken'])) * 100;
                 statsPer90['shotsOnTarget'] = ((filteredStats['shotsOnTarget'] - filteredStats['penaltiesTaken']) / (filteredStats['shots'] - filteredStats['penaltiesTaken'])) * 100;
                 statsPer90['assists'] = filteredStats['assists'] / (filteredStats['minutes']/90);
-                statsPer90['keyPasses'] = filteredStats['keyPasses'] / (filteredStats['minutes']/90);
+                // statsPer90['keyPasses'] = filteredStats['keyPasses'] / (filteredStats['minutes']/90);
+                statsPer90['xA'] = filteredStats['xA'] / (filteredStats['minutes']/90);
                 statsPer90['succPasses'] = filteredStats['succPasses'] / (filteredStats['minutes']/90);
                 statsPer90['passingRate'] = (filteredStats['succPasses'] / filteredStats['totalPasses']) * 100;
                 statsPer90['succDribbles'] = filteredStats['succDribbles'] / (filteredStats['minutes']/90);
@@ -288,9 +290,11 @@ class Stats extends Component {
                 break;
             case "AM":
                 statsPer90['goals'] = filteredStats['goals'] / (filteredStats['minutes']/90);
-                statsPer90['shots'] = (filteredStats['shots']  - filteredStats['penaltiesTaken']) / (filteredStats['minutes']/90);
+                // statsPer90['shots'] = (filteredStats['shots']  - filteredStats['penaltiesTaken']) / (filteredStats['minutes']/90);
+                statsPer90['xG'] = filteredStats['xG'] / (filteredStats['minutes']/90);
                 statsPer90['assists'] = filteredStats['assists'] / (filteredStats['minutes']/90);
-                statsPer90['keyPasses'] = filteredStats['keyPasses'] / (filteredStats['minutes']/90);
+                // statsPer90['keyPasses'] = filteredStats['keyPasses'] / (filteredStats['minutes']/90);
+                statsPer90['xA'] = filteredStats['xA'] / (filteredStats['minutes']/90);
                 statsPer90['succPasses'] = filteredStats['succPasses'] / (filteredStats['minutes']/90);
                 statsPer90['passingRate'] = (filteredStats['succPasses'] / filteredStats['totalPasses']) * 100;
                 statsPer90['succCrosses'] = filteredStats['succCrosses'] / (filteredStats['minutes']/90);
@@ -306,7 +310,8 @@ class Stats extends Component {
                 break;
             case "CM":
                 statsPer90['goalsPlusAssists'] = (filteredStats['goals'] + filteredStats['assists']) / (filteredStats['minutes']/90);
-                statsPer90['keyPasses'] = filteredStats['keyPasses'] / (filteredStats['minutes']/90);
+                // statsPer90['keyPasses'] = filteredStats['keyPasses'] / (filteredStats['minutes']/90);
+                statsPer90['xA'] = filteredStats['xA'] / (filteredStats['minutes']/90);
                 statsPer90['succPasses'] = filteredStats['succPasses'] / (filteredStats['minutes']/90);
                 statsPer90['passingRate'] = (filteredStats['succPasses'] / filteredStats['totalPasses']) * 100;
                 statsPer90['succLongPasses'] = filteredStats['succLongPasses'] / (filteredStats['minutes']/90);
@@ -324,7 +329,8 @@ class Stats extends Component {
                 break;
             case "FB":
                 statsPer90['assists'] = filteredStats['assists'] / (filteredStats['minutes']/90);
-                statsPer90['keyPasses'] = filteredStats['keyPasses'] / (filteredStats['minutes']/90);
+                // statsPer90['keyPasses'] = filteredStats['keyPasses'] / (filteredStats['minutes']/90);
+                statsPer90['xA'] = filteredStats['xA'] / (filteredStats['minutes']/90);
                 statsPer90['succPasses'] = filteredStats['succPasses'] / (filteredStats['minutes']/90);
                 statsPer90['passingRate'] = (filteredStats['succPasses'] / filteredStats['totalPasses']) * 100;
                 statsPer90['succCrosses'] = filteredStats['succCrosses'] / (filteredStats['minutes']/90);
@@ -544,7 +550,7 @@ class Stats extends Component {
                         }
                     },
                     credits: {
-                        text: "Data source: whoscored.com",
+                        text: "Data sources: WhoScored.com & FBref.com",
                         style: {
                             fontSize: fontSizes['credits']
                         },

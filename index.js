@@ -17,8 +17,8 @@ const mongoURI = "mongodb+srv://hamzah:" + process.env.MONGOPASSWORD + "@cluster
 const dateFormat = require('dateformat');
 
 //helper functions
-const countryCodes = require('./serverUtils/countryCodes.js');
-const clubsList = JSON.parse(fs.readFileSync(path.join(__dirname, '/serverUtils/clubsList.json')));
+const countryCodes = require('./countryCodes.js');
+const clubsList = JSON.parse(fs.readFileSync(path.join(__dirname, 'clubsList.json')));
 
 var db;
 var currentSeasonCollection;
@@ -39,7 +39,7 @@ let connectToDatabase = async () => {
         console.time('database connection');
         mongoClient.connect(mongoURI, {useUnifiedTopology: true},function (err, client) {
             db = client.db("ProjectFourteen");
-            currentSeasonCollection = db.collection('CurrentSeason');
+            currentSeasonCollection = db.collection('CurrentSeasonXG');
             percentilesCollection = db.collection('Percentiles2');
             console.timeEnd('database connection');
             resolve();
