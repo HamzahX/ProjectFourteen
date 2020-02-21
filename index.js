@@ -21,8 +21,8 @@ const countryCodes = require('./countryCodes.js');
 const clubsList = JSON.parse(fs.readFileSync(path.join(__dirname, 'clubsList.json')));
 
 var db;
-var currentSeasonCollection;
-var percentilesCollection;
+var playersCollection;
+var percentileArraysCollection;
 
 let percentiles = {
     'fw': [],
@@ -39,8 +39,8 @@ let connectToDatabase = async () => {
         console.time('database connection');
         mongoClient.connect(mongoURI, {useUnifiedTopology: true},function (err, client) {
             db = client.db("ProjectFourteen");
-            currentSeasonCollection = db.collection('CurrentSeasonXG');
-            percentilesCollection = db.collection('Percentiles2');
+            playersCollection = db.collection('Players');
+            percentileArraysCollection = db.collection('Percentiles2');
             console.timeEnd('database connection');
             resolve();
         })
@@ -53,7 +53,7 @@ let connectToDatabase = async () => {
 let setup = async () => {
     return new Promise(async function(resolve, reject){
 
-        percentilesCollection.find({}).toArray(function (err, docs) {
+        percentileArraysCollection.find({}).toArray(function (err, docs) {
             if (err) {
                 reject();
             } else if (docs.length === 0) {
@@ -125,8 +125,9 @@ app.post('/api/stats', (req, res) => {
                 res.json({
                     url: response.url,
                     name: response.name,
+                    club: response.club,
+                    stats: response.stats,
                     lastUpdated: response.lastUpdated,
-                    stats: response.stats
                 });
             }, 300)
         },
@@ -154,7 +155,7 @@ let search = async (aQuery, type) => {
                     clubSearchResults.push(clubsList[i]);
                 }
             }
-            currentSeasonCollection.find({$text:
+            playersCollection.find({$text:
                 {
                     $search: '\"' + aQuery + '\"',
                     $language: "en",
@@ -196,7 +197,7 @@ let search = async (aQuery, type) => {
             });
         }
         else if (type === "playersByClub"){
-            currentSeasonCollection.find({club: aQuery}).toArray(function(err, docs) {
+            playersCollection.find({club: aQuery}).toArray(function(err, docs) {
                 if (err){
                     console.timeEnd("Time taken to return search results");
                     reject();
@@ -236,7 +237,7 @@ let getStats = async (aURL) => {
     return new Promise(async function(resolve, reject){
         console.log("Retrieving stats from the database for: " + aURL);
         console.time("Time taken to return stats");
-        currentSeasonCollection.find({"url": aURL}).toArray(function (err, docs) {
+        playersCollection.find({"url": aURL}).toArray(function (err, docs) {
             if (err) {
                 console.timeEnd("Time taken to return search results");
                 reject();
@@ -245,14 +246,16 @@ let getStats = async (aURL) => {
                 reject();
             } else {
                 let url = docs[0].url;
-                let stats = docs[0].stats;
                 let name = docs[0].name;
+                let club = docs[0].club;
+                let stats = docs[0].stats;
                 let lastUpdated = docs[0].lastUpdated;
                 let returnObject = {
                     url: url,
                     name: name,
-                    lastUpdated: dateFormat(lastUpdated, "dd/mm/yyyy, h:MM:ss TT", true),
-                    stats: stats
+                    stats: stats,
+                    club: club,
+                    lastUpdated: dateFormat(lastUpdated, "dd/mm/yyyy, h:MM:ss TT", true)
                 };
                 console.timeEnd("Time taken to return stats");
                 resolve(returnObject);

@@ -13,21 +13,18 @@ class Home extends Component {
             <div id="homepage">
                 <div id="menu">
                     <a href="#home">Home</a>
-                    <a href="#preview-container">Preview</a>
-                    <a href="#faq-container">FAQ</a>
-                    <a href="#contact-container">Contact</a>
+                    <a href="#preview">OrganizedChaos</a>
+                    <a href="#faq">FAQ</a>
+                    <a href="#contact">Contact</a>
                 </div>
                 <div id="home">
-                    <Typist cursor={{show: false}} avgTypingDelay={200}>
-                        {/*<Typist.Delay ms={500}/>*/}
-                        <h1>name<span style={{color: '#ffd700'}}>.com</span></h1>
-                    </Typist>
+                    <h1>name<span style={{color: '#ffd700'}}>.com</span></h1>
                     <SearchBar type={3}/>
                 </div>
-                <div id="preview-container" className="homepage-section-container">
-                    <div id="preview">
+                <div id="preview" className="homepage-section-container">
+                    <div id="preview-section-container">
                         <div id="preview-text">
-                            <h2>Preview</h2>
+                            <h2>OrganizedChaos</h2>
                             <p>
                                 The OrganizedChaos tool is all about automation. Everything from data retrieval to
                                 visualization. It sifts through <span className="accented-p">tens of thousands</span> of
@@ -51,8 +48,8 @@ class Home extends Component {
                         </div>
                     </div>
                 </div>
-                <div id="faq-container" style={{backgroundColor: '#f0f1f2'}} className="homepage-section-container">
-                    <div id="faq">
+                <div id="faq" style={{backgroundColor: '#f0f1f2'}} className="homepage-section-container">
+                    <div id="faq-section-container">
                         <h2>F.A.Q.</h2>
                         <div id="faq-container">
                             <div className="faq-item">
@@ -131,8 +128,8 @@ class Home extends Component {
                         </div>
                     </div>
                 </div>
-                <div id="contact-container" className="homepage-section-container">
-                    <div id="contact">
+                <div id="contact" className="homepage-section-container">
+                    <div id="contact-section-container">
                         <h2>Contact</h2>
                         <p>
                             For any comments, bug reports, suggestions or questions, please feel free to reach out to me on twitter

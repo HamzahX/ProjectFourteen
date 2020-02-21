@@ -26,25 +26,27 @@ class SearchBar extends Component {
     render() {
 
         const { type } = this.state;
-        let id;
+        let containerID;
         let homeButton;
+        let autoFocus = false;
         if (type === 1){
-            id="searchbar-container1";
+            containerID = "searchbar-container1";
             homeButton = <Link to={'/'}><div id="home-button"><div>name<span style={{color: '#e1ba00'}}>.com</span></div></div></Link>;
         }
         else if (type === 2) {
-            id="searchbar-container2";
+            containerID="searchbar-container2";
             homeButton = <Link to={'/'}><div id="home-button"><div>name<span style={{color: '#e1bb00'}}>.com</span></div></div></Link>;
         }
         else {
-            id="searchbar-container3";
+            containerID = "searchbar-container3";
+            autoFocus = true;
         }
 
         return (
-            <div className="searchbar-container" id={id}>
+            <div className="searchbar-container" id={containerID}>
                 <form id="searchbar" onSubmit={this.handleSubmit}>
                     {homeButton}
-                    <input type="text" id="query" value={this.state.query} placeholder="Search for players, clubs..." autoComplete="off" onChange={this.handleChange}/>
+                    <input type="text" id="query" value={this.state.query} placeholder="Search for players, clubs..." autoComplete="off" onChange={this.handleChange} autoFocus={autoFocus}/>
                 </form>
             </div>
         );

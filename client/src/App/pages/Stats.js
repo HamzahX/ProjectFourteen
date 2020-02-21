@@ -39,7 +39,7 @@ class Stats extends Component {
             name: '',
             url: '',
             isAll: false,
-            multipleLeagues: false,
+            multipleClubs: false,
             isMobile: this.props.isMobile,
             fontSizes: {
                 title: this.props.isMobile === true ? '4vw' : '2em',
@@ -91,7 +91,7 @@ class Stats extends Component {
     };
 
     processStats(response) {
-        let multipleLeagues = this.state.allCompetitions.filter(x => x.startsWith("League | ")).length > 1;
+        let multipleClubs = (response.club.length !== 1);
         this.setState({
             url: response.url,
             name: response.name,
@@ -100,7 +100,7 @@ class Stats extends Component {
             allCompetitions: Object.keys(response.stats),
             selectedCompetitions: Object.keys(response.stats),
             isLoading: false,
-            multipleLeagues: multipleLeagues
+            multipleClubs: multipleClubs
         }, () => {
 
         });
@@ -438,7 +438,7 @@ class Stats extends Component {
             allStats,
             percentiles,
             isLoading,
-            multipleLeagues,
+            multipleClubs,
             fontSizes,
             isMobile
         } = this.state;
@@ -456,7 +456,7 @@ class Stats extends Component {
                 let current = allCompetitions[i];
                 let isIncluded = selectedCompetitions.includes(current);
                 let label = current;
-                if (!multipleLeagues){
+                if (!multipleClubs){
                     label = label.substring(0, label.indexOf("|")-1)
                 }
                 cards.push(
@@ -713,7 +713,7 @@ class Stats extends Component {
                                     <button id="clearAllButton" type="button" onClick={this.clearAllCompetitions}>Clear All Competitions</button>
                                 </div>
                                 <div className="filter-button">
-                                    <button id="toggleTableButton" type="button" disabled={true}>Toggle Data Table</button>
+                                    <button id="compareButton" type="button" disabled={true}>Compare To...</button>
                                 </div>
                             </div>
                         </div>

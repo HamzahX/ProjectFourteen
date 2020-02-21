@@ -95,10 +95,16 @@ class Search extends Component {
 
         for (let i=0; i<playerSearchResults.length; i++){
             let currentResult = playerSearchResults[i];
-            let temp1 = {
-                value: currentResult.club,
-                label: currentResult.club,
-            };
+            let currentResultClubs = currentResult.club;
+            for (let i=0; i<currentResultClubs.length; i++){
+                let temp1 = {
+                    value: currentResult.club[i],
+                    label: currentResult.club[i],
+                };
+                if (!clubs.filter(e => e.value === temp1.value).length > 0){
+                    clubs.push(temp1);
+                }
+            }
             let temp2 = {
                 value: currentResult.nationality,
                 label: currentResult.nationality,
@@ -108,9 +114,6 @@ class Search extends Component {
                 label: currentResult.name
             };
             names.push(temp3);
-            if (!clubs.filter(e => e.value === temp1.value).length > 0){
-                clubs.push(temp1);
-            }
             if (!nationalities.filter(e => e.value === temp2.value).length > 0){
                 nationalities.push(temp2);
             }
@@ -142,9 +145,13 @@ class Search extends Component {
         else {
             for (let i=0; i<playerSearchResults.length; i++){
                 for (let j=0; j<selectedOption.length; j++){
-                    if (selectedOption[j].value === playerSearchResults[i].club){
+                    if (playerSearchResults[i].club.includes(selectedOption[j].value)
+                        && !filteredPlayerSearchResults.includes(playerSearchResults[i])) {
                         filteredPlayerSearchResults.push(playerSearchResults[i]);
                     }
+                    // if (selectedOption[j].value === playerSearchResults[i].club){
+                    //     filteredPlayerSearchResults.push(playerSearchResults[i]);
+                    // }
                 }
             }
         }
@@ -211,10 +218,14 @@ class Search extends Component {
             let playerCards = [];
             for (let i=0; i<filteredPlayerSearchResults.length; i++){
                 let current = filteredPlayerSearchResults[i];
+                let club = current.club[0];
+                for (let i=1; i<current.club.length; i++){
+                    club += (", " + current.club[i]);
+                }
                 playerCards.push(
                     <PlayerSearchResult
                         name={current.name}
-                        club={current.club}
+                        club={club}
                         nationality={current.nationality}
                         URL={current.URL}
                         all={current.all}

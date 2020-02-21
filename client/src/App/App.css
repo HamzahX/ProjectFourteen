@@ -29,9 +29,10 @@ body {
 }
 
 input {
-    padding-left: 0.7%;
-    padding-right: 0.7%;
+    padding-left: 1%;
+    padding-right: 1%;
     border: darkgrey 1px solid;
+    border-radius: 50px;
 }
 
 input[type=radio], input[type=checkbox] {
@@ -42,7 +43,7 @@ input[type=radio]:hover, input[type=checkbox]:hover {
     background: #e75453;
 }
 
-input:hover {
+input:hover, input:focus {
     border: grey 1px solid;
 }
 
@@ -159,7 +160,14 @@ a {
             padding-top: 13px;
             padding-bottom: 13px;
             text-align: center;
-            box-shadow: 0 5px 10px 0 darkgray;
+        }
+
+        #home #searchbar-container3 form input:hover {
+            box-shadow: 0 0 15px -8px darkgray;
+        }
+
+        #home #searchbar-container3 form input:focus {
+            box-shadow: 0 0 15px -8px darkgray;
         }
 
 .homepage-section-container:not(:last-child) {
@@ -169,13 +177,13 @@ a {
     justify-content: center;
 }
 
-#preview , #faq, #contact {
+#preview-section-container , #faq-section-container, #contact-section-container {
     padding: 5%;
     margin: 0 auto;
     max-width: 1500px;
 }
 
-#preview  {
+#preview-section-container  {
     display: flex;
     flex-direction: row;
     min-height: 100%;
@@ -444,13 +452,13 @@ a {
     /*box-shadow: 0 0 10px 2px lightgray;*/
 }
 
-#selectAllButton, #clearAllButton, #toggleTableButton {
+#selectAllButton, #clearAllButton, #compareButton {
     color: #B23535;
     /*background-color: transparent;*/
     background-color: #f0f0f0;
 }
 
-#toggleTableButton {
+#compareButton {
     color: lightgrey;
 }
 
@@ -458,7 +466,7 @@ a {
     background-color: #dcdcdc;
 }
 
-#toggleTableButton:hover {
+#compareButton:hover {
     cursor: not-allowed;
 }
 
@@ -537,7 +545,7 @@ a {
         min-width: 400px;
     }
 
-    #preview  {
+    #preview-section-container  {
         flex-direction: column;
     }
 
@@ -557,6 +565,11 @@ a {
         flex-direction: column;
         min-height: 140%;
     }
+
+    /*.searchbar-container {*/
+    /*    padding-left: 2%;*/
+    /*    padding-right: 2%;*/
+    /*}*/
 
     #searchbar-container1 #searchbar input, #searchbar-container2 #searchbar input {
         max-width: unset;
@@ -628,13 +641,18 @@ a {
         margin: 0.5% 1% 1%;
     }
 
-    #search-results h3 {
-        margin-left: 20px;
+    #search-results {
+        padding-left: 2%;
+        padding-right: 2%;
     }
 
-    #search-results p {
-        margin-left: 30px;
-    }
+    /*#search-results h3 {*/
+    /*    margin-left: 20px;*/
+    /*}*/
+
+    /*#search-results p {*/
+    /*    margin-left: 30px;*/
+    /*}*/
 
     #chart-filters {
         flex-direction: row;
@@ -741,11 +759,11 @@ a {
         min-width: 70%;
     }
 
-    #preview, #faq {
+    #preview-section-container, #faq-section-container{
         padding-top: 10%;
     }
 
-    #preview  {
+    #preview-section-container  {
         flex-direction: column;
     }
 
