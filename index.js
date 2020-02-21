@@ -40,7 +40,7 @@ let connectToDatabase = async () => {
         mongoClient.connect(mongoURI, {useUnifiedTopology: true},function (err, client) {
             db = client.db("ProjectFourteen");
             playersCollection = db.collection('Players');
-            percentileArraysCollection = db.collection('Percentiles2');
+            percentileArraysCollection = db.collection('PercentileArrays');
             console.timeEnd('database connection');
             resolve();
         })
