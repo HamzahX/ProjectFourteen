@@ -147,7 +147,7 @@ a {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding-bottom: 10%;
+    padding-bottom: 6%;
     height: 100vh;
 }
 
@@ -169,6 +169,46 @@ a {
         #home #searchbar-container3 form input:focus {
             box-shadow: 0 0 15px -8px darkgray;
         }
+
+        #sample-results {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-auto-rows: minmax(min-content, max-content);
+            grid-column-gap: 5%;
+            width: 35%;
+            min-width: 500px;
+        }
+
+            #sample-results a:hover {
+                color: unset;
+            }
+
+            .sample-player {
+                border: darkgrey 1px solid;
+                text-align: center;
+                padding: 10%;
+                border-radius: 50px;
+                transition: 0.2s;
+                max-width: 100%;
+            }
+
+            .sample-player:hover {
+                border-color: #e75453;
+            }
+
+            .sample-player .name {
+                font-weight: bold;
+            }
+
+            .sample-player .name, .sample-player .club {
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+
+            .sample-player .nationality {
+                display: none;
+            }
 
 .homepage-section-container:not(:last-child) {
     min-height: 100vh;
@@ -358,6 +398,7 @@ a {
     grid-template-columns: 1fr 1fr 1fr;
     grid-auto-rows: minmax(min-content, max-content);
     grid-column-gap: 1%;
+    /*grid-row-gap: 2%;*/
 }
 
 .search-result {
@@ -366,7 +407,7 @@ a {
     border: darkgrey 1px solid;
     /*margin-bottom: 20px;*/
     margin-bottom: 3%;
-    transition: 0.3s;
+    transition: 0.2s;
 }
 
 .search-result:hover, .search-result:focus {
@@ -543,6 +584,16 @@ a {
 
     #home #searchbar-container3 {
         min-width: 400px;
+    }
+
+    #sample-results {
+        grid-template-columns: 1fr;
+        grid-row-gap: 6%;
+        min-width: unset;
+    }
+
+    .sample-player {
+        padding: 2%;
     }
 
     #preview-section-container  {
@@ -757,6 +808,16 @@ a {
 
     #home #searchbar-container3 {
         min-width: 70%;
+    }
+
+    #sample-results {
+        grid-template-columns: 1fr;
+        grid-row-gap: 6%;
+        min-width: unset;
+    }
+
+    .sample-player {
+        padding: 2%;
     }
 
     #preview-section-container, #faq-section-container{

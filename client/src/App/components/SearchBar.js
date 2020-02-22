@@ -46,7 +46,7 @@ class SearchBar extends Component {
             <div className="searchbar-container" id={containerID}>
                 <form id="searchbar" onSubmit={this.handleSubmit}>
                     {homeButton}
-                    <input type="text" id="query" value={this.state.query} placeholder="Search for players, clubs..." autoComplete="off" onChange={this.handleChange} autoFocus={autoFocus}/>
+                    <input type="text" id="query" value={this.state.query} placeholder="Search for players, clubs..." autoComplete="off" onChange={this.handleChange}/>
                 </form>
             </div>
         );

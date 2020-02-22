@@ -21,7 +21,7 @@ class Stats extends Component {
             'Shots on Target %',
             'Assists',
             'xA',
-            'Completed Passes',
+            'Passes into the Penalty Area',
             'Pass Completion %',
             'Successful Dribbles',
             'Dribble Success %',
@@ -166,7 +166,7 @@ class Stats extends Component {
                     'Shots on Target %',
                     'Assists',
                     'xA',
-                    'Completed Passes',
+                    'Passes into the Penalty Area',
                     'Pass Completion %',
                     'Successful Dribbles',
                     'Dribble Success %',
@@ -180,7 +180,7 @@ class Stats extends Component {
                     'Non-Penalty xG',
                     'Assists',
                     'xA',
-                    'Completed Passes',
+                    'Passes into the Penalty Area',
                     'Pass Completion %',
                     'Completed Crosses',
                     'Cross Completion %',
@@ -193,8 +193,8 @@ class Stats extends Component {
             case "CM":
                 categories = [
                     'Non-Penalty Goals + Assists',
-                    'xA',
-                    'Completed Passes',
+                    'Non-Penalty xG + xA',
+                    'Passes into the Final 1/3',
                     'Pass Completion %',
                     'Completed Long Passes',
                     'Long Pass Completion %',
@@ -210,7 +210,7 @@ class Stats extends Component {
                 categories = [
                     'Assists',
                     'xA',
-                    'Completed Passes',
+                    'Passes into the Final 1/3',
                     'Pass Completion %',
                     'Completed Crosses',
                     'Cross Completion %',
@@ -224,7 +224,7 @@ class Stats extends Component {
                 break;
             case "CB":
                 categories = [
-                    'Completed Passes',
+                    'Passes into the Final 1/3',
                     'Pass Completion %',
                     'Completed Long Passes',
                     'Long Pass Completion %',
@@ -277,7 +277,8 @@ class Stats extends Component {
                 statsPer90['assists'] = filteredStats['assists'] / (filteredStats['minutes']/90);
                 // statsPer90['keyPasses'] = filteredStats['keyPasses'] / (filteredStats['minutes']/90);
                 statsPer90['xA'] = filteredStats['xA'] / (filteredStats['minutes']/90);
-                statsPer90['succPasses'] = filteredStats['succPasses'] / (filteredStats['minutes']/90);
+                // statsPer90['succPasses'] = filteredStats['succPasses'] / (filteredStats['minutes']/90);
+                statsPer90['PPA'] = filteredStats['PPA'] / (filteredStats['minutes']/90);
                 statsPer90['passingRate'] = (filteredStats['succPasses'] / filteredStats['totalPasses']) * 100;
                 statsPer90['succDribbles'] = filteredStats['succDribbles'] / (filteredStats['minutes']/90);
                 statsPer90['dribbleRate'] = (filteredStats['succDribbles'] / filteredStats['totalDribbles']) * 100;
@@ -295,7 +296,8 @@ class Stats extends Component {
                 statsPer90['assists'] = filteredStats['assists'] / (filteredStats['minutes']/90);
                 // statsPer90['keyPasses'] = filteredStats['keyPasses'] / (filteredStats['minutes']/90);
                 statsPer90['xA'] = filteredStats['xA'] / (filteredStats['minutes']/90);
-                statsPer90['succPasses'] = filteredStats['succPasses'] / (filteredStats['minutes']/90);
+                // statsPer90['succPasses'] = filteredStats['succPasses'] / (filteredStats['minutes']/90);
+                statsPer90['PPA'] = filteredStats['PPA'] / (filteredStats['minutes']/90);
                 statsPer90['passingRate'] = (filteredStats['succPasses'] / filteredStats['totalPasses']) * 100;
                 statsPer90['succCrosses'] = filteredStats['succCrosses'] / (filteredStats['minutes']/90);
                 statsPer90['crossRate'] = (filteredStats['succCrosses'] / filteredStats['totalCrosses']) * 100;
@@ -311,8 +313,10 @@ class Stats extends Component {
             case "CM":
                 statsPer90['goalsPlusAssists'] = (filteredStats['goals'] + filteredStats['assists']) / (filteredStats['minutes']/90);
                 // statsPer90['keyPasses'] = filteredStats['keyPasses'] / (filteredStats['minutes']/90);
-                statsPer90['xA'] = filteredStats['xA'] / (filteredStats['minutes']/90);
-                statsPer90['succPasses'] = filteredStats['succPasses'] / (filteredStats['minutes']/90);
+                // statsPer90['xA'] = filteredStats['xA'] / (filteredStats['minutes']/90);
+                statsPer90['xGPlusxA'] = (filteredStats['xG'] + filteredStats['xA']) / (filteredStats['minutes']/90);
+                // statsPer90['succPasses'] = filteredStats['succPasses'] / (filteredStats['minutes']/90);
+                statsPer90['PFT'] = filteredStats['PFT'] / (filteredStats['minutes']/90);
                 statsPer90['passingRate'] = (filteredStats['succPasses'] / filteredStats['totalPasses']) * 100;
                 statsPer90['succLongPasses'] = filteredStats['succLongPasses'] / (filteredStats['minutes']/90);
                 statsPer90['longPassingRate'] = (filteredStats['succLongPasses'] / filteredStats['totalLongPasses']) * 100;
@@ -331,7 +335,8 @@ class Stats extends Component {
                 statsPer90['assists'] = filteredStats['assists'] / (filteredStats['minutes']/90);
                 // statsPer90['keyPasses'] = filteredStats['keyPasses'] / (filteredStats['minutes']/90);
                 statsPer90['xA'] = filteredStats['xA'] / (filteredStats['minutes']/90);
-                statsPer90['succPasses'] = filteredStats['succPasses'] / (filteredStats['minutes']/90);
+                // statsPer90['succPasses'] = filteredStats['succPasses'] / (filteredStats['minutes']/90);
+                statsPer90['PFT'] = filteredStats['PFT'] / (filteredStats['minutes']/90);
                 statsPer90['passingRate'] = (filteredStats['succPasses'] / filteredStats['totalPasses']) * 100;
                 statsPer90['succCrosses'] = filteredStats['succCrosses'] / (filteredStats['minutes']/90);
                 statsPer90['crossRate'] = (filteredStats['succCrosses'] / filteredStats['totalCrosses']) * 100;
@@ -347,7 +352,8 @@ class Stats extends Component {
                 percentiles['fouls'] = 100 - percentiles['fouls'];
                 break;
             case "CB":
-                statsPer90['succPasses'] = filteredStats['succPasses'] / (filteredStats['minutes']/90);
+                // statsPer90['succPasses'] = filteredStats['succPasses'] / (filteredStats['minutes']/90);
+                statsPer90['PFT'] = filteredStats['PFT'] / (filteredStats['minutes']/90);
                 statsPer90['passingRate'] = (filteredStats['succPasses'] / filteredStats['totalPasses']) * 100;
                 statsPer90['succLongPasses'] = filteredStats['succLongPasses'] / (filteredStats['minutes']/90);
                 statsPer90['longPassingRate'] = (filteredStats['succLongPasses'] / filteredStats['totalLongPasses']) * 100;
@@ -407,7 +413,7 @@ class Stats extends Component {
             colors = [5, 5, 6, 6, 6, 6, 6, 6, 2, 2, 2, 0];
         }
         else if (template === "CM"){
-            colors = [8, 6, 6, 6, 6, 6, 2, 2, 0, 0, 0, 0];
+            colors = [8, 8, 6, 6, 6, 6, 2, 2, 0, 0, 0, 0];
         }
         else if (template === "FB"){
             colors = [6, 6, 6, 6, 6, 6, 2, 2, 0, 0, 0, 0];

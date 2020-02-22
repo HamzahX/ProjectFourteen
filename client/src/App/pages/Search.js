@@ -218,14 +218,12 @@ class Search extends Component {
             let playerCards = [];
             for (let i=0; i<filteredPlayerSearchResults.length; i++){
                 let current = filteredPlayerSearchResults[i];
-                let club = current.club[0];
-                for (let i=1; i<current.club.length; i++){
-                    club += (", " + current.club[i]);
-                }
+                // let club = current.club[0];
                 playerCards.push(
                     <PlayerSearchResult
+                        page={"search"}
                         name={current.name}
-                        club={club}
+                        club={current.club}
                         nationality={current.nationality}
                         URL={current.URL}
                         all={current.all}

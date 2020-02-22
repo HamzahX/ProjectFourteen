@@ -5,7 +5,10 @@
     "dateformat": "^3.0.3",
     "express": "^4.17.1",
     "fs": "0.0.1-security",
-    "mongodb": "^3.4.1"
+    "lodash.isequal": "^4.5.0",
+    "lodash.merge": "^4.6.2",
+    "mongodb": "^3.4.1",
+    "puppeteer": "^2.1.1"
   },
   "scripts": {
     "start": "node index.js"

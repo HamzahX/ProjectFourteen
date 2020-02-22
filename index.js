@@ -24,7 +24,7 @@ var db;
 var playersCollection;
 var percentileArraysCollection;
 
-let percentiles = {
+var percentiles = {
     'fw': [],
     'am': [],
     'cm': [],
@@ -92,6 +92,21 @@ app.get('/', (req,res) =>{
 app.post('/api/percentiles', (req, res) => {
 
     res.json(percentiles);
+
+});
+
+app.post('/api/samplePlayers', (req, res) => {
+
+    getSamplePlayers().then(
+        (samplePlayers) => {
+            setTimeout(function(){
+                res.json(samplePlayers)
+            }, 300)
+        }, () => {
+            res.status(400);
+            res.json([]);
+        }
+    )
 
 });
 
@@ -259,6 +274,36 @@ let getStats = async (aURL) => {
                 };
                 console.timeEnd("Time taken to return stats");
                 resolve(returnObject);
+            }
+        });
+    });
+
+};
+
+let getSamplePlayers = async () => {
+
+    let samplePlayers = [];
+
+    return new Promise(async function(resolve, reject){
+        playersCollection.aggregate([ {$sample: {size: 3}} ]).toArray(function (err, docs) {
+            if (err) {
+                reject();
+            } else if (docs.length === 0) {
+                reject();
+            } else {
+                for (let i=0; i<docs.length; i++){
+                    let url = docs[i].url;
+                    let name = docs[i].name;
+                    let club = docs[i].club;
+                    let samplePlayer = {
+                        url: url,
+                        name: name,
+                        club: club,
+                        nationality: countryCodes.getCountryName(docs[i].countryCode.toUpperCase()),
+                    };
+                    samplePlayers.push(samplePlayer);
+                }
+                resolve(samplePlayers);
             }
         });
     });

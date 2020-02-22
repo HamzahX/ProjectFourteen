@@ -7,6 +7,7 @@ class PlayerSearchResult extends Component {
         super(props);
 
         this.state = {
+            page: this.props.page,
             name: this.props.name,
             club: this.props.club,
             nationality: this.props.nationality,
@@ -20,11 +21,22 @@ class PlayerSearchResult extends Component {
     }
 
     render() {
+
+        let { club, page } = this.state;
+        let clubString = club[0];
+
+        for (let i=1; i<club.length; i++){
+            clubString += (", " + club[i]);
+        }
+
+        let className = page === 'home' ? 'sample-player' : 'search-result';
+        let clubLabel = page === 'home' ? '' : 'Club:';
+
         return (
             <Link to={"/stats/" + this.state.URL}>
-                <div tabIndex="0" className="search-result">
+                <div tabIndex="0" className={className}>
                     <div className="name">{this.state.name}</div>
-                    <div className="club">Club: {this.state.club}</div>
+                    <div className="club">{clubLabel} {clubString}</div>
                     <div className="nationality">Nationality: {this.state.nationality}</div>
                 </div>
             </Link>
