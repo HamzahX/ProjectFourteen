@@ -91,30 +91,27 @@ class Home extends Component {
                             <div id="preview-text">
                                 <h2>OrganizedChaos</h2>
                                 <p>
-                                    The OrganizedChaos tool is all about automation. Everything from data retrieval to
-                                    visualization. It sifts through <span className="accented-p">tens of thousands</span> of
-                                    rows of numbers so you don't have to!
+                                    OrganizedChaos is a football stats visualization tool that is supported by an
+                                    entirely automated data retrieval process. It sifts
+                                    through <span className="accented-p">tens of thousands</span> of rows of numbers so
+                                    you don't have to!
                                 </p>
-                                <br/>
                                 <p>
-                                    Explore a database of <span className="accented-p">1,800+</span> players from
+                                    Explore a database of <span className="accented-p">1,900+</span> players from
                                     Europe's top <span className="accented-p">5</span> leagues from this season, and
                                     hopefully much more in the near future.
                                 </p>
-                                <br/>
                                 <p>
                                     Simply choose from <span className="accented-p">5</span> positional templates, toggle the
                                     competitions you'd like to include, and you can visualize statistics in seconds with
                                     interactive percentile rank bar charts, powered by <a href="https://www.highcharts.com" >Highcharts.js</a>.
                                 </p>
-                                <br/>
                                 <p><span className="accented-p">How should the charts be interpreted?</span></p>
                                 <p>
                                     Each chart consists of 12 bars. The size of the bar for each stat corresponds to the
                                     percentile rank of the selected player with regards to the stat represented by the
                                     bar. The data labels attached to each bar show the raw (per 90) value.
                                 </p>
-                                <br/>
                                 <p>
                                     The colours are meant to help group similar-ish stats together
                                     (as well as improve the charts' visual impact).
@@ -146,7 +143,7 @@ class Home extends Component {
                                     </p>
                                     <ol>
                                         <li>
-                                            The database only includes players who've made 5 or more league appearances this season.
+                                            The database only includes players who've made 4 or more league appearances this season.
                                         </li>
                                         <li>
                                             The search function doesn't always detect special characters such as Ø and é like it's
@@ -157,8 +154,7 @@ class Home extends Component {
                                 <div className="faq-item">
                                     <p><span className="accented-p">Can you add a feature to compare players on the same chart?</span></p>
                                     <p>
-                                        Yes, player comparison is definitely a feature I plan on implementing,
-                                        although I don't have a concrete timeline for that as of right now. Stay tuned!
+                                        Yes, that's in the works right now. Stay tuned!
                                     </p>
                                 </div>
                                 <div className="faq-item">
@@ -168,17 +164,15 @@ class Home extends Component {
                                         that are equal to or lower than the score. This is of course reversed for stats where
                                         a lower value is better, such as the 'fouls committed per 90' stat.
                                     </p>
-                                    <br/>
                                     <p>
                                         The percentile ranks for the OrganizedChaos tool are position-specific. For example,
                                         selecting the 'forward' template compares the selected player only to other forwards in the
                                         dataset. To obtain a list of players who play in each of the 5 template positions,
-                                        I use the <a href="https://whoscored.com/Statistics">
+                                        the tool uses the <a href="https://whoscored.com/Statistics">
                                         WhoScored.com player statistics table</a> to select all top 5 league players
                                         who have accumulated 10 or more starts this season in the said position. Their stats
                                         from all competitions are then recorded in the dataset for their position.
                                     </p>
-                                    <br/>
                                     <p>
                                         For each chart, the percentile ranks of the selected player are then obtained by comparing
                                         the player to all other scores in the dataset of the selected template position.
