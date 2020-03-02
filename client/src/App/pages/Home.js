@@ -5,7 +5,7 @@ import SearchBar from "../components/SearchBar"
 import PlayerSearchResult from "../components/PlayerSearchResult"
 import LoadingSpinner from "../components/LoadingSpinner";
 
-import mockUps from "../assets/mockUps.png"
+import mockUps from "../assets/mockUps3.png"
 
 
 class Home extends Component {
@@ -108,7 +108,7 @@ class Home extends Component {
                                 </p>
                                 <p><span className="accented-p">How should the charts be interpreted?</span></p>
                                 <p>
-                                    Each chart consists of 12 bars. The size of the bar for each stat corresponds to the
+                                    Each chart consists of 12 wedges. The size of the wedge for each stat corresponds to the
                                     percentile rank of the selected player with regards to the stat represented by the
                                     bar. The data labels attached to each bar show the raw (per 90) value.
                                 </p>
