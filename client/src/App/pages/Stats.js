@@ -47,6 +47,7 @@ class Stats extends Component {
                 noData: this.props.isMobile === true ? '2.7vw' : '1.35em',
                 xAxisLabels: this.props.isMobile === true ? '2.3vw' : '1.15em',
                 dataLabels: this.props.isMobile === true ? '2.3vw' : '1.25em',
+                dataLabelsOutline: this.props.isMobile === true ? '0.3vw' : '0.12em',
                 tooltipHeader: this.props.isMobile === true ? '2.3vw' : '1em',
                 tooltip: this.props.isMobile === true ? '2.3vw' : '1.25em',
                 credits: this.props.isMobile === true ? '1.4vw' : '1em',
@@ -95,6 +96,7 @@ class Stats extends Component {
         this.setState({
             url: response.url,
             name: response.name,
+            club: response.club[0],
             lastUpdated: response.lastUpdated,
             allStats: response.stats,
             allCompetitions: Object.keys(response.stats),
@@ -232,10 +234,10 @@ class Stats extends Component {
                     'Tackles Won',
                     'Tackle Win %',
                     'Fouls Committed',
-                    'Blocks',
-                    'Clearances',
                     'Aerial Duels Won',
-                    'Aerial Duel Win %'
+                    'Aerial Duel Win %',
+                    'Blocks',
+                    'Clearances'
                 ];
                 break;
         }
@@ -361,10 +363,10 @@ class Stats extends Component {
                 statsPer90['tackles'] = (filteredStats['tackles'] / (filteredStats['minutes']/90));
                 statsPer90['tackleRate'] = (filteredStats['tackles'] / (filteredStats['tackles'] + filteredStats['dribbledPast'])) *100;
                 statsPer90['fouls'] = filteredStats['fouls'] / (filteredStats['minutes']/90);
-                statsPer90['blocks'] = (filteredStats['blocks'] / (filteredStats['minutes']/90));
-                statsPer90['clearances'] = filteredStats['clearances'] / (filteredStats['minutes']/90);
                 statsPer90['succAerialDuels'] = filteredStats['succAerialDuels'] / (filteredStats['minutes']/90);
                 statsPer90['aerialDuelRate'] = (filteredStats['succAerialDuels'] / filteredStats['totalAerialDuels']) * 100;
+                statsPer90['blocks'] = (filteredStats['blocks'] / (filteredStats['minutes']/90));
+                statsPer90['clearances'] = filteredStats['clearances'] / (filteredStats['minutes']/90);
                 for (let key in statsPer90){
                     percentiles[key] = this.percentRank(percentileArrays['cb'][key], statsPer90[key]) * 100
                 }
@@ -437,6 +439,7 @@ class Stats extends Component {
         let {
             name,
             url,
+            club,
             lastUpdated,
             selectedCompetitions,
             template,
@@ -572,11 +575,12 @@ class Stats extends Component {
                                     color: "black",
                                     fontWeight: '600',
                                     fontSize: fontSizes['dataLabels'],
-                                    textOutline: "1.5px contrast"
+                                    textOutline: fontSizes['dataLabelsOutline'] + " contrast"
                                 },
                                 format: '{point.p90}',
                                 padding: 0,
                                 allowOverlap: true,
+                                z: 7
                             },
                             // shadow: true
                         },
@@ -628,6 +632,7 @@ class Stats extends Component {
                     xAxis: {
                         categories: categories,
                         labels: {
+                            zIndex: 1,
                             distance: isMobile === true ? 60 : 40,
                             style: {
                                 fontSize: fontSizes['xAxisLabels'],
@@ -677,7 +682,7 @@ class Stats extends Component {
                                     <label><input type="radio" name="template" value="CB" checked={template === "CB" ? true: null}/> Center-back </label>
                                 </form>
                                 <h3>Competitions</h3>
-                                <h4>19/20</h4>
+                                <h4 style={{marginBottom: '10px'}}>19/20 {multipleClubs === false ? ' | ' + club : null}</h4>
                                 <form id="competitions">
                                     {cards}
                                 </form>
@@ -705,7 +710,7 @@ class Stats extends Component {
                                 </div>
                                 <div id="competitions-container">
                                     <h3 style={{marginBottom: '0px'}}>Competitions</h3>
-                                    <h4 style={{marginBottom: '20px'}}>19/20</h4>
+                                    <h4 style={{marginBottom: '20px'}}>19/20 {multipleClubs === false ? ' | ' + club : null}</h4>
                                     <form id="competitions">
                                         {cards}
                                     </form>

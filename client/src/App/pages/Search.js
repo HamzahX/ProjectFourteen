@@ -21,10 +21,31 @@ class Search extends Component {
             searchByClub: searchByClub,
             playerSearchResults: [],
             filteredPlayerSearchResults: [],
+            openMenu: false,
             clubSearchResults: [],
             names: [],
             clubs: [],
             nationalities: [],
+            reactSelectStyle: {
+                control: (base, state) => ({
+                    ...base,
+                    boxShadow: "none",
+                    '&:hover': {
+                        borderColor: '#B23535'
+                    },
+                    '&:focus': {
+                        borderColor: '#B23535'
+                    },
+                })
+            },
+            reactSelectTheme: theme => ({
+                ...theme,
+                colors: {
+                    ...theme.colors,
+                    primary25: "pink",
+                    primary: "#e75453"
+                }
+            })
         };
 
         this.filterByClub = this.filterByClub.bind(this);
@@ -54,7 +75,6 @@ class Search extends Component {
     getSearchResults = () => {
 
         let searchByClub = this.state.searchByClub;
-        // alert(searchByClub);
         let type;
         if (searchByClub === undefined){
             type = "playersAndClubs"
@@ -187,14 +207,38 @@ class Search extends Component {
             filteredPlayerSearchResults: []
         }, () => {
             this.setState({
-                filteredPlayerSearchResults: filteredPlayerSearchResults
+                filteredPlayerSearchResults: filteredPlayerSearchResults,
+                openMenu: false
             })
         });
 
     }
 
+    hideMenu = () => {
+        this.setState({ openMenu: false });
+    };
+
+    handleInputChange = (query, { action }) => {
+        if (action === "input-change") {
+            let openMenu;
+            openMenu = query.length !== 0;
+            this.setState({ openMenu: openMenu });
+        }
+    };
+
     render() {
-        let {error, isLoading, filteredPlayerSearchResults, clubSearchResults, clubs, names, searchByClub} = this.state;
+        let {
+            error,
+            isLoading,
+            filteredPlayerSearchResults,
+            clubSearchResults,
+            clubs,
+            names,
+            searchByClub,
+            openMenu,
+            reactSelectStyle,
+            reactSelectTheme
+        } = this.state;
 
         if (isLoading) {
             return (
@@ -218,7 +262,6 @@ class Search extends Component {
             let playerCards = [];
             for (let i=0; i<filteredPlayerSearchResults.length; i++){
                 let current = filteredPlayerSearchResults[i];
-                // let club = current.club[0];
                 playerCards.push(
                     <PlayerSearchResult
                         page={"search"}
@@ -240,28 +283,6 @@ class Search extends Component {
                     />
                 )
             }
-
-            const reactSelectStyle = {
-                control: (base, state) => ({
-                    ...base,
-                    boxShadow: "none",
-                    '&:hover': {
-                        borderColor: '#B23535'
-                    },
-                    '&:focus': {
-                        borderColor: '#B23535'
-                    },
-                })
-            };
-
-            const reactSelectTheme = theme => ({
-                ...theme,
-                colors: {
-                    ...theme.colors,
-                    primary25: "pink",
-                    primary: "#e75453"
-                }
-            });
 
             let searchFilter;
             let searchText;
@@ -287,8 +308,17 @@ class Search extends Component {
                         theme={reactSelectTheme}
                         placeholder={"Filter players by name"}
                         onChange={this.filterByName}
+                        onInputChange={this.handleInputChange}
+                        onBlur={this.hideMenu}
                         isClearable
+                        menuIsOpen={openMenu}
                         options={names}
+                        components={
+                            {
+                                DropdownIndicator: () => null,
+                                IndicatorSeparator: () => null
+                            }
+                        }
                     />
             }
 
@@ -308,7 +338,7 @@ class Search extends Component {
                             <div id="player-search-results">
                                 {playerCards}
                             </div>
-                            {searchByClub === undefined ? <h3>Clubs</h3> : null}
+                            {searchByClub === undefined ? <h3 style={{marginTop: '20px'}}>Clubs</h3> : null}
                             {clubCards.length === 0 && searchByClub === undefined ? <p>No results found</p> : null}
                             <div id="club-search-results">
                                 {clubCards}

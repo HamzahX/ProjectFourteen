@@ -110,9 +110,7 @@ app.post('/api/samplePlayers', (req, res) => {
 
     getSamplePlayers().then(
         (samplePlayers) => {
-            setTimeout(function(){
-                res.json(samplePlayers)
-            }, 100)
+            res.json(samplePlayers)
         }, () => {
             res.status(400);
             res.json([]);
@@ -140,7 +138,7 @@ app.post('/api/search', (req, res) => {
             setTimeout(function(){
                 res.status(400);
                 res.json([]);
-            }, 200)
+            }, 100)
         });
 
 });
@@ -171,7 +169,7 @@ app.post('/api/stats', (req, res) => {
             setTimeout(function(){
                 res.status(400);
                 res.json([]);
-            }, 200)
+            }, 100)
         });
 
 });

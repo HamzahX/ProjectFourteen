@@ -204,7 +204,7 @@ let processRawData = async () => {
         let rawDataTemp = [];
         try {
             if (COMPETITION !== 'cl' && COMPETITION !== 'el'){
-                rawDataTemp.push(JSON.parse(fs.readFileSync(path.join(__dirname, '/serverUtils/currentSeasonLeagueRaw.json'))));
+                rawDataTemp.push(JSON.parse(fs.readFileSync(path.join(__dirname, '/serverUtils/leagueRaw.json'))));
             }
         }
         catch (err) {
@@ -212,7 +212,7 @@ let processRawData = async () => {
         }
         try {
             if (COMPETITION === 'cl'){
-                rawDataTemp.push(JSON.parse(fs.readFileSync(path.join(__dirname, '/serverUtils/currentSeasonCLRaw.json'))));
+                rawDataTemp.push(JSON.parse(fs.readFileSync(path.join(__dirname, '/serverUtils/clRaw.json'))));
             }
         }
         catch (err) {
@@ -220,7 +220,7 @@ let processRawData = async () => {
         }
         try {
             if (COMPETITION === 'el'){
-                rawDataTemp.push(JSON.parse(fs.readFileSync(path.join(__dirname, '/serverUtils/currentSeasonELRaw.json'))));
+                rawDataTemp.push(JSON.parse(fs.readFileSync(path.join(__dirname, '/serverUtils/elRaw.json'))));
             }
         }
         catch (err) {
@@ -292,7 +292,7 @@ let processRawData = async () => {
 
         //save processedData to a file
         return new Promise(async function(resolve, reject) {
-            await fs.writeFile(path.join(__dirname, '/serverUtils/currentSeasonProcessed.json'), JSON.stringify(processedData), function (err) {
+            await fs.writeFile(path.join(__dirname, '/serverUtils/processed.json'), JSON.stringify(processedData), function (err) {
                 if (err) {
                     console.log(err);
                     reject();
@@ -319,7 +319,7 @@ let saveRawData = async(rawData) => {
 
     return new Promise(async function(resolve, reject) {
         if (COMPETITION === "cl"){
-            await fs.writeFile(path.join(__dirname, '/serverUtils/currentSeasonCLRaw.json'), JSON.stringify(rawData), function(err) {
+            await fs.writeFile(path.join(__dirname, '/serverUtils/clRaw.json'), JSON.stringify(rawData), function(err) {
                 if (err) {
                     console.log(err);
                     reject();
@@ -328,7 +328,7 @@ let saveRawData = async(rawData) => {
             });
         }
         else if (COMPETITION === "el"){
-            await fs.writeFile(path.join(__dirname, '/serverUtils/currentSeasonELRaw.json'), JSON.stringify(rawData), function(err) {
+            await fs.writeFile(path.join(__dirname, '/serverUtils/elRaw.json'), JSON.stringify(rawData), function(err) {
                 if (err) {
                     console.log(err);
                     reject();
@@ -337,7 +337,7 @@ let saveRawData = async(rawData) => {
             });
         }
         else{
-            await fs.writeFile(path.join(__dirname, '/serverUtils/currentSeasonLeagueRaw.json'), JSON.stringify(rawData), function(err) {
+            await fs.writeFile(path.join(__dirname, '/serverUtils/leagueRaw.json'), JSON.stringify(rawData), function(err) {
                 if (err) {
                     console.log(err);
                     reject();
@@ -1330,7 +1330,7 @@ let uploadToDatabase = async () => {
     return new Promise(async function(resolve, reject){
         if (COMPETITION === "db"){
 
-            let processedData = JSON.parse(fs.readFileSync(path.join(__dirname, '/serverUtils/currentSeasonProcessed.json')));
+            let processedData = JSON.parse(fs.readFileSync(path.join(__dirname, '/serverUtils/processed.json')));
 
             mongoClient.connect(mongoURI, {useUnifiedTopology: true}, function(err, client) {
                 console.log("Connected to database");
@@ -1357,7 +1357,6 @@ let uploadToDatabase = async () => {
                                         club: club,
                                         countryCode: countryCode,
                                         stats: processedPlayer,
-                                        lastUpdated: new Date()
                                     }
                                 )
                             }
@@ -1374,7 +1373,6 @@ let uploadToDatabase = async () => {
                                     $set: {
                                         stats: temp,
                                         club: temp2,
-                                        lastUpdated: new Date()
                                     }
                                 }
                             )

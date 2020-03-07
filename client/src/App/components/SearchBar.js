@@ -28,7 +28,6 @@ class SearchBar extends Component {
         const { type } = this.state;
         let containerID;
         let homeButton;
-        let autoFocus = false;
         if (type === 1){
             containerID = "searchbar-container1";
             homeButton = <Link to={'/'}><div id="home-button"><div>name<span style={{color: '#e1ba00'}}>.com</span></div></div></Link>;
@@ -39,7 +38,6 @@ class SearchBar extends Component {
         }
         else {
             containerID = "searchbar-container3";
-            autoFocus = true;
         }
 
         return (

@@ -1,8 +1,9 @@
 .idea/
 node_modules/
 serverUtils/
+fbrefMapper.js
+fbrefMapper2.js
 fbrefScraper.js
-fbrefScraper2.js
-whoscoredPercentileScraper.js
-whoscoredPercentileScraper2.js
+percentileScraper.js
+percentileScraper2.js
 index.test.js

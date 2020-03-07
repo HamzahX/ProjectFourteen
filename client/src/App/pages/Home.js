@@ -28,8 +28,6 @@ class Home extends Component {
     }
 
     getSamplePlayers = () => {
-        const { URL } = this.props.match.params;
-
         fetch('/api/samplePlayers', {
             method: 'post',
             headers: {
@@ -108,9 +106,9 @@ class Home extends Component {
                                 </p>
                                 <p><span className="accented-p">How should the charts be interpreted?</span></p>
                                 <p>
-                                    Each chart consists of 12 wedges. The size of the wedge for each stat corresponds to the
+                                    Each chart consists of 12 wedges. The size of each wedge corresponds to the
                                     percentile rank of the selected player with regards to the stat represented by the
-                                    bar. The data labels attached to each bar show the raw (per 90) value.
+                                    wedge. The data labels show the raw (per 90) value.
                                 </p>
                                 <p>
                                     The colours are meant to help group similar-ish stats together
