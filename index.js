@@ -110,7 +110,9 @@ app.post('/api/samplePlayers', (req, res) => {
 
     getSamplePlayers().then(
         (samplePlayers) => {
-            res.json(samplePlayers)
+            setTimeout(function(){
+                res.json(samplePlayers);
+            }, 300);
         }, () => {
             res.status(400);
             res.json([]);

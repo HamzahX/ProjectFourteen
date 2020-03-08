@@ -47,7 +47,7 @@ class Stats extends Component {
                 noData: this.props.isMobile === true ? '2.7vw' : '1.35em',
                 xAxisLabels: this.props.isMobile === true ? '2.3vw' : '1.15em',
                 dataLabels: this.props.isMobile === true ? '2.3vw' : '1.25em',
-                dataLabelsOutline: this.props.isMobile === true ? '0.3vw' : '0.12em',
+                dataLabelsOutline: this.props.isMobile === true ? '0.3vw' : '0.16em',
                 tooltipHeader: this.props.isMobile === true ? '2.3vw' : '1em',
                 tooltip: this.props.isMobile === true ? '2.3vw' : '1.25em',
                 credits: this.props.isMobile === true ? '1.4vw' : '1em',
@@ -575,7 +575,7 @@ class Stats extends Component {
                                     color: "black",
                                     fontWeight: '600',
                                     fontSize: fontSizes['dataLabels'],
-                                    textOutline: fontSizes['dataLabelsOutline'] + " contrast"
+                                    textOutline: fontSizes['dataLabelsOutline'] + " #fafbfc"
                                 },
                                 format: '{point.p90}',
                                 padding: 0,

@@ -14,7 +14,7 @@ let COMPETITIONFULL;
 //process command-line arguments
 let args = process.argv.slice(2);
 var COMPETITION; //the competition data to scrape
-var ADDNEW; //boolean to track if players not already in the databsse should be added
+var ADDNEW; //boolean to track if players not already in the database should be added
 
 //sanitize arguments
 if (args.length !== 2){
@@ -435,7 +435,7 @@ let pageSetup = async (page, isFirstIteration) => {
 /**
  * Loops through all pages of the table and scrapes them
  * @param {*} page - The puppeteer page where the scraping is taking place
- * @param {strign} stat - The stat being scraped
+ * @param {string} stat - The stat being scraped
  * @returns {Promise<*>} - Resolves a custom object containing the scraped data for the specified stat
  */
 let scrapingLoop = async (page, stat) => {
@@ -858,69 +858,6 @@ let scrapeKeyPasses = async (page, firstIteration) => {
     });
 
 };
-
-// let scrapeThroughBalls = async (page, firstIteration) => {
-//
-//     if (firstIteration) {
-//         let selector1 = 'a[href="#player-tournament-stats-passing"]';
-//         await page.waitForSelector(selector1);
-//         await page.evaluate((selector) => document.querySelector(selector).click(), selector1);
-//         await page.waitForSelector('#statistics-table-passing');
-//
-//         await page.waitForFunction('document.querySelector("#statistics-table-passing-loading").style.display == "none"');
-//
-//         await page.waitForSelector('#player-tournament-stats-passing #top-player-stats-summary-grid tr td:not(:empty)');
-//     }
-//
-//     return await page.evaluate(() => {
-//         let throughBalls = {};
-//         let currentPlayer = '';
-//         let currentCompetition = '';
-//         let currentCompetitionPrefix = '';
-//
-//         if (competition === "cl"){
-//             currentCompetitionPrefix = "Champions League";
-//         }
-//         else if (competition === "el") {
-//             currentCompetitionPrefix = "Europa League";
-//         }
-//         else {
-//             currentCompetitionPrefix = "League";
-//         }
-//         const tds = Array.from(document.querySelectorAll('#player-tournament-stats-passing #top-player-stats-summary-grid tr td'));
-//         for (let i = 0; i < tds.length; i++) {
-//             let currentPlayer = '';
-//                 currentPlayer = tds[i].innerHTML.substring(tds[i].innerHTML.indexOf('href="')+6, tds[i].innerHTML.indexOf('">', 0));
-//                 currentPlayer = "https://www.whoscored.com" + currentPlayer.replace("Show", "History");
-//                 let currentClub = tds[i].innerHTML.substring(tds[i].innerHTML.indexOf('"team-name">')+12, tds[i].innerHTML.indexOf(', </span', 0)).replace(".", "'");
-//                 currentCompetition = currentCompetitionPrefix + " | " + currentClub;
-//                 currentPlayer = currentPlayer + "|" + currentClub;
-//                 throughBalls[currentPlayer] = {};
-//                 throughBalls[currentPlayer][currentCompetition] = {};
-//             } else {
-//                 if (tds[i].className === 'accurateThroughBallPerGame   ') {
-//                     let apps = tds[i-8].innerText;
-//                     if (apps.includes('(')) {
-//                         let starts = apps.substr(0, apps.indexOf('('));
-//                         let subs = apps.substr(apps.indexOf('(') + 1, apps.indexOf(')'));
-//                         apps = parseInt(starts, 10) + parseInt(subs, 10);
-//                     }
-//                     else {
-//                         apps = parseInt(tds[i-8].innerText, 10)
-//                     }
-//                     if (tds[i].innerText === '-') {
-//                         throughBalls[currentPlayer][currentCompetition]['throughBalls'] = 0;
-//                     } else {
-//                         // throughBalls[currentPlayer][currentCompetition]['throughBalls'] = Math.round(parseFloat(tds[i].innerText) * apps);
-//                         throughBalls[currentPlayer][currentCompetition]['throughBalls'] = parseFloat(tds[i].innerText) * apps;
-//                     }
-//                 }
-//             }
-//         }
-//         return throughBalls;
-//     });
-//
-// };
 
 /**
  * Scrapes stats for tackles
@@ -1357,6 +1294,7 @@ let uploadToDatabase = async () => {
                                         club: club,
                                         countryCode: countryCode,
                                         stats: processedPlayer,
+                                        lastUpdated: new Date()
                                     }
                                 )
                             }
@@ -1371,8 +1309,9 @@ let uploadToDatabase = async () => {
                                 {url: player},
                                 {
                                     $set: {
-                                        stats: temp,
                                         club: temp2,
+                                        stats: temp,
+                                        lastUpdated: new Date()
                                     }
                                 }
                             )

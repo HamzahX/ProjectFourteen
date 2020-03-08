@@ -562,7 +562,7 @@ a {
 @media (max-width: 1200px){
     #player-search-results, #club-search-results {
         grid-template-columns: 1fr 1fr;
-        grid-row-gap: 1%;
+        grid-row-gap: 0.8vh;
     }
 }
 
@@ -585,7 +585,6 @@ a {
     }
 
     #sample-results {
-
         grid-template-columns: 1fr;
         grid-auto-flow: row;
         grid-row-gap: 6%;
@@ -622,7 +621,7 @@ a {
     }
 
     #searchbar-container1 #searchbar input, #searchbar-container2 #searchbar input {
-        max-width: unset;
+        /*max-width: unset;*/
     }
 
     #searchbar-container1, #searchbar-container2 {
@@ -687,7 +686,11 @@ a {
 
     .result {
         max-width: unset;
-        margin: 2% 1% 1%;
+        margin: 1% 1% 3% 1%;
+    }
+
+    #chart {
+        margin: 3% 1% 1% 1%;
     }
 
     #search-results {
@@ -751,7 +754,7 @@ a {
 
     #player-search-results, #club-search-results {
         grid-template-columns: 1fr;
-        grid-row-gap: 0.1%;
+        /*grid-row-gap: 0.1%;*/
     }
 
     .search-result {
@@ -903,6 +906,10 @@ a {
         max-width: 50%;
     }
 
+    #search-results {
+        overflow-y: unset;
+    }
+
     #search-results h3 {
         margin-left: 20px;
     }
@@ -918,7 +925,7 @@ a {
 
     #player-search-results, #club-search-results {
         grid-template-columns: 1fr;
-        grid-row-gap: 0.1%;
+        grid-row-gap: 0;
     }
 
     .search-result {

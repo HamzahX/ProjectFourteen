@@ -271,7 +271,7 @@ class Search extends Component {
                         URL={current.URL}
                         all={current.all}
                     />
-                )
+                );
             }
 
             let clubCards = [];
