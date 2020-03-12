@@ -484,30 +484,30 @@ class Stats extends Component {
 
                 let selectedStats = this.filterStats(allStats);
                 let series;
-                let subtitle;
+                let subtitle = "";
                 if (selectedCompetitions.length !== 0){
                     let chartInput = this.calculateChartInput(selectedStats, percentiles);
                     series = [chartInput];
-                    subtitle = "Percentile Rank Bars (w/ p90 Raw Values)<br>";
+                    // subtitle = "Percentile Rank Bars (w/ p90 Raw Values)<br>";
                     switch (template) {
                         case "FW":
-                            subtitle += "Forward Template  ║  Minutes Played: ";
+                            subtitle += "vs Top-5 League Players with 10+ Starts as Forwards<br/>";
                             break;
                         case "AM":
-                            subtitle += "Attacking Midfielder / Winger Template  ║  Minutes Played: ";
+                            subtitle += "vs Top-5 League Players with 10+ Starts as Attacking Midfielders / Wingers<br/>";
                             break;
                         case "CM":
-                            subtitle += "Central / Defensive Midfielder Template  ║  Minutes Played: ";
+                            subtitle += "vs Top-5 League Players with 10+ Starts as Central / Defensive Midfielders<br/>";
                             break;
                         case "FB":
-                            subtitle += "Full-back Template  ║  Minutes Played: ";
+                            subtitle += "vs Top-5 League Players with 10+ Starts as Full-backs<br/>";
                             break;
                         case "CB":
-                            subtitle += "Center-back Template  ║  Minutes Played: ";
+                            subtitle += "vs Top-5 League Players with 10+ Starts as Center-backs<br/>";
                             break;
                     }
 
-                    subtitle += selectedStats['minutes'].toLocaleString();
+                    subtitle += ("Percentile Rank Bars (w/ per 90 Raw Values)<br/>Minutes Played: " + selectedStats['minutes'].toLocaleString());
                     subtitle += "<br>Last Updated: " + lastUpdated + " UTC";
                 }
 

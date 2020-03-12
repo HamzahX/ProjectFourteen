@@ -615,6 +615,9 @@ a {
     #preview-image {
         padding-left: unset;
         padding-top: 5%;
+        margin: 0 auto;
+        min-width: 400px;
+        max-width: 70%;
     }
 
     #faq-container {
