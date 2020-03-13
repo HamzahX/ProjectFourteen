@@ -702,7 +702,7 @@ a {
     }
 
     #chart {
-        margin: 3% 1% 1% 1%;
+        margin: 2.5vh 1% 1% 1%;
     }
 
     #search-results {
@@ -945,11 +945,11 @@ a {
 
     #player-search-results, #club-search-results {
         grid-template-columns: 1fr;
-        grid-row-gap: 0;
+        grid-row-gap: 1vh;
     }
 
     .search-result {
-        margin-bottom: 1.5%;
+        /*margin-bottom: 1.5%;*/
     }
 
     #chart-filters {

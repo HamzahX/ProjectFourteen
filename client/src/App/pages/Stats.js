@@ -50,7 +50,7 @@ class Stats extends Component {
                 dataLabelsOutline: this.props.isMobile === true ? '0.3vw' : '0.16em',
                 tooltipHeader: this.props.isMobile === true ? '2.3vw' : '1em',
                 tooltip: this.props.isMobile === true ? '2.3vw' : '1.25em',
-                credits: this.props.isMobile === true ? '1.4vw' : '1em',
+                credits: this.props.isMobile === true ? '2vw' : '1.1em',
                 yAxisLabels: this.props.isMobile === true ? '1vw' : '0.5em',
             }
         };
@@ -507,13 +507,13 @@ class Stats extends Component {
                             break;
                     }
 
-                    subtitle += ("Percentile Rank Bars (w/ per 90 Raw Values)<br/>Minutes Played: " + selectedStats['minutes'].toLocaleString());
+                    subtitle += ("Percentile Rank Bars (with per 90 Raw Values)<br/>Minutes Played: " + selectedStats['minutes'].toLocaleString());
                     subtitle += "<br>Last Updated: " + lastUpdated + " UTC";
                 }
 
                 else {
                     series = [];
-                    subtitle = "-<br>-<br>-";
+                    subtitle = "-<br>-<br>-<br>-";
                 }
 
                 var options = {
@@ -559,7 +559,7 @@ class Stats extends Component {
                         }
                     },
                     credits: {
-                        text: "Data sources: WhoScored.com & FBref.com",
+                        text: "Data sources: Opta (via WhoScored.com) & Statsbomb (via FBref.com)",
                         style: {
                             fontSize: fontSizes['credits']
                         },
