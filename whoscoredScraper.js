@@ -3,7 +3,7 @@ const puppeteer = require('puppeteer');
 const path = require('path');
 const fs = require('fs');
 const mongoClient = require('mongodb').MongoClient;
-const mongoURI = "mongodb+srv://hamzah:containers@cluster0-wz8lb.mongodb.net/test?retryWrites=true&w=majority";
+const mongoURI = "mongodb+srv://hamzah:@cluster0-wz8lb.mongodb.net/test?retryWrites=true&w=majority";
 
 //globals
 let BROWSER;
