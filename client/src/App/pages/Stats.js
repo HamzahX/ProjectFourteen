@@ -2,11 +2,14 @@ import React, { Component } from 'react';
 
 import SearchBar from "../components/SearchBar";
 import LoadingSpinner from "../components/LoadingSpinner";
+
+import domtoimage from 'dom-to-image';
+import { saveAs } from 'file-saver';
+
 import Highcharts from 'highcharts/highstock'
 import HighchartsMore from 'highcharts/highcharts-more'
 import HighchartsParallel from 'highcharts/modules/parallel-coordinates'
 import HighchartsReact from 'highcharts-react-official'
-
 HighchartsMore(Highcharts);
 HighchartsParallel(Highcharts);
 
@@ -14,20 +17,93 @@ class Stats extends Component {
 
     constructor(props){
         super(props);
-        let categories = [
-            'Non-Penalty Goals',
-            'Non-Penalty xG',
-            'Conversion Rate',
-            'Shots on Target %',
-            'Assists',
-            'xA',
-            'Passes into the Penalty Area',
-            'Pass Completion %',
-            'Successful Dribbles',
-            'Dribble Success %',
-            'Turnovers',
-            'Recoveries',
-        ];
+        let categories = {
+            "FW": [
+                'Non-Penalty Goals',
+                'Non-Penalty xG',
+                'Conversion Rate',
+                'Shots on Target %',
+                'Assists',
+                'xA',
+                'Passes into the Penalty Area',
+                'Pass Completion %',
+                'Successful Dribbles',
+                'Dribble Success %',
+                'Turnovers',
+                'Recoveries',
+            ],
+            "AM": [
+                'Non-Penalty Goals',
+                'Non-Penalty xG',
+                'Assists',
+                'xA',
+                'Passes into the Penalty Area',
+                'Pass Completion %',
+                'Completed Crosses',
+                'Cross Completion %',
+                'Successful Dribbles',
+                'Dribble Success %',
+                'Turnovers',
+                'Recoveries',
+            ],
+            "CM": [
+                'Non-Penalty Goals + Assists',
+                'Non-Penalty xG + xA',
+                'Passes into the Final 1/3',
+                'Pass Completion %',
+                'Completed Long Passes',
+                'Long Pass Completion %',
+                'Successful Dribbles',
+                'Dribble Success %',
+                'Interceptions',
+                'Tackles Won',
+                'Tackle Win %',
+                'Fouls Committed'
+            ],
+            "FB": [
+                'Assists',
+                'xA',
+                'Passes into the Final 1/3',
+                'Pass Completion %',
+                'Completed Crosses',
+                'Cross Completion %',
+                'Successful Dribbles',
+                'Dribble Success %',
+                'Interceptions',
+                'Tackles Won',
+                'Tackle Win %',
+                'Fouls Committed'
+            ],
+            "CB": [
+                'Passes into the Final 1/3',
+                'Pass Completion %',
+                'Completed Long Passes',
+                'Long Pass Completion %',
+                'Interceptions',
+                'Tackles Won',
+                'Tackle Win %',
+                'Fouls Committed',
+                'Aerial Duels Won',
+                'Aerial Duel Win %',
+                'Blocks',
+                'Clearances'
+            ],
+            "N/A": [
+                "-",
+                "-",
+                "-",
+                "-",
+                "-",
+                "-",
+                "-",
+                "-",
+                "-",
+                "-",
+                "-",
+                "-"
+            ]
+
+        };
         this.state = {
             isLoading: false,
             allStats: {},
@@ -35,22 +111,27 @@ class Stats extends Component {
             allCompetitions: [],
             selectedCompetitions: [],
             categories: categories,
-            template: "FW",
+            selectedCategories: null,
+            template: null,
+            labelType: "raw",
             name: '',
+            age: 0,
             url: '',
             isAll: false,
             multipleClubs: false,
             isMobile: this.props.isMobile,
+            creditsPosition: "right",
+            animation: true,
             fontSizes: {
                 title: this.props.isMobile === true ? '4vw' : '2em',
-                subtitle: this.props.isMobile === true ? '2.8vw' : '1.4em',
+                subtitle: this.props.isMobile === true ? '2.7vw' : '1.4em',
                 noData: this.props.isMobile === true ? '2.7vw' : '1.35em',
                 xAxisLabels: this.props.isMobile === true ? '2.3vw' : '1.15em',
                 dataLabels: this.props.isMobile === true ? '2.3vw' : '1.25em',
-                dataLabelsOutline: this.props.isMobile === true ? '0.3vw' : '0.16em',
+                dataLabelsOutline: this.props.isMobile === true ? '0.3vw' : '0.2em',
                 tooltipHeader: this.props.isMobile === true ? '2.3vw' : '1em',
                 tooltip: this.props.isMobile === true ? '2.3vw' : '1.25em',
-                credits: this.props.isMobile === true ? '2vw' : '1.1em',
+                credits: this.props.isMobile === true ? '2.2vw' : '1.15em',
                 yAxisLabels: this.props.isMobile === true ? '1vw' : '0.5em',
             }
         };
@@ -58,12 +139,16 @@ class Stats extends Component {
         this.processStats = this.processStats.bind(this);
         this.changeTemplate = this.changeTemplate.bind(this);
         this.changeSelectedCompetitions = this.changeSelectedCompetitions.bind(this);
+        this.changeLabelType = this.changeLabelType.bind(this);
         this.selectAllCompetitions = this.selectAllCompetitions.bind(this);
         this.clearAllCompetitions = this.clearAllCompetitions.bind(this);
+        this.toggleCreditsPosition = this.toggleCreditsPosition.bind(this);
+        this.exportAsImage = this.exportAsImage.bind(this);
         this.filterStats = this.filterStats.bind(this);
         this.calculateChartInput = this.calculateChartInput.bind(this);
         this.percentRank = this.percentRank.bind(this);
         this.roundNumbers = this.roundNumbers.bind(this);
+        this.ordinalSuffix = this.ordinalSuffix.bind(this);
         this.insertChartInput = this.insertChartInput.bind(this);
     }
 
@@ -73,6 +158,8 @@ class Stats extends Component {
         }, () => {
             this.getStats();
         });
+
+        this.chartRef = this.chartRef = React.createRef();
     }
 
     getStats = () => {
@@ -92,11 +179,16 @@ class Stats extends Component {
     };
 
     processStats(response) {
+        let categories = this.state.categories;
         let multipleClubs = (response.club.length !== 1);
+        let selectedCategories = categories[response.position];
         this.setState({
             url: response.url,
             name: response.name,
+            age: response.age,
             club: response.club[0],
+            template: response.position,
+            selectedCategories: selectedCategories,
             lastUpdated: response.lastUpdated,
             allStats: response.stats,
             allCompetitions: Object.keys(response.stats),
@@ -121,7 +213,8 @@ class Stats extends Component {
         }
 
         this.setState({
-            selectedCompetitions: selectedCompetitions
+            selectedCompetitions: selectedCompetitions,
+            animation: true
         });
 
     }
@@ -144,11 +237,49 @@ class Stats extends Component {
 
     }
 
+    toggleCreditsPosition(event){
+
+        let oldPosition = this.state.creditsPosition;
+        let newPosition;
+
+        if (oldPosition === "right"){
+            newPosition = "center"
+        }
+        else {
+            newPosition = "right"
+        }
+
+        this.setState({
+            creditsPosition: newPosition
+        })
+
+    }
+
+    exportAsImage() {
+
+        let name = this.state.name;
+
+        var node = document.getElementsByClassName('highcharts-container')[0];
+
+        domtoimage.toPng(node, {
+                bgcolor: '#fafbfc'
+            })
+            .then(function (blob) {
+                window.saveAs(blob, `${name.replace(" ", "-")}.png`);
+            })
+            .catch(function (error) {
+                console.error('oops, something went wrong!', error);
+            });
+
+    }
+
     changeTemplate(event){
+
         let template = event.target.value;
 
         this.setState({
-            template: template
+            template: template,
+            animation: true
         }, () => {
             this.setCategories();
         });
@@ -157,93 +288,22 @@ class Stats extends Component {
 
     setCategories() {
         let template = this.state.template;
-
-        let categories = [];
-        switch (template) {
-            case "FW":
-                categories = [
-                    'Non-Penalty Goals',
-                    'Non-Penalty xG',
-                    'Conversion Rate',
-                    'Shots on Target %',
-                    'Assists',
-                    'xA',
-                    'Passes into the Penalty Area',
-                    'Pass Completion %',
-                    'Successful Dribbles',
-                    'Dribble Success %',
-                    'Turnovers',
-                    'Recoveries',
-                ];
-                break;
-            case "AM":
-                categories = [
-                    'Non-Penalty Goals',
-                    'Non-Penalty xG',
-                    'Assists',
-                    'xA',
-                    'Passes into the Penalty Area',
-                    'Pass Completion %',
-                    'Completed Crosses',
-                    'Cross Completion %',
-                    'Successful Dribbles',
-                    'Dribble Success %',
-                    'Turnovers',
-                    'Recoveries',
-                ];
-                break;
-            case "CM":
-                categories = [
-                    'Non-Penalty Goals + Assists',
-                    'Non-Penalty xG + xA',
-                    'Passes into the Final 1/3',
-                    'Pass Completion %',
-                    'Completed Long Passes',
-                    'Long Pass Completion %',
-                    'Successful Dribbles',
-                    'Dribble Success %',
-                    'Interceptions',
-                    'Tackles Won',
-                    'Tackle Win %',
-                    'Fouls Committed'
-                ];
-                break;
-            case "FB":
-                categories = [
-                    'Assists',
-                    'xA',
-                    'Passes into the Final 1/3',
-                    'Pass Completion %',
-                    'Completed Crosses',
-                    'Cross Completion %',
-                    'Successful Dribbles',
-                    'Dribble Success %',
-                    'Interceptions',
-                    'Tackles Won',
-                    'Tackle Win %',
-                    'Fouls Committed'
-                ];
-                break;
-            case "CB":
-                categories = [
-                    'Passes into the Final 1/3',
-                    'Pass Completion %',
-                    'Completed Long Passes',
-                    'Long Pass Completion %',
-                    'Interceptions',
-                    'Tackles Won',
-                    'Tackle Win %',
-                    'Fouls Committed',
-                    'Aerial Duels Won',
-                    'Aerial Duel Win %',
-                    'Blocks',
-                    'Clearances'
-                ];
-                break;
-        }
+        let categories = this.state.categories;
+        let selectedCategories = categories[template];
 
         this.setState({
-            categories: categories
+            selectedCategories: selectedCategories
+        })
+
+    }
+
+    changeLabelType(event){
+
+        let labelType = event.target.value;
+
+        this.setState({
+            labelType: labelType,
+            animation: false
         })
 
     }
@@ -372,6 +432,23 @@ class Stats extends Component {
                 }
                 percentiles['fouls'] = 100 - percentiles['fouls'];
                 break;
+            case "N/A":
+                statsPer90['goals'] = 0;
+                statsPer90['xG'] = 0;
+                statsPer90['conversionRate'] = 0;
+                statsPer90['shotsOnTarget'] = 0;
+                statsPer90['assists'] = 0;
+                statsPer90['xA'] = 0;
+                statsPer90['PPA'] = 0;
+                statsPer90['passingRate'] = 0;
+                statsPer90['succDribbles'] = 0;
+                statsPer90['dribbleRate'] = 0;
+                statsPer90['possessionLosses'] = 0;
+                statsPer90['recoveries'] = 0;
+                for (let key in statsPer90){
+                    percentiles[key] = 0
+                }
+                break;
         }
         return this.insertChartInput(statsPer90, percentiles);
     }
@@ -405,6 +482,21 @@ class Stats extends Component {
         return someStats;
     }
 
+    ordinalSuffix(i) {
+        var j = i % 10,
+            k = i % 100;
+        if (j === 1 && k !== 11) {
+            return i + "st";
+        }
+        if (j === 2 && k !== 12) {
+            return i + "nd";
+        }
+        if (j === 3 && k !== 13) {
+            return i + "rd";
+        }
+        return i + "th";
+    }
+
     insertChartInput(statsPer90, percentiles) {
         let template = this.state.template;
         let colors = [];
@@ -420,15 +512,23 @@ class Stats extends Component {
         else if (template === "FB"){
             colors = [6, 6, 6, 6, 6, 6, 2, 2, 0, 0, 0, 0];
         }
-        else {
+        else if (template === "CB") {
             colors = [6, 6, 6, 6, 0, 0, 0, 0, 0, 0, 0, 0];
+        }
+        else {
+            colors = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
         }
         statsPer90 = this.roundNumbers(statsPer90, 2);
         percentiles = this.roundNumbers(percentiles, 0);
         let chartInput = [];
         let i = 0;
         for (let key in percentiles){
-            chartInput[i] = {y: percentiles[key], p90: statsPer90[key], color: Highcharts.Color(Highcharts.getOptions().colors[colors[i]]).setOpacity(0.8).get()};
+            chartInput[i] = {
+                y: percentiles[key],
+                percentile: this.ordinalSuffix(percentiles[key]),
+                p90: statsPer90[key],
+                color: Highcharts.Color(Highcharts.getOptions().colors[colors[i]]).setOpacity(0.85).get()
+            };
             i++;
         }
         return chartInput;
@@ -438,17 +538,21 @@ class Stats extends Component {
 
         let {
             name,
+            age,
             url,
             club,
             lastUpdated,
             selectedCompetitions,
             template,
-            categories,
+            selectedCategories,
+            labelType,
             allStats,
             percentiles,
             isLoading,
             multipleClubs,
             fontSizes,
+            creditsPosition,
+            animation,
             isMobile
         } = this.state;
 
@@ -460,7 +564,7 @@ class Stats extends Component {
 
         else {
             let allCompetitions = this.state.allCompetitions;
-            let cards = [];
+            let competitionLabels = [];
             for (let i=0; i<allCompetitions.length; i++){
                 let current = allCompetitions[i];
                 let isIncluded = selectedCompetitions.includes(current);
@@ -468,7 +572,7 @@ class Stats extends Component {
                 if (!multipleClubs){
                     label = label.substring(0, label.indexOf("|")-1)
                 }
-                cards.push(
+                competitionLabels.push(
                     <label className={isIncluded ? "selected-label" : null}>
                         <input className="competition"
                                type="checkbox"
@@ -480,15 +584,15 @@ class Stats extends Component {
                 )
             }
 
-            if (percentiles.length !== 0 && Object.keys(allStats).length !== 0 && categories !== []) {
+            if (percentiles.length !== 0 && Object.keys(allStats).length !== 0 && selectedCategories !== []) {
 
                 let selectedStats = this.filterStats(allStats);
                 let series;
                 let subtitle = "";
                 if (selectedCompetitions.length !== 0){
+                    subtitle = `Age: ${age} ║ Minutes Played: ${selectedStats['minutes'].toLocaleString()}<br/>`;
                     let chartInput = this.calculateChartInput(selectedStats, percentiles);
                     series = [chartInput];
-                    // subtitle = "Percentile Rank Bars (w/ p90 Raw Values)<br>";
                     switch (template) {
                         case "FW":
                             subtitle += "vs Top-5 League Players with 10+ Starts as Forwards<br/>";
@@ -505,19 +609,28 @@ class Stats extends Component {
                         case "CB":
                             subtitle += "vs Top-5 League Players with 10+ Starts as Center-backs<br/>";
                             break;
+                        case "N/A":
+                            subtitle += "No template selected<br/>"
                     }
-
-                    subtitle += ("Percentile Rank Bars (with per 90 Raw Values)<br/>Minutes Played: " + selectedStats['minutes'].toLocaleString());
-                    subtitle += "<br>Last Updated: " + lastUpdated + " UTC";
+                    if (template !== "N/A"){
+                        subtitle += "Percentile Rank Bars w/ Per 90 Stats<br/>";
+                    }
+                    else {
+                        subtitle += "-<br/>"
+                    }
                 }
 
                 else {
                     series = [];
-                    subtitle = "-<br>-<br>-<br>-";
+                    subtitle = "-<br>-<br>-";
                 }
+
+                let credits = `Last Updated: ${lastUpdated} UTC ${isMobile ? '<br/>.<br/>' : '<br/>'}Sources: Opta (via WhoScored.com) & StatsBomb (via FBref.com)`;
+                let creditsOffset = isMobile ? -40 : -20;
 
                 var options = {
                     chart: {
+                        animation: animation,
                         backgroundColor: 'rgba(0, 0, 0, 0)',
                         style: {
                             fontFamily: 'sans-serif'
@@ -544,12 +657,12 @@ class Stats extends Component {
                         type: 'column',
                         // plotBackgroundColor: '#F5F6F7',
                         // plotShadow: true,
-                        hideDelay: 0,
+                        // hideDelay: 0,
                         spacingLeft: 0,
                         spacingRight: 0,
                         marginLeft: 90,
                         marginRight: 90,
-                        marginBottom: 30,
+                        marginBottom: (creditsPosition === "right" && !isMobile) ? 30 : 60,
                         events: {
                             load: function() {
                                 this.title.element.onclick = function() {
@@ -559,7 +672,11 @@ class Stats extends Component {
                         }
                     },
                     credits: {
-                        text: "Data sources: Opta (via WhoScored.com) & Statsbomb (via FBref.com)",
+                        text: credits,
+                        position: {
+                            align: creditsPosition,
+                            y: creditsOffset
+                        },
                         style: {
                             fontSize: fontSizes['credits']
                         },
@@ -567,17 +684,15 @@ class Stats extends Component {
                     },
                     plotOptions: {
                         series: {
-                            color: Highcharts.Color(Highcharts.getOptions().colors[0]).setOpacity(0.6).get(),
                             dataLabels: {
-                                enabled: true,
-                                inside: true,
+                                enabled: template !== "N/A",
                                 style: {
-                                    color: "black",
-                                    fontWeight: '600',
+                                    // color: "black",
+                                    fontWeight: 'bold',
                                     fontSize: fontSizes['dataLabels'],
                                     textOutline: fontSizes['dataLabelsOutline'] + " #fafbfc"
                                 },
-                                format: '{point.p90}',
+                                format: labelType === "raw" ? '{point.p90}' : '{point.percentile}',
                                 padding: 0,
                                 allowOverlap: true,
                                 z: 7
@@ -595,12 +710,15 @@ class Stats extends Component {
                         margin: 35
                     },
                     pane: {
-                        startAngle: -16.3636363636363636363
+                        startAngle: -15
                     },
                     lang: {
                         noData: "Select a competition"
                     },
                     noData: {
+                        attr: {
+                            zIndex: 6
+                        },
                         style: {
                             fontWeight: 'bold',
                             fontSize: fontSizes['noData'],
@@ -610,6 +728,7 @@ class Stats extends Component {
                     subtitle: {
                         text: subtitle,
                         style: {
+                            fontWeight: 'bold',
                             // color: 'black',
                             fontSize: fontSizes['subtitle']
                         }
@@ -617,7 +736,7 @@ class Stats extends Component {
                     tooltip: {
                         headerFormat: '<span style="font-size: ' + fontSizes['tooltipHeader'] + '">{point.key}</span><br/>',
                         pointFormat: '<span style="color:{point.color}">\u25CF</span>' +
-                            ' {series.name}<br>Raw Value: <b>{point.p90}</b><br/>Percentile Rank: <b>{point.formattedValue}</b>',
+                            ' {series.name}<br>Raw Value: <b>{point.p90}</b><br/>Percentile Rank: <b>{point.percentile}</b>',
                         style: {
                             fontSize: fontSizes['tooltip']
                         }
@@ -630,11 +749,12 @@ class Stats extends Component {
                         layout: 'horizontal'
                     },
                     xAxis: {
-                        categories: categories,
+                        categories: selectedCategories,
                         labels: {
                             zIndex: 1,
                             distance: isMobile === true ? 60 : 40,
                             style: {
+                                color: 'black',
                                 fontSize: fontSizes['xAxisLabels'],
                             },
                             padding: 31
@@ -684,7 +804,16 @@ class Stats extends Component {
                                 <h3>Competitions</h3>
                                 <h4 style={{marginBottom: '10px'}}>19/20 {multipleClubs === false ? ' | ' + club : null}</h4>
                                 <form id="competitions">
-                                    {cards}
+                                    {competitionLabels}
+                                </form>
+                                <h3>Data Labels</h3>
+                                <form id="data-labels" onChange={this.changeLabelType}>
+                                    <label className={labelType === "raw" ? "selected-label" : null}>
+                                        <input type="radio" name="labelType" value="raw" checked={labelType === "raw" ? true: null}/> <span>Per 90 Stats</span>
+                                    </label>
+                                    <label className={labelType === "percentiles" ? "selected-label" : null}>
+                                        <input type="radio" name="labelType" value="percentiles" checked={labelType === "percentiles" ? true: null}/> <span>Percentile Ranks</span>
+                                    </label>
                                 </form>
                             </div>
                             <div className="chart-filter-inputs" id="chart-filter-inputs-mobile">
@@ -712,16 +841,25 @@ class Stats extends Component {
                                     <h3 style={{marginBottom: '0px'}}>Competitions</h3>
                                     <h4 style={{marginBottom: '20px'}}>19/20 {multipleClubs === false ? ' | ' + club : null}</h4>
                                     <form id="competitions">
-                                        {cards}
+                                        {competitionLabels}
                                     </form>
                                 </div>
+                                <h3>Data Labels</h3>
+                                <form id="data-labels" onChange={this.changeLabelType}>
+                                    <label className={labelType === "raw" ? "selected-label" : null}>
+                                        <input type="radio" name="labelType" value="raw" checked={labelType === "raw" ? true: null}/> <span>Per 90 Stats</span>
+                                    </label>
+                                    <label className={labelType === "percentiles" ? "selected-label" : null}>
+                                        <input type="radio" name="labelType" value="percentiles" checked={labelType === "percentiles" ? true: null}/> <span>Percentile Ranks</span>
+                                    </label>
+                                </form>
                             </div>
                             <div id="filter-buttons">
                                 <div className="filter-button">
-                                    <button id="selectAllButton" type="button" onClick={this.selectAllCompetitions}>Select All Competitions</button>
+                                    <button id="toggleCreditsButton" type="button" onClick={this.toggleCreditsPosition}>Toggle Credits Position</button>
                                 </div>
                                 <div className="filter-button">
-                                    <button id="clearAllButton" type="button" onClick={this.clearAllCompetitions}>Clear All Competitions</button>
+                                    <button id="exportButton" type="button" onClick={this.exportAsImage}>Export Chart as PNG</button>
                                 </div>
                                 <div className="filter-button">
                                     <button id="compareButton" type="button" disabled={true}>Compare To...</button>
@@ -734,6 +872,7 @@ class Stats extends Component {
                                 highcharts={Highcharts}
                                 containerProps={{style: {width: '100%'}}}
                                 options={options}
+                                ref={this.chartRef}
                             />
                         </div>
                     </div>

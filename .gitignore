@@ -1,9 +1,11 @@
 .idea/
 node_modules/
 serverUtils/
+whoscoredScraper.js
 fbrefMapper.js
 fbrefMapper2.js
 fbrefScraper.js
+positionScraper.js
 percentileScraper.js
-percentileScraper2.js
 index.test.js
+whoscoredScraper.js

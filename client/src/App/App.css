@@ -147,6 +147,7 @@ a {
     align-items: center;
     padding-bottom: 6%;
     height: 100vh;
+    min-height: 700px;
 }
 
     #home #searchbar-container3 {
@@ -260,9 +261,17 @@ a {
 #main, #main2 {
     display: flex;
     flex-direction: column;
-    min-height: 750px;
+    min-height: 700px;
     height: 100%;
 }
+
+/*#main {*/
+/*    min-height: 1000px;*/
+/*}*/
+
+/*#main2 {*/
+/*    min-height: 700px;*/
+/*}*/
 
 .searchbar-container {
     display: flex;
@@ -491,7 +500,7 @@ a {
     /*box-shadow: 0 0 10px 2px lightgray;*/
 }
 
-#selectAllButton, #clearAllButton, #compareButton {
+#toggleCreditsButton, #exportButton, #compareButton {
     color: #B23535;
     /*background-color: transparent;*/
     background-color: #f0f0f0;
@@ -501,7 +510,7 @@ a {
     color: lightgrey;
 }
 
-#selectAllButton:hover, #clearAllButton:hover {
+#toggleCreditsButton:hover, #exportButton:hover {
     background-color: #dcdcdc;
 }
 
@@ -515,13 +524,13 @@ a {
     flex-direction: row;
 }
 
-.highcharts-data-label {
-    opacity: 1 !important;
-}
+/*.highcharts-data-label {*/
+/*    opacity: 1 !important;*/
+/*}*/
 
-.highcharts-data-label text {
-    opacity: 1 !important;
-}
+/*.highcharts-data-label text {*/
+/*    opacity: 1 !important;*/
+/*}*/
 
 .highcharts-container  svg .highcharts-yaxis-grid path:nth-child(6){
     stroke: #333333;
@@ -531,7 +540,7 @@ a {
 .highcharts-container  svg .highcharts-yaxis-grid path:nth-child(2) {
     fill: #fafbfc !important;
     stroke: #333333;
-    /*stroke-width: 2;*/
+    /*stroke-width: 1.5;*/
 }
 
 .highcharts-container  svg .highcharts-yaxis-grid path:not(:nth-child(2)):not(:nth-child(6)) {
@@ -601,7 +610,7 @@ a {
     }
 
     .sample-player {
-        padding: 2%;
+        padding: 4%;
     }
 
     .sample-player .name, .sample-player .club {
@@ -721,13 +730,17 @@ a {
     }
 
     .chart-filter-inputs form {
-        column-count: 2;
-        -webkit-column-count: 2;
-        -moz-column-count: 2;
+        display: flex;
+        flex-flow: wrap row;
+        /*flex-wrap: wrap;*/
     }
 
     .chart-filter-inputs form label {
-        break-inside: avoid-column;
+        /*display: unset;*/
+        flex: 1 0 50%;
+        max-width: 50%;
+        /*break-inside: avoid-column;*/
+        /*overflow: visible;*/
     }
 
     #filter-buttons {
@@ -832,7 +845,7 @@ a {
     }
 
     .sample-player {
-        padding: 2%;
+        padding: 6%;
     }
 
     .sample-player .name, .sample-player .club {

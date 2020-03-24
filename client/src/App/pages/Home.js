@@ -97,7 +97,7 @@ class Home extends Component {
                                 <p>
                                     Explore a database of <span className="accented-p">1,900+</span> players from
                                     Europe's top <span className="accented-p">5</span> leagues from this season, and
-                                    hopefully much more in the near future.
+                                    hopefully previous seasons as well in the near future.
                                 </p>
                                 <p>
                                     Simply choose from <span className="accented-p">5</span> positional templates, toggle the
@@ -108,17 +108,17 @@ class Home extends Component {
                                 <p>
                                     Each chart consists of 12 wedges. The size of each wedge corresponds to the
                                     percentile rank of the selected player with regards to the stat represented by the
-                                    wedge. The data labels show the raw (per 90) value.
+                                    wedge. The data labels show the raw per 90 value.
                                 </p>
                                 <p>
                                     The colours are meant to help group similar-ish stats together
                                     (as well as improve the charts' visual impact).
                                 </p>
                                 <ul>
-                                    <li><span style={{color: '#f37c98'}}>Red</span> is for goal-scoring & shooting stats,</li>
-                                    <li><span style={{color: '#d7c971'}}>Yellow</span> is for passing & chance creation,</li>
-                                    <li><span style={{color: '#91d782'}}>Green</span> is for dribbling & ball retention</li>
-                                    <li>and <span style={{color: '#95c3ef'}}>Blue</span> is for defensive stats</li>
+                                    <li><span style={{color: '#f15c80'}}>Red</span> is for goal-scoring & shooting stats,</li>
+                                    <li><span style={{color: '#e4d354'}}>Yellow</span> is for passing & chance creation,</li>
+                                    <li><span style={{color: '#90ed7d'}}>Green</span> is for dribbling & ball retention</li>
+                                    <li>and <span style={{color: '#7cb5ec'}}>Blue</span> is for defensive stats.</li>
                                 </ul>
                             </div>
                             <div id="preview-image">
@@ -131,11 +131,18 @@ class Home extends Component {
                             <h2>F.A.Q.</h2>
                             <div id="faq-container">
                                 <div className="faq-item">
-                                    <p><span className="accented-p">Where do you get your data from?</span></p>
-                                    <p><a href="https://www.whoscored.com" >WhoScored.com</a> and <a href="https://www.fbref.com">FBref.com</a></p>
+                                    <p><span className="accented-p">Where does the data come from?</span></p>
+                                    <p><a href="https://www.whoscored.com" >WhoScored.com</a> and <a href="https://www.fbref.com">FBref.com</a>.</p>
                                 </div>
                                 <div className="faq-item">
-                                    <p><span className="accented-p">I can't find a player, and he plays in one of the top 5 leagues. Why?</span></p>
+                                    <p><span className="accented-p">Will the dataset be expanded to include players that aren't in the top 5 leagues?</span></p>
+                                    <p>
+                                        Probably not. This is due to the fact that <a href="https://www.fbref.com">FBref.com</a> only
+                                        has xG and xA data for a few competitions.
+                                    </p>
+                                </div>
+                                <div className="faq-item">
+                                    <p><span className="accented-p">I can't find a player, and they play in one of the top 5 leagues. Why?</span></p>
                                     <p>
                                         This is likely due to one of two reasons:
                                     </p>
@@ -144,8 +151,8 @@ class Home extends Component {
                                             The database only includes players who've made 4 or more league appearances this season.
                                         </li>
                                         <li>
-                                            The search function doesn't always detect special characters such as Ø and é like it's
-                                            supposed to (I'm working on it). You can try searching by club instead.
+                                            Some players are listed under their nickname. For example, try searching for "Chicharito" instead
+                                            of "Javier Hernandez".
                                         </li>
                                     </ol>
                                 </div>
@@ -168,7 +175,7 @@ class Home extends Component {
                                         dataset. To obtain a list of players who play in each of the 5 template positions,
                                         the tool uses the <a href="https://whoscored.com/Statistics">
                                         WhoScored.com player statistics table</a> to select all top 5 league players
-                                        who have accumulated 10 or more starts this season in the said position. Their stats
+                                        who have accumulated 10 or more league starts this season in the said position. Their stats
                                         from all competitions are then recorded in the dataset for their position.
                                     </p>
                                     <p>
@@ -186,8 +193,8 @@ class Home extends Component {
                         <div id="contact-section-container">
                             <h2>Contact</h2>
                             <p>
-                                For any bug reports, suggestions or questions, please feel free to reach out to me on twitter
-                                <a href="https://twitter.com/DyslexicDdue" > @DyslexicDdue</a>
+                                For any bug reports, suggestions or questions, please feel free to reach out to me on
+                                twitter <a href="https://twitter.com/DyslexicDdue" >@DyslexicDdue</a>.
                             </p>
                         </div>
                     </div>

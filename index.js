@@ -13,7 +13,6 @@ const mongoClient = require('mongodb').MongoClient;
 const mongoURI = "mongodb+srv://hamzah:" + process.env.MONGOPASSWORD + "@cluster0-wz8lb.mongodb.net/test?retryWrites=true&w=majority";
 
 //helper functions
-const countryCodes = require('./countryCodes.js');
 const clubsList = JSON.parse(fs.readFileSync(path.join(__dirname, 'clubsList.json')));
 const dateFormat = require('dateformat');
 
@@ -44,8 +43,8 @@ let connectToDatabase = async () => {
             }
             else {
                 DB = client.db("ProjectFourteen");
-                PLAYERSCOLLECTION = DB.collection('Players');
-                PERCENTILEARRAYSCOLLECTION = DB.collection('PercentileArrays');
+                PLAYERSCOLLECTION = DB.collection('PlayersTemp');
+                PERCENTILEARRAYSCOLLECTION = DB.collection('PercentileArraysTemp');
                 console.timeEnd('database connection');
                 resolve();
             }
@@ -156,15 +155,9 @@ app.post('/api/stats', (req, res) => {
     URL = URL.replace("Show", "History")
         .split("_").join("/");
     getStats(URL).then(
-        (response) => {
+        (stats) => {
             setTimeout(function(){
-                res.json({
-                    url: response.url,
-                    name: response.name,
-                    club: response.club,
-                    stats: response.stats,
-                    lastUpdated: response.lastUpdated,
-                });
+                res.json(stats);
             }, 300)
         },
         () => {
@@ -191,9 +184,8 @@ app.get('*', (req,res) =>{
 let search = async (aQuery, theType) => {
 
     return new Promise(async function(resolve, reject){
-        console.log("Searching the database for: " + aQuery);
-        console.time("Time taken to return search results");
         if (theType === "playersAndClubs"){
+            console.log("Searching for: " + aQuery);
             let clubSearchResults = [];
             let playerSearchResults = [];
             for (let i=0; i<clubsList.length; i++){
@@ -201,20 +193,32 @@ let search = async (aQuery, theType) => {
                     clubSearchResults.push(clubsList[i]);
                 }
             }
-            PLAYERSCOLLECTION.find({$text:
-                {
-                    $search: '\"' + aQuery + '\"',
-                    $language: "en",
-                    $caseSensitive: false,
-                    $diacriticSensitive: false
-                }
-            }).toArray(function(err, docs) {
+            // PLAYERSCOLLECTION.find({$or:
+            //     [
+            //         {name: {$regex: aQuery, $options: 'i'}}.collation({locale: "en", strength: 1}),
+            //         {simplifiedName: {$regex: aQuery, $options: 'i'}}.collation({locale: "en", strength: 1})
+            //     ]})
+            // PLAYERSCOLLECTION.find({$text: {
+            //         $search: '\"' + aQuery + '\"',
+            //         $language: "en",
+            //         $caseSensitive: false,
+            //         $diacriticSensitive: false
+            //     }
+            // })
+            // PLAYERSCOLLECTION.find({$or: [{name: {$regex: aQuery, $options: 'i'}}).collation({locale: "en", strength: 1}]})
+            // PLAYERSCOLLECTION.find({ $text: { $search: '\"' + aQuery + '\"'}}).collation({locale: "en", strength: 1})
+            PLAYERSCOLLECTION.find(
+                {$or: [
+                        {name: {$regex: '\"' + aQuery + '\"' , $options: 'i'}},
+                        {simplifiedName: {$regex: aQuery, $options: 'i'}}
+                ]}
+            )
+                .toArray(function(err, docs) {
                 if (err){
-                    console.timeEnd("Time taken to return search results");
+                    console.log(err);
                     reject();
                 }
                 else if (docs.length === 0){
-                    console.timeEnd("Time taken to return search results");
                     let searchResults = {
                         clubSearchResults: clubSearchResults,
                         playerSearchResults: playerSearchResults,
@@ -226,7 +230,7 @@ let search = async (aQuery, theType) => {
                         let result = {
                             name: docs[i].name,
                             club: docs[i].club,
-                            nationality: countryCodes.getCountryName(docs[i].countryCode.toUpperCase()),
+                            nationality: docs[i].nationality,
                             URL: docs[i].url,
                             all: false
                         };
@@ -237,19 +241,17 @@ let search = async (aQuery, theType) => {
                         clubSearchResults: clubSearchResults,
                         playerSearchResults: playerSearchResults,
                     };
-                    console.timeEnd("Time taken to return search results");
                     resolve(searchResults);
                 }
             });
         }
         else if (theType === "playersByClub"){
+            console.log("Retrieving players who play for: " + aQuery);
             PLAYERSCOLLECTION.find({club: aQuery}).toArray(function(err, docs) {
                 if (err){
-                    console.timeEnd("Time taken to return search results");
                     reject();
                 }
                 else if (docs.length === 0){
-                    console.timeEnd("Time taken to return search results");
                     reject();
                 }
                 else {
@@ -258,7 +260,7 @@ let search = async (aQuery, theType) => {
                         let result = {
                             name: docs[i].name,
                             club: docs[i].club,
-                            nationality: countryCodes.getCountryName(docs[i].countryCode.toUpperCase()),
+                            nationality: docs[i].nationality,
                             URL: docs[i].url,
                             all: false
                         };
@@ -268,7 +270,6 @@ let search = async (aQuery, theType) => {
                         clubSearchResults: [],
                         playerSearchResults: playerSearchResults,
                     };
-                    console.timeEnd("Time taken to return search results");
                     resolve(searchResults);
                 }
             });
@@ -286,29 +287,29 @@ let search = async (aQuery, theType) => {
 let getStats = async (aURL) => {
 
     return new Promise(async function(resolve, reject){
-        console.log("Retrieving stats from the database for: " + aURL);
-        console.time("Time taken to return stats");
+        console.log("Retrieving stats for: " + aURL);
         PLAYERSCOLLECTION.find({"url": aURL}).toArray(function (err, docs) {
             if (err) {
-                console.timeEnd("Time taken to return search results");
                 reject();
             } else if (docs.length === 0) {
-                console.timeEnd("Time taken to return search results");
                 reject();
             } else {
                 let url = docs[0].url;
                 let name = docs[0].name;
                 let club = docs[0].club;
+                let age = docs[0].age;
+                let position = docs[0].position;
                 let stats = docs[0].stats;
                 let lastUpdated = docs[0].lastUpdated;
                 let returnObject = {
                     url: url,
                     name: name,
-                    stats: stats,
                     club: club,
-                    lastUpdated: dateFormat(lastUpdated, "dd/mm/yyyy, h:MM:ss TT", true)
+                    age: age,
+                    position: position,
+                    stats: stats,
+                    lastUpdated: dateFormat(lastUpdated, "dd/mm/yyyy, h:MM TT", true)
                 };
-                console.timeEnd("Time taken to return stats");
                 resolve(returnObject);
             }
         });
@@ -325,7 +326,11 @@ let getSamplePlayers = async () => {
     let samplePlayers = [];
 
     return new Promise(async function(resolve, reject){
-        PLAYERSCOLLECTION.aggregate([ {$sample: {size: 3}} ]).toArray(function (err, docs) {
+        PLAYERSCOLLECTION.aggregate([
+            {$match: {position: {$ne: "N/A"}}},
+            {$sample: {size: 3}}
+            ])
+            .toArray(function (err, docs) {
             if (err) {
                 reject();
             } else if (docs.length === 0) {
@@ -339,7 +344,7 @@ let getSamplePlayers = async () => {
                         url: url,
                         name: name,
                         club: club,
-                        nationality: countryCodes.getCountryName(docs[i].countryCode.toUpperCase()),
+                        nationality: docs[i].nationality
                     };
                     samplePlayers.push(samplePlayer);
                 }
