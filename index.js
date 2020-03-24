@@ -43,8 +43,15 @@ let connectToDatabase = async () => {
             }
             else {
                 DB = client.db("ProjectFourteen");
-                PLAYERSCOLLECTION = DB.collection('PlayersTemp');
-                PERCENTILEARRAYSCOLLECTION = DB.collection('PercentileArraysTemp');
+                if (process.env.NODE_ENV === "production"){
+                    console.log("production");
+                    PLAYERSCOLLECTION = DB.collection('Players');
+                    PERCENTILEARRAYSCOLLECTION = DB.collection('PercentileArrays');
+                }
+                else {
+                    PLAYERSCOLLECTION = DB.collection('PlayersTemp');
+                    PERCENTILEARRAYSCOLLECTION = DB.collection('PercentileArraysTemp');
+                }
                 console.timeEnd('database connection');
                 resolve();
             }
