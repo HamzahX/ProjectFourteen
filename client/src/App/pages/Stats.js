@@ -250,6 +250,7 @@ class Stats extends Component {
         }
 
         this.setState({
+            animation: false,
             creditsPosition: newPosition
         })
 
@@ -257,19 +258,39 @@ class Stats extends Component {
 
     exportAsImage() {
 
-        let name = this.state.name;
+        const isMobile = this.state.isMobile;
+        const name = this.state.name;
 
-        var node = document.getElementsByClassName('highcharts-container')[0];
+        const scale = isMobile ? 1 : 2;
+        let node = document.getElementsByClassName('highcharts-container')[0];
 
-        domtoimage.toPng(node, {
+        if (isMobile) {
+            domtoimage.toPng(node, {
                 bgcolor: '#fafbfc'
             })
             .then(function (blob) {
                 window.saveAs(blob, `${name.replace(" ", "-")}.png`);
             })
+                .catch(function (error) {
+                    alert("An error occurred while downloading the PNG. Please refresh the page and try again")
+                });
+        }
+        else {
+            domtoimage.toPng(node, {
+                bgcolor: '#fafbfc',
+                height: node.offsetHeight * scale,
+                width: node.offsetWidth * scale,
+                style: {
+                    transform: `scale(${scale}) translate(${node.offsetWidth / 2 / scale}px, ${node.offsetHeight / 2 / scale}px)`
+                }
+            })
+            .then(function (blob) {
+                window.saveAs(blob, `${name.replace(" ", "-")}.png`);
+            })
             .catch(function (error) {
-                console.error('oops, something went wrong!', error);
+                alert("An error occurred while downloading the PNG. Please refresh the page and try again")
             });
+        }
 
     }
 
