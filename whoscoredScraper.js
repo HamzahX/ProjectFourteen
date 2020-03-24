@@ -3,13 +3,21 @@ const puppeteer = require('puppeteer');
 const path = require('path');
 const fs = require('fs');
 const mongoClient = require('mongodb').MongoClient;
+// const mongoURI = "mongodb+srv://hamzah:" + process.env.MONGOPASSWORD + "@cluster0-wz8lb.mongodb.net/test?retryWrites=true&w=majority";
 const mongoURI = "mongodb+srv://hamzah:containers@cluster0-wz8lb.mongodb.net/test?retryWrites=true&w=majority";
+const countryCodes = require('./countryCodes.js');
 
 //globals
 let BROWSER;
 let PAGE;
 let URL;
 let COMPETITIONFULL;
+
+let FWPlayers;
+let AMPlayers;
+let CMPlayers;
+let FBPlayers;
+let CBPlayers;
 
 //process command-line arguments
 let args = process.argv.slice(2);
@@ -258,6 +266,12 @@ let processRawData = async () => {
             }
         }
 
+        FWPlayers = JSON.parse(fs.readFileSync(path.join(__dirname, '/serverUtils/FWPlayers.json')))['urls'];
+        AMPlayers = JSON.parse(fs.readFileSync(path.join(__dirname, '/serverUtils/AMPlayers.json')))['urls'];
+        CMPlayers = JSON.parse(fs.readFileSync(path.join(__dirname, '/serverUtils/CMPlayers.json')))['urls'];
+        FBPlayers = JSON.parse(fs.readFileSync(path.join(__dirname, '/serverUtils/FBPlayers.json')))['urls'];
+        CBPlayers = JSON.parse(fs.readFileSync(path.join(__dirname, '/serverUtils/CBPlayers.json')))['urls'];
+
         // loop through all rawData this time and fill player's objects in processedData
         for (let i = 0; i < rawData.length; i++) {
             for (let player in rawData[i]) { //for every player in a rawData object
@@ -267,6 +281,12 @@ let processRawData = async () => {
                         // initialize the player's stats for said entry in processedData
                         if (entry === 'club'){
                             processedData[processedPlayer][entry] = [rawData[i][player][entry]]
+                        }
+                        else if (entry === 'countryCode'){
+                            processedData[processedPlayer][entry] = countryCodes.getCountryName(rawData[i][player][entry].toUpperCase())
+                        }
+                        else if (entry === 'position'){
+                            processedData[processedPlayer][entry] = processPlayerPosition(rawData[i][player][entry], processedPlayer);
                         }
                         else {
                             processedData[processedPlayer][entry] = rawData[i][player][entry];
@@ -308,6 +328,47 @@ let processRawData = async () => {
         });
     }
 
+};
+
+let processPlayerPosition = (aString, theURL) => {
+    if (FWPlayers.includes(theURL)){
+        return "FW"
+    }
+    else if (AMPlayers.includes(theURL)){
+        return "AM"
+    }
+    else if (CMPlayers.includes(theURL)){
+        return "CM"
+    }
+    else if (FBPlayers.includes(theURL)){
+        return "FB"
+    }
+    else if (CBPlayers.includes(theURL)){
+        return "CB"
+    }
+    else {
+        return "N/A"
+    }
+    // else {
+    //     if (aString.startsWith("FW")){
+    //         return "FW"
+    //     }
+    //     else if (aString.startsWith("AM") || aString.startsWith("M(R") || aString.startsWith("M(L")){
+    //         return "AM"
+    //     }
+    //     else if (aString.startsWith("M(C")){
+    //         return "CM"
+    //     }
+    //     else if (aString.startsWith("D(L") || aString.startsWith("D(R")){
+    //         return "FB"
+    //     }
+    //     else if (aString.startsWith("D(C")){
+    //         return "CB"
+    //     }
+    //     else {
+    //         return "N/A"
+    //     }
+    // }
 };
 
 /**
@@ -590,9 +651,17 @@ let scrapeAssists = async (page, firstIteration) => {
                 currentCompetition = metadata[1];
                 let currentPlayerName = tds[i].innerHTML.substring(tds[i].innerHTML.indexOf('">')+2, tds[i].innerHTML.indexOf(' </a>', 0));
                 let currentPlayerClub = tds[i].innerHTML.substring(tds[i].innerHTML.indexOf('team-name">')+11, tds[i].innerHTML.indexOf(', </span>', 0)).replace(".", "'");
+                let temp = tds[i].innerHTML.indexOf('player-meta-data">');
+                let temp2 = tds[i].innerHTML.indexOf('player-meta-data">', temp+18);
+                let temp3 = tds[i].innerHTML.indexOf('</span>', tds[i].innerHTML.indexOf('</span>')+7);
+                let temp4 = tds[i].innerHTML.indexOf('</span>', temp3+7);
+                let age = tds[i].innerHTML.substring(tds[i].innerHTML.indexOf('player-meta-data">', temp+18)+18, temp3);
+                let positionString = tds[i].innerHTML.substring(tds[i].innerHTML.indexOf('player-meta-data">', temp2+18)+19, temp4).trim();
                 let flagtd = tds[i - 1];
                 let countryCode = flagtd.innerHTML.substring(flagtd.innerHTML.indexOf('flg-')+4, flagtd.innerHTML.indexOf('"></span>'));
                 assists[currentPlayer]['name'] = currentPlayerName;
+                assists[currentPlayer]['age'] = parseInt(age, 10);
+                assists[currentPlayer]['position'] = positionString;
                 assists[currentPlayer]['club'] = currentPlayerClub;
                 assists[currentPlayer]['countryCode'] = countryCode;
             } else {
@@ -1268,31 +1337,53 @@ let uploadToDatabase = async () => {
         if (COMPETITION === "db"){
 
             let processedData = JSON.parse(fs.readFileSync(path.join(__dirname, '/serverUtils/processed.json')));
+            let promises = [];
 
             mongoClient.connect(mongoURI, {useUnifiedTopology: true}, function(err, client) {
                 console.log("Connected to database");
                 let db = client.db("ProjectFourteen");
-                let collection = db.collection('Players');
+                let collection = db.collection('PlayersTemp');
                 for (let player in processedData){
                     let processedPlayer = processedData[player];
                     let url = player;
                     let name = processedPlayer['name'];
+                    let simplifiedName = name.normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace("Ø", "O");
                     let countryCode = processedPlayer['countryCode'];
                     let club = processedPlayer['club'];
+                    let age = processedPlayer['age'];
+                    let position = processedPlayer['position'];
                     delete processedPlayer['name'];
                     delete processedPlayer['club'];
+                    delete processedPlayer['age'];
                     delete processedPlayer['countryCode'];
+                    delete processedPlayer['position'];
                     collection.find({"url": player}).toArray(function (err, docs) {
                         if (err) {
                             console.log("Error uploading to database");
                         } else if (docs.length === 0) {
                             if (ADDNEW){
+                                // promises.push(collection.insertOne(
+                                //     {
+                                //         url: url,
+                                //         name: name,
+                                //         simplifiedName: simplifiedName,
+                                //         club: club,
+                                //         age: age,
+                                //         nationality: countryCode,
+                                //         position: position,
+                                //         stats: processedPlayer,
+                                //         lastUpdated: new Date()
+                                //     }
+                                // ))
                                 collection.insertOne(
                                     {
                                         url: url,
                                         name: name,
+                                        simplifiedName: simplifiedName,
                                         club: club,
-                                        countryCode: countryCode,
+                                        age: age,
+                                        nationality: countryCode,
+                                        position: position,
                                         stats: processedPlayer,
                                         lastUpdated: new Date()
                                     }
@@ -1305,6 +1396,16 @@ let uploadToDatabase = async () => {
                                 temp[competition] = processedPlayer[competition]
                             }
                             temp2 = Array.from(new Set(temp2.concat(club)));
+                            // promises.push(collection.updateOne(
+                            //     {url: player},
+                            //     {
+                            //         $set: {
+                            //             club: temp2,
+                            //             stats: temp,
+                            //             lastUpdated: new Date()
+                            //         }
+                            //     }
+                            // ))
                             collection.updateOne(
                                 {url: player},
                                 {
@@ -1319,6 +1420,10 @@ let uploadToDatabase = async () => {
                     });
                 }
             });
+            // Promise.all(promises).then(() => {
+            //     console.log("Uploaded to database");
+            //     resolve();
+            // });
             setTimeout(function(){
                 console.log("Uploaded to database");
                 resolve();
