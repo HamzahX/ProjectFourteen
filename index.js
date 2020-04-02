@@ -192,6 +192,7 @@ let search = async (aQuery, theType) => {
 
     return new Promise(async function(resolve, reject){
         if (theType === "playersAndClubs"){
+            let simplifiedQuery = aQuery.normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace("Ø", "O");
             console.log("Searching for: " + aQuery);
             let clubSearchResults = [];
             let playerSearchResults = [];
@@ -216,8 +217,8 @@ let search = async (aQuery, theType) => {
             // PLAYERSCOLLECTION.find({ $text: { $search: '\"' + aQuery + '\"'}}).collation({locale: "en", strength: 1})
             PLAYERSCOLLECTION.find(
                 {$or: [
-                        {name: {$regex: '\"' + aQuery + '\"' , $options: 'i'}},
-                        {simplifiedName: {$regex: aQuery, $options: 'i'}}
+                        {name: {$regex: aQuery, $options: 'i'}},
+                        {simplifiedName: {$regex: simplifiedQuery, $options: 'i'}}
                 ]}
             )
                 .toArray(function(err, docs) {
@@ -241,9 +242,8 @@ let search = async (aQuery, theType) => {
                             URL: docs[i].url,
                             all: false
                         };
-                        playerSearchResults.push(result);
+                        playerSearchResults.unshift(result);
                     }
-                    playerSearchResults = playerSearchResults.reverse();
                     let searchResults = {
                         clubSearchResults: clubSearchResults,
                         playerSearchResults: playerSearchResults,
