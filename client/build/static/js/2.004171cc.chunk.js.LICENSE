@@ -56,6 +56,15 @@ object-assign
  * LICENSE file in the root directory of this source tree.
  */
 
+/*!
+ * UAParser.js v0.7.21
+ * Lightweight JavaScript-based User-Agent string parser
+ * https://github.com/faisalman/ua-parser-js
+ *
+ * Copyright © 2012-2019 Faisal Salman <f@faisalman.com>
+ * Licensed under MIT License
+ */
+
 /** @license React v16.12.0
  * react-is.production.min.js
  *

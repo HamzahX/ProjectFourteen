@@ -1,11 +1,16 @@
 import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
-import './App.css';
+import {isMobileOnly} from 'react-device-detect';
+import $ from 'jquery';
+
 import Home from './pages/Home';
 import Search from './pages/Search';
 import Stats from './pages/Stats';
 
-import $ from 'jquery';
+import './stylesheets/App.css';
+if (isMobileOnly){
+    require('./stylesheets/Mobile.css');
+}
 
 class App extends Component {
 
@@ -21,26 +26,11 @@ class App extends Component {
 
     componentDidMount() {
 
-        var isMobile = false;
-        var self = this;
-
         $(function() {
 
-            if ($('body').css('background-color') === 'rgb(250, 251, 253)') {
-                isMobile = true;
-            }
-
-            if (isMobile){
-
-                var h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
-
-                $("html, body, #root, #root-container").css({"height":h});
-                $("#home").css({"height":h});
-
-                self.setState({
-                    isMobile: isMobile
-                })
-
+            if (isMobileOnly){
+                var height = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+                $("html, body, #root, #root-container").css({"height": height});
             }
 
         });
@@ -74,8 +64,9 @@ class App extends Component {
             <div id="root-container">
                 <Switch>
                     <Route exact path='/' component={Home}/>
+                    <Route exact path='/' render={(props) => <Home {...props} isMobile={isMobileOnly}/>}/>
                     <Route path='/search/:query/:searchByClub?' component={Search}/>
-                    <Route path='/stats/:URL' render={(props) => <Stats {...props} percentiles={this.state.percentiles} isMobile={this.state.isMobile} />}/>
+                    <Route path='/stats/:URL' render={(props) => <Stats {...props} percentiles={this.state.percentiles} isMobile={isMobileOnly}/>}/>
                 </Switch>
             </div>
         );

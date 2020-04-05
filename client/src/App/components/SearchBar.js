@@ -30,14 +30,16 @@ class SearchBar extends Component {
         let homeButton;
         if (type === 1){
             containerID = "searchbar-container1";
-            homeButton = <Link to={'/'}><div id="home-button"><div>name<span style={{color: '#e1ba00'}}>.com</span></div></div></Link>;
         }
         else if (type === 2) {
             containerID="searchbar-container2";
-            homeButton = <Link to={'/'}><div id="home-button"><div>name<span style={{color: '#e1bb00'}}>.com</span></div></div></Link>;
         }
         else {
             containerID = "searchbar-container3";
+        }
+
+        if (type !== 3){
+            homeButton = <Link to={'/'}><div id="home-button"><div>Football<span style={{color: '#e4c000', display: 'block'}}>Slices<span style={{color: 'black'}}>.com</span></span></div></div></Link>;
         }
 
         return (

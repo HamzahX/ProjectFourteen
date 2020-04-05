@@ -29,7 +29,7 @@ class Stats extends Component {
                 'Pass Completion %',
                 'Successful Dribbles',
                 'Dribble Success %',
-                'Turnovers',
+                'Times Dispossessed',
                 'Recoveries',
             ],
             "AM": [
@@ -43,12 +43,12 @@ class Stats extends Component {
                 'Cross Completion %',
                 'Successful Dribbles',
                 'Dribble Success %',
-                'Turnovers',
+                'Times Dispossessed',
                 'Recoveries',
             ],
             "CM": [
-                'Non-Penalty Goals + Assists',
-                'Non-Penalty xG + xA',
+                'Non-Penalty Goals+Assists',
+                'Non-Penalty xG+xA',
                 'Passes into the Final 1/3',
                 'Pass Completion %',
                 'Completed Long Passes',
@@ -131,7 +131,7 @@ class Stats extends Component {
                 dataLabelsOutline: this.props.isMobile === true ? '0.3vw' : '0.2em',
                 tooltipHeader: this.props.isMobile === true ? '2.3vw' : '1em',
                 tooltip: this.props.isMobile === true ? '2.3vw' : '1.25em',
-                credits: this.props.isMobile === true ? '2.2vw' : '1.15em',
+                credits: this.props.isMobile === true ? '2vw' : '1.15em',
                 yAxisLabels: this.props.isMobile === true ? '1vw' : '0.5em',
             }
         };
@@ -263,10 +263,14 @@ class Stats extends Component {
 
         const scale = isMobile ? 1 : 2;
         let node = document.getElementsByClassName('highcharts-container')[0];
+        // let node = document.getElementById('chart');
 
         if (isMobile) {
             domtoimage.toPng(node, {
-                bgcolor: '#fafbfc'
+                bgcolor: '#fafbfc',
+                style: {
+                    'background-size': '20%'
+                }
             })
             .then(function (blob) {
                 window.saveAs(blob, `${name.replace(" ", "-")}.png`);
@@ -276,12 +280,29 @@ class Stats extends Component {
                 });
         }
         else {
+            //scale and position the background (the watermark)
+            let backgroundSize = 15/scale;
+
+            //get the width and height of the background in pixels
+            let backgroundWidth = (backgroundSize/100) * node.offsetWidth;
+            let backgroundHeight = (9/16) * backgroundWidth;
+
+            //get the height of the background as a percentage of the total height of the chart
+            let backgroundHeightRatio = (backgroundHeight / node.offsetHeight) * 100;
+
+            //get the aspect ratio of the current dimensions of the chart
+            let nodeAspectRatio = node.offsetWidth / node.offsetHeight;
+
             domtoimage.toPng(node, {
                 bgcolor: '#fafbfc',
                 height: node.offsetHeight * scale,
                 width: node.offsetWidth * scale,
                 style: {
-                    transform: `scale(${scale}) translate(${node.offsetWidth / 2 / scale}px, ${node.offsetHeight / 2 / scale}px)`
+                    transform: `scale(${scale}) translate(${node.offsetWidth / 2 / scale}px, ${node.offsetHeight / 2 / scale}px)`,
+                    //set the background position after the 4x scaling
+                    //For the Y position, we start with 50% (bottom left), and then adjust based on the height of the watermark and the desired padding
+                    'background-position': `0.3% ${50-(0.3*nodeAspectRatio)-((backgroundHeightRatio+(0.3*nodeAspectRatio))/2)}%`,
+                    'background-size': `${backgroundSize}%`
                 }
             })
             .then(function (blob) {

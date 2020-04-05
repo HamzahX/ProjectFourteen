@@ -5,7 +5,8 @@ import SearchBar from "../components/SearchBar"
 import PlayerSearchResult from "../components/PlayerSearchResult"
 import LoadingSpinner from "../components/LoadingSpinner";
 
-import mockUps from "../assets/mockUps3.png"
+import mockUps from "../assets/mockups.png"
+import $ from "jquery";
 
 
 class Home extends Component {
@@ -14,6 +15,7 @@ class Home extends Component {
         super(props);
 
         this.state = {
+            isMobile: this.props.isMobile,
             isLoading: false,
             samplePlayers: [],
         };
@@ -36,7 +38,36 @@ class Home extends Component {
             body: JSON.stringify({})
         })
         .then(res => res.json())
-        .then(samplePlayers => this.setState({samplePlayers: samplePlayers, isLoading: false}))
+        .then(samplePlayers => {
+            this.setState({samplePlayers: samplePlayers, isLoading: false});
+            if ($('body').css('background-color') === 'rgb(250, 251, 253)') {
+                var height = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+                var navbarHeight = 0.06 * height;
+                $("#home").css({"height": height});
+                $("#navbar-container").css({"height": navbarHeight});
+            }
+        })
+    };
+
+    toggleMenu = () => {
+
+        let menu = document.getElementById('menu');
+        if (menu.className === "navbar"){
+            menu.className += " responsive";
+        }
+        else{
+            menu.className = "navbar"
+        }
+
+    };
+
+    hideMenu = () => {
+
+        let menu = document.getElementById('menu');
+        if (menu.className !== "navbar"){
+            menu.className = "navbar";
+        }
+
     };
 
     render() {
@@ -67,14 +98,20 @@ class Home extends Component {
 
             return (
                 <div id="homepage">
-                    {/*<div id="menu">*/}
-                    {/*    <a href="#home">Home</a>*/}
-                    {/*    <a href="#preview">OrganizedChaos</a>*/}
-                    {/*    <a href="#faq">FAQ</a>*/}
-                    {/*    <a href="#contact">Contact</a>*/}
-                    {/*</div>*/}
+                    <div id="navbar-container">
+                        <div className="navbar" id="menu">
+                            <div><a onClick={this.hideMenu} href="#home">Home</a></div>
+                            <div><a onClick={this.hideMenu} href="#preview">Preview</a></div>
+                            <div><a onClick={this.hideMenu} href="#faq">F.A.Q.</a></div>
+                            <div><a onClick={this.hideMenu} href="#glossary">Glossary</a></div>
+                            <div><a onClick={this.hideMenu} href="#contact">Contact</a></div>
+                            <div id="burger-icon-container"><a onClick={this.toggleMenu} id="burgerIcon">
+                                <i className="fa fa-bars"/>
+                            </a></div>
+                        </div>
+                    </div>
                     <div id="home">
-                        <h1>name<span style={{color: '#ffd700'}}>.com</span></h1>
+                        <h1>Football<span style={{color: '#e4c000'}}>Slices</span></h1>
                         <SearchBar type={3}/>
                         <br/>
                         <br/>
@@ -87,26 +124,25 @@ class Home extends Component {
                     <div id="preview" className="homepage-section-container">
                         <div id="preview-section-container">
                             <div id="preview-text">
-                                <h2>OrganizedChaos</h2>
+                                <h2>Preview</h2>
                                 <p>
-                                    OrganizedChaos is a football stats visualization tool that is supported by an
-                                    entirely automated data retrieval process. It sifts
-                                    through <span className="accented-p">tens of thousands</span> of rows of numbers so
-                                    you don't have to!
+                                    FootballSlices are stats visualizations that are supported by an
+                                    entirely automated data retrieval process. The tool sifts through tens of thousands
+                                    of rows of numbers so you don't have to!
                                 </p>
                                 <p>
-                                    Explore a database of <span className="accented-p">1,900+</span> players from
-                                    Europe's top <span className="accented-p">5</span> leagues from this season, and
-                                    hopefully previous seasons as well in the near future.
+                                    Explore a database of <span style={{color: 'orangered'}}>1,900+ players </span>
+                                    from <span style={{color: 'orangered'}}>Europe's top 5 leagues</span> from this
+                                    season, and hopefully previous seasons as well in the near future.
                                 </p>
                                 <p>
-                                    Simply choose from <span className="accented-p">5</span> positional templates, toggle the
+                                    Simply choose from 5 positional templates, toggle the
                                     competitions you'd like to include, and you can visualize statistics in seconds with
                                     interactive percentile rank bar charts, powered by <a href="https://www.highcharts.com" >Highcharts.js</a>.
                                 </p>
-                                <p><span className="accented-p">How should the charts be interpreted?</span></p>
+                                <p><span className="accented-p">Interpreting FootballSlices</span></p>
                                 <p>
-                                    Each chart consists of 12 wedges. The size of each wedge corresponds to the
+                                    FootballSlices consist of 12 wedges. The size of each wedge corresponds to the
                                     percentile rank of the selected player with regards to the stat represented by the
                                     wedge. The data labels show the raw per 90 value.
                                 </p>
@@ -115,10 +151,10 @@ class Home extends Component {
                                     (as well as improve the charts' visual impact).
                                 </p>
                                 <ul>
-                                    <li><span style={{color: '#f15c80'}}>Red</span> is for goal-scoring & shooting stats,</li>
-                                    <li><span style={{color: '#e4d354'}}>Yellow</span> is for passing & chance creation,</li>
-                                    <li><span style={{color: '#90ed7d'}}>Green</span> is for dribbling & ball retention</li>
-                                    <li>and <span style={{color: '#7cb5ec'}}>Blue</span> is for defensive stats.</li>
+                                    <li><span style={{color: '#f15c80', fontWeight: 'bold'}}>Red</span> is for goal-scoring & shooting stats,</li>
+                                    <li><span style={{color: '#e4c000', fontWeight: 'bold'}}>Yellow</span> is for passing & chance creation,</li>
+                                    <li><span style={{color: '#90ed7d', fontWeight: 'bold'}}>Green</span> is for dribbling & ball retention</li>
+                                    <li>and <span style={{color: '#7cb5ec', fontWeight: 'bold'}}>Blue</span> is for defensive stats.</li>
                                 </ul>
                             </div>
                             <div id="preview-image">
@@ -126,7 +162,7 @@ class Home extends Component {
                             </div>
                         </div>
                     </div>
-                    <div id="faq" style={{backgroundColor: '#f0f1f2'}} className="homepage-section-container">
+                    <div id="faq" style={{backgroundColor: '#f4f5f6'}} className="homepage-section-container">
                         <div id="faq-section-container">
                             <h2>F.A.Q.</h2>
                             <div id="faq-container">
@@ -163,14 +199,14 @@ class Home extends Component {
                                     </p>
                                 </div>
                                 <div className="faq-item">
-                                    <p><span className="accented-p">What is a percentile rank? How does the OrganizedChaos Tool calculate them?</span></p>
+                                    <p><span className="accented-p">What is a percentile rank? How are they calculated for the FootballSlices?</span></p>
                                     <p>
                                         The percentile rank of a score is the percentage of scores within a total dataset
                                         that are equal to or lower than the score. This is of course reversed for stats where
                                         a lower value is better, such as the 'fouls committed per 90' stat.
                                     </p>
                                     <p>
-                                        The percentile ranks for the OrganizedChaos tool are position-specific. For example,
+                                        The percentile ranks for FootballSlices are position-specific. For example,
                                         selecting the 'forward' template compares the selected player only to other forwards in the
                                         dataset. To obtain a list of players who play in each of the 5 template positions,
                                         the tool uses the <a href="https://whoscored.com/Statistics">
@@ -189,13 +225,102 @@ class Home extends Component {
                             </div>
                         </div>
                     </div>
-                    <div id="contact" className="homepage-section-container">
+                    <div id="glossary" className="homepage-section-container">
+                        <div id="glossary-section-container">
+                            <h2>Glossary</h2>
+                            <ul>
+                                <li>
+                                    <span className="accented-p">Non-penalty Goals</span> [Opta] Goals that did not stem directly from penalty kicks.
+                                </li>
+                                <li>
+                                    <span className="accented-p">Non-penalty xG</span> [StatsBomb] Expected goals that did not stem directly from penalty kicks.
+                                    Click <a href="https://fbref.com/en/expected-goals-model-explained/">here</a> for a detailed explanation of StatsBomb's
+                                    expected goals model.
+                                </li>
+                                <li>
+                                    <span className="accented-p">Conversion Rate</span> [Opta] The percentage of shots taken that resulted in goals, excluding penalties.
+                                </li>
+                                <li>
+                                    <span className="accented-p">Shots on Target %</span> [Opta] The percentage of shots taken that were on target.
+                                </li>
+                                <li>
+                                    <span className="accented-p">Assists</span> [Opta] Passes that directly led to a chance scored by a teammate.
+                                </li>
+                                <li>
+                                    <span className="accented-p">xA</span> [StatsBomb] Expected goals that resulted from shot assists.
+                                </li>
+                                <li>
+                                    <span className="accented-p">Passes into the Penalty Area</span> [StatsBomb] Completed passes into the penalty area, excluding set pieces.
+                                </li>
+                                <li>
+                                    <span className="accented-p">Passes into the Final 1/3</span> [StatsBomb] Completed passes that entered the 1/3 of the pitch closest to the
+                                    opposition goal, excluding set pieces.
+                                </li>
+                                <li>
+                                    <span className="accented-p">Pass Completion %</span> [Opta] The percentage of attempted passes that successfully found a teammate.
+                                </li>
+                                <li>
+                                    <span className="accented-p">Completed Crosses</span> [Opta] Accurate passes from a wide position to a central attacking area.
+                                </li>
+                                <li>
+                                    <span className="accented-p">Cross Completion %</span> [Opta] The percentage of attempted crosses that successfully found a teammate.
+                                </li>
+                                <li>
+                                    <span className="accented-p">Completed Long Passes</span> [Opta] Accurate passes of 25 yards or more.
+                                </li>
+                                <li>
+                                    <span className="accented-p">Long Pass Completion %</span> [Opta] The percentage of attempted long passes that successfully found a teammate.
+                                </li>
+                                <li>
+                                    <span className="accented-p">Successful Dribbles</span> [Opta] Successful attempts at taking on a player and making it past them whilst retaining the ball.
+                                </li>
+                                <li>
+                                    <span className="accented-p">Dribble Success %</span> [Opta] The percentage of attempted dribbles that were successful.
+                                </li>
+                                <li>
+                                    <span className="accented-p">Times Dispossessed</span> [Opta] Number of times tackled by an opponent without attempting to dribble past them.
+                                </li>
+                                <li>
+                                    <span className="accented-p">Interceptions</span> [Opta] Preventions of opponents' passes from reaching their teammates.
+                                </li>
+                                <li>
+                                    <span className="accented-p">Tackles Won</span> [Opta] Successful dispossessions of opponents, whether the tackling player comes away with the ball or not.
+                                </li>
+                                <li>
+                                    <span className="accented-p">Tackle Win %</span> [Opta] The percentage of attempted tackles that were won.
+                                </li>
+                                <li>
+                                    <span className="accented-p">Fouls Committed</span> [Opta] Illegal manoeuvres that resulted in free kicks for the opposing team, excluding offsides.
+                                </li>
+                                <li>
+                                    <span className="accented-p">Recoveries</span> [Opta] Successful tackles + interceptions.
+                                </li>
+                                <li>
+                                    <span className="accented-p">Aerial Duels Won</span> [Opta] Headers won in direct contests with opponents
+                                </li>
+                                <li>
+                                    <span className="accented-p">Aerial Duel Win %</span> [Opta] The percentage of attempted aerial duels that were won.
+                                </li>
+                                <li>
+                                    <span className="accented-p">Blocks</span> [Opta] Preventions of opponents' shots from reaching the goal.
+                                </li>
+                                <li>
+                                    <span className="accented-p">Clearances</span> [Opta] Actions by defending players that temporarily removed the attacking threat on their goal/that
+                                    effectively alleviated pressure on their goal.
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div id="contact" style={{backgroundColor: '#f4f5f6'}} className="homepage-section-container">
                         <div id="contact-section-container">
                             <h2>Contact</h2>
                             <p>
-                                For any bug reports, suggestions or questions, please feel free to reach out to me on
-                                twitter <a href="https://twitter.com/DyslexicDdue" >@DyslexicDdue</a>.
+                                For any bug reports, suggestions or questions, please feel free to reach out to me
                             </p>
+                            <ul>
+                                <li>Email: <a href="mailto:footballslices@gmail.com" >FootballSlices@gmail.com</a></li>
+                                <li>Twitter: <a href="https://twitter.com/DyslexicDdue" >@DyslexicDdue</a></li>
+                            </ul>
                         </div>
                     </div>
                 </div>

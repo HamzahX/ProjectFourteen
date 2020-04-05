@@ -286,41 +286,61 @@ class Search extends Component {
 
             let searchFilter;
             let searchText;
-            if (searchByClub === undefined){
-                searchText = <h3>Search results for <br/>"{this.state.query}"</h3>;
-                searchFilter =
-                    <Select
-                        styles={reactSelectStyle}
-                        theme={reactSelectTheme}
-                        placeholder={"Filter players by club"}
-                        onChange={this.filterByClub}
-                        isMulti
-                        isClearable
-                        options={clubs}
-                    />
-            }
+            // if (searchByClub === undefined){
+            //     searchText = <h3>Search results for <br/>"{this.state.query}"</h3>;
+            //     searchFilter =
+            //         <Select
+            //             styles={reactSelectStyle}
+            //             theme={reactSelectTheme}
+            //             placeholder={"Filter players by club"}
+            //             onChange={this.filterByClub}
+            //             isMulti
+            //             isClearable
+            //             options={clubs}
+            //         />
+            // }
+            //
+            // else {
+            //     searchText = <h3>Search results for <br/>"player.club = {this.state.query}"</h3>;
+            //     searchFilter =
+            //         <Select
+            //             styles={reactSelectStyle}
+            //             theme={reactSelectTheme}
+            //             placeholder={"Filter players by name"}
+            //             onChange={this.filterByName}
+            //             onInputChange={this.handleInputChange}
+            //             onBlur={this.hideMenu}
+            //             isClearable
+            //             menuIsOpen={openMenu}
+            //             options={names}
+            //             components={
+            //                 {
+            //                     DropdownIndicator: () => null,
+            //                     IndicatorSeparator: () => null
+            //                 }
+            //             }
+            //         />
+            // }
 
-            else {
-                searchText = <h3>Search results for <br/>"player.club = {this.state.query}"</h3>;
-                searchFilter =
-                    <Select
-                        styles={reactSelectStyle}
-                        theme={reactSelectTheme}
-                        placeholder={"Filter players by name"}
-                        onChange={this.filterByName}
-                        onInputChange={this.handleInputChange}
-                        onBlur={this.hideMenu}
-                        isClearable
-                        menuIsOpen={openMenu}
-                        options={names}
-                        components={
-                            {
-                                DropdownIndicator: () => null,
-                                IndicatorSeparator: () => null
-                            }
+            searchText = <h3>Search results for <br/>"player.club = {this.state.query}"</h3>;
+            searchFilter =
+                <Select
+                    styles={reactSelectStyle}
+                    theme={reactSelectTheme}
+                    placeholder={"Filter players by name"}
+                    onChange={this.filterByName}
+                    onInputChange={this.handleInputChange}
+                    onBlur={this.hideMenu}
+                    isClearable
+                    menuIsOpen={openMenu}
+                    options={names}
+                    components={
+                        {
+                            DropdownIndicator: () => null,
+                            IndicatorSeparator: () => null
                         }
-                    />
-            }
+                    }
+                />
 
             return (
                 <div id="main">
