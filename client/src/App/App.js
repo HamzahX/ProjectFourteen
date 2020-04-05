@@ -7,9 +7,11 @@ import Home from './pages/Home';
 import Search from './pages/Search';
 import Stats from './pages/Stats';
 
-import './stylesheets/App.css';
+require('./stylesheets/App.css');
+let _module;
 if (isMobileOnly){
-    require('./stylesheets/Mobile.css');
+    _module = './stylesheets/Mobile.css';
+    require('' + _module);
 }
 
 class App extends Component {
