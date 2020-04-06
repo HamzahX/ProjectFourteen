@@ -316,10 +316,11 @@ class Home extends Component {
                             <h2>Contact</h2>
                             <p>
                                 For any bug reports, suggestions or questions, please feel free to reach out to me
+                                at either of the following:
                             </p>
                             <ul>
-                                <li>Email: <a href="mailto:footballslices@gmail.com" >FootballSlices@gmail.com</a></li>
                                 <li>Twitter: <a href="https://twitter.com/DyslexicDdue" >@DyslexicDdue</a></li>
+                                <li>Email: <a href="mailto:footballslices@gmail.com" >FootballSlices@gmail.com</a></li>
                             </ul>
                         </div>
                     </div>

@@ -8,10 +8,11 @@ import Search from './pages/Search';
 import Stats from './pages/Stats';
 
 require('./stylesheets/App.css');
-let _module;
 if (isMobileOnly){
-    _module = './stylesheets/Mobile.css';
-    require('' + _module);
+    import('./stylesheets/Mobile.css')
+    .then(test => {
+        console.log("Mobile device detected")
+    });
 }
 
 class App extends Component {

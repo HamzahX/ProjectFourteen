@@ -269,7 +269,7 @@ class Stats extends Component {
             domtoimage.toPng(node, {
                 bgcolor: '#fafbfc',
                 style: {
-                    'background-size': '20%'
+                    'background-size': '25%'
                 }
             })
             .then(function (blob) {
@@ -281,7 +281,7 @@ class Stats extends Component {
         }
         else {
             //scale and position the background (the watermark)
-            let backgroundSize = 15/scale;
+            let backgroundSize = 20/scale;
 
             //get the width and height of the background in pixels
             let backgroundWidth = (backgroundSize/100) * node.offsetWidth;
