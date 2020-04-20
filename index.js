@@ -134,6 +134,10 @@ app.post('/api/samplePlayers', (req, res) => {
  */
 app.post('/api/search', (req, res) => {
 
+    if (req.headers.host.includes("herokuapp")){
+        res.redirect(301, 'http://www.footballslices.com' + req.path)
+    }
+
     let query = req.body.query;
     let type = req.body.type;
     search(query, type).then(
@@ -201,20 +205,6 @@ let search = async (aQuery, theType) => {
                     clubSearchResults.push(clubsList[i]);
                 }
             }
-            // PLAYERSCOLLECTION.find({$or:
-            //     [
-            //         {name: {$regex: aQuery, $options: 'i'}}.collation({locale: "en", strength: 1}),
-            //         {simplifiedName: {$regex: aQuery, $options: 'i'}}.collation({locale: "en", strength: 1})
-            //     ]})
-            // PLAYERSCOLLECTION.find({$text: {
-            //         $search: '\"' + aQuery + '\"',
-            //         $language: "en",
-            //         $caseSensitive: false,
-            //         $diacriticSensitive: false
-            //     }
-            // })
-            // PLAYERSCOLLECTION.find({$or: [{name: {$regex: aQuery, $options: 'i'}}).collation({locale: "en", strength: 1}]})
-            // PLAYERSCOLLECTION.find({ $text: { $search: '\"' + aQuery + '\"'}}).collation({locale: "en", strength: 1})
             PLAYERSCOLLECTION.find(
                 {$or: [
                         {name: {$regex: aQuery, $options: 'i'}},

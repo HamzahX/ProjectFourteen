@@ -1,0 +1,479 @@
+{
+  "Liverpool": {
+    "whoscored": "Liverpool"
+  },
+  "Manchester City": {
+    "whoscored": "Manchester City"
+  },
+  "Leicester City": {
+    "whoscored": "Leicester"
+  },
+  "Chelsea": {
+    "whoscored": "Chelsea"
+  },
+  "Tottenham": {
+    "whoscored": "Tottenham"
+  },
+  "Sheffield Utd": {
+    "whoscored": "Sheffield United"
+  },
+  "Manchester Utd": {
+    "whoscored": "Manchester United"
+  },
+  "Wolves": {
+    "whoscored": "Wolverhampton Wanderers"
+  },
+  "Everton": {
+    "whoscored": "Everton"
+  },
+  "Arsenal": {
+    "whoscored": "Arsenal"
+  },
+  "Burnley": {
+    "whoscored": "Burnley"
+  },
+  "Newcastle Utd": {
+    "whoscored": "Newcastle United"
+  },
+  "Southampton": {
+    "whoscored": "Southampton"
+  },
+  "Crystal Palace": {
+    "whoscored": "Crystal Palace"
+  },
+  "Brighton": {
+    "whoscored": "Brighton"
+  },
+  "Bournemouth": {
+    "whoscored": "Bournemouth"
+  },
+  "Aston Villa": {
+    "whoscored": "Aston Villa"
+  },
+  "West Ham": {
+    "whoscored": "West Ham"
+  },
+  "Watford": {
+    "whoscored": "Watford"
+  },
+  "Norwich City": {
+    "whoscored": "Norwich"
+  },
+  "Juventus": {
+    "whoscored": "Juventus"
+  },
+  "Inter": {
+    "whoscored": "Inter"
+  },
+  "Lazio": {
+    "whoscored": "Lazio"
+  },
+  "Atalanta": {
+    "whoscored": "Atalanta"
+  },
+  "Roma": {
+    "whoscored": "Roma"
+  },
+  "Milan": {
+    "whoscored": "AC Milan"
+  },
+  "Cagliari": {
+    "whoscored": "Cagliari"
+  },
+  "Parma": {
+    "whoscored": "Parma Calcio 1913"
+  },
+  "Bologna": {
+    "whoscored": "Bologna"
+  },
+  "Napoli": {
+    "whoscored": "Napoli"
+  },
+  "Hellas Verona": {
+    "whoscored": "Verona"
+  },
+  "Torino": {
+    "whoscored": "Torino"
+  },
+  "Sassuolo": {
+    "whoscored": "Sassuolo"
+  },
+  "Fiorentina": {
+    "whoscored": "Fiorentina"
+  },
+  "Udinese": {
+    "whoscored": "Udinese"
+  },
+  "Sampdoria": {
+    "whoscored": "Sampdoria"
+  },
+  "Lecce": {
+    "whoscored": "Lecce"
+  },
+  "Genoa": {
+    "whoscored": "Genoa"
+  },
+  "Brescia": {
+    "whoscored": "Brescia"
+  },
+  "SPAL": {
+    "whoscored": "SPAL 2013"
+  },
+  "Real Madrid": {
+    "whoscored": "Real Madrid"
+  },
+  "Barcelona": {
+    "whoscored": "Barcelona"
+  },
+  "Getafe": {
+    "whoscored": "Getafe"
+  },
+  "Sevilla": {
+    "whoscored": "Sevilla"
+  },
+  "Valencia": {
+    "whoscored": "Valencia"
+  },
+  "Atlético Madrid": {
+    "whoscored": "Atletico Madrid"
+  },
+  "Villarreal": {
+    "whoscored": "Villarreal"
+  },
+  "Real Sociedad": {
+    "whoscored": "Real Sociedad"
+  },
+  "Athletic Bilbao": {
+    "whoscored": "Athletic Bilbao"
+  },
+  "Granada": {
+    "whoscored": "Granada"
+  },
+  "Osasuna": {
+    "whoscored": "Osasuna"
+  },
+  "Betis": {
+    "whoscored": "Real Betis"
+  },
+  "Levante": {
+    "whoscored": "Levante"
+  },
+  "Valladolid": {
+    "whoscored": "Real Valladolid"
+  },
+  "Alavés": {
+    "whoscored": "Deportivo Alaves"
+  },
+  "Eibar": {
+    "whoscored": "Eibar"
+  },
+  "Mallorca": {
+    "whoscored": "Mallorca"
+  },
+  "Leganés": {
+    "whoscored": "Leganes"
+  },
+  "Celta Vigo": {
+    "whoscored": "Celta Vigo"
+  },
+  "Espanyol": {
+    "whoscored": "Espanyol"
+  },
+  "Bayern Munich": {
+    "whoscored": "Bayern Munich"
+  },
+  "RB Leipzig": {
+    "whoscored": "RasenBallsport Leipzig"
+  },
+  "Dortmund": {
+    "whoscored": "Borussia Dortmund"
+  },
+  "M'gladbach": {
+    "whoscored": "Borussia M'Gladbach"
+  },
+  "Bayer": {
+    "whoscored": "Bayer Leverkusen"
+  },
+  "Schalke 04": {
+    "whoscored": "Schalke 04"
+  },
+  "Hoffenheim": {
+    "whoscored": "Hoffenheim"
+  },
+  "Freiburg": {
+    "whoscored": "Freiburg"
+  },
+  "Wolfsburg": {
+    "whoscored": "Wolfsburg"
+  },
+  "Augsburg": {
+    "whoscored": "Augsburg"
+  },
+  "Eint Frankfurt": {
+    "whoscored": "Eintracht Frankfurt"
+  },
+  "Union Berlin": {
+    "whoscored": "Union Berlin"
+  },
+  "Hertha BSC": {
+    "whoscored": "Hertha Berlin"
+  },
+  "Köln": {
+    "whoscored": "FC Koln"
+  },
+  "Mainz 05": {
+    "whoscored": "Mainz 05"
+  },
+  "Werder Bremen": {
+    "whoscored": "Werder Bremen"
+  },
+  "Düsseldorf": {
+    "whoscored": "Fortuna Duesseldorf"
+  },
+  "Paderborn 07": {
+    "whoscored": "Paderborn"
+  },
+  "Paris S-G": {
+    "whoscored": "Paris Saint-Germain"
+  },
+  "Marseille": {
+    "whoscored": "Marseille"
+  },
+  "Rennes": {
+    "whoscored": "Rennes"
+  },
+  "Lille": {
+    "whoscored": "Lille"
+  },
+  "Montpellier": {
+    "whoscored": "Montpellier"
+  },
+  "Lyon": {
+    "whoscored": "Lyon"
+  },
+  "Reims": {
+    "whoscored": "Reims"
+  },
+  "Nice": {
+    "whoscored": "Nice"
+  },
+  "Nantes": {
+    "whoscored": "Nantes"
+  },
+  "Bordeaux": {
+    "whoscored": "Bordeaux"
+  },
+  "Strasbourg": {
+    "whoscored": "Strasbourg"
+  },
+  "Angers": {
+    "whoscored": "Angers"
+  },
+  "Monaco": {
+    "whoscored": "Monaco"
+  },
+  "Brest": {
+    "whoscored": "Brest"
+  },
+  "Saint-Étienne": {
+    "whoscored": "Saint-Etienne"
+  },
+  "Metz": {
+    "whoscored": "Metz"
+  },
+  "Dijon": {
+    "whoscored": "Dijon"
+  },
+  "Amiens": {
+    "whoscored": "Amiens"
+  },
+  "Nîmes": {
+    "whoscored": "Nimes"
+  },
+  "Toulouse": {
+    "whoscored": "Toulouse"
+  },
+  "Cardiff City": {
+    "whoscored": "Cardiff"
+  },
+  "Fulham": {
+    "whoscored": "Fulham"
+  },
+  "Huddersfield": {
+    "whoscored": "Huddersfield"
+  },
+  "Girona": {
+    "whoscored": "Girona"
+  },
+  "Huesca": {
+    "whoscored": "SD Huesca"
+  },
+  "Rayo Vallecano": {
+    "whoscored": "Rayo Vallecano"
+  },
+  "Empoli": {
+    "whoscored": "Empoli"
+  },
+  "Frosinone": {
+    "whoscored": "Frosinone"
+  },
+  "Chievo": {
+    "whoscored": "Chievo"
+  },
+  "Hannover 96": {
+    "whoscored": "Hannover 96"
+  },
+  "N�rnberg": {
+    "whoscored": "Nuernberg"
+  },
+  "Caen": {
+    "whoscored": "Caen"
+  },
+  "Guingamp": {
+    "whoscored": "Guingamp"
+  },
+  "Ajax": {
+    "whoscored": "Ajax"
+  },
+  "RB Salzburg": {
+    "whoscored": "Salzburg"
+  },
+  "Zenit": {
+    "whoscored": "Zenit St. Petersburg"
+  },
+  "Benfica": {
+    "whoscored": "Benfica"
+  },
+  "Dinamo Zagreb": {
+    "whoscored": "Dinamo Zagreb"
+  },
+  "Olympiacos": {
+    "whoscored": "Olympiacos"
+  },
+  "Loko Moscow": {
+    "whoscored": "Lokomotiv Moscow"
+  },
+  "Shakhtar": {
+    "whoscored": "Shakhtar Donetsk"
+  },
+  "Slavia Prague": {
+    "whoscored": "Slavia Prague"
+  },
+  "Genk": {
+    "whoscored": "Genk"
+  },
+  "Club Brugge": {
+    "whoscored": "Club Brugge"
+  },
+  "Galatasaray": {
+    "whoscored": "Galatasaray"
+  },
+  "Red Star": {
+    "whoscored": "FK Crvena Zvezda"
+  },
+  "LASK": {
+    "whoscored": "LASK"
+  },
+  "Sporting CP": {
+    "whoscored": "Sporting CP"
+  },
+  "Celtic": {
+    "whoscored": "Celtic"
+  },
+  "Basel": {
+    "whoscored": "FC Basel 1893"
+  },
+  "Braga": {
+    "whoscored": "Braga"
+  },
+  "Dynamo Kyiv": {
+    "whoscored": "Dynamo Kyiv"
+  },
+  "AZ Alkmaar": {
+    "whoscored": "AZ Alkmaar"
+  },
+  "Gent": {
+    "whoscored": "Gent"
+  },
+  "APOEL": {
+    "whoscored": "APOEL Nicosia"
+  },
+  "Rangers": {
+    "whoscored": "Rangers"
+  },
+  "CFR Cluj": {
+    "whoscored": "CFR Cluj"
+  },
+  "Ludogorets": {
+    "whoscored": "Ludogorets Razgrad"
+  },
+  "Porto": {
+    "whoscored": "FC Porto"
+  },
+  "PSV Eindhoven": {
+    "whoscored": "PSV Eindhoven"
+  },
+  "Feyenoord": {
+    "whoscored": "Feyenoord"
+  },
+  "Young Boys": {
+    "whoscored": "BSC Young Boys"
+  },
+  "Standard Li�ge": {
+    "whoscored": "Standard Liege"
+  },
+  "Ba?ak?ehir": {
+    "whoscored": "Istanbul Basaksehir"
+  },
+  "Ferencv�ros": {
+    "whoscored": "Ferencvaros"
+  },
+  "FC Copenhagen": {
+    "whoscored": "FC Copenhagen"
+  },
+  "Wolfsberger AC": {
+    "whoscored": "Wolfsberger AC"
+  },
+  "Vit�ria": {
+    "whoscored": "Vitoria de Guimaraes"
+  },
+  "Malm�": {
+    "whoscored": "Malmoe FF"
+  },
+  "Partizan": {
+    "whoscored": "Partizan Belgrade"
+  },
+  "Slovan Bratislava": {
+    "whoscored": "Slovan Bratislava"
+  },
+  "Qaraba? A?dam": {
+    "whoscored": "Qarabag FK"
+  },
+  "Lugano": {
+    "whoscored": "FC Lugano"
+  },
+  "CSKA Moscow": {
+    "whoscored": "CSKA Moscow"
+  },
+  "Krasnodar": {
+    "whoscored": "FC Krasnodar"
+  },
+  "Trabzonspor": {
+    "whoscored": "Trabzonspor"
+  },
+  "F91 Dudelange": {
+    "whoscored": "F91 Dudelange"
+  },
+  "FC Oleksandriya": {
+    "whoscored": "FC Olexandriya"
+  },
+  "Rosenborg": {
+    "whoscored": "Rosenborg"
+  },
+  "Be?ikta?": {
+    "whoscored": "Besiktas"
+  },
+  "Astana FK": {
+    "whoscored": "FC Astana"
+  }
+}

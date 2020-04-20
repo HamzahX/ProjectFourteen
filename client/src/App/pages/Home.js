@@ -100,14 +100,22 @@ class Home extends Component {
                 <div id="homepage">
                     <div id="navbar-container">
                         <div className="navbar" id="menu">
-                            <div><a onClick={this.hideMenu} href="#home">Home</a></div>
-                            <div><a onClick={this.hideMenu} href="#preview">Preview</a></div>
-                            <div><a onClick={this.hideMenu} href="#faq">F.A.Q.</a></div>
-                            <div><a onClick={this.hideMenu} href="#glossary">Glossary</a></div>
-                            <div><a onClick={this.hideMenu} href="#contact">Contact</a></div>
-                            <div id="burger-icon-container"><a onClick={this.toggleMenu} id="burgerIcon">
-                                <i className="fa fa-bars"/>
-                            </a></div>
+                            {/*<div><a onClick={this.hideMenu} href="#home">Home</a></div>*/}
+                            {/*<div><a onClick={this.hideMenu} href="#preview">Preview</a></div>*/}
+                            {/*<div><a onClick={this.hideMenu} href="#faq">F.A.Q.</a></div>*/}
+                            {/*<div><a onClick={this.hideMenu} href="#glossary">Glossary</a></div>*/}
+                            {/*<div><a onClick={this.hideMenu} href="#contact">Contact</a></div>*/}
+                            {/*<div id="burger-icon-container"><a onClick={this.toggleMenu} id="burgerIcon">*/}
+                            {/*    <i className="fa fa-bars"/>*/}
+                            {/*</a></div>*/}
+                            <a onClick={this.hideMenu} href="#home"><div>Home</div></a>
+                            <a onClick={this.hideMenu} href="#preview"><div>Preview</div></a>
+                            <a onClick={this.hideMenu} href="#faq"><div>F.A.Q.</div></a>
+                            <a onClick={this.hideMenu} href="#glossary"><div>Glossary</div></a>
+                            <a onClick={this.hideMenu} href="#contact"><div>Contact</div></a>
+                            <a onClick={this.toggleMenu} id="burger-icon-container">
+                                <div id="burgerIcon"><i className="fa fa-bars"/></div>
+                            </a>
                         </div>
                     </div>
                     <div id="home">
@@ -284,7 +292,7 @@ class Home extends Component {
                                     <span className="accented-p">Interceptions</span> [Opta] Preventions of opponents' passes from reaching their teammates.
                                 </li>
                                 <li>
-                                    <span className="accented-p">Tackles Won</span> [Opta] Successful dispossessions of opponents, whether the tackling player comes away with the ball or not.
+                                    <span className="accented-p">Tackles Won</span> [Opta] Successful dispossessions of opponents, whether the tackling player came away with the ball or not.
                                 </li>
                                 <li>
                                     <span className="accented-p">Tackle Win %</span> [Opta] The percentage of attempted tackles that were won.
@@ -296,7 +304,7 @@ class Home extends Component {
                                     <span className="accented-p">Recoveries</span> [Opta] Successful tackles + interceptions.
                                 </li>
                                 <li>
-                                    <span className="accented-p">Aerial Duels Won</span> [Opta] Headers won in direct contests with opponents
+                                    <span className="accented-p">Aerial Duels Won</span> [Opta] Headers won in direct contests with opponents.
                                 </li>
                                 <li>
                                     <span className="accented-p">Aerial Duel Win %</span> [Opta] The percentage of attempted aerial duels that were won.

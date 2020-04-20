@@ -110,7 +110,6 @@ a {
 
 .accented-p {
     color: #e75453;
-    /*color: #B23535;*/
 }
 
 #navbar-container {
@@ -132,6 +131,7 @@ a {
     background-color: whitesmoke;
     overflow: hidden;
     max-height: 100%;
+    height: 100%;
 }
 
 .navbar div {
@@ -147,6 +147,9 @@ a {
     text-align: center;
     padding: 0 30px;
     text-decoration: none;
+    /*display: flex;*/
+    /*flex-direction: column;*/
+    /*justify-content: center;*/
 }
 
 .navbar a:hover {
@@ -154,6 +157,10 @@ a {
 }
 
 .navbar #burgerIcon {
+    display: none;
+}
+
+.navbar #burger-icon-container {
     display: none;
 }
 
@@ -328,6 +335,7 @@ a {
     /*box-shadow: 0 20px 10px -17px lightgray;*/
     box-shadow: 0 0 10px 2px lightgray;
     flex: 1 1 6%;
+    max-height: 6%;
 }
 
 #searchbar {
