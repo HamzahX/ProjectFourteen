@@ -191,7 +191,7 @@
   "M'gladbach": {
     "whoscored": "Borussia M'Gladbach"
   },
-  "Bayer": {
+  "Leverkusen": {
     "whoscored": "Bayer Leverkusen"
   },
   "Schalke 04": {
@@ -232,6 +232,9 @@
   },
   "Paderborn 07": {
     "whoscored": "Paderborn"
+  },
+  "Stuttgart": {
+    "whoscored": "VfB Stuttgart"
   },
   "Paris S-G": {
     "whoscored": "Paris Saint-Germain"
@@ -323,7 +326,7 @@
   "Hannover 96": {
     "whoscored": "Hannover 96"
   },
-  "N�rnberg": {
+  "Nürnberg": {
     "whoscored": "Nuernberg"
   },
   "Caen": {
@@ -371,109 +374,16 @@
   "Red Star": {
     "whoscored": "FK Crvena Zvezda"
   },
-  "LASK": {
-    "whoscored": "LASK"
-  },
-  "Sporting CP": {
-    "whoscored": "Sporting CP"
-  },
-  "Celtic": {
-    "whoscored": "Celtic"
-  },
-  "Basel": {
-    "whoscored": "FC Basel 1893"
-  },
-  "Braga": {
-    "whoscored": "Braga"
-  },
-  "Dynamo Kyiv": {
-    "whoscored": "Dynamo Kyiv"
-  },
-  "AZ Alkmaar": {
-    "whoscored": "AZ Alkmaar"
-  },
-  "Gent": {
-    "whoscored": "Gent"
-  },
-  "APOEL": {
-    "whoscored": "APOEL Nicosia"
-  },
-  "Rangers": {
-    "whoscored": "Rangers"
-  },
-  "CFR Cluj": {
-    "whoscored": "CFR Cluj"
-  },
-  "Ludogorets": {
-    "whoscored": "Ludogorets Razgrad"
-  },
   "Porto": {
     "whoscored": "FC Porto"
-  },
-  "PSV Eindhoven": {
-    "whoscored": "PSV Eindhoven"
-  },
-  "Feyenoord": {
-    "whoscored": "Feyenoord"
-  },
-  "Young Boys": {
-    "whoscored": "BSC Young Boys"
-  },
-  "Standard Li�ge": {
-    "whoscored": "Standard Liege"
-  },
-  "Ba?ak?ehir": {
-    "whoscored": "Istanbul Basaksehir"
-  },
-  "Ferencv�ros": {
-    "whoscored": "Ferencvaros"
-  },
-  "FC Copenhagen": {
-    "whoscored": "FC Copenhagen"
-  },
-  "Wolfsberger AC": {
-    "whoscored": "Wolfsberger AC"
-  },
-  "Vit�ria": {
-    "whoscored": "Vitoria de Guimaraes"
-  },
-  "Malm�": {
-    "whoscored": "Malmoe FF"
-  },
-  "Partizan": {
-    "whoscored": "Partizan Belgrade"
-  },
-  "Slovan Bratislava": {
-    "whoscored": "Slovan Bratislava"
-  },
-  "Qaraba? A?dam": {
-    "whoscored": "Qarabag FK"
-  },
-  "Lugano": {
-    "whoscored": "FC Lugano"
   },
   "CSKA Moscow": {
     "whoscored": "CSKA Moscow"
   },
-  "Krasnodar": {
-    "whoscored": "FC Krasnodar"
+  "PSV Eindhoven": {
+    "whoscored": "PSV Eindhoven"
   },
-  "Trabzonspor": {
-    "whoscored": "Trabzonspor"
-  },
-  "F91 Dudelange": {
-    "whoscored": "F91 Dudelange"
-  },
-  "FC Oleksandriya": {
-    "whoscored": "FC Olexandriya"
-  },
-  "Rosenborg": {
-    "whoscored": "Rosenborg"
-  },
-  "Be?ikta?": {
-    "whoscored": "Besiktas"
-  },
-  "Astana FK": {
-    "whoscored": "FC Astana"
+  "Viktoria Plzeň": {
+    "whoscored": "Viktoria Plzen"
   }
 }

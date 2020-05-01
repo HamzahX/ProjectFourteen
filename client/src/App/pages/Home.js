@@ -100,22 +100,14 @@ class Home extends Component {
                 <div id="homepage">
                     <div id="navbar-container">
                         <div className="navbar" id="menu">
-                            {/*<div><a onClick={this.hideMenu} href="#home">Home</a></div>*/}
-                            {/*<div><a onClick={this.hideMenu} href="#preview">Preview</a></div>*/}
-                            {/*<div><a onClick={this.hideMenu} href="#faq">F.A.Q.</a></div>*/}
-                            {/*<div><a onClick={this.hideMenu} href="#glossary">Glossary</a></div>*/}
-                            {/*<div><a onClick={this.hideMenu} href="#contact">Contact</a></div>*/}
-                            {/*<div id="burger-icon-container"><a onClick={this.toggleMenu} id="burgerIcon">*/}
-                            {/*    <i className="fa fa-bars"/>*/}
-                            {/*</a></div>*/}
-                            <a onClick={this.hideMenu} href="#home"><div>Home</div></a>
-                            <a onClick={this.hideMenu} href="#preview"><div>Preview</div></a>
-                            <a onClick={this.hideMenu} href="#faq"><div>F.A.Q.</div></a>
-                            <a onClick={this.hideMenu} href="#glossary"><div>Glossary</div></a>
-                            <a onClick={this.hideMenu} href="#contact"><div>Contact</div></a>
-                            <a onClick={this.toggleMenu} id="burger-icon-container">
-                                <div id="burgerIcon"><i className="fa fa-bars"/></div>
-                            </a>
+                            <div><a onClick={this.hideMenu} href="#home">Home</a></div>
+                            <div><a onClick={this.hideMenu} href="#preview">Preview</a></div>
+                            <div><a onClick={this.hideMenu} href="#faq">F.A.Q.</a></div>
+                            <div><a onClick={this.hideMenu} href="#glossary">Glossary</a></div>
+                            <div><a onClick={this.hideMenu} href="#contact">Contact</a></div>
+                            <div id="burger-icon-container"><a onClick={this.toggleMenu} id="burgerIcon">
+                                <i className="fa fa-bars"/>
+                            </a></div>
                         </div>
                     </div>
                     <div id="home">
@@ -238,85 +230,75 @@ class Home extends Component {
                             <h2>Glossary</h2>
                             <ul>
                                 <li>
-                                    <span className="accented-p">Non-penalty Goals</span> [Opta] Goals that did not stem directly from penalty kicks.
+                                    <span className="accented-p">Non-penalty Goal</span> [Opta] A goal that did not stem directly from a penalty kick.
                                 </li>
                                 <li>
-                                    <span className="accented-p">Non-penalty xG</span> [StatsBomb] Expected goals that did not stem directly from penalty kicks.
-                                    Click <a href="https://fbref.com/en/expected-goals-model-explained/">here</a> for a detailed explanation of StatsBomb's
-                                    expected goals model.
+                                    <span className="accented-p">Non-penalty xG (Expected Goals)</span> [StatsBomb] Expected goals that did not stem directly from penalty kicks.
                                 </li>
                                 <li>
-                                    <span className="accented-p">Conversion Rate</span> [Opta] The percentage of shots taken that resulted in goals, excluding penalties.
+                                    <span className="accented-p">Conversion Rate</span> [Opta] The percentage of goal attempts that resulted in goals, excluding penalty kicks.
                                 </li>
                                 <li>
-                                    <span className="accented-p">Shots on Target %</span> [Opta] The percentage of shots taken that were on target.
+                                    <span className="accented-p">Shot on Target</span> [Opta] A goal attempt that either went into the net, or would have gone into the net
+                                    but for being saved by the goalkeeper or a "last-man" defender.
                                 </li>
                                 <li>
-                                    <span className="accented-p">Assists</span> [Opta] Passes that directly led to a chance scored by a teammate.
+                                    <span className="accented-p">Assist</span> [Opta] The final touch that led to a teammate scoring a goal.
                                 </li>
                                 <li>
-                                    <span className="accented-p">xA</span> [StatsBomb] Expected goals that resulted from shot assists.
+                                    <span className="accented-p">xA (Expected Assists)</span> [StatsBomb] Expected goals that resulted from shot assists.
                                 </li>
                                 <li>
-                                    <span className="accented-p">Passes into the Penalty Area</span> [StatsBomb] Completed passes into the penalty area, excluding set pieces.
+                                    <span className="accented-p">Completed Pass</span> [Opta] An attempted pass which successfully found a teammate.
                                 </li>
                                 <li>
-                                    <span className="accented-p">Passes into the Final 1/3</span> [StatsBomb] Completed passes that entered the 1/3 of the pitch closest to the
+                                    <span className="accented-p">Pass into the Penalty Area</span> [StatsBomb] A completed pass that entered the opposition penalty area, excluding set pieces.
+                                </li>
+                                <li>
+                                    <span className="accented-p">Pass into the Final 1/3</span> [StatsBomb] A completed pass that entered the 1/3 of the pitch closest to the
                                     opposition goal, excluding set pieces.
                                 </li>
                                 <li>
-                                    <span className="accented-p">Pass Completion %</span> [Opta] The percentage of attempted passes that successfully found a teammate.
+                                    <span className="accented-p">Completed Long Pass</span> [Opta] A completed pass of 25 yards or more.
                                 </li>
                                 <li>
-                                    <span className="accented-p">Completed Crosses</span> [Opta] Accurate passes from a wide position to a central attacking area.
+                                    <span className="accented-p">Completed Cross</span> [Opta] A completed pass from a wide position to a specific area in front of the goal.
                                 </li>
                                 <li>
-                                    <span className="accented-p">Cross Completion %</span> [Opta] The percentage of attempted crosses that successfully found a teammate.
+                                    <span className="accented-p">Pass Completion %</span> [Opta] The percentage of attempted passes, including crosses, that successfully found a teammate.
                                 </li>
                                 <li>
-                                    <span className="accented-p">Completed Long Passes</span> [Opta] Accurate passes of 25 yards or more.
+                                    <span className="accented-p">Successful Dribble</span> [Opta] A successful attempt at taking on a player and making it past them whilst retaining possession.
                                 </li>
                                 <li>
-                                    <span className="accented-p">Long Pass Completion %</span> [Opta] The percentage of attempted long passes that successfully found a teammate.
+                                    <span className="accented-p">Dispossessed</span> [Opta] Being tackled by an opponent without attempting to dribble past them.
                                 </li>
                                 <li>
-                                    <span className="accented-p">Successful Dribbles</span> [Opta] Successful attempts at taking on a player and making it past them whilst retaining the ball.
+                                    <span className="accented-p">Interception</span> [Opta] Reading an opponent's pass and preventing it from reaching another opponent by moving into the
+                                    line of the pass.
                                 </li>
                                 <li>
-                                    <span className="accented-p">Dribble Success %</span> [Opta] The percentage of attempted dribbles that were successful.
+                                    <span className="accented-p">Successful Tackle</span> [Opta] A successful dispossession of an opponent, whether the tackling player came away with the ball or not.
                                 </li>
                                 <li>
-                                    <span className="accented-p">Times Dispossessed</span> [Opta] Number of times tackled by an opponent without attempting to dribble past them.
+                                    <span className="accented-p">Foul Committed</span> [Opta] An infringement that was penalized by the referee and resulted in a free kick being awarded
+                                    to the opposition team, excluding offsides.
                                 </li>
                                 <li>
-                                    <span className="accented-p">Interceptions</span> [Opta] Preventions of opponents' passes from reaching their teammates.
+                                    <span className="accented-p">Aerial Duel Won</span> [Opta] Winning the ball in a duel that was challenged in the air.
                                 </li>
                                 <li>
-                                    <span className="accented-p">Tackles Won</span> [Opta] Successful dispossessions of opponents, whether the tackling player came away with the ball or not.
+                                    <span className="accented-p">Block</span> [Opta] A prevention of a shot on target taken by an opponent from reaching the goal.
                                 </li>
                                 <li>
-                                    <span className="accented-p">Tackle Win %</span> [Opta] The percentage of attempted tackles that were won.
-                                </li>
-                                <li>
-                                    <span className="accented-p">Fouls Committed</span> [Opta] Illegal manoeuvres that resulted in free kicks for the opposing team, excluding offsides.
-                                </li>
-                                <li>
-                                    <span className="accented-p">Recoveries</span> [Opta] Successful tackles + interceptions.
-                                </li>
-                                <li>
-                                    <span className="accented-p">Aerial Duels Won</span> [Opta] Headers won in direct contests with opponents.
-                                </li>
-                                <li>
-                                    <span className="accented-p">Aerial Duel Win %</span> [Opta] The percentage of attempted aerial duels that were won.
-                                </li>
-                                <li>
-                                    <span className="accented-p">Blocks</span> [Opta] Preventions of opponents' shots from reaching the goal.
-                                </li>
-                                <li>
-                                    <span className="accented-p">Clearances</span> [Opta] Actions by defending players that temporarily removed the attacking threat on their goal/that
-                                    effectively alleviated pressure on their goal.
+                                    <span className="accented-p">Clearance</span> [Opta] An action where a player kicked the ball away from his own goal with no intended recipient.
                                 </li>
                             </ul>
+                            <p>
+                                Please consult the <a href="https://www.optasports.com/news/opta-s-event-definitions/">Opta event definitions page</a> to
+                                see the complete definitions of the stats provided by Opta. For a detailed explanation of StatsBomb's expected goals/assists
+                                model, you can visit <a href="https://fbref.com/en/expected-goals-model-explained/">FBref's explanation</a>.
+                            </p>
                         </div>
                     </div>
                     <div id="contact" style={{backgroundColor: '#f4f5f6'}} className="homepage-section-container">

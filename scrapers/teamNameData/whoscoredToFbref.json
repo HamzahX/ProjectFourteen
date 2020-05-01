@@ -192,7 +192,7 @@
     "fbref": "M'gladbach"
   },
   "Bayer Leverkusen": {
-    "fbref": "Bayer"
+    "fbref": "Leverkusen"
   },
   "Schalke 04": {
     "fbref": "Schalke 04"
@@ -354,7 +354,7 @@
     "fbref": "Loko Moscow"
   },
   "Shakhtar Donetsk": {
-    "fbref": "Shakhtar"
+    "fbref": "Shaktar"
   },
   "Slavia Prague": {
     "fbref": "Slavia Prague"
@@ -371,109 +371,16 @@
   "FK Crvena Zvezda": {
     "fbref": "Red Star"
   },
-  "LASK": {
-    "fbref": "LASK"
-  },
-  "Sporting CP": {
-    "fbref": "Sporting CP"
-  },
-  "Celtic": {
-    "fbref": "Celtic"
-  },
-  "FC Basel 1893": {
-    "fbref": "Basel"
-  },
-  "Braga": {
-    "fbref": "Braga"
-  },
-  "Dynamo Kyiv": {
-    "fbref": "Dynamo Kyiv"
-  },
-  "AZ Alkmaar": {
-    "fbref": "AZ Alkmaar"
-  },
-  "Gent": {
-    "fbref": "Gent"
-  },
-  "APOEL Nicosia": {
-    "fbref": "APOEL"
-  },
-  "Rangers": {
-    "fbref": "Rangers"
-  },
-  "CFR Cluj": {
-    "fbref": "CFR Cluj"
-  },
-  "Ludogorets Razgrad": {
-    "fbref": "Ludogorets"
-  },
   "FC Porto": {
     "fbref": "Porto"
-  },
-  "PSV Eindhoven": {
-    "fbref": "PSV Eindhoven"
-  },
-  "Feyenoord": {
-    "fbref": "Feyenoord"
-  },
-  "BSC Young Boys": {
-    "fbref": "Young Boys"
-  },
-  "Standard Liege": {
-    "fbref": "Standard Li�ge"
-  },
-  "Istanbul Basaksehir": {
-    "fbref": "Ba?ak?ehir"
-  },
-  "Ferencvaros": {
-    "fbref": "Ferencv�ros"
-  },
-  "FC Copenhagen": {
-    "fbref": "FC Copenhagen"
-  },
-  "Wolfsberger AC": {
-    "fbref": "Wolfsberger AC"
-  },
-  "Vitoria de Guimaraes": {
-    "fbref": "Vit�ria"
-  },
-  "Malmoe FF": {
-    "fbref": "Malm�"
-  },
-  "Partizan Belgrade": {
-    "fbref": "Partizan"
-  },
-  "Slovan Bratislava": {
-    "fbref": "Slovan Bratislava"
-  },
-  "Qarabag FK": {
-    "fbref": "Qaraba? A?dam"
-  },
-  "FC Lugano": {
-    "fbref": "Lugano"
   },
   "CSKA Moscow": {
     "fbref": "CSKA Moscow"
   },
-  "FC Krasnodar": {
-    "fbref": "Krasnodar"
+  "PSV Eindhoven": {
+    "fbref": "PSV Eindhoven"
   },
-  "Trabzonspor": {
-    "fbref": "Trabzonspor"
-  },
-  "F91 Dudelange": {
-    "fbref": "F91 Dudelange"
-  },
-  "FC Olexandriya": {
-    "fbref": "FC Oleksandriya"
-  },
-  "Rosenborg": {
-    "fbref": "Rosenborg"
-  },
-  "Besiktas": {
-    "fbref": "Be?ikta?"
-  },
-  "FC Astana": {
-    "fbref": "Astana FK"
+  "Viktoria Plzen": {
+    "fbref": "Viktoria Plzeň"
   }
 }

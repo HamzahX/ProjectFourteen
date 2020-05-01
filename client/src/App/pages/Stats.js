@@ -30,7 +30,7 @@ class Stats extends Component {
                 'Successful Dribbles',
                 'Dribble Success %',
                 'Times Dispossessed',
-                'Recoveries',
+                'Successful Tackles + Interceptions',
             ],
             "AM": [
                 'Non-Penalty Goals',
@@ -44,7 +44,7 @@ class Stats extends Component {
                 'Successful Dribbles',
                 'Dribble Success %',
                 'Times Dispossessed',
-                'Recoveries',
+                'Successful Tackles + Interceptions',
             ],
             "CM": [
                 'Non-Penalty Goals+Assists',
@@ -56,8 +56,8 @@ class Stats extends Component {
                 'Successful Dribbles',
                 'Dribble Success %',
                 'Interceptions',
-                'Tackles Won',
-                'Tackle Win %',
+                'Successful Tackles',
+                'Tackle Success %',
                 'Fouls Committed'
             ],
             "FB": [
@@ -70,8 +70,8 @@ class Stats extends Component {
                 'Successful Dribbles',
                 'Dribble Success %',
                 'Interceptions',
-                'Tackles Won',
-                'Tackle Win %',
+                'Successful Tackles',
+                'Tackle Success %',
                 'Fouls Committed'
             ],
             "CB": [
@@ -80,8 +80,8 @@ class Stats extends Component {
                 'Completed Long Passes',
                 'Long Pass Completion %',
                 'Interceptions',
-                'Tackles Won',
-                'Tackle Win %',
+                'Successful Tackles',
+                'Tackle Success %',
                 'Fouls Committed',
                 'Aerial Duels Won',
                 'Aerial Duel Win %',
