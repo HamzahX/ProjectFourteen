@@ -135,7 +135,7 @@
     "fbref": "Valencia"
   },
   "Atletico Madrid": {
-    "fbref": "Atlético Madrid"
+    "fbref": "Atl�tico Madrid"
   },
   "Villarreal": {
     "fbref": "Villarreal"
@@ -162,7 +162,7 @@
     "fbref": "Valladolid"
   },
   "Deportivo Alaves": {
-    "fbref": "Alavés"
+    "fbref": "Alav�s"
   },
   "Eibar": {
     "fbref": "Eibar"
@@ -171,7 +171,7 @@
     "fbref": "Mallorca"
   },
   "Leganes": {
-    "fbref": "Leganés"
+    "fbref": "Legan�s"
   },
   "Celta Vigo": {
     "fbref": "Celta Vigo"
@@ -219,7 +219,7 @@
     "fbref": "Hertha BSC"
   },
   "FC Koln": {
-    "fbref": "Köln"
+    "fbref": "K�ln"
   },
   "Mainz 05": {
     "fbref": "Mainz 05"
@@ -228,10 +228,13 @@
     "fbref": "Werder Bremen"
   },
   "Fortuna Duesseldorf": {
-    "fbref": "Düsseldorf"
+    "fbref": "D�sseldorf"
   },
   "Paderborn": {
     "fbref": "Paderborn 07"
+  },
+  "VfB Stuttgart": {
+    "fbref": "Stuttgart"
   },
   "Paris Saint-Germain": {
     "fbref": "Paris S-G"
@@ -276,7 +279,7 @@
     "fbref": "Brest"
   },
   "Saint-Etienne": {
-    "fbref": "Saint-Étienne"
+    "fbref": "Saint-�tienne"
   },
   "Metz": {
     "fbref": "Metz"
@@ -288,7 +291,7 @@
     "fbref": "Amiens"
   },
   "Nimes": {
-    "fbref": "Nîmes"
+    "fbref": "N�mes"
   },
   "Toulouse": {
     "fbref": "Toulouse"
@@ -338,7 +341,7 @@
   "Salzburg": {
     "fbref": "RB Salzburg"
   },
-  "Zenit St. Petersburg": {
+  "Zenit St' Petersburg": {
     "fbref": "Zenit"
   },
   "Benfica": {
@@ -354,7 +357,7 @@
     "fbref": "Loko Moscow"
   },
   "Shakhtar Donetsk": {
-    "fbref": "Shaktar"
+    "fbref": "Shakhtar"
   },
   "Slavia Prague": {
     "fbref": "Slavia Prague"
@@ -381,6 +384,150 @@
     "fbref": "PSV Eindhoven"
   },
   "Viktoria Plzen": {
-    "fbref": "Viktoria Plzeň"
+    "fbref": "Viktoria Plze?"
+  },
+  "FC Basel 1893": {
+    "fbref": "Basel"
+  },
+  "AEK Athens": {
+      "fbref": "AEK Athens"
+  },
+  "Braga": {
+    "fbref": "Braga"
+  },
+  "AZ Alkmaar": {
+    "fbref": "AZ Alkmaar"
+  },
+  "Sporting CP": {
+    "fbref": "Sporting CP"
+  },
+  "LASK": {
+    "fbref": "LASK"
+  },
+  "Rangers": {
+    "fbref": "Rangers"
+  },
+  "Istanbul Basaksehir": {
+    "fbref": "Ba?ak?ehir"
+  },
+  "Celtic": {
+    "fbref": "Celtic"
+  },
+  "Gent": {
+    "fbref": "Gent"
+  },
+  "Ludogorets Razgrad": {
+    "fbref": "Ludogorets"
+  },
+  "APOEL Nicosia": {
+    "fbref": "APOEL"
+  },
+  "Slovan Bratislava": {
+    "fbref": "Slovan Bratislava"
+  },
+  "Partizan Belgrade": {
+    "fbref": "Partizan"
+  },
+  "FC Copenhagen": {
+    "fbref": "FC Copenhagen"
+  },
+  "Malmoe FF": {
+    "fbref": "Malm�"
+  },
+  "Standard Liege": {
+    "fbref": "Standard Li�ge"
+  },
+  "F91 Dudelange": {
+    "fbref": "F91 Dudelange"
+  },
+  "BSC Young Boys": {
+    "fbref": "Young Boys"
+  },
+  "Qarabag FK": {
+    "fbref": "Qaraba? A?dam"
+  },
+  "Vitoria de Guimaraes": {
+    "fbref": "Vit�ria"
+  },
+  "Feyenoord": {
+    "fbref": "Feyenoord"
+  },
+  "Dynamo Kyiv": {
+    "fbref": "Dynamo Kyiv"
+  },
+  "Wolfsberger AC": {
+    "fbref": "Wolfsberger AC"
+  },
+  "CFR Cluj": {
+    "fbref": "CFR Cluj"
+  },
+  "FC Krasnodar": {
+    "fbref": "Krasnodar"
+  },
+  "Besiktas": {
+    "fbref": "Be?ikta?"
+  },
+  "FC Olexandriya": {
+    "fbref": "FC Oleksandriya"
+  },
+  "Ferencvaros": {
+    "fbref": "Ferencv�ros"
+  },
+  "FC Astana": {
+    "fbref": "Astana FK"
+  },
+  "Trabzonspor": {
+    "fbref": "Trabzonspor"
+  },
+  "Rosenborg": {
+    "fbref": "Rosenborg"
+  },
+  "FC Lugano": {
+    "fbref": "Lugano"
+  },
+  "BATE Borisov": {
+    "fbref": "BATE Borisov"
+  },
+  "Apollon Limassol": {
+    "fbref": "Apollon"
+  },
+  "Fenerbahce": {
+    "fbref": "Fenerbah�e"
+  },
+  "FC Zuerich": {
+    "fbref": "Z�rich"
+  },
+  "Spartak Moscow": {
+    "fbref": "Spartak Moscow"
+  },
+  "Sarpsborg 08": {
+    "fbref": "Sarpsborg 08"
+  },
+  "Rapid Wien": {
+    "fbref": "Rapid Wien"
+  },
+  "Jablonec": {
+    "fbref": "Jablonec"
+  },
+  "AEK Larnaca": {
+    "fbref": "A�K L�rnaka"
+  },
+  "PAOK Thessaloniki FC": {
+    "fbref": "PAOK"
+  },
+  "Fehervar FC": {
+    "fbref": "Vidi"
+  },
+  "Spartak Trnava": {
+    "fbref": "Spartak Trnava"
+  },
+  "Vorskla": {
+    "fbref": "Vorskla Poltava"
+  },
+  "Akhisarspor": {
+    "fbref": "Akhisarspor"
+  },
+  "Anderlecht": {
+    "fbref": "Anderlecht"
   }
 }

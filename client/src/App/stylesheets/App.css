@@ -89,7 +89,7 @@ a {
 }
 
 #homepage p {
-    font-size: 1.25em;
+    font-size: 1em;
     color: #222222;
     font-family: Tahoma, Arial, Helvetica, sans-serif;
 }
@@ -625,7 +625,7 @@ a {
     }
 }
 
-@media (max-width: 960px) {
+@media (max-width: 960px), (orientation: portrait) {
 
     .screen {
         padding: 1%;

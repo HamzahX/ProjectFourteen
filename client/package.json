@@ -35,7 +35,6 @@
     "fs-extra": "^8.1.0",
     "highcharts": "^7.2.1",
     "highcharts-react-official": "^2.2.2",
-    "html-to-image": "^0.1.1",
     "html-webpack-plugin": "4.0.0-beta.5",
     "identity-obj-proxy": "3.0.0",
     "jest": "24.9.0",

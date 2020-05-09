@@ -5,7 +5,7 @@ const app = express();
 const bodyParser = require("body-parser");
 const port = process.env.PORT || 5000;
 
-//file writer
+//file writer/reader
 const fs = require('fs');
 
 //mongoDB constants

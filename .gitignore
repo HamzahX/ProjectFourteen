@@ -1,10 +1,10 @@
 .idea/
 node_modules/
 serverUtils/
-whoscoredScraper.js
-fbrefMapper.js
-fbrefMapper2.js
-fbrefScraper.js
 positionScraper.js
-percentileScraper.js
-index.test.js
+metadataScraper.js
+statsScraper.js
+mappingCreator.js
+possessionScraper.js
+statsFiller.js
+percentilesGenerator.js
