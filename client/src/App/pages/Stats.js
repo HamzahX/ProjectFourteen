@@ -97,7 +97,6 @@ class Stats extends Component {
 
         if (response.newPercentileArrays !== undefined){
             this.props.updatePercentileArrays(response.newPercentileArrays);
-            alert("Updating!");
             response = response.stats;
         }
 
