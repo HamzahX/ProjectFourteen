@@ -21,7 +21,7 @@ class App extends Component {
 
         super(props);
         this.state = {
-            percentiles: {},
+            percentileArrays: {},
         };
 
     }
@@ -37,11 +37,11 @@ class App extends Component {
 
         });
 
-        this.getPercentiles()
+        this.getPercentileArrays()
 
     }
 
-    getPercentiles = () => {
+    getPercentileArrays = () => {
 
         fetch('/api/percentiles', {
             method: 'post',
@@ -55,8 +55,16 @@ class App extends Component {
         .then(res => {
             return res.json()
         })
-        .then(percentiles => this.setState({percentiles: percentiles}))
+        .then(percentileArrays => this.setState({percentileArrays: percentileArrays}))
         .catch();
+
+    };
+
+    updatePercentileArrays = (newPercentileArrays) => {
+
+        this.setState({
+            percentileArrays: newPercentileArrays
+        })
 
     };
 
@@ -68,7 +76,11 @@ class App extends Component {
                     <Route exact path='/' component={Home}/>
                     <Route exact path='/' render={(props) => <Home {...props} isMobile={isMobileOnly}/>}/>
                     <Route path='/search/:query/:searchByClub?' component={Search}/>
-                    <Route path='/stats/:URL' render={(props) => <Stats {...props} percentiles={this.state.percentiles} isMobile={isMobileOnly}/>}/>
+                    <Route path='/stats/:code' render={(props) => <Stats {...props}
+                                                                         percentileArrays={this.state.percentileArrays}
+                                                                         isMobile={isMobileOnly}
+                                                                         updatePercentileArrays={this.updatePercentileArrays}/>}
+                    />
                 </Switch>
             </div>
         );

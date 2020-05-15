@@ -1,11 +1,5 @@
 .idea/
 node_modules/
 serverUtils/
-scrapers/positionScraper.js
-scrapers/metadataScraper.js
-scrapers/statsScraper.js
-scrapers/mappingCreator.js
-scrapers/possessionScraper.js
-scrapers/statsFiller.js
-scrapers/percentilesGenerator.js
 scrapers/databaseUploader.js
+scrapers/command.txt

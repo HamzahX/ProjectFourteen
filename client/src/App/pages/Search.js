@@ -4,11 +4,12 @@ import SearchBar from "../components/SearchBar";
 import LoadingSpinner from "../components/LoadingSpinner";
 import PlayerSearchResult from "../components/PlayerSearchResult";
 
-import Select from 'react-select';
 import ClubSearchResult from "../components/ClubSearchResult";
 
 
 class Search extends Component {
+
+    _isMounted = false;
 
     constructor(props){
         super(props);
@@ -23,36 +24,35 @@ class Search extends Component {
             filteredPlayerSearchResults: [],
             openMenu: false,
             clubSearchResults: [],
-            names: [],
-            clubs: [],
-            nationalities: [],
-            reactSelectStyle: {
-                control: (base, state) => ({
-                    ...base,
-                    boxShadow: "none",
-                    '&:hover': {
-                        borderColor: '#B23535'
-                    },
-                    '&:focus': {
-                        borderColor: '#B23535'
-                    },
-                })
-            },
-            reactSelectTheme: theme => ({
-                ...theme,
-                colors: {
-                    ...theme.colors,
-                    primary25: "pink",
-                    primary: "#e75453"
-                }
-            })
+            filterValue: ""
+            // reactSelectStyle: {
+            //     control: (base) => ({
+            //         ...base,
+            //         boxShadow: "none",
+            //         '&:hover': {
+            //             borderColor: '#B23535'
+            //         },
+            //         '&:focus': {
+            //             borderColor: '#B23535'
+            //         },
+            //     })
+            // },
+            // reactSelectTheme: theme => ({
+            //     ...theme,
+            //     colors: {
+            //         ...theme.colors,
+            //         primary25: "pink",
+            //         primary: "#e75453"
+            //     }
+            // })
         };
 
-        this.filterByClub = this.filterByClub.bind(this);
-        this.filterByName = this.filterByName.bind(this);
     }
 
     componentDidMount() {
+
+        this._isMounted = true;
+
         this.setState({
             isLoading: true
         }, () => {
@@ -60,7 +60,7 @@ class Search extends Component {
         });
     }
 
-    componentWillReceiveProps(nextProps, nextContext) {
+    UNSAFE_componentWillReceiveProps(nextProps, nextContext) {
         let { query, searchByClub } = nextProps.match.params;
         this.setState({
             isLoading: true,
@@ -105,99 +105,47 @@ class Search extends Component {
 
     };
 
-    processSearchResults(searchResults){
+    processSearchResults = (searchResults) => {
+
         let playerSearchResults = searchResults['playerSearchResults'];
         let clubSearchResults = searchResults['clubSearchResults'];
 
-        let names = [];
-        let clubs = [];
-        let nationalities = [];
-
-        for (let i=0; i<playerSearchResults.length; i++){
-            let currentResult = playerSearchResults[i];
-            let currentResultClubs = currentResult.club;
-            for (let i=0; i<currentResultClubs.length; i++){
-                let temp1 = {
-                    value: currentResult.club[i],
-                    label: currentResult.club[i],
-                };
-                if (!clubs.filter(e => e.value === temp1.value).length > 0){
-                    clubs.push(temp1);
-                }
-            }
-            let temp2 = {
-                value: currentResult.nationality,
-                label: currentResult.nationality,
-            };
-            let temp3 = {
-                value: currentResult.name,
-                label: currentResult.name
-            };
-            names.push(temp3);
-            if (!nationalities.filter(e => e.value === temp2.value).length > 0){
-                nationalities.push(temp2);
-            }
-        }
-
-        this.setState({
-            playerSearchResults: playerSearchResults,
-            filteredPlayerSearchResults: playerSearchResults,
-            clubSearchResults: clubSearchResults,
-            names: names,
-            clubs: clubs,
-            nationalities: nationalities,
-            isLoading: false,
-            error: null
-        })
-    }
-
-    filterByClub(selectedOption){
-
-        console.log(selectedOption);
-
-        let playerSearchResults = JSON.parse(JSON.stringify(this.state.playerSearchResults));
-        let filteredPlayerSearchResults = [];
-
-        if (selectedOption === null || selectedOption.length === 0){
-            filteredPlayerSearchResults = playerSearchResults;
-        }
-
-        else {
-            for (let i=0; i<playerSearchResults.length; i++){
-                for (let j=0; j<selectedOption.length; j++){
-                    if (playerSearchResults[i].club.includes(selectedOption[j].value)
-                        && !filteredPlayerSearchResults.includes(playerSearchResults[i])) {
-                        filteredPlayerSearchResults.push(playerSearchResults[i]);
-                    }
-                    // if (selectedOption[j].value === playerSearchResults[i].club){
-                    //     filteredPlayerSearchResults.push(playerSearchResults[i]);
-                    // }
-                }
-            }
-        }
-
-        this.setState({
-            filteredPlayerSearchResults: []
-        }, () => {
+        if (this._isMounted){
             this.setState({
-                filteredPlayerSearchResults: filteredPlayerSearchResults
+                isLoading: false,
+                playerSearchResults: playerSearchResults,
+                filteredPlayerSearchResults: playerSearchResults,
+                clubSearchResults: clubSearchResults,
+                error: null
             })
-        });
+        }
+    };
 
+    componentWillUnmount() {
+        this._isMounted = false;
     }
 
-    filterByName(selectedOption){
+    filterByName = (event) => {
 
         let playerSearchResults = JSON.parse(JSON.stringify(this.state.playerSearchResults));
         let filteredPlayerSearchResults = [];
 
-        if (selectedOption === null){
+        let input;
+        if (event === null) {
             filteredPlayerSearchResults = playerSearchResults;
         }
-
         else {
+            input = event.target.value
+                .normalize("NFD")
+                .replace(/[\u0300-\u036f]/g, "")
+                .replace("Ø", "O")
+                .replace("ø", "o");
             for (let i=0; i<playerSearchResults.length; i++){
-                if (playerSearchResults[i].name.toUpperCase().includes(selectedOption.value.toUpperCase())){
+                let name = playerSearchResults[i].name.normalize("NFD")
+                    .replace(/[\u0300-\u036f]/g, "")
+                    .replace("Ø", "O")
+                    .replace("ø", "o");
+                if (name.toUpperCase().includes(input.toUpperCase())){
                     filteredPlayerSearchResults.push(playerSearchResults[i]);
                 }
             }
@@ -208,36 +156,21 @@ class Search extends Component {
         }, () => {
             this.setState({
                 filteredPlayerSearchResults: filteredPlayerSearchResults,
-                openMenu: false
+                filterValue: input
             })
         });
 
-    }
-
-    hideMenu = () => {
-        this.setState({ openMenu: false });
-    };
-
-    handleInputChange = (query, { action }) => {
-        if (action === "input-change") {
-            let openMenu;
-            openMenu = query.length !== 0;
-            this.setState({ openMenu: openMenu });
-        }
     };
 
     render() {
+
         let {
             error,
             isLoading,
             filteredPlayerSearchResults,
             clubSearchResults,
-            clubs,
-            names,
             searchByClub,
-            openMenu,
-            reactSelectStyle,
-            reactSelectTheme
+            filterValue
         } = this.state;
 
         if (isLoading) {
@@ -265,11 +198,11 @@ class Search extends Component {
                 playerCards.push(
                     <PlayerSearchResult
                         page={"search"}
+                        code={current.code}
                         name={current.name}
-                        club={current.club}
+                        clubs={current.clubs}
                         nationality={current.nationality}
-                        URL={current.URL}
-                        all={current.all}
+                        key={i}
                     />
                 );
             }
@@ -280,67 +213,19 @@ class Search extends Component {
                 clubCards.push(
                     <ClubSearchResult
                         name={current}
+                        key={i}
                     />
                 )
             }
 
-            let searchFilter;
-            let searchText;
-            // if (searchByClub === undefined){
-            //     searchText = <h3>Search results for <br/>"{this.state.query}"</h3>;
-            //     searchFilter =
-            //         <Select
-            //             styles={reactSelectStyle}
-            //             theme={reactSelectTheme}
-            //             placeholder={"Filter players by club"}
-            //             onChange={this.filterByClub}
-            //             isMulti
-            //             isClearable
-            //             options={clubs}
-            //         />
-            // }
-            //
-            // else {
-            //     searchText = <h3>Search results for <br/>"player.club = {this.state.query}"</h3>;
-            //     searchFilter =
-            //         <Select
-            //             styles={reactSelectStyle}
-            //             theme={reactSelectTheme}
-            //             placeholder={"Filter players by name"}
-            //             onChange={this.filterByName}
-            //             onInputChange={this.handleInputChange}
-            //             onBlur={this.hideMenu}
-            //             isClearable
-            //             menuIsOpen={openMenu}
-            //             options={names}
-            //             components={
-            //                 {
-            //                     DropdownIndicator: () => null,
-            //                     IndicatorSeparator: () => null
-            //                 }
-            //             }
-            //         />
-            // }
 
-            searchText = <h3>Search results for <br/>"player.club = {this.state.query}"</h3>;
-            searchFilter =
-                <Select
-                    styles={reactSelectStyle}
-                    theme={reactSelectTheme}
-                    placeholder={"Filter players by name"}
-                    onChange={this.filterByName}
-                    onInputChange={this.handleInputChange}
-                    onBlur={this.hideMenu}
-                    isClearable
-                    menuIsOpen={openMenu}
-                    options={names}
-                    components={
-                        {
-                            DropdownIndicator: () => null,
-                            IndicatorSeparator: () => null
-                        }
-                    }
-                />
+            let searchText;
+            if (searchByClub === undefined){
+                searchText = <h3>Search results for <br/>"{this.state.query}"</h3>;
+            }
+            else {
+                searchText = <h3>Search results for <br/>"player.club = {this.state.query}"</h3>;
+            }
 
             return (
                 <div id="main">
@@ -348,8 +233,9 @@ class Search extends Component {
                     <div className="screen" id="search-screen">
                         <div className="filter" id="search-filters">
                             {searchText}
+                            <br />
                             <div id="search-filter-inputs">
-                                {searchFilter}
+                                <input type="text" value={filterValue} placeholder={"Filter players by name"} onChange={this.filterByName} />
                             </div>
                         </div>
                         <div className="result" id="search-results">

@@ -120,21 +120,12 @@
 		"clubs": {
 			"18-19": [
 				"Bournemouth"
-			],
-			"19-20": [
-				"Rangers"
 			]
 		},
 		"18-19": {
 			"Premier League | Bournemouth": {
 				"whoscoredApps": 4,
 				"whoscoredMins": 22
-			}
-		},
-		"19-20": {
-			"Europa League | Rangers": {
-				"whoscoredApps": 1,
-				"whoscoredMins": 5
 			}
 		}
 	},
@@ -2933,10 +2924,6 @@
 			"18-19": [
 				"Fulham",
 				"Besiktas"
-			],
-			"19-20": [
-				"Galatasaray",
-				"Ajax"
 			]
 		},
 		"18-19": {
@@ -2947,16 +2934,6 @@
 			"Europa League | Besiktas": {
 				"whoscoredApps": 3,
 				"whoscoredMins": 166
-			}
-		},
-		"19-20": {
-			"Champions League | Galatasaray": {
-				"whoscoredApps": 4,
-				"whoscoredMins": 334
-			},
-			"Europa League | Ajax": {
-				"whoscoredApps": 2,
-				"whoscoredMins": 180
 			}
 		}
 	},
@@ -5310,9 +5287,6 @@
 		"clubs": {
 			"18-19": [
 				"Roma"
-			],
-			"19-20": [
-				"Roma"
 			]
 		},
 		"18-19": {
@@ -5323,12 +5297,6 @@
 			"Champions League | Roma": {
 				"whoscoredApps": 2,
 				"whoscoredMins": 180
-			}
-		},
-		"19-20": {
-			"Europa League | Roma": {
-				"whoscoredApps": 2,
-				"whoscoredMins": 152
 			}
 		}
 	},
@@ -5516,9 +5484,6 @@
 		"clubs": {
 			"18-19": [
 				"Monaco"
-			],
-			"19-20": [
-				"Galatasaray"
 			]
 		},
 		"18-19": {
@@ -5529,12 +5494,6 @@
 			"Champions League | Monaco": {
 				"whoscoredApps": 5,
 				"whoscoredMins": 340
-			}
-		},
-		"19-20": {
-			"Champions League | Galatasaray": {
-				"whoscoredApps": 3,
-				"whoscoredMins": 208
 			}
 		}
 	},
@@ -7711,21 +7670,12 @@
 		"clubs": {
 			"18-19": [
 				"Espanyol"
-			],
-			"19-20": [
-				"Espanyol"
 			]
 		},
 		"18-19": {
 			"La Liga | Espanyol": {
 				"whoscoredApps": 20,
 				"whoscoredMins": 735
-			}
-		},
-		"19-20": {
-			"Europa League | Espanyol": {
-				"whoscoredApps": 2,
-				"whoscoredMins": 87
 			}
 		}
 	},
@@ -7936,21 +7886,12 @@
 		"clubs": {
 			"18-19": [
 				"Bournemouth"
-			],
-			"19-20": [
-				"Qarabag FK"
 			]
 		},
 		"18-19": {
 			"Premier League | Bournemouth": {
 				"whoscoredApps": 24,
 				"whoscoredMins": 2160
-			}
-		},
-		"19-20": {
-			"Europa League | Qarabag FK": {
-				"whoscoredApps": 5,
-				"whoscoredMins": 450
 			}
 		}
 	},
@@ -8324,9 +8265,6 @@
 		"clubs": {
 			"18-19": [
 				"Liverpool"
-			],
-			"19-20": [
-				"Trabzonspor"
 			]
 		},
 		"18-19": {
@@ -8337,12 +8275,6 @@
 			"Champions League | Liverpool": {
 				"whoscoredApps": 7,
 				"whoscoredMins": 164
-			}
-		},
-		"19-20": {
-			"Europa League | Trabzonspor": {
-				"whoscoredApps": 2,
-				"whoscoredMins": 126
 			}
 		}
 	},
@@ -9716,21 +9648,12 @@
 		"clubs": {
 			"18-19": [
 				"Real Valladolid"
-			],
-			"19-20": [
-				"Standard Liege"
 			]
 		},
 		"18-19": {
 			"La Liga | Real Valladolid": {
 				"whoscoredApps": 18,
 				"whoscoredMins": 679
-			}
-		},
-		"19-20": {
-			"Europa League | Standard Liege": {
-				"whoscoredApps": 3,
-				"whoscoredMins": 161
 			}
 		}
 	},
@@ -10188,9 +10111,6 @@
 		"clubs": {
 			"18-19": [
 				"Inter"
-			],
-			"19-20": [
-				"Inter"
 			]
 		},
 		"18-19": {
@@ -10201,12 +10121,6 @@
 			"Europa League | Inter": {
 				"whoscoredApps": 2,
 				"whoscoredMins": 118
-			}
-		},
-		"19-20": {
-			"Europa League | Inter": {
-				"whoscoredApps": 2,
-				"whoscoredMins": 180
 			}
 		}
 	},
@@ -10560,9 +10474,6 @@
 		"clubs": {
 			"18-19": [
 				"Roma"
-			],
-			"19-20": [
-				"FC Porto"
 			]
 		},
 		"18-19": {
@@ -10573,12 +10484,6 @@
 			"Champions League | Roma": {
 				"whoscoredApps": 2,
 				"whoscoredMins": 166
-			}
-		},
-		"19-20": {
-			"Europa League | FC Porto": {
-				"whoscoredApps": 8,
-				"whoscoredMins": 720
 			}
 		}
 	},
@@ -11421,21 +11326,12 @@
 		"clubs": {
 			"18-19": [
 				"Hertha Berlin"
-			],
-			"19-20": [
-				"BSC Young Boys"
 			]
 		},
 		"18-19": {
 			"Bundesliga | Hertha Berlin": {
 				"whoscoredApps": 29,
 				"whoscoredMins": 2171
-			}
-		},
-		"19-20": {
-			"Europa League | BSC Young Boys": {
-				"whoscoredApps": 5,
-				"whoscoredMins": 382
 			}
 		}
 	},
@@ -12299,9 +12195,6 @@
 		"clubs": {
 			"18-19": [
 				"Marseille"
-			],
-			"19-20": [
-				"PSV Eindhoven"
 			]
 		},
 		"18-19": {
@@ -12312,12 +12205,6 @@
 			"Europa League | Marseille": {
 				"whoscoredApps": 5,
 				"whoscoredMins": 216
-			}
-		},
-		"19-20": {
-			"Europa League | PSV Eindhoven": {
-				"whoscoredApps": 2,
-				"whoscoredMins": 16
 			}
 		}
 	},
@@ -16360,21 +16247,12 @@
 		"clubs": {
 			"18-19": [
 				"Huddersfield"
-			],
-			"19-20": [
-				"FK Crvena Zvezda"
 			]
 		},
 		"18-19": {
 			"Premier League | Huddersfield": {
 				"whoscoredApps": 5,
 				"whoscoredMins": 407
-			}
-		},
-		"19-20": {
-			"Champions League | FK Crvena Zvezda": {
-				"whoscoredApps": 5,
-				"whoscoredMins": 355
 			}
 		}
 	},
@@ -16520,9 +16398,6 @@
 		"clubs": {
 			"18-19": [
 				"Borussia Dortmund"
-			],
-			"19-20": [
-				"Borussia Dortmund"
 			]
 		},
 		"18-19": {
@@ -16533,12 +16408,6 @@
 			"Champions League | Borussia Dortmund": {
 				"whoscoredApps": 3,
 				"whoscoredMins": 193
-			}
-		},
-		"19-20": {
-			"Champions League | Borussia Dortmund": {
-				"whoscoredApps": 1,
-				"whoscoredMins": 1
 			}
 		}
 	},
@@ -16745,21 +16614,12 @@
 		"clubs": {
 			"18-19": [
 				"Guingamp"
-			],
-			"19-20": [
-				"FC Copenhagen"
 			]
 		},
 		"18-19": {
 			"Ligue 1 | Guingamp": {
 				"whoscoredApps": 17,
 				"whoscoredMins": 1530
-			}
-		},
-		"19-20": {
-			"Europa League | FC Copenhagen": {
-				"whoscoredApps": 9,
-				"whoscoredMins": 810
 			}
 		}
 	},
@@ -17879,9 +17739,6 @@
 		"clubs": {
 			"18-19": [
 				"Schalke 04"
-			],
-			"19-20": [
-				"Shakhtar Donetsk"
 			]
 		},
 		"18-19": {
@@ -17892,16 +17749,6 @@
 			"Champions League | Schalke 04": {
 				"whoscoredApps": 6,
 				"whoscoredMins": 462
-			}
-		},
-		"19-20": {
-			"Champions League | Shakhtar Donetsk": {
-				"whoscoredApps": 4,
-				"whoscoredMins": 180
-			},
-			"Europa League | Shakhtar Donetsk": {
-				"whoscoredApps": 3,
-				"whoscoredMins": 13
 			}
 		}
 	},
@@ -19836,21 +19683,12 @@
 		"clubs": {
 			"18-19": [
 				"Lille"
-			],
-			"19-20": [
-				"Braga"
 			]
 		},
 		"18-19": {
 			"Ligue 1 | Lille": {
 				"whoscoredApps": 18,
 				"whoscoredMins": 620
-			}
-		},
-		"19-20": {
-			"Europa League | Braga": {
-				"whoscoredApps": 5,
-				"whoscoredMins": 131
 			}
 		}
 	},
@@ -20194,9 +20032,6 @@
 		"clubs": {
 			"18-19": [
 				"Manchester United"
-			],
-			"19-20": [
-				"Manchester United"
 			]
 		},
 		"18-19": {
@@ -20207,12 +20042,6 @@
 			"Champions League | Manchester United": {
 				"whoscoredApps": 1,
 				"whoscoredMins": 46
-			}
-		},
-		"19-20": {
-			"Europa League | Manchester United": {
-				"whoscoredApps": 4,
-				"whoscoredMins": 348
 			}
 		}
 	},
@@ -21166,9 +20995,6 @@
 		"clubs": {
 			"18-19": [
 				"Tottenham"
-			],
-			"19-20": [
-				"Tottenham"
 			]
 		},
 		"18-19": {
@@ -21179,12 +21005,6 @@
 			"Champions League | Tottenham": {
 				"whoscoredApps": 6,
 				"whoscoredMins": 293
-			}
-		},
-		"19-20": {
-			"Champions League | Tottenham": {
-				"whoscoredApps": 1,
-				"whoscoredMins": 9
 			}
 		}
 	},
@@ -22466,9 +22286,6 @@
 		"clubs": {
 			"18-19": [
 				"Valencia"
-			],
-			"19-20": [
-				"Barcelona"
 			]
 		},
 		"18-19": {
@@ -22483,12 +22300,6 @@
 			"Europa League | Valencia": {
 				"whoscoredApps": 8,
 				"whoscoredMins": 720
-			}
-		},
-		"19-20": {
-			"Champions League | Barcelona": {
-				"whoscoredApps": 1,
-				"whoscoredMins": 90
 			}
 		}
 	},
@@ -23897,9 +23708,6 @@
 		"clubs": {
 			"18-19": [
 				"Villarreal"
-			],
-			"19-20": [
-				"Besiktas"
 			]
 		},
 		"18-19": {
@@ -23910,12 +23718,6 @@
 			"Europa League | Villarreal": {
 				"whoscoredApps": 10,
 				"whoscoredMins": 900
-			}
-		},
-		"19-20": {
-			"Europa League | Besiktas": {
-				"whoscoredApps": 1,
-				"whoscoredMins": 74
 			}
 		}
 	},
@@ -25118,9 +24920,6 @@
 		"clubs": {
 			"18-19": [
 				"Manchester United"
-			],
-			"19-20": [
-				"Manchester United"
 			]
 		},
 		"18-19": {
@@ -25131,12 +24930,6 @@
 			"Champions League | Manchester United": {
 				"whoscoredApps": 3,
 				"whoscoredMins": 270
-			}
-		},
-		"19-20": {
-			"Europa League | Manchester United": {
-				"whoscoredApps": 3,
-				"whoscoredMins": 202
 			}
 		}
 	},
@@ -26195,9 +25988,6 @@
 		"clubs": {
 			"18-19": [
 				"Sevilla"
-			],
-			"19-20": [
-				"Ajax"
 			]
 		},
 		"18-19": {
@@ -26208,16 +25998,6 @@
 			"Europa League | Sevilla": {
 				"whoscoredApps": 10,
 				"whoscoredMins": 759
-			}
-		},
-		"19-20": {
-			"Champions League | Ajax": {
-				"whoscoredApps": 5,
-				"whoscoredMins": 425
-			},
-			"Europa League | Ajax": {
-				"whoscoredApps": 1,
-				"whoscoredMins": 45
 			}
 		}
 	},
@@ -27391,9 +27171,6 @@
 		"clubs": {
 			"18-19": [
 				"Roma"
-			],
-			"19-20": [
-				"Roma"
 			]
 		},
 		"18-19": {
@@ -27404,12 +27181,6 @@
 			"Champions League | Roma": {
 				"whoscoredApps": 3,
 				"whoscoredMins": 212
-			}
-		},
-		"19-20": {
-			"Europa League | Roma": {
-				"whoscoredApps": 1,
-				"whoscoredMins": 90
 			}
 		}
 	},
@@ -27884,9 +27655,6 @@
 		"clubs": {
 			"18-19": [
 				"Napoli"
-			],
-			"19-20": [
-				"Napoli"
 			]
 		},
 		"18-19": {
@@ -27897,12 +27665,6 @@
 			"Europa League | Napoli": {
 				"whoscoredApps": 2,
 				"whoscoredMins": 102
-			}
-		},
-		"19-20": {
-			"Champions League | Napoli": {
-				"whoscoredApps": 2,
-				"whoscoredMins": 147
 			}
 		}
 	},
@@ -30662,9 +30424,6 @@
 		"clubs": {
 			"18-19": [
 				"Paris Saint-Germain"
-			],
-			"19-20": [
-				"Real Madrid"
 			]
 		},
 		"18-19": {
@@ -30675,12 +30434,6 @@
 			"Champions League | Paris Saint-Germain": {
 				"whoscoredApps": 3,
 				"whoscoredMins": 270
-			}
-		},
-		"19-20": {
-			"Champions League | Real Madrid": {
-				"whoscoredApps": 2,
-				"whoscoredMins": 135
 			}
 		}
 	},
@@ -30952,21 +30705,12 @@
 		"clubs": {
 			"18-19": [
 				"Strasbourg"
-			],
-			"19-20": [
-				"Rennes"
 			]
 		},
 		"18-19": {
 			"Ligue 1 | Strasbourg": {
 				"whoscoredApps": 23,
 				"whoscoredMins": 2061
-			}
-		},
-		"19-20": {
-			"Europa League | Rennes": {
-				"whoscoredApps": 2,
-				"whoscoredMins": 162
 			}
 		}
 	},
@@ -32243,21 +31987,12 @@
 		"clubs": {
 			"18-19": [
 				"Frosinone"
-			],
-			"19-20": [
-				"Atalanta"
 			]
 		},
 		"18-19": {
 			"Serie A | Frosinone": {
 				"whoscoredApps": 35,
 				"whoscoredMins": 3150
-			}
-		},
-		"19-20": {
-			"Champions League | Atalanta": {
-				"whoscoredApps": 1,
-				"whoscoredMins": 90
 			}
 		}
 	},
@@ -35981,9 +35716,6 @@
 		"clubs": {
 			"18-19": [
 				"Real Betis"
-			],
-			"19-20": [
-				"Sporting CP"
 			]
 		},
 		"18-19": {
@@ -35994,12 +35726,6 @@
 			"Europa League | Real Betis": {
 				"whoscoredApps": 2,
 				"whoscoredMins": 87
-			}
-		},
-		"19-20": {
-			"Europa League | Sporting CP": {
-				"whoscoredApps": 2,
-				"whoscoredMins": 69
 			}
 		}
 	},
@@ -36579,21 +36305,12 @@
 		"clubs": {
 			"18-19": [
 				"Huddersfield"
-			],
-			"19-20": [
-				"Gent"
 			]
 		},
 		"18-19": {
 			"Premier League | Huddersfield": {
 				"whoscoredApps": 23,
 				"whoscoredMins": 1062
-			}
-		},
-		"19-20": {
-			"Europa League | Gent": {
-				"whoscoredApps": 8,
-				"whoscoredMins": 662
 			}
 		}
 	},
@@ -36985,21 +36702,12 @@
 		"clubs": {
 			"18-19": [
 				"Bologna"
-			],
-			"19-20": [
-				"Rangers"
 			]
 		},
 		"18-19": {
 			"Serie A | Bologna": {
 				"whoscoredApps": 20,
 				"whoscoredMins": 1712
-			}
-		},
-		"19-20": {
-			"Europa League | Rangers": {
-				"whoscoredApps": 5,
-				"whoscoredMins": 450
 			}
 		}
 	},
@@ -37086,9 +36794,6 @@
 		"clubs": {
 			"18-19": [
 				"Bayer Leverkusen"
-			],
-			"19-20": [
-				"Malmoe FF"
 			]
 		},
 		"18-19": {
@@ -37099,12 +36804,6 @@
 			"Europa League | Bayer Leverkusen": {
 				"whoscoredApps": 6,
 				"whoscoredMins": 348
-			}
-		},
-		"19-20": {
-			"Europa League | Malmoe FF": {
-				"whoscoredApps": 2,
-				"whoscoredMins": 180
 			}
 		}
 	},
@@ -38259,21 +37958,12 @@
 		"clubs": {
 			"18-19": [
 				"Fulham"
-			],
-			"19-20": [
-				"Paris Saint-Germain"
 			]
 		},
 		"18-19": {
 			"Premier League | Fulham": {
 				"whoscoredApps": 29,
 				"whoscoredMins": 2610
-			}
-		},
-		"19-20": {
-			"Champions League | Paris Saint-Germain": {
-				"whoscoredApps": 1,
-				"whoscoredMins": 90
 			}
 		}
 	},
@@ -38410,21 +38100,12 @@
 		"clubs": {
 			"18-19": [
 				"Nuernberg"
-			],
-			"19-20": [
-				"Gent"
 			]
 		},
 		"18-19": {
 			"Bundesliga | Nuernberg": {
 				"whoscoredApps": 22,
 				"whoscoredMins": 1363
-			}
-		},
-		"19-20": {
-			"Europa League | Gent": {
-				"whoscoredApps": 1,
-				"whoscoredMins": 1
 			}
 		}
 	},
@@ -39652,21 +39333,12 @@
 		"clubs": {
 			"18-19": [
 				"Toulouse"
-			],
-			"19-20": [
-				"Celtic"
 			]
 		},
 		"18-19": {
 			"Ligue 1 | Toulouse": {
 				"whoscoredApps": 34,
 				"whoscoredMins": 3016
-			}
-		},
-		"19-20": {
-			"Europa League | Celtic": {
-				"whoscoredApps": 8,
-				"whoscoredMins": 676
 			}
 		}
 	},
@@ -41036,9 +40708,6 @@
 		"clubs": {
 			"18-19": [
 				"Juventus"
-			],
-			"19-20": [
-				"Juventus"
 			]
 		},
 		"18-19": {
@@ -41049,12 +40718,6 @@
 			"Champions League | Juventus": {
 				"whoscoredApps": 4,
 				"whoscoredMins": 271
-			}
-		},
-		"19-20": {
-			"Champions League | Juventus": {
-				"whoscoredApps": 2,
-				"whoscoredMins": 180
 			}
 		}
 	},
@@ -41072,9 +40735,6 @@
 			"18-19": [
 				"Nantes",
 				"Lille"
-			],
-			"19-20": [
-				"Feyenoord"
 			]
 		},
 		"18-19": {
@@ -41085,12 +40745,6 @@
 			"Ligue 1 | Lille": {
 				"whoscoredApps": 7,
 				"whoscoredMins": 234
-			}
-		},
-		"19-20": {
-			"Europa League | Feyenoord": {
-				"whoscoredApps": 4,
-				"whoscoredMins": 290
 			}
 		}
 	},
@@ -41432,9 +41086,6 @@
 		"clubs": {
 			"18-19": [
 				"RasenBallsport Leipzig"
-			],
-			"19-20": [
-				"PSV Eindhoven"
 			]
 		},
 		"18-19": {
@@ -41445,12 +41096,6 @@
 			"Europa League | RasenBallsport Leipzig": {
 				"whoscoredApps": 6,
 				"whoscoredMins": 496
-			}
-		},
-		"19-20": {
-			"Europa League | PSV Eindhoven": {
-				"whoscoredApps": 6,
-				"whoscoredMins": 328
 			}
 		}
 	},
@@ -43675,21 +43320,12 @@
 		"clubs": {
 			"18-19": [
 				"Southampton"
-			],
-			"19-20": [
-				"Galatasaray"
 			]
 		},
 		"18-19": {
 			"Premier League | Southampton": {
 				"whoscoredApps": 21,
 				"whoscoredMins": 1616
-			}
-		},
-		"19-20": {
-			"Champions League | Galatasaray": {
-				"whoscoredApps": 4,
-				"whoscoredMins": 330
 			}
 		}
 	},
@@ -44205,9 +43841,6 @@
 		"clubs": {
 			"18-19": [
 				"Arsenal"
-			],
-			"19-20": [
-				"Besiktas"
 			]
 		},
 		"18-19": {
@@ -44218,12 +43851,6 @@
 			"Europa League | Arsenal": {
 				"whoscoredApps": 7,
 				"whoscoredMins": 460
-			}
-		},
-		"19-20": {
-			"Europa League | Besiktas": {
-				"whoscoredApps": 6,
-				"whoscoredMins": 404
 			}
 		}
 	},
@@ -44505,21 +44132,12 @@
 		"clubs": {
 			"18-19": [
 				"Inter"
-			],
-			"19-20": [
-				"Lokomotiv Moscow"
 			]
 		},
 		"18-19": {
 			"Serie A | Inter": {
 				"whoscoredApps": 20,
 				"whoscoredMins": 1081
-			}
-		},
-		"19-20": {
-			"Champions League | Lokomotiv Moscow": {
-				"whoscoredApps": 4,
-				"whoscoredMins": 355
 			}
 		}
 	},
@@ -44536,21 +44154,12 @@
 		"clubs": {
 			"18-19": [
 				"Fulham"
-			],
-			"19-20": [
-				"Sporting CP"
 			]
 		},
 		"18-19": {
 			"Premier League | Fulham": {
 				"whoscoredApps": 20,
 				"whoscoredMins": 987
-			}
-		},
-		"19-20": {
-			"Europa League | Sporting CP": {
-				"whoscoredApps": 7,
-				"whoscoredMins": 584
 			}
 		}
 	},
@@ -44827,21 +44436,12 @@
 		"clubs": {
 			"18-19": [
 				"Hannover 96"
-			],
-			"19-20": [
-				"Partizan Belgrade"
 			]
 		},
 		"18-19": {
 			"Bundesliga | Hannover 96": {
 				"whoscoredApps": 13,
 				"whoscoredMins": 702
-			}
-		},
-		"19-20": {
-			"Europa League | Partizan Belgrade": {
-				"whoscoredApps": 6,
-				"whoscoredMins": 509
 			}
 		}
 	},
@@ -45140,21 +44740,12 @@
 		"clubs": {
 			"18-19": [
 				"Monaco"
-			],
-			"19-20": [
-				"Sevilla"
 			]
 		},
 		"18-19": {
 			"Ligue 1 | Monaco": {
 				"whoscoredApps": 24,
 				"whoscoredMins": 1857
-			}
-		},
-		"19-20": {
-			"Europa League | Sevilla": {
-				"whoscoredApps": 7,
-				"whoscoredMins": 410
 			}
 		}
 	},
@@ -46556,21 +46147,12 @@
 		"clubs": {
 			"18-19": [
 				"Nantes"
-			],
-			"19-20": [
-				"Vitoria de Guimaraes"
 			]
 		},
 		"18-19": {
 			"Ligue 1 | Nantes": {
 				"whoscoredApps": 14,
 				"whoscoredMins": 724
-			}
-		},
-		"19-20": {
-			"Europa League | Vitoria de Guimaraes": {
-				"whoscoredApps": 4,
-				"whoscoredMins": 339
 			}
 		}
 	},
@@ -47093,9 +46675,6 @@
 		"clubs": {
 			"18-19": [
 				"Lazio"
-			],
-			"19-20": [
-				"Braga"
 			]
 		},
 		"18-19": {
@@ -47106,12 +46685,6 @@
 			"Europa League | Lazio": {
 				"whoscoredApps": 3,
 				"whoscoredMins": 237
-			}
-		},
-		"19-20": {
-			"Europa League | Braga": {
-				"whoscoredApps": 3,
-				"whoscoredMins": 160
 			}
 		}
 	},
@@ -49136,21 +48709,12 @@
 		"clubs": {
 			"18-19": [
 				"Girona"
-			],
-			"19-20": [
-				"Sevilla"
 			]
 		},
 		"18-19": {
 			"La Liga | Girona": {
 				"whoscoredApps": 32,
 				"whoscoredMins": 2862
-			}
-		},
-		"19-20": {
-			"Europa League | Sevilla": {
-				"whoscoredApps": 6,
-				"whoscoredMins": 540
 			}
 		}
 	},
@@ -49167,21 +48731,12 @@
 		"clubs": {
 			"18-19": [
 				"Toulouse"
-			],
-			"19-20": [
-				"Dinamo Zagreb"
 			]
 		},
 		"18-19": {
 			"Ligue 1 | Toulouse": {
 				"whoscoredApps": 22,
 				"whoscoredMins": 1935
-			}
-		},
-		"19-20": {
-			"Champions League | Dinamo Zagreb": {
-				"whoscoredApps": 1,
-				"whoscoredMins": 90
 			}
 		}
 	},
@@ -49198,21 +48753,12 @@
 		"clubs": {
 			"18-19": [
 				"Fulham"
-			],
-			"19-20": [
-				"Galatasaray"
 			]
 		},
 		"18-19": {
 			"Premier League | Fulham": {
 				"whoscoredApps": 32,
 				"whoscoredMins": 2252
-			}
-		},
-		"19-20": {
-			"Champions League | Galatasaray": {
-				"whoscoredApps": 6,
-				"whoscoredMins": 478
 			}
 		}
 	},
@@ -49303,25 +48849,12 @@
 		"clubs": {
 			"18-19": [
 				"SD Huesca"
-			],
-			"19-20": [
-				"Olympiacos"
 			]
 		},
 		"18-19": {
 			"La Liga | SD Huesca": {
 				"whoscoredApps": 11,
 				"whoscoredMins": 848
-			}
-		},
-		"19-20": {
-			"Champions League | Olympiacos": {
-				"whoscoredApps": 6,
-				"whoscoredMins": 540
-			},
-			"Europa League | Olympiacos": {
-				"whoscoredApps": 2,
-				"whoscoredMins": 118
 			}
 		}
 	},
@@ -50006,21 +49539,12 @@
 		"clubs": {
 			"18-19": [
 				"Wolverhampton Wanderers"
-			],
-			"19-20": [
-				"Vitoria de Guimaraes"
 			]
 		},
 		"18-19": {
 			"Premier League | Wolverhampton Wanderers": {
 				"whoscoredApps": 7,
 				"whoscoredMins": 130
-			}
-		},
-		"19-20": {
-			"Europa League | Vitoria de Guimaraes": {
-				"whoscoredApps": 5,
-				"whoscoredMins": 158
 			}
 		}
 	},
@@ -50409,21 +49933,12 @@
 		"clubs": {
 			"18-19": [
 				"Toulouse"
-			],
-			"19-20": [
-				"FC Astana"
 			]
 		},
 		"18-19": {
 			"Ligue 1 | Toulouse": {
 				"whoscoredApps": 15,
 				"whoscoredMins": 460
-			}
-		},
-		"19-20": {
-			"Europa League | FC Astana": {
-				"whoscoredApps": 1,
-				"whoscoredMins": 8
 			}
 		}
 	},
@@ -51376,21 +50891,12 @@
 		"clubs": {
 			"18-19": [
 				"VfB Stuttgart"
-			],
-			"19-20": [
-				"PSV Eindhoven"
 			]
 		},
 		"18-19": {
 			"Bundesliga | VfB Stuttgart": {
 				"whoscoredApps": 18,
 				"whoscoredMins": 1620
-			}
-		},
-		"19-20": {
-			"Europa League | PSV Eindhoven": {
-				"whoscoredApps": 3,
-				"whoscoredMins": 270
 			}
 		}
 	},
@@ -51749,21 +51255,12 @@
 		"clubs": {
 			"18-19": [
 				"Southampton"
-			],
-			"19-20": [
-				"Celtic"
 			]
 		},
 		"18-19": {
 			"Premier League | Southampton": {
 				"whoscoredApps": 16,
 				"whoscoredMins": 791
-			}
-		},
-		"19-20": {
-			"Europa League | Celtic": {
-				"whoscoredApps": 6,
-				"whoscoredMins": 404
 			}
 		}
 	},
@@ -51990,21 +51487,12 @@
 		"clubs": {
 			"18-19": [
 				"Caen"
-			],
-			"19-20": [
-				"Istanbul Basaksehir"
 			]
 		},
 		"18-19": {
 			"Ligue 1 | Caen": {
 				"whoscoredApps": 33,
 				"whoscoredMins": 2273
-			}
-		},
-		"19-20": {
-			"Europa League | Istanbul Basaksehir": {
-				"whoscoredApps": 8,
-				"whoscoredMins": 628
 			}
 		}
 	},
@@ -54189,9 +53677,6 @@
 		"clubs": {
 			"18-19": [
 				"Roma"
-			],
-			"19-20": [
-				"Feyenoord"
 			]
 		},
 		"18-19": {
@@ -54202,12 +53687,6 @@
 			"Champions League | Roma": {
 				"whoscoredApps": 2,
 				"whoscoredMins": 76
-			}
-		},
-		"19-20": {
-			"Europa League | Feyenoord": {
-				"whoscoredApps": 3,
-				"whoscoredMins": 265
 			}
 		}
 	},
@@ -54927,21 +54406,12 @@
 		"clubs": {
 			"18-19": [
 				"Guingamp"
-			],
-			"19-20": [
-				"Ludogorets Razgrad"
 			]
 		},
 		"18-19": {
 			"Ligue 1 | Guingamp": {
 				"whoscoredApps": 20,
 				"whoscoredMins": 1707
-			}
-		},
-		"19-20": {
-			"Europa League | Ludogorets Razgrad": {
-				"whoscoredApps": 3,
-				"whoscoredMins": 91
 			}
 		}
 	},
@@ -56687,9 +56157,6 @@
 		"clubs": {
 			"18-19": [
 				"Manchester United"
-			],
-			"19-20": [
-				"Manchester United"
 			]
 		},
 		"18-19": {
@@ -56700,12 +56167,6 @@
 			"Champions League | Manchester United": {
 				"whoscoredApps": 4,
 				"whoscoredMins": 306
-			}
-		},
-		"19-20": {
-			"Europa League | Manchester United": {
-				"whoscoredApps": 2,
-				"whoscoredMins": 180
 			}
 		}
 	},
@@ -57590,21 +57051,12 @@
 		"clubs": {
 			"18-19": [
 				"Lille"
-			],
-			"19-20": [
-				"Lille"
 			]
 		},
 		"18-19": {
 			"Ligue 1 | Lille": {
 				"whoscoredApps": 24,
 				"whoscoredMins": 1015
-			}
-		},
-		"19-20": {
-			"Champions League | Lille": {
-				"whoscoredApps": 1,
-				"whoscoredMins": 66
 			}
 		}
 	},
@@ -58284,21 +57736,12 @@
 		"clubs": {
 			"18-19": [
 				"Brighton"
-			],
-			"19-20": [
-				"Galatasaray"
 			]
 		},
 		"18-19": {
 			"Premier League | Brighton": {
 				"whoscoredApps": 23,
 				"whoscoredMins": 876
-			}
-		},
-		"19-20": {
-			"Champions League | Galatasaray": {
-				"whoscoredApps": 3,
-				"whoscoredMins": 162
 			}
 		}
 	},
@@ -58629,21 +58072,12 @@
 		"clubs": {
 			"18-19": [
 				"Reims"
-			],
-			"19-20": [
-				"Rangers"
 			]
 		},
 		"18-19": {
 			"Ligue 1 | Reims": {
 				"whoscoredApps": 15,
 				"whoscoredMins": 461
-			}
-		},
-		"19-20": {
-			"Europa League | Rangers": {
-				"whoscoredApps": 6,
-				"whoscoredMins": 271
 			}
 		}
 	},
@@ -58893,9 +58327,6 @@
 			"18-19": [
 				"Rayo Vallecano",
 				"Standard Liege"
-			],
-			"19-20": [
-				"Braga"
 			]
 		},
 		"18-19": {
@@ -58906,12 +58337,6 @@
 			"Europa League | Standard Liege": {
 				"whoscoredApps": 4,
 				"whoscoredMins": 194
-			}
-		},
-		"19-20": {
-			"Europa League | Braga": {
-				"whoscoredApps": 2,
-				"whoscoredMins": 106
 			}
 		}
 	},
@@ -59163,21 +58588,12 @@
 		"clubs": {
 			"18-19": [
 				"Nice"
-			],
-			"19-20": [
-				"PSV Eindhoven"
 			]
 		},
 		"18-19": {
 			"Ligue 1 | Nice": {
 				"whoscoredApps": 14,
 				"whoscoredMins": 863
-			}
-		},
-		"19-20": {
-			"Europa League | PSV Eindhoven": {
-				"whoscoredApps": 2,
-				"whoscoredMins": 180
 			}
 		}
 	},
@@ -61435,9 +60851,6 @@
 		"clubs": {
 			"18-19": [
 				"Arsenal"
-			],
-			"19-20": [
-				"Arsenal"
 			]
 		},
 		"18-19": {
@@ -61448,12 +60861,6 @@
 			"Europa League | Arsenal": {
 				"whoscoredApps": 5,
 				"whoscoredMins": 420
-			}
-		},
-		"19-20": {
-			"Europa League | Arsenal": {
-				"whoscoredApps": 3,
-				"whoscoredMins": 270
 			}
 		}
 	},
@@ -62284,21 +61691,12 @@
 		"clubs": {
 			"18-19": [
 				"Getafe"
-			],
-			"19-20": [
-				"Getafe"
 			]
 		},
 		"18-19": {
 			"La Liga | Getafe": {
 				"whoscoredApps": 23,
 				"whoscoredMins": 1697
-			}
-		},
-		"19-20": {
-			"Europa League | Getafe": {
-				"whoscoredApps": 5,
-				"whoscoredMins": 374
 			}
 		}
 	},
@@ -62586,21 +61984,12 @@
 		"clubs": {
 			"18-19": [
 				"Leganes"
-			],
-			"19-20": [
-				"FC Copenhagen"
 			]
 		},
 		"18-19": {
 			"La Liga | Leganes": {
 				"whoscoredApps": 16,
 				"whoscoredMins": 553
-			}
-		},
-		"19-20": {
-			"Europa League | FC Copenhagen": {
-				"whoscoredApps": 9,
-				"whoscoredMins": 637
 			}
 		}
 	},
@@ -65411,9 +64800,6 @@
 			"18-19": [
 				"Sevilla",
 				"Ajax"
-			],
-			"19-20": [
-				"Salzburg"
 			]
 		},
 		"18-19": {
@@ -65428,16 +64814,6 @@
 			"Europa League | Sevilla": {
 				"whoscoredApps": 1,
 				"whoscoredMins": 46
-			}
-		},
-		"19-20": {
-			"Champions League | Salzburg": {
-				"whoscoredApps": 6,
-				"whoscoredMins": 540
-			},
-			"Europa League | Salzburg": {
-				"whoscoredApps": 1,
-				"whoscoredMins": 90
 			}
 		}
 	},
@@ -65702,21 +65078,12 @@
 		"clubs": {
 			"18-19": [
 				"Crystal Palace"
-			],
-			"19-20": [
-				"Trabzonspor"
 			]
 		},
 		"18-19": {
 			"Premier League | Crystal Palace": {
 				"whoscoredApps": 12,
 				"whoscoredMins": 173
-			}
-		},
-		"19-20": {
-			"Europa League | Trabzonspor": {
-				"whoscoredApps": 4,
-				"whoscoredMins": 263
 			}
 		}
 	},
@@ -66986,9 +66353,6 @@
 		"clubs": {
 			"18-19": [
 				"Tottenham"
-			],
-			"19-20": [
-				"Tottenham"
 			]
 		},
 		"18-19": {
@@ -66999,12 +66363,6 @@
 			"Champions League | Tottenham": {
 				"whoscoredApps": 1,
 				"whoscoredMins": 61
-			}
-		},
-		"19-20": {
-			"Champions League | Tottenham": {
-				"whoscoredApps": 1,
-				"whoscoredMins": 90
 			}
 		}
 	},
@@ -67579,21 +66937,12 @@
 		"clubs": {
 			"18-19": [
 				"Real Madrid"
-			],
-			"19-20": [
-				"Real Madrid"
 			]
 		},
 		"18-19": {
 			"La Liga | Real Madrid": {
 				"whoscoredApps": 9,
 				"whoscoredMins": 378
-			}
-		},
-		"19-20": {
-			"Champions League | Real Madrid": {
-				"whoscoredApps": 1,
-				"whoscoredMins": 17
 			}
 		}
 	},
@@ -67893,21 +67242,12 @@
 		"clubs": {
 			"18-19": [
 				"Celta Vigo"
-			],
-			"19-20": [
-				"Galatasaray"
 			]
 		},
 		"18-19": {
 			"La Liga | Celta Vigo": {
 				"whoscoredApps": 10,
 				"whoscoredMins": 367
-			}
-		},
-		"19-20": {
-			"Champions League | Galatasaray": {
-				"whoscoredApps": 4,
-				"whoscoredMins": 109
 			}
 		}
 	},
@@ -68217,21 +67557,12 @@
 		"clubs": {
 			"18-19": [
 				"Dijon"
-			],
-			"19-20": [
-				"Sporting CP"
 			]
 		},
 		"18-19": {
 			"Ligue 1 | Dijon": {
 				"whoscoredApps": 18,
 				"whoscoredMins": 1458
-			}
-		},
-		"19-20": {
-			"Europa League | Sporting CP": {
-				"whoscoredApps": 5,
-				"whoscoredMins": 450
 			}
 		}
 	},
@@ -69252,21 +68583,12 @@
 		"clubs": {
 			"18-19": [
 				"Guingamp"
-			],
-			"19-20": [
-				"Besiktas"
 			]
 		},
 		"18-19": {
 			"Ligue 1 | Guingamp": {
 				"whoscoredApps": 36,
 				"whoscoredMins": 3240
-			}
-		},
-		"19-20": {
-			"Europa League | Besiktas": {
-				"whoscoredApps": 6,
-				"whoscoredMins": 433
 			}
 		}
 	},
@@ -75505,21 +74827,12 @@
 		"clubs": {
 			"18-19": [
 				"Arsenal"
-			],
-			"19-20": [
-				"Arsenal"
 			]
 		},
 		"18-19": {
 			"Premier League | Arsenal": {
 				"whoscoredApps": 4,
 				"whoscoredMins": 150
-			}
-		},
-		"19-20": {
-			"Europa League | Arsenal": {
-				"whoscoredApps": 1,
-				"whoscoredMins": 90
 			}
 		}
 	},
@@ -75883,21 +75196,12 @@
 		"clubs": {
 			"18-19": [
 				"Getafe"
-			],
-			"19-20": [
-				"Getafe"
 			]
 		},
 		"18-19": {
 			"La Liga | Getafe": {
 				"whoscoredApps": 11,
 				"whoscoredMins": 415
-			}
-		},
-		"19-20": {
-			"Europa League | Getafe": {
-				"whoscoredApps": 1,
-				"whoscoredMins": 68
 			}
 		}
 	},
@@ -77839,25 +77143,12 @@
 		"clubs": {
 			"18-19": [
 				"Monaco"
-			],
-			"19-20": [
-				"Benfica"
 			]
 		},
 		"18-19": {
 			"Ligue 1 | Monaco": {
 				"whoscoredApps": 16,
 				"whoscoredMins": 516
-			}
-		},
-		"19-20": {
-			"Champions League | Benfica": {
-				"whoscoredApps": 5,
-				"whoscoredMins": 323
-			},
-			"Europa League | Benfica": {
-				"whoscoredApps": 2,
-				"whoscoredMins": 32
 			}
 		}
 	},
@@ -78968,21 +78259,12 @@
 		"clubs": {
 			"18-19": [
 				"Sevilla"
-			],
-			"19-20": [
-				"Sevilla"
 			]
 		},
 		"18-19": {
 			"La Liga | Sevilla": {
 				"whoscoredApps": 11,
 				"whoscoredMins": 159
-			}
-		},
-		"19-20": {
-			"Europa League | Sevilla": {
-				"whoscoredApps": 4,
-				"whoscoredMins": 164
 			}
 		}
 	},

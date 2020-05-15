@@ -4,40 +4,53 @@ import { Link } from 'react-router-dom';
 class PlayerSearchResult extends Component {
 
     constructor(props) {
+
         super(props);
 
         this.state = {
             page: this.props.page,
+            code: this.props.code,
             name: this.props.name,
-            club: this.props.club,
+            clubs: this.props.clubs,
+            clubString: "",
             nationality: this.props.nationality,
-            URL: this.props.URL.replace("https://www.whoscored.com/", "")
-                .replace("History", "Show")
-                .split("/")
-                .join("_"),
-            all: this.props.all
         };
+
+    }
+
+    componentDidMount() {
+
+        let clubs = this.state.clubs;
+        let seasons = [];
+        for (let season in clubs){
+            seasons.push(season);
+        }
+        clubs = clubs[seasons[seasons.length-1]];
+
+        this.setState({
+            clubs: clubs,
+            clubString: clubs[0]
+        })
 
     }
 
     render() {
 
-        let { club, page } = this.state;
-        let clubString = club[0];
+        let { page, code, name, clubs, clubString, nationality } = this.state;
 
-        for (let i=1; i<club.length; i++){
-            clubString += (", " + club[i]);
+        for (let i=1; i<clubs.length; i++){
+            clubString += (", " + clubs[i]);
         }
 
         let className = page === 'home' ? 'sample-player' : 'search-result';
         let clubLabel = page === 'home' ? '' : 'Club:';
 
         return (
-            <Link to={"/stats/" + this.state.URL}>
+            <Link to={"/stats/" + code}>
                 <div tabIndex="0" className={className}>
-                    <div className="name">{this.state.name}</div>
+                    <div className="name">{name}</div>
                     <div className="club">{clubLabel} {clubString}</div>
-                    <div className="nationality">Nationality: {this.state.nationality}</div>
+                    <div className="nationality">Nationality: {nationality}</div>
                 </div>
             </Link>
         );
