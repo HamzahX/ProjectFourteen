@@ -12,11 +12,13 @@ class Search extends Component {
     _isMounted = false;
 
     constructor(props){
+
         super(props);
+
         let query = props.match.params.query;
         let searchByClub = props.match.params.searchByClub;
         this.state = {
-            isLoading: false,
+            isLoading: true,
             error: null,
             query: query,
             searchByClub: searchByClub,
@@ -25,27 +27,9 @@ class Search extends Component {
             openMenu: false,
             clubSearchResults: [],
             filterValue: ""
-            // reactSelectStyle: {
-            //     control: (base) => ({
-            //         ...base,
-            //         boxShadow: "none",
-            //         '&:hover': {
-            //             borderColor: '#B23535'
-            //         },
-            //         '&:focus': {
-            //             borderColor: '#B23535'
-            //         },
-            //     })
-            // },
-            // reactSelectTheme: theme => ({
-            //     ...theme,
-            //     colors: {
-            //         ...theme.colors,
-            //         primary25: "pink",
-            //         primary: "#e75453"
-            //     }
-            // })
         };
+
+        this.getSearchResults();
 
     }
 
@@ -53,11 +37,6 @@ class Search extends Component {
 
         this._isMounted = true;
 
-        this.setState({
-            isLoading: true
-        }, () => {
-            this.getSearchResults();
-        });
     }
 
     UNSAFE_componentWillReceiveProps(nextProps, nextContext) {
@@ -165,8 +144,8 @@ class Search extends Component {
     render() {
 
         let {
-            error,
             isLoading,
+            error,
             filteredPlayerSearchResults,
             clubSearchResults,
             searchByClub,

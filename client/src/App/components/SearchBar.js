@@ -4,28 +4,29 @@ import { Link, withRouter } from 'react-router-dom';
 class SearchBar extends Component {
 
     constructor(props) {
+
         super(props);
+
         this.state = {
-            query: this.props.query,
+            query: this.props.query || "",
             type: this.props.type,
         };
 
-        this.handleChange = this.handleChange.bind(this);
-        this.handleSubmit = this.handleSubmit.bind(this);
     }
 
-    handleChange(event) {
+    handleChange = (event) => {
         this.setState({query: event.target.value});
-    }
+    };
 
-    handleSubmit(event) {
+    handleSubmit = (event) => {
         event.preventDefault();
         this.props.history.push('/search/' + this.state.query);
-    }
+    };
 
     render() {
 
-        const { type } = this.state;
+        const { query, type } = this.state;
+
         let containerID;
         let homeButton;
         if (type === 1){
@@ -46,7 +47,7 @@ class SearchBar extends Component {
             <div className="searchbar-container" id={containerID}>
                 <form id="searchbar" onSubmit={this.handleSubmit}>
                     {homeButton}
-                    <input type="text" id="query" value={this.state.query} placeholder="Search for players, clubs..." autoComplete="off" onChange={this.handleChange}/>
+                    <input type="text" id="query" value={query} placeholder="Search for players, clubs..." autoComplete="off" onChange={this.handleChange}/>
                 </form>
             </div>
         );

@@ -327,7 +327,6 @@ class Slice extends Component {
                     highcharts={Highcharts}
                     containerProps={{style: {width: '100%'}}}
                     options={chartOptions}
-                    ref={this.chartRef}
                 />
             </div>
         );
