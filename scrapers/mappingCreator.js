@@ -1,19 +1,4 @@
-var SEASON;
-//parse command line arguments to get the season
-let ARGS = process.argv.slice(2);
-if (ARGS.length !== 1){
-    console.log("Incorrect number of args. Usage: node mappingCreator <season>");
-    process.exit(-1);
-}
-else {
-    if (ARGS[0] !== "18-19" && ARGS[0] !== "19-20"){
-        console.log("Incorrect season arg. Supported seasons are 18-19 and 19-20");
-        process.exit(-1);
-    }
-    else {
-        SEASON = ARGS[0];
-    }
-}
+const SEASON = "19-20";
 
 //initialize helpers
 const path = require('path');
@@ -23,7 +8,8 @@ const countryCodes = require('./countryCodes.js');
 //globals to store mappings
 var FBREF_TO_WHOSCORED_PLAYERS;
 var WHOSCORED_TO_FBREF_PLAYERS;
-var HARDCODED_MAPPING;
+var FBREF_TO_WHOSCORED_PLAYERS_NEW = {};
+var WHOSCORED_TO_FBREF_PLAYERS_NEW = {};
 var UNFILLED_MAPPING = {};
 
 //global to track number of mapping collisions. If everything goes well, it should be 0 when the program exits
@@ -60,8 +46,6 @@ let setup = async () => {
 
     return new Promise(async function(resolve, reject){
 
-        HARDCODED_MAPPING = JSON.parse(fs.readFileSync(path.join(__dirname, `playerMappingData/hardcodedMapping.json`)));
-
         EPL = JSON.parse(fs.readFileSync(path.join(__dirname, `fbrefData/${SEASON}/premierLeague.json`)));
         EPL_GK = JSON.parse(fs.readFileSync(path.join(__dirname, `fbrefData/${SEASON}/premierLeague_gk.json`)));
         LA_LIGA = JSON.parse(fs.readFileSync(path.join(__dirname, `fbrefData/${SEASON}/laLiga.json`)));
@@ -78,17 +62,10 @@ let setup = async () => {
         EUROPA_LEAGUE_GK = JSON.parse(fs.readFileSync(path.join(__dirname, `fbrefData/${SEASON}/europaLeague_gk.json`)));
 
         METADATA = JSON.parse(fs.readFileSync(path.join(__dirname, '/playerData/metadata.json')));
-
-        if (SEASON === "18-19"){
-            FBREF_TO_WHOSCORED_PLAYERS = {};
-            WHOSCORED_TO_FBREF_PLAYERS = {};
-        }
-        else {
-            FBREF_TO_WHOSCORED_PLAYERS = JSON.parse(fs.readFileSync(path.join(__dirname, '/playerMappingData/fbrefToWhoscored.json')));
-            WHOSCORED_TO_FBREF_PLAYERS = JSON.parse(fs.readFileSync(path.join(__dirname, '/playerMappingData/whoscoredToFbref.json')))
-        }
-
         FBREF_TO_WHOSCORED_TEAMS = JSON.parse(fs.readFileSync(path.join(__dirname, '/teamMappingData/fbrefToWhoscored.json')));
+
+        FBREF_TO_WHOSCORED_PLAYERS = JSON.parse(fs.readFileSync(path.join(__dirname, '/playerMappingData/fbrefToWhoscored.json')));
+        WHOSCORED_TO_FBREF_PLAYERS = JSON.parse(fs.readFileSync(path.join(__dirname, '/playerMappingData/whoscoredToFbref.json')));
 
         resolve();
 
@@ -207,7 +184,6 @@ let processEuropaLeagueData = async () => {
         processEntry(gk, EUROPA_LEAGUE_GK, isCLorEL, competitionName, true)
     }
 
-
 };
 
 
@@ -216,10 +192,7 @@ let processEntry = (aPlayer, competition, isCLorEL = false, competitionName, isG
     let playerInfo = competition[aPlayer];
     let code = competition[aPlayer]['code'];
 
-    if (HARDCODED_MAPPING[code] !== undefined){
-        let whoscoredCode = HARDCODED_MAPPING[code];
-        FBREF_TO_WHOSCORED_PLAYERS[code] = whoscoredCode;
-        WHOSCORED_TO_FBREF_PLAYERS[whoscoredCode] = code;
+    if (FBREF_TO_WHOSCORED_TEAMS[aPlayer] !== undefined){
         return;
     }
 
@@ -258,12 +231,12 @@ let processEntry = (aPlayer, competition, isCLorEL = false, competitionName, isG
     }
     //find all potential whoscored matches
     let matches = findMatches(query, whoscoredClub, isGoalkeeper);
-    for (let i=0; i<matches.length; i++){
-        let match = matches[i];
-        if (matches.length === 1){
-            processMatch(match, competitionName, whoscoredClub, apps, mins, code, nationality, "single");
-        }
-        if (matches.length > 1){
+    if (matches.length === 1){
+        processMatch(match, competitionName, whoscoredClub, apps, mins, code, nationality, "single");
+    }
+    else {
+        for (let i=0; i<matches.length; i++){
+            let match = matches[i];
             processMatch(match, competitionName, whoscoredClub, apps, mins, code, nationality, "multiple");
         }
     }
@@ -343,23 +316,25 @@ let findMatches = (fbrefName, club, isGoalkeeper) => {
 };
 
 
-let processMatch = (match, competitionName, whoscoredClub, apps, mins, fbrefCode) => {
+let processMatch = (match, competitionName, whoscoredClub, apps, mins, fbrefCode, nationality, matchType) => {
 
     let entries = match[SEASON];
     for (let entry in entries){
-        if (entry === `${competitionName} | ${whoscoredClub}`
+        if (
+            entry === `${competitionName} | ${whoscoredClub}`
             && match[SEASON][entry]["whoscoredApps"] === apps
-            && Math.abs(match[SEASON][entry]["whoscoredMins"] - mins) < 4){
-            if (FBREF_TO_WHOSCORED_PLAYERS[fbrefCode] === undefined){
-                FBREF_TO_WHOSCORED_PLAYERS[fbrefCode] = match["code"];
+            && match[nationality] === nationality
+        ){
+            if (FBREF_TO_WHOSCORED_PLAYERS_NEW[fbrefCode] === undefined){
+                FBREF_TO_WHOSCORED_PLAYERS_NEW[fbrefCode] = match["code"];
             }
             else {
-                if (FBREF_TO_WHOSCORED_PLAYERS[fbrefCode] !== match["code"]){
+                if (FBREF_TO_WHOSCORED_PLAYERS_NEW[fbrefCode] !== match["code"]){
                     COLLISION_COUNTER++;
                     console.log("COLLISION (FBREF TO WHOSCORED): ", fbrefCode);
                     console.log("Original Mapping: ", {
-                        whoscoredCode: FBREF_TO_WHOSCORED_PLAYERS[fbrefCode],
-                        whoscoredName: METADATA[FBREF_TO_WHOSCORED_PLAYERS[fbrefCode]]["name"]
+                        whoscoredCode: FBREF_TO_WHOSCORED_PLAYERS_NEW[fbrefCode],
+                        whoscoredName: METADATA[FBREF_TO_WHOSCORED_PLAYERS_NEW[fbrefCode]]["name"]
                     });
                     console.log("New Suggested Mapping: ", {
                         whoscoredCode: match["code"],
@@ -367,20 +342,18 @@ let processMatch = (match, competitionName, whoscoredClub, apps, mins, fbrefCode
                     });
                 }
             }
-            if (WHOSCORED_TO_FBREF_PLAYERS[match["code"]] === undefined){
-                WHOSCORED_TO_FBREF_PLAYERS[match["code"]] = fbrefCode;
+            if (WHOSCORED_TO_FBREF_PLAYERS_NEW[match["code"]] === undefined){
+                WHOSCORED_TO_FBREF_PLAYERS_NEW[match["code"]] = fbrefCode;
             }
             else {
-                if (WHOSCORED_TO_FBREF_PLAYERS[match["code"]] !== fbrefCode){
+                if (WHOSCORED_TO_FBREF_PLAYERS_NEW[match["code"]] !== fbrefCode){
                     COLLISION_COUNTER++;
                     console.log("COLLISION (WHOSCORED TO FBREF): ", match["code"]);
                     console.log("Original Mapping: ", {
-                        whoscoredCode: WHOSCORED_TO_FBREF_PLAYERS[match["code"]],
-                        whoscoredName: METADATA[WHOSCORED_TO_FBREF_PLAYERS[match["code"]]]["name"]
+                        whoscoredCode: WHOSCORED_TO_FBREF_PLAYERS_NEW[match["code"]],
                     });
                     console.log("New Suggested Mapping: ", {
-                        whoscoredCode: match["code"],
-                        whoscoredName: METADATA[match["code"]]["name"]
+                        whoscoredCode: fbrefCode,
                     });
                 }
             }
@@ -393,18 +366,18 @@ let processMatch = (match, competitionName, whoscoredClub, apps, mins, fbrefCode
 let saveMapping = async () => {
 
     return new Promise(async function (resolve, reject) {
-        await fs.writeFile(path.join(__dirname, `playerMappingData/fbrefToWhoscored.json`), JSON.stringify(FBREF_TO_WHOSCORED_PLAYERS, null, '\t'), async function(err) {
+        await fs.writeFile(path.join(__dirname, `playerMappingData/fbrefToWhoscoredNew.json`), JSON.stringify(FBREF_TO_WHOSCORED_PLAYERS_NEW, null, '\t'), async function(err) {
             if (err) {
                 console.log(err);
                 reject();
             }
-            await fs.writeFile(path.join(__dirname, `playerMappingData/whoscoredToFbref.json`), JSON.stringify(WHOSCORED_TO_FBREF_PLAYERS, null, '\t'), async function(err) {
+            await fs.writeFile(path.join(__dirname, `playerMappingData/whoscoredToFbrefNew.json`), JSON.stringify(WHOSCORED_TO_FBREF_PLAYERS_NEW, null, '\t'), async function(err) {
                 if (err) {
                     console.log(err);
                     reject();
                 }
                 for (let player in METADATA){
-                    if (WHOSCORED_TO_FBREF_PLAYERS[player] === undefined){
+                    if (WHOSCORED_TO_FBREF_PLAYERS[player] === undefined && WHOSCORED_TO_FBREF_PLAYERS_NEW[player] === undefined){
                         UNFILLED_MAPPING[player] = player;
                     }
                 }
@@ -451,22 +424,7 @@ setup()
     .then(() => {
         console.log("Collisions: " + COLLISION_COUNTER);
         console.timeEnd('mapping creation');
-        if (SEASON === "18-19"){
-            if (COLLISION_COUNTER === 0){
-                process.exit(0);
-            }
-            else {
-                process.exit(-1);
-            }
-        }
-        else if (SEASON === "19-20"){
-            if (COLLISION_COUNTER === 0 && Object.keys(UNFILLED_MAPPING).length === 0){
-                process.exit(0);
-            }
-            else {
-                process.exit(-1);
-            }
-        }
+        process.exit(-1);
     })
     .catch(async(anError) => {
         console.log(anError);

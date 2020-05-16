@@ -43,7 +43,7 @@ class PlayerSearchResult extends Component {
         }
 
         let className = page === 'home' ? 'sample-player' : 'search-result';
-        let clubLabel = page === 'home' ? '' : 'Club:';
+        let clubLabel = page === 'home' ? '' : clubs.length === 1 ? 'Club:' : 'Clubs:';
 
         return (
             <Link to={"/stats/" + code}>

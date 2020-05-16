@@ -42,7 +42,8 @@ class Stats extends Component {
         };
 
         this.state = {
-            isLoading: false,
+            isLoading: true,
+            error: null,
             isMobile: this.props.isMobile,
             percentileArrays: this.props.percentileArrays,
             name: '',
@@ -60,17 +61,13 @@ class Stats extends Component {
             isAnimated: true
         };
 
+        this.getStats();
+
     }
 
     componentDidMount() {
 
         this._isMounted = true;
-
-        this.setState({
-            isLoading: true
-        }, () => {
-            this.getStats();
-        });
 
     }
 
@@ -88,8 +85,16 @@ class Stats extends Component {
                 "percentilesTimestamp": this.state.percentileArrays['lastUpdated']
             })
         })
-        .then(res => res.json())
+        .then(res => {
+            if (res.ok) {
+                return res.json()
+            }
+            else {
+                throw new Error("Failed to fetch. This is likely due to a malformed URL. Please try searching for the player again.")
+            }
+        })
         .then(response => this.processStats(response))
+        .catch(error => this.setState({error, isLoading: false}));
 
     };
 
@@ -170,8 +175,6 @@ class Stats extends Component {
 
         let includedSeasons = [];
         let percentileSeason;
-        let statsPer90 = {};
-        let percentiles = {};
 
         for (let season in selectedCompetitions){
             if (selectedCompetitions[season].length !== 0) {
@@ -184,6 +187,9 @@ class Stats extends Component {
         else {
             percentileSeason = "combined";
         }
+
+        let statsPer90 = {};
+        let percentiles = {};
 
         let minutes = filteredStats['minutes'];
         switch (template){
@@ -545,6 +551,7 @@ class Stats extends Component {
 
         let {
             isLoading,
+            error,
             url,
             name,
             age,
@@ -563,6 +570,17 @@ class Stats extends Component {
         if (isLoading) {
             return (
                 <LoadingSpinner/>
+            )
+        }
+
+        else if (error !== null) {
+            return (
+                <div id="main2">
+                    <SearchBar type={2} query={this.state.query}/>
+                    <div className="screen" id="error-screen">
+                        <p>{error.message}</p>
+                    </div>
+                </div>
             )
         }
 
@@ -783,7 +801,7 @@ class Stats extends Component {
                                             type="radio"
                                             name="labelType"
                                             value="raw"
-                                            checked={labelType === "raw" ? true: null}
+                                            checked={labelType === "raw"}
                                             onChange={this.changeLabelType}
                                         /> <span>Raw Values</span>
                                     </label>
@@ -792,7 +810,7 @@ class Stats extends Component {
                                             type="radio"
                                             name="labelType"
                                             value="percentiles"
-                                            checked={labelType === "percentiles" ? true: null}
+                                            checked={labelType === "percentiles"}
                                             onChange={this.changeLabelType}
                                         /> <span>Percentile Ranks</span>
                                     </label>
