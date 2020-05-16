@@ -7,6 +7,8 @@ import Home from './pages/Home';
 import Search from './pages/Search';
 import Stats from './pages/Stats';
 
+import LoadingSpinner from "./components/LoadingSpinner";
+
 require('./stylesheets/App.css');
 if (isMobileOnly){
     import('./stylesheets/Mobile.css')
@@ -20,9 +22,13 @@ class App extends Component {
     constructor(props) {
 
         super(props);
+
         this.state = {
+            isLoading: true,
             percentileArrays: {},
         };
+
+        this.getPercentileArrays();
 
     }
 
@@ -36,8 +42,6 @@ class App extends Component {
             }
 
         });
-
-        this.getPercentileArrays()
 
     }
 
@@ -55,7 +59,7 @@ class App extends Component {
         .then(res => {
             return res.json()
         })
-        .then(percentileArrays => this.setState({percentileArrays: percentileArrays}))
+        .then(percentileArrays => this.setState({percentileArrays: percentileArrays, isLoading: false}))
         .catch();
 
     };
@@ -69,6 +73,8 @@ class App extends Component {
     };
 
     render() {
+
+        let { isLoading } = this.state;
 
         const App = () => (
             <div id="root-container">
@@ -84,11 +90,20 @@ class App extends Component {
                 </Switch>
             </div>
         );
-        return (
-            <Switch>
-              <App/>
-            </Switch>
-        );
+
+        if (isLoading) {
+            return (
+                <div></div>
+            )
+        }
+
+        else {
+            return (
+                <Switch>
+                    <App/>
+                </Switch>
+            );
+        }
 
     }
 }
