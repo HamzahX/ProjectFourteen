@@ -9,12 +9,13 @@ const port = process.env.PORT || 5000;
 const mongoClient = require('mongodb').MongoClient;
 const mongoURI = `mongodb+srv://hamzah:${process.env.MONGOPASSWORD}@cluster0-wz8lb.mongodb.net/test?retryWrites=true&w=majority`;
 
-//globals
+//database collections
 var DB;
 var PLAYERS_COLLECTION;
 var CLUBS_COLLECTION;
 var PERCENTILE_ARRAYS_COLLECTION;
 
+//object containing percentile arrays
 var PERCENTILE_ARRAYS = {
     "18-19": {
         'FW': {},
@@ -39,7 +40,8 @@ var PERCENTILE_ARRAYS = {
         'FB': {},
         'CB': {},
         'GK': {}
-    }
+    },
+    "lastUpdated": null
 };
 
 
@@ -58,12 +60,12 @@ let connectToDatabase = async () => {
             }
             else {
                 DB = client.db("ProjectFourteen");
-                if (process.env.NODE_ENV === "production"){
+                if (process.env.NODE_ENV === "production"){ //production environment
                     console.log("production");
                     PLAYERS_COLLECTION = DB.collection('Players');
                     PERCENTILE_ARRAYS_COLLECTION = DB.collection('PercentileArrays');
                 }
-                else {
+                else { //dev environment
                     PLAYERS_COLLECTION = DB.collection('DevPlayers');
                     PERCENTILE_ARRAYS_COLLECTION = DB.collection('DevPercentileArrays');
                 }
@@ -93,10 +95,11 @@ let getPercentileArrays = async () => {
                 reject();
             }
             else {
-                PERCENTILE_ARRAYS['lastUpdated'] = docs[0].lastUpdated;
+                //populate the percentile array object and record the time of their last update
                 for (let i=0; i<docs.length; i++){
                     PERCENTILE_ARRAYS[docs[i].season][docs[i].position] = docs[i].stats;
                 }
+                PERCENTILE_ARRAYS['lastUpdated'] = docs[0].lastUpdated;
                 resolve();
             }
         });
@@ -153,7 +156,7 @@ app.post('/api/samplePlayers', (req, res) => {
 
 /**
  * Retrieves search results and sends to client upon request
- * @param {express.Request & {body.query : string, body.type : string}} req
+ * @param {express.Request & {body.query: string, body.type: string}} req
  * @param {express.Response} res - Custom object containing the search results
  */
 app.post('/api/search', (req, res) => {
@@ -195,10 +198,13 @@ app.post('/api/stats', (req, res) => {
     getStats(code).then(
         (stats) => {
             setTimeout(function(){
-                if (req.body.percentilesTimestamp === undefined || new Date(req.body.percentilesTimestamp).getTime() === PERCENTILE_ARRAYS['lastUpdated'].getTime()){
+                //compare the last time the client and server's percentile arrays were updated
+                let clientLastUpdate = new Date(req.body.percentilesTimestamp).getTime();
+                let serverLastUpdate = PERCENTILE_ARRAYS['lastUpdated'].getTime();
+                if (req.body.percentilesTimestamp === undefined || clientLastUpdate === serverLastUpdate){
                     res.json(stats);
                 }
-                else {
+                else { //update client percentile arrays if they are out of date
                     res.json({
                         stats: stats,
                         newPercentileArrays: PERCENTILE_ARRAYS
@@ -231,8 +237,8 @@ let getSamplePlayers = async () => {
 
     return new Promise(async function(resolve, reject){
         PLAYERS_COLLECTION.aggregate([
-            {$match: {"positions.19-20": {$exists: true }}},
-            {$match: {"positions.19-20": {$ne: "N/A"}}},
+            {$match: {"positions.19-20": {$exists: true }}}, //players with 19-20 stats
+            {$match: {"positions.19-20": {$ne: "N/A"}}}, //players with a position recorded for 19-20
             {$sample: {size: 3}}
         ])
             .toArray(function (err, docs) {
@@ -242,6 +248,7 @@ let getSamplePlayers = async () => {
                     reject();
                 } else {
                     for (let i=0; i<docs.length; i++){
+                        //retrieve sample player info and push to array
                         let samplePlayer = {
                             code: docs[i].code,
                             name: docs[i].name,
@@ -269,7 +276,9 @@ let getSamplePlayers = async () => {
 let search = async (aQuery, theType) => {
 
     return new Promise(async function(resolve, reject){
+        //searching for players and clubs
         if (theType === "playersAndClubs"){
+            //remove diacritics from the query
             let simplifiedQuery = aQuery
                 .normalize("NFD")
                 .replace(/[\u0300-\u036f]/g, "")
@@ -281,7 +290,9 @@ let search = async (aQuery, theType) => {
             CLUBS_COLLECTION.find(
                 {$or: [
                     {name: {$regex: aQuery, $options: 'i'}},
-                    {name2: {$regex: simplifiedQuery, $options: 'i'}}
+                    {name2: {$regex: aQuery, $options: 'i'}},
+                    {name3: {$regex: simplifiedQuery, $options: 'i'}},
+                    {name4: {$regex: simplifiedQuery, $options: 'i'}},
                 ]}
             )
             .toArray(function(err, docs) {

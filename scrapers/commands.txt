@@ -5,5 +5,7 @@ Full reset:
 Scraping and mapping:
     - node positionScraper 19-20 && node metadataScraper 19-20 false && node statsScraper 19-20 && node possessionScraper 19-20 && node mappingCreator
 Populating:
-    - node statsFiller 18-19 && node statsFiller 19-20 && node percentilesGenerator 19-20 && node databaseUploader
+    - node statsFiller 18-19 && node statsFiller 19-20 && node percentilesGenerator 19-20 && node databaseUploaderDev
+Finalizing:
+    - node databaseUploaderProduction
 

@@ -248,6 +248,9 @@ let processEntry = (aPlayer, aCompetition, isCLorEL, aCompetitionName, isGoalkee
     }
 
     //retrieve the club name and the team's average possession for the required competition
+    if (FBREF_TO_WHOSCORED_TEAMS[fbrefClubName] === undefined){
+        console.log(fbrefClubName);
+    }
     let whoscoredClubName = FBREF_TO_WHOSCORED_TEAMS[fbrefClubName]["whoscored"];
     let possession = POSSESSION_DATA[aCompetitionName][whoscoredClubName];
 

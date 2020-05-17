@@ -232,7 +232,7 @@ let processEntry = (aPlayer, competition, isCLorEL = false, competitionName, isG
     //find all potential whoscored matches
     let matches = findMatches(query, whoscoredClub, isGoalkeeper);
     if (matches.length === 1){
-        processMatch(match, competitionName, whoscoredClub, apps, mins, code, nationality, "single");
+        processMatch(matches[0], competitionName, whoscoredClub, apps, mins, code, nationality, "single");
     }
     else {
         for (let i=0; i<matches.length; i++){

@@ -76,28 +76,33 @@ class App extends Component {
 
         let { isLoading } = this.state;
 
-        const App = () => (
-            <div id="root-container">
-                <Switch>
-                    <Route exact path='/' component={Home}/>
-                    <Route exact path='/' render={(props) => <Home {...props} isMobile={isMobileOnly}/>}/>
-                    <Route path='/search/:query/:searchByClub?' component={Search}/>
-                    <Route path='/stats/:code' render={(props) => <Stats {...props}
-                                                                         percentileArrays={this.state.percentileArrays}
-                                                                         isMobile={isMobileOnly}
-                                                                         updatePercentileArrays={this.updatePercentileArrays}/>}
-                    />
-                </Switch>
-            </div>
-        );
-
         if (isLoading) {
             return (
-                <div></div>
+                <div id="main">
+                    <div className="screen" id="loading-screen">
+                        Connecting to server...
+                    </div>
+                </div>
             )
         }
 
         else {
+
+            const App = () => (
+                <div id="root-container">
+                    <Switch>
+                        <Route exact path='/' component={Home}/>
+                        <Route exact path='/' render={(props) => <Home {...props} isMobile={isMobileOnly}/>}/>
+                        <Route path='/search/:query/:searchByClub?' component={Search}/>
+                        <Route path='/stats/:code' render={(props) => <Stats {...props}
+                                                                             percentileArrays={this.state.percentileArrays}
+                                                                             isMobile={isMobileOnly}
+                                                                             updatePercentileArrays={this.updatePercentileArrays}/>}
+                        />
+                    </Switch>
+                </div>
+            );
+
             return (
                 <Switch>
                     <App/>

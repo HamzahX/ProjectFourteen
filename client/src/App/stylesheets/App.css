@@ -81,6 +81,10 @@ a {
     text-decoration: none;
 }
 
+#homepage {
+    min-height: 700px;
+}
+
 #homepage p {
     font-size: 1.1em;
     color: #222222;

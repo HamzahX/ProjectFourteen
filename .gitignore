@@ -1,3 +1,4 @@
 .idea/
 node_modules/
-scrapers/databaseUploader.js
+scrapers/databaseUploaderDev.js
+scrapers/databaseUploaderProduction.js
