@@ -590,7 +590,7 @@
 		"mapped": false,
 		"name": "Daniel Baier",
 		"simplifiedName": "Daniel Baier",
-		"age": 35,
+		"age": 36,
 		"nationality": "Germany",
 		"positions": {
 			"18-19": "CM",
@@ -1141,7 +1141,7 @@
 		"mapped": false,
 		"name": "Cesc Fàbregas",
 		"simplifiedName": "Cesc Fabregas",
-		"age": 32,
+		"age": 33,
 		"nationality": "Spain",
 		"positions": {
 			"18-19": "CM",
@@ -1291,7 +1291,7 @@
 		"mapped": false,
 		"name": "Mark Noble",
 		"simplifiedName": "Mark Noble",
-		"age": 32,
+		"age": 33,
 		"nationality": "England",
 		"positions": {
 			"18-19": "CM",
@@ -2533,8 +2533,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Union Berlin": {
-				"whoscoredApps": 24,
-				"whoscoredMins": 1929
+				"whoscoredApps": 25,
+				"whoscoredMins": 1948
 			}
 		}
 	},
@@ -3591,8 +3591,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Bayern Munich": {
-				"whoscoredApps": 25,
-				"whoscoredMins": 2250
+				"whoscoredApps": 26,
+				"whoscoredMins": 2340
 			},
 			"Champions League | Bayern Munich": {
 				"whoscoredApps": 7,
@@ -4294,7 +4294,7 @@
 		"mapped": false,
 		"name": "Daniele Dessena",
 		"simplifiedName": "Daniele Dessena",
-		"age": 32,
+		"age": 33,
 		"nationality": "Italy",
 		"positions": {
 			"18-19": "N/A",
@@ -5532,7 +5532,7 @@
 		"mapped": false,
 		"name": "Danilo",
 		"simplifiedName": "Danilo",
-		"age": 35,
+		"age": 36,
 		"nationality": "Brazil",
 		"positions": {
 			"18-19": "CB",
@@ -5563,7 +5563,7 @@
 		"mapped": false,
 		"name": "Enrico Alfonso",
 		"simplifiedName": "Enrico Alfonso",
-		"age": 31,
+		"age": 32,
 		"nationality": "Italy",
 		"positions": {
 			"19-20": "N/A"
@@ -5656,7 +5656,7 @@
 		"mapped": false,
 		"name": "Fernandinho",
 		"simplifiedName": "Fernandinho",
-		"age": 34,
+		"age": 35,
 		"nationality": "Brazil",
 		"positions": {
 			"18-19": "CM",
@@ -5758,7 +5758,7 @@
 		"mapped": false,
 		"name": "Kevin Gameiro",
 		"simplifiedName": "Kevin Gameiro",
-		"age": 32,
+		"age": 33,
 		"nationality": "France",
 		"positions": {
 			"18-19": "FW",
@@ -6118,7 +6118,7 @@
 		"mapped": false,
 		"name": "Marcelo",
 		"simplifiedName": "Marcelo",
-		"age": 31,
+		"age": 32,
 		"nationality": "Brazil",
 		"positions": {
 			"18-19": "FB",
@@ -6541,8 +6541,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Mainz 05": {
-				"whoscoredApps": 20,
-				"whoscoredMins": 1041
+				"whoscoredApps": 21,
+				"whoscoredMins": 1062
 			}
 		}
 	},
@@ -6674,8 +6674,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Werder Bremen": {
-				"whoscoredApps": 6,
-				"whoscoredMins": 114
+				"whoscoredApps": 7,
+				"whoscoredMins": 119
 			}
 		}
 	},
@@ -6683,7 +6683,7 @@
 		"mapped": false,
 		"name": "Adam Lallana",
 		"simplifiedName": "Adam Lallana",
-		"age": 31,
+		"age": 32,
 		"nationality": "England",
 		"positions": {
 			"18-19": "N/A",
@@ -6892,7 +6892,7 @@
 		"mapped": false,
 		"name": "Miguel Veloso",
 		"simplifiedName": "Miguel Veloso",
-		"age": 33,
+		"age": 34,
 		"nationality": "Portugal",
 		"positions": {
 			"18-19": "CM",
@@ -7323,8 +7323,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Bayer Leverkusen": {
-				"whoscoredApps": 25,
-				"whoscoredMins": 2111
+				"whoscoredApps": 26,
+				"whoscoredMins": 2201
 			},
 			"Champions League | Bayer Leverkusen": {
 				"whoscoredApps": 6,
@@ -7795,7 +7795,7 @@
 		"mapped": false,
 		"name": "Dries Mertens",
 		"simplifiedName": "Dries Mertens",
-		"age": 32,
+		"age": 33,
 		"nationality": "Belgium",
 		"positions": {
 			"18-19": "FW",
@@ -8145,8 +8145,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Bayern Munich": {
-				"whoscoredApps": 16,
-				"whoscoredMins": 1104
+				"whoscoredApps": 17,
+				"whoscoredMins": 1194
 			},
 			"Champions League | Bayern Munich": {
 				"whoscoredApps": 5,
@@ -8791,8 +8791,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Werder Bremen": {
-				"whoscoredApps": 12,
-				"whoscoredMins": 1080
+				"whoscoredApps": 13,
+				"whoscoredMins": 1170
 			}
 		}
 	},
@@ -9044,8 +9044,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Union Berlin": {
-				"whoscoredApps": 19,
-				"whoscoredMins": 1684
+				"whoscoredApps": 20,
+				"whoscoredMins": 1774
 			}
 		}
 	},
@@ -9237,8 +9237,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Bayer Leverkusen": {
-				"whoscoredApps": 18,
-				"whoscoredMins": 1419
+				"whoscoredApps": 19,
+				"whoscoredMins": 1504
 			},
 			"Champions League | Bayer Leverkusen": {
 				"whoscoredApps": 5,
@@ -9893,8 +9893,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Bayer Leverkusen": {
-				"whoscoredApps": 18,
-				"whoscoredMins": 1307
+				"whoscoredApps": 19,
+				"whoscoredMins": 1326
 			},
 			"Champions League | Bayer Leverkusen": {
 				"whoscoredApps": 6,
@@ -10749,8 +10749,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Bayern Munich": {
-				"whoscoredApps": 23,
-				"whoscoredMins": 2042
+				"whoscoredApps": 24,
+				"whoscoredMins": 2132
 			},
 			"Champions League | Bayern Munich": {
 				"whoscoredApps": 6,
@@ -11411,8 +11411,8 @@
 		},
 		"19-20": {
 			"Bundesliga | FC Koln": {
-				"whoscoredApps": 19,
-				"whoscoredMins": 772
+				"whoscoredApps": 20,
+				"whoscoredMins": 779
 			}
 		}
 	},
@@ -11641,7 +11641,7 @@
 		"mapped": false,
 		"name": "Luca Rossettini",
 		"simplifiedName": "Luca Rossettini",
-		"age": 34,
+		"age": 35,
 		"nationality": "Italy",
 		"positions": {
 			"18-19": "CB",
@@ -13387,7 +13387,7 @@
 		"mapped": false,
 		"name": "Damien Da Silva",
 		"simplifiedName": "Damien Da Silva",
-		"age": 31,
+		"age": 32,
 		"nationality": "France",
 		"positions": {
 			"18-19": "CB",
@@ -14453,8 +14453,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Werder Bremen": {
-				"whoscoredApps": 18,
-				"whoscoredMins": 1577
+				"whoscoredApps": 19,
+				"whoscoredMins": 1667
 			}
 		}
 	},
@@ -14569,8 +14569,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Bayern Munich": {
-				"whoscoredApps": 25,
-				"whoscoredMins": 1558
+				"whoscoredApps": 26,
+				"whoscoredMins": 1647
 			},
 			"Champions League | Bayern Munich": {
 				"whoscoredApps": 6,
@@ -14634,7 +14634,7 @@
 		"mapped": false,
 		"name": "Stefan Ilsanker",
 		"simplifiedName": "Stefan Ilsanker",
-		"age": 30,
+		"age": 31,
 		"nationality": "Austria",
 		"positions": {
 			"18-19": "N/A",
@@ -15037,8 +15037,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Bayern Munich": {
-				"whoscoredApps": 20,
-				"whoscoredMins": 1788
+				"whoscoredApps": 21,
+				"whoscoredMins": 1878
 			},
 			"Champions League | Bayern Munich": {
 				"whoscoredApps": 4,
@@ -15793,8 +15793,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Werder Bremen": {
-				"whoscoredApps": 9,
-				"whoscoredMins": 357
+				"whoscoredApps": 10,
+				"whoscoredMins": 411
 			}
 		}
 	},
@@ -16939,7 +16939,7 @@
 		"mapped": false,
 		"name": "Juan Villar",
 		"simplifiedName": "Juan Villar",
-		"age": 31,
+		"age": 32,
 		"nationality": "Spain",
 		"positions": {
 			"19-20": "N/A"
@@ -17543,7 +17543,7 @@
 		"mapped": false,
 		"name": "Radja Nainggolan",
 		"simplifiedName": "Radja Nainggolan",
-		"age": 31,
+		"age": 32,
 		"nationality": "Belgium",
 		"positions": {
 			"18-19": "AM",
@@ -18131,8 +18131,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Bayer Leverkusen": {
-				"whoscoredApps": 25,
-				"whoscoredMins": 2250
+				"whoscoredApps": 26,
+				"whoscoredMins": 2340
 			},
 			"Champions League | Bayer Leverkusen": {
 				"whoscoredApps": 6,
@@ -18160,8 +18160,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Union Berlin": {
-				"whoscoredApps": 25,
-				"whoscoredMins": 2250
+				"whoscoredApps": 26,
+				"whoscoredMins": 2340
 			}
 		}
 	},
@@ -18381,7 +18381,7 @@
 		"mapped": false,
 		"name": "Diego Farias",
 		"simplifiedName": "Diego Farias",
-		"age": 29,
+		"age": 30,
 		"nationality": "Brazil",
 		"positions": {
 			"18-19": "FW",
@@ -18494,7 +18494,7 @@
 		"mapped": false,
 		"name": "Péter Gulácsi",
 		"simplifiedName": "Peter Gulacsi",
-		"age": 29,
+		"age": 30,
 		"nationality": "Hungary",
 		"positions": {
 			"18-19": "GK",
@@ -19631,7 +19631,7 @@
 		"mapped": false,
 		"name": "Francis Coquelin",
 		"simplifiedName": "Francis Coquelin",
-		"age": 28,
+		"age": 29,
 		"nationality": "France",
 		"positions": {
 			"18-19": "CM",
@@ -20271,8 +20271,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Mainz 05": {
-				"whoscoredApps": 15,
-				"whoscoredMins": 941
+				"whoscoredApps": 16,
+				"whoscoredMins": 948
 			}
 		}
 	},
@@ -20342,7 +20342,7 @@
 		"mapped": false,
 		"name": "Luigi Sepe",
 		"simplifiedName": "Luigi Sepe",
-		"age": 28,
+		"age": 29,
 		"nationality": "Italy",
 		"positions": {
 			"18-19": "GK",
@@ -20455,8 +20455,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Bayern Munich": {
-				"whoscoredApps": 15,
-				"whoscoredMins": 950
+				"whoscoredApps": 16,
+				"whoscoredMins": 955
 			},
 			"Champions League | Bayern Munich": {
 				"whoscoredApps": 6,
@@ -20619,8 +20619,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Union Berlin": {
-				"whoscoredApps": 8,
-				"whoscoredMins": 182
+				"whoscoredApps": 9,
+				"whoscoredMins": 187
 			}
 		}
 	},
@@ -20832,7 +20832,7 @@
 		"mapped": false,
 		"name": "Yuya Osako",
 		"simplifiedName": "Yuya Osako",
-		"age": 29,
+		"age": 30,
 		"nationality": "Japan",
 		"positions": {
 			"18-19": "AM",
@@ -20854,8 +20854,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Werder Bremen": {
-				"whoscoredApps": 18,
-				"whoscoredMins": 1215
+				"whoscoredApps": 19,
+				"whoscoredMins": 1220
 			}
 		}
 	},
@@ -21024,8 +21024,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Union Berlin": {
-				"whoscoredApps": 23,
-				"whoscoredMins": 2054
+				"whoscoredApps": 24,
+				"whoscoredMins": 2144
 			}
 		}
 	},
@@ -21134,8 +21134,8 @@
 				"whoscoredMins": 961
 			},
 			"Bundesliga | Werder Bremen": {
-				"whoscoredApps": 6,
-				"whoscoredMins": 511
+				"whoscoredApps": 7,
+				"whoscoredMins": 596
 			}
 		}
 	},
@@ -21287,7 +21287,7 @@
 		"mapped": false,
 		"name": "Craig Dawson",
 		"simplifiedName": "Craig Dawson",
-		"age": 29,
+		"age": 30,
 		"nationality": "England",
 		"positions": {
 			"19-20": "CB"
@@ -21657,7 +21657,7 @@
 		"mapped": false,
 		"name": "Thibaut Courtois",
 		"simplifiedName": "Thibaut Courtois",
-		"age": 27,
+		"age": 28,
 		"nationality": "Belgium",
 		"positions": {
 			"18-19": "GK",
@@ -21932,8 +21932,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Bayern Munich": {
-				"whoscoredApps": 22,
-				"whoscoredMins": 1666
+				"whoscoredApps": 23,
+				"whoscoredMins": 1756
 			},
 			"Champions League | Bayern Munich": {
 				"whoscoredApps": 6,
@@ -22043,7 +22043,7 @@
 		"mapped": false,
 		"name": "Raúl Navas",
 		"simplifiedName": "Raul Navas",
-		"age": 31,
+		"age": 32,
 		"nationality": "Spain",
 		"positions": {
 			"18-19": "CB",
@@ -22549,7 +22549,7 @@
 		"mapped": false,
 		"name": "Lukasz Skorupski",
 		"simplifiedName": "Lukasz Skorupski",
-		"age": 28,
+		"age": 29,
 		"nationality": "Poland",
 		"positions": {
 			"18-19": "GK",
@@ -22605,7 +22605,7 @@
 		"mapped": false,
 		"name": "Bram Nuytinck",
 		"simplifiedName": "Bram Nuytinck",
-		"age": 29,
+		"age": 30,
 		"nationality": "Netherlands",
 		"positions": {
 			"18-19": "CB",
@@ -23261,7 +23261,7 @@
 		"mapped": false,
 		"name": "Romelu Lukaku",
 		"simplifiedName": "Romelu Lukaku",
-		"age": 26,
+		"age": 27,
 		"nationality": "Belgium",
 		"positions": {
 			"18-19": "FW",
@@ -25180,7 +25180,7 @@
 		"mapped": false,
 		"name": "Dan Burn",
 		"simplifiedName": "Dan Burn",
-		"age": 27,
+		"age": 28,
 		"nationality": "England",
 		"positions": {
 			"19-20": "FB"
@@ -25497,7 +25497,7 @@
 		"mapped": false,
 		"name": "Quique González",
 		"simplifiedName": "Quique Gonzalez",
-		"age": 29,
+		"age": 30,
 		"nationality": "Spain",
 		"positions": {
 			"19-20": "N/A"
@@ -26760,7 +26760,7 @@
 		"mapped": false,
 		"name": "Andrea La Mantia",
 		"simplifiedName": "Andrea La Mantia",
-		"age": 28,
+		"age": 29,
 		"nationality": "Italy",
 		"positions": {
 			"19-20": "N/A"
@@ -26859,8 +26859,8 @@
 		},
 		"19-20": {
 			"Bundesliga | FC Koln": {
-				"whoscoredApps": 19,
-				"whoscoredMins": 1194
+				"whoscoredApps": 20,
+				"whoscoredMins": 1239
 			}
 		}
 	},
@@ -27053,8 +27053,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Union Berlin": {
-				"whoscoredApps": 16,
-				"whoscoredMins": 602
+				"whoscoredApps": 17,
+				"whoscoredMins": 673
 			}
 		}
 	},
@@ -27693,7 +27693,7 @@
 		"mapped": false,
 		"name": "Gabriel Silva",
 		"simplifiedName": "Gabriel Silva",
-		"age": 28,
+		"age": 29,
 		"nationality": "Brazil",
 		"positions": {
 			"18-19": "N/A",
@@ -29236,7 +29236,7 @@
 		"mapped": false,
 		"name": "Timo Horn",
 		"simplifiedName": "Timo Horn",
-		"age": 26,
+		"age": 27,
 		"nationality": "Germany",
 		"positions": {
 			"19-20": "GK"
@@ -29248,8 +29248,8 @@
 		},
 		"19-20": {
 			"Bundesliga | FC Koln": {
-				"whoscoredApps": 25,
-				"whoscoredMins": 2250
+				"whoscoredApps": 26,
+				"whoscoredMins": 2340
 			}
 		}
 	},
@@ -29284,8 +29284,8 @@
 		},
 		"19-20": {
 			"Bundesliga | FC Koln": {
-				"whoscoredApps": 7,
-				"whoscoredMins": 600
+				"whoscoredApps": 8,
+				"whoscoredMins": 690
 			},
 			"Bundesliga | Schalke 04": {
 				"whoscoredApps": 8,
@@ -29414,8 +29414,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Bayer Leverkusen": {
-				"whoscoredApps": 22,
-				"whoscoredMins": 1242
+				"whoscoredApps": 23,
+				"whoscoredMins": 1271
 			},
 			"Champions League | Bayer Leverkusen": {
 				"whoscoredApps": 5,
@@ -29919,7 +29919,7 @@
 		"mapped": false,
 		"name": "Allan-Roméo Nyom",
 		"simplifiedName": "Allan-Romeo Nyom",
-		"age": 31,
+		"age": 32,
 		"nationality": "Cameroon",
 		"positions": {
 			"18-19": "FB",
@@ -29954,7 +29954,7 @@
 		"mapped": false,
 		"name": "Anaitz Arbilla",
 		"simplifiedName": "Anaitz Arbilla",
-		"age": 32,
+		"age": 33,
 		"nationality": "Spain",
 		"positions": {
 			"18-19": "CB",
@@ -31408,7 +31408,7 @@
 		"mapped": false,
 		"name": "Mateo Kovacic",
 		"simplifiedName": "Mateo Kovacic",
-		"age": 25,
+		"age": 26,
 		"nationality": "Croatia",
 		"positions": {
 			"18-19": "CM",
@@ -31556,7 +31556,7 @@
 		"mapped": false,
 		"name": "Alfredo Morales",
 		"simplifiedName": "Alfredo Morales",
-		"age": 29,
+		"age": 30,
 		"nationality": "United States",
 		"positions": {
 			"18-19": "CM",
@@ -31616,7 +31616,7 @@
 		"mapped": false,
 		"name": "Pablo Sarabia",
 		"simplifiedName": "Pablo Sarabia",
-		"age": 27,
+		"age": 28,
 		"nationality": "Spain",
 		"positions": {
 			"18-19": "AM",
@@ -31746,7 +31746,7 @@
 		"mapped": false,
 		"name": "Loïck Landre",
 		"simplifiedName": "Loick Landre",
-		"age": 27,
+		"age": 28,
 		"nationality": "France",
 		"positions": {
 			"18-19": "CB",
@@ -31947,7 +31947,7 @@
 		"mapped": false,
 		"name": "Rachid Ghezzal",
 		"simplifiedName": "Rachid Ghezzal",
-		"age": 27,
+		"age": 28,
 		"nationality": "Algeria",
 		"positions": {
 			"18-19": "N/A",
@@ -31978,7 +31978,7 @@
 		"mapped": false,
 		"name": "Marco Sportiello",
 		"simplifiedName": "Marco Sportiello",
-		"age": 27,
+		"age": 28,
 		"nationality": "Italy",
 		"positions": {
 			"18-19": "GK",
@@ -32104,7 +32104,7 @@
 		"mapped": false,
 		"name": "Fernando Pacheco",
 		"simplifiedName": "Fernando Pacheco",
-		"age": 27,
+		"age": 28,
 		"nationality": "Spain",
 		"positions": {
 			"18-19": "GK",
@@ -32557,7 +32557,7 @@
 		"mapped": false,
 		"name": "Federico Ceccherini",
 		"simplifiedName": "Federico Ceccherini",
-		"age": 27,
+		"age": 28,
 		"nationality": "Italy",
 		"positions": {
 			"18-19": "CB",
@@ -33493,8 +33493,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Werder Bremen": {
-				"whoscoredApps": 19,
-				"whoscoredMins": 1552
+				"whoscoredApps": 20,
+				"whoscoredMins": 1623
 			}
 		}
 	},
@@ -34078,8 +34078,8 @@
 		},
 		"19-20": {
 			"Bundesliga | FC Koln": {
-				"whoscoredApps": 4,
-				"whoscoredMins": 360
+				"whoscoredApps": 5,
+				"whoscoredMins": 450
 			}
 		}
 	},
@@ -34299,7 +34299,7 @@
 		"mapped": false,
 		"name": "Marquinhos",
 		"simplifiedName": "Marquinhos",
-		"age": 25,
+		"age": 26,
 		"nationality": "Brazil",
 		"positions": {
 			"18-19": "CB",
@@ -34471,7 +34471,7 @@
 		"mapped": false,
 		"name": "Felipe",
 		"simplifiedName": "Felipe",
-		"age": 30,
+		"age": 31,
 		"nationality": "Brazil",
 		"positions": {
 			"19-20": "CB"
@@ -34647,7 +34647,7 @@
 		"mapped": false,
 		"name": "Marko Pajac",
 		"simplifiedName": "Marko Pajac",
-		"age": 26,
+		"age": 27,
 		"nationality": "Croatia",
 		"positions": {
 			"18-19": "N/A",
@@ -35368,8 +35368,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Mainz 05": {
-				"whoscoredApps": 24,
-				"whoscoredMins": 1989
+				"whoscoredApps": 25,
+				"whoscoredMins": 2079
 			}
 		}
 	},
@@ -35862,7 +35862,7 @@
 		"mapped": false,
 		"name": "Dennis Praet",
 		"simplifiedName": "Dennis Praet",
-		"age": 25,
+		"age": 26,
 		"nationality": "Belgium",
 		"positions": {
 			"18-19": "CM",
@@ -36357,7 +36357,7 @@
 		"mapped": false,
 		"name": "Íñigo Martínez",
 		"simplifiedName": "Inigo Martinez",
-		"age": 28,
+		"age": 29,
 		"nationality": "Spain",
 		"positions": {
 			"18-19": "CB",
@@ -36935,7 +36935,7 @@
 		"mapped": false,
 		"name": "Munas Dabbur",
 		"simplifiedName": "Munas Dabbur",
-		"age": 27,
+		"age": 28,
 		"nationality": "Israel",
 		"positions": {
 			"19-20": "N/A"
@@ -37081,7 +37081,7 @@
 		"mapped": false,
 		"name": "Pedro Bigas",
 		"simplifiedName": "Pedro Bigas",
-		"age": 29,
+		"age": 30,
 		"nationality": "Spain",
 		"positions": {
 			"18-19": "N/A",
@@ -37168,7 +37168,7 @@
 		"mapped": false,
 		"name": "Raúl Jiménez",
 		"simplifiedName": "Raul Jimenez",
-		"age": 28,
+		"age": 29,
 		"nationality": "Mexico",
 		"positions": {
 			"18-19": "FW",
@@ -37385,7 +37385,7 @@
 		"mapped": false,
 		"name": "Mariusz Stepinski",
 		"simplifiedName": "Mariusz Stepinski",
-		"age": 24,
+		"age": 25,
 		"nationality": "Poland",
 		"positions": {
 			"18-19": "FW",
@@ -37610,7 +37610,7 @@
 		"nationality": "Germany",
 		"positions": {
 			"18-19": "FB",
-			"19-20": "N/A"
+			"19-20": "FB"
 		},
 		"clubs": {
 			"18-19": [
@@ -37632,8 +37632,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Bayer Leverkusen": {
-				"whoscoredApps": 13,
-				"whoscoredMins": 812
+				"whoscoredApps": 14,
+				"whoscoredMins": 902
 			},
 			"Champions League | Bayer Leverkusen": {
 				"whoscoredApps": 3,
@@ -37897,7 +37897,7 @@
 		"mapped": false,
 		"name": "Javier Manquillo",
 		"simplifiedName": "Javier Manquillo",
-		"age": 25,
+		"age": 26,
 		"nationality": "Spain",
 		"positions": {
 			"18-19": "FB",
@@ -38568,7 +38568,7 @@
 		"mapped": false,
 		"name": "Tobias Strobl",
 		"simplifiedName": "Tobias Strobl",
-		"age": 29,
+		"age": 30,
 		"nationality": "Germany",
 		"positions": {
 			"18-19": "CM",
@@ -38813,7 +38813,7 @@
 		"mapped": false,
 		"name": "Stefano Denswil",
 		"simplifiedName": "Stefano Denswil",
-		"age": 26,
+		"age": 27,
 		"nationality": "Netherlands",
 		"positions": {
 			"19-20": "N/A"
@@ -39010,8 +39010,8 @@
 		},
 		"19-20": {
 			"Bundesliga | FC Koln": {
-				"whoscoredApps": 23,
-				"whoscoredMins": 1991
+				"whoscoredApps": 24,
+				"whoscoredMins": 2067
 			}
 		}
 	},
@@ -39960,7 +39960,7 @@
 		"mapped": false,
 		"name": "Erik Durm",
 		"simplifiedName": "Erik Durm",
-		"age": 27,
+		"age": 28,
 		"nationality": "Germany",
 		"positions": {
 			"18-19": "FB",
@@ -40021,8 +40021,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Bayer Leverkusen": {
-				"whoscoredApps": 17,
-				"whoscoredMins": 1118
+				"whoscoredApps": 18,
+				"whoscoredMins": 1208
 			},
 			"Champions League | Bayer Leverkusen": {
 				"whoscoredApps": 5,
@@ -40038,7 +40038,7 @@
 		"mapped": false,
 		"name": "Rafael Czichos",
 		"simplifiedName": "Rafael Czichos",
-		"age": 29,
+		"age": 30,
 		"nationality": "Germany",
 		"positions": {
 			"19-20": "CB"
@@ -40318,8 +40318,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Bayern Munich": {
-				"whoscoredApps": 15,
-				"whoscoredMins": 748
+				"whoscoredApps": 16,
+				"whoscoredMins": 819
 			},
 			"Champions League | Bayern Munich": {
 				"whoscoredApps": 4,
@@ -41782,8 +41782,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Bayern Munich": {
-				"whoscoredApps": 23,
-				"whoscoredMins": 1619
+				"whoscoredApps": 24,
+				"whoscoredMins": 1704
 			},
 			"Champions League | Bayern Munich": {
 				"whoscoredApps": 6,
@@ -42209,7 +42209,7 @@
 		"mapped": false,
 		"name": "Guillermo Maripán",
 		"simplifiedName": "Guillermo Maripan",
-		"age": 25,
+		"age": 26,
 		"nationality": "Chile",
 		"positions": {
 			"18-19": "FW",
@@ -42262,8 +42262,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Mainz 05": {
-				"whoscoredApps": 21,
-				"whoscoredMins": 1786
+				"whoscoredApps": 22,
+				"whoscoredMins": 1869
 			}
 		}
 	},
@@ -42742,8 +42742,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Union Berlin": {
-				"whoscoredApps": 24,
-				"whoscoredMins": 2146
+				"whoscoredApps": 25,
+				"whoscoredMins": 2217
 			}
 		}
 	},
@@ -43893,7 +43893,7 @@
 		"mapped": false,
 		"name": "Darío Benedetto",
 		"simplifiedName": "Dario Benedetto",
-		"age": 29,
+		"age": 30,
 		"nationality": "Argentina",
 		"positions": {
 			"19-20": "FW"
@@ -44245,8 +44245,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Bayer Leverkusen": {
-				"whoscoredApps": 18,
-				"whoscoredMins": 908
+				"whoscoredApps": 19,
+				"whoscoredMins": 913
 			},
 			"Champions League | Bayer Leverkusen": {
 				"whoscoredApps": 5,
@@ -44362,8 +44362,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Bayern Munich": {
-				"whoscoredApps": 15,
-				"whoscoredMins": 996
+				"whoscoredApps": 16,
+				"whoscoredMins": 1015
 			},
 			"Champions League | Bayern Munich": {
 				"whoscoredApps": 6,
@@ -44396,7 +44396,7 @@
 		"mapped": false,
 		"name": "Juan Musso",
 		"simplifiedName": "Juan Musso",
-		"age": 25,
+		"age": 26,
 		"nationality": "Argentina",
 		"positions": {
 			"18-19": "GK",
@@ -45013,7 +45013,7 @@
 		"mapped": false,
 		"name": "Morten Thorsby",
 		"simplifiedName": "Morten Thorsby",
-		"age": 23,
+		"age": 24,
 		"nationality": "Norway",
 		"positions": {
 			"19-20": "N/A"
@@ -45174,7 +45174,7 @@
 		"mapped": false,
 		"name": "Cristian Benavente Bristol",
 		"simplifiedName": "Cristian Benavente Bristol",
-		"age": 25,
+		"age": 26,
 		"nationality": "Peru",
 		"positions": {
 			"19-20": "N/A"
@@ -45284,8 +45284,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Union Berlin": {
-				"whoscoredApps": 20,
-				"whoscoredMins": 1214
+				"whoscoredApps": 21,
+				"whoscoredMins": 1295
 			}
 		}
 	},
@@ -45932,8 +45932,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Union Berlin": {
-				"whoscoredApps": 24,
-				"whoscoredMins": 2119
+				"whoscoredApps": 25,
+				"whoscoredMins": 2209
 			}
 		}
 	},
@@ -46037,8 +46037,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Mainz 05": {
-				"whoscoredApps": 17,
-				"whoscoredMins": 1199
+				"whoscoredApps": 18,
+				"whoscoredMins": 1268
 			}
 		}
 	},
@@ -46138,7 +46138,7 @@
 		"mapped": false,
 		"name": "Lucas Evangelista",
 		"simplifiedName": "Lucas Evangelista",
-		"age": 24,
+		"age": 25,
 		"nationality": "Brazil",
 		"positions": {
 			"18-19": "N/A",
@@ -47153,8 +47153,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Union Berlin": {
-				"whoscoredApps": 7,
-				"whoscoredMins": 559
+				"whoscoredApps": 8,
+				"whoscoredMins": 649
 			}
 		}
 	},
@@ -47548,7 +47548,7 @@
 		"mapped": false,
 		"name": "Enes Ünal",
 		"simplifiedName": "Enes Unal",
-		"age": 22,
+		"age": 23,
 		"nationality": "Turkey",
 		"positions": {
 			"18-19": "FW",
@@ -48255,7 +48255,7 @@
 		"mapped": false,
 		"name": "Adrián Embarba",
 		"simplifiedName": "Adrian Embarba",
-		"age": 27,
+		"age": 28,
 		"nationality": "Spain",
 		"positions": {
 			"18-19": "AM",
@@ -48403,7 +48403,7 @@
 		"mapped": false,
 		"name": "Deyverson",
 		"simplifiedName": "Deyverson",
-		"age": 28,
+		"age": 29,
 		"nationality": "Brazil",
 		"positions": {
 			"19-20": "N/A"
@@ -48907,7 +48907,7 @@
 		"mapped": false,
 		"name": "Youri Tielemans",
 		"simplifiedName": "Youri Tielemans",
-		"age": 22,
+		"age": 23,
 		"nationality": "Belgium",
 		"positions": {
 			"18-19": "CM",
@@ -49415,7 +49415,7 @@
 		"mapped": false,
 		"name": "Jhon Córdoba",
 		"simplifiedName": "Jhon Cordoba",
-		"age": 26,
+		"age": 27,
 		"nationality": "Colombia",
 		"positions": {
 			"19-20": "FW"
@@ -49427,8 +49427,8 @@
 		},
 		"19-20": {
 			"Bundesliga | FC Koln": {
-				"whoscoredApps": 21,
-				"whoscoredMins": 1396
+				"whoscoredApps": 22,
+				"whoscoredMins": 1479
 			}
 		}
 	},
@@ -49731,7 +49731,8 @@
 				"Hertha Berlin"
 			],
 			"19-20": [
-				"Hertha Berlin"
+				"Hertha Berlin",
+				"Werder Bremen"
 			]
 		},
 		"18-19": {
@@ -49744,6 +49745,10 @@
 			"Bundesliga | Hertha Berlin": {
 				"whoscoredApps": 19,
 				"whoscoredMins": 957
+			},
+			"Bundesliga | Werder Bremen": {
+				"whoscoredApps": 4,
+				"whoscoredMins": 320
 			}
 		}
 	},
@@ -50936,8 +50941,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Werder Bremen": {
-				"whoscoredApps": 15,
-				"whoscoredMins": 1252
+				"whoscoredApps": 16,
+				"whoscoredMins": 1342
 			}
 		}
 	},
@@ -51346,8 +51351,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Bayer Leverkusen": {
-				"whoscoredApps": 8,
-				"whoscoredMins": 566
+				"whoscoredApps": 9,
+				"whoscoredMins": 656
 			},
 			"Champions League | Bayer Leverkusen": {
 				"whoscoredApps": 2,
@@ -51700,7 +51705,7 @@
 		"mapped": false,
 		"name": "Dennis Srbeny",
 		"simplifiedName": "Dennis Srbeny",
-		"age": 25,
+		"age": 26,
 		"nationality": "Germany",
 		"positions": {
 			"19-20": "N/A"
@@ -52679,8 +52684,8 @@
 		},
 		"19-20": {
 			"Bundesliga | FC Koln": {
-				"whoscoredApps": 12,
-				"whoscoredMins": 842
+				"whoscoredApps": 13,
+				"whoscoredMins": 925
 			}
 		}
 	},
@@ -52793,7 +52798,7 @@
 		"mapped": false,
 		"name": "Otávio",
 		"simplifiedName": "Otavio",
-		"age": 25,
+		"age": 26,
 		"nationality": "Brazil",
 		"positions": {
 			"18-19": "CM",
@@ -52946,7 +52951,7 @@
 		"mapped": false,
 		"name": "Gian-Luca Waldschmidt",
 		"simplifiedName": "Gian-Luca Waldschmidt",
-		"age": 23,
+		"age": 24,
 		"nationality": "Germany",
 		"positions": {
 			"18-19": "N/A",
@@ -54963,7 +54968,7 @@
 		"mapped": false,
 		"name": "Ellyes Skhiri",
 		"simplifiedName": "Ellyes Skhiri",
-		"age": 24,
+		"age": 25,
 		"nationality": "Tunisia",
 		"positions": {
 			"18-19": "CM",
@@ -54985,8 +54990,8 @@
 		},
 		"19-20": {
 			"Bundesliga | FC Koln": {
-				"whoscoredApps": 23,
-				"whoscoredMins": 1950
+				"whoscoredApps": 24,
+				"whoscoredMins": 2040
 			}
 		}
 	},
@@ -56448,8 +56453,8 @@
 		},
 		"19-20": {
 			"Bundesliga | FC Koln": {
-				"whoscoredApps": 23,
-				"whoscoredMins": 1821
+				"whoscoredApps": 24,
+				"whoscoredMins": 1828
 			}
 		}
 	},
@@ -56519,7 +56524,7 @@
 		"mapped": false,
 		"name": "Vukasin Jovanovic",
 		"simplifiedName": "Vukasin Jovanovic",
-		"age": 23,
+		"age": 24,
 		"nationality": "Serbia",
 		"positions": {
 			"18-19": "CB",
@@ -56719,8 +56724,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Werder Bremen": {
-				"whoscoredApps": 23,
-				"whoscoredMins": 2070
+				"whoscoredApps": 24,
+				"whoscoredMins": 2160
 			}
 		}
 	},
@@ -57013,7 +57018,7 @@
 		"mapped": false,
 		"name": "Abdou Diallo",
 		"simplifiedName": "Abdou Diallo",
-		"age": 23,
+		"age": 24,
 		"nationality": "France",
 		"positions": {
 			"18-19": "FB",
@@ -57445,8 +57450,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Werder Bremen": {
-				"whoscoredApps": 22,
-				"whoscoredMins": 1956
+				"whoscoredApps": 23,
+				"whoscoredMins": 2046
 			}
 		}
 	},
@@ -57454,7 +57459,7 @@
 		"mapped": false,
 		"name": "Seko Fofana",
 		"simplifiedName": "Seko Fofana",
-		"age": 24,
+		"age": 25,
 		"nationality": "Cote D'Ivoire",
 		"positions": {
 			"18-19": "CM",
@@ -58231,8 +58236,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Bayern Munich": {
-				"whoscoredApps": 23,
-				"whoscoredMins": 2070
+				"whoscoredApps": 24,
+				"whoscoredMins": 2160
 			},
 			"Champions League | Bayern Munich": {
 				"whoscoredApps": 7,
@@ -58287,8 +58292,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Mainz 05": {
-				"whoscoredApps": 18,
-				"whoscoredMins": 1502
+				"whoscoredApps": 19,
+				"whoscoredMins": 1592
 			}
 		}
 	},
@@ -58707,8 +58712,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Bayer Leverkusen": {
-				"whoscoredApps": 22,
-				"whoscoredMins": 1410
+				"whoscoredApps": 23,
+				"whoscoredMins": 1481
 			},
 			"Champions League | Bayer Leverkusen": {
 				"whoscoredApps": 4,
@@ -58776,7 +58781,7 @@
 		"mapped": false,
 		"name": "Dani Olmo",
 		"simplifiedName": "Dani Olmo",
-		"age": 21,
+		"age": 22,
 		"nationality": "Spain",
 		"positions": {
 			"19-20": "N/A"
@@ -59579,8 +59584,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Union Berlin": {
-				"whoscoredApps": 7,
-				"whoscoredMins": 272
+				"whoscoredApps": 8,
+				"whoscoredMins": 357
 			}
 		}
 	},
@@ -59644,7 +59649,7 @@
 		"mapped": false,
 		"name": "Johannes Eggestein",
 		"simplifiedName": "Johannes Eggestein",
-		"age": 21,
+		"age": 22,
 		"nationality": "Germany",
 		"positions": {
 			"18-19": "N/A",
@@ -59666,8 +59671,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Werder Bremen": {
-				"whoscoredApps": 13,
-				"whoscoredMins": 468
+				"whoscoredApps": 14,
+				"whoscoredMins": 504
 			}
 		}
 	},
@@ -59745,7 +59750,7 @@
 		"mapped": false,
 		"name": "Frenkie de Jong",
 		"simplifiedName": "Frenkie de Jong",
-		"age": 22,
+		"age": 23,
 		"nationality": "Netherlands",
 		"positions": {
 			"19-20": "CM"
@@ -60079,7 +60084,7 @@
 		"mapped": false,
 		"name": "Matías Vargas",
 		"simplifiedName": "Matias Vargas",
-		"age": 22,
+		"age": 23,
 		"nationality": "Argentina",
 		"positions": {
 			"19-20": "N/A"
@@ -60215,8 +60220,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Mainz 05": {
-				"whoscoredApps": 6,
-				"whoscoredMins": 151
+				"whoscoredApps": 7,
+				"whoscoredMins": 185
 			}
 		}
 	},
@@ -60224,7 +60229,7 @@
 		"mapped": false,
 		"name": "Kevin Bonifazi",
 		"simplifiedName": "Kevin Bonifazi",
-		"age": 23,
+		"age": 24,
 		"nationality": "Italy",
 		"positions": {
 			"18-19": "CB",
@@ -60496,8 +60501,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Bayern Munich": {
-				"whoscoredApps": 24,
-				"whoscoredMins": 2097
+				"whoscoredApps": 25,
+				"whoscoredMins": 2187
 			},
 			"Champions League | Bayern Munich": {
 				"whoscoredApps": 7,
@@ -60612,8 +60617,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Union Berlin": {
-				"whoscoredApps": 7,
-				"whoscoredMins": 155
+				"whoscoredApps": 8,
+				"whoscoredMins": 164
 			}
 		}
 	},
@@ -61067,8 +61072,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Werder Bremen": {
-				"whoscoredApps": 20,
-				"whoscoredMins": 1730
+				"whoscoredApps": 21,
+				"whoscoredMins": 1815
 			}
 		}
 	},
@@ -61219,7 +61224,7 @@
 		"mapped": false,
 		"name": "Íñigo Lekue",
 		"simplifiedName": "Inigo Lekue",
-		"age": 26,
+		"age": 27,
 		"nationality": "Spain",
 		"positions": {
 			"18-19": "N/A",
@@ -62007,7 +62012,7 @@
 		"mapped": false,
 		"name": "Ruslan Malinovskiy",
 		"simplifiedName": "Ruslan Malinovskiy",
-		"age": 26,
+		"age": 27,
 		"nationality": "Ukraine",
 		"positions": {
 			"19-20": "N/A"
@@ -62418,8 +62423,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Mainz 05": {
-				"whoscoredApps": 24,
-				"whoscoredMins": 2160
+				"whoscoredApps": 25,
+				"whoscoredMins": 2250
 			}
 		}
 	},
@@ -62805,8 +62810,8 @@
 		},
 		"19-20": {
 			"Bundesliga | FC Koln": {
-				"whoscoredApps": 20,
-				"whoscoredMins": 1071
+				"whoscoredApps": 21,
+				"whoscoredMins": 1142
 			}
 		}
 	},
@@ -62814,7 +62819,7 @@
 		"mapped": false,
 		"name": "Gelson Martins",
 		"simplifiedName": "Gelson Martins",
-		"age": 24,
+		"age": 25,
 		"nationality": "Portugal",
 		"positions": {
 			"18-19": "AM",
@@ -62998,7 +63003,7 @@
 		"mapped": false,
 		"name": "Andrea Favilli",
 		"simplifiedName": "Andrea Favilli",
-		"age": 22,
+		"age": 23,
 		"nationality": "Italy",
 		"positions": {
 			"18-19": "N/A",
@@ -63516,7 +63521,7 @@
 		"mapped": false,
 		"name": "Casimir Ninga",
 		"simplifiedName": "Casimir Ninga",
-		"age": 26,
+		"age": 27,
 		"nationality": "Chad",
 		"positions": {
 			"18-19": "AM",
@@ -64097,7 +64102,7 @@
 		"mapped": false,
 		"name": "Ousmane Dembélé",
 		"simplifiedName": "Ousmane Dembele",
-		"age": 22,
+		"age": 23,
 		"nationality": "France",
 		"positions": {
 			"18-19": "FW",
@@ -65101,7 +65106,7 @@
 		"mapped": false,
 		"name": "Bernardo",
 		"simplifiedName": "Bernardo",
-		"age": 24,
+		"age": 25,
 		"nationality": "Brazil",
 		"positions": {
 			"18-19": "FB",
@@ -66281,8 +66286,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Mainz 05": {
-				"whoscoredApps": 23,
-				"whoscoredMins": 1162
+				"whoscoredApps": 24,
+				"whoscoredMins": 1246
 			}
 		}
 	},
@@ -66488,8 +66493,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Mainz 05": {
-				"whoscoredApps": 4,
-				"whoscoredMins": 315
+				"whoscoredApps": 5,
+				"whoscoredMins": 405
 			}
 		}
 	},
@@ -66731,7 +66736,7 @@
 		"mapped": false,
 		"name": "Aaron Ramsdale",
 		"simplifiedName": "Aaron Ramsdale",
-		"age": 21,
+		"age": 22,
 		"nationality": "England",
 		"positions": {
 			"19-20": "GK"
@@ -66960,7 +66965,7 @@
 		"mapped": false,
 		"name": "Andrea Pinamonti",
 		"simplifiedName": "Andrea Pinamonti",
-		"age": 20,
+		"age": 21,
 		"nationality": "Italy",
 		"positions": {
 			"18-19": "FW",
@@ -67114,7 +67119,7 @@
 		"mapped": false,
 		"name": "Richarlison",
 		"simplifiedName": "Richarlison",
-		"age": 22,
+		"age": 23,
 		"nationality": "Brazil",
 		"positions": {
 			"18-19": "FW",
@@ -67793,8 +67798,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Bayern Munich": {
-				"whoscoredApps": 21,
-				"whoscoredMins": 1592
+				"whoscoredApps": 22,
+				"whoscoredMins": 1682
 			},
 			"Champions League | Bayern Munich": {
 				"whoscoredApps": 4,
@@ -67906,8 +67911,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Union Berlin": {
-				"whoscoredApps": 10,
-				"whoscoredMins": 231
+				"whoscoredApps": 11,
+				"whoscoredMins": 236
 			}
 		}
 	},
@@ -67927,8 +67932,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Union Berlin": {
-				"whoscoredApps": 25,
-				"whoscoredMins": 2093
+				"whoscoredApps": 26,
+				"whoscoredMins": 2112
 			}
 		}
 	},
@@ -68549,7 +68554,7 @@
 		"mapped": false,
 		"name": "Ryan Sessegnon",
 		"simplifiedName": "Ryan Sessegnon",
-		"age": 19,
+		"age": 20,
 		"nationality": "England",
 		"positions": {
 			"18-19": "AM",
@@ -69233,8 +69238,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Mainz 05": {
-				"whoscoredApps": 18,
-				"whoscoredMins": 1487
+				"whoscoredApps": 19,
+				"whoscoredMins": 1577
 			}
 		}
 	},
@@ -69464,8 +69469,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Bayer Leverkusen": {
-				"whoscoredApps": 22,
-				"whoscoredMins": 1860
+				"whoscoredApps": 23,
+				"whoscoredMins": 1945
 			},
 			"Champions League | Bayer Leverkusen": {
 				"whoscoredApps": 5,
@@ -69584,8 +69589,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Bayer Leverkusen": {
-				"whoscoredApps": 14,
-				"whoscoredMins": 692
+				"whoscoredApps": 15,
+				"whoscoredMins": 720
 			},
 			"Champions League | Bayer Leverkusen": {
 				"whoscoredApps": 3,
@@ -70862,7 +70867,7 @@
 		"mapped": false,
 		"name": "Justin Kluivert",
 		"simplifiedName": "Justin Kluivert",
-		"age": 20,
+		"age": 21,
 		"nationality": "Netherlands",
 		"positions": {
 			"18-19": "AM",
@@ -71367,7 +71372,7 @@
 		"mapped": false,
 		"name": "Martín Aguirregabiria",
 		"simplifiedName": "Martin Aguirregabiria",
-		"age": 23,
+		"age": 24,
 		"nationality": "Spain",
 		"positions": {
 			"18-19": "FB",
@@ -71472,8 +71477,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Werder Bremen": {
-				"whoscoredApps": 18,
-				"whoscoredMins": 1481
+				"whoscoredApps": 19,
+				"whoscoredMins": 1571
 			}
 		}
 	},
@@ -71638,7 +71643,7 @@
 		"mapped": false,
 		"name": "Stefan Posch",
 		"simplifiedName": "Stefan Posch",
-		"age": 22,
+		"age": 23,
 		"nationality": "Austria",
 		"positions": {
 			"18-19": "CB",
@@ -72141,7 +72146,7 @@
 		"mapped": false,
 		"name": "Douglas Luiz",
 		"simplifiedName": "Douglas Luiz",
-		"age": 21,
+		"age": 22,
 		"nationality": "Brazil",
 		"positions": {
 			"18-19": "CM",
@@ -72517,8 +72522,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Bayer Leverkusen": {
-				"whoscoredApps": 7,
-				"whoscoredMins": 170
+				"whoscoredApps": 8,
+				"whoscoredMins": 175
 			},
 			"Champions League | Bayer Leverkusen": {
 				"whoscoredApps": 2,
@@ -72624,8 +72629,8 @@
 		},
 		"19-20": {
 			"Bundesliga | FC Koln": {
-				"whoscoredApps": 11,
-				"whoscoredMins": 804
+				"whoscoredApps": 12,
+				"whoscoredMins": 823
 			}
 		}
 	},
@@ -73148,7 +73153,7 @@
 		"mapped": false,
 		"name": "Sandro Tonali",
 		"simplifiedName": "Sandro Tonali",
-		"age": 19,
+		"age": 20,
 		"nationality": "Italy",
 		"positions": {
 			"19-20": "CM"
@@ -73469,17 +73474,27 @@
 		"age": 20,
 		"nationality": "France",
 		"positions": {
-			"18-19": "N/A"
+			"18-19": "N/A",
+			"19-20": "N/A"
 		},
 		"clubs": {
 			"18-19": [
 				"Borussia M'Gladbach"
+			],
+			"19-20": [
+				"Bayern Munich"
 			]
 		},
 		"18-19": {
 			"Bundesliga | Borussia M'Gladbach": {
 				"whoscoredApps": 11,
 				"whoscoredMins": 269
+			}
+		},
+		"19-20": {
+			"Bundesliga | Bayern Munich": {
+				"whoscoredApps": 4,
+				"whoscoredMins": 37
 			}
 		}
 	},
@@ -74669,8 +74684,8 @@
 		},
 		"19-20": {
 			"Bundesliga | FC Koln": {
-				"whoscoredApps": 4,
-				"whoscoredMins": 206
+				"whoscoredApps": 5,
+				"whoscoredMins": 220
 			},
 			"Europa League | Wolfsburg": {
 				"whoscoredApps": 1,
@@ -75033,8 +75048,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Bayer Leverkusen": {
-				"whoscoredApps": 19,
-				"whoscoredMins": 1136
+				"whoscoredApps": 20,
+				"whoscoredMins": 1198
 			},
 			"Champions League | Bayer Leverkusen": {
 				"whoscoredApps": 2,
@@ -75392,8 +75407,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Mainz 05": {
-				"whoscoredApps": 22,
-				"whoscoredMins": 1678
+				"whoscoredApps": 23,
+				"whoscoredMins": 1768
 			}
 		}
 	},
@@ -75673,8 +75688,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Union Berlin": {
-				"whoscoredApps": 24,
-				"whoscoredMins": 1707
+				"whoscoredApps": 25,
+				"whoscoredMins": 1792
 			}
 		}
 	},
@@ -75934,7 +75949,7 @@
 		"mapped": false,
 		"name": "Youcef Atal",
 		"simplifiedName": "Youcef Atal",
-		"age": 23,
+		"age": 24,
 		"nationality": "Algeria",
 		"positions": {
 			"18-19": "FB",
@@ -76891,7 +76906,7 @@
 		"mapped": false,
 		"name": "Farid El Melali",
 		"simplifiedName": "Farid El Melali",
-		"age": 22,
+		"age": 23,
 		"nationality": "Algeria",
 		"positions": {
 			"18-19": "N/A",
@@ -76965,8 +76980,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Mainz 05": {
-				"whoscoredApps": 20,
-				"whoscoredMins": 1377
+				"whoscoredApps": 21,
+				"whoscoredMins": 1460
 			}
 		}
 	},
@@ -77124,8 +77139,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Mainz 05": {
-				"whoscoredApps": 5,
-				"whoscoredMins": 93
+				"whoscoredApps": 6,
+				"whoscoredMins": 99
 			}
 		}
 	},
@@ -77145,8 +77160,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Mainz 05": {
-				"whoscoredApps": 10,
-				"whoscoredMins": 559
+				"whoscoredApps": 11,
+				"whoscoredMins": 566
 			}
 		}
 	},
@@ -77417,7 +77432,7 @@
 		"mapped": false,
 		"name": "Adrià Pedrosa",
 		"simplifiedName": "Adria Pedrosa",
-		"age": 21,
+		"age": 22,
 		"nationality": "Spain",
 		"positions": {
 			"18-19": "N/A",
@@ -77499,8 +77514,8 @@
 		},
 		"19-20": {
 			"Bundesliga | FC Koln": {
-				"whoscoredApps": 21,
-				"whoscoredMins": 1883
+				"whoscoredApps": 22,
+				"whoscoredMins": 1973
 			}
 		}
 	},
@@ -77928,8 +77943,8 @@
 		},
 		"19-20": {
 			"Bundesliga | FC Koln": {
-				"whoscoredApps": 12,
-				"whoscoredMins": 883
+				"whoscoredApps": 13,
+				"whoscoredMins": 973
 			}
 		}
 	},
@@ -77980,8 +77995,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Werder Bremen": {
-				"whoscoredApps": 18,
-				"whoscoredMins": 848
+				"whoscoredApps": 19,
+				"whoscoredMins": 867
 			}
 		}
 	},
@@ -78482,8 +78497,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Bayer Leverkusen": {
-				"whoscoredApps": 5,
-				"whoscoredMins": 450
+				"whoscoredApps": 6,
+				"whoscoredMins": 540
 			},
 			"Europa League | Bayer Leverkusen": {
 				"whoscoredApps": 3,
@@ -78499,7 +78514,7 @@
 		"mapped": false,
 		"name": "Kai Pröger",
 		"simplifiedName": "Kai Proger",
-		"age": 27,
+		"age": 28,
 		"nationality": "Germany",
 		"positions": {
 			"19-20": "AM"
@@ -78594,8 +78609,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Union Berlin": {
-				"whoscoredApps": 15,
-				"whoscoredMins": 1222
+				"whoscoredApps": 16,
+				"whoscoredMins": 1312
 			}
 		}
 	},
@@ -78603,7 +78618,7 @@
 		"mapped": false,
 		"name": "Kouadio Kone",
 		"simplifiedName": "Kouadio Kone",
-		"age": 18,
+		"age": 19,
 		"nationality": "France",
 		"positions": {
 			"19-20": "CM"
@@ -79568,7 +79583,7 @@
 		"mapped": false,
 		"name": "Gabriel Fernández",
 		"simplifiedName": "Gabriel Fernandez",
-		"age": 25,
+		"age": 26,
 		"nationality": "Uruguay",
 		"positions": {
 			"19-20": "N/A"
@@ -79799,7 +79814,7 @@
 		"mapped": false,
 		"name": "Jon Moncayola",
 		"simplifiedName": "Jon Moncayola",
-		"age": 21,
+		"age": 22,
 		"nationality": "Spain",
 		"positions": {
 			"19-20": "N/A"
@@ -80310,8 +80325,8 @@
 		},
 		"19-20": {
 			"Bundesliga | FC Koln": {
-				"whoscoredApps": 7,
-				"whoscoredMins": 345
+				"whoscoredApps": 8,
+				"whoscoredMins": 391
 			}
 		}
 	},
@@ -80319,7 +80334,7 @@
 		"mapped": false,
 		"name": "Amine Adli",
 		"simplifiedName": "Amine Adli",
-		"age": 19,
+		"age": 20,
 		"nationality": "",
 		"positions": {
 			"19-20": "N/A"

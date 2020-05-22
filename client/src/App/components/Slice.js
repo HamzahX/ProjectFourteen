@@ -1,24 +1,63 @@
 import React, {Component} from 'react';
 
+//import dependencies
 import Highcharts from 'highcharts/highstock'
+import HighchartsReact from 'highcharts-react-official'
 import HighchartsMore from 'highcharts/highcharts-more'
-import HighchartsParallel from 'highcharts/modules/parallel-coordinates'
-import HighchartsReact from "highcharts-react-official";
+//init HIghchartsMore
 HighchartsMore(Highcharts);
-HighchartsParallel(Highcharts);
 
+
+/**
+ * Component to render Slices (charts)
+ */
 class Slice extends Component {
 
     constructor(props) {
 
         super(props);
 
+        this.isMobile = this.props.isMobile;
+        this.isForExport = this.props.isForExport;
+
+        //set font size constants
+        this.fontSizes = null;
+        if (this.props.isForExport){
+            this.fontSizes =  {
+                title: '3.3em',
+                subtitle: '2em',
+                noData: '1.76em',
+                xAxisLabels: '1.95em',
+                dataLabels: '1.95em',
+                dataLabelsOutline: '0.13em',
+                tooltipHeader: '1.3em',
+                tooltip: '0em',
+                credits: '1.65em',
+                yAxisLabels: '0.65em'
+            };
+        }
+        else {
+            this.fontSizes =  {
+                title: this.props.isMobile ? '4.6vw' : '2.3em',
+                subtitle: this.props.isMobile ? '2.7vw' : '1.4em',
+                noData: this.props.isMobile ? '2.7vw' : '1.35em',
+                xAxisLabels: this.props.isMobile ? '2.3vw' : '1.15em',
+                dataLabels: this.props.isMobile ? '2.3vw' : '1.15em',
+                dataLabelsOutline: this.props.isMobile ? '0.3vw' : '0.15em',
+                tooltipHeader: this.props.isMobile ? '2.3vw' : '1em',
+                tooltip: this.props.isMobile ? '2.3vw' : '1.25em',
+                credits: this.props.isMobile ? '2.3vw' : '1.2em',
+                yAxisLabels: this.props.isMobile ? '1vw' : '0.5em'
+            };
+        }
+
+        //set categories (x-axis labels) constants
         this.categories = {
             "FW": [
                 'Non-Penalty Goals',
                 'Non-Penalty xG',
                 'Non-Penalty xG/Shot',
-                `${this.props.isMobile ? "Conver-<br>sion Rate" : "Conversion Rate"}`,
+                `${this.isMobile && !this.isForExport ? "Conver-<br>sion Rate" : "Conversion Rate"}`,
                 'Aerial Win %',
                 'Touches in Box',
                 'xA',
@@ -36,7 +75,7 @@ class Slice extends Component {
                 'OP Shot-Creating Actions',
                 'Passes into Box',
                 'Progressive Distance',
-                `${this.props.isMobile ? "Pass Comp. %" : "Pass Completion %"}`,
+                `${this.isMobile && !this.isForExport ? "Pass Comp. %" : "Pass Completion %"}`,
                 'Successful Dribbles',
                 'Dribble Success %',
                 'Times Dispossessed',
@@ -46,39 +85,39 @@ class Slice extends Component {
                 'xA',
                 'OP Shot-Creating Actions',
                 'Passes into Final 1/3',
-                `${this.props.isMobile ? "Prog-<br>ressive Distance" : "Progressive Distance"}`,
-                `${this.props.isMobile ? "Pass Comp. %" : "Pass Completion %"}`,
+                `${this.isMobile && !this.isForExport ? "Prog-<br>ressive Distance" : "Progressive Distance"}`,
+                `${this.isMobile && !this.isForExport ? "Pass Comp. %" : "Pass Completion %"}`,
                 'Successful Dribbles',
                 'Dribble Success %',
                 'Times Dispossessed',
                 '(pAdj) Successful Pressures',
-                `${this.props.isMobile ? "(pAdj) Inter-<br>ceptions" : "(pAdj) Interceptions"}`,
+                `${this.isMobile && !this.isForExport ? "(pAdj) Inter-<br>ceptions" : "(pAdj) Interceptions"}`,
                 '(pAdj) Tackles Won',
-                'Tackle/ Dribbled Past %'
+                `${this.isForExport ? "Tackle/Dribbled Past %" : "Tackle/ Dribbled Past %"}`
             ],
             "FB": [
                 'xA',
                 'Passes into Final 1/3',
                 'Progressive Distance',
-                `${this.props.isMobile ? "Pass Comp. %" : "Pass Completion %"}`,
+                `${this.isMobile && !this.isForExport ? "Pass Comp. %" : "Pass Completion %"}`,
                 'Successful Dribbles',
                 'Dribble Success %',
                 'Times Dispossessed',
                 '(pAdj) Successful Pressures',
                 '(pAdj) Interceptions',
                 "(pAdj) Tackles Won",
-                'Tackle/ Dribbled Past %',
+                `${this.isForExport ? "Tackle/Dribbled Past %" : "Tackle/ Dribbled Past %"}`,
                 'Aerial Win %'
             ],
             "CB": [
                 'Passes into Final 1/3',
                 'Progressive Distance',
-                `${this.props.isMobile ? "Pass Comp. %" : "Pass Completion %"}`,
-                `${this.props.isMobile ? "Long Pass Comp. %" : "Long Pass Completion %"}`,
+                `${this.isMobile && !this.isForExport ? "Pass Comp. %" : "Pass Completion %"}`,
+                `${this.isMobile && !this.isForExport ? "Long Pass Comp. %" : "Long Pass Completion %"}`,
                 '(pAdj) Successful Pressures',
                 '(pAdj) Interceptions',
                 '(pAdj) Tackles Won',
-                'Tackle/ Dribbled Past %',
+                `${this.isForExport ? "Tackle/Dribbled Past %" : "Tackle/ Dribbled Past %"}`,
                 '(pAdj) Fouls Committed',
                 'Aerials Won',
                 'Aerial Win %',
@@ -105,6 +144,7 @@ class Slice extends Component {
             ]
         };
 
+        //set subtitle constants
         this.subtitles = {
             "FW": "vs Top-5 League Players with 10+ Starts as Forwards<br/>",
             "AM": "vs Top-5 League Players with 10+ Starts as Attacking Midfielders / Wingers<br/>",
@@ -115,19 +155,10 @@ class Slice extends Component {
             "N/A": "No Template Selected"
         };
 
-        this.fontSizes =  {
-            title: this.props.isMobile === true ? '4.6vw' : '2.3em',
-            subtitle: this.props.isMobile === true ? '2.7vw' : '1.4em',
-            noData: this.props.isMobile === true ? '2.7vw' : '1.35em',
-            xAxisLabels: this.props.isMobile === true ? '2.3vw' : '1.15em',
-            dataLabels: this.props.isMobile === true ? '2.3vw' : '1.15em',
-            dataLabelsOutline: this.props.isMobile === true ? '0.3vw' : '0.2em',
-            tooltipHeader: this.props.isMobile === true ? '2.3vw' : '1em',
-            tooltip: this.props.isMobile === true ? '2.3vw' : '1.25em',
-            credits: this.props.isMobile === true ? '2.3vw' : '1.2em',
-            yAxisLabels: this.props.isMobile === true ? '1vw' : '0.5em'
-        };
-
+        //Highcharts chart options
+        //variable options are initialized to null, and then modified on render using props
+        //consult the Highcharts API reference for detailed explanations of each option
+        //https://api.highcharts.com/highcharts/
         this.chartOptions = {
             title: {
                 text: null,
@@ -141,7 +172,6 @@ class Slice extends Component {
             subtitle: {
                 text: null,
                 style: {
-                    // fontWeight: 'bold',
                     fontSize: this.fontSizes['subtitle']
                 }
             },
@@ -156,10 +186,9 @@ class Slice extends Component {
                 animation: null,
                 polar: true,
                 type: 'column',
-                // spacingLeft: 30,
-                // spacingRight: 30,
                 marginLeft: 90,
                 marginRight: 90,
+                marginTop: null,
                 marginBottom: null,
                 events: null
             },
@@ -198,6 +227,11 @@ class Slice extends Component {
             series: null,
             plotOptions: {
                 series: {
+                    states: {
+                        hover: {
+                            enabled: null
+                        }
+                    },
                     dataLabels: {
                         enabled: null,
                         style: {
@@ -257,6 +291,12 @@ class Slice extends Component {
 
         let chartOptions = this.chartOptions;
 
+        //set the title
+        let title = chartOptions.title;
+        title.text = this.props.name;
+        title.text += !this.isForExport ? " <span style='font-size: 0.4em; transform: translateY(-50%)'>🔗</span>" : "";
+
+        //build the subtitle
         let subtitle = "";
         if (this.props.series.length !== 0){
             subtitle = `Age: ${this.props.age} ║ Minutes Played: ${this.props.minutes.toLocaleString()}<br/>`;
@@ -271,31 +311,47 @@ class Slice extends Component {
         else {
             subtitle = "-<br>-<br>-";
         }
-
-        chartOptions.title.text = this.props.name + " [v2]";
+        //set the subtitle
         chartOptions.subtitle.text = subtitle;
 
+        //calculate the start angle based on the number of wedges
         chartOptions.pane.startAngle = -((360/this.categories[this.props.template].length)/2);
 
         let chart = chartOptions.chart;
+        //set animation (on update) to true or false
         chart.animation = this.props.isAnimated;
-        chart.marginBottom = (this.props.creditsPosition === "right" && !this.props.isMobile) ? 30 : 60;
-        let url = this.props.url;
-        chart.events = {
-            load: function() {
-                this.title.element.onclick = function() {
-                    window.open(url, '_blank');
-                };
-                this.credits.element.onclick = function() {
-                    window.open('https://fbref.com', '_blank');
-                }
-            },
-        };
+        //set chart margins
+        if (this.isForExport){
+            chart.marginTop = 230;
+            chart.marginBottom = (this.props.creditsPosition === "right") ? 100 : 120;
+        }
+        else {
+            chart.marginBottom = (this.props.creditsPosition === "right" && !this.props.isMobile) ? 30 : 60;
+            let url = this.props.url;
+            //add links to title and credits if the chart is not for export
+            chart.events = {
+                load: function() {
+                    this.title.element.onclick = function() {
+                        window.open(url, '_blank');
+                    };
+                    this.credits.element.onclick = function() {
+                        window.open('https://fbref.com', '_blank');
+                    }
+                },
+            };
+        }
 
         let xAxis = chartOptions.xAxis;
+        //set x-axis labels
         xAxis.categories = this.categories[this.props.template];
-        xAxis.labels.distance = this.props.isMobile === true ? 60 : 40;
+        if (this.isForExport){
+            xAxis.labels.distance = 75;
+        }
+        else {
+            xAxis.labels.distance = this.isMobile ? 60 : 40;
+        }
 
+        //set data points
         chartOptions.series = this.props.series.map(function (set) {
             return {
                 pointPadding: 0,
@@ -307,28 +363,38 @@ class Slice extends Component {
             };
         });
 
-        let dataLabels = chartOptions.plotOptions.series.dataLabels;
+        //disable initial animation and hover effects for charts that are for export
+        let series = chartOptions.plotOptions.series;
+        if (!this.props.isAnimatedInitial){
+            series.animation = this.props.isAnimatedInitial;
+        }
+        series.states.hover.enabled = this.props.isAnimatedInitial;
+
+        //set data labels
+        let dataLabels = series.dataLabels;
         dataLabels.enabled = this.props.template !== "N/A";
         dataLabels.format = this.props.labelType === "raw" ? '{point.p90_label}' : '{point.percentile_label}';
 
+        //disable tooltip for charts that for export
+        chartOptions.tooltip.enabled = this.props.hasTooltip;
         chartOptions.tooltip.pointFormat = '<br>Raw Value: <b>{point.p90_label}</b><br/>Percentile Rank: <b>{point.percentile_label}</b>';
 
+        //set credits text and position
         let credits = chartOptions.credits;
-        credits.text = `Data Source: FBref.com ${this.props.isMobile ? '<br/>.<br/>' : '<br/>'} Last Updated: ${this.props.lastUpdated} UTC`;
+        credits.text = `Data Source: FBref.com ${this.isMobile || this.isForExport ? '<br/>.<br/>' : '<br/>'} Last Updated: ${this.props.lastUpdated} UTC`;
         credits.position = {
             align: this.props.creditsPosition,
-            y: this.props.isMobile ? -40 : -20
+            y: this.isMobile || this.isForExport ? -40 : -20
         };
 
+        //pass chart options to the Highcharts component and render
         return (
-            <div className="result" id="chart">
-                <HighchartsReact
-                    constructorType={"chart"}
-                    highcharts={Highcharts}
-                    containerProps={{style: {width: '100%'}}}
-                    options={chartOptions}
-                />
-            </div>
+            <HighchartsReact
+                constructorType={"chart"}
+                highcharts={Highcharts}
+                containerProps={{style: {width: '100%', height: '100%'}}}
+                options={chartOptions}
+            />
         );
 
     }

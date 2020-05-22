@@ -15,111 +15,51 @@ var PLAYERS_COLLECTION;
 var CLUBS_COLLECTION;
 var PERCENTILE_ARRAYS_COLLECTION;
 
-//object containing percentile arrays
+//percentile arrays
 var PERCENTILE_ARRAYS = {
     "18-19": {
-        'FW': {},
-        'AM': {},
-        'CM': {},
-        'FB': {},
-        'CB': {},
-        'GK': {}
+        'FW': [],
+        'AM': [],
+        'CM': [],
+        'FB': [],
+        'CB': [],
+        'GK': []
     },
     "19-20": {
-        'FW': {},
-        'AM': {},
-        'CM': {},
-        'FB': {},
-        'CB': {},
-        'GK': {}
+        'FW': [],
+        'AM': [],
+        'CM': [],
+        'FB': [],
+        'CB': [],
+        'GK': []
     },
     "combined": {
-        'FW': {},
-        'AM': {},
-        'CM': {},
-        'FB': {},
-        'CB': {},
-        'GK': {}
+        'FW': [],
+        'AM': [],
+        'CM': [],
+        'FB': [],
+        'CB': [],
+        'GK': []
     },
     "lastUpdated": null
 };
 
-
-/**
- * Establishes a connection to the MongoDB database
- * @returns {Promise<*>} Promise resolves when the connection has been successfully made
- */
-let connectToDatabase = async () => {
-
-    return new Promise(function(resolve, reject) {
-
-        console.time('database connection');
-        mongoClient.connect(mongoURI, {useUnifiedTopology: true},function (err, client) {
-            if(err){
-                reject()
-            }
-            else {
-                DB = client.db("ProjectFourteen");
-                if (process.env.NODE_ENV === "production"){ //production environment
-                    console.log("production");
-                    PLAYERS_COLLECTION = DB.collection('Players');
-                    PERCENTILE_ARRAYS_COLLECTION = DB.collection('PercentileArrays');
-                }
-                else { //dev environment
-                    PLAYERS_COLLECTION = DB.collection('DevPlayers');
-                    PERCENTILE_ARRAYS_COLLECTION = DB.collection('DevPercentileArrays');
-                }
-                CLUBS_COLLECTION = DB.collection('Clubs');
-                console.timeEnd('database connection');
-                resolve();
-            }
-        })
-
-    });
-
-};
-
-/**
- * Retrieves the percentile arrays from the MongoDB database.
- * @returns {Promise<*>} Promise resolves when the arrays have been successfully retrieved
- */
-let getPercentileArrays = async () => {
-
-    return new Promise(async function(resolve, reject){
-
-        PERCENTILE_ARRAYS_COLLECTION.find({}).toArray(async function (err, docs) {
-            if (err) {
-                reject();
-            }
-            else if (docs.length === 0) {
-                reject();
-            }
-            else {
-                //populate the percentile array object and record the time of their last update
-                for (let i=0; i<docs.length; i++){
-                    PERCENTILE_ARRAYS[docs[i].season][docs[i].position] = docs[i].stats;
-                }
-                PERCENTILE_ARRAYS['lastUpdated'] = docs[0].lastUpdated;
-                resolve();
-            }
-        });
-
-    });
-
-};
 
 //express set-up
 app.use(bodyParser.urlencoded({extended : true}));
 app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, './client/build')));
 
+
 /**
- * Serves the SPA
+ * Serves the single-page application
  * @param {express.Request} req
  * @param {express.Response} res
  */
-app.get('/', (req, res) =>{
+app.get('/', (req, res) => {
+
     res.sendFile(path.join(__dirname+'/client/build/index.html'));
+
 });
 
 
@@ -129,12 +69,14 @@ app.get('/', (req, res) =>{
  * @param {express.Response} res
  */
 app.post('/api/percentiles', (req, res) => {
+
     res.json(PERCENTILE_ARRAYS);
+
 });
 
 
 /**
- * Sends three sample players to the client upon request
+ * Retrieves three sample players and sends to client upon request
  * @param {express.Request} req
  * @param {express.Response} res
  */
@@ -142,9 +84,7 @@ app.post('/api/samplePlayers', (req, res) => {
 
     getSamplePlayers().then(
         (samplePlayers) => {
-            setTimeout(function(){
-                res.json(samplePlayers);
-            }, 300);
+            res.json(samplePlayers);
         }, () => {
             res.status(400);
             res.json([]);
@@ -161,12 +101,11 @@ app.post('/api/samplePlayers', (req, res) => {
  */
 app.post('/api/search', (req, res) => {
 
-    // if (req.headers.host.includes("herokuapp")){
-    //     res.redirect(301, 'http://www.footballslices.com' + req.path)
-    // }
-
+    //retrieve the search query and the search type
     let query = req.body.query;
     let type = req.body.type;
+
+    //search and respond
     search(query, type).then(
         (searchResults) => {
             setTimeout(function(){
@@ -190,21 +129,21 @@ app.post('/api/search', (req, res) => {
  */
 app.post('/api/stats', (req, res) => {
 
-    // if (req.headers.host.includes("herokuapp")){
-    //     res.redirect(301, 'http://www.footballslices.com' + req.path)
-    // }
-
+    //retrieve the player code
     let code = req.body.code;
+
+    //retrieve stats and respond
     getStats(code).then(
         (stats) => {
             setTimeout(function(){
                 //compare the last time the client and server's percentile arrays were updated
+                //update client percentile arrays if they are out of date
                 let clientLastUpdate = new Date(req.body.percentilesTimestamp).getTime();
                 let serverLastUpdate = PERCENTILE_ARRAYS['lastUpdated'].getTime();
                 if (req.body.percentilesTimestamp === undefined || clientLastUpdate === serverLastUpdate){
                     res.json(stats);
                 }
-                else { //update client percentile arrays if they are out of date
+                else {
                     res.json({
                         stats: stats,
                         newPercentileArrays: PERCENTILE_ARRAYS
@@ -222,44 +161,121 @@ app.post('/api/stats', (req, res) => {
 });
 
 
-app.get('*', (req,res) =>{
+app.get('*', (req, res) => {
+
     res.sendFile(path.join(__dirname+'/client/build/index.html'));
+
 });
 
 
 /**
- * queries the database to retrieve 3 random players
+ * Establishes a connection to the MongoDB database
+ * @returns {Promise<*>} Promise resolves when the connection has been successfully made
+ */
+connectToDatabase = async () => {
+
+    return new Promise(function(resolve, reject) {
+
+        console.time('database connection');
+        //establish a connection to the database
+        mongoClient.connect(mongoURI, {useUnifiedTopology: true},function (err, client) {
+            if (err){
+                reject()
+            }
+            else {
+                DB = client.db("ProjectFourteen");
+                //retrieve to the production collections if it is a production environment
+                if (process.env.NODE_ENV === "production"){
+                    console.log("production");
+                    PLAYERS_COLLECTION = DB.collection('Players');
+                    PERCENTILE_ARRAYS_COLLECTION = DB.collection('PercentileArrays');
+                }
+                //retrieve to the development collections otherwise
+                else {
+                    PLAYERS_COLLECTION = DB.collection('Players_Dev');
+                    PERCENTILE_ARRAYS_COLLECTION = DB.collection('PercentileArrays_Dev');
+                }
+                //retrieve the clubs collection
+                CLUBS_COLLECTION = DB.collection('Clubs');
+                console.timeEnd('database connection');
+                resolve();
+            }
+        })
+
+    });
+
+};
+
+
+/**
+ * Retrieves the percentile arrays from the MongoDB database.
+ * @returns {Promise<*>} Promise resolves if the arrays have been successfully retrieved, rejects otherwise
+ */
+getPercentileArrays = async () => {
+
+    return new Promise(async function(resolve, reject){
+
+        //retrieve all percentile arrays from the database
+        PERCENTILE_ARRAYS_COLLECTION.find({}).toArray(async function (err, docs) {
+            if (err){
+                reject();
+            }
+            else if (docs.length === 0){
+                reject();
+            }
+            else {
+                //populate the percentile array object and record the time of their last update
+                for (let i=0; i<docs.length; i++){
+                    PERCENTILE_ARRAYS[docs[i].season][docs[i].position] = docs[i].stats;
+                }
+                PERCENTILE_ARRAYS['lastUpdated'] = docs[0].lastUpdated;
+                resolve();
+            }
+        });
+
+    });
+
+};
+
+
+/**
+ * Queries the database to retrieve 3 random players
  * @returns {Promise<*>} Promise object represents the metadata of the 3 random players
  */
-let getSamplePlayers = async () => {
+getSamplePlayers = async () => {
 
     let samplePlayers = [];
 
     return new Promise(async function(resolve, reject){
+
+        //retrieve 3 players with recorded positions in the 19/20 seasons
         PLAYERS_COLLECTION.aggregate([
-            {$match: {"positions.19-20": {$exists: true }}}, //players with 19-20 stats
-            {$match: {"positions.19-20": {$ne: "N/A"}}}, //players with a position recorded for 19-20
+            {$match: {"positions.19-20": {$exists: true }}},
+            {$match: {"positions.19-20": {$ne: "N/A"}}},
             {$sample: {size: 3}}
         ])
-            .toArray(function (err, docs) {
-                if (err) {
-                    reject();
-                } else if (docs.length === 0) {
-                    reject();
-                } else {
-                    for (let i=0; i<docs.length; i++){
-                        //retrieve sample player info and push to array
-                        let samplePlayer = {
-                            code: docs[i].code,
-                            name: docs[i].name,
-                            clubs: docs[i].clubs,
-                            nationality: docs[i].nationality
-                        };
-                        samplePlayers.push(samplePlayer);
-                    }
-                    resolve(samplePlayers);
+        .toArray(function (err, docs) {
+            if (err) {
+                reject();
+            }
+            else if (docs.length === 0) {
+                reject();
+            }
+            else {
+                //retrieve sample player info and push to samplePlayers array
+                for (let i=0; i<docs.length; i++){
+                    let samplePlayer = {
+                        code: docs[i].code,
+                        name: docs[i].name,
+                        clubs: docs[i].clubs,
+                        nationality: docs[i].nationality
+                    };
+                    samplePlayers.push(samplePlayer);
                 }
-            });
+                resolve(samplePlayers);
+            }
+        });
+
     });
 
 };
@@ -273,20 +289,28 @@ let getSamplePlayers = async () => {
  *                        "playersByClub" returns all players whose club matches the club specified in the query
  * @returns {Promise<*>} Promise object represents the search results that match the query given the search type
  */
-let search = async (aQuery, theType) => {
+search = async (aQuery, theType) => {
 
     return new Promise(async function(resolve, reject){
+
+        let searchResults = {
+            clubSearchResults: [],
+            playerSearchResults: [],
+        };
+
         //searching for players and clubs
         if (theType === "playersAndClubs"){
-            //remove diacritics from the query
+
+            console.log("Searching for: " + aQuery);
+
+            //re-construct the query without diacritics
             let simplifiedQuery = aQuery
                 .normalize("NFD")
                 .replace(/[\u0300-\u036f]/g, "")
                 .replace("Ø", "O")
                 .replace("ø", "o");
-            console.log("Searching for: " + aQuery);
-            let clubSearchResults = [];
-            let playerSearchResults = [];
+
+            //find clubs whose whoscored or fbref name/simplifiedName includes the query
             CLUBS_COLLECTION.find(
                 {$or: [
                     {name: {$regex: aQuery, $options: 'i'}},
@@ -300,9 +324,11 @@ let search = async (aQuery, theType) => {
                     console.log(err);
                     reject();
                 }
+                //push matched clubs to search results
                 for (let i=0; i<docs.length; i++){
-                    clubSearchResults.push(docs[i].name);
+                    searchResults.clubSearchResults.push(docs[i].name);
                 }
+                //find players whose whoscored or fbref name/simplifiedName includes the query
                 PLAYERS_COLLECTION.find(
                     {$or: [
                         {name: {$regex: aQuery, $options: 'i'}},
@@ -316,14 +342,8 @@ let search = async (aQuery, theType) => {
                         console.log(err);
                         reject();
                     }
-                    else if (docs.length === 0){
-                        let searchResults = {
-                            clubSearchResults: clubSearchResults,
-                            playerSearchResults: playerSearchResults,
-                        };
-                        resolve(searchResults);
-                    }
                     else {
+                        //push matched players to search results
                         for (let i=0; i<docs.length; i++){
                             let result = {
                                 code: docs[i].code,
@@ -331,45 +351,41 @@ let search = async (aQuery, theType) => {
                                 nationality: docs[i].nationality,
                                 clubs: docs[i].clubs,
                             };
-                            playerSearchResults.unshift(result);
+                            searchResults.playerSearchResults.unshift(result);
                         }
-                        let searchResults = {
-                            clubSearchResults: clubSearchResults,
-                            playerSearchResults: playerSearchResults,
-                        };
                         resolve(searchResults);
                     }
                 });
             });
+
         }
+        //search for players by club
         else if (theType === "playersByClub"){
+
             console.log("Retrieving players who play for: " + aQuery);
+
+            //find all players whose array of clubs for the 19/20 season includes the query
             PLAYERS_COLLECTION.find({"clubs.19-20": aQuery}).toArray(function(err, docs) {
                 if (err){
                     reject();
                 }
-                else if (docs.length === 0){
-                    reject();
-                }
                 else {
-                    let playerSearchResults = [];
+                    //push matched players to search results
                     for (let i=0; i<docs.length; i++){
-                        let result = {
+                        let player = {
                             code: docs[i].code,
                             name: docs[i].name,
                             nationality: docs[i].nationality,
                             clubs: docs[i].clubs,
                         };
-                        playerSearchResults.push(result);
+                        searchResults.playerSearchResults.push(player);
                     }
-                    let searchResults = {
-                        clubSearchResults: [],
-                        playerSearchResults: playerSearchResults,
-                    };
                     resolve(searchResults);
                 }
             });
+
         }
+
     });
 
 };
@@ -381,19 +397,31 @@ let search = async (aQuery, theType) => {
  *                        the MongoDB database
  * @returns {Promise<*>} Promise object represents the stats of the requested player, along with their metadata.
  */
-let getStats = async (code) => {
+getStats = async (code) => {
+
+    //parse the code to handle v1 URLs (of the form "Players_[code]_Show_[Name]")
+    //v2 only requires the code
+    if (code.includes("Players")){
+        code = code.split("_")[1];
+    }
 
     return new Promise(async function(resolve, reject){
+
         console.log("Retrieving stats for: " + code);
+
+        //find the player who matches the requested code
         PLAYERS_COLLECTION.find({"code": code}).toArray(function (err, docs) {
             if (err) {
                 reject();
-            } else if (docs.length === 0) {
+            }
+            else if (docs.length === 0) {
                 reject();
-            } else {
+            }
+            else {
                 resolve(docs[0]);
             }
         });
+
     });
 
 };
@@ -414,7 +442,9 @@ connectToDatabase()
         console.log(anError);
     });
 
+
+//export functions needed in the unit testing module
 module.exports.connectToDatabase = connectToDatabase;
+module.exports.getSamplePlayers = getSamplePlayers;
 module.exports.search = search;
 module.exports.getStats = getStats;
-module.exports.getSamplePlayers = getSamplePlayers;

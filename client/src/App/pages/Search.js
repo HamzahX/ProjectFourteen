@@ -1,16 +1,24 @@
 import React, { Component } from 'react';
 
+//import components
 import SearchBar from "../components/SearchBar";
 import LoadingSpinner from "../components/LoadingSpinner";
 import PlayerSearchResult from "../components/PlayerSearchResult";
-
 import ClubSearchResult from "../components/ClubSearchResult";
 
 
+/**
+ * Search page component
+ */
 class Search extends Component {
 
+    //class variable to track if the component is mounted
     _isMounted = false;
 
+    /**
+     * Constructor
+     * @param props
+     */
     constructor(props){
 
         super(props);
@@ -24,7 +32,6 @@ class Search extends Component {
             searchByClub: searchByClub,
             playerSearchResults: [],
             filteredPlayerSearchResults: [],
-            openMenu: false,
             clubSearchResults: [],
             filterValue: ""
         };
@@ -33,12 +40,21 @@ class Search extends Component {
 
     }
 
+
+    /**
+     * Called after component has mounted
+     */
     componentDidMount() {
-
         this._isMounted = true;
-
     }
 
+
+    /**
+     * Called just before the component receives new props. This is done to ensure that new props trigger a setState()
+     * @param nextProps
+     * @param nextContext
+     */
+    //TODO: re-factor because componentWillReceiveProps has been deprecated
     UNSAFE_componentWillReceiveProps(nextProps, nextContext) {
         let { query, searchByClub } = nextProps.match.params;
         this.setState({
@@ -51,16 +67,15 @@ class Search extends Component {
     }
 
 
+    /**
+     * Function to send a post request to the server to retrieve the search results matching the query
+     */
     getSearchResults = () => {
 
         let searchByClub = this.state.searchByClub;
-        let type;
-        if (searchByClub === undefined){
-            type = "playersAndClubs"
-        }
-        else {
-            type = "playersByClub"
-        }
+        let type = searchByClub === undefined ? "playersAndClubs" : "playersByClub";
+
+        //retrieve search results
         fetch('/api/search', {
             method: 'post',
             headers: {
@@ -76,7 +91,7 @@ class Search extends Component {
                 return res.json()
             }
             else {
-               throw new Error("No results found")
+               throw new Error("Failed to fetch search results. Please refresh the page and try again.")
             }
         })
         .then(searchResults => this.processSearchResults(searchResults))
@@ -84,6 +99,11 @@ class Search extends Component {
 
     };
 
+
+    /**
+     * Function to process the search results and save to state
+     * @param {Object} searchResults - object containing search results
+     */
     processSearchResults = (searchResults) => {
 
         let playerSearchResults = searchResults['playerSearchResults'];
@@ -91,21 +111,31 @@ class Search extends Component {
 
         if (this._isMounted){
             this.setState({
+                error: null,
                 isLoading: false,
                 playerSearchResults: playerSearchResults,
                 filteredPlayerSearchResults: playerSearchResults,
                 clubSearchResults: clubSearchResults,
-                error: null
             })
         }
     };
 
+
+    /**
+     * Called just before the component un-mounts
+     */
     componentWillUnmount() {
         this._isMounted = false;
     }
 
+
+    /**
+     * Function to filter player search results
+     * @param {Object} event - the input event from the search result filter
+     */
     filterByName = (event) => {
 
+        //create a deep-copy of playerSearchResults to avoid modifying the original
         let playerSearchResults = JSON.parse(JSON.stringify(this.state.playerSearchResults));
         let filteredPlayerSearchResults = [];
 
@@ -114,22 +144,26 @@ class Search extends Component {
             filteredPlayerSearchResults = playerSearchResults;
         }
         else {
-            input = event.target.value
+            //retrieve the input text and remove diacritics
+            let input = event.target.value
                 .normalize("NFD")
                 .replace(/[\u0300-\u036f]/g, "")
                 .replace("Ø", "O")
                 .replace("ø", "o");
             for (let i=0; i<playerSearchResults.length; i++){
+                //remove diacritics from each search result
                 let name = playerSearchResults[i].name.normalize("NFD")
                     .replace(/[\u0300-\u036f]/g, "")
                     .replace("Ø", "O")
                     .replace("ø", "o");
+                //push matches to filteredSearchResults
                 if (name.toUpperCase().includes(input.toUpperCase())){
                     filteredPlayerSearchResults.push(playerSearchResults[i]);
                 }
             }
         }
 
+        //set state by clearing filteredSearchResults first, and the re-populating it on callback
         this.setState({
             filteredPlayerSearchResults: []
         }, () => {
@@ -141,6 +175,11 @@ class Search extends Component {
 
     };
 
+
+    /**
+     * render function
+     * @return {*} - JSX code for the search page
+     */
     render() {
 
         let {
@@ -152,16 +191,18 @@ class Search extends Component {
             filterValue
         } = this.state;
 
+        //display loading spinner while the server responds to POST request for the search results
         if (isLoading) {
             return (
                 <LoadingSpinner/>
             )
         }
 
+        //display the error message screen if an error is caught
         else if (error !== null) {
             return (
                 <div id="main">
-                    <SearchBar type={1} query={this.state.query}/>
+                    <SearchBar page="search" query={this.state.query}/>
                     <div className="screen" id="error-screen">
                         <p>{error.message}</p>
                     </div>
@@ -169,14 +210,16 @@ class Search extends Component {
             )
         }
 
+        //build search page otherwise
         else {
 
+            //construct the player cards
             let playerCards = [];
             for (let i=0; i<filteredPlayerSearchResults.length; i++){
                 let current = filteredPlayerSearchResults[i];
                 playerCards.push(
                     <PlayerSearchResult
-                        page={"search"}
+                        page="search"
                         code={current.code}
                         name={current.name}
                         clubs={current.clubs}
@@ -186,6 +229,7 @@ class Search extends Component {
                 );
             }
 
+            //construct the club cards
             let clubCards = [];
             for (let i=0; i<clubSearchResults.length; i++){
                 let current = clubSearchResults[i];
@@ -197,24 +241,30 @@ class Search extends Component {
                 )
             }
 
-
+            //build header for search results
             let searchText;
             if (searchByClub === undefined){
                 searchText = <h3>Search results for <br/>"{this.state.query}"</h3>;
             }
             else {
-                searchText = <h3>Search results for <br/>"player.club = {this.state.query}"</h3>;
+                searchText = <h3>Search results for <br/>"player.club[19-20] = {this.state.query}"</h3>;
             }
 
+            //return JSX code for the search page
             return (
                 <div id="main">
-                    <SearchBar type={1} query={this.state.query}/>
+                    <SearchBar page="search" query={this.state.query}/>
                     <div className="screen" id="search-screen">
                         <div className="filter" id="search-filters">
                             {searchText}
                             <br />
                             <div id="search-filter-inputs">
-                                <input type="text" value={filterValue} placeholder={"Filter players by name"} onChange={this.filterByName} />
+                                <input
+                                    type="text"
+                                    value={filterValue}
+                                    placeholder={"Filter players by name"}
+                                    onChange={this.filterByName}
+                                />
                             </div>
                         </div>
                         <div className="result" id="search-results">
@@ -232,7 +282,9 @@ class Search extends Component {
                     </div>
                 </div>
             );
+
         }
+
     }
 
 }

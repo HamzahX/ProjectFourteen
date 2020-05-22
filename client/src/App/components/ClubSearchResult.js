@@ -1,9 +1,14 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
+
+/**
+ * Component to render a club search result
+ */
 class ClubSearchResult extends Component {
 
     constructor(props) {
+
         super(props);
 
         this.state = {
@@ -12,11 +17,19 @@ class ClubSearchResult extends Component {
 
     }
 
+
+    /**
+     * render function
+     * @return {*} - JSX code for a club search result
+     */
     render() {
+
+        let { name } = this.state;
+
         return (
-            <Link to={"/search/" + this.state.name + "/all"}>
+            <Link to={"/search/" + name + "/all"}>
                 <div tabIndex="0" className="search-result">
-                    <div className="name">{this.state.name}</div>
+                    <div className="name">{name}</div>
                 </div>
             </Link>
         );

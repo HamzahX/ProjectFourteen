@@ -1,28 +1,52 @@
 import React, { Component } from 'react';
 
+//import dependencies
+import Cookies from 'universal-cookie';
+import Highcharts from 'highcharts'
+import domtoimage from 'dom-to-image';
+import saveAs from 'file-saver';
+
+//import components
 import LoadingSpinner from "../components/LoadingSpinner";
 import SearchBar from "../components/SearchBar";
 import Slice from "../components/Slice";
 
-import Cookies from 'universal-cookie';
-import domtoimage from 'dom-to-image';
-import saveAs from 'file-saver';
-import Highcharts from 'highcharts/highstock'
-
+//initialize helpers
 const dateFormat = require('dateformat');
 const cookies = new Cookies();
 
+
+/**
+ * Stats page component
+ */
 class Stats extends Component {
 
+    //class variable to track if the component is mounted
     _isMounted = false;
 
+    /**
+     * Constructor
+     * @param props
+     */
     constructor(props){
 
         super(props);
 
-        let labelTypeCookie = cookies.get('labelType');
-        let creditsPositionCookie = cookies.get('creditsPosition');
+        this.positions = {
+            "FW": "Forward",
+            "AM": "Attacking Midfielder / Winger",
+            "CM": "Central / Defensive Midfielder",
+            "FB": "Full-back",
+            "CB": "Center-back",
+            "GK": "Goalkeeper"
+        };
 
+        this.labelTypes = {
+            "raw": "Raw Value",
+            "percentiles": "Percentile Ranks"
+        };
+
+        //colors used in the Slices
         this.colors = {
             "FW": ['#f15c80', '#f15c80', '#f15c80', '#f15c80', '#f15c80', '#e4d354',
                 '#e4d354', '#e4d354', '#90ed7d', '#90ed7d', '#90ed7d', '#7cb5ec'],
@@ -41,16 +65,22 @@ class Stats extends Component {
                 '#7cb5ec', '#7cb5ec', '#7cb5ec', '#7cb5ec', '#7cb5ec', '#7cb5ec']
         };
 
+        //cookies
+        let labelTypeCookie = cookies.get('labelType');
+        let creditsPositionCookie = cookies.get('creditsPosition');
+
         this.state = {
             isLoading: true,
             error: null,
             isMobile: this.props.isMobile,
+            isSafari: this.props.isSafari,
             percentileArrays: this.props.percentileArrays,
             name: '',
             url: '',
             age: 0,
             clubs: {},
             positions: {},
+            percentileEntries: {},
             stats: {},
             lastUpdated: null,
             template: "N/A",
@@ -65,16 +95,23 @@ class Stats extends Component {
 
     }
 
+
+    /**
+     * Called after component has mounted
+     */
     componentDidMount() {
-
         this._isMounted = true;
-
     }
 
+
+    /**
+     * Function to send a post request to the server to retrieve the stats of the player
+     */
     getStats = () => {
 
         const { code } = this.props.match.params;
 
+        //retrieve stats
         fetch('/api/stats', {
             method: 'post',
             headers: {
@@ -98,25 +135,37 @@ class Stats extends Component {
 
     };
 
-    processStats = (response) => {
 
-        if (response.newPercentileArrays !== undefined){
-            this.props.updatePercentileArrays(response.newPercentileArrays);
-            response = response.stats;
+    /**
+     *
+     * @param {Object} playerStats - object containing the player metadata and stats, as well as new percentile arrays
+     * in the event that the server needs to update a client's percentile arrays.
+     */
+    processStats = (playerStats) => {
+
+        //check if the stats object contains new percentile arrays
+        if (playerStats.newPercentileArrays !== undefined){
+            //update percentile arrays in parent component as required
+            this.props.updatePercentileArrays(playerStats.newPercentileArrays);
+            playerStats = playerStats.stats;
         }
 
-        let position = "N/A";
-        for (let season in response.positions){
-            let temp = response.positions[season];
-            if (temp !== "N/A"){
-                position = temp;
+        //process player position entry and set template. template is set to the most recent non-"N/A" position
+        //in the player's position entries
+        let template = "N/A";
+        for (let season in playerStats.positions){
+            let position = playerStats.positions[season];
+            if (position !== "N/A"){
+                template = position;
             }
         }
 
+        //retrieve player competitions. stored in an object where the keys are seasons and the values are arrays
+        //of the competitions for the season
         let competitions = {};
-        for (let season in response.stats){
+        for (let season in playerStats.stats){
             competitions[season] = [];
-            for (let competition in response.stats[season]){
+            for (let competition in playerStats.stats[season]){
                 competitions[season].push(competition);
             }
         }
@@ -124,13 +173,14 @@ class Stats extends Component {
         if (this._isMounted){
             this.setState({
                 isLoading: false,
-                name: response.name,
-                url: "https://fbref.com/en/players/" + response.fbrefCode,
-                age: response.age,
-                clubs: response.clubs,
-                stats: response.stats,
-                lastUpdated: dateFormat(response.lastUpdated, "dd/mm/yyyy, h:MM TT", true),
-                template: position,
+                name: playerStats.name,
+                url: "https://fbref.com/en/players/" + playerStats.fbrefCode,
+                age: playerStats.age,
+                clubs: playerStats.clubs,
+                percentileEntries: playerStats.percentileEntries,
+                stats: playerStats.stats,
+                lastUpdated: dateFormat(playerStats.lastUpdated, "dd/mm/yyyy, h:MM TT", true),
+                template: template,
                 competitions: JSON.parse(JSON.stringify(competitions)),
                 selectedCompetitions: JSON.parse(JSON.stringify(competitions)),
             }, () => {
@@ -140,22 +190,35 @@ class Stats extends Component {
 
     };
 
+
+    /**
+     * Called just before the component un-mounts
+     */
     componentWillUnmount() {
         this._isMounted = false;
     }
 
+
+    /**
+     * Function to filter the complete stats based on the selected competitions
+     * @param {Object} stats - object containing the complete stats of the player
+     * @return {Object} filteredStats - object containing aggregated totals of the filtered stats
+     */
     filterStats = (stats) => {
 
         let filteredStats = {};
         let selectedCompetitions = this.state.selectedCompetitions;
 
+        //iterate through complete stats, check if a competition is selected, and add the stats for said competition
+        //to the aggregated stats if so
         for (let season in stats){
             for (let competition in stats[season]){
                 if (selectedCompetitions[season].includes(competition)) {
                     for (let stat in stats[season][competition]) {
                         if (!(stat in filteredStats)) {
                             filteredStats[stat] = stats[season][competition][stat];
-                        } else {
+                        }
+                        else {
                             filteredStats[stat] += stats[season][competition][stat];
                         }
                     }
@@ -167,117 +230,139 @@ class Stats extends Component {
 
     };
 
-    calculateChartInput = (filteredStats) => {
+
+    /**
+     * Function to calculate the 'per90' stats and percentile ranks of the filtered stats
+     * @param {Object} filteredStats - object containing the aggregated totals from the selected competitions
+     * @return {{statsPer90, percentiles}} - object containing the per90 stats and percentile ranks
+     */
+    calculateStats = (filteredStats) => {
 
         let percentileArrays = this.state.percentileArrays;
+        let percentileEntries = this.state.percentileEntries;
         let selectedCompetitions = this.state.selectedCompetitions;
         let template = this.state.template;
 
         let includedSeasons = [];
         let percentileSeason;
+        let percentileArrayOccurrences = 0;
 
-        for (let season in selectedCompetitions){
+        //iterate through selected competitions and list the seasons they span
+        for (let season in selectedCompetitions) {
             if (selectedCompetitions[season].length !== 0) {
                 includedSeasons.push(season);
             }
         }
-        if (includedSeasons.length === 1){
+        //if only one season is selected, set the percentile season to that season
+        if (includedSeasons.length === 1) {
             percentileSeason = includedSeasons[0];
         }
+        //set the percentile season to the combined dataset otherwise
         else {
             percentileSeason = "combined";
+        }
+
+        //count how many of the entries in the percentile array belong to the player
+        //this is done so that the percentile rank can be adjusted in order not to double count a player's entries
+        for (let season in percentileEntries) {
+            if (percentileSeason === season || percentileSeason === "combined") {
+                if (percentileEntries[season].includes(template)) {
+                    percentileArrayOccurrences = 1;
+                }
+            }
         }
 
         let statsPer90 = {};
         let percentiles = {};
 
+        //calculate per90 stats
         let minutes = filteredStats['minutes'];
-        switch (template){
+        switch (template) {
             case "FW":
-                statsPer90["npg"] = filteredStats["npg"] / (minutes/90);
-                statsPer90["npxg"] = filteredStats["npxg"] / (minutes/90);
+                statsPer90["npg"] = filteredStats["npg"] / (minutes / 90);
+                statsPer90["npxg"] = filteredStats["npxg"] / (minutes / 90);
                 statsPer90["npxgPerShot"] = filteredStats["npxg"] / filteredStats["shots"];
                 statsPer90["conversionRate"] = (filteredStats["npg"] / filteredStats["shots"]) * 100;
                 statsPer90["aerialSuccRate"] = (filteredStats["succAerials"] / filteredStats["attAerials"]) * 100;
-                statsPer90["boxTouches"] = filteredStats["boxTouches"] / (minutes/90);
-                statsPer90["xa"] = filteredStats["xa"] / (minutes/90);
-                statsPer90["ppa"] = filteredStats["ppa"] / (minutes/90);
-                statsPer90["succDribbles"] = filteredStats["succDribbles"] / (minutes/90);
+                statsPer90["boxTouches"] = filteredStats["boxTouches"] / (minutes / 90);
+                statsPer90["xa"] = filteredStats["xa"] / (minutes / 90);
+                statsPer90["ppa"] = filteredStats["ppa"] / (minutes / 90);
+                statsPer90["succDribbles"] = filteredStats["succDribbles"] / (minutes / 90);
                 statsPer90["dribbleSuccRate"] = (filteredStats["succDribbles"] / filteredStats["attDribbles"]) * 100;
-                statsPer90["timesDispossessed"] = filteredStats["timesDispossessed"] / (minutes/90);
+                statsPer90["timesDispossessed"] = filteredStats["timesDispossessed"] / (minutes / 90);
                 // statsPer90["succPressures"] = filteredStats["succPressures"] / (minutes/90);
-                statsPer90["padjSuccPressures"] = filteredStats["padjSuccPressures"] / (minutes/90);
+                statsPer90["padjSuccPressures"] = filteredStats["padjSuccPressures"] / (minutes / 90);
                 break;
             case "AM":
-                statsPer90["npg"] = filteredStats["npg"] / (minutes/90);
-                statsPer90["npxg"] = filteredStats["npxg"] / (minutes/90);
+                statsPer90["npg"] = filteredStats["npg"] / (minutes / 90);
+                statsPer90["npxg"] = filteredStats["npxg"] / (minutes / 90);
                 statsPer90["npxgPerShot"] = filteredStats["npxg"] / filteredStats["shots"];
-                statsPer90["xa"] = filteredStats["xa"] / (minutes/90);
-                statsPer90["sca"] = filteredStats["sca"] / (minutes/90);
-                statsPer90["ppa"] = filteredStats["ppa"] / (minutes/90);
-                statsPer90["progDistance"] = filteredStats["progDistance"] / (minutes/90);
+                statsPer90["xa"] = filteredStats["xa"] / (minutes / 90);
+                statsPer90["sca"] = filteredStats["sca"] / (minutes / 90);
+                statsPer90["ppa"] = filteredStats["ppa"] / (minutes / 90);
+                statsPer90["progDistance"] = filteredStats["progDistance"] / (minutes / 90);
                 statsPer90["passSuccRate"] = (filteredStats["succPasses"] / filteredStats["attPasses"]) * 100;
-                statsPer90["succDribbles"] = filteredStats["succDribbles"] / (minutes/90);
+                statsPer90["succDribbles"] = filteredStats["succDribbles"] / (minutes / 90);
                 statsPer90["dribbleSuccRate"] = (filteredStats["succDribbles"] / filteredStats["attDribbles"]) * 100;
-                statsPer90["timesDispossessed"] = filteredStats["timesDispossessed"] / (minutes/90);
+                statsPer90["timesDispossessed"] = filteredStats["timesDispossessed"] / (minutes / 90);
                 // statsPer90["succPressures"] = filteredStats["succPressures"] / (minutes/90);
-                statsPer90["padjSuccPressures"] = filteredStats["padjSuccPressures"] / (minutes/90);
+                statsPer90["padjSuccPressures"] = filteredStats["padjSuccPressures"] / (minutes / 90);
                 break;
             case "CM":
-                statsPer90["xa"] = filteredStats["xa"] / (minutes/90);
-                statsPer90["sca"] = filteredStats["sca"] / (minutes/90);
-                statsPer90["pft"] = filteredStats["pft"] / (minutes/90);
-                statsPer90["progDistance"] = filteredStats["progDistance"] / (minutes/90);
+                statsPer90["xa"] = filteredStats["xa"] / (minutes / 90);
+                statsPer90["sca"] = filteredStats["sca"] / (minutes / 90);
+                statsPer90["pft"] = filteredStats["pft"] / (minutes / 90);
+                statsPer90["progDistance"] = filteredStats["progDistance"] / (minutes / 90);
                 statsPer90["passSuccRate"] = (filteredStats["succPasses"] / filteredStats["attPasses"]) * 100;
-                statsPer90["succDribbles"] = filteredStats["succDribbles"] / (minutes/90);
+                statsPer90["succDribbles"] = filteredStats["succDribbles"] / (minutes / 90);
                 statsPer90["dribbleSuccRate"] = (filteredStats["succDribbles"] / filteredStats["attDribbles"]) * 100;
-                statsPer90["timesDispossessed"] = filteredStats["timesDispossessed"] / (minutes/90);
+                statsPer90["timesDispossessed"] = filteredStats["timesDispossessed"] / (minutes / 90);
                 // statsPer90["succPressures"] = filteredStats["succPressures"] / (minutes/90);
-                statsPer90["padjSuccPressures"] = filteredStats["padjSuccPressures"] / (minutes/90);
+                statsPer90["padjSuccPressures"] = filteredStats["padjSuccPressures"] / (minutes / 90);
                 // statsPer90["interceptions"] = filteredStats["interceptions"] / (minutes/90);
-                statsPer90["padjInterceptions"] = filteredStats["padjInterceptions"] / (minutes/90);
+                statsPer90["padjInterceptions"] = filteredStats["padjInterceptions"] / (minutes / 90);
                 // statsPer90["tacklesWon"] = filteredStats["tacklesWon"] / (minutes/90);
-                statsPer90["padjTacklesWon"] = filteredStats["padjTacklesWon"] / (minutes/90);
+                statsPer90["padjTacklesWon"] = filteredStats["padjTacklesWon"] / (minutes / 90);
                 statsPer90["dribbleTackleRate"] = (filteredStats["succDribbleTackles"] / filteredStats["attDribbleTackles"]) * 100;
                 break;
             case "FB":
-                statsPer90["xa"] = filteredStats["xa"] / (minutes/90);
-                statsPer90["pft"] = filteredStats["pft"] / (minutes/90);
-                statsPer90["progDistance"] = filteredStats["progDistance"] / (minutes/90);
+                statsPer90["xa"] = filteredStats["xa"] / (minutes / 90);
+                statsPer90["pft"] = filteredStats["pft"] / (minutes / 90);
+                statsPer90["progDistance"] = filteredStats["progDistance"] / (minutes / 90);
                 statsPer90["passSuccRate"] = (filteredStats["succPasses"] / filteredStats["attPasses"]) * 100;
-                statsPer90["succDribbles"] = filteredStats["succDribbles"] / (minutes/90);
+                statsPer90["succDribbles"] = filteredStats["succDribbles"] / (minutes / 90);
                 statsPer90["dribbleSuccRate"] = (filteredStats["succDribbles"] / filteredStats["attDribbles"]) * 100;
-                statsPer90["timesDispossessed"] = filteredStats["timesDispossessed"] / (minutes/90);
+                statsPer90["timesDispossessed"] = filteredStats["timesDispossessed"] / (minutes / 90);
                 // statsPer90["succPressures"] = filteredStats["succPressures"] / (minutes/90);
-                statsPer90["padjSuccPressures"] = filteredStats["padjSuccPressures"] / (minutes/90);
+                statsPer90["padjSuccPressures"] = filteredStats["padjSuccPressures"] / (minutes / 90);
                 // statsPer90["interceptions"] = filteredStats["interceptions"] / (minutes/90);
-                statsPer90["padjInterceptions"] = filteredStats["padjInterceptions"] / (minutes/90);
+                statsPer90["padjInterceptions"] = filteredStats["padjInterceptions"] / (minutes / 90);
                 // statsPer90["tacklesWon"] = filteredStats["tacklesWon"] / (minutes/90);
-                statsPer90["padjTacklesWon"] = filteredStats["padjTacklesWon"] / (minutes/90);
+                statsPer90["padjTacklesWon"] = filteredStats["padjTacklesWon"] / (minutes / 90);
                 statsPer90["dribbleTackleRate"] = (filteredStats["succDribbleTackles"] / filteredStats["attDribbleTackles"]) * 100;
                 statsPer90["aerialSuccRate"] = (filteredStats["succAerials"] / filteredStats["attAerials"]) * 100;
                 break;
             case "CB":
-                statsPer90["pft"] = filteredStats["pft"] / (minutes/90);
-                statsPer90["progDistance"] = filteredStats["progDistance"] / (minutes/90);
+                statsPer90["pft"] = filteredStats["pft"] / (minutes / 90);
+                statsPer90["progDistance"] = filteredStats["progDistance"] / (minutes / 90);
                 statsPer90["passSuccRate"] = (filteredStats["succPasses"] / filteredStats["attPasses"]) * 100;
                 statsPer90["longPassSuccRate"] = (filteredStats["succLongPasses"] / filteredStats["attLongPasses"]) * 100;
                 // statsPer90["succPressures"] = filteredStats["succPressures"] / (minutes/90);
-                statsPer90["padjSuccPressures"] = filteredStats["padjSuccPressures"] / (minutes/90);
+                statsPer90["padjSuccPressures"] = filteredStats["padjSuccPressures"] / (minutes / 90);
                 // statsPer90["interceptions"] = filteredStats["interceptions"] / (minutes/90);
-                statsPer90["padjInterceptions"] = filteredStats["padjInterceptions"] / (minutes/90);
+                statsPer90["padjInterceptions"] = filteredStats["padjInterceptions"] / (minutes / 90);
                 // statsPer90["tacklesWon"] = filteredStats["tacklesWon"] / (minutes/90);
-                statsPer90["padjTacklesWon"] = filteredStats["padjTacklesWon"] / (minutes/90);
+                statsPer90["padjTacklesWon"] = filteredStats["padjTacklesWon"] / (minutes / 90);
                 statsPer90["dribbleTackleRate"] = (filteredStats["succDribbleTackles"] / filteredStats["attDribbleTackles"]) * 100;
                 // statsPer90["fouls"] = filteredStats["fouls"] / (minutes/90);
-                statsPer90["padjFouls"] = filteredStats["padjFouls"] / (minutes/90);
-                statsPer90["succAerials"] = filteredStats["succAerials"] / (minutes/90);
+                statsPer90["padjFouls"] = filteredStats["padjFouls"] / (minutes / 90);
+                statsPer90["succAerials"] = filteredStats["succAerials"] / (minutes / 90);
                 statsPer90["aerialSuccRate"] = (filteredStats["succAerials"] / filteredStats["attAerials"]) * 100;
                 // statsPer90["clearances"] = filteredStats["clearances"] / (minutes/90);
-                statsPer90["padjClearances"] = filteredStats["padjClearances"] / (minutes/90);
+                statsPer90["padjClearances"] = filteredStats["padjClearances"] / (minutes / 90);
                 break;
             case "GK":
-                statsPer90["gsaa"] = ((filteredStats["psxg"]-filteredStats["goalsAgainst"])/filteredStats["sota"]) * 100;
+                statsPer90["gsaa"] = ((filteredStats["psxg"] - filteredStats["goalsAgainst"]) / filteredStats["sota"]) * 100;
                 statsPer90["crossStopRate"] = (filteredStats["stoppedCrosses"] / filteredStats["attCrosses"]) * 100;
                 statsPer90["launchedPassSuccRate"] = (filteredStats["succLaunchedPasses"] / filteredStats["attLaunchedPasses"]) * 100;
                 break;
@@ -297,31 +382,51 @@ class Stats extends Component {
                 statsPer90["padjSuccPressures"] = 0;
         }
 
-        if (template !== "N/A" && percentileArrays[percentileSeason] !== undefined){
-            for (let stat in statsPer90){
-                if (isFinite(statsPer90[stat])){
-                    percentiles[stat] = this.percentileRank(percentileArrays[percentileSeason][template][stat], statsPer90[stat]) * 100;
+        // for (let stat in statsPer90){
+        //     percentiles[stat] = 100;
+        // }
+
+        //calculate percentile ranks
+        if (template !== "N/A") {
+            for (let stat in statsPer90) {
+                if (isFinite(statsPer90[stat])) {
+                    percentiles[stat] = this.percentileRank(percentileArrays[percentileSeason][template][stat], statsPer90[stat], percentileArrayOccurrences) * 100;
                 }
+                //handle cases where the per 90 value is NaN (e.g.: as a result of divide by 0 error)
                 else {
+                    statsPer90[stat] = 0;
                     percentiles[stat] = 0;
                 }
-                if (stat === "padjFouls" || stat === "timesDispossessed"){
+                //reverse percentile ranks for "less is better" stats
+                if (stat === "padjFouls" || stat === "timesDispossessed") {
                     percentiles[stat] = 100 - percentiles[stat];
                 }
             }
         }
         else {
-            for (let stat in statsPer90){
+            for (let stat in statsPer90) {
                 percentiles[stat] = 0;
             }
         }
 
-        return this.constructChartInput(statsPer90, percentiles);
+        return {
+            statsPer90: statsPer90,
+            percentiles: percentiles
+        };
 
     };
 
-    percentileRank = (array, value) => {
 
+    /**
+     * Function to calculate the percentile rank of a given value within a given array
+     * @param {Array} array - the array of values
+     * @param {number} value - the value for which the percentile rank is being calculated
+     * @param {Integer} occurrences - the number of occurrences of the player's numbers within the percentile array
+     * @return {number} the percentile rank of the value in the array (adjusted for the double-counting problem)
+     */
+    percentileRank = (array, value, occurrences) => {
+
+        //taken from: https://gist.github.com/IceCreamYou/6ffa1b18c4c8f6aeaad2
         if (!isFinite(value)){
             value = 0;
         }
@@ -332,22 +437,31 @@ class Stats extends Component {
                 if (value !== array[i-1]) {
                     i += (value - array[i-1]) / (array[i] - array[i-1]);
                 }
-                return i / length;
+                //adjust the returned percentile by disregarding the entries that belong to the player
+                return (i / length) - (occurrences/array.length);
             }
         }
         return 1;
 
     };
 
+
+    /**
+     * Function to construct the input given to the Highcharts component
+     * @param {Object} statsPer90 - object containing the per90 stats
+     * @param {Object} percentiles - object containing the percentile ranks
+     * @return {Array} chartInput - array containing information for each data point in the Highcharts plot
+     */
     constructChartInput = (statsPer90, percentiles) => {
 
         let template = this.state.template;
-
         let colors = this.colors[template];
 
-        let p90_labels = this.significantFigures(statsPer90);
+        //remove unnecessary precision from the per90 labels and the percentile ranks
+        let p90_labels = this.threeDigits(statsPer90);
         let percentile_labels = this.roundNumbers(percentiles, 0);
 
+        //iterate through per90 stats and percentile ranks and construct objects for each point on the Highcharts plot
         let chartInput = [];
         let i = 0;
         for (let key in percentiles){
@@ -363,47 +477,65 @@ class Stats extends Component {
 
     };
 
-    roundNumbers = (someStats, precision) => {
 
-        for (let stat in someStats){
-            if (isFinite(someStats[stat])) {
-                someStats[stat] = Math.round(someStats[stat] * (10**precision)) / (10**precision);
-            }
-            else {
-                someStats[stat] = 0;
-            }
-        }
-        return someStats;
+    /**
+     * Function to truncate all values in an object to 3 digits
+     * @param {Object} someStats - object containing the values that need to be reduced to 3 digits
+     * @return {Object} threeDigitStats - object containing value of someStats reduced to 3 digits
+     */
+    threeDigits = (someStats) => {
 
-    };
-
-    significantFigures = (someStats) => {
+        let threeDigitStats = {};
 
         for (let stat in someStats){
             let value = someStats[stat];
             let precision;
-            if (isFinite(value)) {
-                if (Math.abs(value) < 10){
-                    precision = 2;
-                }
-                else if (Math.abs(value) < 100){
-                    precision = 1;
-                }
-                else {
-                    precision = 0;
-                }
-                someStats[stat] = Math.round(someStats[stat] * (10**precision)) / (10**precision);
+            //if 0-10, round to 2 decimal places (e.g.: 0.12 is 3 digits)
+            if (Math.abs(value) < 10){
+                precision = 2;
             }
+            //if 10-100, round to 1 decimal place (e.g.: 12.3 is 3 digits)
+            else if (Math.abs(value) < 100){
+                precision = 1;
+            }
+            //if 100+, round to 0 decimal places (e.g.: 123 is 3 digits
             else {
-                someStats[stat] = 0;
+                precision = 0;
             }
+            threeDigitStats[stat] = Math.round(someStats[stat] * (10**precision)) / (10**precision);
         }
-        return someStats;
+        return threeDigitStats;
 
     };
 
+
+    /**
+     * Function to round all values in an object to a specified precision
+     * @param {Object} someStats - object containing the values that need to be rounded
+     * @param {number} precision - the number of decimal places each number should be rounded to
+     * @return {Object}
+     */
+    roundNumbers = (someStats, precision) => {
+
+        let roundedStats = {};
+
+        for (let stat in someStats){
+            roundedStats[stat] = Math.round(someStats[stat] * (10**precision)) / (10**precision);
+        }
+
+        return roundedStats;
+
+    };
+
+
+    /**
+     * Function to append an ordinal suffix (-st, -nd, -rd, -th) to numbers
+     * @param {number} aNumber - the number to which the ordinal suffix is being appended
+     * @return {string} - the number with the ordinal suffix appended to it
+     */
     ordinalSuffix = (aNumber) => {
 
+        //taken from: https://stackoverflow.com/questions/13627308/add-st-nd-rd-and-th-ordinal-suffix-to-a-number
         let j = aNumber % 10,
             k = aNumber % 100;
         if (j === 1 && k !== 11) {
@@ -419,6 +551,11 @@ class Stats extends Component {
 
     };
 
+
+    /**
+     * Function to change the selected template
+     * @param {Object} event - the input event from the template form
+     */
     changeTemplate = (event) => {
 
         let template = event.target.value;
@@ -432,6 +569,11 @@ class Stats extends Component {
 
     };
 
+
+    /**
+     * Function to change the list of selected competitions
+     * @param {Object} event - the input event from the competitions form
+     */
     changeSelectedCompetitions = (event) => {
 
         let selectedCompetitions = this.state.selectedCompetitions;
@@ -454,6 +596,11 @@ class Stats extends Component {
 
     };
 
+
+    /**
+     * Function to change the type of data labels
+     * @param {Object} event - the input event from the data labels form
+     */
     changeLabelType = (event) => {
 
         let labelType = event.target.value;
@@ -467,20 +614,16 @@ class Stats extends Component {
 
     };
 
-    toggleCreditsPosition = (event) => {
+
+    /**
+     * Function to change the position of the credits at the bottom of the Slice container
+     */
+    toggleCreditsPosition = () => {
 
         let oldPosition = this.state.creditsPosition;
-        let newPosition;
-
-        if (oldPosition === "right"){
-            newPosition = "center"
-        }
-        else {
-            newPosition = "right"
-        }
+        let newPosition = oldPosition === "right" ? "center" : "right";
 
         cookies.set('creditsPosition', newPosition, {path: '/'});
-
         this.setState({
             isAnimated: false,
             creditsPosition: newPosition
@@ -488,65 +631,70 @@ class Stats extends Component {
 
     };
 
-    exportChart = () => {
 
-        const isMobile = this.state.isMobile;
+    /**
+     * Function to export the chart in a standardized 2400 * 2000 PNG format
+     * Exports the second slice that is rendered to the "#export" div, which has fixed height and width
+     * Adds the FootballSlices watermark to the exported image
+     * @return {Promise<void>}
+     */
+    //TODO: re-factor this functionality so that the second slice is only rendered when an export is required
+    exportChart = async () => {
+
+        const isSafari = this.state.isSafari;
+        if (isSafari){
+            alert("Sorry, this feature is not supported in Safari.");
+            return;
+        }
+
         const name = this.state.name;
+        const node = document.getElementById('export');
+        const scale = 2;
 
-        const scale = isMobile ? 1 : 2;
-        let node = document.getElementsByClassName('highcharts-container')[0];
+        //scale the background (the watermark)
+        let backgroundSize = 18/scale;
 
-        if (isMobile) {
-            domtoimage.toPng(node, {
-                bgcolor: '#fafbfc',
-                style: {
-                    'background-size': '25%'
-                }
-            })
-                .then(function (blob) {
-                    window.saveAs(blob, `${name.replace(" ", "-")}.png`);
-                })
-                .catch(function (error) {
-                    alert("An error occurred while downloading the PNG. Please refresh the page and try again")
-                });
-        }
-        else {
+        //get the width and height of the background in pixels
+        let backgroundWidth = (backgroundSize/100) * node.offsetWidth;
+        let backgroundHeight = (791/2070) * backgroundWidth; //height = inverted aspect ratio * width
 
-            //scale and position the background (the watermark)
-            let backgroundSize = 12/scale;
+        //get the height of the background as a percentage of the total height of the chart
+        let backgroundHeightRatio = (backgroundHeight / node.offsetHeight) * 100;
 
-            //get the width and height of the background in pixels
-            let backgroundWidth = (backgroundSize/100) * node.offsetWidth;
-            let backgroundHeight = (789/2089) * backgroundWidth;
+        //get the aspect ratio of the export div
+        let nodeAspectRatio = node.offsetWidth / node.offsetHeight;
 
-            //get the height of the background as a percentage of the total height of the chart
-            let backgroundHeightRatio = (backgroundHeight / node.offsetHeight) * 100;
-
-            //get the aspect ratio of the current dimensions of the chart
-            let nodeAspectRatio = node.offsetWidth / node.offsetHeight;
-
-            domtoimage.toPng(node, {
-                bgcolor: '#fafbfc',
-                height: node.offsetHeight * scale,
-                width: node.offsetWidth * scale,
-                style: {
-                    transform: `scale(${scale}) translate(${node.offsetWidth / 2 / scale}px, ${node.offsetHeight / 2 / scale}px)`,
-                    //set the background position after the 4x scaling
-                    //For the Y position, we start with 50% (bottom left), and then adjust based on the height of the watermark and the desired padding
-                    'background-position': `0.3% ${50-(0.3*nodeAspectRatio)-((backgroundHeightRatio+(0.3*nodeAspectRatio))/2)}%`,
-                    'background-size': `${backgroundSize}%`
-                }
-            })
-                .then(function (blob) {
-                    window.saveAs(blob, `${name.replace(" ", "-")}.png`);
-                })
-                .catch(function (error) {
-                    alert("An error occurred while downloading the PNG. Please refresh the page and try again")
-                });
-        }
+        domtoimage.toPng(node, {
+            bgcolor: '#fafbfc',
+            width: 1200 * scale,
+            height: 1100 * scale,
+            style: {
+                //make the export div visible
+                opacity: '1',
+                //scale up 4x to improve the resolution of the exported chart
+                transform: `scale(${scale}) translate(${node.offsetWidth / 2 / scale}px, ${node.offsetHeight / 2 / scale}px)`,
+                //set the background position after the 4x scaling
+                //for the Y position, we start with 50% (bottom left),
+                //and then adjust based on the height of the watermark to achieve 0.3% bottom pading
+                'background-position': `0.3% ${(100/scale)-(0.3*nodeAspectRatio)-((backgroundHeightRatio+(0.3*nodeAspectRatio))/scale)}%`,
+                'background-size': `${backgroundSize}%`
+            }
+        })
+        .then(function (blob) {
+            saveAs(blob, `${name.replace(" ", "-")}.png`);
+        })
+        .catch(function (error) {
+            console.log(error);
+            alert("An error occurred while exporting. Please refresh the page and try again.")
+        });
 
     };
 
+
+    /**
+     * render function
+     * @return {*} - JSX code for the stats page
+     */
     render() {
 
         let {
@@ -567,16 +715,18 @@ class Stats extends Component {
             isMobile
         } = this.state;
 
+        //display loading spinner while the server responds to POST request for the stats
         if (isLoading) {
             return (
                 <LoadingSpinner/>
             )
         }
 
+        //display the error message screen if an error is caught
         else if (error !== null) {
             return (
                 <div id="main2">
-                    <SearchBar type={2} query={this.state.query}/>
+                    <SearchBar page="stats" query={this.state.query}/>
                     <div className="screen" id="error-screen">
                         <p>{error.message}</p>
                     </div>
@@ -584,14 +734,80 @@ class Stats extends Component {
             )
         }
 
+        //build stats page otherwise
         else {
 
-            let competitionsForm = [];
+            //calculate stats and construct chart input
+            let filteredStats = {};
+            let series = [];
+            if (template !== null) {
+                filteredStats = this.filterStats(stats);
+                if (Object.keys(filteredStats).length !== 0){
+                    let calculatedStats = this.calculateStats(filteredStats);
+                    let chartInput = this.constructChartInput(calculatedStats.statsPer90, calculatedStats.percentiles);
+                    series = [chartInput];
+
+                }
+            }
+
+            //TODO: re-factor so the entire #chart-filters div is its own component
+
+            //construct templates form
+            let templateLabels = [];
+            let mobileTemplateLabels = [];
+            for (let position in this.positions){
+                let className;
+                let mobileClassName;
+                let disabled;
+                if (position !== "GK"){
+                    className = template !== "GK" ? "selectable-label" : "blocked-label";
+                    mobileClassName = `${template === position ? "selected-label" : null} ${template !== "GK" ? "selectable-label" : null}`;
+                    disabled = template === "GK";
+                }
+                else {
+                    className = template === "GK" ? "selectable-label" : "blocked-label";
+                    mobileClassName = `${template === position ? "selected-label" : null} ${template === "GK" ? "selectable-label" : null}`;
+                    disabled = template !== "GK";
+                }
+                templateLabels.push(
+                    <label
+                        className={className}
+                        key={`${position}_label`}
+                        >
+                        <input type="radio"
+                           name="template"
+                           value={position}
+                           checked={template === position}
+                           disabled={disabled}
+                           onChange={this.changeTemplate}
+                        /> {this.positions[position]}
+                    </label>
+                );
+                mobileTemplateLabels.push(
+                    <label
+                        className={mobileClassName}
+                        key={`${position}_label_mobile`}
+                        >
+                        <input type="radio"
+                               name="template"
+                               value={position}
+                               checked={template === position}
+                               disabled={disabled}
+                               onChange={this.changeTemplate}
+                        /> {this.positions[position]}
+                    </label>
+                );
+            }
+            let templatesForm = <form id="templates">{templateLabels}</form>;
+            let mobileTemplatesForm = <form id="templates">{mobileTemplateLabels}</form>;
+
+            //construct competitions forms
+            let competitionsForms = [];
             let counter = 0;
             for (let season in competitions){
                 let competitionLabels = [];
                 let multipleClubs = clubs[season].length !== 1;
-                competitionsForm.push(
+                competitionsForms.push(
                     <h4
                         key={`${season}_header`}
                         style={{
@@ -610,7 +826,10 @@ class Stats extends Component {
                         label = label.substring(0, label.indexOf("|")-1)
                     }
                     competitionLabels.push(
-                        <label key={`${season}_${currentCompetition}`} className={`${isIncluded ? "selected-label" : null} selectable-label`}>
+                        <label
+                            className={`${isIncluded ? "selected-label" : null} selectable-label`}
+                            key={`${season}_${currentCompetition}`}
+                            >
                             <input className="competition"
                                    type="checkbox"
                                    value={`${season}_${currentCompetition}`}
@@ -620,201 +839,51 @@ class Stats extends Component {
                         </label>
                     )
                 }
-                competitionsForm.push(<form key={`${season}_form`} className="competitions">{competitionLabels}</form>);
+                competitionsForms.push(<form key={`${season}_form`} className="competitions">{competitionLabels}</form>);
                 counter++;
             }
 
-            let filteredStats = {};
-            let series = [];
-
-            if (Object.keys(stats).length !== 0 && template !== null) {
-
-                filteredStats = this.filterStats(stats);
-
-                if (Object.keys(filteredStats).length !== 0){
-                    let chartInput = this.calculateChartInput(filteredStats);
-                    series = [chartInput];
-
-                }
-
-                else {
-                    series = [];
-                }
-
+            //construct label type form
+            let labelTypeLabels = [];
+            for (let type in this.labelTypes){
+                labelTypeLabels.push(
+                    <label
+                        className="selectable-label"
+                        key={type}
+                        >
+                        <input
+                            type="radio"
+                            name="labelType"
+                            value={type}
+                            checked={labelType === type}
+                            onChange={this.changeLabelType}
+                        /> {this.labelTypes[type]}
+                    </label>
+                )
             }
+            let labelTypeForm = <form id="data-labels">{labelTypeLabels}</form>;
 
+            //return JSX code for the stats page
             return (
                 <div id="main2">
-                    <SearchBar type={2}/>
-                    <div className="screen2" id="content-screen">
+                    <SearchBar page="stats"/>
+                    <div className="screen2" id="stats-screen">
                         <div className="filter" id="chart-filters">
                             <div className="chart-filter-inputs" id="chart-filter-inputs-laptop">
                                 <h3>Template</h3>
-                                <form id="templates">
-                                    <label className={template !== "GK" ? "selectable-label" : "blocked-label"}>
-                                        <input type="radio"
-                                               name="template"
-                                               value="FW"
-                                               checked={template === "FW"}
-                                               disabled={template === "GK"}
-                                               onChange={this.changeTemplate}
-                                        /> Forward
-                                    </label>
-                                    <label className={template !== "GK" ? "selectable-label" : "blocked-label"}>
-                                        <input type="radio"
-                                               name="template"
-                                               value="AM"
-                                               checked={template === "AM"}
-                                               disabled={template === "GK"}
-                                               onChange={this.changeTemplate}
-                                        /> Attacking Midfielder / Winger
-                                    </label>
-                                    <label className={template !== "GK" ? "selectable-label" : "blocked-label"}>
-                                        <input type="radio"
-                                               name="template"
-                                               value="CM"
-                                               checked={template === "CM"}
-                                               disabled={template === "GK"}
-                                               onChange={this.changeTemplate}
-                                        /> Central / Defensive Midfielder
-                                    </label>
-                                    <label className={template !== "GK" ? "selectable-label" : "blocked-label"}>
-                                        <input type="radio"
-                                               name="template"
-                                               value="FB"
-                                               checked={template === "FB"}
-                                               disabled={template === "GK"}
-                                               onChange={this.changeTemplate}
-                                        /> Full-back
-                                    </label>
-                                    <label className={template !== "GK" ? "selectable-label" : "blocked-label"}>
-                                        <input type="radio"
-                                               name="template"
-                                               value="CB"
-                                               checked={template === "CB"}
-                                               disabled={template === "GK"}
-                                               onChange={this.changeTemplate}
-                                        /> Center-back
-                                    </label>
-                                    <label className={template === "GK" ? "selectable-label" : "blocked-label"}>
-                                        <input type="radio"
-                                               name="template"
-                                               value="GK"
-                                               checked={template === "GK"}
-                                               disabled={template !== "GK"}
-                                               onChange={this.changeTemplate}
-                                        /> Goalkeeper
-                                    </label>
-                                </form>
+                                {templatesForm}
                                 <h3>Competitions</h3>
-                                {competitionsForm}
+                                {competitionsForms}
                                 <h3>Data Labels</h3>
-                                <form id="data-labels">
-                                    <label className="selectable-label">
-                                        <input
-                                            type="radio"
-                                            name="labelType"
-                                            value="raw"
-                                            checked={labelType === "raw"}
-                                            onChange={this.changeLabelType}
-                                        /> <span>Raw Values</span>
-                                    </label>
-                                    <label className="selectable-label">
-                                        <input
-                                            type="radio"
-                                            name="labelType"
-                                            value="percentiles"
-                                            checked={labelType === "percentiles"}
-                                            onChange={this.changeLabelType}
-                                        /> <span>Percentile Ranks</span>
-                                    </label>
-                                </form>
+                                {labelTypeForm}
                             </div>
                             <div className="chart-filter-inputs" id="chart-filter-inputs-mobile">
-                                <div id="templates-container">
-                                    <h3>Template</h3>
-                                    <form id="templates">
-                                        <label className={`${template === "FW" ? "selected-label" : null} ${template !== "GK" ? "selectable-label" : null}`}>
-                                            <input type="radio"
-                                                   name="template"
-                                                   value="FW"
-                                                   checked={template === "FW"}
-                                                   disabled={template === "GK"}
-                                                   onChange={this.changeTemplate}
-                                            /> <span>Forward</span>
-                                        </label>
-                                        <label className={`${template === "AM" ? "selected-label" : null} ${template !== "GK" ? "selectable-label" : null}`}>
-                                            <input type="radio"
-                                                   name="template"
-                                                   value="AM"
-                                                   checked={template === "AM"}
-                                                   disabled={template === "GK"}
-                                                   onChange={this.changeTemplate}
-                                            /> <span>Attacking Midfielder / Winger</span>
-                                        </label>
-                                        <label className={`${template === "CM" ? "selected-label" : null} ${template !== "GK" ? "selectable-label" : null}`}>
-                                            <input type="radio"
-                                                   name="template"
-                                                   value="CM"
-                                                   checked={template === "CM"}
-                                                   disabled={template === "GK"}
-                                                   onChange={this.changeTemplate}
-                                            /> <span>Central / Defensive Midfielder</span>
-                                        </label>
-                                        <label className={`${template === "FB" ? "selected-label" : null} ${template !== "GK" ? "selectable-label" : null}`}>
-                                            <input type="radio"
-                                                   name="template"
-                                                   value="FB"
-                                                   checked={template === "FB"}
-                                                   disabled={template === "GK"}
-                                                   onChange={this.changeTemplate}
-                                            /> <span>Full-back</span>
-                                        </label>
-                                        <label className={`${template === "CB" ? "selected-label" : null} ${template !== "GK" ? "selectable-label" : null}`}>
-                                            <input type="radio"
-                                                   name="template"
-                                                   value="CB"
-                                                   checked={template === "CB"}
-                                                   disabled={template === "GK"}
-                                                   onChange={this.changeTemplate}
-                                            /> <span>Center-back</span>
-                                        </label>
-                                        <label className={`${template === "GK" ? "selected-label" : null} ${template === "GK" ? "selectable-label" : null}`}>
-                                            <input type="radio"
-                                                   name="template"
-                                                   value="GK"
-                                                   checked={template === "GK"}
-                                                   disabled={template !== "GK"}
-                                                   onChange={this.changeTemplate}
-                                            /> <span>Goalkeeper</span>
-                                        </label>
-                                    </form>
-                                </div>
-                                <div id="competitions-container">
-                                    <h3 style={{marginBottom: '0px'}}>Competitions</h3>
-                                    {competitionsForm}
-                                </div>
+                                <h3>Template</h3>
+                                {mobileTemplatesForm}
+                                <h3>Competitions</h3>
+                                {competitionsForms}
                                 <h3>Data Labels</h3>
-                                <form id="data-labels">
-                                    <label className={`${labelType === "raw" ? "selected-label" : null} selectable-label`}>
-                                        <input
-                                            type="radio"
-                                            name="labelType"
-                                            value="raw"
-                                            checked={labelType === "raw"}
-                                            onChange={this.changeLabelType}
-                                        /> <span>Raw Values</span>
-                                    </label>
-                                    <label className={`${labelType === "percentiles" ? "selected-label" : null} selectable-label`}>
-                                        <input
-                                            type="radio"
-                                            name="labelType"
-                                            value="percentiles"
-                                            checked={labelType === "percentiles"}
-                                            onChange={this.changeLabelType}
-                                        /> <span>Percentile Ranks</span>
-                                    </label>
-                                </form>
+                                {labelTypeForm}
                             </div>
                             <div id="filter-buttons">
                                 <div className="filter-button">
@@ -828,11 +897,35 @@ class Stats extends Component {
                                 </div>
                             </div>
                         </div>
+                        <div className="result" id="chart">
+                            <Slice
+                                isMobile={isMobile}
+                                isForExport={false}
+                                isAnimated={isAnimated}
+                                isAnimatedInitial={true}
+                                hasTooltip={true}
+                                creditsPosition={creditsPosition}
+                                url={url}
+                                lastUpdated={lastUpdated}
+                                template={template}
+                                labelType={labelType}
+                                name={name}
+                                age={age}
+                                minutes={filteredStats['minutes']}
+                                series={series}
+                            />
+                        </div>
+                    </div>
+                    {/*extra div which contains the Slice used in exports. Not displayed*/}
+                    <div id="export">
                         <Slice
                             isMobile={isMobile}
-                            isAnimated={isAnimated}
+                            isForExport={true}
+                            isAnimated={false}
+                            isAnimatedInitial={false}
+                            hasTooltip={false}
                             creditsPosition={creditsPosition}
-                            url={url}
+                            url={null}
                             lastUpdated={lastUpdated}
                             template={template}
                             labelType={labelType}
@@ -844,7 +937,9 @@ class Stats extends Component {
                     </div>
                 </div>
             );
+
         }
+
     }
 
 }

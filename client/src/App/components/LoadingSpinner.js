@@ -1,5 +1,10 @@
 import React, { Component } from 'react';
 
+
+/**
+ * Renders a pure CSS loading spinner
+ * taken from: https://projects.lukehaas.me/css-loaders/
+ */
 class LoadingSpinner extends Component {
 
     render() {

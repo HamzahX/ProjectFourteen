@@ -77,14 +77,13 @@ let setup = async () => {
 let processEPLData = async () => {
 
     let competitionName = "Premier League";
-    let isCLorEL = false;
 
     for (let player in EPL){
-        processEntry(player, EPL, isCLorEL, competitionName, false)
+        processEntry(player, EPL, competitionName, false)
     }
 
     for (let gk in EPL_GK){
-        processEntry(gk, EPL_GK, isCLorEL, competitionName, true)
+        processEntry(gk, EPL_GK, competitionName, true)
     }
 
 
@@ -94,14 +93,13 @@ let processEPLData = async () => {
 let processLaLigaData = async () => {
 
     let competitionName = "La Liga";
-    let isCLorEL = false;
 
     for (let player in LA_LIGA){
-        processEntry(player, LA_LIGA, isCLorEL, competitionName, false)
+        processEntry(player, LA_LIGA, competitionName, false)
     }
 
     for (let gk in LA_LIGA_GK){
-        processEntry(gk, LA_LIGA_GK, isCLorEL, competitionName, true)
+        processEntry(gk, LA_LIGA_GK, competitionName, true)
     }
 
 
@@ -110,14 +108,13 @@ let processLaLigaData = async () => {
 let processSerieAData = async () => {
 
     let competitionName = "Serie A";
-    let isCLorEL = false;
 
     for (let player in SERIE_A){
-        processEntry(player, SERIE_A, isCLorEL, competitionName, false)
+        processEntry(player, SERIE_A, competitionName, false)
     }
 
     for (let gk in SERIE_A_GK){
-        processEntry(gk, SERIE_A_GK, isCLorEL, competitionName, true)
+        processEntry(gk, SERIE_A_GK, competitionName, true)
     }
 
 
@@ -126,14 +123,13 @@ let processSerieAData = async () => {
 let processBundesligaData = async () => {
 
     let competitionName = "Bundesliga";
-    let isCLorEL = false;
 
     for (let player in BUNDESLIGA){
-        processEntry(player, BUNDESLIGA, isCLorEL, competitionName, false)
+        processEntry(player, BUNDESLIGA, competitionName, false)
     }
 
     for (let gk in BUNDESLIGA_GK){
-        processEntry(gk, BUNDESLIGA_GK, isCLorEL, competitionName, true)
+        processEntry(gk, BUNDESLIGA_GK, competitionName, true)
     }
 
 
@@ -142,14 +138,13 @@ let processBundesligaData = async () => {
 let processLigue1Data = async () => {
 
     let competitionName = "Ligue 1";
-    let isCLorEL = false;
 
     for (let player in LIGUE_1){
-        processEntry(player, LIGUE_1, isCLorEL, competitionName, false)
+        processEntry(player, LIGUE_1, competitionName, false)
     }
 
     for (let gk in LIGUE_1_GK){
-        processEntry(gk, LIGUE_1_GK, isCLorEL, competitionName, true)
+        processEntry(gk, LIGUE_1_GK, competitionName, true)
     }
 
 
@@ -158,14 +153,13 @@ let processLigue1Data = async () => {
 let processChampionsLeagueData = async () => {
 
     let competitionName = "Champions League";
-    let isCLorEL = true;
 
     for (let player in CHAMPIONS_LEAGUE){
-        processEntry(player, CHAMPIONS_LEAGUE, isCLorEL, competitionName, false)
+        processEntry(player, CHAMPIONS_LEAGUE, competitionName, false)
     }
 
     for (let gk in CHAMPIONS_LEAGUE_GK){
-        processEntry(gk, CHAMPIONS_LEAGUE_GK, isCLorEL, competitionName, true)
+        processEntry(gk, CHAMPIONS_LEAGUE_GK, competitionName, true)
     }
 
 
@@ -174,23 +168,27 @@ let processChampionsLeagueData = async () => {
 let processEuropaLeagueData = async () => {
 
     let competitionName = "Europa League";
-    let isCLorEL = true;
 
     for (let player in EUROPA_LEAGUE){
-        processEntry(player, EUROPA_LEAGUE, isCLorEL, competitionName, false)
+        processEntry(player, EUROPA_LEAGUE, competitionName, false)
     }
 
     for (let gk in EUROPA_LEAGUE_GK){
-        processEntry(gk, EUROPA_LEAGUE_GK, isCLorEL, competitionName, true)
+        processEntry(gk, EUROPA_LEAGUE_GK, competitionName, true)
     }
 
 };
 
 
-let processEntry = (aPlayer, competition, isCLorEL = false, competitionName, isGoalkeeper) => {
+let processEntry = (aPlayer, competitionData, competitionName, isGoalkeeper) => {
 
-    let playerInfo = competition[aPlayer];
-    let code = competition[aPlayer]['code'];
+    let isCLorEL = false;
+    if (competitionName === "Champions League" || competitionName === "Europa League"){
+        isCLorEL = true;
+    }
+
+    let playerInfo = competitionData[aPlayer];
+    let code = competitionData[aPlayer]['code'];
 
     if (FBREF_TO_WHOSCORED_TEAMS[aPlayer] !== undefined){
         return;
@@ -424,7 +422,12 @@ setup()
     .then(() => {
         console.log("Collisions: " + COLLISION_COUNTER);
         console.timeEnd('mapping creation');
-        process.exit(-1);
+        if (Object.keys(WHOSCORED_TO_FBREF_PLAYERS_NEW).length === 0 && COLLISION_COUNTER === 0 && Object.keys(UNFILLED_MAPPING).length === 0){
+            process.exit(0);
+        }
+        else {
+            process.exit(-1);
+        }
     })
     .catch(async(anError) => {
         console.log(anError);

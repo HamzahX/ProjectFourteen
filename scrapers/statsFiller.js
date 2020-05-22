@@ -51,6 +51,7 @@ var PROCESSED; //player metadata + stats
 
 var FBREF_TO_WHOSCORED_TEAMS; //fbref to whoscored club name dictionary
 var POSSESSION_DATA; //team average possession data
+var POSITION_DATA = []; //player position arrays
 
 
 let setup = async () => {
@@ -64,6 +65,13 @@ let setup = async () => {
         else if (SEASON === "19-20"){
             PROCESSED = JSON.parse(fs.readFileSync(path.join(__dirname, '/playerData/processed.json')));
         }
+
+        POSITION_DATA["FW"] = JSON.parse(fs.readFileSync(path.join(__dirname, `/positionData/${SEASON}/FWPlayers.json`)))['codes'];
+        POSITION_DATA["AM"] = JSON.parse(fs.readFileSync(path.join(__dirname, `/positionData/${SEASON}/AMPlayers.json`)))['codes'];
+        POSITION_DATA["CM"] = JSON.parse(fs.readFileSync(path.join(__dirname, `/positionData/${SEASON}/CMPlayers.json`)))['codes'];
+        POSITION_DATA["FB"] = JSON.parse(fs.readFileSync(path.join(__dirname, `/positionData/${SEASON}/FBPlayers.json`)))['codes'];
+        POSITION_DATA["CB"] = JSON.parse(fs.readFileSync(path.join(__dirname, `/positionData/${SEASON}/CBPlayers.json`)))['codes'];
+        POSITION_DATA["GK"] = JSON.parse(fs.readFileSync(path.join(__dirname, `/positionData/${SEASON}/GKPlayers.json`)))['codes'];
 
         EPL = JSON.parse(fs.readFileSync(path.join(__dirname, `fbrefData/${SEASON}/premierLeague.json`)));
         EPL_GK = JSON.parse(fs.readFileSync(path.join(__dirname, `fbrefData/${SEASON}/premierLeague_gk.json`)));
@@ -95,14 +103,13 @@ let setup = async () => {
 let processEPLData = async () => {
 
     let competitionName = "Premier League";
-    let isCLorEL = false;
 
     for (let player in EPL){
-        processEntry(player, EPL, isCLorEL, competitionName, false)
+        processEntry(player, EPL, competitionName, false)
     }
 
     for (let gk in EPL_GK){
-        processEntry(gk, EPL_GK, isCLorEL, competitionName, true)
+        processEntry(gk, EPL_GK, competitionName, true)
     }
 
 
@@ -112,14 +119,13 @@ let processEPLData = async () => {
 let processLaLigaData = async () => {
 
     let competitionName = "La Liga";
-    let isCLorEL = false;
 
     for (let player in LA_LIGA){
-        processEntry(player, LA_LIGA, isCLorEL, competitionName, false)
+        processEntry(player, LA_LIGA, competitionName, false)
     }
 
     for (let gk in LA_LIGA_GK){
-        processEntry(gk, LA_LIGA_GK, isCLorEL, competitionName, true)
+        processEntry(gk, LA_LIGA_GK, competitionName, true)
     }
 
 
@@ -128,92 +134,87 @@ let processLaLigaData = async () => {
 let processSerieAData = async () => {
 
     let competitionName = "Serie A";
-    let isCLorEL = false;
 
     for (let player in SERIE_A){
-        processEntry(player, SERIE_A, isCLorEL, competitionName, false)
+        processEntry(player, SERIE_A, competitionName, false)
     }
 
     for (let gk in SERIE_A_GK){
-        processEntry(gk, SERIE_A_GK, isCLorEL, competitionName, true)
+        processEntry(gk, SERIE_A_GK, competitionName, true)
     }
 
 
 };
-
 
 let processBundesligaData = async () => {
 
     let competitionName = "Bundesliga";
-    let isCLorEL = false;
 
     for (let player in BUNDESLIGA){
-        processEntry(player, BUNDESLIGA, isCLorEL, competitionName, false)
+        processEntry(player, BUNDESLIGA, competitionName, false)
     }
 
     for (let gk in BUNDESLIGA_GK){
-        processEntry(gk, BUNDESLIGA_GK, isCLorEL, competitionName, true)
+        processEntry(gk, BUNDESLIGA_GK, competitionName, true)
     }
 
 
 };
-
 
 let processLigue1Data = async () => {
 
     let competitionName = "Ligue 1";
-    let isCLorEL = false;
 
     for (let player in LIGUE_1){
-        processEntry(player, LIGUE_1, isCLorEL, competitionName, false)
+        processEntry(player, LIGUE_1, competitionName, false)
     }
 
     for (let gk in LIGUE_1_GK){
-        processEntry(gk, LIGUE_1_GK, isCLorEL, competitionName, true)
+        processEntry(gk, LIGUE_1_GK, competitionName, true)
     }
 
 
 };
-
 
 let processChampionsLeagueData = async () => {
 
     let competitionName = "Champions League";
-    let isCLorEL = true;
 
     for (let player in CHAMPIONS_LEAGUE){
-        processEntry(player, CHAMPIONS_LEAGUE, isCLorEL, competitionName, false)
+        processEntry(player, CHAMPIONS_LEAGUE, competitionName, false)
     }
 
     for (let gk in CHAMPIONS_LEAGUE_GK){
-        processEntry(gk, CHAMPIONS_LEAGUE_GK, isCLorEL, competitionName, true)
+        processEntry(gk, CHAMPIONS_LEAGUE_GK, competitionName, true)
     }
 
 
 };
-
 
 let processEuropaLeagueData = async () => {
 
     let competitionName = "Europa League";
-    let isCLorEL = true;
 
     for (let player in EUROPA_LEAGUE){
-        processEntry(player, EUROPA_LEAGUE, isCLorEL, competitionName, false)
+        processEntry(player, EUROPA_LEAGUE, competitionName, false)
     }
 
     for (let gk in EUROPA_LEAGUE_GK){
-        processEntry(gk, EUROPA_LEAGUE_GK, isCLorEL, competitionName, true)
+        processEntry(gk, EUROPA_LEAGUE_GK, competitionName, true)
     }
-
 
 };
 
 
-let processEntry = (aPlayer, aCompetition, isCLorEL, aCompetitionName, isGoalkeeper) => {
+let processEntry = (aPlayer, competitionData, competitionName, isGoalkeeper) => {
+
+    let isCLorEL = false;
+    if (competitionName === "Champions League" || competitionName === "Europa League"){
+        isCLorEL = true;
+    }
 
     //retrieve the player object from the fbref stats and the player name
-    let entry = aCompetition[aPlayer];
+    let entry = competitionData[aPlayer];
 
     //retrieve the player name and club from the fbref entry
     let fbrefName;
@@ -252,7 +253,7 @@ let processEntry = (aPlayer, aCompetition, isCLorEL, aCompetitionName, isGoalkee
         console.log(fbrefClubName);
     }
     let whoscoredClubName = FBREF_TO_WHOSCORED_TEAMS[fbrefClubName]["whoscored"];
-    let possession = POSSESSION_DATA[aCompetitionName][whoscoredClubName];
+    let possession = POSSESSION_DATA[competitionName][whoscoredClubName];
 
     //retrieve required stats
     let stats;
@@ -323,17 +324,29 @@ let processEntry = (aPlayer, aCompetition, isCLorEL, aCompetitionName, isGoalkee
         currentPlayer["age"] = metadata["age"];
         currentPlayer["nationality"] = metadata["nationality"] === "" ? countryCodes.getCountryName(entry['standard___2'].split(" ")[0].toUpperCase()) : metadata["nationality"];
         currentPlayer["positions"] = metadata["positions"];
+        currentPlayer["percentileEntries"] = {};
         currentPlayer["clubs"] = metadata["clubs"];
         currentPlayer["stats"] = {};
     }
 
+    if (PROCESSED[whoscoredCode]["percentileEntries"][SEASON] === undefined){
+        PROCESSED[whoscoredCode]["percentileEntries"][SEASON] = [];
+    }
+
+    let percentileEntriesArray = PROCESSED[whoscoredCode]["percentileEntries"][SEASON];
+    for (let position in POSITION_DATA){
+        if (POSITION_DATA[position].includes(whoscoredCode)){
+            if (!percentileEntriesArray.includes(position)) percentileEntriesArray.push(position)
+        }
+    }
+
     //populate the player stats
     if (METADATA[whoscoredCode][SEASON] !== undefined){
-        if (METADATA[whoscoredCode][SEASON][`${aCompetitionName} | ${whoscoredClubName}`] !== undefined){
+        if (METADATA[whoscoredCode][SEASON][`${competitionName} | ${whoscoredClubName}`] !== undefined){
             if (PROCESSED[whoscoredCode]["stats"][SEASON] === undefined){
                 PROCESSED[whoscoredCode]["stats"][SEASON] = {};
             }
-            PROCESSED[whoscoredCode]["stats"][SEASON][`${aCompetitionName} | ${whoscoredClubName}`] = stats;
+            PROCESSED[whoscoredCode]["stats"][SEASON][`${competitionName} | ${whoscoredClubName}`] = stats;
         }
     }
 

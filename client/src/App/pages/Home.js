@@ -1,40 +1,56 @@
 import React, { Component } from 'react';
 import $ from "jquery";
 
-// import Typist from 'react-typist';
+//import components
 import SearchBar from "../components/SearchBar"
 import PlayerSearchResult from "../components/PlayerSearchResult"
 import LoadingSpinner from "../components/LoadingSpinner";
 
+//import assets
 import mockUps from "../assets/mockups.png"
 
 
+/**
+ * Homepage component
+ */
 class Home extends Component {
 
+    //class variable to track if the component is mounted
     _isMounted = false;
 
+    /**
+     * Constructor
+     * @param props
+     */
     constructor(props) {
 
         super(props);
-
         this.state = {
             isMobile: this.props.isMobile,
             isLoading: true,
             samplePlayers: [],
         };
-
         this.getSamplePlayers();
 
     }
 
+
+    /**
+     * Called after component has mounted
+     */
     componentDidMount() {
-
         this._isMounted = true;
-
     }
 
+
+    /**
+     * Function to send a post request to the server to retrieve 3 sample players to be displayed on the homepage
+     */
     getSamplePlayers = () => {
 
+        let isMobile = this.state.isMobile;
+
+        //retrieve sample players
         fetch('/api/samplePlayers', {
             method: 'post',
             headers: {
@@ -44,63 +60,90 @@ class Home extends Component {
         })
         .then(res => res.json())
         .then(samplePlayers => {
+            //only set state if the component is mounter
             if (this._isMounted){
                 this.setState({samplePlayers: samplePlayers, isLoading: false});
-                if ($('body').css('background-color') === 'rgb(250, 251, 253)') {
+                //hard code the height of home and the navbar container if it is a mobile device
+                //this is done because the soft keyboards on mobile devices affect the view-height
+                if (isMobile){
                     var height = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
                     var navbarHeight = 0.06 * height;
                     $("#home").css({"height": height});
                     $("#navbar-container").css({"height": navbarHeight});
                 }
-                $("#menu-hidden").addClass('preload');
+                //add preload class to the hidden menu to disable the first animation
+                $("#navbar-hidden").addClass('preload');
             }
         })
 
     };
 
+
+    /**
+     * Called just before the component un-mounts
+     */
     componentWillUnmount() {
         this._isMounted = false;
     }
 
-    toggleMenu = () => {
 
-        let menuResponsive = document.getElementsByClassName('responsive-navbar')[0];
-        if (menuResponsive.id === "menu-hidden"){
-            menuResponsive.id = "menu-expanded";
+    /**
+     * Function to display/hide the responsive navbar
+     */
+    toggleNavbar = () => {
+
+        //select the responsive navbar element
+        let responsiveNavbar = $(".responsive-navbar");
+
+        //expand or hide based on current state
+        if (responsiveNavbar.attr("id") === "navbar-hidden"){
+            responsiveNavbar.attr("id", "navbar-expanded");
         }
         else {
-            $("#menu-expanded").removeClass('preload');
-            menuResponsive.id = "menu-hidden";
+            //remove preload class when expanding to re-enable animations
+            $("#navbar-expanded").removeClass('preload');
+            responsiveNavbar.attr("id", "navbar-hidden");
         }
 
     };
 
-    hideMenu = () => {
 
-        $("#menu-expanded").removeClass('preload');
-        let menuResponsive = document.getElementsByClassName('responsive-navbar')[0];
-        menuResponsive.id = "menu-hidden";
+    /**
+     * Function to hide the navbar (called after one of the menu options is clicked)
+     */
+    hideNavbar = () => {
+
+        $("#navbar-expanded").removeClass('preload');
+        $(".responsive-navbar").attr("id", "navbar-hidden");
 
     };
 
+
+    /**
+     * render function
+     * @return {*} - JSX code for the homepage
+     */
     render() {
 
         let { isLoading, samplePlayers } = this.state;
 
+        //display loading spinner while the server responds to POST request for the sample players
         if (isLoading) {
             return (
                 <LoadingSpinner/>
             )
         }
 
+        //return homepage code otherwise
         else {
 
-            let samplePlayerCards = [];
+            //construct the sample player buttons
+            let samplePlayerButtons = [];
             for (let i=0; i<samplePlayers.length; i++){
                 let current = samplePlayers[i];
-                samplePlayerCards.push(
+                samplePlayerButtons.push(
                     <PlayerSearchResult
-                        page = {"home"}
+                        page = "home"
                         code = {current.code}
                         name = {current.name}
                         clubs = {current.clubs}
@@ -110,53 +153,54 @@ class Home extends Component {
                 );
             }
 
+            //static JSX code for the homepage
             return (
                 <div id="homepage">
                     <div id="navbar-container">
-                        <div className="navbar" id="menu">
-                            <a onClick={this.hideMenu} href="#home">
+                        <div className="navbar" id="navbar-normal">
+                            <a href="#home">
                                 <div>Home</div>
                             </a>
-                            <a onClick={this.hideMenu} href="#preview">
+                            <a href="#preview">
                                 <div>Preview</div>
                             </a>
-                            <a onClick={this.hideMenu} href="#glossary">
+                            <a href="#glossary">
                                 <div>Glossary</div>
                             </a>
-                            <a onClick={this.hideMenu} href="#faq">
+                            <a href="#faq">
                                 <div>F.A.Q.</div>
                             </a>
-                            <a onClick={this.hideMenu} href="#contact">
+                            <a href="#contact">
                                 <div>Contact</div>
                             </a>
-                            <a onClick={this.toggleMenu} id="burger-icon-container">
+                            <button onClick={this.toggleNavbar} id="burger-icon-container">
                                 <div id="burgerIcon"><i className="fa fa-bars"/></div>
-                            </a>
+                            </button>
                         </div>
-                        <div className="navbar responsive-navbar" id="menu-hidden">
-                            <a onClick={this.hideMenu} href="#preview">
+                        <div className="navbar responsive-navbar" id="navbar-hidden">
+                            <a onClick={this.hideNavbar} href="#preview">
                                 <div>Preview</div>
                             </a>
-                            <a onClick={this.hideMenu} href="#glossary">
+                            <a onClick={this.hideNavbar} href="#glossary">
                                 <div>Glossary</div>
                             </a>
-                            <a onClick={this.hideMenu} href="#faq">
+                            <a onClick={this.hideNavbar} href="#faq">
                                 <div>F.A.Q.</div>
                             </a>
-                            <a onClick={this.hideMenu} href="#contact">
+                            <a onClick={this.hideNavbar} href="#contact">
                                 <div>Contact</div>
                             </a>
                         </div>
                     </div>
                     <div id="home">
                         <h1>Football<span style={{color: '#e4c000'}}>Slices</span></h1>
-                        <SearchBar type={3}/>
+                        <SearchBar page="home"/>
                         <br/>
                         <br/>
                         <p>...or try using a sample player</p>
                         <br/>
                         <div id="sample-results">
-                            {samplePlayerCards}
+                            {samplePlayerButtons}
                         </div>
                     </div>
                     <div id="preview" className="homepage-section-container">
@@ -169,15 +213,13 @@ class Home extends Component {
                                     numbers so you don't have to!
                                 </p>
                                 <p>
-                                    Explore a database of <span style={{color: 'orangered'}}>2,700+ players </span>
-                                    from <span style={{color: 'orangered'}}>Europe's top 5 leagues</span>, with stats
-                                    from the <span style={{color: 'orangered'}}>2018/19</span> and
-                                    <span style={{color: 'orangered'}}> 2019/20</span> seasons.
+                                    Explore a database of more than <b>2,700 players</b> from <b>Europe's top 5 leagues</b>,
+                                    with stats from the <b>2018/19</b> and <b>2019/20</b> seasons.
                                 </p>
                                 <p>
                                     Simply choose a positional template, toggle the competitions you'd like to include,
                                     and visualize statistics in seconds with interactive percentile rank bar
-                                    charts, powered by <a href="https://www.highcharts.com" >Highcharts.js</a>.
+                                    charts, powered by <a href="https://www.highcharts.com" target="_blank" rel="noopener noreferrer">Highcharts.js</a>.
                                 </p>
                                 <p><span className="accented-p">Interpreting FootballSlices</span></p>
                                 <p>
@@ -320,13 +362,17 @@ class Home extends Component {
                                     The percentage of attempted crosses into the penalty area that were stopped by the goalkeeper.
                                 </li>
                             </ul>
-                            <p>
-                                * <a href="https://fbref.com/en/expected-goals-model-explained/" target="_blank" rel="noopener noreferrer">Expected goals/assists model explanation</a>
-                                &nbsp;&nbsp;
-                                ** <a href="https://statsbomb.com/2014/06/introducing-possession-adjusted-player-stats/" target="_blank" rel="noopener noreferrer">Possession adjustment explanation</a>
-                                &nbsp;&nbsp;
-                                *** <a href="https://statsbomb.com/2018/12/introducing-goalkeeper-radars/" target="_blank" rel="noopener noreferrer">GSAA % explanation</a>
-                            </p>
+                            <div id="glossary-links">
+                                <span>
+                                    * <a href="https://fbref.com/en/expected-goals-model-explained/" target="_blank" rel="noopener noreferrer">Expected goals/assists model explanation</a>
+                                </span>
+                                <span>
+                                    ** <a href="https://statsbomb.com/2014/06/introducing-possession-adjusted-player-stats/" target="_blank" rel="noopener noreferrer">Possession adjustment explanation</a>
+                                </span>
+                                <span>
+                                    *** <a href="https://statsbomb.com/2018/12/introducing-goalkeeper-radars/" target="_blank" rel="noopener noreferrer">GSAA % explanation</a>
+                                </span>
+                            </div>
                         </div>
                     </div>
                     <div id="faq" className="homepage-section-container">
@@ -335,8 +381,8 @@ class Home extends Component {
                             <div id="faq-container">
                                 <div className="faq-item">
                                     <p><span className="accented-p">Where does the data come from?</span></p>
-                                    <p>The metadata is from <a href="https://www.whoscored.com" >WhoScored.com</a>, and
-                                        the stats are from <a href="https://www.fbref.com">FBref.com</a>.</p>
+                                    <p>The metadata is from <a href="https://www.whoscored.com" target="_blank" rel="noopener noreferrer">WhoScored.com</a>, and
+                                        the stats are from <a href="https://www.fbref.com" target="_blank" rel="noopener noreferrer">FBref.com</a>.</p>
                                 </div>
                                 <div className="faq-item">
                                     <p><span className="accented-p">Who's included in the database? How often is it updated?</span></p>
@@ -351,7 +397,7 @@ class Home extends Component {
                                         Will the database be expanded to include seasons before 2018/19 and players outside the top 5 leagues?
                                     </span></p>
                                     <p>
-                                        Probably not. At present, <a href="https://www.fbref.com">FBref.com</a>'s advanced statistics
+                                        Probably not. At present, <a href="https://www.fbref.com" target="_blank" rel="noopener noreferrer">FBref.com</a>'s advanced statistics
                                         are only available for a few seasons and leagues.
                                     </p>
                                 </div>
@@ -384,7 +430,7 @@ class Home extends Component {
                                 <div className="faq-item">
                                     <p><span className="accented-p">How are the player positions decided?</span></p>
                                     <p>
-                                        Position data is obtained using the 'detailed' tab of the <a href="https://whoscored.com/Statistics">
+                                        Position data is obtained using the 'detailed' tab of the <a href="https://whoscored.com/Statistics" target="_blank" rel="noopener noreferrer">
                                         WhoScored.com player statistics table</a> to find all players who've made 10 or more
                                         league starts in each of the template positions during a particular season.
                                     </p>
@@ -412,6 +458,7 @@ class Home extends Component {
                     </div>
                 </div>
             );
+
         }
 
     }

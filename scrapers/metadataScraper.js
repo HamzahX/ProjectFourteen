@@ -374,6 +374,31 @@ let processRawData = async () => {
             let processedPlayer = player.substring(0, player.indexOf("|"));
             if (processedMetadata[processedPlayer] !== undefined){
                 for (let entry in rawMetadata[i][player]){ //for every entry in that object
+                    if (entry === "age"){
+                        processedMetadata[processedPlayer][entry] = rawMetadata[i][player][entry];
+                    }
+                    else if (entry === "position"){
+                        if (processedMetadata[processedPlayer]['positions'] === undefined){
+                            processedMetadata[processedPlayer]['positions'] = {};
+                        }
+                        processedMetadata[processedPlayer]["positions"][SEASON] = processPlayerPosition(rawMetadata[i][player][entry], processedPlayer);
+                    }
+                    if (entry === "club"){
+                        if (processedMetadata[processedPlayer]['clubs'] === undefined){
+                            processedMetadata[processedPlayer]['clubs'] = {};
+                        }
+                        let playerClub = rawMetadata[i][player]['club'];
+                        if (processedMetadata[processedPlayer]['clubs'][SEASON] === undefined){
+                            if (i < rawMetadata.length-2){ //if the entry is not for CL/EL
+                                processedMetadata[processedPlayer]['clubs'][SEASON] = [playerClub]
+                            }
+                        }
+                        else {
+                            if (!processedMetadata[processedPlayer]['clubs'][SEASON].includes(playerClub)){
+                                processedMetadata[processedPlayer]['clubs'][SEASON].push(playerClub);
+                            }
+                        }
+                    }
                     if (processedMetadata[processedPlayer][entry] === undefined){
                         // initialize the player's stats for said entry in processedData
                         if (entry === 'countryCode'){
@@ -388,31 +413,6 @@ let processRawData = async () => {
                                                                                     .replace(/[\u0300-\u036f]/g, "")
                                                                                     .replace("Ø", "O")
                                                                                     .replace("ø", "o");
-                        }
-                        else if (entry === "age" || entry === "nationality"){
-                            processedMetadata[processedPlayer][entry] = rawMetadata[i][player][entry];
-                        }
-                        else if (entry === "position"){
-                            if (processedMetadata[processedPlayer]['positions'] === undefined){
-                                processedMetadata[processedPlayer]['positions'] = {};
-                            }
-                            processedMetadata[processedPlayer]["positions"][SEASON] = processPlayerPosition(rawMetadata[i][player][entry], processedPlayer);
-                        }
-                        if (entry === "club"){
-                            if (processedMetadata[processedPlayer]['clubs'] === undefined){
-                                processedMetadata[processedPlayer]['clubs'] = {};
-                            }
-                            let playerClub = rawMetadata[i][player]['club'];
-                            if (processedMetadata[processedPlayer]['clubs'][SEASON] === undefined){
-                                if (i < rawMetadata.length-2){ //if the entry is not for CL/EL
-                                    processedMetadata[processedPlayer]['clubs'][SEASON] = [playerClub]
-                                }
-                            }
-                            else {
-                                if (!processedMetadata[processedPlayer]['clubs'][SEASON].includes(playerClub)){
-                                    processedMetadata[processedPlayer]['clubs'][SEASON].push(playerClub);
-                                }
-                            }
                         }
                         else if (typeof rawMetadata[i][player][entry] === 'object'){
                             let competition = Object.keys(rawMetadata[i][player][entry])[0];

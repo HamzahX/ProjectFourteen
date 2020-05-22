@@ -45,35 +45,6 @@ let setup = async () => {
 
     return new Promise(async function(resolve, reject){
 
-        try {
-            fs.unlink(path.join(__dirname, `positionData/${SEASON}/FWPlayers.json`, file), err => {
-                if (err) throw err;
-            });
-
-            fs.unlink(path.join(__dirname, `positionData/${SEASON}/AMPlayers.json`, file), err => {
-                if (err) throw err;
-            });
-
-            fs.unlink(path.join(__dirname, `positionData/${SEASON}/CMPlayers.json`, file), err => {
-                if (err) throw err;
-            });
-
-            fs.unlink(path.join(__dirname, `positionData/${SEASON}/FBPlayers.json`, file), err => {
-                if (err) throw err;
-            });
-
-            fs.unlink(path.join(__dirname, `positionData/${SEASON}/CBPlayers.json`, file), err => {
-                if (err) throw err;
-            });
-
-            fs.unlink(path.join(__dirname, `positionData/${SEASON}/GKPlayers.json`, file), err => {
-                if (err) throw err;
-            });
-        }
-        catch (e) {
-            ;
-        }
-
         console.time('browser launch');
         browser = await puppeteer.launch({
             headless: false,
@@ -245,44 +216,15 @@ let getPlayers = async(position) => {
 
     console.log(`Getting ${position}s`);
 
-    let filePath;
-
-    switch (position) {
-        case "FW":
-            filePath = `positionData/${SEASON}/FWPlayers.json`;
-            break;
-        case "AM":
-            filePath = `positionData/${SEASON}/AMPlayers.json`;
-            break;
-        case "CM":
-            filePath = `positionData/${SEASON}/CMPlayers.json`;
-            break;
-        case "FB":
-            filePath = `positionData/${SEASON}/FBPlayers.json`;
-            break;
-        case "CB":
-            filePath = `positionData/${SEASON}/CBPlayers.json`;
-            break;
-        case "GK":
-            filePath = `positionData/${SEASON}/GKPlayers.json`;
-            break;
-    }
-
     return new Promise((resolve, reject) => {
-        let rawData;
-        try {
-            rawData = JSON.parse(fs.readFileSync(path.join(__dirname, filePath)));
-        }
-        catch (e) {
-            rawData = {names:[], codes:[]};
-        }
+        let rawData = {names:[], codes:[]};
         pageSetup(page, true, position)
             .then(() =>
-                getNames(page)
+                getNamesAndCodes(page)
             )
-            .then( async (names) => {
-                rawData['names'] = rawData['names'].concat(names[0]);
-                rawData['codes'] = rawData['codes'].concat(names[1]);
+            .then( async (namesAndCodes) => {
+                rawData['names'] = rawData['names'].concat(namesAndCodes[0]);
+                rawData['codes'] = rawData['codes'].concat(namesAndCodes[1]);
                 await saveData(rawData, position);
                 resolve()
             })
@@ -294,7 +236,7 @@ let getPlayers = async(position) => {
 };
 
 
-let getNames = async (page) => {
+let getNamesAndCodes = async (page) => {
 
     let firstIteration = true;
     //scrape needed data
@@ -304,7 +246,7 @@ let getNames = async (page) => {
         (async function loop() {
             while (hasNextPage){
                 hasNextPage = await new Promise( (resolve, reject) =>
-                    scrapeNames(page, firstIteration)
+                    scrapeNamesAndCodes(page, firstIteration)
                         .then(async (result) =>(percentiles = combineResults(percentiles, result), firstIteration = false))
                         .then(async () =>
                             resolve(await pageSetup(page, false))
@@ -320,7 +262,7 @@ let getNames = async (page) => {
                     await page.waitFor(1000);
                 }
             }
-            scrapeNames(page, firstIteration)
+            scrapeNamesAndCodes(page, firstIteration)
                 .then(async (result) =>
                     (percentiles = combineResults(percentiles, result), firstIteration = false)
                 ).then(() =>
@@ -332,7 +274,7 @@ let getNames = async (page) => {
 };
 
 
-let scrapeNames = async (page) => {
+let scrapeNamesAndCodes = async (page) => {
 
     return await page.evaluate(() => {
         let names = [];
