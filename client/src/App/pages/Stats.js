@@ -490,8 +490,11 @@ class Stats extends Component {
         for (let stat in someStats){
             let value = someStats[stat];
             let precision;
+            if (stat === "npxgPerShot"){
+                precision = 3;
+            }
             //if 0-10, round to 2 decimal places (e.g.: 0.12 is 3 digits)
-            if (Math.abs(value) < 10){
+            else if (Math.abs(value) < 10){
                 precision = 2;
             }
             //if 10-100, round to 1 decimal place (e.g.: 12.3 is 3 digits)
