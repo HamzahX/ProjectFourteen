@@ -302,8 +302,6 @@ search = async (aQuery, theType) => {
         //searching for players and clubs
         if (theType === "playersAndClubs"){
 
-            console.log("Searching for: " + aQuery);
-
             //re-construct the query without diacritics
             let simplifiedQuery = aQuery
                 .normalize("NFD")
@@ -408,8 +406,6 @@ getStats = async (code) => {
 
     return new Promise(async function(resolve, reject){
 
-        console.log("Retrieving stats for: " + code);
-
         //find the player who matches the requested code
         PLAYERS_COLLECTION.find({"code": code}).toArray(function (err, docs) {
             if (err) {
@@ -419,6 +415,7 @@ getStats = async (code) => {
                 reject();
             }
             else {
+                console.log(`Retrieving stats for: ${docs[0].name} (${code})`);
                 resolve(docs[0]);
             }
         });

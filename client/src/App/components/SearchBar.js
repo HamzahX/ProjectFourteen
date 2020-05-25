@@ -137,43 +137,43 @@ class SearchBar extends Component {
             query: query
         });
 
-        //update search results
-        if (query !== ""){
-            this.getSearchResults(query)
-            .then((searchResults) => {
-                let playerSearchResults = searchResults['playerSearchResults'];
-                let clubSearchResults = searchResults['clubSearchResults'];
-                if (this._isMounted){
-                    this.setState({
-                        error: null,
-                        isLoading: false,
-                        playerSearchResults: [],
-                        clubSearchResults: []
-                    }, () => {
-                        this.setState({
-                            playerSearchResults: playerSearchResults,
-                            clubSearchResults: clubSearchResults
-                        })
-                    })
-                }
-            }, (error) => {
-                if (this._isMounted){
-                    this.setState({
-                        error, isLoading: false
-                    })
-                }
-            })
-        }
-        else {
-            if (this._isMounted){
-                this.setState({
-                    error: null,
-                    isLoading: false,
-                    playerSearchResults: [],
-                    clubSearchResults: []
-                })
-            }
-        }
+        // //update search results
+        // if (query !== ""){
+        //     this.getSearchResults(query)
+        //     .then((searchResults) => {
+        //         let playerSearchResults = searchResults['playerSearchResults'];
+        //         let clubSearchResults = searchResults['clubSearchResults'];
+        //         if (this._isMounted){
+        //             this.setState({
+        //                 error: null,
+        //                 isLoading: false,
+        //                 playerSearchResults: [],
+        //                 clubSearchResults: []
+        //             }, () => {
+        //                 this.setState({
+        //                     playerSearchResults: playerSearchResults,
+        //                     clubSearchResults: clubSearchResults
+        //                 })
+        //             })
+        //         }
+        //     }, (error) => {
+        //         if (this._isMounted){
+        //             this.setState({
+        //                 error, isLoading: false
+        //             })
+        //         }
+        //     })
+        // }
+        // else {
+        //     if (this._isMounted){
+        //         this.setState({
+        //             error: null,
+        //             isLoading: false,
+        //             playerSearchResults: [],
+        //             clubSearchResults: []
+        //         })
+        //     }
+        // }
 
     };
 
@@ -257,10 +257,10 @@ class SearchBar extends Component {
                         />
                     </form>
                 </div>
-                <div id="live-search-results">
-                    {playerCards}
-                    {clubCards}
-                </div>
+                {/*<div id="live-search-results">*/}
+                {/*    {playerCards}*/}
+                {/*    {clubCards}*/}
+                {/*</div>*/}
             </Fragment>
 
         );

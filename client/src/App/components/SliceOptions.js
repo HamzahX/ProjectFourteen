@@ -104,7 +104,7 @@ class SliceOptions extends Component {
                     key={`${season}_header`}
                     style={{
                         marginBottom: isMobile ? '20px' : '10px',
-                        marginTop: (counter !== 0 && !isMobile) ? '15px' : '5px'
+                        marginTop: (counter !== 0 && !isMobile) ? '15px' : '20px'
                     }}
                 >
                     {season.replace("-", "/")} {multipleClubs === false ? ' | ' + this.clubs[season][0] : null}
@@ -157,63 +157,80 @@ class SliceOptions extends Component {
 
         return (
             <div className="filter" id="chart-filters">
+                {/*<div className="chart-filter-inputs" id="chart-filter-inputs-laptop">*/}
+                {/*    <Collapsible*/}
+                {/*        open={true}*/}
+                {/*        trigger="Template"*/}
+                {/*        className="chart-filter-headers"*/}
+                {/*        transitionTime={200}*/}
+                {/*        transitionCloseTime={200}*/}
+                {/*    >*/}
+                {/*        {templatesForm}*/}
+                {/*    </Collapsible>*/}
+                {/*    <Collapsible*/}
+                {/*        open={true}*/}
+                {/*        trigger="Competitions"*/}
+                {/*        className="chart-filter-headers"*/}
+                {/*        transitionTime={200}*/}
+                {/*        transitionCloseTime={200}*/}
+                {/*    >*/}
+                {/*        {competitionsForms}*/}
+                {/*    </Collapsible>*/}
+                {/*    <Collapsible*/}
+                {/*        open={true}*/}
+                {/*        trigger="Data Labels"*/}
+                {/*        className="chart-filter-headers"*/}
+                {/*        transitionTime={200}*/}
+                {/*        transitionCloseTime={200}*/}
+                {/*    >*/}
+                {/*        {labelTypeForm}*/}
+                {/*    </Collapsible>*/}
+
+                {/*</div>*/}
+                {/*<div className="chart-filter-inputs" id="chart-filter-inputs-mobile">*/}
+                {/*    <Collapsible*/}
+                {/*        open={true}*/}
+                {/*        trigger="Template"*/}
+                {/*        className="chart-filter-headers"*/}
+                {/*        transitionTime={200}*/}
+                {/*        transitionCloseTime={200}*/}
+                {/*    >*/}
+                {/*        {mobileTemplatesForm}*/}
+                {/*    </Collapsible>*/}
+                {/*    <Collapsible*/}
+                {/*        open={true}*/}
+                {/*        trigger="Competitions"*/}
+                {/*        className="chart-filter-headers"*/}
+                {/*        transitionTime={200}*/}
+                {/*        transitionCloseTime={200}*/}
+                {/*    >*/}
+                {/*        {competitionsForms}*/}
+                {/*    </Collapsible>*/}
+                {/*    <Collapsible*/}
+                {/*        open={true}*/}
+                {/*        trigger="Data Labels"*/}
+                {/*        className="chart-filter-headers"*/}
+                {/*        transitionTime={200}*/}
+                {/*        transitionCloseTime={200}*/}
+                {/*    >*/}
+                {/*        {labelTypeForm}*/}
+                {/*    </Collapsible>*/}
+                {/*</div>*/}
                 <div className="chart-filter-inputs" id="chart-filter-inputs-laptop">
-                    <Collapsible
-                        open={true}
-                        trigger="Template"
-                        className="chart-filter-headers"
-                        transitionTime={200}
-                        transitionCloseTime={200}
-                    >
-                        {templatesForm}
-                    </Collapsible>
-                    <Collapsible
-                        open={true}
-                        trigger="Competitions"
-                        className="chart-filter-headers"
-                        transitionTime={200}
-                        transitionCloseTime={200}
-                    >
-                        {competitionsForms}
-                    </Collapsible>
-                    <Collapsible
-                        open={true}
-                        trigger="Data Labels"
-                        className="chart-filter-headers"
-                        transitionTime={200}
-                        transitionCloseTime={200}
-                    >
-                        {labelTypeForm}
-                    </Collapsible>
+                    <h3>Template</h3>
+                    {templatesForm}
+                    <h3>Competitions</h3>
+                    {competitionsForms}
+                    <h3>Data Labels</h3>
+                    {labelTypeForm}
                 </div>
                 <div className="chart-filter-inputs" id="chart-filter-inputs-mobile">
-                    <Collapsible
-                        open={true}
-                        trigger="Template"
-                        className="chart-filter-headers"
-                        transitionTime={200}
-                        transitionCloseTime={200}
-                    >
-                        {mobileTemplatesForm}
-                    </Collapsible>
-                    <Collapsible
-                        open={true}
-                        trigger="Competitions"
-                        className="chart-filter-headers"
-                        transitionTime={200}
-                        transitionCloseTime={200}
-                    >
-                        {competitionsForms}
-                    </Collapsible>
-                    <Collapsible
-                        open={true}
-                        trigger="Data Labels"
-                        className="chart-filter-headers"
-                        transitionTime={200}
-                        transitionCloseTime={200}
-                    >
-                        {labelTypeForm}
-                    </Collapsible>
+                    <h3>Template</h3>
+                    {mobileTemplatesForm}
+                    <h3>Competitions</h3>
+                    {competitionsForms}
+                    <h3>Data Labels</h3>
+                    {labelTypeForm}
                 </div>
                 <div id="filter-buttons">
                     <div className="filter-button">

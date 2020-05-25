@@ -665,11 +665,11 @@ button:focus, input:focus{
             background-size: 0;
         }
 
-            .highcharts-title:after {
-                font-family: 'FontAwesome';
-                content: '\f107';
-                transition: transform 300ms;
-            }
+            /*.highcharts-title:after {*/
+            /*    font-family: 'FontAwesome';*/
+            /*    content: '\f107';*/
+            /*    transition: transform 300ms;*/
+            /*}*/
 
             .highcharts-title:hover {
                 cursor: pointer;
