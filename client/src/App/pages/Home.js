@@ -50,7 +50,7 @@ class Home extends Component {
 
         let isMobile = this.state.isMobile;
 
-        //retrieve sample players
+        //fetch sample players
         fetch('/api/samplePlayers', {
             method: 'post',
             headers: {

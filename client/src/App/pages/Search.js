@@ -95,7 +95,11 @@ class Search extends Component {
             }
         })
         .then(searchResults => this.processSearchResults(searchResults))
-        .catch(error => this.setState({error, isLoading: false}));
+        .catch(error => {
+            if (this._isMounted){
+                this.setState({error, isLoading: false})
+            }
+        });
 
     };
 
@@ -141,6 +145,7 @@ class Search extends Component {
 
         let input;
         if (event === null) {
+            input = "";
             filteredPlayerSearchResults = playerSearchResults;
         }
         else {
@@ -165,11 +170,11 @@ class Search extends Component {
 
         //set state by clearing filteredSearchResults first, and the re-populating it on callback
         this.setState({
-            filteredPlayerSearchResults: []
+            filteredPlayerSearchResults: [],
+            filterValue: input
         }, () => {
             this.setState({
                 filteredPlayerSearchResults: filteredPlayerSearchResults,
-                filterValue: input
             })
         });
 

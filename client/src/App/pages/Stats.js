@@ -9,6 +9,7 @@ import saveAs from 'file-saver';
 //import components
 import LoadingSpinner from "../components/LoadingSpinner";
 import SearchBar from "../components/SearchBar";
+import SliceOptions from "../components/SliceOptions";
 import Slice from "../components/Slice";
 
 //initialize helpers
@@ -31,20 +32,6 @@ class Stats extends Component {
     constructor(props){
 
         super(props);
-
-        this.positions = {
-            "FW": "Forward",
-            "AM": "Attacking Midfielder / Winger",
-            "CM": "Central / Defensive Midfielder",
-            "FB": "Full-back",
-            "CB": "Center-back",
-            "GK": "Goalkeeper"
-        };
-
-        this.labelTypes = {
-            "raw": "Raw Value",
-            "percentiles": "Percentile Ranks"
-        };
 
         //colors used in the Slices
         this.colors = {
@@ -111,7 +98,7 @@ class Stats extends Component {
 
         const { code } = this.props.match.params;
 
-        //retrieve stats
+        //fetch stats
         fetch('/api/stats', {
             method: 'post',
             headers: {
@@ -131,7 +118,11 @@ class Stats extends Component {
             }
         })
         .then(response => this.processStats(response))
-        .catch(error => this.setState({error, isLoading: false}));
+        .catch(error => {
+            if (this._isMounted){
+                this.setState({error, isLoading: false})
+            }
+        });
 
     };
 
@@ -183,9 +174,7 @@ class Stats extends Component {
                 template: template,
                 competitions: JSON.parse(JSON.stringify(competitions)),
                 selectedCompetitions: JSON.parse(JSON.stringify(competitions)),
-            }, () => {
-
-            });
+            })
         }
 
     };
@@ -458,7 +447,7 @@ class Stats extends Component {
         let colors = this.colors[template];
 
         //remove unnecessary precision from the per90 labels and the percentile ranks
-        let p90_labels = this.threeDigits(statsPer90);
+        let p90_labels = this.truncate(statsPer90);
         let percentile_labels = this.roundNumbers(percentiles, 0);
 
         //iterate through per90 stats and percentile ranks and construct objects for each point on the Highcharts plot
@@ -483,29 +472,38 @@ class Stats extends Component {
      * @param {Object} someStats - object containing the values that need to be reduced to 3 digits
      * @return {Object} threeDigitStats - object containing value of someStats reduced to 3 digits
      */
-    threeDigits = (someStats) => {
+    truncate = (someStats) => {
 
         let threeDigitStats = {};
 
         for (let stat in someStats){
-            let value = someStats[stat];
             let precision;
-            if (stat === "npxgPerShot"){
-                precision = 3;
-            }
-            //if 0-10, round to 2 decimal places (e.g.: 0.12 is 3 digits)
-            else if (Math.abs(value) < 10){
-                precision = 2;
-            }
-            //if 10-100, round to 1 decimal place (e.g.: 12.3 is 3 digits)
-            else if (Math.abs(value) < 100){
-                precision = 1;
-            }
-            //if 100+, round to 0 decimal places (e.g.: 123 is 3 digits
-            else {
+            if (
+                stat === "progDistance" ||
+                someStats[stat] === 0
+            ) {
                 precision = 0;
             }
-            threeDigitStats[stat] = Math.round(someStats[stat] * (10**precision)) / (10**precision);
+            else if (
+                stat === "conversionRate" ||
+                stat === "aerialSuccRate" ||
+                stat === "dribbleSuccRate" ||
+                stat === "passSuccRate" ||
+                stat === "dribbleTackleRate" ||
+                stat === "longPassSuccRate" ||
+                stat === "launchedPassSuccRate"
+            ) {
+                precision = 1;
+            }
+            else if (
+                stat === "npxgPerShot"
+            ){
+                precision = 3;
+            }
+            else {
+                precision = 2;
+            }
+            threeDigitStats[stat] = parseFloat(Math.round(someStats[stat] * (10**precision)) / (10**precision)).toFixed(precision);
         }
         return threeDigitStats;
 
@@ -753,182 +751,32 @@ class Stats extends Component {
                 }
             }
 
-            //TODO: re-factor so the entire #chart-filters div is its own component
-
-            //construct templates form
-            let templateLabels = [];
-            let mobileTemplateLabels = [];
-            for (let position in this.positions){
-                let className;
-                let mobileClassName;
-                let disabled;
-                if (position !== "GK"){
-                    className = template !== "GK" ? "selectable-label" : "blocked-label";
-                    mobileClassName = `${template === position ? "selected-label" : null} ${template !== "GK" ? "selectable-label" : null}`;
-                    disabled = template === "GK";
-                }
-                else {
-                    className = template === "GK" ? "selectable-label" : "blocked-label";
-                    mobileClassName = `${template === position ? "selected-label" : null} ${template === "GK" ? "selectable-label" : null}`;
-                    disabled = template !== "GK";
-                }
-                templateLabels.push(
-                    <label
-                        className={className}
-                        key={`${position}_label`}
-                        >
-                        <input type="radio"
-                           name="template"
-                           value={position}
-                           checked={template === position}
-                           disabled={disabled}
-                           onChange={this.changeTemplate}
-                        /> {this.positions[position]}
-                    </label>
-                );
-                mobileTemplateLabels.push(
-                    <label
-                        className={mobileClassName}
-                        key={`${position}_label_mobile`}
-                        >
-                        <input type="radio"
-                               name="template"
-                               value={position}
-                               checked={template === position}
-                               disabled={disabled}
-                               onChange={this.changeTemplate}
-                        /> {this.positions[position]}
-                    </label>
-                );
-            }
-            let templatesForm = <form id="templates">{templateLabels}</form>;
-            let mobileTemplatesForm = <form id="templates">{mobileTemplateLabels}</form>;
-
-            //construct competitions forms
-            let competitionsForms = [];
-            let counter = 0;
-            for (let season in competitions){
-                let competitionLabels = [];
-                let multipleClubs = clubs[season].length !== 1;
-                competitionsForms.push(
-                    <h4
-                        key={`${season}_header`}
-                        style={{
-                            marginBottom: isMobile ? '20px' : '10px',
-                            marginTop: (counter !== 0 && !isMobile) ? '15px' : '20px'
-                        }}
-                    >
-                        {season.replace("-", "/")} {multipleClubs === false ? ' | ' + clubs[season][0] : null}
-                    </h4>
-                );
-                for (let i=0; i<competitions[season].length; i++){
-                    let currentCompetition = competitions[season][i];
-                    let isIncluded = selectedCompetitions[season].includes(currentCompetition);
-                    let label = currentCompetition;
-                    if (clubs[season].length === 1){
-                        label = label.substring(0, label.indexOf("|")-1)
-                    }
-                    competitionLabels.push(
-                        <label
-                            className={`${isIncluded ? "selected-label" : null} selectable-label`}
-                            key={`${season}_${currentCompetition}`}
-                            >
-                            <input className="competition"
-                                   type="checkbox"
-                                   value={`${season}_${currentCompetition}`}
-                                   onChange={this.changeSelectedCompetitions}
-                                   checked={isIncluded}
-                            /> {label}
-                        </label>
-                    )
-                }
-                competitionsForms.push(<form key={`${season}_form`} className="competitions">{competitionLabels}</form>);
-                counter++;
-            }
-
-            //construct label type form
-            let labelTypeLabels = [];
-            for (let type in this.labelTypes){
-                labelTypeLabels.push(
-                    <label
-                        className="selectable-label"
-                        key={type}
-                        >
-                        <input
-                            type="radio"
-                            name="labelType"
-                            value={type}
-                            checked={labelType === type}
-                            onChange={this.changeLabelType}
-                        /> {this.labelTypes[type]}
-                    </label>
-                )
-            }
-            let labelTypeForm = <form id="data-labels">{labelTypeLabels}</form>;
-
             //return JSX code for the stats page
             return (
                 <div id="main2">
                     <SearchBar page="stats"/>
                     <div className="screen2" id="stats-screen">
-                        <div className="filter" id="chart-filters">
-                            <div className="chart-filter-inputs" id="chart-filter-inputs-laptop">
-                                <h3>Template</h3>
-                                {templatesForm}
-                                <h3>Competitions</h3>
-                                {competitionsForms}
-                                <h3>Data Labels</h3>
-                                {labelTypeForm}
-                            </div>
-                            <div className="chart-filter-inputs" id="chart-filter-inputs-mobile">
-                                <h3>Template</h3>
-                                {mobileTemplatesForm}
-                                <h3>Competitions</h3>
-                                {competitionsForms}
-                                <h3>Data Labels</h3>
-                                {labelTypeForm}
-                            </div>
-                            <div id="filter-buttons">
-                                <div className="filter-button">
-                                    <button id="toggleCreditsButton" type="button" onClick={this.toggleCreditsPosition}>Toggle Credits Position</button>
-                                </div>
-                                <div className="filter-button">
-                                    <button id="exportButton" type="button" onClick={this.exportChart}>Export Chart</button>
-                                </div>
-                                <div className="filter-button">
-                                    <button id="compareButton" type="button" disabled={true}>Compare To...</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="result" id="chart">
-                            <Slice
-                                isMobile={isMobile}
-                                isForExport={false}
-                                isAnimated={isAnimated}
-                                isAnimatedInitial={true}
-                                hasTooltip={true}
-                                creditsPosition={creditsPosition}
-                                url={url}
-                                lastUpdated={lastUpdated}
-                                template={template}
-                                labelType={labelType}
-                                name={name}
-                                age={age}
-                                minutes={filteredStats['minutes']}
-                                series={series}
-                            />
-                        </div>
-                    </div>
-                    {/*extra div which contains the Slice used in exports. Not displayed*/}
-                    <div id="export">
+                        <SliceOptions
+                            isMobile={isMobile}
+                            template={template}
+                            competitions={competitions}
+                            clubs={clubs}
+                            selectedCompetitions={selectedCompetitions}
+                            labelType={labelType}
+                            changeTemplate={this.changeTemplate}
+                            changeSelectedCompetitions={this.changeSelectedCompetitions}
+                            changeLabelType={this.changeLabelType}
+                            toggleCreditsPosition={this.toggleCreditsPosition}
+                            exportChart={this.exportChart}
+                        />
                         <Slice
                             isMobile={isMobile}
-                            isForExport={true}
-                            isAnimated={false}
-                            isAnimatedInitial={false}
-                            hasTooltip={false}
+                            isForExport={false}
+                            isAnimated={isAnimated}
+                            isAnimatedInitial={true}
+                            hasTooltip={true}
                             creditsPosition={creditsPosition}
-                            url={null}
+                            url={url}
                             lastUpdated={lastUpdated}
                             template={template}
                             labelType={labelType}
@@ -938,6 +786,23 @@ class Stats extends Component {
                             series={series}
                         />
                     </div>
+                    {/*extra div which contains the Slice used in exports. Not displayed*/}
+                    <Slice
+                        isMobile={isMobile}
+                        isForExport={true}
+                        isAnimated={false}
+                        isAnimatedInitial={false}
+                        hasTooltip={false}
+                        creditsPosition={creditsPosition}
+                        url={null}
+                        lastUpdated={lastUpdated}
+                        template={template}
+                        labelType={labelType}
+                        name={name}
+                        age={age}
+                        minutes={filteredStats['minutes']}
+                        series={series}
+                    />
                 </div>
             );
 

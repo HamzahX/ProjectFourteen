@@ -4,7 +4,6 @@ import React, {Component} from 'react';
 import Highcharts from 'highcharts/highstock'
 import HighchartsReact from 'highcharts-react-official'
 import HighchartsMore from 'highcharts/highcharts-more'
-//init HIghchartsMore
 HighchartsMore(Highcharts);
 
 
@@ -22,7 +21,7 @@ class Slice extends Component {
 
         //set font size constants
         this.fontSizes = null;
-        if (this.props.isForExport){
+        if (this.isForExport){
             this.fontSizes =  {
                 title: '3.3em',
                 subtitle: '2em',
@@ -43,7 +42,7 @@ class Slice extends Component {
                 noData: this.props.isMobile ? '2.7vw' : '1.35em',
                 xAxisLabels: this.props.isMobile ? '2.3vw' : '1.15em',
                 dataLabels: this.props.isMobile ? '2.3vw' : '1.15em',
-                dataLabelsOutline: this.props.isMobile ? '0.3vw' : '0.15em',
+                dataLabelsOutline: this.props.isMobile ? '0.3vw' : '0.18em',
                 tooltipHeader: this.props.isMobile ? '2.3vw' : '1em',
                 tooltip: this.props.isMobile ? '2.3vw' : '1.25em',
                 credits: this.props.isMobile ? '2.3vw' : '1.2em',
@@ -287,6 +286,11 @@ class Slice extends Component {
 
     }
 
+    /**
+     * render function
+     * configures chart options based on props and draws the slice charts
+     * @return {*} - JSX code for the slice charts
+     */
     render() {
 
         let chartOptions = this.chartOptions;
@@ -294,7 +298,7 @@ class Slice extends Component {
         //set the title
         let title = chartOptions.title;
         title.text = this.props.name;
-        title.text += !this.isForExport ? " <span style='font-size: 0.4em; transform: translateY(-50%)'>🔗</span>" : "";
+        // title.text += !this.isForExport ? " <span style='font-size: 0.4em; transform: translateY(-50%)'>🔗</span>" : "";
 
         //build the subtitle
         let subtitle = "";
@@ -352,12 +356,12 @@ class Slice extends Component {
         }
 
         //set data points
-        chartOptions.series = this.props.series.map(function (set) {
+        chartOptions.series = this.props.series.map(function (data) {
             return {
                 pointPadding: 0,
                 groupPadding: 0,
                 // name: name,
-                data: set,
+                data: data,
                 stickyTracking: false,
                 zIndex: 0
             };
@@ -387,14 +391,19 @@ class Slice extends Component {
             y: this.isMobile || this.isForExport ? -40 : -20
         };
 
+        let className = this.isForExport ? null : "result";
+        let id = this.isForExport ? "export" : "chart";
+
         //pass chart options to the Highcharts component and render
         return (
-            <HighchartsReact
-                constructorType={"chart"}
-                highcharts={Highcharts}
-                containerProps={{style: {width: '100%', height: '100%'}}}
-                options={chartOptions}
-            />
+            <div className={className} id={id}>
+                <HighchartsReact
+                    constructorType={"chart"}
+                    highcharts={Highcharts}
+                    containerProps={{style: {width: '100%', height: '100%'}}}
+                    options={chartOptions}
+                />
+            </div>
         );
 
     }

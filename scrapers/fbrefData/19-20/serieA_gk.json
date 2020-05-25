@@ -65,11 +65,11 @@
 		"keeper_adv___5": 31,
 		"keeper_adv___6": 1988,
 		"keeper_adv___7": 3.1,
-		"keeper_adv___8": 4,
-		"keeper_adv_Goals": 0,
+		"keeper_adv_Goals": 4,
 		"keeper_adv_Goals__1": 0,
 		"keeper_adv_Goals__2": 0,
 		"keeper_adv_Goals__3": 0,
+		"keeper_adv_Goals__4": 0,
 		"keeper_adv_Expected": 2.1,
 		"keeper_adv_Expected__1": 0.19,
 		"keeper_adv_Expected__2": -1.9,
@@ -90,7 +90,7 @@
 		"keeper_adv_Sweeper": 4,
 		"keeper_adv_Sweeper__1": 1.29,
 		"keeper_adv_Sweeper__2": 16.3,
-		"keeper_adv___9": "Matches"
+		"keeper_adv___8": "Matches"
 	},
 	"2": {
 		"passing_types___1": "Lorenzo Andrenacci\\Lorenzo-Andrenacci",
@@ -158,11 +158,11 @@
 		"keeper_adv___5": 24,
 		"keeper_adv___6": 1995,
 		"keeper_adv___7": 0.9,
-		"keeper_adv___8": 2,
-		"keeper_adv_Goals": 0,
-		"keeper_adv_Goals__1": 1,
-		"keeper_adv_Goals__2": 0,
+		"keeper_adv_Goals": 2,
+		"keeper_adv_Goals__1": 0,
+		"keeper_adv_Goals__2": 1,
 		"keeper_adv_Goals__3": 0,
+		"keeper_adv_Goals__4": 0,
 		"keeper_adv_Expected": 2.3,
 		"keeper_adv_Expected__1": 0.29,
 		"keeper_adv_Expected__2": "+0.3",
@@ -183,7 +183,7 @@
 		"keeper_adv_Sweeper": 0,
 		"keeper_adv_Sweeper__1": 0,
 		"keeper_adv_Sweeper__2": 11,
-		"keeper_adv___9": "Matches"
+		"keeper_adv___8": "Matches"
 	},
 	"3": {
 		"passing_types___1": "Emil Audero\\Emil-Audero",
@@ -251,11 +251,11 @@
 		"keeper_adv___5": 22,
 		"keeper_adv___6": 1997,
 		"keeper_adv___7": 25,
-		"keeper_adv___8": 44,
-		"keeper_adv_Goals": 4,
-		"keeper_adv_Goals__1": 0,
-		"keeper_adv_Goals__2": 8,
-		"keeper_adv_Goals__3": 3,
+		"keeper_adv_Goals": 44,
+		"keeper_adv_Goals__1": 4,
+		"keeper_adv_Goals__2": 0,
+		"keeper_adv_Goals__3": 8,
+		"keeper_adv_Goals__4": 3,
 		"keeper_adv_Expected": 36.3,
 		"keeper_adv_Expected__1": 0.3,
 		"keeper_adv_Expected__2": -4.7,
@@ -276,7 +276,7 @@
 		"keeper_adv_Sweeper": 16,
 		"keeper_adv_Sweeper__1": 0.64,
 		"keeper_adv_Sweeper__2": 14.3,
-		"keeper_adv___9": "Matches"
+		"keeper_adv___8": "Matches"
 	},
 	"4": {
 		"passing_types___1": "Asmir Begović\\Asmir-Begovic",
@@ -344,11 +344,11 @@
 		"keeper_adv___5": 32,
 		"keeper_adv___6": 1987,
 		"keeper_adv___7": 1.4,
-		"keeper_adv___8": 3,
-		"keeper_adv_Goals": 1,
-		"keeper_adv_Goals__1": 0,
+		"keeper_adv_Goals": 3,
+		"keeper_adv_Goals__1": 1,
 		"keeper_adv_Goals__2": 0,
 		"keeper_adv_Goals__3": 0,
+		"keeper_adv_Goals__4": 0,
 		"keeper_adv_Expected": 3.5,
 		"keeper_adv_Expected__1": 0.46,
 		"keeper_adv_Expected__2": "+0.5",
@@ -369,7 +369,7 @@
 		"keeper_adv_Sweeper": 0,
 		"keeper_adv_Sweeper__1": 0,
 		"keeper_adv_Sweeper__2": 15.5,
-		"keeper_adv___9": "Matches"
+		"keeper_adv___8": "Matches"
 	},
 	"5": {
 		"passing_types___1": "Etrit Berisha\\Etrit-Berisha",
@@ -437,11 +437,11 @@
 		"keeper_adv___5": 30,
 		"keeper_adv___6": 1989,
 		"keeper_adv___7": 26,
-		"keeper_adv___8": 41,
-		"keeper_adv_Goals": 6,
-		"keeper_adv_Goals__1": 1,
-		"keeper_adv_Goals__2": 2,
+		"keeper_adv_Goals": 41,
+		"keeper_adv_Goals__1": 6,
+		"keeper_adv_Goals__2": 1,
 		"keeper_adv_Goals__3": 2,
+		"keeper_adv_Goals__4": 2,
 		"keeper_adv_Expected": 43.9,
 		"keeper_adv_Expected__1": 0.28,
 		"keeper_adv_Expected__2": "+1.9",
@@ -462,7 +462,7 @@
 		"keeper_adv_Sweeper": 14,
 		"keeper_adv_Sweeper__1": 0.54,
 		"keeper_adv_Sweeper__2": 13.6,
-		"keeper_adv___9": "Matches"
+		"keeper_adv___8": "Matches"
 	},
 	"6": {
 		"passing_types___1": "Gianluigi Buffon\\Gianluigi-Buffon",
@@ -530,11 +530,11 @@
 		"keeper_adv___5": 41,
 		"keeper_adv___6": 1978,
 		"keeper_adv___7": 7,
-		"keeper_adv___8": 7,
-		"keeper_adv_Goals": 0,
+		"keeper_adv_Goals": 7,
 		"keeper_adv_Goals__1": 0,
-		"keeper_adv_Goals__2": 2,
-		"keeper_adv_Goals__3": 0,
+		"keeper_adv_Goals__2": 0,
+		"keeper_adv_Goals__3": 2,
+		"keeper_adv_Goals__4": 0,
 		"keeper_adv_Expected": 5.4,
 		"keeper_adv_Expected__1": 0.25,
 		"keeper_adv_Expected__2": -1.6,
@@ -555,7 +555,7 @@
 		"keeper_adv_Sweeper": 5,
 		"keeper_adv_Sweeper__1": 0.71,
 		"keeper_adv_Sweeper__2": 16.2,
-		"keeper_adv___9": "Matches"
+		"keeper_adv___8": "Matches"
 	},
 	"7": {
 		"passing_types___1": "Simone Colombi\\Simone-Colombi",
@@ -623,11 +623,11 @@
 		"keeper_adv___5": 28,
 		"keeper_adv___6": 1991,
 		"keeper_adv___7": 4,
-		"keeper_adv___8": 4,
-		"keeper_adv_Goals": 1,
-		"keeper_adv_Goals__1": 0,
+		"keeper_adv_Goals": 4,
+		"keeper_adv_Goals__1": 1,
 		"keeper_adv_Goals__2": 0,
 		"keeper_adv_Goals__3": 0,
+		"keeper_adv_Goals__4": 0,
 		"keeper_adv_Expected": 5.1,
 		"keeper_adv_Expected__1": 0.26,
 		"keeper_adv_Expected__2": "+1.1",
@@ -648,7 +648,7 @@
 		"keeper_adv_Sweeper": 0,
 		"keeper_adv_Sweeper__1": 0,
 		"keeper_adv_Sweeper__2": 11.7,
-		"keeper_adv___9": "Matches"
+		"keeper_adv___8": "Matches"
 	},
 	"8": {
 		"passing_types___1": "Andrea Consigli\\Andrea-Consigli",
@@ -716,11 +716,11 @@
 		"keeper_adv___5": 32,
 		"keeper_adv___6": 1987,
 		"keeper_adv___7": 20,
-		"keeper_adv___8": 33,
-		"keeper_adv_Goals": 5,
-		"keeper_adv_Goals__1": 1,
-		"keeper_adv_Goals__2": 5,
-		"keeper_adv_Goals__3": 2,
+		"keeper_adv_Goals": 33,
+		"keeper_adv_Goals__1": 5,
+		"keeper_adv_Goals__2": 1,
+		"keeper_adv_Goals__3": 5,
+		"keeper_adv_Goals__4": 2,
 		"keeper_adv_Expected": 32.5,
 		"keeper_adv_Expected__1": 0.3,
 		"keeper_adv_Expected__2": "+1.5",
@@ -741,7 +741,7 @@
 		"keeper_adv_Sweeper": 10,
 		"keeper_adv_Sweeper__1": 0.5,
 		"keeper_adv_Sweeper__2": 14.1,
-		"keeper_adv___9": "Matches"
+		"keeper_adv___8": "Matches"
 	},
 	"9": {
 		"passing_types___1": "Angelo da Costa Júnior\\Angelo-da-Costa-Junior",
@@ -809,11 +809,11 @@
 		"keeper_adv___5": 35,
 		"keeper_adv___6": 1983,
 		"keeper_adv___7": 1,
-		"keeper_adv___8": 1,
-		"keeper_adv_Goals": 0,
+		"keeper_adv_Goals": 1,
 		"keeper_adv_Goals__1": 0,
 		"keeper_adv_Goals__2": 0,
 		"keeper_adv_Goals__3": 0,
+		"keeper_adv_Goals__4": 0,
 		"keeper_adv_Expected": 0.5,
 		"keeper_adv_Expected__1": 0.26,
 		"keeper_adv_Expected__2": -0.5,
@@ -834,7 +834,7 @@
 		"keeper_adv_Sweeper": 1,
 		"keeper_adv_Sweeper__1": 1,
 		"keeper_adv_Sweeper__2": 18.8,
-		"keeper_adv___9": "Matches"
+		"keeper_adv___8": "Matches"
 	},
 	"10": {
 		"passing_types___1": "Alessio Cragno\\Alessio-Cragno",
@@ -902,11 +902,11 @@
 		"keeper_adv___5": 25,
 		"keeper_adv___6": 1994,
 		"keeper_adv___7": 4,
-		"keeper_adv___8": 5,
-		"keeper_adv_Goals": 0,
+		"keeper_adv_Goals": 5,
 		"keeper_adv_Goals__1": 0,
 		"keeper_adv_Goals__2": 0,
 		"keeper_adv_Goals__3": 0,
+		"keeper_adv_Goals__4": 0,
 		"keeper_adv_Expected": 6.1,
 		"keeper_adv_Expected__1": 0.34,
 		"keeper_adv_Expected__2": "+1.1",
@@ -927,7 +927,7 @@
 		"keeper_adv_Sweeper": 0,
 		"keeper_adv_Sweeper__1": 0,
 		"keeper_adv_Sweeper__2": 6.1,
-		"keeper_adv___9": "Matches"
+		"keeper_adv___8": "Matches"
 	},
 	"11": {
 		"passing_types___1": "Gianluigi Donnarumma\\Gianluigi-Donnarumma",
@@ -995,11 +995,11 @@
 		"keeper_adv___5": 20,
 		"keeper_adv___6": 1999,
 		"keeper_adv___7": 23.6,
-		"keeper_adv___8": 30,
-		"keeper_adv_Goals": 2,
-		"keeper_adv_Goals__1": 0,
-		"keeper_adv_Goals__2": 4,
-		"keeper_adv_Goals__3": 1,
+		"keeper_adv_Goals": 30,
+		"keeper_adv_Goals__1": 2,
+		"keeper_adv_Goals__2": 0,
+		"keeper_adv_Goals__3": 4,
+		"keeper_adv_Goals__4": 1,
 		"keeper_adv_Expected": 30.7,
 		"keeper_adv_Expected__1": 0.28,
 		"keeper_adv_Expected__2": "+1.7",
@@ -1020,7 +1020,7 @@
 		"keeper_adv_Sweeper": 19,
 		"keeper_adv_Sweeper__1": 0.81,
 		"keeper_adv_Sweeper__2": 15.9,
-		"keeper_adv___9": "Matches"
+		"keeper_adv___8": "Matches"
 	},
 	"12": {
 		"passing_types___1": "Bartłomiej Drągowski\\Bartlomiej-Dragowski",
@@ -1088,11 +1088,11 @@
 		"keeper_adv___5": 21,
 		"keeper_adv___6": 1997,
 		"keeper_adv___7": 26,
-		"keeper_adv___8": 36,
-		"keeper_adv_Goals": 3,
-		"keeper_adv_Goals__1": 2,
-		"keeper_adv_Goals__2": 5,
-		"keeper_adv_Goals__3": 0,
+		"keeper_adv_Goals": 36,
+		"keeper_adv_Goals__1": 3,
+		"keeper_adv_Goals__2": 2,
+		"keeper_adv_Goals__3": 5,
+		"keeper_adv_Goals__4": 0,
 		"keeper_adv_Expected": 34.7,
 		"keeper_adv_Expected__1": 0.29,
 		"keeper_adv_Expected__2": -1.3,
@@ -1113,7 +1113,7 @@
 		"keeper_adv_Sweeper": 12,
 		"keeper_adv_Sweeper__1": 0.46,
 		"keeper_adv_Sweeper__2": 12.5,
-		"keeper_adv___9": "Matches"
+		"keeper_adv___8": "Matches"
 	},
 	"13": {
 		"passing_types___1": "Gabriel\\Gabriel",
@@ -1181,11 +1181,11 @@
 		"keeper_adv___5": 26,
 		"keeper_adv___6": 1992,
 		"keeper_adv___7": 21.3,
-		"keeper_adv___8": 47,
-		"keeper_adv_Goals": 6,
-		"keeper_adv_Goals__1": 0,
-		"keeper_adv_Goals__2": 8,
-		"keeper_adv_Goals__3": 1,
+		"keeper_adv_Goals": 47,
+		"keeper_adv_Goals__1": 6,
+		"keeper_adv_Goals__2": 0,
+		"keeper_adv_Goals__3": 8,
+		"keeper_adv_Goals__4": 1,
 		"keeper_adv_Expected": 49.2,
 		"keeper_adv_Expected__1": 0.33,
 		"keeper_adv_Expected__2": "+3.2",
@@ -1206,7 +1206,7 @@
 		"keeper_adv_Sweeper": 7,
 		"keeper_adv_Sweeper__1": 0.33,
 		"keeper_adv_Sweeper__2": 13.1,
-		"keeper_adv___9": "Matches"
+		"keeper_adv___8": "Matches"
 	},
 	"14": {
 		"passing_types___1": "Pierluigi Gollini\\Pierluigi-Gollini",
@@ -1274,11 +1274,11 @@
 		"keeper_adv___5": 24,
 		"keeper_adv___6": 1995,
 		"keeper_adv___7": 22,
-		"keeper_adv___8": 31,
-		"keeper_adv_Goals": 4,
-		"keeper_adv_Goals__1": 0,
-		"keeper_adv_Goals__2": 2,
+		"keeper_adv_Goals": 31,
+		"keeper_adv_Goals__1": 4,
+		"keeper_adv_Goals__2": 0,
 		"keeper_adv_Goals__3": 2,
+		"keeper_adv_Goals__4": 2,
 		"keeper_adv_Expected": 25.8,
 		"keeper_adv_Expected__1": 0.31,
 		"keeper_adv_Expected__2": -3.2,
@@ -1299,7 +1299,7 @@
 		"keeper_adv_Sweeper": 22,
 		"keeper_adv_Sweeper__1": 1,
 		"keeper_adv_Sweeper__2": 15.2,
-		"keeper_adv___9": "Matches"
+		"keeper_adv___8": "Matches"
 	},
 	"15": {
 		"passing_types___1": "Samir Handanović\\Samir-Handanovic",
@@ -1367,11 +1367,11 @@
 		"keeper_adv___5": 35,
 		"keeper_adv___6": 1984,
 		"keeper_adv___7": 22,
-		"keeper_adv___8": 20,
-		"keeper_adv_Goals": 1,
-		"keeper_adv_Goals__1": 0,
-		"keeper_adv_Goals__2": 1,
+		"keeper_adv_Goals": 20,
+		"keeper_adv_Goals__1": 1,
+		"keeper_adv_Goals__2": 0,
 		"keeper_adv_Goals__3": 1,
+		"keeper_adv_Goals__4": 1,
 		"keeper_adv_Expected": 20.7,
 		"keeper_adv_Expected__1": 0.25,
 		"keeper_adv_Expected__2": "+1.7",
@@ -1392,7 +1392,7 @@
 		"keeper_adv_Sweeper": 3,
 		"keeper_adv_Sweeper__1": 0.14,
 		"keeper_adv_Sweeper__2": 11,
-		"keeper_adv___9": "Matches"
+		"keeper_adv___8": "Matches"
 	},
 	"16": {
 		"passing_types___1": "Jesse Joronen\\Jesse-Joronen",
@@ -1460,11 +1460,11 @@
 		"keeper_adv___5": 26,
 		"keeper_adv___6": 1993,
 		"keeper_adv___7": 22,
-		"keeper_adv___8": 43,
-		"keeper_adv_Goals": 6,
-		"keeper_adv_Goals__1": 0,
-		"keeper_adv_Goals__2": 8,
-		"keeper_adv_Goals__3": 2,
+		"keeper_adv_Goals": 43,
+		"keeper_adv_Goals__1": 6,
+		"keeper_adv_Goals__2": 0,
+		"keeper_adv_Goals__3": 8,
+		"keeper_adv_Goals__4": 2,
 		"keeper_adv_Expected": 42.1,
 		"keeper_adv_Expected__1": 0.3,
 		"keeper_adv_Expected__2": "+1.1",
@@ -1485,7 +1485,7 @@
 		"keeper_adv_Sweeper": 6,
 		"keeper_adv_Sweeper__1": 0.27,
 		"keeper_adv_Sweeper__2": 12.9,
-		"keeper_adv___9": "Matches"
+		"keeper_adv___8": "Matches"
 	},
 	"17": {
 		"passing_types___1": "Pau López\\Pau-Lopez",
@@ -1553,11 +1553,11 @@
 		"keeper_adv___5": 24,
 		"keeper_adv___6": 1994,
 		"keeper_adv___7": 25,
-		"keeper_adv___8": 35,
-		"keeper_adv_Goals": 6,
-		"keeper_adv_Goals__1": 1,
-		"keeper_adv_Goals__2": 2,
-		"keeper_adv_Goals__3": 0,
+		"keeper_adv_Goals": 35,
+		"keeper_adv_Goals__1": 6,
+		"keeper_adv_Goals__2": 1,
+		"keeper_adv_Goals__3": 2,
+		"keeper_adv_Goals__4": 0,
 		"keeper_adv_Expected": 35.2,
 		"keeper_adv_Expected__1": 0.29,
 		"keeper_adv_Expected__2": "+0.2",
@@ -1578,7 +1578,7 @@
 		"keeper_adv_Sweeper": 19,
 		"keeper_adv_Sweeper__1": 0.76,
 		"keeper_adv_Sweeper__2": 14.6,
-		"keeper_adv___9": "Matches"
+		"keeper_adv___8": "Matches"
 	},
 	"18": {
 		"passing_types___1": "Alex Meret\\Alex-Meret",
@@ -1646,11 +1646,11 @@
 		"keeper_adv___5": 22,
 		"keeper_adv___6": 1997,
 		"keeper_adv___7": 15,
-		"keeper_adv___8": 23,
-		"keeper_adv_Goals": 3,
-		"keeper_adv_Goals__1": 0,
-		"keeper_adv_Goals__2": 2,
-		"keeper_adv_Goals__3": 1,
+		"keeper_adv_Goals": 23,
+		"keeper_adv_Goals__1": 3,
+		"keeper_adv_Goals__2": 0,
+		"keeper_adv_Goals__3": 2,
+		"keeper_adv_Goals__4": 1,
 		"keeper_adv_Expected": 19.5,
 		"keeper_adv_Expected__1": 0.28,
 		"keeper_adv_Expected__2": -2.5,
@@ -1671,7 +1671,7 @@
 		"keeper_adv_Sweeper": 4,
 		"keeper_adv_Sweeper__1": 0.27,
 		"keeper_adv_Sweeper__2": 11.9,
-		"keeper_adv___9": "Matches"
+		"keeper_adv___8": "Matches"
 	},
 	"19": {
 		"passing_types___1": "Antonio Mirante\\Antonio-Mirante",
@@ -1739,11 +1739,11 @@
 		"keeper_adv___5": 36,
 		"keeper_adv___6": 1983,
 		"keeper_adv___7": 1,
-		"keeper_adv___8": 0,
 		"keeper_adv_Goals": 0,
 		"keeper_adv_Goals__1": 0,
 		"keeper_adv_Goals__2": 0,
 		"keeper_adv_Goals__3": 0,
+		"keeper_adv_Goals__4": 0,
 		"keeper_adv_Expected": 0.6,
 		"keeper_adv_Expected__1": 0.31,
 		"keeper_adv_Expected__2": "+0.6",
@@ -1764,7 +1764,7 @@
 		"keeper_adv_Sweeper": 0,
 		"keeper_adv_Sweeper__1": 0,
 		"keeper_adv_Sweeper__2": 11.3,
-		"keeper_adv___9": "Matches"
+		"keeper_adv___8": "Matches"
 	},
 	"20": {
 		"passing_types___1": "Juan Musso\\Juan-Musso",
@@ -1832,11 +1832,11 @@
 		"keeper_adv___5": 25,
 		"keeper_adv___6": 1994,
 		"keeper_adv___7": 26,
-		"keeper_adv___8": 37,
-		"keeper_adv_Goals": 7,
-		"keeper_adv_Goals__1": 1,
-		"keeper_adv_Goals__2": 6,
-		"keeper_adv_Goals__3": 0,
+		"keeper_adv_Goals": 37,
+		"keeper_adv_Goals__1": 7,
+		"keeper_adv_Goals__2": 1,
+		"keeper_adv_Goals__3": 6,
+		"keeper_adv_Goals__4": 0,
 		"keeper_adv_Expected": 39.8,
 		"keeper_adv_Expected__1": 0.29,
 		"keeper_adv_Expected__2": "+2.8",
@@ -1857,7 +1857,7 @@
 		"keeper_adv_Sweeper": 11,
 		"keeper_adv_Sweeper__1": 0.42,
 		"keeper_adv_Sweeper__2": 12.8,
-		"keeper_adv___9": "Matches"
+		"keeper_adv___8": "Matches"
 	},
 	"21": {
 		"passing_types___1": "Robin Olsen\\Robin-Olsen",
@@ -1925,11 +1925,11 @@
 		"keeper_adv___5": 29,
 		"keeper_adv___6": 1990,
 		"keeper_adv___7": 15.9,
-		"keeper_adv___8": 24,
-		"keeper_adv_Goals": 4,
-		"keeper_adv_Goals__1": 0,
-		"keeper_adv_Goals__2": 1,
-		"keeper_adv_Goals__3": 2,
+		"keeper_adv_Goals": 24,
+		"keeper_adv_Goals__1": 4,
+		"keeper_adv_Goals__2": 0,
+		"keeper_adv_Goals__3": 1,
+		"keeper_adv_Goals__4": 2,
 		"keeper_adv_Expected": 24.9,
 		"keeper_adv_Expected__1": 0.28,
 		"keeper_adv_Expected__2": "+2.9",
@@ -1950,7 +1950,7 @@
 		"keeper_adv_Sweeper": 4,
 		"keeper_adv_Sweeper__1": 0.25,
 		"keeper_adv_Sweeper__2": 11.2,
-		"keeper_adv___9": "Matches"
+		"keeper_adv___8": "Matches"
 	},
 	"22": {
 		"passing_types___1": "David Ospina\\David-Ospina",
@@ -2018,11 +2018,11 @@
 		"keeper_adv___5": 30,
 		"keeper_adv___6": 1988,
 		"keeper_adv___7": 11,
-		"keeper_adv___8": 13,
-		"keeper_adv_Goals": 1,
+		"keeper_adv_Goals": 13,
 		"keeper_adv_Goals__1": 1,
-		"keeper_adv_Goals__2": 2,
-		"keeper_adv_Goals__3": 0,
+		"keeper_adv_Goals__2": 1,
+		"keeper_adv_Goals__3": 2,
+		"keeper_adv_Goals__4": 0,
 		"keeper_adv_Expected": 11.2,
 		"keeper_adv_Expected__1": 0.27,
 		"keeper_adv_Expected__2": -1.8,
@@ -2043,7 +2043,7 @@
 		"keeper_adv_Sweeper": 6,
 		"keeper_adv_Sweeper__1": 0.55,
 		"keeper_adv_Sweeper__2": 13.5,
-		"keeper_adv___9": "Matches"
+		"keeper_adv___8": "Matches"
 	},
 	"23": {
 		"passing_types___1": "Daniele Padelli\\Daniele-Padelli",
@@ -2111,11 +2111,11 @@
 		"keeper_adv___5": 33,
 		"keeper_adv___6": 1985,
 		"keeper_adv___7": 3,
-		"keeper_adv___8": 4,
-		"keeper_adv_Goals": 1,
-		"keeper_adv_Goals__1": 0,
-		"keeper_adv_Goals__2": 2,
-		"keeper_adv_Goals__3": 0,
+		"keeper_adv_Goals": 4,
+		"keeper_adv_Goals__1": 1,
+		"keeper_adv_Goals__2": 0,
+		"keeper_adv_Goals__3": 2,
+		"keeper_adv_Goals__4": 0,
 		"keeper_adv_Expected": 3.2,
 		"keeper_adv_Expected__1": 0.39,
 		"keeper_adv_Expected__2": -0.8,
@@ -2136,7 +2136,7 @@
 		"keeper_adv_Sweeper": 0,
 		"keeper_adv_Sweeper__1": 0,
 		"keeper_adv_Sweeper__2": 9.3,
-		"keeper_adv___9": "Matches"
+		"keeper_adv___8": "Matches"
 	},
 	"24": {
 		"passing_types___1": "Gianluca Pegolo\\Gianluca-Pegolo",
@@ -2204,11 +2204,11 @@
 		"keeper_adv___5": 38,
 		"keeper_adv___6": 1981,
 		"keeper_adv___7": 3,
-		"keeper_adv___8": 2,
-		"keeper_adv_Goals": 0,
+		"keeper_adv_Goals": 2,
 		"keeper_adv_Goals__1": 0,
 		"keeper_adv_Goals__2": 0,
-		"keeper_adv_Goals__3": 1,
+		"keeper_adv_Goals__3": 0,
+		"keeper_adv_Goals__4": 1,
 		"keeper_adv_Expected": 4.7,
 		"keeper_adv_Expected__1": 0.24,
 		"keeper_adv_Expected__2": "+3.7",
@@ -2229,7 +2229,7 @@
 		"keeper_adv_Sweeper": 0,
 		"keeper_adv_Sweeper__1": 0,
 		"keeper_adv_Sweeper__2": 12,
-		"keeper_adv___9": "Matches"
+		"keeper_adv___8": "Matches"
 	},
 	"25": {
 		"passing_types___1": "Mattia Perin\\Mattia-Perin",
@@ -2297,11 +2297,11 @@
 		"keeper_adv___5": 26,
 		"keeper_adv___6": 1992,
 		"keeper_adv___7": 9,
-		"keeper_adv___8": 12,
-		"keeper_adv_Goals": 1,
+		"keeper_adv_Goals": 12,
 		"keeper_adv_Goals__1": 1,
-		"keeper_adv_Goals__2": 2,
-		"keeper_adv_Goals__3": 1,
+		"keeper_adv_Goals__2": 1,
+		"keeper_adv_Goals__3": 2,
+		"keeper_adv_Goals__4": 1,
 		"keeper_adv_Expected": 14.5,
 		"keeper_adv_Expected__1": 0.33,
 		"keeper_adv_Expected__2": "+3.5",
@@ -2322,7 +2322,7 @@
 		"keeper_adv_Sweeper": 1,
 		"keeper_adv_Sweeper__1": 0.11,
 		"keeper_adv_Sweeper__2": 11.3,
-		"keeper_adv___9": "Matches"
+		"keeper_adv___8": "Matches"
 	},
 	"26": {
 		"passing_types___1": "Ionuț Radu\\Ionut-Radu",
@@ -2390,11 +2390,11 @@
 		"keeper_adv___5": 22,
 		"keeper_adv___6": 1997,
 		"keeper_adv___7": 17,
-		"keeper_adv___8": 35,
-		"keeper_adv_Goals": 6,
-		"keeper_adv_Goals__1": 2,
-		"keeper_adv_Goals__2": 4,
-		"keeper_adv_Goals__3": 1,
+		"keeper_adv_Goals": 35,
+		"keeper_adv_Goals__1": 6,
+		"keeper_adv_Goals__2": 2,
+		"keeper_adv_Goals__3": 4,
+		"keeper_adv_Goals__4": 1,
 		"keeper_adv_Expected": 29.1,
 		"keeper_adv_Expected__1": 0.27,
 		"keeper_adv_Expected__2": -4.9,
@@ -2415,7 +2415,7 @@
 		"keeper_adv_Sweeper": 4,
 		"keeper_adv_Sweeper__1": 0.24,
 		"keeper_adv_Sweeper__2": 11.5,
-		"keeper_adv___9": "Matches"
+		"keeper_adv___8": "Matches"
 	},
 	"27": {
 		"passing_types___1": "Rafael\\Rafael",
@@ -2483,11 +2483,11 @@
 		"keeper_adv___5": 37,
 		"keeper_adv___6": 1982,
 		"keeper_adv___7": 5,
-		"keeper_adv___8": 11,
-		"keeper_adv_Goals": 2,
-		"keeper_adv_Goals__1": 0,
+		"keeper_adv_Goals": 11,
+		"keeper_adv_Goals__1": 2,
 		"keeper_adv_Goals__2": 0,
 		"keeper_adv_Goals__3": 0,
+		"keeper_adv_Goals__4": 0,
 		"keeper_adv_Expected": 8,
 		"keeper_adv_Expected__1": 0.41,
 		"keeper_adv_Expected__2": -3,
@@ -2508,7 +2508,7 @@
 		"keeper_adv_Sweeper": 2,
 		"keeper_adv_Sweeper__1": 0.4,
 		"keeper_adv_Sweeper__2": 12,
-		"keeper_adv___9": "Matches"
+		"keeper_adv___8": "Matches"
 	},
 	"28": {
 		"passing_types___1": "Pepe Reina\\Pepe-Reina",
@@ -2576,11 +2576,11 @@
 		"keeper_adv___5": 36,
 		"keeper_adv___6": 1982,
 		"keeper_adv___7": 1,
-		"keeper_adv___8": 1,
-		"keeper_adv_Goals": 0,
-		"keeper_adv_Goals__1": 1,
-		"keeper_adv_Goals__2": 0,
+		"keeper_adv_Goals": 1,
+		"keeper_adv_Goals__1": 0,
+		"keeper_adv_Goals__2": 1,
 		"keeper_adv_Goals__3": 0,
+		"keeper_adv_Goals__4": 0,
 		"keeper_adv_Expected": 1.5,
 		"keeper_adv_Expected__1": 0.16,
 		"keeper_adv_Expected__2": "+0.5",
@@ -2601,7 +2601,7 @@
 		"keeper_adv_Sweeper": 2,
 		"keeper_adv_Sweeper__1": 2,
 		"keeper_adv_Sweeper__2": 19.6,
-		"keeper_adv___9": "Matches"
+		"keeper_adv___8": "Matches"
 	},
 	"29": {
 		"passing_types___1": "Luigi Sepe\\Luigi-Sepe",
@@ -2669,11 +2669,11 @@
 		"keeper_adv___5": 28,
 		"keeper_adv___6": 1991,
 		"keeper_adv___7": 21,
-		"keeper_adv___8": 27,
-		"keeper_adv_Goals": 1,
-		"keeper_adv_Goals__1": 0,
-		"keeper_adv_Goals__2": 5,
-		"keeper_adv_Goals__3": 0,
+		"keeper_adv_Goals": 27,
+		"keeper_adv_Goals__1": 1,
+		"keeper_adv_Goals__2": 0,
+		"keeper_adv_Goals__3": 5,
+		"keeper_adv_Goals__4": 0,
 		"keeper_adv_Expected": 29.1,
 		"keeper_adv_Expected__1": 0.24,
 		"keeper_adv_Expected__2": "+2.1",
@@ -2694,7 +2694,7 @@
 		"keeper_adv_Sweeper": 4,
 		"keeper_adv_Sweeper__1": 0.19,
 		"keeper_adv_Sweeper__2": 13.4,
-		"keeper_adv___9": "Matches"
+		"keeper_adv___8": "Matches"
 	},
 	"30": {
 		"passing_types___1": "Marco Silvestri\\Marco-Silvestri",
@@ -2762,11 +2762,11 @@
 		"keeper_adv___5": 28,
 		"keeper_adv___6": 1991,
 		"keeper_adv___7": 25,
-		"keeper_adv___8": 26,
-		"keeper_adv_Goals": 6,
-		"keeper_adv_Goals__1": 1,
-		"keeper_adv_Goals__2": 4,
-		"keeper_adv_Goals__3": 0,
+		"keeper_adv_Goals": 26,
+		"keeper_adv_Goals__1": 6,
+		"keeper_adv_Goals__2": 1,
+		"keeper_adv_Goals__3": 4,
+		"keeper_adv_Goals__4": 0,
 		"keeper_adv_Expected": 28.1,
 		"keeper_adv_Expected__1": 0.24,
 		"keeper_adv_Expected__2": "+2.1",
@@ -2787,7 +2787,7 @@
 		"keeper_adv_Sweeper": 7,
 		"keeper_adv_Sweeper__1": 0.28,
 		"keeper_adv_Sweeper__2": 12.3,
-		"keeper_adv___9": "Matches"
+		"keeper_adv___8": "Matches"
 	},
 	"31": {
 		"passing_types___1": "Salvatore Sirigu\\Salvatore-Sirigu",
@@ -2855,11 +2855,11 @@
 		"keeper_adv___5": 32,
 		"keeper_adv___6": 1987,
 		"keeper_adv___7": 25,
-		"keeper_adv___8": 45,
-		"keeper_adv_Goals": 7,
-		"keeper_adv_Goals__1": 2,
-		"keeper_adv_Goals__2": 7,
-		"keeper_adv_Goals__3": 1,
+		"keeper_adv_Goals": 45,
+		"keeper_adv_Goals__1": 7,
+		"keeper_adv_Goals__2": 2,
+		"keeper_adv_Goals__3": 7,
+		"keeper_adv_Goals__4": 1,
 		"keeper_adv_Expected": 49.3,
 		"keeper_adv_Expected__1": 0.32,
 		"keeper_adv_Expected__2": "+5.3",
@@ -2880,7 +2880,7 @@
 		"keeper_adv_Sweeper": 11,
 		"keeper_adv_Sweeper__1": 0.44,
 		"keeper_adv_Sweeper__2": 13.8,
-		"keeper_adv___9": "Matches"
+		"keeper_adv___8": "Matches"
 	},
 	"32": {
 		"passing_types___1": "Łukasz Skorupski\\Lukasz-Skorupski",
@@ -2948,11 +2948,11 @@
 		"keeper_adv___5": 28,
 		"keeper_adv___6": 1991,
 		"keeper_adv___7": 25,
-		"keeper_adv___8": 41,
-		"keeper_adv_Goals": 5,
-		"keeper_adv_Goals__1": 2,
+		"keeper_adv_Goals": 41,
+		"keeper_adv_Goals__1": 5,
 		"keeper_adv_Goals__2": 2,
-		"keeper_adv_Goals__3": 1,
+		"keeper_adv_Goals__3": 2,
+		"keeper_adv_Goals__4": 1,
 		"keeper_adv_Expected": 32.6,
 		"keeper_adv_Expected__1": 0.28,
 		"keeper_adv_Expected__2": -7.4,
@@ -2973,7 +2973,7 @@
 		"keeper_adv_Sweeper": 10,
 		"keeper_adv_Sweeper__1": 0.4,
 		"keeper_adv_Sweeper__2": 13.1,
-		"keeper_adv___9": "Matches"
+		"keeper_adv___8": "Matches"
 	},
 	"33": {
 		"passing_types___1": "Marco Sportiello\\Marco-Sportiello",
@@ -3041,11 +3041,11 @@
 		"keeper_adv___5": 27,
 		"keeper_adv___6": 1992,
 		"keeper_adv___7": 3,
-		"keeper_adv___8": 3,
-		"keeper_adv_Goals": 0,
+		"keeper_adv_Goals": 3,
 		"keeper_adv_Goals__1": 0,
 		"keeper_adv_Goals__2": 0,
 		"keeper_adv_Goals__3": 0,
+		"keeper_adv_Goals__4": 0,
 		"keeper_adv_Expected": 2.8,
 		"keeper_adv_Expected__1": 0.21,
 		"keeper_adv_Expected__2": -0.2,
@@ -3066,7 +3066,7 @@
 		"keeper_adv_Sweeper": 4,
 		"keeper_adv_Sweeper__1": 1.33,
 		"keeper_adv_Sweeper__2": 20.5,
-		"keeper_adv___9": "Matches"
+		"keeper_adv___8": "Matches"
 	},
 	"34": {
 		"passing_types___1": "Thomas Strakosha\\Thomas-Strakosha",
@@ -3134,11 +3134,11 @@
 		"keeper_adv___5": 24,
 		"keeper_adv___6": 1995,
 		"keeper_adv___7": 26,
-		"keeper_adv___8": 23,
-		"keeper_adv_Goals": 2,
-		"keeper_adv_Goals__1": 1,
-		"keeper_adv_Goals__2": 3,
-		"keeper_adv_Goals__3": 1,
+		"keeper_adv_Goals": 23,
+		"keeper_adv_Goals__1": 2,
+		"keeper_adv_Goals__2": 1,
+		"keeper_adv_Goals__3": 3,
+		"keeper_adv_Goals__4": 1,
 		"keeper_adv_Expected": 29.2,
 		"keeper_adv_Expected__1": 0.27,
 		"keeper_adv_Expected__2": "+7.2",
@@ -3159,7 +3159,7 @@
 		"keeper_adv_Sweeper": 10,
 		"keeper_adv_Sweeper__1": 0.38,
 		"keeper_adv_Sweeper__2": 13.5,
-		"keeper_adv___9": "Matches"
+		"keeper_adv___8": "Matches"
 	},
 	"35": {
 		"passing_types___1": "Wojciech Szczęsny\\Wojciech-Szczesny",
@@ -3227,11 +3227,11 @@
 		"keeper_adv___5": 29,
 		"keeper_adv___6": 1990,
 		"keeper_adv___7": 19,
-		"keeper_adv___8": 17,
-		"keeper_adv_Goals": 5,
-		"keeper_adv_Goals__1": 0,
-		"keeper_adv_Goals__2": 2,
-		"keeper_adv_Goals__3": 0,
+		"keeper_adv_Goals": 17,
+		"keeper_adv_Goals__1": 5,
+		"keeper_adv_Goals__2": 0,
+		"keeper_adv_Goals__3": 2,
+		"keeper_adv_Goals__4": 0,
 		"keeper_adv_Expected": 22.7,
 		"keeper_adv_Expected__1": 0.23,
 		"keeper_adv_Expected__2": "+5.7",
@@ -3252,7 +3252,7 @@
 		"keeper_adv_Sweeper": 11,
 		"keeper_adv_Sweeper__1": 0.58,
 		"keeper_adv_Sweeper__2": 13.5,
-		"keeper_adv___9": "Matches"
+		"keeper_adv___8": "Matches"
 	},
 	"36": {
 		"passing_types___1": "Stefano Turati\\Stefano-Turati",
@@ -3320,11 +3320,11 @@
 		"keeper_adv___5": "",
 		"keeper_adv___6": "",
 		"keeper_adv___7": 2,
-		"keeper_adv___8": 4,
-		"keeper_adv_Goals": 1,
-		"keeper_adv_Goals__1": 0,
+		"keeper_adv_Goals": 4,
+		"keeper_adv_Goals__1": 1,
 		"keeper_adv_Goals__2": 0,
 		"keeper_adv_Goals__3": 0,
+		"keeper_adv_Goals__4": 0,
 		"keeper_adv_Expected": 4.1,
 		"keeper_adv_Expected__1": 0.3,
 		"keeper_adv_Expected__2": "+0.1",
@@ -3345,7 +3345,7 @@
 		"keeper_adv_Sweeper": 2,
 		"keeper_adv_Sweeper__1": 1,
 		"keeper_adv_Sweeper__2": 18.2,
-		"keeper_adv___9": "Matches"
+		"keeper_adv___8": "Matches"
 	},
 	"37": {
 		"passing_types___1": "Mauro Vigorito\\Mauro-Vigorito",
@@ -3413,11 +3413,11 @@
 		"keeper_adv___5": 29,
 		"keeper_adv___6": 1990,
 		"keeper_adv___7": 4.7,
-		"keeper_adv___8": 9,
-		"keeper_adv_Goals": 1,
-		"keeper_adv_Goals__1": 0,
-		"keeper_adv_Goals__2": 1,
-		"keeper_adv_Goals__3": 0,
+		"keeper_adv_Goals": 9,
+		"keeper_adv_Goals__1": 1,
+		"keeper_adv_Goals__2": 0,
+		"keeper_adv_Goals__3": 1,
+		"keeper_adv_Goals__4": 0,
 		"keeper_adv_Expected": 9.3,
 		"keeper_adv_Expected__1": 0.34,
 		"keeper_adv_Expected__2": "+0.3",
@@ -3438,7 +3438,7 @@
 		"keeper_adv_Sweeper": 1,
 		"keeper_adv_Sweeper__1": 0.21,
 		"keeper_adv_Sweeper__2": 11.6,
-		"keeper_adv___9": "Matches"
+		"keeper_adv___8": "Matches"
 	},
 	"Rk": {
 		"keeper___1": "Player",
@@ -3472,11 +3472,11 @@
 		"keeper_adv___5": "Age",
 		"keeper_adv___6": "Born",
 		"keeper_adv___7": "90s",
-		"keeper_adv___8": "GA",
-		"keeper_adv_Goals": "PKA",
-		"keeper_adv_Goals__1": "FK",
-		"keeper_adv_Goals__2": "CK",
-		"keeper_adv_Goals__3": "OG",
+		"keeper_adv_Goals": "GA",
+		"keeper_adv_Goals__1": "PKA",
+		"keeper_adv_Goals__2": "FK",
+		"keeper_adv_Goals__3": "CK",
+		"keeper_adv_Goals__4": "OG",
 		"keeper_adv_Expected": "PSxG",
 		"keeper_adv_Expected__1": "PSxG/SoT",
 		"keeper_adv_Expected__2": "PSxG+/-",
@@ -3497,6 +3497,6 @@
 		"keeper_adv_Sweeper": "#OPA",
 		"keeper_adv_Sweeper__1": "#OPA/90",
 		"keeper_adv_Sweeper__2": "AvgDist",
-		"keeper_adv___9": "Matches"
+		"keeper_adv___8": "Matches"
 	}
 }

@@ -104,13 +104,14 @@ app.post('/api/search', (req, res) => {
     //retrieve the search query and the search type
     let query = req.body.query;
     let type = req.body.type;
+    let isLive = req.body.isLive;
 
     //search and respond
     search(query, type).then(
         (searchResults) => {
             setTimeout(function(){
                 res.json(searchResults);
-            }, 100)
+            }, isLive ? 0 : 100)
         },
         () => {
             setTimeout(function(){

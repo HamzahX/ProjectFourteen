@@ -240,14 +240,14 @@ let getNamesAndCodes = async (page) => {
 
     let firstIteration = true;
     //scrape needed data
-    let percentiles = [];
+    let namesAndCodes = [];
     return new Promise(async function(resolve, reject){
         let hasNextPage = true;
         (async function loop() {
             while (hasNextPage){
                 hasNextPage = await new Promise( (resolve, reject) =>
                     scrapeNamesAndCodes(page, firstIteration)
-                        .then(async (result) =>(percentiles = combineResults(percentiles, result), firstIteration = false))
+                        .then(async (result) => (namesAndCodes = combineResults(namesAndCodes, result), firstIteration = false))
                         .then(async () =>
                             resolve(await pageSetup(page, false))
                         )
@@ -255,18 +255,18 @@ let getNamesAndCodes = async (page) => {
                             reject(anError);
                         })
                 );
-                let array1 = percentiles.slice(percentiles.length-10, percentiles.length);
-                let array2 = percentiles.slice(percentiles.length-20, percentiles.length-10);
+                let array1 = namesAndCodes.slice(namesAndCodes.length-10, namesAndCodes.length);
+                let array2 = namesAndCodes.slice(namesAndCodes.length-20, namesAndCodes.length-10);
                 if (isEqual(array1, array2)){
-                    percentiles.splice(percentiles.length-10, 10);
+                    namesAndCodes.splice(namesAndCodes.length-10, 10);
                     await page.waitFor(1000);
                 }
             }
             scrapeNamesAndCodes(page, firstIteration)
                 .then(async (result) =>
-                    (percentiles = combineResults(percentiles, result), firstIteration = false)
+                    (namesAndCodes = combineResults(namesAndCodes, result), firstIteration = false)
                 ).then(() =>
-                (resolve(percentiles), logResults(percentiles))
+                (resolve(namesAndCodes), logResults(namesAndCodes))
             )
         })();
     });
@@ -315,16 +315,16 @@ let combineResults = (original, addition) => {
 };
 
 
-function logResults(percentiles){
-    if (Array.isArray(percentiles[0])){
+function logResults(namesAndCodes){
+    if (Array.isArray(namesAndCodes[0])){
         let numbers = [];
-        for (let i=0; i<percentiles.length; i++){
-            numbers.push(percentiles[i].length);
+        for (let i=0; i<namesAndCodes.length; i++){
+            numbers.push(namesAndCodes[i].length);
         }
         console.log(numbers);
     }
     else {
-        console.log(percentiles.length)
+        console.log(namesAndCodes.length)
     }
 }
 
