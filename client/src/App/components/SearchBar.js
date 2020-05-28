@@ -1,5 +1,7 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import { Link, withRouter } from 'react-router-dom';
+import OutsideClickHandler from 'react-outside-click-handler';
+
 import PlayerSearchResult from "./PlayerSearchResult";
 import ClubSearchResult from "./ClubSearchResult";
 
@@ -38,17 +40,19 @@ class SearchBar extends Component {
                 this.containerID = "searchbar-container1";
         }
 
-        //attach a home button to the searchbar if it is not being displayed on the homepage
+        //attach a home button to the searchbar if it is not being displayed on the homepage or the compare dialog
         this.displayHomeButton = 'default';
-        if (page === "home"){
+        if (page === "home" || page === "compare"){
             this.displayHomeButton = 'none';
         }
 
         this.state = {
             page: this.props.page,
+            currentPlayerCode: this.props.currentPlayerCode,
             query: this.props.query || "",
             isLoading: false,
             error: null,
+            liveResultsOpen: false,
             playerSearchResults: [],
             clubSearchResults: [],
         };
@@ -95,7 +99,10 @@ class SearchBar extends Component {
                     else {
                         throw new Error("Failed to fetch search results. Please refresh the page and try again.")
                     }
-                })
+                },
+                    () => {
+                        reject()
+                    })
                 .then(searchResults => {
                     resolve(searchResults);
                 })
@@ -134,46 +141,51 @@ class SearchBar extends Component {
 
         //set searchbar input value
         this.setState({
-            query: query
+            query: query,
+            liveResultsOpen: query.length > 1,
+            isLoading: true
         });
 
-        // //update search results
-        // if (query !== ""){
-        //     this.getSearchResults(query)
-        //     .then((searchResults) => {
-        //         let playerSearchResults = searchResults['playerSearchResults'];
-        //         let clubSearchResults = searchResults['clubSearchResults'];
-        //         if (this._isMounted){
-        //             this.setState({
-        //                 error: null,
-        //                 isLoading: false,
-        //                 playerSearchResults: [],
-        //                 clubSearchResults: []
-        //             }, () => {
-        //                 this.setState({
-        //                     playerSearchResults: playerSearchResults,
-        //                     clubSearchResults: clubSearchResults
-        //                 })
-        //             })
-        //         }
-        //     }, (error) => {
-        //         if (this._isMounted){
-        //             this.setState({
-        //                 error, isLoading: false
-        //             })
-        //         }
-        //     })
-        // }
-        // else {
-        //     if (this._isMounted){
-        //         this.setState({
-        //             error: null,
-        //             isLoading: false,
-        //             playerSearchResults: [],
-        //             clubSearchResults: []
-        //         })
-        //     }
-        // }
+        //update search results
+        if (query.length > 1){
+            this.getSearchResults(query)
+            .then((searchResults) => {
+                let playerSearchResults = searchResults['playerSearchResults'];
+                let clubSearchResults = searchResults['clubSearchResults'];
+                if (this._isMounted){
+                    this.setState({
+                        playerSearchResults: [],
+                        clubSearchResults: []
+                    }, () => {
+                        this.setState({
+                            playerSearchResults: playerSearchResults,
+                            clubSearchResults: clubSearchResults,
+                            error: null,
+                            isLoading: false
+                        })
+                    })
+                }
+            }, (error) => {
+                if (this._isMounted){
+                    if (error){
+                        this.setState({
+                            error: error,
+                            isLoading: false
+                        })
+                    }
+                }
+            })
+        }
+        else {
+            if (this._isMounted){
+                this.setState({
+                    error: null,
+                    isLoading: false,
+                    playerSearchResults: [],
+                    clubSearchResults: []
+                })
+            }
+        }
 
     };
 
@@ -197,9 +209,11 @@ class SearchBar extends Component {
     render() {
 
         const {
+            page,
+            currentPlayerCode,
             query,
             isLoading,
-            error,
+            liveResultsOpen,
             playerSearchResults,
             clubSearchResults
         } = this.state;
@@ -210,7 +224,9 @@ class SearchBar extends Component {
             let current = playerSearchResults[i];
             playerCards.push(
                 <PlayerSearchResult
-                    page="search"
+                    page="live"
+                    forComparison={page === "compare"}
+                    comparisonCode={currentPlayerCode}
                     code={current.code}
                     name={current.name}
                     clubs={current.clubs}
@@ -234,34 +250,56 @@ class SearchBar extends Component {
 
         //return JSX code for the searchbar
         return (
-
-            <Fragment>
-                <div className="searchbar-container" id={this.containerID}>
+            <div className="searchbar-container" id={this.containerID}>
+                <Link id="home-button" to={'/'}>
+                    <div style={{display: this.displayHomeButton}}>
+                        <div>
+                            Football
+                            <span style={{color: '#e4c000', display: 'block'}}>
+                                Slices
+                                <span style={{color: 'black'}}>.com</span>
+                            </span>
+                        </div>
+                    </div>
+                </Link>
+                <OutsideClickHandler
+                    onOutsideClick={() => {
+                        this.setState({
+                            liveResultsOpen: false
+                        })
+                    }}
+                >
                     <form id="searchbar-form" onSubmit={this.handleSubmit}>
-                        <Link to={'/'}>
-                            <div id="home-button" style={{display: this.displayHomeButton}}>
-                                <div>
-                                    Football
-                                    <span style={{color: '#e4c000', display: 'block'}}>Slices
-                            <span style={{color: 'black'}}>.com</span></span>
-                                </div>
-                            </div>
-                        </Link>
                         <input
                             type="text"
                             id="searchbar-input"
                             value={query}
-                            placeholder="Search for players, clubs..."
+                            placeholder={page === "compare" ? "Search for players..." : "Search for players, clubs..."}
                             autoComplete="off"
                             onChange={this.handleChange}
                         />
+                        <div id="live-search-results" style={{display: liveResultsOpen ? 'block' : 'none'}}>
+                            <div id="live-search-loader">
+                                <div style={{display: isLoading ? 'block' : 'none'}} className="loader">
+                                    Loading...
+                                </div>
+                            </div>
+                            <div>
+                                <div>
+                                    <h3>Players</h3>
+                                    {playerCards}
+                                    {playerCards.length === 0 ? <p>{isLoading ? "..." : " No results found"}</p> : null}
+                                </div>
+                                <div style={{display: page === "compare" ? 'none' : 'block'}}>
+                                    <h3>Clubs</h3>
+                                    {clubCards}
+                                    {clubCards.length === 0 ? <p>{isLoading ? "..." : " No results found"}</p> : null}
+                                </div>
+                            </div>
+                        </div>
                     </form>
-                </div>
-                {/*<div id="live-search-results">*/}
-                {/*    {playerCards}*/}
-                {/*    {clubCards}*/}
-                {/*</div>*/}
-            </Fragment>
+                </OutsideClickHandler>
+            </div>
 
         );
 

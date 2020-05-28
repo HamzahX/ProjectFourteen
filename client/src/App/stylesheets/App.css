@@ -1,3 +1,66 @@
+/*Loading Screen Animation*/
+.loader,
+.loader:before,
+.loader:after {
+    background: #000000;
+    -webkit-animation: load1 1s infinite ease-in-out;
+    animation: load1 1s infinite ease-in-out;
+    width: 1em;
+    height: 4em;
+}
+.loader {
+    color: #000000;
+    text-indent: -9999em;
+    margin: 88px auto;
+    position: relative;
+    font-size: 11px;
+    -webkit-transform: translateZ(0);
+    -ms-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-animation-delay: -0.16s;
+    animation-delay: -0.16s;
+}
+.loader:before,
+.loader:after {
+    position: absolute;
+    top: 0;
+    content: '';
+}
+.loader:before {
+    left: -1.5em;
+    -webkit-animation-delay: -0.32s;
+    animation-delay: -0.32s;
+}
+.loader:after {
+    left: 1.5em;
+}
+@-webkit-keyframes load1 {
+    0%,
+    80%,
+    100% {
+        box-shadow: 0 0;
+        height: 4em;
+    }
+    40% {
+        box-shadow: 0 -2em;
+        height: 5em;
+    }
+}
+@keyframes load1 {
+    0%,
+    80%,
+    100% {
+        box-shadow: 0 0;
+        height: 4em;
+    }
+    40% {
+        box-shadow: 0 -2em;
+        height: 5em;
+    }
+}
+
+
+
 * {
     box-sizing: border-box;
     -webkit-box-sizing: border-box;
@@ -30,8 +93,9 @@ body {
 h1 {
     font-family: "courier new", monospace;
     color: #e75453;
-    font-size: 5em;
+    font-size: 4.5em;
     margin-top: 0;
+    margin-bottom: 0.5em;
 }
 
 h2 {
@@ -75,19 +139,27 @@ input:hover, input:focus {
     border: grey 1px solid;
 }
 
+button {
+    background-color: unset;
+    border: none;
+}
+
 button:focus, input:focus{
     outline: dimgrey none;
 }
 
 .searchbar-container {
+    z-index: 3;
     display: flex;
-    flex-direction: column;
-    z-index: 2;
+    flex-direction: row;
 }
 
+    .searchbar-container > div {
+        height: 100%;
+        width: 100%;
+    }
+
     #searchbar-form {
-        display: flex;
-        flex-direction: row;
         width: 100%;
         height: 100%;
         padding-top: 0.5%;
@@ -97,36 +169,80 @@ button:focus, input:focus{
         #searchbar-input {
             width: 100%;
             /*height: 100%;*/
-            font-size: 1.2em;
+            font-size: 1.1em;
             color: #222222;
             padding-left: 1%;
             padding-right: 1%;
-            border: darkgrey 1px solid;
+            border: #b4b4b4 1px solid;
             border-radius: 50px;
         }
 
-    #live-search-results {
-        position: fixed;
-        background-color: white;
-        max-height: 500px;
-        overflow-y: scroll;
-        z-index: 3;
-    }
+        #live-search-results {
+            position: absolute;
+            background-color: white;
+            max-height: 500px;
+            padding: 5px;
+            overflow-y: scroll;
+            border: #b4b4b4 1px solid;
+            border-radius: 10px;
+            /*border-top: none;*/
+        }
+
+            #live-search-results #live-search-loader {
+                position: absolute;
+                width: 40px;
+                height: 40px;
+                top: 0;
+                right: 0;
+            }
+
+                #live-search-results #live-search-loader .loader{
+                    margin-top: 15px;
+                    font-size: 5px
+                }
+
+            #live-search-results h3 {
+                margin-top: 5px;
+                margin-bottom: 3px;
+            }
+
+            #live-search-results p {
+                margin-top: 0;
+                font-style: italic;
+                color: grey;
+                font-size: 1em;
+                padding-top: 5px;
+                padding-left: 5px;
+            }
+
+            #live-search-results .search-result {
+                padding: 5px;
+            }
+
+            #live-search-results .search-result:hover {
+                background-color: rgba(255, 192, 203, 0.25);
+            }
+
+                #live-search-results .search-result .name {
+                    font-size: 1.2em;
+                    color: #e75453;
+                    font-weight: bold;
+                    display: inline-block;
+                }
+
+                #live-search-results .search-result .club {
+                    display: block;
+                    padding-left: 5px;
+                    /*display: none;*/
+                }
+
+                #live-search-results .search-result .nationality {
+                    display: none;
+                }
 
 #homepage {
     min-height: 700px;
 }
-
-    #homepage p {
-        color: #222222;
-        font-family: Tahoma, Arial, Helvetica, sans-serif;
-    }
-
-    #homepage li {
-        font-size: 1.1em;
-        color: #373737;
-        font-family: Tahoma, Arial, Helvetica, sans-serif;
-    }
 
     #navbar-container {
         position: fixed;
@@ -159,11 +275,6 @@ button:focus, input:focus{
                 height: 100%;
                 max-height: 100%;
                 display: inline-block;
-            }
-
-            .navbar button {
-                background-color: unset;
-                border: none;
             }
 
             .navbar a:hover, .navbar button:hover {
@@ -244,73 +355,92 @@ button:focus, input:focus{
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        /*padding-bottom: 6%;*/
+        padding-bottom: 16%;
         height: 100vh;
         min-height: 600px;
     }
 
         #home #searchbar-container1 {
-            width: 35%;
             min-width: 400px;
+            width: 35%;
+            margin-bottom: 3%;
         }
 
             #home #searchbar-container1 form input {
-                padding-top: 13px;
-                padding-bottom: 13px;
+                padding-top: 10px;
+                padding-bottom: 10px;
                 text-align: center;
             }
 
-            #home #searchbar-container1 form input:hover {
-                box-shadow: 0 0 15px -8px darkgray;
+            #home #searchbar-container1 form input:hover, #home #searchbar-container1 form input:focus {
+                box-shadow: 0 0 13px -8px darkgray;
             }
 
-            #home #searchbar-container1 form input:focus {
-                box-shadow: 0 0 15px -8px darkgray;
+            #home #searchbar-container1 #live-search-results {
+                min-width: 400px;
+                width: 35%;
             }
 
-        #sample-results {
-            display: flex;
-            width: 35%;
-            min-width: 500px;
+        #lucky-button {
+            font-size: 1em;
+            font-weight: bold;
+            padding: 10px 15px;
+            border: black solid 1px;
+            border-radius: 7px;
+            background-color: white;
+            opacity: 0.7;
+            transition: 0.2s;
         }
 
-            #sample-results a {
-                color: #454545;
-                flex: 1 1 33.3333333333%;
-                max-width: 33.3333333333%;
-                margin-left: 1%;
-                margin-right: 1%;
-                border: darkgrey 1px solid;
-                border-radius: 10px;
-                transition: 0.2s;
-                background-color: rgba(255, 255, 255, 0.8);
-                text-align: center;
-            }
+        #lucky-button:hover {
+            border-color: #e75453;
+            opacity: 1;
+            cursor: pointer;
+        }
 
-            #sample-results a:hover {
-                color: unset;
-                border-color: orangered;
-            }
+        /*#sample-results {*/
+        /*    display: flex;*/
+        /*    width: 35%;*/
+        /*    min-width: 500px;*/
+        /*}*/
 
-            .sample-player {
-                padding: 10%;
-                max-width: 100%;
-                border-radius: 10px;
-            }
+        /*    #sample-results a {*/
+        /*        color: #454545;*/
+        /*        flex: 1 1 33.3333333333%;*/
+        /*        max-width: 33.3333333333%;*/
+        /*        margin-left: 1%;*/
+        /*        margin-right: 1%;*/
+        /*        border: darkgrey 1px solid;*/
+        /*        border-radius: 10px;*/
+        /*        transition: 0.2s;*/
+        /*        background-color: rgba(255, 255, 255, 0.8);*/
+        /*        text-align: center;*/
+        /*    }*/
 
-                .sample-player .name {
-                    font-weight: bold;
-                }
+        /*    #sample-results a:hover {*/
+        /*        color: unset;*/
+        /*        border-color: orangered;*/
+        /*    }*/
 
-                .sample-player .name, .sample-player .club {
-                    white-space: nowrap;
-                    overflow: hidden;
-                    text-overflow: ellipsis;
-                }
+        /*    .sample-player {*/
+        /*        padding: 10%;*/
+        /*        max-width: 100%;*/
+        /*        border-radius: 10px;*/
+        /*    }*/
 
-                .sample-player .nationality {
-                    display: none;
-                }
+        /*        .sample-player .name {*/
+        /*            font-weight: bold;*/
+        /*        }*/
+
+        /*        .sample-player .name, .sample-player .club {*/
+        /*            white-space: nowrap;*/
+        /*            overflow: hidden;*/
+        /*            text-overflow: ellipsis;*/
+        /*        }*/
+
+        /*        .sample-player .nationality {*/
+        /*            display: none;*/
+        /*        }*/
 
     .homepage-section-container:not(:last-child) {
         min-height: 100vh;
@@ -318,6 +448,17 @@ button:focus, input:focus{
         flex-direction: column;
         justify-content: center;
     }
+
+        .homepage-section-container p {
+            color: #222222;
+            font-family: Tahoma, Arial, Helvetica, sans-serif;
+        }
+
+        .homepage-section-container li {
+            font-size: 1.1em;
+            color: #373737;
+            font-family: Tahoma, Arial, Helvetica, sans-serif;
+        }
 
         .homepage-section-container a {
             color: #878787;
@@ -388,7 +529,7 @@ button:focus, input:focus{
     width: 100%;
 }
 
-    .searchbar-container #home-button {
+    #searchbar-container2 #home-button, #searchbar-container3 #home-button {
         text-align: center;
         height: 100%;
         display: flex;
@@ -399,6 +540,7 @@ button:focus, input:focus{
         font-weight: bold;
         color: #e75453;
         line-height: 90%;
+        margin-right: 0.8%;
     }
 
     .searchbar-container #home-button:hover {
@@ -410,17 +552,31 @@ button:focus, input:focus{
         box-shadow: 0 0 10px 2px lightgray;
         flex: 1 1 6%;
         max-height: 6%;
+        width: 100%;
+        padding-left: 1%;
     }
 
-        #searchbar-container2 #searchbar-form, #searchbar-container3 #searchbar-form {
-            padding-left: 1%;
-            padding-right: 1%;
+        #searchbar-container2 > div, #searchbar-container3 > div {
+            width: 500px;
+            max-width: 100%;
         }
 
-        #searchbar-container2 #searchbar-form input, #searchbar-container3 #searchbar-form input {
-            max-width: 500px;
-            margin-left: 1%;
+        #searchbar-container2 #searchbar-form, #searchbar-container3 #searchbar-form {
+            width: 100%;
+            padding-top: 1.5%;
+            padding-bottom: 1.5%;
         }
+
+            #searchbar-container2 #searchbar-form input, #searchbar-container3 #searchbar-form input {
+                height: 100%;
+                width: 100%;
+                padding-left: 20px;
+            }
+
+            #searchbar-container2 #live-search-results, #searchbar-container3 #live-search-results {
+                width: 500px;
+                max-width: 100%;
+            }
 
     .screen, .screen2 {
         padding-top: 0.5%;
@@ -508,33 +664,79 @@ button:focus, input:focus{
                 grid-row-gap: 1.6vh;
             }
 
-                .search-result {
+                #search-results .search-result {
                     padding: 3.3%;
                     border: darkgrey 1px solid;
                     /*margin-bottom: 3%;*/
                     transition: 0.2s;
                 }
 
-                .search-result:hover, .search-result:focus {
+                #search-results .search-result:hover, #search-results .search-result:focus {
                     outline: none;
                     border-color: #e75453;
                     cursor: pointer;
                 }
 
-                    .search-result .name {
-                        font-size: 1.4em;
-                        color: #e75453;
-                        font-weight: bold;
-                    }
+                #search-results .search-result .name {
+                    font-size: 1.4em;
+                    color: #e75453;
+                    font-weight: bold;
+                }
 
-                    .search-result .club, .search-result .nationality {
-                        font-size: 1.15em;
-                        color: #373737;
-                    }
+                #search-results .search-result .club, #search-results .search-result .nationality {
+                    font-size: 1.15em;
+                    color: #373737;
+                }
 
     #stats-screen {
         display: flex;
     }
+
+        #compare-search-screen {
+            position: fixed;
+            background-color: rgba(0, 0, 0, 0.6);
+            padding-top: 30px;
+            height: 100%;
+            width: 100%;
+            z-index: 4;
+        }
+
+            #close-compare-search {
+                position: absolute;
+                top: 0;
+                right: 0;
+                font-family: 'FontAwesome';
+                content: '\f00d';
+                font-size: 2.5em;
+                color: white;
+                z-index: 4;
+            }
+
+                #close-compare-search:hover {
+                    color: black;
+                    cursor: pointer;
+                }
+
+            #compare-search-screen #searchbar-container1 {
+                min-width: 400px;
+                width: 35%;
+                margin: 0 auto;
+            }
+
+            #compare-search-screen #searchbar-container1 form input {
+                padding-top: 10px;
+                padding-bottom: 10px;
+                text-align: center;
+            }
+
+            #compare-search-screen #searchbar-container1 form input:hover, #compare-search-screen #searchbar-container1 form input:focus {
+                box-shadow: 0 0 13px -8px darkgray;
+            }
+
+            #compare-search-screen #searchbar-container1 #live-search-results {
+                min-width: 400px;
+                width: 35%;
+            }
 
         #chart-filters {
             display: flex;
@@ -635,27 +837,16 @@ button:focus, input:focus{
                     height: 100%;
                     border: none;
                     font-size: 1.05em;
-                    /*font-weight: bold;*/
                     transition: 0.3s;
-                    /*box-shadow: 0 0 10px 2px lightgray;*/
                 }
 
                 #toggleCreditsButton, #exportButton, #compareButton {
                     color: #B23535;
-                    /*background-color: transparent;*/
                     background-color: #f0f0f0;
                 }
 
-                #compareButton {
-                    color: lightgrey;
-                }
-
-                #toggleCreditsButton:hover, #exportButton:hover {
+                #toggleCreditsButton:hover, #exportButton:hover, #compareButton:hover {
                     background-color: #dcdcdc;
-                }
-
-                #compareButton:hover {
-                    cursor: not-allowed;
                 }
 
         .highcharts-container {
@@ -837,22 +1028,21 @@ button:focus, input:focus{
     }
 
         #searchbar-container2, #searchbar-container3 {
-            padding-top: 0.5%;
+            /*padding-top: 0.5%;*/
             flex: 1 1 4.29%;
             /*flex: 1 1 8%*/
             /*box-shadow: none;*/
         }
 
-        #searchbar-container2 #searchbar-form input, #searchbar-container3 #searchbar-form input {
-            /*max-width: unset;*/
-        }
-
         #main #searchbar-form, #main2 #searchbar-form {
-            padding-top: 0.5%;
+            /*padding-top: 0.5%;*/
             padding-left: 1%;
             padding-right: 1%;
-            min-width: unset;
-            width: 100%;
+            /*width: 100%;*/
+        }
+
+        #searchbar-container2 #searchbar-form input, #searchbar-container3 #searchbar-form input {
+            /*max-width: unset;*/
         }
 
         .screen {
@@ -994,68 +1184,4 @@ button:focus, input:focus{
             margin-bottom: 1.5%;
         }
 
-}
-
-
-
-
-/*Loading Screen Animation*/
-.loader,
-.loader:before,
-.loader:after {
-    background: #000000;
-    -webkit-animation: load1 1s infinite ease-in-out;
-    animation: load1 1s infinite ease-in-out;
-    width: 1em;
-    height: 4em;
-}
-.loader {
-    color: #000000;
-    text-indent: -9999em;
-    margin: 88px auto;
-    position: relative;
-    font-size: 11px;
-    -webkit-transform: translateZ(0);
-    -ms-transform: translateZ(0);
-    transform: translateZ(0);
-    -webkit-animation-delay: -0.16s;
-    animation-delay: -0.16s;
-}
-.loader:before,
-.loader:after {
-    position: absolute;
-    top: 0;
-    content: '';
-}
-.loader:before {
-    left: -1.5em;
-    -webkit-animation-delay: -0.32s;
-    animation-delay: -0.32s;
-}
-.loader:after {
-    left: 1.5em;
-}
-@-webkit-keyframes load1 {
-    0%,
-    80%,
-    100% {
-    box-shadow: 0 0;
-    height: 4em;
-    }
-    40% {
-    box-shadow: 0 -2em;
-    height: 5em;
-    }
-}
-@keyframes load1 {
-    0%,
-    80%,
-    100% {
-    box-shadow: 0 0;
-    height: 4em;
-    }
-    40% {
-    box-shadow: 0 -2em;
-    height: 5em;
-    }
 }

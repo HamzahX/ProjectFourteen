@@ -4,16 +4,17 @@ import {isMobileOnly, isSafari} from 'react-device-detect';
 import $ from 'jquery';
 
 //import pages
+import LoadingSpinner from "./components/LoadingSpinner";
 import Home from './pages/Home';
 import Search from './pages/Search';
 import Stats from './pages/Stats';
+import Compare from './pages/Compare';
 
 //import stylesheets, including mobile stylesheet if it is a mobile device
 require('./stylesheets/App.css');
 if (isMobileOnly){
     import('./stylesheets/Mobile.css')
-    .then(test => {
-        console.log("Mobile device detected")
+    .then( () => {
     });
 }
 
@@ -78,7 +79,7 @@ class App extends Component {
 
 
     /**
-     * Function to update percentile arrays (called from Stats page)
+     * Function to update percentile arrays (called from Stats and Compare pages)
      * @param {Object} newPercentileArrays - the object representing the new percentile arrays
      */
     updatePercentileArrays = (newPercentileArrays) => {
@@ -101,11 +102,7 @@ class App extends Component {
         //display loading message while server responds to POST request for the percentile arrays
         if (isLoading) {
             return (
-                <div id="main">
-                    <div className="screen" id="loading-screen">
-                        Connecting to server...
-                    </div>
-                </div>
+                <LoadingSpinner/>
             )
         }
 
@@ -127,6 +124,14 @@ class App extends Component {
                                  isMobile={isMobileOnly}
                                  isSafari={isSafari}
                                  updatePercentileArrays={this.updatePercentileArrays}
+                            />}
+                        />
+                        <Route path='/compare/:codes' render={(props) =>
+                            <Compare {...props}
+                                   percentileArrays={this.state.percentileArrays}
+                                   isMobile={isMobileOnly}
+                                   isSafari={isSafari}
+                                   updatePercentileArrays={this.updatePercentileArrays}
                             />}
                         />
                         <Route path='*' component={Home}/>

@@ -21,6 +21,8 @@ class PlayerSearchResult extends Component {
 
         this.state = {
             page: this.props.page,
+            forComparison: this.props.forComparison,
+            comparisonCode: this.props.comparisonCode,
             code: this.props.code,
             name: this.props.name,
             clubs: clubs,
@@ -28,7 +30,6 @@ class PlayerSearchResult extends Component {
         };
 
     }
-
 
     /**
      * render function
@@ -38,23 +39,29 @@ class PlayerSearchResult extends Component {
 
         let {
             page,
+            forComparison,
+            comparisonCode,
             code,
             name,
             clubs,
             nationality
         } = this.state;
 
-        //change the div class name based on the page so that the CSS rules modify it accordingly
-        let className = page === 'home' ? 'sample-player' : 'search-result';
-
-        //remove the "Club: " label for home page, and modify it to "Clubs" if there are more than 1
-        let clubLabel = page === 'home' ? '' : clubs.length === 1 ? 'Club:' : 'Clubs:';
+        let link;
+        //set the link to the comparison page if it is a result for a player comparison
+        if (forComparison) {
+            link = `/compare/${comparisonCode}_${code}`;
+        }
+        //set the link to the stats page otherwise
+        else {
+            link = `/stats/${code}`;
+        }
 
         return (
-            <Link to={"/stats/" + code}>
-                <div tabIndex="0" className={className}>
+            <Link to={link}>
+                <div tabIndex="0" className="search-result">
                     <div className="name">{name}</div>
-                    <div className="club">{clubLabel} {clubs.join(", ")}</div>
+                    <div className="club">{page === "live" ? '' : clubs.length === 1 ? 'Club:' : 'Clubs:'} {clubs.join(", ")}</div>
                     <div className="nationality">Nationality: {nationality}</div>
                 </div>
             </Link>

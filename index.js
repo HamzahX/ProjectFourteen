@@ -70,6 +70,12 @@ app.get('/', (req, res) => {
  */
 app.post('/api/percentiles', (req, res) => {
 
+    // console.log(req.headers.origin);
+    // if (req.headers.origin === "http://localhost:5000/"){
+    //     console.log("here");
+    //     res.redirect(301, 'http://www.footballslices.com');
+    // }
+
     res.json(PERCENTILE_ARRAYS);
 
 });
@@ -80,11 +86,11 @@ app.post('/api/percentiles', (req, res) => {
  * @param {express.Request} req
  * @param {express.Response} res
  */
-app.post('/api/samplePlayers', (req, res) => {
+app.post('/api/samplePlayer', (req, res) => {
 
-    getSamplePlayers().then(
-        (samplePlayers) => {
-            res.json(samplePlayers);
+    getSamplePlayer().then(
+        (samplePlayer) => {
+            res.json(samplePlayer);
         }, () => {
             res.status(400);
             res.json([]);
@@ -107,11 +113,16 @@ app.post('/api/search', (req, res) => {
     let isLive = req.body.isLive;
 
     //search and respond
-    search(query, type).then(
+    search(query, type, isLive).then(
         (searchResults) => {
-            setTimeout(function(){
-                res.json(searchResults);
-            }, isLive ? 0 : 100)
+            if (isLive){
+                res.json(searchResults)
+            }
+            else{
+                setTimeout(function(){
+                    res.json(searchResults);
+                }, 100)
+            }
         },
         () => {
             setTimeout(function(){
@@ -136,21 +147,23 @@ app.post('/api/stats', (req, res) => {
     //retrieve stats and respond
     getStats(code).then(
         (stats) => {
-            setTimeout(function(){
-                //compare the last time the client and server's percentile arrays were updated
-                //update client percentile arrays if they are out of date
-                let clientLastUpdate = new Date(req.body.percentilesTimestamp).getTime();
-                let serverLastUpdate = PERCENTILE_ARRAYS['lastUpdated'].getTime();
-                if (req.body.percentilesTimestamp === undefined || clientLastUpdate === serverLastUpdate){
+            //compare the last time the client and server's percentile arrays were updated
+            //update client percentile arrays if they are out of date
+            let clientLastUpdate = new Date(req.body.percentilesTimestamp).getTime();
+            let serverLastUpdate = PERCENTILE_ARRAYS['lastUpdated'].getTime();
+            if (req.body.percentilesTimestamp === undefined || clientLastUpdate === serverLastUpdate){
+                setTimeout(function(){
                     res.json(stats);
-                }
-                else {
+                }, 300)
+            }
+            else {
+                setTimeout(function(){
                     res.json({
                         stats: stats,
                         newPercentileArrays: PERCENTILE_ARRAYS
                     })
-                }
-            }, 300)
+                }, 300)
+            }
         },
         () => {
             setTimeout(function(){
@@ -240,12 +253,10 @@ getPercentileArrays = async () => {
 
 
 /**
- * Queries the database to retrieve 3 random players
- * @returns {Promise<*>} Promise object represents the metadata of the 3 random players
+ * Queries the database to retrieve a random players
+ * @returns {Promise<*>} Promise object represents the metadata of the random player
  */
-getSamplePlayers = async () => {
-
-    let samplePlayers = [];
+getSamplePlayer = async () => {
 
     return new Promise(async function(resolve, reject){
 
@@ -253,7 +264,7 @@ getSamplePlayers = async () => {
         PLAYERS_COLLECTION.aggregate([
             {$match: {"positions.19-20": {$exists: true }}},
             {$match: {"positions.19-20": {$ne: "N/A"}}},
-            {$sample: {size: 3}}
+            {$sample: {size: 1}}
         ])
         .toArray(function (err, docs) {
             if (err) {
@@ -263,17 +274,14 @@ getSamplePlayers = async () => {
                 reject();
             }
             else {
-                //retrieve sample player info and push to samplePlayers array
-                for (let i=0; i<docs.length; i++){
-                    let samplePlayer = {
-                        code: docs[i].code,
-                        name: docs[i].name,
-                        clubs: docs[i].clubs,
-                        nationality: docs[i].nationality
-                    };
-                    samplePlayers.push(samplePlayer);
-                }
-                resolve(samplePlayers);
+                //retrieve sample player metadata and resolve
+                let samplePlayer = {
+                    code: docs[0].code,
+                    name: docs[0].name,
+                    clubs: docs[0].clubs,
+                    nationality: docs[0].nationality
+                };
+                resolve(samplePlayer);
             }
         });
 
@@ -288,9 +296,10 @@ getSamplePlayers = async () => {
  * @param {string} theType - The type of search.
  *                        "playersAndClubs" returns all players and clubs who match the query
  *                        "playersByClub" returns all players whose club matches the club specified in the query
+ * @param {boolean} isLive - Boolean indicating whether or not the search function is being called for a live search
  * @returns {Promise<*>} Promise object represents the search results that match the query given the search type
  */
-search = async (aQuery, theType) => {
+search = async (aQuery, theType, isLive) => {
 
     return new Promise(async function(resolve, reject){
 
@@ -312,12 +321,17 @@ search = async (aQuery, theType) => {
             //find clubs whose whoscored or fbref name/simplifiedName includes the query
             CLUBS_COLLECTION.find(
                 {$or: [
-                    {name: {$regex: aQuery, $options: 'i'}},
-                    {name2: {$regex: aQuery, $options: 'i'}},
-                    {name3: {$regex: simplifiedQuery, $options: 'i'}},
-                    {name4: {$regex: simplifiedQuery, $options: 'i'}},
+                    {name: {$regex: new RegExp('^' + aQuery), $options: 'i'}},
+                    {name2: {$regex: new RegExp('^' + aQuery), $options: 'i'}},
+                    {name3: {$regex: new RegExp('^' + simplifiedQuery), $options: 'i'}},
+                    {name4: {$regex: new RegExp('^' + simplifiedQuery), $options: 'i'}},
+                    {name: {$regex: " " + aQuery, $options: 'i'}},
+                    {name2: {$regex: " " + aQuery, $options: 'i'}},
+                    {name3: {$regex: " " + simplifiedQuery, $options: 'i'}},
+                    {name4: {$regex: " " + simplifiedQuery, $options: 'i'}},
                 ]}
             )
+            .limit(isLive ? 5 : 0)
             .toArray(function(err, docs) {
                 if (err){
                     console.log(err);
@@ -330,12 +344,17 @@ search = async (aQuery, theType) => {
                 //find players whose whoscored or fbref name/simplifiedName includes the query
                 PLAYERS_COLLECTION.find(
                     {$or: [
-                        {name: {$regex: aQuery, $options: 'i'}},
-                        {name2: {$regex: aQuery, $options: 'i'}},
-                        {simplifiedName: {$regex: simplifiedQuery, $options: 'i'}},
-                        {simplifiedName2: {$regex: simplifiedQuery, $options: 'i'}},
+                            {name: {$regex: new RegExp('^' + aQuery), $options: 'i'}},
+                            {name2: {$regex: new RegExp('^' + aQuery), $options: 'i'}},
+                            {simplifiedName: {$regex: new RegExp('^' + simplifiedQuery), $options: 'i'}},
+                            {simplifiedName2: {$regex: new RegExp('^' + simplifiedQuery), $options: 'i'}},
+                            {name: {$regex: " " + aQuery, $options: 'i'}},
+                            {name2: {$regex: " " + aQuery, $options: 'i'}},
+                            {simplifiedName: {$regex: " " + simplifiedQuery, $options: 'i'}},
+                            {simplifiedName2: {$regex: " " + simplifiedQuery, $options: 'i'}},
                     ]}
                 )
+                .limit(isLive ? 10 : 0)
                 .toArray(function(err, docs) {
                     if (err){
                         console.log(err);
@@ -350,7 +369,7 @@ search = async (aQuery, theType) => {
                                 nationality: docs[i].nationality,
                                 clubs: docs[i].clubs,
                             };
-                            searchResults.playerSearchResults.unshift(result);
+                            searchResults.playerSearchResults.push(result);
                         }
                         resolve(searchResults);
                     }
@@ -443,6 +462,6 @@ connectToDatabase()
 
 //export functions needed in the unit testing module
 module.exports.connectToDatabase = connectToDatabase;
-module.exports.getSamplePlayers = getSamplePlayers;
+module.exports.getSamplePlayer = getSamplePlayer;
 module.exports.search = search;
 module.exports.getStats = getStats;

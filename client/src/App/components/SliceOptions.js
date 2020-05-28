@@ -19,6 +19,7 @@ class SliceOptions extends Component {
             "GK": "Goalkeeper"
         };
 
+        this.templateOpen = this.props.template === "N/A";
         this.competitions = this.props.competitions;
         this.clubs = this.props.clubs;
 
@@ -157,81 +158,80 @@ class SliceOptions extends Component {
 
         return (
             <div className="filter" id="chart-filters">
-                {/*<div className="chart-filter-inputs" id="chart-filter-inputs-laptop">*/}
-                {/*    <Collapsible*/}
-                {/*        open={true}*/}
-                {/*        trigger="Template"*/}
-                {/*        className="chart-filter-headers"*/}
-                {/*        transitionTime={200}*/}
-                {/*        transitionCloseTime={200}*/}
-                {/*    >*/}
-                {/*        {templatesForm}*/}
-                {/*    </Collapsible>*/}
-                {/*    <Collapsible*/}
-                {/*        open={true}*/}
-                {/*        trigger="Competitions"*/}
-                {/*        className="chart-filter-headers"*/}
-                {/*        transitionTime={200}*/}
-                {/*        transitionCloseTime={200}*/}
-                {/*    >*/}
-                {/*        {competitionsForms}*/}
-                {/*    </Collapsible>*/}
-                {/*    <Collapsible*/}
-                {/*        open={true}*/}
-                {/*        trigger="Data Labels"*/}
-                {/*        className="chart-filter-headers"*/}
-                {/*        transitionTime={200}*/}
-                {/*        transitionCloseTime={200}*/}
-                {/*    >*/}
-                {/*        {labelTypeForm}*/}
-                {/*    </Collapsible>*/}
-
-                {/*</div>*/}
-                {/*<div className="chart-filter-inputs" id="chart-filter-inputs-mobile">*/}
-                {/*    <Collapsible*/}
-                {/*        open={true}*/}
-                {/*        trigger="Template"*/}
-                {/*        className="chart-filter-headers"*/}
-                {/*        transitionTime={200}*/}
-                {/*        transitionCloseTime={200}*/}
-                {/*    >*/}
-                {/*        {mobileTemplatesForm}*/}
-                {/*    </Collapsible>*/}
-                {/*    <Collapsible*/}
-                {/*        open={true}*/}
-                {/*        trigger="Competitions"*/}
-                {/*        className="chart-filter-headers"*/}
-                {/*        transitionTime={200}*/}
-                {/*        transitionCloseTime={200}*/}
-                {/*    >*/}
-                {/*        {competitionsForms}*/}
-                {/*    </Collapsible>*/}
-                {/*    <Collapsible*/}
-                {/*        open={true}*/}
-                {/*        trigger="Data Labels"*/}
-                {/*        className="chart-filter-headers"*/}
-                {/*        transitionTime={200}*/}
-                {/*        transitionCloseTime={200}*/}
-                {/*    >*/}
-                {/*        {labelTypeForm}*/}
-                {/*    </Collapsible>*/}
-                {/*</div>*/}
                 <div className="chart-filter-inputs" id="chart-filter-inputs-laptop">
-                    <h3>Template</h3>
-                    {templatesForm}
-                    <h3>Competitions</h3>
-                    {competitionsForms}
-                    <h3>Data Labels</h3>
-                    {labelTypeForm}
+                    <Collapsible
+                        open={this.templateOpen}
+                        trigger="Template"
+                        className="chart-filter-headers"
+                        transitionTime={200}
+                        transitionCloseTime={200}
+                    >
+                        {templatesForm}
+                    </Collapsible>
+                    <Collapsible
+                        open={true}
+                        trigger="Competitions"
+                        className="chart-filter-headers"
+                        transitionTime={200}
+                        transitionCloseTime={200}
+                    >
+                        {competitionsForms}
+                    </Collapsible>
+                    <Collapsible
+                        open={false}
+                        trigger="Data Labels"
+                        className="chart-filter-headers"
+                        transitionTime={200}
+                        transitionCloseTime={200}
+                    >
+                        {labelTypeForm}
+                    </Collapsible>
                 </div>
                 <div className="chart-filter-inputs" id="chart-filter-inputs-mobile">
-                    <h3>Template</h3>
-                    {mobileTemplatesForm}
-                    <h3>Competitions</h3>
-                    {competitionsForms}
-                    <h3>Data Labels</h3>
-                    {labelTypeForm}
+                    <Collapsible
+                        open={this.templateOpen}
+                        trigger="Template"
+                        className="chart-filter-headers"
+                        transitionTime={200}
+                        transitionCloseTime={200}
+                    >
+                        {mobileTemplatesForm}
+                    </Collapsible>
+                    <Collapsible
+                        open={true}
+                        trigger="Competitions"
+                        className="chart-filter-headers"
+                        transitionTime={200}
+                        transitionCloseTime={200}
+                    >
+                        {competitionsForms}
+                    </Collapsible>
+                    <Collapsible
+                        open={false}
+                        trigger="Data Labels"
+                        className="chart-filter-headers"
+                        transitionTime={200}
+                        transitionCloseTime={200}
+                    >
+                        {labelTypeForm}
+                    </Collapsible>
                 </div>
+                {/*<div className="chart-filter-inputs" id="chart-filter-inputs-laptop">*/}
+                {/*    <h3>Template</h3>*/}
+                {/*    {templatesForm}*/}
+                {/*    <h3>Competitions</h3>*/}
+                {/*    {competitionsForms}*/}
+                {/*    <h3>Data Labels</h3>*/}
+                {/*    {labelTypeForm}*/}
+                {/*</div>*/}
+                {/*<div className="chart-filter-inputs" id="chart-filter-inputs-mobile">*/}
+                {/*    <h3>Template</h3>*/}
+                {/*    {mobileTemplatesForm}*/}
+                {/*    <h3>Competitions</h3>*/}
+                {/*    {competitionsForms}*/}
+                {/*    <h3>Data Labels</h3>*/}
+                {/*    {labelTypeForm}*/}
+                {/*</div>*/}
                 <div id="filter-buttons">
                     <div className="filter-button">
                         <button id="toggleCreditsButton" type="button" onClick={this.props.toggleCreditsPosition}>Toggle Credits Position</button>
@@ -240,7 +240,7 @@ class SliceOptions extends Component {
                         <button id="exportButton" type="button" onClick={this.props.exportChart}>Export Chart</button>
                     </div>
                     <div className="filter-button">
-                        <button id="compareButton" type="button" disabled={true}>Compare To...</button>
+                        <button id="compareButton" type="button" onClick={this.props.toggleCompareSearch}>Compare To...</button>
                     </div>
                 </div>
             </div>

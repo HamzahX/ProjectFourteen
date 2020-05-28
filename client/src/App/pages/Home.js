@@ -3,11 +3,11 @@ import $ from "jquery";
 
 //import components
 import SearchBar from "../components/SearchBar"
-import PlayerSearchResult from "../components/PlayerSearchResult"
 import LoadingSpinner from "../components/LoadingSpinner";
 
 //import assets
 import mockUps from "../assets/mockups.png"
+import {Link} from "react-router-dom";
 
 
 /**
@@ -28,9 +28,9 @@ class Home extends Component {
         this.state = {
             isMobile: this.props.isMobile,
             isLoading: true,
-            samplePlayers: [],
+            samplePlayer: {},
         };
-        this.getSamplePlayers();
+        this.getSamplePlayer();
 
     }
 
@@ -46,12 +46,12 @@ class Home extends Component {
     /**
      * Function to send a post request to the server to retrieve 3 sample players to be displayed on the homepage
      */
-    getSamplePlayers = () => {
+    getSamplePlayer = () => {
 
         let isMobile = this.state.isMobile;
 
         //fetch sample players
-        fetch('/api/samplePlayers', {
+        fetch('/api/samplePlayer', {
             method: 'post',
             headers: {
                 "Content-Type": "application/json"
@@ -59,10 +59,10 @@ class Home extends Component {
             body: JSON.stringify({})
         })
         .then(res => res.json())
-        .then(samplePlayers => {
+        .then(samplePlayer => {
             //only set state if the component is mounter
             if (this._isMounted){
-                this.setState({samplePlayers: samplePlayers, isLoading: false});
+                this.setState({samplePlayer: samplePlayer, isLoading: false});
                 //hard code the height of home and the navbar container if it is a mobile device
                 //this is done because the soft keyboards on mobile devices affect the view-height
                 if (isMobile){
@@ -125,7 +125,7 @@ class Home extends Component {
      */
     render() {
 
-        let { isLoading, samplePlayers } = this.state;
+        let { isLoading, samplePlayer } = this.state;
 
         //display loading spinner while the server responds to POST request for the sample players
         if (isLoading) {
@@ -137,21 +137,21 @@ class Home extends Component {
         //return homepage code otherwise
         else {
 
-            //construct the sample player buttons
-            let samplePlayerButtons = [];
-            for (let i=0; i<samplePlayers.length; i++){
-                let current = samplePlayers[i];
-                samplePlayerButtons.push(
-                    <PlayerSearchResult
-                        page = "home"
-                        code = {current.code}
-                        name = {current.name}
-                        clubs = {current.clubs}
-                        nationality = {current.nationality}
-                        key = {i}
-                    />
-                );
-            }
+            // //construct the sample player buttons
+            // let samplePlayerButton = [];
+            // for (let i=0; i<samplePlayers.length; i++){
+            //     let current = samplePlayers[i];
+            //     samplePlayerButton.push(
+            //         <PlayerSearchResult
+            //             page = "home"
+            //             code = {current.code}
+            //             name = {current.name}
+            //             clubs = {current.clubs}
+            //             nationality = {current.nationality}
+            //             key = {i}
+            //         />
+            //     );
+            // }
 
             //static JSX code for the homepage
             return (
@@ -195,13 +195,15 @@ class Home extends Component {
                     <div id="home">
                         <h1>Football<span style={{color: '#e4c000'}}>Slices</span></h1>
                         <SearchBar page="home"/>
-                        <br/>
-                        <br/>
-                        <p>...or try using a sample player</p>
-                        <br/>
-                        <div id="sample-results">
-                            {samplePlayerButtons}
-                        </div>
+                        {/*<Link to={"/stats/" + samplePlayer.code}>*/}
+                        {/*    <button id="lucky-button">*/}
+                        {/*        Slice of Luck*/}
+                        {/*    </button>*/}
+                        {/*</Link>*/}
+                        {/*<p>Trending:</p>*/}
+                        {/*<div id="sample-results">*/}
+                        {/*    {samplePlayerButtons}*/}
+                        {/*</div>*/}
                     </div>
                     <div id="preview" className="homepage-section-container">
                         <div id="preview-section-container">
@@ -422,7 +424,7 @@ class Home extends Component {
                                         competitions from multiple seasons will compare the selected player to the combined dataset.
                                     </p>
                                     <p>
-                                        Please note however that the percentile ranks are not competition-specific. In other words,
+                                        However, please note that the percentile ranks are not competition-specific. In other words,
                                         the selected player's stats are always compared to other players' stats from all competitions, regardless
                                         of which competitions are toggled for the selected player.
                                     </p>

@@ -49,6 +49,11 @@ h3 {
         min-width: 70%;
     }
 
+    #home #searchbar-container1 #live-search-results {
+        min-width: 70%;
+        width: 70%;
+    }
+
     #sample-results {
         flex-direction: column;
         /*grid-template-columns: 1fr;*/
@@ -110,25 +115,39 @@ h3 {
 #main2 {
     display: flex;
     flex-direction: column;
-    /*min-height: 100%;*/
 }
 
     #searchbar-container2, #searchbar-container3 {
-        padding-top: 0.5%;
-        box-shadow: none;
+        /*padding-top: 0.5%;*/
+        /*box-shadow: none;*/
         /*flex: 1 1 4.29%;*/
         flex: 1 1 6%
     }
 
+    #searchbar-container2 > div, #searchbar-container3 > div {
+        width: 100%;
+        /*max-width: 100%;*/
+    }
+
         #main #searchbar-form, #main2 #searchbar-form {
-            padding-left: 1%;
-            padding-right: 1%;
-            width: 100%;
+            padding-left: 2%;
+            padding-right: 2%;
+            /*width: 100%;*/
         }
 
         #searchbar-container2 #searchbar-form input, #searchbar-container3 #searchbar-form input {
-            max-width: unset;
+            /*max-width: unset;*/
         }
+
+        #searchbar-container2 #live-search-results, #searchbar-container3 #live-search-results {
+            position: unset;
+            width: auto;
+        }
+
+            #searchbar-container2 #live-search-loader, #searchbar-container3 #live-search-loader {
+                top: 6%;
+                right: 2%;
+            }
 
     .screen {
         padding: 1%;

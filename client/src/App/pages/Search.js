@@ -224,7 +224,6 @@ class Search extends Component {
                 let current = filteredPlayerSearchResults[i];
                 playerCards.push(
                     <PlayerSearchResult
-                        page="search"
                         code={current.code}
                         name={current.name}
                         clubs={current.clubs}

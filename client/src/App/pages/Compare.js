@@ -18,9 +18,9 @@ const cookies = new Cookies();
 
 
 /**
- * Stats page component
+ * Compare page component
  */
-class Stats extends Component {
+class Compare extends Component {
 
     //class variable to track if the component is mounted
     _isMounted = false;
@@ -883,4 +883,4 @@ class Stats extends Component {
 
 }
 
-export default Stats;
+export default Compare;

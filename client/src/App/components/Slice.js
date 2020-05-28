@@ -385,7 +385,7 @@ class Slice extends Component {
 
         //set credits text and position
         let credits = chartOptions.credits;
-        credits.text = `Data Source: FBref.com ${this.isMobile || this.isForExport ? '<br/>.<br/>' : '<br/>'} Last Updated: ${this.props.lastUpdated} UTC`;
+        credits.text = `Data Sources: FBref.com | StatsBomb ${this.isMobile || this.isForExport ? '<br/>.<br/>' : '<br/>'} Last Updated: ${this.props.lastUpdated} UTC`;
         credits.position = {
             align: this.props.creditsPosition,
             y: this.isMobile || this.isForExport ? -40 : -20
