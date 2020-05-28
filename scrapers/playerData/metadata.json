@@ -511,8 +511,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Hertha Berlin": {
-				"whoscoredApps": 23,
-				"whoscoredMins": 2008
+				"whoscoredApps": 24,
+				"whoscoredMins": 2098
 			}
 		}
 	},
@@ -612,8 +612,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Augsburg": {
-				"whoscoredApps": 20,
-				"whoscoredMins": 1768
+				"whoscoredApps": 21,
+				"whoscoredMins": 1835
 			}
 		}
 	},
@@ -1365,8 +1365,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Hertha Berlin": {
-				"whoscoredApps": 19,
-				"whoscoredMins": 1375
+				"whoscoredApps": 20,
+				"whoscoredMins": 1453
 			}
 		}
 	},
@@ -2044,8 +2044,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Borussia M'Gladbach": {
-				"whoscoredApps": 19,
-				"whoscoredMins": 1451
+				"whoscoredApps": 20,
+				"whoscoredMins": 1541
 			},
 			"Europa League | Borussia M'Gladbach": {
 				"whoscoredApps": 4,
@@ -2079,8 +2079,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Hertha Berlin": {
-				"whoscoredApps": 18,
-				"whoscoredMins": 865
+				"whoscoredApps": 19,
+				"whoscoredMins": 943
 			}
 		}
 	},
@@ -2428,8 +2428,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Borussia Dortmund": {
-				"whoscoredApps": 22,
-				"whoscoredMins": 1547
+				"whoscoredApps": 23,
+				"whoscoredMins": 1627
 			},
 			"Champions League | Borussia Dortmund": {
 				"whoscoredApps": 6,
@@ -2480,7 +2480,7 @@
 		"mapped": false,
 		"name": "Iván Cuéllar",
 		"simplifiedName": "Ivan Cuellar",
-		"age": 35,
+		"age": 36,
 		"nationality": "Spain",
 		"positions": {
 			"18-19": "GK",
@@ -2533,8 +2533,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Union Berlin": {
-				"whoscoredApps": 25,
-				"whoscoredMins": 1948
+				"whoscoredApps": 26,
+				"whoscoredMins": 2038
 			}
 		}
 	},
@@ -3591,8 +3591,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Bayern Munich": {
-				"whoscoredApps": 27,
-				"whoscoredMins": 2430
+				"whoscoredApps": 28,
+				"whoscoredMins": 2520
 			},
 			"Champions League | Bayern Munich": {
 				"whoscoredApps": 7,
@@ -3729,8 +3729,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Fortuna Duesseldorf": {
-				"whoscoredApps": 26,
-				"whoscoredMins": 2033
+				"whoscoredApps": 27,
+				"whoscoredMins": 2114
 			}
 		}
 	},
@@ -4190,8 +4190,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Bayern Munich": {
-				"whoscoredApps": 12,
-				"whoscoredMins": 568
+				"whoscoredApps": 13,
+				"whoscoredMins": 571
 			},
 			"Champions League | Bayern Munich": {
 				"whoscoredApps": 6,
@@ -4449,8 +4449,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Fortuna Duesseldorf": {
-				"whoscoredApps": 22,
-				"whoscoredMins": 1651
+				"whoscoredApps": 23,
+				"whoscoredMins": 1680
 			}
 		}
 	},
@@ -4531,8 +4531,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Paderborn": {
-				"whoscoredApps": 11,
-				"whoscoredMins": 783
+				"whoscoredApps": 12,
+				"whoscoredMins": 873
 			}
 		}
 	},
@@ -4922,8 +4922,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Augsburg": {
-				"whoscoredApps": 17,
-				"whoscoredMins": 1201
+				"whoscoredApps": 18,
+				"whoscoredMins": 1209
 			}
 		}
 	},
@@ -5071,7 +5071,7 @@
 		"mapped": false,
 		"name": "Birkir Bjarnason",
 		"simplifiedName": "Birkir Bjarnason",
-		"age": 31,
+		"age": 32,
 		"nationality": "Iceland",
 		"positions": {
 			"19-20": "N/A"
@@ -5139,8 +5139,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Eintracht Frankfurt": {
-				"whoscoredApps": 17,
-				"whoscoredMins": 1427
+				"whoscoredApps": 18,
+				"whoscoredMins": 1517
 			},
 			"Europa League | Eintracht Frankfurt": {
 				"whoscoredApps": 7,
@@ -5183,7 +5183,7 @@
 		"mapped": false,
 		"name": "Gervinho",
 		"simplifiedName": "Gervinho",
-		"age": 32,
+		"age": 33,
 		"nationality": "Cote D'Ivoire",
 		"positions": {
 			"18-19": "AM",
@@ -5335,7 +5335,7 @@
 		"mapped": false,
 		"name": "Roberto Soldado",
 		"simplifiedName": "Roberto Soldado",
-		"age": 34,
+		"age": 35,
 		"nationality": "Spain",
 		"positions": {
 			"19-20": "FW"
@@ -6541,8 +6541,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Mainz 05": {
-				"whoscoredApps": 21,
-				"whoscoredMins": 1062
+				"whoscoredApps": 22,
+				"whoscoredMins": 1070
 			}
 		}
 	},
@@ -6607,8 +6607,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Borussia Dortmund": {
-				"whoscoredApps": 25,
-				"whoscoredMins": 2046
+				"whoscoredApps": 26,
+				"whoscoredMins": 2136
 			},
 			"Champions League | Borussia Dortmund": {
 				"whoscoredApps": 8,
@@ -6674,8 +6674,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Werder Bremen": {
-				"whoscoredApps": 8,
-				"whoscoredMins": 146
+				"whoscoredApps": 9,
+				"whoscoredMins": 150
 			}
 		}
 	},
@@ -6749,8 +6749,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Hoffenheim": {
-				"whoscoredApps": 7,
-				"whoscoredMins": 474
+				"whoscoredApps": 8,
+				"whoscoredMins": 512
 			}
 		}
 	},
@@ -7036,7 +7036,7 @@
 		"mapped": false,
 		"name": "Lasse Schöne",
 		"simplifiedName": "Lasse Schone",
-		"age": 33,
+		"age": 34,
 		"nationality": "Denmark",
 		"positions": {
 			"19-20": "CM"
@@ -7323,8 +7323,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Bayer Leverkusen": {
-				"whoscoredApps": 27,
-				"whoscoredMins": 2291
+				"whoscoredApps": 28,
+				"whoscoredMins": 2337
 			},
 			"Champions League | Bayer Leverkusen": {
 				"whoscoredApps": 6,
@@ -8145,8 +8145,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Bayern Munich": {
-				"whoscoredApps": 18,
-				"whoscoredMins": 1267
+				"whoscoredApps": 19,
+				"whoscoredMins": 1352
 			},
 			"Champions League | Bayern Munich": {
 				"whoscoredApps": 5,
@@ -8791,8 +8791,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Werder Bremen": {
-				"whoscoredApps": 14,
-				"whoscoredMins": 1260
+				"whoscoredApps": 15,
+				"whoscoredMins": 1350
 			}
 		}
 	},
@@ -8896,8 +8896,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Borussia Dortmund": {
-				"whoscoredApps": 21,
-				"whoscoredMins": 1808
+				"whoscoredApps": 22,
+				"whoscoredMins": 1813
 			},
 			"Champions League | Borussia Dortmund": {
 				"whoscoredApps": 7,
@@ -9044,8 +9044,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Union Berlin": {
-				"whoscoredApps": 20,
-				"whoscoredMins": 1774
+				"whoscoredApps": 21,
+				"whoscoredMins": 1864
 			}
 		}
 	},
@@ -9167,8 +9167,8 @@
 		},
 		"19-20": {
 			"Bundesliga | FC Koln": {
-				"whoscoredApps": 20,
-				"whoscoredMins": 818
+				"whoscoredApps": 21,
+				"whoscoredMins": 826
 			}
 		}
 	},
@@ -9237,8 +9237,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Bayer Leverkusen": {
-				"whoscoredApps": 20,
-				"whoscoredMins": 1594
+				"whoscoredApps": 21,
+				"whoscoredMins": 1684
 			},
 			"Champions League | Bayer Leverkusen": {
 				"whoscoredApps": 5,
@@ -9570,8 +9570,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Freiburg": {
-				"whoscoredApps": 11,
-				"whoscoredMins": 262
+				"whoscoredApps": 12,
+				"whoscoredMins": 264
 			}
 		}
 	},
@@ -9893,8 +9893,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Bayer Leverkusen": {
-				"whoscoredApps": 20,
-				"whoscoredMins": 1335
+				"whoscoredApps": 21,
+				"whoscoredMins": 1380
 			},
 			"Champions League | Bayer Leverkusen": {
 				"whoscoredApps": 6,
@@ -10547,6 +10547,27 @@
 			}
 		}
 	},
+	"28800": {
+		"mapped": false,
+		"name": "Peter Pekarík",
+		"simplifiedName": "Peter Pekarik",
+		"age": 33,
+		"nationality": "Slovakia",
+		"positions": {
+			"19-20": "N/A"
+		},
+		"clubs": {
+			"19-20": [
+				"Hertha Berlin"
+			]
+		},
+		"19-20": {
+			"Bundesliga | Hertha Berlin": {
+				"whoscoredApps": 4,
+				"whoscoredMins": 360
+			}
+		}
+	},
 	"29026": {
 		"mapped": false,
 		"name": "Zanka",
@@ -10749,8 +10770,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Bayern Munich": {
-				"whoscoredApps": 25,
-				"whoscoredMins": 2222
+				"whoscoredApps": 26,
+				"whoscoredMins": 2312
 			},
 			"Champions League | Bayern Munich": {
 				"whoscoredApps": 6,
@@ -11019,8 +11040,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Freiburg": {
-				"whoscoredApps": 27,
-				"whoscoredMins": 2109
+				"whoscoredApps": 28,
+				"whoscoredMins": 2140
 			}
 		}
 	},
@@ -11304,8 +11325,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Borussia M'Gladbach": {
-				"whoscoredApps": 18,
-				"whoscoredMins": 855
+				"whoscoredApps": 19,
+				"whoscoredMins": 926
 			},
 			"Europa League | Borussia M'Gladbach": {
 				"whoscoredApps": 4,
@@ -11411,8 +11432,8 @@
 		},
 		"19-20": {
 			"Bundesliga | FC Koln": {
-				"whoscoredApps": 21,
-				"whoscoredMins": 780
+				"whoscoredApps": 22,
+				"whoscoredMins": 788
 			}
 		}
 	},
@@ -12679,8 +12700,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Fortuna Duesseldorf": {
-				"whoscoredApps": 14,
-				"whoscoredMins": 952
+				"whoscoredApps": 15,
+				"whoscoredMins": 1022
 			}
 		}
 	},
@@ -13546,8 +13567,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Eintracht Frankfurt": {
-				"whoscoredApps": 16,
-				"whoscoredMins": 1079
+				"whoscoredApps": 17,
+				"whoscoredMins": 1153
 			},
 			"Europa League | Eintracht Frankfurt": {
 				"whoscoredApps": 3,
@@ -14181,8 +14202,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Borussia M'Gladbach": {
-				"whoscoredApps": 13,
-				"whoscoredMins": 805
+				"whoscoredApps": 14,
+				"whoscoredMins": 876
 			},
 			"Europa League | Borussia M'Gladbach": {
 				"whoscoredApps": 2,
@@ -14216,8 +14237,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Borussia M'Gladbach": {
-				"whoscoredApps": 27,
-				"whoscoredMins": 2430
+				"whoscoredApps": 28,
+				"whoscoredMins": 2520
 			},
 			"Europa League | Borussia M'Gladbach": {
 				"whoscoredApps": 6,
@@ -14453,8 +14474,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Werder Bremen": {
-				"whoscoredApps": 20,
-				"whoscoredMins": 1757
+				"whoscoredApps": 21,
+				"whoscoredMins": 1847
 			}
 		}
 	},
@@ -14569,8 +14590,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Bayern Munich": {
-				"whoscoredApps": 27,
-				"whoscoredMins": 1737
+				"whoscoredApps": 28,
+				"whoscoredMins": 1827
 			},
 			"Champions League | Bayern Munich": {
 				"whoscoredApps": 6,
@@ -14661,8 +14682,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Eintracht Frankfurt": {
-				"whoscoredApps": 6,
-				"whoscoredMins": 479
+				"whoscoredApps": 7,
+				"whoscoredMins": 569
 			},
 			"Bundesliga | RasenBallsport Leipzig": {
 				"whoscoredApps": 6,
@@ -14704,8 +14725,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Schalke 04": {
-				"whoscoredApps": 19,
-				"whoscoredMins": 1149
+				"whoscoredApps": 20,
+				"whoscoredMins": 1223
 			}
 		}
 	},
@@ -14906,8 +14927,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Hoffenheim": {
-				"whoscoredApps": 26,
-				"whoscoredMins": 2245
+				"whoscoredApps": 27,
+				"whoscoredMins": 2290
 			}
 		}
 	},
@@ -15037,8 +15058,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Bayern Munich": {
-				"whoscoredApps": 22,
-				"whoscoredMins": 1968
+				"whoscoredApps": 23,
+				"whoscoredMins": 2058
 			},
 			"Champions League | Bayern Munich": {
 				"whoscoredApps": 4,
@@ -15286,8 +15307,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Bayer Leverkusen": {
-				"whoscoredApps": 10,
-				"whoscoredMins": 624
+				"whoscoredApps": 11,
+				"whoscoredMins": 669
 			},
 			"Champions League | Bayer Leverkusen": {
 				"whoscoredApps": 3,
@@ -15920,8 +15941,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Hoffenheim": {
-				"whoscoredApps": 7,
-				"whoscoredMins": 473
+				"whoscoredApps": 8,
+				"whoscoredMins": 563
 			}
 		}
 	},
@@ -17391,7 +17412,7 @@
 		"mapped": false,
 		"name": "Juan Cuadrado",
 		"simplifiedName": "Juan Cuadrado",
-		"age": 31,
+		"age": 32,
 		"nationality": "Colombia",
 		"positions": {
 			"18-19": "AM",
@@ -18023,8 +18044,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Borussia Dortmund": {
-				"whoscoredApps": 24,
-				"whoscoredMins": 2141
+				"whoscoredApps": 25,
+				"whoscoredMins": 2231
 			},
 			"Champions League | Borussia Dortmund": {
 				"whoscoredApps": 8,
@@ -18144,8 +18165,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Bayer Leverkusen": {
-				"whoscoredApps": 27,
-				"whoscoredMins": 2430
+				"whoscoredApps": 28,
+				"whoscoredMins": 2520
 			},
 			"Champions League | Bayer Leverkusen": {
 				"whoscoredApps": 6,
@@ -18173,8 +18194,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Union Berlin": {
-				"whoscoredApps": 27,
-				"whoscoredMins": 2430
+				"whoscoredApps": 28,
+				"whoscoredMins": 2520
 			}
 		}
 	},
@@ -18208,8 +18229,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Eintracht Frankfurt": {
-				"whoscoredApps": 22,
-				"whoscoredMins": 1405
+				"whoscoredApps": 23,
+				"whoscoredMins": 1479
 			},
 			"Europa League | Eintracht Frankfurt": {
 				"whoscoredApps": 7,
@@ -18286,8 +18307,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Eintracht Frankfurt": {
-				"whoscoredApps": 15,
-				"whoscoredMins": 1350
+				"whoscoredApps": 16,
+				"whoscoredMins": 1440
 			},
 			"Europa League | Eintracht Frankfurt": {
 				"whoscoredApps": 4,
@@ -18529,8 +18550,8 @@
 		},
 		"19-20": {
 			"Bundesliga | RasenBallsport Leipzig": {
-				"whoscoredApps": 26,
-				"whoscoredMins": 2340
+				"whoscoredApps": 27,
+				"whoscoredMins": 2430
 			},
 			"Champions League | RasenBallsport Leipzig": {
 				"whoscoredApps": 8,
@@ -18869,8 +18890,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Schalke 04": {
-				"whoscoredApps": 27,
-				"whoscoredMins": 2430
+				"whoscoredApps": 28,
+				"whoscoredMins": 2520
 			}
 		}
 	},
@@ -19534,8 +19555,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Eintracht Frankfurt": {
-				"whoscoredApps": 16,
-				"whoscoredMins": 995
+				"whoscoredApps": 17,
+				"whoscoredMins": 1004
 			},
 			"Europa League | Eintracht Frankfurt": {
 				"whoscoredApps": 4,
@@ -19709,7 +19730,7 @@
 		"mapped": false,
 		"name": "Kyle Walker",
 		"simplifiedName": "Kyle Walker",
-		"age": 29,
+		"age": 30,
 		"nationality": "England",
 		"positions": {
 			"18-19": "FB",
@@ -20284,8 +20305,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Mainz 05": {
-				"whoscoredApps": 17,
-				"whoscoredMins": 964
+				"whoscoredApps": 18,
+				"whoscoredMins": 972
 			}
 		}
 	},
@@ -20468,8 +20489,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Bayern Munich": {
-				"whoscoredApps": 17,
-				"whoscoredMins": 1019
+				"whoscoredApps": 18,
+				"whoscoredMins": 1036
 			},
 			"Champions League | Bayern Munich": {
 				"whoscoredApps": 6,
@@ -20867,8 +20888,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Werder Bremen": {
-				"whoscoredApps": 20,
-				"whoscoredMins": 1247
+				"whoscoredApps": 21,
+				"whoscoredMins": 1309
 			}
 		}
 	},
@@ -21037,8 +21058,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Union Berlin": {
-				"whoscoredApps": 25,
-				"whoscoredMins": 2234
+				"whoscoredApps": 26,
+				"whoscoredMins": 2324
 			}
 		}
 	},
@@ -21287,8 +21308,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Fortuna Duesseldorf": {
-				"whoscoredApps": 7,
-				"whoscoredMins": 533
+				"whoscoredApps": 8,
+				"whoscoredMins": 614
 			},
 			"Europa League | Lazio": {
 				"whoscoredApps": 4,
@@ -21321,7 +21342,7 @@
 		"mapped": false,
 		"name": "Alexandre Lacazette",
 		"simplifiedName": "Alexandre Lacazette",
-		"age": 28,
+		"age": 29,
 		"nationality": "France",
 		"positions": {
 			"18-19": "FW",
@@ -21622,8 +21643,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Borussia Dortmund": {
-				"whoscoredApps": 8,
-				"whoscoredMins": 631
+				"whoscoredApps": 9,
+				"whoscoredMins": 677
 			},
 			"Champions League | Borussia Dortmund": {
 				"whoscoredApps": 3,
@@ -21657,8 +21678,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Wolfsburg": {
-				"whoscoredApps": 19,
-				"whoscoredMins": 1710
+				"whoscoredApps": 20,
+				"whoscoredMins": 1800
 			},
 			"Europa League | Wolfsburg": {
 				"whoscoredApps": 4,
@@ -22702,8 +22723,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Augsburg": {
-				"whoscoredApps": 4,
-				"whoscoredMins": 360
+				"whoscoredApps": 5,
+				"whoscoredMins": 450
 			}
 		}
 	},
@@ -22773,8 +22794,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Hoffenheim": {
-				"whoscoredApps": 23,
-				"whoscoredMins": 2070
+				"whoscoredApps": 24,
+				"whoscoredMins": 2160
 			}
 		}
 	},
@@ -22815,8 +22836,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Werder Bremen": {
-				"whoscoredApps": 10,
-				"whoscoredMins": 731
+				"whoscoredApps": 11,
+				"whoscoredMins": 821
 			}
 		}
 	},
@@ -22846,8 +22867,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Freiburg": {
-				"whoscoredApps": 15,
-				"whoscoredMins": 1259
+				"whoscoredApps": 16,
+				"whoscoredMins": 1349
 			}
 		}
 	},
@@ -23674,8 +23695,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Fortuna Duesseldorf": {
-				"whoscoredApps": 27,
-				"whoscoredMins": 2430
+				"whoscoredApps": 28,
+				"whoscoredMins": 2520
 			}
 		}
 	},
@@ -24192,8 +24213,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Borussia Dortmund": {
-				"whoscoredApps": 14,
-				"whoscoredMins": 506
+				"whoscoredApps": 15,
+				"whoscoredMins": 516
 			},
 			"Champions League | Borussia Dortmund": {
 				"whoscoredApps": 4,
@@ -24227,8 +24248,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Wolfsburg": {
-				"whoscoredApps": 11,
-				"whoscoredMins": 442
+				"whoscoredApps": 12,
+				"whoscoredMins": 467
 			},
 			"Europa League | Wolfsburg": {
 				"whoscoredApps": 4,
@@ -24624,8 +24645,8 @@
 				"whoscoredMins": 810
 			},
 			"Bundesliga | Mainz 05": {
-				"whoscoredApps": 6,
-				"whoscoredMins": 496
+				"whoscoredApps": 7,
+				"whoscoredMins": 586
 			},
 			"Europa League | Wolfsburg": {
 				"whoscoredApps": 5,
@@ -25271,8 +25292,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Schalke 04": {
-				"whoscoredApps": 22,
-				"whoscoredMins": 1778
+				"whoscoredApps": 23,
+				"whoscoredMins": 1852
 			}
 		}
 	},
@@ -25738,8 +25759,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Hertha Berlin": {
-				"whoscoredApps": 22,
-				"whoscoredMins": 1944
+				"whoscoredApps": 23,
+				"whoscoredMins": 2034
 			}
 		}
 	},
@@ -25923,8 +25944,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Borussia M'Gladbach": {
-				"whoscoredApps": 20,
-				"whoscoredMins": 1078
+				"whoscoredApps": 21,
+				"whoscoredMins": 1086
 			},
 			"Europa League | Borussia M'Gladbach": {
 				"whoscoredApps": 5,
@@ -26609,8 +26630,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Eintracht Frankfurt": {
-				"whoscoredApps": 24,
-				"whoscoredMins": 2160
+				"whoscoredApps": 25,
+				"whoscoredMins": 2250
 			},
 			"Europa League | Eintracht Frankfurt": {
 				"whoscoredApps": 8,
@@ -26870,7 +26891,7 @@
 		"mapped": false,
 		"name": "Dominick Drexler",
 		"simplifiedName": "Dominick Drexler",
-		"age": 29,
+		"age": 30,
 		"nationality": "Germany",
 		"positions": {
 			"19-20": "AM"
@@ -26882,8 +26903,8 @@
 		},
 		"19-20": {
 			"Bundesliga | FC Koln": {
-				"whoscoredApps": 21,
-				"whoscoredMins": 1270
+				"whoscoredApps": 22,
+				"whoscoredMins": 1326
 			}
 		}
 	},
@@ -27045,8 +27066,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Hertha Berlin": {
-				"whoscoredApps": 21,
-				"whoscoredMins": 1676
+				"whoscoredApps": 22,
+				"whoscoredMins": 1747
 			}
 		}
 	},
@@ -27327,8 +27348,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Schalke 04": {
-				"whoscoredApps": 8,
-				"whoscoredMins": 552
+				"whoscoredApps": 9,
+				"whoscoredMins": 568
 			},
 			"Bundesliga | Augsburg": {
 				"whoscoredApps": 6,
@@ -29011,8 +29032,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Hoffenheim": {
-				"whoscoredApps": 24,
-				"whoscoredMins": 1998
+				"whoscoredApps": 25,
+				"whoscoredMins": 2088
 			}
 		}
 	},
@@ -29271,8 +29292,8 @@
 		},
 		"19-20": {
 			"Bundesliga | FC Koln": {
-				"whoscoredApps": 27,
-				"whoscoredMins": 2430
+				"whoscoredApps": 28,
+				"whoscoredMins": 2520
 			}
 		}
 	},
@@ -29284,7 +29305,7 @@
 		"nationality": "Germany",
 		"positions": {
 			"18-19": "N/A",
-			"19-20": "N/A"
+			"19-20": "AM"
 		},
 		"clubs": {
 			"18-19": [
@@ -29307,8 +29328,8 @@
 		},
 		"19-20": {
 			"Bundesliga | FC Koln": {
-				"whoscoredApps": 9,
-				"whoscoredMins": 780
+				"whoscoredApps": 10,
+				"whoscoredMins": 862
 			},
 			"Bundesliga | Schalke 04": {
 				"whoscoredApps": 8,
@@ -29342,8 +29363,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Freiburg": {
-				"whoscoredApps": 25,
-				"whoscoredMins": 2171
+				"whoscoredApps": 26,
+				"whoscoredMins": 2261
 			}
 		}
 	},
@@ -29437,8 +29458,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Bayer Leverkusen": {
-				"whoscoredApps": 24,
-				"whoscoredMins": 1337
+				"whoscoredApps": 25,
+				"whoscoredMins": 1383
 			},
 			"Champions League | Bayer Leverkusen": {
 				"whoscoredApps": 5,
@@ -29631,8 +29652,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Schalke 04": {
-				"whoscoredApps": 15,
-				"whoscoredMins": 1274
+				"whoscoredApps": 16,
+				"whoscoredMins": 1364
 			}
 		}
 	},
@@ -30308,8 +30329,8 @@
 		},
 		"19-20": {
 			"Bundesliga | RasenBallsport Leipzig": {
-				"whoscoredApps": 27,
-				"whoscoredMins": 2128
+				"whoscoredApps": 28,
+				"whoscoredMins": 2218
 			},
 			"Champions League | RasenBallsport Leipzig": {
 				"whoscoredApps": 7,
@@ -30658,8 +30679,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Fortuna Duesseldorf": {
-				"whoscoredApps": 22,
-				"whoscoredMins": 1875
+				"whoscoredApps": 23,
+				"whoscoredMins": 1965
 			}
 		}
 	},
@@ -30904,8 +30925,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Hertha Berlin": {
-				"whoscoredApps": 12,
-				"whoscoredMins": 1080
+				"whoscoredApps": 13,
+				"whoscoredMins": 1091
 			}
 		}
 	},
@@ -31601,8 +31622,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Fortuna Duesseldorf": {
-				"whoscoredApps": 21,
-				"whoscoredMins": 1515
+				"whoscoredApps": 22,
+				"whoscoredMins": 1524
 			}
 		}
 	},
@@ -31760,8 +31781,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Schalke 04": {
-				"whoscoredApps": 12,
-				"whoscoredMins": 855
+				"whoscoredApps": 13,
+				"whoscoredMins": 945
 			}
 		}
 	},
@@ -32118,8 +32139,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Freiburg": {
-				"whoscoredApps": 26,
-				"whoscoredMins": 2333
+				"whoscoredApps": 27,
+				"whoscoredMins": 2423
 			}
 		}
 	},
@@ -32536,8 +32557,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Wolfsburg": {
-				"whoscoredApps": 23,
-				"whoscoredMins": 1834
+				"whoscoredApps": 24,
+				"whoscoredMins": 1924
 			},
 			"Europa League | Wolfsburg": {
 				"whoscoredApps": 6,
@@ -32747,8 +32768,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Augsburg": {
-				"whoscoredApps": 16,
-				"whoscoredMins": 1268
+				"whoscoredApps": 17,
+				"whoscoredMins": 1284
 			}
 		}
 	},
@@ -32953,8 +32974,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Freiburg": {
-				"whoscoredApps": 18,
-				"whoscoredMins": 1553
+				"whoscoredApps": 19,
+				"whoscoredMins": 1643
 			}
 		}
 	},
@@ -33446,8 +33467,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Wolfsburg": {
-				"whoscoredApps": 18,
-				"whoscoredMins": 1551
+				"whoscoredApps": 19,
+				"whoscoredMins": 1559
 			},
 			"Europa League | Wolfsburg": {
 				"whoscoredApps": 8,
@@ -33516,8 +33537,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Werder Bremen": {
-				"whoscoredApps": 21,
-				"whoscoredMins": 1686
+				"whoscoredApps": 22,
+				"whoscoredMins": 1714
 			}
 		}
 	},
@@ -33821,7 +33842,7 @@
 		"mapped": false,
 		"name": "John Stones",
 		"simplifiedName": "John Stones",
-		"age": 25,
+		"age": 26,
 		"nationality": "England",
 		"positions": {
 			"18-19": "CB",
@@ -33903,8 +33924,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Borussia Dortmund": {
-				"whoscoredApps": 26,
-				"whoscoredMins": 1834
+				"whoscoredApps": 27,
+				"whoscoredMins": 1924
 			},
 			"Champions League | Borussia Dortmund": {
 				"whoscoredApps": 7,
@@ -34101,8 +34122,8 @@
 		},
 		"19-20": {
 			"Bundesliga | FC Koln": {
-				"whoscoredApps": 6,
-				"whoscoredMins": 540
+				"whoscoredApps": 7,
+				"whoscoredMins": 630
 			}
 		}
 	},
@@ -34249,7 +34270,7 @@
 		"mapped": false,
 		"name": "Stéphane Bahoken",
 		"simplifiedName": "Stephane Bahoken",
-		"age": 27,
+		"age": 28,
 		"nationality": "Cameroon",
 		"positions": {
 			"18-19": "FW",
@@ -34618,8 +34639,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Borussia M'Gladbach": {
-				"whoscoredApps": 16,
-				"whoscoredMins": 1006
+				"whoscoredApps": 17,
+				"whoscoredMins": 1088
 			},
 			"Europa League | Borussia M'Gladbach": {
 				"whoscoredApps": 5,
@@ -34777,8 +34798,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Paderborn": {
-				"whoscoredApps": 21,
-				"whoscoredMins": 1030
+				"whoscoredApps": 22,
+				"whoscoredMins": 1032
 			}
 		}
 	},
@@ -34847,8 +34868,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Fortuna Duesseldorf": {
-				"whoscoredApps": 10,
-				"whoscoredMins": 753
+				"whoscoredApps": 11,
+				"whoscoredMins": 843
 			}
 		}
 	},
@@ -35194,8 +35215,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Wolfsburg": {
-				"whoscoredApps": 18,
-				"whoscoredMins": 1620
+				"whoscoredApps": 19,
+				"whoscoredMins": 1702
 			},
 			"Europa League | Wolfsburg": {
 				"whoscoredApps": 4,
@@ -35233,8 +35254,8 @@
 		},
 		"19-20": {
 			"Bundesliga | RasenBallsport Leipzig": {
-				"whoscoredApps": 10,
-				"whoscoredMins": 841
+				"whoscoredApps": 11,
+				"whoscoredMins": 852
 			},
 			"Champions League | RasenBallsport Leipzig": {
 				"whoscoredApps": 3,
@@ -35391,8 +35412,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Mainz 05": {
-				"whoscoredApps": 26,
-				"whoscoredMins": 2169
+				"whoscoredApps": 27,
+				"whoscoredMins": 2242
 			}
 		}
 	},
@@ -35717,8 +35738,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Eintracht Frankfurt": {
-				"whoscoredApps": 25,
-				"whoscoredMins": 2239
+				"whoscoredApps": 26,
+				"whoscoredMins": 2329
 			},
 			"Europa League | Eintracht Frankfurt": {
 				"whoscoredApps": 9,
@@ -36543,7 +36564,7 @@
 		"mapped": false,
 		"name": "Mário Rui",
 		"simplifiedName": "Mario Rui",
-		"age": 28,
+		"age": 29,
 		"nationality": "Portugal",
 		"positions": {
 			"18-19": "FB",
@@ -36971,8 +36992,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Hoffenheim": {
-				"whoscoredApps": 7,
-				"whoscoredMins": 324
+				"whoscoredApps": 8,
+				"whoscoredMins": 382
 			},
 			"Europa League | Sevilla": {
 				"whoscoredApps": 6,
@@ -37147,8 +37168,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Paderborn": {
-				"whoscoredApps": 17,
-				"whoscoredMins": 1267
+				"whoscoredApps": 18,
+				"whoscoredMins": 1355
 			}
 		}
 	},
@@ -37461,8 +37482,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Borussia M'Gladbach": {
-				"whoscoredApps": 24,
-				"whoscoredMins": 1904
+				"whoscoredApps": 25,
+				"whoscoredMins": 1994
 			},
 			"Europa League | Borussia M'Gladbach": {
 				"whoscoredApps": 5,
@@ -37620,8 +37641,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Werder Bremen": {
-				"whoscoredApps": 25,
-				"whoscoredMins": 2250
+				"whoscoredApps": 26,
+				"whoscoredMins": 2340
 			}
 		}
 	},
@@ -37655,8 +37676,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Bayer Leverkusen": {
-				"whoscoredApps": 15,
-				"whoscoredMins": 992
+				"whoscoredApps": 16,
+				"whoscoredMins": 1038
 			},
 			"Champions League | Bayer Leverkusen": {
 				"whoscoredApps": 3,
@@ -37672,7 +37693,7 @@
 		"mapped": false,
 		"name": "Maximilian Arnold",
 		"simplifiedName": "Maximilian Arnold",
-		"age": 25,
+		"age": 26,
 		"nationality": "Germany",
 		"positions": {
 			"18-19": "CM",
@@ -37694,8 +37715,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Wolfsburg": {
-				"whoscoredApps": 26,
-				"whoscoredMins": 2228
+				"whoscoredApps": 27,
+				"whoscoredMins": 2318
 			},
 			"Europa League | Wolfsburg": {
 				"whoscoredApps": 8,
@@ -38046,7 +38067,7 @@
 		"mapped": false,
 		"name": "Jeison Murillo",
 		"simplifiedName": "Jeison Murillo",
-		"age": 27,
+		"age": 28,
 		"nationality": "Colombia",
 		"positions": {
 			"19-20": "N/A"
@@ -38522,8 +38543,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Eintracht Frankfurt": {
-				"whoscoredApps": 18,
-				"whoscoredMins": 907
+				"whoscoredApps": 19,
+				"whoscoredMins": 952
 			},
 			"Europa League | Eintracht Frankfurt": {
 				"whoscoredApps": 3,
@@ -38557,8 +38578,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Borussia M'Gladbach": {
-				"whoscoredApps": 24,
-				"whoscoredMins": 2151
+				"whoscoredApps": 25,
+				"whoscoredMins": 2241
 			},
 			"Europa League | Borussia M'Gladbach": {
 				"whoscoredApps": 4,
@@ -38718,8 +38739,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Augsburg": {
-				"whoscoredApps": 26,
-				"whoscoredMins": 2161
+				"whoscoredApps": 27,
+				"whoscoredMins": 2251
 			}
 		}
 	},
@@ -38966,8 +38987,8 @@
 				"whoscoredMins": 281
 			},
 			"Bundesliga | Borussia Dortmund": {
-				"whoscoredApps": 6,
-				"whoscoredMins": 466
+				"whoscoredApps": 7,
+				"whoscoredMins": 511
 			},
 			"Champions League | Borussia Dortmund": {
 				"whoscoredApps": 2,
@@ -39021,7 +39042,7 @@
 		"mapped": false,
 		"name": "Jonas Hector",
 		"simplifiedName": "Jonas Hector",
-		"age": 29,
+		"age": 30,
 		"nationality": "Germany",
 		"positions": {
 			"19-20": "CM"
@@ -39033,8 +39054,8 @@
 		},
 		"19-20": {
 			"Bundesliga | FC Koln": {
-				"whoscoredApps": 25,
-				"whoscoredMins": 2157
+				"whoscoredApps": 26,
+				"whoscoredMins": 2165
 			}
 		}
 	},
@@ -39549,8 +39570,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Augsburg": {
-				"whoscoredApps": 4,
-				"whoscoredMins": 337
+				"whoscoredApps": 5,
+				"whoscoredMins": 360
 			}
 		}
 	},
@@ -39956,8 +39977,8 @@
 		},
 		"19-20": {
 			"Bundesliga | RasenBallsport Leipzig": {
-				"whoscoredApps": 23,
-				"whoscoredMins": 2055
+				"whoscoredApps": 24,
+				"whoscoredMins": 2118
 			},
 			"Champions League | RasenBallsport Leipzig": {
 				"whoscoredApps": 5,
@@ -39991,8 +40012,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Borussia M'Gladbach": {
-				"whoscoredApps": 17,
-				"whoscoredMins": 1090
+				"whoscoredApps": 18,
+				"whoscoredMins": 1109
 			},
 			"Europa League | Borussia M'Gladbach": {
 				"whoscoredApps": 3,
@@ -40065,8 +40086,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Bayer Leverkusen": {
-				"whoscoredApps": 19,
-				"whoscoredMins": 1298
+				"whoscoredApps": 20,
+				"whoscoredMins": 1363
 			},
 			"Champions League | Bayer Leverkusen": {
 				"whoscoredApps": 5,
@@ -40115,8 +40136,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Wolfsburg": {
-				"whoscoredApps": 13,
-				"whoscoredMins": 1064
+				"whoscoredApps": 14,
+				"whoscoredMins": 1154
 			},
 			"Europa League | Wolfsburg": {
 				"whoscoredApps": 5,
@@ -40211,8 +40232,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Borussia Dortmund": {
-				"whoscoredApps": 22,
-				"whoscoredMins": 1772
+				"whoscoredApps": 23,
+				"whoscoredMins": 1862
 			},
 			"Champions League | Borussia Dortmund": {
 				"whoscoredApps": 8,
@@ -40267,8 +40288,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Wolfsburg": {
-				"whoscoredApps": 25,
-				"whoscoredMins": 2126
+				"whoscoredApps": 26,
+				"whoscoredMins": 2216
 			},
 			"Europa League | Wolfsburg": {
 				"whoscoredApps": 8,
@@ -40362,8 +40383,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Bayern Munich": {
-				"whoscoredApps": 17,
-				"whoscoredMins": 909
+				"whoscoredApps": 18,
+				"whoscoredMins": 999
 			},
 			"Champions League | Bayern Munich": {
 				"whoscoredApps": 4,
@@ -40678,8 +40699,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Fortuna Duesseldorf": {
-				"whoscoredApps": 19,
-				"whoscoredMins": 1690
+				"whoscoredApps": 20,
+				"whoscoredMins": 1710
 			}
 		}
 	},
@@ -40891,8 +40912,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Freiburg": {
-				"whoscoredApps": 27,
-				"whoscoredMins": 2418
+				"whoscoredApps": 28,
+				"whoscoredMins": 2508
 			}
 		}
 	},
@@ -41766,8 +41787,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Wolfsburg": {
-				"whoscoredApps": 21,
-				"whoscoredMins": 1151
+				"whoscoredApps": 22,
+				"whoscoredMins": 1227
 			},
 			"Europa League | Wolfsburg": {
 				"whoscoredApps": 9,
@@ -41826,8 +41847,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Bayern Munich": {
-				"whoscoredApps": 25,
-				"whoscoredMins": 1730
+				"whoscoredApps": 26,
+				"whoscoredMins": 1817
 			},
 			"Champions League | Bayern Munich": {
 				"whoscoredApps": 6,
@@ -42223,8 +42244,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Freiburg": {
-				"whoscoredApps": 19,
-				"whoscoredMins": 1033
+				"whoscoredApps": 20,
+				"whoscoredMins": 1115
 			}
 		}
 	},
@@ -42306,8 +42327,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Mainz 05": {
-				"whoscoredApps": 23,
-				"whoscoredMins": 1930
+				"whoscoredApps": 24,
+				"whoscoredMins": 2020
 			}
 		}
 	},
@@ -42735,7 +42756,7 @@
 		"mapped": false,
 		"name": "Aymeric Laporte",
 		"simplifiedName": "Aymeric Laporte",
-		"age": 25,
+		"age": 26,
 		"nationality": "France",
 		"positions": {
 			"18-19": "CB",
@@ -42786,8 +42807,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Union Berlin": {
-				"whoscoredApps": 26,
-				"whoscoredMins": 2289
+				"whoscoredApps": 27,
+				"whoscoredMins": 2330
 			}
 		}
 	},
@@ -43294,8 +43315,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Paderborn": {
-				"whoscoredApps": 23,
-				"whoscoredMins": 1018
+				"whoscoredApps": 24,
+				"whoscoredMins": 1046
 			}
 		}
 	},
@@ -43846,8 +43867,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Augsburg": {
-				"whoscoredApps": 26,
-				"whoscoredMins": 2284
+				"whoscoredApps": 27,
+				"whoscoredMins": 2359
 			}
 		}
 	},
@@ -44289,8 +44310,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Bayer Leverkusen": {
-				"whoscoredApps": 19,
-				"whoscoredMins": 913
+				"whoscoredApps": 20,
+				"whoscoredMins": 938
 			},
 			"Champions League | Bayer Leverkusen": {
 				"whoscoredApps": 5,
@@ -44406,8 +44427,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Bayern Munich": {
-				"whoscoredApps": 17,
-				"whoscoredMins": 1100
+				"whoscoredApps": 18,
+				"whoscoredMins": 1173
 			},
 			"Champions League | Bayern Munich": {
 				"whoscoredApps": 6,
@@ -44623,8 +44644,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Freiburg": {
-				"whoscoredApps": 16,
-				"whoscoredMins": 538
+				"whoscoredApps": 17,
+				"whoscoredMins": 546
 			}
 		}
 	},
@@ -45109,7 +45130,7 @@
 		"mapped": false,
 		"name": "João Cancelo",
 		"simplifiedName": "Joao Cancelo",
-		"age": 25,
+		"age": 26,
 		"nationality": "Portugal",
 		"positions": {
 			"18-19": "FB",
@@ -45170,8 +45191,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Fortuna Duesseldorf": {
-				"whoscoredApps": 25,
-				"whoscoredMins": 2193
+				"whoscoredApps": 26,
+				"whoscoredMins": 2283
 			}
 		}
 	},
@@ -45328,8 +45349,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Union Berlin": {
-				"whoscoredApps": 22,
-				"whoscoredMins": 1352
+				"whoscoredApps": 23,
+				"whoscoredMins": 1426
 			}
 		}
 	},
@@ -45401,8 +45422,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Paderborn": {
-				"whoscoredApps": 21,
-				"whoscoredMins": 1890
+				"whoscoredApps": 22,
+				"whoscoredMins": 1980
 			}
 		}
 	},
@@ -45618,8 +45639,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Hoffenheim": {
-				"whoscoredApps": 24,
-				"whoscoredMins": 2053
+				"whoscoredApps": 25,
+				"whoscoredMins": 2143
 			}
 		}
 	},
@@ -46046,8 +46067,8 @@
 		},
 		"19-20": {
 			"Bundesliga | RasenBallsport Leipzig": {
-				"whoscoredApps": 27,
-				"whoscoredMins": 2232
+				"whoscoredApps": 28,
+				"whoscoredMins": 2311
 			},
 			"Champions League | RasenBallsport Leipzig": {
 				"whoscoredApps": 8,
@@ -46247,8 +46268,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Freiburg": {
-				"whoscoredApps": 10,
-				"whoscoredMins": 551
+				"whoscoredApps": 11,
+				"whoscoredMins": 639
 			}
 		}
 	},
@@ -46483,8 +46504,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Hoffenheim": {
-				"whoscoredApps": 25,
-				"whoscoredMins": 1742
+				"whoscoredApps": 26,
+				"whoscoredMins": 1774
 			}
 		}
 	},
@@ -46611,8 +46632,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Bayer Leverkusen": {
-				"whoscoredApps": 19,
-				"whoscoredMins": 1501
+				"whoscoredApps": 20,
+				"whoscoredMins": 1591
 			},
 			"Champions League | Bayer Leverkusen": {
 				"whoscoredApps": 4,
@@ -46867,8 +46888,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Augsburg": {
-				"whoscoredApps": 27,
-				"whoscoredMins": 2347
+				"whoscoredApps": 28,
+				"whoscoredMins": 2437
 			}
 		}
 	},
@@ -47001,8 +47022,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Hoffenheim": {
-				"whoscoredApps": 20,
-				"whoscoredMins": 1765
+				"whoscoredApps": 21,
+				"whoscoredMins": 1815
 			}
 		}
 	},
@@ -47405,8 +47426,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Fortuna Duesseldorf": {
-				"whoscoredApps": 5,
-				"whoscoredMins": 253
+				"whoscoredApps": 6,
+				"whoscoredMins": 262
 			}
 		}
 	},
@@ -47967,8 +47988,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Augsburg": {
-				"whoscoredApps": 12,
-				"whoscoredMins": 810
+				"whoscoredApps": 13,
+				"whoscoredMins": 900
 			}
 		}
 	},
@@ -48002,8 +48023,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Borussia Dortmund": {
-				"whoscoredApps": 11,
-				"whoscoredMins": 473
+				"whoscoredApps": 12,
+				"whoscoredMins": 558
 			},
 			"Champions League | Borussia Dortmund": {
 				"whoscoredApps": 2,
@@ -49471,8 +49492,8 @@
 		},
 		"19-20": {
 			"Bundesliga | FC Koln": {
-				"whoscoredApps": 23,
-				"whoscoredMins": 1569
+				"whoscoredApps": 24,
+				"whoscoredMins": 1651
 			}
 		}
 	},
@@ -49791,8 +49812,8 @@
 				"whoscoredMins": 957
 			},
 			"Bundesliga | Werder Bremen": {
-				"whoscoredApps": 5,
-				"whoscoredMins": 328
+				"whoscoredApps": 6,
+				"whoscoredMins": 344
 			}
 		}
 	},
@@ -49949,8 +49970,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Bayern Munich": {
-				"whoscoredApps": 12,
-				"whoscoredMins": 690
+				"whoscoredApps": 13,
+				"whoscoredMins": 695
 			},
 			"Champions League | Bayern Munich": {
 				"whoscoredApps": 2,
@@ -50269,8 +50290,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Fortuna Duesseldorf": {
-				"whoscoredApps": 13,
-				"whoscoredMins": 827
+				"whoscoredApps": 14,
+				"whoscoredMins": 917
 			}
 		}
 	},
@@ -50532,7 +50553,7 @@
 		"mapped": false,
 		"name": "Víctor Camarasa",
 		"simplifiedName": "Victor Camarasa",
-		"age": 25,
+		"age": 26,
 		"nationality": "Spain",
 		"positions": {
 			"18-19": "AM",
@@ -50985,8 +51006,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Werder Bremen": {
-				"whoscoredApps": 17,
-				"whoscoredMins": 1432
+				"whoscoredApps": 18,
+				"whoscoredMins": 1522
 			}
 		}
 	},
@@ -51102,7 +51123,7 @@
 		"nationality": "Germany",
 		"positions": {
 			"18-19": "AM",
-			"19-20": "N/A"
+			"19-20": "AM"
 		},
 		"clubs": {
 			"18-19": [
@@ -51124,8 +51145,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Borussia Dortmund": {
-				"whoscoredApps": 26,
-				"whoscoredMins": 1656
+				"whoscoredApps": 27,
+				"whoscoredMins": 1702
 			},
 			"Champions League | Borussia Dortmund": {
 				"whoscoredApps": 7,
@@ -51528,8 +51549,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Fortuna Duesseldorf": {
-				"whoscoredApps": 13,
-				"whoscoredMins": 471
+				"whoscoredApps": 14,
+				"whoscoredMins": 532
 			}
 		}
 	},
@@ -51740,8 +51761,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Augsburg": {
-				"whoscoredApps": 25,
-				"whoscoredMins": 2188
+				"whoscoredApps": 26,
+				"whoscoredMins": 2270
 			}
 		}
 	},
@@ -51766,8 +51787,8 @@
 				"whoscoredMins": 41
 			},
 			"Bundesliga | Paderborn": {
-				"whoscoredApps": 10,
-				"whoscoredMins": 677
+				"whoscoredApps": 11,
+				"whoscoredMins": 767
 			}
 		}
 	},
@@ -51797,8 +51818,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Fortuna Duesseldorf": {
-				"whoscoredApps": 27,
-				"whoscoredMins": 1741
+				"whoscoredApps": 28,
+				"whoscoredMins": 1831
 			}
 		}
 	},
@@ -52081,8 +52102,8 @@
 		},
 		"19-20": {
 			"Bundesliga | RasenBallsport Leipzig": {
-				"whoscoredApps": 25,
-				"whoscoredMins": 2151
+				"whoscoredApps": 26,
+				"whoscoredMins": 2241
 			},
 			"Champions League | RasenBallsport Leipzig": {
 				"whoscoredApps": 8,
@@ -52193,7 +52214,7 @@
 		"mapped": false,
 		"name": "Filippo Romagna",
 		"simplifiedName": "Filippo Romagna",
-		"age": 22,
+		"age": 23,
 		"nationality": "Italy",
 		"positions": {
 			"18-19": "CB",
@@ -52348,8 +52369,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Union Berlin": {
-				"whoscoredApps": 24,
-				"whoscoredMins": 2160
+				"whoscoredApps": 25,
+				"whoscoredMins": 2250
 			}
 		}
 	},
@@ -52458,8 +52479,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Paderborn": {
-				"whoscoredApps": 21,
-				"whoscoredMins": 1890
+				"whoscoredApps": 22,
+				"whoscoredMins": 1980
 			}
 		}
 	},
@@ -52719,7 +52740,7 @@
 		"age": 25,
 		"nationality": "Germany",
 		"positions": {
-			"19-20": "N/A"
+			"19-20": "FB"
 		},
 		"clubs": {
 			"19-20": [
@@ -52728,8 +52749,8 @@
 		},
 		"19-20": {
 			"Bundesliga | FC Koln": {
-				"whoscoredApps": 13,
-				"whoscoredMins": 925
+				"whoscoredApps": 14,
+				"whoscoredMins": 1007
 			}
 		}
 	},
@@ -52763,8 +52784,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Schalke 04": {
-				"whoscoredApps": 15,
-				"whoscoredMins": 797
+				"whoscoredApps": 16,
+				"whoscoredMins": 887
 			}
 		}
 	},
@@ -52999,7 +53020,7 @@
 		"nationality": "Germany",
 		"positions": {
 			"18-19": "N/A",
-			"19-20": "N/A"
+			"19-20": "FW"
 		},
 		"clubs": {
 			"18-19": [
@@ -53017,8 +53038,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Freiburg": {
-				"whoscoredApps": 16,
-				"whoscoredMins": 876
+				"whoscoredApps": 17,
+				"whoscoredMins": 935
 			}
 		}
 	},
@@ -53512,8 +53533,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Freiburg": {
-				"whoscoredApps": 27,
-				"whoscoredMins": 1941
+				"whoscoredApps": 28,
+				"whoscoredMins": 2031
 			}
 		}
 	},
@@ -54281,8 +54302,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Paderborn": {
-				"whoscoredApps": 24,
-				"whoscoredMins": 1897
+				"whoscoredApps": 25,
+				"whoscoredMins": 1976
 			}
 		}
 	},
@@ -55034,8 +55055,8 @@
 		},
 		"19-20": {
 			"Bundesliga | FC Koln": {
-				"whoscoredApps": 25,
-				"whoscoredMins": 2130
+				"whoscoredApps": 26,
+				"whoscoredMins": 2220
 			}
 		}
 	},
@@ -56057,8 +56078,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Borussia M'Gladbach": {
-				"whoscoredApps": 26,
-				"whoscoredMins": 2136
+				"whoscoredApps": 27,
+				"whoscoredMins": 2226
 			},
 			"Europa League | Borussia M'Gladbach": {
 				"whoscoredApps": 5,
@@ -56173,8 +56194,8 @@
 		},
 		"19-20": {
 			"Bundesliga | RasenBallsport Leipzig": {
-				"whoscoredApps": 16,
-				"whoscoredMins": 908
+				"whoscoredApps": 17,
+				"whoscoredMins": 987
 			},
 			"Champions League | RasenBallsport Leipzig": {
 				"whoscoredApps": 3,
@@ -56255,8 +56276,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Freiburg": {
-				"whoscoredApps": 14,
-				"whoscoredMins": 728
+				"whoscoredApps": 15,
+				"whoscoredMins": 787
 			}
 		}
 	},
@@ -56497,8 +56518,8 @@
 		},
 		"19-20": {
 			"Bundesliga | FC Koln": {
-				"whoscoredApps": 25,
-				"whoscoredMins": 1887
+				"whoscoredApps": 26,
+				"whoscoredMins": 1919
 			}
 		}
 	},
@@ -56559,8 +56580,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Hertha Berlin": {
-				"whoscoredApps": 22,
-				"whoscoredMins": 1845
+				"whoscoredApps": 23,
+				"whoscoredMins": 1935
 			}
 		}
 	},
@@ -56768,8 +56789,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Werder Bremen": {
-				"whoscoredApps": 25,
-				"whoscoredMins": 2250
+				"whoscoredApps": 26,
+				"whoscoredMins": 2340
 			}
 		}
 	},
@@ -56880,7 +56901,7 @@
 		"mapped": false,
 		"name": "Konrad Laimer",
 		"simplifiedName": "Konrad Laimer",
-		"age": 22,
+		"age": 23,
 		"nationality": "Austria",
 		"positions": {
 			"18-19": "CM",
@@ -56906,8 +56927,8 @@
 		},
 		"19-20": {
 			"Bundesliga | RasenBallsport Leipzig": {
-				"whoscoredApps": 24,
-				"whoscoredMins": 1842
+				"whoscoredApps": 25,
+				"whoscoredMins": 1932
 			},
 			"Champions League | RasenBallsport Leipzig": {
 				"whoscoredApps": 8,
@@ -57255,10 +57276,14 @@
 		"age": 25,
 		"nationality": "Spain",
 		"positions": {
-			"18-19": "N/A"
+			"18-19": "N/A",
+			"19-20": "N/A"
 		},
 		"clubs": {
 			"18-19": [
+				"Eintracht Frankfurt"
+			],
+			"19-20": [
 				"Eintracht Frankfurt"
 			]
 		},
@@ -57270,6 +57295,12 @@
 			"Europa League | Eintracht Frankfurt": {
 				"whoscoredApps": 3,
 				"whoscoredMins": 184
+			}
+		},
+		"19-20": {
+			"Bundesliga | Eintracht Frankfurt": {
+				"whoscoredApps": 4,
+				"whoscoredMins": 183
 			}
 		}
 	},
@@ -57494,8 +57525,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Werder Bremen": {
-				"whoscoredApps": 24,
-				"whoscoredMins": 2136
+				"whoscoredApps": 25,
+				"whoscoredMins": 2226
 			}
 		}
 	},
@@ -57660,8 +57691,8 @@
 				"whoscoredMins": 422
 			},
 			"Bundesliga | RasenBallsport Leipzig": {
-				"whoscoredApps": 6,
-				"whoscoredMins": 531
+				"whoscoredApps": 7,
+				"whoscoredMins": 555
 			},
 			"Champions League | RasenBallsport Leipzig": {
 				"whoscoredApps": 2,
@@ -57936,8 +57967,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Schalke 04": {
-				"whoscoredApps": 25,
-				"whoscoredMins": 2230
+				"whoscoredApps": 26,
+				"whoscoredMins": 2320
 			}
 		}
 	},
@@ -58280,8 +58311,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Bayern Munich": {
-				"whoscoredApps": 25,
-				"whoscoredMins": 2250
+				"whoscoredApps": 26,
+				"whoscoredMins": 2340
 			},
 			"Champions League | Bayern Munich": {
 				"whoscoredApps": 7,
@@ -58721,8 +58752,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Hertha Berlin": {
-				"whoscoredApps": 23,
-				"whoscoredMins": 1624
+				"whoscoredApps": 24,
+				"whoscoredMins": 1703
 			}
 		}
 	},
@@ -58756,8 +58787,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Bayer Leverkusen": {
-				"whoscoredApps": 23,
-				"whoscoredMins": 1481
+				"whoscoredApps": 24,
+				"whoscoredMins": 1571
 			},
 			"Champions League | Bayer Leverkusen": {
 				"whoscoredApps": 4,
@@ -58838,8 +58869,8 @@
 		},
 		"19-20": {
 			"Bundesliga | RasenBallsport Leipzig": {
-				"whoscoredApps": 5,
-				"whoscoredMins": 280
+				"whoscoredApps": 6,
+				"whoscoredMins": 338
 			},
 			"Champions League | Dinamo Zagreb": {
 				"whoscoredApps": 6,
@@ -59058,8 +59089,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Eintracht Frankfurt": {
-				"whoscoredApps": 16,
-				"whoscoredMins": 1278
+				"whoscoredApps": 17,
+				"whoscoredMins": 1359
 			},
 			"Europa League | Eintracht Frankfurt": {
 				"whoscoredApps": 4,
@@ -59135,8 +59166,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Wolfsburg": {
-				"whoscoredApps": 17,
-				"whoscoredMins": 1228
+				"whoscoredApps": 18,
+				"whoscoredMins": 1318
 			},
 			"Europa League | Wolfsburg": {
 				"whoscoredApps": 4,
@@ -59342,8 +59373,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Paderborn": {
-				"whoscoredApps": 19,
-				"whoscoredMins": 832
+				"whoscoredApps": 20,
+				"whoscoredMins": 894
 			}
 		}
 	},
@@ -59460,8 +59491,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Freiburg": {
-				"whoscoredApps": 26,
-				"whoscoredMins": 2278
+				"whoscoredApps": 27,
+				"whoscoredMins": 2368
 			}
 		}
 	},
@@ -59628,8 +59659,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Union Berlin": {
-				"whoscoredApps": 9,
-				"whoscoredMins": 447
+				"whoscoredApps": 10,
+				"whoscoredMins": 472
 			}
 		}
 	},
@@ -60217,8 +60248,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Hoffenheim": {
-				"whoscoredApps": 14,
-				"whoscoredMins": 790
+				"whoscoredApps": 15,
+				"whoscoredMins": 880
 			}
 		}
 	},
@@ -60264,8 +60295,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Mainz 05": {
-				"whoscoredApps": 8,
-				"whoscoredMins": 214
+				"whoscoredApps": 9,
+				"whoscoredMins": 277
 			}
 		}
 	},
@@ -60545,8 +60576,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Bayern Munich": {
-				"whoscoredApps": 26,
-				"whoscoredMins": 2272
+				"whoscoredApps": 27,
+				"whoscoredMins": 2362
 			},
 			"Champions League | Bayern Munich": {
 				"whoscoredApps": 7,
@@ -60661,8 +60692,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Union Berlin": {
-				"whoscoredApps": 8,
-				"whoscoredMins": 164
+				"whoscoredApps": 9,
+				"whoscoredMins": 180
 			}
 		}
 	},
@@ -60703,8 +60734,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Schalke 04": {
-				"whoscoredApps": 8,
-				"whoscoredMins": 651
+				"whoscoredApps": 9,
+				"whoscoredMins": 741
 			}
 		}
 	},
@@ -61019,8 +61050,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Borussia M'Gladbach": {
-				"whoscoredApps": 13,
-				"whoscoredMins": 987
+				"whoscoredApps": 14,
+				"whoscoredMins": 1006
 			},
 			"Europa League | Borussia M'Gladbach": {
 				"whoscoredApps": 6,
@@ -61116,8 +61147,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Werder Bremen": {
-				"whoscoredApps": 22,
-				"whoscoredMins": 1897
+				"whoscoredApps": 23,
+				"whoscoredMins": 1983
 			}
 		}
 	},
@@ -61346,8 +61377,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Hoffenheim": {
-				"whoscoredApps": 25,
-				"whoscoredMins": 2018
+				"whoscoredApps": 26,
+				"whoscoredMins": 2064
 			}
 		}
 	},
@@ -61355,7 +61386,7 @@
 		"mapped": false,
 		"name": "Lukas Klünter",
 		"simplifiedName": "Lukas Klunter",
-		"age": 23,
+		"age": 24,
 		"nationality": "Germany",
 		"positions": {
 			"18-19": "N/A",
@@ -61628,8 +61659,8 @@
 		},
 		"19-20": {
 			"Bundesliga | FC Koln": {
-				"whoscoredApps": 9,
-				"whoscoredMins": 543
+				"whoscoredApps": 10,
+				"whoscoredMins": 601
 			}
 		}
 	},
@@ -62201,8 +62232,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Mainz 05": {
-				"whoscoredApps": 10,
-				"whoscoredMins": 638
+				"whoscoredApps": 11,
+				"whoscoredMins": 728
 			}
 		}
 	},
@@ -62467,8 +62498,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Mainz 05": {
-				"whoscoredApps": 26,
-				"whoscoredMins": 2340
+				"whoscoredApps": 27,
+				"whoscoredMins": 2430
 			}
 		}
 	},
@@ -62480,7 +62511,7 @@
 		"nationality": "France",
 		"positions": {
 			"18-19": "AM",
-			"19-20": "AM"
+			"19-20": "FW"
 		},
 		"clubs": {
 			"18-19": [
@@ -62498,8 +62529,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Borussia M'Gladbach": {
-				"whoscoredApps": 27,
-				"whoscoredMins": 1945
+				"whoscoredApps": 28,
+				"whoscoredMins": 2027
 			},
 			"Europa League | Borussia M'Gladbach": {
 				"whoscoredApps": 6,
@@ -62854,8 +62885,8 @@
 		},
 		"19-20": {
 			"Bundesliga | FC Koln": {
-				"whoscoredApps": 22,
-				"whoscoredMins": 1221
+				"whoscoredApps": 23,
+				"whoscoredMins": 1255
 			}
 		}
 	},
@@ -62939,7 +62970,7 @@
 		"mapped": false,
 		"name": "Ionut Radu",
 		"simplifiedName": "Ionut Radu",
-		"age": 22,
+		"age": 23,
 		"nationality": "Romania",
 		"positions": {
 			"18-19": "GK",
@@ -63243,8 +63274,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Borussia Dortmund": {
-				"whoscoredApps": 25,
-				"whoscoredMins": 1949
+				"whoscoredApps": 26,
+				"whoscoredMins": 2039
 			},
 			"Champions League | Borussia Dortmund": {
 				"whoscoredApps": 6,
@@ -63495,8 +63526,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Freiburg": {
-				"whoscoredApps": 15,
-				"whoscoredMins": 1261
+				"whoscoredApps": 16,
+				"whoscoredMins": 1292
 			}
 		}
 	},
@@ -63713,8 +63744,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Wolfsburg": {
-				"whoscoredApps": 23,
-				"whoscoredMins": 1196
+				"whoscoredApps": 24,
+				"whoscoredMins": 1261
 			},
 			"Europa League | Wolfsburg": {
 				"whoscoredApps": 8,
@@ -64063,8 +64094,8 @@
 		},
 		"19-20": {
 			"Bundesliga | RasenBallsport Leipzig": {
-				"whoscoredApps": 8,
-				"whoscoredMins": 232
+				"whoscoredApps": 9,
+				"whoscoredMins": 264
 			},
 			"Champions League | RasenBallsport Leipzig": {
 				"whoscoredApps": 1,
@@ -64080,7 +64111,7 @@
 		"nationality": "Portugal",
 		"positions": {
 			"18-19": "FW",
-			"19-20": "N/A"
+			"19-20": "FW"
 		},
 		"clubs": {
 			"18-19": [
@@ -64102,8 +64133,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Eintracht Frankfurt": {
-				"whoscoredApps": 17,
-				"whoscoredMins": 964
+				"whoscoredApps": 18,
+				"whoscoredMins": 1054
 			},
 			"Europa League | Eintracht Frankfurt": {
 				"whoscoredApps": 8,
@@ -64137,8 +64168,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Hertha Berlin": {
-				"whoscoredApps": 24,
-				"whoscoredMins": 1616
+				"whoscoredApps": 25,
+				"whoscoredMins": 1687
 			}
 		}
 	},
@@ -64320,8 +64351,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Eintracht Frankfurt": {
-				"whoscoredApps": 17,
-				"whoscoredMins": 800
+				"whoscoredApps": 18,
+				"whoscoredMins": 816
 			},
 			"Europa League | Eintracht Frankfurt": {
 				"whoscoredApps": 4,
@@ -64731,8 +64762,8 @@
 		},
 		"19-20": {
 			"Bundesliga | RasenBallsport Leipzig": {
-				"whoscoredApps": 25,
-				"whoscoredMins": 1603
+				"whoscoredApps": 26,
+				"whoscoredMins": 1669
 			},
 			"Champions League | RasenBallsport Leipzig": {
 				"whoscoredApps": 7,
@@ -65059,8 +65090,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Paderborn": {
-				"whoscoredApps": 5,
-				"whoscoredMins": 117
+				"whoscoredApps": 6,
+				"whoscoredMins": 120
 			}
 		}
 	},
@@ -66077,8 +66108,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Hoffenheim": {
-				"whoscoredApps": 5,
-				"whoscoredMins": 189
+				"whoscoredApps": 6,
+				"whoscoredMins": 241
 			},
 			"Bundesliga | Borussia Dortmund": {
 				"whoscoredApps": 4,
@@ -66123,7 +66154,7 @@
 		"mapped": false,
 		"name": "Marius Wolf",
 		"simplifiedName": "Marius Wolf",
-		"age": 24,
+		"age": 25,
 		"nationality": "Germany",
 		"positions": {
 			"18-19": "N/A",
@@ -66330,8 +66361,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Mainz 05": {
-				"whoscoredApps": 25,
-				"whoscoredMins": 1320
+				"whoscoredApps": 26,
+				"whoscoredMins": 1347
 			}
 		}
 	},
@@ -66442,8 +66473,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Borussia Dortmund": {
-				"whoscoredApps": 10,
-				"whoscoredMins": 692
+				"whoscoredApps": 11,
+				"whoscoredMins": 764
 			},
 			"Champions League | Salzburg": {
 				"whoscoredApps": 6,
@@ -66481,8 +66512,8 @@
 		},
 		"19-20": {
 			"Bundesliga | RasenBallsport Leipzig": {
-				"whoscoredApps": 7,
-				"whoscoredMins": 502
+				"whoscoredApps": 8,
+				"whoscoredMins": 592
 			},
 			"Champions League | RasenBallsport Leipzig": {
 				"whoscoredApps": 1,
@@ -66537,8 +66568,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Mainz 05": {
-				"whoscoredApps": 6,
-				"whoscoredMins": 495
+				"whoscoredApps": 7,
+				"whoscoredMins": 585
 			}
 		}
 	},
@@ -66589,8 +66620,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Augsburg": {
-				"whoscoredApps": 4,
-				"whoscoredMins": 48
+				"whoscoredApps": 5,
+				"whoscoredMins": 71
 			}
 		}
 	},
@@ -67672,8 +67703,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Borussia M'Gladbach": {
-				"whoscoredApps": 23,
-				"whoscoredMins": 1732
+				"whoscoredApps": 24,
+				"whoscoredMins": 1822
 			},
 			"Europa League | Borussia M'Gladbach": {
 				"whoscoredApps": 5,
@@ -67832,8 +67863,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Augsburg": {
-				"whoscoredApps": 20,
-				"whoscoredMins": 1421
+				"whoscoredApps": 21,
+				"whoscoredMins": 1511
 			}
 		}
 	},
@@ -67863,8 +67894,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Bayern Munich": {
-				"whoscoredApps": 23,
-				"whoscoredMins": 1772
+				"whoscoredApps": 24,
+				"whoscoredMins": 1862
 			},
 			"Champions League | Bayern Munich": {
 				"whoscoredApps": 4,
@@ -67976,8 +68007,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Union Berlin": {
-				"whoscoredApps": 12,
-				"whoscoredMins": 263
+				"whoscoredApps": 13,
+				"whoscoredMins": 353
 			}
 		}
 	},
@@ -67997,8 +68028,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Union Berlin": {
-				"whoscoredApps": 27,
-				"whoscoredMins": 2183
+				"whoscoredApps": 28,
+				"whoscoredMins": 2273
 			}
 		}
 	},
@@ -68115,8 +68146,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Borussia Dortmund": {
-				"whoscoredApps": 27,
-				"whoscoredMins": 2225
+				"whoscoredApps": 28,
+				"whoscoredMins": 2315
 			},
 			"Champions League | Borussia Dortmund": {
 				"whoscoredApps": 8,
@@ -68915,8 +68946,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Hoffenheim": {
-				"whoscoredApps": 17,
-				"whoscoredMins": 982
+				"whoscoredApps": 18,
+				"whoscoredMins": 995
 			}
 		}
 	},
@@ -69268,8 +69299,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Eintracht Frankfurt": {
-				"whoscoredApps": 17,
-				"whoscoredMins": 1364
+				"whoscoredApps": 18,
+				"whoscoredMins": 1365
 			},
 			"Europa League | Eintracht Frankfurt": {
 				"whoscoredApps": 4,
@@ -69534,8 +69565,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Bayer Leverkusen": {
-				"whoscoredApps": 24,
-				"whoscoredMins": 2035
+				"whoscoredApps": 25,
+				"whoscoredMins": 2125
 			},
 			"Champions League | Bayer Leverkusen": {
 				"whoscoredApps": 5,
@@ -69654,8 +69685,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Bayer Leverkusen": {
-				"whoscoredApps": 16,
-				"whoscoredMins": 744
+				"whoscoredApps": 17,
+				"whoscoredMins": 760
 			},
 			"Champions League | Bayer Leverkusen": {
 				"whoscoredApps": 3,
@@ -69785,8 +69816,8 @@
 		},
 		"19-20": {
 			"Bundesliga | RasenBallsport Leipzig": {
-				"whoscoredApps": 22,
-				"whoscoredMins": 1912
+				"whoscoredApps": 23,
+				"whoscoredMins": 2002
 			},
 			"Champions League | RasenBallsport Leipzig": {
 				"whoscoredApps": 6,
@@ -69810,8 +69841,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Borussia M'Gladbach": {
-				"whoscoredApps": 24,
-				"whoscoredMins": 2084
+				"whoscoredApps": 25,
+				"whoscoredMins": 2174
 			},
 			"Europa League | Borussia M'Gladbach": {
 				"whoscoredApps": 6,
@@ -69939,8 +69970,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Mainz 05": {
-				"whoscoredApps": 11,
-				"whoscoredMins": 556
+				"whoscoredApps": 12,
+				"whoscoredMins": 638
 			}
 		}
 	},
@@ -70591,8 +70622,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Borussia M'Gladbach": {
-				"whoscoredApps": 15,
-				"whoscoredMins": 832
+				"whoscoredApps": 16,
+				"whoscoredMins": 840
 			},
 			"Europa League | Borussia M'Gladbach": {
 				"whoscoredApps": 4,
@@ -70758,7 +70789,7 @@
 		"mapped": false,
 		"name": "Phil Foden",
 		"simplifiedName": "Phil Foden",
-		"age": 19,
+		"age": 20,
 		"nationality": "England",
 		"positions": {
 			"18-19": "N/A",
@@ -70871,8 +70902,8 @@
 		},
 		"19-20": {
 			"Bundesliga | RasenBallsport Leipzig": {
-				"whoscoredApps": 4,
-				"whoscoredMins": 42
+				"whoscoredApps": 5,
+				"whoscoredMins": 53
 			}
 		}
 	},
@@ -71115,8 +71146,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Hertha Berlin": {
-				"whoscoredApps": 11,
-				"whoscoredMins": 831
+				"whoscoredApps": 12,
+				"whoscoredMins": 921
 			}
 		}
 	},
@@ -71563,8 +71594,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Werder Bremen": {
-				"whoscoredApps": 20,
-				"whoscoredMins": 1653
+				"whoscoredApps": 21,
+				"whoscoredMins": 1743
 			}
 		}
 	},
@@ -71584,8 +71615,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Paderborn": {
-				"whoscoredApps": 18,
-				"whoscoredMins": 808
+				"whoscoredApps": 19,
+				"whoscoredMins": 819
 			}
 		}
 	},
@@ -71636,8 +71667,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Hertha Berlin": {
-				"whoscoredApps": 8,
-				"whoscoredMins": 295
+				"whoscoredApps": 9,
+				"whoscoredMins": 307
 			}
 		}
 	},
@@ -71755,8 +71786,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Hoffenheim": {
-				"whoscoredApps": 21,
-				"whoscoredMins": 1691
+				"whoscoredApps": 22,
+				"whoscoredMins": 1781
 			}
 		}
 	},
@@ -71845,7 +71876,7 @@
 		"mapped": false,
 		"name": "Juan Ferney Otero",
 		"simplifiedName": "Juan Ferney Otero",
-		"age": 24,
+		"age": 25,
 		"nationality": "Colombia",
 		"positions": {
 			"18-19": "AM",
@@ -71924,8 +71955,8 @@
 				"whoscoredMins": 311
 			},
 			"Bundesliga | Augsburg": {
-				"whoscoredApps": 10,
-				"whoscoredMins": 418
+				"whoscoredApps": 11,
+				"whoscoredMins": 493
 			}
 		}
 	},
@@ -72090,8 +72121,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Wolfsburg": {
-				"whoscoredApps": 4,
-				"whoscoredMins": 318
+				"whoscoredApps": 5,
+				"whoscoredMins": 408
 			},
 			"Champions League | Salzburg": {
 				"whoscoredApps": 1,
@@ -72402,8 +72433,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Schalke 04": {
-				"whoscoredApps": 22,
-				"whoscoredMins": 1573
+				"whoscoredApps": 23,
+				"whoscoredMins": 1663
 			}
 		}
 	},
@@ -72532,8 +72563,8 @@
 				"whoscoredMins": 1190
 			},
 			"Bundesliga | Hertha Berlin": {
-				"whoscoredApps": 8,
-				"whoscoredMins": 492
+				"whoscoredApps": 9,
+				"whoscoredMins": 511
 			}
 		}
 	},
@@ -73427,8 +73458,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Augsburg": {
-				"whoscoredApps": 13,
-				"whoscoredMins": 272
+				"whoscoredApps": 14,
+				"whoscoredMins": 288
 			}
 		}
 	},
@@ -73570,8 +73601,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Eintracht Frankfurt": {
-				"whoscoredApps": 21,
-				"whoscoredMins": 1357
+				"whoscoredApps": 22,
+				"whoscoredMins": 1447
 			},
 			"Europa League | Eintracht Frankfurt": {
 				"whoscoredApps": 9,
@@ -74318,8 +74349,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Borussia Dortmund": {
-				"whoscoredApps": 25,
-				"whoscoredMins": 1843
+				"whoscoredApps": 26,
+				"whoscoredMins": 1888
 			},
 			"Champions League | Borussia Dortmund": {
 				"whoscoredApps": 8,
@@ -74388,8 +74419,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Augsburg": {
-				"whoscoredApps": 24,
-				"whoscoredMins": 1827
+				"whoscoredApps": 25,
+				"whoscoredMins": 1894
 			}
 		}
 	},
@@ -74669,8 +74700,8 @@
 		},
 		"19-20": {
 			"Bundesliga | FC Koln": {
-				"whoscoredApps": 15,
-				"whoscoredMins": 1259
+				"whoscoredApps": 16,
+				"whoscoredMins": 1349
 			}
 		}
 	},
@@ -74796,8 +74827,8 @@
 		},
 		"19-20": {
 			"Bundesliga | FC Koln": {
-				"whoscoredApps": 6,
-				"whoscoredMins": 231
+				"whoscoredApps": 7,
+				"whoscoredMins": 321
 			},
 			"Europa League | Wolfsburg": {
 				"whoscoredApps": 1,
@@ -75160,8 +75191,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Bayer Leverkusen": {
-				"whoscoredApps": 21,
-				"whoscoredMins": 1288
+				"whoscoredApps": 22,
+				"whoscoredMins": 1362
 			},
 			"Champions League | Bayer Leverkusen": {
 				"whoscoredApps": 2,
@@ -75519,8 +75550,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Mainz 05": {
-				"whoscoredApps": 24,
-				"whoscoredMins": 1858
+				"whoscoredApps": 25,
+				"whoscoredMins": 1948
 			}
 		}
 	},
@@ -75586,8 +75617,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Schalke 04": {
-				"whoscoredApps": 19,
-				"whoscoredMins": 1190
+				"whoscoredApps": 20,
+				"whoscoredMins": 1280
 			}
 		}
 	},
@@ -75800,8 +75831,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Union Berlin": {
-				"whoscoredApps": 26,
-				"whoscoredMins": 1855
+				"whoscoredApps": 27,
+				"whoscoredMins": 1920
 			}
 		}
 	},
@@ -75821,8 +75852,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Paderborn": {
-				"whoscoredApps": 23,
-				"whoscoredMins": 2039
+				"whoscoredApps": 24,
+				"whoscoredMins": 2129
 			}
 		}
 	},
@@ -75842,8 +75873,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Paderborn": {
-				"whoscoredApps": 27,
-				"whoscoredMins": 1867
+				"whoscoredApps": 28,
+				"whoscoredMins": 1957
 			}
 		}
 	},
@@ -75863,8 +75894,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Paderborn": {
-				"whoscoredApps": 26,
-				"whoscoredMins": 2281
+				"whoscoredApps": 27,
+				"whoscoredMins": 2368
 			}
 		}
 	},
@@ -75895,8 +75926,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Schalke 04": {
-				"whoscoredApps": 6,
-				"whoscoredMins": 314
+				"whoscoredApps": 7,
+				"whoscoredMins": 319
 			},
 			"Champions League | Barcelona": {
 				"whoscoredApps": 1,
@@ -77092,8 +77123,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Mainz 05": {
-				"whoscoredApps": 22,
-				"whoscoredMins": 1521
+				"whoscoredApps": 23,
+				"whoscoredMins": 1603
 			}
 		}
 	},
@@ -77101,7 +77132,7 @@
 		"mapped": false,
 		"name": "Matheus Cunha",
 		"simplifiedName": "Matheus Cunha",
-		"age": 20,
+		"age": 21,
 		"nationality": "Brazil",
 		"positions": {
 			"18-19": "N/A",
@@ -77128,8 +77159,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Hertha Berlin": {
-				"whoscoredApps": 6,
-				"whoscoredMins": 454
+				"whoscoredApps": 7,
+				"whoscoredMins": 544
 			},
 			"Bundesliga | RasenBallsport Leipzig": {
 				"whoscoredApps": 10,
@@ -77272,8 +77303,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Mainz 05": {
-				"whoscoredApps": 12,
-				"whoscoredMins": 595
+				"whoscoredApps": 13,
+				"whoscoredMins": 685
 			}
 		}
 	},
@@ -77325,8 +77356,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Hertha Berlin": {
-				"whoscoredApps": 20,
-				"whoscoredMins": 1176
+				"whoscoredApps": 21,
+				"whoscoredMins": 1195
 			}
 		}
 	},
@@ -77626,8 +77657,8 @@
 		},
 		"19-20": {
 			"Bundesliga | FC Koln": {
-				"whoscoredApps": 23,
-				"whoscoredMins": 2063
+				"whoscoredApps": 24,
+				"whoscoredMins": 2089
 			}
 		}
 	},
@@ -78107,8 +78138,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Werder Bremen": {
-				"whoscoredApps": 20,
-				"whoscoredMins": 930
+				"whoscoredApps": 21,
+				"whoscoredMins": 1004
 			}
 		}
 	},
@@ -78215,8 +78246,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Schalke 04": {
-				"whoscoredApps": 18,
-				"whoscoredMins": 383
+				"whoscoredApps": 19,
+				"whoscoredMins": 399
 			}
 		}
 	},
@@ -78609,8 +78640,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Bayer Leverkusen": {
-				"whoscoredApps": 7,
-				"whoscoredMins": 630
+				"whoscoredApps": 8,
+				"whoscoredMins": 720
 			},
 			"Europa League | Bayer Leverkusen": {
 				"whoscoredApps": 3,
@@ -78638,8 +78669,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Paderborn": {
-				"whoscoredApps": 25,
-				"whoscoredMins": 1903
+				"whoscoredApps": 26,
+				"whoscoredMins": 1931
 			}
 		}
 	},
@@ -78690,8 +78721,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Schalke 04": {
-				"whoscoredApps": 14,
-				"whoscoredMins": 731
+				"whoscoredApps": 15,
+				"whoscoredMins": 816
 			}
 		}
 	},
@@ -78721,8 +78752,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Union Berlin": {
-				"whoscoredApps": 16,
-				"whoscoredMins": 1312
+				"whoscoredApps": 17,
+				"whoscoredMins": 1402
 			}
 		}
 	},
@@ -78840,8 +78871,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Hoffenheim": {
-				"whoscoredApps": 19,
-				"whoscoredMins": 1091
+				"whoscoredApps": 20,
+				"whoscoredMins": 1168
 			}
 		}
 	},
@@ -79598,8 +79629,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Wolfsburg": {
-				"whoscoredApps": 25,
-				"whoscoredMins": 1259
+				"whoscoredApps": 26,
+				"whoscoredMins": 1349
 			},
 			"Europa League | Wolfsburg": {
 				"whoscoredApps": 6,
@@ -79623,8 +79654,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Paderborn": {
-				"whoscoredApps": 19,
-				"whoscoredMins": 1245
+				"whoscoredApps": 20,
+				"whoscoredMins": 1307
 			}
 		}
 	},
@@ -79665,8 +79696,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Fortuna Duesseldorf": {
-				"whoscoredApps": 10,
-				"whoscoredMins": 900
+				"whoscoredApps": 11,
+				"whoscoredMins": 990
 			}
 		}
 	},
@@ -79686,8 +79717,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Augsburg": {
-				"whoscoredApps": 26,
-				"whoscoredMins": 1927
+				"whoscoredApps": 27,
+				"whoscoredMins": 2017
 			}
 		}
 	},
@@ -80433,8 +80464,8 @@
 		},
 		"19-20": {
 			"Bundesliga | Borussia Dortmund": {
-				"whoscoredApps": 9,
-				"whoscoredMins": 133
+				"whoscoredApps": 10,
+				"whoscoredMins": 151
 			},
 			"Champions League | Borussia Dortmund": {
 				"whoscoredApps": 2,
@@ -80446,7 +80477,7 @@
 		"mapped": false,
 		"name": "Jan Thielmann",
 		"simplifiedName": "Jan Thielmann",
-		"age": 17,
+		"age": 18,
 		"nationality": "",
 		"positions": {
 			"19-20": "N/A"

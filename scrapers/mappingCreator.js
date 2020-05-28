@@ -190,7 +190,7 @@ let processEntry = (aPlayer, competitionData, competitionName, isGoalkeeper) => 
     let playerInfo = competitionData[aPlayer];
     let code = competitionData[aPlayer]['code'];
 
-    if (FBREF_TO_WHOSCORED_TEAMS[aPlayer] !== undefined){
+    if (FBREF_TO_WHOSCORED_PLAYERS[code] !== undefined){
         return;
     }
 
@@ -295,8 +295,9 @@ let findMatches = (fbrefName, club, isGoalkeeper) => {
     }
 
     let matches = [];
-
     let maxMatches = 1;
+
+    //iterate through the matchesCounter object and push the matches with the highest matchCounter to the 'matches' array
     for (let match in matchesCounter){
         if (!(matchesCounter[match] < maxMatches)){
             if (matchesCounter[match] > maxMatches){
