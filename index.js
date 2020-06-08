@@ -136,7 +136,7 @@ app.post('/api/search', (req, res) => {
 
 /**
  * Retrieves player stats and metadata and sends to client upon request
- * @param {express.Request & {body.query : string, body.type : string}} req
+ * @param {express.Request & {body.code : string}} req
  * @param {express.Response} res - Custom object containing the stats and metadata
  */
 app.post('/api/stats', (req, res) => {
@@ -153,7 +153,52 @@ app.post('/api/stats', (req, res) => {
             let serverLastUpdate = PERCENTILE_ARRAYS['lastUpdated'].getTime();
             if (req.body.percentilesTimestamp === undefined || clientLastUpdate === serverLastUpdate){
                 setTimeout(function(){
-                    res.json(stats);
+                    res.json({
+                        stats: stats
+                    });
+                }, 300)
+            }
+            else {
+                setTimeout(function(){
+                    res.json({
+                        stats: stats,
+                        newPercentileArrays: PERCENTILE_ARRAYS
+                    })
+                }, 300)
+            }
+        },
+        () => {
+            setTimeout(function(){
+                res.status(400);
+                res.json([]);
+            }, 100)
+        });
+
+});
+
+
+/**
+ * Retrieves player stats and metadata and sends to client upon request
+ * @param {express.Request & {body.query : string, body.type : string}} req
+ * @param {express.Response} res - Custom object containing the stats and metadata
+ */
+app.post('/api/comparisonStats', (req, res) => {
+
+    //retrieve the player code
+    let codes = req.body.codes;
+
+    //retrieve stats and respond
+    getComparisonStats(codes).then(
+        (stats) => {
+            //compare the last time the client and server's percentile arrays were updated
+            //update client percentile arrays if they are out of date
+            let clientLastUpdate = new Date(req.body.percentilesTimestamp).getTime();
+            let serverLastUpdate = PERCENTILE_ARRAYS['lastUpdated'].getTime();
+            if (req.body.percentilesTimestamp === undefined || clientLastUpdate === serverLastUpdate){
+                setTimeout(function(){
+                    res.json({
+                        stats: stats
+                    });
                 }, 300)
             }
             else {
@@ -436,6 +481,54 @@ getStats = async (code) => {
             else {
                 console.log(`Retrieving stats for: ${docs[0].name} (${code})`);
                 resolve(docs[0]);
+            }
+        });
+
+    });
+
+};
+
+
+/**
+ * Queries the database for the stats of the requested players
+ * @param {string} codes - the whoscored.com codes of the requested players, which is used as the identifying value in
+ *                        the MongoDB database
+ * @returns {Promise<*>} Promise object represents the stats of the requested players, along with their metadata.
+ */
+getComparisonStats = async (codes) => {
+
+    let code1 = codes[0];
+    let code2 = codes[1];
+
+    let stats = {};
+
+    return new Promise(async function(resolve, reject){
+
+        //find the player who matches code 1
+        PLAYERS_COLLECTION.find({"code": code1.split("|")[0]}).toArray(function (err, docs) {
+            if (err) {
+                reject();
+            }
+            else if (docs.length === 0) {
+                reject();
+            }
+            else {
+                console.log(`Retrieving stats for: ${docs[0].name} (${code1}) [for comparison]`);
+                stats[code1] = docs[0];
+                //find the player who matches code 1
+                PLAYERS_COLLECTION.find({"code": code2.split("|")[0]}).toArray(function (err, docs) {
+                    if (err) {
+                        reject();
+                    }
+                    else if (docs.length === 0) {
+                        reject();
+                    }
+                    else {
+                        console.log(`Retrieving stats for: ${docs[0].name} (${code2}) [for comparison]`);
+                        stats[code2] = docs[0];
+                        resolve(stats);
+                    }
+                });
             }
         });
 

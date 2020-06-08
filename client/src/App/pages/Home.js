@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import OutsideClickHandler from 'react-outside-click-handler';
 import $ from "jquery";
 
 //import components
@@ -7,7 +8,6 @@ import LoadingSpinner from "../components/LoadingSpinner";
 
 //import assets
 import mockUps from "../assets/mockups.png"
-import {Link} from "react-router-dom";
 
 
 /**
@@ -25,8 +25,10 @@ class Home extends Component {
     constructor(props) {
 
         super(props);
+
+        this.isMobile = this.props.isMobile;
+
         this.state = {
-            isMobile: this.props.isMobile,
             isLoading: true,
             samplePlayer: {},
         };
@@ -48,8 +50,6 @@ class Home extends Component {
      */
     getSamplePlayer = () => {
 
-        let isMobile = this.state.isMobile;
-
         //fetch sample players
         fetch('/api/samplePlayer', {
             method: 'post',
@@ -65,11 +65,9 @@ class Home extends Component {
                 this.setState({samplePlayer: samplePlayer, isLoading: false});
                 //hard code the height of home and the navbar container if it is a mobile device
                 //this is done because the soft keyboards on mobile devices affect the view-height
-                if (isMobile){
-                    var height = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
-                    var navbarHeight = 0.06 * height;
+                if (this.isMobile){
+                    let height = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
                     $("#home").css({"height": height});
-                    $("#navbar-container").css({"height": navbarHeight});
                 }
                 //add preload class to the hidden menu to disable the first animation
                 $("#navbar-hidden").addClass('preload');
@@ -125,7 +123,7 @@ class Home extends Component {
      */
     render() {
 
-        let { isLoading, samplePlayer } = this.state;
+        let { isLoading } = this.state;
 
         //display loading spinner while the server responds to POST request for the sample players
         if (isLoading) {
@@ -156,45 +154,52 @@ class Home extends Component {
             //static JSX code for the homepage
             return (
                 <div id="homepage">
-                    <div id="navbar-container">
-                        <div className="navbar" id="navbar-normal">
-                            <a href="#home">
-                                <div>Home</div>
-                            </a>
-                            <a href="#preview">
-                                <div>Preview</div>
-                            </a>
-                            <a href="#glossary">
-                                <div>Glossary</div>
-                            </a>
-                            <a href="#faq">
-                                <div>F.A.Q.</div>
-                            </a>
-                            <a href="#contact">
-                                <div>Contact</div>
-                            </a>
-                            <button onClick={this.toggleNavbar} id="burger-icon-container">
-                                <div id="burgerIcon"><i className="fa fa-bars"/></div>
-                            </button>
+                    <OutsideClickHandler
+                        onOutsideClick={this.hideNavbar}
+                    >
+                        <div id="navbar-container">
+                            <div className="navbar" id="navbar-normal">
+                                <a onClick={this.hideNavbar} href="#home">
+                                    <div>Home</div>
+                                </a>
+                                <a href="#about">
+                                    <div>About</div>
+                                </a>
+                                <a href="#glossary">
+                                    <div>Glossary</div>
+                                </a>
+                                <a href="#faq">
+                                    <div>F.A.Q.</div>
+                                </a>
+                                <a href="#contact">
+                                    <div>Contact</div>
+                                </a>
+                                <button onClick={this.toggleNavbar} id="burger-icon-container">
+                                    <div id="burgerIcon"><i className="fa fa-bars"/></div>
+                                </button>
+                            </div>
+                            <div className="navbar responsive-navbar" id="navbar-hidden">
+                                <a onClick={this.hideNavbar} href="#about">
+                                    <div>About</div>
+                                </a>
+                                <a onClick={this.hideNavbar} href="#glossary">
+                                    <div>Glossary</div>
+                                </a>
+                                <a onClick={this.hideNavbar} href="#faq">
+                                    <div>F.A.Q.</div>
+                                </a>
+                                <a onClick={this.hideNavbar} href="#contact">
+                                    <div>Contact</div>
+                                </a>
+                            </div>
                         </div>
-                        <div className="navbar responsive-navbar" id="navbar-hidden">
-                            <a onClick={this.hideNavbar} href="#preview">
-                                <div>Preview</div>
-                            </a>
-                            <a onClick={this.hideNavbar} href="#glossary">
-                                <div>Glossary</div>
-                            </a>
-                            <a onClick={this.hideNavbar} href="#faq">
-                                <div>F.A.Q.</div>
-                            </a>
-                            <a onClick={this.hideNavbar} href="#contact">
-                                <div>Contact</div>
-                            </a>
-                        </div>
-                    </div>
+                    </OutsideClickHandler>
                     <div id="home">
                         <h1>Football<span style={{color: '#e4c000'}}>Slices</span></h1>
-                        <SearchBar page="home"/>
+                        <SearchBar
+                            isMobile={this.isMobile}
+                            page="home"
+                        />
                         {/*<Link to={"/stats/" + samplePlayer.code}>*/}
                         {/*    <button id="lucky-button">*/}
                         {/*        Slice of Luck*/}
@@ -205,24 +210,35 @@ class Home extends Component {
                         {/*    {samplePlayerButtons}*/}
                         {/*</div>*/}
                     </div>
-                    <div id="preview" className="homepage-section-container">
-                        <div id="preview-section-container">
-                            <div id="preview-text">
-                                <h2>Preview</h2>
+                    <div id="about" className="homepage-section-container">
+                        <div id="about-section-container">
+                            <div id="about-text">
+                                <h2>About</h2>
+                                {/*<p>*/}
+                                {/*    FootballSlices are stats visualizations that are supported by an*/}
+                                {/*    entirely automated data retrieval process. The tool sifts through mountains of*/}
+                                {/*    numbers so you don't have to!*/}
+                                {/*</p>*/}
+                                {/*<p>*/}
+                                {/*    Explore a database of more than <b>2,700 players</b> from <b>Europe's top 5 leagues</b>,*/}
+                                {/*    with stats from the <b>2018/19</b> and <b>2019/20</b> seasons.*/}
+                                {/*</p>*/}
+                                {/*<p>*/}
+                                {/*    Simply choose a positional template, toggle the competitions you'd like to include,*/}
+                                {/*    and visualize statistics in seconds with interactive percentile rank bar*/}
+                                {/*    charts, powered by <a href="https://www.highcharts.com" target="_blank" rel="noopener noreferrer">Highcharts.js</a>.*/}
+                                {/*</p>*/}
                                 <p>
-                                    FootballSlices are stats visualizations that are supported by an
-                                    entirely automated data retrieval process. The tool sifts through mountains of
-                                    numbers so you don't have to!
+                                    FootballSlices.com is football stats visualization tool
+                                </p>
+                                <p>
+
                                 </p>
                                 <p>
                                     Explore a database of more than <b>2,700 players</b> from <b>Europe's top 5 leagues</b>,
                                     with stats from the <b>2018/19</b> and <b>2019/20</b> seasons.
                                 </p>
-                                <p>
-                                    Simply choose a positional template, toggle the competitions you'd like to include,
-                                    and visualize statistics in seconds with interactive percentile rank bar
-                                    charts, powered by <a href="https://www.highcharts.com" target="_blank" rel="noopener noreferrer">Highcharts.js</a>.
-                                </p>
+                                <br/>
                                 <p><span className="accented-p">Interpreting FootballSlices</span></p>
                                 <p>
                                     Each slice is made up of wedges. The size of each wedge corresponds to the
@@ -241,7 +257,7 @@ class Home extends Component {
                                     <li>and <span style={{color: '#787ccd', fontWeight: 'bold'}}>Purple</span> is for goalkeeping stats</li>
                                 </ul>
                             </div>
-                            <div id="preview-image">
+                            <div id="about-image">
                                 <img src={mockUps} alt="Mock-ups"/>
                             </div>
                         </div>
@@ -383,34 +399,21 @@ class Home extends Component {
                             <div id="faq-container">
                                 <div className="faq-item">
                                     <p><span className="accented-p">Where does the data come from?</span></p>
-                                    <p>The metadata is from <a href="https://www.whoscored.com" target="_blank" rel="noopener noreferrer">WhoScored.com</a>, and
-                                        the stats are from <a href="https://www.fbref.com" target="_blank" rel="noopener noreferrer">FBref.com</a>.</p>
+                                    <p>
+                                        All stats are from <a href="https://www.fbref.com" target="_blank" rel="noopener noreferrer">FBref.com</a>,
+                                        who provide advanced stats courtesy of <a href="https://statsbomb.com" target="_blank" rel="noopener noreferrer">StatsBomb</a>.
+                                        The metadata is from <a href="https://www.whoscored.com" target="_blank" rel="noopener noreferrer">WhoScored.com</a>.
+                                    </p>
                                 </div>
                                 <div className="faq-item">
                                     <p><span className="accented-p">Who's included in the database? How often is it updated?</span></p>
                                     <p>
                                         The database includes all top 5 league players who've made 4 or more league appearances
-                                        in the 2018/19 or 2019/20 seasons. It's updated after every top 5 league, Champions League
-                                        or Europa League matchday.
+                                        in the 2018/19 or 2019/20 seasons. It's updated about once a week.
                                     </p>
                                 </div>
                                 <div className="faq-item">
-                                    <p><span className="accented-p">
-                                        Will the database be expanded to include seasons before 2018/19 and players outside the top 5 leagues?
-                                    </span></p>
-                                    <p>
-                                        Probably not. At present, <a href="https://www.fbref.com" target="_blank" rel="noopener noreferrer">FBref.com</a>'s advanced statistics
-                                        are only available for a few seasons and leagues.
-                                    </p>
-                                </div>
-                                <div className="faq-item">
-                                    <p><span className="accented-p">Will a feature be added to compare players on the same chart?</span></p>
-                                    <p>
-                                        Still working on that.
-                                    </p>
-                                </div>
-                                <div className="faq-item">
-                                    <p><span className="accented-p">What is a percentile rank? How are they calculated for FootballSlices?</span></p>
+                                    <p><span className="accented-p">How are the percentile ranks calculated?</span></p>
                                     <p>
                                         The percentile rank of a score is the percentage of scores within a dataset
                                         that are equal to or lower than the score. This is of course reversed for stats where
@@ -430,6 +433,10 @@ class Home extends Component {
                                     </p>
                                 </div>
                                 <div className="faq-item">
+                                    <p><span className="accented-p">How are the possession-adjusted stats calculated?</span></p>
+                                    <p></p>
+                                </div>
+                                <div className="faq-item">
                                     <p><span className="accented-p">How are the player positions decided?</span></p>
                                     <p>
                                         Position data is obtained using the 'detailed' tab of the <a href="https://whoscored.com/Statistics" target="_blank" rel="noopener noreferrer">
@@ -440,6 +447,15 @@ class Home extends Component {
                                         Disclaimer: This method has some small quirks. For example, it classifies Martin Ødegaard as a
                                         central midfielder, whereas I feel he's more of an attacking midfielder. It's
                                         not perfect but it's the best way I've found to automate the process.
+                                    </p>
+                                </div>
+                                <div className="faq-item">
+                                    <p><span className="accented-p">
+                                        Will the database be expanded to include seasons before 2018/19 and players outside the top 5 leagues?
+                                    </span></p>
+                                    <p>
+                                        Probably not. At present, <a href="https://www.fbref.com" target="_blank" rel="noopener noreferrer">FBref.com</a>'s advanced statistics
+                                        are only available for a few seasons and leagues.
                                     </p>
                                 </div>
                             </div>

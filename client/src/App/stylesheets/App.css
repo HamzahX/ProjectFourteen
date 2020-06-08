@@ -82,7 +82,7 @@ body {
     height: 100%;
 }
 
-#root, #root-container {
+#root, #app {
     position: absolute;
     margin: 0;
     min-width: 100%;
@@ -95,7 +95,7 @@ h1 {
     color: #e75453;
     font-size: 4.5em;
     margin-top: 0;
-    margin-bottom: 0.5em;
+    margin-bottom: 0.3em;
 }
 
 h2 {
@@ -180,12 +180,12 @@ button:focus, input:focus{
         #live-search-results {
             position: absolute;
             background-color: white;
-            max-height: 500px;
+            max-height: 400px;
             padding: 5px;
             overflow-y: scroll;
             border: #b4b4b4 1px solid;
             border-radius: 10px;
-            /*border-top: none;*/
+            z-index: 100;
         }
 
             #live-search-results #live-search-loader {
@@ -211,11 +211,13 @@ button:focus, input:focus{
                 font-style: italic;
                 color: grey;
                 font-size: 1em;
-                padding-top: 5px;
-                padding-left: 5px;
             }
 
-            #live-search-results .search-result {
+            #live-search-results .search-result:nth-child(even) {
+                background-color: red;
+            }
+
+            #live-search-results .search-result, #live-search-results p {
                 padding: 5px;
             }
 
@@ -231,9 +233,8 @@ button:focus, input:focus{
                 }
 
                 #live-search-results .search-result .club {
-                    display: block;
-                    padding-left: 5px;
-                    /*display: none;*/
+                    display: inline-block;
+                    padding-left: 7px;
                 }
 
                 #live-search-results .search-result .nationality {
@@ -250,8 +251,8 @@ button:focus, input:focus{
         top: 0;
         right: 0;
         text-align: left;
-        height: 6%;
-        max-height: 30%;
+        height: 52px;
+        max-height: calc(52px*5);
         width: 100%;
         background-color: whitesmoke;
         box-shadow: 0 0 10px 2px lightgray;
@@ -299,8 +300,7 @@ button:focus, input:focus{
             }
 
             .responsive-navbar a {
-                height: 25%;
-                max-height: 25%;
+                height: 52px;
                 width: 100%;
                 display: flex;
                 flex-direction: column;
@@ -315,36 +315,36 @@ button:focus, input:focus{
             #navbar-hidden {
                 width: 100%;
                 /*height: 24%;*/
-                max-height: 24%;
+                height: calc(52px * 4);
                 opacity: 0.95;
                 position: fixed;
-                top: -18%;
+                top: calc(52px * 3 * -1);
                 animation: slideUp;
-                animation-duration: 0.45s;
+                animation-duration: 0.25s;
                 z-index: 1;
             }
 
                 @keyframes slideUp {
-                    0% {top: 6%}
-                    100% {top: -18%}
+                    0% {top: 52px}
+                    100% {top: calc(52px * 3 * -1)}
                 }
 
             #navbar-expanded {
                 width: 100%;
                 /*height: 24%;*/
-                max-height: 24%;
+                height: calc(52px * 4);
                 opacity: 0.95;
                 position: fixed;
-                top: 6%;
+                top: 52px;
                 animation: slideDown;
-                animation-duration: 0.45s;
+                animation-duration: 0.25s;
                 z-index: 1;
                 box-shadow: 0 0 10px 2px lightgray;
             }
 
                 @keyframes slideDown {
-                    0% {top: -18%}
-                    100% {top: 6%}
+                    0% {top: calc(52px * 3 * -1)}
+                    100% {top: 52px}
                 }
 
     #home {
@@ -355,15 +355,15 @@ button:focus, input:focus{
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        padding-bottom: 16%;
-        height: 100vh;
+        padding-top: 80px;
+        padding-bottom: 410px;
         min-height: 600px;
+        height: 100vh;
     }
 
         #home #searchbar-container1 {
             min-width: 400px;
             width: 35%;
-            margin-bottom: 3%;
         }
 
             #home #searchbar-container1 form input {
@@ -468,23 +468,23 @@ button:focus, input:focus{
             color: orangered;
         }
 
-    #preview-section-container, #faq-section-container, #glossary-section-container, #contact-section-container {
-        padding: 5%;
+    #about-section-container, #faq-section-container, #glossary-section-container, #contact-section-container {
+        padding: 70px 5% 5%;
         margin: 0 auto;
         max-width: 1500px;
     }
 
-    #preview-section-container  {
+    #about-section-container  {
         display: flex;
         flex-direction: row;
         min-height: 100%;
     }
 
-        #preview-text {
+        #about-text {
             flex: 1 1 50%;
         }
 
-        #preview-image {
+        #about-image {
             flex: 1 1 50%;
             display: flex;
             flex-direction: column;
@@ -492,7 +492,7 @@ button:focus, input:focus{
             padding-left: 5%;
         }
 
-        #preview-image img {
+        #about-image img {
             width: 100%;
         }
 
@@ -523,9 +523,10 @@ button:focus, input:focus{
 #main, #main2 {
     display: flex;
     flex-direction: column;
-    min-height: 100%;
+    min-height: 700px;
     height: 100%;
-    min-width: 100%;
+    max-height: 100%;
+    min-width: 500px;
     width: 100%;
 }
 
@@ -550,8 +551,7 @@ button:focus, input:focus{
     #searchbar-container2, #searchbar-container3 {
         background-color: whitesmoke;
         box-shadow: 0 0 10px 2px lightgray;
-        flex: 1 1 6%;
-        max-height: 6%;
+        height: 52px;
         width: 100%;
         padding-left: 1%;
     }
@@ -580,8 +580,8 @@ button:focus, input:focus{
 
     .screen, .screen2 {
         padding-top: 0.5%;
-        flex: 1 1 94%;
-        max-height: 94%;
+        flex: 1;
+        max-height: calc(100% - 52px);
         max-width: 100vw;
     }
 
@@ -688,16 +688,27 @@ button:focus, input:focus{
                     color: #373737;
                 }
 
-    #stats-screen {
+    #stats-screen, #compare-screen {
         display: flex;
     }
+
+        #compare-search-screen.closed {
+            transform: scale(0.001);
+            opacity: 0;
+        }
+
+        #compare-search-screen.open {
+            transform: scale(1);
+            opacity: 1;
+        }
 
         #compare-search-screen {
             position: fixed;
             background-color: rgba(0, 0, 0, 0.6);
-            padding-top: 30px;
+            /*padding-top: 30px;*/
             height: 100%;
             width: 100%;
+            transition: transform 0.3s, opacity 0.3s;
             z-index: 4;
         }
 
@@ -705,17 +716,21 @@ button:focus, input:focus{
                 position: absolute;
                 top: 0;
                 right: 0;
-                font-family: 'FontAwesome';
+                font-family: 'FontAwesome', sans-serif;
                 content: '\f00d';
-                font-size: 2.5em;
+                font-size: 2.2em;
                 color: white;
-                z-index: 4;
             }
 
                 #close-compare-search:hover {
                     color: black;
                     cursor: pointer;
                 }
+
+            #compare-search-screen span h3 {
+                color: white;
+                text-align: center;
+            }
 
             #compare-search-screen #searchbar-container1 {
                 min-width: 400px;
@@ -862,6 +877,42 @@ button:focus, input:focus{
             /*    transition: transform 300ms;*/
             /*}*/
 
+            .multi-color-1 {
+                background: rgb(241,92,128);
+                background: -moz-linear-gradient(90deg, rgba(241,92,128,1) 0%, rgba(228,211,84,1) 50%, rgba(144,237,125,1) 100%);
+                background: -webkit-linear-gradient(90deg, rgba(241,92,128,1) 0%, rgba(228,211,84,1) 50%, rgba(144,237,125,1) 100%);
+                background: linear-gradient(90deg, rgba(241,92,128,1) 0%, rgba(228,211,84,1) 50%, rgba(144,237,125,1) 100%);
+                -webkit-background-clip: text;
+            }
+
+            .multi-color-2 {
+                background: rgb(228,211,84);
+                background: -moz-linear-gradient(90deg, rgba(228,211,84,1) 0%, rgba(144,237,125,1) 50%, rgba(124,181,236,1) 100%);
+                background: -webkit-linear-gradient(90deg, rgba(228,211,84,1) 0%, rgba(144,237,125,1) 50%, rgba(124,181,236,1) 100%);
+                background: linear-gradient(90deg, rgba(228,211,84,1) 0%, rgba(144,237,125,1) 50%, rgba(124,181,236,1) 100%);
+                -webkit-background-clip: text;
+            }
+
+            .multi-color-3 {
+                background: rgb(228,211,84);
+                background: -moz-linear-gradient(90deg, rgba(228,211,84,1) 0%, rgba(124,181,236,1) 90%);
+                background: -webkit-linear-gradient(90deg, rgba(228,211,84,1) 0%, rgba(124,181,236,1) 90%);
+                background: linear-gradient(90deg, rgba(228,211,84,1) 0%, rgba(124,181,236,1) 90%);
+                -webkit-background-clip: text;
+            }
+
+            .multi-color-4 {
+                background: rgb(148,153,255);
+                background: -moz-linear-gradient(90deg, rgba(148,153,255,1) 0%, rgba(228,211,84,1) 75%);
+                background: -webkit-linear-gradient(90deg, rgba(148,153,255,1) 0%, rgba(228,211,84,1) 75%);
+                background: linear-gradient(90deg, rgba(148,153,255,1) 0%, rgba(228,211,84,1) 75%);
+                -webkit-background-clip: text;
+            }
+
+            #compare-screen .highcharts-title {
+
+            }
+
             .highcharts-title:hover {
                 cursor: pointer;
                 opacity: 0.7;
@@ -869,15 +920,16 @@ button:focus, input:focus{
 
             /*outer border*/
             .highcharts-container  svg .highcharts-yaxis-grid path:nth-child(6){
-                stroke: #333333;
+                stroke: #000000;
                 stroke-width: 2;
             }
 
             /*inner border*/
             .highcharts-container  svg .highcharts-yaxis-grid path:nth-child(2) {
                 fill: #fafbfc !important;
-                stroke: #333333;
+                stroke: #000000;
                 stroke-width: 2;
+                z-index: 7 !important;
             }
 
             /*axis-lines (in-between inner and outer)*/
@@ -886,13 +938,17 @@ button:focus, input:focus{
                 opacity: 0.6 !important;
             }
 
+        #compare-screen .highcharts-container .highcharts-data-label {
+            /*opacity: 0;*/
+        }
+
         #export {
             position: absolute;
             top: 0;
             left: 0;
-            opacity: 0;
             width: 1200px;
             height: 1100px;
+            opacity: 0;
             transform: scale(0.01);
             background-color: rgba(0, 0, 0, 0);
             background-image: url(../assets/watermark.png);
@@ -935,7 +991,6 @@ button:focus, input:focus{
 
     #navbar-container {
         text-align: unset;
-        max-height: 30%;
     }
 
         #navbar-normal a:not(:first-child) {
@@ -983,15 +1038,15 @@ button:focus, input:focus{
         justify-content: unset;
     }
 
-    #preview-section-container, #faq-section-container, #glossary-section-container, #contact-section-container {
-        padding-top: 100px;
+    #about-section-container, #faq-section-container, #glossary-section-container, #contact-section-container {
+        padding-top: 75px;
     }
 
-    #preview-section-container  {
+    #about-section-container  {
         flex-direction: column;
     }
 
-        #preview-image {
+        #about-image {
             padding-left: unset;
             padding-top: 5%;
             margin: 0 auto;
@@ -1024,74 +1079,62 @@ button:focus, input:focus{
     #main2 {
         display: flex;
         flex-direction: column;
-        min-height: 140%;
     }
 
         #searchbar-container2, #searchbar-container3 {
-            /*padding-top: 0.5%;*/
-            flex: 1 1 4.29%;
-            /*flex: 1 1 8%*/
-            /*box-shadow: none;*/
+
         }
 
         #main #searchbar-form, #main2 #searchbar-form {
-            /*padding-top: 0.5%;*/
             padding-left: 1%;
             padding-right: 1%;
-            /*width: 100%;*/
         }
 
-        #searchbar-container2 #searchbar-form input, #searchbar-container3 #searchbar-form input {
-            /*max-width: unset;*/
-        }
+            #searchbar-container2 #searchbar-form input, #searchbar-container3 #searchbar-form input {
 
-        .screen {
-            padding: 1%;
-            flex-direction: column;
-        }
+            }
 
-        .screen2 {
-            flex: 1 1 95.71%;
-            max-height: 95.71%;
-            /*flex: 1 1 92%;*/
-            /*max-height: 92%;*/
+        .screen, .screen2 {
             flex-direction: column;
         }
 
             .filter {
-                min-height: 23%;
-                flex: 1 1 23%;
-                max-height: 23%;
+                flex: unset;
                 max-width: unset;
-                /*margin: 10px 20px;*/
                 margin-right: 1%;
                 margin-bottom: 1%;
             }
 
             .result {
-                flex: 1 1 77%;
-                max-height: 77%;
                 max-width: unset;
-                margin: 1% 1% 3% 1%;
+                margin: 1% 1% 1% 1%;
             }
+
+        .screen {
+            padding: 1%;
+            flex: 1;
+        }
+
+        .screen2 {
+            max-height: unset;
+        }
 
         #search-screen {
 
         }
 
             #search-filters {
-                flex: none;
+                display: flex;
                 max-height: unset;
                 height: auto;
                 padding-bottom: 2.5%;
-                display: flex;
                 align-items: center;
                 box-shadow: none;
             }
 
                 #search-filter-inputs {
-                    width: 48%;
-                    max-width: 48%;
+                    width: 38%;
+                    max-width: 38%;
                 }
 
                     .search-filter-input {
@@ -1104,8 +1147,7 @@ button:focus, input:focus{
                         }
 
             #search-results {
-                /*padding-left: 2%;*/
-                /*padding-right: 2%;*/
+                flex: 1;
             }
 
         #stats-screen {
@@ -1114,27 +1156,23 @@ button:focus, input:focus{
 
             #chart-filters {
                 flex-direction: row;
+                height: 280px;
+                max-height: 280px;
             }
 
                 .chart-filter-inputs {
                     padding: 0 2% 2%;
-                    /*padding: 0.5em 0.5em;*/
-                    max-height: 100%;
                     box-shadow: none;
                 }
 
                     .chart-filter-inputs form {
                         display: flex;
                         flex-flow: wrap row;
-                        /*flex-wrap: wrap;*/
                     }
 
                         .chart-filter-inputs form label {
-                            /*display: unset;*/
                             flex: 1 0 50%;
                             max-width: 50%;
-                            /*break-inside: avoid-column;*/
-                            /*overflow: visible;*/
                         }
 
                 #filter-buttons {
@@ -1165,6 +1203,9 @@ button:focus, input:focus{
                     }
 
             #chart {
+                flex: unset;
+                min-height: 600px;
+                height: 97.5vh;
                 margin: 2.5vh 1% 1% 1%;
             }
 

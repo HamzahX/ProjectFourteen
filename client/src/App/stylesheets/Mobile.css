@@ -15,9 +15,19 @@ h3 {
     margin-bottom: 20px;
 }
 
+#live-search-results .search-result, #live-search-results p {
+    padding: 20px;
+    text-overflow: ellipsis;
+}
+
+#live-search-results .search-result .club {
+    padding-left: 20px;
+}
+
 #navbar-container {
     text-align: unset;
-    max-height: 30%;
+    height: 104px;
+    max-height: calc(104px*5);
 }
 
     .navbar a {
@@ -33,6 +43,30 @@ h3 {
             float: right;
         }
 
+        .responsive-navbar a {
+            height: 104px;
+        }
+
+        #navbar-hidden {
+            height: calc(104px * 4);
+            top: calc(104px * 3 * -1);
+        }
+
+            @keyframes slideUp {
+                0% {top: 104px}
+                100% {top: calc(104px * 3 * -1)}
+            }
+
+        #navbar-expanded {
+            height: calc(104px*4);
+            top: 104px;
+        }
+
+            @keyframes slideDown {
+                0% {top: calc(104px * 3 * -1)}
+                100% {top: 104px}
+            }
+
 .homepage-section-container:not(:last-child) {
     justify-content: unset;
 }
@@ -47,18 +81,22 @@ h3 {
 
     #home #searchbar-container1 {
         min-width: 70%;
+        height: 104px;
     }
 
+        #home #searchbar-container1 #searchbar-input {
+            height: 100%;
+        }
+
     #home #searchbar-container1 #live-search-results {
-        min-width: 70%;
-        width: 70%;
+        left: 1%;
+        min-width: 98%;
+        width: 98%;
+        max-height: 600px;
     }
 
     #sample-results {
         flex-direction: column;
-        /*grid-template-columns: 1fr;*/
-        /*grid-auto-flow: row;*/
-        /*grid-row-gap: 6%;*/
         min-width: unset;
     }
 
@@ -77,15 +115,15 @@ h3 {
                 /*white-space: unset;*/
             }
 
-#preview-section-container, #faq-section-container, #glossary-section-container{
+#about-section-container, #faq-section-container, #glossary-section-container{
     padding-top: 7.5vh;
 }
 
-#preview-section-container  {
+#about-section-container  {
     flex-direction: column;
 }
 
-    #preview-image {
+    #about-image {
         padding-left: unset;
         padding-top: 5%;
     }
@@ -109,7 +147,7 @@ h3 {
 }
 
     #faq-container .faq-item {
-        margin-bottom: 5%;
+        margin-bottom: 10%;
     }
 
 #main2 {
@@ -118,25 +156,19 @@ h3 {
 }
 
     #searchbar-container2, #searchbar-container3 {
-        /*padding-top: 0.5%;*/
-        /*box-shadow: none;*/
-        /*flex: 1 1 4.29%;*/
-        flex: 1 1 6%
+        height: 104px;
     }
 
     #searchbar-container2 > div, #searchbar-container3 > div {
         width: 100%;
-        /*max-width: 100%;*/
     }
 
         #main #searchbar-form, #main2 #searchbar-form {
             padding-left: 2%;
             padding-right: 2%;
-            /*width: 100%;*/
         }
 
         #searchbar-container2 #searchbar-form input, #searchbar-container3 #searchbar-form input {
-            /*max-width: unset;*/
         }
 
         #searchbar-container2 #live-search-results, #searchbar-container3 #live-search-results {
@@ -149,26 +181,23 @@ h3 {
                 right: 2%;
             }
 
+    .screen, .screen2 {
+        flex: 1;
+        flex-direction: column;
+    }
+
     .screen {
         padding: 1%;
-        flex-direction: column;
     }
 
 
     .screen2 {
-        /*flex: 1 1 95.21%;*/
-        /*max-height: 95.21%;*/
-        flex: 1 1 94%;
-        max-height: 94%;
-        flex-direction: column;
+
     }
 
         .filter {
-            min-height: 23%;
-            flex: 1 1 23%;
-            max-height: 23%;
+            flex: unset;
             max-width: unset;
-            /*margin: 10px 20px;*/
             margin-right: 1%;
             margin-bottom: 1%;
         }
@@ -183,10 +212,7 @@ h3 {
     }
 
         #search-filters {
-            flex: none;
-            max-height: unset;
-            height: auto;
-            padding-bottom: 2.5%;
+            padding-bottom: 5%;
             display: flex;
             align-items: center;
             box-shadow: none;
@@ -228,12 +254,32 @@ h3 {
                     /*margin-bottom: 1.5%;*/
                 }
 
-    #stats-screen {
-
+    #stats-screen, #compare-screen {
+        max-height: unset;
     }
 
+        #compare-search-screen {
+
+        }
+
+            #compare-search-screen #searchbar-container1 {
+                min-width: 75%;
+                height: 104px;
+            }
+
+                #compare-search-screen #searchbar-container1 #live-search-results {
+                    min-width: unset;
+                    width: 72%;
+                }
+
+                #compare-search-screen #searchbar-container1 #searchbar-input{
+                    height: 100%;
+                }
+
         #chart-filters {
-            flex-direction: row;
+            /*flex-direction: row;*/
+            min-height: 507px;
+            /*max-height: 410px;*/
         }
 
             .chart-filter-inputs {
@@ -260,6 +306,21 @@ h3 {
                 display: block;
             }
 
+                #chart-filter-inputs-mobile form {
+                    display: flex;
+                    flex-flow: wrap row;
+                }
+
+                    #chart-filter-inputs-mobile form label {
+                        flex: 1 0 50%;
+                        max-width: 50%;
+                    }
+
+                #chart-filter-inputs-mobile .Collapsible__trigger {
+                    padding-top: 21px;
+                    padding-bottom: 21px;
+                }
+
                 #chart-filter-inputs-mobile form label {
                     font-size: 3vw;
                     padding: 30px;
@@ -273,28 +334,44 @@ h3 {
                     box-shadow: 0 0 6px #B23535;
                 }
 
-        #filter-buttons {
+            #filter-buttons {
+                flex: unset;
+                flex-direction: row;
+            }
+
+                #filter-buttons .filter-button {
+                    padding: 0;
+                    margin-top: 1%;
+                }
+
+                    #filter-buttons .filter-button button {
+                        padding-top: 20px;
+                        padding-bottom: 20px;
+                    }
+
+                #filter-buttons .filter-button:first-child {
+                    margin-right: 0.5%;
+                }
+
+                #filter-buttons .filter-button:not(:first-child):not(:last-child) {
+                    margin-left: 0.25%;
+                    margin-right: 0.25%;
+                }
+
+                #filter-buttons .filter-button:last-child {
+                    margin-left: 0.5%;
+                }
+
+        #chart {
+            flex: 1;
+            min-height: 1250px;
         }
 
-            #filter-buttons .filter-button {
-                padding: 0;
-                /*margin-left: 20px;*/
-                margin-left: 3.3%;
-            }
 
-            #filter-buttons .filter-button:first-child {
-                /*padding-bottom: 13px;*/
-                padding-bottom: 2.5%;
-            }
+/*@media (max-device-aspect-ratio: 568/320){*/
 
-            #filter-buttons .filter-button:not(:first-child):not(:last-child) {
-                /*padding-top: 7px;*/
-                /*padding-bottom: 7px;*/
-                padding-top: 1.25%;
-                padding-bottom: 1.25%;
-            }
+/*    #chart {*/
+/*        min-height: 1500px;*/
+/*    }*/
 
-            #filter-buttons .filter-button:last-child {
-                /*padding-top: 13px;*/
-                padding-top: 2.5%;
-            }
+/*}*/

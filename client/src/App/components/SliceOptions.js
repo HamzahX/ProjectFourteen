@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import Collapsible from 'react-collapsible';
 
 /**
@@ -10,18 +10,34 @@ class SliceOptions extends Component {
 
         super(props);
 
-        this.positions = {
-            "FW": "Forward",
-            "AM": "Attacking Midfielder / Winger",
-            "CM": "Central / Defensive Midfielder",
-            "FB": "Full-back",
-            "CB": "Center-back",
-            "GK": "Goalkeeper"
-        };
-
+        this.isMobile = this.props.isMobile;
         this.templateOpen = this.props.template === "N/A";
         this.competitions = this.props.competitions;
+        this.codes = this.props.codes;
+        this.names = this.props.names;
         this.clubs = this.props.clubs;
+
+        this.positions = {};
+        if (this.isMobile){
+            this.positions = {
+                "FW": "FW",
+                "AM": "AM",
+                "CM": "CM / DM",
+                "FB": "FB",
+                "CB": "CB",
+                "GK": "GK"
+            };
+        }
+        else {
+            this.positions = {
+                "FW": "Forward",
+                "AM": "Attacking Midfielder / Winger",
+                "CM": "Central / Defensive Midfielder",
+                "FB": "Full-back",
+                "CB": "Center-back",
+                "GK": "Goalkeeper"
+            };
+        }
 
         this.labelTypes = {
             "raw": "Raw Value",
@@ -33,16 +49,65 @@ class SliceOptions extends Component {
 
     }
 
+    constructPlayerCompetitions = (forComparison, code) => {
+
+        let competitions = forComparison ? this.competitions[code] : this.competitions;
+        let clubs = forComparison ? this.clubs[code] : this.clubs;
+        let selectedCompetitions = forComparison ? this.props.selectedCompetitions[code] : this.props.selectedCompetitions;
+
+        let competitionsForms = [];
+        let counter = 0;
+        for (let season in competitions){
+            let competitionLabels = [];
+            let multipleClubs = clubs[season].length !== 1;
+            competitionsForms.push(
+                <h4
+                    key={`${season}_header`}
+                    style={{
+                        marginBottom: this.isMobile ? '20px' : '10px',
+                        // marginTop: (counter !== 0 && !isMobile) ? '12px' : '10px'
+                        marginTop: (counter === 0) ? (this.isMobile ? '15px' : '10px') : (this.isMobile ? '20px' : '12px')
+                    }}
+                >
+                    {season.replace("-", "/")} {multipleClubs === false ? ' | ' + clubs[season][0] : null}
+                </h4>
+            );
+            for (let i=0; i<competitions[season].length; i++){
+                let currentCompetition = competitions[season][i];
+                let isIncluded = selectedCompetitions[season].includes(currentCompetition);
+                let label = currentCompetition;
+                if (clubs[season].length === 1){
+                    label = label.substring(0, label.indexOf("|")-1)
+                }
+                competitionLabels.push(
+                    <label
+                        className={`${isIncluded ? "selected-label" : null} selectable-label`}
+                        key={forComparison ? `${season}_${currentCompetition}_${code}` : `${season}_${currentCompetition}`}
+                    >
+                        <input className="competition"
+                               type="checkbox"
+                               value={forComparison ? `${season}_${currentCompetition}_${code}` : `${season}_${currentCompetition}`}
+                               onChange={this.props.changeSelectedCompetitions}
+                               checked={isIncluded}
+                        /> {label}
+                    </label>
+                )
+            }
+            competitionsForms.push(<form key={forComparison ? `${code}_${season}_form` : `${season}_form`} className="competitions">{competitionLabels}</form>);
+            counter++;
+        }
+
+        return competitionsForms;
+
+    };
+
     /**
      * render function
      * @return {*} - JSX code for the slice options
      */
     render() {
 
-        let isMobile = this.props.isMobile;
-
         let template = this.props.template;
-        let selectedCompetitions = this.props.selectedCompetitions;
         let labelType = this.props.labelType;
 
         //construct templates form
@@ -96,44 +161,40 @@ class SliceOptions extends Component {
 
         //construct competitions forms
         let competitionsForms = [];
-        let counter = 0;
-        for (let season in this.competitions){
-            let competitionLabels = [];
-            let multipleClubs = this.clubs[season].length !== 1;
-            competitionsForms.push(
-                <h4
-                    key={`${season}_header`}
-                    style={{
-                        marginBottom: isMobile ? '20px' : '10px',
-                        marginTop: (counter !== 0 && !isMobile) ? '15px' : '20px'
-                    }}
-                >
-                    {season.replace("-", "/")} {multipleClubs === false ? ' | ' + this.clubs[season][0] : null}
-                </h4>
-            );
-            for (let i=0; i<this.competitions[season].length; i++){
-                let currentCompetition = this.competitions[season][i];
-                let isIncluded = selectedCompetitions[season].includes(currentCompetition);
-                let label = currentCompetition;
-                if (this.clubs[season].length === 1){
-                    label = label.substring(0, label.indexOf("|")-1)
-                }
-                competitionLabels.push(
-                    <label
-                        className={`${isIncluded ? "selected-label" : null} selectable-label`}
-                        key={`${season}_${currentCompetition}`}
+        let playerCompetitions;
+        if (this.codes !== undefined){
+            playerCompetitions = {};
+            for (let i=0; i<this.codes.length; i++){
+                let code = this.codes[i];
+                playerCompetitions[code] = this.constructPlayerCompetitions(true, code);
+                competitionsForms.push(
+                    <Collapsible
+                        key={`Competitions (${code})`}
+                        open={true}
+                        trigger={`Competitions (${this.names[this.codes[i]]})`}
+                        className="chart-filter-headers"
+                        transitionTime={200}
+                        transitionCloseTime={200}
                     >
-                        <input className="competition"
-                               type="checkbox"
-                               value={`${season}_${currentCompetition}`}
-                               onChange={this.props.changeSelectedCompetitions}
-                               checked={isIncluded}
-                        /> {label}
-                    </label>
+                        {playerCompetitions[code]}
+                    </Collapsible>
                 )
             }
-            competitionsForms.push(<form key={`${season}_form`} className="competitions">{competitionLabels}</form>);
-            counter++;
+        }
+        else {
+            playerCompetitions = this.constructPlayerCompetitions(false);
+            competitionsForms.push(
+                <Collapsible
+                    key={"_"}
+                    open={true}
+                    trigger={`Competitions`}
+                    className="chart-filter-headers"
+                    transitionTime={200}
+                    transitionCloseTime={200}
+                >
+                    {playerCompetitions}
+                </Collapsible>
+            )
         }
 
         //construct label type form
@@ -141,7 +202,7 @@ class SliceOptions extends Component {
         for (let type in this.labelTypes){
             labelTypeLabels.push(
                 <label
-                    className="selectable-label"
+                    className={`selectable-label ${labelType === type ? "selected-label" : null}`}
                     key={type}
                 >
                     <input
@@ -168,15 +229,7 @@ class SliceOptions extends Component {
                     >
                         {templatesForm}
                     </Collapsible>
-                    <Collapsible
-                        open={true}
-                        trigger="Competitions"
-                        className="chart-filter-headers"
-                        transitionTime={200}
-                        transitionCloseTime={200}
-                    >
-                        {competitionsForms}
-                    </Collapsible>
+                    {competitionsForms}
                     <Collapsible
                         open={false}
                         trigger="Data Labels"
@@ -197,15 +250,7 @@ class SliceOptions extends Component {
                     >
                         {mobileTemplatesForm}
                     </Collapsible>
-                    <Collapsible
-                        open={true}
-                        trigger="Competitions"
-                        className="chart-filter-headers"
-                        transitionTime={200}
-                        transitionCloseTime={200}
-                    >
-                        {competitionsForms}
-                    </Collapsible>
+                    {competitionsForms}
                     <Collapsible
                         open={false}
                         trigger="Data Labels"
@@ -216,31 +261,15 @@ class SliceOptions extends Component {
                         {labelTypeForm}
                     </Collapsible>
                 </div>
-                {/*<div className="chart-filter-inputs" id="chart-filter-inputs-laptop">*/}
-                {/*    <h3>Template</h3>*/}
-                {/*    {templatesForm}*/}
-                {/*    <h3>Competitions</h3>*/}
-                {/*    {competitionsForms}*/}
-                {/*    <h3>Data Labels</h3>*/}
-                {/*    {labelTypeForm}*/}
-                {/*</div>*/}
-                {/*<div className="chart-filter-inputs" id="chart-filter-inputs-mobile">*/}
-                {/*    <h3>Template</h3>*/}
-                {/*    {mobileTemplatesForm}*/}
-                {/*    <h3>Competitions</h3>*/}
-                {/*    {competitionsForms}*/}
-                {/*    <h3>Data Labels</h3>*/}
-                {/*    {labelTypeForm}*/}
-                {/*</div>*/}
                 <div id="filter-buttons">
                     <div className="filter-button">
                         <button id="toggleCreditsButton" type="button" onClick={this.props.toggleCreditsPosition}>Toggle Credits Position</button>
                     </div>
                     <div className="filter-button">
-                        <button id="exportButton" type="button" onClick={this.props.exportChart}>Export Chart</button>
+                        <button id="compareButton" type="button" onClick={this.props.toggleCompareSearch}>Compare</button>
                     </div>
                     <div className="filter-button">
-                        <button id="compareButton" type="button" onClick={this.props.toggleCompareSearch}>Compare To...</button>
+                        <button id="exportButton" type="button" onClick={this.props.exportChart}>Export Chart</button>
                     </div>
                 </div>
             </div>

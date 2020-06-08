@@ -23,13 +23,11 @@ class Search extends Component {
 
         super(props);
 
-        let query = props.match.params.query;
-        let searchByClub = props.match.params.searchByClub;
         this.state = {
             isLoading: true,
             error: null,
-            query: query,
-            searchByClub: searchByClub,
+            query: props.match.params.query,
+            searchByClub: props.match.params.searchByClub,
             playerSearchResults: [],
             filteredPlayerSearchResults: [],
             clubSearchResults: [],

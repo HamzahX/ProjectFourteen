@@ -2,15 +2,20 @@ import React, { Component } from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import OutsideClickHandler from 'react-outside-click-handler';
 
+//import components
 import PlayerSearchResult from "./PlayerSearchResult";
 import ClubSearchResult from "./ClubSearchResult";
+import $ from "jquery";
 
+//create the abort controller for live search requests
 var controller = new AbortController();
-var { signal } = controller;
+//initialize the signal global. Updated upon every live search request
+var signal = controller.signal;
+
 
 /**
  * Component to render a div containing a searchbar
- * Also handles the live search
+ * Also handles the live search requests and aborts
  */
 class SearchBar extends Component {
 
@@ -22,11 +27,14 @@ class SearchBar extends Component {
 
         super(props);
 
-        let page = this.props.page;
+        this.page = this.props.page;
+        this.isMobile = this.props.isMobile;
+        this.currentPlayerCode = this.props.currentPlayerCode;
+
 
         //change the searchbar container id based on the page so that the CSS rules modify it accordingly
         this.containerID = "";
-        switch (page) {
+        switch (this.page) {
             case "home":
                 this.containerID = "searchbar-container1";
                 break;
@@ -42,13 +50,11 @@ class SearchBar extends Component {
 
         //attach a home button to the searchbar if it is not being displayed on the homepage or the compare dialog
         this.displayHomeButton = 'default';
-        if (page === "home" || page === "compare"){
+        if (this.page === "home" || this.page === "compare"){
             this.displayHomeButton = 'none';
         }
 
         this.state = {
-            page: this.props.page,
-            currentPlayerCode: this.props.currentPlayerCode,
             query: this.props.query || "",
             isLoading: false,
             error: null,
@@ -191,6 +197,55 @@ class SearchBar extends Component {
 
 
     /**
+     * Function to handle the searchbar being focused
+     * Displays the live search results on focus
+     * @param {Object} event - the focus event from the searchbar input
+     */
+    handleFocus = (event) => {
+
+        let query = event.target.value;
+        if (this.isMobile && this.page === "home"){
+            $("#searchbar-container1").css({
+                "position": "fixed",
+                "top": 0,
+                "left": 0,
+                "width": "100%",
+                "z-index": 7
+            });
+            $("h1").css({
+                "display": "none"
+            })
+        }
+        this.setState({
+            liveResultsOpen: query.length > 1
+        })
+
+    };
+
+    /**
+     * Function to handle the searchbar being blurred (un-focused)
+     * hides the live search results
+     */
+    handleBlur = () => {
+
+        if (this.isMobile && this.page === "home"){
+            $("#searchbar-container1").css({
+                "position": "relative",
+                "width": '75%',
+                "z-index": 1
+            });
+            $("h1").css({
+                "display": "block"
+            })
+        }
+        this.setState({
+            liveResultsOpen: false
+        })
+
+    };
+
+
+    /**
      * Function to handle submit events from the searchbar input
      * Redirects to the search URL with the correct URL params
      * @param {Object} event - the submit event from the searchbar input
@@ -209,8 +264,6 @@ class SearchBar extends Component {
     render() {
 
         const {
-            page,
-            currentPlayerCode,
             query,
             isLoading,
             liveResultsOpen,
@@ -225,8 +278,8 @@ class SearchBar extends Component {
             playerCards.push(
                 <PlayerSearchResult
                     page="live"
-                    forComparison={page === "compare"}
-                    comparisonCode={currentPlayerCode}
+                    forComparison={this.page === "compare"}
+                    comparisonCode={this.currentPlayerCode}
                     code={current.code}
                     name={current.name}
                     clubs={current.clubs}
@@ -263,20 +316,17 @@ class SearchBar extends Component {
                     </div>
                 </Link>
                 <OutsideClickHandler
-                    onOutsideClick={() => {
-                        this.setState({
-                            liveResultsOpen: false
-                        })
-                    }}
+                    onOutsideClick={this.handleBlur}
                 >
                     <form id="searchbar-form" onSubmit={this.handleSubmit}>
                         <input
                             type="text"
                             id="searchbar-input"
                             value={query}
-                            placeholder={page === "compare" ? "Search for players..." : "Search for players, clubs..."}
+                            placeholder={this.page === "compare" ? "Search for players..." : "Search for players, clubs..."}
                             autoComplete="off"
                             onChange={this.handleChange}
+                            onFocus={this.handleFocus}
                         />
                         <div id="live-search-results" style={{display: liveResultsOpen ? 'block' : 'none'}}>
                             <div id="live-search-loader">
@@ -290,7 +340,7 @@ class SearchBar extends Component {
                                     {playerCards}
                                     {playerCards.length === 0 ? <p>{isLoading ? "..." : " No results found"}</p> : null}
                                 </div>
-                                <div style={{display: page === "compare" ? 'none' : 'block'}}>
+                                <div style={{display: this.page === "compare" ? 'none' : 'block'}}>
                                     <h3>Clubs</h3>
                                     {clubCards}
                                     {clubCards.length === 0 ? <p>{isLoading ? "..." : " No results found"}</p> : null}

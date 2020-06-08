@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { Router, Route, Switch } from 'react-router-dom';
+import { createBrowserHistory } from 'history'
+import ReactGA from 'react-ga';
 import {isMobileOnly, isSafari} from 'react-device-detect';
 import $ from 'jquery';
 
 //import pages
-import LoadingSpinner from "./components/LoadingSpinner";
 import Home from './pages/Home';
 import Search from './pages/Search';
 import Stats from './pages/Stats';
@@ -17,6 +18,14 @@ if (isMobileOnly){
     .then( () => {
     });
 }
+
+//initialize Google Analytics
+ReactGA.initialize('UA-168675037-1');
+//listen for route changes and record a page-view in Google Analytics for each one
+const history = createBrowserHistory();
+history.listen((location, action) => {
+    ReactGA.pageview(location.pathname + location.search);
+});
 
 
 /**
@@ -46,11 +55,15 @@ class App extends Component {
      */
     componentDidMount() {
 
+        //record the first page-view in Google Analytics
+        //this is done because history.listen() only records route changes, but doesn't record the first page on load
+        ReactGA.pageview(window.location.pathname + window.location.search);
+
         //hard code the height of html, body, root and root-container if it is a mobile device
         //this is done because the soft keyboards on mobile devices affect the vh
         if (isMobileOnly){
-            var height = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
-            $("html, body, #root, #root-container").css({"height": height});
+            let height = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+            // $("html, body, #root").css({"height": height});
         }
 
     }
@@ -102,7 +115,11 @@ class App extends Component {
         //display loading message while server responds to POST request for the percentile arrays
         if (isLoading) {
             return (
-                <LoadingSpinner/>
+                <div id="main">
+                    <div className="screen" id="loading-screen">
+                        <p>...</p>
+                    </div>
+                </div>
             )
         }
 
@@ -110,7 +127,7 @@ class App extends Component {
         else {
 
             const App = () => (
-                <div id="root-container">
+                <Router history={history}>
                     <Switch>
                         <Route exact path='/' render={(props) =>
                             <Home {...props}
@@ -136,7 +153,7 @@ class App extends Component {
                         />
                         <Route path='*' component={Home}/>
                     </Switch>
-                </div>
+                </Router>
             );
 
             return (
