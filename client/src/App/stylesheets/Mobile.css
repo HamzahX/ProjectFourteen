@@ -158,7 +158,6 @@ h3 {
 
 #main2 {
     display: flex;
-    display: -webkit-flex;
     flex-direction: column;
 }
 
@@ -220,7 +219,6 @@ h3 {
 
         #search-filters {
             display: flex;
-            display: -webkit-flex;
             flex-direction: column;
             height: auto;
             padding-bottom: 5%;
@@ -300,7 +298,6 @@ h3 {
 
                 #chart-filter-inputs-mobile form {
                     display: flex;
-                    display: -webkit-flex;
                     flex-flow: wrap row;
                 }
 
@@ -356,7 +353,9 @@ h3 {
                 }
 
         #chart {
-            flex: 1;
+            /*flex: 1;*/
+            flex: 0 1 100%;
+            -webkit-flex: 0 1 100%;
             min-height: 1150px;
         }
 

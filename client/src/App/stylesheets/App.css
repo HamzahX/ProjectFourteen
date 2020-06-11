@@ -595,8 +595,9 @@ button:focus, input:focus{
 
     .screen, .screen2 {
         padding-top: 0.5%;
+        /*flex: 1;*/
         flex: 0 1 100%;
-        -webkit-flex: 0 1 auto;
+        -webkit-flex: 0 1 100%;
         max-height: calc(100% - 52px);
         max-width: 100vw;
     }
@@ -1167,8 +1168,9 @@ button:focus, input:focus{
                     }
 
             #search-results {
+                /*flex: 1;*/
                 flex: 0 1 100%;
-                -webkit-flex: 0 1 auto;
+                -webkit-flex: 0 1 100%;
             }
 
         #stats-screen {
