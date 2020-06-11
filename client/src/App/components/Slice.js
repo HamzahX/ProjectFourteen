@@ -541,10 +541,11 @@ class Slice extends Component {
         let chartOptions = this.chartOptions;
 
         let title = "";
-        let titleColor = this.primaryColors[this.props.template];
-        if (titleColor === '#e4d354'){
-            titleColor = '#cd9820';
-        }
+        let titleColor = "#e75453";
+        // let titleColor = this.primaryColors[this.props.template];
+        // if (titleColor === '#e4d354'){
+        //     titleColor = '#cd9820';
+        // }
         if (this.isForComparison) {
             chartOptions.title.style.color = titleColor;
             title += `<span class="chart-title"><a href=${this.props.url[0]} target="_blank" rel="noopener noreferrer">${this.props.name[0]}</a></span>`;

@@ -337,7 +337,7 @@ export function constructChartInput(statsPer90, percentiles, playerCode, playerN
             percentile_label: ordinalSuffix(percentile_labels[key]),
             color: Highcharts.Color(colors[i]).setOpacity(index !== 1 ? 0.85 : 0).get(),
             borderColor: isSecondPlayer ? 'black' : null,
-            borderWidth: isSecondPlayer ? 5 : 0
+            borderWidth: isSecondPlayer ? 5.5 : 0
         };
         i++;
     }
@@ -457,33 +457,45 @@ export function changeSelectedCompetitions(event){
     let clickedValues = event.target.value.split("_");
     let selectedCompetitions = this.state.selectedCompetitions;
 
+    //check if the function was called from a 'compare' page, where the checkbox values include an extra value
+    let forComparison = clickedValues.length > 2;
+
     //retrieve the information of the clicked checkbox
     let code;
     let entry;
     let clickedSeason;
     let clickedCompetition;
+    let isLastCompetition = false;
 
     //retrieve the season and competition from the clicked checkbox
     clickedSeason = clickedValues[0];
     clickedCompetition = clickedValues[1];
 
-    //check if the function was called from a 'compare' page, where the checkbox values include an extra value
     //if so, retrieve the player code from the clicked checkbox
-    if (clickedValues.length > 2) {
+    if (forComparison) {
         code = clickedValues[2];
         entry = selectedCompetitions[code][clickedSeason];
+        //determine if the click competition is the last checked competition
+        let counter = 0;
+        for (let season in selectedCompetitions[code]) {
+            counter += selectedCompetitions[code][season].length;
+        }
+        isLastCompetition = counter === 1;
     }
     else {
         entry = selectedCompetitions[clickedSeason];
     }
 
     //remove the clicked competition from selected competitions if it is already included
-    if (entry.includes(clickedCompetition)){
+    //don't remove a clicked competition if it is the last checked competition of a player on a compare page
+    if (entry.includes(clickedCompetition) && !isLastCompetition){
         entry.splice(entry.indexOf(clickedCompetition), 1);
     }
     //add it otherwise
     else {
-        entry.push(clickedCompetition);
+        if (!entry.includes(clickedCompetition)){
+            entry.push(clickedCompetition);
+        }
     }
 
     this.setState({

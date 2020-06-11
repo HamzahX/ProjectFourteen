@@ -219,7 +219,7 @@ class Home extends Component {
                                     by <a href="https://www.highcharts.com" target="_blank" rel="noopener noreferrer">Highcharts.js</a>.
                                 </p>
                                 <p>
-                                    Explore a database of more than <b>2,700 players</b> from <b>Europe's top 5 leagues</b>,
+                                    It is built on a database of more than <b>2,700 players</b> from <b>Europe's top 5 leagues</b>,
                                     with stats from the <b>2018/19</b> and <b>2019/20</b> seasons.
                                 </p>
                                 <p>
@@ -407,8 +407,8 @@ class Home extends Component {
                                     <p><span className="accented-p">How are the percentile ranks calculated?</span></p>
                                     <p>
                                         The percentile rank of a score is the percentage of scores within a dataset
-                                        that are equal to or lower than the score. This is of course reversed for stats where
-                                        a lower value is better, such as the 'fouls committed per 90' stat.
+                                        that are equal to or lower than the score. This is reversed for stats where
+                                        a lower value is better, such as 'times dispossessed'.
                                     </p>
                                     <p>
                                         The percentile ranks for FootballSlices are position-specific. For example,
@@ -457,7 +457,7 @@ class Home extends Component {
                                         Will the database be expanded to include seasons before 2018/19 and players outside the top 5 leagues?
                                     </span></p>
                                     <p>
-                                        Probably not. At present, <a href="https://www.fbref.com" target="_blank" rel="noopener noreferrer">FBref.com</a>'s advanced statistics
+                                        Probably not. At present, <a href="https://www.fbref.com" target="_blank" rel="noopener noreferrer">FBref.com</a>'s advanced stats
                                         are only available for a few seasons and leagues.
                                     </p>
                                 </div>
