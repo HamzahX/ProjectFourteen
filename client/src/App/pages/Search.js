@@ -141,14 +141,13 @@ class Search extends Component {
         let playerSearchResults = JSON.parse(JSON.stringify(this.state.playerSearchResults));
         let filteredPlayerSearchResults = [];
 
-        let input;
+        let input = "";
         if (event === null) {
-            input = "";
             filteredPlayerSearchResults = playerSearchResults;
         }
         else {
             //retrieve the input text and remove diacritics
-            let input = event.target.value
+            input = event.target.value
                 .normalize("NFD")
                 .replace(/[\u0300-\u036f]/g, "")
                 .replace("Ø", "O")

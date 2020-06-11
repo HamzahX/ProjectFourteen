@@ -40,7 +40,7 @@ class SliceOptions extends Component {
         }
 
         this.labelTypes = {
-            "raw": "Raw Value",
+            "raw": "Raw Values",
             "percentiles": "Percentile Ranks"
         };
 
@@ -65,7 +65,6 @@ class SliceOptions extends Component {
                     key={`${season}_header`}
                     style={{
                         marginBottom: this.isMobile ? '20px' : '10px',
-                        // marginTop: (counter !== 0 && !isMobile) ? '12px' : '10px'
                         marginTop: (counter === 0) ? (this.isMobile ? '15px' : '10px') : (this.isMobile ? '20px' : '12px')
                     }}
                 >
@@ -170,7 +169,7 @@ class SliceOptions extends Component {
                 competitionsForms.push(
                     <Collapsible
                         key={`Competitions (${code})`}
-                        open={true}
+                        open={!this.templateOpen && !this.isMobile}
                         trigger={`Competitions (${this.names[this.codes[i]]})`}
                         className="chart-filter-headers"
                         transitionTime={200}
@@ -186,7 +185,7 @@ class SliceOptions extends Component {
             competitionsForms.push(
                 <Collapsible
                     key={"_"}
-                    open={true}
+                    open={!this.templateOpen && !this.isMobile}
                     trigger={`Competitions`}
                     className="chart-filter-headers"
                     transitionTime={200}
@@ -242,7 +241,7 @@ class SliceOptions extends Component {
                 </div>
                 <div className="chart-filter-inputs" id="chart-filter-inputs-mobile">
                     <Collapsible
-                        open={this.templateOpen}
+                        open={false}
                         trigger="Template"
                         className="chart-filter-headers"
                         transitionTime={200}

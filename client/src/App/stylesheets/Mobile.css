@@ -4,7 +4,7 @@ body {
 }
 
 h1 {
-    font-size: 8.3vw;
+    font-size: 10vw;
 }
 
 h2 {
@@ -15,14 +15,18 @@ h3 {
     margin-bottom: 20px;
 }
 
-#live-search-results .search-result, #live-search-results p {
-    padding: 20px;
-    text-overflow: ellipsis;
+#live-search-results {
+    max-height: 600px;
 }
 
-#live-search-results .search-result .club {
-    padding-left: 20px;
-}
+    #live-search-results .search-result, #live-search-results p {
+        padding: 25px 20px;
+        text-overflow: ellipsis;
+    }
+
+    #live-search-results .search-result .club {
+        padding-left: 15px;
+    }
 
 #navbar-container {
     text-align: unset;
@@ -58,6 +62,7 @@ h3 {
             }
 
         #navbar-expanded {
+            display: block;
             height: calc(104px*4);
             top: 104px;
         }
@@ -67,7 +72,7 @@ h3 {
                 100% {top: 104px}
             }
 
-.homepage-section-container:not(:last-child) {
+.homepage-section-container.centered-section{
     justify-content: unset;
 }
 
@@ -76,7 +81,7 @@ h3 {
     background-position: bottom;
     background-repeat: no-repeat;
     background-size: unset;
-    font-size: 105%;
+    padding-top: 500px;
 }
 
     #home #searchbar-container1 {
@@ -92,31 +97,31 @@ h3 {
         left: 1%;
         min-width: 98%;
         width: 98%;
-        max-height: 600px;
+        /*max-height: 600px;*/
     }
 
-    #sample-results {
-        flex-direction: column;
-        min-width: unset;
-    }
+    /*#sample-results {*/
+    /*    flex-direction: column;*/
+    /*    min-width: unset;*/
+    /*}*/
 
-        #sample-results a {
-            max-width: unset;
-            margin-left: unset;
-            margin-right: unset;
-            margin-bottom: 5%;
-        }
+    /*    #sample-results a {*/
+    /*        max-width: unset;*/
+    /*        margin-left: unset;*/
+    /*        margin-right: unset;*/
+    /*        margin-bottom: 5%;*/
+    /*    }*/
 
-        .sample-player {
-            padding: 6%;
-        }
+    /*    .sample-player {*/
+    /*        padding: 6%;*/
+    /*    }*/
 
-            .sample-player .name, .sample-player .club {
-                /*white-space: unset;*/
-            }
+    /*        .sample-player .name, .sample-player .club {*/
+    /*            !*white-space: unset;*!*/
+    /*        }*/
 
-#about-section-container, #faq-section-container, #glossary-section-container{
-    padding-top: 7.5vh;
+#about-section-container, #faq-section-container, #glossary-section-container {
+    padding-top: 130px;
 }
 
 #about-section-container  {
@@ -139,6 +144,7 @@ h3 {
     }
 
     #glossary-section-container #glossary-links span {
+        margin-top: 0.3em;
         display: block;
     }
 
@@ -166,9 +172,11 @@ h3 {
         #main #searchbar-form, #main2 #searchbar-form {
             padding-left: 2%;
             padding-right: 2%;
+            height: 80px;
         }
 
         #searchbar-container2 #searchbar-form input, #searchbar-container3 #searchbar-form input {
+
         }
 
         #searchbar-container2 #live-search-results, #searchbar-container3 #live-search-results {
@@ -182,14 +190,12 @@ h3 {
             }
 
     .screen, .screen2 {
-        flex: 1;
         flex-direction: column;
     }
 
     .screen {
-        padding: 1%;
+        padding: 1%
     }
-
 
     .screen2 {
 
@@ -212,8 +218,10 @@ h3 {
     }
 
         #search-filters {
-            padding-bottom: 5%;
             display: flex;
+            flex-direction: column;
+            height: auto;
+            padding-bottom: 5%;
             align-items: center;
             box-shadow: none;
         }
@@ -226,12 +234,6 @@ h3 {
                 .search-filter-input {
                     padding: 1%;
                 }
-
-                    .search-filter-input input {
-                        margin-left: 20px;
-                        margin-right: 20px;
-                        /*max-width: 50%;*/
-                    }
 
         #search-results {
             overflow-y: unset;
@@ -251,7 +253,6 @@ h3 {
             }
 
                 .search-result {
-                    /*margin-bottom: 1.5%;*/
                 }
 
     #stats-screen, #compare-screen {
@@ -264,7 +265,7 @@ h3 {
 
             #compare-search-screen #searchbar-container1 {
                 min-width: 75%;
-                height: 104px;
+                height: 80px;
             }
 
                 #compare-search-screen #searchbar-container1 #live-search-results {
@@ -272,14 +273,13 @@ h3 {
                     width: 72%;
                 }
 
-                #compare-search-screen #searchbar-container1 #searchbar-input{
+                #compare-search-screen #searchbar-container1 #searchbar-input {
                     height: 100%;
                 }
 
         #chart-filters {
-            /*flex-direction: row;*/
-            min-height: 507px;
-            /*max-height: 410px;*/
+            /*min-height: 507px;*/
+            height: auto;
         }
 
             .chart-filter-inputs {
@@ -287,16 +287,6 @@ h3 {
                 max-height: 100%;
                 box-shadow: none;
             }
-
-                .chart-filter-inputs form {
-                    /*column-count: 2;*/
-                    /*-webkit-column-count: 2;*/
-                    /*-moz-column-count: 2;*/
-                }
-
-                    .chart-filter-inputs form label {
-                        break-inside: avoid-column;
-                    }
 
             #chart-filter-inputs-laptop {
                 display: none;
@@ -322,7 +312,7 @@ h3 {
                 }
 
                 #chart-filter-inputs-mobile form label {
-                    font-size: 3vw;
+                    font-size: 0.93em;
                     padding: 30px;
                 }
 
@@ -364,14 +354,10 @@ h3 {
 
         #chart {
             flex: 1;
-            min-height: 1250px;
+            min-height: 1150px;
         }
 
+            #stats-screen #chart .chart-title:after {
+                padding-left: 12px;
+            }
 
-/*@media (max-device-aspect-ratio: 568/320){*/
-
-/*    #chart {*/
-/*        min-height: 1500px;*/
-/*    }*/
-
-/*}*/

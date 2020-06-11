@@ -87,19 +87,19 @@ body {
     margin: 0;
     min-width: 100%;
     width: 100%;
+    min-height: 100%;
     height: 100%;
 }
 
 h1 {
     font-family: "courier new", monospace;
     color: #e75453;
-    font-size: 4.5em;
+    font-size: 5.3em;
     margin-top: 0;
-    margin-bottom: 0.3em;
+    margin-bottom: 0.2em;
 }
 
 h2 {
-    display: block;
     font-family: "Didact Gothic", sans-serif;
     color: #B23535;
     font-weight: normal;
@@ -155,20 +155,19 @@ button:focus, input:focus{
 }
 
     .searchbar-container > div {
-        height: 100%;
         width: 100%;
+        height: 100%;
     }
 
     #searchbar-form {
         width: 100%;
         height: 100%;
-        padding-top: 0.5%;
-        padding-bottom: 0.5%;
+        /*padding-top: 0.5%;*/
+        /*padding-bottom: 0.5%;*/
     }
 
         #searchbar-input {
             width: 100%;
-            /*height: 100%;*/
             font-size: 1.1em;
             color: #222222;
             padding-left: 1%;
@@ -213,12 +212,13 @@ button:focus, input:focus{
                 font-size: 1em;
             }
 
-            #live-search-results .search-result:nth-child(even) {
-                background-color: red;
+            #live-search-results a:not(:last-child) .search-result {
+                border-bottom: 1px rgb(255, 192, 203) solid;
             }
 
             #live-search-results .search-result, #live-search-results p {
-                padding: 5px;
+                padding: 8px;
+                margin-bottom: 0;
             }
 
             #live-search-results .search-result:hover {
@@ -250,10 +250,10 @@ button:focus, input:focus{
         z-index: 4;
         top: 0;
         right: 0;
-        text-align: left;
         height: 52px;
         max-height: calc(52px*5);
         width: 100%;
+        text-align: left;
         background-color: whitesmoke;
         box-shadow: 0 0 10px 2px lightgray;
     }
@@ -261,21 +261,21 @@ button:focus, input:focus{
         .navbar {
             background-color: whitesmoke;
             overflow: hidden;
-            max-height: 100%;
             height: 100%;
+            max-height: 100%;
         }
 
             .navbar a, .navbar button {
+                display: inline-block;
+                height: 100%;
+                max-height: 100%;
+                padding: 0 30px;
                 color: #e75453;
                 font-weight: 500;
                 font-size: 1.1em;
                 font-family: "Didact Gothic", sans-serif;
                 text-align: center;
-                padding: 0 30px;
                 text-decoration: none;
-                height: 100%;
-                max-height: 100%;
-                display: inline-block;
             }
 
             .navbar a:hover, .navbar button:hover {
@@ -283,11 +283,11 @@ button:focus, input:focus{
             }
 
             .navbar a div {
-                min-height: 100%;
-                height: 100%;
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
+                min-height: 100%;
+                height: 100%;
             }
 
             #navbar-normal {
@@ -300,12 +300,12 @@ button:focus, input:focus{
             }
 
             .responsive-navbar a {
-                height: 52px;
-                width: 100%;
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
                 align-items: flex-start;
+                width: 100%;
+                height: 52px;
             }
 
             #navbar-hidden.preload {
@@ -313,12 +313,11 @@ button:focus, input:focus{
             }
 
             #navbar-hidden {
-                width: 100%;
-                /*height: 24%;*/
-                height: calc(52px * 4);
-                opacity: 0.95;
                 position: fixed;
                 top: calc(52px * 3 * -1);
+                width: 100%;
+                height: calc(52px * 4);
+                opacity: 0.95;
                 animation: slideUp;
                 animation-duration: 0.25s;
                 z-index: 1;
@@ -330,12 +329,12 @@ button:focus, input:focus{
                 }
 
             #navbar-expanded {
-                width: 100%;
-                /*height: 24%;*/
-                height: calc(52px * 4);
-                opacity: 0.95;
+                display: none;
                 position: fixed;
                 top: 52px;
+                width: 100%;
+                height: calc(52px * 4);
+                opacity: 0.95;
                 animation: slideDown;
                 animation-duration: 0.25s;
                 z-index: 1;
@@ -353,10 +352,9 @@ button:focus, input:focus{
         background-size: cover;
         display: flex;
         flex-direction: column;
-        justify-content: center;
+        /*justify-content: center;*/
         align-items: center;
-        padding-top: 80px;
-        padding-bottom: 410px;
+        padding-top: 200px;
         min-height: 600px;
         height: 100vh;
     }
@@ -364,11 +362,11 @@ button:focus, input:focus{
         #home #searchbar-container1 {
             min-width: 400px;
             width: 35%;
+            height: 45px;
         }
 
             #home #searchbar-container1 form input {
-                padding-top: 10px;
-                padding-bottom: 10px;
+                height: 100%;
                 text-align: center;
             }
 
@@ -444,6 +442,9 @@ button:focus, input:focus{
 
     .homepage-section-container:not(:last-child) {
         min-height: 100vh;
+    }
+
+    .homepage-section-container.centered-section {
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -469,7 +470,7 @@ button:focus, input:focus{
         }
 
     #about-section-container, #faq-section-container, #glossary-section-container, #contact-section-container {
-        padding: 70px 5% 5%;
+        padding: 100px 5% 5%;
         margin: 0 auto;
         max-width: 1500px;
     }
@@ -508,6 +509,7 @@ button:focus, input:focus{
         }
 
         #glossary-section-container #glossary-links span {
+            font-size: 1.1em;
             margin-right: 10px;
         }
 
@@ -530,24 +532,6 @@ button:focus, input:focus{
     width: 100%;
 }
 
-    #searchbar-container2 #home-button, #searchbar-container3 #home-button {
-        text-align: center;
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        font-family: "Courier New", monospace;
-        font-size: 1.1em;
-        font-weight: bold;
-        color: #e75453;
-        line-height: 90%;
-        margin-right: 0.8%;
-    }
-
-    .searchbar-container #home-button:hover {
-        opacity: 0.7;
-    }
-
     #searchbar-container2, #searchbar-container3 {
         background-color: whitesmoke;
         box-shadow: 0 0 10px 2px lightgray;
@@ -556,15 +540,35 @@ button:focus, input:focus{
         padding-left: 1%;
     }
 
+        #searchbar-container2 #home-button, #searchbar-container3 #home-button {
+            text-align: center;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            font-family: "Courier New", monospace;
+            font-size: 1.1em;
+            font-weight: bold;
+            color: #e75453;
+            line-height: 90%;
+            margin-right: 0.8%;
+        }
+
+        .searchbar-container #home-button:hover {
+            opacity: 0.7;
+        }
+
         #searchbar-container2 > div, #searchbar-container3 > div {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
             width: 500px;
             max-width: 100%;
         }
 
         #searchbar-container2 #searchbar-form, #searchbar-container3 #searchbar-form {
             width: 100%;
-            padding-top: 1.5%;
-            padding-bottom: 1.5%;
+            height: 40px;
         }
 
             #searchbar-container2 #searchbar-form input, #searchbar-container3 #searchbar-form input {
@@ -589,7 +593,6 @@ button:focus, input:focus{
             min-width: 20%;
             flex: 1 1 20%;
             max-width: 20%;
-            /*margin: 10px 10px 20px 20px;*/
             margin: 0.5% 0.5% 1% 1%;
             z-index: 2;
         }
@@ -597,7 +600,6 @@ button:focus, input:focus{
         .result {
             flex: 1 1 80%;
             max-width: 80%;
-            /*margin: 10px 20px 20px 10px;*/
             margin: 0.5% 1% 1% 0.5%;
             z-index: 2;
         }
@@ -607,9 +609,6 @@ button:focus, input:focus{
     }
 
         #search-filters {
-            display: flex;
-            flex-direction: column;
-            /*padding: 0 20px 20px;*/
             padding: 0 1% 1%;
             border: darkgrey 1px solid;
             box-shadow: 0 0 10px lightgray;
@@ -667,7 +666,6 @@ button:focus, input:focus{
                 #search-results .search-result {
                     padding: 3.3%;
                     border: darkgrey 1px solid;
-                    /*margin-bottom: 3%;*/
                     transition: 0.2s;
                 }
 
@@ -705,7 +703,6 @@ button:focus, input:focus{
         #compare-search-screen {
             position: fixed;
             background-color: rgba(0, 0, 0, 0.6);
-            /*padding-top: 30px;*/
             height: 100%;
             width: 100%;
             transition: transform 0.3s, opacity 0.3s;
@@ -736,11 +733,11 @@ button:focus, input:focus{
                 min-width: 400px;
                 width: 35%;
                 margin: 0 auto;
+                height: 40px;
             }
 
             #compare-search-screen #searchbar-container1 form input {
-                padding-top: 10px;
-                padding-bottom: 10px;
+                height: 100%;
                 text-align: center;
             }
 
@@ -760,14 +757,11 @@ button:focus, input:focus{
 
             .chart-filter-inputs {
                 flex: 1 1 70%;
-                /*padding-top: 1em;*/
-                /*padding-left: 1em;*/
-                /*padding-right: 1em;*/
                 padding: 0.4em 1em 1em;
                 border: darkgrey 1px solid;
                 white-space: normal;
                 overflow-y: scroll;
-                /*overflow-y: auto;*/
+                overflow-x: hidden;
                 box-shadow: 0 0 10px lightgray;
             }
 
@@ -780,19 +774,16 @@ button:focus, input:focus{
                     font-weight: bold;
                     font-size: 1.2em;
                     color: #B23535;
-                    /*border: black 1px solid;*/
-                    /*border-bottom: none;*/
                 }
 
                 .chart-filter-inputs .Collapsible__trigger:hover {
                     cursor: pointer;
-                    /*background-color: #f0f0f0;*/
                 }
 
                 .chart-filter-inputs .Collapsible__trigger:after {
                      font-family: 'FontAwesome';
                      content: '\f107';
-                     transition: transform 300ms;
+                     transition: transform 200ms;
                 }
 
                 .chart-filter-inputs .Collapsible__trigger.is-open:after {
@@ -800,9 +791,6 @@ button:focus, input:focus{
                 }
 
                 .chart-filter-inputs .Collapsible__contentOuter {
-                    /*padding-top: 10px;*/
-                    /*padding-bottom: 5px;*/
-                    /*margin-bottom: 1em;*/
                     border-bottom: #e1e1e1 2px solid;
                 }
 
@@ -842,7 +830,6 @@ button:focus, input:focus{
         }
 
             #filter-buttons .filter-button {
-                /*padding-top: 20px;*/
                 padding-top: 5%;
                 flex: 1 1 33.3%;
             }
@@ -909,13 +896,35 @@ button:focus, input:focus{
                 -webkit-background-clip: text;
             }
 
-            #compare-screen .highcharts-title {
-
+            #stats-screen #chart .chart-title {
+                display: inline-flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: center;
             }
 
-            .highcharts-title:hover {
+            #stats-screen #chart .chart-title:after {
+                color: black;
+                text-decoration: none;
+                padding-left: 6px;
+                font-family: 'FontAwesome';
+                content: '\f08e';
+                font-size: 0.7em;
+            }
+
+            #chart .chart-title a:hover {
+                text-decoration: underline;
                 cursor: pointer;
-                opacity: 0.7;
+            }
+
+            /*#chart .chart-title:hover:after {*/
+            /*    text-decoration: none !important;*/
+            /*}*/
+
+            /*dummy border*/
+            .highcharts-container  svg .highcharts-yaxis-grid path:nth-child(7){
+                stroke: #fafbfc;
+                stroke-width: 2;
             }
 
             /*outer border*/
@@ -933,14 +942,10 @@ button:focus, input:focus{
             }
 
             /*axis-lines (in-between inner and outer)*/
-            .highcharts-container  svg .highcharts-yaxis-grid path:not(:nth-child(2)):not(:nth-child(6)) {
+            .highcharts-container  svg .highcharts-yaxis-grid path:not(:nth-child(2)):not(:nth-child(6)):not(:nth-child(7)) {
                 stroke: #7b7b7b;
                 opacity: 0.6 !important;
             }
-
-        #compare-screen .highcharts-container .highcharts-data-label {
-            /*opacity: 0;*/
-        }
 
         #export {
             position: absolute;
@@ -960,8 +965,8 @@ button:focus, input:focus{
 
     #loading-screen, #error-screen {
         display: flex;
-        text-align: center;
         flex-direction: column;
+        text-align: center;
         justify-content: center;
         font-size: 1.5em;
     }
@@ -986,7 +991,7 @@ button:focus, input:focus{
 @media (max-width: 960px) {
 
     h1 {
-        font-size: 8.3vw;
+        font-size: 8.8vw;
     }
 
     #navbar-container {
@@ -1002,9 +1007,9 @@ button:focus, input:focus{
             float: right;
         }
 
-            #navbar-normal #burger-icon-container #burgerIcon {
-                display: flex;
-            }
+        #navbar-expanded {
+            display: block;
+        }
 
     #homepage {
 
@@ -1014,27 +1019,27 @@ button:focus, input:focus{
             min-width: 400px;
         }
 
-        #sample-results {
-            flex-direction: column;
-            min-width: unset;
-        }
+        /*#sample-results {*/
+        /*    flex-direction: column;*/
+        /*    min-width: unset;*/
+        /*}*/
 
-            #sample-results a {
-                max-width: unset;
-                margin-left: unset;
-                margin-right: unset;
-                margin-bottom: 5%;
-            }
+        /*    #sample-results a {*/
+        /*        max-width: unset;*/
+        /*        margin-left: unset;*/
+        /*        margin-right: unset;*/
+        /*        margin-bottom: 5%;*/
+        /*    }*/
 
-            .sample-player {
-                padding: 4%;
-            }
+        /*    .sample-player {*/
+        /*        padding: 4%;*/
+        /*    }*/
 
-                .sample-player .name, .sample-player .club {
-                    /*white-space: unset;*/
-                }
+        /*        .sample-player .name, .sample-player .club {*/
 
-    .homepage-section-container:not(:last-child) {
+        /*        }*/
+
+    .homepage-section-container.centered-section {
         justify-content: unset;
     }
 
@@ -1065,6 +1070,7 @@ button:focus, input:focus{
         }
 
         #glossary-section-container #glossary-links span {
+            margin-top: 0.3em;
             display: block;
         }
 
@@ -1086,8 +1092,7 @@ button:focus, input:focus{
         }
 
         #main #searchbar-form, #main2 #searchbar-form {
-            padding-left: 1%;
-            padding-right: 1%;
+            /*padding-left: 1%;*/
         }
 
             #searchbar-container2 #searchbar-form input, #searchbar-container3 #searchbar-form input {
@@ -1112,7 +1117,6 @@ button:focus, input:focus{
 
         .screen {
             padding: 1%;
-            flex: 1;
         }
 
         .screen2 {
@@ -1125,7 +1129,7 @@ button:focus, input:focus{
 
             #search-filters {
                 display: flex;
-                max-height: unset;
+                flex-direction: column;
                 height: auto;
                 padding-bottom: 2.5%;
                 align-items: center;
@@ -1140,11 +1144,6 @@ button:focus, input:focus{
                     .search-filter-input {
                         padding: 1%;
                     }
-
-                        .search-filter-input input {
-                            margin-left: 20px;
-                            margin-right: 20px;
-                        }
 
             #search-results {
                 flex: 1;
@@ -1181,30 +1180,25 @@ button:focus, input:focus{
 
                     #filter-buttons .filter-button {
                         padding: 0;
-                        /*margin-left: 20px;*/
                         margin-left: 3.3%;
                     }
 
                     #filter-buttons .filter-button:first-child {
-                        /*padding-bottom: 13px;*/
                         padding-bottom: 2.5%;
                     }
 
                     #filter-buttons .filter-button:not(:first-child):not(:last-child) {
-                        /*padding-top: 7px;*/
-                        /*padding-bottom: 7px;*/
                         padding-top: 1.25%;
                         padding-bottom: 1.25%;
                     }
 
                     #filter-buttons .filter-button:last-child {
-                        /*padding-top: 13px;*/
                         padding-top: 2.5%;
                     }
 
             #chart {
                 flex: unset;
-                min-height: 600px;
+                min-height: 850px;
                 height: 97.5vh;
                 margin: 2.5vh 1% 1% 1%;
             }
@@ -1218,7 +1212,6 @@ button:focus, input:focus{
 
     #player-search-results, #club-search-results {
         grid-template-columns: 1fr;
-        /*grid-row-gap: 0.1%;*/
     }
 
         .search-result {

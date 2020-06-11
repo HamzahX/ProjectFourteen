@@ -17,7 +17,6 @@ const cookies = new Cookies();
  */
 export function filterStats(stats, playerCode = undefined){
 
-    let filteredStats = {};
     let selectedCompetitions;
     if (playerCode === undefined) {
         selectedCompetitions = this.state.selectedCompetitions;
@@ -28,6 +27,7 @@ export function filterStats(stats, playerCode = undefined){
 
     //iterate through complete stats, check if a competition is selected, and add the stats for said competition
     //to the aggregated stats if so
+    let filteredStats = {};
     for (let season in stats){
         for (let competition in stats[season]){
             if (selectedCompetitions[season].includes(competition)) {
@@ -332,14 +332,12 @@ export function constructChartInput(statsPer90, percentiles, playerCode, playerN
     for (let key in percentiles){
         chartInput[i] = {
             playerName: playerCode !== undefined ? playerName : null,
-            playerAge: playerAge,
-            minutes: minutes,
             y: percentiles[key],
             p90_label: p90_labels[key],
             percentile_label: ordinalSuffix(percentile_labels[key]),
             color: Highcharts.Color(colors[i]).setOpacity(index !== 1 ? 0.85 : 0).get(),
             borderColor: isSecondPlayer ? 'black' : null,
-            borderWidth: isSecondPlayer ? 4 : 0
+            borderWidth: isSecondPlayer ? 5 : 0
         };
         i++;
     }

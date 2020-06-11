@@ -25,7 +25,7 @@ class Slice extends Component {
         this.fontSizes = undefined;
         if (this.isForExport){
             this.fontSizes =  {
-                title: '3.3em',
+                title: this.isMobile ? '4.6vw' : '2.3em',
                 subtitle: '2em',
                 noData: '1.76em',
                 xAxisLabels: '1.8em',
@@ -40,18 +40,18 @@ class Slice extends Component {
         }
         else {
             this.fontSizes =  {
-                title: this.props.isMobile ? '4.6vw' : '2.3em',
-                subtitle: this.props.isMobile ? '2.7vw' : '1.4em',
-                noData: this.props.isMobile ? '2.7vw' : '1.35em',
-                xAxisLabels: this.props.isMobile ? '2.3vw' : '1.15em',
-                dataLabels: this.props.isMobile ? '2.3vw' : '1.15em',
-                dataLabelsOutline: this.props.isMobile ? '0.3vw' : '0.18em',
-                tooltipHeader: this.props.isMobile ? '2.3vw' : '1em',
-                tooltip: this.props.isMobile ? '2.3vw' : '1.25em',
-                legend: this.props.isMobile ? '2.8vw' : '1.4em',
-                legendTitle: this.props.isMobile ? '2vw' : '1em',
-                credits: this.props.isMobile ? '2.3vw' : '1.2em',
-                yAxisLabels: this.props.isMobile ? '1vw' : '0.5em'
+                title: this.isMobile ? '4vw' : '1.7em',
+                subtitle: this.isMobile ? '2.6vw' : '1.4em',
+                noData: this.isMobile ? '2.7vw' : '1.35em',
+                xAxisLabels: this.isMobile ? '2.3vw' : '1.15em',
+                dataLabels: this.isMobile ? '2.3vw' : '1.15em',
+                dataLabelsOutline: this.isMobile ? '0.3vw' : '0.18em',
+                tooltipHeader: this.isMobile ? '2.3vw' : '1em',
+                tooltip: this.isMobile ? '2.3vw' : '1.25em',
+                legend: this.isMobile ? '2.8vw' : '1.4em',
+                legendTitle: this.isMobile ? '2vw' : '1em',
+                credits: this.isMobile ? '2.3vw' : '1.2em',
+                yAxisLabels: this.isMobile ? '1vw' : '0.5em'
             };
         }
 
@@ -165,17 +165,27 @@ class Slice extends Component {
             "FB": ['#e4d354', '#90ed7d', '#7cb5ec'],
             "CB": ['#e4d354', '#7cb5ec'],
             "GK": ['#9499ff', '#e4d354'],
-            "N/A": ['black'],
+            "N/A": ['#000000'],
+        };
+
+        this.primaryColors = {
+            "FW": '#f15c80',
+            "AM": '#e4d354',
+            "CM": '#e4d354',
+            "FB": '#7cb5ec',
+            "CB": '#7cb5ec',
+            "GK": '#9499ff',
+            "N/A": '#000000',
         };
 
         //set subtitle constants
         this.subtitles = {
-            "FW": "vs Top-5 League Players with 10+ Starts as Forwards<br/>",
-            "AM": "vs Top-5 League Players with 10+ Starts as Attacking Midfielders / Wingers<br/>",
-            "CM": "vs Top-5 League Players with 10+ Starts as Central / Defensive Midfielders<br/>",
-            "FB": "vs Top-5 League Players with 10+ Starts as Full-backs<br/>",
-            "CB": "vs Top-5 League Players with 10+ Starts as Center-backs<br/>",
-            "GK": "vs Top-5 League Players with 10+ Starts as Goalkeepers<br/>",
+            "FW": "vs Top-5 League Players with 10+ Starts as <b>Forwards</b>",
+            "AM": "vs Top-5 League Players with 10+ Starts as <b>Attacking Midfielders / Wingers</b>",
+            "CM": "vs Top-5 League Players with 10+ Starts as <b>Central / Defensive Midfielders</b>",
+            "FB": "vs Top-5 League Players with 10+ Starts as <b>Full-backs</b>",
+            "CB": "vs Top-5 League Players with 10+ Starts as <b>Center-backs</b>",
+            "GK": "vs Top-5 League Players with 10+ Starts as <b>Goalkeepers</b>",
             "N/A": "No Template Selected"
         };
 
@@ -183,15 +193,11 @@ class Slice extends Component {
         //the goal is to have the first wedge pointing to 0 degrees
         let startAngle = -((360/this.categories[this.props.template].length)/2);
 
-        //add links to title and credits if the chart is not for export
-        let url = this.isForComparison ? "https://www.fbref.com" : this.props.url;
+        //add a link to the credits if the chart is not for export
         let chartEvents;
         if (!this.isForExport){
             chartEvents = {
                 load: function() {
-                    this.title.element.onclick = function() {
-                        window.open(url, '_blank');
-                    };
                     this.credits.element.onclick = function() {
                         window.open('https://fbref.com', '_blank');
                     };
@@ -224,6 +230,7 @@ class Slice extends Component {
         //https://api.highcharts.com/highcharts/
         this.chartOptions = {
             title: {
+                useHTML: true,
                 text: undefined,
                 style: {
                     color: '#e75453',
@@ -286,7 +293,7 @@ class Slice extends Component {
                 showLastLabel: true,
                 min: -15,
                 max: 100,
-                tickPositions: [-15, 0, 25, 50, 75, 100]
+                tickPositions: [-15, 0, 25, 50, 75, 100, 102]
             },
             series: undefined,
             colors: undefined,
@@ -370,17 +377,20 @@ class Slice extends Component {
                 itemHoverStyle: {
                     color: '#666666'
                 },
+                y: 10,
                 margin: 0,
                 padding: 0,
                 itemMarginTop: 3
             },
             credits: {
-                text: `Data Sources: FBref.com | StatsBomb ${this.isMobile || this.isForExport ? '<br/>.<br/>' : '<br/>'} Last Updated: ${this.props.lastUpdated} UTC`,
+                text: `Data Sources: FBref.com | StatsBomb<br/>Last Updated: ${this.props.lastUpdated} UTC`,
                 position: {
                     align: undefined,
-                    y: this.isMobile || this.isForExport ? -40 : -20
+                    x: undefined,
+                    y: this.isMobile || this.isForExport ? -30 : -20
                 },
                 style: {
+                    lineHeight: this.isMobile || this.isForExport ? (this.isForExport ? "20px" : "25px") : null,
                     fontSize: this.fontSizes['credits']
                 },
             },
@@ -460,10 +470,16 @@ class Slice extends Component {
     drawLegendBorders() {
 
         let chart = this.slice;
+
+        let borderColor = this.primaryColors[this.props.template];
+        if (borderColor === '#e4d354'){
+            borderColor = '#ebb320';
+        }
+
         $.each(chart.legend.allItems, function (i, item) {
             item.legendSymbol.element.setAttribute("stroke-width", "3");
-            //yellow border to first symbol, black border to second symbol
-            item.legendSymbol.element.setAttribute("stroke", i === 0 ? "#e4d354" : "#000000")
+            //primary color border to first symbol, black border to second symbol
+            item.legendSymbol.element.setAttribute("stroke", i === 0 ? borderColor : "#000000")
         });
 
     }
@@ -525,35 +541,32 @@ class Slice extends Component {
         let chartOptions = this.chartOptions;
 
         let title = "";
+        let titleColor = this.primaryColors[this.props.template];
+        if (titleColor === '#e4d354'){
+            titleColor = '#cd9820';
+        }
         if (this.isForComparison) {
-            // let name1 = this.props.name[0];
-            // let colors = this.titleColors[this.props.template];
-            // let nameParts = this.splitText(name1, colors);
-            // for (let i=0; i<nameParts.length; i++){
-            //     title += `<span style='color: ${colors[i]}'>${nameParts[i]}</span>`
-            // }
-            title += this.props.name[0];
-            title += `<span style='color: black;'> - ${this.props.name[1]}</span>`
+            chartOptions.title.style.color = titleColor;
+            title += `<span class="chart-title"><a href=${this.props.url[0]} target="_blank" rel="noopener noreferrer">${this.props.name[0]}</a></span>`;
+            title += `<span class="chart-title" style='color: black;'> - <a href=${this.props.url[1]} target="_blank" rel="noopener noreferrer">${this.props.name[1]}</a></span>`;
         }
         else {
-            title = this.props.name;
+            title = `<span class="chart-title"><a href=${this.props.url} target="_blank" rel="noopener noreferrer">${this.props.name}</a></span>`;
         }
         chartOptions.title.text = title;
 
         //build the subtitle
         let subtitle = "";
-        if (this.props.series.length !== 0){
+        if (this.props.series.length === 0 || this.props.hasUndefined){
+            subtitle = "-<br>-<br>-";
+        }
+        else {
             if (this.isForComparison) {
-                subtitle += `<span style='color: #e75453'>Age: <span style='font-weight: bold; color: #e75453'>${this.props.age[0]} ║ </span></span>`;
-                subtitle += `<span style='color: #e75453'>Minutes Played: <span style='font-weight: bold; color: #e75453'>${this.props.minutes[0].toLocaleString()}</span></span>`;
+                subtitle += `<span style='color: ${titleColor}'>Age: <span style='font-weight: bold; color: ${titleColor}'>${this.props.age[0]} ║ </span></span>`;
+                subtitle += `<span style='color: ${titleColor}'>Minutes Played: <span style='font-weight: bold; color: ${titleColor}'>${this.props.minutes[0].toLocaleString()}</span></span>`;
                 subtitle += " - ";
                 subtitle += `Age: <b>${this.props.age[1]}</b> ║ `;
                 subtitle += `Minutes Played: <b>${this.props.minutes[1].toLocaleString()}</b><br>`;
-                // subtitle += `<span style='font-weight: bold; color: #e75453'>Age: ${this.props.age[0]} ║ Minutes Played: ${this.props.minutes[0].toLocaleString()}</span>`;
-                // subtitle += `<span style='font-weight: bold; color: #e75453'> - Age: ${this.props.age[1]} ║ Minutes Played: ${this.props.minutes[1].toLocaleString()}</span>`;
-                // subtitle += "<br>"
-                // subtitle += `<span style="font-weight: bold; color: #e75453">${this.props.age[0]}</span> Age <b>${this.props.age[1]}</b><br>`;
-                // subtitle += `<span style="font-weight: bold; color: #e75453">${this.props.minutes[0].toLocaleString()}</span> Minutes Played <b>${this.props.minutes[1].toLocaleString()}</b><br>`;
             }
             else {
                 subtitle += `Age: <span style="font-weight: bold; color: #e75453">${this.props.age}</span> ║ `;
@@ -561,9 +574,6 @@ class Slice extends Component {
             }
             subtitle += "Percentile Rank Bars (per 90 stats)<br>";
             subtitle += this.subtitles[this.props.template];
-        }
-        else {
-            subtitle = "-<br>-<br>-";
         }
         //set the subtitle
         chartOptions.subtitle.text = subtitle;
@@ -598,37 +608,34 @@ class Slice extends Component {
 
         //set series color
         let titleColors = this.titleColors[this.props.template];
+        let numColors = titleColors.length;
         let gradientStops = [];
         let stop = 0;
-        for (let i=0; i<titleColors.length; i++){
-            if (titleColors[i] !== "#e4d354"){
-                gradientStops.push([stop, titleColors[i]])
+        for (let i=0; i<numColors; i++){
+            if (titleColors[numColors - 1 - i] !== this.primaryColors[this.props.template]){
+                gradientStops.push([stop, titleColors[numColors - 1 - i]]);
                 stop++
             }
         }
-        // alert(gradientStops);
         chartOptions.colors = [
             {
-                linearGradient: {
-                    x1: 0,
-                    x2: 0,
-                    y1: 0,
-                    y2: 1
+                radialGradient: {
+                    cx: 0.5,
+                    cy: 0.5,
+                    r: 0.3,
                 },
                 stops: gradientStops
             },
-            'white'
             // {
-            //     radialGradient: {
-            //         cx: 0.5,
-            //         cy: 0.5,
-            //         r: 1,
+            //     linearGradient: {
+            //         x1: 0,
+            //         x2: 0,
+            //         y1: 0,
+            //         y2: 1
             //     },
-            //     stops: [
-            //         [0, 'white'],
-            //         [1, 'black']
-            //     ]
+            //     stops: gradientStops
             // },
+            'white'
         ];
 
         //set data labels
@@ -637,7 +644,10 @@ class Slice extends Component {
         dataLabels.format = this.props.labelType === "raw" ? '{point.p90_label}' : '{point.percentile_label}';
 
         //set credits position
-        chartOptions.credits.position.align = this.isForExport ? "center" : this.props.creditsPosition;
+        let credits = chartOptions.credits;
+        let creditsPosition = this.props.creditsPosition;
+        credits.position.align = this.isForExport ? "center" : creditsPosition;
+        credits.position.x = this.isForExport || creditsPosition === "center" ? 0 : -10;
 
         let className = this.isForExport ? undefined : "result";
         let id = this.isForExport ? "export" : "chart";

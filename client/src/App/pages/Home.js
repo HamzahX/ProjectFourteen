@@ -210,36 +210,27 @@ class Home extends Component {
                         {/*    {samplePlayerButtons}*/}
                         {/*</div>*/}
                     </div>
-                    <div id="about" className="homepage-section-container">
+                    <div id="about" className="homepage-section-container centered-section">
                         <div id="about-section-container">
                             <div id="about-text">
                                 <h2>About</h2>
-                                {/*<p>*/}
-                                {/*    FootballSlices are stats visualizations that are supported by an*/}
-                                {/*    entirely automated data retrieval process. The tool sifts through mountains of*/}
-                                {/*    numbers so you don't have to!*/}
-                                {/*</p>*/}
-                                {/*<p>*/}
-                                {/*    Explore a database of more than <b>2,700 players</b> from <b>Europe's top 5 leagues</b>,*/}
-                                {/*    with stats from the <b>2018/19</b> and <b>2019/20</b> seasons.*/}
-                                {/*</p>*/}
-                                {/*<p>*/}
-                                {/*    Simply choose a positional template, toggle the competitions you'd like to include,*/}
-                                {/*    and visualize statistics in seconds with interactive percentile rank bar*/}
-                                {/*    charts, powered by <a href="https://www.highcharts.com" target="_blank" rel="noopener noreferrer">Highcharts.js</a>.*/}
-                                {/*</p>*/}
                                 <p>
-                                    FootballSlices.com is football stats visualization tool
-                                </p>
-                                <p>
-
+                                    Football Slices is a stats visualization tool powered
+                                    by <a href="https://www.highcharts.com" target="_blank" rel="noopener noreferrer">Highcharts.js</a>.
                                 </p>
                                 <p>
                                     Explore a database of more than <b>2,700 players</b> from <b>Europe's top 5 leagues</b>,
                                     with stats from the <b>2018/19</b> and <b>2019/20</b> seasons.
                                 </p>
+                                <p>
+                                    Football Slices is made possible by the incredible work done by the people over
+                                    at <a href="https://www.fbref.com" target="_blank" rel="noopener noreferrer">FBref.com</a>.
+                                    Every chart title has a link to the player's page on FBref, where you can find that player's
+                                    complete stats sheet. Please do make sure to check out FBref and spread the word about
+                                    them if you'd like to see them continue adding more data to their site.
+                                </p>
                                 <br/>
-                                <p><span className="accented-p">Interpreting FootballSlices</span></p>
+                                <p><span className="accented-p">Interpreting the Slices</span></p>
                                 <p>
                                     Each slice is made up of wedges. The size of each wedge corresponds to the
                                     percentile rank of the selected player with regards to the stat represented by the
@@ -401,7 +392,7 @@ class Home extends Component {
                                     <p><span className="accented-p">Where does the data come from?</span></p>
                                     <p>
                                         All stats are from <a href="https://www.fbref.com" target="_blank" rel="noopener noreferrer">FBref.com</a>,
-                                        who provide advanced stats courtesy of <a href="https://statsbomb.com" target="_blank" rel="noopener noreferrer">StatsBomb</a>.
+                                        who provide advanced stats courtesy of <a href="https://www.statsbomb.com" target="_blank" rel="noopener noreferrer">StatsBomb</a>.
                                         The metadata is from <a href="https://www.whoscored.com" target="_blank" rel="noopener noreferrer">WhoScored.com</a>.
                                     </p>
                                 </div>
@@ -434,7 +425,19 @@ class Home extends Component {
                                 </div>
                                 <div className="faq-item">
                                     <p><span className="accented-p">How are the possession-adjusted stats calculated?</span></p>
-                                    <p></p>
+                                    <p>
+                                        Defensive stats are adjusted for possession using the StatsBomb sigmoid function,
+                                        which you can read more about <a href="https://statsbomb.com/2014/06/introducing-possession-adjusted-player-stats/"
+                                                                    target="_blank" rel="noopener noreferrer">here</a>.
+                                        Each player's stats for a particular competition are adjusted based on their team's
+                                        average possession during said competition.
+                                    </p>
+                                    <p>
+                                        Ideally, a player's stats should be adjusted based on the possession
+                                        values from only the games they played in. However, I don't have access to that
+                                        data and so I used the next best thing; which is the team's average possession
+                                        across all games in the competition.
+                                    </p>
                                 </div>
                                 <div className="faq-item">
                                     <p><span className="accented-p">How are the player positions decided?</span></p>
@@ -444,7 +447,7 @@ class Home extends Component {
                                         league starts in each of the template positions during a particular season.
                                     </p>
                                     <p>
-                                        Disclaimer: This method has some small quirks. For example, it classifies Martin Ødegaard as a
+                                        This method has some small quirks. For example, it classifies Martin Ødegaard as a
                                         central midfielder, whereas I feel he's more of an attacking midfielder. It's
                                         not perfect but it's the best way I've found to automate the process.
                                     </p>

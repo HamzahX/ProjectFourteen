@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import $ from "jquery";
+// import $ from "jquery";
 
 //import dependencies
 import Cookies from 'universal-cookie';
@@ -315,6 +315,7 @@ class Compare extends Component {
             //calculate stats and construct chart input
             let filteredStats = {};
             let series = [];
+            let hasUndefined;
             if (template !== null) {
                 for (let i=0; i<codes.length; i++){
                     let code = codes[i];
@@ -332,6 +333,9 @@ class Compare extends Component {
                         );
                         series.push(chartInput);
                     }
+                    else {
+                        hasUndefined = true;
+                    }
                 }
             }
 
@@ -345,6 +349,7 @@ class Compare extends Component {
                     isMobile={this.isMobile}
                     isForExport={true}
                     isForComparison={true}
+                    hasUndefined={hasUndefined}
                     isAnimated={false}
                     isAnimatedInitial={false}
                     hasTooltip={false}
@@ -401,6 +406,7 @@ class Compare extends Component {
                             isMobile={this.isMobile}
                             isForExport={false}
                             isForComparison={true}
+                            hasUndefined={hasUndefined}
                             isAnimated={isAnimated}
                             isAnimatedInitial={true}
                             hasTooltip={true}

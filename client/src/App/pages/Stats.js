@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import $ from "jquery";
+// import $ from "jquery";
 
 //import dependencies
 import Cookies from 'universal-cookie';

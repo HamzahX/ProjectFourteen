@@ -1744,7 +1744,7 @@
 		},
 		"138695|Sheffield United": {
 			"name": "Oliver McBurnie",
-			"age": 23,
+			"age": 24,
 			"countryCode": "gb-sct",
 			"position": "AM(CL),FW",
 			"club": "Sheffield United",
@@ -4240,7 +4240,7 @@
 		},
 		"77438|Crystal Palace": {
 			"name": "Cenk Tosun",
-			"age": 28,
+			"age": 29,
 			"countryCode": "tr",
 			"position": "FW",
 			"club": "Crystal Palace",
@@ -4331,7 +4331,7 @@
 		},
 		"297403|Arsenal": {
 			"name": "Kieran Tierney",
-			"age": 22,
+			"age": 23,
 			"countryCode": "gb-sct",
 			"position": "D(L)",
 			"club": "Arsenal",
@@ -4890,7 +4890,7 @@
 		},
 		"77438|Everton": {
 			"name": "Cenk Tosun",
-			"age": 28,
+			"age": 29,
 			"countryCode": "tr",
 			"position": "FW",
 			"club": "Everton",
@@ -6153,7 +6153,7 @@
 		},
 		"296337|Real Madrid": {
 			"name": "Ferland Mendy",
-			"age": 24,
+			"age": 25,
 			"countryCode": "fr",
 			"position": "D(L),M(L)",
 			"club": "Real Madrid",
@@ -7076,7 +7076,7 @@
 		},
 		"6227|Mallorca": {
 			"name": "Dani Rodríguez",
-			"age": 31,
+			"age": 32,
 			"countryCode": "es",
 			"position": "AM(LR)",
 			"club": "Mallorca",
@@ -7505,7 +7505,7 @@
 		},
 		"73494|Leganes": {
 			"name": "Martin Braithwaite",
-			"age": 28,
+			"age": 29,
 			"countryCode": "dk",
 			"position": "AM(CLR),FW",
 			"club": "Leganes",
@@ -7960,7 +7960,7 @@
 		},
 		"135374|Real Betis": {
 			"name": "Álex Moreno",
-			"age": 26,
+			"age": 27,
 			"countryCode": "es",
 			"position": "D(L),M(L)",
 			"club": "Real Betis",
@@ -8272,7 +8272,7 @@
 		},
 		"377285|Mallorca": {
 			"name": "Takefusa Kubo",
-			"age": 18,
+			"age": 19,
 			"countryCode": "jp",
 			"position": "AM(CR)",
 			"club": "Mallorca",
@@ -8350,7 +8350,7 @@
 		},
 		"108176|Leganes": {
 			"name": "Roque Mesa",
-			"age": 30,
+			"age": 31,
 			"countryCode": "es",
 			"position": "DMC",
 			"club": "Leganes",
@@ -9338,7 +9338,7 @@
 		},
 		"381674|Osasuna": {
 			"name": "Sergio Herrera",
-			"age": 26,
+			"age": 27,
 			"countryCode": "es",
 			"position": "GK",
 			"club": "Osasuna",
@@ -10534,7 +10534,7 @@
 		},
 		"89851|Levante": {
 			"name": "Óscar Duarte",
-			"age": 30,
+			"age": 31,
 			"countryCode": "cr",
 			"position": "D(C),DMC",
 			"club": "Levante",
@@ -11719,7 +11719,7 @@
 		},
 		"83390|Napoli": {
 			"name": "Lorenzo Insigne",
-			"age": 28,
+			"age": 29,
 			"countryCode": "it",
 			"position": "AM(CL),FW",
 			"club": "Napoli",
@@ -11888,7 +11888,7 @@
 		},
 		"70561|Parma Calcio 1913": {
 			"name": "Matteo Scozzarella",
-			"age": 31,
+			"age": 32,
 			"countryCode": "it",
 			"position": "M(C)",
 			"club": "Parma Calcio 1913",
@@ -15645,7 +15645,7 @@
 		},
 		"296494|Brescia": {
 			"name": "Ales Mateju",
-			"age": 23,
+			"age": 24,
 			"countryCode": "cz",
 			"position": "D(L)",
 			"club": "Brescia",
@@ -16035,7 +16035,7 @@
 		},
 		"87537|Udinese": {
 			"name": "Lukasz Teodorczyk",
-			"age": 28,
+			"age": 29,
 			"countryCode": "pl",
 			"position": "FW",
 			"club": "Udinese",
@@ -16061,7 +16061,7 @@
 		},
 		"40099|Bologna": {
 			"name": "Federico Santander",
-			"age": 28,
+			"age": 29,
 			"countryCode": "py",
 			"position": "FW",
 			"club": "Bologna",
@@ -16529,7 +16529,7 @@
 		},
 		"355391|Fiorentina": {
 			"name": "Riccardo Sottil",
-			"age": 20,
+			"age": 21,
 			"countryCode": "it",
 			"position": "Forward",
 			"club": "Fiorentina",
@@ -17083,8 +17083,8 @@
 			"club": "Bayern Munich",
 			"19-20": {
 				"Bundesliga | Bayern Munich": {
-					"whoscoredApps": 27,
-					"whoscoredMins": 2402
+					"whoscoredApps": 28,
+					"whoscoredMins": 2492
 				}
 			}
 		},
@@ -17092,12 +17092,12 @@
 			"name": "Jadon Sancho",
 			"age": 20,
 			"countryCode": "gb-eng",
-			"position": "AM(LR)",
+			"position": "AM(CLR)",
 			"club": "Borussia Dortmund",
 			"19-20": {
 				"Bundesliga | Borussia Dortmund": {
-					"whoscoredApps": 27,
-					"whoscoredMins": 1978
+					"whoscoredApps": 28,
+					"whoscoredMins": 2068
 				}
 			}
 		},
@@ -17148,8 +17148,8 @@
 			"club": "RasenBallsport Leipzig",
 			"19-20": {
 				"Bundesliga | RasenBallsport Leipzig": {
-					"whoscoredApps": 29,
-					"whoscoredMins": 2401
+					"whoscoredApps": 30,
+					"whoscoredMins": 2491
 				}
 			}
 		},
@@ -17161,21 +17161,8 @@
 			"club": "Bayern Munich",
 			"19-20": {
 				"Bundesliga | Bayern Munich": {
-					"whoscoredApps": 25,
-					"whoscoredMins": 1952
-				}
-			}
-		},
-		"74939|Bayern Munich": {
-			"name": "Thiago",
-			"age": 29,
-			"countryCode": "es",
-			"position": "M(C)",
-			"club": "Bayern Munich",
-			"19-20": {
-				"Bundesliga | Bayern Munich": {
-					"whoscoredApps": 23,
-					"whoscoredMins": 1756
+					"whoscoredApps": 26,
+					"whoscoredMins": 2037
 				}
 			}
 		},
@@ -17187,8 +17174,8 @@
 			"club": "Bayern Munich",
 			"19-20": {
 				"Bundesliga | Bayern Munich": {
-					"whoscoredApps": 27,
-					"whoscoredMins": 1895
+					"whoscoredApps": 28,
+					"whoscoredMins": 1969
 				}
 			}
 		},
@@ -17205,16 +17192,16 @@
 				}
 			}
 		},
-		"80994|RasenBallsport Leipzig": {
-			"name": "Kevin Kampl",
+		"74939|Bayern Munich": {
+			"name": "Thiago",
 			"age": 29,
-			"countryCode": "si",
-			"position": "M(CLR)",
-			"club": "RasenBallsport Leipzig",
+			"countryCode": "es",
+			"position": "M(C)",
+			"club": "Bayern Munich",
 			"19-20": {
-				"Bundesliga | RasenBallsport Leipzig": {
-					"whoscoredApps": 6,
-					"whoscoredMins": 353
+				"Bundesliga | Bayern Munich": {
+					"whoscoredApps": 24,
+					"whoscoredMins": 1772
 				}
 			}
 		},
@@ -17226,21 +17213,8 @@
 			"club": "RasenBallsport Leipzig",
 			"19-20": {
 				"Bundesliga | RasenBallsport Leipzig": {
-					"whoscoredApps": 27,
-					"whoscoredMins": 1759
-				}
-			}
-		},
-		"105995|Eintracht Frankfurt": {
-			"name": "Filip Kostic",
-			"age": 27,
-			"countryCode": "rs",
-			"position": "M(LR),FW",
-			"club": "Eintracht Frankfurt",
-			"19-20": {
-				"Bundesliga | Eintracht Frankfurt": {
-					"whoscoredApps": 27,
-					"whoscoredMins": 2419
+					"whoscoredApps": 28,
+					"whoscoredMins": 1817
 				}
 			}
 		},
@@ -17265,8 +17239,21 @@
 			"club": "Bayern Munich",
 			"19-20": {
 				"Bundesliga | Bayern Munich": {
-					"whoscoredApps": 28,
-					"whoscoredMins": 2452
+					"whoscoredApps": 29,
+					"whoscoredMins": 2542
+				}
+			}
+		},
+		"105995|Eintracht Frankfurt": {
+			"name": "Filip Kostic",
+			"age": 27,
+			"countryCode": "rs",
+			"position": "M(LR),FW",
+			"club": "Eintracht Frankfurt",
+			"19-20": {
+				"Bundesliga | Eintracht Frankfurt": {
+					"whoscoredApps": 29,
+					"whoscoredMins": 2599
 				}
 			}
 		},
@@ -17278,8 +17265,21 @@
 			"club": "Borussia Dortmund",
 			"19-20": {
 				"Bundesliga | Borussia Dortmund": {
-					"whoscoredApps": 24,
-					"whoscoredMins": 1942
+					"whoscoredApps": 25,
+					"whoscoredMins": 2032
+				}
+			}
+		},
+		"80994|RasenBallsport Leipzig": {
+			"name": "Kevin Kampl",
+			"age": 29,
+			"countryCode": "si",
+			"position": "M(CLR)",
+			"club": "RasenBallsport Leipzig",
+			"19-20": {
+				"Bundesliga | RasenBallsport Leipzig": {
+					"whoscoredApps": 7,
+					"whoscoredMins": 441
 				}
 			}
 		},
@@ -17291,21 +17291,21 @@
 			"club": "Borussia Dortmund",
 			"19-20": {
 				"Bundesliga | Borussia Dortmund": {
-					"whoscoredApps": 29,
-					"whoscoredMins": 2402
+					"whoscoredApps": 30,
+					"whoscoredMins": 2492
 				}
 			}
 		},
-		"296322|Borussia M'Gladbach": {
-			"name": "Marcus Thuram",
-			"age": 22,
-			"countryCode": "fr",
-			"position": "AM(L),FW",
-			"club": "Borussia M'Gladbach",
+		"37099|Bayern Munich": {
+			"name": "Thomas Müller",
+			"age": 30,
+			"countryCode": "de",
+			"position": "M(CLR),FW",
+			"club": "Bayern Munich",
 			"19-20": {
-				"Bundesliga | Borussia M'Gladbach": {
-					"whoscoredApps": 29,
-					"whoscoredMins": 2117
+				"Bundesliga | Bayern Munich": {
+					"whoscoredApps": 30,
+					"whoscoredMins": 1992
 				}
 			}
 		},
@@ -17322,42 +17322,16 @@
 				}
 			}
 		},
-		"101537|Borussia Dortmund": {
-			"name": "Thorgan Hazard",
-			"age": 27,
-			"countryCode": "be",
-			"position": "AM(CLR),FW",
-			"club": "Borussia Dortmund",
+		"296322|Borussia M'Gladbach": {
+			"name": "Marcus Thuram",
+			"age": 22,
+			"countryCode": "fr",
+			"position": "AM(L),FW",
+			"club": "Borussia M'Gladbach",
 			"19-20": {
-				"Bundesliga | Borussia Dortmund": {
-					"whoscoredApps": 28,
-					"whoscoredMins": 2014
-				}
-			}
-		},
-		"37099|Bayern Munich": {
-			"name": "Thomas Müller",
-			"age": 30,
-			"countryCode": "de",
-			"position": "M(CLR),FW",
-			"club": "Bayern Munich",
-			"19-20": {
-				"Bundesliga | Bayern Munich": {
-					"whoscoredApps": 29,
-					"whoscoredMins": 1902
-				}
-			}
-		},
-		"90969|FC Koln": {
-			"name": "Mark Uth",
-			"age": 28,
-			"countryCode": "de",
-			"position": "AM(CR),FW",
-			"club": "FC Koln",
-			"19-20": {
-				"Bundesliga | FC Koln": {
-					"whoscoredApps": 10,
-					"whoscoredMins": 862
+				"Bundesliga | Borussia M'Gladbach": {
+					"whoscoredApps": 30,
+					"whoscoredMins": 2207
 				}
 			}
 		},
@@ -17374,16 +17348,16 @@
 				}
 			}
 		},
-		"108585|Borussia M'Gladbach": {
-			"name": "Alassane Pléa",
+		"101537|Borussia Dortmund": {
+			"name": "Thorgan Hazard",
 			"age": 27,
-			"countryCode": "fr",
-			"position": "AM(LR),FW",
-			"club": "Borussia M'Gladbach",
+			"countryCode": "be",
+			"position": "AM(CLR),FW",
+			"club": "Borussia Dortmund",
 			"19-20": {
-				"Bundesliga | Borussia M'Gladbach": {
-					"whoscoredApps": 26,
-					"whoscoredMins": 2084
+				"Bundesliga | Borussia Dortmund": {
+					"whoscoredApps": 29,
+					"whoscoredMins": 2093
 				}
 			}
 		},
@@ -17400,19 +17374,6 @@
 				}
 			}
 		},
-		"101685|FC Koln": {
-			"name": "Toni Leistner",
-			"age": 29,
-			"countryCode": "de",
-			"position": "D(C)",
-			"club": "FC Koln",
-			"19-20": {
-				"Bundesliga | FC Koln": {
-					"whoscoredApps": 8,
-					"whoscoredMins": 720
-				}
-			}
-		},
 		"92051|RasenBallsport Leipzig": {
 			"name": "Marcel Sabitzer",
 			"age": 26,
@@ -17426,19 +17387,6 @@
 				}
 			}
 		},
-		"259648|Bayern Munich": {
-			"name": "Benjamin Pavard",
-			"age": 24,
-			"countryCode": "fr",
-			"position": "D(CLR)",
-			"club": "Bayern Munich",
-			"19-20": {
-				"Bundesliga | Bayern Munich": {
-					"whoscoredApps": 27,
-					"whoscoredMins": 2402
-				}
-			}
-		},
 		"115230|Wolfsburg": {
 			"name": "Kevin Mbabu",
 			"age": 25,
@@ -17447,8 +17395,8 @@
 			"club": "Wolfsburg",
 			"19-20": {
 				"Bundesliga | Wolfsburg": {
-					"whoscoredApps": 15,
-					"whoscoredMins": 1244
+					"whoscoredApps": 16,
+					"whoscoredMins": 1334
 				}
 			}
 		},
@@ -17465,6 +17413,58 @@
 				}
 			}
 		},
+		"101685|FC Koln": {
+			"name": "Toni Leistner",
+			"age": 29,
+			"countryCode": "de",
+			"position": "D(C)",
+			"club": "FC Koln",
+			"19-20": {
+				"Bundesliga | FC Koln": {
+					"whoscoredApps": 9,
+					"whoscoredMins": 810
+				}
+			}
+		},
+		"259648|Bayern Munich": {
+			"name": "Benjamin Pavard",
+			"age": 24,
+			"countryCode": "fr",
+			"position": "D(CLR)",
+			"club": "Bayern Munich",
+			"19-20": {
+				"Bundesliga | Bayern Munich": {
+					"whoscoredApps": 28,
+					"whoscoredMins": 2492
+				}
+			}
+		},
+		"108585|Borussia M'Gladbach": {
+			"name": "Alassane Pléa",
+			"age": 27,
+			"countryCode": "fr",
+			"position": "AM(LR),FW",
+			"club": "Borussia M'Gladbach",
+			"19-20": {
+				"Bundesliga | Borussia M'Gladbach": {
+					"whoscoredApps": 27,
+					"whoscoredMins": 2151
+				}
+			}
+		},
+		"90969|FC Koln": {
+			"name": "Mark Uth",
+			"age": 28,
+			"countryCode": "de",
+			"position": "AM(CR),FW",
+			"club": "FC Koln",
+			"19-20": {
+				"Bundesliga | FC Koln": {
+					"whoscoredApps": 11,
+					"whoscoredMins": 933
+				}
+			}
+		},
 		"288892|Borussia M'Gladbach": {
 			"name": "Ramy Bensebaini",
 			"age": 25,
@@ -17473,8 +17473,21 @@
 			"club": "Borussia M'Gladbach",
 			"19-20": {
 				"Bundesliga | Borussia M'Gladbach": {
-					"whoscoredApps": 15,
-					"whoscoredMins": 1096
+					"whoscoredApps": 16,
+					"whoscoredMins": 1186
+				}
+			}
+		},
+		"111212|Borussia Dortmund": {
+			"name": "Emre Can",
+			"age": 26,
+			"countryCode": "de",
+			"position": "D(CLR),DMC",
+			"club": "Borussia Dortmund",
+			"19-20": {
+				"Bundesliga | Borussia Dortmund": {
+					"whoscoredApps": 9,
+					"whoscoredMins": 688
 				}
 			}
 		},
@@ -17486,21 +17499,8 @@
 			"club": "RasenBallsport Leipzig",
 			"19-20": {
 				"Bundesliga | RasenBallsport Leipzig": {
-					"whoscoredApps": 24,
-					"whoscoredMins": 2118
-				}
-			}
-		},
-		"255089|RasenBallsport Leipzig": {
-			"name": "Angeliño",
-			"age": 23,
-			"countryCode": "es",
-			"position": "D(L),M(L)",
-			"club": "RasenBallsport Leipzig",
-			"19-20": {
-				"Bundesliga | RasenBallsport Leipzig": {
-					"whoscoredApps": 8,
-					"whoscoredMins": 645
+					"whoscoredApps": 25,
+					"whoscoredMins": 2163
 				}
 			}
 		},
@@ -17512,34 +17512,21 @@
 			"club": "Bayer Leverkusen",
 			"19-20": {
 				"Bundesliga | Bayer Leverkusen": {
-					"whoscoredApps": 22,
-					"whoscoredMins": 1817
+					"whoscoredApps": 23,
+					"whoscoredMins": 1831
 				}
 			}
 		},
-		"327721|RasenBallsport Leipzig": {
-			"name": "Dayot Upamecano",
-			"age": 21,
+		"125883|Bayern Munich": {
+			"name": "Kingsley Coman",
+			"age": 23,
 			"countryCode": "fr",
-			"position": "D(C)",
-			"club": "RasenBallsport Leipzig",
+			"position": "AM(LR),FW",
+			"club": "Bayern Munich",
 			"19-20": {
-				"Bundesliga | RasenBallsport Leipzig": {
-					"whoscoredApps": 24,
-					"whoscoredMins": 2092
-				}
-			}
-		},
-		"332120|Hertha Berlin": {
-			"name": "Jordan Torunarigha",
-			"age": 22,
-			"countryCode": "de",
-			"position": "D(CL)",
-			"club": "Hertha Berlin",
-			"19-20": {
-				"Bundesliga | Hertha Berlin": {
-					"whoscoredApps": 13,
-					"whoscoredMins": 1011
+				"Bundesliga | Bayern Munich": {
+					"whoscoredApps": 20,
+					"whoscoredMins": 1301
 				}
 			}
 		},
@@ -17564,47 +17551,34 @@
 			"club": "Union Berlin",
 			"19-20": {
 				"Bundesliga | Union Berlin": {
-					"whoscoredApps": 27,
-					"whoscoredMins": 2414
+					"whoscoredApps": 28,
+					"whoscoredMins": 2504
 				}
 			}
 		},
-		"28800|Hertha Berlin": {
-			"name": "Peter Pekarík",
-			"age": 33,
-			"countryCode": "sk",
-			"position": "D(LR)",
+		"255089|RasenBallsport Leipzig": {
+			"name": "Angeliño",
+			"age": 23,
+			"countryCode": "es",
+			"position": "D(L),M(L)",
+			"club": "RasenBallsport Leipzig",
+			"19-20": {
+				"Bundesliga | RasenBallsport Leipzig": {
+					"whoscoredApps": 9,
+					"whoscoredMins": 735
+				}
+			}
+		},
+		"332120|Hertha Berlin": {
+			"name": "Jordan Torunarigha",
+			"age": 22,
+			"countryCode": "de",
+			"position": "D(CL)",
 			"club": "Hertha Berlin",
 			"19-20": {
 				"Bundesliga | Hertha Berlin": {
-					"whoscoredApps": 5,
-					"whoscoredMins": 450
-				}
-			}
-		},
-		"125883|Bayern Munich": {
-			"name": "Kingsley Coman",
-			"age": 23,
-			"countryCode": "fr",
-			"position": "AM(LR),FW",
-			"club": "Bayern Munich",
-			"19-20": {
-				"Bundesliga | Bayern Munich": {
-					"whoscoredApps": 19,
-					"whoscoredMins": 1235
-				}
-			}
-		},
-		"320518|Union Berlin": {
-			"name": "Sebastian Andersson",
-			"age": 28,
-			"countryCode": "se",
-			"position": "FW",
-			"club": "Union Berlin",
-			"19-20": {
-				"Bundesliga | Union Berlin": {
-					"whoscoredApps": 29,
-					"whoscoredMins": 2363
+					"whoscoredApps": 14,
+					"whoscoredMins": 1101
 				}
 			}
 		},
@@ -17616,8 +17590,21 @@
 			"club": "RasenBallsport Leipzig",
 			"19-20": {
 				"Bundesliga | RasenBallsport Leipzig": {
-					"whoscoredApps": 18,
-					"whoscoredMins": 1055
+					"whoscoredApps": 19,
+					"whoscoredMins": 1101
+				}
+			}
+		},
+		"327721|RasenBallsport Leipzig": {
+			"name": "Dayot Upamecano",
+			"age": 21,
+			"countryCode": "fr",
+			"position": "D(C)",
+			"club": "RasenBallsport Leipzig",
+			"19-20": {
+				"Bundesliga | RasenBallsport Leipzig": {
+					"whoscoredApps": 25,
+					"whoscoredMins": 2135
 				}
 			}
 		},
@@ -17634,22 +17621,22 @@
 				}
 			}
 		},
-		"75217|Hoffenheim": {
-			"name": "Andrej Kramaric",
+		"320518|Union Berlin": {
+			"name": "Sebastian Andersson",
 			"age": 28,
-			"countryCode": "hr",
-			"position": "AM(CLR),FW",
-			"club": "Hoffenheim",
+			"countryCode": "se",
+			"position": "FW",
+			"club": "Union Berlin",
 			"19-20": {
-				"Bundesliga | Hoffenheim": {
-					"whoscoredApps": 14,
-					"whoscoredMins": 1170
+				"Bundesliga | Union Berlin": {
+					"whoscoredApps": 30,
+					"whoscoredMins": 2453
 				}
 			}
 		},
 		"342548|Borussia Dortmund": {
 			"name": "Dan-Axel Zagadou",
-			"age": 20,
+			"age": 21,
 			"countryCode": "fr",
 			"position": "D(CL)",
 			"club": "Borussia Dortmund",
@@ -17673,6 +17660,19 @@
 				}
 			}
 		},
+		"115519|Bayern Munich": {
+			"name": "Leon Goretzka",
+			"age": 25,
+			"countryCode": "de",
+			"position": "M(CR)",
+			"club": "Bayern Munich",
+			"19-20": {
+				"Bundesliga | Bayern Munich": {
+					"whoscoredApps": 20,
+					"whoscoredMins": 1163
+				}
+			}
+		},
 		"130123|Hoffenheim": {
 			"name": "Robert Skov",
 			"age": 24,
@@ -17681,8 +17681,8 @@
 			"club": "Hoffenheim",
 			"19-20": {
 				"Bundesliga | Hoffenheim": {
-					"whoscoredApps": 26,
-					"whoscoredMins": 2233
+					"whoscoredApps": 27,
+					"whoscoredMins": 2318
 				}
 			}
 		},
@@ -17694,8 +17694,8 @@
 			"club": "Hertha Berlin",
 			"19-20": {
 				"Bundesliga | Hertha Berlin": {
-					"whoscoredApps": 24,
-					"whoscoredMins": 2124
+					"whoscoredApps": 25,
+					"whoscoredMins": 2214
 				}
 			}
 		},
@@ -17707,34 +17707,8 @@
 			"club": "Wolfsburg",
 			"19-20": {
 				"Bundesliga | Wolfsburg": {
-					"whoscoredApps": 28,
-					"whoscoredMins": 2408
-				}
-			}
-		},
-		"132926|Augsburg": {
-			"name": "Florian Niederlechner",
-			"age": 29,
-			"countryCode": "de",
-			"position": "AM(CR),FW",
-			"club": "Augsburg",
-			"19-20": {
-				"Bundesliga | Augsburg": {
 					"whoscoredApps": 29,
-					"whoscoredMins": 2482
-				}
-			}
-		},
-		"111212|Borussia Dortmund": {
-			"name": "Emre Can",
-			"age": 26,
-			"countryCode": "de",
-			"position": "D(CLR),DMC",
-			"club": "Borussia Dortmund",
-			"19-20": {
-				"Bundesliga | Borussia Dortmund": {
-					"whoscoredApps": 8,
-					"whoscoredMins": 598
+					"whoscoredMins": 2496
 				}
 			}
 		},
@@ -17751,68 +17725,16 @@
 				}
 			}
 		},
-		"104917|RasenBallsport Leipzig": {
-			"name": "Willi Orban",
+		"115479|Wolfsburg": {
+			"name": "Wout Weghorst",
 			"age": 27,
-			"countryCode": "hu",
-			"position": "D(C)",
-			"club": "RasenBallsport Leipzig",
+			"countryCode": "nl",
+			"position": "FW",
+			"club": "Wolfsburg",
 			"19-20": {
-				"Bundesliga | RasenBallsport Leipzig": {
-					"whoscoredApps": 11,
-					"whoscoredMins": 852
-				}
-			}
-		},
-		"94912|Schalke 04": {
-			"name": "Salif Sané",
-			"age": 29,
-			"countryCode": "sn",
-			"position": "D(C),DMC",
-			"club": "Schalke 04",
-			"19-20": {
-				"Bundesliga | Schalke 04": {
-					"whoscoredApps": 14,
-					"whoscoredMins": 1035
-				}
-			}
-		},
-		"141556|Borussia Dortmund": {
-			"name": "Julian Brandt",
-			"age": 24,
-			"countryCode": "de",
-			"position": "M(CLR),FW",
-			"club": "Borussia Dortmund",
-			"19-20": {
-				"Bundesliga | Borussia Dortmund": {
+				"Bundesliga | Wolfsburg": {
 					"whoscoredApps": 28,
-					"whoscoredMins": 1782
-				}
-			}
-		},
-		"25191|Borussia Dortmund": {
-			"name": "Axel Witsel",
-			"age": 31,
-			"countryCode": "be",
-			"position": "M(C)",
-			"club": "Borussia Dortmund",
-			"19-20": {
-				"Bundesliga | Borussia Dortmund": {
-					"whoscoredApps": 23,
-					"whoscoredMins": 1834
-				}
-			}
-		},
-		"115166|Bayer Leverkusen": {
-			"name": "Kerem Demirbay",
-			"age": 26,
-			"countryCode": "de",
-			"position": "M(C)",
-			"club": "Bayer Leverkusen",
-			"19-20": {
-				"Bundesliga | Bayer Leverkusen": {
-					"whoscoredApps": 20,
-					"whoscoredMins": 1363
+					"whoscoredMins": 2381
 				}
 			}
 		},
@@ -17824,8 +17746,47 @@
 			"club": "RasenBallsport Leipzig",
 			"19-20": {
 				"Bundesliga | RasenBallsport Leipzig": {
-					"whoscoredApps": 21,
-					"whoscoredMins": 1425
+					"whoscoredApps": 22,
+					"whoscoredMins": 1515
+				}
+			}
+		},
+		"25191|Borussia Dortmund": {
+			"name": "Axel Witsel",
+			"age": 31,
+			"countryCode": "be",
+			"position": "M(C)",
+			"club": "Borussia Dortmund",
+			"19-20": {
+				"Bundesliga | Borussia Dortmund": {
+					"whoscoredApps": 24,
+					"whoscoredMins": 1914
+				}
+			}
+		},
+		"132926|Augsburg": {
+			"name": "Florian Niederlechner",
+			"age": 29,
+			"countryCode": "de",
+			"position": "AM(CR),FW",
+			"club": "Augsburg",
+			"19-20": {
+				"Bundesliga | Augsburg": {
+					"whoscoredApps": 30,
+					"whoscoredMins": 2558
+				}
+			}
+		},
+		"141556|Borussia Dortmund": {
+			"name": "Julian Brandt",
+			"age": 24,
+			"countryCode": "de",
+			"position": "M(CLR),FW",
+			"club": "Borussia Dortmund",
+			"19-20": {
+				"Bundesliga | Borussia Dortmund": {
+					"whoscoredApps": 29,
+					"whoscoredMins": 1850
 				}
 			}
 		},
@@ -17842,55 +17803,29 @@
 				}
 			}
 		},
-		"34323|Eintracht Frankfurt": {
-			"name": "Bas Dost",
-			"age": 31,
-			"countryCode": "nl",
-			"position": "FW",
-			"club": "Eintracht Frankfurt",
+		"75217|Hoffenheim": {
+			"name": "Andrej Kramaric",
+			"age": 28,
+			"countryCode": "hr",
+			"position": "AM(CLR),FW",
+			"club": "Hoffenheim",
 			"19-20": {
-				"Bundesliga | Eintracht Frankfurt": {
-					"whoscoredApps": 18,
-					"whoscoredMins": 1166
+				"Bundesliga | Hoffenheim": {
+					"whoscoredApps": 15,
+					"whoscoredMins": 1189
 				}
 			}
 		},
-		"248010|RasenBallsport Leipzig": {
-			"name": "Konrad Laimer",
-			"age": 23,
-			"countryCode": "at",
-			"position": "D(R),M(CR)",
-			"club": "RasenBallsport Leipzig",
+		"94912|Schalke 04": {
+			"name": "Salif Sané",
+			"age": 29,
+			"countryCode": "sn",
+			"position": "D(C),DMC",
+			"club": "Schalke 04",
 			"19-20": {
-				"Bundesliga | RasenBallsport Leipzig": {
-					"whoscoredApps": 26,
-					"whoscoredMins": 1991
-				}
-			}
-		},
-		"115519|Bayern Munich": {
-			"name": "Leon Goretzka",
-			"age": 25,
-			"countryCode": "de",
-			"position": "M(CR)",
-			"club": "Bayern Munich",
-			"19-20": {
-				"Bundesliga | Bayern Munich": {
-					"whoscoredApps": 19,
-					"whoscoredMins": 1089
-				}
-			}
-		},
-		"115479|Wolfsburg": {
-			"name": "Wout Weghorst",
-			"age": 27,
-			"countryCode": "nl",
-			"position": "FW",
-			"club": "Wolfsburg",
-			"19-20": {
-				"Bundesliga | Wolfsburg": {
-					"whoscoredApps": 27,
-					"whoscoredMins": 2291
+				"Bundesliga | Schalke 04": {
+					"whoscoredApps": 15,
+					"whoscoredMins": 1125
 				}
 			}
 		},
@@ -17920,19 +17855,6 @@
 				}
 			}
 		},
-		"39722|Bayern Munich": {
-			"name": "David Alaba",
-			"age": 27,
-			"countryCode": "at",
-			"position": "D(CL),M(C)",
-			"club": "Bayern Munich",
-			"19-20": {
-				"Bundesliga | Bayern Munich": {
-					"whoscoredApps": 24,
-					"whoscoredMins": 2148
-				}
-			}
-		},
 		"29940|Bayer Leverkusen": {
 			"name": "Lars Bender",
 			"age": 31,
@@ -17946,42 +17868,81 @@
 				}
 			}
 		},
-		"136904|FC Koln": {
-			"name": "Jhon Córdoba",
-			"age": 27,
-			"countryCode": "co",
+		"34323|Eintracht Frankfurt": {
+			"name": "Bas Dost",
+			"age": 31,
+			"countryCode": "nl",
 			"position": "FW",
-			"club": "FC Koln",
+			"club": "Eintracht Frankfurt",
 			"19-20": {
-				"Bundesliga | FC Koln": {
+				"Bundesliga | Eintracht Frankfurt": {
+					"whoscoredApps": 20,
+					"whoscoredMins": 1225
+				}
+			}
+		},
+		"39722|Bayern Munich": {
+			"name": "David Alaba",
+			"age": 27,
+			"countryCode": "at",
+			"position": "D(CL),M(C)",
+			"club": "Bayern Munich",
+			"19-20": {
+				"Bundesliga | Bayern Munich": {
 					"whoscoredApps": 25,
-					"whoscoredMins": 1675
+					"whoscoredMins": 2238
 				}
 			}
 		},
-		"244779|Hertha Berlin": {
-			"name": "Marko Grujic",
-			"age": 24,
-			"countryCode": "rs",
-			"position": "DMC",
-			"club": "Hertha Berlin",
-			"19-20": {
-				"Bundesliga | Hertha Berlin": {
-					"whoscoredApps": 24,
-					"whoscoredMins": 2025
-				}
-			}
-		},
-		"319448|Borussia M'Gladbach": {
-			"name": "Florian Neuhaus",
-			"age": 23,
+		"115166|Bayer Leverkusen": {
+			"name": "Kerem Demirbay",
+			"age": 26,
 			"countryCode": "de",
 			"position": "M(C)",
-			"club": "Borussia M'Gladbach",
+			"club": "Bayer Leverkusen",
 			"19-20": {
-				"Bundesliga | Borussia M'Gladbach": {
+				"Bundesliga | Bayer Leverkusen": {
+					"whoscoredApps": 21,
+					"whoscoredMins": 1408
+				}
+			}
+		},
+		"82362|Schalke 04": {
+			"name": "Daniel Caligiuri",
+			"age": 32,
+			"countryCode": "de",
+			"position": "D(R),M(CLR),FW",
+			"club": "Schalke 04",
+			"19-20": {
+				"Bundesliga | Schalke 04": {
 					"whoscoredApps": 25,
-					"whoscoredMins": 1912
+					"whoscoredMins": 2032
+				}
+			}
+		},
+		"248010|RasenBallsport Leipzig": {
+			"name": "Konrad Laimer",
+			"age": 23,
+			"countryCode": "at",
+			"position": "D(R),M(CR)",
+			"club": "RasenBallsport Leipzig",
+			"19-20": {
+				"Bundesliga | RasenBallsport Leipzig": {
+					"whoscoredApps": 27,
+					"whoscoredMins": 2016
+				}
+			}
+		},
+		"90982|Freiburg": {
+			"name": "Nicolas Höfler",
+			"age": 30,
+			"countryCode": "de",
+			"position": "D(C),DMC",
+			"club": "Freiburg",
+			"19-20": {
+				"Bundesliga | Freiburg": {
+					"whoscoredApps": 28,
+					"whoscoredMins": 2441
 				}
 			}
 		},
@@ -18011,6 +17972,45 @@
 				}
 			}
 		},
+		"319448|Borussia M'Gladbach": {
+			"name": "Florian Neuhaus",
+			"age": 23,
+			"countryCode": "de",
+			"position": "M(C)",
+			"club": "Borussia M'Gladbach",
+			"19-20": {
+				"Bundesliga | Borussia M'Gladbach": {
+					"whoscoredApps": 26,
+					"whoscoredMins": 2002
+				}
+			}
+		},
+		"136904|FC Koln": {
+			"name": "Jhon Córdoba",
+			"age": 27,
+			"countryCode": "co",
+			"position": "FW",
+			"club": "FC Koln",
+			"19-20": {
+				"Bundesliga | FC Koln": {
+					"whoscoredApps": 26,
+					"whoscoredMins": 1757
+				}
+			}
+		},
+		"244779|Hertha Berlin": {
+			"name": "Marko Grujic",
+			"age": 24,
+			"countryCode": "rs",
+			"position": "DMC",
+			"club": "Hertha Berlin",
+			"19-20": {
+				"Bundesliga | Hertha Berlin": {
+					"whoscoredApps": 25,
+					"whoscoredMins": 2113
+				}
+			}
+		},
 		"73744|Borussia Dortmund": {
 			"name": "Thomas Delaney",
 			"age": 28,
@@ -18019,60 +18019,8 @@
 			"club": "Borussia Dortmund",
 			"19-20": {
 				"Bundesliga | Borussia Dortmund": {
-					"whoscoredApps": 10,
-					"whoscoredMins": 746
-				}
-			}
-		},
-		"83659|Eintracht Frankfurt": {
-			"name": "Martin Hinteregger",
-			"age": 27,
-			"countryCode": "at",
-			"position": "D(C)",
-			"club": "Eintracht Frankfurt",
-			"19-20": {
-				"Bundesliga | Eintracht Frankfurt": {
-					"whoscoredApps": 26,
-					"whoscoredMins": 2340
-				}
-			}
-		},
-		"289014|Werder Bremen": {
-			"name": "Milot Rashica",
-			"age": 23,
-			"countryCode": "xk",
-			"position": "AM(LR),FW",
-			"club": "Werder Bremen",
-			"19-20": {
-				"Bundesliga | Werder Bremen": {
-					"whoscoredApps": 24,
-					"whoscoredMins": 2041
-				}
-			}
-		},
-		"82362|Schalke 04": {
-			"name": "Daniel Caligiuri",
-			"age": 32,
-			"countryCode": "de",
-			"position": "D(R),M(CLR),FW",
-			"club": "Schalke 04",
-			"19-20": {
-				"Bundesliga | Schalke 04": {
-					"whoscoredApps": 24,
-					"whoscoredMins": 1942
-				}
-			}
-		},
-		"91060|Bayer Leverkusen": {
-			"name": "Karim Bellarabi",
-			"age": 30,
-			"countryCode": "de",
-			"position": "M(CLR),FW",
-			"club": "Bayer Leverkusen",
-			"19-20": {
-				"Bundesliga | Bayer Leverkusen": {
-					"whoscoredApps": 25,
-					"whoscoredMins": 1383
+					"whoscoredApps": 11,
+					"whoscoredMins": 836
 				}
 			}
 		},
@@ -18084,34 +18032,47 @@
 			"club": "Hertha Berlin",
 			"19-20": {
 				"Bundesliga | Hertha Berlin": {
-					"whoscoredApps": 25,
-					"whoscoredMins": 1793
+					"whoscoredApps": 26,
+					"whoscoredMins": 1883
+				}
+			}
+		},
+		"28800|Hertha Berlin": {
+			"name": "Peter Pekarík",
+			"age": 33,
+			"countryCode": "sk",
+			"position": "D(LR)",
+			"club": "Hertha Berlin",
+			"19-20": {
+				"Bundesliga | Hertha Berlin": {
+					"whoscoredApps": 6,
+					"whoscoredMins": 540
+				}
+			}
+		},
+		"104917|RasenBallsport Leipzig": {
+			"name": "Willi Orban",
+			"age": 27,
+			"countryCode": "hu",
+			"position": "D(C)",
+			"club": "RasenBallsport Leipzig",
+			"19-20": {
+				"Bundesliga | RasenBallsport Leipzig": {
+					"whoscoredApps": 12,
+					"whoscoredMins": 854
 				}
 			}
 		},
 		"143600|RasenBallsport Leipzig": {
 			"name": "Lukas Klostermann",
-			"age": 23,
+			"age": 24,
 			"countryCode": "de",
 			"position": "D(CLR),M(R)",
 			"club": "RasenBallsport Leipzig",
 			"19-20": {
 				"Bundesliga | RasenBallsport Leipzig": {
-					"whoscoredApps": 27,
-					"whoscoredMins": 2331
-				}
-			}
-		},
-		"22589|Bayer Leverkusen": {
-			"name": "Sven Bender",
-			"age": 31,
-			"countryCode": "de",
-			"position": "D(C),M(C)",
-			"club": "Bayer Leverkusen",
-			"19-20": {
-				"Bundesliga | Bayer Leverkusen": {
-					"whoscoredApps": 29,
-					"whoscoredMins": 2427
+					"whoscoredApps": 28,
+					"whoscoredMins": 2421
 				}
 			}
 		},
@@ -18128,32 +18089,6 @@
 				}
 			}
 		},
-		"90982|Freiburg": {
-			"name": "Nicolas Höfler",
-			"age": 30,
-			"countryCode": "de",
-			"position": "D(C),DMC",
-			"club": "Freiburg",
-			"19-20": {
-				"Bundesliga | Freiburg": {
-					"whoscoredApps": 27,
-					"whoscoredMins": 2351
-				}
-			}
-		},
-		"353397|Bayer Leverkusen": {
-			"name": "Moussa Diaby",
-			"age": 20,
-			"countryCode": "fr",
-			"position": "M(L)",
-			"club": "Bayer Leverkusen",
-			"19-20": {
-				"Bundesliga | Bayer Leverkusen": {
-					"whoscoredApps": 23,
-					"whoscoredMins": 1386
-				}
-			}
-		},
 		"130897|Union Berlin": {
 			"name": "Christopher Lenz",
 			"age": 25,
@@ -18167,6 +18102,84 @@
 				}
 			}
 		},
+		"83659|Eintracht Frankfurt": {
+			"name": "Martin Hinteregger",
+			"age": 27,
+			"countryCode": "at",
+			"position": "D(C)",
+			"club": "Eintracht Frankfurt",
+			"19-20": {
+				"Bundesliga | Eintracht Frankfurt": {
+					"whoscoredApps": 28,
+					"whoscoredMins": 2520
+				}
+			}
+		},
+		"353397|Bayer Leverkusen": {
+			"name": "Moussa Diaby",
+			"age": 20,
+			"countryCode": "fr",
+			"position": "M(L)",
+			"club": "Bayer Leverkusen",
+			"19-20": {
+				"Bundesliga | Bayer Leverkusen": {
+					"whoscoredApps": 24,
+					"whoscoredMins": 1476
+				}
+			}
+		},
+		"289014|Werder Bremen": {
+			"name": "Milot Rashica",
+			"age": 23,
+			"countryCode": "xk",
+			"position": "AM(LR),FW",
+			"club": "Werder Bremen",
+			"19-20": {
+				"Bundesliga | Werder Bremen": {
+					"whoscoredApps": 25,
+					"whoscoredMins": 2070
+				}
+			}
+		},
+		"22589|Bayer Leverkusen": {
+			"name": "Sven Bender",
+			"age": 31,
+			"countryCode": "de",
+			"position": "D(C),M(C)",
+			"club": "Bayer Leverkusen",
+			"19-20": {
+				"Bundesliga | Bayer Leverkusen": {
+					"whoscoredApps": 30,
+					"whoscoredMins": 2517
+				}
+			}
+		},
+		"142466|Augsburg": {
+			"name": "Philipp Max",
+			"age": 26,
+			"countryCode": "de",
+			"position": "D(L),M(L)",
+			"club": "Augsburg",
+			"19-20": {
+				"Bundesliga | Augsburg": {
+					"whoscoredApps": 27,
+					"whoscoredMins": 2360
+				}
+			}
+		},
+		"91060|Bayer Leverkusen": {
+			"name": "Karim Bellarabi",
+			"age": 30,
+			"countryCode": "de",
+			"position": "M(CLR),FW",
+			"club": "Bayer Leverkusen",
+			"19-20": {
+				"Bundesliga | Bayer Leverkusen": {
+					"whoscoredApps": 26,
+					"whoscoredMins": 1429
+				}
+			}
+		},
 		"243534|Borussia M'Gladbach": {
 			"name": "Nico Elvedi",
 			"age": 23,
@@ -18175,21 +18188,8 @@
 			"club": "Borussia M'Gladbach",
 			"19-20": {
 				"Bundesliga | Borussia M'Gladbach": {
-					"whoscoredApps": 28,
-					"whoscoredMins": 2316
-				}
-			}
-		},
-		"70105|Wolfsburg": {
-			"name": "Josuha Guilavogui",
-			"age": 29,
-			"countryCode": "fr",
-			"position": "D(C),M(C)",
-			"club": "Wolfsburg",
-			"19-20": {
-				"Bundesliga | Wolfsburg": {
-					"whoscoredApps": 22,
-					"whoscoredMins": 1970
+					"whoscoredApps": 29,
+					"whoscoredMins": 2398
 				}
 			}
 		},
@@ -18206,16 +18206,16 @@
 				}
 			}
 		},
-		"142466|Augsburg": {
-			"name": "Philipp Max",
-			"age": 26,
-			"countryCode": "de",
-			"position": "D(L),M(L)",
-			"club": "Augsburg",
+		"11090|Borussia Dortmund": {
+			"name": "Lukasz Piszczek",
+			"age": 35,
+			"countryCode": "pl",
+			"position": "D(CR),M(R)",
+			"club": "Borussia Dortmund",
 			"19-20": {
-				"Bundesliga | Augsburg": {
-					"whoscoredApps": 26,
-					"whoscoredMins": 2270
+				"Bundesliga | Borussia Dortmund": {
+					"whoscoredApps": 25,
+					"whoscoredMins": 1807
 				}
 			}
 		},
@@ -18227,86 +18227,8 @@
 			"club": "Eintracht Frankfurt",
 			"19-20": {
 				"Bundesliga | Eintracht Frankfurt": {
-					"whoscoredApps": 17,
-					"whoscoredMins": 1359
-				}
-			}
-		},
-		"11090|Borussia Dortmund": {
-			"name": "Lukasz Piszczek",
-			"age": 34,
-			"countryCode": "pl",
-			"position": "D(CR),M(R)",
-			"club": "Borussia Dortmund",
-			"19-20": {
-				"Bundesliga | Borussia Dortmund": {
-					"whoscoredApps": 24,
-					"whoscoredMins": 1717
-				}
-			}
-		},
-		"105117|Mainz 05": {
-			"name": "Robin Quaison",
-			"age": 26,
-			"countryCode": "se",
-			"position": "M(CLR),FW",
-			"club": "Mainz 05",
-			"19-20": {
-				"Bundesliga | Mainz 05": {
-					"whoscoredApps": 28,
-					"whoscoredMins": 2318
-				}
-			}
-		},
-		"296499|FC Koln": {
-			"name": "Florian Kainz",
-			"age": 27,
-			"countryCode": "at",
-			"position": "AM(CLR)",
-			"club": "FC Koln",
-			"19-20": {
-				"Bundesliga | FC Koln": {
-					"whoscoredApps": 24,
-					"whoscoredMins": 1313
-				}
-			}
-		},
-		"369470|Paderborn": {
-			"name": "Kai Pröger",
-			"age": 28,
-			"countryCode": "de",
-			"position": "AM(CR)",
-			"club": "Paderborn",
-			"19-20": {
-				"Bundesliga | Paderborn": {
-					"whoscoredApps": 27,
-					"whoscoredMins": 1947
-				}
-			}
-		},
-		"111307|FC Koln": {
-			"name": "Jonas Hector",
-			"age": 30,
-			"countryCode": "de",
-			"position": "D(L),DMC,M(L)",
-			"club": "FC Koln",
-			"19-20": {
-				"Bundesliga | FC Koln": {
-					"whoscoredApps": 27,
-					"whoscoredMins": 2255
-				}
-			}
-		},
-		"70524|Bayern Munich": {
-			"name": "Ivan Perisic",
-			"age": 31,
-			"countryCode": "hr",
-			"position": "AM(CLR)",
-			"club": "Bayern Munich",
-			"19-20": {
-				"Bundesliga | Bayern Munich": {
 					"whoscoredApps": 19,
-					"whoscoredMins": 1064
+					"whoscoredMins": 1495
 				}
 			}
 		},
@@ -18318,8 +18240,47 @@
 			"club": "Freiburg",
 			"19-20": {
 				"Bundesliga | Freiburg": {
-					"whoscoredApps": 29,
-					"whoscoredMins": 2230
+					"whoscoredApps": 30,
+					"whoscoredMins": 2263
+				}
+			}
+		},
+		"369470|Paderborn": {
+			"name": "Kai Pröger",
+			"age": 28,
+			"countryCode": "de",
+			"position": "AM(CR)",
+			"club": "Paderborn",
+			"19-20": {
+				"Bundesliga | Paderborn": {
+					"whoscoredApps": 28,
+					"whoscoredMins": 2023
+				}
+			}
+		},
+		"70105|Wolfsburg": {
+			"name": "Josuha Guilavogui",
+			"age": 29,
+			"countryCode": "fr",
+			"position": "D(C),M(C)",
+			"club": "Wolfsburg",
+			"19-20": {
+				"Bundesliga | Wolfsburg": {
+					"whoscoredApps": 23,
+					"whoscoredMins": 1972
+				}
+			}
+		},
+		"111307|FC Koln": {
+			"name": "Jonas Hector",
+			"age": 30,
+			"countryCode": "de",
+			"position": "D(L),DMC,M(L)",
+			"club": "FC Koln",
+			"19-20": {
+				"Bundesliga | FC Koln": {
+					"whoscoredApps": 28,
+					"whoscoredMins": 2345
 				}
 			}
 		},
@@ -18336,29 +18297,16 @@
 				}
 			}
 		},
-		"238903|FC Koln": {
-			"name": "Ellyes Skhiri",
-			"age": 25,
-			"countryCode": "tn",
-			"position": "DMC",
-			"club": "FC Koln",
-			"19-20": {
-				"Bundesliga | FC Koln": {
-					"whoscoredApps": 27,
-					"whoscoredMins": 2310
-				}
-			}
-		},
-		"140646|Fortuna Duesseldorf": {
-			"name": "Kenan Karaman",
+		"105117|Mainz 05": {
+			"name": "Robin Quaison",
 			"age": 26,
-			"countryCode": "tr",
-			"position": "AM(CLR),FW",
-			"club": "Fortuna Duesseldorf",
+			"countryCode": "se",
+			"position": "M(CLR),FW",
+			"club": "Mainz 05",
 			"19-20": {
-				"Bundesliga | Fortuna Duesseldorf": {
-					"whoscoredApps": 15,
-					"whoscoredMins": 1007
+				"Bundesliga | Mainz 05": {
+					"whoscoredApps": 29,
+					"whoscoredMins": 2408
 				}
 			}
 		},
@@ -18370,8 +18318,34 @@
 			"club": "Borussia M'Gladbach",
 			"19-20": {
 				"Bundesliga | Borussia M'Gladbach": {
-					"whoscoredApps": 29,
-					"whoscoredMins": 2610
+					"whoscoredApps": 30,
+					"whoscoredMins": 2700
+				}
+			}
+		},
+		"261212|RasenBallsport Leipzig": {
+			"name": "Dani Olmo",
+			"age": 22,
+			"countryCode": "es",
+			"position": "AM(CR)",
+			"club": "RasenBallsport Leipzig",
+			"19-20": {
+				"Bundesliga | RasenBallsport Leipzig": {
+					"whoscoredApps": 8,
+					"whoscoredMins": 488
+				}
+			}
+		},
+		"104899|Wolfsburg": {
+			"name": "John Brooks",
+			"age": 27,
+			"countryCode": "us",
+			"position": "D(C)",
+			"club": "Wolfsburg",
+			"19-20": {
+				"Bundesliga | Wolfsburg": {
+					"whoscoredApps": 21,
+					"whoscoredMins": 1882
 				}
 			}
 		},
@@ -18388,29 +18362,29 @@
 				}
 			}
 		},
-		"132273|Bayer Leverkusen": {
-			"name": "Wendell",
-			"age": 26,
-			"countryCode": "br",
-			"position": "D(CL),M(L)",
-			"club": "Bayer Leverkusen",
+		"296499|FC Koln": {
+			"name": "Florian Kainz",
+			"age": 27,
+			"countryCode": "at",
+			"position": "AM(CLR)",
+			"club": "FC Koln",
 			"19-20": {
-				"Bundesliga | Bayer Leverkusen": {
-					"whoscoredApps": 20,
-					"whoscoredMins": 1591
+				"Bundesliga | FC Koln": {
+					"whoscoredApps": 25,
+					"whoscoredMins": 1403
 				}
 			}
 		},
-		"67925|Schalke 04": {
-			"name": "Bastian Oczipka",
-			"age": 31,
+		"142517|Fortuna Duesseldorf": {
+			"name": "Erik Thommy",
+			"age": 25,
 			"countryCode": "de",
-			"position": "D(CL),M(L)",
-			"club": "Schalke 04",
+			"position": "M(CLR)",
+			"club": "Fortuna Duesseldorf",
 			"19-20": {
-				"Bundesliga | Schalke 04": {
-					"whoscoredApps": 29,
-					"whoscoredMins": 2565
+				"Bundesliga | Fortuna Duesseldorf": {
+					"whoscoredApps": 30,
+					"whoscoredMins": 1987
 				}
 			}
 		},
@@ -18440,6 +18414,19 @@
 				}
 			}
 		},
+		"361710|Schalke 04": {
+			"name": "Jean-Clair Todibo",
+			"age": 20,
+			"countryCode": "fr",
+			"position": "D(C)",
+			"club": "Schalke 04",
+			"19-20": {
+				"Bundesliga | Schalke 04": {
+					"whoscoredApps": 8,
+					"whoscoredMins": 365
+				}
+			}
+		},
 		"14176|Werder Bremen": {
 			"name": "Nuri Sahin",
 			"age": 31,
@@ -18450,6 +18437,32 @@
 				"Bundesliga | Werder Bremen": {
 					"whoscoredApps": 16,
 					"whoscoredMins": 1258
+				}
+			}
+		},
+		"132273|Bayer Leverkusen": {
+			"name": "Wendell",
+			"age": 26,
+			"countryCode": "br",
+			"position": "D(CL),M(L)",
+			"club": "Bayer Leverkusen",
+			"19-20": {
+				"Bundesliga | Bayer Leverkusen": {
+					"whoscoredApps": 21,
+					"whoscoredMins": 1636
+				}
+			}
+		},
+		"140646|Fortuna Duesseldorf": {
+			"name": "Kenan Karaman",
+			"age": 26,
+			"countryCode": "tr",
+			"position": "AM(CLR),FW",
+			"club": "Fortuna Duesseldorf",
+			"19-20": {
+				"Bundesliga | Fortuna Duesseldorf": {
+					"whoscoredApps": 16,
+					"whoscoredMins": 1090
 				}
 			}
 		},
@@ -18466,19 +18479,6 @@
 				}
 			}
 		},
-		"69467|Eintracht Frankfurt": {
-			"name": "Timothy Chandler",
-			"age": 30,
-			"countryCode": "us",
-			"position": "D(R),M(LR)",
-			"club": "Eintracht Frankfurt",
-			"19-20": {
-				"Bundesliga | Eintracht Frankfurt": {
-					"whoscoredApps": 18,
-					"whoscoredMins": 1094
-				}
-			}
-		},
 		"271856|Eintracht Frankfurt": {
 			"name": "Gonçalo Paciência",
 			"age": 25,
@@ -18489,6 +18489,32 @@
 				"Bundesliga | Eintracht Frankfurt": {
 					"whoscoredApps": 22,
 					"whoscoredMins": 1268
+				}
+			}
+		},
+		"67925|Schalke 04": {
+			"name": "Bastian Oczipka",
+			"age": 31,
+			"countryCode": "de",
+			"position": "D(CL),M(L)",
+			"club": "Schalke 04",
+			"19-20": {
+				"Bundesliga | Schalke 04": {
+					"whoscoredApps": 30,
+					"whoscoredMins": 2655
+				}
+			}
+		},
+		"238903|FC Koln": {
+			"name": "Ellyes Skhiri",
+			"age": 25,
+			"countryCode": "tn",
+			"position": "DMC",
+			"club": "FC Koln",
+			"19-20": {
+				"Bundesliga | FC Koln": {
+					"whoscoredApps": 28,
+					"whoscoredMins": 2356
 				}
 			}
 		},
@@ -18505,58 +18531,6 @@
 				}
 			}
 		},
-		"261021|Bayer Leverkusen": {
-			"name": "Nadiem Amiri",
-			"age": 23,
-			"countryCode": "de",
-			"position": "AM(CL)",
-			"club": "Bayer Leverkusen",
-			"19-20": {
-				"Bundesliga | Bayer Leverkusen": {
-					"whoscoredApps": 25,
-					"whoscoredMins": 1661
-				}
-			}
-		},
-		"361710|Schalke 04": {
-			"name": "Jean-Clair Todibo",
-			"age": 20,
-			"countryCode": "fr",
-			"position": "D(C)",
-			"club": "Schalke 04",
-			"19-20": {
-				"Bundesliga | Schalke 04": {
-					"whoscoredApps": 8,
-					"whoscoredMins": 365
-				}
-			}
-		},
-		"142517|Fortuna Duesseldorf": {
-			"name": "Erik Thommy",
-			"age": 25,
-			"countryCode": "de",
-			"position": "M(CLR)",
-			"club": "Fortuna Duesseldorf",
-			"19-20": {
-				"Bundesliga | Fortuna Duesseldorf": {
-					"whoscoredApps": 29,
-					"whoscoredMins": 1897
-				}
-			}
-		},
-		"104899|Wolfsburg": {
-			"name": "John Brooks",
-			"age": 27,
-			"countryCode": "us",
-			"position": "D(C)",
-			"club": "Wolfsburg",
-			"19-20": {
-				"Bundesliga | Wolfsburg": {
-					"whoscoredApps": 20,
-					"whoscoredMins": 1792
-				}
-			}
-		},
 		"84130|Hertha Berlin": {
 			"name": "Vladimír Darida",
 			"age": 29,
@@ -18565,47 +18539,8 @@
 			"club": "Hertha Berlin",
 			"19-20": {
 				"Bundesliga | Hertha Berlin": {
-					"whoscoredApps": 23,
-					"whoscoredMins": 1837
-				}
-			}
-		},
-		"90548|Hoffenheim": {
-			"name": "Pavel Kaderábek",
-			"age": 28,
-			"countryCode": "cz",
-			"position": "D(R),M(R)",
-			"club": "Hoffenheim",
-			"19-20": {
-				"Bundesliga | Hoffenheim": {
-					"whoscoredApps": 25,
-					"whoscoredMins": 2088
-				}
-			}
-		},
-		"261212|RasenBallsport Leipzig": {
-			"name": "Dani Olmo",
-			"age": 22,
-			"countryCode": "es",
-			"position": "AM(CR)",
-			"club": "RasenBallsport Leipzig",
-			"19-20": {
-				"Bundesliga | RasenBallsport Leipzig": {
-					"whoscoredApps": 7,
-					"whoscoredMins": 423
-				}
-			}
-		},
-		"83234|Borussia M'Gladbach": {
-			"name": "Patrick Herrmann",
-			"age": 29,
-			"countryCode": "de",
-			"position": "M(LR),FW",
-			"club": "Borussia M'Gladbach",
-			"19-20": {
-				"Bundesliga | Borussia M'Gladbach": {
-					"whoscoredApps": 22,
-					"whoscoredMins": 1159
+					"whoscoredApps": 24,
+					"whoscoredMins": 1927
 				}
 			}
 		},
@@ -18617,21 +18552,47 @@
 			"club": "Borussia M'Gladbach",
 			"19-20": {
 				"Bundesliga | Borussia M'Gladbach": {
-					"whoscoredApps": 26,
-					"whoscoredMins": 2331
+					"whoscoredApps": 27,
+					"whoscoredMins": 2421
 				}
 			}
 		},
-		"38649|Hoffenheim": {
-			"name": "Sebastian Rudy",
-			"age": 30,
-			"countryCode": "de",
-			"position": "D(R),M(CR)",
-			"club": "Hoffenheim",
+		"70524|Bayern Munich": {
+			"name": "Ivan Perisic",
+			"age": 31,
+			"countryCode": "hr",
+			"position": "AM(CLR)",
+			"club": "Bayern Munich",
 			"19-20": {
-				"Bundesliga | Hoffenheim": {
-					"whoscoredApps": 28,
-					"whoscoredMins": 2380
+				"Bundesliga | Bayern Munich": {
+					"whoscoredApps": 20,
+					"whoscoredMins": 1088
+				}
+			}
+		},
+		"356743|Schalke 04": {
+			"name": "Ozan Kabak",
+			"age": 20,
+			"countryCode": "tr",
+			"position": "D(C)",
+			"club": "Schalke 04",
+			"19-20": {
+				"Bundesliga | Schalke 04": {
+					"whoscoredApps": 22,
+					"whoscoredMins": 1460
+				}
+			}
+		},
+		"261021|Bayer Leverkusen": {
+			"name": "Nadiem Amiri",
+			"age": 23,
+			"countryCode": "de",
+			"position": "AM(CLR)",
+			"club": "Bayer Leverkusen",
+			"19-20": {
+				"Bundesliga | Bayer Leverkusen": {
+					"whoscoredApps": 26,
+					"whoscoredMins": 1707
 				}
 			}
 		},
@@ -18643,34 +18604,21 @@
 			"club": "Freiburg",
 			"19-20": {
 				"Bundesliga | Freiburg": {
-					"whoscoredApps": 28,
-					"whoscoredMins": 2447
+					"whoscoredApps": 29,
+					"whoscoredMins": 2479
 				}
 			}
 		},
-		"25657|Bayer Leverkusen": {
-			"name": "Charles Aránguiz",
-			"age": 31,
-			"countryCode": "cl",
-			"position": "M(C)",
-			"club": "Bayer Leverkusen",
+		"38649|Hoffenheim": {
+			"name": "Sebastian Rudy",
+			"age": 30,
+			"countryCode": "de",
+			"position": "D(R),M(CR)",
+			"club": "Hoffenheim",
 			"19-20": {
-				"Bundesliga | Bayer Leverkusen": {
-					"whoscoredApps": 22,
-					"whoscoredMins": 1774
-				}
-			}
-		},
-		"299490|Hertha Berlin": {
-			"name": "Dodi Lukébakio",
-			"age": 22,
-			"countryCode": "be",
-			"position": "AM(R),FW",
-			"club": "Hertha Berlin",
-			"19-20": {
-				"Bundesliga | Hertha Berlin": {
-					"whoscoredApps": 26,
-					"whoscoredMins": 1752
+				"Bundesliga | Hoffenheim": {
+					"whoscoredApps": 29,
+					"whoscoredMins": 2470
 				}
 			}
 		},
@@ -18687,42 +18635,29 @@
 				}
 			}
 		},
-		"330780|Borussia M'Gladbach": {
-			"name": "László Bénes",
-			"age": 22,
-			"countryCode": "sk",
-			"position": "AM(C)",
-			"club": "Borussia M'Gladbach",
+		"110132|Freiburg": {
+			"name": "Dominique Heintz",
+			"age": 26,
+			"countryCode": "de",
+			"position": "D(CL)",
+			"club": "Freiburg",
 			"19-20": {
-				"Bundesliga | Borussia M'Gladbach": {
-					"whoscoredApps": 17,
-					"whoscoredMins": 848
+				"Bundesliga | Freiburg": {
+					"whoscoredApps": 24,
+					"whoscoredMins": 2074
 				}
 			}
 		},
-		"369446|Bayer Leverkusen": {
-			"name": "Edmond Tapsoba",
-			"age": 21,
-			"countryCode": "bf",
-			"position": "D(C)",
-			"club": "Bayer Leverkusen",
+		"31814|Mainz 05": {
+			"name": "Daniel Brosinski",
+			"age": 31,
+			"countryCode": "de",
+			"position": "D(LR),M(LR)",
+			"club": "Mainz 05",
 			"19-20": {
-				"Bundesliga | Bayer Leverkusen": {
-					"whoscoredApps": 9,
-					"whoscoredMins": 725
-				}
-			}
-		},
-		"356743|Schalke 04": {
-			"name": "Ozan Kabak",
-			"age": 20,
-			"countryCode": "tr",
-			"position": "D(C)",
-			"club": "Schalke 04",
-			"19-20": {
-				"Bundesliga | Schalke 04": {
-					"whoscoredApps": 21,
-					"whoscoredMins": 1370
+				"Bundesliga | Mainz 05": {
+					"whoscoredApps": 22,
+					"whoscoredMins": 1474
 				}
 			}
 		},
@@ -18739,6 +18674,19 @@
 				}
 			}
 		},
+		"90548|Hoffenheim": {
+			"name": "Pavel Kaderábek",
+			"age": 28,
+			"countryCode": "cz",
+			"position": "D(R),M(R)",
+			"club": "Hoffenheim",
+			"19-20": {
+				"Bundesliga | Hoffenheim": {
+					"whoscoredApps": 26,
+					"whoscoredMins": 2116
+				}
+			}
+		},
 		"100591|Wolfsburg": {
 			"name": "Robin Knoche",
 			"age": 28,
@@ -18749,6 +18697,19 @@
 				"Bundesliga | Wolfsburg": {
 					"whoscoredApps": 19,
 					"whoscoredMins": 1559
+				}
+			}
+		},
+		"69467|Eintracht Frankfurt": {
+			"name": "Timothy Chandler",
+			"age": 30,
+			"countryCode": "us",
+			"position": "D(R),M(LR)",
+			"club": "Eintracht Frankfurt",
+			"19-20": {
+				"Bundesliga | Eintracht Frankfurt": {
+					"whoscoredApps": 19,
+					"whoscoredMins": 1139
 				}
 			}
 		},
@@ -18778,29 +18739,42 @@
 				}
 			}
 		},
-		"110132|Freiburg": {
-			"name": "Dominique Heintz",
-			"age": 26,
+		"369556|Union Berlin": {
+			"name": "Keven Schlotterbeck",
+			"age": 23,
 			"countryCode": "de",
-			"position": "D(CL)",
-			"club": "Freiburg",
+			"position": "D(C)",
+			"club": "Union Berlin",
 			"19-20": {
-				"Bundesliga | Freiburg": {
-					"whoscoredApps": 23,
-					"whoscoredMins": 1984
+				"Bundesliga | Union Berlin": {
+					"whoscoredApps": 19,
+					"whoscoredMins": 1582
 				}
 			}
 		},
-		"132021|Hoffenheim": {
-			"name": "Ihlas Bebou",
-			"age": 26,
-			"countryCode": "tg",
-			"position": "AM(CLR),FW",
-			"club": "Hoffenheim",
+		"83234|Borussia M'Gladbach": {
+			"name": "Patrick Herrmann",
+			"age": 29,
+			"countryCode": "de",
+			"position": "M(LR),FW",
+			"club": "Borussia M'Gladbach",
 			"19-20": {
-				"Bundesliga | Hoffenheim": {
-					"whoscoredApps": 27,
-					"whoscoredMins": 1826
+				"Bundesliga | Borussia M'Gladbach": {
+					"whoscoredApps": 23,
+					"whoscoredMins": 1231
+				}
+			}
+		},
+		"121192|Freiburg": {
+			"name": "Vincenzo Grifo",
+			"age": 27,
+			"countryCode": "it",
+			"position": "AM(CL)",
+			"club": "Freiburg",
+			"19-20": {
+				"Bundesliga | Freiburg": {
+					"whoscoredApps": 22,
+					"whoscoredMins": 1278
 				}
 			}
 		},
@@ -18814,19 +18788,6 @@
 				"Bundesliga | Mainz 05": {
 					"whoscoredApps": 22,
 					"whoscoredMins": 1936
-				}
-			}
-		},
-		"64846|Bayer Leverkusen": {
-			"name": "Lukás Hrádecky",
-			"age": 30,
-			"countryCode": "fi",
-			"position": "GK",
-			"club": "Bayer Leverkusen",
-			"19-20": {
-				"Bundesliga | Bayer Leverkusen": {
-					"whoscoredApps": 29,
-					"whoscoredMins": 2610
 				}
 			}
 		},
@@ -18856,29 +18817,42 @@
 				}
 			}
 		},
-		"361430|Paderborn": {
-			"name": "Jamilu Collins",
-			"age": 25,
-			"countryCode": "ng",
-			"position": "D(L)",
-			"club": "Paderborn",
+		"64846|Bayer Leverkusen": {
+			"name": "Lukás Hrádecky",
+			"age": 30,
+			"countryCode": "fi",
+			"position": "GK",
+			"club": "Bayer Leverkusen",
 			"19-20": {
-				"Bundesliga | Paderborn": {
-					"whoscoredApps": 25,
-					"whoscoredMins": 2219
+				"Bundesliga | Bayer Leverkusen": {
+					"whoscoredApps": 30,
+					"whoscoredMins": 2700
 				}
 			}
 		},
-		"369979|Hoffenheim": {
-			"name": "Christoph Baumgartner",
-			"age": 20,
-			"countryCode": "at",
-			"position": "AM(C)",
-			"club": "Hoffenheim",
+		"299490|Hertha Berlin": {
+			"name": "Dodi Lukébakio",
+			"age": 22,
+			"countryCode": "be",
+			"position": "AM(R),FW",
+			"club": "Hertha Berlin",
 			"19-20": {
-				"Bundesliga | Hoffenheim": {
-					"whoscoredApps": 21,
-					"whoscoredMins": 1254
+				"Bundesliga | Hertha Berlin": {
+					"whoscoredApps": 27,
+					"whoscoredMins": 1798
+				}
+			}
+		},
+		"25657|Bayer Leverkusen": {
+			"name": "Charles Aránguiz",
+			"age": 31,
+			"countryCode": "cl",
+			"position": "M(C)",
+			"club": "Bayer Leverkusen",
+			"19-20": {
+				"Bundesliga | Bayer Leverkusen": {
+					"whoscoredApps": 23,
+					"whoscoredMins": 1864
 				}
 			}
 		},
@@ -18890,8 +18864,47 @@
 			"club": "Bayern Munich",
 			"19-20": {
 				"Bundesliga | Bayern Munich": {
-					"whoscoredApps": 19,
-					"whoscoredMins": 1352
+					"whoscoredApps": 20,
+					"whoscoredMins": 1442
+				}
+			}
+		},
+		"132021|Hoffenheim": {
+			"name": "Ihlas Bebou",
+			"age": 26,
+			"countryCode": "tg",
+			"position": "AM(CLR),FW",
+			"club": "Hoffenheim",
+			"19-20": {
+				"Bundesliga | Hoffenheim": {
+					"whoscoredApps": 28,
+					"whoscoredMins": 1854
+				}
+			}
+		},
+		"333741|Hoffenheim": {
+			"name": "Stefan Posch",
+			"age": 23,
+			"countryCode": "at",
+			"position": "D(CR)",
+			"club": "Hoffenheim",
+			"19-20": {
+				"Bundesliga | Hoffenheim": {
+					"whoscoredApps": 24,
+					"whoscoredMins": 1956
+				}
+			}
+		},
+		"104011|Fortuna Duesseldorf": {
+			"name": "Kevin Stöger",
+			"age": 26,
+			"countryCode": "at",
+			"position": "M(CL)",
+			"club": "Fortuna Duesseldorf",
+			"19-20": {
+				"Bundesliga | Fortuna Duesseldorf": {
+					"whoscoredApps": 13,
+					"whoscoredMins": 990
 				}
 			}
 		},
@@ -18903,21 +18916,21 @@
 			"club": "FC Koln",
 			"19-20": {
 				"Bundesliga | FC Koln": {
-					"whoscoredApps": 17,
-					"whoscoredMins": 1424
+					"whoscoredApps": 18,
+					"whoscoredMins": 1514
 				}
 			}
 		},
-		"369556|Union Berlin": {
-			"name": "Keven Schlotterbeck",
-			"age": 23,
-			"countryCode": "de",
-			"position": "D(C)",
-			"club": "Union Berlin",
+		"262856|Wolfsburg": {
+			"name": "Xaver Schlager",
+			"age": 22,
+			"countryCode": "at",
+			"position": "M(C)",
+			"club": "Wolfsburg",
 			"19-20": {
-				"Bundesliga | Union Berlin": {
-					"whoscoredApps": 18,
-					"whoscoredMins": 1492
+				"Bundesliga | Wolfsburg": {
+					"whoscoredApps": 20,
+					"whoscoredMins": 1491
 				}
 			}
 		},
@@ -18934,6 +18947,19 @@
 				}
 			}
 		},
+		"361430|Paderborn": {
+			"name": "Jamilu Collins",
+			"age": 25,
+			"countryCode": "ng",
+			"position": "D(L)",
+			"club": "Paderborn",
+			"19-20": {
+				"Bundesliga | Paderborn": {
+					"whoscoredApps": 26,
+					"whoscoredMins": 2309
+				}
+			}
+		},
 		"115257|Hertha Berlin": {
 			"name": "Ondrej Duda",
 			"age": 25,
@@ -18947,159 +18973,16 @@
 				}
 			}
 		},
-		"333741|Hoffenheim": {
-			"name": "Stefan Posch",
-			"age": 23,
-			"countryCode": "at",
-			"position": "D(CR)",
-			"club": "Hoffenheim",
-			"19-20": {
-				"Bundesliga | Hoffenheim": {
-					"whoscoredApps": 23,
-					"whoscoredMins": 1871
-				}
-			}
-		},
-		"291937|Hoffenheim": {
-			"name": "Florian Grillitsch",
-			"age": 24,
-			"countryCode": "at",
-			"position": "DMC,M(L)",
-			"club": "Hoffenheim",
-			"19-20": {
-				"Bundesliga | Hoffenheim": {
-					"whoscoredApps": 26,
-					"whoscoredMins": 2064
-				}
-			}
-		},
-		"298792|Wolfsburg": {
-			"name": "Josip Brekalo",
-			"age": 21,
-			"countryCode": "hr",
-			"position": "AM(CLR)",
-			"club": "Wolfsburg",
-			"19-20": {
-				"Bundesliga | Wolfsburg": {
-					"whoscoredApps": 25,
-					"whoscoredMins": 1351
-				}
-			}
-		},
-		"327722|Borussia M'Gladbach": {
-			"name": "Stefan Lainer",
-			"age": 27,
-			"countryCode": "at",
-			"position": "D(R),M(R)",
+		"330780|Borussia M'Gladbach": {
+			"name": "László Bénes",
+			"age": 22,
+			"countryCode": "sk",
+			"position": "AM(C)",
 			"club": "Borussia M'Gladbach",
 			"19-20": {
 				"Bundesliga | Borussia M'Gladbach": {
-					"whoscoredApps": 26,
-					"whoscoredMins": 2264
-				}
-			}
-		},
-		"121192|Freiburg": {
-			"name": "Vincenzo Grifo",
-			"age": 27,
-			"countryCode": "it",
-			"position": "AM(CL)",
-			"club": "Freiburg",
-			"19-20": {
-				"Bundesliga | Freiburg": {
-					"whoscoredApps": 21,
-					"whoscoredMins": 1190
-				}
-			}
-		},
-		"125095|Augsburg": {
-			"name": "Tin Jedvaj",
-			"age": 24,
-			"countryCode": "hr",
-			"position": "D(CLR)",
-			"club": "Augsburg",
-			"19-20": {
-				"Bundesliga | Augsburg": {
-					"whoscoredApps": 27,
-					"whoscoredMins": 2359
-				}
-			}
-		},
-		"244583|FC Koln": {
-			"name": "Kingsley Ehizibue",
-			"age": 25,
-			"countryCode": "nl",
-			"position": "D(R),M(R)",
-			"club": "FC Koln",
-			"19-20": {
-				"Bundesliga | FC Koln": {
-					"whoscoredApps": 26,
-					"whoscoredMins": 1919
-				}
-			}
-		},
-		"349837|FC Koln": {
-			"name": "Elvis Rexhbecaj",
-			"age": 22,
-			"countryCode": "de",
-			"position": "DMC",
-			"club": "FC Koln",
-			"19-20": {
-				"Bundesliga | FC Koln": {
-					"whoscoredApps": 8,
-					"whoscoredMins": 379
-				}
-			}
-		},
-		"13754|Bayern Munich": {
-			"name": "Manuel Neuer",
-			"age": 34,
-			"countryCode": "de",
-			"position": "GK",
-			"club": "Bayern Munich",
-			"19-20": {
-				"Bundesliga | Bayern Munich": {
-					"whoscoredApps": 29,
-					"whoscoredMins": 2610
-				}
-			}
-		},
-		"97145|Wolfsburg": {
-			"name": "Jérôme Roussillon",
-			"age": 27,
-			"countryCode": "fr",
-			"position": "D(L),M(L)",
-			"club": "Wolfsburg",
-			"19-20": {
-				"Bundesliga | Wolfsburg": {
-					"whoscoredApps": 25,
-					"whoscoredMins": 2014
-				}
-			}
-		},
-		"36663|Werder Bremen": {
-			"name": "Theodor Gebre Selassie",
-			"age": 33,
-			"countryCode": "cz",
-			"position": "D(CLR),DMC,M(R)",
-			"club": "Werder Bremen",
-			"19-20": {
-				"Bundesliga | Werder Bremen": {
-					"whoscoredApps": 22,
-					"whoscoredMins": 1937
-				}
-			}
-		},
-		"313405|Mainz 05": {
-			"name": "Karim Onisiwo",
-			"age": 28,
-			"countryCode": "at",
-			"position": "AM(LR),FW",
-			"club": "Mainz 05",
-			"19-20": {
-				"Bundesliga | Mainz 05": {
-					"whoscoredApps": 27,
-					"whoscoredMins": 1392
+					"whoscoredApps": 18,
+					"whoscoredMins": 857
 				}
 			}
 		},
@@ -19111,8 +18994,138 @@
 			"club": "Freiburg",
 			"19-20": {
 				"Bundesliga | Freiburg": {
-					"whoscoredApps": 29,
-					"whoscoredMins": 2598
+					"whoscoredApps": 30,
+					"whoscoredMins": 2688
+				}
+			}
+		},
+		"125095|Augsburg": {
+			"name": "Tin Jedvaj",
+			"age": 24,
+			"countryCode": "hr",
+			"position": "D(CLR)",
+			"club": "Augsburg",
+			"19-20": {
+				"Bundesliga | Augsburg": {
+					"whoscoredApps": 28,
+					"whoscoredMins": 2449
+				}
+			}
+		},
+		"244583|FC Koln": {
+			"name": "Kingsley Ehizibue",
+			"age": 25,
+			"countryCode": "nl",
+			"position": "D(R),M(R)",
+			"club": "FC Koln",
+			"19-20": {
+				"Bundesliga | FC Koln": {
+					"whoscoredApps": 27,
+					"whoscoredMins": 2009
+				}
+			}
+		},
+		"97743|Freiburg": {
+			"name": "Alexander Schwolow",
+			"age": 28,
+			"countryCode": "de",
+			"position": "GK",
+			"club": "Freiburg",
+			"19-20": {
+				"Bundesliga | Freiburg": {
+					"whoscoredApps": 21,
+					"whoscoredMins": 1823
+				}
+			}
+		},
+		"97145|Wolfsburg": {
+			"name": "Jérôme Roussillon",
+			"age": 27,
+			"countryCode": "fr",
+			"position": "D(L),M(L)",
+			"club": "Wolfsburg",
+			"19-20": {
+				"Bundesliga | Wolfsburg": {
+					"whoscoredApps": 26,
+					"whoscoredMins": 2103
+				}
+			}
+		},
+		"369446|Bayer Leverkusen": {
+			"name": "Edmond Tapsoba",
+			"age": 21,
+			"countryCode": "bf",
+			"position": "D(C)",
+			"club": "Bayer Leverkusen",
+			"19-20": {
+				"Bundesliga | Bayer Leverkusen": {
+					"whoscoredApps": 10,
+					"whoscoredMins": 815
+				}
+			}
+		},
+		"298792|Wolfsburg": {
+			"name": "Josip Brekalo",
+			"age": 21,
+			"countryCode": "hr",
+			"position": "AM(CLR)",
+			"club": "Wolfsburg",
+			"19-20": {
+				"Bundesliga | Wolfsburg": {
+					"whoscoredApps": 26,
+					"whoscoredMins": 1441
+				}
+			}
+		},
+		"336048|Wolfsburg": {
+			"name": "Marin Pongracic",
+			"age": 22,
+			"countryCode": "hr",
+			"position": "D(C)",
+			"club": "Wolfsburg",
+			"19-20": {
+				"Bundesliga | Wolfsburg": {
+					"whoscoredApps": 7,
+					"whoscoredMins": 588
+				}
+			}
+		},
+		"327722|Borussia M'Gladbach": {
+			"name": "Stefan Lainer",
+			"age": 27,
+			"countryCode": "at",
+			"position": "D(R),M(R)",
+			"club": "Borussia M'Gladbach",
+			"19-20": {
+				"Bundesliga | Borussia M'Gladbach": {
+					"whoscoredApps": 27,
+					"whoscoredMins": 2354
+				}
+			}
+		},
+		"369979|Hoffenheim": {
+			"name": "Christoph Baumgartner",
+			"age": 20,
+			"countryCode": "at",
+			"position": "AM(C)",
+			"club": "Hoffenheim",
+			"19-20": {
+				"Bundesliga | Hoffenheim": {
+					"whoscoredApps": 22,
+					"whoscoredMins": 1316
+				}
+			}
+		},
+		"36663|Werder Bremen": {
+			"name": "Theodor Gebre Selassie",
+			"age": 33,
+			"countryCode": "cz",
+			"position": "D(CLR),DMC,M(R)",
+			"club": "Werder Bremen",
+			"19-20": {
+				"Bundesliga | Werder Bremen": {
+					"whoscoredApps": 24,
+					"whoscoredMins": 2117
 				}
 			}
 		},
@@ -19124,8 +19137,34 @@
 			"club": "Union Berlin",
 			"19-20": {
 				"Bundesliga | Union Berlin": {
-					"whoscoredApps": 27,
-					"whoscoredMins": 2118
+					"whoscoredApps": 28,
+					"whoscoredMins": 2196
+				}
+			}
+		},
+		"13754|Bayern Munich": {
+			"name": "Manuel Neuer",
+			"age": 34,
+			"countryCode": "de",
+			"position": "GK",
+			"club": "Bayern Munich",
+			"19-20": {
+				"Bundesliga | Bayern Munich": {
+					"whoscoredApps": 30,
+					"whoscoredMins": 2700
+				}
+			}
+		},
+		"313405|Mainz 05": {
+			"name": "Karim Onisiwo",
+			"age": 28,
+			"countryCode": "at",
+			"position": "AM(LR),FW",
+			"club": "Mainz 05",
+			"19-20": {
+				"Bundesliga | Mainz 05": {
+					"whoscoredApps": 28,
+					"whoscoredMins": 1408
 				}
 			}
 		},
@@ -19142,29 +19181,16 @@
 				}
 			}
 		},
-		"115172|FC Koln": {
-			"name": "Rafael Czichos",
-			"age": 30,
+		"133790|Union Berlin": {
+			"name": "Florian Hübner",
+			"age": 29,
 			"countryCode": "de",
 			"position": "D(C)",
-			"club": "FC Koln",
+			"club": "Union Berlin",
 			"19-20": {
-				"Bundesliga | FC Koln": {
-					"whoscoredApps": 21,
-					"whoscoredMins": 1794
-				}
-			}
-		},
-		"262856|Wolfsburg": {
-			"name": "Xaver Schlager",
-			"age": 22,
-			"countryCode": "at",
-			"position": "M(C)",
-			"club": "Wolfsburg",
-			"19-20": {
-				"Bundesliga | Wolfsburg": {
-					"whoscoredApps": 19,
-					"whoscoredMins": 1408
+				"Bundesliga | Union Berlin": {
+					"whoscoredApps": 10,
+					"whoscoredMins": 829
 				}
 			}
 		},
@@ -19181,19 +19207,6 @@
 				}
 			}
 		},
-		"133790|Union Berlin": {
-			"name": "Florian Hübner",
-			"age": 29,
-			"countryCode": "de",
-			"position": "D(C)",
-			"club": "Union Berlin",
-			"19-20": {
-				"Bundesliga | Union Berlin": {
-					"whoscoredApps": 9,
-					"whoscoredMins": 739
-				}
-			}
-		},
 		"276205|Freiburg": {
 			"name": "Robin Koch",
 			"age": 23,
@@ -19202,86 +19215,34 @@
 			"club": "Freiburg",
 			"19-20": {
 				"Bundesliga | Freiburg": {
-					"whoscoredApps": 28,
-					"whoscoredMins": 2443
+					"whoscoredApps": 29,
+					"whoscoredMins": 2533
 				}
 			}
 		},
-		"77440|Hoffenheim": {
-			"name": "Oliver Baumann",
-			"age": 30,
-			"countryCode": "de",
-			"position": "GK",
+		"291937|Hoffenheim": {
+			"name": "Florian Grillitsch",
+			"age": 24,
+			"countryCode": "at",
+			"position": "DMC,M(L)",
 			"club": "Hoffenheim",
 			"19-20": {
 				"Bundesliga | Hoffenheim": {
-					"whoscoredApps": 25,
-					"whoscoredMins": 2250
+					"whoscoredApps": 27,
+					"whoscoredMins": 2069
 				}
 			}
 		},
-		"97743|Freiburg": {
-			"name": "Alexander Schwolow",
-			"age": 28,
-			"countryCode": "de",
-			"position": "GK",
-			"club": "Freiburg",
-			"19-20": {
-				"Bundesliga | Freiburg": {
-					"whoscoredApps": 20,
-					"whoscoredMins": 1733
-				}
-			}
-		},
-		"31814|Mainz 05": {
-			"name": "Daniel Brosinski",
-			"age": 31,
-			"countryCode": "de",
-			"position": "D(LR),M(LR)",
+		"259929|Mainz 05": {
+			"name": "Jeremiah St. Juste",
+			"age": 23,
+			"countryCode": "nl",
+			"position": "D(CR),DMC",
 			"club": "Mainz 05",
 			"19-20": {
 				"Bundesliga | Mainz 05": {
 					"whoscoredApps": 21,
-					"whoscoredMins": 1384
-				}
-			}
-		},
-		"142470|Paderborn": {
-			"name": "Dennis Srbeny",
-			"age": 26,
-			"countryCode": "de",
-			"position": "FW",
-			"club": "Paderborn",
-			"19-20": {
-				"Bundesliga | Paderborn": {
-					"whoscoredApps": 12,
-					"whoscoredMins": 833
-				}
-			}
-		},
-		"327682|Bayer Leverkusen": {
-			"name": "Leon Bailey",
-			"age": 22,
-			"countryCode": "jm",
-			"position": "M(LR)",
-			"club": "Bayer Leverkusen",
-			"19-20": {
-				"Bundesliga | Bayer Leverkusen": {
-					"whoscoredApps": 18,
-					"whoscoredMins": 845
-				}
-			}
-		},
-		"5423|Hertha Berlin": {
-			"name": "Rune Jarstein",
-			"age": 35,
-			"countryCode": "no",
-			"position": "GK",
-			"club": "Hertha Berlin",
-			"19-20": {
-				"Bundesliga | Hertha Berlin": {
-					"whoscoredApps": 25,
-					"whoscoredMins": 2188
+					"whoscoredMins": 1772
 				}
 			}
 		},
@@ -19293,8 +19254,21 @@
 			"club": "Freiburg",
 			"19-20": {
 				"Bundesliga | Freiburg": {
-					"whoscoredApps": 29,
-					"whoscoredMins": 2106
+					"whoscoredApps": 30,
+					"whoscoredMins": 2194
+				}
+			}
+		},
+		"115172|FC Koln": {
+			"name": "Rafael Czichos",
+			"age": 30,
+			"countryCode": "de",
+			"position": "D(C)",
+			"club": "FC Koln",
+			"19-20": {
+				"Bundesliga | FC Koln": {
+					"whoscoredApps": 22,
+					"whoscoredMins": 1884
 				}
 			}
 		},
@@ -19311,6 +19285,19 @@
 				}
 			}
 		},
+		"320002|Augsburg": {
+			"name": "Felix Uduokhai",
+			"age": 22,
+			"countryCode": "de",
+			"position": "D(C)",
+			"club": "Augsburg",
+			"19-20": {
+				"Bundesliga | Augsburg": {
+					"whoscoredApps": 23,
+					"whoscoredMins": 1691
+				}
+			}
+		},
 		"364235|FC Koln": {
 			"name": "Sebastiaan Bornauw",
 			"age": 21,
@@ -19321,6 +19308,19 @@
 				"Bundesliga | FC Koln": {
 					"whoscoredApps": 24,
 					"whoscoredMins": 2089
+				}
+			}
+		},
+		"299460|Eintracht Frankfurt": {
+			"name": "André Silva",
+			"age": 24,
+			"countryCode": "pt",
+			"position": "FW",
+			"club": "Eintracht Frankfurt",
+			"19-20": {
+				"Bundesliga | Eintracht Frankfurt": {
+					"whoscoredApps": 21,
+					"whoscoredMins": 1298
 				}
 			}
 		},
@@ -19337,29 +19337,29 @@
 				}
 			}
 		},
-		"299460|Eintracht Frankfurt": {
-			"name": "André Silva",
-			"age": 24,
-			"countryCode": "pt",
-			"position": "FW",
-			"club": "Eintracht Frankfurt",
+		"122140|Union Berlin": {
+			"name": "Robert Andrich",
+			"age": 25,
+			"countryCode": "de",
+			"position": "M(C)",
+			"club": "Union Berlin",
 			"19-20": {
-				"Bundesliga | Eintracht Frankfurt": {
-					"whoscoredApps": 19,
-					"whoscoredMins": 1131
+				"Bundesliga | Union Berlin": {
+					"whoscoredApps": 28,
+					"whoscoredMins": 2420
 				}
 			}
 		},
-		"108860|Werder Bremen": {
-			"name": "Davy Klaassen",
-			"age": 27,
-			"countryCode": "nl",
-			"position": "AM(CL)",
-			"club": "Werder Bremen",
+		"327682|Bayer Leverkusen": {
+			"name": "Leon Bailey",
+			"age": 22,
+			"countryCode": "jm",
+			"position": "M(LR)",
+			"club": "Bayer Leverkusen",
 			"19-20": {
-				"Bundesliga | Werder Bremen": {
-					"whoscoredApps": 27,
-					"whoscoredMins": 2430
+				"Bundesliga | Bayer Leverkusen": {
+					"whoscoredApps": 19,
+					"whoscoredMins": 891
 				}
 			}
 		},
@@ -19376,16 +19376,16 @@
 				}
 			}
 		},
-		"320002|Augsburg": {
-			"name": "Felix Uduokhai",
-			"age": 22,
+		"77440|Hoffenheim": {
+			"name": "Oliver Baumann",
+			"age": 30,
 			"countryCode": "de",
-			"position": "D(C)",
-			"club": "Augsburg",
+			"position": "GK",
+			"club": "Hoffenheim",
 			"19-20": {
-				"Bundesliga | Augsburg": {
-					"whoscoredApps": 22,
-					"whoscoredMins": 1601
+				"Bundesliga | Hoffenheim": {
+					"whoscoredApps": 26,
+					"whoscoredMins": 2340
 				}
 			}
 		},
@@ -19402,6 +19402,19 @@
 				}
 			}
 		},
+		"5423|Hertha Berlin": {
+			"name": "Rune Jarstein",
+			"age": 35,
+			"countryCode": "no",
+			"position": "GK",
+			"club": "Hertha Berlin",
+			"19-20": {
+				"Bundesliga | Hertha Berlin": {
+					"whoscoredApps": 26,
+					"whoscoredMins": 2278
+				}
+			}
+		},
 		"367227|FC Koln": {
 			"name": "Noah Katterbach",
 			"age": 19,
@@ -19410,34 +19423,34 @@
 			"club": "FC Koln",
 			"19-20": {
 				"Bundesliga | FC Koln": {
-					"whoscoredApps": 15,
-					"whoscoredMins": 1123
+					"whoscoredApps": 16,
+					"whoscoredMins": 1185
 				}
 			}
 		},
-		"104011|Fortuna Duesseldorf": {
-			"name": "Kevin Stöger",
-			"age": 26,
-			"countryCode": "at",
-			"position": "M(CL)",
-			"club": "Fortuna Duesseldorf",
+		"133884|Paderborn": {
+			"name": "Christian Strohdiek",
+			"age": 32,
+			"countryCode": "de",
+			"position": "D(C)",
+			"club": "Paderborn",
 			"19-20": {
-				"Bundesliga | Fortuna Duesseldorf": {
-					"whoscoredApps": 12,
-					"whoscoredMins": 900
-				}
-			}
-		},
-		"132775|Wolfsburg": {
-			"name": "Marcel Tisserand",
-			"age": 27,
-			"countryCode": "cd",
-			"position": "D(CLR),M(R)",
-			"club": "Wolfsburg",
-			"19-20": {
-				"Bundesliga | Wolfsburg": {
+				"Bundesliga | Paderborn": {
 					"whoscoredApps": 14,
-					"whoscoredMins": 1205
+					"whoscoredMins": 1260
+				}
+			}
+		},
+		"135089|Augsburg": {
+			"name": "Raphael Framberger",
+			"age": 24,
+			"countryCode": "de",
+			"position": "D(R)",
+			"club": "Augsburg",
+			"19-20": {
+				"Bundesliga | Augsburg": {
+					"whoscoredApps": 15,
+					"whoscoredMins": 1006
 				}
 			}
 		},
@@ -19467,29 +19480,16 @@
 				}
 			}
 		},
-		"122140|Union Berlin": {
-			"name": "Robert Andrich",
-			"age": 25,
-			"countryCode": "de",
-			"position": "M(C)",
-			"club": "Union Berlin",
-			"19-20": {
-				"Bundesliga | Union Berlin": {
-					"whoscoredApps": 27,
-					"whoscoredMins": 2330
-				}
-			}
-		},
-		"115163|Borussia M'Gladbach": {
-			"name": "Jonas Hofmann",
-			"age": 27,
+		"134756|Mainz 05": {
+			"name": "Levin Öztunali",
+			"age": 24,
 			"countryCode": "de",
 			"position": "AM(CLR)",
-			"club": "Borussia M'Gladbach",
+			"club": "Mainz 05",
 			"19-20": {
-				"Bundesliga | Borussia M'Gladbach": {
-					"whoscoredApps": 19,
-					"whoscoredMins": 1191
+				"Bundesliga | Mainz 05": {
+					"whoscoredApps": 23,
+					"whoscoredMins": 1616
 				}
 			}
 		},
@@ -19527,21 +19527,47 @@
 			"club": "Borussia M'Gladbach",
 			"19-20": {
 				"Bundesliga | Borussia M'Gladbach": {
-					"whoscoredApps": 20,
-					"whoscoredMins": 1008
+					"whoscoredApps": 21,
+					"whoscoredMins": 1090
 				}
 			}
 		},
-		"363083|Hertha Berlin": {
-			"name": "Javairô Dilrosun",
-			"age": 21,
-			"countryCode": "nl",
-			"position": "AM(L)",
-			"club": "Hertha Berlin",
+		"13777|Fortuna Duesseldorf": {
+			"name": "Rouwen Hennings",
+			"age": 32,
+			"countryCode": "de",
+			"position": "FW",
+			"club": "Fortuna Duesseldorf",
 			"19-20": {
-				"Bundesliga | Hertha Berlin": {
-					"whoscoredApps": 22,
-					"whoscoredMins": 1285
+				"Bundesliga | Fortuna Duesseldorf": {
+					"whoscoredApps": 28,
+					"whoscoredMins": 2204
+				}
+			}
+		},
+		"115163|Borussia M'Gladbach": {
+			"name": "Jonas Hofmann",
+			"age": 27,
+			"countryCode": "de",
+			"position": "M(CLR)",
+			"club": "Borussia M'Gladbach",
+			"19-20": {
+				"Bundesliga | Borussia M'Gladbach": {
+					"whoscoredApps": 20,
+					"whoscoredMins": 1272
+				}
+			}
+		},
+		"72266|Werder Bremen": {
+			"name": "Kevin Vogt",
+			"age": 28,
+			"countryCode": "de",
+			"position": "D(CR),M(C)",
+			"club": "Werder Bremen",
+			"19-20": {
+				"Bundesliga | Werder Bremen": {
+					"whoscoredApps": 11,
+					"whoscoredMins": 894
 				}
 			}
 		},
@@ -19558,42 +19584,42 @@
 				}
 			}
 		},
-		"259929|Mainz 05": {
-			"name": "Jeremiah St. Juste",
-			"age": 23,
-			"countryCode": "nl",
-			"position": "D(CR),DMC",
-			"club": "Mainz 05",
+		"65581|Eintracht Frankfurt": {
+			"name": "Sebastian Rode",
+			"age": 29,
+			"countryCode": "de",
+			"position": "D(R),M(C)",
+			"club": "Eintracht Frankfurt",
 			"19-20": {
-				"Bundesliga | Mainz 05": {
-					"whoscoredApps": 20,
-					"whoscoredMins": 1682
+				"Bundesliga | Eintracht Frankfurt": {
+					"whoscoredApps": 26,
+					"whoscoredMins": 1718
 				}
 			}
 		},
-		"282994|Werder Bremen": {
-			"name": "Ludwig Augustinsson",
-			"age": 26,
-			"countryCode": "se",
-			"position": "D(L),M(L)",
+		"37940|Eintracht Frankfurt": {
+			"name": "Stefan Ilsanker",
+			"age": 31,
+			"countryCode": "at",
+			"position": "D(CR),DMC",
+			"club": "Eintracht Frankfurt",
+			"19-20": {
+				"Bundesliga | Eintracht Frankfurt": {
+					"whoscoredApps": 9,
+					"whoscoredMins": 668
+				}
+			}
+		},
+		"108860|Werder Bremen": {
+			"name": "Davy Klaassen",
+			"age": 27,
+			"countryCode": "nl",
+			"position": "AM(CL)",
 			"club": "Werder Bremen",
 			"19-20": {
 				"Bundesliga | Werder Bremen": {
-					"whoscoredApps": 8,
-					"whoscoredMins": 697
-				}
-			}
-		},
-		"135089|Augsburg": {
-			"name": "Raphael Framberger",
-			"age": 24,
-			"countryCode": "de",
-			"position": "D(R)",
-			"club": "Augsburg",
-			"19-20": {
-				"Bundesliga | Augsburg": {
-					"whoscoredApps": 14,
-					"whoscoredMins": 916
+					"whoscoredApps": 29,
+					"whoscoredMins": 2605
 				}
 			}
 		},
@@ -19610,16 +19636,16 @@
 				}
 			}
 		},
-		"133346|Hoffenheim": {
-			"name": "Benjamin Hübner",
-			"age": 30,
+		"349837|FC Koln": {
+			"name": "Elvis Rexhbecaj",
+			"age": 22,
 			"countryCode": "de",
-			"position": "D(C)",
-			"club": "Hoffenheim",
+			"position": "DMC",
+			"club": "FC Koln",
 			"19-20": {
-				"Bundesliga | Hoffenheim": {
-					"whoscoredApps": 21,
-					"whoscoredMins": 1815
+				"Bundesliga | FC Koln": {
+					"whoscoredApps": 9,
+					"whoscoredMins": 398
 				}
 			}
 		},
@@ -19636,16 +19662,42 @@
 				}
 			}
 		},
-		"91200|Schalke 04": {
-			"name": "Matija Nastasic",
-			"age": 27,
-			"countryCode": "rs",
-			"position": "D(C)",
-			"club": "Schalke 04",
+		"362751|Mainz 05": {
+			"name": "Pierre Kunde",
+			"age": 24,
+			"countryCode": "cm",
+			"position": "DMC",
+			"club": "Mainz 05",
 			"19-20": {
-				"Bundesliga | Schalke 04": {
-					"whoscoredApps": 16,
-					"whoscoredMins": 1364
+				"Bundesliga | Mainz 05": {
+					"whoscoredApps": 25,
+					"whoscoredMins": 1643
+				}
+			}
+		},
+		"394786|Bayer Leverkusen": {
+			"name": "Florian Wirtz",
+			"age": 17,
+			"countryCode": "",
+			"position": "Midfielder",
+			"club": "Bayer Leverkusen",
+			"19-20": {
+				"Bundesliga | Bayer Leverkusen": {
+					"whoscoredApps": 4,
+					"whoscoredMins": 236
+				}
+			}
+		},
+		"142470|Paderborn": {
+			"name": "Dennis Srbeny",
+			"age": 26,
+			"countryCode": "de",
+			"position": "FW",
+			"club": "Paderborn",
+			"19-20": {
+				"Bundesliga | Paderborn": {
+					"whoscoredApps": 13,
+					"whoscoredMins": 918
 				}
 			}
 		},
@@ -19662,29 +19714,42 @@
 				}
 			}
 		},
-		"65581|Eintracht Frankfurt": {
-			"name": "Sebastian Rode",
-			"age": 29,
-			"countryCode": "de",
-			"position": "D(R),M(C)",
-			"club": "Eintracht Frankfurt",
+		"91200|Schalke 04": {
+			"name": "Matija Nastasic",
+			"age": 27,
+			"countryCode": "rs",
+			"position": "D(C)",
+			"club": "Schalke 04",
 			"19-20": {
-				"Bundesliga | Eintracht Frankfurt": {
-					"whoscoredApps": 24,
-					"whoscoredMins": 1556
+				"Bundesliga | Schalke 04": {
+					"whoscoredApps": 16,
+					"whoscoredMins": 1364
 				}
 			}
 		},
-		"134756|Mainz 05": {
-			"name": "Levin Öztunali",
-			"age": 24,
-			"countryCode": "de",
-			"position": "AM(CLR)",
-			"club": "Mainz 05",
+		"298446|Freiburg": {
+			"name": "Philipp Lienhart",
+			"age": 23,
+			"countryCode": "at",
+			"position": "D(C)",
+			"club": "Freiburg",
 			"19-20": {
-				"Bundesliga | Mainz 05": {
+				"Bundesliga | Freiburg": {
+					"whoscoredApps": 18,
+					"whoscoredMins": 1472
+				}
+			}
+		},
+		"125654|Bayer Leverkusen": {
+			"name": "Lucas Alario",
+			"age": 27,
+			"countryCode": "ar",
+			"position": "FW",
+			"club": "Bayer Leverkusen",
+			"19-20": {
+				"Bundesliga | Bayer Leverkusen": {
 					"whoscoredApps": 22,
-					"whoscoredMins": 1540
+					"whoscoredMins": 1042
 				}
 			}
 		},
@@ -19701,29 +19766,16 @@
 				}
 			}
 		},
-		"13777|Fortuna Duesseldorf": {
-			"name": "Rouwen Hennings",
-			"age": 32,
-			"countryCode": "de",
-			"position": "FW",
-			"club": "Fortuna Duesseldorf",
+		"132775|Wolfsburg": {
+			"name": "Marcel Tisserand",
+			"age": 27,
+			"countryCode": "cd",
+			"position": "D(CLR),M(R)",
+			"club": "Wolfsburg",
 			"19-20": {
-				"Bundesliga | Fortuna Duesseldorf": {
-					"whoscoredApps": 27,
-					"whoscoredMins": 2114
-				}
-			}
-		},
-		"10088|Borussia M'Gladbach": {
-			"name": "Oscar Wendt",
-			"age": 34,
-			"countryCode": "se",
-			"position": "D(L),M(L)",
-			"club": "Borussia M'Gladbach",
-			"19-20": {
-				"Bundesliga | Borussia M'Gladbach": {
-					"whoscoredApps": 21,
-					"whoscoredMins": 1542
+				"Bundesliga | Wolfsburg": {
+					"whoscoredApps": 15,
+					"whoscoredMins": 1206
 				}
 			}
 		},
@@ -19740,6 +19792,32 @@
 				}
 			}
 		},
+		"363083|Hertha Berlin": {
+			"name": "Javairô Dilrosun",
+			"age": 21,
+			"countryCode": "nl",
+			"position": "AM(L)",
+			"club": "Hertha Berlin",
+			"19-20": {
+				"Bundesliga | Hertha Berlin": {
+					"whoscoredApps": 23,
+					"whoscoredMins": 1315
+				}
+			}
+		},
+		"27124|Bayer Leverkusen": {
+			"name": "Julian Baumgartlinger",
+			"age": 32,
+			"countryCode": "at",
+			"position": "DMC",
+			"club": "Bayer Leverkusen",
+			"19-20": {
+				"Bundesliga | Bayer Leverkusen": {
+					"whoscoredApps": 23,
+					"whoscoredMins": 1532
+				}
+			}
+		},
 		"333227|Werder Bremen": {
 			"name": "Marco Friedl",
 			"age": 22,
@@ -19748,8 +19826,34 @@
 			"club": "Werder Bremen",
 			"19-20": {
 				"Bundesliga | Werder Bremen": {
-					"whoscoredApps": 22,
-					"whoscoredMins": 1833
+					"whoscoredApps": 23,
+					"whoscoredMins": 1909
+				}
+			}
+		},
+		"282994|Werder Bremen": {
+			"name": "Ludwig Augustinsson",
+			"age": 26,
+			"countryCode": "se",
+			"position": "D(L),M(L)",
+			"club": "Werder Bremen",
+			"19-20": {
+				"Bundesliga | Werder Bremen": {
+					"whoscoredApps": 10,
+					"whoscoredMins": 801
+				}
+			}
+		},
+		"361682|Paderborn": {
+			"name": "Sebastian Vasiliadis",
+			"age": 22,
+			"countryCode": "gr",
+			"position": "M(C)",
+			"club": "Paderborn",
+			"19-20": {
+				"Bundesliga | Paderborn": {
+					"whoscoredApps": 29,
+					"whoscoredMins": 2541
 				}
 			}
 		},
@@ -19761,8 +19865,8 @@
 			"club": "Eintracht Frankfurt",
 			"19-20": {
 				"Bundesliga | Eintracht Frankfurt": {
-					"whoscoredApps": 17,
-					"whoscoredMins": 1530
+					"whoscoredApps": 19,
+					"whoscoredMins": 1710
 				}
 			}
 		},
@@ -19774,47 +19878,21 @@
 			"club": "RasenBallsport Leipzig",
 			"19-20": {
 				"Bundesliga | RasenBallsport Leipzig": {
-					"whoscoredApps": 28,
-					"whoscoredMins": 2520
+					"whoscoredApps": 29,
+					"whoscoredMins": 2610
 				}
 			}
 		},
-		"362751|Mainz 05": {
-			"name": "Pierre Kunde",
-			"age": 24,
-			"countryCode": "cm",
-			"position": "DMC",
-			"club": "Mainz 05",
+		"10088|Borussia M'Gladbach": {
+			"name": "Oscar Wendt",
+			"age": 34,
+			"countryCode": "se",
+			"position": "D(L),M(L)",
+			"club": "Borussia M'Gladbach",
 			"19-20": {
-				"Bundesliga | Mainz 05": {
-					"whoscoredApps": 24,
-					"whoscoredMins": 1617
-				}
-			}
-		},
-		"346733|Augsburg": {
-			"name": "Marco Richter",
-			"age": 22,
-			"countryCode": "de",
-			"position": "AM(CLR)",
-			"club": "Augsburg",
-			"19-20": {
-				"Bundesliga | Augsburg": {
-					"whoscoredApps": 26,
-					"whoscoredMins": 1939
-				}
-			}
-		},
-		"100805|Werder Bremen": {
-			"name": "Leonardo Bittencourt",
-			"age": 26,
-			"countryCode": "de",
-			"position": "M(CLR),FW",
-			"club": "Werder Bremen",
-			"19-20": {
-				"Bundesliga | Werder Bremen": {
-					"whoscoredApps": 23,
-					"whoscoredMins": 1760
+				"Bundesliga | Borussia M'Gladbach": {
+					"whoscoredApps": 22,
+					"whoscoredMins": 1560
 				}
 			}
 		},
@@ -19831,81 +19909,42 @@
 				}
 			}
 		},
-		"361682|Paderborn": {
-			"name": "Sebastian Vasiliadis",
-			"age": 22,
-			"countryCode": "gr",
-			"position": "M(C)",
-			"club": "Paderborn",
-			"19-20": {
-				"Bundesliga | Paderborn": {
-					"whoscoredApps": 28,
-					"whoscoredMins": 2451
-				}
-			}
-		},
-		"125654|Bayer Leverkusen": {
-			"name": "Lucas Alario",
+		"361419|Union Berlin": {
+			"name": "Marius Bülter",
 			"age": 27,
-			"countryCode": "ar",
-			"position": "FW",
-			"club": "Bayer Leverkusen",
-			"19-20": {
-				"Bundesliga | Bayer Leverkusen": {
-					"whoscoredApps": 21,
-					"whoscoredMins": 966
-				}
-			}
-		},
-		"298446|Freiburg": {
-			"name": "Philipp Lienhart",
-			"age": 23,
-			"countryCode": "at",
-			"position": "D(C)",
-			"club": "Freiburg",
-			"19-20": {
-				"Bundesliga | Freiburg": {
-					"whoscoredApps": 17,
-					"whoscoredMins": 1382
-				}
-			}
-		},
-		"72266|Werder Bremen": {
-			"name": "Kevin Vogt",
-			"age": 28,
 			"countryCode": "de",
-			"position": "D(CR),M(C)",
-			"club": "Werder Bremen",
+			"position": "D(R),M(CLR)",
+			"club": "Union Berlin",
 			"19-20": {
-				"Bundesliga | Werder Bremen": {
-					"whoscoredApps": 9,
-					"whoscoredMins": 721
+				"Bundesliga | Union Berlin": {
+					"whoscoredApps": 29,
+					"whoscoredMins": 2100
 				}
 			}
 		},
-		"133884|Paderborn": {
-			"name": "Christian Strohdiek",
-			"age": 32,
-			"countryCode": "de",
+		"297390|Borussia Dortmund": {
+			"name": "Manuel Akanji",
+			"age": 24,
+			"countryCode": "ch",
 			"position": "D(C)",
-			"club": "Paderborn",
+			"club": "Borussia Dortmund",
 			"19-20": {
-				"Bundesliga | Paderborn": {
-					"whoscoredApps": 13,
-					"whoscoredMins": 1170
+				"Bundesliga | Borussia Dortmund": {
+					"whoscoredApps": 28,
+					"whoscoredMins": 2219
 				}
 			}
 		},
-		"27124|Bayer Leverkusen": {
-			"name": "Julian Baumgartlinger",
-			"age": 32,
-			"countryCode": "at",
-			"position": "DMC",
-			"club": "Bayer Leverkusen",
+		"346733|Augsburg": {
+			"name": "Marco Richter",
+			"age": 22,
+			"countryCode": "de",
+			"position": "AM(CLR)",
+			"club": "Augsburg",
 			"19-20": {
-				"Bundesliga | Bayer Leverkusen": {
-					"whoscoredApps": 22,
-					"whoscoredMins": 1470
+				"Bundesliga | Augsburg": {
+					"whoscoredApps": 27,
+					"whoscoredMins": 2029
 				}
 			}
 		},
@@ -19917,21 +19956,8 @@
 			"club": "Union Berlin",
 			"19-20": {
 				"Bundesliga | Union Berlin": {
-					"whoscoredApps": 29,
-					"whoscoredMins": 2610
-				}
-			}
-		},
-		"115983|Fortuna Duesseldorf": {
-			"name": "Niko Gießelmann",
-			"age": 28,
-			"countryCode": "de",
-			"position": "D(CL),M(L)",
-			"club": "Fortuna Duesseldorf",
-			"19-20": {
-				"Bundesliga | Fortuna Duesseldorf": {
-					"whoscoredApps": 21,
-					"whoscoredMins": 1800
+					"whoscoredApps": 30,
+					"whoscoredMins": 2700
 				}
 			}
 		},
@@ -19943,99 +19969,21 @@
 			"club": "Paderborn",
 			"19-20": {
 				"Bundesliga | Paderborn": {
-					"whoscoredApps": 25,
-					"whoscoredMins": 1976
+					"whoscoredApps": 26,
+					"whoscoredMins": 2052
 				}
 			}
 		},
-		"25041|Werder Bremen": {
-			"name": "Niklas Moisander",
-			"age": 34,
-			"countryCode": "fi",
-			"position": "D(C)",
-			"club": "Werder Bremen",
-			"19-20": {
-				"Bundesliga | Werder Bremen": {
-					"whoscoredApps": 16,
-					"whoscoredMins": 1440
-				}
-			}
-		},
-		"344166|Eintracht Frankfurt": {
-			"name": "Daichi Kamada",
-			"age": 23,
-			"countryCode": "jp",
-			"position": "AM(CR)",
-			"club": "Eintracht Frankfurt",
-			"19-20": {
-				"Bundesliga | Eintracht Frankfurt": {
-					"whoscoredApps": 23,
-					"whoscoredMins": 1536
-				}
-			}
-		},
-		"92715|Fortuna Duesseldorf": {
-			"name": "Andre Hoffmann",
-			"age": 27,
+		"115983|Fortuna Duesseldorf": {
+			"name": "Niko Gießelmann",
+			"age": 28,
 			"countryCode": "de",
-			"position": "D(C),DMC",
+			"position": "D(CL),M(L)",
 			"club": "Fortuna Duesseldorf",
 			"19-20": {
 				"Bundesliga | Fortuna Duesseldorf": {
-					"whoscoredApps": 24,
-					"whoscoredMins": 2055
-				}
-			}
-		},
-		"317630|Eintracht Frankfurt": {
-			"name": "Djibril Sow",
-			"age": 23,
-			"countryCode": "ch",
-			"position": "DMC",
-			"club": "Eintracht Frankfurt",
-			"19-20": {
-				"Bundesliga | Eintracht Frankfurt": {
-					"whoscoredApps": 23,
-					"whoscoredMins": 1506
-				}
-			}
-		},
-		"336048|Wolfsburg": {
-			"name": "Marin Pongracic",
-			"age": 22,
-			"countryCode": "hr",
-			"position": "D(C)",
-			"club": "Wolfsburg",
-			"19-20": {
-				"Bundesliga | Wolfsburg": {
-					"whoscoredApps": 6,
-					"whoscoredMins": 498
-				}
-			}
-		},
-		"8946|Hertha Berlin": {
-			"name": "Per Skjelbred",
-			"age": 32,
-			"countryCode": "no",
-			"position": "M(CR)",
-			"club": "Hertha Berlin",
-			"19-20": {
-				"Bundesliga | Hertha Berlin": {
-					"whoscoredApps": 21,
-					"whoscoredMins": 1512
-				}
-			}
-		},
-		"71547|Werder Bremen": {
-			"name": "Yuya Osako",
-			"age": 30,
-			"countryCode": "jp",
-			"position": "AM(CR),FW",
-			"club": "Werder Bremen",
-			"19-20": {
-				"Bundesliga | Werder Bremen": {
 					"whoscoredApps": 22,
-					"whoscoredMins": 1354
+					"whoscoredMins": 1824
 				}
 			}
 		},
@@ -20052,45 +20000,6 @@
 				}
 			}
 		},
-		"107552|Schalke 04": {
-			"name": "Benito Raman",
-			"age": 25,
-			"countryCode": "be",
-			"position": "AM(LR),FW",
-			"club": "Schalke 04",
-			"19-20": {
-				"Bundesliga | Schalke 04": {
-					"whoscoredApps": 21,
-					"whoscoredMins": 1460
-				}
-			}
-		},
-		"129171|Fortuna Duesseldorf": {
-			"name": "Kaan Ayhan",
-			"age": 25,
-			"countryCode": "tr",
-			"position": "D(C),DMC",
-			"club": "Fortuna Duesseldorf",
-			"19-20": {
-				"Bundesliga | Fortuna Duesseldorf": {
-					"whoscoredApps": 26,
-					"whoscoredMins": 2283
-				}
-			}
-		},
-		"381550|Augsburg": {
-			"name": "Ruben Vargas",
-			"age": 21,
-			"countryCode": "ch",
-			"position": "AM(L)",
-			"club": "Augsburg",
-			"19-20": {
-				"Bundesliga | Augsburg": {
-					"whoscoredApps": 28,
-					"whoscoredMins": 2107
-				}
-			}
-		},
 		"292121|Hertha Berlin": {
 			"name": "Lukas Klünter",
 			"age": 24,
@@ -20101,32 +20010,6 @@
 				"Bundesliga | Hertha Berlin": {
 					"whoscoredApps": 21,
 					"whoscoredMins": 1801
-				}
-			}
-		},
-		"14091|Bayern Munich": {
-			"name": "Javi Martínez",
-			"age": 31,
-			"countryCode": "es",
-			"position": "D(C),M(C)",
-			"club": "Bayern Munich",
-			"19-20": {
-				"Bundesliga | Bayern Munich": {
-					"whoscoredApps": 13,
-					"whoscoredMins": 571
-				}
-			}
-		},
-		"144710|Union Berlin": {
-			"name": "Marvin Friedrich",
-			"age": 24,
-			"countryCode": "de",
-			"position": "D(C)",
-			"club": "Union Berlin",
-			"19-20": {
-				"Bundesliga | Union Berlin": {
-					"whoscoredApps": 26,
-					"whoscoredMins": 2340
 				}
 			}
 		},
@@ -20143,6 +20026,19 @@
 				}
 			}
 		},
+		"381550|Augsburg": {
+			"name": "Ruben Vargas",
+			"age": 21,
+			"countryCode": "ch",
+			"position": "AM(L)",
+			"club": "Augsburg",
+			"19-20": {
+				"Bundesliga | Augsburg": {
+					"whoscoredApps": 29,
+					"whoscoredMins": 2183
+				}
+			}
+		},
 		"80881|Mainz 05": {
 			"name": "Jeffrey Bruma",
 			"age": 28,
@@ -20156,6 +20052,97 @@
 				}
 			}
 		},
+		"129171|Fortuna Duesseldorf": {
+			"name": "Kaan Ayhan",
+			"age": 25,
+			"countryCode": "tr",
+			"position": "D(C),DMC",
+			"club": "Fortuna Duesseldorf",
+			"19-20": {
+				"Bundesliga | Fortuna Duesseldorf": {
+					"whoscoredApps": 27,
+					"whoscoredMins": 2373
+				}
+			}
+		},
+		"344166|Eintracht Frankfurt": {
+			"name": "Daichi Kamada",
+			"age": 23,
+			"countryCode": "jp",
+			"position": "AM(CR)",
+			"club": "Eintracht Frankfurt",
+			"19-20": {
+				"Bundesliga | Eintracht Frankfurt": {
+					"whoscoredApps": 25,
+					"whoscoredMins": 1703
+				}
+			}
+		},
+		"317630|Eintracht Frankfurt": {
+			"name": "Djibril Sow",
+			"age": 23,
+			"countryCode": "ch",
+			"position": "DMC",
+			"club": "Eintracht Frankfurt",
+			"19-20": {
+				"Bundesliga | Eintracht Frankfurt": {
+					"whoscoredApps": 25,
+					"whoscoredMins": 1528
+				}
+			}
+		},
+		"133346|Hoffenheim": {
+			"name": "Benjamin Hübner",
+			"age": 30,
+			"countryCode": "de",
+			"position": "D(C)",
+			"club": "Hoffenheim",
+			"19-20": {
+				"Bundesliga | Hoffenheim": {
+					"whoscoredApps": 22,
+					"whoscoredMins": 1824
+				}
+			}
+		},
+		"71547|Werder Bremen": {
+			"name": "Yuya Osako",
+			"age": 30,
+			"countryCode": "jp",
+			"position": "AM(CR),FW",
+			"club": "Werder Bremen",
+			"19-20": {
+				"Bundesliga | Werder Bremen": {
+					"whoscoredApps": 24,
+					"whoscoredMins": 1516
+				}
+			}
+		},
+		"296319|Mainz 05": {
+			"name": "Moussa Niakhaté",
+			"age": 24,
+			"countryCode": "fr",
+			"position": "D(C)",
+			"club": "Mainz 05",
+			"19-20": {
+				"Bundesliga | Mainz 05": {
+					"whoscoredApps": 29,
+					"whoscoredMins": 2610
+				}
+			}
+		},
+		"8946|Hertha Berlin": {
+			"name": "Per Skjelbred",
+			"age": 32,
+			"countryCode": "no",
+			"position": "M(CR)",
+			"club": "Hertha Berlin",
+			"19-20": {
+				"Bundesliga | Hertha Berlin": {
+					"whoscoredApps": 22,
+					"whoscoredMins": 1574
+				}
+			}
+		},
 		"280982|Hoffenheim": {
 			"name": "Diadie Samassékou",
 			"age": 24,
@@ -20164,47 +20151,34 @@
 			"club": "Hoffenheim",
 			"19-20": {
 				"Bundesliga | Hoffenheim": {
-					"whoscoredApps": 16,
-					"whoscoredMins": 970
+					"whoscoredApps": 17,
+					"whoscoredMins": 1060
 				}
 			}
 		},
-		"297390|Borussia Dortmund": {
-			"name": "Manuel Akanji",
-			"age": 24,
-			"countryCode": "ch",
-			"position": "D(C)",
-			"club": "Borussia Dortmund",
-			"19-20": {
-				"Bundesliga | Borussia Dortmund": {
-					"whoscoredApps": 27,
-					"whoscoredMins": 2129
-				}
-			}
-		},
-		"361419|Union Berlin": {
-			"name": "Marius Bülter",
+		"92715|Fortuna Duesseldorf": {
+			"name": "Andre Hoffmann",
 			"age": 27,
 			"countryCode": "de",
-			"position": "D(R),M(CLR)",
-			"club": "Union Berlin",
+			"position": "D(C),DMC",
+			"club": "Fortuna Duesseldorf",
 			"19-20": {
-				"Bundesliga | Union Berlin": {
-					"whoscoredApps": 28,
-					"whoscoredMins": 2010
+				"Bundesliga | Fortuna Duesseldorf": {
+					"whoscoredApps": 25,
+					"whoscoredMins": 2121
 				}
 			}
 		},
-		"14179|Paderborn": {
-			"name": "Uwe Hünemeier",
-			"age": 34,
+		"110165|Eintracht Frankfurt": {
+			"name": "Dominik Kohr",
+			"age": 26,
 			"countryCode": "de",
-			"position": "D(C)",
-			"club": "Paderborn",
+			"position": "DMC",
+			"club": "Eintracht Frankfurt",
 			"19-20": {
-				"Bundesliga | Paderborn": {
-					"whoscoredApps": 13,
-					"whoscoredMins": 963
+				"Bundesliga | Eintracht Frankfurt": {
+					"whoscoredApps": 22,
+					"whoscoredMins": 1200
 				}
 			}
 		},
@@ -20221,6 +20195,19 @@
 				}
 			}
 		},
+		"144710|Union Berlin": {
+			"name": "Marvin Friedrich",
+			"age": 24,
+			"countryCode": "de",
+			"position": "D(C)",
+			"club": "Union Berlin",
+			"19-20": {
+				"Bundesliga | Union Berlin": {
+					"whoscoredApps": 27,
+					"whoscoredMins": 2430
+				}
+			}
+		},
 		"124014|Hoffenheim": {
 			"name": "Sargis Adamyan",
 			"age": 27,
@@ -20234,16 +20221,81 @@
 				}
 			}
 		},
-		"381546|Fortuna Duesseldorf": {
-			"name": "Florian Kastenmeier",
+		"107552|Schalke 04": {
+			"name": "Benito Raman",
+			"age": 25,
+			"countryCode": "be",
+			"position": "AM(LR),FW",
+			"club": "Schalke 04",
+			"19-20": {
+				"Bundesliga | Schalke 04": {
+					"whoscoredApps": 22,
+					"whoscoredMins": 1520
+				}
+			}
+		},
+		"73797|Wolfsburg": {
+			"name": "Koen Casteels",
+			"age": 27,
+			"countryCode": "be",
+			"position": "GK",
+			"club": "Wolfsburg",
+			"19-20": {
+				"Bundesliga | Wolfsburg": {
+					"whoscoredApps": 22,
+					"whoscoredMins": 1980
+				}
+			}
+		},
+		"14179|Paderborn": {
+			"name": "Uwe Hünemeier",
+			"age": 34,
+			"countryCode": "de",
+			"position": "D(C)",
+			"club": "Paderborn",
+			"19-20": {
+				"Bundesliga | Paderborn": {
+					"whoscoredApps": 14,
+					"whoscoredMins": 1053
+				}
+			}
+		},
+		"14091|Bayern Munich": {
+			"name": "Javi Martínez",
+			"age": 31,
+			"countryCode": "es",
+			"position": "D(C),M(C)",
+			"club": "Bayern Munich",
+			"19-20": {
+				"Bundesliga | Bayern Munich": {
+					"whoscoredApps": 14,
+					"whoscoredMins": 587
+				}
+			}
+		},
+		"315299|Mainz 05": {
+			"name": "Florian Müller",
 			"age": 22,
 			"countryCode": "de",
 			"position": "GK",
-			"club": "Fortuna Duesseldorf",
+			"club": "Mainz 05",
 			"19-20": {
-				"Bundesliga | Fortuna Duesseldorf": {
-					"whoscoredApps": 12,
-					"whoscoredMins": 1080
+				"Bundesliga | Mainz 05": {
+					"whoscoredApps": 9,
+					"whoscoredMins": 765
+				}
+			}
+		},
+		"100805|Werder Bremen": {
+			"name": "Leonardo Bittencourt",
+			"age": 26,
+			"countryCode": "de",
+			"position": "M(CLR),FW",
+			"club": "Werder Bremen",
+			"19-20": {
+				"Bundesliga | Werder Bremen": {
+					"whoscoredApps": 25,
+					"whoscoredMins": 1788
 				}
 			}
 		},
@@ -20273,48 +20325,22 @@
 				}
 			}
 		},
-		"315299|Mainz 05": {
-			"name": "Florian Müller",
-			"age": 22,
-			"countryCode": "de",
-			"position": "GK",
-			"club": "Mainz 05",
+		"25041|Werder Bremen": {
+			"name": "Niklas Moisander",
+			"age": 34,
+			"countryCode": "fi",
+			"position": "D(C)",
+			"club": "Werder Bremen",
 			"19-20": {
-				"Bundesliga | Mainz 05": {
-					"whoscoredApps": 8,
-					"whoscoredMins": 675
-				}
-			}
-		},
-		"110272|Freiburg": {
-			"name": "Janik Haberer",
-			"age": 26,
-			"countryCode": "de",
-			"position": "M(CLR),FW",
-			"club": "Freiburg",
-			"19-20": {
-				"Bundesliga | Freiburg": {
-					"whoscoredApps": 23,
-					"whoscoredMins": 1709
-				}
-			}
-		},
-		"110266|Augsburg": {
-			"name": "Rani Khedira",
-			"age": 26,
-			"countryCode": "de",
-			"position": "D(C),DMC",
-			"club": "Augsburg",
-			"19-20": {
-				"Bundesliga | Augsburg": {
-					"whoscoredApps": 28,
-					"whoscoredMins": 2313
+				"Bundesliga | Werder Bremen": {
+					"whoscoredApps": 18,
+					"whoscoredMins": 1620
 				}
 			}
 		},
 		"13622|Fortuna Duesseldorf": {
 			"name": "Oliver Fink",
-			"age": 37,
+			"age": 38,
 			"countryCode": "de",
 			"position": "M(CL)",
 			"club": "Fortuna Duesseldorf",
@@ -20325,16 +20351,16 @@
 				}
 			}
 		},
-		"77433|Augsburg": {
-			"name": "Andreas Luthe",
-			"age": 33,
-			"countryCode": "de",
-			"position": "GK",
-			"club": "Augsburg",
+		"80418|Hoffenheim": {
+			"name": "Ermin Bicakcic",
+			"age": 30,
+			"countryCode": "ba",
+			"position": "D(C)",
+			"club": "Hoffenheim",
 			"19-20": {
-				"Bundesliga | Augsburg": {
-					"whoscoredApps": 6,
-					"whoscoredMins": 540
+				"Bundesliga | Hoffenheim": {
+					"whoscoredApps": 17,
+					"whoscoredMins": 986
 				}
 			}
 		},
@@ -20351,19 +20377,6 @@
 				}
 			}
 		},
-		"339504|Hertha Berlin": {
-			"name": "Krzysztof Piatek",
-			"age": 24,
-			"countryCode": "pl",
-			"position": "FW",
-			"club": "Hertha Berlin",
-			"19-20": {
-				"Bundesliga | Hertha Berlin": {
-					"whoscoredApps": 10,
-					"whoscoredMins": 536
-				}
-			}
-		},
 		"135092|Borussia Dortmund": {
 			"name": "Mahmoud Dahoud",
 			"age": 24,
@@ -20374,32 +20387,6 @@
 				"Bundesliga | Borussia Dortmund": {
 					"whoscoredApps": 12,
 					"whoscoredMins": 558
-				}
-			}
-		},
-		"73797|Wolfsburg": {
-			"name": "Koen Casteels",
-			"age": 27,
-			"countryCode": "be",
-			"position": "GK",
-			"club": "Wolfsburg",
-			"19-20": {
-				"Bundesliga | Wolfsburg": {
-					"whoscoredApps": 21,
-					"whoscoredMins": 1890
-				}
-			}
-		},
-		"129598|Union Berlin": {
-			"name": "Marcus Ingvartsen",
-			"age": 24,
-			"countryCode": "dk",
-			"position": "AM(CR)",
-			"club": "Union Berlin",
-			"19-20": {
-				"Bundesliga | Union Berlin": {
-					"whoscoredApps": 24,
-					"whoscoredMins": 1506
 				}
 			}
 		},
@@ -20429,16 +20416,107 @@
 				}
 			}
 		},
-		"41881|Wolfsburg": {
-			"name": "Admir Mehmedi",
-			"age": 29,
-			"countryCode": "ch",
-			"position": "M(CLR),FW",
-			"club": "Wolfsburg",
+		"90967|FC Koln": {
+			"name": "Timo Horn",
+			"age": 27,
+			"countryCode": "de",
+			"position": "GK",
+			"club": "FC Koln",
 			"19-20": {
-				"Bundesliga | Wolfsburg": {
-					"whoscoredApps": 20,
-					"whoscoredMins": 1141
+				"Bundesliga | FC Koln": {
+					"whoscoredApps": 30,
+					"whoscoredMins": 2700
+				}
+			}
+		},
+		"110266|Augsburg": {
+			"name": "Rani Khedira",
+			"age": 26,
+			"countryCode": "de",
+			"position": "D(C),DMC",
+			"club": "Augsburg",
+			"19-20": {
+				"Bundesliga | Augsburg": {
+					"whoscoredApps": 29,
+					"whoscoredMins": 2403
+				}
+			}
+		},
+		"110272|Freiburg": {
+			"name": "Janik Haberer",
+			"age": 26,
+			"countryCode": "de",
+			"position": "M(CLR),FW",
+			"club": "Freiburg",
+			"19-20": {
+				"Bundesliga | Freiburg": {
+					"whoscoredApps": 24,
+					"whoscoredMins": 1716
+				}
+			}
+		},
+		"315275|RasenBallsport Leipzig": {
+			"name": "Tyler Adams",
+			"age": 21,
+			"countryCode": "us",
+			"position": "M(CR)",
+			"club": "RasenBallsport Leipzig",
+			"19-20": {
+				"Bundesliga | RasenBallsport Leipzig": {
+					"whoscoredApps": 10,
+					"whoscoredMins": 713
+				}
+			}
+		},
+		"363038|Mainz 05": {
+			"name": "Leandro Barreiro Martins",
+			"age": 20,
+			"countryCode": "lu",
+			"position": "DMC",
+			"club": "Mainz 05",
+			"19-20": {
+				"Bundesliga | Mainz 05": {
+					"whoscoredApps": 15,
+					"whoscoredMins": 825
+				}
+			}
+		},
+		"145269|Paderborn": {
+			"name": "Leopold Zingerle",
+			"age": 26,
+			"countryCode": "de",
+			"position": "GK",
+			"club": "Paderborn",
+			"19-20": {
+				"Bundesliga | Paderborn": {
+					"whoscoredApps": 24,
+					"whoscoredMins": 2160
+				}
+			}
+		},
+		"77433|Augsburg": {
+			"name": "Andreas Luthe",
+			"age": 33,
+			"countryCode": "de",
+			"position": "GK",
+			"club": "Augsburg",
+			"19-20": {
+				"Bundesliga | Augsburg": {
+					"whoscoredApps": 7,
+					"whoscoredMins": 630
+				}
+			}
+		},
+		"129598|Union Berlin": {
+			"name": "Marcus Ingvartsen",
+			"age": 24,
+			"countryCode": "dk",
+			"position": "AM(CR)",
+			"club": "Union Berlin",
+			"19-20": {
+				"Bundesliga | Union Berlin": {
+					"whoscoredApps": 25,
+					"whoscoredMins": 1518
 				}
 			}
 		},
@@ -20455,29 +20533,29 @@
 				}
 			}
 		},
-		"139186|Bayern Munich": {
-			"name": "Lucas Hernández",
-			"age": 24,
-			"countryCode": "fr",
-			"position": "D(CL)",
-			"club": "Bayern Munich",
+		"312666|Hertha Berlin": {
+			"name": "Marius Wolf",
+			"age": 25,
+			"countryCode": "de",
+			"position": "D(R),M(CLR)",
+			"club": "Hertha Berlin",
 			"19-20": {
-				"Bundesliga | Bayern Munich": {
-					"whoscoredApps": 14,
-					"whoscoredMins": 741
+				"Bundesliga | Hertha Berlin": {
+					"whoscoredApps": 21,
+					"whoscoredMins": 1411
 				}
 			}
 		},
-		"130899|Wolfsburg": {
-			"name": "Yannick Gerhardt",
-			"age": 26,
-			"countryCode": "de",
-			"position": "D(L),M(CL)",
-			"club": "Wolfsburg",
+		"23199|Eintracht Frankfurt": {
+			"name": "David Abraham",
+			"age": 33,
+			"countryCode": "ar",
+			"position": "D(C)",
+			"club": "Eintracht Frankfurt",
 			"19-20": {
-				"Bundesliga | Wolfsburg": {
-					"whoscoredApps": 13,
-					"whoscoredMins": 690
+				"Bundesliga | Eintracht Frankfurt": {
+					"whoscoredApps": 17,
+					"whoscoredMins": 1422
 				}
 			}
 		},
@@ -20489,21 +20567,8 @@
 			"club": "Hoffenheim",
 			"19-20": {
 				"Bundesliga | Hoffenheim": {
-					"whoscoredApps": 9,
-					"whoscoredMins": 602
-				}
-			}
-		},
-		"312666|Hertha Berlin": {
-			"name": "Marius Wolf",
-			"age": 25,
-			"countryCode": "de",
-			"position": "D(R),M(CLR)",
-			"club": "Hertha Berlin",
-			"19-20": {
-				"Bundesliga | Hertha Berlin": {
-					"whoscoredApps": 21,
-					"whoscoredMins": 1411
+					"whoscoredApps": 10,
+					"whoscoredMins": 692
 				}
 			}
 		},
@@ -20533,120 +20598,120 @@
 				}
 			}
 		},
-		"90967|FC Koln": {
-			"name": "Timo Horn",
-			"age": 27,
-			"countryCode": "de",
-			"position": "GK",
-			"club": "FC Koln",
+		"41881|Wolfsburg": {
+			"name": "Admir Mehmedi",
+			"age": 29,
+			"countryCode": "ch",
+			"position": "M(CLR),FW",
+			"club": "Wolfsburg",
 			"19-20": {
-				"Bundesliga | FC Koln": {
-					"whoscoredApps": 29,
-					"whoscoredMins": 2610
+				"Bundesliga | Wolfsburg": {
+					"whoscoredApps": 21,
+					"whoscoredMins": 1205
 				}
 			}
 		},
-		"367480|Werder Bremen": {
-			"name": "Joshua Sargent",
-			"age": 20,
-			"countryCode": "us",
-			"position": "FW",
-			"club": "Werder Bremen",
-			"19-20": {
-				"Bundesliga | Werder Bremen": {
-					"whoscoredApps": 22,
-					"whoscoredMins": 1074
-				}
-			}
-		},
-		"10103|Hertha Berlin": {
-			"name": "Vedad Ibisevic",
-			"age": 35,
-			"countryCode": "ba",
-			"position": "FW",
-			"club": "Hertha Berlin",
-			"19-20": {
-				"Bundesliga | Hertha Berlin": {
-					"whoscoredApps": 20,
-					"whoscoredMins": 1007
-				}
-			}
-		},
-		"296319|Mainz 05": {
-			"name": "Moussa Niakhaté",
-			"age": 24,
-			"countryCode": "fr",
-			"position": "D(C)",
-			"club": "Mainz 05",
-			"19-20": {
-				"Bundesliga | Mainz 05": {
-					"whoscoredApps": 28,
-					"whoscoredMins": 2520
-				}
-			}
-		},
-		"145269|Paderborn": {
-			"name": "Leopold Zingerle",
+		"130899|Wolfsburg": {
+			"name": "Yannick Gerhardt",
 			"age": 26,
 			"countryCode": "de",
-			"position": "GK",
-			"club": "Paderborn",
+			"position": "D(L),M(CL)",
+			"club": "Wolfsburg",
 			"19-20": {
-				"Bundesliga | Paderborn": {
-					"whoscoredApps": 23,
-					"whoscoredMins": 2070
-				}
-			}
-		},
-		"315275|RasenBallsport Leipzig": {
-			"name": "Tyler Adams",
-			"age": 21,
-			"countryCode": "us",
-			"position": "M(CR)",
-			"club": "RasenBallsport Leipzig",
-			"19-20": {
-				"Bundesliga | RasenBallsport Leipzig": {
-					"whoscoredApps": 9,
-					"whoscoredMins": 623
-				}
-			}
-		},
-		"298837|RasenBallsport Leipzig": {
-			"name": "Amadou Haidara",
-			"age": 22,
-			"countryCode": "ml",
-			"position": "M(C)",
-			"club": "RasenBallsport Leipzig",
-			"19-20": {
-				"Bundesliga | RasenBallsport Leipzig": {
+				"Bundesliga | Wolfsburg": {
 					"whoscoredApps": 14,
-					"whoscoredMins": 591
+					"whoscoredMins": 697
 				}
 			}
 		},
-		"23199|Eintracht Frankfurt": {
-			"name": "David Abraham",
-			"age": 33,
-			"countryCode": "ar",
-			"position": "D(C)",
-			"club": "Eintracht Frankfurt",
+		"107636|Hoffenheim": {
+			"name": "Munas Dabbur",
+			"age": 28,
+			"countryCode": "il",
+			"position": "FW",
+			"club": "Hoffenheim",
 			"19-20": {
-				"Bundesliga | Eintracht Frankfurt": {
-					"whoscoredApps": 16,
-					"whoscoredMins": 1332
+				"Bundesliga | Hoffenheim": {
+					"whoscoredApps": 10,
+					"whoscoredMins": 525
 				}
 			}
 		},
-		"254557|Werder Bremen": {
-			"name": "Maximilian Eggestein",
+		"255961|Schalke 04": {
+			"name": "Jonjoe Kenny",
 			"age": 23,
-			"countryCode": "de",
-			"position": "M(CR)",
-			"club": "Werder Bremen",
+			"countryCode": "gb-eng",
+			"position": "D(R),M(R)",
+			"club": "Schalke 04",
 			"19-20": {
-				"Bundesliga | Werder Bremen": {
-					"whoscoredApps": 26,
-					"whoscoredMins": 2316
+				"Bundesliga | Schalke 04": {
+					"whoscoredApps": 28,
+					"whoscoredMins": 2499
+				}
+			}
+		},
+		"381546|Fortuna Duesseldorf": {
+			"name": "Florian Kastenmeier",
+			"age": 22,
+			"countryCode": "de",
+			"position": "GK",
+			"club": "Fortuna Duesseldorf",
+			"19-20": {
+				"Bundesliga | Fortuna Duesseldorf": {
+					"whoscoredApps": 13,
+					"whoscoredMins": 1170
+				}
+			}
+		},
+		"84919|Schalke 04": {
+			"name": "Michael Gregoritsch",
+			"age": 26,
+			"countryCode": "at",
+			"position": "AM(CR),FW",
+			"club": "Schalke 04",
+			"19-20": {
+				"Bundesliga | Schalke 04": {
+					"whoscoredApps": 11,
+					"whoscoredMins": 716
+				}
+			}
+		},
+		"94824|Fortuna Duesseldorf": {
+			"name": "Alfredo Morales",
+			"age": 30,
+			"countryCode": "us",
+			"position": "M(C)",
+			"club": "Fortuna Duesseldorf",
+			"19-20": {
+				"Bundesliga | Fortuna Duesseldorf": {
+					"whoscoredApps": 24,
+					"whoscoredMins": 1605
+				}
+			}
+		},
+		"339845|Bayer Leverkusen": {
+			"name": "Paulinho",
+			"age": 19,
+			"countryCode": "br",
+			"position": "AM(LR)",
+			"club": "Bayer Leverkusen",
+			"19-20": {
+				"Bundesliga | Bayer Leverkusen": {
+					"whoscoredApps": 10,
+					"whoscoredMins": 208
+				}
+			}
+		},
+		"139186|Bayern Munich": {
+			"name": "Lucas Hernández",
+			"age": 24,
+			"countryCode": "fr",
+			"position": "D(CL)",
+			"club": "Bayern Munich",
+			"19-20": {
+				"Bundesliga | Bayern Munich": {
+					"whoscoredApps": 15,
+					"whoscoredMins": 746
 				}
 			}
 		},
@@ -20658,34 +20723,8 @@
 			"club": "Fortuna Duesseldorf",
 			"19-20": {
 				"Bundesliga | Fortuna Duesseldorf": {
-					"whoscoredApps": 29,
-					"whoscoredMins": 2587
-				}
-			}
-		},
-		"110165|Eintracht Frankfurt": {
-			"name": "Dominik Kohr",
-			"age": 26,
-			"countryCode": "de",
-			"position": "DMC",
-			"club": "Eintracht Frankfurt",
-			"19-20": {
-				"Bundesliga | Eintracht Frankfurt": {
-					"whoscoredApps": 20,
-					"whoscoredMins": 1029
-				}
-			}
-		},
-		"80418|Hoffenheim": {
-			"name": "Ermin Bicakcic",
-			"age": 30,
-			"countryCode": "ba",
-			"position": "D(C)",
-			"club": "Hoffenheim",
-			"19-20": {
-				"Bundesliga | Hoffenheim": {
-					"whoscoredApps": 16,
-					"whoscoredMins": 896
+					"whoscoredApps": 30,
+					"whoscoredMins": 2653
 				}
 			}
 		},
@@ -20702,55 +20741,29 @@
 				}
 			}
 		},
-		"94824|Fortuna Duesseldorf": {
-			"name": "Alfredo Morales",
-			"age": 30,
-			"countryCode": "us",
-			"position": "M(C)",
-			"club": "Fortuna Duesseldorf",
-			"19-20": {
-				"Bundesliga | Fortuna Duesseldorf": {
-					"whoscoredApps": 23,
-					"whoscoredMins": 1581
-				}
-			}
-		},
-		"363038|Mainz 05": {
-			"name": "Leandro Barreiro Martins",
-			"age": 20,
-			"countryCode": "lu",
-			"position": "M(C)",
-			"club": "Mainz 05",
-			"19-20": {
-				"Bundesliga | Mainz 05": {
-					"whoscoredApps": 14,
-					"whoscoredMins": 761
-				}
-			}
-		},
-		"381542|Paderborn": {
-			"name": "Streli Mamba",
-			"age": 25,
-			"countryCode": "de",
+		"339504|Hertha Berlin": {
+			"name": "Krzysztof Piatek",
+			"age": 24,
+			"countryCode": "pl",
 			"position": "FW",
-			"club": "Paderborn",
+			"club": "Hertha Berlin",
 			"19-20": {
-				"Bundesliga | Paderborn": {
-					"whoscoredApps": 21,
-					"whoscoredMins": 1373
+				"Bundesliga | Hertha Berlin": {
+					"whoscoredApps": 11,
+					"whoscoredMins": 564
 				}
 			}
 		},
-		"255961|Schalke 04": {
-			"name": "Jonjoe Kenny",
-			"age": 23,
-			"countryCode": "gb-eng",
-			"position": "D(R),M(R)",
-			"club": "Schalke 04",
+		"10103|Hertha Berlin": {
+			"name": "Vedad Ibisevic",
+			"age": 35,
+			"countryCode": "ba",
+			"position": "FW",
+			"club": "Hertha Berlin",
 			"19-20": {
-				"Bundesliga | Schalke 04": {
-					"whoscoredApps": 27,
-					"whoscoredMins": 2410
+				"Bundesliga | Hertha Berlin": {
+					"whoscoredApps": 21,
+					"whoscoredMins": 1097
 				}
 			}
 		},
@@ -20767,6 +20780,32 @@
 				}
 			}
 		},
+		"381542|Paderborn": {
+			"name": "Streli Mamba",
+			"age": 25,
+			"countryCode": "de",
+			"position": "FW",
+			"club": "Paderborn",
+			"19-20": {
+				"Bundesliga | Paderborn": {
+					"whoscoredApps": 22,
+					"whoscoredMins": 1436
+				}
+			}
+		},
+		"254557|Werder Bremen": {
+			"name": "Maximilian Eggestein",
+			"age": 23,
+			"countryCode": "de",
+			"position": "M(CR)",
+			"club": "Werder Bremen",
+			"19-20": {
+				"Bundesliga | Werder Bremen": {
+					"whoscoredApps": 28,
+					"whoscoredMins": 2496
+				}
+			}
+		},
 		"36018|Augsburg": {
 			"name": "Jan Morávek",
 			"age": 30,
@@ -20777,19 +20816,6 @@
 				"Bundesliga | Augsburg": {
 					"whoscoredApps": 11,
 					"whoscoredMins": 471
-				}
-			}
-		},
-		"84919|Schalke 04": {
-			"name": "Michael Gregoritsch",
-			"age": 26,
-			"countryCode": "at",
-			"position": "AM(CR),FW",
-			"club": "Schalke 04",
-			"19-20": {
-				"Bundesliga | Schalke 04": {
-					"whoscoredApps": 10,
-					"whoscoredMins": 626
 				}
 			}
 		},
@@ -20819,16 +20845,42 @@
 				}
 			}
 		},
-		"127274|Freiburg": {
-			"name": "Chang-Hoon Kwon",
-			"age": 25,
-			"countryCode": "kr",
-			"position": "AM(CR)",
-			"club": "Freiburg",
+		"298837|RasenBallsport Leipzig": {
+			"name": "Amadou Haidara",
+			"age": 22,
+			"countryCode": "ml",
+			"position": "M(C)",
+			"club": "RasenBallsport Leipzig",
 			"19-20": {
-				"Bundesliga | Freiburg": {
-					"whoscoredApps": 18,
-					"whoscoredMins": 562
+				"Bundesliga | RasenBallsport Leipzig": {
+					"whoscoredApps": 15,
+					"whoscoredMins": 623
+				}
+			}
+		},
+		"42234|Hoffenheim": {
+			"name": "Steven Zuber",
+			"age": 28,
+			"countryCode": "ch",
+			"position": "D(L),M(CLR)",
+			"club": "Hoffenheim",
+			"19-20": {
+				"Bundesliga | Hoffenheim": {
+					"whoscoredApps": 10,
+					"whoscoredMins": 671
+				}
+			}
+		},
+		"260770|Schalke 04": {
+			"name": "Alexander Nübel",
+			"age": 23,
+			"countryCode": "de",
+			"position": "GK",
+			"club": "Schalke 04",
+			"19-20": {
+				"Bundesliga | Schalke 04": {
+					"whoscoredApps": 22,
+					"whoscoredMins": 1956
 				}
 			}
 		},
@@ -20845,16 +20897,16 @@
 				}
 			}
 		},
-		"247458|Werder Bremen": {
-			"name": "Jirí Pavlenka",
-			"age": 28,
-			"countryCode": "cz",
-			"position": "GK",
-			"club": "Werder Bremen",
+		"315527|Augsburg": {
+			"name": "Noah Joel Sarenren Bazee",
+			"age": 23,
+			"countryCode": "de",
+			"position": "AM(R)",
+			"club": "Augsburg",
 			"19-20": {
-				"Bundesliga | Werder Bremen": {
-					"whoscoredApps": 27,
-					"whoscoredMins": 2430
+				"Bundesliga | Augsburg": {
+					"whoscoredApps": 7,
+					"whoscoredMins": 243
 				}
 			}
 		},
@@ -20866,21 +20918,34 @@
 			"club": "Paderborn",
 			"19-20": {
 				"Bundesliga | Paderborn": {
-					"whoscoredApps": 20,
-					"whoscoredMins": 826
+					"whoscoredApps": 21,
+					"whoscoredMins": 840
 				}
 			}
 		},
-		"37940|Eintracht Frankfurt": {
-			"name": "Stefan Ilsanker",
-			"age": 31,
-			"countryCode": "at",
-			"position": "D(CR),DMC",
-			"club": "Eintracht Frankfurt",
+		"367480|Werder Bremen": {
+			"name": "Joshua Sargent",
+			"age": 20,
+			"countryCode": "us",
+			"position": "FW",
+			"club": "Werder Bremen",
 			"19-20": {
-				"Bundesliga | Eintracht Frankfurt": {
-					"whoscoredApps": 7,
-					"whoscoredMins": 569
+				"Bundesliga | Werder Bremen": {
+					"whoscoredApps": 24,
+					"whoscoredMins": 1179
+				}
+			}
+		},
+		"148484|Freiburg": {
+			"name": "Gian-Luca Waldschmidt",
+			"age": 24,
+			"countryCode": "de",
+			"position": "AM(CR),FW",
+			"club": "Freiburg",
+			"19-20": {
+				"Bundesliga | Freiburg": {
+					"whoscoredApps": 19,
+					"whoscoredMins": 1034
 				}
 			}
 		},
@@ -20897,55 +20962,16 @@
 				}
 			}
 		},
-		"334739|Augsburg": {
-			"name": "Eduard Löwen",
-			"age": 23,
-			"countryCode": "",
-			"position": "D(C),M(C)",
-			"club": "Augsburg",
-			"19-20": {
-				"Bundesliga | Augsburg": {
-					"whoscoredApps": 12,
-					"whoscoredMins": 539
-				}
-			}
-		},
-		"148484|Freiburg": {
-			"name": "Gian-Luca Waldschmidt",
-			"age": 24,
+		"146633|FC Koln": {
+			"name": "Benno Schmitz",
+			"age": 25,
 			"countryCode": "de",
-			"position": "AM(CR),FW",
-			"club": "Freiburg",
+			"position": "D(CLR)",
+			"club": "FC Koln",
 			"19-20": {
-				"Bundesliga | Freiburg": {
-					"whoscoredApps": 18,
-					"whoscoredMins": 951
-				}
-			}
-		},
-		"260770|Schalke 04": {
-			"name": "Alexander Nübel",
-			"age": 23,
-			"countryCode": "de",
-			"position": "GK",
-			"club": "Schalke 04",
-			"19-20": {
-				"Bundesliga | Schalke 04": {
-					"whoscoredApps": 21,
-					"whoscoredMins": 1866
-				}
-			}
-		},
-		"361993|Schalke 04": {
-			"name": "Juan Miranda",
-			"age": 20,
-			"countryCode": "es",
-			"position": "Defender",
-			"club": "Schalke 04",
-			"19-20": {
-				"Bundesliga | Schalke 04": {
-					"whoscoredApps": 6,
-					"whoscoredMins": 359
+				"Bundesliga | FC Koln": {
+					"whoscoredApps": 16,
+					"whoscoredMins": 1110
 				}
 			}
 		},
@@ -20962,32 +20988,6 @@
 				}
 			}
 		},
-		"146633|FC Koln": {
-			"name": "Benno Schmitz",
-			"age": 25,
-			"countryCode": "de",
-			"position": "D(CLR)",
-			"club": "FC Koln",
-			"19-20": {
-				"Bundesliga | FC Koln": {
-					"whoscoredApps": 15,
-					"whoscoredMins": 1082
-				}
-			}
-		},
-		"339845|Bayer Leverkusen": {
-			"name": "Paulinho",
-			"age": 19,
-			"countryCode": "br",
-			"position": "AM(LR)",
-			"club": "Bayer Leverkusen",
-			"19-20": {
-				"Bundesliga | Bayer Leverkusen": {
-					"whoscoredApps": 9,
-					"whoscoredMins": 180
-				}
-			}
-		},
 		"334739|Hertha Berlin": {
 			"name": "Eduard Löwen",
 			"age": 23,
@@ -21001,42 +21001,68 @@
 				}
 			}
 		},
+		"127274|Freiburg": {
+			"name": "Chang-Hoon Kwon",
+			"age": 25,
+			"countryCode": "kr",
+			"position": "AM(CR)",
+			"club": "Freiburg",
+			"19-20": {
+				"Bundesliga | Freiburg": {
+					"whoscoredApps": 19,
+					"whoscoredMins": 564
+				}
+			}
+		},
 		"33477|Fortuna Duesseldorf": {
 			"name": "Markus Suttner",
 			"age": 33,
 			"countryCode": "at",
-			"position": "D(L),M(L)",
+			"position": "D(CL),M(L)",
 			"club": "Fortuna Duesseldorf",
 			"19-20": {
 				"Bundesliga | Fortuna Duesseldorf": {
-					"whoscoredApps": 16,
-					"whoscoredMins": 1046
+					"whoscoredApps": 17,
+					"whoscoredMins": 1136
 				}
 			}
 		},
-		"108153|Paderborn": {
-			"name": "Laurent Jans",
-			"age": 27,
-			"countryCode": "lu",
-			"position": "D(R)",
-			"club": "Paderborn",
-			"19-20": {
-				"Bundesliga | Paderborn": {
-					"whoscoredApps": 18,
-					"whoscoredMins": 1355
-				}
-			}
-		},
-		"300318|Eintracht Frankfurt": {
-			"name": "Mijat Gacinovic",
-			"age": 25,
-			"countryCode": "rs",
-			"position": "M(CLR)",
+		"16954|Eintracht Frankfurt": {
+			"name": "Makoto Hasebe",
+			"age": 36,
+			"countryCode": "jp",
+			"position": "D(CR),M(CR)",
 			"club": "Eintracht Frankfurt",
 			"19-20": {
 				"Bundesliga | Eintracht Frankfurt": {
-					"whoscoredApps": 19,
-					"whoscoredMins": 900
+					"whoscoredApps": 21,
+					"whoscoredMins": 1787
+				}
+			}
+		},
+		"381541|Wolfsburg": {
+			"name": "Joao Victor",
+			"age": 26,
+			"countryCode": "br",
+			"position": "AM(CL)",
+			"club": "Wolfsburg",
+			"19-20": {
+				"Bundesliga | Wolfsburg": {
+					"whoscoredApps": 28,
+					"whoscoredMins": 1474
+				}
+			}
+		},
+		"334739|Augsburg": {
+			"name": "Eduard Löwen",
+			"age": 23,
+			"countryCode": "",
+			"position": "D(C),M(C)",
+			"club": "Augsburg",
+			"19-20": {
+				"Bundesliga | Augsburg": {
+					"whoscoredApps": 13,
+					"whoscoredMins": 553
 				}
 			}
 		},
@@ -21066,19 +21092,6 @@
 				}
 			}
 		},
-		"107636|Hoffenheim": {
-			"name": "Munas Dabbur",
-			"age": 28,
-			"countryCode": "il",
-			"position": "FW",
-			"club": "Hoffenheim",
-			"19-20": {
-				"Bundesliga | Hoffenheim": {
-					"whoscoredApps": 9,
-					"whoscoredMins": 454
-				}
-			}
-		},
 		"342058|Paderborn": {
 			"name": "Cauly Oliveira Souza",
 			"age": 24,
@@ -21089,45 +21102,6 @@
 				"Bundesliga | Paderborn": {
 					"whoscoredApps": 13,
 					"whoscoredMins": 718
-				}
-			}
-		},
-		"381541|Wolfsburg": {
-			"name": "Joao Victor",
-			"age": 26,
-			"countryCode": "br",
-			"position": "AM(C)",
-			"club": "Wolfsburg",
-			"19-20": {
-				"Bundesliga | Wolfsburg": {
-					"whoscoredApps": 27,
-					"whoscoredMins": 1410
-				}
-			}
-		},
-		"243889|Freiburg": {
-			"name": "Roland Sallai",
-			"age": 23,
-			"countryCode": "hu",
-			"position": "AM(CLR)",
-			"club": "Freiburg",
-			"19-20": {
-				"Bundesliga | Freiburg": {
-					"whoscoredApps": 16,
-					"whoscoredMins": 853
-				}
-			}
-		},
-		"296580|Fortuna Duesseldorf": {
-			"name": "Dawid Kownacki",
-			"age": 23,
-			"countryCode": "pl",
-			"position": "AM(L),FW",
-			"club": "Fortuna Duesseldorf",
-			"19-20": {
-				"Bundesliga | Fortuna Duesseldorf": {
-					"whoscoredApps": 18,
-					"whoscoredMins": 1056
 				}
 			}
 		},
@@ -21144,6 +21118,19 @@
 				}
 			}
 		},
+		"70227|Mainz 05": {
+			"name": "Danny Latza",
+			"age": 30,
+			"countryCode": "de",
+			"position": "DMC",
+			"club": "Mainz 05",
+			"19-20": {
+				"Bundesliga | Mainz 05": {
+					"whoscoredApps": 19,
+					"whoscoredMins": 1062
+				}
+			}
+		},
 		"124597|Hertha Berlin": {
 			"name": "Niklas Stark",
 			"age": 25,
@@ -21154,6 +21141,19 @@
 				"Bundesliga | Hertha Berlin": {
 					"whoscoredApps": 17,
 					"whoscoredMins": 1421
+				}
+			}
+		},
+		"108153|Paderborn": {
+			"name": "Laurent Jans",
+			"age": 27,
+			"countryCode": "lu",
+			"position": "D(R)",
+			"club": "Paderborn",
+			"19-20": {
+				"Bundesliga | Paderborn": {
+					"whoscoredApps": 19,
+					"whoscoredMins": 1440
 				}
 			}
 		},
@@ -21170,42 +21170,42 @@
 				}
 			}
 		},
-		"42234|Hoffenheim": {
-			"name": "Steven Zuber",
+		"247458|Werder Bremen": {
+			"name": "Jirí Pavlenka",
 			"age": 28,
-			"countryCode": "ch",
-			"position": "D(L),M(CLR)",
-			"club": "Hoffenheim",
+			"countryCode": "cz",
+			"position": "GK",
+			"club": "Werder Bremen",
 			"19-20": {
-				"Bundesliga | Hoffenheim": {
-					"whoscoredApps": 9,
-					"whoscoredMins": 609
+				"Bundesliga | Werder Bremen": {
+					"whoscoredApps": 29,
+					"whoscoredMins": 2610
 				}
 			}
 		},
-		"80388|Wolfsburg": {
-			"name": "Daniel Ginczek",
-			"age": 29,
-			"countryCode": "de",
-			"position": "AM(R),FW",
-			"club": "Wolfsburg",
+		"300318|Eintracht Frankfurt": {
+			"name": "Mijat Gacinovic",
+			"age": 25,
+			"countryCode": "rs",
+			"position": "M(CLR)",
+			"club": "Eintracht Frankfurt",
 			"19-20": {
-				"Bundesliga | Wolfsburg": {
-					"whoscoredApps": 13,
-					"whoscoredMins": 483
+				"Bundesliga | Eintracht Frankfurt": {
+					"whoscoredApps": 21,
+					"whoscoredMins": 1033
 				}
 			}
 		},
-		"44722|Augsburg": {
-			"name": "Alfred Finnbogason",
-			"age": 31,
-			"countryCode": "is",
-			"position": "FW",
-			"club": "Augsburg",
+		"243889|Freiburg": {
+			"name": "Roland Sallai",
+			"age": 23,
+			"countryCode": "hu",
+			"position": "AM(CLR)",
+			"club": "Freiburg",
 			"19-20": {
-				"Bundesliga | Augsburg": {
-					"whoscoredApps": 16,
-					"whoscoredMins": 780
+				"Bundesliga | Freiburg": {
+					"whoscoredApps": 17,
+					"whoscoredMins": 910
 				}
 			}
 		},
@@ -21224,7 +21224,7 @@
 		},
 		"80382|Borussia Dortmund": {
 			"name": "Mario Götze",
-			"age": 27,
+			"age": 28,
 			"countryCode": "de",
 			"position": "M(CLR),FW",
 			"club": "Borussia Dortmund",
@@ -21232,32 +21232,6 @@
 				"Bundesliga | Borussia Dortmund": {
 					"whoscoredApps": 15,
 					"whoscoredMins": 516
-				}
-			}
-		},
-		"16954|Eintracht Frankfurt": {
-			"name": "Makoto Hasebe",
-			"age": 36,
-			"countryCode": "jp",
-			"position": "D(CR),M(CR)",
-			"club": "Eintracht Frankfurt",
-			"19-20": {
-				"Bundesliga | Eintracht Frankfurt": {
-					"whoscoredApps": 19,
-					"whoscoredMins": 1607
-				}
-			}
-		},
-		"40560|Bayer Leverkusen": {
-			"name": "Aleksandar Dragovic",
-			"age": 29,
-			"countryCode": "at",
-			"position": "D(C)",
-			"club": "Bayer Leverkusen",
-			"19-20": {
-				"Bundesliga | Bayer Leverkusen": {
-					"whoscoredApps": 12,
-					"whoscoredMins": 759
 				}
 			}
 		},
@@ -21269,21 +21243,47 @@
 			"club": "Fortuna Duesseldorf",
 			"19-20": {
 				"Bundesliga | Fortuna Duesseldorf": {
-					"whoscoredApps": 9,
-					"whoscoredMins": 647
+					"whoscoredApps": 10,
+					"whoscoredMins": 713
 				}
 			}
 		},
-		"43364|Borussia Dortmund": {
-			"name": "Marcel Schmelzer",
-			"age": 32,
+		"80388|Wolfsburg": {
+			"name": "Daniel Ginczek",
+			"age": 29,
 			"countryCode": "de",
-			"position": "D(CL),M(L)",
-			"club": "Borussia Dortmund",
+			"position": "AM(R),FW",
+			"club": "Wolfsburg",
 			"19-20": {
-				"Bundesliga | Borussia Dortmund": {
-					"whoscoredApps": 5,
-					"whoscoredMins": 24
+				"Bundesliga | Wolfsburg": {
+					"whoscoredApps": 14,
+					"whoscoredMins": 509
+				}
+			}
+		},
+		"296580|Fortuna Duesseldorf": {
+			"name": "Dawid Kownacki",
+			"age": 23,
+			"countryCode": "pl",
+			"position": "AM(L),FW",
+			"club": "Fortuna Duesseldorf",
+			"19-20": {
+				"Bundesliga | Fortuna Duesseldorf": {
+					"whoscoredApps": 19,
+					"whoscoredMins": 1063
+				}
+			}
+		},
+		"25605|FC Koln": {
+			"name": "Anthony Modeste",
+			"age": 32,
+			"countryCode": "fr",
+			"position": "FW",
+			"club": "FC Koln",
+			"19-20": {
+				"Bundesliga | FC Koln": {
+					"whoscoredApps": 23,
+					"whoscoredMins": 900
 				}
 			}
 		},
@@ -21295,21 +21295,21 @@
 			"club": "Mainz 05",
 			"19-20": {
 				"Bundesliga | Mainz 05": {
-					"whoscoredApps": 20,
-					"whoscoredMins": 1432
+					"whoscoredApps": 21,
+					"whoscoredMins": 1446
 				}
 			}
 		},
-		"70227|Mainz 05": {
-			"name": "Danny Latza",
-			"age": 30,
-			"countryCode": "de",
-			"position": "DMC",
-			"club": "Mainz 05",
+		"44722|Augsburg": {
+			"name": "Alfred Finnbogason",
+			"age": 31,
+			"countryCode": "is",
+			"position": "FW",
+			"club": "Augsburg",
 			"19-20": {
-				"Bundesliga | Mainz 05": {
-					"whoscoredApps": 18,
-					"whoscoredMins": 972
+				"Bundesliga | Augsburg": {
+					"whoscoredApps": 17,
+					"whoscoredMins": 794
 				}
 			}
 		},
@@ -21326,16 +21326,29 @@
 				}
 			}
 		},
-		"136772|Fortuna Duesseldorf": {
-			"name": "Lewis Baker",
-			"age": 25,
-			"countryCode": "gb-eng",
-			"position": "M(C)",
-			"club": "Fortuna Duesseldorf",
+		"84145|Union Berlin": {
+			"name": "Anthony Ujah",
+			"age": 29,
+			"countryCode": "ng",
+			"position": "FW",
+			"club": "Union Berlin",
 			"19-20": {
-				"Bundesliga | Fortuna Duesseldorf": {
-					"whoscoredApps": 8,
-					"whoscoredMins": 548
+				"Bundesliga | Union Berlin": {
+					"whoscoredApps": 20,
+					"whoscoredMins": 794
+				}
+			}
+		},
+		"40560|Bayer Leverkusen": {
+			"name": "Aleksandar Dragovic",
+			"age": 29,
+			"countryCode": "at",
+			"position": "D(C)",
+			"club": "Bayer Leverkusen",
+			"19-20": {
+				"Bundesliga | Bayer Leverkusen": {
+					"whoscoredApps": 13,
+					"whoscoredMins": 849
 				}
 			}
 		},
@@ -21347,8 +21360,21 @@
 			"club": "Paderborn",
 			"19-20": {
 				"Bundesliga | Paderborn": {
-					"whoscoredApps": 29,
-					"whoscoredMins": 2040
+					"whoscoredApps": 30,
+					"whoscoredMins": 2130
+				}
+			}
+		},
+		"136772|Fortuna Duesseldorf": {
+			"name": "Lewis Baker",
+			"age": 25,
+			"countryCode": "gb-eng",
+			"position": "M(C)",
+			"club": "Fortuna Duesseldorf",
+			"19-20": {
+				"Bundesliga | Fortuna Duesseldorf": {
+					"whoscoredApps": 8,
+					"whoscoredMins": 548
 				}
 			}
 		},
@@ -21417,32 +21443,6 @@
 				}
 			}
 		},
-		"25605|FC Koln": {
-			"name": "Anthony Modeste",
-			"age": 32,
-			"countryCode": "fr",
-			"position": "FW",
-			"club": "FC Koln",
-			"19-20": {
-				"Bundesliga | FC Koln": {
-					"whoscoredApps": 22,
-					"whoscoredMins": 892
-				}
-			}
-		},
-		"21488|Mainz 05": {
-			"name": "Ádám Szalai",
-			"age": 32,
-			"countryCode": "hu",
-			"position": "FW",
-			"club": "Mainz 05",
-			"19-20": {
-				"Bundesliga | Mainz 05": {
-					"whoscoredApps": 23,
-					"whoscoredMins": 1084
-				}
-			}
-		},
 		"14165|Fortuna Duesseldorf": {
 			"name": "Adam Bodzek",
 			"age": 34,
@@ -21451,8 +21451,8 @@
 			"club": "Fortuna Duesseldorf",
 			"19-20": {
 				"Bundesliga | Fortuna Duesseldorf": {
-					"whoscoredApps": 24,
-					"whoscoredMins": 1770
+					"whoscoredApps": 25,
+					"whoscoredMins": 1836
 				}
 			}
 		},
@@ -21469,6 +21469,19 @@
 				}
 			}
 		},
+		"63936|Borussia Dortmund": {
+			"name": "Roman Bürki",
+			"age": 29,
+			"countryCode": "ch",
+			"position": "GK",
+			"club": "Borussia Dortmund",
+			"19-20": {
+				"Bundesliga | Borussia Dortmund": {
+					"whoscoredApps": 27,
+					"whoscoredMins": 2411
+				}
+			}
+		},
 		"22418|Eintracht Frankfurt": {
 			"name": "Gelson Fernandes",
 			"age": 33,
@@ -21482,16 +21495,16 @@
 				}
 			}
 		},
-		"63936|Borussia Dortmund": {
-			"name": "Roman Bürki",
-			"age": 29,
-			"countryCode": "ch",
-			"position": "GK",
-			"club": "Borussia Dortmund",
+		"21488|Mainz 05": {
+			"name": "Ádám Szalai",
+			"age": 32,
+			"countryCode": "hu",
+			"position": "FW",
+			"club": "Mainz 05",
 			"19-20": {
-				"Bundesliga | Borussia Dortmund": {
-					"whoscoredApps": 26,
-					"whoscoredMins": 2321
+				"Bundesliga | Mainz 05": {
+					"whoscoredApps": 24,
+					"whoscoredMins": 1085
 				}
 			}
 		},
@@ -21508,19 +21521,6 @@
 				}
 			}
 		},
-		"328096|Mainz 05": {
-			"name": "Jean-Philippe Mateta",
-			"age": 22,
-			"countryCode": "fr",
-			"position": "FW",
-			"club": "Mainz 05",
-			"19-20": {
-				"Bundesliga | Mainz 05": {
-					"whoscoredApps": 13,
-					"whoscoredMins": 684
-				}
-			}
-		},
 		"113933|Augsburg": {
 			"name": "Carlos Gruezo",
 			"age": 25,
@@ -21529,8 +21529,8 @@
 			"club": "Augsburg",
 			"19-20": {
 				"Bundesliga | Augsburg": {
-					"whoscoredApps": 6,
-					"whoscoredMins": 450
+					"whoscoredApps": 7,
+					"whoscoredMins": 540
 				}
 			}
 		},
@@ -21547,16 +21547,42 @@
 				}
 			}
 		},
-		"84145|Union Berlin": {
-			"name": "Anthony Ujah",
-			"age": 29,
-			"countryCode": "ng",
-			"position": "FW",
+		"43364|Borussia Dortmund": {
+			"name": "Marcel Schmelzer",
+			"age": 32,
+			"countryCode": "de",
+			"position": "D(CL),M(L)",
+			"club": "Borussia Dortmund",
+			"19-20": {
+				"Bundesliga | Borussia Dortmund": {
+					"whoscoredApps": 6,
+					"whoscoredMins": 25
+				}
+			}
+		},
+		"361993|Schalke 04": {
+			"name": "Juan Miranda",
+			"age": 20,
+			"countryCode": "es",
+			"position": "Defender",
+			"club": "Schalke 04",
+			"19-20": {
+				"Bundesliga | Schalke 04": {
+					"whoscoredApps": 7,
+					"whoscoredMins": 449
+				}
+			}
+		},
+		"104919|Union Berlin": {
+			"name": "Yunus Malli",
+			"age": 28,
+			"countryCode": "tr",
+			"position": "AM(CLR),FW",
 			"club": "Union Berlin",
 			"19-20": {
 				"Bundesliga | Union Berlin": {
-					"whoscoredApps": 19,
-					"whoscoredMins": 716
+					"whoscoredApps": 10,
+					"whoscoredMins": 525
 				}
 			}
 		},
@@ -21586,19 +21612,6 @@
 				}
 			}
 		},
-		"141399|Werder Bremen": {
-			"name": "Milos Veljkovic",
-			"age": 24,
-			"countryCode": "rs",
-			"position": "D(C),DMC",
-			"club": "Werder Bremen",
-			"19-20": {
-				"Bundesliga | Werder Bremen": {
-					"whoscoredApps": 18,
-					"whoscoredMins": 1522
-				}
-			}
-		},
 		"37961|Schalke 04": {
 			"name": "Guido Burgstaller",
 			"age": 31,
@@ -21609,6 +21622,19 @@
 				"Bundesliga | Schalke 04": {
 					"whoscoredApps": 21,
 					"whoscoredMins": 1233
+				}
+			}
+		},
+		"328096|Mainz 05": {
+			"name": "Jean-Philippe Mateta",
+			"age": 22,
+			"countryCode": "fr",
+			"position": "FW",
+			"club": "Mainz 05",
+			"19-20": {
+				"Bundesliga | Mainz 05": {
+					"whoscoredApps": 14,
+					"whoscoredMins": 759
 				}
 			}
 		},
@@ -21625,29 +21651,29 @@
 				}
 			}
 		},
-		"367737|Schalke 04": {
-			"name": "Ahmed Kutucu",
-			"age": 20,
-			"countryCode": "tr",
-			"position": "Forward",
-			"club": "Schalke 04",
+		"141399|Werder Bremen": {
+			"name": "Milos Veljkovic",
+			"age": 24,
+			"countryCode": "rs",
+			"position": "D(C),DMC",
+			"club": "Werder Bremen",
 			"19-20": {
-				"Bundesliga | Schalke 04": {
+				"Bundesliga | Werder Bremen": {
 					"whoscoredApps": 20,
-					"whoscoredMins": 431
+					"whoscoredMins": 1702
 				}
 			}
 		},
-		"315527|Augsburg": {
-			"name": "Noah Joel Sarenren Bazee",
-			"age": 23,
-			"countryCode": "de",
-			"position": "AM(R)",
-			"club": "Augsburg",
+		"19087|Eintracht Frankfurt": {
+			"name": "Jonathan de Guzmán",
+			"age": 32,
+			"countryCode": "nl",
+			"position": "M(CLR)",
+			"club": "Eintracht Frankfurt",
 			"19-20": {
-				"Bundesliga | Augsburg": {
-					"whoscoredApps": 6,
-					"whoscoredMins": 153
+				"Bundesliga | Eintracht Frankfurt": {
+					"whoscoredApps": 5,
+					"whoscoredMins": 41
 				}
 			}
 		},
@@ -21685,21 +21711,21 @@
 			"club": "Paderborn",
 			"19-20": {
 				"Bundesliga | Paderborn": {
-					"whoscoredApps": 25,
-					"whoscoredMins": 1070
+					"whoscoredApps": 26,
+					"whoscoredMins": 1097
 				}
 			}
 		},
-		"104919|Union Berlin": {
-			"name": "Yunus Malli",
-			"age": 28,
+		"367737|Schalke 04": {
+			"name": "Ahmed Kutucu",
+			"age": 20,
 			"countryCode": "tr",
-			"position": "AM(CLR),FW",
-			"club": "Union Berlin",
+			"position": "Forward",
+			"club": "Schalke 04",
 			"19-20": {
-				"Bundesliga | Union Berlin": {
-					"whoscoredApps": 9,
-					"whoscoredMins": 456
+				"Bundesliga | Schalke 04": {
+					"whoscoredApps": 21,
+					"whoscoredMins": 462
 				}
 			}
 		},
@@ -21729,19 +21755,6 @@
 				}
 			}
 		},
-		"103937|Paderborn": {
-			"name": "Ben Zolinski",
-			"age": 28,
-			"countryCode": "de",
-			"position": "AM(C),FW",
-			"club": "Paderborn",
-			"19-20": {
-				"Bundesliga | Paderborn": {
-					"whoscoredApps": 23,
-					"whoscoredMins": 1056
-				}
-			}
-		},
 		"389376|FC Koln": {
 			"name": "Jan Thielmann",
 			"age": 18,
@@ -21768,6 +21781,19 @@
 				}
 			}
 		},
+		"103937|Paderborn": {
+			"name": "Ben Zolinski",
+			"age": 28,
+			"countryCode": "de",
+			"position": "AM(C),FW",
+			"club": "Paderborn",
+			"19-20": {
+				"Bundesliga | Paderborn": {
+					"whoscoredApps": 24,
+					"whoscoredMins": 1061
+				}
+			}
+		},
 		"136215|Fortuna Duesseldorf": {
 			"name": "Jean Zimmer",
 			"age": 26,
@@ -21776,21 +21802,21 @@
 			"club": "Fortuna Duesseldorf",
 			"19-20": {
 				"Bundesliga | Fortuna Duesseldorf": {
-					"whoscoredApps": 12,
-					"whoscoredMins": 582
+					"whoscoredApps": 13,
+					"whoscoredMins": 606
 				}
 			}
 		},
-		"333350|Hertha Berlin": {
-			"name": "Arne Maier",
-			"age": 21,
-			"countryCode": "de",
-			"position": "DMC",
-			"club": "Hertha Berlin",
+		"281049|Mainz 05": {
+			"name": "Taiwo Awoniyi",
+			"age": 22,
+			"countryCode": "ng",
+			"position": "FW",
+			"club": "Mainz 05",
 			"19-20": {
-				"Bundesliga | Hertha Berlin": {
-					"whoscoredApps": 10,
-					"whoscoredMins": 338
+				"Bundesliga | Mainz 05": {
+					"whoscoredApps": 11,
+					"whoscoredMins": 457
 				}
 			}
 		},
@@ -21820,16 +21846,16 @@
 				}
 			}
 		},
-		"26072|Freiburg": {
-			"name": "Mike Frantz",
-			"age": 33,
+		"41961|Werder Bremen": {
+			"name": "Philipp Bargfrede",
+			"age": 31,
 			"countryCode": "de",
-			"position": "M(CLR),FW",
-			"club": "Freiburg",
+			"position": "D(C),M(C)",
+			"club": "Werder Bremen",
 			"19-20": {
-				"Bundesliga | Freiburg": {
+				"Bundesliga | Werder Bremen": {
 					"whoscoredApps": 13,
-					"whoscoredMins": 280
+					"whoscoredMins": 545
 				}
 			}
 		},
@@ -21859,6 +21885,19 @@
 				}
 			}
 		},
+		"93671|Wolfsburg": {
+			"name": "Felix Klaus",
+			"age": 27,
+			"countryCode": "de",
+			"position": "AM(CLR)",
+			"club": "Wolfsburg",
+			"19-20": {
+				"Bundesliga | Wolfsburg": {
+					"whoscoredApps": 21,
+					"whoscoredMins": 557
+				}
+			}
+		},
 		"383993|Fortuna Duesseldorf": {
 			"name": "Nana Ampomah",
 			"age": 24,
@@ -21880,8 +21919,8 @@
 			"club": "Schalke 04",
 			"19-20": {
 				"Bundesliga | Schalke 04": {
-					"whoscoredApps": 17,
-					"whoscoredMins": 977
+					"whoscoredApps": 18,
+					"whoscoredMins": 1067
 				}
 			}
 		},
@@ -21911,6 +21950,45 @@
 				}
 			}
 		},
+		"333350|Hertha Berlin": {
+			"name": "Arne Maier",
+			"age": 21,
+			"countryCode": "de",
+			"position": "DMC",
+			"club": "Hertha Berlin",
+			"19-20": {
+				"Bundesliga | Hertha Berlin": {
+					"whoscoredApps": 11,
+					"whoscoredMins": 340
+				}
+			}
+		},
+		"111306|Freiburg": {
+			"name": "Lukas Kübler",
+			"age": 27,
+			"countryCode": "de",
+			"position": "D(R),M(R)",
+			"club": "Freiburg",
+			"19-20": {
+				"Bundesliga | Freiburg": {
+					"whoscoredApps": 5,
+					"whoscoredMins": 211
+				}
+			}
+		},
+		"26072|Freiburg": {
+			"name": "Mike Frantz",
+			"age": 33,
+			"countryCode": "de",
+			"position": "M(CLR),FW",
+			"club": "Freiburg",
+			"19-20": {
+				"Bundesliga | Freiburg": {
+					"whoscoredApps": 14,
+					"whoscoredMins": 282
+				}
+			}
+		},
 		"285933|Schalke 04": {
 			"name": "Markus Schubert",
 			"age": 21,
@@ -21921,6 +21999,19 @@
 				"Bundesliga | Schalke 04": {
 					"whoscoredApps": 9,
 					"whoscoredMins": 741
+				}
+			}
+		},
+		"369521|Schalke 04": {
+			"name": "Rabbi Matondo",
+			"age": 19,
+			"countryCode": "gb-wls",
+			"position": "FW",
+			"club": "Schalke 04",
+			"19-20": {
+				"Bundesliga | Schalke 04": {
+					"whoscoredApps": 17,
+					"whoscoredMins": 945
 				}
 			}
 		},
@@ -21937,55 +22028,16 @@
 				}
 			}
 		},
-		"323169|Schalke 04": {
-			"name": "Timo Becker",
-			"age": 23,
+		"137852|Werder Bremen": {
+			"name": "Davie Selke",
+			"age": 25,
 			"countryCode": "de",
-			"position": "Defender",
-			"club": "Schalke 04",
-			"19-20": {
-				"Bundesliga | Schalke 04": {
-					"whoscoredApps": 5,
-					"whoscoredMins": 177
-				}
-			}
-		},
-		"41961|Werder Bremen": {
-			"name": "Philipp Bargfrede",
-			"age": 31,
-			"countryCode": "de",
-			"position": "D(C),M(C)",
+			"position": "FW",
 			"club": "Werder Bremen",
 			"19-20": {
 				"Bundesliga | Werder Bremen": {
-					"whoscoredApps": 12,
-					"whoscoredMins": 484
-				}
-			}
-		},
-		"369521|Schalke 04": {
-			"name": "Rabbi Matondo",
-			"age": 19,
-			"countryCode": "gb-wls",
-			"position": "FW",
-			"club": "Schalke 04",
-			"19-20": {
-				"Bundesliga | Schalke 04": {
-					"whoscoredApps": 16,
-					"whoscoredMins": 862
-				}
-			}
-		},
-		"93671|Wolfsburg": {
-			"name": "Felix Klaus",
-			"age": 27,
-			"countryCode": "de",
-			"position": "AM(CLR)",
-			"club": "Wolfsburg",
-			"19-20": {
-				"Bundesliga | Wolfsburg": {
-					"whoscoredApps": 20,
-					"whoscoredMins": 531
+					"whoscoredApps": 9,
+					"whoscoredMins": 441
 				}
 			}
 		},
@@ -22015,19 +22067,6 @@
 				}
 			}
 		},
-		"14958|Borussia M'Gladbach": {
-			"name": "Raffael",
-			"age": 35,
-			"countryCode": "br",
-			"position": "AM(CL),FW",
-			"club": "Borussia M'Gladbach",
-			"19-20": {
-				"Bundesliga | Borussia M'Gladbach": {
-					"whoscoredApps": 6,
-					"whoscoredMins": 49
-				}
-			}
-		},
 		"90969|Schalke 04": {
 			"name": "Mark Uth",
 			"age": 28,
@@ -22038,6 +22077,19 @@
 				"Bundesliga | Schalke 04": {
 					"whoscoredApps": 8,
 					"whoscoredMins": 355
+				}
+			}
+		},
+		"301486|Paderborn": {
+			"name": "Marlon Ritter",
+			"age": 25,
+			"countryCode": "de",
+			"position": "Midfielder",
+			"club": "Paderborn",
+			"19-20": {
+				"Bundesliga | Paderborn": {
+					"whoscoredApps": 7,
+					"whoscoredMins": 134
 				}
 			}
 		},
@@ -22054,16 +22106,16 @@
 				}
 			}
 		},
-		"389087|Borussia Dortmund": {
-			"name": "Giovanni Reyna",
-			"age": 17,
-			"countryCode": "us",
-			"position": "Midfielder",
-			"club": "Borussia Dortmund",
+		"323169|Schalke 04": {
+			"name": "Timo Becker",
+			"age": 23,
+			"countryCode": "de",
+			"position": "Defender",
+			"club": "Schalke 04",
 			"19-20": {
-				"Bundesliga | Borussia Dortmund": {
-					"whoscoredApps": 11,
-					"whoscoredMins": 161
+				"Bundesliga | Schalke 04": {
+					"whoscoredApps": 6,
+					"whoscoredMins": 178
 				}
 			}
 		},
@@ -22080,16 +22132,55 @@
 				}
 			}
 		},
-		"285026|Union Berlin": {
-			"name": "Joshua Mees",
-			"age": 24,
-			"countryCode": "de",
-			"position": "AM(CL)",
-			"club": "Union Berlin",
+		"389087|Borussia Dortmund": {
+			"name": "Giovanni Reyna",
+			"age": 17,
+			"countryCode": "us",
+			"position": "Midfielder",
+			"club": "Borussia Dortmund",
 			"19-20": {
-				"Bundesliga | Union Berlin": {
-					"whoscoredApps": 10,
-					"whoscoredMins": 205
+				"Bundesliga | Borussia Dortmund": {
+					"whoscoredApps": 12,
+					"whoscoredMins": 183
+				}
+			}
+		},
+		"82899|FC Koln": {
+			"name": "Marco Höger",
+			"age": 30,
+			"countryCode": "de",
+			"position": "D(CR),M(C)",
+			"club": "FC Koln",
+			"19-20": {
+				"Bundesliga | FC Koln": {
+					"whoscoredApps": 11,
+					"whoscoredMins": 565
+				}
+			}
+		},
+		"14958|Borussia M'Gladbach": {
+			"name": "Raffael",
+			"age": 35,
+			"countryCode": "br",
+			"position": "AM(CL),FW",
+			"club": "Borussia M'Gladbach",
+			"19-20": {
+				"Bundesliga | Borussia M'Gladbach": {
+					"whoscoredApps": 7,
+					"whoscoredMins": 57
+				}
+			}
+		},
+		"362788|Borussia Dortmund": {
+			"name": "Leonardo Balerdi",
+			"age": 21,
+			"countryCode": "ar",
+			"position": "D(C)",
+			"club": "Borussia Dortmund",
+			"19-20": {
+				"Bundesliga | Borussia Dortmund": {
+					"whoscoredApps": 5,
+					"whoscoredMins": 54
 				}
 			}
 		},
@@ -22103,19 +22194,6 @@
 				"Bundesliga | Union Berlin": {
 					"whoscoredApps": 14,
 					"whoscoredMins": 359
-				}
-			}
-		},
-		"137852|Werder Bremen": {
-			"name": "Davie Selke",
-			"age": 25,
-			"countryCode": "de",
-			"position": "FW",
-			"club": "Werder Bremen",
-			"19-20": {
-				"Bundesliga | Werder Bremen": {
-					"whoscoredApps": 7,
-					"whoscoredMins": 376
 				}
 			}
 		},
@@ -22158,16 +22236,16 @@
 				}
 			}
 		},
-		"82899|FC Koln": {
-			"name": "Marco Höger",
-			"age": 30,
+		"285026|Union Berlin": {
+			"name": "Joshua Mees",
+			"age": 24,
 			"countryCode": "de",
-			"position": "D(CR),M(C)",
-			"club": "FC Koln",
+			"position": "AM(CL)",
+			"club": "Union Berlin",
 			"19-20": {
-				"Bundesliga | FC Koln": {
-					"whoscoredApps": 10,
-					"whoscoredMins": 520
+				"Bundesliga | Union Berlin": {
+					"whoscoredApps": 11,
+					"whoscoredMins": 217
 				}
 			}
 		},
@@ -22205,34 +22283,8 @@
 			"club": "Union Berlin",
 			"19-20": {
 				"Bundesliga | Union Berlin": {
-					"whoscoredApps": 11,
-					"whoscoredMins": 562
-				}
-			}
-		},
-		"301486|Paderborn": {
-			"name": "Marlon Ritter",
-			"age": 25,
-			"countryCode": "de",
-			"position": "Midfielder",
-			"club": "Paderborn",
-			"19-20": {
-				"Bundesliga | Paderborn": {
-					"whoscoredApps": 6,
-					"whoscoredMins": 120
-				}
-			}
-		},
-		"281049|Mainz 05": {
-			"name": "Taiwo Awoniyi",
-			"age": 22,
-			"countryCode": "ng",
-			"position": "FW",
-			"club": "Mainz 05",
-			"19-20": {
-				"Bundesliga | Mainz 05": {
-					"whoscoredApps": 10,
-					"whoscoredMins": 367
+					"whoscoredApps": 12,
+					"whoscoredMins": 583
 				}
 			}
 		},
@@ -22246,32 +22298,6 @@
 				"Bundesliga | Union Berlin": {
 					"whoscoredApps": 11,
 					"whoscoredMins": 250
-				}
-			}
-		},
-		"31060|Werder Bremen": {
-			"name": "Sebastian Langkamp",
-			"age": 32,
-			"countryCode": "de",
-			"position": "D(C)",
-			"club": "Werder Bremen",
-			"19-20": {
-				"Bundesliga | Werder Bremen": {
-					"whoscoredApps": 4,
-					"whoscoredMins": 269
-				}
-			}
-		},
-		"362788|Borussia Dortmund": {
-			"name": "Leonardo Balerdi",
-			"age": 21,
-			"countryCode": "ar",
-			"position": "D(C)",
-			"club": "Borussia Dortmund",
-			"19-20": {
-				"Bundesliga | Borussia Dortmund": {
-					"whoscoredApps": 4,
-					"whoscoredMins": 44
 				}
 			}
 		},
@@ -22296,8 +22322,8 @@
 			"club": "Schalke 04",
 			"19-20": {
 				"Bundesliga | Schalke 04": {
-					"whoscoredApps": 7,
-					"whoscoredMins": 189
+					"whoscoredApps": 8,
+					"whoscoredMins": 196
 				}
 			}
 		},
@@ -22324,6 +22350,19 @@
 				"Bundesliga | Fortuna Duesseldorf": {
 					"whoscoredApps": 6,
 					"whoscoredMins": 354
+				}
+			}
+		},
+		"31060|Werder Bremen": {
+			"name": "Sebastian Langkamp",
+			"age": 32,
+			"countryCode": "de",
+			"position": "D(C)",
+			"club": "Werder Bremen",
+			"19-20": {
+				"Bundesliga | Werder Bremen": {
+					"whoscoredApps": 4,
+					"whoscoredMins": 269
 				}
 			}
 		},
@@ -22379,19 +22418,6 @@
 				}
 			}
 		},
-		"111306|Freiburg": {
-			"name": "Lukas Kübler",
-			"age": 27,
-			"countryCode": "de",
-			"position": "D(R),M(R)",
-			"club": "Freiburg",
-			"19-20": {
-				"Bundesliga | Freiburg": {
-					"whoscoredApps": 4,
-					"whoscoredMins": 153
-				}
-			}
-		},
 		"141987|Fortuna Duesseldorf": {
 			"name": "Marcel Sobottka",
 			"age": 26,
@@ -22402,6 +22428,19 @@
 				"Bundesliga | Fortuna Duesseldorf": {
 					"whoscoredApps": 15,
 					"whoscoredMins": 548
+				}
+			}
+		},
+		"386606|Werder Bremen": {
+			"name": "Nick Woltemade",
+			"age": 18,
+			"countryCode": "de",
+			"position": "Forward",
+			"club": "Werder Bremen",
+			"19-20": {
+				"Bundesliga | Werder Bremen": {
+					"whoscoredApps": 5,
+					"whoscoredMins": 90
 				}
 			}
 		},
@@ -22444,6 +22483,19 @@
 				}
 			}
 		},
+		"21666|Werder Bremen": {
+			"name": "Fin Bartels",
+			"age": 33,
+			"countryCode": "de",
+			"position": "M(CLR),FW",
+			"club": "Werder Bremen",
+			"19-20": {
+				"Bundesliga | Werder Bremen": {
+					"whoscoredApps": 11,
+					"whoscoredMins": 240
+				}
+			}
+		},
 		"260779|Augsburg": {
 			"name": "Reece Oxford",
 			"age": 21,
@@ -22454,6 +22506,19 @@
 				"Bundesliga | Augsburg": {
 					"whoscoredApps": 9,
 					"whoscoredMins": 324
+				}
+			}
+		},
+		"25814|Borussia M'Gladbach": {
+			"name": "Ibrahima Traoré",
+			"age": 32,
+			"countryCode": "gn",
+			"position": "AM(LR)",
+			"club": "Borussia M'Gladbach",
+			"19-20": {
+				"Bundesliga | Borussia M'Gladbach": {
+					"whoscoredApps": 4,
+					"whoscoredMins": 29
 				}
 			}
 		},
@@ -22480,19 +22545,6 @@
 				"Bundesliga | Hoffenheim": {
 					"whoscoredApps": 5,
 					"whoscoredMins": 87
-				}
-			}
-		},
-		"21666|Werder Bremen": {
-			"name": "Fin Bartels",
-			"age": 33,
-			"countryCode": "de",
-			"position": "M(CLR),FW",
-			"club": "Werder Bremen",
-			"19-20": {
-				"Bundesliga | Werder Bremen": {
-					"whoscoredApps": 9,
-					"whoscoredMins": 150
 				}
 			}
 		},
@@ -23241,7 +23293,7 @@
 		},
 		"382492|Paris Saint-Germain": {
 			"name": "Tanguy Kouassi",
-			"age": 17,
+			"age": 18,
 			"countryCode": "fr",
 			"position": "Defender",
 			"club": "Paris Saint-Germain",
@@ -24125,7 +24177,7 @@
 		},
 		"327905|Nice": {
 			"name": "Alexis Claude Maurice",
-			"age": 21,
+			"age": 22,
 			"countryCode": "fr",
 			"position": "AM(CL)",
 			"club": "Nice",
@@ -24671,7 +24723,7 @@
 		},
 		"355401|Angers": {
 			"name": "Rayan Ait Nouri",
-			"age": 18,
+			"age": 19,
 			"countryCode": "fr",
 			"position": "D(L)",
 			"club": "Angers",
@@ -25295,7 +25347,7 @@
 		},
 		"381662|Nimes": {
 			"name": "Sidy Sarr",
-			"age": 23,
+			"age": 24,
 			"countryCode": "sn",
 			"position": "DMC",
 			"club": "Nimes",
@@ -26583,7 +26635,7 @@
 		"325156|Bordeaux": {
 			"name": "Josh Maja",
 			"age": 21,
-			"countryCode": "gb-eng",
+			"countryCode": "ng",
 			"position": "FW",
 			"club": "Bordeaux",
 			"19-20": {
@@ -27869,7 +27921,7 @@
 		},
 		"345409|Monaco": {
 			"name": "Henry Onyekuru",
-			"age": 22,
+			"age": 23,
 			"countryCode": "ng",
 			"position": "AM(LR),FW",
 			"club": "Monaco",
@@ -28012,7 +28064,7 @@
 		},
 		"388534|Saint-Etienne": {
 			"name": "Edmilson Indjai Correia",
-			"age": 19,
+			"age": 20,
 			"countryCode": "",
 			"position": "Midfielder",
 			"club": "Saint-Etienne",
@@ -28181,7 +28233,7 @@
 		},
 		"381653|Toulouse": {
 			"name": "Mathieu Goncalves",
-			"age": 18,
+			"age": 19,
 			"countryCode": "fr",
 			"position": "Defender",
 			"club": "Toulouse",
@@ -29108,7 +29160,7 @@
 			"name": "Jadon Sancho",
 			"age": 20,
 			"countryCode": "gb-eng",
-			"position": "AM(LR)",
+			"position": "AM(CLR)",
 			"club": "Borussia Dortmund",
 			"19-20": {
 				"Champions League | Borussia Dortmund": {
@@ -29626,7 +29678,7 @@
 		},
 		"83390|Napoli": {
 			"name": "Lorenzo Insigne",
-			"age": 28,
+			"age": 29,
 			"countryCode": "it",
 			"position": "AM(CL),FW",
 			"club": "Napoli",
@@ -30900,7 +30952,7 @@
 		},
 		"103542|RasenBallsport Leipzig": {
 			"name": "Yvon Mvogo",
-			"age": 25,
+			"age": 26,
 			"countryCode": "ch",
 			"position": "GK",
 			"club": "RasenBallsport Leipzig",
@@ -31901,7 +31953,7 @@
 		},
 		"143600|RasenBallsport Leipzig": {
 			"name": "Lukas Klostermann",
-			"age": 23,
+			"age": 24,
 			"countryCode": "de",
 			"position": "D(CLR),M(R)",
 			"club": "RasenBallsport Leipzig",
@@ -31927,7 +31979,7 @@
 		},
 		"296337|Real Madrid": {
 			"name": "Ferland Mendy",
-			"age": 24,
+			"age": 25,
 			"countryCode": "fr",
 			"position": "D(L),M(L)",
 			"club": "Real Madrid",
@@ -32473,7 +32525,7 @@
 		},
 		"382492|Paris Saint-Germain": {
 			"name": "Tanguy Kouassi",
-			"age": 17,
+			"age": 18,
 			"countryCode": "fr",
 			"position": "Defender",
 			"club": "Paris Saint-Germain",
@@ -32683,7 +32735,7 @@
 			"name": "Nadiem Amiri",
 			"age": 23,
 			"countryCode": "de",
-			"position": "AM(CL)",
+			"position": "AM(CLR)",
 			"club": "Bayer Leverkusen",
 			"19-20": {
 				"Champions League | Bayer Leverkusen": {
@@ -33487,7 +33539,7 @@
 		},
 		"318120|Galatasaray": {
 			"name": "Marcão",
-			"age": 23,
+			"age": 24,
 			"countryCode": "br",
 			"position": "D(C)",
 			"club": "Galatasaray",
@@ -34176,7 +34228,7 @@
 		},
 		"80382|Borussia Dortmund": {
 			"name": "Mario Götze",
-			"age": 27,
+			"age": 28,
 			"countryCode": "de",
 			"position": "M(CLR),FW",
 			"club": "Borussia Dortmund",
@@ -34215,7 +34267,7 @@
 		},
 		"11090|Borussia Dortmund": {
 			"name": "Lukasz Piszczek",
-			"age": 34,
+			"age": 35,
 			"countryCode": "pl",
 			"position": "D(CR),M(R)",
 			"club": "Borussia Dortmund",
@@ -34306,7 +34358,7 @@
 		},
 		"342548|Borussia Dortmund": {
 			"name": "Dan-Axel Zagadou",
-			"age": 20,
+			"age": 21,
 			"countryCode": "fr",
 			"position": "D(CL)",
 			"club": "Borussia Dortmund",
@@ -34319,7 +34371,7 @@
 		},
 		"40763|Shakhtar Donetsk": {
 			"name": "Marlos Bonfim",
-			"age": 31,
+			"age": 32,
 			"countryCode": "ua",
 			"position": "AM(R)",
 			"club": "Shakhtar Donetsk",
@@ -35892,7 +35944,7 @@
 		},
 		"296542|Club Brugge": {
 			"name": "Dion Cools",
-			"age": 23,
+			"age": 24,
 			"countryCode": "be",
 			"position": "Defender",
 			"club": "Club Brugge",
@@ -35970,7 +36022,7 @@
 		},
 		"42947|FK Crvena Zvezda": {
 			"name": "Rajiv van La Parra",
-			"age": 28,
+			"age": 29,
 			"countryCode": "nl",
 			"position": "AM(LR),FW",
 			"club": "FK Crvena Zvezda",
@@ -38325,7 +38377,7 @@
 		},
 		"297403|Arsenal": {
 			"name": "Kieran Tierney",
-			"age": 22,
+			"age": 23,
 			"countryCode": "gb-sct",
 			"position": "D(L)",
 			"club": "Arsenal",
@@ -39484,7 +39536,7 @@
 			"name": "Nadiem Amiri",
 			"age": 23,
 			"countryCode": "de",
-			"position": "AM(CL)",
+			"position": "AM(CLR)",
 			"club": "Bayer Leverkusen",
 			"19-20": {
 				"Europa League | Bayer Leverkusen": {
@@ -40797,7 +40849,7 @@
 			"name": "Joao Victor",
 			"age": 26,
 			"countryCode": "br",
-			"position": "AM(C)",
+			"position": "AM(CL)",
 			"club": "Wolfsburg",
 			"19-20": {
 				"Europa League | Wolfsburg": {
@@ -41692,7 +41744,7 @@
 		},
 		"40763|Shakhtar Donetsk": {
 			"name": "Marlos Bonfim",
-			"age": 31,
+			"age": 32,
 			"countryCode": "ua",
 			"position": "AM(R)",
 			"club": "Shakhtar Donetsk",
@@ -42849,7 +42901,7 @@
 		},
 		"78881|APOEL Nicosia": {
 			"name": "Vid Belec",
-			"age": 29,
+			"age": 30,
 			"countryCode": "si",
 			"position": "GK",
 			"club": "APOEL Nicosia",
@@ -43345,7 +43397,7 @@
 			"name": "Jonas Hofmann",
 			"age": 27,
 			"countryCode": "de",
-			"position": "AM(CLR)",
+			"position": "M(CLR)",
 			"club": "Borussia M'Gladbach",
 			"19-20": {
 				"Europa League | Borussia M'Gladbach": {
@@ -45137,7 +45189,7 @@
 		},
 		"328429|FC Lugano": {
 			"name": "Linus Obexer",
-			"age": 22,
+			"age": 23,
 			"countryCode": "ch",
 			"position": "Defender",
 			"club": "FC Lugano",
@@ -46424,7 +46476,7 @@
 		},
 		"40883|Malmoe FF": {
 			"name": "Anders Christiansen",
-			"age": 29,
+			"age": 30,
 			"countryCode": "dk",
 			"position": "M(C)",
 			"club": "Malmoe FF",
@@ -47191,7 +47243,7 @@
 		},
 		"76306|FC Lugano": {
 			"name": "Marco Aratore",
-			"age": 28,
+			"age": 29,
 			"countryCode": "ch",
 			"position": "AM(L)",
 			"club": "FC Lugano",
@@ -50480,7 +50532,7 @@
 		},
 		"381815|Trabzonspor": {
 			"name": "Firatcan Üzüm",
-			"age": 20,
+			"age": 21,
 			"countryCode": "tr",
 			"position": "Forward",
 			"club": "Trabzonspor",
@@ -52716,7 +52768,7 @@
 		},
 		"267016|Rangers": {
 			"name": "Matt Polster",
-			"age": 26,
+			"age": 27,
 			"countryCode": "us",
 			"position": "D(R),DMC",
 			"club": "Rangers",
