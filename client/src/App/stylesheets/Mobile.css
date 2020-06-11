@@ -158,6 +158,7 @@ h3 {
 
 #main2 {
     display: flex;
+    display: -webkit-flex;
     flex-direction: column;
 }
 
@@ -219,6 +220,7 @@ h3 {
 
         #search-filters {
             display: flex;
+            display: -webkit-flex;
             flex-direction: column;
             height: auto;
             padding-bottom: 5%;
@@ -298,6 +300,7 @@ h3 {
 
                 #chart-filter-inputs-mobile form {
                     display: flex;
+                    display: -webkit-flex;
                     flex-flow: wrap row;
                 }
 
