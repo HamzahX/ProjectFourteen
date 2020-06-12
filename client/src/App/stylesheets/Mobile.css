@@ -220,7 +220,7 @@ h3 {
         #search-filters {
             display: flex;
             flex-direction: column;
-            height: auto;
+            height: 100%;
             padding-bottom: 5%;
             align-items: center;
             box-shadow: none;
@@ -278,7 +278,7 @@ h3 {
                 }
 
         #chart-filters {
-            /*min-height: 507px;*/
+            display: block;
             height: auto;
         }
 

@@ -94,7 +94,7 @@ body {
 h1 {
     font-family: "courier new", monospace;
     color: #e75453;
-    font-size: 5.3em;
+    font-size: 4.8em;
     margin-top: 0;
     margin-bottom: 0.2em;
 }
@@ -1011,7 +1011,7 @@ button:focus, input:focus{
 @media (max-width: 960px) {
 
     h1 {
-        font-size: 8.8vw;
+        font-size: 8vw;
     }
 
     #navbar-container {
