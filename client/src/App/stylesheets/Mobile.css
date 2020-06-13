@@ -219,20 +219,22 @@ h3 {
     }
 
         #search-filters {
-            display: flex;
-            flex-direction: column;
+            display: block;
             padding-bottom: 5%;
-            align-items: center;
+            /*align-items: center;*/
             box-shadow: none;
         }
 
             #search-filter-inputs {
-                width: 60%;
-                max-width: 60%;
+                display: block;
+                text-align: center;
             }
 
-                .search-filter-input {
-                    padding: 1%;
+                #search-filter-inputs input {
+                    margin: 0 auto;
+                    width: 60%;
+                    max-width: 60%;
+                    padding: 2%;
                 }
 
         #search-results {
@@ -279,7 +281,6 @@ h3 {
 
         #chart-filters {
             display: block;
-            height: auto;
         }
 
             .chart-filter-inputs {
