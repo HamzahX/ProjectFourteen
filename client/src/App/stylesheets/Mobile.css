@@ -203,6 +203,7 @@ h3 {
 
         .filter {
             flex: unset;
+            height: auto;
             max-width: unset;
             margin-right: 1%;
             margin-bottom: 1%;
@@ -220,7 +221,6 @@ h3 {
         #search-filters {
             display: flex;
             flex-direction: column;
-            height: 100%;
             padding-bottom: 5%;
             align-items: center;
             box-shadow: none;
@@ -360,6 +360,6 @@ h3 {
         }
 
             #stats-screen #chart .chart-title:after {
-                padding-left: 12px;
+                padding-left: 16px;
             }
 

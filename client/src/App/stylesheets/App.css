@@ -915,30 +915,30 @@ button:focus, input:focus{
                 -webkit-background-clip: text;
             }
 
-            #stats-screen #chart .chart-title {
-                display: inline-flex;
-                flex-direction: row;
-                align-items: center;
-                justify-content: center;
+            .highcharts-title {
+                text-align: center;
             }
 
-            #stats-screen #chart .chart-title:after {
-                color: black;
-                text-decoration: none;
-                padding-left: 6px;
-                font-family: 'FontAwesome';
-                content: '\f08e';
-                font-size: 0.7em;
-            }
+                #stats-screen #chart .chart-title {
+                    display: inline-flex;
+                    flex-direction: row;
+                    align-items: center;
+                    justify-content: center;
+                }
 
-            #chart .chart-title a:hover {
-                text-decoration: underline;
-                cursor: pointer;
-            }
+                #stats-screen #chart .chart-title:after {
+                    color: black;
+                    text-decoration: none;
+                    padding-left: 12px;
+                    font-family: 'FontAwesome';
+                    content: '\f08e';
+                    font-size: 0.7em;
+                }
 
-            /*#chart .chart-title:hover:after {*/
-            /*    text-decoration: none !important;*/
-            /*}*/
+                #stats-screen #chart .chart-title a:hover {
+                    text-decoration: underline;
+                    cursor: pointer;
+                }
 
             /*dummy border*/
             .highcharts-container  svg .highcharts-yaxis-grid path:nth-child(7){
