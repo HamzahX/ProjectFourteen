@@ -1,7 +1,8 @@
 //express constants
 const express = require('express');
-const path = require('path');
 const app = express();
+const secure = require('express-force-https');
+const path = require('path');
 const bodyParser = require("body-parser");
 const port = process.env.PORT || 5000;
 
@@ -46,7 +47,8 @@ var PERCENTILE_ARRAYS = {
 
 
 //express set-up
-app.use(bodyParser.urlencoded({extended : true}));
+app.use(secure);
+app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, './client/build')));
 
@@ -69,12 +71,6 @@ app.get('/', (req, res) => {
  * @param {express.Response} res
  */
 app.post('/api/percentiles', (req, res) => {
-
-    // console.log(req.headers.origin);
-    // if (req.headers.origin === "http://localhost:5000/"){
-    //     console.log("here");
-    //     res.redirect(301, 'http://www.footballslices.com');
-    // }
 
     res.json(PERCENTILE_ARRAYS);
 
@@ -425,8 +421,6 @@ search = async (aQuery, theType, isLive) => {
         //search for players by club
         else if (theType === "playersByClub"){
 
-            console.log("Retrieving players who play for: " + aQuery);
-
             //find all players whose array of clubs for the 19/20 season includes the query
             PLAYERS_COLLECTION.find({"clubs.19-20": aQuery}).toArray(function(err, docs) {
                 if (err){
@@ -479,7 +473,6 @@ getStats = async (code) => {
                 reject();
             }
             else {
-                console.log(`Retrieving stats for: ${docs[0].name} (${code})`);
                 resolve(docs[0]);
             }
         });
@@ -513,7 +506,6 @@ getComparisonStats = async (codes) => {
                 reject();
             }
             else {
-                console.log(`Retrieving stats for: ${docs[0].name} (${code1}) [for comparison]`);
                 stats[code1] = docs[0];
                 //find the player who matches code 1
                 PLAYERS_COLLECTION.find({"code": code2.split("|")[0]}).toArray(function (err, docs) {
@@ -524,7 +516,6 @@ getComparisonStats = async (codes) => {
                         reject();
                     }
                     else {
-                        console.log(`Retrieving stats for: ${docs[0].name} (${code2}) [for comparison]`);
                         stats[code2] = docs[0];
                         resolve(stats);
                     }
