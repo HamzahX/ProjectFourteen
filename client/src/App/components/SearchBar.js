@@ -30,8 +30,8 @@ class SearchBar extends Component {
         //try to create the abort controller for live search requests
         //AbortController is relatively new, so we catch an error and disable live search if it is undefined
         try {
-            // this.controller = new AbortController();
-            throw new Error("ERROR");
+            this.controller = new AbortController();
+            // throw new Error("ERROR");
         }
         catch (e) {
             this.liveSearchEnabled = false;
