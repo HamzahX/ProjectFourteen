@@ -919,25 +919,22 @@ button:focus, input:focus{
                 text-align: center;
             }
 
-                #stats-screen #chart .chart-title {
-                    display: inline-flex;
-                    flex-direction: row;
-                    align-items: center;
-                    justify-content: center;
+                #chart .chart-title {
+
                 }
 
-                #stats-screen #chart .chart-title:after {
-                    color: black;
-                    text-decoration: none;
-                    padding-left: 12px;
-                    font-family: 'FontAwesome';
-                    content: '\f08e';
-                    font-size: 0.7em;
-                }
-
-                #stats-screen #chart .chart-title a:hover {
+                #chart .chart-title:hover {
                     text-decoration: underline;
                     cursor: pointer;
+                }
+
+                #chart .chart-title #link-icon {
+                    vertical-align: baseline;
+                    text-decoration: none;
+                    margin: 0;
+                    padding: 0 0 0 10px;
+                    color: black;
+                    font-size: 0.8em;
                 }
 
             /*dummy border*/

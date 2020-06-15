@@ -542,17 +542,14 @@ class Slice extends Component {
 
         let title = "";
         let titleColor = "#e75453";
-        // let titleColor = this.primaryColors[this.props.template];
-        // if (titleColor === '#e4d354'){
-        //     titleColor = '#cd9820';
-        // }
         if (this.isForComparison) {
             chartOptions.title.style.color = titleColor;
             title += `<span class="chart-title"><a href=${this.props.url[0]} target="_blank" rel="noopener noreferrer">${this.props.name[0]}</a></span>`;
-            title += `<span class="chart-title" style='color: black;'> - <a href=${this.props.url[1]} target="_blank" rel="noopener noreferrer">${this.props.name[1]}</a></span>`;
+            title += `<span style='color: black;'> - <span class="chart-title"><a href=${this.props.url[1]} target="_blank" rel="noopener noreferrer">${this.props.name[1]}</a></span></span>`;
         }
         else {
-            title = `<span class="chart-title"><a href=${this.props.url} target="_blank" rel="noopener noreferrer">${this.props.name}</a></span>`;
+            title = `<span class="chart-title"><a href=${this.props.url} target="_blank" rel="noopener noreferrer">${this.props.name}</a>`;
+            title += `<a href=${this.props.url} target="_blank" rel="noopener noreferrer"><i id="link-icon" class="fa fa-external-link"></i></a></span>`;
         }
         chartOptions.title.text = title;
 

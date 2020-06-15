@@ -7,11 +7,6 @@ import PlayerSearchResult from "./PlayerSearchResult";
 import ClubSearchResult from "./ClubSearchResult";
 import $ from "jquery";
 
-//create the abort controller for live search requests
-var controller = new AbortController();
-//initialize the signal global. Updated upon every live search request
-var signal = controller.signal;
-
 
 /**
  * Component to render a div containing a searchbar
@@ -30,14 +25,21 @@ class SearchBar extends Component {
         this.page = this.props.page;
         this.isMobile = this.props.isMobile;
         this.currentPlayerCode = this.props.currentPlayerCode;
+        this.liveSearchEnabled = true;
 
+        //try to create the abort controller for live search requests
+        //AbortController is relatively new, so we catch an error and disable live search if it is undefined
+        try {
+            // this.controller = new AbortController();
+            throw new Error("ERROR");
+        }
+        catch (e) {
+            this.liveSearchEnabled = false;
+        }
 
         //change the searchbar container id based on the page so that the CSS rules modify it accordingly
         this.containerID = "";
         switch (this.page) {
-            case "home":
-                this.containerID = "searchbar-container1";
-                break;
             case "search":
                 this.containerID = "searchbar-container2";
                 break;
@@ -79,8 +81,12 @@ class SearchBar extends Component {
      */
     getSearchResults = (query) => {
 
-        controller = new AbortController();
-        signal = controller.signal;
+        //create a new abort controller for every request and retrieve its signal
+        let signal = null;
+        if (this.liveSearchEnabled){
+            this.controller = new AbortController();
+            signal = this.controller.signal;
+        }
 
         return new Promise((resolve, reject) => {
             //fetch search results
@@ -129,11 +135,25 @@ class SearchBar extends Component {
 
 
     /**
-     * Function to handle an input to the searchbar
-     * Updates searchbar input value, fetches search results and sets state
+     * Function to handle an input to the searchbar if live search is NOT enabled
+     * Updates searchbar input value
      * @param {Object} event - the input event from the searchbar input
      */
     handleChange = (event) => {
+
+        this.setState({
+            query: event.target.value,
+        });
+
+    };
+
+
+    /**
+     * Function to handle an input to the searchbar if live search is enabled
+     * Updates searchbar input value, fetches search results and sets state
+     * @param {Object} event - the input event from the searchbar input
+     */
+    handleChangeLive = (event) => {
 
         let query = event.target.value;
 
@@ -142,45 +162,55 @@ class SearchBar extends Component {
             this._firstRequest = false;
         }
         else {
-            controller.abort();
+            this.controller.abort();
         }
 
-        //set searchbar input value
+        //set searchbar input value and open live search results container
         this.setState({
             query: query,
             liveResultsOpen: query.length > 1,
             isLoading: true
         });
 
-        //update search results
+        this.updateLiveSearchResults(query);
+
+    };
+
+
+    /**
+     * Function to update the arrays of search results
+     * Also handles the display of the loading spinner and error messages (if applicable) in the live container
+     */
+    updateLiveSearchResults = (query) => {
+
         if (query.length > 1){
             this.getSearchResults(query)
-            .then((searchResults) => {
-                let playerSearchResults = searchResults['playerSearchResults'];
-                let clubSearchResults = searchResults['clubSearchResults'];
-                if (this._isMounted){
-                    this.setState({
-                        playerSearchResults: [],
-                        clubSearchResults: []
-                    }, () => {
+                .then((searchResults) => {
+                    let playerSearchResults = searchResults['playerSearchResults'];
+                    let clubSearchResults = searchResults['clubSearchResults'];
+                    if (this._isMounted){
                         this.setState({
-                            playerSearchResults: playerSearchResults,
-                            clubSearchResults: clubSearchResults,
-                            error: null,
-                            isLoading: false
-                        })
-                    })
-                }
-            }, (error) => {
-                if (this._isMounted){
-                    if (error){
-                        this.setState({
-                            error: error,
-                            isLoading: false
+                            playerSearchResults: [],
+                            clubSearchResults: []
+                        }, () => {
+                            this.setState({
+                                playerSearchResults: playerSearchResults,
+                                clubSearchResults: clubSearchResults,
+                                error: null,
+                                isLoading: false
+                            })
                         })
                     }
-                }
-            })
+                }, (error) => {
+                    if (this._isMounted){
+                        if (error){
+                            this.setState({
+                                error: error,
+                                isLoading: false
+                            })
+                        }
+                    }
+                })
         }
         else {
             if (this._isMounted){
@@ -217,7 +247,7 @@ class SearchBar extends Component {
             })
         }
         this.setState({
-            liveResultsOpen: query.length > 1
+            liveResultsOpen: this.liveSearchEnabled && query.length > 1
         })
 
     };
@@ -238,6 +268,7 @@ class SearchBar extends Component {
                 "display": "block"
             })
         }
+
         this.setState({
             liveResultsOpen: false
         })
@@ -246,13 +277,45 @@ class SearchBar extends Component {
 
 
     /**
-     * Function to handle submit events from the searchbar input
+     * Function to handle submit events from the searchbar input if live search is NOT enabled
      * Redirects to the search URL with the correct URL params
      * @param {Object} event - the submit event from the searchbar input
      */
     handleSubmit = (event) => {
+
         event.preventDefault();
-        this.props.history.push('/search/' + this.state.query);
+
+        if (this.page !== "compare"){
+            this.props.history.push('/search/' + this.state.query);
+        }
+        else {
+            let query = this.state.query;
+
+            //open live search results container
+            this.setState({
+                liveResultsOpen: query.length > 1,
+                isLoading: true
+            });
+
+            this.updateLiveSearchResults(query);
+        }
+
+    };
+
+
+    /**
+     * Function to handle submit events from the searchbar input if live search is enabled
+     * Redirects to the search URL with the correct URL params
+     * @param {Object} event - the submit event from the searchbar input
+     */
+    handleSubmitLive = (event) => {
+
+        event.preventDefault();
+
+        if (this.page !== "compare"){
+            this.props.history.push('/search/' + this.state.query);
+        }
+
     };
 
 
@@ -318,14 +381,14 @@ class SearchBar extends Component {
                 <OutsideClickHandler
                     onOutsideClick={this.handleBlur}
                 >
-                    <form id="searchbar-form" onSubmit={this.handleSubmit}>
+                    <form id="searchbar-form" onSubmit={this.liveSearchEnabled ? this.handleSubmitLive : this.handleSubmit}>
                         <input
                             type="text"
                             id="searchbar-input"
                             value={query}
                             placeholder={this.page === "compare" ? "Search for players..." : "Search for players, clubs..."}
                             autoComplete="off"
-                            onChange={this.handleChange}
+                            onChange={this.liveSearchEnabled ? this.handleChangeLive : this.handleChange}
                             onFocus={this.handleFocus}
                         />
                         <div id="live-search-results" style={{display: liveResultsOpen ? 'block' : 'none'}}>
