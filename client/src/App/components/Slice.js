@@ -148,15 +148,15 @@ class Slice extends Component {
             ]
         };
 
-        this.titleClassNames = {
-            "FW": "multi-color-1",
-            "AM": "multi-color-1",
-            "CM": "multi-color-2",
-            "FB": "multi-color-2",
-            "CB": "multi-color-3",
-            "GK": "multi-color-4",
-            "N/A": "multi-color-1"
-        };
+        // this.titleClassNames = {
+        //     "FW": "multi-color-1",
+        //     "AM": "multi-color-1",
+        //     "CM": "multi-color-2",
+        //     "FB": "multi-color-2",
+        //     "CB": "multi-color-3",
+        //     "GK": "multi-color-4",
+        //     "N/A": "multi-color-1"
+        // };
 
         this.titleColors = {
             "FW": ['#f15c80', '#e4d354', '#90ed7d', '#7cb5ec'],
@@ -320,6 +320,8 @@ class Slice extends Component {
                     },
                     dataLabels: {
                         enabled: undefined,
+                        // crop: false,
+                        // overflow: 'allow',
                         style: {
                             fontWeight: 'bold',
                             fontSize: this.fontSizes['dataLabels'],
@@ -549,7 +551,9 @@ class Slice extends Component {
         }
         else {
             title = `<span class="chart-title"><a href=${this.props.url} target="_blank" rel="noopener noreferrer">${this.props.name}</a>`;
-            title += `<a href=${this.props.url} target="_blank" rel="noopener noreferrer"><i id="link-icon" class="fa fa-external-link"></i></a></span>`;
+            if (!this.isForExport){
+                title += `<a href=${this.props.url} target="_blank" rel="noopener noreferrer"><i id="link-icon" class="fa fa-external-link"></i></a></span>`;
+            }
         }
         chartOptions.title.text = title;
 
@@ -593,7 +597,7 @@ class Slice extends Component {
         xAxis.categories = this.categories[this.props.template];
 
         //set data points
-        chartOptions.series = this.props.series.map(function (data, index) {
+        chartOptions.series = this.props.series.map((data, index) => {
             return {
                 name: data[0].playerName,
                 data: data,

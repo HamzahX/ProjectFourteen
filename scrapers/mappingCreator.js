@@ -229,6 +229,9 @@ let processEntry = (aPlayer, competitionData, competitionName, isGoalkeeper) => 
     }
     //find all potential whoscored matches
     let matches = findMatches(query, whoscoredClub, isGoalkeeper);
+    // if (matches.length !== 0){
+    //     console.log(matches);
+    // }
     if (matches.length === 1){
         processMatch(matches[0], competitionName, whoscoredClub, apps, mins, code, nationality, "single");
     }
@@ -322,39 +325,59 @@ let processMatch = (match, competitionName, whoscoredClub, apps, mins, fbrefCode
         if (
             entry === `${competitionName} | ${whoscoredClub}`
             && match[SEASON][entry]["whoscoredApps"] === apps
-            && match[nationality] === nationality
+            && match['nationality'] === nationality
         ){
             if (FBREF_TO_WHOSCORED_PLAYERS_NEW[fbrefCode] === undefined){
                 FBREF_TO_WHOSCORED_PLAYERS_NEW[fbrefCode] = match["code"];
             }
-            else {
-                if (FBREF_TO_WHOSCORED_PLAYERS_NEW[fbrefCode] !== match["code"]){
-                    COLLISION_COUNTER++;
-                    console.log("COLLISION (FBREF TO WHOSCORED): ", fbrefCode);
-                    console.log("Original Mapping: ", {
-                        whoscoredCode: FBREF_TO_WHOSCORED_PLAYERS_NEW[fbrefCode],
-                        whoscoredName: METADATA[FBREF_TO_WHOSCORED_PLAYERS_NEW[fbrefCode]]["name"]
-                    });
-                    console.log("New Suggested Mapping: ", {
-                        whoscoredCode: match["code"],
-                        whoscoredName: METADATA[match["code"]]["name"]
-                    });
-                }
+            else if (FBREF_TO_WHOSCORED_PLAYERS_NEW[fbrefCode] !== match["code"]){
+                COLLISION_COUNTER++;
+                console.log("COLLISION (FBREF TO WHOSCORED - NEW): ", fbrefCode);
+                console.log("Original Mapping: ", {
+                    whoscoredCode: FBREF_TO_WHOSCORED_PLAYERS_NEW[fbrefCode],
+                    whoscoredName: METADATA[FBREF_TO_WHOSCORED_PLAYERS_NEW[fbrefCode]]["name"]
+                });
+                console.log("New Suggested Mapping: ", {
+                    whoscoredCode: match["code"],
+                    whoscoredName: METADATA[match["code"]]["name"]
+                });
+
+            }
+            else if (FBREF_TO_WHOSCORED_PLAYERS[fbrefCode] !== match["code"]){
+                COLLISION_COUNTER++;
+                console.log("COLLISION (FBREF TO WHOSCORED - OLD): ", fbrefCode);
+                console.log("Original Mapping: ", {
+                    whoscoredCode: FBREF_TO_WHOSCORED_PLAYERS[fbrefCode],
+                    whoscoredName: METADATA[FBREF_TO_WHOSCORED_PLAYERS[fbrefCode]]["name"]
+                });
+                console.log("New Suggested Mapping: ", {
+                    whoscoredCode: match["code"],
+                    whoscoredName: METADATA[match["code"]]["name"]
+                });
+
             }
             if (WHOSCORED_TO_FBREF_PLAYERS_NEW[match["code"]] === undefined){
                 WHOSCORED_TO_FBREF_PLAYERS_NEW[match["code"]] = fbrefCode;
             }
-            else {
-                if (WHOSCORED_TO_FBREF_PLAYERS_NEW[match["code"]] !== fbrefCode){
-                    COLLISION_COUNTER++;
-                    console.log("COLLISION (WHOSCORED TO FBREF): ", match["code"]);
-                    console.log("Original Mapping: ", {
-                        whoscoredCode: WHOSCORED_TO_FBREF_PLAYERS_NEW[match["code"]],
-                    });
-                    console.log("New Suggested Mapping: ", {
-                        whoscoredCode: fbrefCode,
-                    });
-                }
+            else if (WHOSCORED_TO_FBREF_PLAYERS_NEW[match["code"]] !== fbrefCode){
+                COLLISION_COUNTER++;
+                console.log("COLLISION (WHOSCORED TO FBREF - NEW): ", match["code"]);
+                console.log("Original Mapping: ", {
+                    whoscoredCode: WHOSCORED_TO_FBREF_PLAYERS_NEW[match["code"]],
+                });
+                console.log("New Suggested Mapping: ", {
+                    whoscoredCode: fbrefCode,
+                });
+            }
+            else if (WHOSCORED_TO_FBREF_PLAYERS[match["code"]] !== fbrefCode){
+                COLLISION_COUNTER++;
+                console.log("COLLISION (WHOSCORED TO FBREF - OLD): ", match["code"]);
+                console.log("Original Mapping: ", {
+                    whoscoredCode: WHOSCORED_TO_FBREF_PLAYERS[match["code"]],
+                });
+                console.log("New Suggested Mapping: ", {
+                    whoscoredCode: fbrefCode,
+                });
             }
         }
     }
@@ -423,12 +446,7 @@ setup()
     .then(() => {
         console.log("Collisions: " + COLLISION_COUNTER);
         console.timeEnd('mapping creation');
-        if (Object.keys(WHOSCORED_TO_FBREF_PLAYERS_NEW).length === 0 && COLLISION_COUNTER === 0 && Object.keys(UNFILLED_MAPPING).length === 0){
-            process.exit(0);
-        }
-        else {
-            process.exit(-1);
-        }
+        process.exit(-1)
     })
     .catch(async(anError) => {
         console.log(anError);

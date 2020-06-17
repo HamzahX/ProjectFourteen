@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { createBrowserHistory } from 'history'
 import ReactGA from 'react-ga';
 import {isMobileOnly, isSafari} from 'react-device-detect';
@@ -119,7 +119,7 @@ class App extends Component {
         else {
 
             const App = () => (
-                <Router history={history}>
+                <BrowserRouter history={history}>
                     <Switch>
                         <Route exact path='/' render={(props) =>
                             <Home {...props}
@@ -145,7 +145,7 @@ class App extends Component {
                         />
                         <Route path='*' component={Home}/>
                     </Switch>
-                </Router>
+                </BrowserRouter>
             );
 
             return (

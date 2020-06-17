@@ -161,7 +161,7 @@ let pageSetup = async (page, isFirstIteration, competitionName) => {
 
             await page.waitForSelector(selector);
             await page.evaluate((selector) => document.querySelector(selector).click(), selector);
-            await page.waitForSelector('#statistics-table-detailed');
+            await page.waitForSelector('#player-table-statistics-body');
 
             //if it's not a European competition, set the minimum number of appearances to 4 (more than 3)
             if (competitionName !== "Champions League" && competitionName !== "Europa League"){

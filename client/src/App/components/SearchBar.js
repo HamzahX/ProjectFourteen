@@ -168,7 +168,7 @@ class SearchBar extends Component {
         //set searchbar input value and open live search results container
         this.setState({
             query: query,
-            liveResultsOpen: query.length > 1,
+            liveResultsOpen: query.length > 0,
             isLoading: true
         });
 
@@ -183,7 +183,7 @@ class SearchBar extends Component {
      */
     updateLiveSearchResults = (query) => {
 
-        if (query.length > 1){
+        if (query.length > 0){
             this.getSearchResults(query)
                 .then((searchResults) => {
                     let playerSearchResults = searchResults['playerSearchResults'];
@@ -247,7 +247,7 @@ class SearchBar extends Component {
             })
         }
         this.setState({
-            liveResultsOpen: this.liveSearchEnabled && query.length > 1
+            liveResultsOpen: this.liveSearchEnabled && query.length > 0
         })
 
     };
@@ -289,15 +289,17 @@ class SearchBar extends Component {
             this.props.history.push('/search/' + this.state.query);
         }
         else {
+
             let query = this.state.query;
 
             //open live search results container
             this.setState({
-                liveResultsOpen: query.length > 1,
+                liveResultsOpen: query.length > 0,
                 isLoading: true
             });
 
             this.updateLiveSearchResults(query);
+
         }
 
     };

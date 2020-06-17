@@ -317,8 +317,27 @@ export function constructChartInput(statsPer90, percentiles, playerCode, playerN
             '#7cb5ec', '#7cb5ec', '#7cb5ec', '#7cb5ec', '#7cb5ec', '#7cb5ec']
     };
 
+    const alignments = {
+        "vertical": {
+            "GK": ["bottom", "top", "top"],
+            "other": ["bottom", "bottom", "middle", "middle", "middle", "top",
+                "top", "top", "middle", "middle", "middle", "bottom"
+            ]
+        },
+        "horizontal": {
+            "GK": ["center", "left", "right"],
+            "other": ["center", "left", "left", "left", "left", "center",
+                "center", "right", "right", "right", "right", "center"
+            ]
+        }
+    };
+
     let template = this.state.template;
     let colors = colorArrays[template];
+    let verticalAlignments = alignments['vertical'][template === "GK" ? "GK" : "other"];
+    let horizontalAlignments = alignments['horizontal'][template === "GK" ? "GK" : "other"];
+
+    // alert(verticalAlignments);
 
     let isSecondPlayer = index === 1;
 
@@ -335,6 +354,10 @@ export function constructChartInput(statsPer90, percentiles, playerCode, playerN
             y: percentiles[key],
             p90_label: p90_labels[key],
             percentile_label: ordinalSuffix(percentile_labels[key]),
+            dataLabels: {
+                align: horizontalAlignments[i],
+                verticalAlign: verticalAlignments[i]
+            },
             color: Highcharts.Color(colors[i]).setOpacity(index !== 1 ? 0.85 : 0).get(),
             borderColor: isSecondPlayer ? 'black' : null,
             borderWidth: isSecondPlayer ? 5.5 : 0
