@@ -50,18 +50,11 @@ var PERCENTILE_ARRAYS = {
 app.use(secure);
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
-app.use(express.static(path.join(__dirname, './client/build')));
+const root = require('path').join(__dirname, 'client', 'build');
+app.use(express.static(root));
 
-
-/**
- * Serves the single-page application
- * @param {express.Request} req
- * @param {express.Response} res
- */
-app.get('/', (req, res) => {
-
-    res.sendFile(path.join(__dirname+'/client/build/index.html'));
-
+app.get("*", (req, res) => {
+    res.sendFile('index.html', { root });
 });
 
 
