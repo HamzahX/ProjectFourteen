@@ -1,6 +1,7 @@
 {
   "name": "footballslices",
   "version": "2.1.2",
+  "homepage": "https://footballslices-staging.herokuapp.com/",
   "dependencies": {
     "create-react-app": "^3.4.1",
     "csvjson-csv2json": "^5.0.6",
