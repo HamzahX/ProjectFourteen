@@ -1,6 +1,6 @@
 {
-  "name": "undertheradar",
-  "version": "1.0.0",
+  "name": "footballslices",
+  "version": "2.1.2",
   "dependencies": {
     "create-react-app": "^3.4.1",
     "csvjson-csv2json": "^5.0.6",
