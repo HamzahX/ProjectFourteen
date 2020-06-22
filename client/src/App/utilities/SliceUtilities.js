@@ -594,7 +594,7 @@ export async function exportChart(){
         const scale = 2;
 
         //scale the sizes of the watermark and credits images
-        let watermarkSize = 14/scale;
+        let watermarkSize = 17/scale;
         let creditsSize = 25/scale;
 
         //get the width and height of the watermark and credits in pixels
@@ -616,11 +616,11 @@ export async function exportChart(){
         //set the background position to be the bottom right corner after the 4x scaling
         //for the X position, we start with 50% (100/scale=2),
         //and then adjust based on the width of the watermark
-        let watermarkPadding = 0.3;
+        let watermarkPadding = -0.2;
         let creditsPadding = 0.8;
         let watermarkXPos = (100/scale)-(watermarkPadding*exportAspectRatioInverse)-((watermarkWidthRatio+(watermarkPadding*exportAspectRatioInverse))/scale);
         //same for Y position but this time we adjust based on the height of the watermark and the credits position
-        let watermarkYPos = (100/scale)-(watermarkPadding*exportAspectRatio)-((watermarkHeightRatio+(watermarkPadding*exportAspectRatio))/scale);
+        let watermarkYPos = (100/scale)-(0.63*exportAspectRatio)-((watermarkHeightRatio+(0.63*exportAspectRatio))/scale);
 
         // let creditsXPos = (50/scale)-(creditsWidthRatio)/scale;
         let creditsXPos = (43/scale);

@@ -118,8 +118,10 @@ class Search extends Component {
                 playerSearchResults: playerSearchResults,
                 filteredPlayerSearchResults: playerSearchResults,
                 clubSearchResults: clubSearchResults,
-            })
+            });
+            document.title = "Search Results | Football Slices"
         }
+
     };
 
 

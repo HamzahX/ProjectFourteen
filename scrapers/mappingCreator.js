@@ -327,7 +327,7 @@ let processMatch = (match, competitionName, whoscoredClub, apps, mins, fbrefCode
             && match[SEASON][entry]["whoscoredApps"] === apps
             && match['nationality'] === nationality
         ){
-            if (FBREF_TO_WHOSCORED_PLAYERS_NEW[fbrefCode] === undefined){
+            if (FBREF_TO_WHOSCORED_PLAYERS[fbrefCode] === undefined){
                 FBREF_TO_WHOSCORED_PLAYERS_NEW[fbrefCode] = match["code"];
             }
             else if (FBREF_TO_WHOSCORED_PLAYERS_NEW[fbrefCode] !== match["code"]){
@@ -356,7 +356,7 @@ let processMatch = (match, competitionName, whoscoredClub, apps, mins, fbrefCode
                 });
 
             }
-            if (WHOSCORED_TO_FBREF_PLAYERS_NEW[match["code"]] === undefined){
+            if (WHOSCORED_TO_FBREF_PLAYERS[match["code"]] === undefined){
                 WHOSCORED_TO_FBREF_PLAYERS_NEW[match["code"]] = fbrefCode;
             }
             else if (WHOSCORED_TO_FBREF_PLAYERS_NEW[match["code"]] !== fbrefCode){

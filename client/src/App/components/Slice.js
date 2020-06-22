@@ -642,7 +642,7 @@ class Slice extends Component {
             //     },
             //     stops: gradientStops
             // },
-            'white'
+            '#fafbfc'
         ];
 
         //set data labels

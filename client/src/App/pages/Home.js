@@ -42,6 +42,7 @@ class Home extends Component {
      */
     componentDidMount() {
         this._isMounted = true;
+        document.title = "Home | Football Slices"
     }
 
 
@@ -365,7 +366,7 @@ class Home extends Component {
                                 </li>
                                 <li>
                                     <span style={{color: '#787ccd', fontWeight: 'bold'}}>GSAA (Goals Saved Above Average) %</span>&nbsp;
-                                    (Post-Shot xG − Goals Conceded) ÷ Shots on Target Faced.***
+                                    (Post-Shot xG − Goals Conceded (excluding own goals)) ÷ Shots on Target Faced.***
                                 </li>
                                 <li>
                                     <span style={{color: '#787ccd', fontWeight: 'bold'}}>Cross Stopping %</span>&nbsp;

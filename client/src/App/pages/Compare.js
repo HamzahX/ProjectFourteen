@@ -244,13 +244,8 @@ class Compare extends Component {
                 competitions: JSON.parse(JSON.stringify(competitions)),
                 selectedCompetitions: JSON.parse(JSON.stringify(competitions)),
                 lastUpdated: dateFormat(playerStats[codes[0]].lastUpdated, "dd/mm/yyyy, h:MM TT", true)
-            }, () => {
-                if (this.isMobile){
-                    // let height = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
-                    // let searchbarHeight = 0.055 * height;
-                    // $("#searchbar-container1").css({"height": searchbarHeight});
-                }
-            })
+            });
+            document.title = `${names[codes[0]]} vs ${names[codes[1]]} | Football Slices`
         }
 
     };
