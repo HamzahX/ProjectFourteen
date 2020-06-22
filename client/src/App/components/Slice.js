@@ -224,6 +224,10 @@ class Slice extends Component {
             }
         }
 
+        //define the text for the credits
+        let creditsText = this.isForExport ? "" : "Data Sources: FBref.com | StatsBomb<br/>";
+        creditsText += `Last Updated: ${this.props.lastUpdated} UTC`;
+
         //Highcharts chart options
         //variable options are initialized to undefined, and then modified on render using props
         //consult the Highcharts API reference for detailed explanations of each option
@@ -379,17 +383,18 @@ class Slice extends Component {
                 itemHoverStyle: {
                     color: '#666666'
                 },
-                y: 10,
+                y: this.isForExport ? 5 : 10,
                 margin: 0,
                 padding: 0,
                 itemMarginTop: 3
             },
             credits: {
-                text: `Data Sources: FBref.com | StatsBomb<br/>Last Updated: ${this.props.lastUpdated} UTC`,
+                text: creditsText,
                 position: {
                     align: undefined,
                     x: undefined,
-                    y: this.isMobile || this.isForExport ? -30 : -20
+                    // y: this.isMobile ? -30 : (this.isForExport ? -15 : -20)
+                    y: this.isForExport ? -10 : (this.isMobile ? -30 : -20)
                 },
                 style: {
                     lineHeight: this.isMobile || this.isForExport ? (this.isForExport ? "20px" : "25px") : null,
@@ -479,7 +484,7 @@ class Slice extends Component {
         }
 
         $.each(chart.legend.allItems, function (i, item) {
-            item.legendSymbol.element.setAttribute("stroke-width", "3");
+            item.legendSymbol.element.setAttribute("stroke-width", "3.5");
             //primary color border to first symbol, black border to second symbol
             item.legendSymbol.element.setAttribute("stroke", i === 0 ? borderColor : "#000000")
         });
@@ -586,7 +591,7 @@ class Slice extends Component {
         //set chart margins
         if (this.isForExport){
             chart.marginTop = 230;
-            chart.marginBottom = 120;
+            chart.marginBottom = 130;
         }
         else {
             chart.marginBottom = (this.props.creditsPosition === "right" && !this.props.isMobile) ? 30 : 60;

@@ -360,7 +360,7 @@ export function constructChartInput(statsPer90, percentiles, playerCode, playerN
             },
             color: Highcharts.Color(colors[i]).setOpacity(index !== 1 ? 0.85 : 0).get(),
             borderColor: isSecondPlayer ? 'black' : null,
-            borderWidth: isSecondPlayer ? 5.5 : 0
+            borderWidth: isSecondPlayer ? 6 : 0
         };
         i++;
     }
@@ -593,28 +593,38 @@ export async function exportChart(){
         const node = document.getElementById('export');
         const scale = 2;
 
-        //scale the background (the watermark)
-        let backgroundSize = 14/scale;
+        //scale the sizes of the watermark and credits images
+        let watermarkSize = 14/scale;
+        let creditsSize = 25/scale;
 
-        //get the width and height of the background in pixels
-        let backgroundWidth = (backgroundSize/100) * node.offsetWidth;
-        let backgroundHeight = (791/2070) * backgroundWidth; //height = inverted aspect ratio * width
+        //get the width and height of the watermark and credits in pixels
+        let watermarkWidth = (watermarkSize/100) * node.offsetWidth;
+        let watermarkHeight = (791/2070) * watermarkWidth; //height = inverted aspect ratio * width
+        let creditsWidth = (creditsSize/100) * node.offsetWidth;
+        let creditsHeight = (500/1500) * creditsWidth;
 
-        //get the height of the background as a percentage of the total height of the chart
-        let backgroundHeightRatio = (backgroundHeight / node.offsetHeight) * 100;
-        let backgroundWidthRatio = (backgroundWidth / node.offsetWidth) * 100;
+        //get the height of the watermark and credits as a percentage of the total height of the chart
+        let watermarkHeightRatio = (watermarkHeight / node.offsetHeight) * 100;
+        let watermarkWidthRatio = (watermarkWidth / node.offsetWidth) * 100;
+        let creditsHeightRatio = (creditsHeight / node.offsetHeight) * 100;
+        // let creditsWidthRatio = (creditsWidth / node.offsetWidth) * 100;
 
         //get the aspect ratio of the export div
-        let nodeAspectRatio = node.offsetWidth / node.offsetHeight;
-        let nodeAspectRatioInverse = node.offsetHeight / node.offsetWidth;
+        let exportAspectRatio = node.offsetWidth / node.offsetHeight;
+        let exportAspectRatioInverse = node.offsetHeight / node.offsetWidth;
 
         //set the background position to be the bottom right corner after the 4x scaling
         //for the X position, we start with 50% (100/scale=2),
         //and then adjust based on the width of the watermark
-        let backgroundXPos = (100/scale)-(0.3*nodeAspectRatioInverse)-((backgroundWidthRatio+(0.3*nodeAspectRatioInverse))/scale);
+        let watermarkPadding = 0.3;
+        let creditsPadding = 0.8;
+        let watermarkXPos = (100/scale)-(watermarkPadding*exportAspectRatioInverse)-((watermarkWidthRatio+(watermarkPadding*exportAspectRatioInverse))/scale);
         //same for Y position but this time we adjust based on the height of the watermark and the credits position
-        let bottomPadding = 0.3;
-        let backgroundYPos = (100/scale)-(bottomPadding*nodeAspectRatio)-((backgroundHeightRatio+(bottomPadding*nodeAspectRatio))/scale);
+        let watermarkYPos = (100/scale)-(watermarkPadding*exportAspectRatio)-((watermarkHeightRatio+(watermarkPadding*exportAspectRatio))/scale);
+
+        // let creditsXPos = (50/scale)-(creditsWidthRatio)/scale;
+        let creditsXPos = (43/scale);
+        let creditsYPos = (100/scale)-(creditsPadding*exportAspectRatio)-((creditsHeightRatio+(creditsPadding*exportAspectRatio))/scale);
 
         domtoimage.toPng(node, {
             bgcolor: '#fafbfc',
@@ -622,11 +632,11 @@ export async function exportChart(){
             height: 1100 * scale,
             style: {
                 //make the export div visible
-                opacity: '1',
+                'opacity': '1',
                 //scale up 4x to improve the resolution of the exported chart
-                transform: `scale(${scale}) translate(${node.offsetWidth / 2 / scale}px, ${node.offsetHeight / 2 / scale}px)`,
-                'background-position': `${backgroundXPos}% ${backgroundYPos}%`,
-                'background-size': `${backgroundSize}%`
+                'transform': `scale(${scale}) translate(${node.offsetWidth / 2 / scale}px, ${node.offsetHeight / 2 / scale}px)`,
+                'background-position': `${watermarkXPos}% ${watermarkYPos}%, ${creditsXPos}% ${creditsYPos}%`,
+                'background-size': `${watermarkSize}%, ${creditsSize}%`
             }
         })
             .then((blob) => {

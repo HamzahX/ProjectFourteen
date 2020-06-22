@@ -224,7 +224,8 @@ class Home extends Component {
                                 </p>
                                 <p>
                                     Football Slices is made possible by the incredible work done by the people over
-                                    at <a href="https://www.fbref.com" target="_blank" rel="noopener noreferrer">FBref.com</a>.
+                                    at <a href="https://www.fbref.com" target="_blank" rel="noopener noreferrer">FBref.com</a>,
+                                    who provide advanced stats courtesy of <a href="https://www.statsbomb.com" target="_blank" rel="noopener noreferrer">StatsBomb</a>.
                                     Every chart title has a link to the player's page on FBref, where you can find that player's
                                     complete stats sheet. Please do make sure to check out FBref and spread the word about
                                     them if you'd like to see them continue adding more data to their site.

@@ -255,12 +255,12 @@ let processEntry = (aPlayer, competitionData, competitionName, isGoalkeeper) => 
     let whoscoredClubName = FBREF_TO_WHOSCORED_TEAMS[fbrefClubName]["whoscored"];
     let possession = POSSESSION_DATA[competitionName][whoscoredClubName];
 
-    //retrieve required stats
+    //retrieve required stats from the fbref data (exported CSVs converted to JSON)
     let stats;
     if (isGoalkeeper){
         stats = {
             minutes: entry["keeper_Playing Time__2"],
-            goalsAgainst: entry["keeper_Performance"],
+            goalsAgainst: entry["keeper_Performance"] - entry["keeper_adv_Goals__4"],
             psxg: entry["keeper_adv_Expected"],
             sota: entry["keeper_Performance__2"],
             stoppedCrosses: entry["keeper_adv_Crosses__1"],
