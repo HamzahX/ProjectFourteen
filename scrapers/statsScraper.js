@@ -453,6 +453,10 @@ let retrieveJSON = async (page, tableType) => {
             document.querySelector(buttonSelector).click();
             let csv = document.querySelector(csvSelector).innerHTML;
             csv = csv.replace("<!-- ALREADYCSV -->", "");
+            csv = csv.replace("--- When using SR data, please cite us and provide a link and/or a mention.\n" +
+                "\n" +
+                "\n" +
+                " ", "");
             csv = csv.split("\n");
             csv[1] = csv[1].split(",");
             for (let i=0; i<csv[1].length; i++){
