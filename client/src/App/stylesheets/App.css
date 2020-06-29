@@ -148,6 +148,10 @@ button:focus, input:focus{
     outline: dimgrey none;
 }
 
+button:hover {
+    cursor: pointer;
+}
+
 .searchbar-container {
     z-index: 3;
     display: flex;

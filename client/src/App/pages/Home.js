@@ -436,7 +436,7 @@ class Home extends Component {
                                     </p>
                                     <p>
                                         Ideally, a player's stats should be adjusted based on the possession
-                                        values from only the games they played in. However, I don't have access to that
+                                        stats from only the games they played in. However, I don't have access to that
                                         data and so I used the next best thing; which is the team's average possession
                                         across all games in the competition.
                                     </p>
@@ -447,11 +447,6 @@ class Home extends Component {
                                         Position data is obtained using the 'detailed' tab of the <a href="https://whoscored.com/Statistics" target="_blank" rel="noopener noreferrer">
                                         WhoScored.com player statistics table</a> to find all players who've made 10 or more
                                         league starts in each of the template positions during a particular season.
-                                    </p>
-                                    <p>
-                                        This method has some small quirks. For example, it classifies Martin Ødegaard as a
-                                        central midfielder, whereas I feel he's more of an attacking midfielder. It's
-                                        not perfect but it's the best way I've found to automate the process.
                                     </p>
                                 </div>
                                 <div className="faq-item">

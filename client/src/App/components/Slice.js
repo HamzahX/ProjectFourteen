@@ -433,6 +433,8 @@ class Slice extends Component {
         //relevant github issue and further explanation: https://github.com/highcharts/highcharts/issues/3321
         Highcharts.wrap(Highcharts.Axis.prototype, 'render', function (proceed) {
 
+            // console.log(this);
+
             proceed.call(this);
             let chart = this.chart;
 
@@ -455,6 +457,14 @@ class Slice extends Component {
             return this;
 
         });
+
+        // console.log(Highcharts);
+
+        // Highcharts.wrap(Highcharts.Tick.prototype, 'render', function (proceed) {
+        //
+        //     console.log(this);
+        //
+        // });
 
         this.afterChartCreated = this.afterChartCreated.bind(this);
 
