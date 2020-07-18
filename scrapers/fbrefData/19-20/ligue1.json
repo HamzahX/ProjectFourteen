@@ -1930,7 +1930,7 @@
 		"standard_Per 90 Minutes__2": 0.52,
 		"standard_Per 90 Minutes__3": 0.31,
 		"standard_Per 90 Minutes__4": 0.48,
-		"standard_Expected": 6.4,
+		"standard_Expected": 6.5,
 		"standard_Expected__1": 5.7,
 		"standard_Expected__2": 3,
 		"standard_Per 90 Minutes__5": 0.28,
@@ -1958,10 +1958,10 @@
 		"shooting_Standard__8": 0.79,
 		"shooting_Standard__9": 0.16,
 		"shooting_Standard__10": 0.39,
-		"shooting_Expected": 6.4,
+		"shooting_Expected": 6.5,
 		"shooting_Expected__1": 5.7,
 		"shooting_Expected__2": 0.13,
-		"shooting_Expected__3": "+1.6",
+		"shooting_Expected__3": "+1.5",
 		"shooting_Expected__4": "+1.3",
 		"shooting___8": "Matches",
 		"passing___1": "Ludovic Ajorque\\Ludovic-Ajorque",
@@ -2054,13 +2054,13 @@
 		"possession___5": 25,
 		"possession___6": 1994,
 		"possession___7": 22.9,
-		"possession_Touches": 754,
+		"possession_Touches": 755,
 		"possession_Touches__1": 22,
 		"possession_Touches__2": 52,
 		"possession_Touches__3": 415,
-		"possession_Touches__4": 314,
-		"possession_Touches__5": 109,
-		"possession_Touches__6": 730,
+		"possession_Touches__4": 315,
+		"possession_Touches__5": 110,
+		"possession_Touches__6": 731,
 		"possession_Dribbles": 14,
 		"possession_Dribbles__1": 27,
 		"possession_Dribbles__2": 51.9,
@@ -3081,9 +3081,9 @@
 		"standard_Expected__2": 1.3,
 		"standard_Per 90 Minutes__5": 0.33,
 		"standard_Per 90 Minutes__6": 0.08,
-		"standard_Per 90 Minutes__7": 0.4,
+		"standard_Per 90 Minutes__7": 0.41,
 		"standard_Per 90 Minutes__8": 0.33,
-		"standard_Per 90 Minutes__9": 0.4,
+		"standard_Per 90 Minutes__9": 0.41,
 		"standard___7": "Matches",
 		"code": "bdedd861",
 		"shooting___1": "Rachid Alioui\\Rachid-Alioui",
@@ -3844,7 +3844,7 @@
 		"standard_Expected__1": 1.4,
 		"standard_Expected__2": 0.5,
 		"standard_Per 90 Minutes__5": 0.22,
-		"standard_Per 90 Minutes__6": 0.08,
+		"standard_Per 90 Minutes__6": 0.09,
 		"standard_Per 90 Minutes__7": 0.31,
 		"standard_Per 90 Minutes__8": 0.22,
 		"standard_Per 90 Minutes__9": 0.31,
@@ -4775,6 +4775,197 @@
 		"misc___8": "Matches"
 	},
 	"26": {
+		"standard___1": "Janis Antiste\\Janis-Antiste",
+		"standard___2": "fr FRA",
+		"standard___3": "FW",
+		"standard___4": "Toulouse",
+		"standard___5": 16,
+		"standard___6": 2002,
+		"standard_Playing Time": 1,
+		"standard_Playing Time__1": 0,
+		"standard_Playing Time__2": 12,
+		"standard_Performance": 0,
+		"standard_Performance__1": 0,
+		"standard_Performance__2": 0,
+		"standard_Performance__3": 0,
+		"standard_Performance__4": 0,
+		"standard_Performance__5": 0,
+		"standard_Per 90 Minutes": 0,
+		"standard_Per 90 Minutes__1": 0,
+		"standard_Per 90 Minutes__2": 0,
+		"standard_Per 90 Minutes__3": 0,
+		"standard_Per 90 Minutes__4": 0,
+		"standard_Expected": "",
+		"standard_Expected__1": "",
+		"standard_Expected__2": "",
+		"standard_Per 90 Minutes__5": "",
+		"standard_Per 90 Minutes__6": "",
+		"standard_Per 90 Minutes__7": "",
+		"standard_Per 90 Minutes__8": "",
+		"standard_Per 90 Minutes__9": "",
+		"standard___7": "Matches",
+		"code": "38d9ce53",
+		"shooting___1": "Janis Antiste\\Janis-Antiste",
+		"shooting___2": "fr FRA",
+		"shooting___3": "FW",
+		"shooting___4": "Toulouse",
+		"shooting___5": 16,
+		"shooting___6": 2002,
+		"shooting___7": 0.1,
+		"shooting_Standard": 0,
+		"shooting_Standard__1": 0,
+		"shooting_Standard__2": 0,
+		"shooting_Standard__3": 1,
+		"shooting_Standard__4": 0,
+		"shooting_Standard__5": "",
+		"shooting_Standard__6": 0,
+		"shooting_Standard__7": 7.5,
+		"shooting_Standard__8": 0,
+		"shooting_Standard__9": 0,
+		"shooting_Standard__10": "",
+		"shooting_Expected": "",
+		"shooting_Expected__1": "",
+		"shooting_Expected__2": "",
+		"shooting_Expected__3": "",
+		"shooting_Expected__4": "",
+		"shooting___8": "Matches",
+		"passing___1": "Janis Antiste\\Janis-Antiste",
+		"passing___2": "fr FRA",
+		"passing___3": "FW",
+		"passing___4": "Toulouse",
+		"passing___5": 16,
+		"passing___6": 2002,
+		"passing___7": 0.1,
+		"passing_Total": "",
+		"passing_Total__1": "",
+		"passing_Total__2": "",
+		"passing_Total__3": "",
+		"passing_Total__4": "",
+		"passing_Short": "",
+		"passing_Short__1": "",
+		"passing_Short__2": "",
+		"passing_Medium": "",
+		"passing_Medium__1": "",
+		"passing_Medium__2": "",
+		"passing_Long": "",
+		"passing_Long__1": "",
+		"passing_Long__2": "",
+		"passing___8": 0,
+		"passing___9": "",
+		"passing___10": "",
+		"passing___11": "",
+		"passing___12": "",
+		"passing___13": "",
+		"passing___14": "",
+		"passing___15": "",
+		"passing___16": "Matches",
+		"gca___1": "Janis Antiste\\Janis-Antiste",
+		"gca___2": "fr FRA",
+		"gca___3": "FW",
+		"gca___4": "Toulouse",
+		"gca___5": 16,
+		"gca___6": 2002,
+		"gca___7": 0.1,
+		"gca_SCA": "",
+		"gca_SCA__1": "",
+		"gca_SCA Types": "",
+		"gca_SCA Types__1": "",
+		"gca_SCA Types__2": "",
+		"gca_SCA Types__3": "",
+		"gca_SCA Types__4": "",
+		"gca_GCA": "",
+		"gca_GCA__1": "",
+		"gca_GCA Types": "",
+		"gca_GCA Types__1": "",
+		"gca_GCA Types__2": "",
+		"gca_GCA Types__3": "",
+		"gca_GCA Types__4": "",
+		"gca_GCA Types__5": "",
+		"gca___8": "Matches",
+		"defense___1": "Janis Antiste\\Janis-Antiste",
+		"defense___2": "fr FRA",
+		"defense___3": "FW",
+		"defense___4": "Toulouse",
+		"defense___5": 16,
+		"defense___6": 2002,
+		"defense___7": 0.1,
+		"defense_Tackles": "",
+		"defense_Tackles__1": 0,
+		"defense_Tackles__2": "",
+		"defense_Tackles__3": "",
+		"defense_Tackles__4": "",
+		"defense_Vs Dribbles": "",
+		"defense_Vs Dribbles__1": "",
+		"defense_Vs Dribbles__2": "",
+		"defense_Vs Dribbles__3": "",
+		"defense_Pressures": "",
+		"defense_Pressures__1": "",
+		"defense_Pressures__2": "",
+		"defense_Pressures__3": "",
+		"defense_Pressures__4": "",
+		"defense_Pressures__5": "",
+		"defense_Blocks": "",
+		"defense_Blocks__1": "",
+		"defense_Blocks__2": "",
+		"defense_Blocks__3": "",
+		"defense___8": 0,
+		"defense___9": "",
+		"defense___10": "",
+		"defense___11": "Matches",
+		"possession___1": "Janis Antiste\\Janis-Antiste",
+		"possession___2": "fr FRA",
+		"possession___3": "FW",
+		"possession___4": "Toulouse",
+		"possession___5": 16,
+		"possession___6": 2002,
+		"possession___7": 0.1,
+		"possession_Touches": "",
+		"possession_Touches__1": "",
+		"possession_Touches__2": "",
+		"possession_Touches__3": "",
+		"possession_Touches__4": "",
+		"possession_Touches__5": "",
+		"possession_Touches__6": "",
+		"possession_Dribbles": "",
+		"possession_Dribbles__1": "",
+		"possession_Dribbles__2": "",
+		"possession_Dribbles__3": "",
+		"possession_Dribbles__4": "",
+		"possession_Carries": "",
+		"possession_Carries__1": "",
+		"possession_Carries__2": "",
+		"possession_Receiving": "",
+		"possession_Receiving__1": "",
+		"possession_Receiving__2": "",
+		"possession___8": "",
+		"possession___9": "",
+		"possession___10": "Matches",
+		"misc___1": "Janis Antiste\\Janis-Antiste",
+		"misc___2": "fr FRA",
+		"misc___3": "FW",
+		"misc___4": "Toulouse",
+		"misc___5": 16,
+		"misc___6": 2002,
+		"misc___7": 0.1,
+		"misc_Performance": 0,
+		"misc_Performance__1": 0,
+		"misc_Performance__2": 0,
+		"misc_Performance__3": 0,
+		"misc_Performance__4": 0,
+		"misc_Performance__5": 0,
+		"misc_Performance__6": 1,
+		"misc_Performance__7": 0,
+		"misc_Performance__8": 0,
+		"misc_Performance__9": "",
+		"misc_Performance__10": "",
+		"misc_Performance__11": 0,
+		"misc_Performance__12": "",
+		"misc_Aerial Duels": "",
+		"misc_Aerial Duels__1": "",
+		"misc_Aerial Duels__2": "",
+		"misc___8": "Matches"
+	},
+	"27": {
 		"standard___1": "Houssem Aouar\\Houssem-Aouar",
 		"standard___2": "fr FRA",
 		"standard___3": "MF",
@@ -4965,7 +5156,7 @@
 		"misc_Aerial Duels__2": 53.6,
 		"misc___8": "Matches"
 	},
-	"27": {
+	"28": {
 		"standard___1": "Adil Aouchiche\\Adil-Aouchiche",
 		"standard___2": "fr FRA",
 		"standard___3": "MF",
@@ -5156,7 +5347,7 @@
 		"misc_Aerial Duels__2": "",
 		"misc___8": "Matches"
 	},
-	"28": {
+	"29": {
 		"standard___1": "Dennis Appiah\\Dennis-Appiah",
 		"standard___2": "fr FRA",
 		"standard___3": "DF",
@@ -5347,7 +5538,7 @@
 		"misc_Aerial Duels__2": 61.1,
 		"misc___8": "Matches"
 	},
-	"29": {
+	"30": {
 		"standard___1": "Luiz Araújo\\Luiz-Araujo",
 		"standard___2": "br BRA",
 		"standard___3": "FWMF",
@@ -5538,7 +5729,7 @@
 		"misc_Aerial Duels__2": 42.9,
 		"misc___8": "Matches"
 	},
-	"30": {
+	"31": {
 		"standard___1": "Alphonse Areola\\Alphonse-Areola",
 		"standard___2": "fr FRA",
 		"standard___3": "GK",
@@ -5729,7 +5920,7 @@
 		"misc_Aerial Duels__2": "",
 		"misc___8": "Matches"
 	},
-	"31": {
+	"32": {
 		"standard___1": "Youcef Attal\\Youcef-Attal",
 		"standard___2": "dz ALG",
 		"standard___3": "FWDF",
@@ -5920,7 +6111,7 @@
 		"misc_Aerial Duels__2": 60.9,
 		"misc___8": "Matches"
 	},
-	"32": {
+	"33": {
 		"standard___1": "Jean-Kévin Augustin\\Jean-Kevin-Augustin",
 		"standard___2": "fr FRA",
 		"standard___3": "FW",
@@ -6111,7 +6302,7 @@
 		"misc_Aerial Duels__2": 0,
 		"misc___8": "Matches"
 	},
-	"33": {
+	"34": {
 		"standard___1": "Mathias Autret\\Mathias-Autret",
 		"standard___2": "fr FRA",
 		"standard___3": "MFFW",
@@ -6137,9 +6328,9 @@
 		"standard_Expected__2": 3,
 		"standard_Per 90 Minutes__5": 0.15,
 		"standard_Per 90 Minutes__6": 0.22,
-		"standard_Per 90 Minutes__7": 0.37,
+		"standard_Per 90 Minutes__7": 0.36,
 		"standard_Per 90 Minutes__8": 0.15,
-		"standard_Per 90 Minutes__9": 0.37,
+		"standard_Per 90 Minutes__9": 0.36,
 		"standard___7": "Matches",
 		"code": "7dfbba27",
 		"shooting___1": "Mathias Autret\\Mathias-Autret",
@@ -6302,7 +6493,7 @@
 		"misc_Aerial Duels__2": 25,
 		"misc___8": "Matches"
 	},
-	"34": {
+	"35": {
 		"standard___1": "Ludovic Baal\\Ludovic-Baal",
 		"standard___2": "gf GUF",
 		"standard___3": "DF",
@@ -6493,7 +6684,7 @@
 		"misc_Aerial Duels__2": 61.8,
 		"misc___8": "Matches"
 	},
-	"35": {
+	"36": {
 		"standard___1": "Bastian Badu\\Bastian-Badu",
 		"standard___2": "fr FRA",
 		"standard___3": "FW",
@@ -6684,7 +6875,7 @@
 		"misc_Aerial Duels__2": 50,
 		"misc___8": "Matches"
 	},
-	"36": {
+	"37": {
 		"standard___1": "Stéphane Bahoken\\Stephane-Bahoken",
 		"standard___2": "cm CMR",
 		"standard___3": "FW",
@@ -6875,7 +7066,7 @@
 		"misc_Aerial Duels__2": 21.7,
 		"misc___8": "Matches"
 	},
-	"37": {
+	"38": {
 		"standard___1": "Dénys Bain\\Denys-Bain",
 		"standard___2": "fr FRA",
 		"standard___3": "DF",
@@ -7066,7 +7257,7 @@
 		"misc_Aerial Duels__2": 71.7,
 		"misc___8": "Matches"
 	},
-	"38": {
+	"39": {
 		"standard___1": "Stefan Bajic\\Stefan-Bajic",
 		"standard___2": "fr FRA",
 		"standard___3": "GK",
@@ -7257,7 +7448,7 @@
 		"misc_Aerial Duels__2": "",
 		"misc___8": "Matches"
 	},
-	"39": {
+	"40": {
 		"standard___1": "Tiemoué Bakayoko\\Tiemoue-Bakayoko",
 		"standard___2": "fr FRA",
 		"standard___3": "MF",
@@ -7448,7 +7639,7 @@
 		"misc_Aerial Duels__2": 62.5,
 		"misc___8": "Matches"
 	},
-	"40": {
+	"41": {
 		"standard___1": "Mitchel Bakker\\Mitchel-Bakker",
 		"standard___2": "nl NED",
 		"standard___3": "DF",
@@ -7639,7 +7830,7 @@
 		"misc_Aerial Duels__2": 0,
 		"misc___8": "Matches"
 	},
-	"41": {
+	"42": {
 		"standard___1": "Keita Baldé\\Keita-Balde",
 		"standard___2": "sn SEN",
 		"standard___3": "FWMF",
@@ -7830,7 +8021,7 @@
 		"misc_Aerial Duels__2": 44.3,
 		"misc___8": "Matches"
 	},
-	"42": {
+	"43": {
 		"standard___1": "Fodé Ballo-Touré\\Fode-Ballo-Toure",
 		"standard___2": "fr FRA",
 		"standard___3": "DF",
@@ -8021,7 +8212,7 @@
 		"misc_Aerial Duels__2": 65.4,
 		"misc___8": "Matches"
 	},
-	"43": {
+	"44": {
 		"standard___1": "Florent Balmont\\Florent-Balmont",
 		"standard___2": "fr FRA",
 		"standard___3": "MF",
@@ -8212,7 +8403,7 @@
 		"misc_Aerial Duels__2": 20,
 		"misc___8": "Matches"
 	},
-	"44": {
+	"45": {
 		"standard___1": "Abdoulaye Bamba\\Abdoulaye-Bamba",
 		"standard___2": "ci CIV",
 		"standard___3": "DF",
@@ -8237,7 +8428,7 @@
 		"standard_Expected__1": 0,
 		"standard_Expected__2": 0.3,
 		"standard_Per 90 Minutes__5": 0,
-		"standard_Per 90 Minutes__6": 0.05,
+		"standard_Per 90 Minutes__6": 0.04,
 		"standard_Per 90 Minutes__7": 0.05,
 		"standard_Per 90 Minutes__8": 0,
 		"standard_Per 90 Minutes__9": 0.05,
@@ -8403,7 +8594,7 @@
 		"misc_Aerial Duels__2": 50,
 		"misc___8": "Matches"
 	},
-	"45": {
+	"46": {
 		"standard___1": "Jonathan Bamba\\Jonathan-Bamba",
 		"standard___2": "fr FRA",
 		"standard___3": "FWMF",
@@ -8425,10 +8616,10 @@
 		"standard_Per 90 Minutes__3": 0,
 		"standard_Per 90 Minutes__4": 0.19,
 		"standard_Expected": 5.1,
-		"standard_Expected__1": 2.9,
+		"standard_Expected__1": 2.8,
 		"standard_Expected__2": 2.5,
 		"standard_Per 90 Minutes__5": 0.24,
-		"standard_Per 90 Minutes__6": 0.11,
+		"standard_Per 90 Minutes__6": 0.12,
 		"standard_Per 90 Minutes__7": 0.35,
 		"standard_Per 90 Minutes__8": 0.13,
 		"standard_Per 90 Minutes__9": 0.25,
@@ -8453,10 +8644,10 @@
 		"shooting_Standard__9": 0,
 		"shooting_Standard__10": 0,
 		"shooting_Expected": 5.1,
-		"shooting_Expected__1": 2.9,
-		"shooting_Expected__2": 0.07,
+		"shooting_Expected__1": 2.8,
+		"shooting_Expected__2": 0.06,
 		"shooting_Expected__3": -4.1,
-		"shooting_Expected__4": -2.9,
+		"shooting_Expected__4": -2.8,
 		"shooting___8": "Matches",
 		"passing___1": "Jonathan Bamba\\Jonathan-Bamba",
 		"passing___2": "fr FRA",
@@ -8594,7 +8785,7 @@
 		"misc_Aerial Duels__2": 38.1,
 		"misc___8": "Matches"
 	},
-	"46": {
+	"47": {
 		"standard___1": "Danilo Barbosa\\Danilo-Barbosa",
 		"standard___2": "br BRA",
 		"standard___3": "DFMF",
@@ -8785,7 +8976,7 @@
 		"misc_Aerial Duels__2": 46.7,
 		"misc___8": "Matches"
 	},
-	"47": {
+	"48": {
 		"standard___1": "Melvin Bard\\Melvin-Bard",
 		"standard___2": "fr FRA",
 		"standard___3": "DF",
@@ -8976,7 +9167,7 @@
 		"misc_Aerial Duels__2": 100,
 		"misc___8": "Matches"
 	},
-	"48": {
+	"49": {
 		"standard___1": "Toma Bašić\\Toma-Basic",
 		"standard___2": "hr CRO",
 		"standard___3": "MF",
@@ -9167,7 +9358,7 @@
 		"misc_Aerial Duels__2": 62.5,
 		"misc___8": "Matches"
 	},
-	"49": {
+	"50": {
 		"standard___1": "Thomas Basila\\Thomas-Basila",
 		"standard___2": "fr FRA",
 		"standard___3": "DF",
@@ -9358,7 +9549,7 @@
 		"misc_Aerial Duels__2": 50,
 		"misc___8": "Matches"
 	},
-	"50": {
+	"51": {
 		"standard___1": "Gil Bastião Dias\\Gil-Bastiao-Dias",
 		"standard___2": "pt POR",
 		"standard___3": "DFMF",
@@ -9549,7 +9740,7 @@
 		"misc_Aerial Duels__2": 43.5,
 		"misc___8": "Matches"
 	},
-	"51": {
+	"52": {
 		"standard___1": "Cristian Battocchio\\Cristian-Battocchio",
 		"standard___2": "it ITA",
 		"standard___3": "MF",
@@ -9740,7 +9931,7 @@
 		"misc_Aerial Duels__2": 33.3,
 		"misc___8": "Matches"
 	},
-	"52": {
+	"53": {
 		"standard___1": "Gaëtan Belaud\\Gaetan-Belaud",
 		"standard___2": "fr FRA",
 		"standard___3": "DF",
@@ -9931,7 +10122,7 @@
 		"misc_Aerial Duels__2": 42.9,
 		"misc___8": "Matches"
 	},
-	"53": {
+	"54": {
 		"standard___1": "Haris Belkebla\\Haris-Belkebla",
 		"standard___2": "dz ALG",
 		"standard___3": "MF",
@@ -10122,7 +10313,7 @@
 		"misc_Aerial Duels__2": 32.6,
 		"misc___8": "Matches"
 	},
-	"54": {
+	"55": {
 		"standard___1": "Raoul Bellanova\\Raoul-Bellanova",
 		"standard___2": "it ITA",
 		"standard___3": "DF",
@@ -10313,7 +10504,7 @@
 		"misc_Aerial Duels__2": 0,
 		"misc___8": "Matches"
 	},
-	"55": {
+	"56": {
 		"standard___1": "Jean-Ricner Bellegarde\\Jean-Ricner-Bellegarde",
 		"standard___2": "fr FRA",
 		"standard___3": "MF",
@@ -10504,7 +10695,7 @@
 		"misc_Aerial Duels__2": 15.2,
 		"misc___8": "Matches"
 	},
-	"56": {
+	"57": {
 		"standard___1": "Sami Ben Amar\\Sami-Ben-Amar",
 		"standard___2": "ma MAR",
 		"standard___3": "FW",
@@ -10695,7 +10886,7 @@
 		"misc_Aerial Duels__2": 25,
 		"misc___8": "Matches"
 	},
-	"57": {
+	"58": {
 		"standard___1": "Wissam Ben Yedder\\Wissam-Ben-Yedder",
 		"standard___2": "fr FRA",
 		"standard___3": "FW",
@@ -10886,7 +11077,7 @@
 		"misc_Aerial Duels__2": 20.4,
 		"misc___8": "Matches"
 	},
-	"58": {
+	"59": {
 		"standard___1": "Cristian Benavente\\Cristian-Benavente",
 		"standard___2": "pe PER",
 		"standard___3": "MFFW",
@@ -11077,7 +11268,7 @@
 		"misc_Aerial Duels__2": 12.5,
 		"misc___8": "Matches"
 	},
-	"59": {
+	"60": {
 		"standard___1": "Darío Benedetto\\Dario-Benedetto",
 		"standard___2": "ar ARG",
 		"standard___3": "FW",
@@ -11099,8 +11290,8 @@
 		"standard_Per 90 Minutes__3": 0.47,
 		"standard_Per 90 Minutes__4": 0.47,
 		"standard_Expected": 10.1,
-		"standard_Expected__1": 9.4,
-		"standard_Expected__2": 1.2,
+		"standard_Expected__1": 9.3,
+		"standard_Expected__2": 1.1,
 		"standard_Per 90 Minutes__5": 0.43,
 		"standard_Per 90 Minutes__6": 0.05,
 		"standard_Per 90 Minutes__7": 0.48,
@@ -11127,10 +11318,10 @@
 		"shooting_Standard__9": 0.18,
 		"shooting_Standard__10": 0.41,
 		"shooting_Expected": 10.1,
-		"shooting_Expected__1": 9.4,
+		"shooting_Expected__1": 9.3,
 		"shooting_Expected__2": 0.16,
 		"shooting_Expected__3": "+0.9",
-		"shooting_Expected__4": "+1.6",
+		"shooting_Expected__4": "+1.7",
 		"shooting___8": "Matches",
 		"passing___1": "Darío Benedetto\\Dario-Benedetto",
 		"passing___2": "ar ARG",
@@ -11154,8 +11345,8 @@
 		"passing_Long__1": 101,
 		"passing_Long__2": 71.3,
 		"passing___8": 0,
-		"passing___9": 1.2,
-		"passing___10": -1.2,
+		"passing___9": 1.1,
+		"passing___10": -1.1,
 		"passing___11": 17,
 		"passing___12": 27,
 		"passing___13": 11,
@@ -11268,7 +11459,7 @@
 		"misc_Aerial Duels__2": 38.5,
 		"misc___8": "Matches"
 	},
-	"60": {
+	"61": {
 		"standard___1": "Walter Benítez\\Walter-Benitez",
 		"standard___2": "ar ARG",
 		"standard___3": "GK",
@@ -11459,7 +11650,7 @@
 		"misc_Aerial Duels__2": "",
 		"misc___8": "Matches"
 	},
-	"61": {
+	"62": {
 		"standard___1": "Loris Benito\\Loris-Benito",
 		"standard___2": "ch SUI",
 		"standard___3": "DF",
@@ -11650,7 +11841,7 @@
 		"misc_Aerial Duels__2": 53.8,
 		"misc___8": "Matches"
 	},
-	"62": {
+	"63": {
 		"standard___1": "Bilal Benkhedim\\Bilal-Benkhedim",
 		"standard___2": "fr FRA",
 		"standard___3": "MFFW",
@@ -11841,7 +12032,7 @@
 		"misc_Aerial Duels__2": 0,
 		"misc___8": "Matches"
 	},
-	"63": {
+	"64": {
 		"standard___1": "Yassine Benrahou\\Yassine-Benrahou",
 		"standard___2": "fr FRA",
 		"standard___3": "FWMF",
@@ -12032,7 +12223,7 @@
 		"misc_Aerial Duels__2": 0,
 		"misc___8": "Matches"
 	},
-	"64": {
+	"65": {
 		"standard___1": "Yassine Benrahou\\Yassine-Benrahou",
 		"standard___2": "fr FRA",
 		"standard___3": "MFFW",
@@ -12223,7 +12414,7 @@
 		"misc_Aerial Duels__2": 15.4,
 		"misc___8": "Matches"
 	},
-	"65": {
+	"66": {
 		"standard___1": "Yassine Benzia\\Yassine-Benzia",
 		"standard___2": "dz ALG",
 		"standard___3": "MF",
@@ -12414,7 +12605,7 @@
 		"misc_Aerial Duels__2": 33.3,
 		"misc___8": "Matches"
 	},
-	"66": {
+	"67": {
 		"standard___1": "Robert Berić\\Robert-Beric",
 		"standard___2": "si SVN",
 		"standard___3": "FWMF",
@@ -12605,7 +12796,7 @@
 		"misc_Aerial Duels__2": 26.3,
 		"misc___8": "Matches"
 	},
-	"67": {
+	"68": {
 		"standard___1": "Paul Bernardoni\\Paul-Bernardoni",
 		"standard___2": "fr FRA",
 		"standard___3": "GK",
@@ -12796,7 +12987,7 @@
 		"misc_Aerial Duels__2": "",
 		"misc___8": "Matches"
 	},
-	"68": {
+	"69": {
 		"standard___1": "Juan Bernat\\Juan-Bernat",
 		"standard___2": "es ESP",
 		"standard___3": "DFMF",
@@ -12987,10 +13178,10 @@
 		"misc_Aerial Duels__2": 28.6,
 		"misc___8": "Matches"
 	},
-	"69": {
+	"70": {
 		"standard___1": "Dimitry Bertaud\\Dimitry-Bertaud",
 		"standard___2": "fr FRA",
-		"standard___3": "GKFW",
+		"standard___3": "GK",
 		"standard___4": "Montpellier",
 		"standard___5": 21,
 		"standard___6": 1998,
@@ -13020,7 +13211,7 @@
 		"code": "380a15e2",
 		"shooting___1": "Dimitry Bertaud\\Dimitry-Bertaud",
 		"shooting___2": "fr FRA",
-		"shooting___3": "GKFW",
+		"shooting___3": "GK",
 		"shooting___4": "Montpellier",
 		"shooting___5": 21,
 		"shooting___6": 1998,
@@ -13044,7 +13235,7 @@
 		"shooting___8": "Matches",
 		"passing___1": "Dimitry Bertaud\\Dimitry-Bertaud",
 		"passing___2": "fr FRA",
-		"passing___3": "GKFW",
+		"passing___3": "GK",
 		"passing___4": "Montpellier",
 		"passing___5": 21,
 		"passing___6": 1998,
@@ -13074,7 +13265,7 @@
 		"passing___16": "Matches",
 		"gca___1": "Dimitry Bertaud\\Dimitry-Bertaud",
 		"gca___2": "fr FRA",
-		"gca___3": "GKFW",
+		"gca___3": "GK",
 		"gca___4": "Montpellier",
 		"gca___5": 21,
 		"gca___6": 1998,
@@ -13097,7 +13288,7 @@
 		"gca___8": "Matches",
 		"defense___1": "Dimitry Bertaud\\Dimitry-Bertaud",
 		"defense___2": "fr FRA",
-		"defense___3": "GKFW",
+		"defense___3": "GK",
 		"defense___4": "Montpellier",
 		"defense___5": 21,
 		"defense___6": 1998,
@@ -13127,7 +13318,7 @@
 		"defense___11": "Matches",
 		"possession___1": "Dimitry Bertaud\\Dimitry-Bertaud",
 		"possession___2": "fr FRA",
-		"possession___3": "GKFW",
+		"possession___3": "GK",
 		"possession___4": "Montpellier",
 		"possession___5": 21,
 		"possession___6": 1998,
@@ -13155,7 +13346,7 @@
 		"possession___10": "Matches",
 		"misc___1": "Dimitry Bertaud\\Dimitry-Bertaud",
 		"misc___2": "fr FRA",
-		"misc___3": "GKFW",
+		"misc___3": "GK",
 		"misc___4": "Montpellier",
 		"misc___5": 21,
 		"misc___6": 1998,
@@ -13178,7 +13369,7 @@
 		"misc_Aerial Duels__2": "",
 		"misc___8": "Matches"
 	},
-	"70": {
+	"71": {
 		"standard___1": "El Bilal Touré\\El-Bilal-Toure",
 		"standard___2": "ml MLI",
 		"standard___3": "FW",
@@ -13369,7 +13560,7 @@
 		"misc_Aerial Duels__2": 33.3,
 		"misc___8": "Matches"
 	},
-	"71": {
+	"72": {
 		"standard___1": "Ludovic Blas\\Ludovic-Blas",
 		"standard___2": "fr FRA",
 		"standard___3": "FWMF",
@@ -13560,7 +13751,7 @@
 		"misc_Aerial Duels__2": 33.9,
 		"misc___8": "Matches"
 	},
-	"72": {
+	"73": {
 		"standard___1": "Alexis Blin\\Alexis-Blin",
 		"standard___2": "fr FRA",
 		"standard___3": "MF",
@@ -13751,7 +13942,7 @@
 		"misc_Aerial Duels__2": 51.4,
 		"misc___8": "Matches"
 	},
-	"73": {
+	"74": {
 		"standard___1": "Antonin Bobichon\\Antonin-Bobichon",
 		"standard___2": "fr FRA",
 		"standard___3": "MF",
@@ -13775,11 +13966,11 @@
 		"standard_Expected": 1.1,
 		"standard_Expected__1": 1.1,
 		"standard_Expected__2": 1,
-		"standard_Per 90 Minutes__5": 0.16,
+		"standard_Per 90 Minutes__5": 0.15,
 		"standard_Per 90 Minutes__6": 0.14,
-		"standard_Per 90 Minutes__7": 0.3,
-		"standard_Per 90 Minutes__8": 0.16,
-		"standard_Per 90 Minutes__9": 0.3,
+		"standard_Per 90 Minutes__7": 0.29,
+		"standard_Per 90 Minutes__8": 0.15,
+		"standard_Per 90 Minutes__9": 0.29,
 		"standard___7": "Matches",
 		"code": "7d937aa1",
 		"shooting___1": "Antonin Bobichon\\Antonin-Bobichon",
@@ -13942,7 +14133,7 @@
 		"misc_Aerial Duels__2": 16.7,
 		"misc___8": "Matches"
 	},
-	"74": {
+	"75": {
 		"standard___1": "Antonin Bobichon\\Antonin-Bobichon",
 		"standard___2": "fr FRA",
 		"standard___3": "MF",
@@ -14133,7 +14324,7 @@
 		"misc_Aerial Duels__2": 50,
 		"misc___8": "Matches"
 	},
-	"75": {
+	"76": {
 		"standard___1": "Mathieu Bodmer\\Mathieu-Bodmer",
 		"standard___2": "fr FRA",
 		"standard___3": "MF",
@@ -14324,7 +14515,7 @@
 		"misc_Aerial Duels__2": 50,
 		"misc___8": "Matches"
 	},
-	"76": {
+	"77": {
 		"standard___1": "Sacha Boey\\Sacha-Boey",
 		"standard___2": "fr FRA",
 		"standard___3": "DF",
@@ -14515,7 +14706,7 @@
 		"misc_Aerial Duels__2": 100,
 		"misc___8": "Matches"
 	},
-	"77": {
+	"78": {
 		"standard___1": "Quentin Boisgard\\Quentin-Boisgard",
 		"standard___2": "fr FRA",
 		"standard___3": "MFFW",
@@ -14538,7 +14729,7 @@
 		"standard_Per 90 Minutes__4": 0.16,
 		"standard_Expected": 0.9,
 		"standard_Expected__1": 0.9,
-		"standard_Expected__2": 1.6,
+		"standard_Expected__2": 1.7,
 		"standard_Per 90 Minutes__5": 0.07,
 		"standard_Per 90 Minutes__6": 0.13,
 		"standard_Per 90 Minutes__7": 0.2,
@@ -14592,8 +14783,8 @@
 		"passing_Long__1": 71,
 		"passing_Long__2": 49.3,
 		"passing___8": 1,
-		"passing___9": 1.6,
-		"passing___10": -0.6,
+		"passing___9": 1.7,
+		"passing___10": -0.7,
 		"passing___11": 16,
 		"passing___12": 24,
 		"passing___13": 7,
@@ -14706,7 +14897,7 @@
 		"misc_Aerial Duels__2": 41.9,
 		"misc___8": "Matches"
 	},
-	"78": {
+	"79": {
 		"standard___1": "Gabriel Boschilia\\Gabriel-Boschilia",
 		"standard___2": "br BRA",
 		"standard___3": "MFFW",
@@ -14897,7 +15088,7 @@
 		"misc_Aerial Duels__2": 0,
 		"misc___8": "Matches"
 	},
-	"79": {
+	"80": {
 		"standard___1": "Denis Bouanga\\Denis-Bouanga",
 		"standard___2": "ga GAB",
 		"standard___3": "FWDF",
@@ -15088,7 +15279,7 @@
 		"misc_Aerial Duels__2": 38,
 		"misc___8": "Matches"
 	},
-	"80": {
+	"81": {
 		"standard___1": "Hicham Boudaoui\\Hicham-Boudaoui",
 		"standard___2": "dz ALG",
 		"standard___3": "MFFW",
@@ -15279,7 +15470,7 @@
 		"misc_Aerial Duels__2": 41.2,
 		"misc___8": "Matches"
 	},
-	"81": {
+	"82": {
 		"standard___1": "Ryad Boudebouz\\Ryad-Boudebouz",
 		"standard___2": "dz ALG",
 		"standard___3": "MFFW",
@@ -15470,7 +15661,7 @@
 		"misc_Aerial Duels__2": 22.7,
 		"misc___8": "Matches"
 	},
-	"82": {
+	"83": {
 		"standard___1": "Farid Boulaya\\Farid-Boulaya",
 		"standard___2": "dz ALG",
 		"standard___3": "FW",
@@ -15661,7 +15852,7 @@
 		"misc_Aerial Duels__2": 23.8,
 		"misc___8": "Matches"
 	},
-	"83": {
+	"84": {
 		"standard___1": "Benjamin Bourigeaud\\Benjamin-Bourigeaud",
 		"standard___2": "fr FRA",
 		"standard___3": "MF",
@@ -15852,7 +16043,7 @@
 		"misc_Aerial Duels__2": 43.6,
 		"misc___8": "Matches"
 	},
-	"84": {
+	"85": {
 		"standard___1": "Bilal Boutobba\\Bilal-Boutobba",
 		"standard___2": "fr FRA",
 		"standard___3": "MFDF",
@@ -16043,7 +16234,7 @@
 		"misc_Aerial Duels__2": "",
 		"misc___8": "Matches"
 	},
-	"85": {
+	"86": {
 		"standard___1": "John Boye\\John-Boye",
 		"standard___2": "gh GHA",
 		"standard___3": "DF",
@@ -16234,7 +16425,7 @@
 		"misc_Aerial Duels__2": 67.4,
 		"misc___8": "Matches"
 	},
-	"86": {
+	"87": {
 		"standard___1": "Domagoj Bradarić\\Domagoj-Bradaric",
 		"standard___2": "hr CRO",
 		"standard___3": "DF",
@@ -16425,7 +16616,7 @@
 		"misc_Aerial Duels__2": 39.3,
 		"misc___8": "Matches"
 	},
-	"87": {
+	"88": {
 		"standard___1": "Anthony Briançon\\Anthony-Briancon",
 		"standard___2": "fr FRA",
 		"standard___3": "DF",
@@ -16616,7 +16807,7 @@
 		"misc_Aerial Duels__2": 56.4,
 		"misc___8": "Matches"
 	},
-	"88": {
+	"89": {
 		"standard___1": "Jimmy Briand\\Jimmy-Briand",
 		"standard___2": "fr FRA",
 		"standard___3": "FW",
@@ -16807,7 +16998,7 @@
 		"misc_Aerial Duels__2": 28,
 		"misc___8": "Matches"
 	},
-	"89": {
+	"90": {
 		"standard___1": "Dylan Bronn\\Dylan-Bronn",
 		"standard___2": "tn TUN",
 		"standard___3": "DF",
@@ -16998,7 +17189,7 @@
 		"misc_Aerial Duels__2": 54.5,
 		"misc___8": "Matches"
 	},
-	"90": {
+	"91": {
 		"standard___1": "Lucas Buadés\\Lucas-Buades",
 		"standard___2": "fr FRA",
 		"standard___3": "FW",
@@ -17189,7 +17380,7 @@
 		"misc_Aerial Duels__2": 50,
 		"misc___8": "Matches"
 	},
-	"91": {
+	"92": {
 		"standard___1": "Patrick Burner\\Patrick-Burner",
 		"standard___2": "fr FRA",
 		"standard___3": "DF",
@@ -17380,7 +17571,7 @@
 		"misc_Aerial Duels__2": 36.4,
 		"misc___8": "Matches"
 	},
-	"92": {
+	"93": {
 		"standard___1": "Ludovic Butelle\\Ludovic-Butelle",
 		"standard___2": "fr FRA",
 		"standard___3": "GK",
@@ -17571,7 +17762,7 @@
 		"misc_Aerial Duels__2": "",
 		"misc___8": "Matches"
 	},
-	"93": {
+	"94": {
 		"standard___1": "Marcin Bułka\\Marcin-Bulka",
 		"standard___2": "pl POL",
 		"standard___3": "GK",
@@ -17762,7 +17953,7 @@
 		"misc_Aerial Duels__2": "",
 		"misc___8": "Matches"
 	},
-	"94": {
+	"95": {
 		"standard___1": "Yohan Cabaye\\Yohan-Cabaye",
 		"standard___2": "fr FRA",
 		"standard___3": "MF",
@@ -17953,7 +18144,7 @@
 		"misc_Aerial Duels__2": 58.8,
 		"misc___8": "Matches"
 	},
-	"95": {
+	"96": {
 		"standard___1": "Manuel Cabit\\Manuel-Cabit",
 		"standard___2": "mq MTQ",
 		"standard___3": "DF",
@@ -18144,7 +18335,7 @@
 		"misc_Aerial Duels__2": 0,
 		"misc___8": "Matches"
 	},
-	"96": {
+	"97": {
 		"standard___1": "Anthony Caci\\Anthony-Caci",
 		"standard___2": "fr FRA",
 		"standard___3": "DF",
@@ -18167,9 +18358,9 @@
 		"standard_Per 90 Minutes__4": 0.65,
 		"standard_Expected": 0.2,
 		"standard_Expected__1": 0.2,
-		"standard_Expected__2": 1.9,
+		"standard_Expected__2": 2,
 		"standard_Per 90 Minutes__5": 0.03,
-		"standard_Per 90 Minutes__6": 0.25,
+		"standard_Per 90 Minutes__6": 0.26,
 		"standard_Per 90 Minutes__7": 0.28,
 		"standard_Per 90 Minutes__8": 0.03,
 		"standard_Per 90 Minutes__9": 0.28,
@@ -18221,8 +18412,8 @@
 		"passing_Long__1": 164,
 		"passing_Long__2": 61.6,
 		"passing___8": 4,
-		"passing___9": 1.9,
-		"passing___10": "+2.1",
+		"passing___9": 2,
+		"passing___10": "+2.0",
 		"passing___11": 12,
 		"passing___12": 50,
 		"passing___13": 12,
@@ -18335,7 +18526,7 @@
 		"misc_Aerial Duels__2": 50,
 		"misc___8": "Matches"
 	},
-	"97": {
+	"98": {
 		"standard___1": "Jhonder Cádiz\\Jhonder-Cadiz",
 		"standard___2": "ve VEN",
 		"standard___3": "FWMF",
@@ -18526,7 +18717,7 @@
 		"misc_Aerial Duels__2": 47.7,
 		"misc___8": "Matches"
 	},
-	"98": {
+	"99": {
 		"standard___1": "Mathieu Cafaro\\Mathieu-Cafaro",
 		"standard___2": "fr FRA",
 		"standard___3": "FWMF",
@@ -18717,7 +18908,7 @@
 		"misc_Aerial Duels__2": 31.6,
 		"misc___8": "Matches"
 	},
-	"99": {
+	"100": {
 		"standard___1": "Jonathan Cafu\\Jonathan-Cafu",
 		"standard___2": "br BRA",
 		"standard___3": "DF",
@@ -18908,7 +19099,7 @@
 		"misc_Aerial Duels__2": 0,
 		"misc___8": "Matches"
 	},
-	"100": {
+	"101": {
 		"standard___1": "Arturo Calabresi\\Arturo-Calabresi",
 		"standard___2": "it ITA",
 		"standard___3": "DF",
@@ -19099,7 +19290,7 @@
 		"misc_Aerial Duels__2": 47.1,
 		"misc___8": "Matches"
 	},
-	"101": {
+	"102": {
 		"standard___1": "Duje Ćaleta-Car\\Duje-Caleta-Car",
 		"standard___2": "hr CRO",
 		"standard___3": "DF",
@@ -19125,9 +19316,9 @@
 		"standard_Expected__2": 0.2,
 		"standard_Per 90 Minutes__5": 0.06,
 		"standard_Per 90 Minutes__6": 0.01,
-		"standard_Per 90 Minutes__7": 0.08,
+		"standard_Per 90 Minutes__7": 0.07,
 		"standard_Per 90 Minutes__8": 0.06,
-		"standard_Per 90 Minutes__9": 0.08,
+		"standard_Per 90 Minutes__9": 0.07,
 		"standard___7": "Matches",
 		"code": "94f8d10c",
 		"shooting___1": "Duje Ćaleta-Car\\Duje-Caleta-Car",
@@ -19290,7 +19481,7 @@
 		"misc_Aerial Duels__2": 73.4,
 		"misc___8": "Matches"
 	},
-	"102": {
+	"103": {
 		"standard___1": "Mahdi Camara\\Mahdi-Camara",
 		"standard___2": "fr FRA",
 		"standard___3": "MF",
@@ -19481,7 +19672,7 @@
 		"misc_Aerial Duels__2": 65.4,
 		"misc___8": "Matches"
 	},
-	"103": {
+	"104": {
 		"standard___1": "Souleymane Camara\\Souleymane-Camara",
 		"standard___2": "sn SEN",
 		"standard___3": "FWMF",
@@ -19672,7 +19863,7 @@
 		"misc_Aerial Duels__2": 37,
 		"misc___8": "Matches"
 	},
-	"104": {
+	"105": {
 		"standard___1": "Eduardo Camavinga\\Eduardo-Camavinga",
 		"standard___2": "fr FRA",
 		"standard___3": "MF",
@@ -19863,7 +20054,7 @@
 		"misc_Aerial Duels__2": 52.3,
 		"misc___8": "Matches"
 	},
-	"105": {
+	"106": {
 		"standard___1": "Pierrick Capelle\\Pierrick-Capelle",
 		"standard___2": "fr FRA",
 		"standard___3": "MFDF",
@@ -20054,7 +20245,7 @@
 		"misc_Aerial Duels__2": 55.1,
 		"misc___8": "Matches"
 	},
-	"106": {
+	"107": {
 		"standard___1": "Maxence Caqueret\\Maxence-Caqueret",
 		"standard___2": "fr FRA",
 		"standard___3": "MF",
@@ -20245,7 +20436,7 @@
 		"misc_Aerial Duels__2": 33.3,
 		"misc___8": "Matches"
 	},
-	"107": {
+	"108": {
 		"standard___1": "Irvin Cardona\\Irvin-Cardona",
 		"standard___2": "fr FRA",
 		"standard___3": "FWMF",
@@ -20436,7 +20627,7 @@
 		"misc_Aerial Duels__2": 55.3,
 		"misc___8": "Matches"
 	},
-	"108": {
+	"109": {
 		"standard___1": "Lionel Carole\\Lionel-Carole",
 		"standard___2": "fr FRA",
 		"standard___3": "DF",
@@ -20627,7 +20818,7 @@
 		"misc_Aerial Duels__2": 71.4,
 		"misc___8": "Matches"
 	},
-	"109": {
+	"110": {
 		"standard___1": "Matis Carvalho\\Matis-Carvalho",
 		"standard___2": "pt POR",
 		"standard___3": "GK",
@@ -20818,7 +21009,7 @@
 		"misc_Aerial Duels__2": "",
 		"misc___8": "Matches"
 	},
-	"110": {
+	"111": {
 		"standard___1": "Moreto Cassamã\\Moreto-Cassama",
 		"standard___2": "gw GNB",
 		"standard___3": "MF",
@@ -21009,7 +21200,7 @@
 		"misc_Aerial Duels__2": 57.1,
 		"misc___8": "Matches"
 	},
-	"111": {
+	"112": {
 		"standard___1": "Jean-Charles Castelletto\\Jean-Charles-Castelletto",
 		"standard___2": "cm CMR",
 		"standard___3": "DF",
@@ -21200,7 +21391,7 @@
 		"misc_Aerial Duels__2": 61.2,
 		"misc___8": "Matches"
 	},
-	"112": {
+	"113": {
 		"standard___1": "Edinson Cavani\\Edinson-Cavani",
 		"standard___2": "uy URU",
 		"standard___3": "FW",
@@ -21391,7 +21582,7 @@
 		"misc_Aerial Duels__2": 40,
 		"misc___8": "Matches"
 	},
-	"113": {
+	"114": {
 		"standard___1": "Zeki Çelik\\Zeki-Celik",
 		"standard___2": "tr TUR",
 		"standard___3": "DF",
@@ -21582,7 +21773,7 @@
 		"misc_Aerial Duels__2": 40,
 		"misc___8": "Matches"
 	},
-	"114": {
+	"115": {
 		"standard___1": "Fabien Centonze\\Fabien-Centonze",
 		"standard___2": "fr FRA",
 		"standard___3": "DF",
@@ -21773,7 +21964,7 @@
 		"misc_Aerial Duels__2": 58.7,
 		"misc___8": "Matches"
 	},
-	"115": {
+	"116": {
 		"standard___1": "Florian Chabrolle\\Florian-Chabrolle",
 		"standard___2": "fr FRA",
 		"standard___3": "MF",
@@ -21964,7 +22155,7 @@
 		"misc_Aerial Duels__2": "",
 		"misc___8": "Matches"
 	},
-	"116": {
+	"117": {
 		"standard___1": "Fouad Chafik\\Fouad-Chafik",
 		"standard___2": "ma MAR",
 		"standard___3": "DF",
@@ -22155,7 +22346,7 @@
 		"misc_Aerial Duels__2": 47.8,
 		"misc___8": "Matches"
 	},
-	"117": {
+	"118": {
 		"standard___1": "Gaëtan Charbonnier\\Gaetan-Charbonnier",
 		"standard___2": "fr FRA",
 		"standard___3": "FWMF",
@@ -22346,7 +22537,7 @@
 		"misc_Aerial Duels__2": 38.2,
 		"misc___8": "Matches"
 	},
-	"118": {
+	"119": {
 		"standard___1": "Brendan Chardonnet\\Brendan-Chardonnet",
 		"standard___2": "fr FRA",
 		"standard___3": "DF",
@@ -22537,7 +22728,7 @@
 		"misc_Aerial Duels__2": 59.6,
 		"misc___8": "Matches"
 	},
-	"119": {
+	"120": {
 		"standard___1": "Xavier Chavalerin\\Xavier-Chavalerin",
 		"standard___2": "fr FRA",
 		"standard___3": "MF",
@@ -22728,7 +22919,7 @@
 		"misc_Aerial Duels__2": 45.5,
 		"misc___8": "Matches"
 	},
-	"120": {
+	"121": {
 		"standard___1": "Aurélien Chedjou\\Aurelien-Chedjou",
 		"standard___2": "cm CMR",
 		"standard___3": "DF",
@@ -22919,7 +23110,7 @@
 		"misc_Aerial Duels__2": 66.2,
 		"misc___8": "Matches"
 	},
-	"121": {
+	"122": {
 		"standard___1": "Rayan Cherki\\Rayan-Cherki",
 		"standard___2": "fr FRA",
 		"standard___3": "MFFW",
@@ -23110,7 +23301,7 @@
 		"misc_Aerial Duels__2": 0,
 		"misc___8": "Matches"
 	},
-	"122": {
+	"123": {
 		"standard___1": "Joris Chotard\\Joris-Chotard",
 		"standard___2": "fr FRA",
 		"standard___3": "MF",
@@ -23301,7 +23492,7 @@
 		"misc_Aerial Duels__2": 54.3,
 		"misc___8": "Matches"
 	},
-	"123": {
+	"124": {
 		"standard___1": "Mounir Chouiar\\Mounir-Chouiar",
 		"standard___2": "fr FRA",
 		"standard___3": "MFFW",
@@ -23324,7 +23515,7 @@
 		"standard_Per 90 Minutes__4": 0.24,
 		"standard_Expected": 4.1,
 		"standard_Expected__1": 4.1,
-		"standard_Expected__2": 3.1,
+		"standard_Expected__2": 3,
 		"standard_Per 90 Minutes__5": 0.25,
 		"standard_Per 90 Minutes__6": 0.18,
 		"standard_Per 90 Minutes__7": 0.43,
@@ -23378,8 +23569,8 @@
 		"passing_Long__1": 170,
 		"passing_Long__2": 53.5,
 		"passing___8": 0,
-		"passing___9": 3.1,
-		"passing___10": -3.1,
+		"passing___9": 3,
+		"passing___10": -3,
 		"passing___11": 44,
 		"passing___12": 33,
 		"passing___13": 20,
@@ -23492,7 +23683,7 @@
 		"misc_Aerial Duels__2": 50,
 		"misc___8": "Matches"
 	},
-	"124": {
+	"125": {
 		"standard___1": "Ibrahim Cissé\\Ibrahim-Cisse",
 		"standard___2": "ci CIV",
 		"standard___3": "DFFW",
@@ -23683,7 +23874,7 @@
 		"misc_Aerial Duels__2": 50,
 		"misc___8": "Matches"
 	},
-	"125": {
+	"126": {
 		"standard___1": "Ibrahim Cissé\\Ibrahim-Cisse",
 		"standard___2": "sn SEN",
 		"standard___3": "DF",
@@ -23874,7 +24065,7 @@
 		"misc_Aerial Duels__2": 50,
 		"misc___8": "Matches"
 	},
-	"126": {
+	"127": {
 		"standard___1": "Alexis Claude-Maurice\\Alexis-Claude-Maurice",
 		"standard___2": "fr FRA",
 		"standard___3": "MFFW",
@@ -24065,7 +24256,7 @@
 		"misc_Aerial Duels__2": 52.6,
 		"misc___8": "Matches"
 	},
-	"127": {
+	"128": {
 		"standard___1": "Yannis Clementia\\Yannis-Clementia",
 		"standard___2": "fr FRA",
 		"standard___3": "GK",
@@ -24256,7 +24447,7 @@
 		"misc_Aerial Duels__2": "",
 		"misc___8": "Matches"
 	},
-	"128": {
+	"129": {
 		"standard___1": "Marcus Coco\\Marcus-Coco",
 		"standard___2": "fr FRA",
 		"standard___3": "FW",
@@ -24447,7 +24638,7 @@
 		"misc_Aerial Duels__2": "",
 		"misc___8": "Matches"
 	},
-	"129": {
+	"130": {
 		"standard___1": "Renaud Cohade\\Renaud-Cohade",
 		"standard___2": "fr FRA",
 		"standard___3": "MF",
@@ -24468,8 +24659,8 @@
 		"standard_Per 90 Minutes__2": 0.12,
 		"standard_Per 90 Minutes__3": 0.12,
 		"standard_Per 90 Minutes__4": 0.12,
-		"standard_Expected": 0.5,
-		"standard_Expected__1": 0.5,
+		"standard_Expected": 0.4,
+		"standard_Expected__1": 0.4,
 		"standard_Expected__2": 0.5,
 		"standard_Per 90 Minutes__5": 0.05,
 		"standard_Per 90 Minutes__6": 0.06,
@@ -24496,11 +24687,11 @@
 		"shooting_Standard__8": 0.47,
 		"shooting_Standard__9": 0.13,
 		"shooting_Standard__10": 0.25,
-		"shooting_Expected": 0.5,
-		"shooting_Expected__1": 0.5,
+		"shooting_Expected": 0.4,
+		"shooting_Expected__1": 0.4,
 		"shooting_Expected__2": 0.06,
-		"shooting_Expected__3": "+0.5",
-		"shooting_Expected__4": "+0.5",
+		"shooting_Expected__3": "+0.6",
+		"shooting_Expected__4": "+0.6",
 		"shooting___8": "Matches",
 		"passing___1": "Renaud Cohade\\Renaud-Cohade",
 		"passing___2": "fr FRA",
@@ -24638,7 +24829,7 @@
 		"misc_Aerial Duels__2": 70.8,
 		"misc___8": "Matches"
 	},
-	"130": {
+	"131": {
 		"standard___1": "Racine Coly\\Racine-Coly",
 		"standard___2": "sn SEN",
 		"standard___3": "DF",
@@ -24829,7 +25020,7 @@
 		"misc_Aerial Duels__2": 59.1,
 		"misc___8": "Matches"
 	},
-	"131": {
+	"132": {
 		"standard___1": "Daniel Congré\\Daniel-Congre",
 		"standard___2": "fr FRA",
 		"standard___3": "DF",
@@ -25020,7 +25211,7 @@
 		"misc_Aerial Duels__2": 55.4,
 		"misc___8": "Matches"
 	},
-	"132": {
+	"133": {
 		"standard___1": "Benjamin Corgnet\\Benjamin-Corgnet",
 		"standard___2": "fr FRA",
 		"standard___3": "MF",
@@ -25211,7 +25402,7 @@
 		"misc_Aerial Duels__2": 45.5,
 		"misc___8": "Matches"
 	},
-	"133": {
+	"134": {
 		"standard___1": "Maxwel Cornet\\Maxwel-Cornet",
 		"standard___2": "ci CIV",
 		"standard___3": "FWDF",
@@ -25402,7 +25593,7 @@
 		"misc_Aerial Duels__2": 45,
 		"misc___8": "Matches"
 	},
-	"134": {
+	"135": {
 		"standard___1": "Quentin Cornette\\Quentin-Cornette",
 		"standard___2": "fr FRA",
 		"standard___3": "FWMF",
@@ -25593,7 +25784,7 @@
 		"misc_Aerial Duels__2": 60,
 		"misc___8": "Matches"
 	},
-	"135": {
+	"136": {
 		"standard___1": "Nuno da Costa\\Nuno-da-Costa",
 		"standard___2": "cv CPV",
 		"standard___3": "FWMF",
@@ -25784,7 +25975,7 @@
 		"misc_Aerial Duels__2": 59.4,
 		"misc___8": "Matches"
 	},
-	"136": {
+	"137": {
 		"standard___1": "Benoît Costil\\Benoit-Costil",
 		"standard___2": "fr FRA",
 		"standard___3": "GK",
@@ -25975,7 +26166,7 @@
 		"misc_Aerial Duels__2": "",
 		"misc___8": "Matches"
 	},
-	"137": {
+	"138": {
 		"standard___1": "Kalifa Coulibaly\\Kalifa-Coulibaly",
 		"standard___2": "ml MLI",
 		"standard___3": "FW",
@@ -25996,8 +26187,8 @@
 		"standard_Per 90 Minutes__2": 0.22,
 		"standard_Per 90 Minutes__3": 0.22,
 		"standard_Per 90 Minutes__4": 0.22,
-		"standard_Expected": 5,
-		"standard_Expected__1": 5,
+		"standard_Expected": 4.9,
+		"standard_Expected__1": 4.9,
 		"standard_Expected__2": 0.9,
 		"standard_Per 90 Minutes__5": 0.28,
 		"standard_Per 90 Minutes__6": 0.05,
@@ -26024,11 +26215,11 @@
 		"shooting_Standard__8": 1.06,
 		"shooting_Standard__9": 0.09,
 		"shooting_Standard__10": 0.21,
-		"shooting_Expected": 5,
-		"shooting_Expected__1": 5,
+		"shooting_Expected": 4.9,
+		"shooting_Expected__1": 4.9,
 		"shooting_Expected__2": 0.11,
-		"shooting_Expected__3": -1,
-		"shooting_Expected__4": -1,
+		"shooting_Expected__3": -0.9,
+		"shooting_Expected__4": -0.9,
 		"shooting___8": "Matches",
 		"passing___1": "Kalifa Coulibaly\\Kalifa-Coulibaly",
 		"passing___2": "ml MLI",
@@ -26166,7 +26357,7 @@
 		"misc_Aerial Duels__2": 49.7,
 		"misc___8": "Matches"
 	},
-	"138": {
+	"139": {
 		"standard___1": "Senou Coulibaly\\Senou-Coulibaly",
 		"standard___2": "ml MLI",
 		"standard___3": "DF",
@@ -26357,7 +26548,7 @@
 		"misc_Aerial Duels__2": 50,
 		"misc___8": "Matches"
 	},
-	"139": {
+	"140": {
 		"standard___1": "Yoann Court\\Yoann-Court",
 		"standard___2": "fr FRA",
 		"standard___3": "FWMF",
@@ -26548,7 +26739,7 @@
 		"misc_Aerial Duels__2": 36.7,
 		"misc___8": "Matches"
 	},
-	"140": {
+	"141": {
 		"standard___1": "Nicolas Cozza\\Nicolas-Cozza",
 		"standard___2": "fr FRA",
 		"standard___3": "DF",
@@ -26739,7 +26930,7 @@
 		"misc_Aerial Duels__2": 60.9,
 		"misc___8": "Matches"
 	},
-	"141": {
+	"142": {
 		"standard___1": "Wylan Cyprien\\Wylan-Cyprien",
 		"standard___2": "fr FRA",
 		"standard___3": "MF",
@@ -26930,7 +27121,7 @@
 		"misc_Aerial Duels__2": 55,
 		"misc___8": "Matches"
 	},
-	"142": {
+	"143": {
 		"standard___1": "Lucas Da Cunha\\Lucas-Da-Cunha",
 		"standard___2": "fr FRA",
 		"standard___3": "MF",
@@ -27121,7 +27312,7 @@
 		"misc_Aerial Duels__2": 16.7,
 		"misc___8": "Matches"
 	},
-	"143": {
+	"144": {
 		"standard___1": "Damien Da Silva\\Damien-Da-Silva",
 		"standard___2": "fr FRA",
 		"standard___3": "DF",
@@ -27312,7 +27503,7 @@
 		"misc_Aerial Duels__2": 74.6,
 		"misc___8": "Matches"
 	},
-	"144": {
+	"145": {
 		"standard___1": "Colin Dagba\\Colin-Dagba",
 		"standard___2": "fr FRA",
 		"standard___3": "DF",
@@ -27503,7 +27694,7 @@
 		"misc_Aerial Duels__2": 16.7,
 		"misc___8": "Matches"
 	},
-	"145": {
+	"146": {
 		"standard___1": "Dante\\Dante",
 		"standard___2": "br BRA",
 		"standard___3": "DF",
@@ -27694,7 +27885,7 @@
 		"misc_Aerial Duels__2": 71.6,
 		"misc___8": "Matches"
 	},
-	"146": {
+	"147": {
 		"standard___1": "Lucas Deaux\\Lucas-Deaux",
 		"standard___2": "fr FRA",
 		"standard___3": "MF",
@@ -27885,7 +28076,7 @@
 		"misc_Aerial Duels__2": 64.5,
 		"misc___8": "Matches"
 	},
-	"147": {
+	"148": {
 		"standard___1": "Mathieu Debuchy\\Mathieu-Debuchy",
 		"standard___2": "fr FRA",
 		"standard___3": "DF",
@@ -28076,7 +28267,7 @@
 		"misc_Aerial Duels__2": 72.1,
 		"misc___8": "Matches"
 	},
-	"148": {
+	"149": {
 		"standard___1": "Romain Del Castillo\\Romain-Del-Castillo",
 		"standard___2": "fr FRA",
 		"standard___3": "FWMF",
@@ -28267,7 +28458,7 @@
 		"misc_Aerial Duels__2": 40,
 		"misc___8": "Matches"
 	},
-	"149": {
+	"150": {
 		"standard___1": "Thomas Delaine\\Thomas-Delaine",
 		"standard___2": "fr FRA",
 		"standard___3": "DF",
@@ -28292,7 +28483,7 @@
 		"standard_Expected__1": 0.3,
 		"standard_Expected__2": 0.5,
 		"standard_Per 90 Minutes__5": 0.02,
-		"standard_Per 90 Minutes__6": 0.04,
+		"standard_Per 90 Minutes__6": 0.03,
 		"standard_Per 90 Minutes__7": 0.06,
 		"standard_Per 90 Minutes__8": 0.02,
 		"standard_Per 90 Minutes__9": 0.06,
@@ -28318,7 +28509,7 @@
 		"shooting_Standard__10": 0,
 		"shooting_Expected": 0.3,
 		"shooting_Expected__1": 0.3,
-		"shooting_Expected__2": 0.05,
+		"shooting_Expected__2": 0.04,
 		"shooting_Expected__3": -0.3,
 		"shooting_Expected__4": -0.3,
 		"shooting___8": "Matches",
@@ -28458,7 +28649,7 @@
 		"misc_Aerial Duels__2": 15.8,
 		"misc___8": "Matches"
 	},
-	"150": {
+	"151": {
 		"standard___1": "Paul Delecroix\\Paul-Delecroix",
 		"standard___2": "fr FRA",
 		"standard___3": "GK",
@@ -28649,7 +28840,7 @@
 		"misc_Aerial Duels__2": "",
 		"misc___8": "Matches"
 	},
-	"151": {
+	"152": {
 		"standard___1": "Andy Delort\\Andy-Delort",
 		"standard___2": "dz ALG",
 		"standard___3": "FW",
@@ -28840,7 +29031,7 @@
 		"misc_Aerial Duels__2": 45.4,
 		"misc___8": "Matches"
 	},
-	"152": {
+	"153": {
 		"standard___1": "Moussa Dembélé\\Moussa-Dembele",
 		"standard___2": "fr FRA",
 		"standard___3": "FW",
@@ -29031,7 +29222,7 @@
 		"misc_Aerial Duels__2": 42.3,
 		"misc___8": "Matches"
 	},
-	"153": {
+	"154": {
 		"standard___1": "Jason Denayer\\Jason-Denayer",
 		"standard___2": "be BEL",
 		"standard___3": "DF",
@@ -29222,7 +29413,7 @@
 		"misc_Aerial Duels__2": 59,
 		"misc___8": "Matches"
 	},
-	"154": {
+	"155": {
 		"standard___1": "Kevin Denkey\\Kevin-Denkey",
 		"standard___2": "tg TOG",
 		"standard___3": "FW",
@@ -29413,7 +29604,7 @@
 		"misc_Aerial Duels__2": 25.5,
 		"misc___8": "Matches"
 	},
-	"155": {
+	"156": {
 		"standard___1": "Memphis Depay\\Memphis-Depay",
 		"standard___2": "nl NED",
 		"standard___3": "FWMF",
@@ -29604,7 +29795,7 @@
 		"misc_Aerial Duels__2": 15.4,
 		"misc___8": "Matches"
 	},
-	"156": {
+	"157": {
 		"standard___1": "Ángel Di María\\Angel-Di-Maria",
 		"standard___2": "ar ARG",
 		"standard___3": "FWMF",
@@ -29795,7 +29986,7 @@
 		"misc_Aerial Duels__2": 20,
 		"misc___8": "Matches"
 	},
-	"157": {
+	"158": {
 		"standard___1": "Boulaye Dia\\Boulaye-Dia",
 		"standard___2": "fr FRA",
 		"standard___3": "FW",
@@ -29986,7 +30177,7 @@
 		"misc_Aerial Duels__2": 25.2,
 		"misc___8": "Matches"
 	},
-	"158": {
+	"159": {
 		"standard___1": "Fousseni Diabaté\\Fousseni-Diabate",
 		"standard___2": "ml MLI",
 		"standard___3": "FWMF",
@@ -30177,7 +30368,7 @@
 		"misc_Aerial Duels__2": 39.1,
 		"misc___8": "Matches"
 	},
-	"159": {
+	"160": {
 		"standard___1": "Bafodé Diakité\\Bafode-Diakite",
 		"standard___2": "fr FRA",
 		"standard___3": "DF",
@@ -30368,7 +30559,7 @@
 		"misc_Aerial Duels__2": 59.5,
 		"misc___8": "Matches"
 	},
-	"160": {
+	"161": {
 		"standard___1": "Abdou Diallo\\Abdou-Diallo",
 		"standard___2": "fr FRA",
 		"standard___3": "DF",
@@ -30559,7 +30750,7 @@
 		"misc_Aerial Duels__2": 60.7,
 		"misc___8": "Matches"
 	},
-	"161": {
+	"162": {
 		"standard___1": "Habib Diallo\\Habib-Diallo",
 		"standard___2": "sn SEN",
 		"standard___3": "FW",
@@ -30580,9 +30771,9 @@
 		"standard_Per 90 Minutes__2": 0.61,
 		"standard_Per 90 Minutes__3": 0.45,
 		"standard_Per 90 Minutes__4": 0.57,
-		"standard_Expected": 10.3,
+		"standard_Expected": 10.4,
 		"standard_Expected__1": 8.1,
-		"standard_Expected__2": 2.7,
+		"standard_Expected__2": 2.8,
 		"standard_Per 90 Minutes__5": 0.42,
 		"standard_Per 90 Minutes__6": 0.11,
 		"standard_Per 90 Minutes__7": 0.54,
@@ -30608,10 +30799,10 @@
 		"shooting_Standard__8": 1.07,
 		"shooting_Standard__9": 0.15,
 		"shooting_Standard__10": 0.42,
-		"shooting_Expected": 10.3,
+		"shooting_Expected": 10.4,
 		"shooting_Expected__1": 8.1,
 		"shooting_Expected__2": 0.11,
-		"shooting_Expected__3": "+1.7",
+		"shooting_Expected__3": "+1.6",
 		"shooting_Expected__4": "+2.9",
 		"shooting___8": "Matches",
 		"passing___1": "Habib Diallo\\Habib-Diallo",
@@ -30636,8 +30827,8 @@
 		"passing_Long__1": 63,
 		"passing_Long__2": 65.1,
 		"passing___8": 3,
-		"passing___9": 2.7,
-		"passing___10": "+0.3",
+		"passing___9": 2.8,
+		"passing___10": "+0.2",
 		"passing___11": 26,
 		"passing___12": 16,
 		"passing___13": 5,
@@ -30750,7 +30941,7 @@
 		"misc_Aerial Duels__2": 38.1,
 		"misc___8": "Matches"
 	},
-	"162": {
+	"163": {
 		"standard___1": "Ibrahima Diallo\\Ibrahima-Diallo",
 		"standard___2": "fr FRA",
 		"standard___3": "MF",
@@ -30941,7 +31132,7 @@
 		"misc_Aerial Duels__2": 56.7,
 		"misc___8": "Matches"
 	},
-	"163": {
+	"164": {
 		"standard___1": "Moussa Diarra\\Moussa-Diarra",
 		"standard___2": "fr FRA",
 		"standard___3": "DF",
@@ -31132,7 +31323,7 @@
 		"misc_Aerial Duels__2": 50,
 		"misc___8": "Matches"
 	},
-	"164": {
+	"165": {
 		"standard___1": "Raphael Dias Belloli\\Raphael-Dias-Belloli",
 		"standard___2": "br BRA",
 		"standard___3": "MFFW",
@@ -31323,7 +31514,7 @@
 		"misc_Aerial Duels__2": 45.5,
 		"misc___8": "Matches"
 	},
-	"165": {
+	"166": {
 		"standard___1": "Lucas Dias\\Lucas-Dias",
 		"standard___2": "fr FRA",
 		"standard___3": "GK",
@@ -31514,7 +31705,7 @@
 		"misc_Aerial Duels__2": "",
 		"misc___8": "Matches"
 	},
-	"166": {
+	"167": {
 		"standard___1": "Bakaye Dibassy\\Bakaye-Dibassy",
 		"standard___2": "ml MLI",
 		"standard___3": "DF",
@@ -31705,7 +31896,7 @@
 		"misc_Aerial Duels__2": 40,
 		"misc___8": "Matches"
 	},
-	"167": {
+	"168": {
 		"standard___1": "Tristan Dingomé\\Tristan-Dingome",
 		"standard___2": "cm CMR",
 		"standard___3": "MF",
@@ -31896,7 +32087,7 @@
 		"misc_Aerial Duels__2": 10,
 		"misc___8": "Matches"
 	},
-	"168": {
+	"169": {
 		"standard___1": "Lois Diony\\Lois-Diony",
 		"standard___2": "fr FRA",
 		"standard___3": "FW",
@@ -32087,7 +32278,7 @@
 		"misc_Aerial Duels__2": 19.5,
 		"misc___8": "Matches"
 	},
-	"169": {
+	"170": {
 		"standard___1": "Assane Dioussé\\Assane-Diousse",
 		"standard___2": "sn SEN",
 		"standard___3": "MF",
@@ -32278,7 +32469,7 @@
 		"misc_Aerial Duels__2": 50,
 		"misc___8": "Matches"
 	},
-	"170": {
+	"171": {
 		"standard___1": "Axel Disasi\\Axel-Disasi",
 		"standard___2": "fr FRA",
 		"standard___3": "DF",
@@ -32469,7 +32660,7 @@
 		"misc_Aerial Duels__2": 61.9,
 		"misc___8": "Matches"
 	},
-	"171": {
+	"172": {
 		"standard___1": "Tiago Djaló\\Tiago-Djalo",
 		"standard___2": "pt POR",
 		"standard___3": "DF",
@@ -32660,7 +32851,7 @@
 		"misc_Aerial Duels__2": 55.6,
 		"misc___8": "Matches"
 	},
-	"172": {
+	"173": {
 		"standard___1": "Alexander Djiku\\Alexander-Djiku",
 		"standard___2": "fr FRA",
 		"standard___3": "DFMF",
@@ -32851,7 +33042,7 @@
 		"misc_Aerial Duels__2": 78.8,
 		"misc___8": "Matches"
 	},
-	"173": {
+	"174": {
 		"standard___1": "Kasper Dolberg\\Kasper-Dolberg",
 		"standard___2": "dk DEN",
 		"standard___3": "FW",
@@ -33042,7 +33233,7 @@
 		"misc_Aerial Duels__2": 45.9,
 		"misc___8": "Matches"
 	},
-	"174": {
+	"175": {
 		"standard___1": "Keagan Dolly\\Keagan-Dolly",
 		"standard___2": "za RSA",
 		"standard___3": "MF",
@@ -33233,7 +33424,7 @@
 		"misc_Aerial Duels__2": 66.7,
 		"misc___8": "Matches"
 	},
-	"175": {
+	"176": {
 		"standard___1": "Anastasios Donis\\Anastasios-Donis",
 		"standard___2": "gr GRE",
 		"standard___3": "FWMF",
@@ -33424,7 +33615,7 @@
 		"misc_Aerial Duels__2": 25,
 		"misc___8": "Matches"
 	},
-	"176": {
+	"177": {
 		"standard___1": "Gabriel Dos Santos\\Gabriel-Dos-Santos",
 		"standard___2": "br BRA",
 		"standard___3": "DF",
@@ -33559,7 +33750,7 @@
 		"defense_Blocks__2": 0,
 		"defense_Blocks__3": 26,
 		"defense___8": 26,
-		"defense___9": 138,
+		"defense___9": 139,
 		"defense___10": 0,
 		"defense___11": "Matches",
 		"possession___1": "Gabriel Dos Santos\\Gabriel-Dos-Santos",
@@ -33569,13 +33760,13 @@
 		"possession___5": 21,
 		"possession___6": 1997,
 		"possession___7": 23.2,
-		"possession_Touches": 1725,
+		"possession_Touches": 1726,
 		"possession_Touches__1": 138,
-		"possession_Touches__2": 741,
+		"possession_Touches__2": 742,
 		"possession_Touches__3": 1038,
 		"possession_Touches__4": 55,
 		"possession_Touches__5": 26,
-		"possession_Touches__6": 1674,
+		"possession_Touches__6": 1675,
 		"possession_Dribbles": 5,
 		"possession_Dribbles__1": 7,
 		"possession_Dribbles__2": 71.4,
@@ -33615,7 +33806,7 @@
 		"misc_Aerial Duels__2": 71,
 		"misc___8": "Matches"
 	},
-	"177": {
+	"178": {
 		"standard___1": "Mathieu Dossevi\\Mathieu-Dossevi",
 		"standard___2": "tg TOG",
 		"standard___3": "MFFW",
@@ -33640,7 +33831,7 @@
 		"standard_Expected__1": 1.6,
 		"standard_Expected__2": 4.8,
 		"standard_Per 90 Minutes__5": 0.08,
-		"standard_Per 90 Minutes__6": 0.24,
+		"standard_Per 90 Minutes__6": 0.25,
 		"standard_Per 90 Minutes__7": 0.33,
 		"standard_Per 90 Minutes__8": 0.08,
 		"standard_Per 90 Minutes__9": 0.33,
@@ -33806,7 +33997,7 @@
 		"misc_Aerial Duels__2": 23.3,
 		"misc___8": "Matches"
 	},
-	"178": {
+	"179": {
 		"standard___1": "Moussa Doumbia\\Moussa-Doumbia",
 		"standard___2": "ml MLI",
 		"standard___3": "FWMF",
@@ -33997,7 +34188,7 @@
 		"misc_Aerial Duels__2": 20,
 		"misc___8": "Matches"
 	},
-	"179": {
+	"180": {
 		"standard___1": "Souleyman Doumbia\\Souleyman-Doumbia",
 		"standard___2": "ci CIV",
 		"standard___3": "DF",
@@ -34188,7 +34379,7 @@
 		"misc_Aerial Duels__2": 40,
 		"misc___8": "Matches"
 	},
-	"180": {
+	"181": {
 		"standard___1": "Souleyman Doumbia\\Souleyman-Doumbia",
 		"standard___2": "ci CIV",
 		"standard___3": "DF",
@@ -34379,7 +34570,7 @@
 		"misc_Aerial Duels__2": 0,
 		"misc___8": "Matches"
 	},
-	"181": {
+	"182": {
 		"standard___1": "Julian Draxler\\Julian-Draxler",
 		"standard___2": "de GER",
 		"standard___3": "MF",
@@ -34570,7 +34761,7 @@
 		"misc_Aerial Duels__2": 75,
 		"misc___8": "Matches"
 	},
-	"182": {
+	"183": {
 		"standard___1": "Leo Dubois\\Leo-Dubois",
 		"standard___2": "fr FRA",
 		"standard___3": "DF",
@@ -34761,7 +34952,7 @@
 		"misc_Aerial Duels__2": 70.4,
 		"misc___8": "Matches"
 	},
-	"183": {
+	"184": {
 		"standard___1": "Haris Duljević\\Haris-Duljevic",
 		"standard___2": "ba BIH",
 		"standard___3": "FWMF",
@@ -34952,7 +35143,7 @@
 		"misc_Aerial Duels__2": 25,
 		"misc___8": "Matches"
 	},
-	"184": {
+	"185": {
 		"standard___1": "Riza Durmisi\\Riza-Durmisi",
 		"standard___2": "dk DEN",
 		"standard___3": "DF",
@@ -35143,7 +35334,7 @@
 		"misc_Aerial Duels__2": 0,
 		"misc___8": "Matches"
 	},
-	"185": {
+	"186": {
 		"standard___1": "Jean-Kevin Duverne\\Jean-Kevin-Duverne",
 		"standard___2": "fr FRA",
 		"standard___3": "DF",
@@ -35334,7 +35525,7 @@
 		"misc_Aerial Duels__2": 46.9,
 		"misc___8": "Matches"
 	},
-	"186": {
+	"187": {
 		"standard___1": "Bruno Ecuele Manga\\Bruno-Ecuele-Manga",
 		"standard___2": "ga GAB",
 		"standard___3": "DF",
@@ -35525,7 +35716,7 @@
 		"misc_Aerial Duels__2": 72.6,
 		"misc___8": "Matches"
 	},
-	"187": {
+	"188": {
 		"standard___1": "Renaud Emond\\Renaud-Emond",
 		"standard___2": "be BEL",
 		"standard___3": "FWMF",
@@ -35716,7 +35907,7 @@
 		"misc_Aerial Duels__2": 41.2,
 		"misc___8": "Matches"
 	},
-	"188": {
+	"189": {
 		"standard___1": "Fábio\\Fabio",
 		"standard___2": "br BRA",
 		"standard___3": "DF",
@@ -35907,7 +36098,7 @@
 		"misc_Aerial Duels__2": 55.9,
 		"misc___8": "Matches"
 	},
-	"189": {
+	"190": {
 		"standard___1": "Cesc Fàbregas\\Cesc-Fabregas",
 		"standard___2": "es ESP",
 		"standard___3": "MF",
@@ -36098,7 +36289,7 @@
 		"misc_Aerial Duels__2": 54.5,
 		"misc___8": "Matches"
 	},
-	"190": {
+	"191": {
 		"standard___1": "Julien Faussurier\\Julien-Faussurier",
 		"standard___2": "fr FRA",
 		"standard___3": "DF",
@@ -36289,7 +36480,7 @@
 		"misc_Aerial Duels__2": 40.5,
 		"misc___8": "Matches"
 	},
-	"191": {
+	"192": {
 		"standard___1": "Zinedine Ferhat\\Zinedine-Ferhat",
 		"standard___2": "dz ALG",
 		"standard___3": "FWMF",
@@ -36310,13 +36501,13 @@
 		"standard_Per 90 Minutes__2": 0.28,
 		"standard_Per 90 Minutes__3": 0.12,
 		"standard_Per 90 Minutes__4": 0.28,
-		"standard_Expected": 3.3,
-		"standard_Expected__1": 3.3,
+		"standard_Expected": 3.4,
+		"standard_Expected__1": 3.4,
 		"standard_Expected__2": 4.8,
-		"standard_Per 90 Minutes__5": 0.13,
+		"standard_Per 90 Minutes__5": 0.14,
 		"standard_Per 90 Minutes__6": 0.19,
 		"standard_Per 90 Minutes__7": 0.33,
-		"standard_Per 90 Minutes__8": 0.13,
+		"standard_Per 90 Minutes__8": 0.14,
 		"standard_Per 90 Minutes__9": 0.33,
 		"standard___7": "Matches",
 		"code": "005c0807",
@@ -36338,11 +36529,11 @@
 		"shooting_Standard__8": 0.56,
 		"shooting_Standard__9": 0.07,
 		"shooting_Standard__10": 0.21,
-		"shooting_Expected": 3.3,
-		"shooting_Expected__1": 3.3,
+		"shooting_Expected": 3.4,
+		"shooting_Expected__1": 3.4,
 		"shooting_Expected__2": 0.07,
-		"shooting_Expected__3": -0.3,
-		"shooting_Expected__4": -0.3,
+		"shooting_Expected__3": -0.4,
+		"shooting_Expected__4": -0.4,
 		"shooting___8": "Matches",
 		"passing___1": "Zinedine Ferhat\\Zinedine-Ferhat",
 		"passing___2": "dz ALG",
@@ -36480,7 +36671,7 @@
 		"misc_Aerial Duels__2": 50.8,
 		"misc___8": "Matches"
 	},
-	"192": {
+	"193": {
 		"standard___1": "Juan Ferney Otero\\Juan-Ferney-Otero",
 		"standard___2": "co COL",
 		"standard___3": "FWMF",
@@ -36671,7 +36862,7 @@
 		"misc_Aerial Duels__2": 44,
 		"misc___8": "Matches"
 	},
-	"193": {
+	"194": {
 		"standard___1": "Jordan Ferri\\Jordan-Ferri",
 		"standard___2": "fr FRA",
 		"standard___3": "MF",
@@ -36862,7 +37053,7 @@
 		"misc_Aerial Duels__2": 52,
 		"misc___8": "Matches"
 	},
-	"194": {
+	"195": {
 		"standard___1": "Mamadou Fofana\\Mamadou-Fofana",
 		"standard___2": "ml MLI",
 		"standard___3": "DFMF",
@@ -37053,7 +37244,7 @@
 		"misc_Aerial Duels__2": 49,
 		"misc___8": "Matches"
 	},
-	"195": {
+	"196": {
 		"standard___1": "Wesley Fofana\\Wesley-Fofana",
 		"standard___2": "fr FRA",
 		"standard___3": "DF",
@@ -37244,7 +37435,7 @@
 		"misc_Aerial Duels__2": 76.9,
 		"misc___8": "Matches"
 	},
-	"196": {
+	"197": {
 		"standard___1": "Youssouf Fofana\\Youssouf-Fofana",
 		"standard___2": "fr FRA",
 		"standard___3": "MF",
@@ -37435,7 +37626,7 @@
 		"misc_Aerial Duels__2": 53.3,
 		"misc___8": "Matches"
 	},
-	"197": {
+	"198": {
 		"standard___1": "Youssouf Fofana\\Youssouf-Fofana",
 		"standard___2": "fr FRA",
 		"standard___3": "MF",
@@ -37626,7 +37817,7 @@
 		"misc_Aerial Duels__2": 66.7,
 		"misc___8": "Matches"
 	},
-	"198": {
+	"199": {
 		"standard___1": "Thomas Foket\\Thomas-Foket",
 		"standard___2": "be BEL",
 		"standard___3": "DF",
@@ -37817,7 +38008,7 @@
 		"misc_Aerial Duels__2": 40.7,
 		"misc___8": "Matches"
 	},
-	"199": {
+	"200": {
 		"standard___1": "Lamine Fomba\\Lamine-Fomba",
 		"standard___2": "fr FRA",
 		"standard___3": "MF",
@@ -38008,7 +38199,7 @@
 		"misc_Aerial Duels__2": 46.7,
 		"misc___8": "Matches"
 	},
-	"200": {
+	"201": {
 		"standard___1": "José Fonte\\Jose-Fonte",
 		"standard___2": "pt POR",
 		"standard___3": "DF",
@@ -38029,8 +38220,8 @@
 		"standard_Per 90 Minutes__2": 0.08,
 		"standard_Per 90 Minutes__3": 0.04,
 		"standard_Per 90 Minutes__4": 0.08,
-		"standard_Expected": 2,
-		"standard_Expected__1": 2,
+		"standard_Expected": 2.1,
+		"standard_Expected__1": 2.1,
 		"standard_Expected__2": 0.6,
 		"standard_Per 90 Minutes__5": 0.08,
 		"standard_Per 90 Minutes__6": 0.02,
@@ -38057,11 +38248,11 @@
 		"shooting_Standard__8": 0.24,
 		"shooting_Standard__9": 0.06,
 		"shooting_Standard__10": 0.17,
-		"shooting_Expected": 2,
-		"shooting_Expected__1": 2,
+		"shooting_Expected": 2.1,
+		"shooting_Expected__1": 2.1,
 		"shooting_Expected__2": 0.11,
-		"shooting_Expected__3": -1,
-		"shooting_Expected__4": -1,
+		"shooting_Expected__3": -1.1,
+		"shooting_Expected__4": -1.1,
 		"shooting___8": "Matches",
 		"passing___1": "José Fonte\\Jose-Fonte",
 		"passing___2": "pt POR",
@@ -38199,7 +38390,7 @@
 		"misc_Aerial Duels__2": 65.7,
 		"misc___8": "Matches"
 	},
-	"201": {
+	"202": {
 		"standard___1": "Lyle Foster\\Lyle-Foster",
 		"standard___2": "za RSA",
 		"standard___3": "FW",
@@ -38390,7 +38581,7 @@
 		"misc_Aerial Duels__2": 33.3,
 		"misc___8": "Matches"
 	},
-	"202": {
+	"203": {
 		"standard___1": "Angelo Fulgini\\Angelo-Fulgini",
 		"standard___2": "fr FRA",
 		"standard___3": "MF",
@@ -38581,7 +38772,7 @@
 		"misc_Aerial Duels__2": 40.9,
 		"misc___8": "Matches"
 	},
-	"203": {
+	"204": {
 		"standard___1": "Ruben Gabrielsen\\Ruben-Gabrielsen",
 		"standard___2": "no NOR",
 		"standard___3": "DF",
@@ -38772,7 +38963,7 @@
 		"misc_Aerial Duels__2": 64.7,
 		"misc___8": "Matches"
 	},
-	"204": {
+	"205": {
 		"standard___1": "Nicolás Gaitán\\Nicolas-Gaitan",
 		"standard___2": "ar ARG",
 		"standard___3": "MFFW",
@@ -38963,7 +39154,7 @@
 		"misc_Aerial Duels__2": 50,
 		"misc___8": "Matches"
 	},
-	"205": {
+	"206": {
 		"standard___1": "Marvin Gakpa\\Marvin-Gakpa",
 		"standard___2": "fr FRA",
 		"standard___3": "MFFW",
@@ -39154,7 +39345,7 @@
 		"misc_Aerial Duels__2": 22.2,
 		"misc___8": "Matches"
 	},
-	"206": {
+	"207": {
 		"standard___1": "Idrissa Gana Gueye\\Idrissa-Gana-Gueye",
 		"standard___2": "sn SEN",
 		"standard___3": "MF",
@@ -39345,7 +39536,7 @@
 		"misc_Aerial Duels__2": 56.7,
 		"misc___8": "Matches"
 	},
-	"207": {
+	"208": {
 		"standard___1": "Ignatius Ganago\\Ignatius-Ganago",
 		"standard___2": "cm CMR",
 		"standard___3": "FWMF",
@@ -39536,7 +39727,7 @@
 		"misc_Aerial Duels__2": 33.3,
 		"misc___8": "Matches"
 	},
-	"208": {
+	"209": {
 		"standard___1": "Yann Gboho\\Yann-Gboho",
 		"standard___2": "fr FRA",
 		"standard___3": "FW",
@@ -39727,7 +39918,7 @@
 		"misc_Aerial Duels__2": 20,
 		"misc___8": "Matches"
 	},
-	"209": {
+	"210": {
 		"standard___1": "Jérémy Gélin\\Jeremy-Gelin",
 		"standard___2": "fr FRA",
 		"standard___3": "DFMF",
@@ -39918,7 +40109,7 @@
 		"misc_Aerial Duels__2": 50,
 		"misc___8": "Matches"
 	},
-	"210": {
+	"211": {
 		"standard___1": "Valère Germain\\Valere-Germain",
 		"standard___2": "fr FRA",
 		"standard___3": "FW",
@@ -40109,7 +40300,7 @@
 		"misc_Aerial Duels__2": 35.7,
 		"misc___8": "Matches"
 	},
-	"211": {
+	"212": {
 		"standard___1": "Saman Ghoddos\\Saman-Ghoddos",
 		"standard___2": "ir IRN",
 		"standard___3": "FW",
@@ -40300,7 +40491,7 @@
 		"misc_Aerial Duels__2": 50,
 		"misc___8": "Matches"
 	},
-	"212": {
+	"213": {
 		"standard___1": "Andrei Girotto\\Andrei-Girotto",
 		"standard___2": "br BRA",
 		"standard___3": "DF",
@@ -40323,7 +40514,7 @@
 		"standard_Per 90 Minutes__4": 0.04,
 		"standard_Expected": 1.3,
 		"standard_Expected__1": 1.3,
-		"standard_Expected__2": 0.5,
+		"standard_Expected__2": 0.4,
 		"standard_Per 90 Minutes__5": 0.05,
 		"standard_Per 90 Minutes__6": 0.02,
 		"standard_Per 90 Minutes__7": 0.07,
@@ -40377,8 +40568,8 @@
 		"passing_Long__1": 353,
 		"passing_Long__2": 79,
 		"passing___8": 0,
-		"passing___9": 0.5,
-		"passing___10": -0.5,
+		"passing___9": 0.4,
+		"passing___10": -0.4,
 		"passing___11": 3,
 		"passing___12": 45,
 		"passing___13": 4,
@@ -40491,7 +40682,7 @@
 		"misc_Aerial Duels__2": 56.1,
 		"misc___8": "Matches"
 	},
-	"213": {
+	"214": {
 		"standard___1": "Kamil Glik\\Kamil-Glik",
 		"standard___2": "pl POL",
 		"standard___3": "DF",
@@ -40682,7 +40873,7 @@
 		"misc_Aerial Duels__2": 62.1,
 		"misc___8": "Matches"
 	},
-	"214": {
+	"215": {
 		"standard___1": "Joris Gnagnon\\Joris-Gnagnon",
 		"standard___2": "fr FRA",
 		"standard___3": "DF",
@@ -40873,7 +41064,7 @@
 		"misc_Aerial Duels__2": 69.7,
 		"misc___8": "Matches"
 	},
-	"215": {
+	"216": {
 		"standard___1": "Eddy Gnahoré\\Eddy-Gnahore",
 		"standard___2": "fr FRA",
 		"standard___3": "MF",
@@ -41064,7 +41255,7 @@
 		"misc_Aerial Duels__2": 52,
 		"misc___8": "Matches"
 	},
-	"216": {
+	"217": {
 		"standard___1": "Mauro Goicoechea\\Mauro-Goicoechea",
 		"standard___2": "uy URU",
 		"standard___3": "GK",
@@ -41255,7 +41446,7 @@
 		"misc_Aerial Duels__2": "",
 		"misc___8": "Matches"
 	},
-	"217": {
+	"218": {
 		"standard___1": "Aleksandr Golovin\\Aleksandr-Golovin",
 		"standard___2": "ru RUS",
 		"standard___3": "MF",
@@ -41446,7 +41637,7 @@
 		"misc_Aerial Duels__2": 50,
 		"misc___8": "Matches"
 	},
-	"218": {
+	"219": {
 		"standard___1": "Alfred Gomis\\Alfred-Gomis",
 		"standard___2": "sn SEN",
 		"standard___3": "GK",
@@ -41637,7 +41828,7 @@
 		"misc_Aerial Duels__2": "",
 		"misc___8": "Matches"
 	},
-	"219": {
+	"220": {
 		"standard___1": "Mathieu Goncalves\\Mathieu-Goncalves",
 		"standard___2": "fr FRA",
 		"standard___3": "DF",
@@ -41828,7 +42019,7 @@
 		"misc_Aerial Duels__2": 50,
 		"misc___8": "Matches"
 	},
-	"220": {
+	"221": {
 		"standard___1": "Álvaro González\\Alvaro-Gonzalez",
 		"standard___2": "es ESP",
 		"standard___3": "DF",
@@ -42019,7 +42210,7 @@
 		"misc_Aerial Duels__2": 64.3,
 		"misc___8": "Matches"
 	},
-	"221": {
+	"222": {
 		"standard___1": "Prince-Désir Gouano\\Prince-Desir-Gouano",
 		"standard___2": "fr FRA",
 		"standard___3": "DF",
@@ -42210,7 +42401,7 @@
 		"misc_Aerial Duels__2": 60,
 		"misc___8": "Matches"
 	},
-	"222": {
+	"223": {
 		"standard___1": "Amine Gouiri\\Amine-Gouiri",
 		"standard___2": "fr FRA",
 		"standard___3": "FW",
@@ -42401,7 +42592,7 @@
 		"misc_Aerial Duels__2": "",
 		"misc___8": "Matches"
 	},
-	"223": {
+	"224": {
 		"standard___1": "Max Gradel\\Max-Gradel",
 		"standard___2": "ci CIV",
 		"standard___3": "MFFW",
@@ -42592,7 +42783,7 @@
 		"misc_Aerial Duels__2": 25.9,
 		"misc___8": "Matches"
 	},
-	"224": {
+	"225": {
 		"standard___1": "Samuel Grandsir\\Samuel-Grandsir",
 		"standard___2": "fr FRA",
 		"standard___3": "FWMF",
@@ -42783,7 +42974,7 @@
 		"misc_Aerial Duels__2": 21.4,
 		"misc___8": "Matches"
 	},
-	"225": {
+	"226": {
 		"standard___1": "Clément Grenier\\Clement-Grenier",
 		"standard___2": "fr FRA",
 		"standard___3": "MF",
@@ -42974,7 +43165,7 @@
 		"misc_Aerial Duels__2": 68.8,
 		"misc___8": "Matches"
 	},
-	"226": {
+	"227": {
 		"standard___1": "Jérémy Grimm\\Jeremy-Grimm",
 		"standard___2": "fr FRA",
 		"standard___3": "FW",
@@ -43165,7 +43356,7 @@
 		"misc_Aerial Duels__2": "",
 		"misc___8": "Matches"
 	},
-	"227": {
+	"228": {
 		"standard___1": "Bruno Guimarães\\Bruno-Guimaraes",
 		"standard___2": "br BRA",
 		"standard___3": "MF",
@@ -43356,7 +43547,7 @@
 		"misc_Aerial Duels__2": 100,
 		"misc___8": "Matches"
 	},
-	"228": {
+	"229": {
 		"standard___1": "Sehrou Guirassy\\Sehrou-Guirassy",
 		"standard___2": "fr FRA",
 		"standard___3": "FW",
@@ -43407,7 +43598,7 @@
 		"shooting_Standard__10": 0.38,
 		"shooting_Expected": 9.1,
 		"shooting_Expected__1": 6.1,
-		"shooting_Expected__2": 0.15,
+		"shooting_Expected__2": 0.14,
 		"shooting_Expected__3": -0.1,
 		"shooting_Expected__4": -0.1,
 		"shooting___8": "Matches",
@@ -43547,7 +43738,7 @@
 		"misc_Aerial Duels__2": 46.2,
 		"misc___8": "Matches"
 	},
-	"229": {
+	"230": {
 		"standard___1": "Rafik Guitane\\Rafik-Guitane",
 		"standard___2": "fr FRA",
 		"standard___3": "MFDF",
@@ -43738,7 +43929,7 @@
 		"misc_Aerial Duels__2": "",
 		"misc___8": "Matches"
 	},
-	"230": {
+	"231": {
 		"standard___1": "Régis Gurtner\\Regis-Gurtner",
 		"standard___2": "fr FRA",
 		"standard___3": "GK",
@@ -43929,7 +44120,7 @@
 		"misc_Aerial Duels__2": 0,
 		"misc___8": "Matches"
 	},
-	"231": {
+	"232": {
 		"standard___1": "Luiz Gustavo\\Luiz-Gustavo",
 		"standard___2": "br BRA",
 		"standard___3": "MF",
@@ -44120,7 +44311,7 @@
 		"misc_Aerial Duels__2": 50,
 		"misc___8": "Matches"
 	},
-	"232": {
+	"233": {
 		"standard___1": "Romain Hamouma\\Romain-Hamouma",
 		"standard___2": "fr FRA",
 		"standard___3": "FWMF",
@@ -44311,7 +44502,7 @@
 		"misc_Aerial Duels__2": 27,
 		"misc___8": "Matches"
 	},
-	"233": {
+	"234": {
 		"standard___1": "Benjamin Henrichs\\Benjamin-Henrichs",
 		"standard___2": "de GER",
 		"standard___3": "DFMF",
@@ -44502,7 +44693,7 @@
 		"misc_Aerial Duels__2": 52.9,
 		"misc___8": "Matches"
 	},
-	"234": {
+	"235": {
 		"standard___1": "Christophe Hérelle\\Christophe-Herelle",
 		"standard___2": "mq MTQ",
 		"standard___3": "DF",
@@ -44693,7 +44884,7 @@
 		"misc_Aerial Duels__2": 53.3,
 		"misc___8": "Matches"
 	},
-	"235": {
+	"236": {
 		"standard___1": "Ander Herrera\\Ander-Herrera",
 		"standard___2": "es ESP",
 		"standard___3": "MFDF",
@@ -44884,7 +45075,7 @@
 		"misc_Aerial Duels__2": 44.4,
 		"misc___8": "Matches"
 	},
-	"236": {
+	"237": {
 		"standard___1": "Vitorino Hilton\\Vitorino-Hilton",
 		"standard___2": "br BRA",
 		"standard___3": "DF",
@@ -45075,7 +45266,7 @@
 		"misc_Aerial Duels__2": 65.2,
 		"misc___8": "Matches"
 	},
-	"237": {
+	"238": {
 		"standard___1": "Josué Homawoo\\Josue-Homawoo",
 		"standard___2": "fr FRA",
 		"standard___3": "DF",
@@ -45266,7 +45457,7 @@
 		"misc_Aerial Duels__2": 100,
 		"misc___8": "Matches"
 	},
-	"238": {
+	"239": {
 		"standard___1": "Franck Honorat\\Franck-Honorat",
 		"standard___2": "fr FRA",
 		"standard___3": "FWDF",
@@ -45457,7 +45648,7 @@
 		"misc_Aerial Duels__2": 36.8,
 		"misc___8": "Matches"
 	},
-	"239": {
+	"240": {
 		"standard___1": "Adrien Hunou\\Adrien-Hunou",
 		"standard___2": "fr FRA",
 		"standard___3": "FWMF",
@@ -45479,7 +45670,7 @@
 		"standard_Per 90 Minutes__3": 0.52,
 		"standard_Per 90 Minutes__4": 0.6,
 		"standard_Expected": 7.7,
-		"standard_Expected__1": 6.9,
+		"standard_Expected__1": 7,
 		"standard_Expected__2": 1.7,
 		"standard_Per 90 Minutes__5": 0.57,
 		"standard_Per 90 Minutes__6": 0.13,
@@ -45507,10 +45698,10 @@
 		"shooting_Standard__9": 0.24,
 		"shooting_Standard__10": 0.5,
 		"shooting_Expected": 7.7,
-		"shooting_Expected__1": 6.9,
+		"shooting_Expected__1": 7,
 		"shooting_Expected__2": 0.25,
 		"shooting_Expected__3": "+0.3",
-		"shooting_Expected__4": "+0.1",
+		"shooting_Expected__4": 0,
 		"shooting___8": "Matches",
 		"passing___1": "Adrien Hunou\\Adrien-Hunou",
 		"passing___2": "fr FRA",
@@ -45648,7 +45839,7 @@
 		"misc_Aerial Duels__2": 32.4,
 		"misc___8": "Matches"
 	},
-	"240": {
+	"241": {
 		"standard___1": "Suk Hyun-jun\\Suk-Hyun-jun",
 		"standard___2": "kr KOR",
 		"standard___3": "FWMF",
@@ -45839,7 +46030,7 @@
 		"misc_Aerial Duels__2": 51.8,
 		"misc___8": "Matches"
 	},
-	"241": {
+	"242": {
 		"standard___1": "Didier Ibrahim Ndong\\Didier-Ibrahim-Ndong",
 		"standard___2": "ga GAB",
 		"standard___3": "MF",
@@ -46030,7 +46221,7 @@
 		"misc_Aerial Duels__2": 34.8,
 		"misc___8": "Matches"
 	},
-	"242": {
+	"243": {
 		"standard___1": "Mauro Icardi\\Mauro-Icardi",
 		"standard___2": "ar ARG",
 		"standard___3": "FW",
@@ -46221,7 +46412,7 @@
 		"misc_Aerial Duels__2": 30.4,
 		"misc___8": "Matches"
 	},
-	"243": {
+	"244": {
 		"standard___1": "Jonathan Ikone\\Jonathan-Ikone",
 		"standard___2": "fr FRA",
 		"standard___3": "MFFW",
@@ -46242,7 +46433,7 @@
 		"standard_Per 90 Minutes__2": 0.39,
 		"standard_Per 90 Minutes__3": 0.09,
 		"standard_Per 90 Minutes__4": 0.35,
-		"standard_Expected": 4.3,
+		"standard_Expected": 4.4,
 		"standard_Expected__1": 3.6,
 		"standard_Expected__2": 4.3,
 		"standard_Per 90 Minutes__5": 0.19,
@@ -46270,10 +46461,10 @@
 		"shooting_Standard__8": 0.61,
 		"shooting_Standard__9": 0.06,
 		"shooting_Standard__10": 0.14,
-		"shooting_Expected": 4.3,
+		"shooting_Expected": 4.4,
 		"shooting_Expected__1": 3.6,
 		"shooting_Expected__2": 0.1,
-		"shooting_Expected__3": -1.3,
+		"shooting_Expected__3": -1.4,
 		"shooting_Expected__4": -1.6,
 		"shooting___8": "Matches",
 		"passing___1": "Jonathan Ikone\\Jonathan-Ikone",
@@ -46412,7 +46603,7 @@
 		"misc_Aerial Duels__2": 20,
 		"misc___8": "Matches"
 	},
-	"244": {
+	"245": {
 		"standard___1": "Yun Il-lok\\Yun-Il-lok",
 		"standard___2": "kr KOR",
 		"standard___3": "MFFW",
@@ -46603,7 +46794,7 @@
 		"misc_Aerial Duels__2": 50,
 		"misc___8": "Matches"
 	},
-	"245": {
+	"246": {
 		"standard___1": "Edmilson Indjai\\Edmilson-Indjai",
 		"standard___2": "gw GNB",
 		"standard___3": "FW",
@@ -46794,7 +46985,7 @@
 		"misc_Aerial Duels__2": 100,
 		"misc___8": "Matches"
 	},
-	"246": {
+	"247": {
 		"standard___1": "Nicolas Isimat-Mirin\\Nicolas-Isimat-Mirin",
 		"standard___2": "fr FRA",
 		"standard___3": "DF",
@@ -46985,7 +47176,7 @@
 		"misc_Aerial Duels__2": 61.8,
 		"misc___8": "Matches"
 	},
-	"247": {
+	"248": {
 		"standard___1": "Christophe Jallet\\Christophe-Jallet",
 		"standard___2": "fr FRA",
 		"standard___3": "DF",
@@ -47176,7 +47367,7 @@
 		"misc_Aerial Duels__2": 44,
 		"misc___8": "Matches"
 	},
-	"248": {
+	"249": {
 		"standard___1": "Corentin Jean\\Corentin-Jean",
 		"standard___2": "fr FRA",
 		"standard___3": "DF",
@@ -47367,7 +47558,7 @@
 		"misc_Aerial Duels__2": "",
 		"misc___8": "Matches"
 	},
-	"249": {
+	"250": {
 		"standard___1": "Benjamin Jeannot\\Benjamin-Jeannot",
 		"standard___2": "fr FRA",
 		"standard___3": "MF",
@@ -47558,7 +47749,7 @@
 		"misc_Aerial Duels__2": 0,
 		"misc___8": "Matches"
 	},
-	"250": {
+	"251": {
 		"standard___1": "Jemerson\\Jemerson",
 		"standard___2": "br BRA",
 		"standard___3": "DFMF",
@@ -47749,7 +47940,7 @@
 		"misc_Aerial Duels__2": 52.4,
 		"misc___8": "Matches"
 	},
-	"251": {
+	"252": {
 		"standard___1": "Jesé\\Jese",
 		"standard___2": "es ESP",
 		"standard___3": "FW",
@@ -47940,7 +48131,7 @@
 		"misc_Aerial Duels__2": "",
 		"misc___8": "Matches"
 	},
-	"252": {
+	"253": {
 		"standard___1": "Vukašin Jovanović\\Vukasin-Jovanovic",
 		"standard___2": "rs SRB",
 		"standard___3": "DF",
@@ -48131,7 +48322,7 @@
 		"misc_Aerial Duels__2": 56.3,
 		"misc___8": "Matches"
 	},
-	"253": {
+	"254": {
 		"standard___1": "Stevan Jovetić\\Stevan-Jovetic",
 		"standard___2": "me MNE",
 		"standard___3": "FWMF",
@@ -48322,7 +48513,7 @@
 		"misc_Aerial Duels__2": 41.2,
 		"misc___8": "Matches"
 	},
-	"254": {
+	"255": {
 		"standard___1": "Abdoul Kader Bamba\\Abdoul-Kader-Bamba",
 		"standard___2": "fr FRA",
 		"standard___3": "FWMF",
@@ -48513,7 +48704,7 @@
 		"misc_Aerial Duels__2": 33.3,
 		"misc___8": "Matches"
 	},
-	"255": {
+	"256": {
 		"standard___1": "Gaël Kakuta\\Gael-Kakuta",
 		"standard___2": "cd COD",
 		"standard___3": "MFFW",
@@ -48704,7 +48895,7 @@
 		"misc_Aerial Duels__2": 28,
 		"misc___8": "Matches"
 	},
-	"256": {
+	"257": {
 		"standard___1": "Lovre Kalinić\\Lovre-Kalinic",
 		"standard___2": "hr CRO",
 		"standard___3": "GK",
@@ -48895,7 +49086,7 @@
 		"misc_Aerial Duels__2": "",
 		"misc___8": "Matches"
 	},
-	"257": {
+	"258": {
 		"standard___1": "Samuel Kalu\\Samuel-Kalu",
 		"standard___2": "ng NGA",
 		"standard___3": "FWDF",
@@ -49086,7 +49277,7 @@
 		"misc_Aerial Duels__2": 33.3,
 		"misc___8": "Matches"
 	},
-	"258": {
+	"259": {
 		"standard___1": "François Kamano\\Francois-Kamano",
 		"standard___2": "gn GUI",
 		"standard___3": "DFMF",
@@ -49277,7 +49468,7 @@
 		"misc_Aerial Duels__2": 21.1,
 		"misc___8": "Matches"
 	},
-	"259": {
+	"260": {
 		"standard___1": "Boubacar Kamara\\Boubacar-Kamara",
 		"standard___2": "fr FRA",
 		"standard___3": "DFMF",
@@ -49298,8 +49489,8 @@
 		"standard_Per 90 Minutes__2": 0.13,
 		"standard_Per 90 Minutes__3": 0.04,
 		"standard_Per 90 Minutes__4": 0.13,
-		"standard_Expected": 0.6,
-		"standard_Expected__1": 0.6,
+		"standard_Expected": 0.5,
+		"standard_Expected__1": 0.5,
 		"standard_Expected__2": 0.4,
 		"standard_Per 90 Minutes__5": 0.02,
 		"standard_Per 90 Minutes__6": 0.02,
@@ -49326,11 +49517,11 @@
 		"shooting_Standard__8": 0.13,
 		"shooting_Standard__9": 0.07,
 		"shooting_Standard__10": 0.33,
-		"shooting_Expected": 0.6,
-		"shooting_Expected__1": 0.6,
+		"shooting_Expected": 0.5,
+		"shooting_Expected__1": 0.5,
 		"shooting_Expected__2": 0.04,
-		"shooting_Expected__3": "+0.4",
-		"shooting_Expected__4": "+0.4",
+		"shooting_Expected__3": "+0.5",
+		"shooting_Expected__4": "+0.5",
 		"shooting___8": "Matches",
 		"passing___1": "Boubacar Kamara\\Boubacar-Kamara",
 		"passing___2": "fr FRA",
@@ -49412,7 +49603,7 @@
 		"defense_Blocks__2": 0,
 		"defense_Blocks__3": 26,
 		"defense___8": 37,
-		"defense___9": 96,
+		"defense___9": 95,
 		"defense___10": 0,
 		"defense___11": "Matches",
 		"possession___1": "Boubacar Kamara\\Boubacar-Kamara",
@@ -49422,13 +49613,13 @@
 		"possession___5": 19,
 		"possession___6": 1999,
 		"possession___7": 23.8,
-		"possession_Touches": 1548,
+		"possession_Touches": 1547,
 		"possession_Touches__1": 120,
-		"possession_Touches__2": 683,
+		"possession_Touches__2": 682,
 		"possession_Touches__3": 884,
 		"possession_Touches__4": 94,
 		"possession_Touches__5": 19,
-		"possession_Touches__6": 1500,
+		"possession_Touches__6": 1499,
 		"possession_Dribbles": 14,
 		"possession_Dribbles__1": 22,
 		"possession_Dribbles__2": 63.6,
@@ -49468,7 +49659,7 @@
 		"misc_Aerial Duels__2": 57.6,
 		"misc___8": "Matches"
 	},
-	"260": {
+	"261": {
 		"standard___1": "Hassane Kamara\\Hassane-Kamara",
 		"standard___2": "gm GAM",
 		"standard___3": "DFFW",
@@ -49659,7 +49850,7 @@
 		"misc_Aerial Duels__2": 65.1,
 		"misc___8": "Matches"
 	},
-	"261": {
+	"262": {
 		"standard___1": "Wilfried Kanga\\Wilfried-Kanga",
 		"standard___2": "fr FRA",
 		"standard___3": "FW",
@@ -49850,7 +50041,7 @@
 		"misc_Aerial Duels__2": 33.3,
 		"misc___8": "Matches"
 	},
-	"262": {
+	"263": {
 		"standard___1": "Thilo Kehrer\\Thilo-Kehrer",
 		"standard___2": "de GER",
 		"standard___3": "DF",
@@ -50041,7 +50232,7 @@
 		"misc_Aerial Duels__2": 54.5,
 		"misc___8": "Matches"
 	},
-	"263": {
+	"264": {
 		"standard___1": "Jules Keita\\Jules-Keita",
 		"standard___2": "gn GUI",
 		"standard___3": "MFFW",
@@ -50232,7 +50423,7 @@
 		"misc_Aerial Duels__2": 25,
 		"misc___8": "Matches"
 	},
-	"264": {
+	"265": {
 		"standard___1": "Saîf-Eddine Khaoui\\Saif-Eddine-Khaoui",
 		"standard___2": "tn TUN",
 		"standard___3": "MFFW",
@@ -50423,7 +50614,7 @@
 		"misc_Aerial Duels__2": 40,
 		"misc___8": "Matches"
 	},
-	"265": {
+	"266": {
 		"standard___1": "Wahbi Khazri\\Wahbi-Khazri",
 		"standard___2": "tn TUN",
 		"standard___3": "FWMF",
@@ -50614,7 +50805,7 @@
 		"misc_Aerial Duels__2": 31.8,
 		"misc___8": "Matches"
 	},
-	"266": {
+	"267": {
 		"standard___1": "Presnel Kimpembe\\Presnel-Kimpembe",
 		"standard___2": "fr FRA",
 		"standard___3": "DF",
@@ -50805,7 +50996,7 @@
 		"misc_Aerial Duels__2": 68.6,
 		"misc___8": "Matches"
 	},
-	"267": {
+	"268": {
 		"standard___1": "Timothée Kolodziejczak\\Timothee-Kolodziejczak",
 		"standard___2": "fr FRA",
 		"standard___3": "DF",
@@ -50996,7 +51187,7 @@
 		"misc_Aerial Duels__2": 61,
 		"misc___8": "Matches"
 	},
-	"268": {
+	"269": {
 		"standard___1": "Ghislain Konan\\Ghislain-Konan",
 		"standard___2": "ci CIV",
 		"standard___3": "DF",
@@ -51187,7 +51378,7 @@
 		"misc_Aerial Duels__2": 37,
 		"misc___8": "Matches"
 	},
-	"269": {
+	"270": {
 		"standard___1": "Moussa Konaté\\Moussa-Konate",
 		"standard___2": "sn SEN",
 		"standard___3": "FW",
@@ -51378,7 +51569,7 @@
 		"misc_Aerial Duels__2": 34.9,
 		"misc___8": "Matches"
 	},
-	"270": {
+	"271": {
 		"standard___1": "Kouadio Koné\\Kouadio-Kone",
 		"standard___2": "fr FRA",
 		"standard___3": "MF",
@@ -51569,7 +51760,7 @@
 		"misc_Aerial Duels__2": 36,
 		"misc___8": "Matches"
 	},
-	"271": {
+	"272": {
 		"standard___1": "Lamine Koné\\Lamine-Kone",
 		"standard___2": "ci CIV",
 		"standard___3": "DF",
@@ -51760,7 +51951,7 @@
 		"misc_Aerial Duels__2": 71.7,
 		"misc___8": "Matches"
 	},
-	"272": {
+	"273": {
 		"standard___1": "Moussa Koné\\Moussa-Kone",
 		"standard___2": "sn SEN",
 		"standard___3": "FW",
@@ -51951,7 +52142,7 @@
 		"misc_Aerial Duels__2": 15.4,
 		"misc___8": "Matches"
 	},
-	"273": {
+	"274": {
 		"standard___1": "Youssouf Koné\\Youssouf-Kone",
 		"standard___2": "ml MLI",
 		"standard___3": "DF",
@@ -52142,7 +52333,7 @@
 		"misc_Aerial Duels__2": 50,
 		"misc___8": "Matches"
 	},
-	"274": {
+	"275": {
 		"standard___1": "Laurent Koscielny\\Laurent-Koscielny",
 		"standard___2": "fr FRA",
 		"standard___3": "DF",
@@ -52333,7 +52524,7 @@
 		"misc_Aerial Duels__2": 62.5,
 		"misc___8": "Matches"
 	},
-	"275": {
+	"276": {
 		"standard___1": "Nianzou Kouassi\\Nianzou-Kouassi",
 		"standard___2": "fr FRA",
 		"standard___3": "DFMF",
@@ -52524,7 +52715,7 @@
 		"misc_Aerial Duels__2": 73.3,
 		"misc___8": "Matches"
 	},
-	"276": {
+	"277": {
 		"standard___1": "Efthimis Koulouris\\Efthimis-Koulouris",
 		"standard___2": "gr GRE",
 		"standard___3": "FW",
@@ -52715,7 +52906,7 @@
 		"misc_Aerial Duels__2": 29.4,
 		"misc___8": "Matches"
 	},
-	"277": {
+	"278": {
 		"standard___1": "Rene Krhin\\Rene-Krhin",
 		"standard___2": "si SVN",
 		"standard___3": "DFMF",
@@ -52906,7 +53097,7 @@
 		"misc_Aerial Duels__2": 83.3,
 		"misc___8": "Matches"
 	},
-	"278": {
+	"279": {
 		"standard___1": "Layvin Kurzawa\\Layvin-Kurzawa",
 		"standard___2": "fr FRA",
 		"standard___3": "DF",
@@ -53097,7 +53288,7 @@
 		"misc_Aerial Duels__2": 58.8,
 		"misc___8": "Matches"
 	},
-	"279": {
+	"280": {
 		"standard___1": "Dereck Kutesa\\Dereck-Kutesa",
 		"standard___2": "ch SUI",
 		"standard___3": "FWMF",
@@ -53288,7 +53479,7 @@
 		"misc_Aerial Duels__2": 27.3,
 		"misc___8": "Matches"
 	},
-	"280": {
+	"281": {
 		"standard___1": "Enock Kwateng\\Enock-Kwateng",
 		"standard___2": "fr FRA",
 		"standard___3": "DF",
@@ -53479,7 +53670,7 @@
 		"misc_Aerial Duels__2": 72.5,
 		"misc___8": "Matches"
 	},
-	"281": {
+	"282": {
 		"standard___1": "Gaëtan Laborde\\Gaetan-Laborde",
 		"standard___2": "fr FRA",
 		"standard___3": "FW",
@@ -53670,7 +53861,7 @@
 		"misc_Aerial Duels__2": 48.9,
 		"misc___8": "Matches"
 	},
-	"282": {
+	"283": {
 		"standard___1": "Alban Lafont\\Alban-Lafont",
 		"standard___2": "fr FRA",
 		"standard___3": "GK",
@@ -53861,7 +54052,7 @@
 		"misc_Aerial Duels__2": "",
 		"misc___8": "Matches"
 	},
-	"283": {
+	"284": {
 		"standard___1": "Jack Lahne\\Jack-Lahne",
 		"standard___2": "se SWE",
 		"standard___3": "FW",
@@ -54052,7 +54243,7 @@
 		"misc_Aerial Duels__2": "",
 		"misc___8": "Matches"
 	},
-	"284": {
+	"285": {
 		"standard___1": "Kenny Lala\\Kenny-Lala",
 		"standard___2": "fr FRA",
 		"standard___3": "DF",
@@ -54243,7 +54434,7 @@
 		"misc_Aerial Duels__2": 63.3,
 		"misc___8": "Matches"
 	},
-	"285": {
+	"286": {
 		"standard___1": "Loïck Landre\\Loick-Landre",
 		"standard___2": "fr FRA",
 		"standard___3": "DF",
@@ -54434,7 +54625,7 @@
 		"misc_Aerial Duels__2": 64.7,
 		"misc___8": "Matches"
 	},
-	"286": {
+	"287": {
 		"standard___1": "Gautier Larsonneur\\Gautier-Larsonneur",
 		"standard___2": "fr FRA",
 		"standard___3": "GK",
@@ -54625,7 +54816,7 @@
 		"misc_Aerial Duels__2": "",
 		"misc___8": "Matches"
 	},
-	"287": {
+	"288": {
 		"standard___1": "Paul Lasne\\Paul-Lasne",
 		"standard___2": "fr FRA",
 		"standard___3": "MFFW",
@@ -54648,7 +54839,7 @@
 		"standard_Per 90 Minutes__4": 0.22,
 		"standard_Expected": 1.1,
 		"standard_Expected__1": 1.1,
-		"standard_Expected__2": 1.4,
+		"standard_Expected__2": 1.5,
 		"standard_Per 90 Minutes__5": 0.08,
 		"standard_Per 90 Minutes__6": 0.11,
 		"standard_Per 90 Minutes__7": 0.19,
@@ -54702,8 +54893,8 @@
 		"passing_Long__1": 124,
 		"passing_Long__2": 69.4,
 		"passing___8": 1,
-		"passing___9": 1.4,
-		"passing___10": -0.4,
+		"passing___9": 1.5,
+		"passing___10": -0.5,
 		"passing___11": 15,
 		"passing___12": 46,
 		"passing___13": 13,
@@ -54816,7 +55007,7 @@
 		"misc_Aerial Duels__2": 48.4,
 		"misc___8": "Matches"
 	},
-	"288": {
+	"289": {
 		"standard___1": "Wesley Lautoa\\Wesley-Lautoa",
 		"standard___2": "nc NCL",
 		"standard___3": "MFDF",
@@ -55007,7 +55198,7 @@
 		"misc_Aerial Duels__2": 43.4,
 		"misc___8": "Matches"
 	},
-	"289": {
+	"290": {
 		"standard___1": "Mickaël Le Bihan\\Mickael-Le-Bihan",
 		"standard___2": "fr FRA",
 		"standard___3": "FW",
@@ -55198,7 +55389,7 @@
 		"misc_Aerial Duels__2": 25,
 		"misc___8": "Matches"
 	},
-	"290": {
+	"291": {
 		"standard___1": "Damien Le Tallec\\Damien-Le-Tallec",
 		"standard___2": "fr FRA",
 		"standard___3": "MFDF",
@@ -55389,7 +55580,7 @@
 		"misc_Aerial Duels__2": 51.2,
 		"misc___8": "Matches"
 	},
-	"291": {
+	"292": {
 		"standard___1": "James Lea Siliki\\James-Lea-Siliki",
 		"standard___2": "fr FRA",
 		"standard___3": "MF",
@@ -55580,7 +55771,7 @@
 		"misc_Aerial Duels__2": 63.6,
 		"misc___8": "Matches"
 	},
-	"292": {
+	"293": {
 		"standard___1": "Adrien Lebeau\\Adrien-Lebeau",
 		"standard___2": "fr FRA",
 		"standard___3": "MF",
@@ -55771,7 +55962,7 @@
 		"misc_Aerial Duels__2": 0,
 		"misc___8": "Matches"
 	},
-	"293": {
+	"294": {
 		"standard___1": "Benjamin Lecomte\\Benjamin-Lecomte",
 		"standard___2": "fr FRA",
 		"standard___3": "GK",
@@ -55962,7 +56153,7 @@
 		"misc_Aerial Duels__2": "",
 		"misc___8": "Matches"
 	},
-	"294": {
+	"295": {
 		"standard___1": "Pierre Lees-Melou\\Pierre-Lees-Melou",
 		"standard___2": "fr FRA",
 		"standard___3": "MF",
@@ -56153,7 +56344,7 @@
 		"misc_Aerial Duels__2": 51.9,
 		"misc___8": "Matches"
 	},
-	"295": {
+	"296": {
 		"standard___1": "Jordan Lefort\\Jordan-Lefort",
 		"standard___2": "fr FRA",
 		"standard___3": "DF",
@@ -56344,7 +56535,7 @@
 		"misc_Aerial Duels__2": 59.1,
 		"misc___8": "Matches"
 	},
-	"296": {
+	"297": {
 		"standard___1": "Nicolas Lemaître\\Nicolas-Lemaitre",
 		"standard___2": "fr FRA",
 		"standard___3": "GK",
@@ -56535,7 +56726,7 @@
 		"misc_Aerial Duels__2": "",
 		"misc___8": "Matches"
 	},
-	"297": {
+	"298": {
 		"standard___1": "Donovan Léon\\Donovan-Leon",
 		"standard___2": "gf GUF",
 		"standard___3": "GK",
@@ -56726,7 +56917,7 @@
 		"misc_Aerial Duels__2": "",
 		"misc___8": "Matches"
 	},
-	"298": {
+	"299": {
 		"standard___1": "Aaron Leya Iseka\\Aaron-Leya-Iseka",
 		"standard___2": "be BEL",
 		"standard___3": "FW",
@@ -56917,7 +57108,7 @@
 		"misc_Aerial Duels__2": 34.5,
 		"misc___8": "Matches"
 	},
-	"299": {
+	"300": {
 		"standard___1": "Dimitri Liénard\\Dimitri-Lienard",
 		"standard___2": "fr FRA",
 		"standard___3": "MF",
@@ -57108,7 +57299,7 @@
 		"misc_Aerial Duels__2": 42.3,
 		"misc___8": "Matches"
 	},
-	"300": {
+	"301": {
 		"standard___1": "Isaac Lihadji\\Isaac-Lihadji",
 		"standard___2": "fr FRA",
 		"standard___3": "DFMF",
@@ -57299,7 +57490,7 @@
 		"misc_Aerial Duels__2": 33.3,
 		"misc___8": "Matches"
 	},
-	"301": {
+	"302": {
 		"standard___1": "Lucas Lima\\Lucas-Lima",
 		"standard___2": "br BRA",
 		"standard___3": "FWDF",
@@ -57490,7 +57681,7 @@
 		"misc_Aerial Duels__2": 33.3,
 		"misc___8": "Matches"
 	},
-	"302": {
+	"303": {
 		"standard___1": "Anthony Limbombe\\Anthony-Limbombe",
 		"standard___2": "be BEL",
 		"standard___3": "FWMF",
@@ -57681,7 +57872,7 @@
 		"misc_Aerial Duels__2": 0,
 		"misc___8": "Matches"
 	},
-	"303": {
+	"304": {
 		"standard___1": "Gautier Lloris\\Gautier-Lloris",
 		"standard___2": "fr FRA",
 		"standard___3": "DF",
@@ -57872,7 +58063,7 @@
 		"misc_Aerial Duels__2": 55.6,
 		"misc___8": "Matches"
 	},
-	"304": {
+	"305": {
 		"standard___1": "Enzo Loiodice\\Enzo-Loiodice",
 		"standard___2": "fr FRA",
 		"standard___3": "MF",
@@ -57896,11 +58087,11 @@
 		"standard_Expected": 0.1,
 		"standard_Expected__1": 0.1,
 		"standard_Expected__2": 0,
-		"standard_Per 90 Minutes__5": 0.04,
+		"standard_Per 90 Minutes__5": 0.03,
 		"standard_Per 90 Minutes__6": 0,
-		"standard_Per 90 Minutes__7": 0.04,
-		"standard_Per 90 Minutes__8": 0.04,
-		"standard_Per 90 Minutes__9": 0.04,
+		"standard_Per 90 Minutes__7": 0.03,
+		"standard_Per 90 Minutes__8": 0.03,
+		"standard_Per 90 Minutes__9": 0.03,
 		"standard___7": "Matches",
 		"code": "6bca20fe",
 		"shooting___1": "Enzo Loiodice\\Enzo-Loiodice",
@@ -57923,7 +58114,7 @@
 		"shooting_Standard__10": "",
 		"shooting_Expected": 0.1,
 		"shooting_Expected__1": 0.1,
-		"shooting_Expected__2": 0.03,
+		"shooting_Expected__2": 0.02,
 		"shooting_Expected__3": -0.1,
 		"shooting_Expected__4": -0.1,
 		"shooting___8": "Matches",
@@ -58063,7 +58254,7 @@
 		"misc_Aerial Duels__2": 20,
 		"misc___8": "Matches"
 	},
-	"305": {
+	"306": {
 		"standard___1": "Anthony Lopes\\Anthony-Lopes",
 		"standard___2": "pt POR",
 		"standard___3": "GK",
@@ -58254,7 +58445,7 @@
 		"misc_Aerial Duels__2": "",
 		"misc___8": "Matches"
 	},
-	"306": {
+	"307": {
 		"standard___1": "Rony Lopes\\Rony-Lopes",
 		"standard___2": "pt POR",
 		"standard___3": "FW",
@@ -58445,7 +58636,7 @@
 		"misc_Aerial Duels__2": 20,
 		"misc___8": "Matches"
 	},
-	"307": {
+	"308": {
 		"standard___1": "Maxime Lopez\\Maxime-Lopez",
 		"standard___2": "fr FRA",
 		"standard___3": "MFFW",
@@ -58636,7 +58827,7 @@
 		"misc_Aerial Duels__2": 13.3,
 		"misc___8": "Matches"
 	},
-	"308": {
+	"309": {
 		"standard___1": "Albert Lottin\\Albert-Lottin",
 		"standard___2": "fr FRA",
 		"standard___3": "MF",
@@ -58827,7 +59018,7 @@
 		"misc_Aerial Duels__2": 100,
 		"misc___8": "Matches"
 	},
-	"309": {
+	"310": {
 		"standard___1": "Imran Louza\\Imran-Louza",
 		"standard___2": "fr FRA",
 		"standard___3": "MFFW",
@@ -58850,7 +59041,7 @@
 		"standard_Per 90 Minutes__4": 0.18,
 		"standard_Expected": 1.9,
 		"standard_Expected__1": 1.9,
-		"standard_Expected__2": 4.2,
+		"standard_Expected__2": 4.1,
 		"standard_Per 90 Minutes__5": 0.09,
 		"standard_Per 90 Minutes__6": 0.19,
 		"standard_Per 90 Minutes__7": 0.27,
@@ -58904,8 +59095,8 @@
 		"passing_Long__1": 306,
 		"passing_Long__2": 54.9,
 		"passing___8": 2,
-		"passing___9": 4.2,
-		"passing___10": -2.2,
+		"passing___9": 4.1,
+		"passing___10": -2.1,
 		"passing___11": 35,
 		"passing___12": 85,
 		"passing___13": 17,
@@ -59018,7 +59209,7 @@
 		"misc_Aerial Duels__2": 29.3,
 		"misc___8": "Matches"
 	},
-	"310": {
+	"311": {
 		"standard___1": "Jean Lucas\\Jean-Lucas",
 		"standard___2": "br BRA",
 		"standard___3": "MF",
@@ -59209,7 +59400,7 @@
 		"misc_Aerial Duels__2": 12.5,
 		"misc___8": "Matches"
 	},
-	"311": {
+	"312": {
 		"standard___1": "Arnaud Lusamba\\Arnaud-Lusamba",
 		"standard___2": "fr FRA",
 		"standard___3": "MFFW",
@@ -59400,7 +59591,7 @@
 		"misc_Aerial Duels__2": 29.4,
 		"misc___8": "Matches"
 	},
-	"312": {
+	"313": {
 		"standard___1": "Yann M'Vila\\Yann-MVila",
 		"standard___2": "fr FRA",
 		"standard___3": "MFDF",
@@ -59591,7 +59782,7 @@
 		"misc_Aerial Duels__2": 63.5,
 		"misc___8": "Matches"
 	},
-	"313": {
+	"314": {
 		"standard___1": "Yvann Macon\\Yvann-Macon",
 		"standard___2": "GPE",
 		"standard___3": "DF",
@@ -59782,7 +59973,7 @@
 		"misc_Aerial Duels__2": 100,
 		"misc___8": "Matches"
 	},
-	"314": {
+	"315": {
 		"standard___1": "Hugo Magnetti\\Hugo-Magnetti",
 		"standard___2": "fr FRA",
 		"standard___3": "MF",
@@ -59973,7 +60164,7 @@
 		"misc_Aerial Duels__2": 60,
 		"misc___8": "Matches"
 	},
-	"315": {
+	"316": {
 		"standard___1": "Thiago Maia\\Thiago-Maia",
 		"standard___2": "br BRA",
 		"standard___3": "MF",
@@ -60164,7 +60355,7 @@
 		"misc_Aerial Duels__2": 50,
 		"misc___8": "Matches"
 	},
-	"316": {
+	"317": {
 		"standard___1": "Habib Maïga\\Habib-Maiga",
 		"standard___2": "ci CIV",
 		"standard___3": "MF",
@@ -60355,7 +60546,7 @@
 		"misc_Aerial Duels__2": 50.7,
 		"misc___8": "Matches"
 	},
-	"317": {
+	"318": {
 		"standard___1": "Mike Maignan\\Mike-Maignan",
 		"standard___2": "fr FRA",
 		"standard___3": "GK",
@@ -60546,7 +60737,7 @@
 		"misc_Aerial Duels__2": 100,
 		"misc___8": "Matches"
 	},
-	"318": {
+	"319": {
 		"standard___1": "Josh Maja\\Josh-Maja",
 		"standard___2": "ng NGA",
 		"standard___3": "FW",
@@ -60737,7 +60928,7 @@
 		"misc_Aerial Duels__2": 17.9,
 		"misc___8": "Matches"
 	},
-	"319": {
+	"320": {
 		"standard___1": "Abdul Majeed Waris\\Abdul-Majeed-Waris",
 		"standard___2": "gh GHA",
 		"standard___3": "FW",
@@ -60928,7 +61119,7 @@
 		"misc_Aerial Duels__2": 16.7,
 		"misc___8": "Matches"
 	},
-	"320": {
+	"321": {
 		"standard___1": "Jean-Victor Makengo\\Jean-Victor-Makengo",
 		"standard___2": "fr FRA",
 		"standard___3": "MFFW",
@@ -61119,7 +61310,7 @@
 		"misc_Aerial Duels__2": 9.5,
 		"misc___8": "Matches"
 	},
-	"321": {
+	"322": {
 		"standard___1": "Hianga Mananga Mbock\\Hianga-Mananga-Mbock",
 		"standard___2": "fr FRA",
 		"standard___3": "MF",
@@ -61310,7 +61501,7 @@
 		"misc_Aerial Duels__2": 90,
 		"misc___8": "Matches"
 	},
-	"322": {
+	"323": {
 		"standard___1": "Vincent Manceau\\Vincent-Manceau",
 		"standard___2": "fr FRA",
 		"standard___3": "DF",
@@ -61501,7 +61692,7 @@
 		"misc_Aerial Duels__2": 51.5,
 		"misc___8": "Matches"
 	},
-	"323": {
+	"324": {
 		"standard___1": "Steve Mandanda\\Steve-Mandanda",
 		"standard___2": "fr FRA",
 		"standard___3": "GK",
@@ -61692,7 +61883,7 @@
 		"misc_Aerial Duels__2": 0,
 		"misc___8": "Matches"
 	},
-	"324": {
+	"325": {
 		"standard___1": "Reinildo Mandava\\Reinildo-Mandava",
 		"standard___2": "mz MOZ",
 		"standard___3": "DF",
@@ -61883,7 +62074,7 @@
 		"misc_Aerial Duels__2": 51.5,
 		"misc___8": "Matches"
 	},
-	"325": {
+	"326": {
 		"standard___1": "Thomas Mangani\\Thomas-Mangani",
 		"standard___2": "fr FRA",
 		"standard___3": "MF",
@@ -62074,7 +62265,7 @@
 		"misc_Aerial Duels__2": 40,
 		"misc___8": "Matches"
 	},
-	"326": {
+	"327": {
 		"standard___1": "Myziane Maolida\\Myziane-Maolida",
 		"standard___2": "fr FRA",
 		"standard___3": "FWMF",
@@ -62265,7 +62456,7 @@
 		"misc_Aerial Duels__2": 33.3,
 		"misc___8": "Matches"
 	},
-	"327": {
+	"328": {
 		"standard___1": "Faitout Maouassa\\Faitout-Maouassa",
 		"standard___2": "fr FRA",
 		"standard___3": "DF",
@@ -62456,7 +62647,7 @@
 		"misc_Aerial Duels__2": 60,
 		"misc___8": "Matches"
 	},
-	"328": {
+	"329": {
 		"standard___1": "Fernando Marçal\\Fernando-Marcal",
 		"standard___2": "br BRA",
 		"standard___3": "DF",
@@ -62647,7 +62838,7 @@
 		"misc_Aerial Duels__2": 80,
 		"misc___8": "Matches"
 	},
-	"329": {
+	"330": {
 		"standard___1": "Marcelo\\Marcelo",
 		"standard___2": "br BRA",
 		"standard___3": "DF",
@@ -62838,7 +63029,7 @@
 		"misc_Aerial Duels__2": 78.1,
 		"misc___8": "Matches"
 	},
-	"330": {
+	"331": {
 		"standard___1": "Dario Maresic\\Dario-Maresic",
 		"standard___2": "at AUT",
 		"standard___3": "DF",
@@ -63029,7 +63220,7 @@
 		"misc_Aerial Duels__2": 33.3,
 		"misc___8": "Matches"
 	},
-	"331": {
+	"332": {
 		"standard___1": "Jordan Marié\\Jordan-Marie",
 		"standard___2": "fr FRA",
 		"standard___3": "MF",
@@ -63220,7 +63411,7 @@
 		"misc_Aerial Duels__2": 16.7,
 		"misc___8": "Matches"
 	},
-	"332": {
+	"333": {
 		"standard___1": "Guillermo Maripán\\Guillermo-Maripan",
 		"standard___2": "cl CHI",
 		"standard___3": "DF",
@@ -63411,7 +63602,7 @@
 		"misc_Aerial Duels__2": 53.5,
 		"misc___8": "Matches"
 	},
-	"333": {
+	"334": {
 		"standard___1": "Marquinhos\\Marquinhos",
 		"standard___2": "br BRA",
 		"standard___3": "MFDF",
@@ -63602,7 +63793,7 @@
 		"misc_Aerial Duels__2": 56.2,
 		"misc___8": "Matches"
 	},
-	"334": {
+	"335": {
 		"standard___1": "Jonas Martin\\Jonas-Martin",
 		"standard___2": "fr FRA",
 		"standard___3": "MF",
@@ -63793,7 +63984,7 @@
 		"misc_Aerial Duels__2": 50,
 		"misc___8": "Matches"
 	},
-	"335": {
+	"336": {
 		"standard___1": "Jonas Martin\\Jonas-Martin",
 		"standard___2": "fr FRA",
 		"standard___3": "MF",
@@ -63984,7 +64175,7 @@
 		"misc_Aerial Duels__2": 75,
 		"misc___8": "Matches"
 	},
-	"336": {
+	"337": {
 		"standard___1": "Pablo Martinez\\Pablo-Martinez",
 		"standard___2": "fr FRA",
 		"standard___3": "DF",
@@ -64175,7 +64366,7 @@
 		"misc_Aerial Duels__2": 59.8,
 		"misc___8": "Matches"
 	},
-	"337": {
+	"338": {
 		"standard___1": "Gelson Martins\\Gelson-Martins",
 		"standard___2": "pt POR",
 		"standard___3": "DFFW",
@@ -64366,7 +64557,7 @@
 		"misc_Aerial Duels__2": 29.6,
 		"misc___8": "Matches"
 	},
-	"338": {
+	"339": {
 		"standard___1": "Stephy Mavididi\\Stephy-Mavididi",
 		"standard___2": "eng ENG",
 		"standard___3": "FWMF",
@@ -64557,7 +64748,7 @@
 		"misc_Aerial Duels__2": 21.2,
 		"misc___8": "Matches"
 	},
-	"339": {
+	"340": {
 		"standard___1": "Eric Maxim Choupo-Moting\\Eric-Maxim-Choupo-Moting",
 		"standard___2": "cm CMR",
 		"standard___3": "FWMF",
@@ -64748,7 +64939,7 @@
 		"misc_Aerial Duels__2": 50,
 		"misc___8": "Matches"
 	},
-	"340": {
+	"341": {
 		"standard___1": "Kévin Mayi\\Kevin-Mayi",
 		"standard___2": "fr FRA",
 		"standard___3": "FW",
@@ -64939,7 +65130,7 @@
 		"misc_Aerial Duels__2": "",
 		"misc___8": "Matches"
 	},
-	"341": {
+	"342": {
 		"standard___1": "Kylian Mbappé\\Kylian-Mbappe",
 		"standard___2": "fr FRA",
 		"standard___3": "FW",
@@ -65130,7 +65321,7 @@
 		"misc_Aerial Duels__2": 50,
 		"misc___8": "Matches"
 	},
-	"342": {
+	"343": {
 		"standard___1": "Loïc Mbe Soh\\Loic-Mbe-Soh",
 		"standard___2": "fr FRA",
 		"standard___3": "DF",
@@ -65321,7 +65512,7 @@
 		"misc_Aerial Duels__2": 33.3,
 		"misc___8": "Matches"
 	},
-	"343": {
+	"344": {
 		"standard___1": "Isaac Mbenza\\Isaac-Mbenza",
 		"standard___2": "be BEL",
 		"standard___3": "FW",
@@ -65512,7 +65703,7 @@
 		"misc_Aerial Duels__2": "",
 		"misc___8": "Matches"
 	},
-	"344": {
+	"345": {
 		"standard___1": "Nathanael Mbuku\\Nathanael-Mbuku",
 		"standard___2": "fr FRA",
 		"standard___3": "MFFW",
@@ -65703,7 +65894,7 @@
 		"misc_Aerial Duels__2": 37.5,
 		"misc___8": "Matches"
 	},
-	"345": {
+	"346": {
 		"standard___1": "Farid El Melali\\Farid-El-Melali",
 		"standard___2": "dz ALG",
 		"standard___3": "MFFW",
@@ -65894,7 +66085,7 @@
 		"misc_Aerial Duels__2": 50,
 		"misc___8": "Matches"
 	},
-	"346": {
+	"347": {
 		"standard___1": "Pedro Mendes\\Pedro-Mendes",
 		"standard___2": "pt POR",
 		"standard___3": "DF",
@@ -66085,7 +66276,7 @@
 		"misc_Aerial Duels__2": 45,
 		"misc___8": "Matches"
 	},
-	"347": {
+	"348": {
 		"standard___1": "Thiago Mendes\\Thiago-Mendes",
 		"standard___2": "br BRA",
 		"standard___3": "MF",
@@ -66276,7 +66467,7 @@
 		"misc_Aerial Duels__2": 73.9,
 		"misc___8": "Matches"
 	},
-	"348": {
+	"349": {
 		"standard___1": "Stiven Mendoza\\Stiven-Mendoza",
 		"standard___2": "co COL",
 		"standard___3": "FWMF",
@@ -66467,7 +66658,7 @@
 		"misc_Aerial Duels__2": 29.6,
 		"misc___8": "Matches"
 	},
-	"349": {
+	"350": {
 		"standard___1": "Alexandre Mendy\\Alexandre-Mendy",
 		"standard___2": "fr FRA",
 		"standard___3": "FWMF",
@@ -66658,7 +66849,7 @@
 		"misc_Aerial Duels__2": 45.6,
 		"misc___8": "Matches"
 	},
-	"350": {
+	"351": {
 		"standard___1": "Edouard Mendy\\Edouard-Mendy",
 		"standard___2": "sn SEN",
 		"standard___3": "GK",
@@ -66849,7 +67040,7 @@
 		"misc_Aerial Duels__2": "",
 		"misc___8": "Matches"
 	},
-	"351": {
+	"352": {
 		"standard___1": "Hamza Mendyl\\Hamza-Mendyl",
 		"standard___2": "ma MAR",
 		"standard___3": "DF",
@@ -67040,7 +67231,7 @@
 		"misc_Aerial Duels__2": 28.6,
 		"misc___8": "Matches"
 	},
-	"352": {
+	"353": {
 		"standard___1": "Thomas Meunier\\Thomas-Meunier",
 		"standard___2": "be BEL",
 		"standard___3": "DF",
@@ -67231,7 +67422,7 @@
 		"misc_Aerial Duels__2": 51.9,
 		"misc___8": "Matches"
 	},
-	"353": {
+	"354": {
 		"standard___1": "Mexer\\Mexer",
 		"standard___2": "mz MOZ",
 		"standard___3": "DF",
@@ -67422,7 +67613,7 @@
 		"misc_Aerial Duels__2": 64.7,
 		"misc___8": "Matches"
 	},
-	"354": {
+	"355": {
 		"standard___1": "Florian Miguel\\Florian-Miguel",
 		"standard___2": "fr FRA",
 		"standard___3": "DF",
@@ -67613,7 +67804,7 @@
 		"misc_Aerial Duels__2": 55.6,
 		"misc___8": "Matches"
 	},
-	"355": {
+	"356": {
 		"standard___1": "Georges Mikautadze\\Georges-Mikautadze",
 		"standard___2": "fr FRA",
 		"standard___3": "FW",
@@ -67804,7 +67995,7 @@
 		"misc_Aerial Duels__2": "",
 		"misc___8": "Matches"
 	},
-	"356": {
+	"357": {
 		"standard___1": "Stefan Mitrović\\Stefan-Mitrovic",
 		"standard___2": "rs SRB",
 		"standard___3": "DF",
@@ -67995,7 +68186,7 @@
 		"misc_Aerial Duels__2": 63.1,
 		"misc___8": "Matches"
 	},
-	"357": {
+	"358": {
 		"standard___1": "Florent Mollet\\Florent-Mollet",
 		"standard___2": "fr FRA",
 		"standard___3": "MF",
@@ -68186,7 +68377,7 @@
 		"misc_Aerial Duels__2": 38.9,
 		"misc___8": "Matches"
 	},
-	"358": {
+	"359": {
 		"standard___1": "Thomas Monconduit\\Thomas-Monconduit",
 		"standard___2": "fr FRA",
 		"standard___3": "MF",
@@ -68377,7 +68568,7 @@
 		"misc_Aerial Duels__2": 59,
 		"misc___8": "Matches"
 	},
-	"359": {
+	"360": {
 		"standard___1": "Steven Moreira\\Steven-Moreira",
 		"standard___2": "fr FRA",
 		"standard___3": "DF",
@@ -68568,7 +68759,7 @@
 		"misc_Aerial Duels__2": 30.8,
 		"misc___8": "Matches"
 	},
-	"360": {
+	"361": {
 		"standard___1": "Jérémy Morel\\Jeremy-Morel",
 		"standard___2": "mg MAD",
 		"standard___3": "DF",
@@ -68759,7 +68950,7 @@
 		"misc_Aerial Duels__2": 56.1,
 		"misc___8": "Matches"
 	},
-	"361": {
+	"362": {
 		"standard___1": "Lebo Mothiba\\Lebo-Mothiba",
 		"standard___2": "za RSA",
 		"standard___3": "FW",
@@ -68783,10 +68974,10 @@
 		"standard_Expected": 5.4,
 		"standard_Expected__1": 5.4,
 		"standard_Expected__2": 1.4,
-		"standard_Per 90 Minutes__5": 0.46,
+		"standard_Per 90 Minutes__5": 0.47,
 		"standard_Per 90 Minutes__6": 0.12,
 		"standard_Per 90 Minutes__7": 0.58,
-		"standard_Per 90 Minutes__8": 0.46,
+		"standard_Per 90 Minutes__8": 0.47,
 		"standard_Per 90 Minutes__9": 0.58,
 		"standard___7": "Matches",
 		"code": "3eaf8817",
@@ -68950,7 +69141,7 @@
 		"misc_Aerial Duels__2": 41.9,
 		"misc___8": "Matches"
 	},
-	"362": {
+	"363": {
 		"standard___1": "Harold Moukoudi\\Harold-Moukoudi",
 		"standard___2": "cm CMR",
 		"standard___3": "DF",
@@ -69141,7 +69332,7 @@
 		"misc_Aerial Duels__2": 69.8,
 		"misc___8": "Matches"
 	},
-	"363": {
+	"364": {
 		"standard___1": "Jessy Moulin\\Jessy-Moulin",
 		"standard___2": "fr FRA",
 		"standard___3": "GK",
@@ -69332,7 +69523,7 @@
 		"misc_Aerial Duels__2": "",
 		"misc___8": "Matches"
 	},
-	"364": {
+	"365": {
 		"standard___1": "Wesley Moustache\\Wesley-Moustache",
 		"standard___2": "fr FRA",
 		"standard___3": "DF",
@@ -69523,7 +69714,7 @@
 		"misc_Aerial Duels__2": 33.3,
 		"misc___8": "Matches"
 	},
-	"365": {
+	"366": {
 		"standard___1": "Samuel Moutoussamy\\Samuel-Moutoussamy",
 		"standard___2": "cd COD",
 		"standard___3": "DFFW",
@@ -69714,7 +69905,7 @@
 		"misc_Aerial Duels__2": 12.5,
 		"misc___8": "Matches"
 	},
-	"366": {
+	"367": {
 		"standard___1": "Benoît Mukinayi\\Benoit-Mukinayi",
 		"standard___2": "fr FRA",
 		"standard___3": "DF",
@@ -69905,7 +70096,7 @@
 		"misc_Aerial Duels__2": 67.1,
 		"misc___8": "Matches"
 	},
-	"367": {
+	"368": {
 		"standard___1": "Marshall Munetsi\\Marshall-Munetsi",
 		"standard___2": "zw ZIM",
 		"standard___3": "MF",
@@ -70096,7 +70287,7 @@
 		"misc_Aerial Duels__2": 66.7,
 		"misc___8": "Matches"
 	},
-	"368": {
+	"369": {
 		"standard___1": "Kévin N'Doram\\Kevin-NDoram",
 		"standard___2": "fr FRA",
 		"standard___3": "MF",
@@ -70287,7 +70478,7 @@
 		"misc_Aerial Duels__2": 50.8,
 		"misc___8": "Matches"
 	},
-	"369": {
+	"370": {
 		"standard___1": "Abdallah N'dour\\Abdallah-Ndour",
 		"standard___2": "sn SEN",
 		"standard___3": "DF",
@@ -70478,7 +70669,7 @@
 		"misc_Aerial Duels__2": 55.6,
 		"misc___8": "Matches"
 	},
-	"370": {
+	"371": {
 		"standard___1": "Ferris N'Goma\\Ferris-NGoma",
 		"standard___2": "fr FRA",
 		"standard___3": "FWMF",
@@ -70669,7 +70860,7 @@
 		"misc_Aerial Duels__2": "",
 		"misc___8": "Matches"
 	},
-	"371": {
+	"372": {
 		"standard___1": "Nathan N'Goumou\\Nathan-NGoumou",
 		"standard___2": "fr FRA",
 		"standard___3": "FWMF",
@@ -70860,7 +71051,7 @@
 		"misc_Aerial Duels__2": 0,
 		"misc___8": "Matches"
 	},
-	"372": {
+	"373": {
 		"standard___1": "Stanley N'Soki\\Stanley-NSoki",
 		"standard___2": "fr FRA",
 		"standard___3": "DF",
@@ -71051,7 +71242,7 @@
 		"misc_Aerial Duels__2": 75.8,
 		"misc___8": "Matches"
 	},
-	"373": {
+	"374": {
 		"standard___1": "Keylor Navas\\Keylor-Navas",
 		"standard___2": "cr CRC",
 		"standard___3": "GK",
@@ -71242,7 +71433,7 @@
 		"misc_Aerial Duels__2": "",
 		"misc___8": "Matches"
 	},
-	"374": {
+	"375": {
 		"standard___1": "Papa Ndiaga Yade\\Papa-Ndiaga-Yade",
 		"standard___2": "sn SEN",
 		"standard___3": "FW",
@@ -71433,7 +71624,7 @@
 		"misc_Aerial Duels__2": 0,
 		"misc___8": "Matches"
 	},
-	"375": {
+	"376": {
 		"standard___1": "Neymar\\Neymar",
 		"standard___2": "br BRA",
 		"standard___3": "MFFW",
@@ -71624,7 +71815,7 @@
 		"misc_Aerial Duels__2": 50,
 		"misc___8": "Matches"
 	},
-	"376": {
+	"377": {
 		"standard___1": "Muzinga Ngonda\\Muzinga-Ngonda",
 		"standard___2": "cd COD",
 		"standard___3": "DF",
@@ -71815,7 +72006,7 @@
 		"misc_Aerial Duels__2": 60,
 		"misc___8": "Matches"
 	},
-	"377": {
+	"378": {
 		"standard___1": "Ahmad Ngouyamsa\\Ahmad-Ngouyamsa",
 		"standard___2": "cm CMR",
 		"standard___3": "DF",
@@ -72006,7 +72197,7 @@
 		"misc_Aerial Duels__2": "",
 		"misc___8": "Matches"
 	},
-	"378": {
+	"379": {
 		"standard___1": "Opa Nguette\\Opa-Nguette",
 		"standard___2": "sn SEN",
 		"standard___3": "FW",
@@ -72027,8 +72218,8 @@
 		"standard_Per 90 Minutes__2": 0.35,
 		"standard_Per 90 Minutes__3": 0.25,
 		"standard_Per 90 Minutes__4": 0.35,
-		"standard_Expected": 3.6,
-		"standard_Expected__1": 3.6,
+		"standard_Expected": 3.7,
+		"standard_Expected__1": 3.7,
 		"standard_Expected__2": 1.5,
 		"standard_Per 90 Minutes__5": 0.18,
 		"standard_Per 90 Minutes__6": 0.07,
@@ -72055,11 +72246,11 @@
 		"shooting_Standard__8": 0.49,
 		"shooting_Standard__9": 0.18,
 		"shooting_Standard__10": 0.5,
-		"shooting_Expected": 3.6,
-		"shooting_Expected__1": 3.6,
+		"shooting_Expected": 3.7,
+		"shooting_Expected__1": 3.7,
 		"shooting_Expected__2": 0.13,
-		"shooting_Expected__3": "+1.4",
-		"shooting_Expected__4": "+1.4",
+		"shooting_Expected__3": "+1.3",
+		"shooting_Expected__4": "+1.3",
 		"shooting___8": "Matches",
 		"passing___1": "Opa Nguette\\Opa-Nguette",
 		"passing___2": "sn SEN",
@@ -72197,7 +72388,7 @@
 		"misc_Aerial Duels__2": 30.6,
 		"misc___8": "Matches"
 	},
-	"379": {
+	"380": {
 		"standard___1": "Ibrahima Niane\\Ibrahima-Niane",
 		"standard___2": "sn SEN",
 		"standard___3": "FW",
@@ -72388,7 +72579,7 @@
 		"misc_Aerial Duels__2": 37.5,
 		"misc___8": "Matches"
 	},
-	"380": {
+	"381": {
 		"standard___1": "M'Baye Niang\\MBaye-Niang",
 		"standard___2": "sn SEN",
 		"standard___3": "FW",
@@ -72579,7 +72770,7 @@
 		"misc_Aerial Duels__2": 42,
 		"misc___8": "Matches"
 	},
-	"381": {
+	"382": {
 		"standard___1": "Cheikh Niasse\\Cheikh-Niasse",
 		"standard___2": "sn SEN",
 		"standard___3": "MF",
@@ -72770,7 +72961,7 @@
 		"misc_Aerial Duels__2": "",
 		"misc___8": "Matches"
 	},
-	"382": {
+	"383": {
 		"standard___1": "Casimir Ninga\\Casimir-Ninga",
 		"standard___2": "td CHA",
 		"standard___3": "MFFW",
@@ -72961,7 +73152,7 @@
 		"misc_Aerial Duels__2": 34.6,
 		"misc___8": "Matches"
 	},
-	"383": {
+	"384": {
 		"standard___1": "Timothée Nkada\\Timothee-Nkada",
 		"standard___2": "fr FRA",
 		"standard___3": "FWMF",
@@ -73152,7 +73343,7 @@
 		"misc_Aerial Duels__2": 20,
 		"misc___8": "Matches"
 	},
-	"384": {
+	"385": {
 		"standard___1": "Arnaud Nordin\\Arnaud-Nordin",
 		"standard___2": "fr FRA",
 		"standard___3": "FW",
@@ -73343,7 +73534,7 @@
 		"misc_Aerial Duels__2": 25,
 		"misc___8": "Matches"
 	},
-	"385": {
+	"386": {
 		"standard___1": "Gerzino Nyamsi\\Gerzino-Nyamsi",
 		"standard___2": "fr FRA",
 		"standard___3": "DF",
@@ -73534,7 +73725,7 @@
 		"misc_Aerial Duels__2": 33.3,
 		"misc___8": "Matches"
 	},
-	"386": {
+	"387": {
 		"standard___1": "Steven Nzonzi\\Steven-Nzonzi",
 		"standard___2": "fr FRA",
 		"standard___3": "MF",
@@ -73725,7 +73916,7 @@
 		"misc_Aerial Duels__2": 69,
 		"misc___8": "Matches"
 	},
-	"387": {
+	"388": {
 		"standard___1": "Jean Onana\\Jean-Onana",
 		"standard___2": "cm CMR",
 		"standard___3": "MF",
@@ -73916,7 +74107,7 @@
 		"misc_Aerial Duels__2": 100,
 		"misc___8": "Matches"
 	},
-	"388": {
+	"389": {
 		"standard___1": "Henry Onyekuru\\Henry-Onyekuru",
 		"standard___2": "ng NGA",
 		"standard___3": "FWMF",
@@ -74107,7 +74298,7 @@
 		"misc_Aerial Duels__2": 0,
 		"misc___8": "Matches"
 	},
-	"389": {
+	"390": {
 		"standard___1": "Nicholas Opoku\\Nicholas-Opoku",
 		"standard___2": "gh GHA",
 		"standard___3": "DF",
@@ -74298,7 +74489,7 @@
 		"misc_Aerial Duels__2": "",
 		"misc___8": "Matches"
 	},
-	"390": {
+	"391": {
 		"standard___1": "Victor Osimhen\\Victor-Osimhen",
 		"standard___2": "ng NGA",
 		"standard___3": "FW",
@@ -74323,7 +74514,7 @@
 		"standard_Expected__1": 12.7,
 		"standard_Expected__2": 2.9,
 		"standard_Per 90 Minutes__5": 0.59,
-		"standard_Per 90 Minutes__6": 0.11,
+		"standard_Per 90 Minutes__6": 0.12,
 		"standard_Per 90 Minutes__7": 0.7,
 		"standard_Per 90 Minutes__8": 0.5,
 		"standard_Per 90 Minutes__9": 0.61,
@@ -74489,7 +74680,7 @@
 		"misc_Aerial Duels__2": 37.9,
 		"misc___8": "Matches"
 	},
-	"391": {
+	"392": {
 		"standard___1": "Otávio\\Otavio",
 		"standard___2": "br BRA",
 		"standard___3": "MF",
@@ -74680,7 +74871,7 @@
 		"misc_Aerial Duels__2": 48.4,
 		"misc___8": "Matches"
 	},
-	"392": {
+	"393": {
 		"standard___1": "Abou Ouattara\\Abou-Ouattara",
 		"standard___2": "bf BFA",
 		"standard___3": "MF",
@@ -74871,7 +75062,7 @@
 		"misc_Aerial Duels__2": "",
 		"misc___8": "Matches"
 	},
-	"393": {
+	"394": {
 		"standard___1": "Remi Oudin\\Remi-Oudin",
 		"standard___2": "fr FRA",
 		"standard___3": "FWMF",
@@ -75062,7 +75253,7 @@
 		"misc_Aerial Duels__2": 59,
 		"misc___8": "Matches"
 	},
-	"394": {
+	"395": {
 		"standard___1": "Remi Oudin\\Remi-Oudin",
 		"standard___2": "fr FRA",
 		"standard___3": "FW",
@@ -75253,7 +75444,7 @@
 		"misc_Aerial Duels__2": 27.8,
 		"misc___8": "Matches"
 	},
-	"395": {
+	"396": {
 		"standard___1": "Alexandre Oukidja\\Alexandre-Oukidja",
 		"standard___2": "dz ALG",
 		"standard___3": "GK",
@@ -75444,7 +75635,7 @@
 		"misc_Aerial Duels__2": "",
 		"misc___8": "Matches"
 	},
-	"396": {
+	"397": {
 		"standard___1": "Zinédine Ould Khaled\\Zinedine-Ould-Khaled",
 		"standard___2": "fr FRA",
 		"standard___3": "MF",
@@ -75635,7 +75826,7 @@
 		"misc_Aerial Duels__2": 0,
 		"misc___8": "Matches"
 	},
-	"397": {
+	"398": {
 		"standard___1": "Adam Ounas\\Adam-Ounas",
 		"standard___2": "dz ALG",
 		"standard___3": "MFFW",
@@ -75826,7 +76017,7 @@
 		"misc_Aerial Duels__2": 13.3,
 		"misc___8": "Matches"
 	},
-	"398": {
+	"399": {
 		"standard___1": "Ambroise Oyongo\\Ambroise-Oyongo",
 		"standard___2": "cm CMR",
 		"standard___3": "DF",
@@ -76017,7 +76208,7 @@
 		"misc_Aerial Duels__2": 47.8,
 		"misc___8": "Matches"
 	},
-	"399": {
+	"400": {
 		"standard___1": "Pablo\\Pablo",
 		"standard___2": "br BRA",
 		"standard___3": "DF",
@@ -76208,7 +76399,7 @@
 		"misc_Aerial Duels__2": 77.4,
 		"misc___8": "Matches"
 	},
-	"400": {
+	"401": {
 		"standard___1": "Vincent Pajot\\Vincent-Pajot",
 		"standard___2": "fr FRA",
 		"standard___3": "MF",
@@ -76399,7 +76590,7 @@
 		"misc_Aerial Duels__2": 46.2,
 		"misc___8": "Matches"
 	},
-	"401": {
+	"402": {
 		"standard___1": "Vincent Pajot\\Vincent-Pajot",
 		"standard___2": "fr FRA",
 		"standard___3": "MF",
@@ -76590,7 +76781,7 @@
 		"misc_Aerial Duels__2": 85.7,
 		"misc___8": "Matches"
 	},
-	"402": {
+	"403": {
 		"standard___1": "Sergi Palencia\\Sergi-Palencia",
 		"standard___2": "es ESP",
 		"standard___3": "DF",
@@ -76781,7 +76972,7 @@
 		"misc_Aerial Duels__2": 7.7,
 		"misc___8": "Matches"
 	},
-	"403": {
+	"404": {
 		"standard___1": "Nicolas Pallois\\Nicolas-Pallois",
 		"standard___2": "fr FRA",
 		"standard___3": "DF",
@@ -76972,7 +77163,7 @@
 		"misc_Aerial Duels__2": 55.7,
 		"misc___8": "Matches"
 	},
-	"404": {
+	"405": {
 		"standard___1": "Jonathan Panzo\\Jonathan-Panzo",
 		"standard___2": "eng ENG",
 		"standard___3": "DF",
@@ -77163,7 +77354,7 @@
 		"misc_Aerial Duels__2": 40,
 		"misc___8": "Matches"
 	},
-	"405": {
+	"406": {
 		"standard___1": "Gaëtan Paquiez\\Gaetan-Paquiez",
 		"standard___2": "fr FRA",
 		"standard___3": "DF",
@@ -77354,7 +77545,7 @@
 		"misc_Aerial Duels__2": 50,
 		"misc___8": "Matches"
 	},
-	"406": {
+	"407": {
 		"standard___1": "Rubén Pardo\\Ruben-Pardo",
 		"standard___2": "es ESP",
 		"standard___3": "MF",
@@ -77545,7 +77736,7 @@
 		"misc_Aerial Duels__2": 100,
 		"misc___8": "Matches"
 	},
-	"407": {
+	"408": {
 		"standard___1": "Leandro Paredes\\Leandro-Paredes",
 		"standard___2": "ar ARG",
 		"standard___3": "MF",
@@ -77736,7 +77927,7 @@
 		"misc_Aerial Duels__2": 63.6,
 		"misc___8": "Matches"
 	},
-	"408": {
+	"409": {
 		"standard___1": "Mateo Pavlović\\Mateo-Pavlovic",
 		"standard___2": "ba BIH",
 		"standard___3": "DF",
@@ -77927,7 +78118,7 @@
 		"misc_Aerial Duels__2": 76.5,
 		"misc___8": "Matches"
 	},
-	"409": {
+	"410": {
 		"standard___1": "Dimitri Payet\\Dimitri-Payet",
 		"standard___2": "fr FRA",
 		"standard___3": "FW",
@@ -77948,13 +78139,13 @@
 		"standard_Per 90 Minutes__2": 0.61,
 		"standard_Per 90 Minutes__3": 0.28,
 		"standard_Per 90 Minutes__4": 0.47,
-		"standard_Expected": 6,
-		"standard_Expected__1": 3.7,
+		"standard_Expected": 6.1,
+		"standard_Expected__1": 3.8,
 		"standard_Expected__2": 7.1,
 		"standard_Per 90 Minutes__5": 0.28,
 		"standard_Per 90 Minutes__6": 0.33,
-		"standard_Per 90 Minutes__7": 0.61,
-		"standard_Per 90 Minutes__8": 0.17,
+		"standard_Per 90 Minutes__7": 0.62,
+		"standard_Per 90 Minutes__8": 0.18,
 		"standard_Per 90 Minutes__9": 0.51,
 		"standard___7": "Matches",
 		"code": "58ae47b2",
@@ -77976,11 +78167,11 @@
 		"shooting_Standard__8": 1.07,
 		"shooting_Standard__9": 0.1,
 		"shooting_Standard__10": 0.26,
-		"shooting_Expected": 6,
-		"shooting_Expected__1": 3.7,
+		"shooting_Expected": 6.1,
+		"shooting_Expected__1": 3.8,
 		"shooting_Expected__2": 0.06,
-		"shooting_Expected__3": "+3.0",
-		"shooting_Expected__4": "+2.3",
+		"shooting_Expected__3": "+2.9",
+		"shooting_Expected__4": "+2.2",
 		"shooting___8": "Matches",
 		"passing___1": "Dimitri Payet\\Dimitri-Payet",
 		"passing___2": "fr FRA",
@@ -78118,7 +78309,7 @@
 		"misc_Aerial Duels__2": 39.1,
 		"misc___8": "Matches"
 	},
-	"410": {
+	"411": {
 		"standard___1": "Yohann Pelé\\Yohann-Pele",
 		"standard___2": "fr FRA",
 		"standard___3": "GK",
@@ -78309,7 +78500,7 @@
 		"misc_Aerial Duels__2": "",
 		"misc___8": "Matches"
 	},
-	"411": {
+	"412": {
 		"standard___1": "Théo Pellenard\\Theo-Pellenard",
 		"standard___2": "fr FRA",
 		"standard___3": "DF",
@@ -78500,7 +78691,7 @@
 		"misc_Aerial Duels__2": 75,
 		"misc___8": "Matches"
 	},
-	"412": {
+	"413": {
 		"standard___1": "Andy Pelmard\\Andy-Pelmard",
 		"standard___2": "fr FRA",
 		"standard___3": "DF",
@@ -78691,7 +78882,7 @@
 		"misc_Aerial Duels__2": 27.8,
 		"misc___8": "Matches"
 	},
-	"413": {
+	"414": {
 		"standard___1": "Mathias Pereira Lage\\Mathias-Pereira-Lage",
 		"standard___2": "pt POR",
 		"standard___3": "MF",
@@ -78882,7 +79073,7 @@
 		"misc_Aerial Duels__2": 47.5,
 		"misc___8": "Matches"
 	},
-	"414": {
+	"415": {
 		"standard___1": "Romain Perraud\\Romain-Perraud",
 		"standard___2": "fr FRA",
 		"standard___3": "DF",
@@ -79073,7 +79264,7 @@
 		"misc_Aerial Duels__2": 30.4,
 		"misc___8": "Matches"
 	},
-	"415": {
+	"416": {
 		"standard___1": "Loïc Perrin\\Loic-Perrin",
 		"standard___2": "fr FRA",
 		"standard___3": "DF",
@@ -79264,7 +79455,7 @@
 		"misc_Aerial Duels__2": 61.8,
 		"misc___8": "Matches"
 	},
-	"416": {
+	"417": {
 		"standard___1": "Lucas Perrin\\Lucas-Perrin",
 		"standard___2": "fr FRA",
 		"standard___3": "DF",
@@ -79455,7 +79646,7 @@
 		"misc_Aerial Duels__2": 56.3,
 		"misc___8": "Matches"
 	},
-	"417": {
+	"418": {
 		"standard___1": "Danijel Petković\\Danijel-Petkovic",
 		"standard___2": "me MNE",
 		"standard___3": "GK",
@@ -79646,7 +79837,7 @@
 		"misc_Aerial Duels__2": "",
 		"misc___8": "Matches"
 	},
-	"418": {
+	"419": {
 		"standard___1": "Denis Petrić\\Denis-Petric",
 		"standard___2": "rs SRB",
 		"standard___3": "GK",
@@ -79837,7 +80028,7 @@
 		"misc_Aerial Duels__2": "",
 		"misc___8": "Matches"
 	},
-	"419": {
+	"420": {
 		"standard___1": "Rayan Philippe\\Rayan-Philippe",
 		"standard___2": "fr FRA",
 		"standard___3": "DFFW",
@@ -80028,7 +80219,7 @@
 		"misc_Aerial Duels__2": 0,
 		"misc___8": "Matches"
 	},
-	"420": {
+	"421": {
 		"standard___1": "Romain Philippoteaux\\Romain-Philippoteaux",
 		"standard___2": "fr FRA",
 		"standard___3": "FWMF",
@@ -80219,7 +80410,7 @@
 		"misc_Aerial Duels__2": 20,
 		"misc___8": "Matches"
 	},
-	"421": {
+	"422": {
 		"standard___1": "Jérémy Pied\\Jeremy-Pied",
 		"standard___2": "fr FRA",
 		"standard___3": "DF",
@@ -80410,7 +80601,7 @@
 		"misc_Aerial Duels__2": 33.3,
 		"misc___8": "Matches"
 	},
-	"422": {
+	"423": {
 		"standard___1": "Maxime Poundjé\\Maxime-Poundje",
 		"standard___2": "fr FRA",
 		"standard___3": "DF",
@@ -80601,7 +80792,7 @@
 		"misc_Aerial Duels__2": 0,
 		"misc___8": "Matches"
 	},
-	"423": {
+	"424": {
 		"standard___1": "Percy Prado\\Percy-Prado",
 		"standard___2": "pe PER",
 		"standard___3": "DF",
@@ -80792,7 +80983,7 @@
 		"misc_Aerial Duels__2": 33.3,
 		"misc___8": "Matches"
 	},
-	"424": {
+	"425": {
 		"standard___1": "Sanjin Prcić\\Sanjin-Prcic",
 		"standard___2": "ba BIH",
 		"standard___3": "MF",
@@ -80983,7 +81174,7 @@
 		"misc_Aerial Duels__2": 100,
 		"misc___8": "Matches"
 	},
-	"425": {
+	"426": {
 		"standard___1": "Nicolas de Préville\\Nicolas-de-Preville",
 		"standard___2": "fr FRA",
 		"standard___3": "MFFW",
@@ -81174,7 +81365,7 @@
 		"misc_Aerial Duels__2": 48.8,
 		"misc___8": "Matches"
 	},
-	"426": {
+	"427": {
 		"standard___1": "Nemanja Radonjić\\Nemanja-Radonjic",
 		"standard___2": "rs SRB",
 		"standard___3": "FWMF",
@@ -81199,10 +81390,10 @@
 		"standard_Expected__1": 2.9,
 		"standard_Expected__2": 0.9,
 		"standard_Per 90 Minutes__5": 0.3,
-		"standard_Per 90 Minutes__6": 0.1,
-		"standard_Per 90 Minutes__7": 0.4,
+		"standard_Per 90 Minutes__6": 0.09,
+		"standard_Per 90 Minutes__7": 0.39,
 		"standard_Per 90 Minutes__8": 0.3,
-		"standard_Per 90 Minutes__9": 0.4,
+		"standard_Per 90 Minutes__9": 0.39,
 		"standard___7": "Matches",
 		"code": "0630eb63",
 		"shooting___1": "Nemanja Radonjić\\Nemanja-Radonjic",
@@ -81365,7 +81556,7 @@
 		"misc_Aerial Duels__2": 27.8,
 		"misc___8": "Matches"
 	},
-	"427": {
+	"428": {
 		"standard___1": "Rafael\\Rafael",
 		"standard___2": "br BRA",
 		"standard___3": "DF",
@@ -81556,7 +81747,7 @@
 		"misc_Aerial Duels__2": 59.3,
 		"misc___8": "Matches"
 	},
-	"428": {
+	"429": {
 		"standard___1": "Predrag Rajković\\Predrag-Rajkovic",
 		"standard___2": "rs SRB",
 		"standard___3": "GK",
@@ -81747,7 +81938,7 @@
 		"misc_Aerial Duels__2": "",
 		"misc___8": "Matches"
 	},
-	"429": {
+	"430": {
 		"standard___1": "Jeff Reine-Adélaïde\\Jeff-Reine-Adelaide",
 		"standard___2": "fr FRA",
 		"standard___3": "MF",
@@ -81938,7 +82129,7 @@
 		"misc_Aerial Duels__2": 100,
 		"misc___8": "Matches"
 	},
-	"430": {
+	"431": {
 		"standard___1": "Jeff Reine-Adélaïde\\Jeff-Reine-Adelaide",
 		"standard___2": "fr FRA",
 		"standard___3": "MFFW",
@@ -82129,7 +82320,7 @@
 		"misc_Aerial Duels__2": 28.6,
 		"misc___8": "Matches"
 	},
-	"431": {
+	"432": {
 		"standard___1": "Loïc Rémy\\Loic-Remy",
 		"standard___2": "fr FRA",
 		"standard___3": "FW",
@@ -82320,7 +82511,7 @@
 		"misc_Aerial Duels__2": 48.3,
 		"misc___8": "Matches"
 	},
-	"432": {
+	"433": {
 		"standard___1": "Baptiste Reynet\\Baptiste-Reynet",
 		"standard___2": "fr FRA",
 		"standard___3": "GK",
@@ -82511,7 +82702,7 @@
 		"misc_Aerial Duels__2": 100,
 		"misc___8": "Matches"
 	},
-	"433": {
+	"434": {
 		"standard___1": "Sergio Rico\\Sergio-Rico",
 		"standard___2": "es ESP",
 		"standard___3": "GK",
@@ -82702,7 +82893,7 @@
 		"misc_Aerial Duels__2": "",
 		"misc___8": "Matches"
 	},
-	"434": {
+	"435": {
 		"standard___1": "Renaud Ripart\\Renaud-Ripart",
 		"standard___2": "fr FRA",
 		"standard___3": "FWDF",
@@ -82893,7 +83084,7 @@
 		"misc_Aerial Duels__2": 40.6,
 		"misc___8": "Matches"
 	},
-	"435": {
+	"436": {
 		"standard___1": "Mihailo Ristić\\Mihailo-Ristic",
 		"standard___2": "rs SRB",
 		"standard___3": "DFMF",
@@ -83084,7 +83275,7 @@
 		"misc_Aerial Duels__2": 46.2,
 		"misc___8": "Matches"
 	},
-	"436": {
+	"437": {
 		"standard___1": "Maxence Rivera\\Maxence-Rivera",
 		"standard___2": "fr FRA",
 		"standard___3": "MF",
@@ -83275,7 +83466,7 @@
 		"misc_Aerial Duels__2": "",
 		"misc___8": "Matches"
 	},
-	"437": {
+	"438": {
 		"standard___1": "Agustín Rogel\\Agustin-Rogel",
 		"standard___2": "uy URU",
 		"standard___3": "DF",
@@ -83466,7 +83657,7 @@
 		"misc_Aerial Duels__2": 58.3,
 		"misc___8": "Matches"
 	},
-	"438": {
+	"439": {
 		"standard___1": "Alaixys Romao\\Alaixys-Romao",
 		"standard___2": "tg TOG",
 		"standard___3": "MF",
@@ -83657,7 +83848,7 @@
 		"misc_Aerial Duels__2": 40.3,
 		"misc___8": "Matches"
 	},
-	"439": {
+	"440": {
 		"standard___1": "Valentin Rongier\\Valentin-Rongier",
 		"standard___2": "fr FRA",
 		"standard___3": "MF",
@@ -83848,7 +84039,7 @@
 		"misc_Aerial Duels__2": 50,
 		"misc___8": "Matches"
 	},
-	"440": {
+	"441": {
 		"standard___1": "Valentin Rongier\\Valentin-Rongier",
 		"standard___2": "fr FRA",
 		"standard___3": "MF",
@@ -83872,7 +84063,7 @@
 		"standard_Expected": 2.7,
 		"standard_Expected__1": 1.9,
 		"standard_Expected__2": 1.5,
-		"standard_Per 90 Minutes__5": 0.14,
+		"standard_Per 90 Minutes__5": 0.13,
 		"standard_Per 90 Minutes__6": 0.07,
 		"standard_Per 90 Minutes__7": 0.21,
 		"standard_Per 90 Minutes__8": 0.1,
@@ -84039,7 +84230,7 @@
 		"misc_Aerial Duels__2": 52.2,
 		"misc___8": "Matches"
 	},
-	"441": {
+	"442": {
 		"standard___1": "Nolan Roux\\Nolan-Roux",
 		"standard___2": "fr FRA",
 		"standard___3": "FW",
@@ -84230,7 +84421,7 @@
 		"misc_Aerial Duels__2": 24.3,
 		"misc___8": "Matches"
 	},
-	"442": {
+	"443": {
 		"standard___1": "Stéphane Ruffier\\Stephane-Ruffier",
 		"standard___2": "fr FRA",
 		"standard___3": "GK",
@@ -84421,7 +84612,7 @@
 		"misc_Aerial Duels__2": "",
 		"misc___8": "Matches"
 	},
-	"443": {
+	"444": {
 		"standard___1": "Gerónimo Rulli\\Geronimo-Rulli",
 		"standard___2": "ar ARG",
 		"standard___3": "GK",
@@ -84612,7 +84803,7 @@
 		"misc_Aerial Duels__2": "",
 		"misc___8": "Matches"
 	},
-	"444": {
+	"445": {
 		"standard___1": "Roli Pereira de Sa\\Roli-Pereira-de-Sa",
 		"standard___2": "fr FRA",
 		"standard___3": "MF",
@@ -84803,7 +84994,7 @@
 		"misc_Aerial Duels__2": "",
 		"misc___8": "Matches"
 	},
-	"445": {
+	"446": {
 		"standard___1": "Youssouf Sabaly\\Youssouf-Sabaly",
 		"standard___2": "sn SEN",
 		"standard___3": "DF",
@@ -84994,7 +85185,7 @@
 		"misc_Aerial Duels__2": 50,
 		"misc___8": "Matches"
 	},
-	"446": {
+	"447": {
 		"standard___1": "Ihsan Sacko\\Ihsan-Sacko",
 		"standard___2": "fr FRA",
 		"standard___3": "FW",
@@ -85185,7 +85376,7 @@
 		"misc_Aerial Duels__2": 0,
 		"misc___8": "Matches"
 	},
-	"447": {
+	"448": {
 		"standard___1": "Wesley Saïd\\Wesley-Said",
 		"standard___2": "fr FRA",
 		"standard___3": "MFFW",
@@ -85206,14 +85397,14 @@
 		"standard_Per 90 Minutes__2": 0.23,
 		"standard_Per 90 Minutes__3": 0.16,
 		"standard_Per 90 Minutes__4": 0.23,
-		"standard_Expected": 2.6,
-		"standard_Expected__1": 2.6,
+		"standard_Expected": 2.5,
+		"standard_Expected__1": 2.5,
 		"standard_Expected__2": 1.4,
 		"standard_Per 90 Minutes__5": 0.2,
 		"standard_Per 90 Minutes__6": 0.11,
-		"standard_Per 90 Minutes__7": 0.31,
+		"standard_Per 90 Minutes__7": 0.3,
 		"standard_Per 90 Minutes__8": 0.2,
-		"standard_Per 90 Minutes__9": 0.31,
+		"standard_Per 90 Minutes__9": 0.3,
 		"standard___7": "Matches",
 		"code": "90fcf472",
 		"shooting___1": "Wesley Saïd\\Wesley-Said",
@@ -85234,11 +85425,11 @@
 		"shooting_Standard__8": 0.78,
 		"shooting_Standard__9": 0.08,
 		"shooting_Standard__10": 0.2,
-		"shooting_Expected": 2.6,
-		"shooting_Expected__1": 2.6,
+		"shooting_Expected": 2.5,
+		"shooting_Expected__1": 2.5,
 		"shooting_Expected__2": 0.1,
-		"shooting_Expected__3": -0.6,
-		"shooting_Expected__4": -0.6,
+		"shooting_Expected__3": -0.5,
+		"shooting_Expected__4": -0.5,
 		"shooting___8": "Matches",
 		"passing___1": "Wesley Saïd\\Wesley-Said",
 		"passing___2": "fr FRA",
@@ -85376,7 +85567,7 @@
 		"misc_Aerial Duels__2": 39.3,
 		"misc___8": "Matches"
 	},
-	"448": {
+	"449": {
 		"standard___1": "Théo Sainte-Luce\\Theo-Sainte-Luce",
 		"standard___2": "fr FRA",
 		"standard___3": "DFFW",
@@ -85567,7 +85758,7 @@
 		"misc_Aerial Duels__2": 0,
 		"misc___8": "Matches"
 	},
-	"449": {
+	"450": {
 		"standard___1": "Hiroki Sakai\\Hiroki-Sakai",
 		"standard___2": "jp JPN",
 		"standard___3": "DF",
@@ -85758,7 +85949,7 @@
 		"misc_Aerial Duels__2": 64.9,
 		"misc___8": "Matches"
 	},
-	"450": {
+	"451": {
 		"standard___1": "William Saliba\\William-Saliba",
 		"standard___2": "fr FRA",
 		"standard___3": "DF",
@@ -85949,7 +86140,7 @@
 		"misc_Aerial Duels__2": 74.4,
 		"misc___8": "Matches"
 	},
-	"451": {
+	"452": {
 		"standard___1": "Romain Salin\\Romain-Salin",
 		"standard___2": "fr FRA",
 		"standard___3": "GK",
@@ -86140,7 +86331,7 @@
 		"misc_Aerial Duels__2": "",
 		"misc___8": "Matches"
 	},
-	"452": {
+	"453": {
 		"standard___1": "Mama Samba Baldé\\Mama-Samba-Balde",
 		"standard___2": "gw GNB",
 		"standard___3": "FWMF",
@@ -86166,9 +86357,9 @@
 		"standard_Expected__2": 2.7,
 		"standard_Per 90 Minutes__5": 0.28,
 		"standard_Per 90 Minutes__6": 0.15,
-		"standard_Per 90 Minutes__7": 0.42,
+		"standard_Per 90 Minutes__7": 0.43,
 		"standard_Per 90 Minutes__8": 0.28,
-		"standard_Per 90 Minutes__9": 0.42,
+		"standard_Per 90 Minutes__9": 0.43,
 		"standard___7": "Matches",
 		"code": "fb14aa28",
 		"shooting___1": "Mama Samba Baldé\\Mama-Samba-Balde",
@@ -86331,7 +86522,7 @@
 		"misc_Aerial Duels__2": 29.8,
 		"misc___8": "Matches"
 	},
-	"453": {
+	"454": {
 		"standard___1": "Junior Sambia\\Junior-Sambia",
 		"standard___2": "fr FRA",
 		"standard___3": "DFMF",
@@ -86522,7 +86713,7 @@
 		"misc_Aerial Duels__2": 43.8,
 		"misc___8": "Matches"
 	},
-	"454": {
+	"455": {
 		"standard___1": "Frédéric Sammaritano\\Frederic-Sammaritano",
 		"standard___2": "fr FRA",
 		"standard___3": "MFFW",
@@ -86713,7 +86904,7 @@
 		"misc_Aerial Duels__2": 0,
 		"misc___8": "Matches"
 	},
-	"455": {
+	"456": {
 		"standard___1": "Renato Sanches\\Renato-Sanches",
 		"standard___2": "pt POR",
 		"standard___3": "MFFW",
@@ -86738,7 +86929,7 @@
 		"standard_Expected__1": 1.7,
 		"standard_Expected__2": 2.7,
 		"standard_Per 90 Minutes__5": 0.12,
-		"standard_Per 90 Minutes__6": 0.17,
+		"standard_Per 90 Minutes__6": 0.16,
 		"standard_Per 90 Minutes__7": 0.28,
 		"standard_Per 90 Minutes__8": 0.1,
 		"standard_Per 90 Minutes__9": 0.27,
@@ -86764,7 +86955,7 @@
 		"shooting_Standard__10": 0.27,
 		"shooting_Expected": 1.9,
 		"shooting_Expected__1": 1.7,
-		"shooting_Expected__2": 0.05,
+		"shooting_Expected__2": 0.06,
 		"shooting_Expected__3": "+1.1",
 		"shooting_Expected__4": "+1.3",
 		"shooting___8": "Matches",
@@ -86904,7 +87095,7 @@
 		"misc_Aerial Duels__2": 30.8,
 		"misc___8": "Matches"
 	},
-	"456": {
+	"457": {
 		"standard___1": "Ibrahim Sangaré\\Ibrahim-Sangare",
 		"standard___2": "ci CIV",
 		"standard___3": "MF",
@@ -87095,7 +87286,7 @@
 		"misc_Aerial Duels__2": 62.3,
 		"misc___8": "Matches"
 	},
-	"457": {
+	"458": {
 		"standard___1": "Yaya Sanogo\\Yaya-Sanogo",
 		"standard___2": "fr FRA",
 		"standard___3": "FW",
@@ -87116,13 +87307,13 @@
 		"standard_Per 90 Minutes__2": 0.4,
 		"standard_Per 90 Minutes__3": 0.2,
 		"standard_Per 90 Minutes__4": 0.3,
-		"standard_Expected": 3.6,
+		"standard_Expected": 3.7,
 		"standard_Expected__1": 2.9,
 		"standard_Expected__2": 0.3,
 		"standard_Per 90 Minutes__5": 0.36,
 		"standard_Per 90 Minutes__6": 0.03,
-		"standard_Per 90 Minutes__7": 0.39,
-		"standard_Per 90 Minutes__8": 0.28,
+		"standard_Per 90 Minutes__7": 0.4,
+		"standard_Per 90 Minutes__8": 0.29,
 		"standard_Per 90 Minutes__9": 0.32,
 		"standard___7": "Matches",
 		"code": "11ced928",
@@ -87144,10 +87335,10 @@
 		"shooting_Standard__8": 0.99,
 		"shooting_Standard__9": 0.08,
 		"shooting_Standard__10": 0.2,
-		"shooting_Expected": 3.6,
+		"shooting_Expected": 3.7,
 		"shooting_Expected__1": 2.9,
 		"shooting_Expected__2": 0.12,
-		"shooting_Expected__3": -0.6,
+		"shooting_Expected__3": -0.7,
 		"shooting_Expected__4": -0.9,
 		"shooting___8": "Matches",
 		"passing___1": "Yaya Sanogo\\Yaya-Sanogo",
@@ -87286,7 +87477,7 @@
 		"misc_Aerial Duels__2": 39.2,
 		"misc___8": "Matches"
 	},
-	"458": {
+	"459": {
 		"standard___1": "Morgan Sanson\\Morgan-Sanson",
 		"standard___2": "fr FRA",
 		"standard___3": "MF",
@@ -87477,7 +87668,7 @@
 		"misc_Aerial Duels__2": 26.1,
 		"misc___8": "Matches"
 	},
-	"459": {
+	"460": {
 		"standard___1": "Baptiste Santamaria\\Baptiste-Santamaria",
 		"standard___2": "fr FRA",
 		"standard___3": "MF",
@@ -87668,7 +87859,7 @@
 		"misc_Aerial Duels__2": 59.8,
 		"misc___8": "Matches"
 	},
-	"460": {
+	"461": {
 		"standard___1": "Pablo Sarabia\\Pablo-Sarabia",
 		"standard___2": "es ESP",
 		"standard___3": "FWMF",
@@ -87859,7 +88050,7 @@
 		"misc_Aerial Duels__2": 26.7,
 		"misc___8": "Matches"
 	},
-	"461": {
+	"462": {
 		"standard___1": "Bouna Sarr\\Bouna-Sarr",
 		"standard___2": "gn GUI",
 		"standard___3": "DFFW",
@@ -88050,7 +88241,7 @@
 		"misc_Aerial Duels__2": 48.7,
 		"misc___8": "Matches"
 	},
-	"462": {
+	"463": {
 		"standard___1": "Malang Sarr\\Malang-Sarr",
 		"standard___2": "fr FRA",
 		"standard___3": "DF",
@@ -88241,7 +88432,7 @@
 		"misc_Aerial Duels__2": 58.3,
 		"misc___8": "Matches"
 	},
-	"463": {
+	"464": {
 		"standard___1": "Sidy Sarr\\Sidy-Sarr",
 		"standard___2": "sn SEN",
 		"standard___3": "MF",
@@ -88432,7 +88623,7 @@
 		"misc_Aerial Duels__2": 68.8,
 		"misc___8": "Matches"
 	},
-	"464": {
+	"465": {
 		"standard___1": "Téji Savanier\\Teji-Savanier",
 		"standard___2": "fr FRA",
 		"standard___3": "MF",
@@ -88623,7 +88814,7 @@
 		"misc_Aerial Duels__2": 58.5,
 		"misc___8": "Matches"
 	},
-	"465": {
+	"466": {
 		"standard___1": "Matz Sels\\Matz-Sels",
 		"standard___2": "be BEL",
 		"standard___3": "GK",
@@ -88814,7 +89005,7 @@
 		"misc_Aerial Duels__2": "",
 		"misc___8": "Matches"
 	},
-	"466": {
+	"467": {
 		"standard___1": "Gen Shoji\\Gen-Shoji",
 		"standard___2": "jp JPN",
 		"standard___3": "DF",
@@ -89005,7 +89196,7 @@
 		"misc_Aerial Duels__2": 100,
 		"misc___8": "Matches"
 	},
-	"467": {
+	"468": {
 		"standard___1": "Kalidou Sidibé\\Kalidou-Sidibe",
 		"standard___2": "fr FRA",
 		"standard___3": "MF",
@@ -89196,7 +89387,7 @@
 		"misc_Aerial Duels__2": 50,
 		"misc___8": "Matches"
 	},
-	"468": {
+	"469": {
 		"standard___1": "Theoson Siebatcheu\\Theoson-Siebatcheu",
 		"standard___2": "fr FRA",
 		"standard___3": "FW",
@@ -89222,9 +89413,9 @@
 		"standard_Expected__2": 0.6,
 		"standard_Per 90 Minutes__5": 0.21,
 		"standard_Per 90 Minutes__6": 0.13,
-		"standard_Per 90 Minutes__7": 0.34,
+		"standard_Per 90 Minutes__7": 0.33,
 		"standard_Per 90 Minutes__8": 0.21,
-		"standard_Per 90 Minutes__9": 0.34,
+		"standard_Per 90 Minutes__9": 0.33,
 		"standard___7": "Matches",
 		"code": "b684a484",
 		"shooting___1": "Theoson Siebatcheu\\Theoson-Siebatcheu",
@@ -89387,7 +89578,7 @@
 		"misc_Aerial Duels__2": 38.7,
 		"misc___8": "Matches"
 	},
-	"469": {
+	"470": {
 		"standard___1": "Kaj Sierhuis\\Kaj-Sierhuis",
 		"standard___2": "nl NED",
 		"standard___3": "FW",
@@ -89578,7 +89769,7 @@
 		"misc_Aerial Duels__2": "",
 		"misc___8": "Matches"
 	},
-	"470": {
+	"471": {
 		"standard___1": "Adrien Silva\\Adrien-Silva",
 		"standard___2": "pt POR",
 		"standard___3": "MF",
@@ -89769,7 +89960,7 @@
 		"misc_Aerial Duels__2": 44.4,
 		"misc___8": "Matches"
 	},
-	"471": {
+	"472": {
 		"standard___1": "Gabriel Silva\\Gabriel-Silva",
 		"standard___2": "br BRA",
 		"standard___3": "DF",
@@ -89960,7 +90151,7 @@
 		"misc_Aerial Duels__2": 63.6,
 		"misc___8": "Matches"
 	},
-	"472": {
+	"473": {
 		"standard___1": "Matheus Pereira da Silva\\Matheus-Pereira-da-Silva",
 		"standard___2": "br BRA",
 		"standard___3": "MFFW",
@@ -90151,7 +90342,7 @@
 		"misc_Aerial Duels__2": 25,
 		"misc___8": "Matches"
 	},
-	"473": {
+	"474": {
 		"standard___1": "Thiago Silva\\Thiago-Silva",
 		"standard___2": "br BRA",
 		"standard___3": "DF",
@@ -90342,7 +90533,7 @@
 		"misc_Aerial Duels__2": 60.8,
 		"misc___8": "Matches"
 	},
-	"474": {
+	"475": {
 		"standard___1": "Mohamed Simakan\\Mohamed-Simakan",
 		"standard___2": "fr FRA",
 		"standard___3": "DF",
@@ -90533,7 +90724,7 @@
 		"misc_Aerial Duels__2": 62,
 		"misc___8": "Matches"
 	},
-	"475": {
+	"476": {
 		"standard___1": "Moses Simon\\Moses-Simon",
 		"standard___2": "ng NGA",
 		"standard___3": "FWMF",
@@ -90724,7 +90915,7 @@
 		"misc_Aerial Duels__2": 20,
 		"misc___8": "Matches"
 	},
-	"476": {
+	"477": {
 		"standard___1": "Ibrahima Sissoko\\Ibrahima-Sissoko",
 		"standard___2": "fr FRA",
 		"standard___3": "MF",
@@ -90745,8 +90936,8 @@
 		"standard_Per 90 Minutes__2": 0.06,
 		"standard_Per 90 Minutes__3": 0,
 		"standard_Per 90 Minutes__4": 0.06,
-		"standard_Expected": 0.9,
-		"standard_Expected__1": 0.9,
+		"standard_Expected": 0.8,
+		"standard_Expected__1": 0.8,
 		"standard_Expected__2": 1.3,
 		"standard_Per 90 Minutes__5": 0.05,
 		"standard_Per 90 Minutes__6": 0.07,
@@ -90773,11 +90964,11 @@
 		"shooting_Standard__8": 0.06,
 		"shooting_Standard__9": 0,
 		"shooting_Standard__10": 0,
-		"shooting_Expected": 0.9,
-		"shooting_Expected__1": 0.9,
+		"shooting_Expected": 0.8,
+		"shooting_Expected__1": 0.8,
 		"shooting_Expected__2": 0.05,
-		"shooting_Expected__3": -0.9,
-		"shooting_Expected__4": -0.9,
+		"shooting_Expected__3": -0.8,
+		"shooting_Expected__4": -0.8,
 		"shooting___8": "Matches",
 		"passing___1": "Ibrahima Sissoko\\Ibrahima-Sissoko",
 		"passing___2": "fr FRA",
@@ -90915,7 +91106,7 @@
 		"misc_Aerial Duels__2": 58.2,
 		"misc___8": "Matches"
 	},
-	"477": {
+	"478": {
 		"standard___1": "Sambou Sissoko\\Sambou-Sissoko",
 		"standard___2": "fr FRA",
 		"standard___3": "MFFW",
@@ -91106,7 +91297,7 @@
 		"misc_Aerial Duels__2": 0,
 		"misc___8": "Matches"
 	},
-	"478": {
+	"479": {
 		"standard___1": "Petar Škuletić\\Petar-Skuletic",
 		"standard___2": "rs SRB",
 		"standard___3": "FW",
@@ -91297,7 +91488,7 @@
 		"misc_Aerial Duels__2": 50,
 		"misc___8": "Matches"
 	},
-	"479": {
+	"480": {
 		"standard___1": "Islam Slimani\\Islam-Slimani",
 		"standard___2": "dz ALG",
 		"standard___3": "FW",
@@ -91488,7 +91679,7 @@
 		"misc_Aerial Duels__2": 50,
 		"misc___8": "Matches"
 	},
-	"480": {
+	"481": {
 		"standard___1": "Oumar Solet\\Oumar-Solet",
 		"standard___2": "fr FRA",
 		"standard___3": "DF",
@@ -91679,7 +91870,7 @@
 		"misc_Aerial Duels__2": 0,
 		"misc___8": "Matches"
 	},
-	"481": {
+	"482": {
 		"standard___1": "Adama Soumaoro\\Adama-Soumaoro",
 		"standard___2": "fr FRA",
 		"standard___3": "DF",
@@ -91700,8 +91891,8 @@
 		"standard_Per 90 Minutes__2": 0.22,
 		"standard_Per 90 Minutes__3": 0.22,
 		"standard_Per 90 Minutes__4": 0.22,
-		"standard_Expected": 0.8,
-		"standard_Expected__1": 0.8,
+		"standard_Expected": 0.9,
+		"standard_Expected__1": 0.9,
 		"standard_Expected__2": 0,
 		"standard_Per 90 Minutes__5": 0.18,
 		"standard_Per 90 Minutes__6": 0,
@@ -91728,11 +91919,11 @@
 		"shooting_Standard__8": 0.43,
 		"shooting_Standard__9": 0.25,
 		"shooting_Standard__10": 0.5,
-		"shooting_Expected": 0.8,
-		"shooting_Expected__1": 0.8,
+		"shooting_Expected": 0.9,
+		"shooting_Expected__1": 0.9,
 		"shooting_Expected__2": 0.21,
-		"shooting_Expected__3": "+0.2",
-		"shooting_Expected__4": "+0.2",
+		"shooting_Expected__3": "+0.1",
+		"shooting_Expected__4": "+0.1",
 		"shooting___8": "Matches",
 		"passing___1": "Adama Soumaoro\\Adama-Soumaoro",
 		"passing___2": "fr FRA",
@@ -91870,7 +92061,7 @@
 		"misc_Aerial Duels__2": 65,
 		"misc___8": "Matches"
 	},
-	"482": {
+	"483": {
 		"standard___1": "Boubakary Soumaré\\Boubakary-Soumare",
 		"standard___2": "fr FRA",
 		"standard___3": "MF",
@@ -92061,7 +92252,7 @@
 		"misc_Aerial Duels__2": 52.2,
 		"misc___8": "Matches"
 	},
-	"483": {
+	"484": {
 		"standard___1": "Bryan Soumaré\\Bryan-Soumare",
 		"standard___2": "fr FRA",
 		"standard___3": "MFFW",
@@ -92252,7 +92443,7 @@
 		"misc_Aerial Duels__2": 36.4,
 		"misc___8": "Matches"
 	},
-	"484": {
+	"485": {
 		"standard___1": "Arnaud Souquet\\Arnaud-Souquet",
 		"standard___2": "fr FRA",
 		"standard___3": "DF",
@@ -92443,7 +92634,7 @@
 		"misc_Aerial Duels__2": 45,
 		"misc___8": "Matches"
 	},
-	"485": {
+	"486": {
 		"standard___1": "Bassem Srarfi\\Bassem-Srarfi",
 		"standard___2": "tn TUN",
 		"standard___3": "FWDF",
@@ -92634,7 +92825,7 @@
 		"misc_Aerial Duels__2": 0,
 		"misc___8": "Matches"
 	},
-	"486": {
+	"487": {
 		"standard___1": "Vlatko Stojanovski\\Vlatko-Stojanovski",
 		"standard___2": "mk MKD",
 		"standard___3": "FW",
@@ -92659,7 +92850,7 @@
 		"standard_Expected__1": 0.5,
 		"standard_Expected__2": 0.1,
 		"standard_Per 90 Minutes__5": 0.39,
-		"standard_Per 90 Minutes__6": 0.09,
+		"standard_Per 90 Minutes__6": 0.08,
 		"standard_Per 90 Minutes__7": 0.47,
 		"standard_Per 90 Minutes__8": 0.39,
 		"standard_Per 90 Minutes__9": 0.47,
@@ -92825,7 +93016,7 @@
 		"misc_Aerial Duels__2": 20,
 		"misc___8": "Matches"
 	},
-	"487": {
+	"488": {
 		"standard___1": "Kevin Strootman\\Kevin-Strootman",
 		"standard___2": "nl NED",
 		"standard___3": "MF",
@@ -92851,7 +93042,7 @@
 		"standard_Expected__2": 0.9,
 		"standard_Per 90 Minutes__5": 0.1,
 		"standard_Per 90 Minutes__6": 0.06,
-		"standard_Per 90 Minutes__7": 0.15,
+		"standard_Per 90 Minutes__7": 0.16,
 		"standard_Per 90 Minutes__8": 0.05,
 		"standard_Per 90 Minutes__9": 0.11,
 		"standard___7": "Matches",
@@ -93016,7 +93207,7 @@
 		"misc_Aerial Duels__2": 47.4,
 		"misc___8": "Matches"
 	},
-	"488": {
+	"489": {
 		"standard___1": "Mathías Suárez\\Mathias-Suarez",
 		"standard___2": "uy URU",
 		"standard___3": "DF",
@@ -93207,7 +93398,7 @@
 		"misc_Aerial Duels__2": 0,
 		"misc___8": "Matches"
 	},
-	"489": {
+	"490": {
 		"standard___1": "Stoppila Sunzu\\Stoppila-Sunzu",
 		"standard___2": "zm ZAM",
 		"standard___3": "DF",
@@ -93228,8 +93419,8 @@
 		"standard_Per 90 Minutes__2": 0,
 		"standard_Per 90 Minutes__3": 0,
 		"standard_Per 90 Minutes__4": 0,
-		"standard_Expected": 0.5,
-		"standard_Expected__1": 0.5,
+		"standard_Expected": 0.4,
+		"standard_Expected__1": 0.4,
 		"standard_Expected__2": 0,
 		"standard_Per 90 Minutes__5": 0.03,
 		"standard_Per 90 Minutes__6": 0,
@@ -93256,11 +93447,11 @@
 		"shooting_Standard__8": 0,
 		"shooting_Standard__9": 0,
 		"shooting_Standard__10": "",
-		"shooting_Expected": 0.5,
-		"shooting_Expected__1": 0.5,
+		"shooting_Expected": 0.4,
+		"shooting_Expected__1": 0.4,
 		"shooting_Expected__2": 0.09,
-		"shooting_Expected__3": -0.5,
-		"shooting_Expected__4": -0.5,
+		"shooting_Expected__3": -0.4,
+		"shooting_Expected__4": -0.4,
 		"shooting___8": "Matches",
 		"passing___1": "Stoppila Sunzu\\Stoppila-Sunzu",
 		"passing___2": "zm ZAM",
@@ -93398,7 +93589,7 @@
 		"misc_Aerial Duels__2": 61.4,
 		"misc___8": "Matches"
 	},
-	"490": {
+	"491": {
 		"standard___1": "Issiaga Sylla\\Issiaga-Sylla",
 		"standard___2": "gn GUI",
 		"standard___3": "DF",
@@ -93589,7 +93780,7 @@
 		"misc_Aerial Duels__2": 63.3,
 		"misc___8": "Matches"
 	},
-	"491": {
+	"492": {
 		"standard___1": "Moussa Sylla\\Moussa-Sylla",
 		"standard___2": "fr FRA",
 		"standard___3": "FW",
@@ -93780,7 +93971,7 @@
 		"misc_Aerial Duels__2": "",
 		"misc___8": "Matches"
 	},
-	"492": {
+	"493": {
 		"standard___1": "Eddy Sylvestre\\Eddy-Sylvestre",
 		"standard___2": "fr FRA",
 		"standard___3": "MF",
@@ -93971,7 +94162,7 @@
 		"misc_Aerial Duels__2": 0,
 		"misc___8": "Matches"
 	},
-	"493": {
+	"494": {
 		"standard___1": "Flavien Tait\\Flavien-Tait",
 		"standard___2": "fr FRA",
 		"standard___3": "MFFW",
@@ -94162,7 +94353,7 @@
 		"misc_Aerial Duels__2": 22.2,
 		"misc___8": "Matches"
 	},
-	"494": {
+	"495": {
 		"standard___1": "Mahdi Talal\\Mahdi-Talal",
 		"standard___2": "fr FRA",
 		"standard___3": "FW",
@@ -94353,7 +94544,7 @@
 		"misc_Aerial Duels__2": "",
 		"misc___8": "Matches"
 	},
-	"495": {
+	"496": {
 		"standard___1": "Adrien Tameze\\Adrien-Tameze",
 		"standard___2": "cm CMR",
 		"standard___3": "MF",
@@ -94544,7 +94735,7 @@
 		"misc_Aerial Duels__2": 14.3,
 		"misc___8": "Matches"
 	},
-	"496": {
+	"497": {
 		"standard___1": "Adil Taoui\\Adil-Taoui",
 		"standard___2": "fr FRA",
 		"standard___3": "MF",
@@ -94735,7 +94926,7 @@
 		"misc_Aerial Duels__2": "",
 		"misc___8": "Matches"
 	},
-	"497": {
+	"498": {
 		"standard___1": "Ciprian Tătărușanu\\Ciprian-Tatarusanu",
 		"standard___2": "ro ROU",
 		"standard___3": "GK",
@@ -94926,7 +95117,7 @@
 		"misc_Aerial Duels__2": "",
 		"misc___8": "Matches"
 	},
-	"498": {
+	"499": {
 		"standard___1": "Júlio Tavares\\Julio-Tavares",
 		"standard___2": "cv CPV",
 		"standard___3": "FW",
@@ -95115,197 +95306,6 @@
 		"misc_Aerial Duels": 170,
 		"misc_Aerial Duels__1": 142,
 		"misc_Aerial Duels__2": 54.5,
-		"misc___8": "Matches"
-	},
-	"499": {
-		"standard___1": "Ally Taylor\\Ally-Taylor",
-		"standard___2": "fr FRA",
-		"standard___3": "MF",
-		"standard___4": "Toulouse",
-		"standard___5": "",
-		"standard___6": "",
-		"standard_Playing Time": 1,
-		"standard_Playing Time__1": 0,
-		"standard_Playing Time__2": 12,
-		"standard_Performance": 0,
-		"standard_Performance__1": 0,
-		"standard_Performance__2": 0,
-		"standard_Performance__3": 0,
-		"standard_Performance__4": 0,
-		"standard_Performance__5": 0,
-		"standard_Per 90 Minutes": 0,
-		"standard_Per 90 Minutes__1": 0,
-		"standard_Per 90 Minutes__2": 0,
-		"standard_Per 90 Minutes__3": 0,
-		"standard_Per 90 Minutes__4": 0,
-		"standard_Expected": 0.1,
-		"standard_Expected__1": 0.1,
-		"standard_Expected__2": 0,
-		"standard_Per 90 Minutes__5": 0.59,
-		"standard_Per 90 Minutes__6": 0,
-		"standard_Per 90 Minutes__7": 0.59,
-		"standard_Per 90 Minutes__8": 0.59,
-		"standard_Per 90 Minutes__9": 0.59,
-		"standard___7": "Matches",
-		"code": "36211339",
-		"shooting___1": "Ally Taylor\\Ally-Taylor",
-		"shooting___2": "fr FRA",
-		"shooting___3": "MF",
-		"shooting___4": "Toulouse",
-		"shooting___5": "",
-		"shooting___6": "",
-		"shooting___7": 0.1,
-		"shooting_Standard": 0,
-		"shooting_Standard__1": 0,
-		"shooting_Standard__2": 0,
-		"shooting_Standard__3": 1,
-		"shooting_Standard__4": 1,
-		"shooting_Standard__5": 1,
-		"shooting_Standard__6": 100,
-		"shooting_Standard__7": 7.5,
-		"shooting_Standard__8": 7.5,
-		"shooting_Standard__9": 0,
-		"shooting_Standard__10": 0,
-		"shooting_Expected": 0.1,
-		"shooting_Expected__1": 0.1,
-		"shooting_Expected__2": 0.08,
-		"shooting_Expected__3": -0.1,
-		"shooting_Expected__4": -0.1,
-		"shooting___8": "Matches",
-		"passing___1": "Ally Taylor\\Ally-Taylor",
-		"passing___2": "fr FRA",
-		"passing___3": "MF",
-		"passing___4": "Toulouse",
-		"passing___5": "",
-		"passing___6": "",
-		"passing___7": 0.1,
-		"passing_Total": 5,
-		"passing_Total__1": 9,
-		"passing_Total__2": 55.6,
-		"passing_Total__3": 96,
-		"passing_Total__4": 11,
-		"passing_Short": 0,
-		"passing_Short__1": 0,
-		"passing_Short__2": "",
-		"passing_Medium": 4,
-		"passing_Medium__1": 6,
-		"passing_Medium__2": 66.7,
-		"passing_Long": 1,
-		"passing_Long__1": 3,
-		"passing_Long__2": 33.3,
-		"passing___8": 0,
-		"passing___9": 0,
-		"passing___10": 0,
-		"passing___11": 0,
-		"passing___12": 1,
-		"passing___13": 0,
-		"passing___14": 0,
-		"passing___15": 1,
-		"passing___16": "Matches",
-		"gca___1": "Ally Taylor\\Ally-Taylor",
-		"gca___2": "fr FRA",
-		"gca___3": "MF",
-		"gca___4": "Toulouse",
-		"gca___5": "",
-		"gca___6": "",
-		"gca___7": 0.1,
-		"gca_SCA": 0,
-		"gca_SCA__1": 0,
-		"gca_SCA Types": 0,
-		"gca_SCA Types__1": 0,
-		"gca_SCA Types__2": 0,
-		"gca_SCA Types__3": 0,
-		"gca_SCA Types__4": 0,
-		"gca_GCA": 0,
-		"gca_GCA__1": 0,
-		"gca_GCA Types": 0,
-		"gca_GCA Types__1": 0,
-		"gca_GCA Types__2": 0,
-		"gca_GCA Types__3": 0,
-		"gca_GCA Types__4": 0,
-		"gca_GCA Types__5": 0,
-		"gca___8": "Matches",
-		"defense___1": "Ally Taylor\\Ally-Taylor",
-		"defense___2": "fr FRA",
-		"defense___3": "MF",
-		"defense___4": "Toulouse",
-		"defense___5": "",
-		"defense___6": "",
-		"defense___7": 0.1,
-		"defense_Tackles": 0,
-		"defense_Tackles__1": 0,
-		"defense_Tackles__2": 0,
-		"defense_Tackles__3": 0,
-		"defense_Tackles__4": 0,
-		"defense_Vs Dribbles": 0,
-		"defense_Vs Dribbles__1": 1,
-		"defense_Vs Dribbles__2": 0,
-		"defense_Vs Dribbles__3": 1,
-		"defense_Pressures": 1,
-		"defense_Pressures__1": 0,
-		"defense_Pressures__2": 0,
-		"defense_Pressures__3": 0,
-		"defense_Pressures__4": 0,
-		"defense_Pressures__5": 1,
-		"defense_Blocks": 0,
-		"defense_Blocks__1": 0,
-		"defense_Blocks__2": 0,
-		"defense_Blocks__3": 0,
-		"defense___8": 0,
-		"defense___9": 0,
-		"defense___10": 0,
-		"defense___11": "Matches",
-		"possession___1": "Ally Taylor\\Ally-Taylor",
-		"possession___2": "fr FRA",
-		"possession___3": "MF",
-		"possession___4": "Toulouse",
-		"possession___5": "",
-		"possession___6": "",
-		"possession___7": 0.1,
-		"possession_Touches": 11,
-		"possession_Touches__1": 0,
-		"possession_Touches__2": 0,
-		"possession_Touches__3": 7,
-		"possession_Touches__4": 5,
-		"possession_Touches__5": 0,
-		"possession_Touches__6": 8,
-		"possession_Dribbles": 1,
-		"possession_Dribbles__1": 1,
-		"possession_Dribbles__2": 100,
-		"possession_Dribbles__3": 1,
-		"possession_Dribbles__4": 0,
-		"possession_Carries": 9,
-		"possession_Carries__1": 90,
-		"possession_Carries__2": 48,
-		"possession_Receiving": 6,
-		"possession_Receiving__1": 6,
-		"possession_Receiving__2": 100,
-		"possession___8": 0,
-		"possession___9": 1,
-		"possession___10": "Matches",
-		"misc___1": "Ally Taylor\\Ally-Taylor",
-		"misc___2": "fr FRA",
-		"misc___3": "MF",
-		"misc___4": "Toulouse",
-		"misc___5": "",
-		"misc___6": "",
-		"misc___7": 0.1,
-		"misc_Performance": 0,
-		"misc_Performance__1": 0,
-		"misc_Performance__2": 0,
-		"misc_Performance__3": 0,
-		"misc_Performance__4": 0,
-		"misc_Performance__5": 0,
-		"misc_Performance__6": 1,
-		"misc_Performance__7": 0,
-		"misc_Performance__8": 0,
-		"misc_Performance__9": 0,
-		"misc_Performance__10": 0,
-		"misc_Performance__11": 0,
-		"misc_Performance__12": 1,
-		"misc_Aerial Duels": 0,
-		"misc_Aerial Duels__1": 0,
-		"misc_Aerial Duels__2": "",
 		"misc___8": "Matches"
 	},
 	"500": {
@@ -97817,9 +97817,9 @@
 		"standard_Expected__2": 4.1,
 		"standard_Per 90 Minutes__5": 0.11,
 		"standard_Per 90 Minutes__6": 0.37,
-		"standard_Per 90 Minutes__7": 0.47,
+		"standard_Per 90 Minutes__7": 0.48,
 		"standard_Per 90 Minutes__8": 0.11,
-		"standard_Per 90 Minutes__9": 0.47,
+		"standard_Per 90 Minutes__9": 0.48,
 		"standard___7": "Matches",
 		"code": "1a6f2a66",
 		"shooting___1": "Adama Traoré\\Adama-Traore",
@@ -100299,7 +100299,7 @@
 		"standard_Expected__1": 1,
 		"standard_Expected__2": 1.9,
 		"standard_Per 90 Minutes__5": 0.06,
-		"standard_Per 90 Minutes__6": 0.1,
+		"standard_Per 90 Minutes__6": 0.11,
 		"standard_Per 90 Minutes__7": 0.16,
 		"standard_Per 90 Minutes__8": 0.06,
 		"standard_Per 90 Minutes__9": 0.16,
@@ -101826,10 +101826,10 @@
 		"standard_Expected": 1.1,
 		"standard_Expected__1": 1.1,
 		"standard_Expected__2": 1.1,
-		"standard_Per 90 Minutes__5": 0.15,
+		"standard_Per 90 Minutes__5": 0.14,
 		"standard_Per 90 Minutes__6": 0.14,
 		"standard_Per 90 Minutes__7": 0.28,
-		"standard_Per 90 Minutes__8": 0.15,
+		"standard_Per 90 Minutes__8": 0.14,
 		"standard_Per 90 Minutes__9": 0.28,
 		"standard___7": "Matches",
 		"code": "f3600c02",
@@ -101853,7 +101853,7 @@
 		"shooting_Standard__10": 0,
 		"shooting_Expected": 1.1,
 		"shooting_Expected__1": 1.1,
-		"shooting_Expected__2": 0.13,
+		"shooting_Expected__2": 0.12,
 		"shooting_Expected__3": -1.1,
 		"shooting_Expected__4": -1.1,
 		"shooting___8": "Matches",
@@ -102014,13 +102014,13 @@
 		"standard_Per 90 Minutes__2": 0.53,
 		"standard_Per 90 Minutes__3": 0,
 		"standard_Per 90 Minutes__4": 0.42,
-		"standard_Expected": 2,
+		"standard_Expected": 1.9,
 		"standard_Expected__1": 1.2,
 		"standard_Expected__2": 2.6,
-		"standard_Per 90 Minutes__5": 0.21,
-		"standard_Per 90 Minutes__6": 0.27,
+		"standard_Per 90 Minutes__5": 0.2,
+		"standard_Per 90 Minutes__6": 0.28,
 		"standard_Per 90 Minutes__7": 0.48,
-		"standard_Per 90 Minutes__8": 0.13,
+		"standard_Per 90 Minutes__8": 0.12,
 		"standard_Per 90 Minutes__9": 0.4,
 		"standard___7": "Matches",
 		"code": "f5c8b425",
@@ -102042,10 +102042,10 @@
 		"shooting_Standard__8": 0.32,
 		"shooting_Standard__9": 0,
 		"shooting_Standard__10": 0,
-		"shooting_Expected": 2,
+		"shooting_Expected": 1.9,
 		"shooting_Expected__1": 1.2,
 		"shooting_Expected__2": 0.06,
-		"shooting_Expected__3": -1,
+		"shooting_Expected__3": -0.9,
 		"shooting_Expected__4": -1.2,
 		"shooting___8": "Matches",
 		"passing___1": "Yusuf Yazıcı\\Yusuf-Yazici",

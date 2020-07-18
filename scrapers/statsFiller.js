@@ -248,6 +248,10 @@ let processEntry = (aPlayer, competitionData, competitionName, isGoalkeeper) => 
         return;
     }
 
+    if (isGoalkeeper && METADATA[whoscoredCode]["positions"][SEASON] !== "GK"){
+        return;
+    }
+
     //retrieve the club name and the team's average possession for the required competition
     if (FBREF_TO_WHOSCORED_TEAMS[fbrefClubName] === undefined){
         console.log(fbrefClubName);
@@ -255,9 +259,38 @@ let processEntry = (aPlayer, competitionData, competitionName, isGoalkeeper) => 
     let whoscoredClubName = FBREF_TO_WHOSCORED_TEAMS[fbrefClubName]["whoscored"];
     let possession = POSSESSION_DATA[competitionName][whoscoredClubName];
 
+    //populate the player metadata
+    if (PROCESSED[whoscoredCode] === undefined){
+        PROCESSED[whoscoredCode] = {};
+        let currentPlayer = PROCESSED[whoscoredCode];
+        let metadata = METADATA[whoscoredCode];
+        currentPlayer["fbrefCode"] = fbrefCode;
+        currentPlayer["name"] = metadata["name"];
+        currentPlayer["name2"] = fbrefName;
+        currentPlayer["simplifiedName"] = metadata["simplifiedName"];
+        currentPlayer["simplifiedName2"] = fbrefSimplifiedName;
+        currentPlayer["age"] = metadata["age"];
+        currentPlayer["nationality"] = metadata["nationality"] === "" ? countryCodes.getCountryName(entry['standard___2'].split(" ")[0].toUpperCase()) : metadata["nationality"];
+        currentPlayer["positions"] = metadata["positions"];
+        currentPlayer["percentileEntries"] = {};
+        currentPlayer["clubs"] = metadata["clubs"];
+        currentPlayer["stats"] = {};
+    }
+
+    if (PROCESSED[whoscoredCode]["percentileEntries"][SEASON] === undefined){
+        PROCESSED[whoscoredCode]["percentileEntries"][SEASON] = [];
+    }
+
+    let percentileEntriesArray = PROCESSED[whoscoredCode]["percentileEntries"][SEASON];
+    for (let position in POSITION_DATA){
+        if (POSITION_DATA[position].includes(whoscoredCode)){
+            if (!percentileEntriesArray.includes(position)) percentileEntriesArray.push(position)
+        }
+    }
+
     //retrieve required stats from the fbref data (exported CSVs converted to JSON)
     let stats;
-    if (isGoalkeeper){
+    if (isGoalkeeper && METADATA[whoscoredCode]["positions"][SEASON] === "GK"){
         stats = {
             minutes: entry["keeper_Playing Time__2"],
             goalsAgainst: entry["keeper_Performance"] - entry["keeper_adv_Goals__4"],
@@ -308,35 +341,6 @@ let processEntry = (aPlayer, competitionData, competitionName, isGoalkeeper) => 
             if (typeof stats[stat] === "string"){
                 stats[stat] = 0;
             }
-        }
-    }
-
-    //populate the player metadata
-    if (PROCESSED[whoscoredCode] === undefined){
-        PROCESSED[whoscoredCode] = {};
-        let currentPlayer = PROCESSED[whoscoredCode];
-        let metadata = METADATA[whoscoredCode];
-        currentPlayer["fbrefCode"] = fbrefCode;
-        currentPlayer["name"] = metadata["name"];
-        currentPlayer["name2"] = fbrefName;
-        currentPlayer["simplifiedName"] = metadata["simplifiedName"];
-        currentPlayer["simplifiedName2"] = fbrefSimplifiedName;
-        currentPlayer["age"] = metadata["age"];
-        currentPlayer["nationality"] = metadata["nationality"] === "" ? countryCodes.getCountryName(entry['standard___2'].split(" ")[0].toUpperCase()) : metadata["nationality"];
-        currentPlayer["positions"] = metadata["positions"];
-        currentPlayer["percentileEntries"] = {};
-        currentPlayer["clubs"] = metadata["clubs"];
-        currentPlayer["stats"] = {};
-    }
-
-    if (PROCESSED[whoscoredCode]["percentileEntries"][SEASON] === undefined){
-        PROCESSED[whoscoredCode]["percentileEntries"][SEASON] = [];
-    }
-
-    let percentileEntriesArray = PROCESSED[whoscoredCode]["percentileEntries"][SEASON];
-    for (let position in POSITION_DATA){
-        if (POSITION_DATA[position].includes(whoscoredCode)){
-            if (!percentileEntriesArray.includes(position)) percentileEntriesArray.push(position)
         }
     }
 

@@ -31,8 +31,8 @@ if (SEASON === "18-19"){
         "https://fbref.com/en/comps/11/1896/2018-2019-Serie-A-Stats",
         "https://fbref.com/en/comps/20/2109/2018-2019-Bundesliga-Stats",
         "https://fbref.com/en/comps/13/2104/2018-2019-Ligue-1-Stats",
-        "https://fbref.com/en/comps/8/2102/2018-2019-Champions-League-Stats",
-        "https://fbref.com/en/comps/8/2103/2018-2019-Europa-League-Stats"
+        "https://fbref.com/en/comps/8/2102/stats/2018-2019-Champions-League-Stats",
+        "https://fbref.com/en/comps/19/2103/stats/2018-2019-Europa-League-Stats"
     ];
 }
 else {
@@ -42,8 +42,8 @@ else {
         "https://fbref.com/en/comps/11/Serie-A-Stats",
         "https://fbref.com/en/comps/20/Bundesliga-Stats",
         "https://fbref.com/en/comps/13/Ligue-1-Stats",
-        "https://fbref.com/en/comps/8/Champions-League-Stats",
-        "https://fbref.com/en/comps/19/Europa-League-Stats"
+        "https://fbref.com/en/comps/8/stats/Champions-League-Stats",
+        "https://fbref.com/en/comps/19/stats/Europa-League-Stats"
     ];
 }
 const COMPETITION_NAMES = [

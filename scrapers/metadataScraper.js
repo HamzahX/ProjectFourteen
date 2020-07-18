@@ -464,7 +464,7 @@ let processPlayerPosition = (aString, code) => {
     else if (CBPlayers.includes(code)){
         return "CB"
     }
-    else if (GKPlayers.includes(code) || aString === "GK"){
+    else if (GKPlayers.includes(code) || aString === "GK" || aString === "Goalkeeper"){
         return "GK"
     }
     else {
