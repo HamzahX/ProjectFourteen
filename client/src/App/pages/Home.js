@@ -244,7 +244,9 @@ class Home extends Component {
                                 <h2>About</h2>
                                 <p>
                                     Football Slices is a stats visualization tool powered
-                                    by <a href="https://www.highcharts.com" target="_blank" rel="noopener noreferrer">Highcharts.js</a>.
+                                    by <a href="https://www.highcharts.com" target="_blank" rel="noopener noreferrer">Highcharts.js</a>,
+                                    and adapted from <a href="https://projects.fivethirtyeight.com/world-cup-comparisons/" target="_blank" rel="noopener noreferrer">
+                                    FiveThirtyEight's World Cup player profiles.</a>
                                 </p>
                                 <p>
                                     It is built on a database of <b>{databaseSize.toLocaleString()} players</b> from <b>Europe's top 5 leagues</b>,
