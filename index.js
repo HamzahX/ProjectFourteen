@@ -3,8 +3,12 @@ const express = require('express');
 const app = express();
 const secure = require('express-force-https');
 const path = require('path');
-const bodyParser = require("body-parser");
+const bodyParser = require('body-parser');
 const port = process.env.PORT || 5000;
+
+//chart render library
+const domtoimage = require('dom-to-image');
+//import domtoimage from "dom-to-image";
 
 //mongoDB constants
 const mongoClient = require('mongodb').MongoClient;
@@ -52,6 +56,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, '/client/build')));
 
+
 app.get("/", (req, res) => {
     res.sendFile('index.html', { root });
 });
@@ -70,7 +75,7 @@ app.post('/api/percentiles', (req, res) => {
 
 
 /**
- * Retrieves three sample players and sends to client upon request
+ * Retrieves a sample and sends to client upon request
  * @param {express.Request} req
  * @param {express.Response} res
  */
@@ -79,6 +84,25 @@ app.post('/api/samplePlayer', (req, res) => {
     getSamplePlayer().then(
         (samplePlayer) => {
             res.json(samplePlayer);
+        }, () => {
+            res.status(400);
+            res.json([]);
+        }
+    )
+
+});
+
+
+/**
+ * Retrieves the number of players currently in the database and sends to the client
+ * @param {express.Request} req
+ * @param {express.Response} res
+ */
+app.post('/api/databaseSize', (req, res) => {
+
+    getDatabaseSize().then(
+        (databaseSize) => {
+            res.json(databaseSize);
         }, () => {
             res.status(400);
             res.json([]);
@@ -158,7 +182,7 @@ app.post('/api/stats', (req, res) => {
         () => {
             setTimeout(function(){
                 res.status(400);
-                res.json([]);
+                res.json({});
             }, 100)
         });
 
@@ -208,9 +232,19 @@ app.post('/api/comparisonStats', (req, res) => {
 });
 
 
-app.get('*', (req, res) => {
+app.post('/api/renderChart', (req, res) => {
 
-    res.sendFile(path.join(__dirname+'/client/build/index.html'));
+    //retrieve the player code
+    let node = req.body.node;
+
+    renderChart(node).then(
+        (blob) => {
+            res.json(blob);
+        }, () => {
+            res.status(400);
+            res.json([]);
+        }
+    );
 
 });
 
@@ -219,7 +253,7 @@ app.get('*', (req, res) => {
  * Establishes a connection to the MongoDB database
  * @returns {Promise<*>} Promise resolves when the connection has been successfully made
  */
-connectToDatabase = async () => {
+let connectToDatabase = async () => {
 
     return new Promise(function(resolve, reject) {
 
@@ -258,7 +292,7 @@ connectToDatabase = async () => {
  * Retrieves the percentile arrays from the MongoDB database.
  * @returns {Promise<*>} Promise resolves if the arrays have been successfully retrieved, rejects otherwise
  */
-getPercentileArrays = async () => {
+let getPercentileArrays = async () => {
 
     return new Promise(async function(resolve, reject){
 
@@ -289,7 +323,7 @@ getPercentileArrays = async () => {
  * Queries the database to retrieve a random players
  * @returns {Promise<*>} Promise object represents the metadata of the random player
  */
-getSamplePlayer = async () => {
+let getSamplePlayer = async () => {
 
     return new Promise(async function(resolve, reject){
 
@@ -324,6 +358,28 @@ getSamplePlayer = async () => {
 
 
 /**
+ * Queries the database for the number of players currently stored within in
+ * @returns {Promise<*>} Single value object containing the number of players
+ */
+let getDatabaseSize = async () => {
+
+    return new Promise(async function(resolve, reject){
+
+        PLAYERS_COLLECTION.countDocuments({}, function (err, count) {
+            if (err){
+                console.log(err);
+                reject()
+            }
+            else {
+                resolve({value: count})
+            }
+        })
+
+    });
+
+};
+
+/**
  * Searches the database for the specified query
  * @param {string} aQuery - The search query
  * @param {string} theType - The type of search.
@@ -332,7 +388,7 @@ getSamplePlayer = async () => {
  * @param {boolean} isLive - Boolean indicating whether or not the search function is being called for a live search
  * @returns {Promise<*>} Promise object represents the search results that match the query given the search type
  */
-search = async (aQuery, theType, isLive) => {
+let search = async (aQuery, theType, isLive) => {
 
     return new Promise(async function(resolve, reject){
 
@@ -344,6 +400,9 @@ search = async (aQuery, theType, isLive) => {
         //searching for players and clubs
         if (theType === "playersAndClubs"){
 
+            //clean the query to remove regex special characters
+            aQuery = aQuery.replace(/[|&;$%@"<>()+,\\/]/g, "");
+
             //re-construct the query without diacritics
             let simplifiedQuery = aQuery
                 .normalize("NFD")
@@ -351,17 +410,25 @@ search = async (aQuery, theType, isLive) => {
                 .replace("Ø", "O")
                 .replace("ø", "o");
 
+            //build regular expressions to match results where the first word matches the query
+            let regex1 = new RegExp('^' + aQuery);
+            let regex2 = new RegExp('^' + simplifiedQuery);
+
+            //build regular expressions to match results where any of the other words match the query
+            let regex3 = " " + aQuery;
+            let regex4 = " " + simplifiedQuery;
+
             //find clubs whose whoscored or fbref name/simplifiedName includes the query
             CLUBS_COLLECTION.find(
                 {$or: [
-                    {name: {$regex: new RegExp('^' + aQuery), $options: 'i'}},
-                    {name2: {$regex: new RegExp('^' + aQuery), $options: 'i'}},
-                    {name3: {$regex: new RegExp('^' + simplifiedQuery), $options: 'i'}},
-                    {name4: {$regex: new RegExp('^' + simplifiedQuery), $options: 'i'}},
-                    {name: {$regex: " " + aQuery, $options: 'i'}},
-                    {name2: {$regex: " " + aQuery, $options: 'i'}},
-                    {name3: {$regex: " " + simplifiedQuery, $options: 'i'}},
-                    {name4: {$regex: " " + simplifiedQuery, $options: 'i'}},
+                    {name: {$regex: regex1, $options: 'i'}},
+                    {name2: {$regex: regex1, $options: 'i'}},
+                    {name3: {$regex: regex2, $options: 'i'}},
+                    {name4: {$regex: regex2, $options: 'i'}},
+                    {name: {$regex: regex3, $options: 'i'}},
+                    {name2: {$regex: regex3, $options: 'i'}},
+                    {name3: {$regex: regex4, $options: 'i'}},
+                    {name4: {$regex: regex4, $options: 'i'}},
                 ]}
             )
             .limit(isLive ? 5 : 0)
@@ -372,19 +439,23 @@ search = async (aQuery, theType, isLive) => {
                 }
                 //push matched clubs to search results
                 for (let i=0; i<docs.length; i++){
-                    searchResults.clubSearchResults.push(docs[i].name);
+                    let result = {
+                        name: docs[i].name,
+                        countryCode: docs[i].countryCode
+                    };
+                    searchResults.clubSearchResults.push(result);
                 }
                 //find players whose whoscored or fbref name/simplifiedName includes the query
                 PLAYERS_COLLECTION.find(
                     {$or: [
-                            {name: {$regex: new RegExp('^' + aQuery), $options: 'i'}},
-                            {name2: {$regex: new RegExp('^' + aQuery), $options: 'i'}},
-                            {simplifiedName: {$regex: new RegExp('^' + simplifiedQuery), $options: 'i'}},
-                            {simplifiedName2: {$regex: new RegExp('^' + simplifiedQuery), $options: 'i'}},
-                            {name: {$regex: " " + aQuery, $options: 'i'}},
-                            {name2: {$regex: " " + aQuery, $options: 'i'}},
-                            {simplifiedName: {$regex: " " + simplifiedQuery, $options: 'i'}},
-                            {simplifiedName2: {$regex: " " + simplifiedQuery, $options: 'i'}},
+                            {name: {$regex: regex1, $options: 'i'}},
+                            {name2: {$regex: regex1, $options: 'i'}},
+                            {simplifiedName: {$regex: regex2, $options: 'i'}},
+                            {simplifiedName2: {$regex: regex2, $options: 'i'}},
+                            {name: {$regex: regex3, $options: 'i'}},
+                            {name2: {$regex: regex3, $options: 'i'}},
+                            {simplifiedName: {$regex: regex4, $options: 'i'}},
+                            {simplifiedName2: {$regex: regex4, $options: 'i'}},
                     ]}
                 )
                 .limit(isLive ? 10 : 0)
@@ -399,8 +470,11 @@ search = async (aQuery, theType, isLive) => {
                             let result = {
                                 code: docs[i].code,
                                 name: docs[i].name,
+                                age: docs[i].age,
                                 nationality: docs[i].nationality,
+                                countryCode: docs[i].countryCode,
                                 clubs: docs[i].clubs,
+                                percentileEntries: docs[i].percentileEntries
                             };
                             searchResults.playerSearchResults.push(result);
                         }
@@ -424,8 +498,11 @@ search = async (aQuery, theType, isLive) => {
                         let player = {
                             code: docs[i].code,
                             name: docs[i].name,
+                            age: docs[i].age,
                             nationality: docs[i].nationality,
+                            countryCode: docs[i].countryCode,
                             clubs: docs[i].clubs,
+                            percentileEntries: docs[i].percentileEntries
                         };
                         searchResults.playerSearchResults.push(player);
                     }
@@ -446,13 +523,7 @@ search = async (aQuery, theType, isLive) => {
  *                        the MongoDB database
  * @returns {Promise<*>} Promise object represents the stats of the requested player, along with their metadata.
  */
-getStats = async (code) => {
-
-    //parse the code to handle v1 URLs (of the form "Players_[code]_Show_[Name]")
-    //v2 only requires the code
-    if (code.includes("Players")){
-        code = code.split("_")[1];
-    }
+let getStats = async (code) => {
 
     return new Promise(async function(resolve, reject){
 
@@ -480,7 +551,7 @@ getStats = async (code) => {
  *                        the MongoDB database
  * @returns {Promise<*>} Promise object represents the stats of the requested players, along with their metadata.
  */
-getComparisonStats = async (codes) => {
+let getComparisonStats = async (codes) => {
 
     let code1 = codes[0];
     let code2 = codes[1];
@@ -520,6 +591,71 @@ getComparisonStats = async (codes) => {
 };
 
 
+let renderChart = async(node) => {
+
+    return new Promise(function (resolve, reject) {
+
+        const scale = 2;
+
+        //scale the sizes of the watermark and credits images
+        let watermarkSize = 17/scale;
+        let creditsSize = 25/scale;
+
+        //get the width and height of the watermark and credits in pixels
+        let watermarkWidth = (watermarkSize/100) * node.offsetWidth;
+        let watermarkHeight = (791/2070) * watermarkWidth; //height = inverted aspect ratio * width
+        let creditsWidth = (creditsSize/100) * node.offsetWidth;
+        let creditsHeight = (500/1500) * creditsWidth;
+
+        //get the height of the watermark and credits as a percentage of the total height of the chart
+        let watermarkHeightRatio = (watermarkHeight / node.offsetHeight) * 100;
+        let watermarkWidthRatio = (watermarkWidth / node.offsetWidth) * 100;
+        let creditsHeightRatio = (creditsHeight / node.offsetHeight) * 100;
+        // let creditsWidthRatio = (creditsWidth / node.offsetWidth) * 100;
+
+        //get the aspect ratio of the export div
+        let exportAspectRatio = node.offsetWidth / node.offsetHeight;
+        let exportAspectRatioInverse = node.offsetHeight / node.offsetWidth;
+
+        //set the background position to be the bottom right corner after the 4x scaling
+        //for the X position, we start with 50% (100/scale=2),
+        //and then adjust based on the width of the watermark
+        let watermarkPadding = -0.2;
+        let creditsPadding = 0.8;
+        let watermarkXPos = (100/scale)-(watermarkPadding*exportAspectRatioInverse)-((watermarkWidthRatio+(watermarkPadding*exportAspectRatioInverse))/scale);
+        //same for Y position but this time we adjust based on the height of the watermark and the credits position
+        let watermarkYPos = (100/scale)-(0.63*exportAspectRatio)-((watermarkHeightRatio+(0.63*exportAspectRatio))/scale);
+
+        // let creditsXPos = (50/scale)-(creditsWidthRatio)/scale;
+        let creditsXPos = (43/scale);
+        let creditsYPos = (100/scale)-(creditsPadding*exportAspectRatio)-((creditsHeightRatio+(creditsPadding*exportAspectRatio))/scale);
+
+        domtoimage.toPng(node, {
+            bgcolor: '#fafbfc',
+            width: 1200 * scale,
+            height: 1100 * scale,
+            style: {
+                //make the export div visible
+                'opacity': '1',
+                //scale up 4x to improve the resolution of the exported chart
+                'transform': `scale(${scale}) translate(${node.offsetWidth / 2 / scale}px, ${node.offsetHeight / 2 / scale}px)`,
+                'background-position': `${watermarkXPos}% ${watermarkYPos}%, ${creditsXPos}% ${creditsYPos}%`,
+                'background-size': `${watermarkSize}%, ${creditsSize}%`
+            }
+        })
+            .then((blob) => {
+                resolve(blob);
+            })
+            .catch(function (error) {
+                console.log(error);
+                reject();
+            });
+
+    });
+
+};
+
+
 /**
  * "Main" function / promise chain
  * Connects to database, retrieves percentile array and begins listening for connections
@@ -537,7 +673,7 @@ connectToDatabase()
 
 
 //export functions needed in the unit testing module
-module.exports.connectToDatabase = connectToDatabase;
-module.exports.getSamplePlayer = getSamplePlayer;
-module.exports.search = search;
-module.exports.getStats = getStats;
+// module.exports.connectToDatabase = connectToDatabase;
+// module.exports.getSamplePlayer = getSamplePlayer;
+// module.exports.search = search;
+// module.exports.getStats = getStats;
