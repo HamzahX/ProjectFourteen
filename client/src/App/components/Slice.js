@@ -280,7 +280,7 @@ class Slice extends Component {
                 },
                 gridLineWidth: 2,
                 gridLineColor: 'black',
-                gridZIndex: 1
+                gridZIndex: 2
             },
             yAxis: {
                 labels: {
@@ -290,7 +290,7 @@ class Slice extends Component {
                     //     fontSize: this.fontSizes['yAxisLabels'],
                     // }
                 },
-                gridZIndex: 3,
+                gridZIndex: 4,
                 lineWidth: 0,
                 endOnTick: true,
                 showFirstLabel: false,
@@ -433,8 +433,7 @@ class Slice extends Component {
         //relevant github issue and further explanation: https://github.com/highcharts/highcharts/issues/3321
         Highcharts.wrap(Highcharts.Axis.prototype, 'render', function (proceed) {
 
-            // console.log(this);
-
+            //console.log(this);
             proceed.call(this);
             let chart = this.chart;
 
@@ -458,11 +457,28 @@ class Slice extends Component {
 
         });
 
-        // console.log(Highcharts);
-
         // Highcharts.wrap(Highcharts.Tick.prototype, 'render', function (proceed) {
         //
         //     console.log(this);
+        //     proceed.call(this);
+        //     let chart = this.chart;
+        //     let axis = this.axis;
+        //
+        //     if (chart !== undefined){
+        //         // if (!chart.seriesGroup) {
+        //         //     chart.seriesGroup = chart.renderer.g('series-group')
+        //         //         .attr({
+        //         //             zIndex: 3
+        //         //         })
+        //         //         .add();
+        //         // }
+        //         axis.axisGroup
+        //             .attr({
+        //                 zIndex: this.pos === 0 ? 4 : 1,
+        //                 opacity: 0
+        //             })
+        //             .add(chart.seriesGroup);
+        //     }
         //
         // });
 
@@ -494,7 +510,7 @@ class Slice extends Component {
         }
 
         $.each(chart.legend.allItems, function (i, item) {
-            item.legendSymbol.element.setAttribute("stroke-width", "3.5");
+            item.legendSymbol.element.setAttribute("stroke-width", "3");
             //primary color border to first symbol, black border to second symbol
             item.legendSymbol.element.setAttribute("stroke", i === 0 ? borderColor : "#000000")
         });
@@ -562,7 +578,7 @@ class Slice extends Component {
         if (this.isForComparison) {
             chartOptions.title.style.color = titleColor;
             title += `<span class="chart-title"><a href=${this.props.url[0]} target="_blank" rel="noopener noreferrer">${this.props.name[0]}</a></span>`;
-            title += `<span style='color: black;'> - <span class="chart-title"><a href=${this.props.url[1]} target="_blank" rel="noopener noreferrer">${this.props.name[1]}</a></span></span>`;
+            title += `<span style='color: black;'> vs <span class="chart-title"><a href=${this.props.url[1]} target="_blank" rel="noopener noreferrer">${this.props.name[1]}</a></span></span>`;
         }
         else {
             title = `<span class="chart-title"><a href=${this.props.url} target="_blank" rel="noopener noreferrer">${this.props.name}</a>`;
@@ -616,7 +632,7 @@ class Slice extends Component {
             return {
                 name: data[0].playerName,
                 data: data,
-                zIndex: index === 0 ? 0 : 2,
+                zIndex: index === 0 ? 0 : 3,
                 pointPadding: 0,
                 groupPadding: 0,
                 stickyTracking: false,

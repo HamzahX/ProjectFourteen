@@ -1,6 +1,6 @@
 {
-  "short_name": "FootballSlices",
-  "name": "Football Slices - Football (Soccer) Stats Visualizations",
+  "short_name": "Football Slices",
+  "name": "Football Slices - Football Player Stats Visualizations",
   "icons": [
     {
       "src": "favicon.ico",
@@ -20,6 +20,4 @@
   ],
   "start_url": ".",
   "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
 }

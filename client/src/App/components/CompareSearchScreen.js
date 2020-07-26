@@ -12,6 +12,8 @@ class CompareSearchScreen extends Component {
 
         super(props);
 
+        this.isMobile = this.props.isMobile;
+
         this.toggleCompareSearch = this.props.toggleCompareSearch;
         this.currentPlayerName = this.props.currentPlayerName;
         this.currentPlayerCode = this.props.currentPlayerCode;
@@ -33,6 +35,7 @@ class CompareSearchScreen extends Component {
                 </button>
                 <span><h3>Compare {this.currentPlayerName} to...</h3></span>
                 <SearchBar
+                    isMobile={this.isMobile}
                     page="compare"
                     currentPlayerCode={this.currentPlayerCode}
                 />

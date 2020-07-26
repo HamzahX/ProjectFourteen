@@ -202,7 +202,7 @@ button:hover {
 
                 #live-search-results #live-search-loader .loader{
                     margin-top: 15px;
-                    font-size: 5px
+                    font-size: 4px
                 }
 
             #live-search-results h3 {
@@ -685,6 +685,8 @@ button:hover {
                 #search-results .search-result {
                     padding: 3.3%;
                     border: darkgrey 1px solid;
+                    box-shadow: 0 1px 4px lightgray;
+                    border-radius: 6px;
                     transition: 0.2s;
                 }
 
@@ -693,6 +695,19 @@ button:hover {
                     border-color: #e75453;
                     cursor: pointer;
                 }
+
+                .search-result .bio-extra {
+                    padding-top: 2px;
+                }
+
+                .search-result .bio, .search-result .bio-extra {
+                    display: flex;
+                    justify-content: space-between;
+                }
+
+                    .search-result .bio-extra .position-age {
+                        color: grey;
+                    }
 
                 #search-results .search-result .name {
                     font-size: 1.4em;

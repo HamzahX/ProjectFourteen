@@ -215,7 +215,7 @@ class Compare extends Component {
         //retrieve the information for the 2 players and store in objects
         for (let code in playerStats){
             names[code] = playerStats[code].name;
-            urls[code] = "https://fbref.com/en/players/" + playerStats[code].fbrefCode;
+            urls[code] = "https://www.fbref.com" + playerStats[code].fbrefURL;
             ages[code] = playerStats[code].age;
             clubs[code] = playerStats[code].clubs;
             percentileEntries[code] = playerStats[code].percentileEntries;
@@ -296,7 +296,11 @@ class Compare extends Component {
         else if (error !== null) {
             return (
                 <div id="main2">
-                    <SearchBar page="stats" query={this.state.query}/>
+                    <SearchBar
+                        isMobile={this.isMobile}
+                        page="stats"
+                        query={this.state.query}
+                    />
                     <div className="screen" id="error-screen">
                         <p>{error.message}</p>
                     </div>
@@ -372,12 +376,14 @@ class Compare extends Component {
             return (
                 <div id="main2">
                     <CompareSearchScreen
+                        isMobile={this.isMobile}
                         display={showCompareScreen}
                         currentPlayerCode={codes[0]}
                         currentPlayerName={names[codes[0]]}
                         toggleCompareSearch={this.toggleCompareSearch}
                     />
                     <SearchBar
+                        isMobile={this.isMobile}
                         page="stats"
                     />
                     <div className="screen2" id="compare-screen">

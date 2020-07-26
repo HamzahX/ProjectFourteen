@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import Flag from "react-flags";
 
 
 /**
@@ -11,8 +12,12 @@ class ClubSearchResult extends Component {
 
         super(props);
 
+        this.isMobile = this.props.isMobile;
+
         this.state = {
+            page: this.props.page,
             name: this.props.name,
+            countryCode: this.props.countryCode
         };
 
     }
@@ -24,12 +29,26 @@ class ClubSearchResult extends Component {
      */
     render() {
 
-        let { name } = this.state;
+        let { page, name, countryCode } = this.state;
+
+        let flagSizeMultiplier = this.isMobile ? 2 : 1;
 
         return (
             <Link to={"/search/" + name + "/all"}>
                 <div tabIndex="0" className="search-result">
-                    <div className="name">{name}</div>
+                    <div className="bio">
+                        <span className="name">{name}</span>
+                        <Flag
+                            basePath={"/flags"}
+                            country={countryCode}
+                            format="png"
+                            pngSize={32}
+                            width={(page === "live" ? 24 : 28) * flagSizeMultiplier}
+                            height={(page === "live" ? 24 : 28) * flagSizeMultiplier}
+                            shiny={true}
+                            alt={`${countryCode} Flag`}
+                        />
+                    </div>
                 </div>
             </Link>
         );

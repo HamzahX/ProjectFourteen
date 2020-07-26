@@ -342,13 +342,17 @@ class SearchBar extends Component {
             let current = playerSearchResults[i];
             playerCards.push(
                 <PlayerSearchResult
+                    isMobile={this.isMobile}
                     page="live"
                     forComparison={this.page === "compare"}
                     comparisonCode={this.currentPlayerCode}
                     code={current.code}
                     name={current.name}
+                    age={current.age}
                     clubs={current.clubs}
                     nationality={current.nationality}
+                    countryCode={current.countryCode}
+                    percentileEntries={current.percentileEntries}
                     key={i}
                 />
             );
@@ -360,7 +364,10 @@ class SearchBar extends Component {
             let current = clubSearchResults[i];
             clubCards.push(
                 <ClubSearchResult
-                    name={current}
+                    isMobile={this.isMobile}
+                    page="live"
+                    name={current.name}
+                    countryCode={current.countryCode}
                     key={i}
                 />
             )

@@ -30,9 +30,10 @@ class Home extends Component {
 
         this.state = {
             isLoading: true,
-            samplePlayer: {},
+            error: null,
+            databaseSize: 0,
         };
-        this.getSamplePlayer();
+        this.getDatabaseSize();
 
     }
 
@@ -42,17 +43,20 @@ class Home extends Component {
      */
     componentDidMount() {
         this._isMounted = true;
-        document.title = "Home | Football Slices"
+        document.title = "Home | Football Slices";
+        // window.location.href = this.props.location.hash;
+        // console.log(this.props.location.hash);
     }
 
 
+
     /**
-     * Function to send a post request to the server to retrieve 3 sample players to be displayed on the homepage
+     * Function to send a post request to the server to retrieve the number of players currently in the dataabase
      */
-    getSamplePlayer = () => {
+    getDatabaseSize = () => {
 
         //fetch sample players
-        fetch('/api/samplePlayer', {
+        fetch('/api/databaseSize', {
             method: 'post',
             headers: {
                 "Content-Type": "application/json"
@@ -60,10 +64,10 @@ class Home extends Component {
             body: JSON.stringify({})
         })
         .then(res => res.json())
-        .then(samplePlayer => {
+        .then(databaseSize => {
             //only set state if the component is mounter
             if (this._isMounted){
-                this.setState({samplePlayer: samplePlayer, isLoading: false});
+                this.setState({databaseSize: databaseSize.value, isLoading: false});
                 //hard code the height of home and the navbar container if it is a mobile device
                 //this is done because the soft keyboards on mobile devices affect the view-height
                 if (this.isMobile){
@@ -74,6 +78,14 @@ class Home extends Component {
                 $("#navbar-hidden").addClass('preload');
             }
         })
+        .catch(error => {
+            if (this._isMounted){
+                this.setState({
+                    error: error,
+                    isLoading: false
+                })
+            }
+        });
 
     };
 
@@ -124,12 +136,27 @@ class Home extends Component {
      */
     render() {
 
-        let { isLoading } = this.state;
+        let { isLoading, error, databaseSize } = this.state;
 
         //display loading spinner while the server responds to POST request for the sample players
         if (isLoading) {
             return (
                 <LoadingSpinner/>
+            )
+        }
+
+        //display the error message screen if an error is caught
+        else if (error !== null) {
+            return (
+                <div id="main2">
+                    <SearchBar
+                        isMobile={this.isMobile}
+                        page="home"
+                    />
+                    <div className="screen" id="error-screen">
+                        <p>{error.message}</p>
+                    </div>
+                </div>
             )
         }
 
@@ -220,7 +247,7 @@ class Home extends Component {
                                     by <a href="https://www.highcharts.com" target="_blank" rel="noopener noreferrer">Highcharts.js</a>.
                                 </p>
                                 <p>
-                                    It is built on a database of more than <b>2,700 players</b> from <b>Europe's top 5 leagues</b>,
+                                    It is built on a database of <b>{databaseSize.toLocaleString()} players</b> from <b>Europe's top 5 leagues</b>,
                                     with stats from the <b>2018/19</b> and <b>2019/20</b> seasons.
                                 </p>
                                 <p>

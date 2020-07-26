@@ -23,6 +23,8 @@ class Search extends Component {
 
         super(props);
 
+        this.isMobile = this.props.isMobile;
+
         this.state = {
             isLoading: true,
             error: null,
@@ -206,7 +208,11 @@ class Search extends Component {
         else if (error !== null) {
             return (
                 <div id="main">
-                    <SearchBar page="search" query={this.state.query}/>
+                    <SearchBar
+                        isMobile={this.isMobile}
+                        page="search"
+                        query={this.state.query}
+                    />
                     <div className="screen" id="error-screen">
                         <p>{error.message}</p>
                     </div>
@@ -223,10 +229,15 @@ class Search extends Component {
                 let current = filteredPlayerSearchResults[i];
                 playerCards.push(
                     <PlayerSearchResult
+                        isMobile={this.isMobile}
+                        page="search"
                         code={current.code}
                         name={current.name}
+                        age={current.age}
                         clubs={current.clubs}
                         nationality={current.nationality}
+                        countryCode={current.countryCode}
+                        percentileEntries={current.percentileEntries}
                         key={i}
                     />
                 );
@@ -238,7 +249,10 @@ class Search extends Component {
                 let current = clubSearchResults[i];
                 clubCards.push(
                     <ClubSearchResult
-                        name={current}
+                        isMobile={this.isMobile}
+                        page="search"
+                        name={current.name}
+                        countryCode={current.countryCode}
                         key={i}
                     />
                 )
@@ -256,7 +270,11 @@ class Search extends Component {
             //return JSX code for the search page
             return (
                 <div id="main">
-                    <SearchBar page="search" query={this.state.query}/>
+                    <SearchBar
+                        isMobile={this.isMobile}
+                        page="search"
+                        query={this.state.query}
+                    />
                     <div className="screen" id="search-screen">
                         <div className="filter" id="search-filters">
                             {searchText}

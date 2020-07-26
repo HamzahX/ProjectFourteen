@@ -25,7 +25,7 @@ h3 {
     }
 
     #live-search-results .search-result .club {
-        padding-left: 15px;
+        /*padding-left: 15px;*/
     }
 
 #navbar-container {
@@ -211,7 +211,7 @@ h3 {
 
         .result {
             max-width: unset;
-            margin: 0.5% 1% 1%;
+            margin: 1% 1% 1% 1%;
         }
 
     #search-screen {

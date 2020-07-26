@@ -5,6 +5,7 @@ import ReactGA from 'react-ga';
 import {isMobileOnly, isSafari} from 'react-device-detect';
 
 //import pages
+import Error from './pages/Error';
 import Home from './pages/Home';
 import Search from './pages/Search';
 import Stats from './pages/Stats';
@@ -126,24 +127,28 @@ class App extends Component {
                                   isMobile={isMobileOnly}
                             />}
                         />
-                        <Route path='/search/:query/:searchByClub?' component={Search}/>
-                        <Route path='/stats/:code' render={(props) =>
-                            <Stats {...props}
-                                 percentileArrays={this.state.percentileArrays}
-                                 isMobile={isMobileOnly}
-                                 isSafari={isSafari}
-                                 updatePercentileArrays={this.updatePercentileArrays}
-                            />}
-                        />
-                        <Route path='/compare/:codes' render={(props) =>
-                            <Compare {...props}
-                                   percentileArrays={this.state.percentileArrays}
+                        <Route exact path='/search/:query/:searchByClub?' render={(props) =>
+                            <Search {...props}
                                    isMobile={isMobileOnly}
-                                   isSafari={isSafari}
-                                   updatePercentileArrays={this.updatePercentileArrays}
                             />}
                         />
-                        <Route path='*' component={Home}/>
+                        <Route exact path='/stats/:code' render={(props) =>
+                            <Stats {...props}
+                                percentileArrays={this.state.percentileArrays}
+                                isMobile={isMobileOnly}
+                                isSafari={isSafari}
+                                updatePercentileArrays={this.updatePercentileArrays}
+                            />}
+                        />
+                        <Route exact path='/compare/:codes' render={(props) =>
+                            <Compare {...props}
+                                percentileArrays={this.state.percentileArrays}
+                                isMobile={isMobileOnly}
+                                isSafari={isSafari}
+                                updatePercentileArrays={this.updatePercentileArrays}
+                            />}
+                        />
+                        <Route path='*' component={Error}/>
                     </Switch>
                 </BrowserRouter>
             );

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-// import $ from "jquery";
+import { Redirect } from 'react-router-dom'
 
 //import dependencies
 import Cookies from 'universal-cookie';
@@ -67,6 +67,7 @@ class Stats extends Component {
         this.state = {
             isLoading: true,
             error: null,
+            redirect: false,
             renderForExport: false,
             showCompareScreen: false,
             percentileArrays: this.props.percentileArrays,
@@ -108,6 +109,7 @@ class Stats extends Component {
     UNSAFE_componentWillReceiveProps(nextProps, nextContext) {
         let { code } = nextProps.match.params;
         this.setState({
+            redirect: false,
             isLoading: true,
             code: code
         }, () => {
@@ -145,10 +147,20 @@ class Stats extends Component {
         .then(response => this.processStats(response))
         .catch(error => {
             if (this._isMounted){
-                this.setState({
-                    error: error,
-                    isLoading: false
-                })
+                //redirect if a v1 URL is detected
+                if (code.match("^Players_[0-9]+_Show_")){
+                    this.setState({
+                        redirect: true,
+                        isLoading: false,
+                        code: code.split("_")[1]
+                    })
+                }
+                else {
+                    this.setState({
+                        error: error,
+                        isLoading: false
+                    })
+                }
             }
         });
 
@@ -194,7 +206,7 @@ class Stats extends Component {
             this.setState({
                 isLoading: false,
                 name: playerStats.name,
-                url: "https://fbref.com/en/players/" + playerStats.fbrefCode,
+                url: "https://www.fbref.com" + playerStats.fbrefURL,
                 age: playerStats.age,
                 clubs: playerStats.clubs,
                 percentileEntries: playerStats.percentileEntries,
@@ -227,6 +239,7 @@ class Stats extends Component {
         let {
             isLoading,
             error,
+            redirect,
             renderForExport,
             showCompareScreen,
             code,
@@ -251,11 +264,19 @@ class Stats extends Component {
             )
         }
 
+        else if (redirect){
+            return <Redirect to={`/stats/${code}`}/>
+        }
+
         //display the error message screen if an error is caught
         else if (error !== null) {
             return (
                 <div id="main2">
-                    <SearchBar page="stats" query={this.state.query}/>
+                    <SearchBar
+                        isMobile={this.isMobile}
+                        page="stats"
+                        query={this.state.query}
+                    />
                     <div className="screen" id="error-screen">
                         <p>{error.message}</p>
                     </div>
@@ -303,12 +324,14 @@ class Stats extends Component {
             return (
                 <div id="main2">
                     <CompareSearchScreen
+                        isMobile={this.isMobile}
                         display={showCompareScreen}
                         currentPlayerCode={code}
                         currentPlayerName={name}
                         toggleCompareSearch={this.toggleCompareSearch}
                     />
                     <SearchBar
+                        isMobile={this.isMobile}
                         page="stats"
                     />
                     <div className="screen2" id="stats-screen">
