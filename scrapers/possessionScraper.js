@@ -207,4 +207,5 @@ setup()
     )
     .catch(async (anError) => {
         console.log(anError);
+        process.exit(-1);
     });

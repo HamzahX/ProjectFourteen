@@ -248,6 +248,7 @@ let processEntry = (aPlayer, competitionData, competitionName, isGoalkeeper) => 
         return;
     }
 
+    //exit the function if the player is not a goalkeeper and the current entry is a goalkeeper
     if (isGoalkeeper && METADATA[whoscoredCode]["positions"][SEASON] !== "GK"){
         return;
     }
@@ -265,12 +266,14 @@ let processEntry = (aPlayer, competitionData, competitionName, isGoalkeeper) => 
         let currentPlayer = PROCESSED[whoscoredCode];
         let metadata = METADATA[whoscoredCode];
         currentPlayer["fbrefCode"] = fbrefCode;
+        currentPlayer["fbrefURL"] = entry["url"];
         currentPlayer["name"] = metadata["name"];
         currentPlayer["name2"] = fbrefName;
         currentPlayer["simplifiedName"] = metadata["simplifiedName"];
         currentPlayer["simplifiedName2"] = fbrefSimplifiedName;
         currentPlayer["age"] = metadata["age"];
         currentPlayer["nationality"] = metadata["nationality"] === "" ? countryCodes.getCountryName(entry['standard___2'].split(" ")[0].toUpperCase()) : metadata["nationality"];
+        currentPlayer["countryCode"] = metadata["countryCode"] === "" ? cleanCountryCode(entry['standard___2'].split(" ")[0]) : metadata["countryCode"];
         currentPlayer["positions"] = metadata["positions"];
         currentPlayer["percentileEntries"] = {};
         currentPlayer["clubs"] = metadata["clubs"];
@@ -365,6 +368,27 @@ let adjustForPossession = (value, possession) => {
 };
 
 
+let cleanCountryCode = (code) => {
+    let codeUpperCase = code.toUpperCase();
+    if (codeUpperCase === "GB-ENG" || codeUpperCase === "ENG") {
+        code = "_england"
+    }
+    else if (codeUpperCase === "GB-SCT" || codeUpperCase === "SCO") {
+        code = "_scotland"
+    }
+    else if (codeUpperCase === "GB-WLS" || codeUpperCase === "WAL") {
+        code = "_wales"
+    }
+    else if (codeUpperCase === "GB-NIR" || codeUpperCase === "NIR") {
+        code = "_unknown"
+    }
+    else if (codeUpperCase === "XK") {
+        code = "_kosovo"
+    }
+    return code;
+};
+
+
 let saveStats = async () => {
 
     return new Promise(async function (resolve, reject) {
@@ -412,5 +436,6 @@ setup()
     })
     .catch(async(anError) => {
         console.log(anError);
+        process.exit(-1);
     });
 

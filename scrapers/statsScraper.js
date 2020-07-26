@@ -442,11 +442,13 @@ let retrieveJSON = async (page, tableType) => {
 
         let returnValues = await page.evaluate(async (buttonSelector, csvSelector, tableType) => {
             let playerCodes = [];
+            let playerURLs = [];
             if (tableType === "standard" || tableType === "keeper"){
                 let tds = Array.from(document.querySelectorAll('[data-stat="player"]'), e => e.innerHTML);
                 for (let i=0; i<tds.length; i++){
                     if (tds[i] !== "Player"){
-                        playerCodes.push(tds[i]);
+                        playerCodes.push(tds[i].substring(21, tds[i].indexOf("/", 21)));
+                        playerURLs.push(tds[i].substring(9, tds[i].indexOf('">', 9)));
                     }
                 }
             }
@@ -464,11 +466,12 @@ let retrieveJSON = async (page, tableType) => {
             }
             csv[1] = csv[1].join(",");
             csv = csv.join("\n");
-            return [csv, playerCodes];
+            return [csv, playerCodes, playerURLs];
         }, buttonSelector, csvSelector, tableType);
 
         let csv = returnValues[0];
         let playerCodes = returnValues[1];
+        let playerURLs = returnValues[2];
 
         if (tableType === "passing_types"){
             let csvTemp = csv;
@@ -500,9 +503,9 @@ let retrieveJSON = async (page, tableType) => {
 
         if (tableType === "standard" || tableType === "keeper"){
             for (let i=0; i<playerCodes.length; i++){
-                let playerCodeString = playerCodes[i];
-                let playerCode = playerCodeString.substring(21, playerCodeString.indexOf("/", 21));
-                json[(i+1).toString(10)]["code"] = playerCode;
+                //note that we increment the key by 1 because the fbref CSV row numbers start at 1, not 0
+                json[(i+1).toString(10)]["code"] = playerCodes[i];
+                json[(i+1).toString(10)]["url"] = playerURLs[i];
             }
         }
 
@@ -540,5 +543,6 @@ setup()
     )
     .catch(async (anError) => {
         console.log(anError);
+        process.exit(-1);
     });
 

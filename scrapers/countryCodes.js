@@ -248,6 +248,7 @@ let isoCountries = {
     'WAL': 'Wales',
     'WF' : 'Wallis And Futuna',
     'EH' : 'Western Sahara',
+    'XK' : 'Kosovo',
     'YE' : 'Yemen',
     'ZM' : 'Zambia',
     'ZW' : 'Zimbabwe'

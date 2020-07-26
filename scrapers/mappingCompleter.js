@@ -3,6 +3,7 @@ const path = require('path');
 const fs = require('fs');
 
 //globals to store mappings
+var METADATA;
 var FBREF_TO_WHOSCORED_PLAYERS;
 var WHOSCORED_TO_FBREF_PLAYERS;
 var FBREF_TO_WHOSCORED_PLAYERS_NEW;
@@ -15,6 +16,7 @@ let setup = async () => {
 
     return new Promise(async function(resolve, reject){
 
+        METADATA = JSON.parse(fs.readFileSync(path.join(__dirname, '/playerData/metadata.json')));
         FBREF_TO_WHOSCORED_PLAYERS = JSON.parse(fs.readFileSync(path.join(__dirname, '/playerMappingData/fbrefToWhoscored.json')));
         WHOSCORED_TO_FBREF_PLAYERS = JSON.parse(fs.readFileSync(path.join(__dirname, '/playerMappingData/whoscoredToFbref.json')));
         FBREF_TO_WHOSCORED_PLAYERS_NEW = JSON.parse(fs.readFileSync(path.join(__dirname, '/playerMappingData/fbrefToWhoscoredNew.json')));
@@ -57,6 +59,12 @@ let completeMapping = async () => {
 let saveMapping = async () => {
 
     return new Promise(async function (resolve, reject) {
+        for (let whoscoredCode in METADATA){
+            let fbrefCode = WHOSCORED_TO_FBREF_PLAYERS[whoscoredCode];
+            if (fbrefCode === undefined || whoscoredCode === fbrefCode){
+                reject();
+            }
+        }
         await fs.writeFile(path.join(__dirname, `playerMappingData/fbrefToWhoscored.json`), JSON.stringify(FBREF_TO_WHOSCORED_PLAYERS, null, '\t'), async function(err) {
             if (err) {
                 console.log(err);
@@ -66,6 +74,9 @@ let saveMapping = async () => {
                 if (err) {
                     console.log(err);
                     reject();
+                }
+                else {
+                    resolve();
                 }
             });
         });
@@ -84,9 +95,10 @@ setup()
     })
     .then(() => {
         console.timeEnd('mapping completion');
-        process.exit(0)
+        process.exit(0);
     })
     .catch(async(anError) => {
         console.log(anError);
+        process.exit(-1);
     });
 

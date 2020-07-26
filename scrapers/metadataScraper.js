@@ -405,6 +405,9 @@ let processRawData = async () => {
                             if (processedMetadata[processedPlayer]['nationality'] === undefined){
                                 processedMetadata[processedPlayer]['nationality'] = countryCodes.getCountryName(rawMetadata[i][player][entry].toUpperCase());
                             }
+                            if (processedMetadata[processedPlayer]['countryCode'] === undefined){
+                                processedMetadata[processedPlayer]['countryCode'] = cleanCountryCode(rawMetadata[i][player][entry]);
+                            }
                         }
                         else if (entry === 'name'){
                             processedMetadata[processedPlayer]['name'] = rawMetadata[i][player]['name'];
@@ -472,6 +475,28 @@ let processPlayerPosition = (aString, code) => {
     }
 };
 
+
+let cleanCountryCode = (code) => {
+    let codeUpperCase = code.toUpperCase();
+    if (codeUpperCase === "GB-ENG" || codeUpperCase === "ENG") {
+        code = "_england"
+    }
+    else if (codeUpperCase === "GB-SCT" || codeUpperCase === "SCO") {
+        code = "_scotland"
+    }
+    else if (codeUpperCase === "GB-WLS" || codeUpperCase === "WAL") {
+        code = "_wales"
+    }
+    else if (codeUpperCase === "GB-NIR" || codeUpperCase === "NIR") {
+        code = "_unknown"
+    }
+    else if (codeUpperCase === "XK") {
+        code = "_kosovo"
+    }
+    return code;
+};
+
+
 console.time('metadata retrieval');
 setup()
     .then(async() => {
@@ -508,4 +533,5 @@ setup()
     })
     .catch(async (anError) => {
         console.log(anError);
+        process.exit(-1);
     });
