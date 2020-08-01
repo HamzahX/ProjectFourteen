@@ -379,7 +379,7 @@ button:hover {
             }
 
             #home #searchbar-container1 form input:hover, #home #searchbar-container1 form input:focus {
-                box-shadow: 0 0 13px -8px darkgray;
+                box-shadow: 0 0 5px 0 darkgray;
             }
 
             #home #searchbar-container1 #live-search-results {

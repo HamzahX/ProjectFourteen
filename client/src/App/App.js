@@ -148,7 +148,7 @@ class App extends Component {
                                 updatePercentileArrays={this.updatePercentileArrays}
                             />}
                         />
-                        <Route path='*' component={Error}/>
+                        <Route component={Error}/>
                     </Switch>
                 </BrowserRouter>
             );
