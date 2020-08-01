@@ -7,7 +7,7 @@ const bodyParser = require('body-parser');
 const port = process.env.PORT || 5000;
 
 //chart render library
-const domtoimage = require('dom-to-image');
+//const domtoimage = require('dom-to-image');
 //import domtoimage from "dom-to-image";
 
 //mongoDB constants
@@ -16,8 +16,8 @@ const mongoURI = `mongodb+srv://hamzah:${process.env.MONGOPASSWORD}@cluster0-wz8
 
 //database collections
 var DB;
-var PLAYERS_COLLECTION;
 var CLUBS_COLLECTION;
+var PLAYERS_COLLECTION;
 var PERCENTILE_ARRAYS_COLLECTION;
 
 //percentile arrays
@@ -268,16 +268,16 @@ let connectToDatabase = async () => {
                 //retrieve to the production collections if it is a production environment
                 if (process.env.NODE_ENV === "production"){
                     console.log("production");
+                    CLUBS_COLLECTION = DB.collection('Clubs');
                     PLAYERS_COLLECTION = DB.collection('Players');
                     PERCENTILE_ARRAYS_COLLECTION = DB.collection('PercentileArrays');
                 }
                 //retrieve to the development collections otherwise
                 else {
+                    CLUBS_COLLECTION = DB.collection('Clubs_Dev');
                     PLAYERS_COLLECTION = DB.collection('Players_Dev');
                     PERCENTILE_ARRAYS_COLLECTION = DB.collection('PercentileArrays_Dev');
                 }
-                //retrieve the clubs collection
-                CLUBS_COLLECTION = DB.collection('Clubs');
                 console.timeEnd('database connection');
                 resolve();
             }

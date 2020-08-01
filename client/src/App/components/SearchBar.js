@@ -58,12 +58,14 @@ class SearchBar extends Component {
 
         this.state = {
             query: this.props.query || "",
-            isLoading: false,
+            isLoading: this.props.query !== undefined,
             error: null,
             liveResultsOpen: false,
             playerSearchResults: [],
             clubSearchResults: [],
         };
+
+        this.updateLiveSearchResults(this.state.query);
 
     }
 

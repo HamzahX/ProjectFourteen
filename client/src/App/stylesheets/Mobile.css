@@ -261,21 +261,21 @@ h3 {
         max-height: unset;
     }
 
-        #compare-search-screen {
+        #compare-search-overlay {
 
         }
 
-            #compare-search-screen #searchbar-container1 {
+            #compare-search-overlay #searchbar-container1 {
                 min-width: 75%;
                 height: 80px;
             }
 
-                #compare-search-screen #searchbar-container1 #live-search-results {
+                #compare-search-overlay #searchbar-container1 #live-search-results {
                     min-width: unset;
                     width: 72%;
                 }
 
-                #compare-search-screen #searchbar-container1 #searchbar-input {
+                #compare-search-overlay #searchbar-container1 #searchbar-input {
                     height: 100%;
                 }
 

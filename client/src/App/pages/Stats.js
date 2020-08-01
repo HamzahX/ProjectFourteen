@@ -23,7 +23,8 @@ import LoadingSpinner from "../components/LoadingSpinner";
 import SearchBar from "../components/SearchBar";
 import SliceOptions from "../components/SliceOptions";
 import Slice from "../components/Slice";
-import CompareSearchScreen from "../components/CompareSearchScreen";
+import CompareSearchScreen from "../components/CompareSearchOverlay";
+import ExportLoaderScreen from "../components/ExportLoaderOverlay";
 
 //initialize cookies
 const cookies = new Cookies();
@@ -68,8 +69,9 @@ class Stats extends Component {
             isLoading: true,
             error: null,
             redirect: false,
+            showCompareSearchOverlay: false,
+            showExportLoaderOverlay: false,
             renderForExport: false,
-            showCompareScreen: false,
             percentileArrays: this.props.percentileArrays,
             code: this.props.match.params.code,
             name: '',
@@ -240,8 +242,9 @@ class Stats extends Component {
             isLoading,
             error,
             redirect,
+            showCompareSearchOverlay,
+            showExportLoaderOverlay,
             renderForExport,
-            showCompareScreen,
             code,
             url,
             name,
@@ -325,10 +328,14 @@ class Stats extends Component {
                 <div id="main2">
                     <CompareSearchScreen
                         isMobile={this.isMobile}
-                        display={showCompareScreen}
+                        display={showCompareSearchOverlay}
                         currentPlayerCode={code}
                         currentPlayerName={name}
                         toggleCompareSearch={this.toggleCompareSearch}
+                    />
+                    <ExportLoaderScreen
+                        isMobile={this.isMobile}
+                        display={showExportLoaderOverlay}
                     />
                     <SearchBar
                         isMobile={this.isMobile}

@@ -323,14 +323,14 @@ export function constructChartInput(statsPer90, percentiles, playerCode, playerN
     const alignments = {
         "vertical": {
             "GK": ["bottom", "top", "top"],
-            "other": ["bottom", "bottom", "middle", "middle", "middle", "top",
+            "other": ["bottom", "middle", "middle", "middle", "middle", "top",
                 "top", "top", "middle", "middle", "middle", "bottom"
             ]
         },
         "horizontal": {
             "GK": ["center", "left", "right"],
-            "other": ["center", "center", "left", "left", "left", "center",
-                "center", "center", "right", "right", "right", "center"
+            "other": ["center", "left", "left", "left", "left", "center",
+                "center", "right", "right", "right", "right", "center"
             ]
         }
     };
@@ -574,15 +574,10 @@ export function toggleCreditsPosition(){
  */
 export async function exportChart(){
 
-    //exit if the browser is Safari because its foreign object rules stop the feature from working properly
-    // if (this.isSafari){
-    //     alert("Sorry, this feature is not supported in Safari.");
-    //     return;
-    // }
-
     //render the second slice and then export it.
     //callback executes after the page has re-rendered with the second slice
     this.setState({
+        showExportLoaderOverlay: true,
         renderForExport: true
     }, () => {
 
@@ -593,58 +588,21 @@ export async function exportChart(){
 
         const node = document.getElementById('export');
 
-        const scale = 2;
-
-        //scale the sizes of the watermark and credits images
-        let watermarkSize = 17/scale;
-        let creditsSize = 25/scale;
-
-        //get the width and height of the watermark and credits in pixels
-        let watermarkWidth = (watermarkSize/100) * node.offsetWidth;
-        let watermarkHeight = (791/2070) * watermarkWidth; //height = inverted aspect ratio * width
-        let creditsWidth = (creditsSize/100) * node.offsetWidth;
-        let creditsHeight = (500/1500) * creditsWidth;
-
-        //get the height of the watermark and credits as a percentage of the total height of the chart
-        let watermarkHeightRatio = (watermarkHeight / node.offsetHeight) * 100;
-        let watermarkWidthRatio = (watermarkWidth / node.offsetWidth) * 100;
-        let creditsHeightRatio = (creditsHeight / node.offsetHeight) * 100;
-        // let creditsWidthRatio = (creditsWidth / node.offsetWidth) * 100;
-
-        //get the aspect ratio of the export div
-        let exportAspectRatio = node.offsetWidth / node.offsetHeight;
-        let exportAspectRatioInverse = node.offsetHeight / node.offsetWidth;
-
-        //set the background position to be the bottom right corner after the 4x scaling
-        //for the X position, we start with 50% (100/scale=2),
-        //and then adjust based on the width of the watermark
-        let watermarkPadding = -0.2;
-        let creditsPadding = 0.8;
-        let watermarkXPos = (100/scale)-(watermarkPadding*exportAspectRatioInverse)-((watermarkWidthRatio+(watermarkPadding*exportAspectRatioInverse))/scale);
-        //same for Y position but this time we adjust based on the height of the watermark and the credits position
-        let watermarkYPos = (100/scale)-(0.63*exportAspectRatio)-((watermarkHeightRatio+(0.63*exportAspectRatio))/scale);
-
-        // let creditsXPos = (50/scale)-(creditsWidthRatio)/scale;
-        let creditsXPos = (43/scale);
-        let creditsYPos = (100/scale)-(creditsPadding*exportAspectRatio)-((creditsHeightRatio+(creditsPadding*exportAspectRatio))/scale);
-
         domtoimage.toPng(node, {
             bgcolor: '#fafbfc',
-            width: 1200 * scale,
-            height: 1100 * scale,
+            width: 1200,
+            height: 1100,
             style: {
                 //make the export div visible
                 'opacity': '1',
-                //scale up 4x to improve the resolution of the exported chart
-                'transform': `scale(${scale}) translate(${node.offsetWidth / 2 / scale}px, ${node.offsetHeight / 2 / scale}px)`,
-                'background-position': `${watermarkXPos}% ${watermarkYPos}%, ${creditsXPos}% ${creditsYPos}%`,
-                'background-size': `${watermarkSize}%, ${creditsSize}%`
+                'transform': `scale(1)`,
             }
         })
-            .then((blob) => {
+            .then(async (blob) => {
                 //download the image and revert 'renderForExport' to false so the second slice doesn't continue being updated
-                saveAs(blob, `${name.replace(" ", "-")}.png`);
+                await saveAs(blob, `${name.replace(" ", "-")}.png`);
                 this.setState({
+                    showExportLoaderOverlay: false,
                     renderForExport: false
                 })
             })
@@ -652,35 +610,6 @@ export async function exportChart(){
                 console.log(error);
                 alert("An error occurred while exporting. Please refresh the page and try again.")
             });
-
-        // fetch('/api/renderChart', {
-        //     method: 'post',
-        //     headers: {
-        //         "Content-Type": "application/json"
-        //     },
-        //     body: stringify({
-        //         "node": node,
-        //     })
-        // })
-        //     .then(res => {
-        //         if (res.ok) {
-        //             return res.json()
-        //         }
-        //         else {
-        //             throw new Error("Chart export failed. Please refresh the page and try again");
-        //         }
-        //     })
-        //     .then(blob => {
-        //         saveAs(blob, `${name.replace(" ", "-")}.png`);
-        //         this.setState({
-        //             renderForExport: false
-        //         })
-        //     })
-        //     .catch(error => {
-        //         if (this._isMounted){
-        //             this.setState({error, isLoading: false})
-        //         }
-        //     });
 
     });
 
@@ -691,10 +620,10 @@ export async function exportChart(){
  */
 export function toggleCompareSearch(){
 
-    let currentState = this.state.showCompareScreen;
+    let currentState = this.state.showCompareSearchOverlay;
 
     this.setState({
-        showCompareScreen: !currentState
+        showCompareSearchOverlay: !currentState
     });
 
     if (!this.isMobile){

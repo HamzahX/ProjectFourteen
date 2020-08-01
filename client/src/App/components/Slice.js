@@ -208,7 +208,7 @@ class Slice extends Component {
         //set x-axis label distance
         let xAxisLabelDistance;
         if (this.isForExport){
-            xAxisLabelDistance = 75;
+            xAxisLabelDistance = 60;
         }
         else {
             xAxisLabelDistance = this.isMobile ? 60 : 40;

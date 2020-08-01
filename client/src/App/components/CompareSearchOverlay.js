@@ -6,7 +6,7 @@ import SearchBar from "./SearchBar";
  * Component to render the player comparison search screen
  * Also handles the live search requests and aborts
  */
-class CompareSearchScreen extends Component {
+class CompareSearchOverlay extends Component {
 
     constructor(props) {
 
@@ -30,8 +30,8 @@ class CompareSearchScreen extends Component {
 
         //return JSX code for the searchbar
         return (
-            <div className={this.props.display ? "open" : "closed"} id="compare-search-screen">
-                <button className="far fa-times" onClick={this.toggleCompareSearch} id="close-compare-search">
+            <div className={`overlay ${this.props.display ? "open" : "closed"}`} id="compare-search-overlay">
+                <button className="far fa-times" onClick={this.toggleCompareSearch} id="close-compare-search-overlay">
                 </button>
                 <span><h3>Compare {this.currentPlayerName} to...</h3></span>
                 <SearchBar
@@ -47,4 +47,4 @@ class CompareSearchScreen extends Component {
 
 }
 
-export default (CompareSearchScreen);
+export default (CompareSearchOverlay);

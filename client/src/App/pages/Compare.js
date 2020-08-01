@@ -9,6 +9,8 @@ import LoadingSpinner from "../components/LoadingSpinner";
 import SearchBar from "../components/SearchBar";
 import SliceOptions from "../components/SliceOptions";
 import Slice from "../components/Slice";
+import CompareSearchScreen from "../components/CompareSearchOverlay";
+import ExportLoaderScreen from "../components/ExportLoaderOverlay";
 
 //import utility functions
 import {
@@ -22,7 +24,6 @@ import {
     exportChart,
     toggleCompareSearch
 } from "../utilities/SliceUtilities"
-import CompareSearchScreen from "../components/CompareSearchScreen";
 
 //initialize helpers
 const dateFormat = require('dateformat');
@@ -77,8 +78,9 @@ class Compare extends Component {
         this.state = {
             isLoading: true,
             error: null,
+            showCompareSearchOverlay: false,
+            showExportLoaderOverlay: false,
             renderForExport: false,
-            showCompareScreen: false,
             percentileArrays: this.props.percentileArrays,
             codes: codes,
             names: {},
@@ -128,7 +130,7 @@ class Compare extends Component {
 
         this.setState({
             isLoading: true,
-            showCompareScreen: false,
+            showCompareSearchOverlay: false,
             codes: codes
         }, () => {
             this.getStats();
@@ -268,8 +270,9 @@ class Compare extends Component {
         let {
             isLoading,
             error,
+            showCompareSearchOverlay,
+            showExportLoaderOverlay,
             renderForExport,
-            showCompareScreen,
             codes,
             urls,
             names,
@@ -377,10 +380,14 @@ class Compare extends Component {
                 <div id="main2">
                     <CompareSearchScreen
                         isMobile={this.isMobile}
-                        display={showCompareScreen}
+                        display={showCompareSearchOverlay}
                         currentPlayerCode={codes[0]}
                         currentPlayerName={names[codes[0]]}
                         toggleCompareSearch={this.toggleCompareSearch}
+                    />
+                    <ExportLoaderScreen
+                        isMobile={this.isMobile}
+                        display={showExportLoaderOverlay}
                     />
                     <SearchBar
                         isMobile={this.isMobile}

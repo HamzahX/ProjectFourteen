@@ -110,7 +110,7 @@ class App extends Component {
             return (
                 <div id="main">
                     <div className="screen" id="loading-screen">
-                        <p>...</p>
+                        <p>Connecting...</p>
                     </div>
                 </div>
             )
