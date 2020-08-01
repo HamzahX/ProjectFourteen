@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import LoadingSpinner from "./LoadingSpinner";
 
 
 /**
@@ -7,13 +6,6 @@ import LoadingSpinner from "./LoadingSpinner";
  * Also handles the live search requests and aborts
  */
 class ExportLoaderOverlay extends Component {
-
-    constructor(props) {
-
-        super(props);
-
-    }
-
 
     /**
      * render function

@@ -747,7 +747,9 @@ button:hover {
         #export-loader-overlay {
             display: flex;
             flex-direction: column;
+            align-items: center;
             justify-content: center;
+            color: white;
         }
 
             #export-loader-overlay .loader, #export-loader-overlay .loader:before, #export-loader-overlay .loader:after {

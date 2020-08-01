@@ -330,7 +330,7 @@ export function constructChartInput(statsPer90, percentiles, playerCode, playerN
         "horizontal": {
             "GK": ["center", "left", "right"],
             "other": ["center", "left", "left", "left", "left", "center",
-                "center", "right", "right", "right", "right", "center"
+                "center", "center", "right", "right", "right", "center"
             ]
         }
     };
@@ -600,11 +600,13 @@ export async function exportChart(){
         })
             .then(async (blob) => {
                 //download the image and revert 'renderForExport' to false so the second slice doesn't continue being updated
-                await saveAs(blob, `${name.replace(" ", "-")}.png`);
-                this.setState({
-                    showExportLoaderOverlay: false,
-                    renderForExport: false
-                })
+                saveAs(blob, `${name.replace(" ", "-")}.png`);
+                setTimeout(() => {
+                    this.setState({
+                        showExportLoaderOverlay: false,
+                        renderForExport: false
+                    })
+                }, 1000);
             })
             .catch(function (error) {
                 console.log(error);
