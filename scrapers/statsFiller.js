@@ -220,12 +220,12 @@ let processEntry = (aPlayer, competitionData, competitionName, isGoalkeeper) => 
     let fbrefName;
     let fbrefClubName;
     if (isGoalkeeper){
-        fbrefName = entry['keeper___1'].substring(0, entry['keeper___1'].indexOf('\\'));
-        fbrefClubName = entry["keeper___4"];
+        fbrefName = entry['keeper_Player'].substring(0, entry['keeper_Player'].indexOf('\\'));
+        fbrefClubName = entry["keeper_Squad"];
     }
     else {
-        fbrefName = entry['standard___1'].substring(0, entry['standard___1'].indexOf('\\'));
-        fbrefClubName = entry["standard___4"];
+        fbrefName = entry['standard_Player'].substring(0, entry['standard_Player'].indexOf('\\'));
+        fbrefClubName = entry["standard_Squad"];
     }
 
     //remove the diacritics from the fbref name
@@ -272,8 +272,8 @@ let processEntry = (aPlayer, competitionData, competitionName, isGoalkeeper) => 
         currentPlayer["simplifiedName"] = metadata["simplifiedName"];
         currentPlayer["simplifiedName2"] = fbrefSimplifiedName;
         currentPlayer["age"] = metadata["age"];
-        currentPlayer["nationality"] = metadata["nationality"] === "" ? countryCodes.getCountryName(entry['standard___2'].split(" ")[0].toUpperCase()) : metadata["nationality"];
-        currentPlayer["countryCode"] = metadata["countryCode"] === "" ? cleanCountryCode(entry['standard___2'].split(" ")[0]) : metadata["countryCode"];
+        currentPlayer["nationality"] = metadata["nationality"] === "" ? countryCodes.getCountryName(entry['standard_Nation'].split(" ")[0].toUpperCase()) : metadata["nationality"];
+        currentPlayer["countryCode"] = metadata["countryCode"] === "" ? cleanCountryCode(entry['standard_Nation'].split(" ")[0]) : metadata["countryCode"];
         currentPlayer["positions"] = metadata["positions"];
         currentPlayer["percentileEntries"] = {};
         currentPlayer["clubs"] = metadata["clubs"];
@@ -295,50 +295,53 @@ let processEntry = (aPlayer, competitionData, competitionName, isGoalkeeper) => 
     let stats;
     if (isGoalkeeper && METADATA[whoscoredCode]["positions"][SEASON] === "GK"){
         stats = {
-            minutes: entry["keeper_Playing Time__2"],
-            goalsAgainst: entry["keeper_Performance"] - entry["keeper_adv_Goals__4"],
-            psxg: entry["keeper_adv_Expected"],
-            sota: entry["keeper_Performance__2"],
-            stoppedCrosses: entry["keeper_adv_Crosses__1"],
-            attCrosses: entry["keeper_adv_Crosses"],
-            succPressurePasses: entry["passing_types_Pass Types__4"],
-            succLaunchedPasses: entry["keeper_adv_Launched"],
-            attLaunchedPasses: entry["keeper_adv_Launched__1"]
+            minutes: entry["keeper_Min"],
+            goalsAgainst: entry["keeper_adv_GA"] - entry["keeper_adv_OG"],
+            psxg: entry["keeper_adv_PSxG"],
+            sota: entry["keeper_SoTA"],
+            stoppedCrosses: entry["keeper_adv_Stp"],
+            attCrosses: entry["keeper_adv_Opp"],
+            // succPressurePasses: entry["passing_types_Pass Types__4"],
+            succLaunchedPasses: entry["keeper_adv_Cmp"],
+            attLaunchedPasses: entry["keeper_adv_Att"]
         }
     }
     else {
         stats = {
-            minutes: entry["standard_Playing Time__2"],
-            npg: entry["standard_Performance"] - entry["standard_Performance__2"],
-            npxg: entry["standard_Expected__1"],
-            shots: entry["shooting_Standard__3"] - entry["standard_Performance__3"],
-            succAerials: entry["misc_Aerial Duels"],
-            attAerials: entry["misc_Aerial Duels"] + entry["misc_Aerial Duels__1"],
-            boxTouches: entry["possession_Touches__5"],
-            xa: entry["standard_Expected__2"],
-            sca: entry["gca_SCA Types"] + entry["gca_SCA Types__2"] + entry["gca_SCA Types__3"] + entry["gca_SCA Types__4"],
-            ppa: entry["passing___13"],
-            succDribbles: entry["possession_Dribbles"],
-            attDribbles: entry["possession_Dribbles__1"],
-            timesDispossessed: entry["possession___9"],
-            succPressures: entry["defense_Pressures__1"],
-            padjSuccPressures: adjustForPossession(entry["defense_Pressures__1"], possession),
-            progDistance: entry["passing_Total__4"] + entry["possession_Carries__2"],
-            succPasses: entry["passing_Total"],
-            attPasses: entry["passing_Total__1"],
-            pft: entry["passing___12"],
-            succLongPasses: entry["passing_Long"],
-            attLongPasses: entry["passing_Long__1"],
-            interceptions: entry["defense___8"],
-            padjInterceptions: adjustForPossession(entry["defense___8"], possession),
-            tacklesWon: entry["defense_Tackles__1"],
-            padjTacklesWon: adjustForPossession(entry["defense_Tackles__1"], possession),
-            succDribbleTackles: entry["defense_Vs Dribbles"],
-            attDribbleTackles: entry["defense_Vs Dribbles__1"],
-            fouls: entry["misc_Performance__3"],
-            padjFouls: adjustForPossession(entry["misc_Performance__3"], possession),
-            clearances: entry["defense___9"],
-            padjClearances: adjustForPossession(entry["defense___9"], possession)
+            minutes: entry["standard_Min"],
+            npg: entry["standard_Gls"] - entry["standard_PK"],
+            npxg: entry["standard_npxG"],
+            shots: entry["shooting_Sh"] - entry["standard_PK"],
+            succAerials: entry["misc_Won"],
+            attAerials: entry["misc_Won"] + entry["misc_Lost"],
+            boxTouches: entry["possession_Att Pen"],
+            xa: entry["passing_xA"],
+            sca: entry["gca_SCA"] - entry["gca_PassDead"],
+            ppa: entry["passing_PPA"],
+            succDribbles: entry["possession_Succ"],
+            attDribbles: entry["possession_Att"],
+            timesDispossessed: entry["possession_Dispos"],
+            miscontrols: entry["possession_Miscon"],
+            succPressures: entry["defense_Succ"],
+            padjSuccPressures: adjustForPossession(entry["defense_Succ"], possession),
+            progDistance: entry["passing_PrgDist"] + entry["possession_PrgDist"],
+            succPasses: entry["passing_Cmp"],
+            attPasses: entry["passing_Att"],
+            pft: entry["passing_1/3"],
+            succLongPasses: entry["passing_Cmp__3"],
+            attLongPasses: entry["passing_Att__3"],
+            interceptions: entry["defense_Int"],
+            padjInterceptions: adjustForPossession(entry["defense_Int"], possession),
+            tackles: entry["defense_Tkl"],
+            padjTackles: adjustForPossession(entry["defense_Tkl"], possession),
+            tacklesWon: entry["defense_TklW"],
+            padjTacklesWon: adjustForPossession(entry["defense_TklW"], possession),
+            succDribbleTackles: entry["defense_Tkl__1"],
+            attDribbleTackles: entry["defense_Att"],
+            fouls: entry["misc_Fls"],
+            padjFouls: adjustForPossession(entry["misc_Fls"], possession),
+            clearances: entry["defense_Clr"],
+            padjClearances: adjustForPossession(entry["defense_Clr"], possession)
         };
         for (let stat in stats){
             if (typeof stats[stat] === "string"){

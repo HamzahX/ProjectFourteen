@@ -197,18 +197,18 @@ let processEntry = (aPlayer, competitionData, competitionName, isGoalkeeper) => 
     //get the fbref name, apps, club and nationality
     let query, apps, mins, club, nationality;
     if (!isGoalkeeper){
-        query = playerInfo['standard___1'].substring(0, playerInfo['standard___1'].indexOf('\\'));
-        apps = playerInfo['standard_Playing Time'];
-        mins = playerInfo['standard_Playing Time__2'];
-        club = playerInfo['standard___4'];
-        nationality = playerInfo['standard___2'].split(" ")[0];
+        query = playerInfo['standard_Player'].substring(0, playerInfo['standard_Player'].indexOf('\\'));
+        apps = playerInfo['standard_MP'];
+        mins = playerInfo['standard_Min'];
+        club = playerInfo['standard_Squad'];
+        nationality = playerInfo['standard_Nation'].split(" ")[0];
     }
     else {
-        query = playerInfo['keeper___1'].substring(0, playerInfo['keeper___1'].indexOf('\\'));
-        apps = playerInfo['keeper_Playing Time'];
-        mins = playerInfo['keeper_Playing Time__2'];
-        club = playerInfo['keeper___4'];
-        nationality = playerInfo['keeper___2'].split(" ")[0];
+        query = playerInfo['keeper_Player'].substring(0, playerInfo['keeper_Player'].indexOf('\\'));
+        apps = playerInfo['keeper_MP'];
+        mins = playerInfo['keeper_Min'];
+        club = playerInfo['keeper_Squad'];
+        nationality = playerInfo['keeper_Nation'].split(" ")[0];
     }
     if (apps < 4 && competitionName !== "Champions League" && competitionName !== "Europa League"){
         return;

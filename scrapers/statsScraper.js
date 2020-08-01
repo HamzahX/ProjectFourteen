@@ -2,7 +2,7 @@ var SEASON;
 //parse command line arguments to get the season
 let ARGS = process.argv.slice(2);
 if (ARGS.length !== 1){
-    console.log("Incorrect number of args. Usage: node fbrefScraper <season>");
+    console.log("Incorrect number of args. Usage: node statsScraper <season>");
     process.exit(-1);
 }
 else {
@@ -402,8 +402,23 @@ saveJSONs = async (competition) => {
                     for (let i=0; i<result.length; i++){
                         await new Promise(async function (resolve, reject) {
                             let temp = result[i];
-                            if ('keeper___1' in temp['1'] || 'keeper_adv___1' in temp['1'] || 'passing_types___1' in temp['1']){
+                            if ('keeper_Player' in temp['1'] || 'keeper_adv_Player' in temp['1']){
                                 combined_gk = merge(combined_gk, temp);
+                                resolve();
+                            }
+                            else if('passing_types_Player' in temp['1']){
+                                //create temp object containing passing type data for just GKs
+                                let temp2 = {};
+                                let counter = 1;
+                                for (let player in temp){
+                                    if (temp[player]['passing_types_Pos'] === "GK")
+                                    {
+                                        temp2[counter.toString()] = temp[player];
+                                        counter++
+                                    }
+                                }
+                                combined_gk = merge(combined_gk, temp2);
+                                combined = merge(combined, temp);
                                 resolve();
                             }
                             else {
@@ -460,11 +475,13 @@ let retrieveJSON = async (page, tableType) => {
                 "\n" +
                 " ", "");
             csv = csv.split("\n");
-            csv[1] = csv[1].split(",");
-            for (let i=0; i<csv[1].length; i++){
-                csv[1][i] = tableType + "_" + csv[1][i];
+            csv.shift();
+            csv.shift();
+            csv[0] = csv[0].split(",");
+            for (let i=0; i<csv[0].length; i++){
+                csv[0][i] = tableType + "_" + csv[0][i];
             }
-            csv[1] = csv[1].join(",");
+            csv[0] = csv[0].join(",");
             csv = csv.join("\n");
             return [csv, playerCodes, playerURLs];
         }, buttonSelector, csvSelector, tableType);
@@ -472,25 +489,6 @@ let retrieveJSON = async (page, tableType) => {
         let csv = returnValues[0];
         let playerCodes = returnValues[1];
         let playerURLs = returnValues[2];
-
-        if (tableType === "passing_types"){
-            let csvTemp = csv;
-            csv = [];
-            csvTemp = csvTemp.split("\n");
-            csv.push(csvTemp[0]);
-            csv.push(csvTemp[1]);
-            let counter = 1;
-            for (let i=2; i<csvTemp.length; i++){
-                let currentLine = csvTemp[i];
-                currentLine = currentLine.split(",");
-                if (currentLine[3] === "GK"){
-                    currentLine[0] = counter.toString();
-                    counter++;
-                    csv.push(currentLine.join(","));
-                }
-            }
-            csv = csv.join("\n");
-        }
 
         let json = csv2json(csv,
             {
