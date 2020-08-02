@@ -629,7 +629,7 @@ export function toggleCompareSearch(){
     });
 
     if (!this.isMobile){
-        $("#compare-search-screen #searchbar-input").focus()
+        $("#compare-search-overlay #searchbar-input").focus()
     }
 
 }
