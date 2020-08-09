@@ -595,6 +595,29 @@ export async function exportChart(){
 
                 const node = document.getElementById('export');
 
+                if (this.firstExport){
+
+                    this.firstExport = false;
+
+                    domtoimage.toPng(node, {
+                        bgcolor: '#fafbfc',
+                        width: 1200,
+                        height: 1100,
+                        style: {
+                            //make the export div visible
+                            'opacity': '1',
+                            'transform': 'scale(1)',
+                        }
+                    })
+                        .then(async (blob) => {
+                        })
+                        .catch(function (error) {
+                            console.log(error);
+                            alert("An error occurred while exporting. Please refresh the page and try again.")
+                        });
+
+                }
+
                 domtoimage.toPng(node, {
                     bgcolor: '#fafbfc',
                     width: 1200,

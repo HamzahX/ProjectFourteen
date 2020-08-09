@@ -60,6 +60,7 @@ class Compare extends Component {
         //device and browser info
         this.isMobile = this.props.isMobile;
         this.isSafari = this.props.isSafari;
+        this.firstExport = true;
 
         //cookies
         let labelTypeCookie = cookies.get('labelType');
