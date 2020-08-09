@@ -307,16 +307,16 @@ let scrapeChampionsLeaguePages = async () => {
         }
         else {
             URLs = [
-                "https://fbref.com/en/comps/8/stats/Champions-League-Stats",
-                "https://fbref.com/en/comps/8/shooting/Champions-League-Stats",
-                "https://fbref.com/en/comps/8/passing/Champions-League-Stats",
-                "https://fbref.com/en/comps/8/passing_types/Champions-League-Stats",
-                "https://fbref.com/en/comps/8/gca/Champions-League-Stats",
-                "https://fbref.com/en/comps/8/defense/Champions-League-Stats",
-                "https://fbref.com/en/comps/8/possession/Champions-League-Stats",
-                "https://fbref.com/en/comps/8/misc/Champions-League-Stats",
-                "https://fbref.com/en/comps/8/keepers/Champions-League-Stats",
-                "https://fbref.com/en/comps/8/keepersadv/Champions-League-Stats"
+                "https://fbref.com/en/comps/8/2900/stats/2019-2020-Champions-League-Stats",
+                "https://fbref.com/en/comps/8/2900/shooting/2019-2020-Champions-League-Stats",
+                "https://fbref.com/en/comps/8/2900/passing/2019-2020-Champions-League-Stats",
+                "https://fbref.com/en/comps/8/2900/passing_types/2019-2020-Champions-League-Stats",
+                "https://fbref.com/en/comps/8/2900/gca/2019-2020-Champions-League-Stats",
+                "https://fbref.com/en/comps/8/2900/defense/2019-2020-Champions-League-Stats",
+                "https://fbref.com/en/comps/8/2900/possession/2019-2020-Champions-League-Stats",
+                "https://fbref.com/en/comps/8/2900/misc/2019-2020-Champions-League-Stats",
+                "https://fbref.com/en/comps/8/2900/keepers/2019-2020-Champions-League-Stats",
+                "https://fbref.com/en/comps/8/2900/keepersadv/2019-2020-Champions-League-Stats"
             ]
         }
         await loadPages(URLs);
@@ -518,21 +518,21 @@ let retrieveJSON = async (page, tableType) => {
 
 console.time('fbref stat retrieval');
 setup()
-    // .then(() =>
-    //     scrapeEPLPages()
-    // )
-    // .then(() =>
-    //     scrapeLaLigaPages()
-    // )
-    // .then(() =>
-    //     scrapeSerieAPages()
-    // )
-    // .then(() =>
-    //     scrapeBundesligaPages()
-    // )
-    // .then(() =>
-    //     scrapeLigue1Pages()
-    // )
+    .then(() =>
+        scrapeEPLPages()
+    )
+    .then(() =>
+        scrapeLaLigaPages()
+    )
+    .then(() =>
+        scrapeSerieAPages()
+    )
+    .then(() =>
+        scrapeBundesligaPages()
+    )
+    .then(() =>
+        scrapeLigue1Pages()
+    )
     .then(() =>
         scrapeChampionsLeaguePages()
     )

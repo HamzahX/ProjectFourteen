@@ -3533,7 +3533,7 @@
 		"nationality": "England",
 		"countryCode": "_england",
 		"positions": {
-			"19-20": "N/A"
+			"19-20": "FW"
 		},
 		"clubs": {
 			"19-20": [
@@ -5767,7 +5767,7 @@
 		"countryCode": "it",
 		"positions": {
 			"18-19": "CB",
-			"19-20": "N/A"
+			"19-20": "CB"
 		},
 		"clubs": {
 			"18-19": [
@@ -9357,7 +9357,7 @@
 		"countryCode": "cl",
 		"positions": {
 			"18-19": "N/A",
-			"19-20": "N/A"
+			"19-20": "FW"
 		},
 		"clubs": {
 			"18-19": [
@@ -12298,7 +12298,7 @@
 		"countryCode": "ar",
 		"positions": {
 			"18-19": "N/A",
-			"19-20": "N/A"
+			"19-20": "AM"
 		},
 		"clubs": {
 			"18-19": [
@@ -26411,7 +26411,7 @@
 		"countryCode": "ma",
 		"positions": {
 			"18-19": "CM",
-			"19-20": "N/A"
+			"19-20": "CM"
 		},
 		"clubs": {
 			"18-19": [
@@ -35876,7 +35876,7 @@
 		"countryCode": "hr",
 		"positions": {
 			"18-19": "FW",
-			"19-20": "N/A"
+			"19-20": "AM"
 		},
 		"clubs": {
 			"18-19": [
@@ -39706,7 +39706,7 @@
 		"countryCode": "fr",
 		"positions": {
 			"18-19": "N/A",
-			"19-20": "N/A"
+			"19-20": "FB"
 		},
 		"clubs": {
 			"18-19": [
@@ -40800,7 +40800,7 @@
 		"nationality": "Netherlands",
 		"countryCode": "nl",
 		"positions": {
-			"19-20": "CB"
+			"19-20": "FB"
 		},
 		"clubs": {
 			"19-20": [
@@ -41469,7 +41469,7 @@
 		"countryCode": "gh",
 		"positions": {
 			"18-19": "CM",
-			"19-20": "N/A"
+			"19-20": "CM"
 		},
 		"clubs": {
 			"18-19": [
@@ -43597,7 +43597,7 @@
 		"nationality": "England",
 		"countryCode": "_england",
 		"positions": {
-			"19-20": "N/A"
+			"19-20": "FW"
 		},
 		"clubs": {
 			"19-20": [
@@ -51676,7 +51676,7 @@
 		"nationality": "Argentina",
 		"countryCode": "ar",
 		"positions": {
-			"19-20": "N/A"
+			"19-20": "CB"
 		},
 		"clubs": {
 			"19-20": [
@@ -52281,7 +52281,7 @@
 		"nationality": "Italy",
 		"countryCode": "it",
 		"positions": {
-			"19-20": "N/A"
+			"19-20": "CB"
 		},
 		"clubs": {
 			"19-20": [
@@ -55735,7 +55735,7 @@
 		"countryCode": "br",
 		"positions": {
 			"18-19": "CM",
-			"19-20": "N/A"
+			"19-20": "CM"
 		},
 		"clubs": {
 			"18-19": [
@@ -62513,7 +62513,7 @@
 		"countryCode": "me",
 		"positions": {
 			"18-19": "FB",
-			"19-20": "N/A"
+			"19-20": "FB"
 		},
 		"clubs": {
 			"18-19": [
@@ -63619,7 +63619,7 @@
 		"nationality": "Czech Republic",
 		"countryCode": "cz",
 		"positions": {
-			"19-20": "N/A"
+			"19-20": "AM"
 		},
 		"clubs": {
 			"19-20": [
@@ -65426,7 +65426,7 @@
 		"nationality": "Albania",
 		"countryCode": "al",
 		"positions": {
-			"19-20": "N/A"
+			"19-20": "CB"
 		},
 		"clubs": {
 			"19-20": [
@@ -69680,7 +69680,7 @@
 		"countryCode": "_england",
 		"positions": {
 			"18-19": "N/A",
-			"19-20": "N/A"
+			"19-20": "CM"
 		},
 		"clubs": {
 			"18-19": [
@@ -77335,7 +77335,7 @@
 		"nationality": "Italy",
 		"countryCode": "it",
 		"positions": {
-			"19-20": "N/A"
+			"19-20": "FB"
 		},
 		"clubs": {
 			"19-20": [
@@ -78282,7 +78282,7 @@
 		"countryCode": "br",
 		"positions": {
 			"18-19": "FB",
-			"19-20": "N/A"
+			"19-20": "FB"
 		},
 		"clubs": {
 			"18-19": [
@@ -82811,7 +82811,7 @@
 		"nationality": "England",
 		"countryCode": "_england",
 		"positions": {
-			"19-20": "N/A"
+			"19-20": "AM"
 		},
 		"clubs": {
 			"19-20": [
@@ -85989,7 +85989,7 @@
 		"nationality": "",
 		"countryCode": "",
 		"positions": {
-			"19-20": "N/A"
+			"19-20": "CB"
 		},
 		"clubs": {
 			"19-20": [
