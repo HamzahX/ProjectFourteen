@@ -379,7 +379,7 @@ button:hover {
             }
 
             #home #searchbar-container1 form input:hover, #home #searchbar-container1 form input:focus {
-                box-shadow: 0 0 5px 0 darkgray;
+                box-shadow: 0 0 5px 0 #c3c3c3;
             }
 
             #home #searchbar-container1 #live-search-results {
@@ -996,7 +996,7 @@ button:hover {
             height: 1100px;
             opacity: 0;
             transform: scale(0.1);
-            background-image: url(../assets/exportBackground.png);
+            /*background-image: url(../assets/exportBackground.png);*/
             background-size: 100%;
             -webkit-background-size: 100%;
             background-repeat: no-repeat;

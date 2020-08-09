@@ -206,17 +206,31 @@ let scrapingLoop = async (page, competitionName) => {
     await page.reload({ waitUntil: ["networkidle2"] });
 
     //attach the initializePlayer function to the page window after the refresh
-    await page.evaluate((competitionName, SEASON) => {
-        window.initializePlayer = function(data, td) {
-            let url = td.innerHTML.substring(td.innerHTML.indexOf('href="')+6, td.innerHTML.indexOf('">', 0));
+    await page.evaluate((competitionName) => {
+
+        window.initializePlayer = function(data, playerLink, club) {
+            // let url = playerLink.substring(playerLink.indexOf('href="')+6, playerLink.indexOf('">', 0));
+            // url = url.replace("/Players/", "");
+            // let playerCode = url.substring(0, url.indexOf("/"));
+            let url = playerLink.getAttribute("href");
             url = url.replace("/Players/", "");
             let playerCode = url.substring(0, url.indexOf("/"));
-            let currentClub = td.innerHTML.substring(td.innerHTML.indexOf('"team-name">')+12, td.innerHTML.indexOf(', </span', 0)).replace(".", "'");
-            let currentCompetition = `${competitionName} | ${currentClub}`;
-            playerCode = playerCode + "|" + currentClub;
+
+            // let clubName = club.substring(club.indexOf('"team-name">')+12, club.indexOf(', </span', 0)).replace(".", "'");
+            let clubName = club.textContent;
+            clubName = clubName
+                .substring(0, clubName.indexOf(","))
+                .replace(".", "'");
+            let competitionAndClub = `${competitionName} | ${clubName}`;
+
+            console.log(club);
+
+            playerCode = playerCode + "|" + clubName;
             data[playerCode] = {};
-            return [playerCode, currentCompetition]
+
+            return [playerCode, competitionAndClub]
         }
+
     }, competitionName, SEASON);
 
     await pageSetup(page, true, competitionName);
@@ -261,37 +275,72 @@ let scrapingLoop = async (page, competitionName) => {
 let scrapeMetadata = async (page) => {
 
     return await page.evaluate((SEASON) => {
+
         let data = {};
-        const tds = Array.from(document.querySelectorAll('#statistics-table-detailed #top-player-stats-summary-grid tr td')); //get all table cells
+
+        const playerLinks = Array.from(document.querySelectorAll('#statistics-table-detailed #top-player-stats-summary-grid tr .grid-ghost-cell .player-link')); //get player links
+        const names = Array.from(document.querySelectorAll('#statistics-table-detailed #top-player-stats-summary-grid tr .grid-ghost-cell .iconize-icon-left')); //get names
+        const flags = Array.from(document.querySelectorAll('#statistics-table-detailed #top-player-stats-summary-grid tr .grid-ghost-cell .iconize-icon-left .ui-icon')); //get flags
+        const clubs = Array.from(document.querySelectorAll('#statistics-table-detailed #top-player-stats-summary-grid tr .grid-ghost-cell .team-name')); //get clubs
+        const ages = Array.from(document.querySelectorAll('#statistics-table-detailed #top-player-stats-summary-grid tr td > span span:nth-child(1)')); //get ages
+        const positions = Array.from(document.querySelectorAll('#statistics-table-detailed #top-player-stats-summary-grid tr td > span span:nth-child(2)')); //get positions
+        const startsMade = Array.from(document.querySelectorAll('#statistics-table-detailed #top-player-stats-summary-grid tr td:nth-child(3)')); //get starts
+        const minutesPlayed = Array.from(document.querySelectorAll('#statistics-table-detailed #top-player-stats-summary-grid tr td:nth-child(4)')); //get minutes
+
+        // alert("Player links: " + playerLinks.length);
+        // alert("Names: " + names.length);
+        // alert("Flags: " + flags.length);
+        // alert("Clubs: " + clubs.length);
+        // alert("Ages: " + ages.length);
+        // alert("Positions: " + positions.length);
+        // alert("Starts Made: " + startsMade.length);
+        // alert("Minutes Played: " + minutesPlayed.length);
+
         let aPlayer = '';
         let aCompetition = '';
-        for (let i = 0; i < tds.length; i++) { //iterate through all of them at process
-            if (tds[i].className === 'pn') {
-                let metadata = initializePlayer(data, tds[i]);
-                aPlayer = metadata[0];
-                aCompetition = metadata[1];
-                let aPlayerName = tds[i].innerHTML.substring(tds[i].innerHTML.indexOf('">')+2, tds[i].innerHTML.indexOf(' </a>', 0));
-                let aPlayerClub = tds[i].innerHTML.substring(tds[i].innerHTML.indexOf('team-name">')+11, tds[i].innerHTML.indexOf(', </span>', 0)).replace(".", "'");
-                let temp = tds[i].innerHTML.indexOf('player-meta-data">');
-                let temp2 = tds[i].innerHTML.indexOf('player-meta-data">', temp+18);
-                let temp3 = tds[i].innerHTML.indexOf('</span>', tds[i].innerHTML.indexOf('</span>')+7);
-                let temp4 = tds[i].innerHTML.indexOf('</span>', temp3+7);
-                let age = tds[i].innerHTML.substring(tds[i].innerHTML.indexOf('player-meta-data">', temp+18)+18, temp3);
-                let positionString = tds[i].innerHTML.substring(tds[i].innerHTML.indexOf('player-meta-data">', temp2+18)+19, temp4).trim();
-                let flagtd = tds[i - 1];
-                let countryCode = flagtd.innerHTML.substring(flagtd.innerHTML.indexOf('flg-')+4, flagtd.innerHTML.indexOf('"></span>'));
-                let apps = parseInt(tds[i+1].innerText, 10);
-                let mins = parseInt(tds[i+2].innerText, 10);
-                data[aPlayer]['name'] = aPlayerName;
-                data[aPlayer]['age'] = parseInt(age, 10);
-                data[aPlayer]['countryCode'] = countryCode;
-                data[aPlayer]['position'] = positionString;
-                data[aPlayer]['club'] = aPlayerClub;
-                data[aPlayer][SEASON]  = {};
-                data[aPlayer][SEASON][aCompetition] = {};
-                data[aPlayer][SEASON][aCompetition]['whoscoredApps'] = apps;
-                data[aPlayer][SEASON][aCompetition]['whoscoredMins'] = mins;
-            }
+
+        for (let i = 0; i < playerLinks.length; i++) { //iterate through HTML and process
+
+            let playerLink = playerLinks[i];
+            let name = names[i];
+            let flag = flags[i];
+            let club = clubs[i];
+            let age = ages[i];
+            let position = positions[i];
+            let starts = startsMade[i];
+            let minutes = minutesPlayed[i];
+
+            let metadata = initializePlayer(data, playerLink, club);
+            aPlayer = metadata[0];
+            aCompetition = metadata[1];
+
+            //let playerName = nameAndFlag.substring(nameAndFlag.indexOf('">')+2, nameAndFlag.indexOf('<span class="ui-icon country'));
+            //let playerClub = club.substring(club.indexOf('"team-name">')+12, club.indexOf(', </span', 0)).replace(".", "'");
+            //let playerAge = ageAndPosition.substring(ageAndPosition.indexOf('">') + 2, ageAndPosition.indexOf('</span>'));
+            //let playerPositionString = ageAndPosition.substring(ageAndPosition.indexOf('">,') + 3, ageAndPosition.indexOf('</span>', ageAndPosition.indexOf('</span>') + 6)).trim();
+            //let playerCountryCode = nameAndFlag.substring(nameAndFlag.indexOf('country flg-')+12, nameAndFlag.indexOf('">', ageAndPosition.indexOf('</span>') + 6));
+            // let apps = parseInt(tds[i+1].innerText, 10);
+            // let mins = parseInt(tds[i+2].innerText, 10);
+
+            let playerName = name.textContent.substring(0, name.textContent.length - 1);
+            let playerClub = club.textContent
+                .substring(0, club.textContent.indexOf(","))
+                .replace(".", "'");
+            let playerAge = age.innerText;
+            let playerPositionString = position.innerText.replace(", ", "");
+            let playerCountryCode = flag.className.replace("ui-icon country flg-", "");
+            let apps = parseInt(starts.innerText);
+            let mins = parseInt(minutes.innerText);
+
+            data[aPlayer]['name'] = playerName;
+            data[aPlayer]['age'] = parseInt(playerAge, 10);
+            data[aPlayer]['countryCode'] = playerCountryCode;
+            data[aPlayer]['position'] = playerPositionString;
+            data[aPlayer]['club'] = playerClub;
+            data[aPlayer][SEASON]  = {};
+            data[aPlayer][SEASON][aCompetition] = {};
+            data[aPlayer][SEASON][aCompetition]['whoscoredApps'] = apps;
+            data[aPlayer][SEASON][aCompetition]['whoscoredMins'] = mins;
         }
         return data;
     }, SEASON);

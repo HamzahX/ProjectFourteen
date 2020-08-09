@@ -450,10 +450,12 @@ saveJSONs = async (competition) => {
 let retrieveJSON = async (page, tableType) => {
 
     return new Promise(async function (resolve, reject) {
+
         let buttonSelector = `#all_stats_${tableType} > div.section_heading > div > ul > li.hasmore > div > ul > li:nth-child(4) > button`; //convert to csv button selector;
         let csvSelector = `#csv_stats_${tableType}`;
 
         await page.waitForSelector(`#stats_${tableType}`);
+        await page.waitForSelector(buttonSelector);
 
         let returnValues = await page.evaluate(async (buttonSelector, csvSelector, tableType) => {
             let playerCodes = [];
@@ -508,6 +510,7 @@ let retrieveJSON = async (page, tableType) => {
         }
 
         resolve(json);
+
     });
 
 
@@ -515,21 +518,21 @@ let retrieveJSON = async (page, tableType) => {
 
 console.time('fbref stat retrieval');
 setup()
-    .then(() =>
-        scrapeEPLPages()
-    )
-    .then(() =>
-        scrapeLaLigaPages()
-    )
-    .then(() =>
-        scrapeSerieAPages()
-    )
-    .then(() =>
-        scrapeBundesligaPages()
-    )
-    .then(() =>
-        scrapeLigue1Pages()
-    )
+    // .then(() =>
+    //     scrapeEPLPages()
+    // )
+    // .then(() =>
+    //     scrapeLaLigaPages()
+    // )
+    // .then(() =>
+    //     scrapeSerieAPages()
+    // )
+    // .then(() =>
+    //     scrapeBundesligaPages()
+    // )
+    // .then(() =>
+    //     scrapeLigue1Pages()
+    // )
     .then(() =>
         scrapeChampionsLeaguePages()
     )

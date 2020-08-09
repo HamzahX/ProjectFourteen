@@ -192,7 +192,7 @@ let pageSetup = async (page, isFirstIteration, position) => {
             }
 
             //press search button
-            selector = '#filter-options > div:nth-child(2) > dl > dd.search-button-container > button';
+            selector = '#filter-options > div:nth-child(4) > dl.listbox.col12-xs-6.col12-s-6.col12-m-6.col12-lg-6 > dd.search-button-container > button';
             await page.evaluate((selector) => document.querySelector(selector).click(), selector);
             await page.waitForFunction('document.querySelector("#statistics-table-detailed-loading").style.display == "none"');
 
@@ -277,20 +277,29 @@ let getNamesAndCodes = async (page) => {
 let scrapeNamesAndCodes = async (page) => {
 
     return await page.evaluate(() => {
-        let names = [];
-        let codes = [];
-        const tds = Array.from(document.querySelectorAll('#statistics-table-detailed #top-player-stats-summary-grid tr td'));
-        for (let i = 0; i < tds.length; i++) {
-            if (tds[i].className === 'pn') {
-                let name = tds[i].innerHTML.substring(tds[i].innerHTML.indexOf('">')+2, tds[i].innerHTML.indexOf(' </a>', 0));
-                let url = tds[i].innerHTML.substring(tds[i].innerHTML.indexOf('href="')+6, tds[i].innerHTML.indexOf('">', 0));
-                url = url.replace("/Players/", "");
-                let code = url.substring(0, url.indexOf("/"));
-                names.push(name);
-                codes.push(code);
-            }
+
+        let playerNames = [];
+        let playerCodes = [];
+
+        const names = Array.from(document.querySelectorAll('#statistics-table-detailed #top-player-stats-summary-grid tr .grid-ghost-cell .iconize-icon-left')); //get names
+        const links = Array.from(document.querySelectorAll('#statistics-table-detailed #top-player-stats-summary-grid tr .grid-ghost-cell .player-link')); //get player links
+
+        for (let i = 0; i < links.length; i++) {
+
+            let nameCell = names[i];
+            let linkCell = links[i];
+
+            let name = nameCell.textContent.substring(0, nameCell.textContent.length - 1);
+            let url = linkCell.getAttribute("href");
+            url = url.replace("/Players/", "");
+            let code = url.substring(0, url.indexOf("/"));
+            playerNames.push(name);
+            playerCodes.push(code);
+
         }
-        return [names, codes];
+
+        return [playerNames, playerCodes];
+
     });
 
 };

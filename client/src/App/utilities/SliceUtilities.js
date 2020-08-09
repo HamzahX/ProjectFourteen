@@ -586,32 +586,39 @@ export async function exportChart(){
             name = Object.values(this.state.names).join("-vs-");
         }
 
-        const node = document.getElementById('export');
+        $('<img/>').attr('src', '../exportBackground.png').on('load', () => {
 
-        domtoimage.toPng(node, {
-            bgcolor: '#fafbfc',
-            width: 1200,
-            height: 1100,
-            style: {
-                //make the export div visible
-                'opacity': '1',
-                'transform': `scale(1)`,
-            }
-        })
-            .then(async (blob) => {
-                //download the image and revert 'renderForExport' to false so the second slice doesn't continue being updated
-                saveAs(blob, `${name.replace(" ", "-")}.png`);
-                setTimeout(() => {
-                    this.setState({
-                        showExportLoaderOverlay: false,
-                        renderForExport: false
-                    })
-                }, 1000);
+            $(this).remove();
+            $('#export').css('background-image', 'url(../exportBackground.png)');
+
+            const node = document.getElementById('export');
+
+            domtoimage.toPng(node, {
+                bgcolor: '#fafbfc',
+                width: 1200,
+                height: 1100,
+                style: {
+                    //make the export div visible
+                    'opacity': '1',
+                    'transform': 'scale(1)',
+                }
             })
-            .catch(function (error) {
-                console.log(error);
-                alert("An error occurred while exporting. Please refresh the page and try again.")
-            });
+                .then(async (blob) => {
+                    //download the image and revert 'renderForExport' to false so the second slice doesn't continue being updated
+                    saveAs(blob, `${name.replace(" ", "-")}.png`);
+                    setTimeout(() => {
+                        this.setState({
+                            showExportLoaderOverlay: false,
+                            renderForExport: false
+                        })
+                    }, 1000);
+                })
+                .catch(function (error) {
+                    console.log(error);
+                    alert("An error occurred while exporting. Please refresh the page and try again.")
+                });
+
+        });
 
     });
 
