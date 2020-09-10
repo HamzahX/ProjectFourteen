@@ -462,10 +462,75 @@ function ordinalSuffix(aNumber){
  */
 export function changeTemplate(event){
 
-    let template = event.target.value;
+    let { codes, stats, template, competitions, selectedCompetitions } = this.state;
+    let newTemplate = event.target.value;
+
+    //check if the function was called from a comparison page
+    if (codes !== undefined) {
+
+        for (let i=0; i<codes.length; i++){
+
+            let code = codes[i];
+
+            if (this.state.isOutfieldGK[code]){
+
+                if (template !== "GK" && newTemplate === "GK"){
+                    let outfieldGKStats = this.state.outfieldGKStats[code];
+                    stats[code] = outfieldGKStats;
+                }
+                else if (template === "GK" && newTemplate !== "GK"){
+                    let standardStats = this.state.standardStats[code];
+                    stats[code] = standardStats;
+                }
+
+                competitions[code] = {};
+                for (let season in stats[code]){
+                    competitions[code][season] = [];
+                    for (let competition in stats[code][season]){
+                        competitions[code][season].push(competition);
+                    }
+                }
+
+            }
+
+        }
+
+        selectedCompetitions = JSON.parse(JSON.stringify(competitions));
+
+    }
+    //handle case where function is called from stats page
+    else {
+
+        if (this.state.isOutfieldGK) {
+
+            if (template !== "GK" && newTemplate === "GK"){
+                let outfieldGKStats = this.state.outfieldGKStats;
+                stats = outfieldGKStats;
+            }
+            else if (template === "GK" && newTemplate !== "GK"){
+                let standardStats = this.state.standardStats;
+                stats = standardStats;
+            }
+
+            competitions = {};
+            for (let season in stats){
+                competitions[season] = [];
+                for (let competition in stats[season]){
+                    competitions[season].push(competition);
+                }
+            }
+
+            selectedCompetitions = JSON.parse(JSON.stringify(competitions));
+
+        }
+
+    }
 
     this.setState({
-        template: template,
+        stats: stats,
+        template: newTemplate,
+        competitions: competitions,
+        selectedCompetitions: selectedCompetitions,
         isAnimated: true
     });
 
@@ -481,9 +546,6 @@ export function changeSelectedCompetitions(event){
     let clickedValues = event.target.value.split("_");
     let selectedCompetitions = this.state.selectedCompetitions;
 
-    //check if the function was called from a 'compare' page, where the checkbox values include an extra value
-    let forComparison = clickedValues.length > 2;
-
     //retrieve the information of the clicked checkbox
     let code;
     let entry;
@@ -494,6 +556,9 @@ export function changeSelectedCompetitions(event){
     //retrieve the season and competition from the clicked checkbox
     clickedSeason = clickedValues[0];
     clickedCompetition = clickedValues[1];
+
+    //check if the function was called from a 'compare' page, where the checkbox values include an extra value
+    let forComparison = clickedValues.length > 2;
 
     //if so, retrieve the player code from the clicked checkbox
     if (forComparison) {
@@ -526,6 +591,25 @@ export function changeSelectedCompetitions(event){
         selectedCompetitions: selectedCompetitions,
         isAnimated: true
     });
+
+}
+
+
+/**
+ * Function to change the selected values for possession adjustment
+ * @param {Object} event - the input event from the possession adjustment form
+ */
+export function changePAdjTypes(event){
+
+    let clickedType = event.target.value;
+
+    let pAdjTypes = this.state.pAdjTypes;
+
+    pAdjTypes[clickedType] = !pAdjTypes[clickedType];
+
+    this.setState({
+        pAdjTypes: pAdjTypes
+    })
 
 }
 

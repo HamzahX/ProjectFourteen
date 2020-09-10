@@ -44,14 +44,12 @@ class Home extends Component {
     componentDidMount() {
         this._isMounted = true;
         document.title = "Home | Football Slices";
-        // window.location.href = this.props.location.hash;
-        // console.log(this.props.location.hash);
+        this.props.recordPageViewGA(window.location.pathname);
     }
 
 
-
     /**
-     * Function to send a post request to the server to retrieve the number of players currently in the dataabase
+     * Function to send a post request to the server to retrieve the number of players currently in the database
      */
     getDatabaseSize = () => {
 
@@ -284,7 +282,7 @@ class Home extends Component {
                             </div>
                         </div>
                     </div>
-                    <div id="glossary" style={{backgroundColor: '#f5f6f7'}} className="homepage-section-container">
+                    <div id="glossary" style={{backgroundColor: '#f5f6f7'}} className="homepage-section-container centered-section">
                         <div id="glossary-section-container">
                             <h2>Glossary</h2>
                             <ul>
@@ -415,7 +413,7 @@ class Home extends Component {
                             </div>
                         </div>
                     </div>
-                    <div id="faq" className="homepage-section-container">
+                    <div id="faq" className="homepage-section-container centered-section">
                         <div id="faq-section-container">
                             <h2>F.A.Q.</h2>
                             <div id="faq-container">

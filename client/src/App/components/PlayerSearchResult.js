@@ -77,6 +77,8 @@ class PlayerSearchResult extends Component {
 
         let flagSizeMultiplier = this.isMobile ? 1.8 : 1;
 
+        //console.log(`${nationality} | ${countryCode}`);
+
         return (
             <Link to={link}>
                 <div tabIndex="0" className="search-result">

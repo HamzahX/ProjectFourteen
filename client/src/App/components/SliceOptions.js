@@ -11,8 +11,8 @@ class SliceOptions extends Component {
         super(props);
 
         this.isMobile = this.props.isMobile;
+        this.isForComparison = this.props.isForComparison;
         this.templateOpen = this.props.template === "N/A";
-        this.competitions = this.props.competitions;
         this.codes = this.props.codes;
         this.names = this.props.names;
         this.clubs = this.props.clubs;
@@ -44,14 +44,19 @@ class SliceOptions extends Component {
             "percentiles": "Percentile Ranks"
         };
 
+        this.pAdjTypes = {
+            offensive: "Offensive",
+            defensive: "Defensive"
+        };
+
         this.state = {
         };
 
     }
 
-    constructPlayerCompetitions = (forComparison, code) => {
+    constructCompetitionLabels = (forComparison, code) => {
 
-        let competitions = forComparison ? this.competitions[code] : this.competitions;
+        let competitions = forComparison ? this.props.competitions[code] : this.props.competitions;
         let clubs = forComparison ? this.clubs[code] : this.clubs;
         let selectedCompetitions = forComparison ? this.props.selectedCompetitions[code] : this.props.selectedCompetitions;
 
@@ -108,35 +113,38 @@ class SliceOptions extends Component {
 
         let template = this.props.template;
         let labelType = this.props.labelType;
+        let pAdjTypes = this.props.pAdjTypes;
+
+        let isGK = this.props.isGK;
+        let isOutfieldGK = this.props.isOutfieldGK;
 
         //construct templates form
         let templateLabels = [];
         let mobileTemplateLabels = [];
+
         for (let position in this.positions){
             let className;
             let mobileClassName;
-            let disabled;
-            if (position !== "GK"){
-                className = template !== "GK" ? "selectable-label" : "blocked-label";
-                mobileClassName = `${template === position ? "selected-label" : null} ${template !== "GK" ? "selectable-label" : null}`;
-                disabled = template === "GK";
+            let disabled = false;
+            if (position === "GK"){
+                disabled = !isGK && !isOutfieldGK;
             }
             else {
-                className = template === "GK" ? "selectable-label" : "blocked-label";
-                mobileClassName = `${template === position ? "selected-label" : null} ${template === "GK" ? "selectable-label" : null}`;
-                disabled = template !== "GK";
+                disabled = isGK;
             }
+            className = disabled ? "blocked-label" : "selectable-label";
+            mobileClassName = `${template === position ? "selected-label" : null} ${disabled ? null : "selectable-label"}`;
             templateLabels.push(
                 <label
                     className={className}
                     key={`${position}_label`}
                 >
                     <input type="radio"
-                           name="template"
-                           value={position}
-                           checked={template === position}
-                           disabled={disabled}
-                           onChange={this.props.changeTemplate}
+                        name="template"
+                        value={position}
+                        checked={template === position}
+                        disabled={disabled}
+                        onChange={this.props.changeTemplate}
                     /> {this.positions[position]}
                 </label>
             );
@@ -146,26 +154,50 @@ class SliceOptions extends Component {
                     key={`${position}_label_mobile`}
                 >
                     <input type="radio"
-                           name="template"
-                           value={position}
-                           checked={template === position}
-                           disabled={disabled}
-                           onChange={this.props.changeTemplate}
+                        name="template"
+                        value={position}
+                        checked={template === position}
+                        disabled={disabled}
+                        onChange={this.props.changeTemplate}
                     /> {this.positions[position]}
                 </label>
             );
         }
-        let templatesForm = <form id="templates">{templateLabels}</form>;
-        let mobileTemplatesForm = <form id="templates">{mobileTemplateLabels}</form>;
 
-        //construct competitions forms
+        let templatesForm =
+            <Collapsible
+                open={this.templateOpen}
+                trigger="Template"
+                className="chart-filter-headers"
+                transitionTime={200}
+                transitionCloseTime={200}
+            >
+                <form id="templates">{templateLabels}</form>
+            </Collapsible>;
+
+        let mobileTemplatesForm =
+            <Collapsible
+                open={false}
+                trigger="Template"
+                className="chart-filter-headers"
+                transitionTime={200}
+                transitionCloseTime={200}
+            >
+                <form id="templates">{mobileTemplateLabels}</form>
+            </Collapsible>;
+
+        //construct competitions form(s)
         let competitionsForms = [];
-        let playerCompetitions;
-        if (this.codes !== undefined){
-            playerCompetitions = {};
+
+        if (this.isForComparison){
+
+            let playerCompetitions = {};
+
             for (let i=0; i<this.codes.length; i++){
+
                 let code = this.codes[i];
-                playerCompetitions[code] = this.constructPlayerCompetitions(true, code);
+                playerCompetitions[code] = this.constructCompetitionLabels(true, code);
+
                 competitionsForms.push(
                     <Collapsible
                         key={`Competitions (${code})`}
@@ -178,10 +210,12 @@ class SliceOptions extends Component {
                         {playerCompetitions[code]}
                     </Collapsible>
                 )
+
             }
+
         }
         else {
-            playerCompetitions = this.constructPlayerCompetitions(false);
+            let playerCompetitions = this.constructCompetitionLabels(false);
             competitionsForms.push(
                 <Collapsible
                     key={"_"}
@@ -197,68 +231,86 @@ class SliceOptions extends Component {
         }
 
         //construct label type form
-        let labelTypeLabels = [];
-        for (let type in this.labelTypes){
-            labelTypeLabels.push(
+        let labelTypeForm = null;
+
+        if (!this.isForComparison){
+            let labelTypeLabels = [];
+
+            for (let type in this.labelTypes){
+                labelTypeLabels.push(
+                    <label
+                        className={`selectable-label ${labelType === type ? "selected-label" : null}`}
+                        key={type}
+                    >
+                        <input
+                            type="radio"
+                            name="labelType"
+                            value={type}
+                            checked={labelType === type}
+                            onChange={this.props.changeLabelType}
+                        /> {this.labelTypes[type]}
+                    </label>
+                )
+            }
+
+            labelTypeForm =
+                <Collapsible
+                    open={false}
+                    trigger="Data Labels"
+                    className="chart-filter-headers"
+                    transitionTime={200}
+                    transitionCloseTime={200}
+                >
+                    <form id="data-labels">{labelTypeLabels}</form>
+                </Collapsible>;
+        }
+
+
+        //construct possession adjustment form
+        let pAdjTypeLabels = [];
+
+        for (let type in this.pAdjTypes){
+            pAdjTypeLabels.push(
                 <label
-                    className={`selectable-label ${labelType === type ? "selected-label" : null}`}
+                    className={`selectable-label ${pAdjTypes[type] === true ? "selected-label" : null}`}
                     key={type}
                 >
                     <input
-                        type="radio"
-                        name="labelType"
+                        type="checkbox"
+                        name="pAdjLabelType"
                         value={type}
-                        checked={labelType === type}
-                        onChange={this.props.changeLabelType}
-                    /> {this.labelTypes[type]}
+                        checked={pAdjTypes[type] === true}
+                        onChange={this.props.changePAdjTypes}
+                    /> {this.pAdjTypes[type]}
                 </label>
             )
         }
-        let labelTypeForm = <form id="data-labels">{labelTypeLabels}</form>;
+
+        let pAdjTypeForm =
+            <Collapsible
+                open={false}
+                trigger="Possession Adjustment"
+                className="chart-filter-headers"
+                transitionTime={200}
+                transitionCloseTime={200}
+            >
+                <form id="templates">{pAdjTypeLabels}</form>
+            </Collapsible>;
+
 
         return (
             <div className="filter" id="chart-filters">
                 <div className="chart-filter-inputs" id="chart-filter-inputs-laptop">
-                    <Collapsible
-                        open={this.templateOpen}
-                        trigger="Template"
-                        className="chart-filter-headers"
-                        transitionTime={200}
-                        transitionCloseTime={200}
-                    >
-                        {templatesForm}
-                    </Collapsible>
+                    {templatesForm}
                     {competitionsForms}
-                    <Collapsible
-                        open={false}
-                        trigger="Data Labels"
-                        className="chart-filter-headers"
-                        transitionTime={200}
-                        transitionCloseTime={200}
-                    >
-                        {labelTypeForm}
-                    </Collapsible>
+                    {pAdjTypeForm}
+                    {labelTypeForm}
                 </div>
                 <div className="chart-filter-inputs" id="chart-filter-inputs-mobile">
-                    <Collapsible
-                        open={false}
-                        trigger="Template"
-                        className="chart-filter-headers"
-                        transitionTime={200}
-                        transitionCloseTime={200}
-                    >
-                        {mobileTemplatesForm}
-                    </Collapsible>
+                    {mobileTemplatesForm}
                     {competitionsForms}
-                    <Collapsible
-                        open={false}
-                        trigger="Data Labels"
-                        className="chart-filter-headers"
-                        transitionTime={200}
-                        transitionCloseTime={200}
-                    >
-                        {labelTypeForm}
-                    </Collapsible>
+                    {pAdjTypeForm}
+                    {labelTypeForm}
                 </div>
                 <div id="filter-buttons">
                     <div className="filter-button">

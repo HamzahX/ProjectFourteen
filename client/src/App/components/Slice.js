@@ -33,7 +33,7 @@ class Slice extends Component {
                 dataLabelsOutline: '0.13em',
                 tooltipHeader: '0em',
                 tooltip: '0em',
-                legend: '1.6em',
+                legend: '2.3em',
                 credits: '1.5em',
                 yAxisLabels: '0.65em'
             };
@@ -170,12 +170,22 @@ class Slice extends Component {
 
         this.primaryColors = {
             "FW": '#f15c80',
-            "AM": '#e4d354',
+            "AM": '#f15c80',
             "CM": '#e4d354',
             "FB": '#7cb5ec',
             "CB": '#7cb5ec',
             "GK": '#9499ff',
             "N/A": '#000000',
+        };
+
+        this.competitionDict = {
+            "Premier League": "EPL",
+            "La Liga": "SLL",
+            "Serie A": "ISA",
+            "Bundesliga": "GBL",
+            "Ligue 1": "FL1",
+            "Champions League": "UCL",
+            "Europa League": "UEL"
         };
 
         //set subtitle constants
@@ -188,10 +198,6 @@ class Slice extends Component {
             "GK": "vs Top-5 League Players with 10+ Starts as <b>Goalkeepers</b>",
             "N/A": "No Template Selected"
         };
-
-        //calculate the start angle based on the number of wedges
-        //the goal is to have the first wedge pointing to 0 degrees
-        let startAngle = -((360/this.categories[this.props.template].length)/2);
 
         //add a link to the credits if the chart is not for export
         let chartEvents;
@@ -237,7 +243,7 @@ class Slice extends Component {
                 useHTML: true,
                 text: undefined,
                 style: {
-                    color: '#e75453',
+                    color: '#B23535',
                     fontSize: this.fontSizes['title'],
                     fontWeight: 'bold',
                 },
@@ -251,7 +257,7 @@ class Slice extends Component {
                 }
             },
             pane: {
-                startAngle: startAngle
+                startAngle: undefined
             },
             chart: {
                 backgroundColor: 'rgba(0, 0, 0, 0)',
@@ -308,13 +314,13 @@ class Slice extends Component {
                     },
                     events: {
                         legendItemClick: (event) => {
-                            event.preventDefault();
-                            let series = this.slice.series[event.target.index];
-                            let seriesOptions = series.options;
-                            seriesOptions.dataLabels.enabled = !seriesOptions.dataLabels.enabled;
-                            seriesOptions.animation = false;
-                            series.update(seriesOptions);
-                            this.drawLegendBorders()
+                            // event.preventDefault();
+                            // let series = this.slice.series[event.target.index];
+                            // let seriesOptions = series.options;
+                            // seriesOptions.dataLabels.enabled = !seriesOptions.dataLabels.enabled;
+                            // seriesOptions.animation = false;
+                            // series.update(seriesOptions);
+                            // this.drawLegendBorders()
                         }
                     },
                     states: {
@@ -372,7 +378,7 @@ class Slice extends Component {
                         fontSize: this.fontSizes['legendTitle']
                     }
                 },
-                symbolPadding: this.isMobile ? 20 : 7,
+                symbolPadding: this.isForExport ? 15 : (this.isMobile ? 20 : 7),
                 align: 'left',
                 verticalAlign: 'bottom',
                 layout: 'vertical',
@@ -565,6 +571,63 @@ class Slice extends Component {
 
 
     /**
+     * Function to generate a string representing the list of selected competitions
+     * @param {Object} selectedCompetitions - object containing arrays of selected competitions on per-season basis
+     */
+    selectedCompetitionsString(selectedCompetitions) {
+
+        let temp1 = [];
+
+        for (let season in selectedCompetitions){
+
+            if (selectedCompetitions[season].length === 0){
+                continue;
+            }
+
+            let seasonString = `${season.replace("-", "/")} (`;
+            let temp2 = [];
+
+            let competitions = Object.values(selectedCompetitions[season]);
+
+            let temp3 = {};
+
+            for (let i=0; i<competitions.length; i++){
+
+                let competition = competitions[i];
+                let competitionName = competition.split(" | ")[0];
+                let competitionClub = competition.split(" | ")[1];
+
+                if (temp3[competitionName] === undefined){
+                    temp3[competitionName] = [competitionClub]
+                }
+                else {
+                    temp3[competitionName].push(competitionClub)
+                }
+
+            }
+
+            for (let competition in temp3){
+
+                if (temp3[competition].length > 1){
+                    temp2.push(`${this.competitionDict[competition]} (${temp3[competition].join(", ")})`)
+                }
+                else {
+                    temp2.push(this.competitionDict[competition]);
+                }
+
+            }
+
+            seasonString += `<span style="font-weight: bold; color: #B23535">${temp2.join(", ")}</span>) `;
+
+            temp1.push(seasonString);
+
+        }
+
+        return temp1.join(" & ");
+    }
+
+
+    /**
      * render function
      * configures chart options based on props and draws the slice charts
      * @return {*} - JSX code for the slice charts
@@ -573,11 +636,10 @@ class Slice extends Component {
 
         let chartOptions = this.chartOptions;
 
-        let title = "";
-        let titleColor = "#e75453";
+        let title;
+        let titleColor = "#B23535";
         if (this.isForComparison) {
-            chartOptions.title.style.color = titleColor;
-            title += `<span class="chart-title"><a href=${this.props.url[0]} target="_blank" rel="noopener noreferrer">${this.props.name[0]}</a></span>`;
+            title = `<span class="chart-title"><a href=${this.props.url[0]} target="_blank" rel="noopener noreferrer">${this.props.name[0]}</a></span>`;
             title += `<span style='color: black;'> vs <span class="chart-title"><a href=${this.props.url[1]} target="_blank" rel="noopener noreferrer">${this.props.name[1]}</a></span></span>`;
         }
         else {
@@ -589,27 +651,32 @@ class Slice extends Component {
         chartOptions.title.text = title;
 
         //build the subtitle
-        let subtitle = "";
+        let subtitle ;
         if (this.props.series.length === 0 || this.props.hasUndefined){
             subtitle = "-<br>-<br>-";
         }
         else {
             if (this.isForComparison) {
-                subtitle += `<span style='color: ${titleColor}'>Age: <span style='font-weight: bold; color: ${titleColor}'>${this.props.age[0]} ║ </span></span>`;
+                subtitle = `<span style='color: ${titleColor}'>Age: <span style='font-weight: bold; color: ${titleColor}'>${this.props.age[0]} ║ </span></span>`;
                 subtitle += `<span style='color: ${titleColor}'>Minutes Played: <span style='font-weight: bold; color: ${titleColor}'>${this.props.minutes[0].toLocaleString()}</span></span>`;
                 subtitle += " - ";
                 subtitle += `Age: <b>${this.props.age[1]}</b> ║ `;
                 subtitle += `Minutes Played: <b>${this.props.minutes[1].toLocaleString()}</b><br>`;
             }
             else {
-                subtitle += `Age: <span style="font-weight: bold; color: #e75453">${this.props.age}</span> ║ `;
-                subtitle += `Minutes Played: <span style="font-weight: bold; color: #e75453">${this.props.minutes.toLocaleString()}</span><br>`;
+                subtitle = `Age: <span style="font-weight: bold; color: #B23535">${this.props.age}</span>   `;
+                subtitle += `Minutes Played: <span style="font-weight: bold; color: #B23535">${this.props.minutes.toLocaleString()}</span><br>`;
+                subtitle += `${this.selectedCompetitionsString(this.props.selectedCompetitions)}<br>`;
             }
-            subtitle += "Percentile Rank Bars (per 90 stats)<br>";
+            //subtitle += "Percentile Rank Bars (per 90 stats)<br>";
             subtitle += this.subtitles[this.props.template];
         }
         //set the subtitle
         chartOptions.subtitle.text = subtitle;
+
+        //calculate the start angle based on the number of wedges
+        //the goal is to have the first wedge pointing to 0 degrees
+        chartOptions.pane.startAngle = -((360/this.categories[this.props.template].length)/2);
 
         let chart = chartOptions.chart;
         //set animation (on update) to true or false
@@ -659,15 +726,6 @@ class Slice extends Component {
                 },
                 stops: gradientStops
             },
-            // {
-            //     linearGradient: {
-            //         x1: 0,
-            //         x2: 0,
-            //         y1: 0,
-            //         y2: 1
-            //     },
-            //     stops: gradientStops
-            // },
             '#fafbfc'
         ];
 

@@ -41,7 +41,7 @@ else {
         "https://fbref.com/en/comps/12/La-Liga-Stats",
         "https://fbref.com/en/comps/11/Serie-A-Stats",
         "https://fbref.com/en/comps/20/Bundesliga-Stats",
-        "https://fbref.com/en/comps/13/Ligue-1-Stats",
+        "https://fbref.com/en/comps/13/3243/2019-2020-Ligue-1-Stats",
         "https://fbref.com/en/comps/8/2900/stats/2019-2020-Champions-League-Stats",
         "https://fbref.com/en/comps/19/stats/Europa-League-Stats"
     ];

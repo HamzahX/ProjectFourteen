@@ -56,7 +56,9 @@ class Search extends Component {
      */
     //TODO: re-factor because componentWillReceiveProps has been deprecated
     UNSAFE_componentWillReceiveProps(nextProps, nextContext) {
+
         let { query, searchByClub } = nextProps.match.params;
+
         this.setState({
             isLoading: true,
             query: query,
@@ -64,6 +66,7 @@ class Search extends Component {
         }, () => {
             this.getSearchResults();
         });
+
     }
 
 
@@ -114,6 +117,7 @@ class Search extends Component {
         let clubSearchResults = searchResults['clubSearchResults'];
 
         if (this._isMounted){
+
             this.setState({
                 error: null,
                 isLoading: false,
@@ -121,7 +125,10 @@ class Search extends Component {
                 filteredPlayerSearchResults: playerSearchResults,
                 clubSearchResults: clubSearchResults,
             });
-            document.title = "Search Results | Football Slices"
+
+            document.title = "Search Results | Football Slices";
+
+            this.props.recordPageViewGA(window.location.pathname);
         }
 
     };

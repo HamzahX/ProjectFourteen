@@ -537,7 +537,7 @@ let cleanCountryCode = (code) => {
         code = "_wales"
     }
     else if (codeUpperCase === "GB-NIR" || codeUpperCase === "NIR") {
-        code = "_unknown"
+        code = "_northern-ireland"
     }
     else if (codeUpperCase === "XK") {
         code = "_kosovo"

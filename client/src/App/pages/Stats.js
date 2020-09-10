@@ -12,6 +12,7 @@ import {
     constructChartInput,
     changeTemplate,
     changeSelectedCompetitions,
+    changePAdjTypes,
     changeLabelType,
     toggleCreditsPosition,
     exportChart,
@@ -51,6 +52,7 @@ class Stats extends Component {
         this.calculateStats = calculateStats.bind(this);
         this.constructChartInput = constructChartInput.bind(this);
         this.changeTemplate = changeTemplate.bind(this);
+        this.changePAdjTypes = changePAdjTypes.bind(this);
         this.changeSelectedCompetitions = changeSelectedCompetitions.bind(this);
         this.changeLabelType = changeLabelType.bind(this);
         this.toggleCreditsPosition = toggleCreditsPosition.bind(this);
@@ -60,9 +62,9 @@ class Stats extends Component {
         //device and browser info
         this.isMobile = this.props.isMobile;
         this.isSafari = this.props.isSafari;
-        this.firstExport = true;
 
         //cookies
+        let pAdjTypesCookie = cookies.get('pAdjTypes');
         let labelTypeCookie = cookies.get('labelType');
         let creditsPositionCookie = cookies.get('creditsPosition');
 
@@ -81,10 +83,15 @@ class Stats extends Component {
             clubs: {},
             percentileEntries: {},
             stats: {},
+            isGK: false,
+            isOutfieldGK: false,
+            outfieldGKStats: null,
+            standardStats: null,
             lastUpdated: null,
             template: null,
             competitions: {},
             selectedCompetitions: {},
+            pAdjTypes: pAdjTypesCookie === undefined ? { offensive: false, defensive: true } : pAdjTypesCookie,
             labelType: labelTypeCookie === undefined ? "raw" : labelTypeCookie,
             creditsPosition: creditsPositionCookie === undefined ? "right" : creditsPositionCookie,
             isAnimated: true
@@ -183,13 +190,13 @@ class Stats extends Component {
             this.props.updatePercentileArrays(response.newPercentileArrays);
         }
 
-        let playerStats = response.stats;
+        let playerData = response.data;
 
         //process player position entry and set template. template is set to the most recent non-"N/A" position
         //in the player's position entries
         let template = "N/A";
-        for (let season in playerStats.positions){
-            let position = playerStats.positions[season];
+        for (let season in playerData.positions){
+            let position = playerData.positions[season];
             if (position !== "N/A"){
                 template = position;
             }
@@ -198,28 +205,36 @@ class Stats extends Component {
         //retrieve player competitions. stored in an object where the keys are seasons and the values are arrays
         //of the competitions for the season
         let competitions = {};
-        for (let season in playerStats.stats){
+        for (let season in playerData.stats){
             competitions[season] = [];
-            for (let competition in playerStats.stats[season]){
+            for (let competition in playerData.stats[season]){
                 competitions[season].push(competition);
             }
         }
 
         if (this._isMounted){
+
             this.setState({
                 isLoading: false,
-                name: playerStats.name,
-                url: "https://www.fbref.com" + playerStats.fbrefURL,
-                age: playerStats.age,
-                clubs: playerStats.clubs,
-                percentileEntries: playerStats.percentileEntries,
-                stats: playerStats.stats,
-                lastUpdated: dateFormat(playerStats.lastUpdated, "dd/mm/yyyy, h:MM TT", true),
+                name: playerData.name,
+                url: "https://www.fbref.com" + playerData.fbrefURL,
+                age: playerData.age,
+                clubs: playerData.clubs,
+                percentileEntries: playerData.percentileEntries,
+                stats: playerData.stats,
+                isGK: template === "GK",
+                isOutfieldGK: playerData.outfieldGKStats != null,
+                outfieldGKStats: playerData.outfieldGKStats,
+                standardStats: playerData.stats,
+                lastUpdated: dateFormat(playerData.lastUpdated, "dd/mm/yyyy, h:MM TT", true),
                 template: template,
                 competitions: JSON.parse(JSON.stringify(competitions)),
                 selectedCompetitions: JSON.parse(JSON.stringify(competitions))
             });
-            document.title = `${playerStats.name} | Football Slices`
+
+            document.title = `${playerData.name} | Football Slices`;
+
+            this.props.recordPageViewGA(window.location.pathname);
         }
 
     };
@@ -252,10 +267,13 @@ class Stats extends Component {
             age,
             clubs,
             stats,
+            isGK,
+            isOutfieldGK,
             lastUpdated,
             competitions,
             selectedCompetitions,
             template,
+            pAdjTypes,
             labelType,
             creditsPosition,
             isAnimated
@@ -308,6 +326,7 @@ class Stats extends Component {
                 exportSlice =
                 <Slice
                     isMobile={this.isMobile}
+                    isForComparison={false}
                     isForExport={true}
                     isAnimated={false}
                     isAnimatedInitial={false}
@@ -318,6 +337,7 @@ class Stats extends Component {
                     template={template}
                     labelType={labelType}
                     name={name}
+                    selectedCompetitions={selectedCompetitions}
                     age={age}
                     minutes={filteredStats['minutes']}
                     series={series}
@@ -345,13 +365,18 @@ class Stats extends Component {
                     <div className="screen2" id="stats-screen">
                         <SliceOptions
                             isMobile={this.isMobile}
+                            isForComparison={false}
+                            isGK={isGK}
+                            isOutfieldGK={isOutfieldGK}
                             template={template}
                             competitions={competitions}
                             clubs={clubs}
                             selectedCompetitions={selectedCompetitions}
+                            pAdjTypes={pAdjTypes}
                             labelType={labelType}
                             changeTemplate={this.changeTemplate}
                             changeSelectedCompetitions={this.changeSelectedCompetitions}
+                            changePAdjTypes={this.changePAdjTypes}
                             changeLabelType={this.changeLabelType}
                             toggleCreditsPosition={this.toggleCreditsPosition}
                             exportChart={this.exportChart}
@@ -369,6 +394,7 @@ class Stats extends Component {
                             template={template}
                             labelType={labelType}
                             name={name}
+                            selectedCompetitions={selectedCompetitions}
                             age={age}
                             minutes={filteredStats['minutes']}
                             series={series}

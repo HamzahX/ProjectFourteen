@@ -19,6 +19,7 @@ import {
     constructChartInput,
     changeTemplate,
     changeSelectedCompetitions,
+    changePAdjTypes,
     changeLabelType,
     toggleCreditsPosition,
     exportChart,
@@ -52,6 +53,7 @@ class Compare extends Component {
         this.constructChartInput = constructChartInput.bind(this);
         this.changeTemplate = changeTemplate.bind(this);
         this.changeSelectedCompetitions = changeSelectedCompetitions.bind(this);
+        this.changePAdjTypes = changePAdjTypes.bind(this);
         this.changeLabelType = changeLabelType.bind(this);
         this.toggleCreditsPosition = toggleCreditsPosition.bind(this);
         this.exportChart = exportChart.bind(this);
@@ -60,9 +62,9 @@ class Compare extends Component {
         //device and browser info
         this.isMobile = this.props.isMobile;
         this.isSafari = this.props.isSafari;
-        this.firstExport = true;
 
         //cookies
+        let pAdjTypesCookie = cookies.get('pAdjTypes');
         let labelTypeCookie = cookies.get('labelType');
         let creditsPositionCookie = cookies.get('creditsPosition');
 
@@ -90,12 +92,17 @@ class Compare extends Component {
             clubs: {},
             percentileEntries: {},
             stats: {},
+            isGK: null,
+            isOutfieldGK: {},
+            outfieldGKStats: {},
+            standardStats: {},
+            lastUpdated: null,
             template: null,
             competitions: {},
             selectedCompetitions: {},
+            pAdjTypes: pAdjTypesCookie === undefined ? { offensive: false, defensive: true } : pAdjTypesCookie,
             labelType: labelTypeCookie === undefined ? "raw" : labelTypeCookie,
             creditsPosition: creditsPositionCookie === undefined ? "right" : creditsPositionCookie,
-            lastUpdated: null,
             isAnimated: true
         };
 
@@ -195,13 +202,13 @@ class Compare extends Component {
             this.props.updatePercentileArrays(response.newPercentileArrays);
         }
 
-        let playerStats = response.stats;
+        let playerData = response.data;
 
         //process player position entry and set template. template is set to the most recent non-"N/A" position
         //in the player's position entries
         let template = "N/A";
-        for (let season in playerStats[codes[0]].positions){
-            let position = playerStats[codes[0]].positions[season];
+        for (let season in playerData[codes[0]].positions){
+            let position = playerData[codes[0]].positions[season];
             if (position !== "N/A"){
                 template = position;
             }
@@ -213,28 +220,43 @@ class Compare extends Component {
         let clubs = {};
         let percentileEntries = {};
         let stats = {};
+        let isOutfieldGK = {};
+        let outfieldGKStats = {};
+        let standardStats = {};
         let competitions = {};
 
         //retrieve the information for the 2 players and store in objects
-        for (let code in playerStats){
-            names[code] = playerStats[code].name;
-            urls[code] = "https://www.fbref.com" + playerStats[code].fbrefURL;
-            ages[code] = playerStats[code].age;
-            clubs[code] = playerStats[code].clubs;
-            percentileEntries[code] = playerStats[code].percentileEntries;
-            stats[code] = playerStats[code].stats;
+        for (let code in playerData){
+
+            names[code] = playerData[code].name;
+            urls[code] = "https://www.fbref.com" + playerData[code].fbrefURL;
+            ages[code] = playerData[code].age;
+            clubs[code] = playerData[code].clubs;
+            percentileEntries[code] = playerData[code].percentileEntries;
+
+            let hasOutfieldGKStats = playerData[code].outfieldGKStats !== null;
+
+            //set the initial stats set to GK stats if player 1 is a GK and player 2 is an outfield GK
+            stats[code] = (template === "GK" && hasOutfieldGKStats) ? playerData[code].outfieldGKStats : playerData[code].stats;
+            isOutfieldGK[code] = hasOutfieldGKStats;
+
+            outfieldGKStats[code] = playerData[code].outfieldGKStats;
+            standardStats[code] = playerData[code].stats;
+
             competitions[code] = {};
             //retrieve player competitions. stored in an object where the keys are seasons and the values are arrays
             //of the competitions for the season
-            for (let season in playerStats[code].stats){
+            for (let season in stats[code]){
                 competitions[code][season] = [];
-                for (let competition in playerStats[code].stats[season]){
+                for (let competition in stats[code][season]){
                     competitions[code][season].push(competition);
                 }
             }
+
         }
 
         if (this._isMounted){
+
             this.setState({
                 isLoading: false,
                 names: JSON.parse(JSON.stringify(names)),
@@ -243,12 +265,19 @@ class Compare extends Component {
                 clubs: JSON.parse(JSON.stringify(clubs)),
                 percentileEntries: JSON.parse(JSON.stringify(percentileEntries)),
                 stats: JSON.parse(JSON.stringify(stats)),
+                isGK: template === "GK",
+                isOutfieldGK: JSON.parse(JSON.stringify(isOutfieldGK)),
+                outfieldGKStats: JSON.parse(JSON.stringify(outfieldGKStats)),
+                standardStats: JSON.parse(JSON.stringify(standardStats)),
+                lastUpdated: dateFormat(playerData[codes[0]].lastUpdated, "dd/mm/yyyy, h:MM TT", true),
                 template: template,
                 competitions: JSON.parse(JSON.stringify(competitions)),
-                selectedCompetitions: JSON.parse(JSON.stringify(competitions)),
-                lastUpdated: dateFormat(playerStats[codes[0]].lastUpdated, "dd/mm/yyyy, h:MM TT", true)
+                selectedCompetitions: JSON.parse(JSON.stringify(competitions))
             });
-            document.title = `${names[codes[0]]} vs ${names[codes[1]]} | Football Slices`
+
+            document.title = `${names[codes[0]]} vs ${names[codes[1]]} | Football Slices`;
+
+            this.props.recordPageViewGA(window.location.pathname);
         }
 
     };
@@ -280,10 +309,13 @@ class Compare extends Component {
             ages,
             clubs,
             stats,
+            isGK,
+            isOutfieldGK,
             lastUpdated,
             competitions,
             selectedCompetitions,
             template,
+            pAdjTypes,
             labelType,
             creditsPosition,
             isAnimated
@@ -397,15 +429,20 @@ class Compare extends Component {
                     <div className="screen2" id="compare-screen">
                         <SliceOptions
                             isMobile={this.isMobile}
+                            isForComparison={true}
+                            isGK={isGK}
+                            isOutfieldGK={isOutfieldGK[codes[0]]}
                             codes={codes}
                             names={names}
                             template={template}
                             competitions={competitions}
                             clubs={clubs}
                             selectedCompetitions={selectedCompetitions}
+                            pAdjTypes={pAdjTypes}
                             labelType={labelType}
                             changeTemplate={this.changeTemplate}
                             changeSelectedCompetitions={this.changeSelectedCompetitions}
+                            changePAdjTypes={this.changePAdjTypes}
                             changeLabelType={this.changeLabelType}
                             toggleCreditsPosition={this.toggleCreditsPosition}
                             exportChart={this.exportChart}

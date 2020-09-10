@@ -691,7 +691,7 @@
 		},
 		"136741|Manchester City": {
 			"name": "Bernardo Silva",
-			"age": 25,
+			"age": 26,
 			"countryCode": "pt",
 			"position": "M(CLR)",
 			"club": "Manchester City",
@@ -886,7 +886,7 @@
 		},
 		"92508|Tottenham": {
 			"name": "Lucas Moura",
-			"age": 27,
+			"age": 28,
 			"countryCode": "br",
 			"position": "AM(CLR),FW",
 			"club": "Tottenham",
@@ -1070,7 +1070,7 @@
 			"name": "Mason Mount",
 			"age": 21,
 			"countryCode": "gb-eng",
-			"position": "AM(C)",
+			"position": "AM(CL)",
 			"club": "Chelsea",
 			"19-20": {
 				"Premier League | Chelsea": {
@@ -2264,7 +2264,7 @@
 		},
 		"29595|Tottenham": {
 			"name": "Moussa Sissoko",
-			"age": 30,
+			"age": 31,
 			"countryCode": "fr",
 			"position": "M(CR)",
 			"club": "Tottenham",
@@ -2784,7 +2784,7 @@
 		},
 		"201755|Newcastle United": {
 			"name": "Joelinton",
-			"age": 23,
+			"age": 24,
 			"countryCode": "br",
 			"position": "AM(LR),FW",
 			"club": "Newcastle United",
@@ -2940,7 +2940,7 @@
 		},
 		"119822|Brighton": {
 			"name": "Neal Maupay",
-			"age": 23,
+			"age": 24,
 			"countryCode": "fr",
 			"position": "FW",
 			"club": "Brighton",
@@ -3213,7 +3213,7 @@
 		},
 		"84146|Liverpool": {
 			"name": "Alex Oxlade Chamberlain",
-			"age": 26,
+			"age": 27,
 			"countryCode": "gb-eng",
 			"position": "M(CLR)",
 			"club": "Liverpool",
@@ -4565,7 +4565,7 @@
 		},
 		"133390|Brighton": {
 			"name": "Alireza Jahanbakhsh",
-			"age": 26,
+			"age": 27,
 			"countryCode": "ir",
 			"position": "AM(CLR)",
 			"club": "Brighton",
@@ -4890,7 +4890,7 @@
 		},
 		"69956|Watford": {
 			"name": "Tom Cleverley",
-			"age": 30,
+			"age": 31,
 			"countryCode": "gb-eng",
 			"position": "M(CLR)",
 			"club": "Watford",
@@ -7076,7 +7076,7 @@
 		},
 		"284114|Barcelona": {
 			"name": "Arthur",
-			"age": 23,
+			"age": 24,
 			"countryCode": "br",
 			"position": "DMC",
 			"club": "Barcelona",
@@ -7297,7 +7297,7 @@
 		},
 		"372827|Barcelona": {
 			"name": "Riqui Puig",
-			"age": 20,
+			"age": 21,
 			"countryCode": "es",
 			"position": "M(C)",
 			"club": "Barcelona",
@@ -8077,7 +8077,7 @@
 		},
 		"344119|Valencia": {
 			"name": "Maxi Gómez",
-			"age": 23,
+			"age": 24,
 			"countryCode": "uy",
 			"position": "FW",
 			"club": "Valencia",
@@ -9689,7 +9689,7 @@
 		},
 		"333333|Mallorca": {
 			"name": "Lumor Agbenyenu",
-			"age": 23,
+			"age": 24,
 			"countryCode": "gh",
 			"position": "D(L),M(L)",
 			"club": "Mallorca",
@@ -9767,7 +9767,7 @@
 		},
 		"123232|Real Sociedad": {
 			"name": "Diego Llorente",
-			"age": 26,
+			"age": 27,
 			"countryCode": "es",
 			"position": "D(C),DMC",
 			"club": "Real Sociedad",
@@ -10690,7 +10690,7 @@
 		},
 		"367583|Real Sociedad": {
 			"name": "Aihen Muñoz",
-			"age": 22,
+			"age": 23,
 			"countryCode": "es",
 			"position": "D(L)",
 			"club": "Real Sociedad",
@@ -11808,7 +11808,7 @@
 		},
 		"91800|Real Betis": {
 			"name": "Cristian Tello",
-			"age": 28,
+			"age": 29,
 			"countryCode": "es",
 			"position": "M(LR)",
 			"club": "Real Betis",
@@ -11847,7 +11847,7 @@
 		},
 		"33397|Deportivo Alaves": {
 			"name": "Ljubomir Fejsa",
-			"age": 31,
+			"age": 32,
 			"countryCode": "rs",
 			"position": "DMC",
 			"club": "Deportivo Alaves",
@@ -12668,7 +12668,7 @@
 		},
 		"125378|Lazio": {
 			"name": "Joaquín Correa",
-			"age": 25,
+			"age": 26,
 			"countryCode": "ar",
 			"position": "AM(CL),FW",
 			"club": "Lazio",
@@ -14098,7 +14098,7 @@
 		},
 		"320374|Juventus": {
 			"name": "Matthijs de Ligt",
-			"age": 20,
+			"age": 21,
 			"countryCode": "nl",
 			"position": "D(C)",
 			"club": "Juventus",
@@ -14345,7 +14345,7 @@
 		},
 		"9991|Juventus": {
 			"name": "Giorgio Chiellini",
-			"age": 35,
+			"age": 36,
 			"countryCode": "it",
 			"position": "D(C)",
 			"club": "Juventus",
@@ -14501,7 +14501,7 @@
 		},
 		"116944|Verona": {
 			"name": "Koray Günter",
-			"age": 25,
+			"age": 26,
 			"countryCode": "de",
 			"position": "D(C)",
 			"club": "Verona",
@@ -14787,7 +14787,7 @@
 		},
 		"33799|Brescia": {
 			"name": "Mario Balotelli",
-			"age": 29,
+			"age": 30,
 			"countryCode": "it",
 			"position": "FW",
 			"club": "Brescia",
@@ -15684,7 +15684,7 @@
 		},
 		"323240|Fiorentina": {
 			"name": "Pol Lirola",
-			"age": 22,
+			"age": 23,
 			"countryCode": "es",
 			"position": "D(R),M(LR)",
 			"club": "Fiorentina",
@@ -15697,7 +15697,7 @@
 		},
 		"294169|Udinese": {
 			"name": "Kevin Lasagna",
-			"age": 27,
+			"age": 28,
 			"countryCode": "it",
 			"position": "AM(L),FW",
 			"club": "Udinese",
@@ -17322,7 +17322,7 @@
 		},
 		"362546|Udinese": {
 			"name": "Nicholas Opoku",
-			"age": 22,
+			"age": 23,
 			"countryCode": "gh",
 			"position": "D(C)",
 			"club": "Udinese",
@@ -17712,7 +17712,7 @@
 		},
 		"78152|Udinese": {
 			"name": "Marvin Zeegelaar",
-			"age": 29,
+			"age": 30,
 			"countryCode": "nl",
 			"position": "D(L),M(L)",
 			"club": "Udinese",
@@ -17894,7 +17894,7 @@
 		},
 		"297395|Torino": {
 			"name": "Sasa Lukic",
-			"age": 23,
+			"age": 24,
 			"countryCode": "rs",
 			"position": "M(C)",
 			"club": "Torino",
@@ -17972,7 +17972,7 @@
 		},
 		"106954|Brescia": {
 			"name": "Bruno Martella",
-			"age": 27,
+			"age": 28,
 			"countryCode": "it",
 			"position": "D(L),M(L)",
 			"club": "Brescia",
@@ -18687,7 +18687,7 @@
 		},
 		"350477|Torino": {
 			"name": "Vincenzo Millico",
-			"age": 19,
+			"age": 20,
 			"countryCode": "it",
 			"position": "Forward",
 			"club": "Torino",
@@ -20457,7 +20457,7 @@
 		},
 		"11269|Union Berlin": {
 			"name": "Christian Gentner",
-			"age": 34,
+			"age": 35,
 			"countryCode": "de",
 			"position": "M(CLR)",
 			"club": "Union Berlin",
@@ -20678,7 +20678,7 @@
 		},
 		"83303|Schalke 04": {
 			"name": "Benjamin Stambouli",
-			"age": 29,
+			"age": 30,
 			"countryCode": "fr",
 			"position": "D(C),M(C)",
 			"club": "Schalke 04",
@@ -20860,7 +20860,7 @@
 		},
 		"110132|Freiburg": {
 			"name": "Dominique Heintz",
-			"age": 26,
+			"age": 27,
 			"countryCode": "de",
 			"position": "D(CL)",
 			"club": "Freiburg",
@@ -21406,7 +21406,7 @@
 		},
 		"344198|Bayern Munich": {
 			"name": "Michaël Cuisance",
-			"age": 20,
+			"age": 21,
 			"countryCode": "fr",
 			"position": "AM(C)",
 			"club": "Bayern Munich",
@@ -22328,7 +22328,7 @@
 			}
 		},
 		"8946|Hertha Berlin": {
-			"name": "Per Skjelbred",
+			"name": "Per Ciljan Skjelbred",
 			"age": 33,
 			"countryCode": "no",
 			"position": "M(CR)",
@@ -23915,7 +23915,7 @@
 		},
 		"96854|Augsburg": {
 			"name": "André Hahn",
-			"age": 29,
+			"age": 30,
 			"countryCode": "de",
 			"position": "AM(R),FW",
 			"club": "Augsburg",
@@ -23954,7 +23954,7 @@
 		},
 		"281049|Mainz 05": {
 			"name": "Taiwo Awoniyi",
-			"age": 22,
+			"age": 23,
 			"countryCode": "ng",
 			"position": "FW",
 			"club": "Mainz 05",
@@ -24616,7 +24616,7 @@
 			}
 		},
 		"96084|Mainz 05": {
-			"name": "Ji Dong-Won",
+			"name": "Dong-Won Ji",
 			"age": 29,
 			"countryCode": "kr",
 			"position": "AM(CLR),FW",
@@ -24749,7 +24749,7 @@
 		},
 		"89946|Monaco": {
 			"name": "Wissam Ben Yedder",
-			"age": 29,
+			"age": 30,
 			"countryCode": "fr",
 			"position": "AM(C),FW",
 			"club": "Monaco",
@@ -25464,7 +25464,7 @@
 		},
 		"247800|Paris Saint-Germain": {
 			"name": "Presnel Kimpembe",
-			"age": 24,
+			"age": 25,
 			"countryCode": "fr",
 			"position": "D(C)",
 			"club": "Paris Saint-Germain",
@@ -26127,7 +26127,7 @@
 		},
 		"71174|Paris Saint-Germain": {
 			"name": "Ander Herrera",
-			"age": 30,
+			"age": 31,
 			"countryCode": "es",
 			"position": "M(C)",
 			"club": "Paris Saint-Germain",
@@ -28259,7 +28259,7 @@
 		},
 		"234346|Reims": {
 			"name": "Moussa Doumbia",
-			"age": 25,
+			"age": 26,
 			"countryCode": "ml",
 			"position": "AM(CL),FW",
 			"club": "Reims",
@@ -28467,7 +28467,7 @@
 		},
 		"316670|Brest": {
 			"name": "Samuel Grandsir",
-			"age": 23,
+			"age": 24,
 			"countryCode": "fr",
 			"position": "AM(LR)",
 			"club": "Brest",
@@ -28740,7 +28740,7 @@
 		},
 		"248278|Amiens": {
 			"name": "Bakaye Dibassy",
-			"age": 30,
+			"age": 31,
 			"countryCode": "ml",
 			"position": "D(CL)",
 			"club": "Amiens",
@@ -28766,7 +28766,7 @@
 		},
 		"137837|Saint-Etienne": {
 			"name": "Franck Honorat",
-			"age": 23,
+			"age": 24,
 			"countryCode": "fr",
 			"position": "M(R)",
 			"club": "Saint-Etienne",
@@ -28805,7 +28805,7 @@
 		},
 		"362546|Amiens": {
 			"name": "Nicholas Opoku",
-			"age": 22,
+			"age": 23,
 			"countryCode": "gh",
 			"position": "D(C)",
 			"club": "Amiens",
@@ -29325,7 +29325,7 @@
 		},
 		"129648|Toulouse": {
 			"name": "Steven Moreira",
-			"age": 25,
+			"age": 26,
 			"countryCode": "fr",
 			"position": "D(LR),M(R)",
 			"club": "Toulouse",
@@ -30209,7 +30209,7 @@
 		},
 		"342571|Nantes": {
 			"name": "Samuel Moutoussamy",
-			"age": 23,
+			"age": 24,
 			"countryCode": "fr",
 			"position": "M(CL)",
 			"club": "Nantes",
@@ -30308,21 +30308,8 @@
 			"club": "Bayern Munich",
 			"19-20": {
 				"Champions League | Bayern Munich": {
-					"whoscoredApps": 7,
-					"whoscoredMins": 617
-				}
-			}
-		},
-		"11119|Barcelona": {
-			"name": "Lionel Messi",
-			"age": 33,
-			"countryCode": "ar",
-			"position": "AM(CR),FW",
-			"club": "Barcelona",
-			"19-20": {
-				"Champions League | Barcelona": {
-					"whoscoredApps": 7,
-					"whoscoredMins": 571
+					"whoscoredApps": 8,
+					"whoscoredMins": 707
 				}
 			}
 		},
@@ -30334,8 +30321,21 @@
 			"club": "Paris Saint-Germain",
 			"19-20": {
 				"Champions League | Paris Saint-Germain": {
-					"whoscoredApps": 4,
-					"whoscoredMins": 315
+					"whoscoredApps": 5,
+					"whoscoredMins": 405
+				}
+			}
+		},
+		"11119|Barcelona": {
+			"name": "Lionel Messi",
+			"age": 33,
+			"countryCode": "ar",
+			"position": "AM(CR),FW",
+			"club": "Barcelona",
+			"19-20": {
+				"Champions League | Barcelona": {
+					"whoscoredApps": 8,
+					"whoscoredMins": 661
 				}
 			}
 		},
@@ -30360,47 +30360,21 @@
 			"club": "Bayern Munich",
 			"19-20": {
 				"Champions League | Bayern Munich": {
-					"whoscoredApps": 5,
-					"whoscoredMins": 450
+					"whoscoredApps": 6,
+					"whoscoredMins": 534
 				}
 			}
 		},
-		"74939|Bayern Munich": {
-			"name": "Thiago",
-			"age": 29,
-			"countryCode": "es",
-			"position": "M(C)",
+		"119501|Bayern Munich": {
+			"name": "Serge Gnabry",
+			"age": 25,
+			"countryCode": "de",
+			"position": "AM(CLR),FW",
 			"club": "Bayern Munich",
 			"19-20": {
 				"Champions League | Bayern Munich": {
-					"whoscoredApps": 7,
-					"whoscoredMins": 565
-				}
-			}
-		},
-		"104749|Manchester City": {
-			"name": "Riyad Mahrez",
-			"age": 29,
-			"countryCode": "dz",
-			"position": "AM(CLR)",
-			"club": "Manchester City",
-			"19-20": {
-				"Champions League | Manchester City": {
-					"whoscoredApps": 6,
-					"whoscoredMins": 538
-				}
-			}
-		},
-		"279379|Manchester City": {
-			"name": "Gabriel Jesus",
-			"age": 23,
-			"countryCode": "br",
-			"position": "AM(LR),FW",
-			"club": "Manchester City",
-			"19-20": {
-				"Champions League | Manchester City": {
-					"whoscoredApps": 7,
-					"whoscoredMins": 500
+					"whoscoredApps": 8,
+					"whoscoredMins": 623
 				}
 			}
 		},
@@ -30430,6 +30404,32 @@
 				}
 			}
 		},
+		"279379|Manchester City": {
+			"name": "Gabriel Jesus",
+			"age": 23,
+			"countryCode": "br",
+			"position": "AM(LR),FW",
+			"club": "Manchester City",
+			"19-20": {
+				"Champions League | Manchester City": {
+					"whoscoredApps": 8,
+					"whoscoredMins": 590
+				}
+			}
+		},
+		"74939|Bayern Munich": {
+			"name": "Thiago",
+			"age": 29,
+			"countryCode": "es",
+			"position": "M(C)",
+			"club": "Bayern Munich",
+			"19-20": {
+				"Champions League | Bayern Munich": {
+					"whoscoredApps": 8,
+					"whoscoredMins": 655
+				}
+			}
+		},
 		"115868|Ajax": {
 			"name": "Hakim Ziyech",
 			"age": 27,
@@ -30456,29 +30456,16 @@
 				}
 			}
 		},
-		"119501|Bayern Munich": {
-			"name": "Serge Gnabry",
-			"age": 25,
-			"countryCode": "de",
-			"position": "AM(CLR),FW",
-			"club": "Bayern Munich",
+		"322096|Lyon": {
+			"name": "Houssem Aouar",
+			"age": 22,
+			"countryCode": "fr",
+			"position": "M(CL)",
+			"club": "Lyon",
 			"19-20": {
-				"Champions League | Bayern Munich": {
+				"Champions League | Lyon": {
 					"whoscoredApps": 7,
-					"whoscoredMins": 548
-				}
-			}
-		},
-		"97692|Manchester City": {
-			"name": "Raheem Sterling",
-			"age": 25,
-			"countryCode": "gb-eng",
-			"position": "M(CLR),FW",
-			"club": "Manchester City",
-			"19-20": {
-				"Champions League | Manchester City": {
-					"whoscoredApps": 8,
-					"whoscoredMins": 509
+					"whoscoredMins": 625
 				}
 			}
 		},
@@ -30508,16 +30495,29 @@
 				}
 			}
 		},
-		"322096|Lyon": {
-			"name": "Houssem Aouar",
-			"age": 22,
-			"countryCode": "fr",
-			"position": "M(CL)",
-			"club": "Lyon",
+		"73084|Manchester City": {
+			"name": "Kevin De Bruyne",
+			"age": 29,
+			"countryCode": "be",
+			"position": "M(CLR),FW",
+			"club": "Manchester City",
 			"19-20": {
-				"Champions League | Lyon": {
-					"whoscoredApps": 6,
-					"whoscoredMins": 535
+				"Champions League | Manchester City": {
+					"whoscoredApps": 7,
+					"whoscoredMins": 574
+				}
+			}
+		},
+		"104749|Manchester City": {
+			"name": "Riyad Mahrez",
+			"age": 29,
+			"countryCode": "dz",
+			"position": "AM(CLR)",
+			"club": "Manchester City",
+			"19-20": {
+				"Champions League | Manchester City": {
+					"whoscoredApps": 7,
+					"whoscoredMins": 572
 				}
 			}
 		},
@@ -30534,6 +30534,19 @@
 				}
 			}
 		},
+		"97692|Manchester City": {
+			"name": "Raheem Sterling",
+			"age": 25,
+			"countryCode": "gb-eng",
+			"position": "M(CLR),FW",
+			"club": "Manchester City",
+			"19-20": {
+				"Champions League | Manchester City": {
+					"whoscoredApps": 9,
+					"whoscoredMins": 599
+				}
+			}
+		},
 		"22221|Barcelona": {
 			"name": "Luis Suárez",
 			"age": 33,
@@ -30542,40 +30555,14 @@
 			"club": "Barcelona",
 			"19-20": {
 				"Champions League | Barcelona": {
-					"whoscoredApps": 6,
-					"whoscoredMins": 478
-				}
-			}
-		},
-		"73084|Manchester City": {
-			"name": "Kevin De Bruyne",
-			"age": 29,
-			"countryCode": "be",
-			"position": "M(CLR),FW",
-			"club": "Manchester City",
-			"19-20": {
-				"Champions League | Manchester City": {
-					"whoscoredApps": 6,
-					"whoscoredMins": 484
-				}
-			}
-		},
-		"300713|Paris Saint-Germain": {
-			"name": "Kylian Mbappé",
-			"age": 21,
-			"countryCode": "fr",
-			"position": "AM(LR),FW",
-			"club": "Paris Saint-Germain",
-			"19-20": {
-				"Champions League | Paris Saint-Germain": {
 					"whoscoredApps": 7,
-					"whoscoredMins": 446
+					"whoscoredMins": 568
 				}
 			}
 		},
 		"84146|Liverpool": {
 			"name": "Alex Oxlade Chamberlain",
-			"age": 26,
+			"age": 27,
 			"countryCode": "gb-eng",
 			"position": "M(CLR)",
 			"club": "Liverpool",
@@ -30651,16 +30638,16 @@
 				}
 			}
 		},
-		"110154|Lyon": {
-			"name": "Memphis Depay",
-			"age": 26,
-			"countryCode": "nl",
-			"position": "AM(CL),FW",
-			"club": "Lyon",
+		"37099|Bayern Munich": {
+			"name": "Thomas Müller",
+			"age": 30,
+			"countryCode": "de",
+			"position": "M(CLR),FW",
+			"club": "Bayern Munich",
 			"19-20": {
-				"Champions League | Lyon": {
-					"whoscoredApps": 6,
-					"whoscoredMins": 462
+				"Champions League | Bayern Munich": {
+					"whoscoredApps": 8,
+					"whoscoredMins": 529
 				}
 			}
 		},
@@ -30674,6 +30661,19 @@
 				"Champions League | Juventus": {
 					"whoscoredApps": 1,
 					"whoscoredMins": 20
+				}
+			}
+		},
+		"300713|Paris Saint-Germain": {
+			"name": "Kylian Mbappé",
+			"age": 21,
+			"countryCode": "fr",
+			"position": "AM(LR),FW",
+			"club": "Paris Saint-Germain",
+			"19-20": {
+				"Champions League | Paris Saint-Germain": {
+					"whoscoredApps": 8,
+					"whoscoredMins": 477
 				}
 			}
 		},
@@ -30750,8 +30750,8 @@
 			"club": "Paris Saint-Germain",
 			"19-20": {
 				"Champions League | Paris Saint-Germain": {
-					"whoscoredApps": 7,
-					"whoscoredMins": 615
+					"whoscoredApps": 8,
+					"whoscoredMins": 705
 				}
 			}
 		},
@@ -30768,19 +30768,6 @@
 				}
 			}
 		},
-		"255089|RasenBallsport Leipzig": {
-			"name": "Angeliño",
-			"age": 23,
-			"countryCode": "es",
-			"position": "D(L),M(L)",
-			"club": "RasenBallsport Leipzig",
-			"19-20": {
-				"Champions League | RasenBallsport Leipzig": {
-					"whoscoredApps": 2,
-					"whoscoredMins": 180
-				}
-			}
-		},
 		"20769|Atalanta": {
 			"name": "Simon Kjaer",
 			"age": 31,
@@ -30791,32 +30778,6 @@
 				"Champions League | Atalanta": {
 					"whoscoredApps": 1,
 					"whoscoredMins": 90
-				}
-			}
-		},
-		"112161|Atletico Madrid": {
-			"name": "Saúl Ñíguez",
-			"age": 25,
-			"countryCode": "es",
-			"position": "D(CL),M(CLR)",
-			"club": "Atletico Madrid",
-			"19-20": {
-				"Champions League | Atletico Madrid": {
-					"whoscoredApps": 8,
-					"whoscoredMins": 750
-				}
-			}
-		},
-		"125883|Bayern Munich": {
-			"name": "Kingsley Coman",
-			"age": 24,
-			"countryCode": "fr",
-			"position": "AM(LR),FW",
-			"club": "Bayern Munich",
-			"19-20": {
-				"Champions League | Bayern Munich": {
-					"whoscoredApps": 6,
-					"whoscoredMins": 434
 				}
 			}
 		},
@@ -30898,6 +30859,19 @@
 				}
 			}
 		},
+		"327721|RasenBallsport Leipzig": {
+			"name": "Dayot Upamecano",
+			"age": 21,
+			"countryCode": "fr",
+			"position": "D(C)",
+			"club": "RasenBallsport Leipzig",
+			"19-20": {
+				"Champions League | RasenBallsport Leipzig": {
+					"whoscoredApps": 7,
+					"whoscoredMins": 571
+				}
+			}
+		},
 		"243510|Liverpool": {
 			"name": "Naby Keita",
 			"age": 25,
@@ -30921,6 +30895,19 @@
 				"Champions League | Zenit St' Petersburg": {
 					"whoscoredApps": 6,
 					"whoscoredMins": 540
+				}
+			}
+		},
+		"80767|Bayern Munich": {
+			"name": "Philippe Coutinho",
+			"age": 28,
+			"countryCode": "br",
+			"position": "M(CLR)",
+			"club": "Bayern Munich",
+			"19-20": {
+				"Champions League | Bayern Munich": {
+					"whoscoredApps": 9,
+					"whoscoredMins": 480
 				}
 			}
 		},
@@ -30989,6 +30976,19 @@
 				}
 			}
 		},
+		"125883|Bayern Munich": {
+			"name": "Kingsley Coman",
+			"age": 24,
+			"countryCode": "fr",
+			"position": "AM(LR),FW",
+			"club": "Bayern Munich",
+			"19-20": {
+				"Champions League | Bayern Munich": {
+					"whoscoredApps": 7,
+					"whoscoredMins": 457
+				}
+			}
+		},
 		"299344|Inter": {
 			"name": "Lautaro Martínez",
 			"age": 22,
@@ -31002,16 +31002,29 @@
 				}
 			}
 		},
-		"296363|Barcelona": {
-			"name": "Nélson Semedo",
-			"age": 26,
-			"countryCode": "pt",
-			"position": "D(R)",
-			"club": "Barcelona",
+		"283323|Bayern Munich": {
+			"name": "Joshua Kimmich",
+			"age": 25,
+			"countryCode": "de",
+			"position": "D(CR),DMC",
+			"club": "Bayern Munich",
 			"19-20": {
-				"Champions League | Barcelona": {
-					"whoscoredApps": 6,
-					"whoscoredMins": 540
+				"Champions League | Bayern Munich": {
+					"whoscoredApps": 9,
+					"whoscoredMins": 723
+				}
+			}
+		},
+		"110154|Lyon": {
+			"name": "Memphis Depay",
+			"age": 26,
+			"countryCode": "nl",
+			"position": "AM(CL),FW",
+			"club": "Lyon",
+			"19-20": {
+				"Champions League | Lyon": {
+					"whoscoredApps": 7,
+					"whoscoredMins": 537
 				}
 			}
 		},
@@ -31025,19 +31038,6 @@
 				"Champions League | Slavia Prague": {
 					"whoscoredApps": 6,
 					"whoscoredMins": 540
-				}
-			}
-		},
-		"77464|Manchester City": {
-			"name": "Ilkay Gündogan",
-			"age": 29,
-			"countryCode": "de",
-			"position": "M(C)",
-			"club": "Manchester City",
-			"19-20": {
-				"Champions League | Manchester City": {
-					"whoscoredApps": 8,
-					"whoscoredMins": 720
 				}
 			}
 		},
@@ -31093,16 +31093,16 @@
 				}
 			}
 		},
-		"22546|Atalanta": {
-			"name": "Alejandro Gómez",
-			"age": 32,
-			"countryCode": "ar",
-			"position": "M(CL),FW",
-			"club": "Atalanta",
+		"255089|RasenBallsport Leipzig": {
+			"name": "Angeliño",
+			"age": 23,
+			"countryCode": "es",
+			"position": "D(L),M(L)",
+			"club": "RasenBallsport Leipzig",
 			"19-20": {
-				"Champions League | Atalanta": {
-					"whoscoredApps": 8,
-					"whoscoredMins": 655
+				"Champions League | RasenBallsport Leipzig": {
+					"whoscoredApps": 3,
+					"whoscoredMins": 270
 				}
 			}
 		},
@@ -31119,16 +31119,16 @@
 				}
 			}
 		},
-		"327721|RasenBallsport Leipzig": {
-			"name": "Dayot Upamecano",
-			"age": 21,
-			"countryCode": "fr",
-			"position": "D(C)",
-			"club": "RasenBallsport Leipzig",
+		"112161|Atletico Madrid": {
+			"name": "Saúl Ñíguez",
+			"age": 25,
+			"countryCode": "es",
+			"position": "D(CL),M(CLR)",
+			"club": "Atletico Madrid",
 			"19-20": {
-				"Champions League | RasenBallsport Leipzig": {
-					"whoscoredApps": 6,
-					"whoscoredMins": 481
+				"Champions League | Atletico Madrid": {
+					"whoscoredApps": 9,
+					"whoscoredMins": 840
 				}
 			}
 		},
@@ -31155,6 +31155,19 @@
 				"Champions League | Zenit St' Petersburg": {
 					"whoscoredApps": 5,
 					"whoscoredMins": 450
+				}
+			}
+		},
+		"22546|Atalanta": {
+			"name": "Alejandro Gómez",
+			"age": 32,
+			"countryCode": "ar",
+			"position": "M(CL),FW",
+			"club": "Atalanta",
+			"19-20": {
+				"Champions League | Atalanta": {
+					"whoscoredApps": 9,
+					"whoscoredMins": 714
 				}
 			}
 		},
@@ -31194,6 +31207,19 @@
 				"Champions League | Lille": {
 					"whoscoredApps": 5,
 					"whoscoredMins": 406
+				}
+			}
+		},
+		"92051|RasenBallsport Leipzig": {
+			"name": "Marcel Sabitzer",
+			"age": 26,
+			"countryCode": "at",
+			"position": "M(CLR),FW",
+			"club": "RasenBallsport Leipzig",
+			"19-20": {
+				"Champions League | RasenBallsport Leipzig": {
+					"whoscoredApps": 8,
+					"whoscoredMins": 717
 				}
 			}
 		},
@@ -31249,16 +31275,42 @@
 				}
 			}
 		},
-		"65901|Paris Saint-Germain": {
-			"name": "Keylor Navas",
-			"age": 33,
-			"countryCode": "cr",
-			"position": "GK",
-			"club": "Paris Saint-Germain",
+		"77464|Manchester City": {
+			"name": "Ilkay Gündogan",
+			"age": 29,
+			"countryCode": "de",
+			"position": "M(C)",
+			"club": "Manchester City",
 			"19-20": {
-				"Champions League | Paris Saint-Germain": {
-					"whoscoredApps": 7,
-					"whoscoredMins": 630
+				"Champions League | Manchester City": {
+					"whoscoredApps": 9,
+					"whoscoredMins": 810
+				}
+			}
+		},
+		"115519|Bayern Munich": {
+			"name": "Leon Goretzka",
+			"age": 25,
+			"countryCode": "de",
+			"position": "M(CR)",
+			"club": "Bayern Munich",
+			"19-20": {
+				"Champions League | Bayern Munich": {
+					"whoscoredApps": 6,
+					"whoscoredMins": 350
+				}
+			}
+		},
+		"70524|Bayern Munich": {
+			"name": "Ivan Perisic",
+			"age": 31,
+			"countryCode": "hr",
+			"position": "AM(CLR)",
+			"club": "Bayern Munich",
+			"19-20": {
+				"Champions League | Bayern Munich": {
+					"whoscoredApps": 8,
+					"whoscoredMins": 339
 				}
 			}
 		},
@@ -31275,19 +31327,6 @@
 				}
 			}
 		},
-		"80767|Bayern Munich": {
-			"name": "Philippe Coutinho",
-			"age": 28,
-			"countryCode": "br",
-			"position": "M(CLR)",
-			"club": "Bayern Munich",
-			"19-20": {
-				"Champions League | Bayern Munich": {
-					"whoscoredApps": 8,
-					"whoscoredMins": 464
-				}
-			}
-		},
 		"301455|Olympiacos": {
 			"name": "Konstantinos Tsimikas",
 			"age": 24,
@@ -31298,6 +31337,19 @@
 				"Champions League | Olympiacos": {
 					"whoscoredApps": 6,
 					"whoscoredMins": 540
+				}
+			}
+		},
+		"101949|Paris Saint-Germain": {
+			"name": "Marquinhos",
+			"age": 26,
+			"countryCode": "br",
+			"position": "D(CR),DMC",
+			"club": "Paris Saint-Germain",
+			"19-20": {
+				"Champions League | Paris Saint-Germain": {
+					"whoscoredApps": 9,
+					"whoscoredMins": 790
 				}
 			}
 		},
@@ -31314,45 +31366,6 @@
 				}
 			}
 		},
-		"92051|RasenBallsport Leipzig": {
-			"name": "Marcel Sabitzer",
-			"age": 26,
-			"countryCode": "at",
-			"position": "M(CLR),FW",
-			"club": "RasenBallsport Leipzig",
-			"19-20": {
-				"Champions League | RasenBallsport Leipzig": {
-					"whoscoredApps": 7,
-					"whoscoredMins": 627
-				}
-			}
-		},
-		"134894|Bayern Munich": {
-			"name": "Corentin Tolisso",
-			"age": 26,
-			"countryCode": "fr",
-			"position": "D(R),M(C)",
-			"club": "Bayern Munich",
-			"19-20": {
-				"Champions League | Bayern Munich": {
-					"whoscoredApps": 7,
-					"whoscoredMins": 323
-				}
-			}
-		},
-		"37099|Bayern Munich": {
-			"name": "Thomas Müller",
-			"age": 30,
-			"countryCode": "de",
-			"position": "M(CLR),FW",
-			"club": "Bayern Munich",
-			"19-20": {
-				"Champions League | Bayern Munich": {
-					"whoscoredApps": 7,
-					"whoscoredMins": 439
-				}
-			}
-		},
 		"362431|Atletico Madrid": {
 			"name": "João Félix",
 			"age": 20,
@@ -31361,8 +31374,8 @@
 			"club": "Atletico Madrid",
 			"19-20": {
 				"Champions League | Atletico Madrid": {
-					"whoscoredApps": 5,
-					"whoscoredMins": 394
+					"whoscoredApps": 6,
+					"whoscoredMins": 426
 				}
 			}
 		},
@@ -31379,19 +31392,6 @@
 				}
 			}
 		},
-		"70524|Bayern Munich": {
-			"name": "Ivan Perisic",
-			"age": 31,
-			"countryCode": "hr",
-			"position": "AM(CLR)",
-			"club": "Bayern Munich",
-			"19-20": {
-				"Champions League | Bayern Munich": {
-					"whoscoredApps": 7,
-					"whoscoredMins": 272
-				}
-			}
-		},
 		"260843|Ajax": {
 			"name": "André Onana",
 			"age": 24,
@@ -31402,19 +31402,6 @@
 				"Champions League | Ajax": {
 					"whoscoredApps": 6,
 					"whoscoredMins": 540
-				}
-			}
-		},
-		"254582|Atletico Madrid": {
-			"name": "Marcos Llorente",
-			"age": 25,
-			"countryCode": "es",
-			"position": "M(C),FW",
-			"club": "Atletico Madrid",
-			"19-20": {
-				"Champions League | Atletico Madrid": {
-					"whoscoredApps": 3,
-					"whoscoredMins": 118
 				}
 			}
 		},
@@ -31444,6 +31431,19 @@
 				}
 			}
 		},
+		"65901|Paris Saint-Germain": {
+			"name": "Keylor Navas",
+			"age": 33,
+			"countryCode": "cr",
+			"position": "GK",
+			"club": "Paris Saint-Germain",
+			"19-20": {
+				"Champions League | Paris Saint-Germain": {
+					"whoscoredApps": 8,
+					"whoscoredMins": 709
+				}
+			}
+		},
 		"91961|Paris Saint-Germain": {
 			"name": "Marco Verratti",
 			"age": 27,
@@ -31457,19 +31457,6 @@
 				}
 			}
 		},
-		"106964|Paris Saint-Germain": {
-			"name": "Mauro Icardi",
-			"age": 27,
-			"countryCode": "ar",
-			"position": "FW",
-			"club": "Paris Saint-Germain",
-			"19-20": {
-				"Champions League | Paris Saint-Germain": {
-					"whoscoredApps": 6,
-					"whoscoredMins": 401
-				}
-			}
-		},
 		"83390|Napoli": {
 			"name": "Lorenzo Insigne",
 			"age": 29,
@@ -31480,32 +31467,6 @@
 				"Champions League | Napoli": {
 					"whoscoredApps": 5,
 					"whoscoredMins": 350
-				}
-			}
-		},
-		"125810|Atalanta": {
-			"name": "José Luis Palomino",
-			"age": 30,
-			"countryCode": "ar",
-			"position": "D(C)",
-			"club": "Atalanta",
-			"19-20": {
-				"Champions League | Atalanta": {
-					"whoscoredApps": 6,
-					"whoscoredMins": 540
-				}
-			}
-		},
-		"102173|Atletico Madrid": {
-			"name": "Felipe",
-			"age": 31,
-			"countryCode": "br",
-			"position": "D(C)",
-			"club": "Atletico Madrid",
-			"19-20": {
-				"Champions League | Atletico Madrid": {
-					"whoscoredApps": 7,
-					"whoscoredMins": 660
 				}
 			}
 		},
@@ -31626,42 +31587,16 @@
 				}
 			}
 		},
-		"303139|Manchester City": {
-			"name": "Rodrigo",
-			"age": 24,
+		"261212|RasenBallsport Leipzig": {
+			"name": "Dani Olmo",
+			"age": 22,
 			"countryCode": "es",
-			"position": "DMC",
-			"club": "Manchester City",
+			"position": "AM(CR)",
+			"club": "RasenBallsport Leipzig",
 			"19-20": {
-				"Champions League | Manchester City": {
-					"whoscoredApps": 7,
-					"whoscoredMins": 542
-				}
-			}
-		},
-		"93700|Paris Saint-Germain": {
-			"name": "Leandro Paredes",
-			"age": 26,
-			"countryCode": "ar",
-			"position": "DMC",
-			"club": "Paris Saint-Germain",
-			"19-20": {
-				"Champions League | Paris Saint-Germain": {
-					"whoscoredApps": 3,
-					"whoscoredMins": 205
-				}
-			}
-		},
-		"247800|Paris Saint-Germain": {
-			"name": "Presnel Kimpembe",
-			"age": 24,
-			"countryCode": "fr",
-			"position": "D(C)",
-			"club": "Paris Saint-Germain",
-			"19-20": {
-				"Champions League | Paris Saint-Germain": {
-					"whoscoredApps": 7,
-					"whoscoredMins": 630
+				"Champions League | RasenBallsport Leipzig": {
+					"whoscoredApps": 1,
+					"whoscoredMins": 83
 				}
 			}
 		},
@@ -31675,45 +31610,6 @@
 				"Champions League | Salzburg": {
 					"whoscoredApps": 5,
 					"whoscoredMins": 404
-				}
-			}
-		},
-		"77564|Atletico Madrid": {
-			"name": "Stefan Savic",
-			"age": 29,
-			"countryCode": "me",
-			"position": "D(C)",
-			"club": "Atletico Madrid",
-			"19-20": {
-				"Champions League | Atletico Madrid": {
-					"whoscoredApps": 3,
-					"whoscoredMins": 300
-				}
-			}
-		},
-		"326646|Atletico Madrid": {
-			"name": "Renan Lodi",
-			"age": 22,
-			"countryCode": "br",
-			"position": "D(L)",
-			"club": "Atletico Madrid",
-			"19-20": {
-				"Champions League | Atletico Madrid": {
-					"whoscoredApps": 8,
-					"whoscoredMins": 672
-				}
-			}
-		},
-		"101949|Paris Saint-Germain": {
-			"name": "Marquinhos",
-			"age": 26,
-			"countryCode": "br",
-			"position": "D(CR),DMC",
-			"club": "Paris Saint-Germain",
-			"19-20": {
-				"Champions League | Paris Saint-Germain": {
-					"whoscoredApps": 8,
-					"whoscoredMins": 700
 				}
 			}
 		},
@@ -31743,16 +31639,16 @@
 				}
 			}
 		},
-		"141726|Atalanta": {
-			"name": "Robin Gosens",
-			"age": 26,
-			"countryCode": "de",
-			"position": "D(L),M(CL)",
-			"club": "Atalanta",
+		"247800|Paris Saint-Germain": {
+			"name": "Presnel Kimpembe",
+			"age": 25,
+			"countryCode": "fr",
+			"position": "D(C)",
+			"club": "Paris Saint-Germain",
 			"19-20": {
-				"Champions League | Atalanta": {
-					"whoscoredApps": 7,
-					"whoscoredMins": 573
+				"Champions League | Paris Saint-Germain": {
+					"whoscoredApps": 8,
+					"whoscoredMins": 720
 				}
 			}
 		},
@@ -31782,6 +31678,19 @@
 				}
 			}
 		},
+		"77564|Atletico Madrid": {
+			"name": "Stefan Savic",
+			"age": 29,
+			"countryCode": "me",
+			"position": "D(C)",
+			"club": "Atletico Madrid",
+			"19-20": {
+				"Champions League | Atletico Madrid": {
+					"whoscoredApps": 4,
+					"whoscoredMins": 390
+				}
+			}
+		},
 		"322655|Tottenham": {
 			"name": "Davinson Sánchez",
 			"age": 24,
@@ -31805,19 +31714,6 @@
 				"Champions League | Lokomotiv Moscow": {
 					"whoscoredApps": 4,
 					"whoscoredMins": 360
-				}
-			}
-		},
-		"80774|Barcelona": {
-			"name": "Marc-André ter Stegen",
-			"age": 28,
-			"countryCode": "de",
-			"position": "GK",
-			"club": "Barcelona",
-			"19-20": {
-				"Champions League | Barcelona": {
-					"whoscoredApps": 7,
-					"whoscoredMins": 630
 				}
 			}
 		},
@@ -31886,16 +31782,16 @@
 				}
 			}
 		},
-		"283323|Bayern Munich": {
-			"name": "Joshua Kimmich",
-			"age": 25,
-			"countryCode": "de",
-			"position": "D(CR),DMC",
+		"134894|Bayern Munich": {
+			"name": "Corentin Tolisso",
+			"age": 26,
+			"countryCode": "fr",
+			"position": "D(R),M(C)",
 			"club": "Bayern Munich",
 			"19-20": {
 				"Champions League | Bayern Munich": {
 					"whoscoredApps": 8,
-					"whoscoredMins": 633
+					"whoscoredMins": 329
 				}
 			}
 		},
@@ -31938,16 +31834,16 @@
 				}
 			}
 		},
-		"243565|RasenBallsport Leipzig": {
-			"name": "Patrik Schick",
-			"age": 24,
-			"countryCode": "cz",
-			"position": "AM(R),FW",
-			"club": "RasenBallsport Leipzig",
+		"141726|Atalanta": {
+			"name": "Robin Gosens",
+			"age": 26,
+			"countryCode": "de",
+			"position": "D(L),M(CL)",
+			"club": "Atalanta",
 			"19-20": {
-				"Champions League | RasenBallsport Leipzig": {
-					"whoscoredApps": 3,
-					"whoscoredMins": 187
+				"Champions League | Atalanta": {
+					"whoscoredApps": 8,
+					"whoscoredMins": 655
 				}
 			}
 		},
@@ -31977,6 +31873,19 @@
 				}
 			}
 		},
+		"106964|Paris Saint-Germain": {
+			"name": "Mauro Icardi",
+			"age": 27,
+			"countryCode": "ar",
+			"position": "FW",
+			"club": "Paris Saint-Germain",
+			"19-20": {
+				"Champions League | Paris Saint-Germain": {
+					"whoscoredApps": 7,
+					"whoscoredMins": 480
+				}
+			}
+		},
 		"3328|Juventus": {
 			"name": "Gianluigi Buffon",
 			"age": 42,
@@ -31987,6 +31896,19 @@
 				"Champions League | Juventus": {
 					"whoscoredApps": 1,
 					"whoscoredMins": 90
+				}
+			}
+		},
+		"296363|Barcelona": {
+			"name": "Nélson Semedo",
+			"age": 26,
+			"countryCode": "pt",
+			"position": "D(R)",
+			"club": "Barcelona",
+			"19-20": {
+				"Champions League | Barcelona": {
+					"whoscoredApps": 7,
+					"whoscoredMins": 630
 				}
 			}
 		},
@@ -32016,19 +31938,6 @@
 				}
 			}
 		},
-		"279423|Barcelona": {
-			"name": "Frenkie de Jong",
-			"age": 23,
-			"countryCode": "nl",
-			"position": "D(C),DMC",
-			"club": "Barcelona",
-			"19-20": {
-				"Champions League | Barcelona": {
-					"whoscoredApps": 8,
-					"whoscoredMins": 657
-				}
-			}
-		},
 		"114863|Juventus": {
 			"name": "Paulo Dybala",
 			"age": 26,
@@ -32055,16 +31964,29 @@
 				}
 			}
 		},
-		"299077|RasenBallsport Leipzig": {
-			"name": "Nordi Mukiele",
-			"age": 22,
-			"countryCode": "fr",
-			"position": "D(CR),M(R)",
-			"club": "RasenBallsport Leipzig",
+		"303139|Manchester City": {
+			"name": "Rodrigo",
+			"age": 24,
+			"countryCode": "es",
+			"position": "DMC",
+			"club": "Manchester City",
 			"19-20": {
-				"Champions League | RasenBallsport Leipzig": {
+				"Champions League | Manchester City": {
 					"whoscoredApps": 8,
-					"whoscoredMins": 607
+					"whoscoredMins": 626
+				}
+			}
+		},
+		"326646|Atletico Madrid": {
+			"name": "Renan Lodi",
+			"age": 22,
+			"countryCode": "br",
+			"position": "D(L)",
+			"club": "Atletico Madrid",
+			"19-20": {
+				"Champions League | Atletico Madrid": {
+					"whoscoredApps": 9,
+					"whoscoredMins": 762
 				}
 			}
 		},
@@ -32094,32 +32016,6 @@
 				}
 			}
 		},
-		"115519|Bayern Munich": {
-			"name": "Leon Goretzka",
-			"age": 25,
-			"countryCode": "de",
-			"position": "M(CR)",
-			"club": "Bayern Munich",
-			"19-20": {
-				"Champions League | Bayern Munich": {
-					"whoscoredApps": 5,
-					"whoscoredMins": 266
-				}
-			}
-		},
-		"248010|RasenBallsport Leipzig": {
-			"name": "Konrad Laimer",
-			"age": 23,
-			"countryCode": "at",
-			"position": "D(R),M(CR)",
-			"club": "RasenBallsport Leipzig",
-			"19-20": {
-				"Champions League | RasenBallsport Leipzig": {
-					"whoscoredApps": 8,
-					"whoscoredMins": 584
-				}
-			}
-		},
 		"143193|Lyon": {
 			"name": "Youssouf Kone",
 			"age": 25,
@@ -32130,6 +32026,19 @@
 				"Champions League | Lyon": {
 					"whoscoredApps": 5,
 					"whoscoredMins": 392
+				}
+			}
+		},
+		"129903|Atalanta": {
+			"name": "Mario Pasalic",
+			"age": 25,
+			"countryCode": "hr",
+			"position": "M(C)",
+			"club": "Atalanta",
+			"19-20": {
+				"Champions League | Atalanta": {
+					"whoscoredApps": 9,
+					"whoscoredMins": 693
 				}
 			}
 		},
@@ -32146,16 +32055,29 @@
 				}
 			}
 		},
-		"129983|Bayern Munich": {
-			"name": "Niklas Süle",
-			"age": 24,
-			"countryCode": "de",
+		"102173|Atletico Madrid": {
+			"name": "Felipe",
+			"age": 31,
+			"countryCode": "br",
 			"position": "D(C)",
-			"club": "Bayern Munich",
+			"club": "Atletico Madrid",
 			"19-20": {
-				"Champions League | Bayern Munich": {
-					"whoscoredApps": 3,
-					"whoscoredMins": 207
+				"Champions League | Atletico Madrid": {
+					"whoscoredApps": 8,
+					"whoscoredMins": 661
+				}
+			}
+		},
+		"121718|Lyon": {
+			"name": "Marçal",
+			"age": 31,
+			"countryCode": "br",
+			"position": "D(CL)",
+			"club": "Lyon",
+			"19-20": {
+				"Champions League | Lyon": {
+					"whoscoredApps": 6,
+					"whoscoredMins": 435
 				}
 			}
 		},
@@ -32172,42 +32094,29 @@
 				}
 			}
 		},
-		"115161|RasenBallsport Leipzig": {
-			"name": "Marcel Halstenberg",
-			"age": 28,
-			"countryCode": "de",
-			"position": "D(CL),M(L)",
+		"28550|Paris Saint-Germain": {
+			"name": "Thiago Silva",
+			"age": 35,
+			"countryCode": "br",
+			"position": "D(C)",
+			"club": "Paris Saint-Germain",
+			"19-20": {
+				"Champions League | Paris Saint-Germain": {
+					"whoscoredApps": 7,
+					"whoscoredMins": 630
+				}
+			}
+		},
+		"248010|RasenBallsport Leipzig": {
+			"name": "Konrad Laimer",
+			"age": 23,
+			"countryCode": "at",
+			"position": "D(R),M(CR)",
 			"club": "RasenBallsport Leipzig",
 			"19-20": {
 				"Champions League | RasenBallsport Leipzig": {
-					"whoscoredApps": 5,
-					"whoscoredMins": 399
-				}
-			}
-		},
-		"12712|Barcelona": {
-			"name": "Gerard Piqué",
-			"age": 33,
-			"countryCode": "es",
-			"position": "D(C)",
-			"club": "Barcelona",
-			"19-20": {
-				"Champions League | Barcelona": {
-					"whoscoredApps": 6,
-					"whoscoredMins": 540
-				}
-			}
-		},
-		"368272|Lyon": {
-			"name": "Maxence Caqueret",
-			"age": 20,
-			"countryCode": "fr",
-			"position": "M(C)",
-			"club": "Lyon",
-			"19-20": {
-				"Champions League | Lyon": {
-					"whoscoredApps": 1,
-					"whoscoredMins": 90
+					"whoscoredApps": 9,
+					"whoscoredMins": 656
 				}
 			}
 		},
@@ -32250,29 +32159,16 @@
 				}
 			}
 		},
-		"129903|Atalanta": {
-			"name": "Mario Pasalic",
-			"age": 25,
-			"countryCode": "hr",
-			"position": "M(C)",
-			"club": "Atalanta",
+		"93700|Paris Saint-Germain": {
+			"name": "Leandro Paredes",
+			"age": 26,
+			"countryCode": "ar",
+			"position": "DMC",
+			"club": "Paris Saint-Germain",
 			"19-20": {
-				"Champions League | Atalanta": {
-					"whoscoredApps": 8,
-					"whoscoredMins": 623
-				}
-			}
-		},
-		"139186|Bayern Munich": {
-			"name": "Lucas Hernández",
-			"age": 24,
-			"countryCode": "fr",
-			"position": "D(CL)",
-			"club": "Bayern Munich",
-			"19-20": {
-				"Champions League | Bayern Munich": {
-					"whoscoredApps": 2,
-					"whoscoredMins": 149
+				"Champions League | Paris Saint-Germain": {
+					"whoscoredApps": 4,
+					"whoscoredMins": 223
 				}
 			}
 		},
@@ -32286,19 +32182,6 @@
 				"Champions League | Inter": {
 					"whoscoredApps": 6,
 					"whoscoredMins": 521
-				}
-			}
-		},
-		"94868|Paris Saint-Germain": {
-			"name": "Pablo Sarabia",
-			"age": 28,
-			"countryCode": "es",
-			"position": "D(L),M(CLR),FW",
-			"club": "Paris Saint-Germain",
-			"19-20": {
-				"Champions League | Paris Saint-Germain": {
-					"whoscoredApps": 7,
-					"whoscoredMins": 345
 				}
 			}
 		},
@@ -32341,19 +32224,6 @@
 				}
 			}
 		},
-		"80464|Paris Saint-Germain": {
-			"name": "Idrissa Gueye",
-			"age": 30,
-			"countryCode": "sn",
-			"position": "M(C)",
-			"club": "Paris Saint-Germain",
-			"19-20": {
-				"Champions League | Paris Saint-Germain": {
-					"whoscoredApps": 6,
-					"whoscoredMins": 496
-				}
-			}
-		},
 		"67206|Napoli": {
 			"name": "José Callejón",
 			"age": 33,
@@ -32367,16 +32237,16 @@
 				}
 			}
 		},
-		"67369|RasenBallsport Leipzig": {
-			"name": "Péter Gulácsi",
+		"125810|Atalanta": {
+			"name": "José Luis Palomino",
 			"age": 30,
-			"countryCode": "hu",
-			"position": "GK",
-			"club": "RasenBallsport Leipzig",
+			"countryCode": "ar",
+			"position": "D(C)",
+			"club": "Atalanta",
 			"19-20": {
-				"Champions League | RasenBallsport Leipzig": {
-					"whoscoredApps": 8,
-					"whoscoredMins": 694
+				"Champions League | Atalanta": {
+					"whoscoredApps": 7,
+					"whoscoredMins": 571
 				}
 			}
 		},
@@ -32388,8 +32258,21 @@
 			"club": "Atletico Madrid",
 			"19-20": {
 				"Champions League | Atletico Madrid": {
-					"whoscoredApps": 5,
-					"whoscoredMins": 451
+					"whoscoredApps": 6,
+					"whoscoredMins": 541
+				}
+			}
+		},
+		"128967|Manchester City": {
+			"name": "João Cancelo",
+			"age": 26,
+			"countryCode": "pt",
+			"position": "D(LR),M(R)",
+			"club": "Manchester City",
+			"19-20": {
+				"Champions League | Manchester City": {
+					"whoscoredApps": 8,
+					"whoscoredMins": 568
 				}
 			}
 		},
@@ -32419,35 +32302,9 @@
 				}
 			}
 		},
-		"91213|Atletico Madrid": {
-			"name": "Álvaro Morata",
-			"age": 27,
-			"countryCode": "es",
-			"position": "AM(L),FW",
-			"club": "Atletico Madrid",
-			"19-20": {
-				"Champions League | Atletico Madrid": {
-					"whoscoredApps": 7,
-					"whoscoredMins": 467
-				}
-			}
-		},
-		"28550|Paris Saint-Germain": {
-			"name": "Thiago Silva",
-			"age": 35,
-			"countryCode": "br",
-			"position": "D(C)",
-			"club": "Paris Saint-Germain",
-			"19-20": {
-				"Champions League | Paris Saint-Germain": {
-					"whoscoredApps": 6,
-					"whoscoredMins": 540
-				}
-			}
-		},
 		"284114|Barcelona": {
 			"name": "Arthur",
-			"age": 23,
+			"age": 24,
 			"countryCode": "br",
 			"position": "DMC",
 			"club": "Barcelona",
@@ -32455,19 +32312,6 @@
 				"Champions League | Barcelona": {
 					"whoscoredApps": 4,
 					"whoscoredMins": 298
-				}
-			}
-		},
-		"121718|Lyon": {
-			"name": "Marçal",
-			"age": 31,
-			"countryCode": "br",
-			"position": "D(CL)",
-			"club": "Lyon",
-			"19-20": {
-				"Champions League | Lyon": {
-					"whoscoredApps": 5,
-					"whoscoredMins": 345
 				}
 			}
 		},
@@ -32494,19 +32338,6 @@
 				"Champions League | Paris Saint-Germain": {
 					"whoscoredApps": 3,
 					"whoscoredMins": 191
-				}
-			}
-		},
-		"128967|Manchester City": {
-			"name": "João Cancelo",
-			"age": 26,
-			"countryCode": "pt",
-			"position": "D(LR),M(R)",
-			"club": "Manchester City",
-			"19-20": {
-				"Champions League | Manchester City": {
-					"whoscoredApps": 7,
-					"whoscoredMins": 478
 				}
 			}
 		},
@@ -32679,6 +32510,32 @@
 				}
 			}
 		},
+		"67369|RasenBallsport Leipzig": {
+			"name": "Péter Gulácsi",
+			"age": 30,
+			"countryCode": "hu",
+			"position": "GK",
+			"club": "RasenBallsport Leipzig",
+			"19-20": {
+				"Champions League | RasenBallsport Leipzig": {
+					"whoscoredApps": 9,
+					"whoscoredMins": 784
+				}
+			}
+		},
+		"299077|RasenBallsport Leipzig": {
+			"name": "Nordi Mukiele",
+			"age": 22,
+			"countryCode": "fr",
+			"position": "D(CR),M(R)",
+			"club": "RasenBallsport Leipzig",
+			"19-20": {
+				"Champions League | RasenBallsport Leipzig": {
+					"whoscoredApps": 9,
+					"whoscoredMins": 608
+				}
+			}
+		},
 		"69344|Tottenham": {
 			"name": "Christian Eriksen",
 			"age": 28,
@@ -32689,19 +32546,6 @@
 				"Champions League | Tottenham": {
 					"whoscoredApps": 5,
 					"whoscoredMins": 295
-				}
-			}
-		},
-		"135914|Atletico Madrid": {
-			"name": "José Giménez",
-			"age": 25,
-			"countryCode": "uy",
-			"position": "D(CR)",
-			"club": "Atletico Madrid",
-			"19-20": {
-				"Champions League | Atletico Madrid": {
-					"whoscoredApps": 4,
-					"whoscoredMins": 210
 				}
 			}
 		},
@@ -32809,19 +32653,6 @@
 				}
 			}
 		},
-		"80764|Atletico Madrid": {
-			"name": "Koke",
-			"age": 28,
-			"countryCode": "es",
-			"position": "M(CLR)",
-			"club": "Atletico Madrid",
-			"19-20": {
-				"Champions League | Atletico Madrid": {
-					"whoscoredApps": 8,
-					"whoscoredMins": 710
-				}
-			}
-		},
 		"361330|Chelsea": {
 			"name": "Reece James",
 			"age": 20,
@@ -32845,6 +32676,45 @@
 				"Champions League | Bayer Leverkusen": {
 					"whoscoredApps": 2,
 					"whoscoredMins": 180
+				}
+			}
+		},
+		"135914|Atletico Madrid": {
+			"name": "José Giménez",
+			"age": 25,
+			"countryCode": "uy",
+			"position": "D(CR)",
+			"club": "Atletico Madrid",
+			"19-20": {
+				"Champions League | Atletico Madrid": {
+					"whoscoredApps": 5,
+					"whoscoredMins": 300
+				}
+			}
+		},
+		"254582|Atletico Madrid": {
+			"name": "Marcos Llorente",
+			"age": 25,
+			"countryCode": "es",
+			"position": "M(C),FW",
+			"club": "Atletico Madrid",
+			"19-20": {
+				"Champions League | Atletico Madrid": {
+					"whoscoredApps": 4,
+					"whoscoredMins": 208
+				}
+			}
+		},
+		"139186|Bayern Munich": {
+			"name": "Lucas Hernández",
+			"age": 24,
+			"countryCode": "fr",
+			"position": "D(CL)",
+			"club": "Bayern Munich",
+			"19-20": {
+				"Champions League | Bayern Munich": {
+					"whoscoredApps": 3,
+					"whoscoredMins": 155
 				}
 			}
 		},
@@ -32900,16 +32770,29 @@
 				}
 			}
 		},
-		"39722|Bayern Munich": {
-			"name": "David Alaba",
+		"115161|RasenBallsport Leipzig": {
+			"name": "Marcel Halstenberg",
 			"age": 28,
-			"countryCode": "at",
-			"position": "D(CL),M(C)",
-			"club": "Bayern Munich",
+			"countryCode": "de",
+			"position": "D(CL),M(L)",
+			"club": "RasenBallsport Leipzig",
 			"19-20": {
-				"Champions League | Bayern Munich": {
-					"whoscoredApps": 5,
-					"whoscoredMins": 406
+				"Champions League | RasenBallsport Leipzig": {
+					"whoscoredApps": 6,
+					"whoscoredMins": 489
+				}
+			}
+		},
+		"279423|Barcelona": {
+			"name": "Frenkie de Jong",
+			"age": 23,
+			"countryCode": "nl",
+			"position": "D(C),DMC",
+			"club": "Barcelona",
+			"19-20": {
+				"Champions League | Barcelona": {
+					"whoscoredApps": 9,
+					"whoscoredMins": 747
 				}
 			}
 		},
@@ -32936,6 +32819,19 @@
 				"Champions League | Borussia Dortmund": {
 					"whoscoredApps": 8,
 					"whoscoredMins": 720
+				}
+			}
+		},
+		"315275|RasenBallsport Leipzig": {
+			"name": "Tyler Adams",
+			"age": 21,
+			"countryCode": "us",
+			"position": "M(CR)",
+			"club": "RasenBallsport Leipzig",
+			"19-20": {
+				"Champions League | RasenBallsport Leipzig": {
+					"whoscoredApps": 2,
+					"whoscoredMins": 52
 				}
 			}
 		},
@@ -32975,6 +32871,19 @@
 				"Champions League | Chelsea": {
 					"whoscoredApps": 7,
 					"whoscoredMins": 613
+				}
+			}
+		},
+		"80464|Paris Saint-Germain": {
+			"name": "Idrissa Gueye",
+			"age": 30,
+			"countryCode": "sn",
+			"position": "M(C)",
+			"club": "Paris Saint-Germain",
+			"19-20": {
+				"Champions League | Paris Saint-Germain": {
+					"whoscoredApps": 7,
+					"whoscoredMins": 568
 				}
 			}
 		},
@@ -33047,7 +32956,7 @@
 			"name": "Giorgos Masouras",
 			"age": 26,
 			"countryCode": "gr",
-			"position": "Midfielder",
+			"position": "AM(L)",
 			"club": "Olympiacos",
 			"19-20": {
 				"Champions League | Olympiacos": {
@@ -33110,7 +33019,7 @@
 		},
 		"320374|Juventus": {
 			"name": "Matthijs de Ligt",
-			"age": 20,
+			"age": 21,
 			"countryCode": "nl",
 			"position": "D(C)",
 			"club": "Juventus",
@@ -33134,6 +33043,19 @@
 				}
 			}
 		},
+		"129983|Bayern Munich": {
+			"name": "Niklas Süle",
+			"age": 24,
+			"countryCode": "de",
+			"position": "D(C)",
+			"club": "Bayern Munich",
+			"19-20": {
+				"Champions League | Bayern Munich": {
+					"whoscoredApps": 4,
+					"whoscoredMins": 221
+				}
+			}
+		},
 		"9972|Inter": {
 			"name": "Samir Handanovic",
 			"age": 36,
@@ -33144,6 +33066,19 @@
 				"Champions League | Inter": {
 					"whoscoredApps": 6,
 					"whoscoredMins": 540
+				}
+			}
+		},
+		"94868|Paris Saint-Germain": {
+			"name": "Pablo Sarabia",
+			"age": 28,
+			"countryCode": "es",
+			"position": "D(L),M(CLR),FW",
+			"club": "Paris Saint-Germain",
+			"19-20": {
+				"Champions League | Paris Saint-Germain": {
+					"whoscoredApps": 8,
+					"whoscoredMins": 405
 				}
 			}
 		},
@@ -33225,6 +33160,19 @@
 				}
 			}
 		},
+		"368272|Lyon": {
+			"name": "Maxence Caqueret",
+			"age": 20,
+			"countryCode": "fr",
+			"position": "M(C)",
+			"club": "Lyon",
+			"19-20": {
+				"Champions League | Lyon": {
+					"whoscoredApps": 2,
+					"whoscoredMins": 180
+				}
+			}
+		},
 		"131519|Tottenham": {
 			"name": "Dele Alli",
 			"age": 24,
@@ -33264,6 +33212,19 @@
 				}
 			}
 		},
+		"80774|Barcelona": {
+			"name": "Marc-André ter Stegen",
+			"age": 28,
+			"countryCode": "de",
+			"position": "GK",
+			"club": "Barcelona",
+			"19-20": {
+				"Champions League | Barcelona": {
+					"whoscoredApps": 8,
+					"whoscoredMins": 720
+				}
+			}
+		},
 		"379205|Ajax": {
 			"name": "Sergiño Dest",
 			"age": 19,
@@ -33274,32 +33235,6 @@
 				"Champions League | Ajax": {
 					"whoscoredApps": 5,
 					"whoscoredMins": 405
-				}
-			}
-		},
-		"338780|Lyon": {
-			"name": "Bruno Guimarães",
-			"age": 22,
-			"countryCode": "br",
-			"position": "DMC",
-			"club": "Lyon",
-			"19-20": {
-				"Champions League | Lyon": {
-					"whoscoredApps": 2,
-					"whoscoredMins": 180
-				}
-			}
-		},
-		"255167|Paris Saint-Germain": {
-			"name": "Thilo Kehrer",
-			"age": 23,
-			"countryCode": "de",
-			"position": "D(CR),M(R)",
-			"club": "Paris Saint-Germain",
-			"19-20": {
-				"Champions League | Paris Saint-Germain": {
-					"whoscoredApps": 2,
-					"whoscoredMins": 106
 				}
 			}
 		},
@@ -33316,6 +33251,19 @@
 				}
 			}
 		},
+		"243565|RasenBallsport Leipzig": {
+			"name": "Patrik Schick",
+			"age": 24,
+			"countryCode": "cz",
+			"position": "AM(R),FW",
+			"club": "RasenBallsport Leipzig",
+			"19-20": {
+				"Champions League | RasenBallsport Leipzig": {
+					"whoscoredApps": 4,
+					"whoscoredMins": 194
+				}
+			}
+		},
 		"25191|Borussia Dortmund": {
 			"name": "Axel Witsel",
 			"age": 31,
@@ -33326,19 +33274,6 @@
 				"Champions League | Borussia Dortmund": {
 					"whoscoredApps": 7,
 					"whoscoredMins": 611
-				}
-			}
-		},
-		"302691|Atalanta": {
-			"name": "Remo Freuler",
-			"age": 28,
-			"countryCode": "ch",
-			"position": "DMC",
-			"club": "Atalanta",
-			"19-20": {
-				"Champions League | Atalanta": {
-					"whoscoredApps": 7,
-					"whoscoredMins": 580
 				}
 			}
 		},
@@ -33368,29 +33303,16 @@
 				}
 			}
 		},
-		"19119|Manchester City": {
-			"name": "Fernandinho",
-			"age": 35,
-			"countryCode": "br",
-			"position": "D(CR),DMC",
-			"club": "Manchester City",
+		"80764|Atletico Madrid": {
+			"name": "Koke",
+			"age": 28,
+			"countryCode": "es",
+			"position": "M(CLR)",
+			"club": "Atletico Madrid",
 			"19-20": {
-				"Champions League | Manchester City": {
-					"whoscoredApps": 7,
-					"whoscoredMins": 597
-				}
-			}
-		},
-		"85070|Atalanta": {
-			"name": "Marten de Roon",
-			"age": 29,
-			"countryCode": "nl",
-			"position": "DMC",
-			"club": "Atalanta",
-			"19-20": {
-				"Champions League | Atalanta": {
-					"whoscoredApps": 8,
-					"whoscoredMins": 675
+				"Champions League | Atletico Madrid": {
+					"whoscoredApps": 9,
+					"whoscoredMins": 800
 				}
 			}
 		},
@@ -33404,6 +33326,19 @@
 				"Champions League | Bayer Leverkusen": {
 					"whoscoredApps": 5,
 					"whoscoredMins": 376
+				}
+			}
+		},
+		"91213|Atletico Madrid": {
+			"name": "Álvaro Morata",
+			"age": 27,
+			"countryCode": "es",
+			"position": "AM(L),FW",
+			"club": "Atletico Madrid",
+			"19-20": {
+				"Champions League | Atletico Madrid": {
+					"whoscoredApps": 8,
+					"whoscoredMins": 485
 				}
 			}
 		},
@@ -33459,6 +33394,19 @@
 				}
 			}
 		},
+		"80994|RasenBallsport Leipzig": {
+			"name": "Kevin Kampl",
+			"age": 29,
+			"countryCode": "si",
+			"position": "M(CLR)",
+			"club": "RasenBallsport Leipzig",
+			"19-20": {
+				"Champions League | RasenBallsport Leipzig": {
+					"whoscoredApps": 3,
+					"whoscoredMins": 225
+				}
+			}
+		},
 		"122469|Napoli": {
 			"name": "Giovanni Di Lorenzo",
 			"age": 27,
@@ -33495,19 +33443,6 @@
 				"Champions League | Inter": {
 					"whoscoredApps": 1,
 					"whoscoredMins": 67
-				}
-			}
-		},
-		"76662|Atletico Madrid": {
-			"name": "Jan Oblak",
-			"age": 27,
-			"countryCode": "si",
-			"position": "GK",
-			"club": "Atletico Madrid",
-			"19-20": {
-				"Champions League | Atletico Madrid": {
-					"whoscoredApps": 8,
-					"whoscoredMins": 750
 				}
 			}
 		},
@@ -33550,19 +33485,6 @@
 				}
 			}
 		},
-		"368091|Manchester City": {
-			"name": "Eric García",
-			"age": 19,
-			"countryCode": "es",
-			"position": "D(C)",
-			"club": "Manchester City",
-			"19-20": {
-				"Champions League | Manchester City": {
-					"whoscoredApps": 1,
-					"whoscoredMins": 90
-				}
-			}
-		},
 		"109807|Lyon": {
 			"name": "Bertrand Traoré",
 			"age": 24,
@@ -33602,19 +33524,6 @@
 				}
 			}
 		},
-		"277239|Lyon": {
-			"name": "Jeff Reine-Adélaïde",
-			"age": 22,
-			"countryCode": "fr",
-			"position": "AM(CR),FW",
-			"club": "Lyon",
-			"19-20": {
-				"Champions League | Lyon": {
-					"whoscoredApps": 6,
-					"whoscoredMins": 299
-				}
-			}
-		},
 		"69807|Dinamo Zagreb": {
 			"name": "Kévin Théophile-Catherine",
 			"age": 30,
@@ -33641,16 +33550,16 @@
 				}
 			}
 		},
-		"300945|RasenBallsport Leipzig": {
-			"name": "Christopher Nkunku",
-			"age": 22,
-			"countryCode": "fr",
-			"position": "M(CLR),FW",
-			"club": "RasenBallsport Leipzig",
+		"85070|Atalanta": {
+			"name": "Marten de Roon",
+			"age": 29,
+			"countryCode": "nl",
+			"position": "DMC",
+			"club": "Atalanta",
 			"19-20": {
-				"Champions League | RasenBallsport Leipzig": {
-					"whoscoredApps": 7,
-					"whoscoredMins": 385
+				"Champions League | Atalanta": {
+					"whoscoredApps": 9,
+					"whoscoredMins": 765
 				}
 			}
 		},
@@ -33667,6 +33576,19 @@
 				}
 			}
 		},
+		"69778|Manchester City": {
+			"name": "Kyle Walker",
+			"age": 30,
+			"countryCode": "gb-eng",
+			"position": "D(CR),M(R)",
+			"club": "Manchester City",
+			"19-20": {
+				"Champions League | Manchester City": {
+					"whoscoredApps": 6,
+					"whoscoredMins": 443
+				}
+			}
+		},
 		"82399|Inter": {
 			"name": "Stefan de Vrij",
 			"age": 28,
@@ -33680,29 +33602,16 @@
 				}
 			}
 		},
-		"69778|Manchester City": {
-			"name": "Kyle Walker",
-			"age": 30,
-			"countryCode": "gb-eng",
-			"position": "D(CR),M(R)",
-			"club": "Manchester City",
+		"302691|Atalanta": {
+			"name": "Remo Freuler",
+			"age": 28,
+			"countryCode": "ch",
+			"position": "DMC",
+			"club": "Atalanta",
 			"19-20": {
-				"Champions League | Manchester City": {
-					"whoscoredApps": 5,
-					"whoscoredMins": 353
-				}
-			}
-		},
-		"80994|RasenBallsport Leipzig": {
-			"name": "Kevin Kampl",
-			"age": 29,
-			"countryCode": "si",
-			"position": "M(CLR)",
-			"club": "RasenBallsport Leipzig",
-			"19-20": {
-				"Champions League | RasenBallsport Leipzig": {
-					"whoscoredApps": 2,
-					"whoscoredMins": 135
+				"Champions League | Atalanta": {
+					"whoscoredApps": 8,
+					"whoscoredMins": 670
 				}
 			}
 		},
@@ -33745,16 +33654,55 @@
 				}
 			}
 		},
-		"27761|Lyon": {
-			"name": "Marcelo",
-			"age": 33,
-			"countryCode": "br",
-			"position": "D(C)",
-			"club": "Lyon",
+		"39722|Bayern Munich": {
+			"name": "David Alaba",
+			"age": 28,
+			"countryCode": "at",
+			"position": "D(CL),M(C)",
+			"club": "Bayern Munich",
 			"19-20": {
-				"Champions League | Lyon": {
+				"Champions League | Bayern Munich": {
+					"whoscoredApps": 6,
+					"whoscoredMins": 496
+				}
+			}
+		},
+		"12712|Barcelona": {
+			"name": "Gerard Piqué",
+			"age": 33,
+			"countryCode": "es",
+			"position": "D(C)",
+			"club": "Barcelona",
+			"19-20": {
+				"Champions League | Barcelona": {
+					"whoscoredApps": 7,
+					"whoscoredMins": 630
+				}
+			}
+		},
+		"13754|Bayern Munich": {
+			"name": "Manuel Neuer",
+			"age": 34,
+			"countryCode": "de",
+			"position": "GK",
+			"club": "Bayern Munich",
+			"19-20": {
+				"Champions League | Bayern Munich": {
+					"whoscoredApps": 9,
+					"whoscoredMins": 810
+				}
+			}
+		},
+		"19119|Manchester City": {
+			"name": "Fernandinho",
+			"age": 35,
+			"countryCode": "br",
+			"position": "D(CR),DMC",
+			"club": "Manchester City",
+			"19-20": {
+				"Champions League | Manchester City": {
 					"whoscoredApps": 8,
-					"whoscoredMins": 544
+					"whoscoredMins": 653
 				}
 			}
 		},
@@ -33771,6 +33719,19 @@
 				}
 			}
 		},
+		"27761|Lyon": {
+			"name": "Marcelo",
+			"age": 33,
+			"countryCode": "br",
+			"position": "D(C)",
+			"club": "Lyon",
+			"19-20": {
+				"Champions League | Lyon": {
+					"whoscoredApps": 9,
+					"whoscoredMins": 634
+				}
+			}
+		},
 		"111891|Slavia Prague": {
 			"name": "Nicolae Stanciu",
 			"age": 27,
@@ -33784,6 +33745,19 @@
 				}
 			}
 		},
+		"300945|RasenBallsport Leipzig": {
+			"name": "Christopher Nkunku",
+			"age": 22,
+			"countryCode": "fr",
+			"position": "M(CLR),FW",
+			"club": "RasenBallsport Leipzig",
+			"19-20": {
+				"Champions League | RasenBallsport Leipzig": {
+					"whoscoredApps": 8,
+					"whoscoredMins": 468
+				}
+			}
+		},
 		"101374|Manchester City": {
 			"name": "John Stones",
 			"age": 26,
@@ -33794,32 +33768,6 @@
 				"Champions League | Manchester City": {
 					"whoscoredApps": 1,
 					"whoscoredMins": 49
-				}
-			}
-		},
-		"95504|Atalanta": {
-			"name": "Marco Sportiello",
-			"age": 28,
-			"countryCode": "it",
-			"position": "GK",
-			"club": "Atalanta",
-			"19-20": {
-				"Champions League | Atalanta": {
-					"whoscoredApps": 1,
-					"whoscoredMins": 90
-				}
-			}
-		},
-		"146724|Lyon": {
-			"name": "Léo Dubois",
-			"age": 25,
-			"countryCode": "fr",
-			"position": "D(LR),M(R)",
-			"club": "Lyon",
-			"19-20": {
-				"Champions League | Lyon": {
-					"whoscoredApps": 7,
-					"whoscoredMins": 618
 				}
 			}
 		},
@@ -33885,19 +33833,6 @@
 				"Champions League | Lokomotiv Moscow": {
 					"whoscoredApps": 6,
 					"whoscoredMins": 533
-				}
-			}
-		},
-		"236511|Barcelona": {
-			"name": "Clément Lenglet",
-			"age": 25,
-			"countryCode": "fr",
-			"position": "D(C)",
-			"club": "Barcelona",
-			"19-20": {
-				"Champions League | Barcelona": {
-					"whoscoredApps": 8,
-					"whoscoredMins": 631
 				}
 			}
 		},
@@ -33979,6 +33914,19 @@
 				}
 			}
 		},
+		"146724|Lyon": {
+			"name": "Léo Dubois",
+			"age": 25,
+			"countryCode": "fr",
+			"position": "D(LR),M(R)",
+			"club": "Lyon",
+			"19-20": {
+				"Champions League | Lyon": {
+					"whoscoredApps": 8,
+					"whoscoredMins": 692
+				}
+			}
+		},
 		"337782|Real Madrid": {
 			"name": "Vinícius Júnior",
 			"age": 20,
@@ -33992,19 +33940,6 @@
 				}
 			}
 		},
-		"13754|Bayern Munich": {
-			"name": "Manuel Neuer",
-			"age": 34,
-			"countryCode": "de",
-			"position": "GK",
-			"club": "Bayern Munich",
-			"19-20": {
-				"Champions League | Bayern Munich": {
-					"whoscoredApps": 8,
-					"whoscoredMins": 720
-				}
-			}
-		},
 		"346744|Salzburg": {
 			"name": "Antoine Bernede",
 			"age": 21,
@@ -34015,19 +33950,6 @@
 				"Champions League | Salzburg": {
 					"whoscoredApps": 1,
 					"whoscoredMins": 90
-				}
-			}
-		},
-		"143600|RasenBallsport Leipzig": {
-			"name": "Lukas Klostermann",
-			"age": 24,
-			"countryCode": "de",
-			"position": "D(CLR),M(R)",
-			"club": "RasenBallsport Leipzig",
-			"19-20": {
-				"Champions League | RasenBallsport Leipzig": {
-					"whoscoredApps": 8,
-					"whoscoredMins": 637
 				}
 			}
 		},
@@ -34070,6 +33992,19 @@
 				}
 			}
 		},
+		"95504|Atalanta": {
+			"name": "Marco Sportiello",
+			"age": 28,
+			"countryCode": "it",
+			"position": "GK",
+			"club": "Atalanta",
+			"19-20": {
+				"Champions League | Atalanta": {
+					"whoscoredApps": 2,
+					"whoscoredMins": 180
+				}
+			}
+		},
 		"22040|Lokomotiv Moscow": {
 			"name": "Vedran Corluka",
 			"age": 34,
@@ -34096,19 +34031,6 @@
 				}
 			}
 		},
-		"135890|Atalanta": {
-			"name": "Hans Hateboer",
-			"age": 26,
-			"countryCode": "nl",
-			"position": "D(R),M(R)",
-			"club": "Atalanta",
-			"19-20": {
-				"Champions League | Atalanta": {
-					"whoscoredApps": 8,
-					"whoscoredMins": 501
-				}
-			}
-		},
 		"63936|Borussia Dortmund": {
 			"name": "Roman Bürki",
 			"age": 29,
@@ -34122,6 +34044,19 @@
 				}
 			}
 		},
+		"277239|Lyon": {
+			"name": "Jeff Reine-Adélaïde",
+			"age": 22,
+			"countryCode": "fr",
+			"position": "AM(CR),FW",
+			"club": "Lyon",
+			"19-20": {
+				"Champions League | Lyon": {
+					"whoscoredApps": 7,
+					"whoscoredMins": 302
+				}
+			}
+		},
 		"357900|Olympiacos": {
 			"name": "Mohamed Camara",
 			"age": 23,
@@ -34132,6 +34067,19 @@
 				"Champions League | Olympiacos": {
 					"whoscoredApps": 5,
 					"whoscoredMins": 418
+				}
+			}
+		},
+		"143600|RasenBallsport Leipzig": {
+			"name": "Lukas Klostermann",
+			"age": 24,
+			"countryCode": "de",
+			"position": "D(CLR),M(R)",
+			"club": "RasenBallsport Leipzig",
+			"19-20": {
+				"Champions League | RasenBallsport Leipzig": {
+					"whoscoredApps": 9,
+					"whoscoredMins": 727
 				}
 			}
 		},
@@ -34200,19 +34148,6 @@
 				}
 			}
 		},
-		"117776|Lyon": {
-			"name": "Thiago Mendes",
-			"age": 28,
-			"countryCode": "br",
-			"position": "D(R),M(CR)",
-			"club": "Lyon",
-			"19-20": {
-				"Champions League | Lyon": {
-					"whoscoredApps": 6,
-					"whoscoredMins": 395
-				}
-			}
-		},
 		"284817|Shakhtar Donetsk": {
 			"name": "Mykola Matvyenko",
 			"age": 24,
@@ -34252,22 +34187,35 @@
 				}
 			}
 		},
-		"44721|Barcelona": {
-			"name": "Sergio Busquets",
-			"age": 32,
-			"countryCode": "es",
-			"position": "DMC",
-			"club": "Barcelona",
+		"255167|Paris Saint-Germain": {
+			"name": "Thilo Kehrer",
+			"age": 23,
+			"countryCode": "de",
+			"position": "D(CR),M(R)",
+			"club": "Paris Saint-Germain",
 			"19-20": {
-				"Champions League | Barcelona": {
-					"whoscoredApps": 6,
-					"whoscoredMins": 439
+				"Champions League | Paris Saint-Germain": {
+					"whoscoredApps": 3,
+					"whoscoredMins": 196
+				}
+			}
+		},
+		"76662|Atletico Madrid": {
+			"name": "Jan Oblak",
+			"age": 27,
+			"countryCode": "si",
+			"position": "GK",
+			"club": "Atletico Madrid",
+			"19-20": {
+				"Champions League | Atletico Madrid": {
+					"whoscoredApps": 9,
+					"whoscoredMins": 840
 				}
 			}
 		},
 		"29595|Tottenham": {
 			"name": "Moussa Sissoko",
-			"age": 30,
+			"age": 31,
 			"countryCode": "fr",
 			"position": "M(CR)",
 			"club": "Tottenham",
@@ -34275,6 +34223,19 @@
 				"Champions League | Tottenham": {
 					"whoscoredApps": 6,
 					"whoscoredMins": 417
+				}
+			}
+		},
+		"338780|Lyon": {
+			"name": "Bruno Guimarães",
+			"age": 22,
+			"countryCode": "br",
+			"position": "DMC",
+			"club": "Lyon",
+			"19-20": {
+				"Champions League | Lyon": {
+					"whoscoredApps": 3,
+					"whoscoredMins": 250
 				}
 			}
 		},
@@ -34421,6 +34382,19 @@
 				}
 			}
 		},
+		"117776|Lyon": {
+			"name": "Thiago Mendes",
+			"age": 28,
+			"countryCode": "br",
+			"position": "D(R),M(CR)",
+			"club": "Lyon",
+			"19-20": {
+				"Champions League | Lyon": {
+					"whoscoredApps": 7,
+					"whoscoredMins": 415
+				}
+			}
+		},
 		"327684|Genk": {
 			"name": "Bryan Heynen",
 			"age": 23,
@@ -34499,19 +34473,6 @@
 				}
 			}
 		},
-		"23589|Bayern Munich": {
-			"name": "Jérôme Boateng",
-			"age": 31,
-			"countryCode": "de",
-			"position": "D(CR)",
-			"club": "Bayern Munich",
-			"19-20": {
-				"Champions League | Bayern Munich": {
-					"whoscoredApps": 6,
-					"whoscoredMins": 436
-				}
-			}
-		},
 		"73379|Juventus": {
 			"name": "Wojciech Szczesny",
 			"age": 30,
@@ -34535,19 +34496,6 @@
 				"Champions League | Lille": {
 					"whoscoredApps": 2,
 					"whoscoredMins": 180
-				}
-			}
-		},
-		"109338|Paris Saint-Germain": {
-			"name": "Sergio Rico",
-			"age": 26,
-			"countryCode": "es",
-			"position": "GK",
-			"club": "Paris Saint-Germain",
-			"19-20": {
-				"Champions League | Paris Saint-Germain": {
-					"whoscoredApps": 1,
-					"whoscoredMins": 90
 				}
 			}
 		},
@@ -34603,19 +34551,6 @@
 				}
 			}
 		},
-		"84190|Atalanta": {
-			"name": "Luis Muriel",
-			"age": 29,
-			"countryCode": "co",
-			"position": "AM(CL),FW",
-			"club": "Atalanta",
-			"19-20": {
-				"Champions League | Atalanta": {
-					"whoscoredApps": 5,
-					"whoscoredMins": 200
-				}
-			}
-		},
 		"322418|RasenBallsport Leipzig": {
 			"name": "Ethan Ampadu",
 			"age": 19,
@@ -34639,6 +34574,19 @@
 				"Champions League | Valencia": {
 					"whoscoredApps": 8,
 					"whoscoredMins": 720
+				}
+			}
+		},
+		"140090|Lyon": {
+			"name": "Moussa Dembele",
+			"age": 24,
+			"countryCode": "fr",
+			"position": "FW",
+			"club": "Lyon",
+			"19-20": {
+				"Champions League | Lyon": {
+					"whoscoredApps": 9,
+					"whoscoredMins": 590
 				}
 			}
 		},
@@ -34668,19 +34616,6 @@
 				}
 			}
 		},
-		"44288|Barcelona": {
-			"name": "Jordi Alba",
-			"age": 31,
-			"countryCode": "es",
-			"position": "D(L),M(L)",
-			"club": "Barcelona",
-			"19-20": {
-				"Champions League | Barcelona": {
-					"whoscoredApps": 4,
-					"whoscoredMins": 266
-				}
-			}
-		},
 		"347051|Salzburg": {
 			"name": "Carlos",
 			"age": 23,
@@ -34704,6 +34639,19 @@
 				"Champions League | Club Brugge": {
 					"whoscoredApps": 3,
 					"whoscoredMins": 260
+				}
+			}
+		},
+		"135890|Atalanta": {
+			"name": "Hans Hateboer",
+			"age": 26,
+			"countryCode": "nl",
+			"position": "D(R),M(R)",
+			"club": "Atalanta",
+			"19-20": {
+				"Champions League | Atalanta": {
+					"whoscoredApps": 9,
+					"whoscoredMins": 591
 				}
 			}
 		},
@@ -34785,6 +34733,19 @@
 				}
 			}
 		},
+		"23589|Bayern Munich": {
+			"name": "Jérôme Boateng",
+			"age": 31,
+			"countryCode": "de",
+			"position": "D(CR)",
+			"club": "Bayern Munich",
+			"19-20": {
+				"Champions League | Bayern Munich": {
+					"whoscoredApps": 7,
+					"whoscoredMins": 512
+				}
+			}
+		},
 		"70033|Ajax": {
 			"name": "Daley Blind",
 			"age": 30,
@@ -34813,7 +34774,7 @@
 		},
 		"344119|Valencia": {
 			"name": "Maxi Gómez",
-			"age": 23,
+			"age": 24,
 			"countryCode": "uy",
 			"position": "FW",
 			"club": "Valencia",
@@ -34847,6 +34808,19 @@
 				"Champions League | Real Madrid": {
 					"whoscoredApps": 5,
 					"whoscoredMins": 408
+				}
+			}
+		},
+		"29809|Paris Saint-Germain": {
+			"name": "Eric Maxim Choupo-Moting",
+			"age": 31,
+			"countryCode": "cm",
+			"position": "M(CLR),FW",
+			"club": "Paris Saint-Germain",
+			"19-20": {
+				"Champions League | Paris Saint-Germain": {
+					"whoscoredApps": 4,
+					"whoscoredMins": 113
 				}
 			}
 		},
@@ -34886,19 +34860,6 @@
 				"Champions League | Club Brugge": {
 					"whoscoredApps": 6,
 					"whoscoredMins": 540
-				}
-			}
-		},
-		"121774|Manchester City": {
-			"name": "Ederson",
-			"age": 26,
-			"countryCode": "br",
-			"position": "GK",
-			"club": "Manchester City",
-			"19-20": {
-				"Champions League | Manchester City": {
-					"whoscoredApps": 7,
-					"whoscoredMins": 586
 				}
 			}
 		},
@@ -34954,22 +34915,9 @@
 				}
 			}
 		},
-		"80241|Barcelona": {
-			"name": "Antoine Griezmann",
-			"age": 29,
-			"countryCode": "fr",
-			"position": "AM(CLR),FW",
-			"club": "Barcelona",
-			"19-20": {
-				"Champions League | Barcelona": {
-					"whoscoredApps": 8,
-					"whoscoredMins": 612
-				}
-			}
-		},
 		"92508|Tottenham": {
 			"name": "Lucas Moura",
-			"age": 27,
+			"age": 28,
 			"countryCode": "br",
 			"position": "AM(CLR),FW",
 			"club": "Tottenham",
@@ -35003,6 +34951,19 @@
 				"Champions League | Galatasaray": {
 					"whoscoredApps": 2,
 					"whoscoredMins": 92
+				}
+			}
+		},
+		"368091|Manchester City": {
+			"name": "Eric García",
+			"age": 19,
+			"countryCode": "es",
+			"position": "D(C)",
+			"club": "Manchester City",
+			"19-20": {
+				"Champions League | Manchester City": {
+					"whoscoredApps": 2,
+					"whoscoredMins": 180
 				}
 			}
 		},
@@ -35071,19 +35032,6 @@
 				}
 			}
 		},
-		"295456|Atalanta": {
-			"name": "Ruslan Malinovskiy",
-			"age": 27,
-			"countryCode": "ua",
-			"position": "M(C)",
-			"club": "Atalanta",
-			"19-20": {
-				"Champions League | Atalanta": {
-					"whoscoredApps": 8,
-					"whoscoredMins": 225
-				}
-			}
-		},
 		"128376|FK Crvena Zvezda": {
 			"name": "Milan Borjan",
 			"age": 32,
@@ -35097,16 +35045,16 @@
 				}
 			}
 		},
-		"145996|Lyon": {
-			"name": "Kenny Tete",
-			"age": 24,
-			"countryCode": "nl",
-			"position": "D(R),M(R)",
+		"243511|Lyon": {
+			"name": "Jason Denayer",
+			"age": 25,
+			"countryCode": "be",
+			"position": "D(CR),DMC",
 			"club": "Lyon",
 			"19-20": {
 				"Champions League | Lyon": {
-					"whoscoredApps": 3,
-					"whoscoredMins": 103
+					"whoscoredApps": 8,
+					"whoscoredMins": 691
 				}
 			}
 		},
@@ -35133,19 +35081,6 @@
 				"Champions League | Club Brugge": {
 					"whoscoredApps": 6,
 					"whoscoredMins": 540
-				}
-			}
-		},
-		"243511|Lyon": {
-			"name": "Jason Denayer",
-			"age": 25,
-			"countryCode": "be",
-			"position": "D(CR),DMC",
-			"club": "Lyon",
-			"19-20": {
-				"Champions League | Lyon": {
-					"whoscoredApps": 7,
-					"whoscoredMins": 601
 				}
 			}
 		},
@@ -35240,6 +35175,19 @@
 				}
 			}
 		},
+		"44721|Barcelona": {
+			"name": "Sergio Busquets",
+			"age": 32,
+			"countryCode": "es",
+			"position": "DMC",
+			"club": "Barcelona",
+			"19-20": {
+				"Champions League | Barcelona": {
+					"whoscoredApps": 7,
+					"whoscoredMins": 509
+				}
+			}
+		},
 		"327685|Genk": {
 			"name": "Mbwana Samatta",
 			"age": 27,
@@ -35263,6 +35211,32 @@
 				"Champions League | Lokomotiv Moscow": {
 					"whoscoredApps": 5,
 					"whoscoredMins": 369
+				}
+			}
+		},
+		"236511|Barcelona": {
+			"name": "Clément Lenglet",
+			"age": 25,
+			"countryCode": "fr",
+			"position": "D(C)",
+			"club": "Barcelona",
+			"19-20": {
+				"Champions League | Barcelona": {
+					"whoscoredApps": 9,
+					"whoscoredMins": 721
+				}
+			}
+		},
+		"80241|Barcelona": {
+			"name": "Antoine Griezmann",
+			"age": 29,
+			"countryCode": "fr",
+			"position": "AM(CLR),FW",
+			"club": "Barcelona",
+			"19-20": {
+				"Champions League | Barcelona": {
+					"whoscoredApps": 9,
+					"whoscoredMins": 657
 				}
 			}
 		},
@@ -35302,6 +35276,19 @@
 				"Champions League | Galatasaray": {
 					"whoscoredApps": 5,
 					"whoscoredMins": 251
+				}
+			}
+		},
+		"125004|Lyon": {
+			"name": "Maxwel Cornet",
+			"age": 23,
+			"countryCode": "ci",
+			"position": "M(LR),FW",
+			"club": "Lyon",
+			"19-20": {
+				"Champions League | Lyon": {
+					"whoscoredApps": 7,
+					"whoscoredMins": 460
 				}
 			}
 		},
@@ -35354,32 +35341,6 @@
 				"Champions League | Olympiacos": {
 					"whoscoredApps": 6,
 					"whoscoredMins": 540
-				}
-			}
-		},
-		"122117|Manchester City": {
-			"name": "Aymeric Laporte",
-			"age": 26,
-			"countryCode": "fr",
-			"position": "D(CL)",
-			"club": "Manchester City",
-			"19-20": {
-				"Champions League | Manchester City": {
-					"whoscoredApps": 2,
-					"whoscoredMins": 123
-				}
-			}
-		},
-		"14102|Manchester City": {
-			"name": "David Silva",
-			"age": 34,
-			"countryCode": "es",
-			"position": "M(CLR)",
-			"club": "Manchester City",
-			"19-20": {
-				"Champions League | Manchester City": {
-					"whoscoredApps": 3,
-					"whoscoredMins": 119
 				}
 			}
 		},
@@ -35474,32 +35435,6 @@
 				}
 			}
 		},
-		"103476|Atletico Madrid": {
-			"name": "Héctor Herrera",
-			"age": 30,
-			"countryCode": "mx",
-			"position": "M(C)",
-			"club": "Atletico Madrid",
-			"19-20": {
-				"Champions League | Atletico Madrid": {
-					"whoscoredApps": 5,
-					"whoscoredMins": 206
-				}
-			}
-		},
-		"90782|Barcelona": {
-			"name": "Sergi Roberto",
-			"age": 28,
-			"countryCode": "es",
-			"position": "D(R),M(CR)",
-			"club": "Barcelona",
-			"19-20": {
-				"Champions League | Barcelona": {
-					"whoscoredApps": 5,
-					"whoscoredMins": 365
-				}
-			}
-		},
 		"111372|Slavia Prague": {
 			"name": "Vladimir Coufal",
 			"age": 27,
@@ -35539,16 +35474,16 @@
 				}
 			}
 		},
-		"315275|RasenBallsport Leipzig": {
-			"name": "Tyler Adams",
-			"age": 21,
-			"countryCode": "us",
-			"position": "M(CR)",
-			"club": "RasenBallsport Leipzig",
+		"100962|Atalanta": {
+			"name": "Berat Djimsiti",
+			"age": 27,
+			"countryCode": "al",
+			"position": "D(C)",
+			"club": "Atalanta",
 			"19-20": {
-				"Champions League | RasenBallsport Leipzig": {
-					"whoscoredApps": 1,
-					"whoscoredMins": 34
+				"Champions League | Atalanta": {
+					"whoscoredApps": 6,
+					"whoscoredMins": 510
 				}
 			}
 		},
@@ -35562,6 +35497,19 @@
 				"Champions League | Slavia Prague": {
 					"whoscoredApps": 6,
 					"whoscoredMins": 540
+				}
+			}
+		},
+		"236504|Lyon": {
+			"name": "Karl Toko Ekambi",
+			"age": 27,
+			"countryCode": "cm",
+			"position": "AM(L),FW",
+			"club": "Lyon",
+			"19-20": {
+				"Champions League | Lyon": {
+					"whoscoredApps": 3,
+					"whoscoredMins": 220
 				}
 			}
 		},
@@ -35617,6 +35565,19 @@
 				}
 			}
 		},
+		"132943|RasenBallsport Leipzig": {
+			"name": "Yussuf Poulsen",
+			"age": 26,
+			"countryCode": "dk",
+			"position": "AM(R),FW",
+			"club": "RasenBallsport Leipzig",
+			"19-20": {
+				"Champions League | RasenBallsport Leipzig": {
+					"whoscoredApps": 7,
+					"whoscoredMins": 484
+				}
+			}
+		},
 		"149121|Benfica": {
 			"name": "Raúl de Tomás",
 			"age": 25,
@@ -35630,29 +35591,16 @@
 				}
 			}
 		},
-		"140090|Lyon": {
-			"name": "Moussa Dembele",
-			"age": 24,
-			"countryCode": "fr",
-			"position": "FW",
-			"club": "Lyon",
+		"44288|Barcelona": {
+			"name": "Jordi Alba",
+			"age": 31,
+			"countryCode": "es",
+			"position": "D(L),M(L)",
+			"club": "Barcelona",
 			"19-20": {
-				"Champions League | Lyon": {
-					"whoscoredApps": 8,
-					"whoscoredMins": 574
-				}
-			}
-		},
-		"298837|RasenBallsport Leipzig": {
-			"name": "Amadou Haidara",
-			"age": 22,
-			"countryCode": "ml",
-			"position": "M(C)",
-			"club": "RasenBallsport Leipzig",
-			"19-20": {
-				"Champions League | RasenBallsport Leipzig": {
-					"whoscoredApps": 6,
-					"whoscoredMins": 260
+				"Champions League | Barcelona": {
+					"whoscoredApps": 5,
+					"whoscoredMins": 356
 				}
 			}
 		},
@@ -35669,35 +35617,9 @@
 				}
 			}
 		},
-		"132943|RasenBallsport Leipzig": {
-			"name": "Yussuf Poulsen",
-			"age": 26,
-			"countryCode": "dk",
-			"position": "AM(R),FW",
-			"club": "RasenBallsport Leipzig",
-			"19-20": {
-				"Champions League | RasenBallsport Leipzig": {
-					"whoscoredApps": 6,
-					"whoscoredMins": 394
-				}
-			}
-		},
-		"100962|Atalanta": {
-			"name": "Berat Djimsiti",
-			"age": 27,
-			"countryCode": "al",
-			"position": "D(C)",
-			"club": "Atalanta",
-			"19-20": {
-				"Champions League | Atalanta": {
-					"whoscoredApps": 5,
-					"whoscoredMins": 450
-				}
-			}
-		},
 		"136741|Manchester City": {
 			"name": "Bernardo Silva",
-			"age": 25,
+			"age": 26,
 			"countryCode": "pt",
 			"position": "M(CLR)",
 			"club": "Manchester City",
@@ -35708,16 +35630,16 @@
 				}
 			}
 		},
-		"141169|Atalanta": {
-			"name": "Timothy Castagne",
-			"age": 24,
-			"countryCode": "be",
-			"position": "D(R),M(LR)",
+		"295456|Atalanta": {
+			"name": "Ruslan Malinovskiy",
+			"age": 27,
+			"countryCode": "ua",
+			"position": "M(C)",
 			"club": "Atalanta",
 			"19-20": {
 				"Champions League | Atalanta": {
-					"whoscoredApps": 5,
-					"whoscoredMins": 385
+					"whoscoredApps": 9,
+					"whoscoredMins": 256
 				}
 			}
 		},
@@ -35773,16 +35695,16 @@
 				}
 			}
 		},
-		"236504|Lyon": {
-			"name": "Karl Toko Ekambi",
-			"age": 27,
-			"countryCode": "cm",
-			"position": "AM(L),FW",
-			"club": "Lyon",
+		"122117|Manchester City": {
+			"name": "Aymeric Laporte",
+			"age": 26,
+			"countryCode": "fr",
+			"position": "D(CL)",
+			"club": "Manchester City",
 			"19-20": {
-				"Champions League | Lyon": {
-					"whoscoredApps": 2,
-					"whoscoredMins": 133
+				"Champions League | Manchester City": {
+					"whoscoredApps": 3,
+					"whoscoredMins": 213
 				}
 			}
 		},
@@ -35890,6 +35812,32 @@
 				}
 			}
 		},
+		"84190|Atalanta": {
+			"name": "Luis Muriel",
+			"age": 29,
+			"countryCode": "co",
+			"position": "AM(CL),FW",
+			"club": "Atalanta",
+			"19-20": {
+				"Champions League | Atalanta": {
+					"whoscoredApps": 6,
+					"whoscoredMins": 220
+				}
+			}
+		},
+		"145996|Lyon": {
+			"name": "Kenny Tete",
+			"age": 24,
+			"countryCode": "nl",
+			"position": "D(R),M(R)",
+			"club": "Lyon",
+			"19-20": {
+				"Champions League | Lyon": {
+					"whoscoredApps": 4,
+					"whoscoredMins": 119
+				}
+			}
+		},
 		"118169|Napoli": {
 			"name": "Piotr Zielinski",
 			"age": 26,
@@ -35900,19 +35848,6 @@
 				"Champions League | Napoli": {
 					"whoscoredApps": 7,
 					"whoscoredMins": 521
-				}
-			}
-		},
-		"25008|Barcelona": {
-			"name": "Arturo Vidal",
-			"age": 33,
-			"countryCode": "cl",
-			"position": "M(CR)",
-			"club": "Barcelona",
-			"19-20": {
-				"Champions League | Barcelona": {
-					"whoscoredApps": 6,
-					"whoscoredMins": 330
 				}
 			}
 		},
@@ -36176,6 +36111,32 @@
 				}
 			}
 		},
+		"14102|Manchester City": {
+			"name": "David Silva",
+			"age": 34,
+			"countryCode": "es",
+			"position": "M(CLR)",
+			"club": "Manchester City",
+			"19-20": {
+				"Champions League | Manchester City": {
+					"whoscoredApps": 4,
+					"whoscoredMins": 125
+				}
+			}
+		},
+		"109338|Paris Saint-Germain": {
+			"name": "Sergio Rico",
+			"age": 26,
+			"countryCode": "es",
+			"position": "GK",
+			"club": "Paris Saint-Germain",
+			"19-20": {
+				"Champions League | Paris Saint-Germain": {
+					"whoscoredApps": 2,
+					"whoscoredMins": 101
+				}
+			}
+		},
 		"101113|Genk": {
 			"name": "Jere Juhani Uronen",
 			"age": 26,
@@ -36212,6 +36173,19 @@
 				"Champions League | Lokomotiv Moscow": {
 					"whoscoredApps": 4,
 					"whoscoredMins": 202
+				}
+			}
+		},
+		"103476|Atletico Madrid": {
+			"name": "Héctor Herrera",
+			"age": 30,
+			"countryCode": "mx",
+			"position": "M(C)",
+			"club": "Atletico Madrid",
+			"19-20": {
+				"Champions League | Atletico Madrid": {
+					"whoscoredApps": 6,
+					"whoscoredMins": 264
 				}
 			}
 		},
@@ -36282,27 +36256,27 @@
 		},
 		"71174|Paris Saint-Germain": {
 			"name": "Ander Herrera",
-			"age": 30,
+			"age": 31,
 			"countryCode": "es",
 			"position": "M(C)",
 			"club": "Paris Saint-Germain",
 			"19-20": {
 				"Champions League | Paris Saint-Germain": {
-					"whoscoredApps": 3,
-					"whoscoredMins": 99
+					"whoscoredApps": 4,
+					"whoscoredMins": 171
 				}
 			}
 		},
-		"382234|Barcelona": {
-			"name": "Ansu Fati",
-			"age": 17,
-			"countryCode": "es",
-			"position": "AM(L)",
-			"club": "Barcelona",
+		"298837|RasenBallsport Leipzig": {
+			"name": "Amadou Haidara",
+			"age": 22,
+			"countryCode": "ml",
+			"position": "M(C)",
+			"club": "RasenBallsport Leipzig",
 			"19-20": {
-				"Champions League | Barcelona": {
-					"whoscoredApps": 4,
-					"whoscoredMins": 92
+				"Champions League | RasenBallsport Leipzig": {
+					"whoscoredApps": 7,
+					"whoscoredMins": 267
 				}
 			}
 		},
@@ -36371,19 +36345,6 @@
 				}
 			}
 		},
-		"137832|Atalanta": {
-			"name": "Mattia Caldara",
-			"age": 26,
-			"countryCode": "it",
-			"position": "D(C)",
-			"club": "Atalanta",
-			"19-20": {
-				"Champions League | Atalanta": {
-					"whoscoredApps": 2,
-					"whoscoredMins": 165
-				}
-			}
-		},
 		"64271|Inter": {
 			"name": "Danilo D'Ambrosio",
 			"age": 31,
@@ -36394,6 +36355,19 @@
 				"Champions League | Inter": {
 					"whoscoredApps": 3,
 					"whoscoredMins": 184
+				}
+			}
+		},
+		"90782|Barcelona": {
+			"name": "Sergi Roberto",
+			"age": 28,
+			"countryCode": "es",
+			"position": "D(R),M(CR)",
+			"club": "Barcelona",
+			"19-20": {
+				"Champions League | Barcelona": {
+					"whoscoredApps": 6,
+					"whoscoredMins": 411
 				}
 			}
 		},
@@ -36462,6 +36436,19 @@
 				}
 			}
 		},
+		"71833|Lyon": {
+			"name": "Anthony Lopes",
+			"age": 29,
+			"countryCode": "pt",
+			"position": "GK",
+			"club": "Lyon",
+			"19-20": {
+				"Champions League | Lyon": {
+					"whoscoredApps": 9,
+					"whoscoredMins": 810
+				}
+			}
+		},
 		"345560|Salzburg": {
 			"name": "Patson Daka",
 			"age": 21,
@@ -36514,19 +36501,6 @@
 				}
 			}
 		},
-		"125004|Lyon": {
-			"name": "Maxwel Cornet",
-			"age": 23,
-			"countryCode": "ci",
-			"position": "M(LR),FW",
-			"club": "Lyon",
-			"19-20": {
-				"Champions League | Lyon": {
-					"whoscoredApps": 6,
-					"whoscoredMins": 370
-				}
-			}
-		},
 		"367181|Lille": {
 			"name": "Tiago Djaló",
 			"age": 20,
@@ -36537,6 +36511,19 @@
 				"Champions League | Lille": {
 					"whoscoredApps": 3,
 					"whoscoredMins": 267
+				}
+			}
+		},
+		"141169|Atalanta": {
+			"name": "Timothy Castagne",
+			"age": 24,
+			"countryCode": "be",
+			"position": "D(R),M(LR)",
+			"club": "Atalanta",
+			"19-20": {
+				"Champions League | Atalanta": {
+					"whoscoredApps": 6,
+					"whoscoredMins": 393
 				}
 			}
 		},
@@ -36774,6 +36761,32 @@
 				}
 			}
 		},
+		"121774|Manchester City": {
+			"name": "Ederson",
+			"age": 26,
+			"countryCode": "br",
+			"position": "GK",
+			"club": "Manchester City",
+			"19-20": {
+				"Champions League | Manchester City": {
+					"whoscoredApps": 8,
+					"whoscoredMins": 676
+				}
+			}
+		},
+		"41073|Atalanta": {
+			"name": "Duván Zapata",
+			"age": 29,
+			"countryCode": "co",
+			"position": "FW",
+			"club": "Atalanta",
+			"19-20": {
+				"Champions League | Atalanta": {
+					"whoscoredApps": 5,
+					"whoscoredMins": 324
+				}
+			}
+		},
 		"34239|Galatasaray": {
 			"name": "Sofiane Feghouli",
 			"age": 30,
@@ -36865,32 +36878,6 @@
 				}
 			}
 		},
-		"24248|Atletico Madrid": {
-			"name": "Diego Costa",
-			"age": 31,
-			"countryCode": "es",
-			"position": "FW",
-			"club": "Atletico Madrid",
-			"19-20": {
-				"Champions League | Atletico Madrid": {
-					"whoscoredApps": 6,
-					"whoscoredMins": 387
-				}
-			}
-		},
-		"29809|Paris Saint-Germain": {
-			"name": "Eric Maxim Choupo-Moting",
-			"age": 31,
-			"countryCode": "cm",
-			"position": "M(CLR),FW",
-			"club": "Paris Saint-Germain",
-			"19-20": {
-				"Champions League | Paris Saint-Germain": {
-					"whoscoredApps": 3,
-					"whoscoredMins": 102
-				}
-			}
-		},
 		"282808|Slavia Prague": {
 			"name": "Milan Skoda",
 			"age": 34,
@@ -36917,6 +36904,19 @@
 				}
 			}
 		},
+		"24248|Atletico Madrid": {
+			"name": "Diego Costa",
+			"age": 31,
+			"countryCode": "es",
+			"position": "FW",
+			"club": "Atletico Madrid",
+			"19-20": {
+				"Champions League | Atletico Madrid": {
+					"whoscoredApps": 7,
+					"whoscoredMins": 459
+				}
+			}
+		},
 		"19112|Inter": {
 			"name": "Borja Valero",
 			"age": 35,
@@ -36934,12 +36934,25 @@
 			"name": "Mason Mount",
 			"age": 21,
 			"countryCode": "gb-eng",
-			"position": "AM(C)",
+			"position": "AM(CL)",
 			"club": "Chelsea",
 			"19-20": {
 				"Champions League | Chelsea": {
 					"whoscoredApps": 8,
 					"whoscoredMins": 451
+				}
+			}
+		},
+		"96449|Paris Saint-Germain": {
+			"name": "Julian Draxler",
+			"age": 26,
+			"countryCode": "de",
+			"position": "AM(CLR)",
+			"club": "Paris Saint-Germain",
+			"19-20": {
+				"Champions League | Paris Saint-Germain": {
+					"whoscoredApps": 3,
+					"whoscoredMins": 41
 				}
 			}
 		},
@@ -37060,6 +37073,19 @@
 				}
 			}
 		},
+		"115472|Atletico Madrid": {
+			"name": "Yannick Carrasco",
+			"age": 26,
+			"countryCode": "be",
+			"position": "M(LR),FW",
+			"club": "Atletico Madrid",
+			"19-20": {
+				"Champions League | Atletico Madrid": {
+					"whoscoredApps": 1,
+					"whoscoredMins": 90
+				}
+			}
+		},
 		"364214|Club Brugge": {
 			"name": "Clinton Mata",
 			"age": 27,
@@ -37164,16 +37190,16 @@
 				}
 			}
 		},
-		"41073|Atalanta": {
-			"name": "Duván Zapata",
-			"age": 29,
-			"countryCode": "co",
-			"position": "FW",
-			"club": "Atalanta",
+		"25008|Barcelona": {
+			"name": "Arturo Vidal",
+			"age": 33,
+			"countryCode": "cl",
+			"position": "M(CR)",
+			"club": "Barcelona",
 			"19-20": {
-				"Champions League | Atalanta": {
-					"whoscoredApps": 4,
-					"whoscoredMins": 242
+				"Champions League | Barcelona": {
+					"whoscoredApps": 7,
+					"whoscoredMins": 420
 				}
 			}
 		},
@@ -37200,6 +37226,32 @@
 				"Champions League | Chelsea": {
 					"whoscoredApps": 2,
 					"whoscoredMins": 180
+				}
+			}
+		},
+		"137832|Atalanta": {
+			"name": "Mattia Caldara",
+			"age": 26,
+			"countryCode": "it",
+			"position": "D(C)",
+			"club": "Atalanta",
+			"19-20": {
+				"Champions League | Atalanta": {
+					"whoscoredApps": 3,
+					"whoscoredMins": 255
+				}
+			}
+		},
+		"64075|Atalanta": {
+			"name": "Rafael Tolói",
+			"age": 29,
+			"countryCode": "br",
+			"position": "D(C)",
+			"club": "Atalanta",
+			"19-20": {
+				"Champions League | Atalanta": {
+					"whoscoredApps": 7,
+					"whoscoredMins": 630
 				}
 			}
 		},
@@ -37278,6 +37330,19 @@
 				"Champions League | Inter": {
 					"whoscoredApps": 3,
 					"whoscoredMins": 51
+				}
+			}
+		},
+		"382234|Barcelona": {
+			"name": "Ansu Fati",
+			"age": 17,
+			"countryCode": "es",
+			"position": "AM(L)",
+			"club": "Barcelona",
+			"19-20": {
+				"Champions League | Barcelona": {
+					"whoscoredApps": 5,
+					"whoscoredMins": 112
 				}
 			}
 		},
@@ -37515,19 +37580,6 @@
 				}
 			}
 		},
-		"96449|Paris Saint-Germain": {
-			"name": "Julian Draxler",
-			"age": 26,
-			"countryCode": "de",
-			"position": "AM(CLR)",
-			"club": "Paris Saint-Germain",
-			"19-20": {
-				"Champions League | Paris Saint-Germain": {
-					"whoscoredApps": 2,
-					"whoscoredMins": 23
-				}
-			}
-		},
 		"83337|Ajax": {
 			"name": "Zakaria Labyad",
 			"age": 27,
@@ -37554,19 +37606,6 @@
 				}
 			}
 		},
-		"64075|Atalanta": {
-			"name": "Rafael Tolói",
-			"age": 29,
-			"countryCode": "br",
-			"position": "D(C)",
-			"club": "Atalanta",
-			"19-20": {
-				"Champions League | Atalanta": {
-					"whoscoredApps": 6,
-					"whoscoredMins": 540
-				}
-			}
-		},
 		"32173|Slavia Prague": {
 			"name": "Ondrej Kudela",
 			"age": 33,
@@ -37590,19 +37629,6 @@
 				"Champions League | Lokomotiv Moscow": {
 					"whoscoredApps": 4,
 					"whoscoredMins": 238
-				}
-			}
-		},
-		"71833|Lyon": {
-			"name": "Anthony Lopes",
-			"age": 29,
-			"countryCode": "pt",
-			"position": "GK",
-			"club": "Lyon",
-			"19-20": {
-				"Champions League | Lyon": {
-					"whoscoredApps": 8,
-					"whoscoredMins": 720
 				}
 			}
 		},
@@ -37844,7 +37870,7 @@
 			"name": "Damian Kadzior",
 			"age": 28,
 			"countryCode": "pl",
-			"position": "Forward",
+			"position": "Midfielder",
 			"club": "Dinamo Zagreb",
 			"19-20": {
 				"Champions League | Dinamo Zagreb": {
@@ -38336,7 +38362,7 @@
 		},
 		"8013|Ajax": {
 			"name": "Klaas Jan Huntelaar",
-			"age": 36,
+			"age": 37,
 			"countryCode": "nl",
 			"position": "FW",
 			"club": "Ajax",
@@ -38830,7 +38856,7 @@
 		},
 		"33397|Benfica": {
 			"name": "Ljubomir Fejsa",
-			"age": 31,
+			"age": 32,
 			"countryCode": "rs",
 			"position": "DMC",
 			"club": "Benfica",
@@ -39166,6 +39192,19 @@
 				}
 			}
 		},
+		"387695|Atalanta": {
+			"name": "Jacopo Da Riva",
+			"age": 19,
+			"countryCode": "it",
+			"position": "Midfielder",
+			"club": "Atalanta",
+			"19-20": {
+				"Champions League | Atalanta": {
+					"whoscoredApps": 1,
+					"whoscoredMins": 8
+				}
+			}
+		},
 		"71182|Real Madrid": {
 			"name": "James Rodríguez",
 			"age": 29,
@@ -39272,19 +39311,6 @@
 		}
 	},
 	{
-		"353565|FC Copenhagen": {
-			"name": "Jonas Wind",
-			"age": 21,
-			"countryCode": "dk",
-			"position": "Forward",
-			"club": "FC Copenhagen",
-			"19-20": {
-				"Europa League | FC Copenhagen": {
-					"whoscoredApps": 1,
-					"whoscoredMins": 90
-				}
-			}
-		},
 		"86743|FC Porto": {
 			"name": "Vincent Aboubakar",
 			"age": 28,
@@ -39337,19 +39363,6 @@
 				}
 			}
 		},
-		"125654|Bayer Leverkusen": {
-			"name": "Lucas Alario",
-			"age": 27,
-			"countryCode": "ar",
-			"position": "FW",
-			"club": "Bayer Leverkusen",
-			"19-20": {
-				"Europa League | Bayer Leverkusen": {
-					"whoscoredApps": 2,
-					"whoscoredMins": 170
-				}
-			}
-		},
 		"329811|Club Brugge": {
 			"name": "Emmanuel Bonaventure Dennis",
 			"age": 22,
@@ -39376,22 +39389,9 @@
 				}
 			}
 		},
-		"143158|Sevilla": {
-			"name": "Munir El Haddadi",
-			"age": 24,
-			"countryCode": "es",
-			"position": "AM(LR),FW",
-			"club": "Sevilla",
-			"19-20": {
-				"Europa League | Sevilla": {
-					"whoscoredApps": 6,
-					"whoscoredMins": 391
-				}
-			}
-		},
 		"111793|CSKA Moscow": {
 			"name": "Ilya Pomazun",
-			"age": 23,
+			"age": 24,
 			"countryCode": "ru",
 			"position": "Goalkeeper",
 			"club": "CSKA Moscow",
@@ -39399,6 +39399,19 @@
 				"Europa League | CSKA Moscow": {
 					"whoscoredApps": 1,
 					"whoscoredMins": 90
+				}
+			}
+		},
+		"296454|Shakhtar Donetsk": {
+			"name": "Junior Moraes",
+			"age": 33,
+			"countryCode": "ua",
+			"position": "FW",
+			"club": "Shakhtar Donetsk",
+			"19-20": {
+				"Europa League | Shakhtar Donetsk": {
+					"whoscoredApps": 5,
+					"whoscoredMins": 445
 				}
 			}
 		},
@@ -39410,21 +39423,8 @@
 			"club": "Shakhtar Donetsk",
 			"19-20": {
 				"Europa League | Shakhtar Donetsk": {
-					"whoscoredApps": 4,
-					"whoscoredMins": 350
-				}
-			}
-		},
-		"326413|Bayer Leverkusen": {
-			"name": "Kai Havertz",
-			"age": 21,
-			"countryCode": "de",
-			"position": "M(CR),FW",
-			"club": "Bayer Leverkusen",
-			"19-20": {
-				"Europa League | Bayer Leverkusen": {
-					"whoscoredApps": 4,
-					"whoscoredMins": 360
+					"whoscoredApps": 5,
+					"whoscoredMins": 428
 				}
 			}
 		},
@@ -39454,6 +39454,19 @@
 				}
 			}
 		},
+		"123761|Manchester United": {
+			"name": "Bruno Fernandes",
+			"age": 25,
+			"countryCode": "pt",
+			"position": "M(CLR)",
+			"club": "Manchester United",
+			"19-20": {
+				"Europa League | Manchester United": {
+					"whoscoredApps": 4,
+					"whoscoredMins": 272
+				}
+			}
+		},
 		"383805|LASK": {
 			"name": "Markus Wostry",
 			"age": 28,
@@ -39467,29 +39480,42 @@
 				}
 			}
 		},
-		"296454|Shakhtar Donetsk": {
-			"name": "Junior Moraes",
-			"age": 33,
-			"countryCode": "ua",
-			"position": "FW",
-			"club": "Shakhtar Donetsk",
+		"353565|FC Copenhagen": {
+			"name": "Jonas Wind",
+			"age": 21,
+			"countryCode": "dk",
+			"position": "Forward",
+			"club": "FC Copenhagen",
 			"19-20": {
-				"Europa League | Shakhtar Donetsk": {
-					"whoscoredApps": 4,
-					"whoscoredMins": 360
+				"Europa League | FC Copenhagen": {
+					"whoscoredApps": 2,
+					"whoscoredMins": 210
 				}
 			}
 		},
-		"123761|Manchester United": {
-			"name": "Bruno Fernandes",
-			"age": 25,
-			"countryCode": "pt",
-			"position": "M(CLR)",
-			"club": "Manchester United",
+		"143158|Sevilla": {
+			"name": "Munir El Haddadi",
+			"age": 24,
+			"countryCode": "es",
+			"position": "AM(LR),FW",
+			"club": "Sevilla",
 			"19-20": {
-				"Europa League | Manchester United": {
-					"whoscoredApps": 3,
-					"whoscoredMins": 152
+				"Europa League | Sevilla": {
+					"whoscoredApps": 7,
+					"whoscoredMins": 392
+				}
+			}
+		},
+		"326413|Bayer Leverkusen": {
+			"name": "Kai Havertz",
+			"age": 21,
+			"countryCode": "de",
+			"position": "M(CR),FW",
+			"club": "Bayer Leverkusen",
+			"19-20": {
+				"Europa League | Bayer Leverkusen": {
+					"whoscoredApps": 5,
+					"whoscoredMins": 450
 				}
 			}
 		},
@@ -39519,16 +39545,16 @@
 				}
 			}
 		},
-		"69344|Inter": {
-			"name": "Christian Eriksen",
-			"age": 28,
-			"countryCode": "dk",
-			"position": "M(CLR)",
-			"club": "Inter",
+		"40763|Shakhtar Donetsk": {
+			"name": "Marlos",
+			"age": 32,
+			"countryCode": "ua",
+			"position": "AM(R)",
+			"club": "Shakhtar Donetsk",
 			"19-20": {
-				"Europa League | Inter": {
-					"whoscoredApps": 3,
-					"whoscoredMins": 188
+				"Europa League | Shakhtar Donetsk": {
+					"whoscoredApps": 4,
+					"whoscoredMins": 294
 				}
 			}
 		},
@@ -39568,19 +39594,6 @@
 				"Europa League | Wolfsburg": {
 					"whoscoredApps": 1,
 					"whoscoredMins": 90
-				}
-			}
-		},
-		"345022|Shakhtar Donetsk": {
-			"name": "Manor Solomon",
-			"age": 21,
-			"countryCode": "il",
-			"position": "Midfielder",
-			"club": "Shakhtar Donetsk",
-			"19-20": {
-				"Europa League | Shakhtar Donetsk": {
-					"whoscoredApps": 1,
-					"whoscoredMins": 13
 				}
 			}
 		},
@@ -39636,29 +39649,16 @@
 				}
 			}
 		},
-		"115166|Bayer Leverkusen": {
-			"name": "Kerem Demirbay",
+		"78498|Inter": {
+			"name": "Romelu Lukaku",
 			"age": 27,
-			"countryCode": "de",
-			"position": "M(C)",
-			"club": "Bayer Leverkusen",
+			"countryCode": "be",
+			"position": "AM(R),FW",
+			"club": "Inter",
 			"19-20": {
-				"Europa League | Bayer Leverkusen": {
-					"whoscoredApps": 3,
-					"whoscoredMins": 261
-				}
-			}
-		},
-		"103622|FC Basel 1893": {
-			"name": "Silvan Widmer",
-			"age": 27,
-			"countryCode": "ch",
-			"position": "D(R),M(R)",
-			"club": "FC Basel 1893",
-			"19-20": {
-				"Europa League | FC Basel 1893": {
-					"whoscoredApps": 9,
-					"whoscoredMins": 810
+				"Europa League | Inter": {
+					"whoscoredApps": 4,
+					"whoscoredMins": 268
 				}
 			}
 		},
@@ -39672,19 +39672,6 @@
 				"Europa League | Roma": {
 					"whoscoredApps": 1,
 					"whoscoredMins": 90
-				}
-			}
-		},
-		"78498|Inter": {
-			"name": "Romelu Lukaku",
-			"age": 27,
-			"countryCode": "be",
-			"position": "AM(R),FW",
-			"club": "Inter",
-			"19-20": {
-				"Europa League | Inter": {
-					"whoscoredApps": 3,
-					"whoscoredMins": 178
 				}
 			}
 		},
@@ -39740,32 +39727,6 @@
 				}
 			}
 		},
-		"26059|Inter": {
-			"name": "Diego Godín",
-			"age": 34,
-			"countryCode": "uy",
-			"position": "D(C)",
-			"club": "Inter",
-			"19-20": {
-				"Europa League | Inter": {
-					"whoscoredApps": 3,
-					"whoscoredMins": 270
-				}
-			}
-		},
-		"369446|Bayer Leverkusen": {
-			"name": "Edmond Tapsoba",
-			"age": 21,
-			"countryCode": "bf",
-			"position": "D(C)",
-			"club": "Bayer Leverkusen",
-			"19-20": {
-				"Europa League | Bayer Leverkusen": {
-					"whoscoredApps": 4,
-					"whoscoredMins": 338
-				}
-			}
-		},
 		"386532|Dynamo Kyiv": {
 			"name": "Denys Popov",
 			"age": 21,
@@ -39776,19 +39737,6 @@
 				"Europa League | Dynamo Kyiv": {
 					"whoscoredApps": 3,
 					"whoscoredMins": 270
-				}
-			}
-		},
-		"82399|Inter": {
-			"name": "Stefan de Vrij",
-			"age": 28,
-			"countryCode": "nl",
-			"position": "D(C)",
-			"club": "Inter",
-			"19-20": {
-				"Europa League | Inter": {
-					"whoscoredApps": 1,
-					"whoscoredMins": 90
 				}
 			}
 		},
@@ -39805,6 +39753,19 @@
 				}
 			}
 		},
+		"125654|Bayer Leverkusen": {
+			"name": "Lucas Alario",
+			"age": 27,
+			"countryCode": "ar",
+			"position": "FW",
+			"club": "Bayer Leverkusen",
+			"19-20": {
+				"Europa League | Bayer Leverkusen": {
+					"whoscoredApps": 3,
+					"whoscoredMins": 175
+				}
+			}
+		},
 		"114947|Slovan Bratislava": {
 			"name": "Andraz Sporar",
 			"age": 26,
@@ -39818,29 +39779,16 @@
 				}
 			}
 		},
-		"38128|Manchester United": {
-			"name": "Nemanja Matic",
-			"age": 32,
-			"countryCode": "rs",
-			"position": "DMC",
-			"club": "Manchester United",
+		"26059|Inter": {
+			"name": "Diego Godín",
+			"age": 34,
+			"countryCode": "uy",
+			"position": "D(C)",
+			"club": "Inter",
 			"19-20": {
-				"Europa League | Manchester United": {
+				"Europa League | Inter": {
 					"whoscoredApps": 4,
 					"whoscoredMins": 360
-				}
-			}
-		},
-		"336915|Manchester United": {
-			"name": "Scott McTominay",
-			"age": 23,
-			"countryCode": "gb-sct",
-			"position": "DMC",
-			"club": "Manchester United",
-			"19-20": {
-				"Europa League | Manchester United": {
-					"whoscoredApps": 6,
-					"whoscoredMins": 424
 				}
 			}
 		},
@@ -39870,19 +39818,6 @@
 				}
 			}
 		},
-		"367782|Manchester United": {
-			"name": "Mason Greenwood",
-			"age": 18,
-			"countryCode": "gb-eng",
-			"position": "AM(R),FW",
-			"club": "Manchester United",
-			"19-20": {
-				"Europa League | Manchester United": {
-					"whoscoredApps": 7,
-					"whoscoredMins": 460
-				}
-			}
-		},
 		"381792|Vitoria de Guimaraes": {
 			"name": "Al Musrati",
 			"age": 24,
@@ -39896,35 +39831,35 @@
 				}
 			}
 		},
-		"9972|Inter": {
-			"name": "Samir Handanovic",
-			"age": 36,
-			"countryCode": "si",
-			"position": "GK",
+		"69344|Inter": {
+			"name": "Christian Eriksen",
+			"age": 28,
+			"countryCode": "dk",
+			"position": "M(CLR)",
 			"club": "Inter",
 			"19-20": {
 				"Europa League | Inter": {
-					"whoscoredApps": 1,
-					"whoscoredMins": 90
+					"whoscoredApps": 4,
+					"whoscoredMins": 219
 				}
 			}
 		},
-		"114397|Manchester United": {
-			"name": "Fred",
+		"99487|Manchester United": {
+			"name": "Harry Maguire",
 			"age": 27,
-			"countryCode": "br",
-			"position": "M(C)",
+			"countryCode": "gb-eng",
+			"position": "D(C)",
 			"club": "Manchester United",
 			"19-20": {
 				"Europa League | Manchester United": {
-					"whoscoredApps": 7,
-					"whoscoredMins": 506
+					"whoscoredApps": 8,
+					"whoscoredMins": 728
 				}
 			}
 		},
 		"80137|AZ Alkmaar": {
 			"name": "Fredrik Midtsjø",
-			"age": 26,
+			"age": 27,
 			"countryCode": "no",
 			"position": "M(CR)",
 			"club": "AZ Alkmaar",
@@ -39974,19 +39909,6 @@
 				}
 			}
 		},
-		"99487|Manchester United": {
-			"name": "Harry Maguire",
-			"age": 27,
-			"countryCode": "gb-eng",
-			"position": "D(C)",
-			"club": "Manchester United",
-			"19-20": {
-				"Europa League | Manchester United": {
-					"whoscoredApps": 7,
-					"whoscoredMins": 608
-				}
-			}
-		},
 		"296521|Braga": {
 			"name": "Matheus",
 			"age": 28,
@@ -40013,32 +39935,6 @@
 				}
 			}
 		},
-		"362275|Sevilla": {
-			"name": "Sergio Reguilón",
-			"age": 23,
-			"countryCode": "es",
-			"position": "D(L)",
-			"club": "Sevilla",
-			"19-20": {
-				"Europa League | Sevilla": {
-					"whoscoredApps": 3,
-					"whoscoredMins": 181
-				}
-			}
-		},
-		"140088|Wolverhampton Wanderers": {
-			"name": "Adama Traoré",
-			"age": 24,
-			"countryCode": "es",
-			"position": "M(LR),FW",
-			"club": "Wolverhampton Wanderers",
-			"19-20": {
-				"Europa League | Wolverhampton Wanderers": {
-					"whoscoredApps": 9,
-					"whoscoredMins": 551
-				}
-			}
-		},
 		"113708|Sevilla": {
 			"name": "Óliver Torres",
 			"age": 25,
@@ -40049,19 +39945,6 @@
 				"Europa League | Sevilla": {
 					"whoscoredApps": 5,
 					"whoscoredMins": 340
-				}
-			}
-		},
-		"40763|Shakhtar Donetsk": {
-			"name": "Marlos",
-			"age": 32,
-			"countryCode": "ua",
-			"position": "AM(R)",
-			"club": "Shakhtar Donetsk",
-			"19-20": {
-				"Europa League | Shakhtar Donetsk": {
-					"whoscoredApps": 3,
-					"whoscoredMins": 222
 				}
 			}
 		},
@@ -40078,6 +39961,19 @@
 				}
 			}
 		},
+		"41494|Shakhtar Donetsk": {
+			"name": "Taison",
+			"age": 32,
+			"countryCode": "br",
+			"position": "AM(CL)",
+			"club": "Shakhtar Donetsk",
+			"19-20": {
+				"Europa League | Shakhtar Donetsk": {
+					"whoscoredApps": 5,
+					"whoscoredMins": 435
+				}
+			}
+		},
 		"118244|Manchester United": {
 			"name": "Luke Shaw",
 			"age": 25,
@@ -40091,6 +39987,19 @@
 				}
 			}
 		},
+		"33724|Sevilla": {
+			"name": "Éver Banega",
+			"age": 32,
+			"countryCode": "ar",
+			"position": "M(C)",
+			"club": "Sevilla",
+			"19-20": {
+				"Europa League | Sevilla": {
+					"whoscoredApps": 5,
+					"whoscoredMins": 249
+				}
+			}
+		},
 		"296555|Qarabag FK": {
 			"name": "Dani Quintana",
 			"age": 33,
@@ -40101,6 +40010,19 @@
 				"Europa League | Qarabag FK": {
 					"whoscoredApps": 6,
 					"whoscoredMins": 270
+				}
+			}
+		},
+		"114397|Manchester United": {
+			"name": "Fred",
+			"age": 27,
+			"countryCode": "br",
+			"position": "M(C)",
+			"club": "Manchester United",
+			"19-20": {
+				"Europa League | Manchester United": {
+					"whoscoredApps": 8,
+					"whoscoredMins": 576
 				}
 			}
 		},
@@ -40130,6 +40052,19 @@
 				}
 			}
 		},
+		"140088|Wolverhampton Wanderers": {
+			"name": "Adama Traoré",
+			"age": 24,
+			"countryCode": "es",
+			"position": "M(LR),FW",
+			"club": "Wolverhampton Wanderers",
+			"19-20": {
+				"Europa League | Wolverhampton Wanderers": {
+					"whoscoredApps": 10,
+					"whoscoredMins": 630
+				}
+			}
+		},
 		"369712|Benfica": {
 			"name": "Florentino Luís",
 			"age": 20,
@@ -40140,6 +40075,19 @@
 				"Europa League | Benfica": {
 					"whoscoredApps": 1,
 					"whoscoredMins": 90
+				}
+			}
+		},
+		"103622|FC Basel 1893": {
+			"name": "Silvan Widmer",
+			"age": 27,
+			"countryCode": "ch",
+			"position": "D(R),M(R)",
+			"club": "FC Basel 1893",
+			"19-20": {
+				"Europa League | FC Basel 1893": {
+					"whoscoredApps": 10,
+					"whoscoredMins": 900
 				}
 			}
 		},
@@ -40286,6 +40234,32 @@
 				}
 			}
 		},
+		"369446|Bayer Leverkusen": {
+			"name": "Edmond Tapsoba",
+			"age": 21,
+			"countryCode": "bf",
+			"position": "D(C)",
+			"club": "Bayer Leverkusen",
+			"19-20": {
+				"Europa League | Bayer Leverkusen": {
+					"whoscoredApps": 5,
+					"whoscoredMins": 428
+				}
+			}
+		},
+		"331924|Manchester United": {
+			"name": "Aaron Wan-Bissaka",
+			"age": 22,
+			"countryCode": "gb-eng",
+			"position": "D(R),M(R)",
+			"club": "Manchester United",
+			"19-20": {
+				"Europa League | Manchester United": {
+					"whoscoredApps": 4,
+					"whoscoredMins": 360
+				}
+			}
+		},
 		"90310|FC Porto": {
 			"name": "Corona",
 			"age": 27,
@@ -40296,19 +40270,6 @@
 				"Europa League | FC Porto": {
 					"whoscoredApps": 7,
 					"whoscoredMins": 624
-				}
-			}
-		},
-		"243814|Manchester United": {
-			"name": "Eric Bailly",
-			"age": 26,
-			"countryCode": "ci",
-			"position": "D(CR)",
-			"club": "Manchester United",
-			"19-20": {
-				"Europa League | Manchester United": {
-					"whoscoredApps": 3,
-					"whoscoredMins": 270
 				}
 			}
 		},
@@ -40325,22 +40286,9 @@
 				}
 			}
 		},
-		"136279|Inter": {
-			"name": "Roberto Gagliardini",
-			"age": 26,
-			"countryCode": "it",
-			"position": "DMC",
-			"club": "Inter",
-			"19-20": {
-				"Europa League | Inter": {
-					"whoscoredApps": 1,
-					"whoscoredMins": 90
-				}
-			}
-		},
 		"125378|Lazio": {
 			"name": "Joaquín Correa",
-			"age": 25,
+			"age": 26,
 			"countryCode": "ar",
 			"position": "AM(CL),FW",
 			"club": "Lazio",
@@ -40348,6 +40296,19 @@
 				"Europa League | Lazio": {
 					"whoscoredApps": 3,
 					"whoscoredMins": 253
+				}
+			}
+		},
+		"367782|Manchester United": {
+			"name": "Mason Greenwood",
+			"age": 18,
+			"countryCode": "gb-eng",
+			"position": "AM(R),FW",
+			"club": "Manchester United",
+			"19-20": {
+				"Europa League | Manchester United": {
+					"whoscoredApps": 8,
+					"whoscoredMins": 551
 				}
 			}
 		},
@@ -40403,19 +40364,6 @@
 				}
 			}
 		},
-		"25363|Manchester United": {
-			"name": "Juan Mata",
-			"age": 32,
-			"countryCode": "es",
-			"position": "AM(CLR)",
-			"club": "Manchester United",
-			"19-20": {
-				"Europa League | Manchester United": {
-					"whoscoredApps": 9,
-					"whoscoredMins": 735
-				}
-			}
-		},
 		"33085|Gent": {
 			"name": "Vadis Odjidja-Ofoe",
 			"age": 31,
@@ -40468,29 +40416,16 @@
 				}
 			}
 		},
-		"33724|Sevilla": {
-			"name": "Éver Banega",
-			"age": 32,
-			"countryCode": "ar",
+		"115166|Bayer Leverkusen": {
+			"name": "Kerem Demirbay",
+			"age": 27,
+			"countryCode": "de",
 			"position": "M(C)",
-			"club": "Sevilla",
+			"club": "Bayer Leverkusen",
 			"19-20": {
-				"Europa League | Sevilla": {
+				"Europa League | Bayer Leverkusen": {
 					"whoscoredApps": 4,
-					"whoscoredMins": 159
-				}
-			}
-		},
-		"108186|Wolverhampton Wanderers": {
-			"name": "Raúl Jiménez",
-			"age": 29,
-			"countryCode": "mx",
-			"position": "FW",
-			"club": "Wolverhampton Wanderers",
-			"19-20": {
-				"Europa League | Wolverhampton Wanderers": {
-					"whoscoredApps": 8,
-					"whoscoredMins": 674
+					"whoscoredMins": 351
 				}
 			}
 		},
@@ -40507,6 +40442,19 @@
 				}
 			}
 		},
+		"38128|Manchester United": {
+			"name": "Nemanja Matic",
+			"age": 32,
+			"countryCode": "rs",
+			"position": "DMC",
+			"club": "Manchester United",
+			"19-20": {
+				"Europa League | Manchester United": {
+					"whoscoredApps": 5,
+					"whoscoredMins": 410
+				}
+			}
+		},
 		"83784|Getafe": {
 			"name": "Raúl García",
 			"age": 31,
@@ -40517,6 +40465,32 @@
 				"Europa League | Getafe": {
 					"whoscoredApps": 4,
 					"whoscoredMins": 360
+				}
+			}
+		},
+		"122366|Manchester United": {
+			"name": "Anthony Martial",
+			"age": 24,
+			"countryCode": "fr",
+			"position": "AM(LR),FW",
+			"club": "Manchester United",
+			"19-20": {
+				"Europa League | Manchester United": {
+					"whoscoredApps": 6,
+					"whoscoredMins": 402
+				}
+			}
+		},
+		"25363|Manchester United": {
+			"name": "Juan Mata",
+			"age": 32,
+			"countryCode": "es",
+			"position": "AM(CLR)",
+			"club": "Manchester United",
+			"19-20": {
+				"Europa League | Manchester United": {
+					"whoscoredApps": 10,
+					"whoscoredMins": 765
 				}
 			}
 		},
@@ -40546,19 +40520,6 @@
 				}
 			}
 		},
-		"35895|FC Basel 1893": {
-			"name": "Valentin Stocker",
-			"age": 31,
-			"countryCode": "ch",
-			"position": "AM(CLR)",
-			"club": "FC Basel 1893",
-			"19-20": {
-				"Europa League | FC Basel 1893": {
-					"whoscoredApps": 9,
-					"whoscoredMins": 750
-				}
-			}
-		},
 		"30993|PSV Eindhoven": {
 			"name": "Daniel Schwaab",
 			"age": 31,
@@ -40569,6 +40530,19 @@
 				"Europa League | PSV Eindhoven": {
 					"whoscoredApps": 3,
 					"whoscoredMins": 270
+				}
+			}
+		},
+		"384143|Manchester United": {
+			"name": "Brandon Williams",
+			"age": 19,
+			"countryCode": "gb-eng",
+			"position": "D(L),M(L)",
+			"club": "Manchester United",
+			"19-20": {
+				"Europa League | Manchester United": {
+					"whoscoredApps": 7,
+					"whoscoredMins": 642
 				}
 			}
 		},
@@ -40611,16 +40585,16 @@
 				}
 			}
 		},
-		"25244|Inter": {
-			"name": "Alexis Sánchez",
-			"age": 31,
-			"countryCode": "cl",
-			"position": "M(CLR),FW",
-			"club": "Inter",
+		"336915|Manchester United": {
+			"name": "Scott McTominay",
+			"age": 23,
+			"countryCode": "gb-sct",
+			"position": "DMC",
+			"club": "Manchester United",
 			"19-20": {
-				"Europa League | Inter": {
-					"whoscoredApps": 3,
-					"whoscoredMins": 200
+				"Europa League | Manchester United": {
+					"whoscoredApps": 7,
+					"whoscoredMins": 425
 				}
 			}
 		},
@@ -40715,19 +40689,6 @@
 				}
 			}
 		},
-		"384143|Manchester United": {
-			"name": "Brandon Williams",
-			"age": 19,
-			"countryCode": "gb-eng",
-			"position": "D(L),M(L)",
-			"club": "Manchester United",
-			"19-20": {
-				"Europa League | Manchester United": {
-					"whoscoredApps": 6,
-					"whoscoredMins": 522
-				}
-			}
-		},
 		"24845|Roma": {
 			"name": "Edin Dzeko",
 			"age": 34,
@@ -40738,6 +40699,19 @@
 				"Europa League | Roma": {
 					"whoscoredApps": 8,
 					"whoscoredMins": 686
+				}
+			}
+		},
+		"136024|FC Copenhagen": {
+			"name": "Rasmus Falk Jensen",
+			"age": 28,
+			"countryCode": "dk",
+			"position": "AM(CLR)",
+			"club": "FC Copenhagen",
+			"19-20": {
+				"Europa League | FC Copenhagen": {
+					"whoscoredApps": 11,
+					"whoscoredMins": 877
 				}
 			}
 		},
@@ -40754,68 +40728,29 @@
 				}
 			}
 		},
-		"333364|FC Basel 1893": {
-			"name": "Raoul Petretta",
-			"age": 23,
-			"countryCode": "it",
-			"position": "M(L)",
-			"club": "FC Basel 1893",
-			"19-20": {
-				"Europa League | FC Basel 1893": {
-					"whoscoredApps": 9,
-					"whoscoredMins": 734
-				}
-			}
-		},
-		"35494|FC Basel 1893": {
-			"name": "Fabian Frei",
-			"age": 31,
-			"countryCode": "ch",
+		"97752|Manchester United": {
+			"name": "Paul Pogba",
+			"age": 27,
+			"countryCode": "fr",
 			"position": "M(C)",
-			"club": "FC Basel 1893",
+			"club": "Manchester United",
 			"19-20": {
-				"Europa League | FC Basel 1893": {
-					"whoscoredApps": 10,
-					"whoscoredMins": 875
-				}
-			}
-		},
-		"94042|Wolverhampton Wanderers": {
-			"name": "Matt Doherty",
-			"age": 28,
-			"countryCode": "ie",
-			"position": "D(LR),M(R)",
-			"club": "Wolverhampton Wanderers",
-			"19-20": {
-				"Europa League | Wolverhampton Wanderers": {
-					"whoscoredApps": 9,
-					"whoscoredMins": 756
-				}
-			}
-		},
-		"92812|Bayer Leverkusen": {
-			"name": "Kevin Volland",
-			"age": 28,
-			"countryCode": "de",
-			"position": "AM(CLR),FW",
-			"club": "Bayer Leverkusen",
-			"19-20": {
-				"Europa League | Bayer Leverkusen": {
+				"Europa League | Manchester United": {
 					"whoscoredApps": 2,
-					"whoscoredMins": 180
+					"whoscoredMins": 147
 				}
 			}
 		},
-		"83100|FC Copenhagen": {
-			"name": "Nicolai Boilesen",
-			"age": 28,
-			"countryCode": "dk",
+		"362275|Sevilla": {
+			"name": "Sergio Reguilón",
+			"age": 23,
+			"countryCode": "es",
 			"position": "D(L)",
-			"club": "FC Copenhagen",
+			"club": "Sevilla",
 			"19-20": {
-				"Europa League | FC Copenhagen": {
-					"whoscoredApps": 1,
-					"whoscoredMins": 69
+				"Europa League | Sevilla": {
+					"whoscoredApps": 4,
+					"whoscoredMins": 271
 				}
 			}
 		},
@@ -40858,19 +40793,6 @@
 				}
 			}
 		},
-		"299684|Bayer Leverkusen": {
-			"name": "Exequiel Palacios",
-			"age": 21,
-			"countryCode": "ar",
-			"position": "AM(C)",
-			"club": "Bayer Leverkusen",
-			"19-20": {
-				"Europa League | Bayer Leverkusen": {
-					"whoscoredApps": 1,
-					"whoscoredMins": 87
-				}
-			}
-		},
 		"71293|Espanyol": {
 			"name": "Sébastien Corchia",
 			"age": 29,
@@ -40881,19 +40803,6 @@
 				"Europa League | Espanyol": {
 					"whoscoredApps": 4,
 					"whoscoredMins": 360
-				}
-			}
-		},
-		"331924|Manchester United": {
-			"name": "Aaron Wan-Bissaka",
-			"age": 22,
-			"countryCode": "gb-eng",
-			"position": "D(R),M(R)",
-			"club": "Manchester United",
-			"19-20": {
-				"Europa League | Manchester United": {
-					"whoscoredApps": 3,
-					"whoscoredMins": 240
 				}
 			}
 		},
@@ -40975,6 +40884,32 @@
 				}
 			}
 		},
+		"94042|Wolverhampton Wanderers": {
+			"name": "Matt Doherty",
+			"age": 28,
+			"countryCode": "ie",
+			"position": "D(LR),M(R)",
+			"club": "Wolverhampton Wanderers",
+			"19-20": {
+				"Europa League | Wolverhampton Wanderers": {
+					"whoscoredApps": 10,
+					"whoscoredMins": 846
+				}
+			}
+		},
+		"333364|FC Basel 1893": {
+			"name": "Raoul Petretta",
+			"age": 23,
+			"countryCode": "it",
+			"position": "D(L),M(L)",
+			"club": "FC Basel 1893",
+			"19-20": {
+				"Europa League | FC Basel 1893": {
+					"whoscoredApps": 10,
+					"whoscoredMins": 824
+				}
+			}
+		},
 		"347178|Getafe": {
 			"name": "Mathías Olivera",
 			"age": 22,
@@ -41027,16 +40962,29 @@
 				}
 			}
 		},
-		"136024|FC Copenhagen": {
-			"name": "Rasmus Falk Jensen",
-			"age": 28,
-			"countryCode": "dk",
-			"position": "AM(CLR)",
-			"club": "FC Copenhagen",
+		"108186|Wolverhampton Wanderers": {
+			"name": "Raúl Jiménez",
+			"age": 29,
+			"countryCode": "mx",
+			"position": "FW",
+			"club": "Wolverhampton Wanderers",
 			"19-20": {
-				"Europa League | FC Copenhagen": {
-					"whoscoredApps": 10,
-					"whoscoredMins": 766
+				"Europa League | Wolverhampton Wanderers": {
+					"whoscoredApps": 9,
+					"whoscoredMins": 764
+				}
+			}
+		},
+		"115587|Sevilla": {
+			"name": "Lucas Ocampos",
+			"age": 26,
+			"countryCode": "ar",
+			"position": "M(CLR),FW",
+			"club": "Sevilla",
+			"19-20": {
+				"Europa League | Sevilla": {
+					"whoscoredApps": 5,
+					"whoscoredMins": 438
 				}
 			}
 		},
@@ -41066,16 +41014,16 @@
 				}
 			}
 		},
-		"102439|Sevilla": {
-			"name": "Franco Vázquez",
-			"age": 31,
-			"countryCode": "ar",
-			"position": "AM(CLR),FW",
-			"club": "Sevilla",
+		"376805|FC Copenhagen": {
+			"name": "Victor Nelsson",
+			"age": 21,
+			"countryCode": "dk",
+			"position": "D(C)",
+			"club": "FC Copenhagen",
 			"19-20": {
-				"Europa League | Sevilla": {
-					"whoscoredApps": 7,
-					"whoscoredMins": 339
+				"Europa League | FC Copenhagen": {
+					"whoscoredApps": 10,
+					"whoscoredMins": 930
 				}
 			}
 		},
@@ -41157,6 +41105,19 @@
 				}
 			}
 		},
+		"35895|FC Basel 1893": {
+			"name": "Valentin Stocker",
+			"age": 31,
+			"countryCode": "ch",
+			"position": "AM(CLR)",
+			"club": "FC Basel 1893",
+			"19-20": {
+				"Europa League | FC Basel 1893": {
+					"whoscoredApps": 10,
+					"whoscoredMins": 823
+				}
+			}
+		},
 		"29908|Roma": {
 			"name": "Federico Fazio",
 			"age": 33,
@@ -41209,29 +41170,16 @@
 				}
 			}
 		},
-		"29159|Shakhtar Donetsk": {
-			"name": "Taras Stepanenko",
-			"age": 31,
-			"countryCode": "ua",
-			"position": "DMC",
-			"club": "Shakhtar Donetsk",
-			"19-20": {
-				"Europa League | Shakhtar Donetsk": {
-					"whoscoredApps": 3,
-					"whoscoredMins": 270
-				}
-			}
-		},
-		"238941|Sevilla": {
-			"name": "Joan Jordán",
+		"243814|Manchester United": {
+			"name": "Eric Bailly",
 			"age": 26,
-			"countryCode": "es",
-			"position": "M(C)",
-			"club": "Sevilla",
+			"countryCode": "ci",
+			"position": "D(CR)",
+			"club": "Manchester United",
 			"19-20": {
-				"Europa League | Sevilla": {
-					"whoscoredApps": 7,
-					"whoscoredMins": 492
+				"Europa League | Manchester United": {
+					"whoscoredApps": 4,
+					"whoscoredMins": 341
 				}
 			}
 		},
@@ -41284,32 +41232,6 @@
 				"Europa League | LASK": {
 					"whoscoredApps": 10,
 					"whoscoredMins": 891
-				}
-			}
-		},
-		"52745|FC Copenhagen": {
-			"name": "Zeca",
-			"age": 31,
-			"countryCode": "gr",
-			"position": "M(C)",
-			"club": "FC Copenhagen",
-			"19-20": {
-				"Europa League | FC Copenhagen": {
-					"whoscoredApps": 9,
-					"whoscoredMins": 810
-				}
-			}
-		},
-		"376805|FC Copenhagen": {
-			"name": "Victor Nelsson",
-			"age": 21,
-			"countryCode": "dk",
-			"position": "D(C)",
-			"club": "FC Copenhagen",
-			"19-20": {
-				"Europa League | FC Copenhagen": {
-					"whoscoredApps": 9,
-					"whoscoredMins": 810
 				}
 			}
 		},
@@ -41391,19 +41313,6 @@
 				}
 			}
 		},
-		"16161|Wolverhampton Wanderers": {
-			"name": "João Moutinho",
-			"age": 33,
-			"countryCode": "pt",
-			"position": "M(C)",
-			"club": "Wolverhampton Wanderers",
-			"19-20": {
-				"Europa League | Wolverhampton Wanderers": {
-					"whoscoredApps": 10,
-					"whoscoredMins": 808
-				}
-			}
-		},
 		"331579|Roma": {
 			"name": "Justin Kluivert",
 			"age": 21,
@@ -41440,19 +41349,6 @@
 				"Europa League | Rangers": {
 					"whoscoredApps": 4,
 					"whoscoredMins": 215
-				}
-			}
-		},
-		"29940|Bayer Leverkusen": {
-			"name": "Lars Bender",
-			"age": 31,
-			"countryCode": "de",
-			"position": "D(CR),M(CR)",
-			"club": "Bayer Leverkusen",
-			"19-20": {
-				"Europa League | Bayer Leverkusen": {
-					"whoscoredApps": 3,
-					"whoscoredMins": 204
 				}
 			}
 		},
@@ -41612,6 +41508,19 @@
 				}
 			}
 		},
+		"35494|FC Basel 1893": {
+			"name": "Fabian Frei",
+			"age": 31,
+			"countryCode": "ch",
+			"position": "M(C)",
+			"club": "FC Basel 1893",
+			"19-20": {
+				"Europa League | FC Basel 1893": {
+					"whoscoredApps": 11,
+					"whoscoredMins": 965
+				}
+			}
+		},
 		"22589|Bayer Leverkusen": {
 			"name": "Sven Bender",
 			"age": 31,
@@ -41648,6 +41557,19 @@
 				"Europa League | Partizan Belgrade": {
 					"whoscoredApps": 1,
 					"whoscoredMins": 90
+				}
+			}
+		},
+		"52745|FC Copenhagen": {
+			"name": "Zeca",
+			"age": 31,
+			"countryCode": "gr",
+			"position": "M(C)",
+			"club": "FC Copenhagen",
+			"19-20": {
+				"Europa League | FC Copenhagen": {
+					"whoscoredApps": 10,
+					"whoscoredMins": 930
 				}
 			}
 		},
@@ -41729,6 +41651,19 @@
 				}
 			}
 		},
+		"238941|Sevilla": {
+			"name": "Joan Jordán",
+			"age": 26,
+			"countryCode": "es",
+			"position": "M(C)",
+			"club": "Sevilla",
+			"19-20": {
+				"Europa League | Sevilla": {
+					"whoscoredApps": 8,
+					"whoscoredMins": 577
+				}
+			}
+		},
 		"296232|Rennes": {
 			"name": "Faitout Maouassa",
 			"age": 22,
@@ -41742,16 +41677,29 @@
 				}
 			}
 		},
-		"261021|Bayer Leverkusen": {
-			"name": "Nadiem Amiri",
-			"age": 23,
-			"countryCode": "de",
-			"position": "M(CLR)",
-			"club": "Bayer Leverkusen",
+		"300299|Manchester United": {
+			"name": "Marcus Rashford",
+			"age": 22,
+			"countryCode": "gb-eng",
+			"position": "AM(LR),FW",
+			"club": "Manchester United",
 			"19-20": {
-				"Europa League | Bayer Leverkusen": {
-					"whoscoredApps": 2,
-					"whoscoredMins": 180
+				"Europa League | Manchester United": {
+					"whoscoredApps": 5,
+					"whoscoredMins": 328
+				}
+			}
+		},
+		"29159|Shakhtar Donetsk": {
+			"name": "Taras Stepanenko",
+			"age": 31,
+			"countryCode": "ua",
+			"position": "DMC",
+			"club": "Shakhtar Donetsk",
+			"19-20": {
+				"Europa League | Shakhtar Donetsk": {
+					"whoscoredApps": 4,
+					"whoscoredMins": 360
 				}
 			}
 		},
@@ -41765,6 +41713,19 @@
 				"Europa League | Bayer Leverkusen": {
 					"whoscoredApps": 1,
 					"whoscoredMins": 68
+				}
+			}
+		},
+		"82399|Inter": {
+			"name": "Stefan de Vrij",
+			"age": 28,
+			"countryCode": "nl",
+			"position": "D(C)",
+			"club": "Inter",
+			"19-20": {
+				"Europa League | Inter": {
+					"whoscoredApps": 2,
+					"whoscoredMins": 180
 				}
 			}
 		},
@@ -41791,19 +41752,6 @@
 				"Europa League | Gent": {
 					"whoscoredApps": 8,
 					"whoscoredMins": 710
-				}
-			}
-		},
-		"238244|Wolverhampton Wanderers": {
-			"name": "Rúben Neves",
-			"age": 23,
-			"countryCode": "pt",
-			"position": "DMC",
-			"club": "Wolverhampton Wanderers",
-			"19-20": {
-				"Europa League | Wolverhampton Wanderers": {
-					"whoscoredApps": 8,
-					"whoscoredMins": 686
 				}
 			}
 		},
@@ -41885,6 +41833,19 @@
 				}
 			}
 		},
+		"383781|Shakhtar Donetsk": {
+			"name": "Marcos Antonio",
+			"age": 20,
+			"countryCode": "",
+			"position": "Midfielder",
+			"club": "Shakhtar Donetsk",
+			"19-20": {
+				"Europa League | Shakhtar Donetsk": {
+					"whoscoredApps": 5,
+					"whoscoredMins": 349
+				}
+			}
+		},
 		"376090|FC Basel 1893": {
 			"name": "Noah Okafor",
 			"age": 20,
@@ -41895,19 +41856,6 @@
 				"Europa League | FC Basel 1893": {
 					"whoscoredApps": 4,
 					"whoscoredMins": 167
-				}
-			}
-		},
-		"344639|FC Basel 1893": {
-			"name": "Omar Alderete",
-			"age": 23,
-			"countryCode": "py",
-			"position": "D(C)",
-			"club": "FC Basel 1893",
-			"19-20": {
-				"Europa League | FC Basel 1893": {
-					"whoscoredApps": 9,
-					"whoscoredMins": 810
 				}
 			}
 		},
@@ -41937,6 +41885,19 @@
 				}
 			}
 		},
+		"16161|Wolverhampton Wanderers": {
+			"name": "João Moutinho",
+			"age": 33,
+			"countryCode": "pt",
+			"position": "M(C)",
+			"club": "Wolverhampton Wanderers",
+			"19-20": {
+				"Europa League | Wolverhampton Wanderers": {
+					"whoscoredApps": 11,
+					"whoscoredMins": 879
+				}
+			}
+		},
 		"71268|Sporting CP": {
 			"name": "Sebastián Coates",
 			"age": 29,
@@ -41963,6 +41924,32 @@
 				}
 			}
 		},
+		"301019|Sevilla": {
+			"name": "Jules Koundé",
+			"age": 21,
+			"countryCode": "fr",
+			"position": "D(C)",
+			"club": "Sevilla",
+			"19-20": {
+				"Europa League | Sevilla": {
+					"whoscoredApps": 7,
+					"whoscoredMins": 630
+				}
+			}
+		},
+		"92812|Bayer Leverkusen": {
+			"name": "Kevin Volland",
+			"age": 28,
+			"countryCode": "de",
+			"position": "AM(CLR),FW",
+			"club": "Bayer Leverkusen",
+			"19-20": {
+				"Europa League | Bayer Leverkusen": {
+					"whoscoredApps": 3,
+					"whoscoredMins": 265
+				}
+			}
+		},
 		"110260|Arsenal": {
 			"name": "Sead Kolasinac",
 			"age": 27,
@@ -41973,19 +41960,6 @@
 				"Europa League | Arsenal": {
 					"whoscoredApps": 1,
 					"whoscoredMins": 80
-				}
-			}
-		},
-		"122366|Manchester United": {
-			"name": "Anthony Martial",
-			"age": 24,
-			"countryCode": "fr",
-			"position": "AM(LR),FW",
-			"club": "Manchester United",
-			"19-20": {
-				"Europa League | Manchester United": {
-					"whoscoredApps": 5,
-					"whoscoredMins": 282
 				}
 			}
 		},
@@ -42054,19 +42028,6 @@
 				}
 			}
 		},
-		"235755|Wolverhampton Wanderers": {
-			"name": "Diogo Jota",
-			"age": 23,
-			"countryCode": "pt",
-			"position": "AM(CL),FW",
-			"club": "Wolverhampton Wanderers",
-			"19-20": {
-				"Europa League | Wolverhampton Wanderers": {
-					"whoscoredApps": 7,
-					"whoscoredMins": 362
-				}
-			}
-		},
 		"132775|Wolfsburg": {
 			"name": "Marcel Tisserand",
 			"age": 27,
@@ -42106,29 +42067,29 @@
 				}
 			}
 		},
-		"236519|Wolverhampton Wanderers": {
-			"name": "Romain Saïss",
-			"age": 30,
-			"countryCode": "ma",
-			"position": "D(C),DMC",
-			"club": "Wolverhampton Wanderers",
+		"148684|Inter": {
+			"name": "Nicolò Barella",
+			"age": 23,
+			"countryCode": "it",
+			"position": "AM(C)",
+			"club": "Inter",
 			"19-20": {
-				"Europa League | Wolverhampton Wanderers": {
-					"whoscoredApps": 7,
-					"whoscoredMins": 558
+				"Europa League | Inter": {
+					"whoscoredApps": 4,
+					"whoscoredMins": 244
 				}
 			}
 		},
-		"353397|Bayer Leverkusen": {
-			"name": "Moussa Diaby",
-			"age": 21,
-			"countryCode": "fr",
-			"position": "M(LR)",
-			"club": "Bayer Leverkusen",
+		"102439|Sevilla": {
+			"name": "Franco Vázquez",
+			"age": 31,
+			"countryCode": "ar",
+			"position": "AM(CLR),FW",
+			"club": "Sevilla",
 			"19-20": {
-				"Europa League | Bayer Leverkusen": {
-					"whoscoredApps": 3,
-					"whoscoredMins": 241
+				"Europa League | Sevilla": {
+					"whoscoredApps": 8,
+					"whoscoredMins": 344
 				}
 			}
 		},
@@ -42147,7 +42108,7 @@
 		},
 		"132475|FC Basel 1893": {
 			"name": "Kevin Bua",
-			"age": 26,
+			"age": 27,
 			"countryCode": "ch",
 			"position": "Midfielder",
 			"club": "FC Basel 1893",
@@ -42288,21 +42249,8 @@
 				}
 			}
 		},
-		"300299|Manchester United": {
-			"name": "Marcus Rashford",
-			"age": 22,
-			"countryCode": "gb-eng",
-			"position": "AM(LR),FW",
-			"club": "Manchester United",
-			"19-20": {
-				"Europa League | Manchester United": {
-					"whoscoredApps": 4,
-					"whoscoredMins": 215
-				}
-			}
-		},
 		"383861|Slovan Bratislava": {
-			"name": "Mohammed Rharsalla",
+			"name": "Mohammed Rharsalla Khadfi",
 			"age": 26,
 			"countryCode": "",
 			"position": "Midfielder",
@@ -42311,6 +42259,19 @@
 				"Europa League | Slovan Bratislava": {
 					"whoscoredApps": 5,
 					"whoscoredMins": 436
+				}
+			}
+		},
+		"25244|Inter": {
+			"name": "Alexis Sánchez",
+			"age": 31,
+			"countryCode": "cl",
+			"position": "M(CLR),FW",
+			"club": "Inter",
+			"19-20": {
+				"Europa League | Inter": {
+					"whoscoredApps": 4,
+					"whoscoredMins": 226
 				}
 			}
 		},
@@ -42357,7 +42318,7 @@
 			"name": "Sam Larsson",
 			"age": 27,
 			"countryCode": "se",
-			"position": "AM(L),FW",
+			"position": "AM(CL),FW",
 			"club": "Feyenoord",
 			"19-20": {
 				"Europa League | Feyenoord": {
@@ -42428,6 +42389,19 @@
 				"Europa League | Ajax": {
 					"whoscoredApps": 2,
 					"whoscoredMins": 180
+				}
+			}
+		},
+		"238244|Wolverhampton Wanderers": {
+			"name": "Rúben Neves",
+			"age": 23,
+			"countryCode": "pt",
+			"position": "DMC",
+			"club": "Wolverhampton Wanderers",
+			"19-20": {
+				"Europa League | Wolverhampton Wanderers": {
+					"whoscoredApps": 9,
+					"whoscoredMins": 776
 				}
 			}
 		},
@@ -42506,32 +42480,6 @@
 				"Europa League | Eintracht Frankfurt": {
 					"whoscoredApps": 4,
 					"whoscoredMins": 360
-				}
-			}
-		},
-		"41494|Shakhtar Donetsk": {
-			"name": "Taison",
-			"age": 32,
-			"countryCode": "br",
-			"position": "AM(CL)",
-			"club": "Shakhtar Donetsk",
-			"19-20": {
-				"Europa League | Shakhtar Donetsk": {
-					"whoscoredApps": 4,
-					"whoscoredMins": 350
-				}
-			}
-		},
-		"134984|Sevilla": {
-			"name": "Diego Carlos",
-			"age": 27,
-			"countryCode": "br",
-			"position": "D(C)",
-			"club": "Sevilla",
-			"19-20": {
-				"Europa League | Sevilla": {
-					"whoscoredApps": 5,
-					"whoscoredMins": 380
 				}
 			}
 		},
@@ -42639,6 +42587,19 @@
 				}
 			}
 		},
+		"43912|FC Copenhagen": {
+			"name": "Karl-Johan Johnsson",
+			"age": 30,
+			"countryCode": "se",
+			"position": "GK",
+			"club": "FC Copenhagen",
+			"19-20": {
+				"Europa League | FC Copenhagen": {
+					"whoscoredApps": 11,
+					"whoscoredMins": 1020
+				}
+			}
+		},
 		"105591|Sevilla": {
 			"name": "Suso",
 			"age": 26,
@@ -42647,21 +42608,8 @@
 			"club": "Sevilla",
 			"19-20": {
 				"Europa League | Sevilla": {
-					"whoscoredApps": 3,
-					"whoscoredMins": 225
-				}
-			}
-		},
-		"115587|Sevilla": {
-			"name": "Lucas Ocampos",
-			"age": 26,
-			"countryCode": "ar",
-			"position": "M(CLR),FW",
-			"club": "Sevilla",
-			"19-20": {
-				"Europa League | Sevilla": {
 					"whoscoredApps": 4,
-					"whoscoredMins": 348
+					"whoscoredMins": 314
 				}
 			}
 		},
@@ -42782,6 +42730,19 @@
 				}
 			}
 		},
+		"236519|Wolverhampton Wanderers": {
+			"name": "Romain Saïss",
+			"age": 30,
+			"countryCode": "ma",
+			"position": "D(C),DMC",
+			"club": "Wolverhampton Wanderers",
+			"19-20": {
+				"Europa League | Wolverhampton Wanderers": {
+					"whoscoredApps": 8,
+					"whoscoredMins": 648
+				}
+			}
+		},
 		"369875|Salzburg": {
 			"name": "Dominik Szoboszlai",
 			"age": 19,
@@ -42847,32 +42808,6 @@
 				}
 			}
 		},
-		"342863|Wolverhampton Wanderers": {
-			"name": "Rúben Vinagre",
-			"age": 21,
-			"countryCode": "pt",
-			"position": "M(L)",
-			"club": "Wolverhampton Wanderers",
-			"19-20": {
-				"Europa League | Wolverhampton Wanderers": {
-					"whoscoredApps": 7,
-					"whoscoredMins": 496
-				}
-			}
-		},
-		"323547|Sevilla": {
-			"name": "Youssef En-Nesyri",
-			"age": 23,
-			"countryCode": "ma",
-			"position": "FW",
-			"club": "Sevilla",
-			"19-20": {
-				"Europa League | Sevilla": {
-					"whoscoredApps": 3,
-					"whoscoredMins": 121
-				}
-			}
-		},
 		"15464|Trabzonspor": {
 			"name": "John Obi Mikel",
 			"age": 33,
@@ -42886,16 +42821,16 @@
 				}
 			}
 		},
-		"301019|Sevilla": {
-			"name": "Jules Koundé",
+		"342863|Wolverhampton Wanderers": {
+			"name": "Rúben Vinagre",
 			"age": 21,
-			"countryCode": "fr",
-			"position": "D(C)",
-			"club": "Sevilla",
+			"countryCode": "pt",
+			"position": "M(L)",
+			"club": "Wolverhampton Wanderers",
 			"19-20": {
-				"Europa League | Sevilla": {
-					"whoscoredApps": 6,
-					"whoscoredMins": 540
+				"Europa League | Wolverhampton Wanderers": {
+					"whoscoredApps": 8,
+					"whoscoredMins": 586
 				}
 			}
 		},
@@ -43029,6 +42964,19 @@
 				}
 			}
 		},
+		"317675|Shakhtar Donetsk": {
+			"name": "Dodô",
+			"age": 21,
+			"countryCode": "",
+			"position": "D(R)",
+			"club": "Shakhtar Donetsk",
+			"19-20": {
+				"Europa League | Shakhtar Donetsk": {
+					"whoscoredApps": 4,
+					"whoscoredMins": 360
+				}
+			}
+		},
 		"32388|LASK": {
 			"name": "James Holland",
 			"age": 31,
@@ -43065,19 +43013,6 @@
 				"Europa League | Borussia M'Gladbach": {
 					"whoscoredApps": 6,
 					"whoscoredMins": 540
-				}
-			}
-		},
-		"90243|FC Basel 1893": {
-			"name": "Taulant Xhaka",
-			"age": 29,
-			"countryCode": "al",
-			"position": "D(R),DMC",
-			"club": "FC Basel 1893",
-			"19-20": {
-				"Europa League | FC Basel 1893": {
-					"whoscoredApps": 9,
-					"whoscoredMins": 781
 				}
 			}
 		},
@@ -43146,19 +43081,6 @@
 				}
 			}
 		},
-		"31958|Sevilla": {
-			"name": "Fernando",
-			"age": 33,
-			"countryCode": "br",
-			"position": "DMC",
-			"club": "Sevilla",
-			"19-20": {
-				"Europa League | Sevilla": {
-					"whoscoredApps": 4,
-					"whoscoredMins": 299
-				}
-			}
-		},
 		"369424|Espanyol": {
 			"name": "Víctor Campuzano",
 			"age": 23,
@@ -43182,6 +43104,19 @@
 				"Europa League | Celtic": {
 					"whoscoredApps": 1,
 					"whoscoredMins": 90
+				}
+			}
+		},
+		"345022|Shakhtar Donetsk": {
+			"name": "Manor Solomon",
+			"age": 21,
+			"countryCode": "il",
+			"position": "Midfielder",
+			"club": "Shakhtar Donetsk",
+			"19-20": {
+				"Europa League | Shakhtar Donetsk": {
+					"whoscoredApps": 2,
+					"whoscoredMins": 31
 				}
 			}
 		},
@@ -43224,16 +43159,16 @@
 				}
 			}
 		},
-		"33064|Inter": {
-			"name": "Victor Moses",
+		"136220|Sevilla": {
+			"name": "Yassine Bounou",
 			"age": 29,
-			"countryCode": "ng",
-			"position": "M(CLR)",
-			"club": "Inter",
+			"countryCode": "ma",
+			"position": "GK",
+			"club": "Sevilla",
 			"19-20": {
-				"Europa League | Inter": {
-					"whoscoredApps": 2,
-					"whoscoredMins": 162
+				"Europa League | Sevilla": {
+					"whoscoredApps": 8,
+					"whoscoredMins": 720
 				}
 			}
 		},
@@ -43315,19 +43250,6 @@
 				}
 			}
 		},
-		"97587|Wolverhampton Wanderers": {
-			"name": "Willy Boly",
-			"age": 29,
-			"countryCode": "fr",
-			"position": "D(C)",
-			"club": "Wolverhampton Wanderers",
-			"19-20": {
-				"Europa League | Wolverhampton Wanderers": {
-					"whoscoredApps": 7,
-					"whoscoredMins": 630
-				}
-			}
-		},
 		"120608|FC Porto": {
 			"name": "Otávio",
 			"age": 25,
@@ -43338,19 +43260,6 @@
 				"Europa League | FC Porto": {
 					"whoscoredApps": 7,
 					"whoscoredMins": 584
-				}
-			}
-		},
-		"319695|FC Basel 1893": {
-			"name": "Djordje Nikolic",
-			"age": 23,
-			"countryCode": "rs",
-			"position": "Goalkeeper",
-			"club": "FC Basel 1893",
-			"19-20": {
-				"Europa League | FC Basel 1893": {
-					"whoscoredApps": 3,
-					"whoscoredMins": 270
 				}
 			}
 		},
@@ -43393,6 +43302,32 @@
 				}
 			}
 		},
+		"344639|FC Basel 1893": {
+			"name": "Omar Alderete",
+			"age": 23,
+			"countryCode": "py",
+			"position": "D(C)",
+			"club": "FC Basel 1893",
+			"19-20": {
+				"Europa League | FC Basel 1893": {
+					"whoscoredApps": 10,
+					"whoscoredMins": 900
+				}
+			}
+		},
+		"97587|Wolverhampton Wanderers": {
+			"name": "Willy Boly",
+			"age": 29,
+			"countryCode": "fr",
+			"position": "D(C)",
+			"club": "Wolverhampton Wanderers",
+			"19-20": {
+				"Europa League | Wolverhampton Wanderers": {
+					"whoscoredApps": 8,
+					"whoscoredMins": 720
+				}
+			}
+		},
 		"383848|Wolfsberger AC": {
 			"name": "Mario Leitgeb",
 			"age": 32,
@@ -43416,6 +43351,19 @@
 				"Europa League | CFR Cluj": {
 					"whoscoredApps": 2,
 					"whoscoredMins": 180
+				}
+			}
+		},
+		"29940|Bayer Leverkusen": {
+			"name": "Lars Bender",
+			"age": 31,
+			"countryCode": "de",
+			"position": "D(CR),M(CR)",
+			"club": "Bayer Leverkusen",
+			"19-20": {
+				"Europa League | Bayer Leverkusen": {
+					"whoscoredApps": 4,
+					"whoscoredMins": 289
 				}
 			}
 		},
@@ -43471,6 +43419,19 @@
 				}
 			}
 		},
+		"235755|Wolverhampton Wanderers": {
+			"name": "Diogo Jota",
+			"age": 23,
+			"countryCode": "pt",
+			"position": "AM(CL),FW",
+			"club": "Wolverhampton Wanderers",
+			"19-20": {
+				"Europa League | Wolverhampton Wanderers": {
+					"whoscoredApps": 8,
+					"whoscoredMins": 373
+				}
+			}
+		},
 		"135127|Benfica": {
 			"name": "Rafa",
 			"age": 27,
@@ -43494,19 +43455,6 @@
 				"Europa League | Sevilla": {
 					"whoscoredApps": 4,
 					"whoscoredMins": 259
-				}
-			}
-		},
-		"329665|Inter": {
-			"name": "Alessandro Bastoni",
-			"age": 21,
-			"countryCode": "it",
-			"position": "D(C)",
-			"club": "Inter",
-			"19-20": {
-				"Europa League | Inter": {
-					"whoscoredApps": 2,
-					"whoscoredMins": 104
 				}
 			}
 		},
@@ -43562,16 +43510,16 @@
 				}
 			}
 		},
-		"383781|Shakhtar Donetsk": {
-			"name": "Marcos Antonio",
-			"age": 20,
-			"countryCode": "",
-			"position": "Midfielder",
-			"club": "Shakhtar Donetsk",
+		"323547|Sevilla": {
+			"name": "Youssef En-Nesyri",
+			"age": 23,
+			"countryCode": "ma",
+			"position": "FW",
+			"club": "Sevilla",
 			"19-20": {
-				"Europa League | Shakhtar Donetsk": {
+				"Europa League | Sevilla": {
 					"whoscoredApps": 4,
-					"whoscoredMins": 264
+					"whoscoredMins": 206
 				}
 			}
 		},
@@ -43679,6 +43627,19 @@
 				}
 			}
 		},
+		"31958|Sevilla": {
+			"name": "Fernando",
+			"age": 33,
+			"countryCode": "br",
+			"position": "DMC",
+			"club": "Sevilla",
+			"19-20": {
+				"Europa League | Sevilla": {
+					"whoscoredApps": 5,
+					"whoscoredMins": 389
+				}
+			}
+		},
 		"105928|APOEL Nicosia": {
 			"name": "Joãozinho",
 			"age": 31,
@@ -43718,19 +43679,6 @@
 				}
 			}
 		},
-		"148684|Inter": {
-			"name": "Nicolò Barella",
-			"age": 23,
-			"countryCode": "it",
-			"position": "AM(C)",
-			"club": "Inter",
-			"19-20": {
-				"Europa League | Inter": {
-					"whoscoredApps": 3,
-					"whoscoredMins": 154
-				}
-			}
-		},
 		"32722|APOEL Nicosia": {
 			"name": "Giorgios Merkis",
 			"age": 36,
@@ -43741,19 +43689,6 @@
 				"Europa League | APOEL Nicosia": {
 					"whoscoredApps": 7,
 					"whoscoredMins": 630
-				}
-			}
-		},
-		"64271|Inter": {
-			"name": "Danilo D'Ambrosio",
-			"age": 31,
-			"countryCode": "it",
-			"position": "D(CLR),M(LR)",
-			"club": "Inter",
-			"19-20": {
-				"Europa League | Inter": {
-					"whoscoredApps": 3,
-					"whoscoredMins": 250
 				}
 			}
 		},
@@ -43965,6 +43900,19 @@
 				}
 			}
 		},
+		"329665|Inter": {
+			"name": "Alessandro Bastoni",
+			"age": 21,
+			"countryCode": "it",
+			"position": "D(C)",
+			"club": "Inter",
+			"19-20": {
+				"Europa League | Inter": {
+					"whoscoredApps": 3,
+					"whoscoredMins": 188
+				}
+			}
+		},
 		"105968|Qarabag FK": {
 			"name": "Richard",
 			"age": 31,
@@ -44001,19 +43949,6 @@
 				"Europa League | BSC Young Boys": {
 					"whoscoredApps": 6,
 					"whoscoredMins": 463
-				}
-			}
-		},
-		"141781|Bayer Leverkusen": {
-			"name": "Daley Sinkgraven",
-			"age": 25,
-			"countryCode": "nl",
-			"position": "D(L),M(CL)",
-			"club": "Bayer Leverkusen",
-			"19-20": {
-				"Europa League | Bayer Leverkusen": {
-					"whoscoredApps": 3,
-					"whoscoredMins": 270
 				}
 			}
 		},
@@ -44108,6 +44043,32 @@
 				}
 			}
 		},
+		"134984|Sevilla": {
+			"name": "Diego Carlos",
+			"age": 27,
+			"countryCode": "br",
+			"position": "D(C)",
+			"club": "Sevilla",
+			"19-20": {
+				"Europa League | Sevilla": {
+					"whoscoredApps": 6,
+					"whoscoredMins": 470
+				}
+			}
+		},
+		"383829|FC Basel 1893": {
+			"name": "Samuele Campo",
+			"age": 25,
+			"countryCode": "ch",
+			"position": "AM(C)",
+			"club": "FC Basel 1893",
+			"19-20": {
+				"Europa League | FC Basel 1893": {
+					"whoscoredApps": 9,
+					"whoscoredMins": 577
+				}
+			}
+		},
 		"232249|Feyenoord": {
 			"name": "Rick Karsdorp",
 			"age": 25,
@@ -44157,19 +44118,6 @@
 				"Europa League | Espanyol": {
 					"whoscoredApps": 3,
 					"whoscoredMins": 268
-				}
-			}
-		},
-		"383829|FC Basel 1893": {
-			"name": "Samuele Campo",
-			"age": 25,
-			"countryCode": "ch",
-			"position": "Midfielder",
-			"club": "FC Basel 1893",
-			"19-20": {
-				"Europa League | FC Basel 1893": {
-					"whoscoredApps": 8,
-					"whoscoredMins": 487
 				}
 			}
 		},
@@ -44277,6 +44225,19 @@
 				}
 			}
 		},
+		"9972|Inter": {
+			"name": "Samir Handanovic",
+			"age": 36,
+			"countryCode": "si",
+			"position": "GK",
+			"club": "Inter",
+			"19-20": {
+				"Europa League | Inter": {
+					"whoscoredApps": 2,
+					"whoscoredMins": 180
+				}
+			}
+		},
 		"8331|Celtic": {
 			"name": "Scott Brown",
 			"age": 35,
@@ -44300,6 +44261,19 @@
 				"Europa League | FC Basel 1893": {
 					"whoscoredApps": 6,
 					"whoscoredMins": 474
+				}
+			}
+		},
+		"90243|FC Basel 1893": {
+			"name": "Taulant Xhaka",
+			"age": 29,
+			"countryCode": "al",
+			"position": "D(R),DMC",
+			"club": "FC Basel 1893",
+			"19-20": {
+				"Europa League | FC Basel 1893": {
+					"whoscoredApps": 10,
+					"whoscoredMins": 841
 				}
 			}
 		},
@@ -44329,19 +44303,6 @@
 				}
 			}
 		},
-		"43912|FC Copenhagen": {
-			"name": "Karl-Johan Johnsson",
-			"age": 30,
-			"countryCode": "se",
-			"position": "GK",
-			"club": "FC Copenhagen",
-			"19-20": {
-				"Europa League | FC Copenhagen": {
-					"whoscoredApps": 10,
-					"whoscoredMins": 900
-				}
-			}
-		},
 		"80843|Wolfsberger AC": {
 			"name": "Lukas Schmitz",
 			"age": 31,
@@ -44352,6 +44313,19 @@
 				"Europa League | Wolfsberger AC": {
 					"whoscoredApps": 6,
 					"whoscoredMins": 540
+				}
+			}
+		},
+		"261021|Bayer Leverkusen": {
+			"name": "Nadiem Amiri",
+			"age": 23,
+			"countryCode": "de",
+			"position": "M(CLR)",
+			"club": "Bayer Leverkusen",
+			"19-20": {
+				"Europa League | Bayer Leverkusen": {
+					"whoscoredApps": 3,
+					"whoscoredMins": 202
 				}
 			}
 		},
@@ -44396,7 +44370,7 @@
 		},
 		"287300|Rangers": {
 			"name": "George Edmundson",
-			"age": 22,
+			"age": 23,
 			"countryCode": "gb-eng",
 			"position": "Defender",
 			"club": "Rangers",
@@ -44408,7 +44382,7 @@
 			}
 		},
 		"310197|Ferencvaros": {
-			"name": "Dávid Sigér",
+			"name": "Dávid Miklós Sigér",
 			"age": 29,
 			"countryCode": "hu",
 			"position": "DMC",
@@ -44435,7 +44409,7 @@
 		},
 		"327717|Standard Liege": {
 			"name": "Collins Fai",
-			"age": 27,
+			"age": 28,
 			"countryCode": "cm",
 			"position": "D(R)",
 			"club": "Standard Liege",
@@ -44693,16 +44667,16 @@
 				}
 			}
 		},
-		"136220|Sevilla": {
-			"name": "Yassine Bounou",
-			"age": 29,
-			"countryCode": "ma",
-			"position": "GK",
-			"club": "Sevilla",
+		"353397|Bayer Leverkusen": {
+			"name": "Moussa Diaby",
+			"age": 21,
+			"countryCode": "fr",
+			"position": "M(LR)",
+			"club": "Bayer Leverkusen",
 			"19-20": {
-				"Europa League | Sevilla": {
-					"whoscoredApps": 7,
-					"whoscoredMins": 630
+				"Europa League | Bayer Leverkusen": {
+					"whoscoredApps": 4,
+					"whoscoredMins": 331
 				}
 			}
 		},
@@ -44784,6 +44758,19 @@
 				}
 			}
 		},
+		"136279|Inter": {
+			"name": "Roberto Gagliardini",
+			"age": 26,
+			"countryCode": "it",
+			"position": "DMC",
+			"club": "Inter",
+			"19-20": {
+				"Europa League | Inter": {
+					"whoscoredApps": 2,
+					"whoscoredMins": 149
+				}
+			}
+		},
 		"78023|Saint-Etienne": {
 			"name": "Romain Hamouma",
 			"age": 33,
@@ -44862,6 +44849,19 @@
 				}
 			}
 		},
+		"141781|Bayer Leverkusen": {
+			"name": "Daley Sinkgraven",
+			"age": 25,
+			"countryCode": "nl",
+			"position": "D(L),M(CL)",
+			"club": "Bayer Leverkusen",
+			"19-20": {
+				"Europa League | Bayer Leverkusen": {
+					"whoscoredApps": 4,
+					"whoscoredMins": 338
+				}
+			}
+		},
 		"132838|Getafe": {
 			"name": "Kenedy",
 			"age": 24,
@@ -44877,7 +44877,7 @@
 		},
 		"141877|Besiktas": {
 			"name": "Enzo Roco",
-			"age": 27,
+			"age": 28,
 			"countryCode": "cl",
 			"position": "D(C)",
 			"club": "Besiktas",
@@ -44911,32 +44911,6 @@
 				"Europa League | PSV Eindhoven": {
 					"whoscoredApps": 3,
 					"whoscoredMins": 252
-				}
-			}
-		},
-		"100008|Manchester United": {
-			"name": "Victor Lindelöf",
-			"age": 26,
-			"countryCode": "se",
-			"position": "D(CR)",
-			"club": "Manchester United",
-			"19-20": {
-				"Europa League | Manchester United": {
-					"whoscoredApps": 2,
-					"whoscoredMins": 180
-				}
-			}
-		},
-		"9446|Sevilla": {
-			"name": "Jesús Navas",
-			"age": 34,
-			"countryCode": "es",
-			"position": "D(R),M(R)",
-			"club": "Sevilla",
-			"19-20": {
-				"Europa League | Sevilla": {
-					"whoscoredApps": 3,
-					"whoscoredMins": 239
 				}
 			}
 		},
@@ -45015,19 +44989,6 @@
 				"Europa League | AZ Alkmaar": {
 					"whoscoredApps": 4,
 					"whoscoredMins": 99
-				}
-			}
-		},
-		"109000|Manchester United": {
-			"name": "Jesse Lingard",
-			"age": 27,
-			"countryCode": "gb-eng",
-			"position": "AM(CLR)",
-			"club": "Manchester United",
-			"19-20": {
-				"Europa League | Manchester United": {
-					"whoscoredApps": 8,
-					"whoscoredMins": 409
 				}
 			}
 		},
@@ -45187,16 +45148,16 @@
 				}
 			}
 		},
-		"68585|Sevilla": {
-			"name": "Luuk de Jong",
-			"age": 29,
-			"countryCode": "nl",
-			"position": "AM(C),FW",
-			"club": "Sevilla",
+		"8166|Inter": {
+			"name": "Ashley Young",
+			"age": 35,
+			"countryCode": "gb-eng",
+			"position": "D(LR),M(LR)",
+			"club": "Inter",
 			"19-20": {
-				"Europa League | Sevilla": {
-					"whoscoredApps": 5,
-					"whoscoredMins": 272
+				"Europa League | Inter": {
+					"whoscoredApps": 3,
+					"whoscoredMins": 189
 				}
 			}
 		},
@@ -45226,6 +45187,19 @@
 				}
 			}
 		},
+		"87449|Inter": {
+			"name": "Marcelo Brozovic",
+			"age": 27,
+			"countryCode": "hr",
+			"position": "M(CR)",
+			"club": "Inter",
+			"19-20": {
+				"Europa League | Inter": {
+					"whoscoredApps": 3,
+					"whoscoredMins": 217
+				}
+			}
+		},
 		"383819|F91 Dudelange": {
 			"name": "Mohamed Bouchouari",
 			"age": 19,
@@ -45249,6 +45223,19 @@
 				"Europa League | Celtic": {
 					"whoscoredApps": 6,
 					"whoscoredMins": 404
+				}
+			}
+		},
+		"9446|Sevilla": {
+			"name": "Jesús Navas",
+			"age": 34,
+			"countryCode": "es",
+			"position": "D(R),M(R)",
+			"club": "Sevilla",
+			"19-20": {
+				"Europa League | Sevilla": {
+					"whoscoredApps": 4,
+					"whoscoredMins": 329
 				}
 			}
 		},
@@ -45369,6 +45356,19 @@
 				}
 			}
 		},
+		"83100|FC Copenhagen": {
+			"name": "Nicolai Boilesen",
+			"age": 28,
+			"countryCode": "dk",
+			"position": "D(L)",
+			"club": "FC Copenhagen",
+			"19-20": {
+				"Europa League | FC Copenhagen": {
+					"whoscoredApps": 2,
+					"whoscoredMins": 84
+				}
+			}
+		},
 		"361822|Saint-Etienne": {
 			"name": "William Saliba",
 			"age": 19,
@@ -45436,7 +45436,7 @@
 		},
 		"60216|CFR Cluj": {
 			"name": "Paulo Vinícius",
-			"age": 35,
+			"age": 36,
 			"countryCode": "br",
 			"position": "D(C)",
 			"club": "CFR Cluj",
@@ -45642,19 +45642,6 @@
 				}
 			}
 		},
-		"145385|FC Copenhagen": {
-			"name": "Guillermo Varela",
-			"age": 27,
-			"countryCode": "uy",
-			"position": "D(R)",
-			"club": "FC Copenhagen",
-			"19-20": {
-				"Europa League | FC Copenhagen": {
-					"whoscoredApps": 10,
-					"whoscoredMins": 721
-				}
-			}
-		},
 		"78875|Sporting CP": {
 			"name": "Renan Ribeiro",
 			"age": 30,
@@ -45798,19 +45785,6 @@
 				}
 			}
 		},
-		"355666|FC Basel 1893": {
-			"name": "Arthur Cabral",
-			"age": 22,
-			"countryCode": "br",
-			"position": "FW",
-			"club": "FC Basel 1893",
-			"19-20": {
-				"Europa League | FC Basel 1893": {
-					"whoscoredApps": 10,
-					"whoscoredMins": 575
-				}
-			}
-		},
 		"328983|Arsenal": {
 			"name": "Matteo Guendouzi",
 			"age": 21,
@@ -45902,8 +45876,21 @@
 				}
 			}
 		},
+		"33064|Inter": {
+			"name": "Victor Moses",
+			"age": 29,
+			"countryCode": "ng",
+			"position": "M(CLR)",
+			"club": "Inter",
+			"19-20": {
+				"Europa League | Inter": {
+					"whoscoredApps": 3,
+					"whoscoredMins": 193
+				}
+			}
+		},
 		"75208|Slovan Bratislava": {
-			"name": "Rabiu",
+			"name": "Ibrahim Danda Rabiu",
 			"age": 29,
 			"countryCode": "ng",
 			"position": "M(C)",
@@ -45912,6 +45899,19 @@
 				"Europa League | Slovan Bratislava": {
 					"whoscoredApps": 5,
 					"whoscoredMins": 440
+				}
+			}
+		},
+		"319695|FC Basel 1893": {
+			"name": "Djordje Nikolic",
+			"age": 23,
+			"countryCode": "rs",
+			"position": "Goalkeeper",
+			"club": "FC Basel 1893",
+			"19-20": {
+				"Europa League | FC Basel 1893": {
+					"whoscoredApps": 4,
+					"whoscoredMins": 360
 				}
 			}
 		},
@@ -45967,19 +45967,6 @@
 				}
 			}
 		},
-		"388679|FC Copenhagen": {
-			"name": "Robert Mudrazija",
-			"age": 23,
-			"countryCode": "hr",
-			"position": "Midfielder",
-			"club": "FC Copenhagen",
-			"19-20": {
-				"Europa League | FC Copenhagen": {
-					"whoscoredApps": 3,
-					"whoscoredMins": 110
-				}
-			}
-		},
 		"21024|Malmoe FF": {
 			"name": "Rasmus Bengtsson",
 			"age": 34,
@@ -46006,19 +45993,6 @@
 				}
 			}
 		},
-		"255776|Shakhtar Donetsk": {
-			"name": "Viktor Kovalenko",
-			"age": 24,
-			"countryCode": "ua",
-			"position": "M(C)",
-			"club": "Shakhtar Donetsk",
-			"19-20": {
-				"Europa League | Shakhtar Donetsk": {
-					"whoscoredApps": 3,
-					"whoscoredMins": 172
-				}
-			}
-		},
 		"378561|CSKA Moscow": {
 			"name": "Zvonimir Sarlija",
 			"age": 23,
@@ -46032,24 +46006,11 @@
 				}
 			}
 		},
-		"377280|FC Copenhagen": {
-			"name": "Jens Stage",
-			"age": 23,
-			"countryCode": "dk",
-			"position": "M(C)",
-			"club": "FC Copenhagen",
-			"19-20": {
-				"Europa League | FC Copenhagen": {
-					"whoscoredApps": 8,
-					"whoscoredMins": 667
-				}
-			}
-		},
 		"366705|Olympiacos": {
 			"name": "Giorgos Masouras",
 			"age": 26,
 			"countryCode": "gr",
-			"position": "Midfielder",
+			"position": "AM(L)",
 			"club": "Olympiacos",
 			"19-20": {
 				"Europa League | Olympiacos": {
@@ -46081,6 +46042,19 @@
 				"Europa League | Olympiacos": {
 					"whoscoredApps": 3,
 					"whoscoredMins": 300
+				}
+			}
+		},
+		"100008|Manchester United": {
+			"name": "Victor Lindelöf",
+			"age": 26,
+			"countryCode": "se",
+			"position": "D(CR)",
+			"club": "Manchester United",
+			"19-20": {
+				"Europa League | Manchester United": {
+					"whoscoredApps": 3,
+					"whoscoredMins": 229
 				}
 			}
 		},
@@ -46189,13 +46163,26 @@
 			}
 		},
 		"363180|Qarabag FK": {
-			"name": "Rahil Mammadov",
+			"name": "Rahil Sarvar oglu Mammadov",
 			"age": 24,
 			"countryCode": "az",
 			"position": "Defender",
 			"club": "Qarabag FK",
 			"19-20": {
 				"Europa League | Qarabag FK": {
+					"whoscoredApps": 1,
+					"whoscoredMins": 90
+				}
+			}
+		},
+		"370248|Shakhtar Donetsk": {
+			"name": "Valerii Bondar",
+			"age": 21,
+			"countryCode": "ua",
+			"position": "Defender",
+			"club": "Shakhtar Donetsk",
+			"19-20": {
+				"Europa League | Shakhtar Donetsk": {
 					"whoscoredApps": 1,
 					"whoscoredMins": 90
 				}
@@ -46240,6 +46227,32 @@
 				}
 			}
 		},
+		"145385|FC Copenhagen": {
+			"name": "Guillermo Varela",
+			"age": 27,
+			"countryCode": "uy",
+			"position": "D(R)",
+			"club": "FC Copenhagen",
+			"19-20": {
+				"Europa League | FC Copenhagen": {
+					"whoscoredApps": 11,
+					"whoscoredMins": 826
+				}
+			}
+		},
+		"377280|FC Copenhagen": {
+			"name": "Jens Stage",
+			"age": 23,
+			"countryCode": "dk",
+			"position": "M(C)",
+			"club": "FC Copenhagen",
+			"19-20": {
+				"Europa League | FC Copenhagen": {
+					"whoscoredApps": 9,
+					"whoscoredMins": 772
+				}
+			}
+		},
 		"383846|Wolfsberger AC": {
 			"name": "Michael Sollbauer",
 			"age": 30,
@@ -46253,19 +46266,6 @@
 				}
 			}
 		},
-		"134946|Bayer Leverkusen": {
-			"name": "Jonathan Tah",
-			"age": 24,
-			"countryCode": "de",
-			"position": "D(C)",
-			"club": "Bayer Leverkusen",
-			"19-20": {
-				"Europa League | Bayer Leverkusen": {
-					"whoscoredApps": 3,
-					"whoscoredMins": 193
-				}
-			}
-		},
 		"149348|BSC Young Boys": {
 			"name": "Ulisses García",
 			"age": 24,
@@ -46276,19 +46276,6 @@
 				"Europa League | BSC Young Boys": {
 					"whoscoredApps": 6,
 					"whoscoredMins": 454
-				}
-			}
-		},
-		"33831|Manchester United": {
-			"name": "Sergio Romero",
-			"age": 33,
-			"countryCode": "ar",
-			"position": "GK",
-			"club": "Manchester United",
-			"19-20": {
-				"Europa League | Manchester United": {
-					"whoscoredApps": 8,
-					"whoscoredMins": 720
 				}
 			}
 		},
@@ -46409,6 +46396,19 @@
 				}
 			}
 		},
+		"109000|Manchester United": {
+			"name": "Jesse Lingard",
+			"age": 27,
+			"countryCode": "gb-eng",
+			"position": "AM(CLR)",
+			"club": "Manchester United",
+			"19-20": {
+				"Europa League | Manchester United": {
+					"whoscoredApps": 9,
+					"whoscoredMins": 416
+				}
+			}
+		},
 		"106318|Ludogorets Razgrad": {
 			"name": "Marcelinho",
 			"age": 35,
@@ -46432,19 +46432,6 @@
 				"Europa League | Espanyol": {
 					"whoscoredApps": 4,
 					"whoscoredMins": 331
-				}
-			}
-		},
-		"383799|FC Copenhagen": {
-			"name": "Pep Biel",
-			"age": 23,
-			"countryCode": "",
-			"position": "Midfielder",
-			"club": "FC Copenhagen",
-			"19-20": {
-				"Europa League | FC Copenhagen": {
-					"whoscoredApps": 6,
-					"whoscoredMins": 434
 				}
 			}
 		},
@@ -46474,6 +46461,19 @@
 				}
 			}
 		},
+		"134946|Bayer Leverkusen": {
+			"name": "Jonathan Tah",
+			"age": 24,
+			"countryCode": "de",
+			"position": "D(C)",
+			"club": "Bayer Leverkusen",
+			"19-20": {
+				"Europa League | Bayer Leverkusen": {
+					"whoscoredApps": 4,
+					"whoscoredMins": 283
+				}
+			}
+		},
 		"379205|Ajax": {
 			"name": "Sergiño Dest",
 			"age": 19,
@@ -46484,19 +46484,6 @@
 				"Europa League | Ajax": {
 					"whoscoredApps": 2,
 					"whoscoredMins": 180
-				}
-			}
-		},
-		"337916|Wolverhampton Wanderers": {
-			"name": "Pedro Neto",
-			"age": 20,
-			"countryCode": "pt",
-			"position": "AM(LR)",
-			"club": "Wolverhampton Wanderers",
-			"19-20": {
-				"Europa League | Wolverhampton Wanderers": {
-					"whoscoredApps": 7,
-					"whoscoredMins": 312
 				}
 			}
 		},
@@ -46565,6 +46552,19 @@
 				}
 			}
 		},
+		"37344|FC Basel 1893": {
+			"name": "Ricky van Wolfswinkel",
+			"age": 31,
+			"countryCode": "nl",
+			"position": "FW",
+			"club": "FC Basel 1893",
+			"19-20": {
+				"Europa League | FC Basel 1893": {
+					"whoscoredApps": 2,
+					"whoscoredMins": 41
+				}
+			}
+		},
 		"345552|FC Lugano": {
 			"name": "Carlinhos",
 			"age": 26,
@@ -46575,6 +46575,19 @@
 				"Europa League | FC Lugano": {
 					"whoscoredApps": 5,
 					"whoscoredMins": 422
+				}
+			}
+		},
+		"284817|Shakhtar Donetsk": {
+			"name": "Mykola Matvyenko",
+			"age": 24,
+			"countryCode": "ua",
+			"position": "D(CL)",
+			"club": "Shakhtar Donetsk",
+			"19-20": {
+				"Europa League | Shakhtar Donetsk": {
+					"whoscoredApps": 5,
+					"whoscoredMins": 450
 				}
 			}
 		},
@@ -46601,6 +46614,32 @@
 				"Europa League | Sporting CP": {
 					"whoscoredApps": 6,
 					"whoscoredMins": 497
+				}
+			}
+		},
+		"68585|Sevilla": {
+			"name": "Luuk de Jong",
+			"age": 29,
+			"countryCode": "nl",
+			"position": "AM(C),FW",
+			"club": "Sevilla",
+			"19-20": {
+				"Europa League | Sevilla": {
+					"whoscoredApps": 6,
+					"whoscoredMins": 277
+				}
+			}
+		},
+		"33831|Manchester United": {
+			"name": "Sergio Romero",
+			"age": 33,
+			"countryCode": "ar",
+			"position": "GK",
+			"club": "Manchester United",
+			"19-20": {
+				"Europa League | Manchester United": {
+					"whoscoredApps": 9,
+					"whoscoredMins": 840
 				}
 			}
 		},
@@ -46669,32 +46708,6 @@
 				}
 			}
 		},
-		"29199|FC Copenhagen": {
-			"name": "Andreas Bjelland",
-			"age": 32,
-			"countryCode": "dk",
-			"position": "D(CL)",
-			"club": "FC Copenhagen",
-			"19-20": {
-				"Europa League | FC Copenhagen": {
-					"whoscoredApps": 6,
-					"whoscoredMins": 454
-				}
-			}
-		},
-		"8166|Inter": {
-			"name": "Ashley Young",
-			"age": 35,
-			"countryCode": "gb-eng",
-			"position": "D(LR),M(LR)",
-			"club": "Inter",
-			"19-20": {
-				"Europa League | Inter": {
-					"whoscoredApps": 2,
-					"whoscoredMins": 99
-				}
-			}
-		},
 		"10372|Inter": {
 			"name": "Daniele Padelli",
 			"age": 34,
@@ -46751,12 +46764,25 @@
 			"name": "Oleksandr Zubkov",
 			"age": 24,
 			"countryCode": "ua",
-			"position": "Midfielder",
+			"position": "Forward",
 			"club": "Ferencvaros",
 			"19-20": {
 				"Europa League | Ferencvaros": {
 					"whoscoredApps": 6,
 					"whoscoredMins": 468
+				}
+			}
+		},
+		"64271|Inter": {
+			"name": "Danilo D'Ambrosio",
+			"age": 31,
+			"countryCode": "it",
+			"position": "D(CLR),M(LR)",
+			"club": "Inter",
+			"19-20": {
+				"Europa League | Inter": {
+					"whoscoredApps": 4,
+					"whoscoredMins": 309
 				}
 			}
 		},
@@ -46851,16 +46877,16 @@
 				}
 			}
 		},
-		"83455|FC Copenhagen": {
-			"name": "Bryan Oviedo",
-			"age": 30,
-			"countryCode": "cr",
-			"position": "D(L),M(L)",
-			"club": "FC Copenhagen",
+		"124106|Wolverhampton Wanderers": {
+			"name": "Leander Dendoncker",
+			"age": 25,
+			"countryCode": "be",
+			"position": "D(C),DMC",
+			"club": "Wolverhampton Wanderers",
 			"19-20": {
-				"Europa League | FC Copenhagen": {
-					"whoscoredApps": 4,
-					"whoscoredMins": 180
+				"Europa League | Wolverhampton Wanderers": {
+					"whoscoredApps": 11,
+					"whoscoredMins": 604
 				}
 			}
 		},
@@ -46881,7 +46907,7 @@
 			"name": "Dorin Rotariu",
 			"age": 25,
 			"countryCode": "ro",
-			"position": "Forward",
+			"position": "Midfielder",
 			"club": "FC Astana",
 			"19-20": {
 				"Europa League | FC Astana": {
@@ -46891,7 +46917,7 @@
 			}
 		},
 		"41869|FC Astana": {
-			"name": "Runar Mar Sigurjonsson",
+			"name": "Runar Mar Sigurjónsson",
 			"age": 30,
 			"countryCode": "is",
 			"position": "M(C)",
@@ -46900,6 +46926,19 @@
 				"Europa League | FC Astana": {
 					"whoscoredApps": 4,
 					"whoscoredMins": 355
+				}
+			}
+		},
+		"299684|Bayer Leverkusen": {
+			"name": "Exequiel Palacios",
+			"age": 21,
+			"countryCode": "ar",
+			"position": "M(C)",
+			"club": "Bayer Leverkusen",
+			"19-20": {
+				"Europa League | Bayer Leverkusen": {
+					"whoscoredApps": 2,
+					"whoscoredMins": 146
 				}
 			}
 		},
@@ -46926,19 +46965,6 @@
 				"Europa League | Braga": {
 					"whoscoredApps": 8,
 					"whoscoredMins": 582
-				}
-			}
-		},
-		"124106|Wolverhampton Wanderers": {
-			"name": "Leander Dendoncker",
-			"age": 25,
-			"countryCode": "be",
-			"position": "D(C),DMC",
-			"club": "Wolverhampton Wanderers",
-			"19-20": {
-				"Europa League | Wolverhampton Wanderers": {
-					"whoscoredApps": 10,
-					"whoscoredMins": 514
 				}
 			}
 		},
@@ -47046,19 +47072,6 @@
 				}
 			}
 		},
-		"132273|Bayer Leverkusen": {
-			"name": "Wendell",
-			"age": 27,
-			"countryCode": "br",
-			"position": "D(CL),M(L)",
-			"club": "Bayer Leverkusen",
-			"19-20": {
-				"Europa League | Bayer Leverkusen": {
-					"whoscoredApps": 1,
-					"whoscoredMins": 90
-				}
-			}
-		},
 		"22325|Getafe": {
 			"name": "Ángel Rodríguez",
 			"age": 33,
@@ -47124,6 +47137,19 @@
 				}
 			}
 		},
+		"69893|Shakhtar Donetsk": {
+			"name": "Sergey Krivtsov",
+			"age": 29,
+			"countryCode": "ua",
+			"position": "D(C)",
+			"club": "Shakhtar Donetsk",
+			"19-20": {
+				"Europa League | Shakhtar Donetsk": {
+					"whoscoredApps": 5,
+					"whoscoredMins": 450
+				}
+			}
+		},
 		"38462|Rangers": {
 			"name": "Ryan Jack",
 			"age": 28,
@@ -47147,6 +47173,19 @@
 				"Europa League | FC Copenhagen": {
 					"whoscoredApps": 6,
 					"whoscoredMins": 540
+				}
+			}
+		},
+		"355666|FC Basel 1893": {
+			"name": "Arthur Cabral",
+			"age": 22,
+			"countryCode": "br",
+			"position": "FW",
+			"club": "FC Basel 1893",
+			"19-20": {
+				"Europa League | FC Basel 1893": {
+					"whoscoredApps": 11,
+					"whoscoredMins": 648
 				}
 			}
 		},
@@ -47293,19 +47332,6 @@
 				}
 			}
 		},
-		"74277|FC Copenhagen": {
-			"name": "Pierre Bengtsson",
-			"age": 32,
-			"countryCode": "se",
-			"position": "D(L),M(L)",
-			"club": "FC Copenhagen",
-			"19-20": {
-				"Europa League | FC Copenhagen": {
-					"whoscoredApps": 9,
-					"whoscoredMins": 647
-				}
-			}
-		},
 		"383823|F91 Dudelange": {
 			"name": "Sabir Bougrine",
 			"age": 24,
@@ -47412,7 +47438,7 @@
 		},
 		"117710|FC Krasnodar": {
 			"name": "Cristian Ramírez",
-			"age": 25,
+			"age": 26,
 			"countryCode": "ec",
 			"position": "D(L)",
 			"club": "FC Krasnodar",
@@ -47518,7 +47544,7 @@
 			"name": "René Renner",
 			"age": 26,
 			"countryCode": "at",
-			"position": "Midfielder",
+			"position": "M(L)",
 			"club": "LASK",
 			"19-20": {
 				"Europa League | LASK": {
@@ -47579,16 +47605,16 @@
 				}
 			}
 		},
-		"317675|Shakhtar Donetsk": {
-			"name": "Dodô",
-			"age": 21,
-			"countryCode": "",
-			"position": "D(R)",
-			"club": "Shakhtar Donetsk",
+		"74277|FC Copenhagen": {
+			"name": "Pierre Bengtsson",
+			"age": 32,
+			"countryCode": "se",
+			"position": "D(L),M(L)",
+			"club": "FC Copenhagen",
 			"19-20": {
-				"Europa League | Shakhtar Donetsk": {
-					"whoscoredApps": 3,
-					"whoscoredMins": 270
+				"Europa League | FC Copenhagen": {
+					"whoscoredApps": 10,
+					"whoscoredMins": 753
 				}
 			}
 		},
@@ -47615,32 +47641,6 @@
 				"Europa League | Dynamo Kyiv": {
 					"whoscoredApps": 2,
 					"whoscoredMins": 143
-				}
-			}
-		},
-		"87449|Inter": {
-			"name": "Marcelo Brozovic",
-			"age": 27,
-			"countryCode": "hr",
-			"position": "M(CR)",
-			"club": "Inter",
-			"19-20": {
-				"Europa League | Inter": {
-					"whoscoredApps": 2,
-					"whoscoredMins": 127
-				}
-			}
-		},
-		"97752|Manchester United": {
-			"name": "Paul Pogba",
-			"age": 27,
-			"countryCode": "fr",
-			"position": "M(C)",
-			"club": "Manchester United",
-			"19-20": {
-				"Europa League | Manchester United": {
-					"whoscoredApps": 1,
-					"whoscoredMins": 27
 				}
 			}
 		},
@@ -47696,6 +47696,19 @@
 				}
 			}
 		},
+		"337916|Wolverhampton Wanderers": {
+			"name": "Pedro Neto",
+			"age": 20,
+			"countryCode": "pt",
+			"position": "AM(LR)",
+			"club": "Wolverhampton Wanderers",
+			"19-20": {
+				"Europa League | Wolverhampton Wanderers": {
+					"whoscoredApps": 8,
+					"whoscoredMins": 331
+				}
+			}
+		},
 		"297321|Sporting CP": {
 			"name": "Cristian Borja",
 			"age": 27,
@@ -47717,19 +47730,6 @@
 			"club": "Saint-Etienne",
 			"19-20": {
 				"Europa League | Saint-Etienne": {
-					"whoscoredApps": 4,
-					"whoscoredMins": 360
-				}
-			}
-		},
-		"69893|Shakhtar Donetsk": {
-			"name": "Sergey Krivtsov",
-			"age": 29,
-			"countryCode": "ua",
-			"position": "D(C)",
-			"club": "Shakhtar Donetsk",
-			"19-20": {
-				"Europa League | Shakhtar Donetsk": {
 					"whoscoredApps": 4,
 					"whoscoredMins": 360
 				}
@@ -47826,6 +47826,19 @@
 				}
 			}
 		},
+		"83455|FC Copenhagen": {
+			"name": "Bryan Oviedo",
+			"age": 30,
+			"countryCode": "cr",
+			"position": "D(L),M(L)",
+			"club": "FC Copenhagen",
+			"19-20": {
+				"Europa League | FC Copenhagen": {
+					"whoscoredApps": 5,
+					"whoscoredMins": 243
+				}
+			}
+		},
 		"383801|FC Lugano": {
 			"name": "Olivier Custodio",
 			"age": 25,
@@ -47836,6 +47849,19 @@
 				"Europa League | FC Lugano": {
 					"whoscoredApps": 6,
 					"whoscoredMins": 469
+				}
+			}
+		},
+		"383799|FC Copenhagen": {
+			"name": "Pep Biel",
+			"age": 23,
+			"countryCode": "",
+			"position": "M(R)",
+			"club": "FC Copenhagen",
+			"19-20": {
+				"Europa League | FC Copenhagen": {
+					"whoscoredApps": 7,
+					"whoscoredMins": 491
 				}
 			}
 		},
@@ -47943,19 +47969,6 @@
 				}
 			}
 		},
-		"284817|Shakhtar Donetsk": {
-			"name": "Mykola Matvyenko",
-			"age": 24,
-			"countryCode": "ua",
-			"position": "D(CL)",
-			"club": "Shakhtar Donetsk",
-			"19-20": {
-				"Europa League | Shakhtar Donetsk": {
-					"whoscoredApps": 4,
-					"whoscoredMins": 360
-				}
-			}
-		},
 		"365244|Manchester United": {
 			"name": "Tahith Chong",
 			"age": 20,
@@ -47979,6 +47992,19 @@
 				"Europa League | Braga": {
 					"whoscoredApps": 8,
 					"whoscoredMins": 720
+				}
+			}
+		},
+		"388679|FC Copenhagen": {
+			"name": "Robert Mudrazija",
+			"age": 23,
+			"countryCode": "hr",
+			"position": "Midfielder",
+			"club": "FC Copenhagen",
+			"19-20": {
+				"Europa League | FC Copenhagen": {
+					"whoscoredApps": 4,
+					"whoscoredMins": 125
 				}
 			}
 		},
@@ -48031,6 +48057,19 @@
 				"Europa League | FC Copenhagen": {
 					"whoscoredApps": 2,
 					"whoscoredMins": 176
+				}
+			}
+		},
+		"29199|FC Copenhagen": {
+			"name": "Andreas Bjelland",
+			"age": 32,
+			"countryCode": "dk",
+			"position": "D(CL)",
+			"club": "FC Copenhagen",
+			"19-20": {
+				"Europa League | FC Copenhagen": {
+					"whoscoredApps": 7,
+					"whoscoredMins": 574
 				}
 			}
 		},
@@ -48090,7 +48129,7 @@
 			"name": "Babajide David Akintola",
 			"age": 24,
 			"countryCode": "",
-			"position": "Midfielder",
+			"position": "Forward",
 			"club": "Rosenborg",
 			"19-20": {
 				"Europa League | Rosenborg": {
@@ -48398,6 +48437,32 @@
 				}
 			}
 		},
+		"64846|Bayer Leverkusen": {
+			"name": "Lukás Hrádecky",
+			"age": 30,
+			"countryCode": "fi",
+			"position": "GK",
+			"club": "Bayer Leverkusen",
+			"19-20": {
+				"Europa League | Bayer Leverkusen": {
+					"whoscoredApps": 5,
+					"whoscoredMins": 450
+				}
+			}
+		},
+		"255776|Shakhtar Donetsk": {
+			"name": "Viktor Kovalenko",
+			"age": 24,
+			"countryCode": "ua",
+			"position": "M(C)",
+			"club": "Shakhtar Donetsk",
+			"19-20": {
+				"Europa League | Shakhtar Donetsk": {
+					"whoscoredApps": 4,
+					"whoscoredMins": 184
+				}
+			}
+		},
 		"294140|Lazio": {
 			"name": "Jony",
 			"age": 29,
@@ -48450,6 +48515,19 @@
 				}
 			}
 		},
+		"97710|Wolverhampton Wanderers": {
+			"name": "Conor Coady",
+			"age": 27,
+			"countryCode": "gb-eng",
+			"position": "D(CR),DMC",
+			"club": "Wolverhampton Wanderers",
+			"19-20": {
+				"Europa League | Wolverhampton Wanderers": {
+					"whoscoredApps": 11,
+					"whoscoredMins": 990
+				}
+			}
+		},
 		"114301|FC Porto": {
 			"name": "Mateus Uribe",
 			"age": 29,
@@ -48489,19 +48567,6 @@
 				}
 			}
 		},
-		"97710|Wolverhampton Wanderers": {
-			"name": "Conor Coady",
-			"age": 27,
-			"countryCode": "gb-eng",
-			"position": "D(CR),DMC",
-			"club": "Wolverhampton Wanderers",
-			"19-20": {
-				"Europa League | Wolverhampton Wanderers": {
-					"whoscoredApps": 10,
-					"whoscoredMins": 900
-				}
-			}
-		},
 		"275688|FC Astana": {
 			"name": "Ivan Maevski",
 			"age": 32,
@@ -48517,7 +48582,7 @@
 		},
 		"234353|Gent": {
 			"name": "Jean-Luc Mamadou Diarra Dompé",
-			"age": 24,
+			"age": 25,
 			"countryCode": "fr",
 			"position": "Forward",
 			"club": "Gent",
@@ -48762,19 +48827,6 @@
 				}
 			}
 		},
-		"64846|Bayer Leverkusen": {
-			"name": "Lukás Hrádecky",
-			"age": 30,
-			"countryCode": "fi",
-			"position": "GK",
-			"club": "Bayer Leverkusen",
-			"19-20": {
-				"Europa League | Bayer Leverkusen": {
-					"whoscoredApps": 4,
-					"whoscoredMins": 360
-				}
-			}
-		},
 		"104919|Wolfsburg": {
 			"name": "Yunus Malli",
 			"age": 28,
@@ -48948,7 +49000,7 @@
 			"name": "Joe Aribo",
 			"age": 24,
 			"countryCode": "ng",
-			"position": "Midfielder",
+			"position": "AM(C)",
 			"club": "Rangers",
 			"19-20": {
 				"Europa League | Rangers": {
@@ -49019,6 +49071,19 @@
 				"Europa League | Sporting CP": {
 					"whoscoredApps": 3,
 					"whoscoredMins": 180
+				}
+			}
+		},
+		"299344|Inter": {
+			"name": "Lautaro Martínez",
+			"age": 22,
+			"countryCode": "ar",
+			"position": "FW",
+			"club": "Inter",
+			"19-20": {
+				"Europa League | Inter": {
+					"whoscoredApps": 3,
+					"whoscoredMins": 198
 				}
 			}
 		},
@@ -49126,6 +49191,19 @@
 				}
 			}
 		},
+		"91060|Bayer Leverkusen": {
+			"name": "Karim Bellarabi",
+			"age": 30,
+			"countryCode": "de",
+			"position": "M(CLR),FW",
+			"club": "Bayer Leverkusen",
+			"19-20": {
+				"Europa League | Bayer Leverkusen": {
+					"whoscoredApps": 2,
+					"whoscoredMins": 67
+				}
+			}
+		},
 		"143021|Braga": {
 			"name": "Tiago Sá",
 			"age": 25,
@@ -49175,6 +49253,19 @@
 				"Europa League | Wolfsburg": {
 					"whoscoredApps": 6,
 					"whoscoredMins": 465
+				}
+			}
+		},
+		"387417|Shakhtar Donetsk": {
+			"name": "Tetê",
+			"age": 20,
+			"countryCode": "",
+			"position": "Midfielder",
+			"club": "Shakhtar Donetsk",
+			"19-20": {
+				"Europa League | Shakhtar Donetsk": {
+					"whoscoredApps": 4,
+					"whoscoredMins": 124
 				}
 			}
 		},
@@ -49451,19 +49542,6 @@
 				}
 			}
 		},
-		"91060|Bayer Leverkusen": {
-			"name": "Karim Bellarabi",
-			"age": 30,
-			"countryCode": "de",
-			"position": "M(CLR),FW",
-			"club": "Bayer Leverkusen",
-			"19-20": {
-				"Europa League | Bayer Leverkusen": {
-					"whoscoredApps": 1,
-					"whoscoredMins": 62
-				}
-			}
-		},
 		"373291|Ajax": {
 			"name": "Lassina Traoré",
 			"age": 19,
@@ -49494,7 +49572,7 @@
 			"name": "Fedor Chalov",
 			"age": 22,
 			"countryCode": "ru",
-			"position": "FW",
+			"position": "AM(C),FW",
 			"club": "CSKA Moscow",
 			"19-20": {
 				"Europa League | CSKA Moscow": {
@@ -49607,6 +49685,19 @@
 				}
 			}
 		},
+		"23089|Wolverhampton Wanderers": {
+			"name": "Rui Patrício",
+			"age": 32,
+			"countryCode": "pt",
+			"position": "GK",
+			"club": "Wolverhampton Wanderers",
+			"19-20": {
+				"Europa League | Wolverhampton Wanderers": {
+					"whoscoredApps": 10,
+					"whoscoredMins": 900
+				}
+			}
+		},
 		"383839|FC Olexandriya": {
 			"name": "Maksim Zaderaka",
 			"age": 25,
@@ -49617,6 +49708,19 @@
 				"Europa League | FC Olexandriya": {
 					"whoscoredApps": 3,
 					"whoscoredMins": 27
+				}
+			}
+		},
+		"20896|Shakhtar Donetsk": {
+			"name": "Andriy Pyatov",
+			"age": 36,
+			"countryCode": "ua",
+			"position": "GK",
+			"club": "Shakhtar Donetsk",
+			"19-20": {
+				"Europa League | Shakhtar Donetsk": {
+					"whoscoredApps": 5,
+					"whoscoredMins": 450
 				}
 			}
 		},
@@ -49695,6 +49799,19 @@
 				"Europa League | FC Krasnodar": {
 					"whoscoredApps": 3,
 					"whoscoredMins": 270
+				}
+			}
+		},
+		"132273|Bayer Leverkusen": {
+			"name": "Wendell",
+			"age": 27,
+			"countryCode": "br",
+			"position": "D(CL),M(L)",
+			"club": "Bayer Leverkusen",
+			"19-20": {
+				"Europa League | Bayer Leverkusen": {
+					"whoscoredApps": 2,
+					"whoscoredMins": 112
 				}
 			}
 		},
@@ -49997,19 +50114,6 @@
 				}
 			}
 		},
-		"23089|Wolverhampton Wanderers": {
-			"name": "Rui Patrício",
-			"age": 32,
-			"countryCode": "pt",
-			"position": "GK",
-			"club": "Wolverhampton Wanderers",
-			"19-20": {
-				"Europa League | Wolverhampton Wanderers": {
-					"whoscoredApps": 9,
-					"whoscoredMins": 810
-				}
-			}
-		},
 		"29871|Ludogorets Razgrad": {
 			"name": "Svetoslav Dyakov",
 			"age": 36,
@@ -50114,16 +50218,16 @@
 				}
 			}
 		},
-		"20896|Shakhtar Donetsk": {
-			"name": "Andriy Pyatov",
-			"age": 36,
-			"countryCode": "ua",
-			"position": "GK",
-			"club": "Shakhtar Donetsk",
+		"243462|Ferencvaros": {
+			"name": "Mikalay Signevich",
+			"age": 28,
+			"countryCode": "by",
+			"position": "FW",
+			"club": "Ferencvaros",
 			"19-20": {
-				"Europa League | Shakhtar Donetsk": {
+				"Europa League | Ferencvaros": {
 					"whoscoredApps": 4,
-					"whoscoredMins": 360
+					"whoscoredMins": 55
 				}
 			}
 		},
@@ -50137,19 +50241,6 @@
 				"Europa League | Wolverhampton Wanderers": {
 					"whoscoredApps": 4,
 					"whoscoredMins": 252
-				}
-			}
-		},
-		"243462|Ferencvaros": {
-			"name": "Nikolay Signevich",
-			"age": 28,
-			"countryCode": "by",
-			"position": "FW",
-			"club": "Ferencvaros",
-			"19-20": {
-				"Europa League | Ferencvaros": {
-					"whoscoredApps": 4,
-					"whoscoredMins": 55
 				}
 			}
 		},
@@ -50596,7 +50687,7 @@
 			}
 		},
 		"321088|Ferencvaros": {
-			"name": "Tokmac Nguen",
+			"name": "Tokmac Chol Nguen",
 			"age": 26,
 			"countryCode": "no",
 			"position": "AM(LR)",
@@ -50660,19 +50751,6 @@
 				}
 			}
 		},
-		"387417|Shakhtar Donetsk": {
-			"name": "Tetê",
-			"age": 20,
-			"countryCode": "",
-			"position": "Midfielder",
-			"club": "Shakhtar Donetsk",
-			"19-20": {
-				"Europa League | Shakhtar Donetsk": {
-					"whoscoredApps": 3,
-					"whoscoredMins": 119
-				}
-			}
-		},
 		"320738|Rosenborg": {
 			"name": "Birger Meling",
 			"age": 25,
@@ -50727,7 +50805,7 @@
 		},
 		"137837|Saint-Etienne": {
 			"name": "Franck Honorat",
-			"age": 23,
+			"age": 24,
 			"countryCode": "fr",
 			"position": "M(R)",
 			"club": "Saint-Etienne",
@@ -50943,19 +51021,6 @@
 				"Europa League | Feyenoord": {
 					"whoscoredApps": 2,
 					"whoscoredMins": 23
-				}
-			}
-		},
-		"327682|Bayer Leverkusen": {
-			"name": "Leon Bailey",
-			"age": 23,
-			"countryCode": "jm",
-			"position": "M(LR)",
-			"club": "Bayer Leverkusen",
-			"19-20": {
-				"Europa League | Bayer Leverkusen": {
-					"whoscoredApps": 4,
-					"whoscoredMins": 67
 				}
 			}
 		},
@@ -51375,19 +51440,6 @@
 				}
 			}
 		},
-		"364231|FC Basel 1893": {
-			"name": "Jasper van der Werff",
-			"age": 21,
-			"countryCode": "ch",
-			"position": "Defender",
-			"club": "FC Basel 1893",
-			"19-20": {
-				"Europa League | FC Basel 1893": {
-					"whoscoredApps": 2,
-					"whoscoredMins": 35
-				}
-			}
-		},
 		"384566|Espanyol": {
 			"name": "Víctor Gómez",
 			"age": 20,
@@ -51622,19 +51674,6 @@
 				}
 			}
 		},
-		"299344|Inter": {
-			"name": "Lautaro Martínez",
-			"age": 22,
-			"countryCode": "ar",
-			"position": "FW",
-			"club": "Inter",
-			"19-20": {
-				"Europa League | Inter": {
-					"whoscoredApps": 2,
-					"whoscoredMins": 134
-				}
-			}
-		},
 		"77176|Club Brugge": {
 			"name": "Mats Rits",
 			"age": 27,
@@ -51658,6 +51697,19 @@
 				"Europa League | Standard Liege": {
 					"whoscoredApps": 5,
 					"whoscoredMins": 346
+				}
+			}
+		},
+		"397645|FC Copenhagen": {
+			"name": "William Boving Vick",
+			"age": 0,
+			"countryCode": "",
+			"position": "Forward",
+			"club": "FC Copenhagen",
+			"19-20": {
+				"Europa League | FC Copenhagen": {
+					"whoscoredApps": 1,
+					"whoscoredMins": 9
 				}
 			}
 		},
@@ -51765,6 +51817,19 @@
 				}
 			}
 		},
+		"327682|Bayer Leverkusen": {
+			"name": "Leon Bailey",
+			"age": 23,
+			"countryCode": "jm",
+			"position": "M(LR)",
+			"club": "Bayer Leverkusen",
+			"19-20": {
+				"Europa League | Bayer Leverkusen": {
+					"whoscoredApps": 5,
+					"whoscoredMins": 98
+				}
+			}
+		},
 		"373340|AZ Alkmaar": {
 			"name": "Zakaria Aboukhlal",
 			"age": 20,
@@ -51827,6 +51892,19 @@
 				"Europa League | Feyenoord": {
 					"whoscoredApps": 4,
 					"whoscoredMins": 275
+				}
+			}
+		},
+		"341335|FC Basel 1893": {
+			"name": "Afimico Pululu",
+			"age": 21,
+			"countryCode": "fr",
+			"position": "Forward",
+			"club": "FC Basel 1893",
+			"19-20": {
+				"Europa League | FC Basel 1893": {
+					"whoscoredApps": 7,
+					"whoscoredMins": 239
 				}
 			}
 		},
@@ -51947,19 +52025,6 @@
 				}
 			}
 		},
-		"384573|FC Basel 1893": {
-			"name": "Kemal Ademi",
-			"age": 24,
-			"countryCode": "ch",
-			"position": "Forward",
-			"club": "FC Basel 1893",
-			"19-20": {
-				"Europa League | FC Basel 1893": {
-					"whoscoredApps": 8,
-					"whoscoredMins": 301
-				}
-			}
-		},
 		"316998|Olympiacos": {
 			"name": "Maximiliano Lovera",
 			"age": 21,
@@ -51970,32 +52035,6 @@
 				"Europa League | Olympiacos": {
 					"whoscoredApps": 2,
 					"whoscoredMins": 22
-				}
-			}
-		},
-		"37344|FC Basel 1893": {
-			"name": "Ricky van Wolfswinkel",
-			"age": 31,
-			"countryCode": "nl",
-			"position": "FW",
-			"club": "FC Basel 1893",
-			"19-20": {
-				"Europa League | FC Basel 1893": {
-					"whoscoredApps": 1,
-					"whoscoredMins": 24
-				}
-			}
-		},
-		"387444|FC Basel 1893": {
-			"name": "Yannick Marchand",
-			"age": 20,
-			"countryCode": "",
-			"position": "Midfielder",
-			"club": "FC Basel 1893",
-			"19-20": {
-				"Europa League | FC Basel 1893": {
-					"whoscoredApps": 1,
-					"whoscoredMins": 3
 				}
 			}
 		},
@@ -52074,19 +52113,6 @@
 				"Europa League | Borussia M'Gladbach": {
 					"whoscoredApps": 5,
 					"whoscoredMins": 224
-				}
-			}
-		},
-		"341335|FC Basel 1893": {
-			"name": "Afimico Pululu",
-			"age": 21,
-			"countryCode": "fr",
-			"position": "Forward",
-			"club": "FC Basel 1893",
-			"19-20": {
-				"Europa League | FC Basel 1893": {
-					"whoscoredApps": 6,
-					"whoscoredMins": 149
 				}
 			}
 		},
@@ -52234,7 +52260,7 @@
 			}
 		},
 		"97606|Qarabag FK": {
-			"name": "Qara Qarayev",
+			"name": "Gara Elkhan Oglu Garayev",
 			"age": 27,
 			"countryCode": "az",
 			"position": "DMC",
@@ -52256,6 +52282,19 @@
 				"Europa League | FC Lugano": {
 					"whoscoredApps": 4,
 					"whoscoredMins": 297
+				}
+			}
+		},
+		"384573|FC Basel 1893": {
+			"name": "Kemal Ademi",
+			"age": 24,
+			"countryCode": "ch",
+			"position": "Forward",
+			"club": "FC Basel 1893",
+			"19-20": {
+				"Europa League | FC Basel 1893": {
+					"whoscoredApps": 9,
+					"whoscoredMins": 318
 				}
 			}
 		},
@@ -52282,19 +52321,6 @@
 				"Europa League | Dynamo Kyiv": {
 					"whoscoredApps": 4,
 					"whoscoredMins": 189
-				}
-			}
-		},
-		"364657|FC Copenhagen": {
-			"name": "Karlo Bartolec",
-			"age": 25,
-			"countryCode": "hr",
-			"position": "Defender",
-			"club": "FC Copenhagen",
-			"19-20": {
-				"Europa League | FC Copenhagen": {
-					"whoscoredApps": 7,
-					"whoscoredMins": 219
 				}
 			}
 		},
@@ -52376,6 +52402,19 @@
 				}
 			}
 		},
+		"392643|FC Copenhagen": {
+			"name": "Mikkel Kaufmann",
+			"age": 19,
+			"countryCode": "dk",
+			"position": "Forward",
+			"club": "FC Copenhagen",
+			"19-20": {
+				"Europa League | FC Copenhagen": {
+					"whoscoredApps": 5,
+					"whoscoredMins": 206
+				}
+			}
+		},
 		"96448|Getafe": {
 			"name": "David Timor",
 			"age": 30,
@@ -52386,19 +52425,6 @@
 				"Europa League | Getafe": {
 					"whoscoredApps": 7,
 					"whoscoredMins": 355
-				}
-			}
-		},
-		"392643|FC Copenhagen": {
-			"name": "Mikkel Kaufmann",
-			"age": 19,
-			"countryCode": "dk",
-			"position": "Forward",
-			"club": "FC Copenhagen",
-			"19-20": {
-				"Europa League | FC Copenhagen": {
-					"whoscoredApps": 4,
-					"whoscoredMins": 143
 				}
 			}
 		},
@@ -52558,6 +52584,19 @@
 				}
 			}
 		},
+		"27124|Bayer Leverkusen": {
+			"name": "Julian Baumgartlinger",
+			"age": 32,
+			"countryCode": "at",
+			"position": "DMC",
+			"club": "Bayer Leverkusen",
+			"19-20": {
+				"Europa League | Bayer Leverkusen": {
+					"whoscoredApps": 4,
+					"whoscoredMins": 117
+				}
+			}
+		},
 		"280988|Vitoria de Guimaraes": {
 			"name": "Falaye Sacko",
 			"age": 25,
@@ -52624,7 +52663,7 @@
 			}
 		},
 		"131153|FC Krasnodar": {
-			"name": "Jón Fjóluson",
+			"name": "Jón Gudni Fjóluson",
 			"age": 31,
 			"countryCode": "is",
 			"position": "D(C)",
@@ -52633,6 +52672,19 @@
 				"Europa League | FC Krasnodar": {
 					"whoscoredApps": 2,
 					"whoscoredMins": 60
+				}
+			}
+		},
+		"364657|FC Copenhagen": {
+			"name": "Karlo Bartolec",
+			"age": 25,
+			"countryCode": "hr",
+			"position": "Defender",
+			"club": "FC Copenhagen",
+			"19-20": {
+				"Europa League | FC Copenhagen": {
+					"whoscoredApps": 8,
+					"whoscoredMins": 234
 				}
 			}
 		},
@@ -52831,19 +52883,6 @@
 				}
 			}
 		},
-		"383798|FC Copenhagen": {
-			"name": "Mohammed Daramy",
-			"age": 18,
-			"countryCode": "sl",
-			"position": "Forward",
-			"club": "FC Copenhagen",
-			"19-20": {
-				"Europa League | FC Copenhagen": {
-					"whoscoredApps": 6,
-					"whoscoredMins": 153
-				}
-			}
-		},
 		"329681|Wolverhampton Wanderers": {
 			"name": "Patrick Cutrone",
 			"age": 22,
@@ -52871,7 +52910,7 @@
 			}
 		},
 		"105873|Ferencvaros": {
-			"name": "Abraham Frimpong",
+			"name": "Abraham Akwasi Frimpong",
 			"age": 27,
 			"countryCode": "gh",
 			"position": "Defender",
@@ -52880,19 +52919,6 @@
 				"Europa League | Ferencvaros": {
 					"whoscoredApps": 5,
 					"whoscoredMins": 276
-				}
-			}
-		},
-		"27124|Bayer Leverkusen": {
-			"name": "Julian Baumgartlinger",
-			"age": 32,
-			"countryCode": "at",
-			"position": "DMC",
-			"club": "Bayer Leverkusen",
-			"19-20": {
-				"Europa League | Bayer Leverkusen": {
-					"whoscoredApps": 3,
-					"whoscoredMins": 49
 				}
 			}
 		},
@@ -53039,6 +53065,19 @@
 				}
 			}
 		},
+		"364231|FC Basel 1893": {
+			"name": "Jasper van der Werff",
+			"age": 21,
+			"countryCode": "ch",
+			"position": "Defender",
+			"club": "FC Basel 1893",
+			"19-20": {
+				"Europa League | FC Basel 1893": {
+					"whoscoredApps": 3,
+					"whoscoredMins": 108
+				}
+			}
+		},
 		"283329|Slovan Bratislava": {
 			"name": "Aleksandar Cavric",
 			"age": 26,
@@ -53088,6 +53127,19 @@
 				"Europa League | Rennes": {
 					"whoscoredApps": 4,
 					"whoscoredMins": 151
+				}
+			}
+		},
+		"383798|FC Copenhagen": {
+			"name": "Mohammed Daramy",
+			"age": 18,
+			"countryCode": "sl",
+			"position": "Forward",
+			"club": "FC Copenhagen",
+			"19-20": {
+				"Europa League | FC Copenhagen": {
+					"whoscoredApps": 7,
+					"whoscoredMins": 210
 				}
 			}
 		},
@@ -53329,7 +53381,7 @@
 			"name": "Mavis Tchibota",
 			"age": 24,
 			"countryCode": "cg",
-			"position": "Forward",
+			"position": "Midfielder",
 			"club": "Ludogorets Razgrad",
 			"19-20": {
 				"Europa League | Ludogorets Razgrad": {
@@ -53478,19 +53530,6 @@
 				"Europa League | LASK": {
 					"whoscoredApps": 1,
 					"whoscoredMins": 2
-				}
-			}
-		},
-		"317789|Shakhtar Donetsk": {
-			"name": "Maycon",
-			"age": 23,
-			"countryCode": "br",
-			"position": "M(C)",
-			"club": "Shakhtar Donetsk",
-			"19-20": {
-				"Europa League | Shakhtar Donetsk": {
-					"whoscoredApps": 1,
-					"whoscoredMins": 24
 				}
 			}
 		},
@@ -53647,6 +53686,19 @@
 				"Europa League | CSKA Moscow": {
 					"whoscoredApps": 5,
 					"whoscoredMins": 336
+				}
+			}
+		},
+		"317789|Shakhtar Donetsk": {
+			"name": "Maycon",
+			"age": 23,
+			"countryCode": "br",
+			"position": "M(C)",
+			"club": "Shakhtar Donetsk",
+			"19-20": {
+				"Europa League | Shakhtar Donetsk": {
+					"whoscoredApps": 2,
+					"whoscoredMins": 29
 				}
 			}
 		},
@@ -53936,6 +53988,19 @@
 				}
 			}
 		},
+		"363129|FC Basel 1893": {
+			"name": "Ramires",
+			"age": 20,
+			"countryCode": "",
+			"position": "AM(CR)",
+			"club": "FC Basel 1893",
+			"19-20": {
+				"Europa League | FC Basel 1893": {
+					"whoscoredApps": 2,
+					"whoscoredMins": 37
+				}
+			}
+		},
 		"103057|FC Olexandriya": {
 			"name": "Oleksiy Dovgiy",
 			"age": 30,
@@ -54024,6 +54089,19 @@
 				"Europa League | LASK": {
 					"whoscoredApps": 4,
 					"whoscoredMins": 128
+				}
+			}
+		},
+		"302918|Inter": {
+			"name": "Milan Skriniar",
+			"age": 25,
+			"countryCode": "sk",
+			"position": "D(C)",
+			"club": "Inter",
+			"19-20": {
+				"Europa League | Inter": {
+					"whoscoredApps": 1,
+					"whoscoredMins": 6
 				}
 			}
 		},
@@ -54261,19 +54339,6 @@
 				}
 			}
 		},
-		"363129|FC Basel 1893": {
-			"name": "Ramires",
-			"age": 19,
-			"countryCode": "",
-			"position": "AM(CR)",
-			"club": "FC Basel 1893",
-			"19-20": {
-				"Europa League | FC Basel 1893": {
-					"whoscoredApps": 1,
-					"whoscoredMins": 20
-				}
-			}
-		},
 		"2837|Rangers": {
 			"name": "Jermain Defoe",
 			"age": 37,
@@ -54367,7 +54432,7 @@
 		},
 		"243528|Partizan Belgrade": {
 			"name": "Filip Kljajic",
-			"age": 29,
+			"age": 30,
 			"countryCode": "rs",
 			"position": "Goalkeeper",
 			"club": "Partizan Belgrade",
@@ -54509,7 +54574,7 @@
 			}
 		},
 		"91282|FC Astana": {
-			"name": "Rangelo Janga",
+			"name": "Rangelo Maria Janga",
 			"age": 28,
 			"countryCode": "nl",
 			"position": "Forward",
@@ -54885,9 +54950,22 @@
 				}
 			}
 		},
+		"348068|Shakhtar Donetsk": {
+			"name": "Fernando",
+			"age": 21,
+			"countryCode": "br",
+			"position": "Midfielder",
+			"club": "Shakhtar Donetsk",
+			"19-20": {
+				"Europa League | Shakhtar Donetsk": {
+					"whoscoredApps": 1,
+					"whoscoredMins": 5
+				}
+			}
+		},
 		"8013|Ajax": {
 			"name": "Klaas Jan Huntelaar",
-			"age": 36,
+			"age": 37,
 			"countryCode": "nl",
 			"position": "FW",
 			"club": "Ajax",
@@ -55064,6 +55142,19 @@
 				"Europa League | LASK": {
 					"whoscoredApps": 2,
 					"whoscoredMins": 27
+				}
+			}
+		},
+		"387444|FC Basel 1893": {
+			"name": "Yannick Marchand",
+			"age": 20,
+			"countryCode": "",
+			"position": "Midfielder",
+			"club": "FC Basel 1893",
+			"19-20": {
+				"Europa League | FC Basel 1893": {
+					"whoscoredApps": 2,
+					"whoscoredMins": 34
 				}
 			}
 		},

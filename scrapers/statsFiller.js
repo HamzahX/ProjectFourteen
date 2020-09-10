@@ -249,13 +249,14 @@ let processEntry = (aPlayer, competitionData, competitionName, isGoalkeeper) => 
     }
 
     //exit the function if the player is not a goalkeeper and the current entry is a goalkeeper
-    if (isGoalkeeper && METADATA[whoscoredCode]["positions"][SEASON] !== "GK"){
-        return;
-    }
+    // if (isGoalkeeper && METADATA[whoscoredCode]["positions"][SEASON] !== "GK"){
+    //     return;
+    // }
+    let isOutfieldGoalkeeper = isGoalkeeper && METADATA[whoscoredCode]["positions"][SEASON] !== "GK";
 
     //retrieve the club name and the team's average possession for the required competition
     if (FBREF_TO_WHOSCORED_TEAMS[fbrefClubName] === undefined){
-        console.log(fbrefClubName);
+        console.log("Unmatched fbref club name: " + fbrefClubName + ". Check the team name mappings");
     }
     let whoscoredClubName = FBREF_TO_WHOSCORED_TEAMS[fbrefClubName]["whoscored"];
     let possession = POSSESSION_DATA[competitionName][whoscoredClubName];
@@ -263,21 +264,24 @@ let processEntry = (aPlayer, competitionData, competitionName, isGoalkeeper) => 
     //populate the player metadata
     if (PROCESSED[whoscoredCode] === undefined){
         PROCESSED[whoscoredCode] = {};
-        let currentPlayer = PROCESSED[whoscoredCode];
         let metadata = METADATA[whoscoredCode];
-        currentPlayer["fbrefCode"] = fbrefCode;
-        currentPlayer["fbrefURL"] = entry["url"];
-        currentPlayer["name"] = metadata["name"];
-        currentPlayer["name2"] = fbrefName;
-        currentPlayer["simplifiedName"] = metadata["simplifiedName"];
-        currentPlayer["simplifiedName2"] = fbrefSimplifiedName;
-        currentPlayer["age"] = metadata["age"];
-        currentPlayer["nationality"] = metadata["nationality"] === "" ? countryCodes.getCountryName(entry['standard_Nation'].split(" ")[0].toUpperCase()) : metadata["nationality"];
-        currentPlayer["countryCode"] = metadata["countryCode"] === "" ? cleanCountryCode(entry['standard_Nation'].split(" ")[0]) : metadata["countryCode"];
-        currentPlayer["positions"] = metadata["positions"];
-        currentPlayer["percentileEntries"] = {};
-        currentPlayer["clubs"] = metadata["clubs"];
-        currentPlayer["stats"] = {};
+        PROCESSED[whoscoredCode]["fbrefCode"] = fbrefCode;
+        PROCESSED[whoscoredCode]["fbrefURL"] = entry["url"];
+        PROCESSED[whoscoredCode]["name"] = metadata["name"];
+        PROCESSED[whoscoredCode]["name2"] = fbrefName;
+        PROCESSED[whoscoredCode]["simplifiedName"] = metadata["simplifiedName"];
+        PROCESSED[whoscoredCode]["simplifiedName2"] = fbrefSimplifiedName;
+        PROCESSED[whoscoredCode]["age"] = metadata["age"];
+        PROCESSED[whoscoredCode]["nationality"] = metadata["nationality"] === "" ? countryCodes.getCountryName(entry['standard_Nation'].split(" ")[0].toUpperCase()) : metadata["nationality"];
+        PROCESSED[whoscoredCode]["countryCode"] = metadata["countryCode"] === "" ? cleanCountryCode(entry['standard_Nation'].split(" ")[0]) : metadata["countryCode"];
+        PROCESSED[whoscoredCode]["positions"] = metadata["positions"];
+        PROCESSED[whoscoredCode]["percentileEntries"] = {};
+        PROCESSED[whoscoredCode]["clubs"] = metadata["clubs"];
+        PROCESSED[whoscoredCode]["stats"] = {};
+    }
+
+    if (isOutfieldGoalkeeper && PROCESSED[whoscoredCode]["outfieldGKStats"] === undefined){
+        PROCESSED[whoscoredCode]["outfieldGKStats"] = {};
     }
 
     if (PROCESSED[whoscoredCode]["percentileEntries"][SEASON] === undefined){
@@ -293,7 +297,7 @@ let processEntry = (aPlayer, competitionData, competitionName, isGoalkeeper) => 
 
     //retrieve required stats from the fbref data (exported CSVs converted to JSON)
     let stats;
-    if (isGoalkeeper && METADATA[whoscoredCode]["positions"][SEASON] === "GK"){
+    if (isGoalkeeper){
         stats = {
             minutes: entry["keeper_Min"],
             goalsAgainst: entry["keeper_adv_GA"] - entry["keeper_adv_OG"],
@@ -308,6 +312,7 @@ let processEntry = (aPlayer, competitionData, competitionName, isGoalkeeper) => 
     }
     else {
         stats = {
+            age: entry["standard_Age"],
             minutes: entry["standard_Min"],
             npg: entry["standard_Gls"] - entry["standard_PK"],
             npxg: entry["standard_npxG"],
@@ -323,7 +328,7 @@ let processEntry = (aPlayer, competitionData, competitionName, isGoalkeeper) => 
             timesDispossessed: entry["possession_Dispos"],
             miscontrols: entry["possession_Miscon"],
             succPressures: entry["defense_Succ"],
-            padjSuccPressures: adjustForPossession(entry["defense_Succ"], possession),
+            padjSuccPressures: adjustForPossessionDefensive(entry["defense_Succ"], possession),
             progDistance: entry["passing_PrgDist"] + entry["possession_PrgDist"],
             succPasses: entry["passing_Cmp"],
             attPasses: entry["passing_Att"],
@@ -331,17 +336,17 @@ let processEntry = (aPlayer, competitionData, competitionName, isGoalkeeper) => 
             succLongPasses: entry["passing_Cmp__3"],
             attLongPasses: entry["passing_Att__3"],
             interceptions: entry["defense_Int"],
-            padjInterceptions: adjustForPossession(entry["defense_Int"], possession),
+            padjInterceptions: adjustForPossessionDefensive(entry["defense_Int"], possession),
             tackles: entry["defense_Tkl"],
-            padjTackles: adjustForPossession(entry["defense_Tkl"], possession),
+            padjTackles: adjustForPossessionDefensive(entry["defense_Tkl"], possession),
             tacklesWon: entry["defense_TklW"],
-            padjTacklesWon: adjustForPossession(entry["defense_TklW"], possession),
+            padjTacklesWon: adjustForPossessionDefensive(entry["defense_TklW"], possession),
             succDribbleTackles: entry["defense_Tkl__1"],
             attDribbleTackles: entry["defense_Att"],
             fouls: entry["misc_Fls"],
-            padjFouls: adjustForPossession(entry["misc_Fls"], possession),
+            padjFouls: adjustForPossessionDefensive(entry["misc_Fls"], possession),
             clearances: entry["defense_Clr"],
-            padjClearances: adjustForPossession(entry["defense_Clr"], possession)
+            padjClearances: adjustForPossessionDefensive(entry["defense_Clr"], possession)
         };
         for (let stat in stats){
             if (typeof stats[stat] === "string"){
@@ -353,18 +358,36 @@ let processEntry = (aPlayer, competitionData, competitionName, isGoalkeeper) => 
     //populate the player stats
     if (METADATA[whoscoredCode][SEASON] !== undefined){
         if (METADATA[whoscoredCode][SEASON][`${competitionName} | ${whoscoredClubName}`] !== undefined){
-            if (PROCESSED[whoscoredCode]["stats"][SEASON] === undefined){
-                PROCESSED[whoscoredCode]["stats"][SEASON] = {};
+            if (isOutfieldGoalkeeper){
+                if (PROCESSED[whoscoredCode]["outfieldGKStats"][SEASON] === undefined){
+                    PROCESSED[whoscoredCode]["outfieldGKStats"][SEASON] = {};
+                }
+                PROCESSED[whoscoredCode]["outfieldGKStats"][SEASON][`${competitionName} | ${whoscoredClubName}`] = stats;
             }
-            PROCESSED[whoscoredCode]["stats"][SEASON][`${competitionName} | ${whoscoredClubName}`] = stats;
+            else {
+                if (PROCESSED[whoscoredCode]["stats"][SEASON] === undefined){
+                    PROCESSED[whoscoredCode]["stats"][SEASON] = {};
+                }
+                PROCESSED[whoscoredCode]["stats"][SEASON][`${competitionName} | ${whoscoredClubName}`] = stats;
+            }
         }
     }
 
 };
 
 
-let adjustForPossession = (value, possession) => {
+let adjustForPossessionDefensive = (value, possession) => {
 
+    //StatsBomb sigmoid function adapted from: https://statsbomb.com/2014/06/introducing-possession-adjusted-player-stats/
+    return (value * 2) / (1 + Math.exp(-0.1 * (possession - 50)));
+
+};
+
+
+let adjustForPossessionOffensive = (value, touches) => {
+
+    //return value per 100 touches
+    return (v)
     //StatsBomb sigmoid function adapted from: https://statsbomb.com/2014/06/introducing-possession-adjusted-player-stats/
     return (value * 2) / (1 + Math.exp(-0.1 * (possession - 50)));
 
@@ -383,7 +406,7 @@ let cleanCountryCode = (code) => {
         code = "_wales"
     }
     else if (codeUpperCase === "GB-NIR" || codeUpperCase === "NIR") {
-        code = "_unknown"
+        code = "_northern-ireland"
     }
     else if (codeUpperCase === "XK") {
         code = "_kosovo"

@@ -1,15 +1,14 @@
 import React, { Component } from 'react';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import { createBrowserHistory } from 'history'
+import { withRouter, Route, Switch } from 'react-router-dom';
 import ReactGA from 'react-ga';
 import {isMobileOnly, isSafari} from 'react-device-detect';
 
 //import pages
-import Error from './pages/Error';
 import Home from './pages/Home';
 import Search from './pages/Search';
 import Stats from './pages/Stats';
 import Compare from './pages/Compare';
+import Error from './pages/Error';
 
 //import stylesheets, including mobile stylesheet if it is a mobile device
 require('./stylesheets/App.css');
@@ -21,11 +20,6 @@ if (isMobileOnly){
 
 //initialize Google Analytics
 ReactGA.initialize('UA-168675037-1');
-//listen for route changes and record a page-view in Google Analytics for each one
-const history = createBrowserHistory();
-history.listen((location, action) => {
-    ReactGA.pageview(location.pathname + location.search);
-});
 
 
 /**
@@ -51,18 +45,6 @@ class App extends Component {
 
 
     /**
-     * Called after component has mounted
-     */
-    componentDidMount() {
-
-        //record the first page-view in Google Analytics
-        //this is done because history.listen() only records route changes, but doesn't record the first page on load
-        ReactGA.pageview(window.location.pathname + window.location.search);
-
-    }
-
-
-    /**
      * Function to send a POST request to the server to retrieve the percentile arrays
      */
     getPercentileArrays = () => {
@@ -80,6 +62,18 @@ class App extends Component {
         })
         .then(percentileArrays => this.setState({percentileArrays: percentileArrays, isLoading: false}))
         .catch();
+
+    };
+
+
+    /**
+     * Function to record a Google Analytics page view
+     * Passed to page components as a prop, and called on page load
+     * @param {string} location - the URL of the page for which the view is being recorded
+     */
+    recordPageViewGA = (location) => {
+
+        ReactGA.pageview(location);
 
     };
 
@@ -119,43 +113,43 @@ class App extends Component {
         //return routing code otherwise
         else {
 
-            const App = () => (
-                <BrowserRouter history={history}>
-                    <Switch>
-                        <Route exact path='/' render={(props) =>
-                            <Home {...props}
-                                  isMobile={isMobileOnly}
-                            />}
-                        />
-                        <Route exact path='/search/:query/:searchByClub?' render={(props) =>
-                            <Search {...props}
-                                   isMobile={isMobileOnly}
-                            />}
-                        />
-                        <Route exact path='/stats/:code' render={(props) =>
-                            <Stats {...props}
-                                percentileArrays={this.state.percentileArrays}
-                                isMobile={isMobileOnly}
-                                isSafari={isSafari}
-                                updatePercentileArrays={this.updatePercentileArrays}
-                            />}
-                        />
-                        <Route exact path='/compare/:codes' render={(props) =>
-                            <Compare {...props}
-                                percentileArrays={this.state.percentileArrays}
-                                isMobile={isMobileOnly}
-                                isSafari={isSafari}
-                                updatePercentileArrays={this.updatePercentileArrays}
-                            />}
-                        />
-                        <Route component={Error}/>
-                    </Switch>
-                </BrowserRouter>
-            );
-
             return (
                 <Switch>
-                    <App/>
+                    <Route exact path='/' render={(props) =>
+                        <Home
+                            {...props}
+                            isMobile={isMobileOnly}
+                            recordPageViewGA={this.recordPageViewGA}
+                        />}
+                    />
+                    <Route exact path='/search/:query/:searchByClub?' render={(props) =>
+                        <Search
+                            {...props}
+                            isMobile={isMobileOnly}
+                            recordPageViewGA={this.recordPageViewGA}
+                        />}
+                    />
+                    <Route exact path='/stats/:code' render={(props) =>
+                        <Stats
+                            {...props}
+                            isMobile={isMobileOnly}
+                            isSafari={isSafari}
+                            recordPageViewGA={this.recordPageViewGA}
+                            percentileArrays={this.state.percentileArrays}
+                            updatePercentileArrays={this.updatePercentileArrays}
+                        />}
+                    />
+                    <Route exact path='/compare/:codes' render={(props) =>
+                        <Compare
+                            {...props}
+                            isMobile={isMobileOnly}
+                            isSafari={isSafari}
+                            recordPageViewGA={this.recordPageViewGA}
+                            percentileArrays={this.state.percentileArrays}
+                            updatePercentileArrays={this.updatePercentileArrays}
+                        />}
+                    />
+                    <Route component={Error}/>
                 </Switch>
             );
 
@@ -165,4 +159,4 @@ class App extends Component {
 
 }
 
-export default App;
+export default withRouter(App);

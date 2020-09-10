@@ -207,6 +207,7 @@ button:hover {
 
             #live-search-results h3 {
                 margin-top: 5px;
+                margin-left: 5px;
                 margin-bottom: 3px;
             }
 
@@ -231,7 +232,7 @@ button:hover {
             }
 
                 #live-search-results .search-result .name {
-                    font-size: 1.2em;
+                    font-size: 1.1em;
                     color: #e75453;
                     font-weight: bold;
                     display: inline-block;
@@ -822,7 +823,7 @@ button:hover {
                     padding-top: 10px;
                     padding-bottom: 10px;
                     font-weight: bold;
-                    font-size: 1.2em;
+                    font-size: 1.1em;
                     color: #B23535;
                 }
 

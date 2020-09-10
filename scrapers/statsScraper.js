@@ -266,16 +266,16 @@ let scrapeLigue1Pages = async () => {
         }
         else {
             URLs = [
-                "https://fbref.com/en/comps/13/stats/Ligue-1-Stats",
-                "https://fbref.com/en/comps/13/shooting/Ligue-1-Stats",
-                "https://fbref.com/en/comps/13/passing/Ligue-1-Stats",
-                "https://fbref.com/en/comps/13/passing_types/Ligue-1-Stats",
-                "https://fbref.com/en/comps/13/gca/Ligue-1-Stats",
-                "https://fbref.com/en/comps/13/defense/Ligue-1-Stats",
-                "https://fbref.com/en/comps/13/possession/Ligue-1-Stats",
-                "https://fbref.com/en/comps/13/misc/Ligue-1-Stats",
-                "https://fbref.com/en/comps/13/keepers/Ligue-1-Stats",
-                "https://fbref.com/en/comps/13/keepersadv/Ligue-1-Stats"
+                "https://fbref.com/en/comps/13/3243/stats/2019-2020-Ligue-1-Stats",
+                "https://fbref.com/en/comps/13/3243/shooting/2019-2020-Ligue-1-Stats",
+                "https://fbref.com/en/comps/13/3243/passing/2019-2020-Ligue-1-Stats",
+                "https://fbref.com/en/comps/13/3243/passing_types/2019-2020-Ligue-1-Stats",
+                "https://fbref.com/en/comps/13/3243/gca/2019-2020-Ligue-1-Stats",
+                "https://fbref.com/en/comps/13/3243/defense/2019-2020-Ligue-1-Stats",
+                "https://fbref.com/en/comps/13/3243/possession/2019-2020-Ligue-1-Stats",
+                "https://fbref.com/en/comps/13/3243/misc/2019-2020-Ligue-1-Stats",
+                "https://fbref.com/en/comps/13/3243/keepers/2019-2020-Ligue-1-Stats",
+                "https://fbref.com/en/comps/13/3243/keepersadv/2019-2020-Ligue-1-Stats"
             ]
         }
         await loadPages(URLs);
@@ -408,16 +408,16 @@ saveJSONs = async (competition) => {
                             }
                             else if('passing_types_Player' in temp['1']){
                                 //create temp object containing passing type data for just GKs
-                                let temp2 = {};
-                                let counter = 1;
-                                for (let player in temp){
-                                    if (temp[player]['passing_types_Pos'] === "GK")
-                                    {
-                                        temp2[counter.toString()] = temp[player];
-                                        counter++
-                                    }
-                                }
-                                combined_gk = merge(combined_gk, temp2);
+                                // let temp2 = {};
+                                // let counter = 1;
+                                // for (let player in temp){
+                                //     if (temp[player]['passing_types_Pos'] === "GK")
+                                //     {
+                                //         temp2[counter.toString()] = temp[player];
+                                //         counter++
+                                //     }
+                                // }
+                                // combined_gk = merge(combined_gk, temp2);
                                 combined = merge(combined, temp);
                                 resolve();
                             }
