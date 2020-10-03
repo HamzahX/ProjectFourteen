@@ -67,8 +67,8 @@ class GlossaryOverlay extends Component {
                                 The average expected goal value of shots taken, excluding penalty kicks.
                             </li>
                             <li>
-                                <span style={{color: '#f15c80', fontWeight: 'bold'}}>Conversion Rate</span>&nbsp;
-                                The percentage of shots that resulted in goals, excluding penalty kicks.
+                                <span style={{color: '#f15c80', fontWeight: 'bold'}}>Aerial Win</span>&nbsp;
+                                Winning the ball in a duel that was challenged in the air.
                             </li>
                             <li>
                                 <span style={{color: '#f15c80', fontWeight: 'bold'}}>Aerial Win %</span>&nbsp;
@@ -124,8 +124,8 @@ class GlossaryOverlay extends Component {
                                 The percentage of attempted dribbles that were successful.
                             </li>
                             <li>
-                                <span style={{color: '#87e179', fontWeight: 'bold'}}>Dispossessed</span>&nbsp;
-                                Being tackled by an opponent and losing control of the ball without attempting a dribble.
+                                <span style={{color: '#87e179', fontWeight: 'bold'}}>Turnover</span>&nbsp;
+                                A miscontrol, or being tackled by an opponent and losing possession of the ball without attempting a dribble.
                             </li>
                             <li>
                                 <span style={{color: '#7db9f0', fontWeight: 'bold'}}>pAdj</span>&nbsp;

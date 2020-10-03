@@ -261,9 +261,9 @@ class Home extends Component {
                                 <br/>
                                 <p><span className="accented-p">Interpreting the Slices</span></p>
                                 <p>
-                                    Each slice is made up of wedges. The size of each wedge corresponds to the
-                                    percentile rank of the selected player with regards to the stat represented by the
-                                    wedge. The data labels show the raw values.
+                                    A Football Slice is made up of a number of wedges (12 for outfield players, 3 for goalkeepers).
+                                    The length of each wedge corresponds to the selected player's percentile rank for the stat
+                                    when they are compared to top-5 league players who play in a similar position.
                                 </p>
                                 <p>
                                     The colours help to group similar-ish stats together (as well as improve the charts'
@@ -299,8 +299,8 @@ class Home extends Component {
                                     The average expected goal value of shots taken, excluding penalty kicks.
                                 </li>
                                 <li>
-                                    <span style={{color: '#f15c80', fontWeight: 'bold'}}>Conversion Rate</span>&nbsp;
-                                    The percentage of shots that resulted in goals, excluding penalty kicks.
+                                    <span style={{color: '#f15c80', fontWeight: 'bold'}}>Aerial Win</span>&nbsp;
+                                    Winning the ball in a duel that was challenged in the air.
                                 </li>
                                 <li>
                                     <span style={{color: '#f15c80', fontWeight: 'bold'}}>Aerial Win %</span>&nbsp;
@@ -356,8 +356,8 @@ class Home extends Component {
                                     The percentage of attempted dribbles that were successful.
                                 </li>
                                 <li>
-                                    <span style={{color: '#87e179', fontWeight: 'bold'}}>Dispossessed</span>&nbsp;
-                                    Being tackled by an opponent and losing control of the ball without attempting a dribble.
+                                    <span style={{color: '#87e179', fontWeight: 'bold'}}>Turnover</span>&nbsp;
+                                    A miscontrol, or being tackled by an opponent and losing possession of the ball without attempting a dribble.
                                 </li>
                                 <li>
                                     <span style={{color: '#7db9f0', fontWeight: 'bold'}}>pAdj</span>&nbsp;
