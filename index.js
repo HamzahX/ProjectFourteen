@@ -63,6 +63,7 @@ app.get('*', (req, res) => {
 
 });
 
+
 /**
  * Sends the percentile arrays to the client upon request
  * @param {express.Request} req
@@ -70,7 +71,18 @@ app.get('*', (req, res) => {
  */
 app.post('/api/percentiles', (req, res) => {
 
-    res.json(PERCENTILE_ARRAYS);
+    //compare the last time the client and server's percentile arrays were updated
+    //update client percentile arrays if they are out of date
+    let clientLastUpdate = new Date(req.body.percentilesTimestamp).getTime();
+    let serverLastUpdate = PERCENTILE_ARRAYS['lastUpdated'].getTime();
+
+    if (req.body.percentilesTimestamp === undefined || clientLastUpdate === serverLastUpdate){
+        res.json(null);
+    }
+    else {
+        res.json(PERCENTILE_ARRAYS);
+    }
+
 
 });
 
@@ -385,7 +397,7 @@ let search = async (aQuery, theType, isLive) => {
         if (theType === "playersAndClubs"){
 
             //clean the query to remove regex special characters
-            aQuery = aQuery.replace(/[|&;$%@"<>()+,\\/]/g, "");
+            aQuery = aQuery.replace(/[|&;$%@"<>()+,\\/\[\]]/g, "");
 
             //re-construct the query without diacritics
             let simplifiedQuery = aQuery

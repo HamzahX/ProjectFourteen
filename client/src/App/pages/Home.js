@@ -330,7 +330,7 @@ class Home extends Component {
                                     A completed pass that entered the third of the pitch that is closest to the opposition's goal, excluding set pieces.
                                 </li>
                                 <li>
-                                    <span style={{color: '#e4c000', fontWeight: 'bold'}}>Progressive Distance</span>&nbsp;
+                                    <span style={{color: '#e4c000', fontWeight: 'bold'}}>Yards Progressed</span>&nbsp;
                                     Distance, in yards, that the ball was moved towards the oppositions's goal
                                     with passes and carries.
                                     (Note: Passes and carries away from the oppositions's goal are counted as zero progressive yards)
@@ -437,7 +437,7 @@ class Home extends Component {
                                     <p>
                                         The percentile rank of a score is the percentage of scores within a dataset
                                         that are equal to or lower than the score. This is reversed for stats where
-                                        a lower value is better, such as 'times dispossessed'.
+                                        a lower value is better, such as 'turnovers'.
                                     </p>
                                     <p>
                                         The percentile ranks for FootballSlices are position-specific. For example,

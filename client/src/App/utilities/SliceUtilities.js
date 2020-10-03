@@ -9,8 +9,81 @@ import saveAs from "file-saver";
 //initialize cookies
 const cookies = new Cookies();
 
-//initialize helper to stringify JSON objects with circular references
-//const stringify = require('json-stringify-safe');
+const orderedStats = {
+
+    "FW": ['npg', 'npxg', 'npxgPerShot', 'succAerials', 'aerialSuccRate', 'boxTouches',
+        'padjBoxTouches', 'xa', 'padjXA', 'ppa', 'padjPPA', 'succDribbles', 'padjSuccDribbles',
+        'dribbleSuccRate', 'turnovers', 'padjTurnovers', 'succPressures', 'padjSuccPressures'],
+
+    "AM": ['npg', 'npxg', 'npxgPerShot', 'xa', 'padjXA', 'sca', 'padjSCA', 'ppa',
+        'padjPPA', 'progDistance', 'padjProgDistance', 'passSuccRate', 'succDribbles',
+        'padjSuccDribbles', 'dribbleSuccRate', 'turnovers', 'padjTurnovers', 'succPressures',
+        'padjSuccPressures'],
+
+    "CM": ['xa', 'padjXA', 'sca', 'padjSCA', 'pft', 'padjPFT', 'progDistance', 'padjProgDistance',
+        'passSuccRate', 'succDribbles', 'padjSuccDribbles', 'dribbleSuccRate', 'turnovers',
+        'padjTurnovers', 'succPressures', 'padjSuccPressures', 'interceptions', 'padjInterceptions',
+        'succTackles', 'padjSuccTackles', 'dribbleTackleRate'],
+
+    "FB": ['xa', 'padjXA', 'pft', 'padjPFT', 'progDistance', 'padjProgDistance',
+        'passSuccRate', 'succDribbles', 'padjSuccDribbles', 'dribbleSuccRate', 'turnovers', 'padjTurnovers',
+        'succPressures', 'padjSuccPressures', 'interceptions', 'padjInterceptions',
+        'succTackles', 'padjSuccTackles', 'dribbleTackleRate', 'aerialSuccRate'],
+
+    "CB": ['pft', 'padjPFT', 'progDistance', 'padjProgDistance',
+        'passSuccRate', 'longPassSuccRate', 'succPressures', 'padjSuccPressures',
+        'interceptions', 'padjInterceptions', 'succTackles', 'padjSuccTackles', 'dribbleTackleRate',
+        'fouls', 'padjFouls', 'succAerials', 'aerialSuccRate', 'clearances', 'padjClearances'],
+
+    "GK": ['gsaa', 'crossStopRate', 'launchedPassSuccRate'],
+
+    "N/A": ['npg', 'npxg', 'npxgPerShot', 'conversionRate', 'aerialSuccRate', 'boxTouches',
+        'padjBoxTouches', 'xa', 'padjXA', 'ppa', 'padjPPA', 'succDribbles',
+        'padjSuccDribbles', 'dribbleSuccRate', 'turnovers', 'padjTurnovers', 'succPressures',
+        'padjSuccPressures'],
+
+    null: ['npg', 'npxg', 'npxgPerShot', 'conversionRate', 'aerialSuccRate', 'boxTouches',
+        'padjBoxTouches', 'xa', 'padjXA', 'ppa', 'padjPPA', 'succDribbles',
+        'padjSuccDribbles', 'dribbleSuccRate', 'turnovers', 'padjTurnovers', 'succPressures',
+        'padjSuccPressures'],
+};
+
+//colors used in the Slices
+const colorArrays = {
+    "FW": ['#f15c80', '#f15c80', '#f15c80', '#f15c80', '#f15c80', '#e4d354',
+        '#e4d354', '#e4d354', '#90ed7d', '#90ed7d', '#90ed7d', '#7cb5ec'],
+    "AM": ['#f15c80', '#f15c80', '#f15c80', '#e4d354', '#e4d354', '#e4d354',
+        '#e4d354', '#e4d354', '#90ed7d', '#90ed7d', '#90ed7d', '#7cb5ec'],
+    "CM": ['#e4d354', '#e4d354', '#e4d354', '#e4d354', '#e4d354', '#90ed7d',
+        '#90ed7d', '#90ed7d', '#7cb5ec', '#7cb5ec', '#7cb5ec', '#7cb5ec'],
+    "FB": ['#e4d354', '#e4d354', '#e4d354', '#e4d354', '#90ed7d', '#90ed7d',
+        '#90ed7d', '#7cb5ec', '#7cb5ec', '#7cb5ec', '#7cb5ec', '#7cb5ec'],
+    "CB": ['#e4d354', '#e4d354', '#e4d354', '#e4d354', '#7cb5ec', '#7cb5ec',
+        '#7cb5ec', '#7cb5ec', '#7cb5ec', '#7cb5ec', '#7cb5ec', '#7cb5ec'],
+    "GK": ['#9499ff', '#9499ff', '#e4d354'],
+    "N/A": ['#7cb5ec', '#7cb5ec', '#7cb5ec', '#7cb5ec', '#7cb5ec', '#7cb5ec',
+        '#7cb5ec', '#7cb5ec', '#7cb5ec', '#7cb5ec', '#7cb5ec', '#7cb5ec'],
+    "comparison": ['#e75453', '#e75453', '#e75453', '#e75453', '#e75453', '#e75453',
+        '#e75453', '#e75453', '#e75453', '#e75453', '#e75453', '#e75453'],
+    null: ['#7cb5ec', '#7cb5ec', '#7cb5ec', '#7cb5ec', '#7cb5ec', '#7cb5ec',
+        '#7cb5ec', '#7cb5ec', '#7cb5ec', '#7cb5ec', '#7cb5ec', '#7cb5ec']
+};
+
+//data label alignments
+const alignments = {
+    "vertical": {
+        "GK": ["bottom", "top", "top"],
+        "other": ["bottom", "bottom", "middle", "middle", "middle", "top",
+            "top", "top", "middle", "middle", "middle", "bottom"
+        ]
+    },
+    "horizontal": {
+        "GK": ["center", "left", "right"],
+        "other": ["center", "center", "left", "left", "left", "center",
+            "center", "center", "right", "right", "right", "center"
+        ]
+    }
+};
 
 /**
  * Function to filter the complete stats based on the selected competitions
@@ -28,21 +101,43 @@ export function filterStats(stats, playerCode = undefined){
         selectedCompetitions = this.state.selectedCompetitions[playerCode];
     }
 
-    //iterate through complete stats, check if a competition is selected, and add the stats for said competition
-    //to the aggregated stats if so
+    //iterate through complete stats, check if a competition is selected
+    //add the stats for said competition to the aggregated stats if so
+    //for ages, create an array containing the age range for selected competitions
     let filteredStats = {};
+
     for (let season in stats){
         for (let competition in stats[season]){
+
             if (selectedCompetitions[season].includes(competition)) {
+
                 for (let stat in stats[season][competition]) {
-                    if (!(stat in filteredStats)) {
-                        filteredStats[stat] = stats[season][competition][stat];
+
+                    let value = stats[season][competition][stat];
+
+                    if (!(stat in filteredStats)){
+                        if (stat === 'age'){
+                            filteredStats[stat] = [value];
+                        }
+                        else {
+                            filteredStats[stat] = value;
+                        }
                     }
-                    else {
-                        filteredStats[stat] += stats[season][competition][stat];
+                    else{
+                        if (stat === 'age'){
+                            if (!filteredStats[stat].includes(value)){
+                                filteredStats[stat].push(value);
+                            }
+                        }
+                        else {
+                            filteredStats[stat] += value;
+                        }
                     }
+
                 }
+
             }
+
         }
     }
 
@@ -62,6 +157,7 @@ export function calculateStats(filteredStats, playerCode = undefined){
     let percentileArrays = this.state.percentileArrays;
     let template = this.state.template;
     let selectedCompetitions = this.state.selectedCompetitions;
+    let padjTypes = this.state.pAdjTypes;
 
     let percentileEntries;
     let selectedSeasons = [];
@@ -119,8 +215,177 @@ export function calculateStats(filteredStats, playerCode = undefined){
 
     //calculate per90 stats
     let minutes = filteredStats['minutes'];
+    let touches = filteredStats['touches'];
+
     switch (template) {
+
         case "FW":
+
+            statsPer90["npg"] = filteredStats["npg"] / (minutes / 90);
+            statsPer90["npxg"] = filteredStats["npxg"] / (minutes / 90);
+            statsPer90["npxgPerShot"] = filteredStats["npxg"] / filteredStats["shots"];
+            statsPer90["succAerials"] = filteredStats["succAerials"] / (minutes / 90);
+            statsPer90["aerialSuccRate"] = (filteredStats["succAerials"] / filteredStats["attAerials"]) * 100;
+            statsPer90["dribbleSuccRate"] = (filteredStats["succDribbles"] / filteredStats["attDribbles"]) * 100;
+            statsPer90["succPressures"] = filteredStats["succPressures"] / (minutes/90);
+
+            if (padjTypes['offensive']){
+                statsPer90["padjBoxTouches"] = filteredStats["boxTouches"] / (touches / 100);
+                statsPer90["padjXA"] = filteredStats["xa"] / (touches / 100);
+                statsPer90["padjPPA"] = filteredStats["ppa"] / (touches / 100);
+                statsPer90["padjSuccDribbles"] = filteredStats["succDribbles"] / (touches / 100);
+                statsPer90["padjTurnovers"] = (filteredStats["timesDispossessed"] + filteredStats["miscontrols"]) / (touches / 100);
+            }
+            else {
+                statsPer90["boxTouches"] = filteredStats["boxTouches"] / (minutes / 90);
+                statsPer90["xa"] = filteredStats["xa"] / (minutes / 90);
+                statsPer90["ppa"] = filteredStats["ppa"] / (minutes / 90);
+                statsPer90["succDribbles"] = filteredStats["succDribbles"] / (minutes / 90);
+                statsPer90["turnovers"] = (filteredStats["timesDispossessed"] + filteredStats["miscontrols"]) / (minutes / 90);
+            }
+
+            break;
+
+        case "AM":
+
+            statsPer90["npg"] = filteredStats["npg"] / (minutes / 90);
+            statsPer90["npxg"] = filteredStats["npxg"] / (minutes / 90);
+            statsPer90["npxgPerShot"] = filteredStats["npxg"] / filteredStats["shots"];
+            statsPer90["passSuccRate"] = (filteredStats["succPasses"] / filteredStats["attPasses"]) * 100;
+            statsPer90["dribbleSuccRate"] = (filteredStats["succDribbles"] / filteredStats["attDribbles"]) * 100;
+            statsPer90["succPressures"] = filteredStats["succPressures"] / (minutes/90);
+
+            if (padjTypes['offensive']){
+                statsPer90["padjXA"] = filteredStats["xa"] / (touches / 100);
+                statsPer90["padjSCA"] = filteredStats["sca"] / (touches / 100);
+                statsPer90["padjPPA"] = filteredStats["ppa"] / (touches / 100);
+                statsPer90["padjProgDistance"] = filteredStats["progDistance"] / (touches / 100);
+                statsPer90["padjSuccDribbles"] = filteredStats["succDribbles"] / (touches / 100);
+                statsPer90["padjTurnovers"] = (filteredStats["timesDispossessed"] + filteredStats["miscontrols"]) / (touches / 100);
+            }
+            else {
+                statsPer90["xa"] = filteredStats["xa"] / (minutes / 90);
+                statsPer90["sca"] = filteredStats["sca"] / (minutes / 90);
+                statsPer90["ppa"] = filteredStats["ppa"] / (minutes / 90);
+                statsPer90["progDistance"] = filteredStats["progDistance"] / (minutes / 90);
+                statsPer90["succDribbles"] = filteredStats["succDribbles"] / (minutes / 90);
+                statsPer90["turnovers"] = (filteredStats["timesDispossessed"] + filteredStats["miscontrols"]) / (minutes / 90);
+            }
+
+            break;
+
+        case "CM":
+
+            statsPer90["passSuccRate"] = (filteredStats["succPasses"] / filteredStats["attPasses"]) * 100;
+            statsPer90["dribbleSuccRate"] = (filteredStats["succDribbles"] / filteredStats["attDribbles"]) * 100;
+            statsPer90["dribbleTackleRate"] = (filteredStats["succDribbleTackles"] / filteredStats["attDribbleTackles"]) * 100;
+            statsPer90["succPressures"] = filteredStats["succPressures"] / (minutes/90);
+
+            if (padjTypes['offensive']){
+                statsPer90["padjXA"] = filteredStats["xa"] / (touches / 100);
+                statsPer90["padjSCA"] = filteredStats["sca"] / (touches / 100);
+                statsPer90["padjPFT"] = filteredStats["pft"] / (touches / 100);
+                statsPer90["padjProgDistance"] = filteredStats["progDistance"] / (touches / 100);
+                statsPer90["padjSuccDribbles"] = filteredStats["succDribbles"] / (touches / 100);
+                statsPer90["padjTurnovers"] = (filteredStats["timesDispossessed"] + filteredStats["miscontrols"]) / (touches / 100);
+            }
+            else {
+                statsPer90["xa"] = filteredStats["xa"] / (minutes / 90);
+                statsPer90["sca"] = filteredStats["sca"] / (minutes / 90);
+                statsPer90["pft"] = filteredStats["pft"] / (minutes / 90);
+                statsPer90["progDistance"] = filteredStats["progDistance"] / (minutes / 90);
+                statsPer90["succDribbles"] = filteredStats["succDribbles"] / (minutes / 90);
+                statsPer90["turnovers"] = (filteredStats["timesDispossessed"] + filteredStats["miscontrols"]) / (minutes / 90);
+            }
+
+            if (padjTypes['defensive']){
+                statsPer90["padjInterceptions"] = filteredStats["padjInterceptions"] / (minutes / 90);
+                statsPer90["padjSuccTackles"] = filteredStats["padjSuccTackles"] / (minutes / 90);
+            }
+            else {
+                statsPer90["interceptions"] = filteredStats["interceptions"] / (minutes/90);
+                statsPer90["succTackles"] = filteredStats["succTackles"] / (minutes/90);
+            }
+
+            break;
+
+        case "FB":
+
+            statsPer90["passSuccRate"] = (filteredStats["succPasses"] / filteredStats["attPasses"]) * 100;
+            statsPer90["dribbleSuccRate"] = (filteredStats["succDribbles"] / filteredStats["attDribbles"]) * 100;
+            statsPer90["dribbleTackleRate"] = (filteredStats["succDribbleTackles"] / filteredStats["attDribbleTackles"]) * 100;
+            statsPer90["succPressures"] = filteredStats["succPressures"] / (minutes/90);
+            statsPer90["aerialSuccRate"] = (filteredStats["succAerials"] / filteredStats["attAerials"]) * 100;
+
+            if (padjTypes['offensive']){
+                statsPer90["padjXA"] = filteredStats["xa"] / (touches / 100);
+                statsPer90["padjPFT"] = filteredStats["pft"] / (touches / 100);
+                statsPer90["padjProgDistance"] = filteredStats["progDistance"] / (touches / 100);
+                statsPer90["padjSuccDribbles"] = filteredStats["succDribbles"] / (touches / 100);
+                statsPer90["padjTurnovers"] = (filteredStats["timesDispossessed"] + filteredStats["miscontrols"]) / (touches / 100);
+            }
+            else {
+                statsPer90["xa"] = filteredStats["xa"] / (minutes / 90);
+                statsPer90["pft"] = filteredStats["pft"] / (minutes / 90);
+                statsPer90["progDistance"] = filteredStats["progDistance"] / (minutes / 90);
+                statsPer90["succDribbles"] = filteredStats["succDribbles"] / (minutes / 90);
+                statsPer90["turnovers"] = (filteredStats["timesDispossessed"] + filteredStats["miscontrols"]) / (minutes / 90);
+            }
+
+            if (padjTypes['defensive']){
+                statsPer90["padjInterceptions"] = filteredStats["padjInterceptions"] / (minutes / 90);
+                statsPer90["padjSuccTackles"] = filteredStats["padjSuccTackles"] / (minutes / 90);
+            }
+            else {
+                statsPer90["interceptions"] = filteredStats["interceptions"] / (minutes/90);
+                statsPer90["succTackles"] = filteredStats["succTackles"] / (minutes/90);
+            }
+
+            break;
+
+        case "CB":
+
+            statsPer90["passSuccRate"] = (filteredStats["succPasses"] / filteredStats["attPasses"]) * 100;
+            statsPer90["longPassSuccRate"] = (filteredStats["succLongPasses"] / filteredStats["attLongPasses"]) * 100;
+            statsPer90["dribbleTackleRate"] = (filteredStats["succDribbleTackles"] / filteredStats["attDribbleTackles"]) * 100;
+            statsPer90["succAerials"] = filteredStats["succAerials"] / (minutes / 90);
+            statsPer90["aerialSuccRate"] = (filteredStats["succAerials"] / filteredStats["attAerials"]) * 100;
+            statsPer90["succPressures"] = filteredStats["succPressures"] / (minutes/90);
+
+            if (padjTypes['offensive']){
+                statsPer90["padjPFT"] = filteredStats["pft"] / (touches / 100);
+                statsPer90["padjProgDistance"] = filteredStats["progDistance"] / (touches / 100);
+            }
+            else {
+                statsPer90["pft"] = filteredStats["pft"] / (minutes / 90);
+                statsPer90["progDistance"] = filteredStats["progDistance"] / (minutes / 90);
+            }
+
+            if (padjTypes['defensive']){
+                statsPer90["padjInterceptions"] = filteredStats["padjInterceptions"] / (minutes / 90);
+                statsPer90["padjSuccTackles"] = filteredStats["padjSuccTackles"] / (minutes / 90);
+                statsPer90["padjFouls"] = filteredStats["padjFouls"] / (minutes / 90);
+                statsPer90["padjClearances"] = filteredStats["padjClearances"] / (minutes / 90);
+            }
+            else {
+                statsPer90["interceptions"] = filteredStats["interceptions"] / (minutes/90);
+                statsPer90["succTackles"] = filteredStats["succTackles"] / (minutes/90);
+                statsPer90["fouls"] = filteredStats["fouls"] / (minutes/90);
+                statsPer90["clearances"] = filteredStats["clearances"] / (minutes/90);
+            }
+
+            break;
+
+        case "GK":
+
+            statsPer90["gsaa"] = ((filteredStats["psxg"] - filteredStats["goalsAgainst"]) / filteredStats["sota"]) * 100;
+            statsPer90["crossStopRate"] = (filteredStats["stoppedCrosses"] / filteredStats["attCrosses"]) * 100;
+            statsPer90["launchedPassSuccRate"] = (filteredStats["succLaunchedPasses"] / filteredStats["attLaunchedPasses"]) * 100;
+
+            break;
+
+        default:
+
             statsPer90["npg"] = filteredStats["npg"] / (minutes / 90);
             statsPer90["npxg"] = filteredStats["npxg"] / (minutes / 90);
             statsPer90["npxgPerShot"] = filteredStats["npxg"] / filteredStats["shots"];
@@ -131,102 +396,10 @@ export function calculateStats(filteredStats, playerCode = undefined){
             statsPer90["ppa"] = filteredStats["ppa"] / (minutes / 90);
             statsPer90["succDribbles"] = filteredStats["succDribbles"] / (minutes / 90);
             statsPer90["dribbleSuccRate"] = (filteredStats["succDribbles"] / filteredStats["attDribbles"]) * 100;
-            statsPer90["timesDispossessed"] = filteredStats["timesDispossessed"] / (minutes / 90);
+            statsPer90["turnovers"] = (filteredStats["timesDispossessed"] + filteredStats["miscontrols"]) / (minutes / 90);
             statsPer90["succPressures"] = filteredStats["succPressures"] / (minutes/90);
-            // statsPer90["padjSuccPressures"] = filteredStats["padjSuccPressures"] / (minutes / 90);
-            break;
-        case "AM":
-            statsPer90["npg"] = filteredStats["npg"] / (minutes / 90);
-            statsPer90["npxg"] = filteredStats["npxg"] / (minutes / 90);
-            statsPer90["npxgPerShot"] = filteredStats["npxg"] / filteredStats["shots"];
-            statsPer90["xa"] = filteredStats["xa"] / (minutes / 90);
-            statsPer90["sca"] = filteredStats["sca"] / (minutes / 90);
-            statsPer90["ppa"] = filteredStats["ppa"] / (minutes / 90);
-            statsPer90["progDistance"] = filteredStats["progDistance"] / (minutes / 90);
-            statsPer90["passSuccRate"] = (filteredStats["succPasses"] / filteredStats["attPasses"]) * 100;
-            statsPer90["succDribbles"] = filteredStats["succDribbles"] / (minutes / 90);
-            statsPer90["dribbleSuccRate"] = (filteredStats["succDribbles"] / filteredStats["attDribbles"]) * 100;
-            statsPer90["timesDispossessed"] = filteredStats["timesDispossessed"] / (minutes / 90);
-            statsPer90["succPressures"] = filteredStats["succPressures"] / (minutes/90);
-            // statsPer90["padjSuccPressures"] = filteredStats["padjSuccPressures"] / (minutes / 90);
-            break;
-        case "CM":
-            statsPer90["xa"] = filteredStats["xa"] / (minutes / 90);
-            statsPer90["sca"] = filteredStats["sca"] / (minutes / 90);
-            statsPer90["pft"] = filteredStats["pft"] / (minutes / 90);
-            statsPer90["progDistance"] = filteredStats["progDistance"] / (minutes / 90);
-            statsPer90["passSuccRate"] = (filteredStats["succPasses"] / filteredStats["attPasses"]) * 100;
-            statsPer90["succDribbles"] = filteredStats["succDribbles"] / (minutes / 90);
-            statsPer90["dribbleSuccRate"] = (filteredStats["succDribbles"] / filteredStats["attDribbles"]) * 100;
-            statsPer90["timesDispossessed"] = filteredStats["timesDispossessed"] / (minutes / 90);
-            statsPer90["succPressures"] = filteredStats["succPressures"] / (minutes/90);
-            // statsPer90["padjSuccPressures"] = filteredStats["padjSuccPressures"] / (minutes / 90);
-            // statsPer90["interceptions"] = filteredStats["interceptions"] / (minutes/90);
-            statsPer90["padjInterceptions"] = filteredStats["padjInterceptions"] / (minutes / 90);
-            // statsPer90["tacklesWon"] = filteredStats["tacklesWon"] / (minutes/90);
-            statsPer90["padjTacklesWon"] = filteredStats["padjTacklesWon"] / (minutes / 90);
-            statsPer90["dribbleTackleRate"] = (filteredStats["succDribbleTackles"] / filteredStats["attDribbleTackles"]) * 100;
-            break;
-        case "FB":
-            statsPer90["xa"] = filteredStats["xa"] / (minutes / 90);
-            statsPer90["pft"] = filteredStats["pft"] / (minutes / 90);
-            statsPer90["progDistance"] = filteredStats["progDistance"] / (minutes / 90);
-            statsPer90["passSuccRate"] = (filteredStats["succPasses"] / filteredStats["attPasses"]) * 100;
-            statsPer90["succDribbles"] = filteredStats["succDribbles"] / (minutes / 90);
-            statsPer90["dribbleSuccRate"] = (filteredStats["succDribbles"] / filteredStats["attDribbles"]) * 100;
-            statsPer90["timesDispossessed"] = filteredStats["timesDispossessed"] / (minutes / 90);
-            statsPer90["succPressures"] = filteredStats["succPressures"] / (minutes/90);
-            // statsPer90["padjSuccPressures"] = filteredStats["padjSuccPressures"] / (minutes / 90);
-            // statsPer90["interceptions"] = filteredStats["interceptions"] / (minutes/90);
-            statsPer90["padjInterceptions"] = filteredStats["padjInterceptions"] / (minutes / 90);
-            // statsPer90["tacklesWon"] = filteredStats["tacklesWon"] / (minutes/90);
-            statsPer90["padjTacklesWon"] = filteredStats["padjTacklesWon"] / (minutes / 90);
-            statsPer90["dribbleTackleRate"] = (filteredStats["succDribbleTackles"] / filteredStats["attDribbleTackles"]) * 100;
-            statsPer90["aerialSuccRate"] = (filteredStats["succAerials"] / filteredStats["attAerials"]) * 100;
-            break;
-        case "CB":
-            statsPer90["pft"] = filteredStats["pft"] / (minutes / 90);
-            statsPer90["progDistance"] = filteredStats["progDistance"] / (minutes / 90);
-            statsPer90["passSuccRate"] = (filteredStats["succPasses"] / filteredStats["attPasses"]) * 100;
-            statsPer90["longPassSuccRate"] = (filteredStats["succLongPasses"] / filteredStats["attLongPasses"]) * 100;
-            statsPer90["succPressures"] = filteredStats["succPressures"] / (minutes/90);
-            // statsPer90["padjSuccPressures"] = filteredStats["padjSuccPressures"] / (minutes / 90);
-            // statsPer90["interceptions"] = filteredStats["interceptions"] / (minutes/90);
-            statsPer90["padjInterceptions"] = filteredStats["padjInterceptions"] / (minutes / 90);
-            // statsPer90["tacklesWon"] = filteredStats["tacklesWon"] / (minutes/90);
-            statsPer90["padjTacklesWon"] = filteredStats["padjTacklesWon"] / (minutes / 90);
-            statsPer90["dribbleTackleRate"] = (filteredStats["succDribbleTackles"] / filteredStats["attDribbleTackles"]) * 100;
-            // statsPer90["fouls"] = filteredStats["fouls"] / (minutes/90);
-            statsPer90["padjFouls"] = filteredStats["padjFouls"] / (minutes / 90);
-            statsPer90["succAerials"] = filteredStats["succAerials"] / (minutes / 90);
-            statsPer90["aerialSuccRate"] = (filteredStats["succAerials"] / filteredStats["attAerials"]) * 100;
-            // statsPer90["clearances"] = filteredStats["clearances"] / (minutes/90);
-            statsPer90["padjClearances"] = filteredStats["padjClearances"] / (minutes / 90);
-            break;
-        case "GK":
-            statsPer90["gsaa"] = ((filteredStats["psxg"] - filteredStats["goalsAgainst"]) / filteredStats["sota"]) * 100;
-            statsPer90["crossStopRate"] = (filteredStats["stoppedCrosses"] / filteredStats["attCrosses"]) * 100;
-            statsPer90["launchedPassSuccRate"] = (filteredStats["succLaunchedPasses"] / filteredStats["attLaunchedPasses"]) * 100;
-            break;
-        default:
-            statsPer90["npg"] = 0;
-            statsPer90["npxg"] = 0;
-            statsPer90["npxgPerShot"] = 0;
-            statsPer90["conversionRate"] = 0;
-            statsPer90["succAerials"] = 0;
-            statsPer90["boxTouches"] = 0;
-            statsPer90["xa"] = 0;
-            statsPer90["ppa"] = 0;
-            statsPer90["succDribbles"] = 0;
-            statsPer90["dribbleSuccRate"] = 0;
-            statsPer90["timesDispossessed"] = 0;
-            // statsPer90["succPressures"] = 0;
-            statsPer90["padjSuccPressures"] = 0;
-    }
 
-    // for (let stat in statsPer90){
-    //     percentiles[stat] = 100;
-    // }
+    }
 
     //calculate percentile ranks
     if (template !== "N/A") {
@@ -240,7 +413,11 @@ export function calculateStats(filteredStats, playerCode = undefined){
                 percentiles[stat] = 0;
             }
             //reverse percentile ranks for "less is better" stats
-            if (stat === "padjFouls" || stat === "timesDispossessed") {
+            if (stat === "padjFouls" ||
+                stat === "fouls" ||
+                stat === "turnovers" ||
+                stat === "padjTurnovers"
+            ) {
                 percentiles[stat] = 100 - percentiles[stat];
             }
         }
@@ -263,7 +440,7 @@ export function calculateStats(filteredStats, playerCode = undefined){
  * Function to calculate the percentile rank of a given value within a given array
  * @param {Array} array - the array of values
  * @param {number} value - the value for which the percentile rank is being calculated
- * @param {Integer} occurrences - the number of occurrences of the player's numbers within the percentile array
+ * @param {number} occurrences - the number of occurrences of the player's numbers within the percentile array
  * @return {number} the percentile rank of the value in the array (adjusted for the double-counting problem)
  */
 function percentileRank(array, value, occurrences){
@@ -296,47 +473,22 @@ function percentileRank(array, value, occurrences){
  * @param playerName
  * @param playerAge
  * @param minutes
+ * @param isForComparison
  * @param index
  * @return {Array} chartInput - array containing information for each data point in the Highcharts plot
  */
-export function constructChartInput(statsPer90, percentiles, playerCode, playerName, playerAge, minutes, index){
-
-    //colors used in the Slices
-    const colorArrays = {
-        "FW": ['#f15c80', '#f15c80', '#f15c80', '#f15c80', '#f15c80', '#e4d354',
-            '#e4d354', '#e4d354', '#90ed7d', '#90ed7d', '#90ed7d', '#7cb5ec'],
-        "AM": ['#f15c80', '#f15c80', '#f15c80', '#e4d354', '#e4d354', '#e4d354',
-            '#e4d354', '#e4d354', '#90ed7d', '#90ed7d', '#90ed7d', '#7cb5ec'],
-        "CM": ['#e4d354', '#e4d354', '#e4d354', '#e4d354', '#e4d354', '#90ed7d',
-            '#90ed7d', '#90ed7d', '#7cb5ec', '#7cb5ec', '#7cb5ec', '#7cb5ec'],
-        "FB": ['#e4d354', '#e4d354', '#e4d354', '#e4d354', '#90ed7d', '#90ed7d',
-            '#90ed7d', '#7cb5ec', '#7cb5ec', '#7cb5ec', '#7cb5ec', '#7cb5ec'],
-        "CB": ['#e4d354', '#e4d354', '#e4d354', '#e4d354', '#7cb5ec', '#7cb5ec',
-            '#7cb5ec', '#7cb5ec', '#7cb5ec', '#7cb5ec', '#7cb5ec', '#7cb5ec'],
-        "GK": ['#9499ff', '#9499ff', '#e4d354'],
-        "N/A": ['#7cb5ec', '#7cb5ec', '#7cb5ec', '#7cb5ec', '#7cb5ec', '#7cb5ec',
-            '#7cb5ec', '#7cb5ec', '#7cb5ec', '#7cb5ec', '#7cb5ec', '#7cb5ec'],
-        null: ['#7cb5ec', '#7cb5ec', '#7cb5ec', '#7cb5ec', '#7cb5ec', '#7cb5ec',
-            '#7cb5ec', '#7cb5ec', '#7cb5ec', '#7cb5ec', '#7cb5ec', '#7cb5ec']
-    };
-
-    const alignments = {
-        "vertical": {
-            "GK": ["bottom", "top", "top"],
-            "other": ["bottom", "middle", "middle", "middle", "middle", "top",
-                "top", "top", "middle", "middle", "middle", "bottom"
-            ]
-        },
-        "horizontal": {
-            "GK": ["center", "left", "right"],
-            "other": ["center", "left", "left", "left", "left", "center",
-                "center", "center", "right", "right", "right", "center"
-            ]
-        }
-    };
+export function constructChartInput(statsPer90, percentiles, playerCode, playerName, playerAge, minutes, isForComparison, index){
 
     let template = this.state.template;
-    let colors = colorArrays[template];
+
+    let colors;
+    if (isForComparison) {
+        colors = colorArrays['comparison'];
+    }
+    else {
+        colors = colorArrays[template];
+    }
+
     let verticalAlignments = alignments['vertical'][template === "GK" ? "GK" : "other"];
     let horizontalAlignments = alignments['horizontal'][template === "GK" ? "GK" : "other"];
 
@@ -348,8 +500,16 @@ export function constructChartInput(statsPer90, percentiles, playerCode, playerN
 
     //iterate through per90 stats and percentile ranks and construct objects for each point on the Highcharts plot
     let chartInput = [];
+
     let i = 0;
-    for (let key in percentiles){
+    for (let stat in orderedStats[template]){
+
+        let key = orderedStats[template][stat];
+
+        if (statsPer90[key] === undefined){
+            continue;
+        }
+
         chartInput[i] = {
             playerName: playerCode !== undefined ? playerName : null,
             y: percentiles[key],
@@ -359,12 +519,16 @@ export function constructChartInput(statsPer90, percentiles, playerCode, playerN
                 align: horizontalAlignments[i],
                 verticalAlign: verticalAlignments[i]
             },
-            color: Highcharts.Color(colors[i]).setOpacity(index !== 1 ? 0.85 : 0).get(),
+            color: Highcharts.Color(colors[i]).setOpacity(index !== 1 ? (isForComparison ? 0.55 : 0.85) : 0).get(),
+            tooltipColor: index === 0 ? colors[i] : 'black',
             borderColor: isSecondPlayer ? 'black' : null,
             borderWidth: isSecondPlayer ? 6 : 0
         };
+
         i++;
+
     }
+
     return chartInput;
 
 }
@@ -383,6 +547,7 @@ function truncate(someStats){
         let precision;
         if (
             stat === "progDistance" ||
+            stat === "padjProgDistance" ||
             someStats[stat] === 0
         ) {
             precision = 0;
@@ -457,6 +622,35 @@ function ordinalSuffix(aNumber){
 
 
 /**
+ * Function to reduce array of ages into string collapsing consecutive numbers
+ * E.g.: [23, 24, 25, 27] => ["23-25", "27"]
+ * @param ageArray -
+ * @return {string}
+ */
+export function ageRangesString(ageArray){
+
+    //adapted from: https://stackoverflow.com/questions/2270910/how-to-reduce-consecutive-integers-in-an-array-to-hyphenated-range-expressions
+
+    if (ageArray === undefined){
+        return "";
+    }
+
+    let ranges = [], rstart, rend;
+    for (let i = 0; i < ageArray.length; i++) {
+        rstart = ageArray[i];
+        rend = rstart;
+        while (ageArray[i + 1] - ageArray[i] === 1) {
+            rend = ageArray[i + 1];
+            i++;
+        }
+        ranges.push(rstart === rend ? rstart+'' : rstart + '-' + rend);
+    }
+    return ranges.join(", ");
+
+}
+
+
+/**
  * Function to change the selected template
  * @param {Object} event - the input event from the template form
  */
@@ -491,11 +685,11 @@ export function changeTemplate(event){
                     }
                 }
 
+                selectedCompetitions = JSON.parse(JSON.stringify(competitions));
+
             }
 
         }
-
-        selectedCompetitions = JSON.parse(JSON.stringify(competitions));
 
     }
     //handle case where function is called from stats page
@@ -604,12 +798,14 @@ export function changePAdjTypes(event){
     let clickedType = event.target.value;
 
     let pAdjTypes = this.state.pAdjTypes;
-
     pAdjTypes[clickedType] = !pAdjTypes[clickedType];
 
     this.setState({
-        pAdjTypes: pAdjTypes
-    })
+        pAdjTypes: pAdjTypes,
+        isAnimated: true
+    });
+
+    cookies.set('padjTypes', pAdjTypes, {path: '/'});
 
 }
 
@@ -622,12 +818,12 @@ export function changeLabelType(event){
 
     let labelType = event.target.value;
 
-    cookies.set('labelType', labelType, {path: '/'});
-
     this.setState({
         labelType: labelType,
         isAnimated: false
-    })
+    });
+
+    cookies.set('labelType', labelType, {path: '/'});
 
 }
 
@@ -640,11 +836,12 @@ export function toggleCreditsPosition(){
     let oldPosition = this.state.creditsPosition;
     let newPosition = oldPosition === "right" ? "center" : "right";
 
-    cookies.set('creditsPosition', newPosition, {path: '/'});
     this.setState({
         isAnimated: false,
         creditsPosition: newPosition
-    })
+    });
+
+    cookies.set('creditsPosition', newPosition, {path: '/'});
 
 }
 
@@ -735,10 +932,25 @@ export async function exportChart(){
 
 }
 
+
+/**
+ * Function to the show an overlay containing a glossary/explanation
+ */
+export function toggleGlossaryOverlay(){
+
+    let currentState = this.state.showGlossaryOverlay;
+
+    this.setState({
+        showGlossaryOverlay: !currentState
+    });
+
+}
+
+
 /**
  * Function to the show the search dialog for the comparison functionality
  */
-export function toggleCompareSearch(){
+export function toggleCompareSearchOverlay(){
 
     let currentState = this.state.showCompareSearchOverlay;
 

@@ -5,18 +5,20 @@ import { Redirect } from 'react-router-dom'
 import Cookies from 'universal-cookie';
 import dateFormat from 'dateformat';
 
-//import utility functions
+//import utility functions, constants
 import {
     filterStats,
     calculateStats,
     constructChartInput,
+    ageRangesString,
     changeTemplate,
     changeSelectedCompetitions,
     changePAdjTypes,
     changeLabelType,
     toggleCreditsPosition,
     exportChart,
-    toggleCompareSearch
+    toggleGlossaryOverlay,
+    toggleCompareSearchOverlay
 } from "../utilities/SliceUtilities"
 
 //import components
@@ -24,8 +26,9 @@ import LoadingSpinner from "../components/LoadingSpinner";
 import SearchBar from "../components/SearchBar";
 import SliceOptions from "../components/SliceOptions";
 import Slice from "../components/Slice";
-import CompareSearchScreen from "../components/CompareSearchOverlay";
-import ExportLoaderScreen from "../components/ExportLoaderOverlay";
+import GlossaryOverlay from "../components/GlossaryOverlay";
+import CompareSearchOverlay from "../components/CompareSearchOverlay";
+import ExportLoaderOverlay from "../components/ExportLoaderOverlay";
 
 //initialize cookies
 const cookies = new Cookies();
@@ -51,13 +54,15 @@ class Stats extends Component {
         this.filterStats = filterStats.bind(this);
         this.calculateStats = calculateStats.bind(this);
         this.constructChartInput = constructChartInput.bind(this);
+        this.ageRangesString = ageRangesString.bind(this);
         this.changeTemplate = changeTemplate.bind(this);
         this.changePAdjTypes = changePAdjTypes.bind(this);
         this.changeSelectedCompetitions = changeSelectedCompetitions.bind(this);
         this.changeLabelType = changeLabelType.bind(this);
         this.toggleCreditsPosition = toggleCreditsPosition.bind(this);
         this.exportChart = exportChart.bind(this);
-        this.toggleCompareSearch = toggleCompareSearch.bind(this);
+        this.toggleGlossaryOverlay = toggleGlossaryOverlay.bind(this);
+        this.toggleCompareSearchOverlay = toggleCompareSearchOverlay.bind(this);
 
         //device and browser info
         this.isMobile = this.props.isMobile;
@@ -72,6 +77,7 @@ class Stats extends Component {
             isLoading: true,
             error: null,
             redirect: false,
+            showGlossaryOverlay: false,
             showCompareSearchOverlay: false,
             showExportLoaderOverlay: false,
             renderForExport: false,
@@ -258,13 +264,13 @@ class Stats extends Component {
             isLoading,
             error,
             redirect,
+            showGlossaryOverlay,
             showCompareSearchOverlay,
             showExportLoaderOverlay,
             renderForExport,
             code,
             url,
             name,
-            age,
             clubs,
             stats,
             isGK,
@@ -312,7 +318,8 @@ class Stats extends Component {
             //calculate stats and construct chart input
             let filteredStats = {};
             let series = [];
-            if (template !== null) {
+
+            if (template !== null && template !== "N/A") {
                 filteredStats = this.filterStats(stats);
                 if (Object.keys(filteredStats).length !== 0){
                     let calculatedStats = this.calculateStats(filteredStats);
@@ -322,6 +329,7 @@ class Stats extends Component {
             }
 
             let exportSlice = null;
+
             if (renderForExport) {
                 exportSlice =
                 <Slice
@@ -337,9 +345,11 @@ class Stats extends Component {
                     template={template}
                     labelType={labelType}
                     name={name}
+                    competitions={competitions}
                     selectedCompetitions={selectedCompetitions}
-                    age={age}
+                    ages={this.ageRangesString(filteredStats['age'])}
                     minutes={filteredStats['minutes']}
+                    padjTypes={pAdjTypes}
                     series={series}
                 />
             }
@@ -347,14 +357,18 @@ class Stats extends Component {
             //return JSX code for the stats page
             return (
                 <div id="main2">
-                    <CompareSearchScreen
+                    <GlossaryOverlay
+                        display={showGlossaryOverlay}
+                        toggleGlossaryOverlay={this.toggleGlossaryOverlay}
+                    />
+                    <CompareSearchOverlay
                         isMobile={this.isMobile}
                         display={showCompareSearchOverlay}
                         currentPlayerCode={code}
                         currentPlayerName={name}
-                        toggleCompareSearch={this.toggleCompareSearch}
+                        toggleCompareSearchOverlay={this.toggleCompareSearchOverlay}
                     />
-                    <ExportLoaderScreen
+                    <ExportLoaderOverlay
                         isMobile={this.isMobile}
                         display={showExportLoaderOverlay}
                     />
@@ -380,7 +394,7 @@ class Stats extends Component {
                             changeLabelType={this.changeLabelType}
                             toggleCreditsPosition={this.toggleCreditsPosition}
                             exportChart={this.exportChart}
-                            toggleCompareSearch={this.toggleCompareSearch}
+                            toggleCompareSearchOverlay={this.toggleCompareSearchOverlay}
                         />
                         <Slice
                             isMobile={this.isMobile}
@@ -394,10 +408,13 @@ class Stats extends Component {
                             template={template}
                             labelType={labelType}
                             name={name}
+                            competitions={competitions}
                             selectedCompetitions={selectedCompetitions}
-                            age={age}
+                            ages={this.ageRangesString(filteredStats['age'])}
                             minutes={filteredStats['minutes']}
+                            padjTypes={pAdjTypes}
                             series={series}
+                            toggleGlossaryOverlay={this.toggleGlossaryOverlay}
                         />
                     </div>
                     {/*Second slice used for exports. Not displayed*/}

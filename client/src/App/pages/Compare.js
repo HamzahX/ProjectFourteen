@@ -9,6 +9,7 @@ import LoadingSpinner from "../components/LoadingSpinner";
 import SearchBar from "../components/SearchBar";
 import SliceOptions from "../components/SliceOptions";
 import Slice from "../components/Slice";
+import GlossaryOverlay from "../components/GlossaryOverlay";
 import CompareSearchScreen from "../components/CompareSearchOverlay";
 import ExportLoaderScreen from "../components/ExportLoaderOverlay";
 
@@ -17,13 +18,15 @@ import {
     filterStats,
     calculateStats,
     constructChartInput,
+    ageRangesString,
     changeTemplate,
     changeSelectedCompetitions,
     changePAdjTypes,
     changeLabelType,
     toggleCreditsPosition,
     exportChart,
-    toggleCompareSearch
+    toggleGlossaryOverlay,
+    toggleCompareSearchOverlay
 } from "../utilities/SliceUtilities"
 
 //initialize helpers
@@ -51,13 +54,15 @@ class Compare extends Component {
         this.filterStats = filterStats.bind(this);
         this.calculateStats = calculateStats.bind(this);
         this.constructChartInput = constructChartInput.bind(this);
+        this.ageRangesString = ageRangesString.bind(this);
         this.changeTemplate = changeTemplate.bind(this);
         this.changeSelectedCompetitions = changeSelectedCompetitions.bind(this);
         this.changePAdjTypes = changePAdjTypes.bind(this);
         this.changeLabelType = changeLabelType.bind(this);
         this.toggleCreditsPosition = toggleCreditsPosition.bind(this);
         this.exportChart = exportChart.bind(this);
-        this.toggleCompareSearch = toggleCompareSearch.bind(this);
+        this.toggleGlossaryOverlay = toggleGlossaryOverlay.bind(this);
+        this.toggleCompareSearchOverlay = toggleCompareSearchOverlay.bind(this);
 
         //device and browser info
         this.isMobile = this.props.isMobile;
@@ -81,6 +86,7 @@ class Compare extends Component {
         this.state = {
             isLoading: true,
             error: null,
+            showGlossaryOverlay: false,
             showCompareSearchOverlay: false,
             showExportLoaderOverlay: false,
             renderForExport: false,
@@ -300,6 +306,7 @@ class Compare extends Component {
         let {
             isLoading,
             error,
+            showGlossaryOverlay,
             showCompareSearchOverlay,
             showExportLoaderOverlay,
             renderForExport,
@@ -350,28 +357,28 @@ class Compare extends Component {
             //calculate stats and construct chart input
             let filteredStats = {};
             let series = [];
-            let hasUndefined;
-            if (template !== null) {
-                for (let i=0; i<codes.length; i++){
-                    let code = codes[i];
-                    filteredStats[code] = this.filterStats(stats[code], code);
-                    if (Object.keys(filteredStats[code]).length !== 0){
-                        let calculatedStats = this.calculateStats(filteredStats[code], code);
-                        let chartInput = this.constructChartInput(
-                            calculatedStats.statsPer90,
-                            calculatedStats.percentiles,
-                            code,
-                            names[codes[i]],
-                            ages[codes[i]],
-                            filteredStats[code]['minutes'],
-                            i
-                        );
-                        series.push(chartInput);
-                    }
-                    else {
-                        hasUndefined = true;
-                    }
+
+            for (let i=0; i<codes.length; i++){
+
+                let code = codes[i];
+                filteredStats[code] = this.filterStats(stats[code], code);
+
+                if (template !== null && template !== "N/A"){
+                    let calculatedStats = this.calculateStats(filteredStats[code], code);
+                    let chartInput = this.constructChartInput(
+                        calculatedStats.statsPer90,
+                        calculatedStats.percentiles,
+                        code,
+                        names[codes[i]],
+                        ages[codes[i]],
+                        filteredStats[code]['minutes'],
+                        true,
+                        i
+                    );
+                    series.push(chartInput);
                 }
+
+
             }
 
             let code1 = codes[0];
@@ -384,13 +391,12 @@ class Compare extends Component {
                     isMobile={this.isMobile}
                     isForExport={true}
                     isForComparison={true}
-                    hasUndefined={hasUndefined}
                     isAnimated={false}
                     isAnimatedInitial={false}
                     hasTooltip={false}
                     creditsPosition={creditsPosition}
                     url={
-                        [urls[code1], urls[code2]]
+                        [null, null]
                     }
                     lastUpdated={lastUpdated}
                     template={template}
@@ -398,12 +404,19 @@ class Compare extends Component {
                     name={
                         [names[code1], names[code2]]
                     }
-                    age={
-                        [ages[code1], ages[code2]]
+                    competitions={
+                        [competitions[code1], competitions[code2]]
+                    }
+                    selectedCompetitions={
+                        [selectedCompetitions[code1], selectedCompetitions[code2]]
+                    }
+                    ages={
+                        [this.ageRangesString(filteredStats[code1]['age']), this.ageRangesString(filteredStats[code2]['age'])]
                     }
                     minutes={
                         [filteredStats[code1]['minutes'], filteredStats[code2]['minutes']]
                     }
+                    padjTypes={pAdjTypes}
                     series={series}
                 />
             }
@@ -411,12 +424,16 @@ class Compare extends Component {
             //return JSX code for the stats page
             return (
                 <div id="main2">
+                    <GlossaryOverlay
+                        display={showGlossaryOverlay}
+                        toggleGlossaryOverlay={this.toggleGlossaryOverlay}
+                    />
                     <CompareSearchScreen
                         isMobile={this.isMobile}
                         display={showCompareSearchOverlay}
                         currentPlayerCode={codes[0]}
                         currentPlayerName={names[codes[0]]}
-                        toggleCompareSearch={this.toggleCompareSearch}
+                        toggleCompareSearchOverlay={this.toggleCompareSearchOverlay}
                     />
                     <ExportLoaderScreen
                         isMobile={this.isMobile}
@@ -446,13 +463,12 @@ class Compare extends Component {
                             changeLabelType={this.changeLabelType}
                             toggleCreditsPosition={this.toggleCreditsPosition}
                             exportChart={this.exportChart}
-                            toggleCompareSearch={this.toggleCompareSearch}
+                            toggleCompareSearchOverlay={this.toggleCompareSearchOverlay}
                         />
                         <Slice
                             isMobile={this.isMobile}
                             isForExport={false}
                             isForComparison={true}
-                            hasUndefined={hasUndefined}
                             isAnimated={isAnimated}
                             isAnimatedInitial={true}
                             hasTooltip={true}
@@ -466,13 +482,21 @@ class Compare extends Component {
                             name={
                                 [names[code1], names[code2]]
                             }
-                            age={
-                                [ages[code1], ages[code2]]
+                            competitions={
+                                [competitions[code1], competitions[code2]]
+                            }
+                            selectedCompetitions={
+                                [selectedCompetitions[code1], selectedCompetitions[code2]]
+                            }
+                            ages={
+                                [this.ageRangesString(filteredStats[code1]['age']), this.ageRangesString(filteredStats[code2]['age'])]
                             }
                             minutes={
                                 [filteredStats[code1]['minutes'], filteredStats[code2]['minutes']]
                             }
+                            padjTypes={pAdjTypes}
                             series={series}
+                            toggleGlossaryOverlay={this.toggleGlossaryOverlay}
                         />
                     </div>
                     {/*Second slice used for exports. Not displayed*/}

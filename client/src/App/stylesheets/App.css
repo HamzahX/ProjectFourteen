@@ -82,6 +82,11 @@ body {
     height: 100%;
 }
 
+body::after{
+    position: absolute; width:0; height:0; overflow:hidden; z-index:-1;
+    content: url(../assets/exportBackground.png);
+}
+
 #root, #app {
     position: absolute;
     margin: 0;
@@ -162,6 +167,7 @@ button:hover {
     .searchbar-container > div {
         width: 100%;
         height: 100%;
+        position: relative;
     }
 
     #searchbar-form {
@@ -182,7 +188,7 @@ button:hover {
         }
 
         #live-search-results {
-            position: absolute;
+            position: relative;
             background-color: white;
             max-height: 400px;
             padding: 5px;
@@ -385,7 +391,7 @@ button:hover {
 
             #home #searchbar-container1 #live-search-results {
                 min-width: 400px;
-                width: 35%;
+                width: 100%;
             }
 
         #lucky-button {
@@ -605,7 +611,23 @@ button:hover {
         -webkit-flex: 0 1 100%;
         max-height: calc(100% - 52px);
         max-width: 100vw;
+        position: relative;
     }
+
+        .screen2 #glossary-button {
+            position: absolute;
+            height: auto;
+            width: auto;
+            top: 0;
+            right: 0;
+            font-family: 'FontAwesome', sans-serif;
+            font-size: 1.5em;
+            z-index: 7;
+        }
+
+            .screen2 #glossary-button:hover {
+                color: #b23535;
+            }
 
         .filter {
             min-width: 20%;
@@ -743,14 +765,33 @@ button:hover {
             width: 100%;
             transition: transform 0.3s, opacity 0.3s;
             z-index: 4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
+            .overlay .overlay-inner-container {
+                position: relative;
+                height: 80%;
+                background-color: #fafbfc;
+                border-radius: 13px;
+            }
+
+            .close-overlay {
+                position: fixed;
+                top: 7px;
+                right: 7px;
+                font-family: 'FontAwesome', sans-serif;
+                font-size: 2.2em;
+                color: lightgrey;
+            }
+
+            .close-overlay:hover {
+                color: black;
+                cursor: pointer;
+            }
+
         #export-loader-overlay {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            color: white;
         }
 
             #export-loader-overlay .loader, #export-loader-overlay .loader:before, #export-loader-overlay .loader:after {
@@ -758,20 +799,57 @@ button:hover {
                 background: white;
             }
 
-            #close-compare-search-overlay {
-                position: absolute;
-                top: 0;
-                right: 0;
-                font-family: 'FontAwesome', sans-serif;
-                content: '\f00d';
-                font-size: 2.2em;
-                color: white;
+        #glossary-overlay {
+
+        }
+
+            #glossary-overlay #glossary-container {
+                min-width: 400px;
+                width: 70%;
+                overflow-y: auto;
             }
 
-                #close-compare-search-overlay:hover {
-                    color: black;
-                    cursor: pointer;
-                }
+            #glossary-overlay #glossary-container #glossary-section-container {
+                padding: 0 4% 4%;
+            }
+
+            #glossary-overlay #glossary-container h2 {
+                font-size: 250%;
+            }
+
+            #glossary-overlay #glossary-container p, #glossary-overlay #glossary-container li {
+                font-size: 1.1em;
+            }
+
+            .help-section-container {
+                padding: 4% 4% 2%;
+            }
+
+            .help-section-container p {
+                font-size: 1em;
+                color: #222222;
+                font-family: Tahoma, Arial, Helvetica, sans-serif;
+            }
+
+            .help-section-container li {
+                font-size: 0.98em;
+                color: #373737;
+                font-family: Tahoma, Arial, Helvetica, sans-serif;
+            }
+
+            .help-section-container a {
+                font-size: 0.9em;
+                color: #878787;
+            }
+
+            .help-section-container a:hover {
+                color: orangered;
+            }
+
+        #compare-search-overlay {
+            flex-direction: column;
+            justify-content: unset;
+        }
 
             #compare-search-overlay span h3 {
                 color: white;
@@ -790,13 +868,8 @@ button:hover {
                 text-align: center;
             }
 
-            #compare-search-overlay #searchbar-container1 form input:hover, #compare-search-overlay #searchbar-container1 form input:focus {
-                box-shadow: 0 0 13px -8px darkgray;
-            }
-
             #compare-search-overlay #searchbar-container1 #live-search-results {
-                min-width: 400px;
-                width: 35%;
+                width: 100%;
             }
 
         #chart-filters {
@@ -832,9 +905,9 @@ button:hover {
                 }
 
                 .chart-filter-inputs .Collapsible__trigger:after {
-                     font-family: 'FontAwesome';
-                     content: '\f107';
-                     transition: transform 200ms;
+                    font-family: 'FontAwesome', sans-serif;
+                    content: '\f107';
+                    transition: transform 200ms;
                 }
 
                 .chart-filter-inputs .Collapsible__trigger.is-open:after {
@@ -847,7 +920,7 @@ button:hover {
 
                 .chart-filter-inputs .Collapsible__contentInner {
                     padding: 2px;
-                    margin-bottom: 1em;
+                    margin-bottom: 0.7em;
                 }
 
                     .chart-filter-inputs form {
@@ -903,6 +976,10 @@ button:hover {
                     background-color: #dcdcdc;
                 }
 
+        #chart {
+            position: relative;
+        }
+
         .highcharts-container {
         }
 
@@ -940,6 +1017,8 @@ button:hover {
 
             .highcharts-title {
                 text-align: center;
+                line-height: 0.8em;
+                margin-bottom: 0.3em;
             }
 
                 #chart .chart-title {
@@ -960,6 +1039,27 @@ button:hover {
                     font-size: 0.8em;
                 }
 
+                #chart .player-1, #export .player-1 {
+                    color: #e75453;
+                    fill: #e75453;
+                }
+
+                #chart .player-2, #export .player-2{
+                    color: black;
+                    fill: black;
+                }
+
+                #chart .competitions, #export .competitions {
+                    font-weight: bold;
+                    font-size: 0.55em;
+                    line-height: 0.5em;
+                }
+
+                #chart .age-minutes, #export .age-minutes {
+                    font-weight: bold;
+                }
+
+
             /*dummy border*/
             .highcharts-container  svg .highcharts-yaxis-grid path:nth-child(7){
                 stroke: #fafbfc;
@@ -968,14 +1068,14 @@ button:hover {
 
             /*outer border*/
             .highcharts-container  svg .highcharts-yaxis-grid path:nth-child(6){
-                stroke: #000000;
+                stroke: #222222;
                 stroke-width: 2;
             }
 
             /*inner border*/
             .highcharts-container  svg .highcharts-yaxis-grid path:nth-child(2) {
                 fill: #fafbfc !important;
-                stroke: #000000;
+                stroke: #222222;
                 stroke-width: 2;
                 z-index: 7 !important;
             }
@@ -983,7 +1083,7 @@ button:hover {
             /*axis-lines (in-between inner and outer)*/
             .highcharts-container  svg .highcharts-yaxis-grid path:not(:nth-child(2)):not(:nth-child(6)):not(:nth-child(7)) {
                 stroke: #7b7b7b;
-                opacity: 0.6 !important;
+                opacity: 0.5 !important;
             }
 
         #chart {
@@ -997,7 +1097,7 @@ button:hover {
             height: 1100px;
             opacity: 0;
             transform: scale(0.1);
-            /*background-image: url(../assets/exportBackground.png);*/
+            background-image: url(../assets/exportBackground.png);
             background-size: 100%;
             -webkit-background-size: 100%;
             background-repeat: no-repeat;

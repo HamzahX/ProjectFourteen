@@ -43,8 +43,8 @@ class ClubSearchResult extends Component {
                             country={countryCode}
                             format="png"
                             pngSize={32}
-                            width={(page === "live" ? 24 : 28) * flagSizeMultiplier}
-                            height={(page === "live" ? 24 : 28) * flagSizeMultiplier}
+                            width={(page === "live" ? 20 : 28) * flagSizeMultiplier}
+                            height={(page === "live" ? 20 : 28) * flagSizeMultiplier}
                             shiny={true}
                             alt={`${countryCode} Flag`}
                         />

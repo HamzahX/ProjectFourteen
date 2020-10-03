@@ -14,7 +14,7 @@ class CompareSearchOverlay extends Component {
 
         this.isMobile = this.props.isMobile;
 
-        this.toggleCompareSearch = this.props.toggleCompareSearch;
+        this.toggleCompareSearchOverlay = this.props.toggleCompareSearchOverlay;
         this.currentPlayerName = this.props.currentPlayerName;
         this.currentPlayerCode = this.props.currentPlayerCode;
 
@@ -31,8 +31,7 @@ class CompareSearchOverlay extends Component {
         //return JSX code for the searchbar
         return (
             <div className={`overlay ${this.props.display ? "open" : "closed"}`} id="compare-search-overlay">
-                <button className="far fa-times" onClick={this.toggleCompareSearch} id="close-compare-search-overlay">
-                </button>
+                <button className="close-overlay far fa-times-circle" onClick={this.toggleCompareSearchOverlay}/>
                 <span><h3>Compare {this.currentPlayerName} to...</h3></span>
                 <SearchBar
                     isMobile={this.isMobile}

@@ -35,10 +35,20 @@ class App extends Component {
     constructor(props) {
 
         super(props);
+
+        let percentileArrays = JSON.parse(localStorage.getItem('percentileArrays'));
+
+        if (percentileArrays === null){
+            percentileArrays = {
+                lastUpdated: null
+            }
+        }
+
         this.state = {
             isLoading: true,
-            percentileArrays: {},
+            percentileArrays: percentileArrays,
         };
+
         this.getPercentileArrays();
 
     }
@@ -55,12 +65,22 @@ class App extends Component {
             headers: {
                 "Content-Type": "application/json"
             },
-            body: JSON.stringify({})
+            body: JSON.stringify({
+                "percentilesTimestamp": this.state.percentileArrays['lastUpdated']
+            })
         })
         .then(res => {
             return res.json()
         })
-        .then(percentileArrays => this.setState({percentileArrays: percentileArrays, isLoading: false}))
+        .then(percentileArrays => {
+            if (percentileArrays === null){
+                this.setState({isLoading: false})
+            }
+            else {
+                localStorage.setItem('percentileArrays', JSON.stringify(percentileArrays));
+                this.setState({percentileArrays: percentileArrays, isLoading: false})
+            }
+        })
         .catch();
 
     };
@@ -83,6 +103,8 @@ class App extends Component {
      * @param {Object} newPercentileArrays - the object representing the new percentile arrays
      */
     updatePercentileArrays = (newPercentileArrays) => {
+
+        localStorage.setItem('percentileArrays', JSON.stringify(newPercentileArrays));
 
         this.setState({
             percentileArrays: newPercentileArrays

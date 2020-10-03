@@ -259,7 +259,6 @@ let processEntry = (aPlayer, competitionData, competitionName, isGoalkeeper) => 
         console.log("Unmatched fbref club name: " + fbrefClubName + ". Check the team name mappings");
     }
     let whoscoredClubName = FBREF_TO_WHOSCORED_TEAMS[fbrefClubName]["whoscored"];
-    let possession = POSSESSION_DATA[competitionName][whoscoredClubName];
 
     //populate the player metadata
     if (PROCESSED[whoscoredCode] === undefined){
@@ -295,10 +294,13 @@ let processEntry = (aPlayer, competitionData, competitionName, isGoalkeeper) => 
         }
     }
 
+    let possession = POSSESSION_DATA[competitionName][whoscoredClubName];
+
     //retrieve required stats from the fbref data (exported CSVs converted to JSON)
     let stats;
     if (isGoalkeeper){
         stats = {
+            age: entry["keeper_Age"],
             minutes: entry["keeper_Min"],
             goalsAgainst: entry["keeper_adv_GA"] - entry["keeper_adv_OG"],
             psxg: entry["keeper_adv_PSxG"],
@@ -314,6 +316,7 @@ let processEntry = (aPlayer, competitionData, competitionName, isGoalkeeper) => 
         stats = {
             age: entry["standard_Age"],
             minutes: entry["standard_Min"],
+            touches: entry["possession_Touches"],
             npg: entry["standard_Gls"] - entry["standard_PK"],
             npxg: entry["standard_npxG"],
             shots: entry["shooting_Sh"] - entry["standard_PK"],
@@ -327,18 +330,18 @@ let processEntry = (aPlayer, competitionData, competitionName, isGoalkeeper) => 
             attDribbles: entry["possession_Att"],
             timesDispossessed: entry["possession_Dispos"],
             miscontrols: entry["possession_Miscon"],
-            succPressures: entry["defense_Succ"],
-            padjSuccPressures: adjustForPossessionDefensive(entry["defense_Succ"], possession),
             progDistance: entry["passing_PrgDist"] + entry["possession_PrgDist"],
             succPasses: entry["passing_Cmp"],
             attPasses: entry["passing_Att"],
             pft: entry["passing_1/3"],
             succLongPasses: entry["passing_Cmp__3"],
             attLongPasses: entry["passing_Att__3"],
+            succPressures: entry["defense_Succ"],
+            padjSuccPressures: adjustForPossessionDefensive(entry["defense_Succ"], possession),
             interceptions: entry["defense_Int"],
             padjInterceptions: adjustForPossessionDefensive(entry["defense_Int"], possession),
-            tackles: entry["defense_Tkl"],
-            padjTackles: adjustForPossessionDefensive(entry["defense_Tkl"], possession),
+            succTackles: entry["defense_Tkl"],
+            padjSuccTackles: adjustForPossessionDefensive(entry["defense_Tkl"], possession),
             tacklesWon: entry["defense_TklW"],
             padjTacklesWon: adjustForPossessionDefensive(entry["defense_TklW"], possession),
             succDribbleTackles: entry["defense_Tkl__1"],
@@ -387,9 +390,7 @@ let adjustForPossessionDefensive = (value, possession) => {
 let adjustForPossessionOffensive = (value, touches) => {
 
     //return value per 100 touches
-    return (v)
-    //StatsBomb sigmoid function adapted from: https://statsbomb.com/2014/06/introducing-possession-adjusted-player-stats/
-    return (value * 2) / (1 + Math.exp(-0.1 * (possession - 50)));
+    return value / (touches/100);
 
 };
 

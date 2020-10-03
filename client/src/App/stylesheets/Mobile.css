@@ -180,12 +180,11 @@ h3 {
         }
 
         #searchbar-container2 #live-search-results, #searchbar-container3 #live-search-results {
-            position: unset;
             width: auto;
         }
 
             #searchbar-container2 #live-search-loader, #searchbar-container3 #live-search-loader {
-                top: 6%;
+                top: 2%;
                 right: 2%;
             }
 
@@ -272,12 +271,24 @@ h3 {
 
                 #compare-search-overlay #searchbar-container1 #live-search-results {
                     min-width: unset;
-                    width: 72%;
                 }
 
                 #compare-search-overlay #searchbar-container1 #searchbar-input {
                     height: 100%;
                 }
+
+        #glossary-overlay #glossary-container {
+            width: 90%;
+            overflow-y: scroll;
+        }
+
+        #glossary-overlay #glossary-container h2 {
+            font-size: 200%;
+        }
+
+        #glossary-overlay #glossary-container p, #glossary-overlay #glossary-container li {
+            font-size: 50%;
+        }
 
         #chart-filters {
             display: block;

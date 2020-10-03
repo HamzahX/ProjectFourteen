@@ -200,9 +200,9 @@ class SliceOptions extends Component {
 
                 competitionsForms.push(
                     <Collapsible
-                        key={`Competitions (${code})`}
+                        key={`Competitions ${code})`}
                         open={!this.templateOpen && !this.isMobile}
-                        trigger={`Competitions (${this.names[this.codes[i]]})`}
+                        trigger={`Competitions | ${this.names[this.codes[i]]}`}
                         className="chart-filter-headers"
                         transitionTime={200}
                         transitionCloseTime={200}
@@ -317,7 +317,7 @@ class SliceOptions extends Component {
                         <button id="toggleCreditsButton" type="button" onClick={this.props.toggleCreditsPosition}>Toggle Credits Position</button>
                     </div>
                     <div className="filter-button">
-                        <button id="compareButton" type="button" onClick={this.props.toggleCompareSearch}>Compare</button>
+                        <button id="compareButton" type="button" onClick={this.props.toggleCompareSearchOverlay}>Compare</button>
                     </div>
                     <div className="filter-button">
                         <button id="exportButton" type="button" onClick={this.props.exportChart}>Export Chart</button>

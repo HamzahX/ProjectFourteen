@@ -4,9 +4,10 @@ import React, {Component} from 'react';
 import Highcharts from 'highcharts/highstock'
 import HighchartsReact from 'highcharts-react-official'
 import HighchartsMore from 'highcharts/highcharts-more'
-import $ from "jquery"
-HighchartsMore(Highcharts);
+import NoDataToDisplay from 'highcharts/modules/no-data-to-display';
 
+HighchartsMore(Highcharts);
+NoDataToDisplay(Highcharts);
 
 /**
  * Component to render Slices (charts)
@@ -39,36 +40,55 @@ class Slice extends Component {
             };
         }
         else {
-            this.fontSizes =  {
-                title: this.isMobile ? '4vw' : '1.7em',
-                subtitle: this.isMobile ? '2.6vw' : '1.4em',
-                noData: this.isMobile ? '2.7vw' : '1.35em',
-                xAxisLabels: this.isMobile ? '2.3vw' : '1.15em',
-                dataLabels: this.isMobile ? '2.3vw' : '1.15em',
-                dataLabelsOutline: this.isMobile ? '0.3vw' : '0.18em',
-                tooltipHeader: this.isMobile ? '2.3vw' : '1em',
-                tooltip: this.isMobile ? '2.3vw' : '1.25em',
-                legend: this.isMobile ? '2.8vw' : '1.4em',
-                legendTitle: this.isMobile ? '2vw' : '1em',
-                credits: this.isMobile ? '2.3vw' : '1.2em',
-                yAxisLabels: this.isMobile ? '1vw' : '0.5em'
-            };
+            if (this.isMobile) {
+                this.fontSizes =  {
+                    title: '4vw',
+                    subtitle: '2.6vw',
+                    noData: '2.7vw',
+                    xAxisLabels: '2.3vw',
+                    dataLabels: '2.3vw',
+                    dataLabelsOutline: '0.3vw',
+                    tooltipHeader: '2.3vw',
+                    tooltip: '2.3vw',
+                    legend: '2.8vw',
+                    legendTitle: '2vw',
+                    credits: '2.3vw',
+                    yAxisLabels: '1vw'
+                };
+            }
+            else {
+                this.fontSizes =  {
+                    title: '1.7em',
+                    subtitle: '1.4em',
+                    noData: '1.35em',
+                    xAxisLabels: '1.15em',
+                    dataLabels: '1.15em',
+                    dataLabelsOutline: '0.21em',
+                    tooltipHeader: '1.05em',
+                    tooltip: '0.95em',
+                    legend: '1.4em',
+                    legendTitle: '1em',
+                    credits: '1.2em',
+                    yAxisLabels: '0.5em'
+                };
+            }
         }
 
         //set categories (x-axis labels) constants
+        this.categories = null;
         this.categories = {
             "FW": [
                 'Non-Penalty Goals',
                 'Non-Penalty xG',
                 'Non-Penalty xG/Shot',
-                `${this.isMobile && !this.isForExport ? "Conver-sion Rate" : "Conversion Rate"}`,
+                'Aerials Won',
                 'Aerial Win %',
                 'Touches in Box',
                 'xA',
                 'Passes into Box',
                 'Successful Dribbles',
                 'Dribble Success %',
-                'Times Dispossessed',
+                'Turnovers',
                 'Successful Pressures',
             ],
             "AM": [
@@ -78,54 +98,54 @@ class Slice extends Component {
                 'xA',
                 'OP Shot-Creating Actions',
                 'Passes into Box',
-                'Progressive Distance',
-                `${this.isMobile && !this.isForExport ? "Pass Comp. %" : "Pass Completion %"}`,
+                'Yards Progressed',
+                'Pass Completion %',
                 'Successful Dribbles',
                 'Dribble Success %',
-                'Times Dispossessed',
+                'Turnovers',
                 'Successful Pressures',
             ],
             "CM": [
                 'xA',
                 'OP Shot-Creating Actions',
                 'Passes into Final 1/3',
-                `${this.isMobile && !this.isForExport ? "Prog-ressive Distance" : "Progressive Distance"}`,
-                `${this.isMobile && !this.isForExport ? "Pass Comp. %" : "Pass Completion %"}`,
+                'Yards Progressed',
+                'Pass Completion %',
                 'Successful Dribbles',
                 'Dribble Success %',
-                'Times Dispossessed',
+                'Turnovers',
                 'Successful Pressures',
-                `${this.isMobile && !this.isForExport ? "(pAdj) Inter-ceptions" : "(pAdj) Interceptions"}`,
-                '(pAdj) Tackles Won',
-                `${this.isForExport ? "Tackle/Dribbled Past %" : "Tackle/ Dribbled Past %"}`
+                'Interceptions',
+                'Successful Tackles',
+                'Tackle/Dribbled Past %'
             ],
             "FB": [
                 'xA',
                 'Passes into Final 1/3',
-                'Progressive Distance',
-                `${this.isMobile && !this.isForExport ? "Pass Comp. %" : "Pass Completion %"}`,
+                'Yards Progressed',
+                'Pass Completion %',
                 'Successful Dribbles',
                 'Dribble Success %',
-                'Times Dispossessed',
+                'Turnovers',
                 'Successful Pressures',
-                '(pAdj) Interceptions',
-                "(pAdj) Tackles Won",
-                `${this.isForExport ? "Tackle/Dribbled Past %" : "Tackle/ Dribbled Past %"}`,
+                'Interceptions',
+                'Successful Tackles',
+                'Tackle/Dribbled Past %',
                 'Aerial Win %'
             ],
             "CB": [
                 'Passes into Final 1/3',
-                'Progressive Distance',
-                `${this.isMobile && !this.isForExport ? "Pass Comp. %" : "Pass Completion %"}`,
-                `${this.isMobile && !this.isForExport ? "Long Pass Comp. %" : "Long Pass Completion %"}`,
+                'Yards Progressed',
+                'Pass Completion %',
+                'Long Pass Completion %',
                 'Successful Pressures',
-                '(pAdj) Interceptions',
-                '(pAdj) Tackles Won',
-                `${this.isForExport ? "Tackle/Dribbled Past %" : "Tackle/ Dribbled Past %"}`,
-                '(pAdj) Fouls Committed',
+                'Interceptions',
+                'Successful Tackles',
+                'Tackle/Dribbled Past %',
+                'Fouls Committed',
                 'Aerials Won',
                 'Aerial Win %',
-                '(pAdj) Clearances'
+                'Clearances'
             ],
             "GK": [
                 "GSAA %",
@@ -148,55 +168,49 @@ class Slice extends Component {
             ]
         };
 
-        // this.titleClassNames = {
-        //     "FW": "multi-color-1",
-        //     "AM": "multi-color-1",
-        //     "CM": "multi-color-2",
-        //     "FB": "multi-color-2",
-        //     "CB": "multi-color-3",
-        //     "GK": "multi-color-4",
-        //     "N/A": "multi-color-1"
-        // };
-
-        this.titleColors = {
-            "FW": ['#f15c80', '#e4d354', '#90ed7d', '#7cb5ec'],
-            "AM": ['#f15c80', '#e4d354', '#90ed7d', '#7cb5ec'],
-            "CM": ['#e4d354', '#90ed7d', '#7cb5ec'],
-            "FB": ['#e4d354', '#90ed7d', '#7cb5ec'],
-            "CB": ['#e4d354', '#7cb5ec'],
-            "GK": ['#9499ff', '#e4d354'],
-            "N/A": ['#000000'],
-        };
-
-        this.primaryColors = {
-            "FW": '#f15c80',
-            "AM": '#f15c80',
-            "CM": '#e4d354',
-            "FB": '#7cb5ec',
-            "CB": '#7cb5ec',
-            "GK": '#9499ff',
-            "N/A": '#000000',
+        this.statTypes = {
+            offensiveVariable: [
+                'Touches in Box',
+                'xA',
+                'Passes into Box',
+                'Successful Dribbles',
+                'Turnovers',
+                'OP Shot-Creating Actions',
+                'Passes into Final 1/3',
+                'Yards Progressed'
+            ],
+            defensiveVariable: [
+                'Interceptions',
+                'Successful Tackles',
+                'Fouls Committed',
+                'Clearances'
+            ],
+            constant: [
+                'Non-Penalty Goals',
+                'Non-Penalty xG',
+                'Successful Pressures',
+                'Aerials Won'
+            ]
         };
 
         this.competitionDict = {
-            "Premier League": "EPL",
-            "La Liga": "SLL",
-            "Serie A": "ISA",
-            "Bundesliga": "GBL",
-            "Ligue 1": "FL1",
+            "Premier League": "ENG",
+            "La Liga": "SPA",
+            "Serie A": "ITA",
+            "Bundesliga": "GER",
+            "Ligue 1": "FRA",
             "Champions League": "UCL",
             "Europa League": "UEL"
         };
 
         //set subtitle constants
         this.subtitles = {
-            "FW": "vs Top-5 League Players with 10+ Starts as <b>Forwards</b>",
-            "AM": "vs Top-5 League Players with 10+ Starts as <b>Attacking Midfielders / Wingers</b>",
-            "CM": "vs Top-5 League Players with 10+ Starts as <b>Central / Defensive Midfielders</b>",
-            "FB": "vs Top-5 League Players with 10+ Starts as <b>Full-backs</b>",
-            "CB": "vs Top-5 League Players with 10+ Starts as <b>Center-backs</b>",
-            "GK": "vs Top-5 League Players with 10+ Starts as <b>Goalkeepers</b>",
-            "N/A": "No Template Selected"
+            "FW": "Percentile Ranks vs Top-5 League <b>Forwards</b>",
+            "AM": "Percentile Ranks vs Top-5 League <b>Attacking Midfielders / Wingers</b>",
+            "CM": "Percentile Ranks vs Top-5 League <b>Central / Defensive Midfielders</b>",
+            "FB": "Percentile Ranks vs Top-5 League <b>Full-backs</b>",
+            "CB": "Percentile Ranks vs Top-5 League <b>Center-backs</b>",
+            "GK": "Percentile Ranks vs Top-5 League <b>Goalkeepers</b>"
         };
 
         //add a link to the credits if the chart is not for export
@@ -214,7 +228,7 @@ class Slice extends Component {
         //set x-axis label distance
         let xAxisLabelDistance;
         if (this.isForExport){
-            xAxisLabelDistance = 60;
+            xAxisLabelDistance = 70;
         }
         else {
             xAxisLabelDistance = this.isMobile ? 60 : 40;
@@ -222,12 +236,25 @@ class Slice extends Component {
 
         //define the tooltip positioner for shared tooltips (used for comparisons)
         let tooltipPositioner = undefined;
+
         if (this.isForComparison) {
-            tooltipPositioner = function (labelWidth, labelHeight, point) {
-                let xPos = point.plotX;
-                let yPos = point.plotY - 33;
-                return {x: xPos, y: yPos};
+
+            let clientHeight = document.body.clientHeight;
+
+            if (this.isMobile){
+                tooltipPositioner = function (labelWidth, labelHeight, point) {
+                    return {x: 6, y: clientHeight - labelHeight - 20};
+                }
             }
+            else {
+                tooltipPositioner = function (labelWidth, labelHeight, point) {
+                    let xPos = point.plotX;
+                    let yPos = point.plotY;
+                    return {x: xPos, y: yPos - 35};
+                }
+            }
+
+
         }
 
         //define the text for the credits
@@ -243,7 +270,6 @@ class Slice extends Component {
                 useHTML: true,
                 text: undefined,
                 style: {
-                    color: '#B23535',
                     fontSize: this.fontSizes['title'],
                     fontWeight: 'bold',
                 },
@@ -271,7 +297,10 @@ class Slice extends Component {
                 marginRight: 90,
                 marginTop: undefined,
                 marginBottom: undefined,
-                events: chartEvents
+                events: chartEvents,
+                zoomType: 'x',
+                panning: true,
+                panKey: 'shift'
             },
             xAxis: {
                 categories: undefined,
@@ -285,10 +314,11 @@ class Slice extends Component {
                     padding: 31
                 },
                 gridLineWidth: 2,
-                gridLineColor: 'black',
+                gridLineColor: '#4a4a4a',
                 gridZIndex: 2
             },
             yAxis: {
+                visible: undefined,
                 labels: {
                     enabled: false,
                     // style: {
@@ -312,17 +342,6 @@ class Slice extends Component {
                     animation: {
                         duration: this.props.isAnimatedInitial ? 750 : 0
                     },
-                    events: {
-                        legendItemClick: (event) => {
-                            // event.preventDefault();
-                            // let series = this.slice.series[event.target.index];
-                            // let seriesOptions = series.options;
-                            // seriesOptions.dataLabels.enabled = !seriesOptions.dataLabels.enabled;
-                            // seriesOptions.animation = false;
-                            // series.update(seriesOptions);
-                            // this.drawLegendBorders()
-                        }
-                    },
                     states: {
                         hover: {
                             enabled: this.props.isAnimatedInitial
@@ -330,8 +349,6 @@ class Slice extends Component {
                     },
                     dataLabels: {
                         enabled: undefined,
-                        // crop: false,
-                        // overflow: 'allow',
                         style: {
                             fontWeight: 'bold',
                             fontSize: this.fontSizes['dataLabels'],
@@ -360,20 +377,25 @@ class Slice extends Component {
             tooltip: {
                 enabled: this.props.hasTooltip,
                 shared: this.isForComparison,
+                useHTML: true,
+                outside: this.isMobile,
                 positioner: tooltipPositioner,
                 followPointer: !this.isMobile,
-                headerFormat: `<span style="font-size: ${this.fontSizes['tooltipHeader']}; font-weight: bold">{point.key}</span><br/>-----`,
-                pointFormat: '<br><b>{point.playerName}</b><br>Raw Value: <b>{point.p90_label}</b><br/>Percentile Rank: <b>{point.percentile_label}</b>',
+                headerFormat: `<span style="font-size: ${this.fontSizes['tooltipHeader']}; font-weight: bold">{point.key}</span><br/>─────`,
+                pointFormat: `<br>${this.isForComparison ? '<span style="color: {point.tooltipColor}; font-weight: bold">{point.playerName}</span><br>' : ""}
+                              Raw Value: <span style="color: {point.tooltipColor}; font-weight: bold">{point.p90_label}</span>
+                              <br>Percentile Rank: <span style="color: {point.tooltipColor}; font-weight: bold">{point.percentile_label}</span>`,
                 style: {
-                    fontSize: this.fontSizes['tooltip']
+                    fontSize: this.fontSizes['tooltip'],
+                    zIndex: 100
                 },
+                borderColor: this.isForComparison ? '#b9b9b9' : undefined,
                 backgroundColor: '#fafbfc',
                 borderWidth: 2
             },
             legend: {
-                enabled: this.isForComparison,
+                enabled: this.isForComparison && !this.isForExport,
                 title: {
-                    // text: "Click to toggle data labels",
                     style: {
                         fontSize: this.fontSizes['legendTitle']
                     }
@@ -408,7 +430,7 @@ class Slice extends Component {
                 },
             },
             lang: {
-                noData: "Select a competition"
+                noData: "Select a template and competitions to proceed",
             },
             noData: {
                 attr: {
@@ -419,18 +441,6 @@ class Slice extends Component {
                     fontSize: this.fontSizes['noData'],
                     color: '#303030'
                 }
-            },
-            responsive: {
-                rules: [{
-                    condition: {
-                        maxWidth: 960
-                    },
-                    chartOptions: {
-                        legend: {
-                            verticalAlign: 'bottom'
-                        }
-                    }
-                }]
             }
         };
 
@@ -510,16 +520,10 @@ class Slice extends Component {
 
         let chart = this.slice;
 
-        let borderColor = this.primaryColors[this.props.template];
-        if (borderColor === '#e4d354'){
-            borderColor = '#ebb320';
+        for (let i=0; i<chart.legend.allItems.length; i++){
+            chart.legend.allItems[i].legendSymbol.element.setAttribute("stroke-width", "3");
+            chart.legend.allItems[i].legendSymbol.element.setAttribute("stroke", i === 0 ? "rgba(231,84,83,0.55)" : "#000000");
         }
-
-        $.each(chart.legend.allItems, function (i, item) {
-            item.legendSymbol.element.setAttribute("stroke-width", "3");
-            //primary color border to first symbol, black border to second symbol
-            item.legendSymbol.element.setAttribute("stroke", i === 0 ? borderColor : "#000000")
-        });
 
     }
 
@@ -572,11 +576,16 @@ class Slice extends Component {
 
     /**
      * Function to generate a string representing the list of selected competitions
+     * @param (Object) allCompetitions - object containing arrays of all competitions on per-season basis
      * @param {Object} selectedCompetitions - object containing arrays of selected competitions on per-season basis
      */
-    selectedCompetitionsString(selectedCompetitions) {
+    selectedCompetitionsString(allCompetitions, selectedCompetitions, template) {
 
-        let temp1 = [];
+        let allSeasons = [];
+
+        if (template === null || template === "N/A"){
+            return this.isForComparison ? "" : "-";
+        }
 
         for (let season in selectedCompetitions){
 
@@ -584,46 +593,64 @@ class Slice extends Component {
                 continue;
             }
 
-            let seasonString = `${season.replace("-", "/")} (`;
-            let temp2 = [];
+            let currentSeasonString = `${season.replace("-", "/")} (`;
+            let currentSeason = [];
 
-            let competitions = Object.values(selectedCompetitions[season]);
+            let competitions = Object.values(allCompetitions[season]);
 
-            let temp3 = {};
+            let allCompetitionsClubDict = {};
+            let selectedCompetitionsClubDict = {};
 
             for (let i=0; i<competitions.length; i++){
 
                 let competition = competitions[i];
-                let competitionName = competition.split(" | ")[0];
-                let competitionClub = competition.split(" | ")[1];
+                let isSelected = false;
 
-                if (temp3[competitionName] === undefined){
-                    temp3[competitionName] = [competitionClub]
+                if (selectedCompetitions[season].includes(competition)){
+                    isSelected = true;
+                }
+
+                let split = competition.split(" | ");
+
+                let competitionName = split[0];
+                let competitionClub = split[1];
+
+                if (allCompetitionsClubDict[competitionName] === undefined){
+                    allCompetitionsClubDict[competitionName] = [competitionClub];
                 }
                 else {
-                    temp3[competitionName].push(competitionClub)
+                    allCompetitionsClubDict[competitionName].push(competitionClub);
+                }
+
+                if (isSelected){
+                    if (selectedCompetitionsClubDict[competitionName] === undefined) {
+                        selectedCompetitionsClubDict[competitionName] = [competitionClub];
+                    }
+                    else {
+                        selectedCompetitionsClubDict[competitionName].push(competitionClub);
+                    }
                 }
 
             }
 
-            for (let competition in temp3){
+            for (let competition in selectedCompetitionsClubDict){
 
-                if (temp3[competition].length > 1){
-                    temp2.push(`${this.competitionDict[competition]} (${temp3[competition].join(", ")})`)
+                if (allCompetitionsClubDict[competition].length > 1){
+                    currentSeason.push(`${this.competitionDict[competition]} (${selectedCompetitionsClubDict[competition].join(", ")})`)
                 }
                 else {
-                    temp2.push(this.competitionDict[competition]);
+                    currentSeason.push(this.competitionDict[competition]);
                 }
 
             }
 
-            seasonString += `<span style="font-weight: bold; color: #B23535">${temp2.join(", ")}</span>) `;
+            currentSeasonString += `${currentSeason.join(", ")}) `;
 
-            temp1.push(seasonString);
+            allSeasons.push(currentSeasonString);
 
         }
 
-        return temp1.join(" & ");
+        return allSeasons.join(" | ");
     }
 
 
@@ -636,40 +663,48 @@ class Slice extends Component {
 
         let chartOptions = this.chartOptions;
 
+        let template = this.props.template;
+
         let title;
-        let titleColor = "#B23535";
         if (this.isForComparison) {
-            title = `<span class="chart-title"><a href=${this.props.url[0]} target="_blank" rel="noopener noreferrer">${this.props.name[0]}</a></span>`;
-            title += `<span style='color: black;'> vs <span class="chart-title"><a href=${this.props.url[1]} target="_blank" rel="noopener noreferrer">${this.props.name[1]}</a></span></span>`;
+            title = `<span class="chart-title player-1"><a href=${this.props.url[0]} target="_blank" rel="noopener noreferrer">${this.props.name[0]}</a></span>`;
+            title += `<span class="player-2"> vs <span class="chart-title"><a href=${this.props.url[1]} target="_blank" rel="noopener noreferrer">${this.props.name[1]}</a></span></span>`;
+            title += "<br>";
+            title += `<span class="player-1 competitions">${this.selectedCompetitionsString(this.props.competitions[0], this.props.selectedCompetitions[0], template)}</span>`;
+            title += `<span class="player-2 competitions"> - ${this.selectedCompetitionsString(this.props.competitions[1], this.props.selectedCompetitions[1], template)}</span>`;
         }
         else {
-            title = `<span class="chart-title"><a href=${this.props.url} target="_blank" rel="noopener noreferrer">${this.props.name}</a>`;
+            title = `<span class="chart-title player-1"><a href=${this.props.url} target="_blank" rel="noopener noreferrer">${this.props.name}</a>`;
             if (!this.isForExport){
                 title += `<a href=${this.props.url} target="_blank" rel="noopener noreferrer"><i id="link-icon" class="fa fa-external-link"></i></a></span>`;
             }
+            title += `<br><span class="player-1 competitions">${this.selectedCompetitionsString(this.props.competitions, this.props.selectedCompetitions, template)}</span><br>`;
         }
         chartOptions.title.text = title;
 
         //build the subtitle
-        let subtitle ;
-        if (this.props.series.length === 0 || this.props.hasUndefined){
-            subtitle = "-<br>-<br>-";
+        let subtitle;
+        if (this.props.template === null || this.props.template === "N/A" || this.props.series.length === 0) {
+            chartOptions.xAxis.visible = false;
+            chartOptions.yAxis.visible = false;
+            subtitle = "-<br>-<br>";
         }
         else {
+            chartOptions.xAxis.visible = true;
+            chartOptions.yAxis.visible = true;
             if (this.isForComparison) {
-                subtitle = `<span style='color: ${titleColor}'>Age: <span style='font-weight: bold; color: ${titleColor}'>${this.props.age[0]} ║ </span></span>`;
-                subtitle += `<span style='color: ${titleColor}'>Minutes Played: <span style='font-weight: bold; color: ${titleColor}'>${this.props.minutes[0].toLocaleString()}</span></span>`;
-                subtitle += " - ";
-                subtitle += `Age: <b>${this.props.age[1]}</b> ║ `;
-                subtitle += `Minutes Played: <b>${this.props.minutes[1].toLocaleString()}</b><br>`;
+                subtitle = `<span class="player-1">Age: <span class="player-1 age-minutes">${this.props.ages[0]}</span>   </span>`;
+                subtitle += `<span class="player-1">Minutes Played: <span class="player-1 age-minutes">${this.props.minutes[0].toLocaleString()}</span></span>`;
+                subtitle += "<b> - </b>";
+                subtitle += `<span class="player-2">Age: <span class="age-minutes">${this.props.ages[1]}</span>   </span>`;
+                subtitle += `<span class="player-2">Minutes Played: <span class="age-minutes">${this.props.minutes[1].toLocaleString()}</span></span>`;
+                subtitle += "<br>"
             }
             else {
-                subtitle = `Age: <span style="font-weight: bold; color: #B23535">${this.props.age}</span>   `;
-                subtitle += `Minutes Played: <span style="font-weight: bold; color: #B23535">${this.props.minutes.toLocaleString()}</span><br>`;
-                subtitle += `${this.selectedCompetitionsString(this.props.selectedCompetitions)}<br>`;
+                subtitle = `Age: <span class="player-1 age-minutes">${this.props.ages}</span>  `;
+                subtitle += `Minutes Played: <span class="player-1 age-minutes">${this.props.minutes.toLocaleString()}</span><br>`;
             }
-            //subtitle += "Percentile Rank Bars (per 90 stats)<br>";
-            subtitle += this.subtitles[this.props.template];
+            subtitle += `${this.subtitles[this.props.template]}`;
         }
         //set the subtitle
         chartOptions.subtitle.text = subtitle;
@@ -690,9 +725,35 @@ class Slice extends Component {
             chart.marginBottom = (this.props.creditsPosition === "right" && !this.props.isMobile) ? 30 : 60;
         }
 
+        let padjOffensive = this.props.padjTypes['offensive'];
+        let padjDefensive = this.props.padjTypes['defensive'];
+
+        let offensiveSuffix = padjOffensive ? " per 100 touches" : " per 90";
+        let defensiveSuffix = padjDefensive ? " per 90 (pAdj)" : " per 90";
+
+        let categories = JSON.parse(JSON.stringify(this.categories[this.props.template]));
+
+        for (let i=0; i<categories.length; i++){
+
+            let stat = categories[i];
+
+            if (this.statTypes['offensiveVariable'].includes(stat)){
+                categories[i] += `<span style="font-size: 0.8em">${offensiveSuffix}</span>`;
+            }
+            else if (this.statTypes['defensiveVariable'].includes(stat)){
+                categories[i] += `<span style="font-size: 0.8em">${defensiveSuffix}</span>`;
+            }
+            else if (this.statTypes['constant'].includes(stat)){
+                categories[i] += `<span style="font-size: 0.8em"> per 90</span>`;
+            }
+
+        }
+
         let xAxis = chartOptions.xAxis;
+
+
         //set x-axis labels
-        xAxis.categories = this.categories[this.props.template];
+        xAxis.categories = categories;
 
         //set data points
         chartOptions.series = this.props.series.map((data, index) => {
@@ -706,26 +767,9 @@ class Slice extends Component {
             };
         });
 
-        //set series color
-        let titleColors = this.titleColors[this.props.template];
-        let numColors = titleColors.length;
-        let gradientStops = [];
-        let stop = 0;
-        for (let i=0; i<numColors; i++){
-            if (titleColors[numColors - 1 - i] !== this.primaryColors[this.props.template]){
-                gradientStops.push([stop, titleColors[numColors - 1 - i]]);
-                stop++
-            }
-        }
+        //set series colors
         chartOptions.colors = [
-            {
-                radialGradient: {
-                    cx: 0.5,
-                    cy: 0.5,
-                    r: 0.3,
-                },
-                stops: gradientStops
-            },
+            'rgba(231,84,83,0.55)',
             '#fafbfc'
         ];
 
@@ -743,9 +787,14 @@ class Slice extends Component {
         let className = this.isForExport ? undefined : "result";
         let id = this.isForExport ? "export" : "chart";
 
+        let helpButton = null;
+        if (!this.isForExport)
+            helpButton = <button className="fas fa-question-circle" id="glossary-button" onClick={this.props.toggleGlossaryOverlay}/>;
+
         //pass chart options to the Highcharts component and render
         return (
             <div className={className} id={id}>
+                {helpButton}
                 <HighchartsReact
                     constructorType={"chart"}
                     highcharts={Highcharts}
