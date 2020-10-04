@@ -82,7 +82,7 @@ class GlossaryOverlay extends Component {
                             </li>
                             <li>
                                 <span style={{color: '#e4c000', fontWeight: 'bold'}}>xA (Expected Assists)</span>&nbsp;
-                                Expected goals that resulted from shot assists, including set pieces.*
+                                Expected goals that resulted from a player's shot assists, including set pieces.*
                             </li>
                             <li>
                                 <span style={{color: '#e4c000', fontWeight: 'bold'}}>OP (Open Play) Shot-Creating Action</span>&nbsp;
