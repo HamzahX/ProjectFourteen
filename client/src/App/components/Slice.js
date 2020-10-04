@@ -75,98 +75,192 @@ class Slice extends Component {
         }
 
         //set categories (x-axis labels) constants
-        this.categories = null;
-        this.categories = {
-            "FW": [
-                'Non-Penalty Goals',
-                'Non-Penalty xG',
-                'Non-Penalty xG/Shot',
-                'Aerials Won',
-                'Aerial Win %',
-                'Touches in Box',
-                'xA',
-                'Passes into Box',
-                'Successful Dribbles',
-                'Dribble Success %',
-                'Turnovers',
-                'Successful Pressures',
-            ],
-            "AM": [
-                'Non-Penalty Goals',
-                'Non-Penalty xG',
-                'Non-Penalty xG/Shot',
-                'xA',
-                'OP Shot-Creating Actions',
-                'Passes into Box',
-                'Yards Progressed',
-                'Pass Completion %',
-                'Successful Dribbles',
-                'Dribble Success %',
-                'Turnovers',
-                'Successful Pressures',
-            ],
-            "CM": [
-                'xA',
-                'OP Shot-Creating Actions',
-                'Passes into Final 1/3',
-                'Yards Progressed',
-                'Pass Completion %',
-                'Successful Dribbles',
-                'Dribble Success %',
-                'Turnovers',
-                'Successful Pressures',
-                'Interceptions',
-                'Successful Tackles',
-                'Tackle/Dribbled Past %'
-            ],
-            "FB": [
-                'xA',
-                'Passes into Final 1/3',
-                'Yards Progressed',
-                'Pass Completion %',
-                'Successful Dribbles',
-                'Dribble Success %',
-                'Turnovers',
-                'Successful Pressures',
-                'Interceptions',
-                'Successful Tackles',
-                'Tackle/Dribbled Past %',
-                'Aerial Win %'
-            ],
-            "CB": [
-                'Passes into Final 1/3',
-                'Yards Progressed',
-                'Pass Completion %',
-                'Long Pass Completion %',
-                'Successful Pressures',
-                'Interceptions',
-                'Successful Tackles',
-                'Tackle/Dribbled Past %',
-                'Fouls Committed',
-                'Aerials Won',
-                'Aerial Win %',
-                'Clearances'
-            ],
-            "GK": [
-                "GSAA %",
-                "Cross Stopping %",
-                "Launched Pass Completion %"
-            ],
-            "N/A": [
-                "-",
-                "-",
-                "-",
-                "-",
-                "-",
-                "-",
-                "-",
-                "-",
-                "-",
-                "-",
-                "-",
-                "-"
-            ]
-        };
+        if (this.isMobile && !this.isForExport){
+            this.categories = {
+                "FW": [
+                    'Non-Penalty Goals',
+                    'Non-Penalty xG',
+                    'Non-Penalty xG/Shot',
+                    'Aerials Won',
+                    'Aerial Win %',
+                    'Touches in Box',
+                    'xA',
+                    'Passes into Box',
+                    'Successful Dribbles',
+                    'Dribble Success %',
+                    'Turnovers',
+                    'Successful Pressures',
+                ],
+                "AM": [
+                    'Non-Penalty Goals',
+                    'Non-Penalty xG',
+                    'Non-Penalty xG/Shot',
+                    'xA',
+                    'OP Shot-Creating Actions',
+                    'Passes into Box',
+                    'Yards Progressed',
+                    'Pass Comp. %',
+                    'Successful Dribbles',
+                    'Dribble Success %',
+                    'Turnovers',
+                    'Successful Pressures',
+                ],
+                "CM": [
+                    'xA',
+                    'OP Shot-Creating Actions',
+                    'Passes into Final 1/3',
+                    'Yards Prog-ressed',
+                    'Pass Comp. %',
+                    'Successful Dribbles',
+                    'Dribble Success %',
+                    'Turnovers',
+                    'Successful Pressures',
+                    'Inter-ceptions',
+                    'Successful Tackles',
+                    'Tackle/ Dribbled Past %'
+                ],
+                "FB": [
+                    'xA',
+                    'Passes into Final 1/3',
+                    'Yards Progressed',
+                    'Pass Comp. %',
+                    'Successful Dribbles',
+                    'Dribble Success %',
+                    'Turnovers',
+                    'Successful Pressures',
+                    'Interceptions',
+                    'Succ. Tackles',
+                    'Tackle/ Dribbled Past %',
+                    'Aerial Win %'
+                ],
+                "CB": [
+                    'Passes into Final 1/3',
+                    'Yards Progressed',
+                    'Pass Comp. %',
+                    'Long Pass Comp. %',
+                    'Succ. Pressures',
+                    'Interceptions',
+                    'Successful Tackles',
+                    'Tackle/ Dribbled Past %',
+                    'Fouls Committed',
+                    'Aerials Won',
+                    'Aerial Win %',
+                    'Clearances'
+                ],
+                "GK": [
+                    "GSAA %",
+                    "Cross Stopping %",
+                    "Launched Pass Comp. %"
+                ],
+                "N/A": [
+                    "-",
+                    "-",
+                    "-",
+                    "-",
+                    "-",
+                    "-",
+                    "-",
+                    "-",
+                    "-",
+                    "-",
+                    "-",
+                    "-"
+                ]
+            };
+        }
+        else {
+            this.categories = {
+                "FW": [
+                    'Non-Penalty Goals',
+                    'Non-Penalty xG',
+                    'Non-Penalty xG/Shot',
+                    'Aerials Won',
+                    'Aerial Win %',
+                    'Touches in Box',
+                    'xA',
+                    'Passes into Box',
+                    'Successful Dribbles',
+                    'Dribble Success %',
+                    'Turnovers',
+                    'Successful Pressures',
+                ],
+                "AM": [
+                    'Non-Penalty Goals',
+                    'Non-Penalty xG',
+                    'Non-Penalty xG/Shot',
+                    'xA',
+                    'OP Shot-Creating Actions',
+                    'Passes into Box',
+                    'Yards Progressed',
+                    'Pass Completion %',
+                    'Successful Dribbles',
+                    'Dribble Success %',
+                    'Turnovers',
+                    'Successful Pressures',
+                ],
+                "CM": [
+                    'xA',
+                    'OP Shot-Creating Actions',
+                    'Passes into Final 1/3',
+                    'Yards Progressed',
+                    'Pass Completion %',
+                    'Successful Dribbles',
+                    'Dribble Success %',
+                    'Turnovers',
+                    'Successful Pressures',
+                    'Interceptions',
+                    'Successful Tackles',
+                    'Tackle/Dribbled Past %'
+                ],
+                "FB": [
+                    'xA',
+                    'Passes into Final 1/3',
+                    'Yards Progressed',
+                    'Pass Completion %',
+                    'Successful Dribbles',
+                    'Dribble Success %',
+                    'Turnovers',
+                    'Successful Pressures',
+                    'Interceptions',
+                    'Successful Tackles',
+                    'Tackle/Dribbled Past %',
+                    'Aerial Win %'
+                ],
+                "CB": [
+                    'Passes into Final 1/3',
+                    'Yards Progressed',
+                    'Pass Completion %',
+                    'Long Pass Completion %',
+                    'Successful Pressures',
+                    'Interceptions',
+                    'Successful Tackles',
+                    'Tackle/Dribbled Past %',
+                    'Fouls Committed',
+                    'Aerials Won',
+                    'Aerial Win %',
+                    'Clearances'
+                ],
+                "GK": [
+                    "GSAA %",
+                    "Cross Stopping %",
+                    "Launched Pass Completion %"
+                ],
+                "N/A": [
+                    "-",
+                    "-",
+                    "-",
+                    "-",
+                    "-",
+                    "-",
+                    "-",
+                    "-",
+                    "-",
+                    "-",
+                    "-",
+                    "-"
+                ]
+            };
+        }
 
         this.statTypes = {
             offensiveVariable: [
@@ -177,11 +271,14 @@ class Slice extends Component {
                 'Turnovers',
                 'OP Shot-Creating Actions',
                 'Passes into Final 1/3',
-                'Yards Progressed'
+                'Yards Progressed',
+                'Yards Prog-ressed'
             ],
             defensiveVariable: [
                 'Interceptions',
+                'Inter-ceptions',
                 'Successful Tackles',
+                'Succ. Tackles',
                 'Fouls Committed',
                 'Clearances'
             ],
@@ -239,11 +336,9 @@ class Slice extends Component {
 
         if (this.isForComparison) {
 
-            let clientHeight = document.body.clientHeight;
-
             if (this.isMobile){
-                tooltipPositioner = function (labelWidth, labelHeight, point) {
-                    return {x: 6, y: clientHeight - labelHeight - 20};
+                tooltipPositioner = (labelWidth, labelHeight, point) => {
+                    return {x: 6, y: document.body.scrollHeight - labelHeight - 20};
                 }
             }
             else {

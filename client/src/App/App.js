@@ -19,7 +19,7 @@ if (isMobileOnly){
 }
 
 //initialize Google Analytics
-ReactGA.initialize('UA-168675037-1');
+ReactGA.initialize('UA-179497563-1');
 
 
 /**

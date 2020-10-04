@@ -30,9 +30,10 @@ class GlossaryOverlay extends Component {
                     <div className="help-section-container">
                         <h2>Interpreting the Slices</h2>
                         <p>
-                            A Football Slice is made up of a number of wedges (12 for outfield players, 3 for goalkeepers).
-                            The length of each wedge corresponds to the selected player's percentile rank for the stat
-                            when they are compared to top-5 league players who play in a similar position.
+                            A Football Slice is made up of a number of wedges (12 for outfield players, 3 for goalkeepers),
+                            each representing a relevant stat. The length of each wedge corresponds to the
+                            selected player's percentile rank for the stat when they are compared to top-5 league
+                            players who play in a similar position.
                         </p>
                         <p>
                             The percentile rank of a score is the percentage of scores within a dataset
@@ -140,8 +141,8 @@ class GlossaryOverlay extends Component {
                                 A prevention of an opponent's pass from reaching another opponent by moving into the line of the pass.
                             </li>
                             <li>
-                                <span style={{color: '#7db9f0', fontWeight: 'bold'}}>Tackle Won</span>&nbsp;
-                                A dispossession of an opponent such that the tackling player's team won possession of the ball.
+                                <span style={{color: '#7db9f0', fontWeight: 'bold'}}>Successful Tackle</span>&nbsp;
+                                A successful dispossession of an opponent (whether the tackler's team won possession of the ball or not).
                             </li>
                             <li>
                                 <span style={{color: '#7db9f0', fontWeight: 'bold'}}>Tackle/Dribbled Past %</span>&nbsp;

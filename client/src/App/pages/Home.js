@@ -258,12 +258,12 @@ class Home extends Component {
                                     complete stats sheet. Please do make sure to check out FBref and spread the word about
                                     them if you'd like to see them continue adding more data to their site.
                                 </p>
-                                <br/>
                                 <p><span className="accented-p">Interpreting the Slices</span></p>
                                 <p>
-                                    A Football Slice is made up of a number of wedges (12 for outfield players, 3 for goalkeepers).
-                                    The length of each wedge corresponds to the selected player's percentile rank for the stat
-                                    when they are compared to top-5 league players who play in a similar position.
+                                    A Football Slice is made up of a number of wedges (12 for outfield players, 3 for goalkeepers),
+                                    each representing a relevant stat. The length of each wedge corresponds to the
+                                    selected player's percentile rank for the stat when they are compared to top-5 league
+                                    players who play in a similar position.
                                 </p>
                                 <p>
                                     The colours help to group similar-ish stats together (as well as improve the charts'
@@ -313,7 +313,7 @@ class Home extends Component {
                                 </li>
                                 <li>
                                     <span style={{color: '#e4c000', fontWeight: 'bold'}}>xA (Expected Assists)</span>&nbsp;
-                                    Expected goals that resulted from shot assists, including set pieces.*
+                                    Expected goals that resulted from a player's shot assists, including set pieces.*
                                 </li>
                                 <li>
                                     <span style={{color: '#e4c000', fontWeight: 'bold'}}>OP (Open Play) Shot-Creating Action</span>&nbsp;
@@ -372,8 +372,8 @@ class Home extends Component {
                                     A prevention of an opponent's pass from reaching another opponent by moving into the line of the pass.
                                 </li>
                                 <li>
-                                    <span style={{color: '#7db9f0', fontWeight: 'bold'}}>Tackle Won</span>&nbsp;
-                                    A dispossession of an opponent such that the tackling player's team won possession of the ball.
+                                    <span style={{color: '#7db9f0', fontWeight: 'bold'}}>Successful Tackle</span>&nbsp;
+                                    A successful dispossession of an opponent (whether the tackler's team won possession of the ball or not).
                                 </li>
                                 <li>
                                     <span style={{color: '#7db9f0', fontWeight: 'bold'}}>Tackle/Dribbled Past %</span>&nbsp;
@@ -429,7 +429,8 @@ class Home extends Component {
                                     <p><span className="accented-p">Who's included in the database? How often is it updated?</span></p>
                                     <p>
                                         The database includes all top 5 league players who've made 4 or more league appearances
-                                        in the 2018/19 or 2019/20 seasons. It's updated about once a week.
+                                        in the 2018/19 or 2019/20 seasons. 2020/21 data will be added shortly, and then
+                                        subsequently updated about once a week.
                                     </p>
                                 </div>
                                 <div className="faq-item">
@@ -454,6 +455,10 @@ class Home extends Component {
                                 </div>
                                 <div className="faq-item">
                                     <p><span className="accented-p">How are the possession-adjusted stats calculated?</span></p>
+                                    <p>
+                                        Possession-adjusted offensive stats are obtained by calculating the number of times
+                                        a player completes an action for every 100 touches of the ball they have.
+                                    </p>
                                     <p>
                                         Defensive stats are adjusted for possession using the StatsBomb sigmoid function,
                                         which you can read more about <a href="https://statsbomb.com/2014/06/introducing-possession-adjusted-player-stats/"
@@ -499,6 +504,12 @@ class Home extends Component {
                                 <li>Twitter: <a href="https://twitter.com/FootballSlices" target="_blank" rel="noopener noreferrer">@FootballSlices</a></li>
                                 <li>Email: <a href="mailto:footballslices@gmail.com" target="_blank" rel="noopener noreferrer">FootballSlices@gmail.com</a></li>
                             </ul>
+                            <p>
+                                Note: Football Slices is a hobby project created and maintained
+                                by Ham (<a href="https://twitter.com/FootballSlices" target="_blank" rel="noopener noreferrer">@DyslexicDdue</a>).
+                                I try to implement as many suggested features as I can, but unfortunately, I can't
+                                guarantee that I'll get to everything.
+                            </p>
                         </div>
                     </div>
                 </div>
