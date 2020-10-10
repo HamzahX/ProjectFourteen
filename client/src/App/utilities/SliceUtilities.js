@@ -869,9 +869,6 @@ export async function exportChart(){
 
         $('<img/>').attr('src', '../exportBackground.png').on('load', () => {
 
-            $(this).remove();
-            $('#export').css('background-image', 'url(../exportBackground.png)');
-
             setTimeout(() => {
 
                 const node = document.getElementById('export');
@@ -925,6 +922,8 @@ export async function exportChart(){
                     });
 
             }, 1000);
+
+            $(this).remove();
 
         });
 

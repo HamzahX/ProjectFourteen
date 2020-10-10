@@ -506,7 +506,7 @@ class Home extends Component {
                             </ul>
                             <p>
                                 Note: Football Slices is a hobby project created and maintained
-                                by Ham (<a href="https://twitter.com/FootballSlices" target="_blank" rel="noopener noreferrer">@DyslexicDdue</a>).
+                                by Ham (<a href="https://twitter.com/DyslexicDdue" target="_blank" rel="noopener noreferrer">@DyslexicDdue</a>).
                                 I try to implement as many suggested features as I can, but unfortunately, I can't
                                 guarantee that I'll get to everything.
                             </p>
