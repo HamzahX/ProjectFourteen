@@ -248,10 +248,6 @@ let processEntry = (aPlayer, competitionData, competitionName, isGoalkeeper) => 
         return;
     }
 
-    //exit the function if the player is not a goalkeeper and the current entry is a goalkeeper
-    // if (isGoalkeeper && METADATA[whoscoredCode]["positions"][SEASON] !== "GK"){
-    //     return;
-    // }
     let isOutfieldGoalkeeper = isGoalkeeper && METADATA[whoscoredCode]["positions"][SEASON] !== "GK";
 
     //retrieve the club name and the team's average possession for the required competition
@@ -270,7 +266,7 @@ let processEntry = (aPlayer, competitionData, competitionName, isGoalkeeper) => 
         PROCESSED[whoscoredCode]["name2"] = fbrefName;
         PROCESSED[whoscoredCode]["simplifiedName"] = metadata["simplifiedName"];
         PROCESSED[whoscoredCode]["simplifiedName2"] = fbrefSimplifiedName;
-        PROCESSED[whoscoredCode]["age"] = metadata["age"];
+        PROCESSED[whoscoredCode]["ages"] = {};
         PROCESSED[whoscoredCode]["nationality"] = metadata["nationality"] === "" ? countryCodes.getCountryName(entry['standard_Nation'].split(" ")[0].toUpperCase()) : metadata["nationality"];
         PROCESSED[whoscoredCode]["countryCode"] = metadata["countryCode"] === "" ? cleanCountryCode(entry['standard_Nation'].split(" ")[0]) : metadata["countryCode"];
         PROCESSED[whoscoredCode]["positions"] = metadata["positions"];
@@ -307,7 +303,6 @@ let processEntry = (aPlayer, competitionData, competitionName, isGoalkeeper) => 
             sota: entry["keeper_SoTA"],
             stoppedCrosses: entry["keeper_adv_Stp"],
             attCrosses: entry["keeper_adv_Opp"],
-            // succPressurePasses: entry["passing_types_Pass Types__4"],
             succLaunchedPasses: entry["keeper_adv_Cmp"],
             attLaunchedPasses: entry["keeper_adv_Att"]
         }
@@ -357,6 +352,9 @@ let processEntry = (aPlayer, competitionData, competitionName, isGoalkeeper) => 
             }
         }
     }
+
+    //populate the player age
+    PROCESSED[whoscoredCode]["ages"][SEASON] = stats['age'];
 
     //populate the player stats
     if (METADATA[whoscoredCode][SEASON] !== undefined){

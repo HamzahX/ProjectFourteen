@@ -466,7 +466,7 @@ let search = async (aQuery, theType, isLive) => {
                             let result = {
                                 code: docs[i].code,
                                 name: docs[i].name,
-                                age: docs[i].age,
+                                age: docs[i].ages['19-20'],
                                 nationality: docs[i].nationality,
                                 countryCode: docs[i].countryCode,
                                 clubs: docs[i].clubs,
@@ -494,7 +494,7 @@ let search = async (aQuery, theType, isLive) => {
                         let player = {
                             code: docs[i].code,
                             name: docs[i].name,
-                            age: docs[i].age,
+                            age: docs[i].ages['19-20'],
                             nationality: docs[i].nationality,
                             countryCode: docs[i].countryCode,
                             clubs: docs[i].clubs,
