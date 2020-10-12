@@ -287,15 +287,6 @@ let scrapeMetadata = async (page) => {
         const startsMade = Array.from(document.querySelectorAll('#statistics-table-detailed #top-player-stats-summary-grid tr td:nth-child(3)')); //get starts
         const minutesPlayed = Array.from(document.querySelectorAll('#statistics-table-detailed #top-player-stats-summary-grid tr td:nth-child(4)')); //get minutes
 
-        // alert("Player links: " + playerLinks.length);
-        // alert("Names: " + names.length);
-        // alert("Flags: " + flags.length);
-        // alert("Clubs: " + clubs.length);
-        // alert("Ages: " + ages.length);
-        // alert("Positions: " + positions.length);
-        // alert("Starts Made: " + startsMade.length);
-        // alert("Minutes Played: " + minutesPlayed.length);
-
         let aPlayer = '';
         let aCompetition = '';
 
@@ -313,14 +304,6 @@ let scrapeMetadata = async (page) => {
             let metadata = initializePlayer(data, playerLink, club);
             aPlayer = metadata[0];
             aCompetition = metadata[1];
-
-            //let playerName = nameAndFlag.substring(nameAndFlag.indexOf('">')+2, nameAndFlag.indexOf('<span class="ui-icon country'));
-            //let playerClub = club.substring(club.indexOf('"team-name">')+12, club.indexOf(', </span', 0)).replace(".", "'");
-            //let playerAge = ageAndPosition.substring(ageAndPosition.indexOf('">') + 2, ageAndPosition.indexOf('</span>'));
-            //let playerPositionString = ageAndPosition.substring(ageAndPosition.indexOf('">,') + 3, ageAndPosition.indexOf('</span>', ageAndPosition.indexOf('</span>') + 6)).trim();
-            //let playerCountryCode = nameAndFlag.substring(nameAndFlag.indexOf('country flg-')+12, nameAndFlag.indexOf('">', ageAndPosition.indexOf('</span>') + 6));
-            // let apps = parseInt(tds[i+1].innerText, 10);
-            // let mins = parseInt(tds[i+2].innerText, 10);
 
             let playerName = name.textContent.substring(0, name.textContent.length - 1);
             let playerClub = club.textContent
