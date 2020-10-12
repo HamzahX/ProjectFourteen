@@ -521,6 +521,11 @@ let search = async (aQuery, theType, isLive) => {
 };
 
 
+/**
+ * Searches the database for the specified query parameters
+ * @param {object} parameters - The search query
+ * @returns {Promise<*>} Promise object represents the search results that match the query given the search type
+ */
 let advancedSearch = async (parameters) => {
 
     return new Promise(async function(resolve, reject){
@@ -531,7 +536,7 @@ let advancedSearch = async (parameters) => {
 
         let season = parameters.season;
 
-        if (parameters.age !== null){
+        if (parameters.age !== undefined){
 
             let minAge = parameters.age.min || 0;
             let maxAge = parameters.age.max || 99;
@@ -545,7 +550,7 @@ let advancedSearch = async (parameters) => {
 
         }
 
-        if (parameters.nationalities !== null){
+        if (parameters.nationalities !== undefined){
 
             query['$and'].push({
                 countryCode: {
@@ -555,7 +560,7 @@ let advancedSearch = async (parameters) => {
 
         }
 
-        if (parameters.clubs !== null){
+        if (parameters.clubs !== undefined){
 
             query['$and'].push({
                 [`clubs.${season}`]: {
@@ -565,11 +570,47 @@ let advancedSearch = async (parameters) => {
 
         }
 
-        if (parameters.position != null){
+        if (parameters.position !== undefined){
 
             query['$and'].push({
                 [`positions.${season}`]: parameters.position
             })
+
+        }
+
+        if (parameters.statsPer90 !== undefined){
+
+            for (let stat in parameters.statsPer90){
+
+                let min = parameters.statsPer90.stat || -10000;
+                let max = parameters.statsPer90.stat || 10000;
+
+                query['$and'].push({
+                    [`statsPer90.${season}.${stat}`]: {
+                        '$gte': min,
+                        '$lte': max
+                    }
+                })
+
+            }
+
+        }
+
+        if (parameters.percentiles !== undefined){
+
+            for (let stat in parameters.percentiles){
+
+                let min = parameters.percentiles.stat || 0;
+                let max = parameters.percentiles.stat || 100;
+
+                query['$and'].push({
+                    [`percentiles.${season}.${stat}`]: {
+                        '$gte': min,
+                        '$lte': max
+                    }
+                })
+
+            }
 
         }
 
@@ -710,10 +751,3 @@ connectToDatabase()
     .catch(async (anError) => {
         console.log(anError);
     });
-
-
-//export functions needed in the unit testing module
-// module.exports.connectToDatabase = connectToDatabase;
-// module.exports.getSamplePlayer = getSamplePlayer;
-// module.exports.search = search;
-// module.exports.getStats = getStats;
