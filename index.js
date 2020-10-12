@@ -160,6 +160,33 @@ app.post('/api/search', (req, res) => {
 
 
 /**
+ * Retrieves search results and sends to client upon request
+ * @param {express.Request & {body.query: string, body.type: string}} req
+ * @param {express.Response} res - Custom object containing the search results
+ */
+app.post('/api/advancedSearch', (req, res) => {
+
+    //retrieve the search query and the search type
+    let parameters = req.body.parameters;
+
+    //search and respond
+    advancedSearch(parameters).then(
+        (searchResults) => {
+            setTimeout(function(){
+                res.json(searchResults);
+            }, 100)
+        },
+        () => {
+            setTimeout(function(){
+                res.status(400);
+                res.json([]);
+            }, 100)
+        });
+
+});
+
+
+/**
  * Retrieves player stats and metadata and sends to client upon request
  * @param {express.Request & {body.code : string}} req
  * @param {express.Response} res - Custom object containing the stats and metadata
@@ -435,11 +462,8 @@ let search = async (aQuery, theType, isLive) => {
                 }
                 //push matched clubs to search results
                 for (let i=0; i<docs.length; i++){
-                    let result = {
-                        name: docs[i].name,
-                        countryCode: docs[i].countryCode
-                    };
-                    searchResults.clubSearchResults.push(result);
+                    let clubSearchResult = buildClubSearchResult(docs[i]);
+                    searchResults.clubSearchResults.push(clubSearchResult);
                 }
                 //find players whose whoscored or fbref name/simplifiedName includes the query
                 PLAYERS_COLLECTION.find(
@@ -463,16 +487,8 @@ let search = async (aQuery, theType, isLive) => {
                     else {
                         //push matched players to search results
                         for (let i=0; i<docs.length; i++){
-                            let result = {
-                                code: docs[i].code,
-                                name: docs[i].name,
-                                age: docs[i].ages['19-20'],
-                                nationality: docs[i].nationality,
-                                countryCode: docs[i].countryCode,
-                                clubs: docs[i].clubs,
-                                percentileEntries: docs[i].percentileEntries
-                            };
-                            searchResults.playerSearchResults.push(result);
+                            let playerSearchResult = buildPlayerSearchResult(docs[i]);
+                            searchResults.playerSearchResults.push(playerSearchResult);
                         }
                         resolve(searchResults);
                     }
@@ -491,22 +507,90 @@ let search = async (aQuery, theType, isLive) => {
                 else {
                     //push matched players to search results
                     for (let i=0; i<docs.length; i++){
-                        let player = {
-                            code: docs[i].code,
-                            name: docs[i].name,
-                            age: docs[i].ages['19-20'],
-                            nationality: docs[i].nationality,
-                            countryCode: docs[i].countryCode,
-                            clubs: docs[i].clubs,
-                            percentileEntries: docs[i].percentileEntries
-                        };
-                        searchResults.playerSearchResults.push(player);
+                        let playerSearchResult = buildPlayerSearchResult(docs[i]);
+                        searchResults.playerSearchResults.push(playerSearchResult);
                     }
                     resolve(searchResults);
                 }
             });
 
         }
+
+    });
+
+};
+
+
+let advancedSearch = async (parameters) => {
+
+    return new Promise(async function(resolve, reject){
+
+        let query = {
+            '$and': []
+        };
+
+        let season = parameters.season;
+
+        if (parameters.age !== null){
+
+            let minAge = parameters.age.min || 0;
+            let maxAge = parameters.age.max || 99;
+
+            query['$and'].push({
+                [`ages.${season}`]: {
+                    '$gte': minAge,
+                    '$lte': maxAge
+                }
+            })
+
+        }
+
+        if (parameters.nationalities !== null){
+
+            query['$and'].push({
+                countryCode: {
+                    '$in': parameters.nationalities,
+                }
+            })
+
+        }
+
+        if (parameters.clubs !== null){
+
+            query['$and'].push({
+                [`clubs.${season}`]: {
+                    '$in': parameters.clubs,
+                }
+            })
+
+        }
+
+        if (parameters.position != null){
+
+            query['$and'].push({
+                [`positions.${season}`]: parameters.position
+            })
+
+        }
+
+        let searchResults = [];
+
+        //find the player who match the query
+        PLAYERS_COLLECTION.find(query).toArray(function (err, docs) {
+            if (err) {
+                reject();
+            }
+            else if (docs.length === 0) {
+                reject();
+            }
+            else {
+                for (let i=0; i<docs.length; i++){
+                    let playerSearchResult = buildPlayerSearchResult(docs[i]);
+                    searchResults.push(playerSearchResult);
+                }
+                resolve(searchResults);
+            }
+        });
 
     });
 
@@ -583,6 +667,31 @@ let getComparisonStats = async (codes) => {
         });
 
     });
+
+};
+
+
+let buildClubSearchResult = (doc) => {
+
+    return {
+        name: doc.name,
+        countryCode: doc.countryCode
+    };
+
+};
+
+
+let buildPlayerSearchResult = (doc) => {
+
+    return {
+        code: doc.code,
+        name: doc.name,
+        age: doc.currentAge,
+        nationality: doc.nationality,
+        countryCode: doc.countryCode,
+        clubs: doc.clubs,
+        positions: doc.positions
+    };
 
 };
 

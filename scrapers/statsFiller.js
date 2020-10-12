@@ -248,7 +248,10 @@ let processEntry = (aPlayer, competitionData, competitionName, isGoalkeeper) => 
         return;
     }
 
-    let isOutfieldGoalkeeper = isGoalkeeper && METADATA[whoscoredCode]["positions"][SEASON] !== "GK";
+    let isOutfieldGoalkeeper = false;
+    if (METADATA[whoscoredCode]["positions"][SEASON] !== undefined){
+        isOutfieldGoalkeeper = isGoalkeeper && !METADATA[whoscoredCode]["positions"][SEASON].includes("GK");
+    }
 
     //retrieve the club name and the team's average possession for the required competition
     if (FBREF_TO_WHOSCORED_TEAMS[fbrefClubName] === undefined){
@@ -266,6 +269,7 @@ let processEntry = (aPlayer, competitionData, competitionName, isGoalkeeper) => 
         PROCESSED[whoscoredCode]["name2"] = fbrefName;
         PROCESSED[whoscoredCode]["simplifiedName"] = metadata["simplifiedName"];
         PROCESSED[whoscoredCode]["simplifiedName2"] = fbrefSimplifiedName;
+        PROCESSED[whoscoredCode]["currentAge"] = metadata["age"];
         PROCESSED[whoscoredCode]["ages"] = {};
         PROCESSED[whoscoredCode]["nationality"] = metadata["nationality"] === "" ? countryCodes.getCountryName(entry['standard_Nation'].split(" ")[0].toUpperCase()) : metadata["nationality"];
         PROCESSED[whoscoredCode]["countryCode"] = metadata["countryCode"] === "" ? cleanCountryCode(entry['standard_Nation'].split(" ")[0]) : metadata["countryCode"];

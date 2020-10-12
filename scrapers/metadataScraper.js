@@ -500,28 +500,40 @@ let processRawData = async () => {
 };
 
 
-let processPlayerPosition = (aString, code) => {
+let processPlayerPosition = (positionString, code) => {
+
+    let positions = [];
+
     if (FWPlayers.includes(code)){
-        return "FW"
+        positions.push("FW");
     }
-    else if (AMPlayers.includes(code)){
-        return "AM"
+
+    if (AMPlayers.includes(code)){
+        positions.push("AM");
     }
-    else if (CMPlayers.includes(code)){
-        return "CM"
+
+    if (CMPlayers.includes(code)){
+        positions.push("CM");
     }
-    else if (FBPlayers.includes(code)){
-        return "FB"
+
+    if (FBPlayers.includes(code)){
+        positions.push("FB");
     }
-    else if (CBPlayers.includes(code)){
-        return "CB"
+
+    if (CBPlayers.includes(code)){
+        positions.push("CB");
     }
-    else if (GKPlayers.includes(code) || aString === "GK" || aString === "Goalkeeper"){
-        return "GK"
+
+    if (GKPlayers.includes(code) || positionString === "GK" || positionString === "Goalkeeper"){
+        positions.push("GK");
     }
-    else {
-        return "N/A"
+
+    if (positions.length === 0) {
+        positions.push("N/A");
     }
+
+    return positions;
+
 };
 
 

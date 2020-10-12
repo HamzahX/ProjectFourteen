@@ -214,7 +214,7 @@ class Compare extends Component {
         //in the player's position entries
         let template = "N/A";
         for (let season in playerData[codes[0]].positions){
-            let position = playerData[codes[0]].positions[season];
+            let position = playerData[codes[0]].positions[season][0];
             if (position !== "N/A"){
                 template = position;
             }

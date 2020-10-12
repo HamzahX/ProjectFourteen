@@ -14,19 +14,19 @@ class PlayerSearchResult extends Component {
         this.isMobile = this.props.isMobile;
 
         let clubs = this.props.clubs;
-        let percentileEntries = this.props.percentileEntries;
+        let positions = this.props.positions;
         let seasons = Object.keys(clubs);
 
         //set the player clubs entry to their most recent season's clubs
         clubs = clubs[seasons[seasons.length-1]];
 
         //set the player positions to the latest season for which they have position info
-        let positions;
+        let latestPositions;
         for (let i=seasons.length-1; i>=0; i--){
             let season = seasons[i];
-            let currentSeasonPositions = percentileEntries[season];
-            positions = (currentSeasonPositions === undefined || currentSeasonPositions.length < 1) ? ["-"] : currentSeasonPositions;
-            if (positions[0] !== "-"){
+            let currentSeasonPositions = positions[season];
+            latestPositions = (currentSeasonPositions === undefined || currentSeasonPositions.length < 1) ? ["-"] : currentSeasonPositions;
+            if (latestPositions[0] !== "-"){
                 break;
             }
         }
@@ -41,7 +41,7 @@ class PlayerSearchResult extends Component {
             clubs: clubs,
             nationality: this.props.nationality,
             countryCode: this.props.countryCode,
-            positions: positions
+            positions: latestPositions
         };
 
     }

@@ -202,7 +202,7 @@ class Stats extends Component {
         //in the player's position entries
         let template = "N/A";
         for (let season in playerData.positions){
-            let position = playerData.positions[season];
+            let position = playerData.positions[season][0];
             if (position !== "N/A"){
                 template = position;
             }
