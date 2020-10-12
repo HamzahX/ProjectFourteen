@@ -106,7 +106,7 @@ class Compare extends Component {
             template: null,
             competitions: {},
             selectedCompetitions: {},
-            pAdjTypes: pAdjTypesCookie === undefined ? { offensive: false, defensive: true } : pAdjTypesCookie,
+            pAdjTypes: pAdjTypesCookie === undefined ? { offensive: false, defensive: false } : pAdjTypesCookie,
             labelType: labelTypeCookie === undefined ? "raw" : labelTypeCookie,
             creditsPosition: creditsPositionCookie === undefined ? "right" : creditsPositionCookie,
             isAnimated: true
