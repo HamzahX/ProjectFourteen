@@ -471,13 +471,12 @@ function percentileRank(array, value, occurrences){
  * @param {Object} percentiles - object containing the percentile ranks
  * @param playerCode
  * @param playerName
- * @param playerAge
  * @param minutes
  * @param isForComparison
  * @param index
  * @return {Array} chartInput - array containing information for each data point in the Highcharts plot
  */
-export function constructChartInput(statsPer90, percentiles, playerCode, playerName, playerAge, minutes, isForComparison, index){
+export function constructChartInput(statsPer90, percentiles, playerCode, playerName, minutes, isForComparison, index){
 
     let template = this.state.template;
 

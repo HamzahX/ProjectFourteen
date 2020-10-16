@@ -313,7 +313,6 @@ class Compare extends Component {
             codes,
             urls,
             names,
-            ages,
             clubs,
             stats,
             isGK,
@@ -370,14 +369,12 @@ class Compare extends Component {
                         calculatedStats.percentiles,
                         code,
                         names[codes[i]],
-                        ages[codes[i]],
                         filteredStats[code]['minutes'],
                         true,
                         i
                     );
                     series.push(chartInput);
                 }
-
 
             }
 
@@ -401,7 +398,7 @@ class Compare extends Component {
                     lastUpdated={lastUpdated}
                     template={template}
                     labelType={labelType}
-                    name={
+                    names={
                         [names[code1], names[code2]]
                     }
                     competitions={
@@ -479,7 +476,7 @@ class Compare extends Component {
                             lastUpdated={lastUpdated}
                             template={template}
                             labelType={labelType}
-                            name={
+                            names={
                                 [names[code1], names[code2]]
                             }
                             competitions={
