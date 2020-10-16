@@ -62,7 +62,7 @@ let setup = async () => {
         if (SEASON === "18-19"){
             PROCESSED = {};
         }
-        else if (SEASON === "19-20"){
+        else{
             PROCESSED = JSON.parse(fs.readFileSync(path.join(__dirname, '/playerData/processed.json')));
         }
 
@@ -357,7 +357,7 @@ let processEntry = (aPlayer, competitionData, competitionName, isGoalkeeper) => 
         }
     }
 
-    //populate the player age
+    //populate the player ages
     PROCESSED[whoscoredCode]["ages"][SEASON] = stats['age'];
 
     //populate the player stats
@@ -385,14 +385,6 @@ let adjustForPossessionDefensive = (value, possession) => {
 
     //StatsBomb sigmoid function adapted from: https://statsbomb.com/2014/06/introducing-possession-adjusted-player-stats/
     return (value * 2) / (1 + Math.exp(-0.1 * (possession - 50)));
-
-};
-
-
-let adjustForPossessionOffensive = (value, touches) => {
-
-    //return value per 100 touches
-    return value / (touches/100);
 
 };
 

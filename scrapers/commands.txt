@@ -1,6 +1,6 @@
 Full reset:
     - node positionScraper 18-19 && node positionScraper 19-20 && node metadataScraper 18-19 false && node metadataScraper 19-20 false && node statsScraper 18-19 && node statsScraper 19-20 && node possessionScraper 18-19 && node possessionScraper 19-20 && node mappingCreator
-    - node mappingCompleter && node statsFiller 18-19 && node statsFiller 19-20 && node percentilesGenerator 18-19 && node percentilesGenerator 19-20 && node databaseUploaderDev
+    - node mappingCompleter && node statsFiller 18-19 && node statsFiller 19-20 && node percentilesFiller 18-19 && node percentilesFiller 19-20 && node databaseUploaderDev
 
 18-19:
     - node metadataScraper 18-19 false && node statsScraper 18-19 && node possessionScraper 18-19
@@ -9,7 +9,7 @@ Scraping and mapping:
     - node positionScraper 19-20 && node metadataScraper 19-20 false && node statsScraper 19-20 && node possessionScraper 19-20 && node mappingCreator
 
 Populating:
-    - node mappingCompleter && node statsFiller 18-19 && node statsFiller 19-20 && node percentilesGenerator 18-19 && node percentilesGenerator 19-20 && node databaseUploaderDev
+    - node mappingCompleter && node statsFiller 18-19 && node statsFiller 19-20 && node percentilesFiller 18-19 && node percentilesFiller 19-20 && node databaseUploaderDev
 
 Finalizing:
     - node databaseUploaderProduction
