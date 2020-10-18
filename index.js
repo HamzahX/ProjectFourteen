@@ -578,15 +578,15 @@ let advancedSearch = async (parameters) => {
 
         }
 
-        if (parameters.statsPer90 !== undefined){
+        if (parameters.processedStats !== undefined){
 
-            for (let stat in parameters.statsPer90){
+            for (let stat in parameters.processedStats){
 
-                let min = parameters.statsPer90.stat || -10000;
-                let max = parameters.statsPer90.stat || 10000;
+                let min = parameters.processedStats[stat].min || -Infinity;
+                let max = parameters.processedStats[stat].max || Infinity;
 
                 query['$and'].push({
-                    [`statsPer90.${season}.${stat}`]: {
+                    [`lookupStats.processedStats.${season}.${stat}`]: {
                         '$gte': min,
                         '$lte': max
                     }
@@ -596,15 +596,15 @@ let advancedSearch = async (parameters) => {
 
         }
 
-        if (parameters.percentiles !== undefined){
+        if (parameters.percentileRanks !== undefined){
 
-            for (let stat in parameters.percentiles){
+            for (let stat in parameters.percentileRanks){
 
-                let min = parameters.percentiles.stat || 0;
-                let max = parameters.percentiles.stat || 100;
+                let min = parameters.percentileRanks[stat].min || 0;
+                let max = parameters.percentileRanks[stat].max || 100;
 
                 query['$and'].push({
-                    [`percentiles.${season}.${stat}`]: {
+                    [`lookupStats.percentileRanks.${season}.${parameters.position}${stat}`]: {
                         '$gte': min,
                         '$lte': max
                     }

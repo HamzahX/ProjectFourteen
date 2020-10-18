@@ -6,8 +6,8 @@ import Highcharts from "highcharts";
 import domtoimage from "dom-to-image";
 import saveAs from "file-saver";
 
-//import text file
-import statsByPosition from '../assets/text/statsByPosition.json';
+//import constants
+import statsByPosition from '../assets/constants/statsByPosition.json';
 
 //initialize cookies
 const cookies = new Cookies();
@@ -25,8 +25,6 @@ const colorArrays = {
     "CB": ['#e4d354', '#e4d354', '#e4d354', '#e4d354', '#7cb5ec', '#7cb5ec',
         '#7cb5ec', '#7cb5ec', '#7cb5ec', '#7cb5ec', '#7cb5ec', '#7cb5ec'],
     "GK": ['#9499ff', '#9499ff', '#e4d354'],
-    "N/A": ['#7cb5ec', '#7cb5ec', '#7cb5ec', '#7cb5ec', '#7cb5ec', '#7cb5ec',
-        '#7cb5ec', '#7cb5ec', '#7cb5ec', '#7cb5ec', '#7cb5ec', '#7cb5ec'],
     "comparison": ['#e75453', '#e75453', '#e75453', '#e75453', '#e75453', '#e75453',
         '#e75453', '#e75453', '#e75453', '#e75453', '#e75453', '#e75453']
 };

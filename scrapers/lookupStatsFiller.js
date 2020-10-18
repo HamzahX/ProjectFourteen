@@ -36,7 +36,7 @@ var PERCENTILE_DATA = {
 let setup = async () => {
 
     PROCESSED = JSON.parse(fs.readFileSync(path.join(__dirname, '/playerData/processed.json')));
-    STATS_BY_POSITION = JSON.parse(fs.readFileSync(path.join(__dirname, '../client/src/App/assets/text/statsByPosition.json')));
+    STATS_BY_POSITION = JSON.parse(fs.readFileSync(path.join(__dirname, '../client/src/App/assets/constants/statsByPosition.json')))
 
     for (let position in PERCENTILE_DATA){
         PERCENTILE_DATA[position] = JSON.parse(fs.readFileSync(path.join(__dirname, `/percentileData/${SEASON}/${position}Percentiles.json`)))
@@ -49,6 +49,18 @@ let calculateProcessedStats = async () => {
 
     for (let player in PROCESSED){
 
+        if (PROCESSED[player]["stats"][SEASON] === undefined){
+            continue;
+        }
+
+        if (PROCESSED[player]["lookupStats"] === undefined){
+            PROCESSED[player]["lookupStats"] = {};
+        }
+
+        if (PROCESSED[player]["lookupStats"]["processedStats"] === undefined){
+            PROCESSED[player]["lookupStats"]["processedStats"] = {};
+        }
+
         let processedStats = {};
 
         let aggregatedStats = aggregateStats(PROCESSED[player]["stats"][SEASON]);
@@ -56,61 +68,61 @@ let calculateProcessedStats = async () => {
         let minutesOverNinety = aggregatedStats["minutes"] / 90;
         let touchesOverHundred = aggregatedStats["touches"] / 100;
 
-        addToStatsObject(processedStats["npg"], (aggregatedStats["npg"] / minutesOverNinety));
-        addToStatsObject(processedStats["npxg"], (aggregatedStats["npxg"] / minutesOverNinety));
-        addToStatsObject(processedStats["npxgPerShot"], (aggregatedStats["npxg"] / aggregatedStats["shots"]));
-        addToStatsObject(processedStats["succAerials"], (aggregatedStats["succAerials"] / minutesOverNinety));
-        addToStatsObject(processedStats["aerialSuccRate"], ((aggregatedStats["succAerials"] / aggregatedStats["attAerials"]) * 100));
+        processedStats["npg"] = returnFinite(aggregatedStats["npg"] / minutesOverNinety);
+        processedStats["npxg"] = returnFinite(aggregatedStats["npxg"] / minutesOverNinety);
+        processedStats["npxgPerShot"] = returnFinite(aggregatedStats["npxg"] / aggregatedStats["shots"]);
+        processedStats["succAerials"] = returnFinite(aggregatedStats["succAerials"] / minutesOverNinety);
+        processedStats["aerialSuccRate"] = returnFinite((aggregatedStats["succAerials"] / aggregatedStats["attAerials"]) * 100);
 
-        addToStatsObject(processedStats["boxTouches"], (aggregatedStats["boxTouches"] / minutesOverNinety));
-        addToStatsObject(processedStats["padjBoxTouches"], (aggregatedStats["boxTouches"] / touchesOverHundred));
+        processedStats["boxTouches"] = returnFinite(aggregatedStats["boxTouches"] / minutesOverNinety);
+        processedStats["padjBoxTouches"] = returnFinite(aggregatedStats["boxTouches"] / touchesOverHundred);
 
-        addToStatsObject(processedStats["xa"], (aggregatedStats["xa"] / minutesOverNinety));
-        addToStatsObject(processedStats["padjXA"], (aggregatedStats["xa"] / touchesOverHundred));
+        processedStats["xa"] = returnFinite(aggregatedStats["xa"] / minutesOverNinety);
+        processedStats["padjXA"] = returnFinite(aggregatedStats["xa"] / touchesOverHundred);
 
-        addToStatsObject(processedStats["ppa"], (aggregatedStats["ppa"] / minutesOverNinety));
-        addToStatsObject(processedStats["padjPPA"], (aggregatedStats["ppa"] / touchesOverHundred));
+        processedStats["ppa"] = returnFinite(aggregatedStats["ppa"] / minutesOverNinety);
+        processedStats["padjPPA"] = returnFinite(aggregatedStats["ppa"] / touchesOverHundred);
 
-        addToStatsObject(processedStats["succDribbles"], (aggregatedStats["succDribbles"] / minutesOverNinety));
-        addToStatsObject(processedStats["padjSuccDribbles"], (aggregatedStats["succDribbles"] / touchesOverHundred));
-        addToStatsObject(processedStats["dribbleSuccRate"], ((aggregatedStats["succDribbles"] / aggregatedStats["attDribbles"]) * 100));
+        processedStats["succDribbles"] = returnFinite(aggregatedStats["succDribbles"] / minutesOverNinety);
+        processedStats["padjSuccDribbles"] = returnFinite(aggregatedStats["succDribbles"] / touchesOverHundred);
+        processedStats["dribbleSuccRate"] = returnFinite((aggregatedStats["succDribbles"] / aggregatedStats["attDribbles"]) * 100);
 
-        addToStatsObject(processedStats["turnovers"], ((aggregatedStats["timesDispossessed"] + aggregatedStats["miscontrols"]) / minutesOverNinety));
-        addToStatsObject(processedStats["padjTurnovers"], ((aggregatedStats["timesDispossessed"] + aggregatedStats["miscontrols"]) / touchesOverHundred));
+        processedStats["turnovers"] = returnFinite((aggregatedStats["timesDispossessed"] + aggregatedStats["miscontrols"]) / minutesOverNinety);
+        processedStats["padjTurnovers"] = returnFinite((aggregatedStats["timesDispossessed"] + aggregatedStats["miscontrols"]) / touchesOverHundred);
 
-        addToStatsObject(processedStats["succPressures"], (aggregatedStats["succPressures"] / minutesOverNinety));
-        addToStatsObject(processedStats["padjSuccPressures"], (aggregatedStats["padjSuccPressures"] / minutesOverNinety));
+        processedStats["succPressures"] = returnFinite(aggregatedStats["succPressures"] / minutesOverNinety);
+        processedStats["padjSuccPressures"] = returnFinite(aggregatedStats["padjSuccPressures"] / minutesOverNinety);
 
-        addToStatsObject(processedStats["sca"], (aggregatedStats["sca"] / minutesOverNinety));
-        addToStatsObject(processedStats["padjSCA"], (aggregatedStats["sca"] / touchesOverHundred));
+        processedStats["sca"] = returnFinite(aggregatedStats["sca"] / minutesOverNinety);
+        processedStats["padjSCA"] = returnFinite(aggregatedStats["sca"] / touchesOverHundred);
 
-        addToStatsObject(processedStats["ppa"], (aggregatedStats["ppa"] / minutesOverNinety));
-        addToStatsObject(processedStats["padjPPA"], (aggregatedStats["ppa"] / touchesOverHundred));
+        processedStats["ppa"] = returnFinite(aggregatedStats["ppa"] / minutesOverNinety);
+        processedStats["padjPPA"] = returnFinite(aggregatedStats["ppa"] / touchesOverHundred);
 
-        addToStatsObject(processedStats["progDistance"], (aggregatedStats["progDistance"] / minutesOverNinety));
-        addToStatsObject(processedStats["padjProgDistance"], (aggregatedStats["progDistance"] / touchesOverHundred));
+        processedStats["progDistance"] = returnFinite(aggregatedStats["progDistance"] / minutesOverNinety);
+        processedStats["padjProgDistance"] = returnFinite(aggregatedStats["progDistance"] / touchesOverHundred);
 
-        addToStatsObject(processedStats["passSuccRate"], ((aggregatedStats["succPasses"] / aggregatedStats["attPasses"]) * 100));
+        processedStats["passSuccRate"] = returnFinite((aggregatedStats["succPasses"] / aggregatedStats["attPasses"]) * 100);
 
-        addToStatsObject(processedStats["pft"], (aggregatedStats["pft"] / minutesOverNinety));
-        addToStatsObject(processedStats["padjPFT"], (aggregatedStats["pft"] / touchesOverHundred));
+        processedStats["pft"] = returnFinite(aggregatedStats["pft"] / minutesOverNinety);
+        processedStats["padjPFT"] = returnFinite(aggregatedStats["pft"] / touchesOverHundred);
 
-        addToStatsObject(processedStats["succTackles"], (aggregatedStats["succTackles"] / minutesOverNinety));
-        addToStatsObject(processedStats["padjSuccTackles"], (aggregatedStats["padjSuccTackles"] / minutesOverNinety));
-        addToStatsObject(processedStats["dribbleTackleRate"], ((aggregatedStats["succDribbleTackles"] / aggregatedStats["attDribbleTackles"]) * 100));
+        processedStats["succTackles"] = returnFinite(aggregatedStats["succTackles"] / minutesOverNinety);
+        processedStats["padjSuccTackles"] = returnFinite(aggregatedStats["padjSuccTackles"] / minutesOverNinety);
+        processedStats["dribbleTackleRate"] = returnFinite((aggregatedStats["succDribbleTackles"] / aggregatedStats["attDribbleTackles"]) * 100);
 
-        addToStatsObject(processedStats["longPassSuccRate"], ((aggregatedStats["succLongPasses"] / aggregatedStats["attLongPasses"]) * 100));
+        processedStats["longPassSuccRate"] = returnFinite((aggregatedStats["succLongPasses"] / aggregatedStats["attLongPasses"]) * 100);
 
-        addToStatsObject(processedStats["fouls"], (aggregatedStats["fouls"] / minutesOverNinety));
-        addToStatsObject(processedStats["padjFouls"], (aggregatedStats["padjFouls"] / minutesOverNinety));
+        processedStats["fouls"] = returnFinite(aggregatedStats["fouls"] / minutesOverNinety);
+        processedStats["padjFouls"] = returnFinite(aggregatedStats["padjFouls"] / minutesOverNinety);
 
-        addToStatsObject(processedStats["succAerials"], (aggregatedStats["succAerials"] / minutesOverNinety));
-        addToStatsObject(processedStats["aerialSuccRate"], ((aggregatedStats["succAerials"] / aggregatedStats["attAerials"]) * 100));
+        processedStats["succAerials"] = returnFinite(aggregatedStats["succAerials"] / minutesOverNinety);
+        processedStats["aerialSuccRate"] = returnFinite((aggregatedStats["succAerials"] / aggregatedStats["attAerials"]) * 100);
 
-        addToStatsObject(processedStats["clearances"], (aggregatedStats["clearances"] / minutesOverNinety));
-        addToStatsObject(processedStats["padjClearances"], (aggregatedStats["padjClearances"] / minutesOverNinety));
+        processedStats["clearances"] = returnFinite(aggregatedStats["clearances"] / minutesOverNinety);
+        processedStats["padjClearances"] = returnFinite(aggregatedStats["padjClearances"] / minutesOverNinety);
 
-        PROCESSED[player]["processedStats"][SEASON] = processedStats;
+        PROCESSED[player]["lookupStats"]["processedStats"][SEASON] = processedStats;
     }
 
 };
@@ -120,10 +132,36 @@ let calculatePercentileRanks = async () => {
 
     for (let player in PROCESSED){
 
+        if (PROCESSED[player]["percentileEntries"][SEASON] === undefined || PROCESSED[player]["percentileEntries"][SEASON].length === 0){
+            continue;
+        }
+
+        if (PROCESSED[player]["lookupStats"]["percentileRanks"] === undefined){
+            PROCESSED[player]["lookupStats"]["percentileRanks"] = {};
+        }
+
+        if (PROCESSED[player]["lookupStats"]["percentileRanks"][SEASON] === undefined){
+            PROCESSED[player]["lookupStats"]["percentileRanks"][SEASON] = {};
+        }
+
         let positions = PROCESSED[player]["percentileEntries"][SEASON];
-        for (let position in positions){
+        let processedStats = PROCESSED[player]["lookupStats"]["processedStats"][SEASON];
 
+        for (let i=0; i<positions.length; i++){
 
+            let position = positions[i];
+            let percentileRanks = {};
+
+            for (let i=0; i<STATS_BY_POSITION[position].length; i++){
+
+                let stat = STATS_BY_POSITION[position][i];
+
+                let playerValue = processedStats[stat];
+                percentileRanks[stat] = percentileRank(PERCENTILE_DATA[position][stat], playerValue, 1) * 100;
+
+            }
+
+            PROCESSED[player]["lookupStats"]["percentileRanks"][SEASON][position] = percentileRanks;
 
         }
 
@@ -148,14 +186,13 @@ let aggregateStats = (stats) => {
 };
 
 
-let addToStatsObject = (key, value) => {
+let returnFinite = (value) => {
 
-    if (isFinite(value)){
-        key = value;
+    if (!isFinite(value)){
+        value = 0;
     }
-    else {
-        key = 0;
-    }
+
+    return value
 
 };
 
@@ -197,7 +234,7 @@ let saveStats = async () => {
 };
 
 
-console.time('percentiles generation');
+console.time('look-up stats filling');
 
 setup()
     .then(async () => {
@@ -210,7 +247,7 @@ setup()
         await saveStats();
     })
     .then(async () => {
-        console.timeEnd('percentiles generation');
+        console.timeEnd('look-up stats filling');
         process.exit(0);
     })
     .catch(async(anError) => {
