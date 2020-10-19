@@ -160,8 +160,8 @@ app.post('/api/search', (req, res) => {
 
 
 /**
- * Retrieves search results and sends to client upon request
- * @param {express.Request & {body.query: string, body.type: string}} req
+ * Retrieves advanced search results and sends to client upon request
+ * @param {express.Request & {body.parameters: object}} req
  * @param {express.Response} res - Custom object containing the search results
  */
 app.post('/api/advancedSearch', (req, res) => {
@@ -297,6 +297,7 @@ let connectToDatabase = async () => {
                 }
                 //retrieve to the development collections otherwise
                 else {
+                    console.log("development");
                     CLUBS_COLLECTION = DB.collection('Clubs_Dev');
                     PLAYERS_COLLECTION = DB.collection('Players_Dev');
                     PERCENTILE_ARRAYS_COLLECTION = DB.collection('PercentileArrays_Dev');

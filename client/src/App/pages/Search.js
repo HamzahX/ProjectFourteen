@@ -284,9 +284,9 @@ class Search extends Component {
                     />
                     <div className="screen" id="search-screen">
                         <div className="filter" id="search-filters">
-                            {searchText}
-                            <br />
-                            <div id="search-filter-inputs">
+                            <div className="filter-inputs search-filter-inputs" id="search-filter-inputs">
+                                {searchText}
+                                <br />
                                 <input
                                     type="text"
                                     value={filterValue}

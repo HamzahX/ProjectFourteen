@@ -9,6 +9,7 @@ import Search from './pages/Search';
 import Stats from './pages/Stats';
 import Compare from './pages/Compare';
 import Error from './pages/Error';
+import AdvancedSearch from "./pages/AdvancedSearch";
 
 //import stylesheets, including mobile stylesheet if it is a mobile device
 require('./stylesheets/App.css');
@@ -146,6 +147,13 @@ class App extends Component {
                     />
                     <Route exact path='/search/:query/:searchByClub?' render={(props) =>
                         <Search
+                            {...props}
+                            isMobile={isMobileOnly}
+                            recordPageViewGA={this.recordPageViewGA}
+                        />}
+                    />
+                    <Route exact path='/advancedSearch' render={(props) =>
+                        <AdvancedSearch
                             {...props}
                             isMobile={isMobileOnly}
                             recordPageViewGA={this.recordPageViewGA}

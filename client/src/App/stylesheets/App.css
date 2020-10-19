@@ -630,12 +630,99 @@ button:hover {
             }
 
         .filter {
+            display: flex;
+            display: -webkit-flex;
+            flex-direction: column;
             min-width: 20%;
             flex: 1 1 20%;
             max-width: 20%;
             margin: 0.5% 0.5% 1% 1%;
             z-index: 2;
         }
+
+            .filter-inputs {
+                padding: 0.4em 1em 1em;
+                border: darkgrey 1px solid;
+                white-space: normal;
+                overflow-x: hidden;
+                box-shadow: 0 0 10px lightgray;
+            }
+
+                .filter-inputs .Collapsible__trigger {
+                    display: flex;
+                    display: -webkit-flex;
+                    justify-content: space-between;
+                    width: 100%;
+                    padding-top: 10px;
+                    padding-bottom: 10px;
+                    font-weight: bold;
+                    font-size: 1.1em;
+                    color: #B23535;
+                }
+
+                .filter-inputs .Collapsible__trigger:hover {
+                    cursor: pointer;
+                }
+
+                .filter-inputs .Collapsible__trigger:after {
+                    font-family: 'FontAwesome', sans-serif;
+                    content: '\f107';
+                    transition: transform 200ms;
+                }
+
+                .filter-inputs .Collapsible__trigger.is-open:after {
+                    transform: rotateZ(180deg);
+                }
+
+                .filter-inputs .Collapsible__contentOuter {
+                    border-bottom: #e1e1e1 2px solid;
+                }
+
+                .filter-inputs .Collapsible__contentInner {
+                    padding: 2px;
+                    margin-bottom: 0.7em;
+                }
+
+                .filter-inputs form {
+                }
+
+                .filter-inputs form label {
+                    display: block;
+                    padding: 10px;
+                }
+
+                .filter-inputs form .selectable-label:hover {
+                    box-shadow: 0 0 6px lightgray;
+                }
+
+                .filter-inputs form .blocked-label:hover {
+                    cursor: not-allowed;
+                }
+
+            .filter-buttons {
+                display: flex;
+                display: -webkit-flex;
+                flex-direction: column;
+            }
+
+            .filter-buttons .filter-button {
+                padding-top: 5%;
+                flex: 1 1 33.3%;
+            }
+
+            .filter-buttons .filter-button button {
+                width: 100%;
+                height: 100%;
+                border: none;
+                font-size: 1.05em;
+                transition: 0.3s;
+                color: #B23535;
+                background-color: #f0f0f0;
+            }
+
+            .filter-buttons .filter-button button:hover {
+                background-color: #dcdcdc;
+            }
 
         .result {
             flex: 1 1 80%;
@@ -650,10 +737,16 @@ button:hover {
     }
 
         #search-filters {
-            padding: 0 1% 1%;
-            border: darkgrey 1px solid;
-            box-shadow: 0 0 10px lightgray;
         }
+
+            .search-filter-inputs {
+                flex: 1 1 100%;
+            }
+
+                #advanced-search-filter-inputs {
+                    flex: 1 1 80%;
+                    overflow-y: scroll;
+                }
 
             #search-filters h3, #search-results h3 {
                 font-weight: unset;
@@ -680,6 +773,10 @@ button:hover {
                     border: darkgrey 1px solid;
                     border-radius: 5px;
                 }
+
+            #advanced-search-filter-buttons {
+                flex: 1 1 20%;
+            }
 
         #search-results {
             border: none;
@@ -873,71 +970,12 @@ button:hover {
             }
 
         #chart-filters {
-            display: flex;
-            display: -webkit-flex;
-            flex-direction: column;
         }
 
             .chart-filter-inputs {
                 flex: 1 1 70%;
-                padding: 0.4em 1em 1em;
-                border: darkgrey 1px solid;
-                white-space: normal;
                 overflow-y: scroll;
-                overflow-x: hidden;
-                box-shadow: 0 0 10px lightgray;
             }
-
-                .chart-filter-inputs .Collapsible__trigger {
-                    display: flex;
-                    display: -webkit-flex;
-                    justify-content: space-between;
-                    width: 100%;
-                    padding-top: 10px;
-                    padding-bottom: 10px;
-                    font-weight: bold;
-                    font-size: 1.1em;
-                    color: #B23535;
-                }
-
-                .chart-filter-inputs .Collapsible__trigger:hover {
-                    cursor: pointer;
-                }
-
-                .chart-filter-inputs .Collapsible__trigger:after {
-                    font-family: 'FontAwesome', sans-serif;
-                    content: '\f107';
-                    transition: transform 200ms;
-                }
-
-                .chart-filter-inputs .Collapsible__trigger.is-open:after {
-                    transform: rotateZ(180deg);
-                }
-
-                .chart-filter-inputs .Collapsible__contentOuter {
-                    border-bottom: #e1e1e1 2px solid;
-                }
-
-                .chart-filter-inputs .Collapsible__contentInner {
-                    padding: 2px;
-                    margin-bottom: 0.7em;
-                }
-
-                    .chart-filter-inputs form {
-                    }
-
-                        .chart-filter-inputs form label {
-                            display: block;
-                            padding: 10px;
-                        }
-
-                        .chart-filter-inputs form .selectable-label:hover {
-                            box-shadow: 0 0 6px lightgray;
-                        }
-
-                        .chart-filter-inputs form .blocked-label:hover {
-                            cursor: not-allowed;
-                        }
 
             #chart-filter-inputs-laptop {
                 display: block;
@@ -947,34 +985,9 @@ button:hover {
                 display: none;
             }
 
-        #filter-buttons {
-            flex: 1 1 30%;
-            display: flex;
-            display: -webkit-flex;
-            flex-direction: column;
-        }
-
-            #filter-buttons .filter-button {
-                padding-top: 5%;
-                flex: 1 1 33.3%;
+            #chart-filter-buttons {
+                flex: 1 1 30%;
             }
-
-                #filter-buttons .filter-button button {
-                    width: 100%;
-                    height: 100%;
-                    border: none;
-                    font-size: 1.05em;
-                    transition: 0.3s;
-                }
-
-                #toggleCreditsButton, #exportButton, #compareButton {
-                    color: #B23535;
-                    background-color: #f0f0f0;
-                }
-
-                #toggleCreditsButton:hover, #exportButton:hover, #compareButton:hover {
-                    background-color: #dcdcdc;
-                }
 
         #chart {
             position: relative;
@@ -1224,6 +1237,11 @@ button:hover {
             margin-bottom: 4%;
         }
 
+
+    #main {
+        overflow-y: scroll;
+    }
+
     #main2 {
         display: flex;
         display: -webkit-flex;
@@ -1248,10 +1266,37 @@ button:hover {
 
             .filter {
                 flex: unset;
-                max-width: unset;
+                flex-direction: row;
+                min-width: 98%;
                 margin-right: 1%;
                 margin-bottom: 1%;
             }
+
+                .filter-inputs {
+                    box-shadow: none;
+                }
+
+                .filter-buttons {
+
+                }
+
+                    .filter-buttons .filter-button {
+                        padding: 0;
+                        margin-left: 3.3%;
+                    }
+
+                    .filter-buttons .filter-button:first-child {
+                        padding-bottom: 2.5%;
+                    }
+
+                    .filter-buttons .filter-button:not(:first-child):not(:last-child) {
+                        padding-top: 1.25%;
+                        padding-bottom: 1.25%;
+                    }
+
+                    .filter-buttons .filter-button:last-child {
+                        padding-top: 2.5%;
+                    }
 
             .result {
                 max-width: unset;
@@ -1259,7 +1304,7 @@ button:hover {
             }
 
         .screen {
-            padding: 1%;
+            /*padding: 1%;*/
         }
 
         .screen2 {
@@ -1270,44 +1315,55 @@ button:hover {
 
         }
 
-            #search-filters {
-                display: flex;
-                display: -webkit-flex;
+            .search-filter-inputs {
                 flex-direction: column;
                 height: auto;
                 padding-bottom: 2.5%;
                 align-items: center;
-                box-shadow: none;
             }
 
                 #search-filter-inputs {
-                    width: 38%;
-                    max-width: 38%;
+
                 }
 
-                    .search-filter-input {
-                        padding: 1%;
+                    #search-filter-inputs input {
+                        width: 38%;
+                        max-width: 38%;
+                        padding: 1.5% 1%;
                     }
 
+
             #search-results {
-                /*flex: 1;*/
                 flex: 0 1 100%;
                 -webkit-flex: 0 1 100%;
+                padding: 0 1% 1%;
+                overflow-y: unset;
             }
+
+            #advanced-search-filters {
+                height: 200px;
+                max-height: 200px;
+            }
+
+                #advanced-search-filter-inputs {
+                    flex: 1 1 70%;
+                }
+
+                #advanced-search-filter-buttons {
+                    flex: 1 1 30%;
+                }
 
         #stats-screen {
 
         }
 
             #chart-filters {
-                flex-direction: row;
                 height: 280px;
                 max-height: 280px;
             }
 
                 .chart-filter-inputs {
                     padding: 0 2% 2%;
-                    box-shadow: none;
                 }
 
                     .chart-filter-inputs form {
@@ -1320,28 +1376,6 @@ button:hover {
                             flex: 1 0 50%;
                             max-width: 50%;
                         }
-
-                #filter-buttons {
-
-                }
-
-                    #filter-buttons .filter-button {
-                        padding: 0;
-                        margin-left: 3.3%;
-                    }
-
-                    #filter-buttons .filter-button:first-child {
-                        padding-bottom: 2.5%;
-                    }
-
-                    #filter-buttons .filter-button:not(:first-child):not(:last-child) {
-                        padding-top: 1.25%;
-                        padding-bottom: 1.25%;
-                    }
-
-                    #filter-buttons .filter-button:last-child {
-                        padding-top: 2.5%;
-                    }
 
             #chart {
                 flex: unset;
