@@ -17,6 +17,8 @@ const mongoURI = `mongodb+srv://hamzah:${process.env.MONGOPASSWORD}@cluster0-wz8
 //database collections
 var DB;
 var CLUBS_COLLECTION;
+var COUNTRIES_COLLECTION;
+var STATS_REFERENCE_COLLECTION;
 var PLAYERS_COLLECTION;
 var PERCENTILE_ARRAYS_COLLECTION;
 
@@ -119,6 +121,25 @@ app.post('/api/databaseSize', (req, res) => {
         }, () => {
             res.status(400);
             res.json([]);
+        }
+    )
+
+});
+
+
+/**
+ * Retrieves the reference data used to populate advanced search select lists
+ * @param {express.Request} req
+ * @param {express.Response} res
+ */
+app.post('/api/referenceData', (req, res) => {
+
+    getReferenceData().then(
+        (referenceData) => {
+            res.json(referenceData);
+        }, () => {
+            res.status(400);
+            res.json({});
         }
     )
 
@@ -281,6 +302,7 @@ let connectToDatabase = async () => {
     return new Promise(function(resolve, reject) {
 
         console.time('database connection');
+
         //establish a connection to the database
         mongoClient.connect(mongoURI, {useUnifiedTopology: true},function (err, client) {
             if (err){
@@ -288,17 +310,20 @@ let connectToDatabase = async () => {
             }
             else {
                 DB = client.db("ProjectFourteen");
-                //retrieve to the production collections if it is a production environment
+
                 if (process.env.NODE_ENV === "production"){
                     console.log("production");
                     CLUBS_COLLECTION = DB.collection('Clubs');
+                    COUNTRIES_COLLECTION = DB.collection("Countries");
+                    STATS_REFERENCE_COLLECTION = DB.collection("StatsReferenceData");
                     PLAYERS_COLLECTION = DB.collection('Players');
                     PERCENTILE_ARRAYS_COLLECTION = DB.collection('PercentileArrays');
                 }
-                //retrieve to the development collections otherwise
                 else {
                     console.log("development");
                     CLUBS_COLLECTION = DB.collection('Clubs_Dev');
+                    COUNTRIES_COLLECTION = DB.collection("Countries_Dev");
+                    STATS_REFERENCE_COLLECTION = DB.collection("StatsReferenceData_Dev");
                     PLAYERS_COLLECTION = DB.collection('Players_Dev');
                     PERCENTILE_ARRAYS_COLLECTION = DB.collection('PercentileArrays_Dev');
                 }
@@ -402,6 +427,58 @@ let getDatabaseSize = async () => {
     });
 
 };
+
+
+/**
+ * Queries the database for the reference data for
+ * @returns {Promise<*>} Object containing reference data
+ */
+let getReferenceData = async () => {
+
+    return new Promise(async function(resolve, reject){
+
+        let referenceData = {
+            countries: null,
+            clubs: null,
+            statsReferenceData: null
+        };
+
+        COUNTRIES_COLLECTION.find({})
+        .toArray(function(err, docs) {
+            if (err){
+                console.log(err);
+                reject();
+            }
+            else {
+                referenceData.countries = docs;
+                CLUBS_COLLECTION.find({})
+                .toArray(function(err, docs) {
+                    if (err){
+                        console.log(err);
+                        reject();
+                    }
+                    else {
+                        referenceData.clubs = docs;
+                        STATS_REFERENCE_COLLECTION.find({})
+                        .toArray(function(err, docs) {
+                            if (err){
+                                console.log(err);
+                                reject();
+                            }
+                            else {
+                                referenceData.statsReferenceData = docs;
+                                resolve(referenceData);
+                            }
+                        });
+                    }
+                });
+            }
+        });
+
+    });
+
+};
+
 
 /**
  * Searches the database for the specified query
@@ -537,13 +614,13 @@ let advancedSearch = async (parameters) => {
 
         let season = parameters.season;
 
-        if (parameters.age !== undefined){
+        if (parameters.currentAge !== undefined){
 
-            let minAge = parameters.age.min || 0;
-            let maxAge = parameters.age.max || 99;
+            let minAge = parameters.currentAge.min || -Infinity;
+            let maxAge = parameters.currentAge.max || Infinity;
 
             query['$and'].push({
-                [`ages.${season}`]: {
+                currentAge: {
                     '$gte': minAge,
                     '$lte': maxAge
                 }
@@ -556,6 +633,20 @@ let advancedSearch = async (parameters) => {
             query['$and'].push({
                 countryCode: {
                     '$in': parameters.nationalities,
+                }
+            })
+
+        }
+
+        if (parameters.seasonAge !== undefined){
+
+            let minAge = parameters.seasonAge.min || -Infinity;
+            let maxAge = parameters.seasonAge.max || Infinity;
+
+            query['$and'].push({
+                [`ages.${season}`]: {
+                    '$gte': minAge,
+                    '$lte': maxAge
                 }
             })
 
@@ -579,15 +670,15 @@ let advancedSearch = async (parameters) => {
 
         }
 
-        if (parameters.processedStats !== undefined){
+        if (parameters.rawStats !== undefined){
 
-            for (let stat in parameters.processedStats){
+            for (let stat in parameters.rawStats){
 
-                let min = parameters.processedStats[stat].min || -Infinity;
-                let max = parameters.processedStats[stat].max || Infinity;
+                let min = parameters.rawStats[stat].min || -Infinity;
+                let max = parameters.rawStats[stat].max || Infinity;
 
                 query['$and'].push({
-                    [`lookupStats.processedStats.${season}.${stat}`]: {
+                    [`lookupStats.rawStats.${season}.${stat}`]: {
                         '$gte': min,
                         '$lte': max
                     }

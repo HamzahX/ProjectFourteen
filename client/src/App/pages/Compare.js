@@ -11,7 +11,7 @@ import SliceOptions from "../components/SliceOptions";
 import Slice from "../components/Slice";
 import GlossaryOverlay from "../components/GlossaryOverlay";
 import CompareSearchScreen from "../components/CompareSearchOverlay";
-import ExportLoaderScreen from "../components/ExportLoaderOverlay";
+import ExportLoaderScreen from "../components/LoaderOverlay";
 
 //import utility functions
 import {

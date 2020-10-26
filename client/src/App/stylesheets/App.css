@@ -641,7 +641,7 @@ button:hover {
         }
 
             .filter-inputs {
-                padding: 0.4em 1em 1em;
+                padding: 1em 1em 1em;
                 border: darkgrey 1px solid;
                 white-space: normal;
                 overflow-x: hidden;

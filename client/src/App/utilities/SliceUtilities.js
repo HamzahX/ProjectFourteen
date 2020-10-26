@@ -6,9 +6,6 @@ import Highcharts from "highcharts";
 import domtoimage from "dom-to-image";
 import saveAs from "file-saver";
 
-//import constants
-import statsByPosition from '../assets/constants/statsByPosition.json';
-
 //initialize cookies
 const cookies = new Cookies();
 
@@ -427,6 +424,7 @@ function percentileRank(array, value, occurrences){
 
 /**
  * Function to construct the input given to the Highcharts component
+ * @param statsByPosition
  * @param {Object} statsPer90 - object containing the per90 stats
  * @param {Object} percentiles - object containing the percentile ranks
  * @param playerCode
@@ -436,7 +434,7 @@ function percentileRank(array, value, occurrences){
  * @param index
  * @return {Array} chartInput - array containing information for each data point in the Highcharts plot
  */
-export function constructChartInput(statsPer90, percentiles, playerCode, playerName, minutes, isForComparison, index){
+export function constructChartInput(statsByPosition, statsPer90, percentiles, playerCode, playerName, minutes, isForComparison, index){
 
     let template = this.state.template;
 

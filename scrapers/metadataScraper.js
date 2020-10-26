@@ -438,7 +438,7 @@ let processRawData = async () => {
                                 processedMetadata[processedPlayer]['nationality'] = countryCodes.getCountryName(rawMetadata[i][player][entry].toUpperCase());
                             }
                             if (processedMetadata[processedPlayer]['countryCode'] === undefined){
-                                processedMetadata[processedPlayer]['countryCode'] = cleanCountryCode(rawMetadata[i][player][entry]);
+                                processedMetadata[processedPlayer]['countryCode'] = countryCodes.cleanCountryCode(rawMetadata[i][player][entry]);
                             }
                         }
                         else if (entry === 'name'){
@@ -517,27 +517,6 @@ let processPlayerPosition = (positionString, code) => {
 
     return positions;
 
-};
-
-
-let cleanCountryCode = (code) => {
-    let codeUpperCase = code.toUpperCase();
-    if (codeUpperCase === "GB-ENG" || codeUpperCase === "ENG") {
-        code = "_england"
-    }
-    else if (codeUpperCase === "GB-SCT" || codeUpperCase === "SCO") {
-        code = "_scotland"
-    }
-    else if (codeUpperCase === "GB-WLS" || codeUpperCase === "WAL") {
-        code = "_wales"
-    }
-    else if (codeUpperCase === "GB-NIR" || codeUpperCase === "NIR") {
-        code = "_northern-ireland"
-    }
-    else if (codeUpperCase === "XK") {
-        code = "_kosovo"
-    }
-    return code;
 };
 
 

@@ -1,0 +1,782 @@
+{
+	"age": {
+		"label": "Age",
+		"mobileLabel": "Age",
+		"suffix": "at the beginning of the season",
+		"isReversed": false,
+		"ranges": {
+			"18-19": {
+				"min": 15,
+				"max": 40,
+				"minName": "Eduardo Camavinga",
+				"maxName": "Gianluigi Buffon"
+			},
+			"19-20": {
+				"min": 0,
+				"max": 41,
+				"minName": "Andrea Ghezzi",
+				"maxName": "Gianluigi Buffon"
+			}
+		}
+	},
+	"npg": {
+		"label": "Non-Penalty Goals",
+		"mobileLabel": "Non-Penalty Goals",
+		"suffix": "per 90",
+		"isReversed": false,
+		"ranges": {
+			"18-19": {
+				"min": -0.27522935779816515,
+				"max": 2.0454545454545454,
+				"minName": "Evens Joseph",
+				"maxName": "Lamine Ghezali"
+			},
+			"19-20": {
+				"min": 0,
+				"max": 2,
+				"minName": "Claudio Pizarro",
+				"maxName": "Mariano"
+			}
+		}
+	},
+	"npxg": {
+		"label": "Non-Penalty xG",
+		"mobileLabel": "Non-Penalty xG",
+		"suffix": "per 90",
+		"isReversed": false,
+		"ranges": {
+			"18-19": {
+				"min": 0,
+				"max": 1.44,
+				"minName": "Daniele Bonera",
+				"maxName": "Jermain Defoe"
+			},
+			"19-20": {
+				"min": 0,
+				"max": 1.4,
+				"minName": "Aaron Lennon",
+				"maxName": "Mariano"
+			}
+		}
+	},
+	"npxgPerShot": {
+		"label": "Non-Penalty xG/Shot",
+		"mobileLabel": "Non-Penalty xG/Shot",
+		"suffix": "per 90",
+		"isReversed": false,
+		"ranges": {
+			"18-19": {
+				"min": 0,
+				"max": 0.9,
+				"minName": "Daniele Bonera",
+				"maxName": "Felix Götze"
+			},
+			"19-20": {
+				"min": 0,
+				"max": 0.6,
+				"minName": "Aaron Lennon",
+				"maxName": "DeAndre Yedlin"
+			}
+		}
+	},
+	"succAerials": {
+		"label": "Aerials Won",
+		"mobileLabel": "Aerials Won",
+		"suffix": "per 90",
+		"isReversed": false,
+		"ranges": {
+			"18-19": {
+				"min": 0,
+				"max": 15.65217391304348,
+				"minName": "Jermain Defoe",
+				"maxName": "Peter Crouch"
+			},
+			"19-20": {
+				"min": 0,
+				"max": 13.333333333333334,
+				"minName": "Raffael",
+				"maxName": "Sam Surridge"
+			}
+		}
+	},
+	"aerialSuccRate": {
+		"label": "Aerial Win %",
+		"mobileLabel": "Aerial Win %",
+		"suffix": "",
+		"isReversed": false,
+		"ranges": {
+			"18-19": {
+				"min": 0,
+				"max": 100,
+				"minName": "Jermain Defoe",
+				"maxName": "Raúl García"
+			},
+			"19-20": {
+				"min": 0,
+				"max": 100,
+				"minName": "Raffael",
+				"maxName": "Hatem Ben Arfa"
+			}
+		}
+	},
+	"boxTouches": {
+		"label": "Touches in Box",
+		"mobileLabel": "Touches in Box",
+		"suffix": "per 90",
+		"isReversed": false,
+		"ranges": {
+			"18-19": {
+				"min": 0,
+				"max": 16.630434782608695,
+				"minName": "Daniele Bonera",
+				"maxName": "Peter Crouch"
+			},
+			"19-20": {
+				"min": 0,
+				"max": 16.666666666666668,
+				"minName": "Andrew Surman",
+				"maxName": "Sam Surridge"
+			}
+		}
+	},
+	"padjBoxTouches": {
+		"label": "Touches in Box",
+		"mobileLabel": "Touches in Box",
+		"suffix": "per 100 touches",
+		"isReversed": false,
+		"ranges": {
+			"18-19": {
+				"min": 0,
+				"max": 100,
+				"minName": "Daniele Bonera",
+				"maxName": "Jermain Defoe"
+			},
+			"19-20": {
+				"min": 0,
+				"max": 30.232558139534884,
+				"minName": "Andrew Surman",
+				"maxName": "Moussa Koné"
+			}
+		}
+	},
+	"xa": {
+		"label": "xA",
+		"mobileLabel": "xA",
+		"suffix": "per 90",
+		"isReversed": false,
+		"ranges": {
+			"18-19": {
+				"min": 0,
+				"max": 1.0799999999999998,
+				"minName": "Daniele Bonera",
+				"maxName": "Makhtar Gueye"
+			},
+			"19-20": {
+				"min": 0,
+				"max": 0.9529411764705883,
+				"minName": "Phil Jagielka",
+				"maxName": "Jessic Ngankam"
+			}
+		}
+	},
+	"padjXA": {
+		"label": "xA",
+		"mobileLabel": "xA",
+		"suffix": "per 100 touches",
+		"isReversed": false,
+		"ranges": {
+			"18-19": {
+				"min": 0,
+				"max": 2,
+				"minName": "Daniele Bonera",
+				"maxName": "Makhtar Gueye"
+			},
+			"19-20": {
+				"min": 0,
+				"max": 3.1034482758620694,
+				"minName": "Phil Jagielka",
+				"maxName": "Jessic Ngankam"
+			}
+		}
+	},
+	"ppa": {
+		"label": "Passes into Box",
+		"mobileLabel": "Passes into Box",
+		"suffix": "per 90",
+		"isReversed": false,
+		"ranges": {
+			"18-19": {
+				"min": 0,
+				"max": 4.6381301041960015,
+				"minName": "Daniele Bonera",
+				"maxName": "Lionel Messi"
+			},
+			"19-20": {
+				"min": 0,
+				"max": 4.090909090909091,
+				"minName": "Wes Morgan",
+				"maxName": "Domingos Quina"
+			}
+		}
+	},
+	"padjPPA": {
+		"label": "Passes into Box",
+		"mobileLabel": "Passes into Box",
+		"suffix": "per 100 touches",
+		"isReversed": false,
+		"ranges": {
+			"18-19": {
+				"min": 0,
+				"max": 8.928571428571427,
+				"minName": "Daniele Bonera",
+				"maxName": "Rabbi Matondo"
+			},
+			"19-20": {
+				"min": 0,
+				"max": 6.8965517241379315,
+				"minName": "Wes Morgan",
+				"maxName": "Juan Hernández"
+			}
+		}
+	},
+	"succDribbles": {
+		"label": "Successful Dribbles",
+		"mobileLabel": "Succ. Dribbles",
+		"suffix": "per 90",
+		"isReversed": false,
+		"ranges": {
+			"18-19": {
+				"min": 0,
+				"max": 7.2517985611510785,
+				"minName": "Daniele Bonera",
+				"maxName": "Sofiane Boufal"
+			},
+			"19-20": {
+				"min": 0,
+				"max": 7.199999999999999,
+				"minName": "Phil Jagielka",
+				"maxName": "Ferris N'Goma"
+			}
+		}
+	},
+	"padjSuccDribbles": {
+		"label": "Successful Dribbles",
+		"mobileLabel": "Succ. Dribbles",
+		"suffix": "per 100 touches",
+		"isReversed": false,
+		"ranges": {
+			"18-19": {
+				"min": 0,
+				"max": 12.893323100537222,
+				"minName": "Daniele Bonera",
+				"maxName": "Sofiane Boufal"
+			},
+			"19-20": {
+				"min": 0,
+				"max": 12.987012987012987,
+				"minName": "Phil Jagielka",
+				"maxName": "Hatem Ben Arfa"
+			}
+		}
+	},
+	"dribbleSuccRate": {
+		"label": "Dribble Success %",
+		"mobileLabel": "Dribble Succ. %",
+		"suffix": "",
+		"isReversed": false,
+		"ranges": {
+			"18-19": {
+				"min": 0,
+				"max": 100,
+				"minName": "Daniele Bonera",
+				"maxName": "Wes Morgan"
+			},
+			"19-20": {
+				"min": 0,
+				"max": 100,
+				"minName": "Phil Jagielka",
+				"maxName": "Souleymane Camara"
+			}
+		}
+	},
+	"turnovers": {
+		"label": "Turnovers",
+		"mobileLabel": "Turnovers",
+		"suffix": "per 90",
+		"isReversed": true,
+		"ranges": {
+			"18-19": {
+				"min": 0,
+				"max": 15.365853658536585,
+				"minName": "Daniele Bonera",
+				"maxName": "Kevin Soni"
+			},
+			"19-20": {
+				"min": 0,
+				"max": 16.666666666666668,
+				"minName": "Zanka",
+				"maxName": "Sam Surridge"
+			}
+		}
+	},
+	"padjTurnovers": {
+		"label": "Turnovers",
+		"mobileLabel": "Turnovers",
+		"suffix": "per 100 touches",
+		"isReversed": true,
+		"ranges": {
+			"18-19": {
+				"min": 0,
+				"max": 50,
+				"minName": "Daniele Bonera",
+				"maxName": "Jermain Defoe"
+			},
+			"19-20": {
+				"min": 0,
+				"max": 31.11111111111111,
+				"minName": "Zanka",
+				"maxName": "Nick Woltemade"
+			}
+		}
+	},
+	"succPressures": {
+		"label": "Successful Pressures",
+		"mobileLabel": "Succ. Pressures",
+		"suffix": "per 90",
+		"isReversed": false,
+		"ranges": {
+			"18-19": {
+				"min": 0,
+				"max": 16.363636363636363,
+				"minName": "Jermain Defoe",
+				"maxName": "Lamine Ghezali"
+			},
+			"19-20": {
+				"min": 0,
+				"max": 16.941176470588236,
+				"minName": "Alessandro Matri",
+				"maxName": "Jessic Ngankam"
+			}
+		}
+	},
+	"padjSuccPressures": {
+		"label": "Successful Pressures",
+		"mobileLabel": "Succ. Pressures",
+		"suffix": "per 90 (pAdj)",
+		"isReversed": false,
+		"ranges": {
+			"18-19": {
+				"min": 0,
+				"max": 18.479005913553685,
+				"minName": "Jermain Defoe",
+				"maxName": "Lamine Ghezali"
+			},
+			"19-20": {
+				"min": 0,
+				"max": 17.71206305926719,
+				"minName": "Alessandro Matri",
+				"maxName": "Hannes Wolf"
+			}
+		}
+	},
+	"sca": {
+		"label": "OP Shot-Creating Actions",
+		"mobileLabel": "OP Shot-Creating Actions",
+		"suffix": "per 90",
+		"isReversed": false,
+		"ranges": {
+			"18-19": {
+				"min": 0,
+				"max": 9.72972972972973,
+				"minName": "Daniele Bonera",
+				"maxName": "Gary Madine"
+			},
+			"19-20": {
+				"min": 0,
+				"max": 7.258064516129032,
+				"minName": "Phil Jagielka",
+				"maxName": "André Anderson"
+			}
+		}
+	},
+	"padjSCA": {
+		"label": "OP Shot-Creating Actions",
+		"mobileLabel": "OP Shot-Creating Actions",
+		"suffix": "per 100 touches",
+		"isReversed": false,
+		"ranges": {
+			"18-19": {
+				"min": 0,
+				"max": 23.52941176470588,
+				"minName": "Daniele Bonera",
+				"maxName": "Gary Madine"
+			},
+			"19-20": {
+				"min": 0,
+				"max": 14.285714285714286,
+				"minName": "Phil Jagielka",
+				"maxName": "Edmilson Indjai Correia"
+			}
+		}
+	},
+	"progDistance": {
+		"label": "Yards Progressed",
+		"mobileLabel": "Yards Progressed",
+		"suffix": "per 90",
+		"isReversed": false,
+		"ranges": {
+			"18-19": {
+				"min": 0,
+				"max": 869.0553580497715,
+				"minName": "Jermain Defoe",
+				"maxName": "Aymeric Laporte"
+			},
+			"19-20": {
+				"min": 0,
+				"max": 844.514896867838,
+				"minName": "Nicholas Opoku",
+				"maxName": "Aymeric Laporte"
+			}
+		}
+	},
+	"padjProgDistance": {
+		"label": "Yards Progressed",
+		"mobileLabel": "Yards Progressed",
+		"suffix": "per 100 touches",
+		"isReversed": false,
+		"ranges": {
+			"18-19": {
+				"min": 0,
+				"max": 1002.5,
+				"minName": "Jermain Defoe",
+				"maxName": "Lamine Ghezali"
+			},
+			"19-20": {
+				"min": 0,
+				"max": 1011.1731843575419,
+				"minName": "Nicholas Opoku",
+				"maxName": "Bartosz Salamon"
+			}
+		}
+	},
+	"passSuccRate": {
+		"label": "Pass Completion %",
+		"mobileLabel": "Pass Comp. %",
+		"suffix": "",
+		"isReversed": false,
+		"ranges": {
+			"18-19": {
+				"min": 0,
+				"max": 96.44549763033176,
+				"minName": "Jermain Defoe",
+				"maxName": "Ömer Toprak"
+			},
+			"19-20": {
+				"min": 0,
+				"max": 100,
+				"minName": "Nicholas Opoku",
+				"maxName": "Domingos Quina"
+			}
+		}
+	},
+	"pft": {
+		"label": "Passes into Final 1/3",
+		"mobileLabel": "Passes into Final 1/3",
+		"suffix": "per 90",
+		"isReversed": false,
+		"ranges": {
+			"18-19": {
+				"min": 0,
+				"max": 10.268667131891137,
+				"minName": "Jermain Defoe",
+				"maxName": "Toni Kroos"
+			},
+			"19-20": {
+				"min": 0,
+				"max": 10.344827586206897,
+				"minName": "Pablo Chavarria",
+				"maxName": "Jonathan de Guzmán"
+			}
+		}
+	},
+	"padjPFT": {
+		"label": "Passes into Final 1/3",
+		"mobileLabel": "Passes into Final 1/3",
+		"suffix": "per 100 touches",
+		"isReversed": false,
+		"ranges": {
+			"18-19": {
+				"min": 0,
+				"max": 12.987012987012987,
+				"minName": "Jermain Defoe",
+				"maxName": "Godfred Donsah"
+			},
+			"19-20": {
+				"min": 0,
+				"max": 14.893617021276597,
+				"minName": "Pablo Chavarria",
+				"maxName": "Antoine Valerio"
+			}
+		}
+	},
+	"interceptions": {
+		"label": "Interceptions",
+		"mobileLabel": "Interceptions",
+		"suffix": "per 90",
+		"isReversed": false,
+		"ranges": {
+			"18-19": {
+				"min": 0,
+				"max": 4.53781512605042,
+				"minName": "Souleymane Camara",
+				"maxName": "Lorenco Simic"
+			},
+			"19-20": {
+				"min": 0,
+				"max": 5.346534653465347,
+				"minName": "Souleymane Camara",
+				"maxName": "Salvatore Bocchetti"
+			}
+		}
+	},
+	"padjInterceptions": {
+		"label": "Interceptions",
+		"mobileLabel": "Interceptions",
+		"suffix": "per 90 (pAdj)",
+		"isReversed": false,
+		"ranges": {
+			"18-19": {
+				"min": 0,
+				"max": 4.651236875655019,
+				"minName": "Souleymane Camara",
+				"maxName": "Lorenco Simic"
+			},
+			"19-20": {
+				"min": 0,
+				"max": 5.293071089037626,
+				"minName": "Souleymane Camara",
+				"maxName": "Salvatore Bocchetti"
+			}
+		}
+	},
+	"succTackles": {
+		"label": "Succ. Tackles",
+		"mobileLabel": "Successful Tackles",
+		"suffix": "per 90",
+		"isReversed": false,
+		"ranges": {
+			"18-19": {
+				"min": 0,
+				"max": 6.206896551724138,
+				"minName": "Souleymane Camara",
+				"maxName": "Bakary Sako"
+			},
+			"19-20": {
+				"min": 0,
+				"max": 6.61764705882353,
+				"minName": "Mathieu Bodmer",
+				"maxName": "Jean Lucas"
+			}
+		}
+	},
+	"padjSuccTackles": {
+		"label": "Successful Tackles",
+		"mobileLabel": "Succ. Tackles",
+		"suffix": "per 90 (pAdj)",
+		"isReversed": false,
+		"ranges": {
+			"18-19": {
+				"min": 0,
+				"max": 6.808342775467403,
+				"minName": "Souleymane Camara",
+				"maxName": "Arturo Vidal"
+			},
+			"19-20": {
+				"min": 0,
+				"max": 8.417118248978182,
+				"minName": "Mathieu Bodmer",
+				"maxName": "Jean Lucas"
+			}
+		}
+	},
+	"dribbleTackleRate": {
+		"label": "Tackle/Dribbled Past %",
+		"mobileLabel": "Tackle/ Dribbled Past %",
+		"suffix": "",
+		"isReversed": false,
+		"ranges": {
+			"18-19": {
+				"min": 0,
+				"max": 100,
+				"minName": "Souleymane Camara",
+				"maxName": "Lluis Sastre"
+			},
+			"19-20": {
+				"min": 0,
+				"max": 100,
+				"minName": "Claudio Pizarro",
+				"maxName": "Giorgio Chiellini"
+			}
+		}
+	},
+	"longPassSuccRate": {
+		"label": "Long Pass Completion %",
+		"mobileLabel": "Long Pass Comp. %",
+		"suffix": "",
+		"isReversed": false,
+		"ranges": {
+			"18-19": {
+				"min": 0,
+				"max": 100,
+				"minName": "Jermain Defoe",
+				"maxName": "Peter Crouch"
+			},
+			"19-20": {
+				"min": 0,
+				"max": 100,
+				"minName": "Suk Hyun-Jun",
+				"maxName": "Mattia Destro"
+			}
+		}
+	},
+	"fouls": {
+		"label": "Fouls Committed",
+		"mobileLabel": "Fouls Committed",
+		"suffix": "per 90",
+		"isReversed": true,
+		"ranges": {
+			"18-19": {
+				"min": 0,
+				"max": 10.588235294117647,
+				"minName": "Jermain Defoe",
+				"maxName": "Sam Gallagher"
+			},
+			"19-20": {
+				"min": 0,
+				"max": 7.590361445783132,
+				"minName": "Gaëtan Bong",
+				"maxName": "Fernando Niño"
+			}
+		}
+	},
+	"padjFouls": {
+		"label": "Fouls Committed",
+		"mobileLabel": "Fouls Committed",
+		"suffix": "per 90 (pAdj)",
+		"isReversed": true,
+		"ranges": {
+			"18-19": {
+				"min": 0,
+				"max": 7.455371250056818,
+				"minName": "Jermain Defoe",
+				"maxName": "Sam Gallagher"
+			},
+			"19-20": {
+				"min": 0,
+				"max": 8.794560936234028,
+				"minName": "Gaëtan Bong",
+				"maxName": "Fernando Niño"
+			}
+		}
+	},
+	"clearances": {
+		"label": "Clearances",
+		"mobileLabel": "Clearances",
+		"suffix": "per 90",
+		"isReversed": false,
+		"ranges": {
+			"18-19": {
+				"min": 0,
+				"max": 10.465116279069768,
+				"minName": "Jermain Defoe",
+				"maxName": "Rodrigo Ely"
+			},
+			"19-20": {
+				"min": 0,
+				"max": 10.24070021881838,
+				"minName": "Abdón Prats",
+				"maxName": "Iván Ramis"
+			}
+		}
+	},
+	"padjClearances": {
+		"label": "Clearances",
+		"mobileLabel": "Clearances",
+		"suffix": "per 90 (pAdj)",
+		"isReversed": false,
+		"ranges": {
+			"18-19": {
+				"min": 0,
+				"max": 10.249947929684208,
+				"minName": "Jermain Defoe",
+				"maxName": "Vasco Regini"
+			},
+			"19-20": {
+				"min": 0,
+				"max": 14.445868038142732,
+				"minName": "Abdón Prats",
+				"maxName": "Joel Matip"
+			}
+		}
+	},
+	"gsaa": {
+		"label": "GSAA %",
+		"mobileLabel": "GSAA %",
+		"suffix": "",
+		"isReversed": false,
+		"ranges": {
+			"18-19": {
+				"min": -30.000000000000004,
+				"max": 20.909090909090907,
+				"minName": "Thomas Kraft",
+				"maxName": "Juan Soriano"
+			},
+			"19-20": {
+				"min": -21.666666666666668,
+				"max": 27.142857142857142,
+				"minName": "Claudio Bravo",
+				"maxName": "Marwin Hitz"
+			}
+		}
+	},
+	"crossStopRate": {
+		"label": "Cross Stopping %",
+		"mobileLabel": "Cross Stopping %",
+		"suffix": "",
+		"isReversed": false,
+		"ranges": {
+			"18-19": {
+				"min": 0,
+				"max": 16.783216783216783,
+				"minName": "Sven Ulreich",
+				"maxName": "Bobby Allain"
+			},
+			"19-20": {
+				"min": 0,
+				"max": 17.391304347826086,
+				"minName": "Willy Caballero",
+				"maxName": "Lovre Kalinic"
+			}
+		}
+	},
+	"launchedPassSuccRate": {
+		"label": "Launched Pass Completion %",
+		"mobileLabel": "Launched Pass Completion %",
+		"suffix": "",
+		"isReversed": false,
+		"ranges": {
+			"18-19": {
+				"min": 24.210526315789473,
+				"max": 57.14285714285714,
+				"minName": "Juan Soriano",
+				"maxName": "Mathieu Gorgelin"
+			},
+			"19-20": {
+				"min": 24.210526315789473,
+				"max": 60.198019801980195,
+				"minName": "Angus Gunn",
+				"maxName": "Manuel Neuer"
+			}
+		}
+	}
+}

@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 
 //import components
-import SearchBar from "../components/SearchBar";
 import LoadingSpinner from "../components/LoadingSpinner";
+import SearchBar from "../components/SearchBar";
 import PlayerSearchResult from "../components/PlayerSearchResult";
 import ClubSearchResult from "../components/ClubSearchResult";
 

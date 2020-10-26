@@ -272,7 +272,7 @@ let processEntry = (aPlayer, competitionData, competitionName, isGoalkeeper) => 
         PROCESSED[whoscoredCode]["currentAge"] = metadata["age"];
         PROCESSED[whoscoredCode]["ages"] = {};
         PROCESSED[whoscoredCode]["nationality"] = metadata["nationality"] === "" ? countryCodes.getCountryName(entry['standard_Nation'].split(" ")[0].toUpperCase()) : metadata["nationality"];
-        PROCESSED[whoscoredCode]["countryCode"] = metadata["countryCode"] === "" ? cleanCountryCode(entry['standard_Nation'].split(" ")[0]) : metadata["countryCode"];
+        PROCESSED[whoscoredCode]["countryCode"] = metadata["countryCode"] === "" ? countryCodes.cleanCountryCode(entry['standard_Nation'].split(" ")[0]) : metadata["countryCode"];
         PROCESSED[whoscoredCode]["positions"] = metadata["positions"];
         PROCESSED[whoscoredCode]["percentileEntries"] = {};
         PROCESSED[whoscoredCode]["clubs"] = metadata["clubs"];
@@ -386,27 +386,6 @@ let adjustForPossessionDefensive = (value, possession) => {
     //StatsBomb sigmoid function adapted from: https://statsbomb.com/2014/06/introducing-possession-adjusted-player-stats/
     return (value * 2) / (1 + Math.exp(-0.1 * (possession - 50)));
 
-};
-
-
-let cleanCountryCode = (code) => {
-    let codeUpperCase = code.toUpperCase();
-    if (codeUpperCase === "GB-ENG" || codeUpperCase === "ENG") {
-        code = "_england"
-    }
-    else if (codeUpperCase === "GB-SCT" || codeUpperCase === "SCO") {
-        code = "_scotland"
-    }
-    else if (codeUpperCase === "GB-WLS" || codeUpperCase === "WAL") {
-        code = "_wales"
-    }
-    else if (codeUpperCase === "GB-NIR" || codeUpperCase === "NIR") {
-        code = "_northern-ireland"
-    }
-    else if (codeUpperCase === "XK") {
-        code = "_kosovo"
-    }
-    return code;
 };
 
 
