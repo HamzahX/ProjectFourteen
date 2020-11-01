@@ -17,6 +17,8 @@ const mongoURI = `mongodb+srv://hamzah:${process.env.MONGOPASSWORD}@cluster0-wz8
 //database collections
 var DB;
 var CLUBS_COLLECTION;
+var COUNTRIES_COLLECTION;
+var STATS_REFERENCE_COLLECTION;
 var PLAYERS_COLLECTION;
 var PERCENTILE_ARRAYS_COLLECTION;
 
@@ -126,6 +128,25 @@ app.post('/api/databaseSize', (req, res) => {
 
 
 /**
+ * Retrieves the reference data used to populate advanced search select lists
+ * @param {express.Request} req
+ * @param {express.Response} res
+ */
+app.post('/api/referenceData', (req, res) => {
+
+    getReferenceData().then(
+        (referenceData) => {
+            res.json(referenceData);
+        }, () => {
+            res.status(400);
+            res.json({});
+        }
+    )
+
+});
+
+
+/**
  * Retrieves search results and sends to client upon request
  * @param {express.Request & {body.query: string, body.type: string}} req
  * @param {express.Response} res - Custom object containing the search results
@@ -148,6 +169,33 @@ app.post('/api/search', (req, res) => {
                     res.json(searchResults);
                 }, 100)
             }
+        },
+        () => {
+            setTimeout(function(){
+                res.status(400);
+                res.json([]);
+            }, 100)
+        });
+
+});
+
+
+/**
+ * Retrieves advanced search results and sends to client upon request
+ * @param {express.Request & {body.parameters: object}} req
+ * @param {express.Response} res - Custom object containing the search results
+ */
+app.post('/api/advancedSearch', (req, res) => {
+
+    //retrieve the search query and the search type
+    let parameters = req.body.parameters;
+
+    //search and respond
+    advancedSearch(parameters).then(
+        (searchResults) => {
+            setTimeout(function(){
+                res.json(searchResults);
+            }, 100)
         },
         () => {
             setTimeout(function(){
@@ -254,6 +302,7 @@ let connectToDatabase = async () => {
     return new Promise(function(resolve, reject) {
 
         console.time('database connection');
+
         //establish a connection to the database
         mongoClient.connect(mongoURI, {useUnifiedTopology: true},function (err, client) {
             if (err){
@@ -261,16 +310,20 @@ let connectToDatabase = async () => {
             }
             else {
                 DB = client.db("ProjectFourteen");
-                //retrieve to the production collections if it is a production environment
+
                 if (process.env.NODE_ENV === "production"){
                     console.log("production");
                     CLUBS_COLLECTION = DB.collection('Clubs');
+                    COUNTRIES_COLLECTION = DB.collection("Countries");
+                    STATS_REFERENCE_COLLECTION = DB.collection("StatsReferenceData");
                     PLAYERS_COLLECTION = DB.collection('Players');
                     PERCENTILE_ARRAYS_COLLECTION = DB.collection('PercentileArrays');
                 }
-                //retrieve to the development collections otherwise
                 else {
+                    console.log("development");
                     CLUBS_COLLECTION = DB.collection('Clubs_Dev');
+                    COUNTRIES_COLLECTION = DB.collection("Countries_Dev");
+                    STATS_REFERENCE_COLLECTION = DB.collection("StatsReferenceData_Dev");
                     PLAYERS_COLLECTION = DB.collection('Players_Dev');
                     PERCENTILE_ARRAYS_COLLECTION = DB.collection('PercentileArrays_Dev');
                 }
@@ -375,6 +428,58 @@ let getDatabaseSize = async () => {
 
 };
 
+
+/**
+ * Queries the database for the reference data for
+ * @returns {Promise<*>} Object containing reference data
+ */
+let getReferenceData = async () => {
+
+    return new Promise(async function(resolve, reject){
+
+        let referenceData = {
+            countries: null,
+            clubs: null,
+            statsReferenceData: null
+        };
+
+        COUNTRIES_COLLECTION.find({})
+        .toArray(function(err, docs) {
+            if (err){
+                console.log(err);
+                reject();
+            }
+            else {
+                referenceData.countries = docs;
+                CLUBS_COLLECTION.find({})
+                .toArray(function(err, docs) {
+                    if (err){
+                        console.log(err);
+                        reject();
+                    }
+                    else {
+                        referenceData.clubs = docs;
+                        STATS_REFERENCE_COLLECTION.find({})
+                        .toArray(function(err, docs) {
+                            if (err){
+                                console.log(err);
+                                reject();
+                            }
+                            else {
+                                referenceData.statsReferenceData = docs;
+                                resolve(referenceData);
+                            }
+                        });
+                    }
+                });
+            }
+        });
+
+    });
+
+};
+
+
 /**
  * Searches the database for the specified query
  * @param {string} aQuery - The search query
@@ -435,11 +540,8 @@ let search = async (aQuery, theType, isLive) => {
                 }
                 //push matched clubs to search results
                 for (let i=0; i<docs.length; i++){
-                    let result = {
-                        name: docs[i].name,
-                        countryCode: docs[i].countryCode
-                    };
-                    searchResults.clubSearchResults.push(result);
+                    let clubSearchResult = buildClubSearchResult(docs[i]);
+                    searchResults.clubSearchResults.push(clubSearchResult);
                 }
                 //find players whose whoscored or fbref name/simplifiedName includes the query
                 PLAYERS_COLLECTION.find(
@@ -463,16 +565,8 @@ let search = async (aQuery, theType, isLive) => {
                     else {
                         //push matched players to search results
                         for (let i=0; i<docs.length; i++){
-                            let result = {
-                                code: docs[i].code,
-                                name: docs[i].name,
-                                age: docs[i].age,
-                                nationality: docs[i].nationality,
-                                countryCode: docs[i].countryCode,
-                                clubs: docs[i].clubs,
-                                percentileEntries: docs[i].percentileEntries
-                            };
-                            searchResults.playerSearchResults.push(result);
+                            let playerSearchResult = buildPlayerSearchResult(docs[i]);
+                            searchResults.playerSearchResults.push(playerSearchResult);
                         }
                         resolve(searchResults);
                     }
@@ -491,22 +585,145 @@ let search = async (aQuery, theType, isLive) => {
                 else {
                     //push matched players to search results
                     for (let i=0; i<docs.length; i++){
-                        let player = {
-                            code: docs[i].code,
-                            name: docs[i].name,
-                            age: docs[i].age,
-                            nationality: docs[i].nationality,
-                            countryCode: docs[i].countryCode,
-                            clubs: docs[i].clubs,
-                            percentileEntries: docs[i].percentileEntries
-                        };
-                        searchResults.playerSearchResults.push(player);
+                        let playerSearchResult = buildPlayerSearchResult(docs[i]);
+                        searchResults.playerSearchResults.push(playerSearchResult);
                     }
                     resolve(searchResults);
                 }
             });
 
         }
+
+    });
+
+};
+
+
+/**
+ * Searches the database for the specified query parameters
+ * @param {object} parameters - The search query
+ * @returns {Promise<*>} Promise object represents the search results that match the query given the search type
+ */
+let advancedSearch = async (parameters) => {
+
+    return new Promise(async function(resolve, reject){
+
+        let query = {
+            '$and': []
+        };
+
+        let season = parameters.season;
+
+        if (parameters.currentAge !== undefined){
+
+            let minAge = parameters.currentAge.min || -Infinity;
+            let maxAge = parameters.currentAge.max || Infinity;
+
+            query['$and'].push({
+                currentAge: {
+                    '$gte': minAge,
+                    '$lte': maxAge
+                }
+            })
+
+        }
+
+        if (parameters.nationalities !== undefined){
+
+            query['$and'].push({
+                countryCode: {
+                    '$in': parameters.nationalities,
+                }
+            })
+
+        }
+
+        if (parameters.seasonAge !== undefined){
+
+            let minAge = parameters.seasonAge.min || -Infinity;
+            let maxAge = parameters.seasonAge.max || Infinity;
+
+            query['$and'].push({
+                [`ages.${season}`]: {
+                    '$gte': minAge,
+                    '$lte': maxAge
+                }
+            })
+
+        }
+
+        if (parameters.clubs !== undefined){
+
+            query['$and'].push({
+                [`clubs.${season}`]: {
+                    '$in': parameters.clubs,
+                }
+            })
+
+        }
+
+        if (parameters.position !== undefined){
+
+            query['$and'].push({
+                [`positions.${season}`]: parameters.position
+            })
+
+        }
+
+        if (parameters.rawStats !== undefined){
+
+            for (let stat in parameters.rawStats){
+
+                let min = parameters.rawStats[stat].min || -Infinity;
+                let max = parameters.rawStats[stat].max || Infinity;
+
+                query['$and'].push({
+                    [`lookupStats.rawStats.${season}.${stat}`]: {
+                        '$gte': min,
+                        '$lte': max
+                    }
+                })
+
+            }
+
+        }
+
+        if (parameters.percentileRanks !== undefined){
+
+            for (let stat in parameters.percentileRanks){
+
+                let min = parameters.percentileRanks[stat].min || 0;
+                let max = parameters.percentileRanks[stat].max || 100;
+
+                query['$and'].push({
+                    [`lookupStats.percentileRanks.${season}.${parameters.position}${stat}`]: {
+                        '$gte': min,
+                        '$lte': max
+                    }
+                })
+
+            }
+
+        }
+
+        let searchResults = [];
+
+        //find the player who match the query
+        PLAYERS_COLLECTION.find(query).toArray(function (err, docs) {
+            if (err) {
+                reject();
+            }
+            else if (docs.length === 0) {
+                reject();
+            }
+            else {
+                for (let i=0; i<docs.length; i++){
+                    let playerSearchResult = buildPlayerSearchResult(docs[i]);
+                    searchResults.push(playerSearchResult);
+                }
+                resolve(searchResults);
+            }
+        });
 
     });
 
@@ -587,6 +804,31 @@ let getComparisonStats = async (codes) => {
 };
 
 
+let buildClubSearchResult = (doc) => {
+
+    return {
+        name: doc.name,
+        countryCode: doc.countryCode
+    };
+
+};
+
+
+let buildPlayerSearchResult = (doc) => {
+
+    return {
+        code: doc.code,
+        name: doc.name,
+        age: doc.currentAge,
+        nationality: doc.nationality,
+        countryCode: doc.countryCode,
+        clubs: doc.clubs,
+        positions: doc.positions
+    };
+
+};
+
+
 /**
  * "Main" function / promise chain
  * Connects to database, retrieves percentile array and begins listening for connections
@@ -601,10 +843,3 @@ connectToDatabase()
     .catch(async (anError) => {
         console.log(anError);
     });
-
-
-//export functions needed in the unit testing module
-// module.exports.connectToDatabase = connectToDatabase;
-// module.exports.getSamplePlayer = getSamplePlayer;
-// module.exports.search = search;
-// module.exports.getStats = getStats;

@@ -9,45 +9,6 @@ import saveAs from "file-saver";
 //initialize cookies
 const cookies = new Cookies();
 
-const orderedStats = {
-
-    "FW": ['npg', 'npxg', 'npxgPerShot', 'succAerials', 'aerialSuccRate', 'boxTouches',
-        'padjBoxTouches', 'xa', 'padjXA', 'ppa', 'padjPPA', 'succDribbles', 'padjSuccDribbles',
-        'dribbleSuccRate', 'turnovers', 'padjTurnovers', 'succPressures', 'padjSuccPressures'],
-
-    "AM": ['npg', 'npxg', 'npxgPerShot', 'xa', 'padjXA', 'sca', 'padjSCA', 'ppa',
-        'padjPPA', 'progDistance', 'padjProgDistance', 'passSuccRate', 'succDribbles',
-        'padjSuccDribbles', 'dribbleSuccRate', 'turnovers', 'padjTurnovers', 'succPressures',
-        'padjSuccPressures'],
-
-    "CM": ['xa', 'padjXA', 'sca', 'padjSCA', 'pft', 'padjPFT', 'progDistance', 'padjProgDistance',
-        'passSuccRate', 'succDribbles', 'padjSuccDribbles', 'dribbleSuccRate', 'turnovers',
-        'padjTurnovers', 'succPressures', 'padjSuccPressures', 'interceptions', 'padjInterceptions',
-        'succTackles', 'padjSuccTackles', 'dribbleTackleRate'],
-
-    "FB": ['xa', 'padjXA', 'pft', 'padjPFT', 'progDistance', 'padjProgDistance',
-        'passSuccRate', 'succDribbles', 'padjSuccDribbles', 'dribbleSuccRate', 'turnovers', 'padjTurnovers',
-        'succPressures', 'padjSuccPressures', 'interceptions', 'padjInterceptions',
-        'succTackles', 'padjSuccTackles', 'dribbleTackleRate', 'aerialSuccRate'],
-
-    "CB": ['pft', 'padjPFT', 'progDistance', 'padjProgDistance',
-        'passSuccRate', 'longPassSuccRate', 'succPressures', 'padjSuccPressures',
-        'interceptions', 'padjInterceptions', 'succTackles', 'padjSuccTackles', 'dribbleTackleRate',
-        'fouls', 'padjFouls', 'succAerials', 'aerialSuccRate', 'clearances', 'padjClearances'],
-
-    "GK": ['gsaa', 'crossStopRate', 'launchedPassSuccRate'],
-
-    "N/A": ['npg', 'npxg', 'npxgPerShot', 'conversionRate', 'aerialSuccRate', 'boxTouches',
-        'padjBoxTouches', 'xa', 'padjXA', 'ppa', 'padjPPA', 'succDribbles',
-        'padjSuccDribbles', 'dribbleSuccRate', 'turnovers', 'padjTurnovers', 'succPressures',
-        'padjSuccPressures'],
-
-    null: ['npg', 'npxg', 'npxgPerShot', 'conversionRate', 'aerialSuccRate', 'boxTouches',
-        'padjBoxTouches', 'xa', 'padjXA', 'ppa', 'padjPPA', 'succDribbles',
-        'padjSuccDribbles', 'dribbleSuccRate', 'turnovers', 'padjTurnovers', 'succPressures',
-        'padjSuccPressures'],
-};
-
 //colors used in the Slices
 const colorArrays = {
     "FW": ['#f15c80', '#f15c80', '#f15c80', '#f15c80', '#f15c80', '#e4d354',
@@ -61,12 +22,8 @@ const colorArrays = {
     "CB": ['#e4d354', '#e4d354', '#e4d354', '#e4d354', '#7cb5ec', '#7cb5ec',
         '#7cb5ec', '#7cb5ec', '#7cb5ec', '#7cb5ec', '#7cb5ec', '#7cb5ec'],
     "GK": ['#9499ff', '#9499ff', '#e4d354'],
-    "N/A": ['#7cb5ec', '#7cb5ec', '#7cb5ec', '#7cb5ec', '#7cb5ec', '#7cb5ec',
-        '#7cb5ec', '#7cb5ec', '#7cb5ec', '#7cb5ec', '#7cb5ec', '#7cb5ec'],
     "comparison": ['#e75453', '#e75453', '#e75453', '#e75453', '#e75453', '#e75453',
-        '#e75453', '#e75453', '#e75453', '#e75453', '#e75453', '#e75453'],
-    null: ['#7cb5ec', '#7cb5ec', '#7cb5ec', '#7cb5ec', '#7cb5ec', '#7cb5ec',
-        '#7cb5ec', '#7cb5ec', '#7cb5ec', '#7cb5ec', '#7cb5ec', '#7cb5ec']
+        '#e75453', '#e75453', '#e75453', '#e75453', '#e75453', '#e75453']
 };
 
 //data label alignments
@@ -467,6 +424,7 @@ function percentileRank(array, value, occurrences){
 
 /**
  * Function to construct the input given to the Highcharts component
+ * @param statsByPosition
  * @param {Object} statsPer90 - object containing the per90 stats
  * @param {Object} percentiles - object containing the percentile ranks
  * @param playerCode
@@ -476,7 +434,7 @@ function percentileRank(array, value, occurrences){
  * @param index
  * @return {Array} chartInput - array containing information for each data point in the Highcharts plot
  */
-export function constructChartInput(statsPer90, percentiles, playerCode, playerName, minutes, isForComparison, index){
+export function constructChartInput(statsByPosition, statsPer90, percentiles, playerCode, playerName, minutes, isForComparison, index){
 
     let template = this.state.template;
 
@@ -501,9 +459,9 @@ export function constructChartInput(statsPer90, percentiles, playerCode, playerN
     let chartInput = [];
 
     let i = 0;
-    for (let stat in orderedStats[template]){
+    for (let stat in statsByPosition[template]){
 
-        let key = orderedStats[template][stat];
+        let key = statsByPosition[template][stat];
 
         if (statsPer90[key] === undefined){
             continue;

@@ -300,19 +300,19 @@ class SliceOptions extends Component {
 
         return (
             <div className="filter" id="chart-filters">
-                <div className="chart-filter-inputs" id="chart-filter-inputs-laptop">
+                <div className="filter-inputs chart-filter-inputs" id="chart-filter-inputs-laptop">
                     {templatesForm}
                     {competitionsForms}
                     {pAdjTypeForm}
                     {labelTypeForm}
                 </div>
-                <div className="chart-filter-inputs" id="chart-filter-inputs-mobile">
+                <div className="filter-inputs chart-filter-inputs" id="chart-filter-inputs-mobile">
                     {mobileTemplatesForm}
                     {competitionsForms}
                     {pAdjTypeForm}
                     {labelTypeForm}
                 </div>
-                <div id="filter-buttons">
+                <div className="filter-buttons" id="chart-filter-buttons">
                     <div className="filter-button">
                         <button id="toggleCreditsButton" type="button" onClick={this.props.toggleCreditsPosition}>Toggle Credits Position</button>
                     </div>

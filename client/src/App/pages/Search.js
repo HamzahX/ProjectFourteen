@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 
 //import components
-import SearchBar from "../components/SearchBar";
 import LoadingSpinner from "../components/LoadingSpinner";
+import SearchBar from "../components/SearchBar";
 import PlayerSearchResult from "../components/PlayerSearchResult";
 import ClubSearchResult from "../components/ClubSearchResult";
 
@@ -244,7 +244,7 @@ class Search extends Component {
                         clubs={current.clubs}
                         nationality={current.nationality}
                         countryCode={current.countryCode}
-                        percentileEntries={current.percentileEntries}
+                        positions={current.positions}
                         key={i}
                     />
                 );
@@ -284,9 +284,9 @@ class Search extends Component {
                     />
                     <div className="screen" id="search-screen">
                         <div className="filter" id="search-filters">
-                            {searchText}
-                            <br />
-                            <div id="search-filter-inputs">
+                            <div className="filter-inputs search-filter-inputs" id="search-filter-inputs">
+                                {searchText}
+                                <br />
                                 <input
                                     type="text"
                                     value={filterValue}

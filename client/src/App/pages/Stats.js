@@ -28,7 +28,7 @@ import SliceOptions from "../components/SliceOptions";
 import Slice from "../components/Slice";
 import GlossaryOverlay from "../components/GlossaryOverlay";
 import CompareSearchOverlay from "../components/CompareSearchOverlay";
-import ExportLoaderOverlay from "../components/ExportLoaderOverlay";
+import ExportLoaderOverlay from "../components/LoaderOverlay";
 
 //initialize cookies
 const cookies = new Cookies();
@@ -202,7 +202,7 @@ class Stats extends Component {
         //in the player's position entries
         let template = "N/A";
         for (let season in playerData.positions){
-            let position = playerData.positions[season];
+            let position = playerData.positions[season][0];
             if (position !== "N/A"){
                 template = position;
             }

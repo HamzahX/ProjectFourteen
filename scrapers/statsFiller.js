@@ -62,7 +62,7 @@ let setup = async () => {
         if (SEASON === "18-19"){
             PROCESSED = {};
         }
-        else if (SEASON === "19-20"){
+        else{
             PROCESSED = JSON.parse(fs.readFileSync(path.join(__dirname, '/playerData/processed.json')));
         }
 
@@ -248,11 +248,10 @@ let processEntry = (aPlayer, competitionData, competitionName, isGoalkeeper) => 
         return;
     }
 
-    //exit the function if the player is not a goalkeeper and the current entry is a goalkeeper
-    // if (isGoalkeeper && METADATA[whoscoredCode]["positions"][SEASON] !== "GK"){
-    //     return;
-    // }
-    let isOutfieldGoalkeeper = isGoalkeeper && METADATA[whoscoredCode]["positions"][SEASON] !== "GK";
+    let isOutfieldGoalkeeper = false;
+    if (METADATA[whoscoredCode]["positions"][SEASON] !== undefined){
+        isOutfieldGoalkeeper = isGoalkeeper && !METADATA[whoscoredCode]["positions"][SEASON].includes("GK");
+    }
 
     //retrieve the club name and the team's average possession for the required competition
     if (FBREF_TO_WHOSCORED_TEAMS[fbrefClubName] === undefined){
@@ -270,9 +269,10 @@ let processEntry = (aPlayer, competitionData, competitionName, isGoalkeeper) => 
         PROCESSED[whoscoredCode]["name2"] = fbrefName;
         PROCESSED[whoscoredCode]["simplifiedName"] = metadata["simplifiedName"];
         PROCESSED[whoscoredCode]["simplifiedName2"] = fbrefSimplifiedName;
-        PROCESSED[whoscoredCode]["age"] = metadata["age"];
+        PROCESSED[whoscoredCode]["currentAge"] = metadata["age"];
+        PROCESSED[whoscoredCode]["ages"] = {};
         PROCESSED[whoscoredCode]["nationality"] = metadata["nationality"] === "" ? countryCodes.getCountryName(entry['standard_Nation'].split(" ")[0].toUpperCase()) : metadata["nationality"];
-        PROCESSED[whoscoredCode]["countryCode"] = metadata["countryCode"] === "" ? cleanCountryCode(entry['standard_Nation'].split(" ")[0]) : metadata["countryCode"];
+        PROCESSED[whoscoredCode]["countryCode"] = metadata["countryCode"] === "" ? countryCodes.cleanCountryCode(entry['standard_Nation'].split(" ")[0]) : metadata["countryCode"];
         PROCESSED[whoscoredCode]["positions"] = metadata["positions"];
         PROCESSED[whoscoredCode]["percentileEntries"] = {};
         PROCESSED[whoscoredCode]["clubs"] = metadata["clubs"];
@@ -307,7 +307,6 @@ let processEntry = (aPlayer, competitionData, competitionName, isGoalkeeper) => 
             sota: entry["keeper_SoTA"],
             stoppedCrosses: entry["keeper_adv_Stp"],
             attCrosses: entry["keeper_adv_Opp"],
-            // succPressurePasses: entry["passing_types_Pass Types__4"],
             succLaunchedPasses: entry["keeper_adv_Cmp"],
             attLaunchedPasses: entry["keeper_adv_Att"]
         }
@@ -358,6 +357,9 @@ let processEntry = (aPlayer, competitionData, competitionName, isGoalkeeper) => 
         }
     }
 
+    //populate the player ages
+    PROCESSED[whoscoredCode]["ages"][SEASON] = stats['age'];
+
     //populate the player stats
     if (METADATA[whoscoredCode][SEASON] !== undefined){
         if (METADATA[whoscoredCode][SEASON][`${competitionName} | ${whoscoredClubName}`] !== undefined){
@@ -384,35 +386,6 @@ let adjustForPossessionDefensive = (value, possession) => {
     //StatsBomb sigmoid function adapted from: https://statsbomb.com/2014/06/introducing-possession-adjusted-player-stats/
     return (value * 2) / (1 + Math.exp(-0.1 * (possession - 50)));
 
-};
-
-
-let adjustForPossessionOffensive = (value, touches) => {
-
-    //return value per 100 touches
-    return value / (touches/100);
-
-};
-
-
-let cleanCountryCode = (code) => {
-    let codeUpperCase = code.toUpperCase();
-    if (codeUpperCase === "GB-ENG" || codeUpperCase === "ENG") {
-        code = "_england"
-    }
-    else if (codeUpperCase === "GB-SCT" || codeUpperCase === "SCO") {
-        code = "_scotland"
-    }
-    else if (codeUpperCase === "GB-WLS" || codeUpperCase === "WAL") {
-        code = "_wales"
-    }
-    else if (codeUpperCase === "GB-NIR" || codeUpperCase === "NIR") {
-        code = "_northern-ireland"
-    }
-    else if (codeUpperCase === "XK") {
-        code = "_kosovo"
-    }
-    return code;
 };
 
 

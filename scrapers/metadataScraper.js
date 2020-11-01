@@ -454,7 +454,7 @@ let processRawData = async () => {
                                 processedMetadata[processedPlayer]['nationality'] = countryCodes.getCountryName(rawMetadata[i][player][entry].toUpperCase());
                             }
                             if (processedMetadata[processedPlayer]['countryCode'] === undefined){
-                                processedMetadata[processedPlayer]['countryCode'] = cleanCountryCode(rawMetadata[i][player][entry]);
+                                processedMetadata[processedPlayer]['countryCode'] = countryCodes.cleanCountryCode(rawMetadata[i][player][entry]);
                             }
                         }
                         else if (entry === 'name'){
@@ -499,49 +499,40 @@ let processRawData = async () => {
 };
 
 
-let processPlayerPosition = (aString, code) => {
+let processPlayerPosition = (positionString, code) => {
+
+    let positions = [];
+
     if (FWPlayers.includes(code)){
-        return "FW"
+        positions.push("FW");
     }
-    else if (AMPlayers.includes(code)){
-        return "AM"
-    }
-    else if (CMPlayers.includes(code)){
-        return "CM"
-    }
-    else if (FBPlayers.includes(code)){
-        return "FB"
-    }
-    else if (CBPlayers.includes(code)){
-        return "CB"
-    }
-    else if (GKPlayers.includes(code) || aString === "GK" || aString === "Goalkeeper"){
-        return "GK"
-    }
-    else {
-        return "N/A"
-    }
-};
 
+    if (AMPlayers.includes(code)){
+        positions.push("AM");
+    }
 
-let cleanCountryCode = (code) => {
-    let codeUpperCase = code.toUpperCase();
-    if (codeUpperCase === "GB-ENG" || codeUpperCase === "ENG") {
-        code = "_england"
+    if (CMPlayers.includes(code)){
+        positions.push("CM");
     }
-    else if (codeUpperCase === "GB-SCT" || codeUpperCase === "SCO") {
-        code = "_scotland"
+
+    if (FBPlayers.includes(code)){
+        positions.push("FB");
     }
-    else if (codeUpperCase === "GB-WLS" || codeUpperCase === "WAL") {
-        code = "_wales"
+
+    if (CBPlayers.includes(code)){
+        positions.push("CB");
     }
-    else if (codeUpperCase === "GB-NIR" || codeUpperCase === "NIR") {
-        code = "_northern-ireland"
+
+    if (GKPlayers.includes(code) || positionString === "GK" || positionString === "Goalkeeper"){
+        positions.push("GK");
     }
-    else if (codeUpperCase === "XK") {
-        code = "_kosovo"
+
+    if (positions.length === 0) {
+        positions.push("N/A");
     }
-    return code;
+
+    return positions;
+
 };
 
 

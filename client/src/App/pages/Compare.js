@@ -11,7 +11,7 @@ import SliceOptions from "../components/SliceOptions";
 import Slice from "../components/Slice";
 import GlossaryOverlay from "../components/GlossaryOverlay";
 import CompareSearchScreen from "../components/CompareSearchOverlay";
-import ExportLoaderScreen from "../components/ExportLoaderOverlay";
+import ExportLoaderScreen from "../components/LoaderOverlay";
 
 //import utility functions
 import {
@@ -214,7 +214,7 @@ class Compare extends Component {
         //in the player's position entries
         let template = "N/A";
         for (let season in playerData[codes[0]].positions){
-            let position = playerData[codes[0]].positions[season];
+            let position = playerData[codes[0]].positions[season][0];
             if (position !== "N/A"){
                 template = position;
             }
