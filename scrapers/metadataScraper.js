@@ -1,14 +1,24 @@
+//initialize constants
+const puppeteer = require('puppeteer');
+const path = require('path');
+const fs = require('fs');
+const countryCodes = require('./countryCodes.js');
+
+const scriptName = path.basename(__filename);
+const suppotedSeasons = ["18-19", "19-20", "20-21"];
+const booleans = ["true", "false"];
+
 var SEASON;
 var ONLY_PROCESS;
 //parse command line arguments to get the season
 let ARGS = process.argv.slice(2);
 if (ARGS.length !== 2){
-    console.log("Incorrect number of args. Usage: node metadataScraper <season> <onlyProcess>");
+    console.log(`Incorrect number of args. Usage: node ${scriptName} <season> <only_process_flag>`);
     process.exit(-1);
 }
 else {
-    if (ARGS[0] !== "18-19" && ARGS[0] !== "19-20" && ARGS[1] !== "true" && ARGS[1] !== "false"){
-        console.log("Incorrect args.");
+    if (!suppotedSeasons.includes(ARGS[0]) || !booleans.includes(ARGS[1])){
+        console.log("Incorrect season arg. Supported seasons are supportedSeason");
         process.exit(-1);
     }
     else {
@@ -16,12 +26,6 @@ else {
         ONLY_PROCESS = ARGS[1] === "true";
     }
 }
-
-//initialize constants
-const puppeteer = require('puppeteer');
-const path = require('path');
-const fs = require('fs');
-const countryCodes = require('./countryCodes.js');
 
 //globals
 var BROWSER;
@@ -38,7 +42,7 @@ if (SEASON === "18-19"){
         "https://www.whoscored.com/Regions/250/Tournaments/30/Seasons/7353/Stages/16786/PlayerStatistics/Europe-Europa-League-2018-2019"
     ];
 }
-else {
+else if (SEASON === "19-20"){
     URLs = [
         "https://www.whoscored.com/Regions/252/Tournaments/2/Seasons/7811/Stages/17590/PlayerStatistics/England-Premier-League-2019-2020",
         "https://www.whoscored.com/Regions/206/Tournaments/4/Seasons/7889/Stages/17702/PlayerStatistics/Spain-LaLiga-2019-2020",
@@ -49,6 +53,18 @@ else {
         "https://www.whoscored.com/Regions/250/Tournaments/30/Seasons/7805/Stages/18066/PlayerStatistics/Europe-Europa-League-2019-2020"
     ];
 }
+else if (SEASON === "20-21"){
+    URLs = [
+        "https://www.whoscored.com/Regions/252/Tournaments/2/Seasons/8228/Stages/18685/PlayerStatistics/England-Premier-League-2020-2021",
+        "https://www.whoscored.com/Regions/206/Tournaments/4/Seasons/8321/Stages/18851/PlayerStatistics/Spain-LaLiga-2020-2021",
+        "https://www.whoscored.com/Regions/108/Tournaments/5/Seasons/8330/Stages/18873/PlayerStatistics/Italy-Serie-A-2020-2021",
+        "https://www.whoscored.com/Regions/81/Tournaments/3/Seasons/8279/Stages/18762/PlayerStatistics/Germany-Bundesliga-2020-2021",
+        "https://www.whoscored.com/Regions/74/Tournaments/22/Seasons/8185/Stages/18594/PlayerStatistics/France-Ligue-1-2020-2021",
+        "https://www.whoscored.com/Regions/250/Tournaments/12/Seasons/8177/Stages/19009/PlayerStatistics/Europe-Champions-League-2020-2021",
+        "https://www.whoscored.com/Regions/250/Tournaments/30/Seasons/8178/Stages/19010/PlayerStatistics/Europe-Europa-League-2020-2021"
+    ];
+}
+
 const COMPETITION_NAMES = [
     "Premier League",
     "La Liga",
@@ -378,7 +394,7 @@ let processRawData = async () => {
 
     let rawMetadata = JSON.parse(fs.readFileSync(path.join(__dirname, `/playerData/raw_${SEASON}.json`)));
     let processedMetadata;
-    if (SEASON === "18-19"){
+    if (SEASON === suppotedSeasons[0]){
         processedMetadata = {};
     }
     else {

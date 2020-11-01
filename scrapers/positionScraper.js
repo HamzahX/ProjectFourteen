@@ -1,25 +1,28 @@
+//initialize constants
+const puppeteer = require('puppeteer');
+const path = require('path');
+const fs = require('fs');
+const isEqual = require('lodash.isequal');
+
+const scriptName = path.basename(__filename);
+const suppotedSeasons = ["18-19", "19-20", "20-21"];
+
 var SEASON;
 //parse command line arguments to get the season
 let ARGS = process.argv.slice(2);
 if (ARGS.length !== 1){
-    console.log("Incorrect number of args. Usage: node positionScraper <season>");
+    console.log(`Incorrect number of args. Usage: node ${scriptName} <season>`);
     process.exit(-1);
 }
 else {
-    if (ARGS[0] !== "18-19" && ARGS[0] !== "19-20"){
-        console.log("Incorrect season arg. Supported seasons are 18-19 and 19-20");
+    if (!suppotedSeasons.includes(ARGS[0])){
+        console.log("Incorrect season arg. Supported seasons are supportedSeason");
         process.exit(-1);
     }
     else {
         SEASON = ARGS[0];
     }
 }
-
-//initialize constants
-const puppeteer = require('puppeteer');
-const path = require('path');
-const fs = require('fs');
-const isEqual = require('lodash.isequal');
 
 //function to launch a browser using puppeteer
 let browser;
@@ -32,6 +35,15 @@ if (SEASON === "18-19"){
         "https://www.whoscored.com/Regions/108/Tournaments/5/Seasons/7468/Stages/16548/PlayerStatistics/Italy-Serie-A-2018-2019",
         "https://www.whoscored.com/Regions/81/Tournaments/3/Seasons/7405/Stages/16427/PlayerStatistics/Germany-Bundesliga-2018-2019",
         "https://www.whoscored.com/Regions/74/Tournaments/22/Seasons/7344/Stages/16348/PlayerStatistics/France-Ligue-1-2018-2019"
+    ];
+}
+else if (SEASON === "19-20"){
+    URLs = [
+        "https://www.whoscored.com/Regions/252/Tournaments/2/Seasons/7811/Stages/17590/PlayerStatistics/England-Premier-League-2019-2020",
+        "https://www.whoscored.com/Regions/206/Tournaments/4/Seasons/7889/Stages/17702/PlayerStatistics/Spain-LaLiga-2019-2020",
+        "https://www.whoscored.com/Regions/108/Tournaments/5/Seasons/7928/Stages/17835/PlayerStatistics/Italy-Serie-A-2019-2020",
+        "https://www.whoscored.com/Regions/81/Tournaments/3/Seasons/8279/Stages/18762/PlayerStatistics/Germany-Bundesliga-2020-2021",
+        "https://www.whoscored.com/Regions/74/Tournaments/22/Seasons/7814/Stages/17593/PlayerStatistics/France-Ligue-1-2019-2020"
     ];
 }
 else {
@@ -86,7 +98,7 @@ let pageSetup = async (page, isFirstIteration, position) => {
             let selector;
             //whoscored data for previous seasons is stored separately (by competition)
             //data for the current season is stored together. Hence the different selectors
-            if (SEASON !== "18-19"){
+            if (SEASON === suppotedSeasons[suppotedSeasons.length - 1]){
                 // navigate to 'detailed' tab (current season)
                 selector = 'a[href="#top-player-stats-detailed"]';
             }
@@ -103,7 +115,7 @@ let pageSetup = async (page, isFirstIteration, position) => {
             await page.focus('#appearances');
             await page.keyboard.press('Backspace');
             // await page.keyboard.press('Backspace');
-            await page.keyboard.type('9');
+            await page.keyboard.type('3');
 
             // select 'total' from 'accumulation' drop-down
             await page.select('#statsAccumulationType', '2');
