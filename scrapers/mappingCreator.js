@@ -1,4 +1,4 @@
-const SEASON = "19-20";
+const SEASON = "20-21";
 
 //initialize helpers
 const path = require('path');
@@ -295,6 +295,10 @@ let findMatches = (fbrefName, club, isGoalkeeper) => {
             }
         }
 
+    }
+
+    if (fbrefName === "adrien truffert"){
+        console.log(matchesCounter);
     }
 
     let matches = [];

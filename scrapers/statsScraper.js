@@ -1,26 +1,29 @@
-var SEASON;
-//parse command line arguments to get the season
-let ARGS = process.argv.slice(2);
-if (ARGS.length !== 1){
-    console.log("Incorrect number of args. Usage: node statsScraper <season>");
-    process.exit(-1);
-}
-else {
-    if (ARGS[0] !== "18-19" && ARGS[0] !== "19-20"){
-        console.log("Incorrect season arg. Supported seasons are 18-19 and 19-20");
-        process.exit(-1);
-    }
-    else {
-        SEASON = ARGS[0];
-    }
-}
-
 //initialize constants
 const path = require('path');
 const fs = require('fs');
 const puppeteer = require('puppeteer');
 const csv2json = require('csvjson-csv2json');
 const merge = require('lodash.merge');
+
+const scriptName = path.basename(__filename);
+const suppotedSeasons = ["18-19", "19-20", "20-21"];
+
+var SEASON;
+//parse command line arguments to get the season
+let ARGS = process.argv.slice(2);
+if (ARGS.length !== 1){
+    console.log(`Incorrect number of args. Usage: node ${scriptName} <season>`);
+    process.exit(-1);
+}
+else {
+    if (!suppotedSeasons.includes(ARGS[0])){
+        console.log("Incorrect season arg. Supported seasons are supportedSeason");
+        process.exit(-1);
+    }
+    else {
+        SEASON = ARGS[0];
+    }
+}
 
 //globals
 let BROWSER;
@@ -100,6 +103,20 @@ let scrapeEPLPages = async () => {
                 "https://fbref.com/en/comps/9/1889/keepersadv/2018-2019-Premier-League-Stats"
             ]
         }
+        else if (SEASON === "19-20"){
+            URLs = [
+                "https://fbref.com/en/comps/9/3232/stats/2019-2020-Premier-League-Stats",
+                "https://fbref.com/en/comps/9/3232/shooting/2019-2020-Premier-League-Stats",
+                "https://fbref.com/en/comps/9/3232/passing/2019-2020-Premier-League-Stats",
+                "https://fbref.com/en/comps/9/3232/passing_types/2019-2020-Premier-League-Stats",
+                "https://fbref.com/en/comps/9/3232/gca/2019-2020-Premier-League-Stats",
+                "https://fbref.com/en/comps/9/3232/defense/2019-2020-Premier-League-Stats",
+                "https://fbref.com/en/comps/9/3232/possession/2019-2020-Premier-League-Stats",
+                "https://fbref.com/en/comps/9/3232/misc/2019-2020-Premier-League-Stats",
+                "https://fbref.com/en/comps/9/3232/keepers/2019-2020-Premier-League-Stats",
+                "https://fbref.com/en/comps/9/3232/keepersadv/2019-2020-Premier-League-Stats"
+            ]
+        }
         else {
             URLs = [
                 "https://fbref.com/en/comps/9/stats/Premier-League-Stats",
@@ -139,6 +156,20 @@ let scrapeLaLigaPages = async () => {
                 "https://fbref.com/en/comps/12/1886/misc/2018-2019-La-Liga-Stats",
                 "https://fbref.com/en/comps/12/1886/keepers/2018-2019-La-Liga-Stats",
                 "https://fbref.com/en/comps/12/1886/keepersadv/2018-2019-La-Liga-Stats"
+            ]
+        }
+        else if (SEASON === "19-20"){
+            URLs = [
+                "https://fbref.com/en/comps/12/3239/stats/2019-2020-La-Liga-Stats",
+                "https://fbref.com/en/comps/12/3239/shooting/2019-2020-La-Liga-Stats",
+                "https://fbref.com/en/comps/12/3239/passing/2019-2020-La-Liga-Stats",
+                "https://fbref.com/en/comps/12/3239/passing_types/2019-2020-La-Liga-Stats",
+                "https://fbref.com/en/comps/12/3239/gca/2019-2020-La-Liga-Stats",
+                "https://fbref.com/en/comps/12/3239/defense/2019-2020-La-Liga-Stats",
+                "https://fbref.com/en/comps/12/3239/possession/2019-2020-La-Liga-Stats",
+                "https://fbref.com/en/comps/12/3239/misc/2019-2020-La-Liga-Stats",
+                "https://fbref.com/en/comps/12/3239/keepers/2019-2020-La-Liga-Stats",
+                "https://fbref.com/en/comps/12/3239/keepersadv/2019-2020-La-Liga-Stats"
             ]
         }
         else {
@@ -182,6 +213,20 @@ let scrapeSerieAPages = async () => {
                 "https://fbref.com/en/comps/11/1896/keepersadv/2018-2019-Serie-A-Stats"
             ]
         }
+        else if (SEASON === "19-20"){
+            URLs = [
+                "https://fbref.com/en/comps/11/3260/stats/2019-2020-Serie-A-Stats",
+                "https://fbref.com/en/comps/11/3260/shooting/2019-2020-Serie-A-Stats",
+                "https://fbref.com/en/comps/11/3260/passing/2019-2020-Serie-A-Stats",
+                "https://fbref.com/en/comps/11/3260/passing_types/2019-2020-Serie-A-Stats",
+                "https://fbref.com/en/comps/11/3260/gca/2019-2020-Serie-A-Stats",
+                "https://fbref.com/en/comps/11/3260/defense/2019-2020-Serie-A-Stats",
+                "https://fbref.com/en/comps/11/3260/possession/2019-2020-Serie-A-Stats",
+                "https://fbref.com/en/comps/11/3260/misc/2019-2020-Serie-A-Stats",
+                "https://fbref.com/en/comps/11/3260/keepers/2019-2020-Serie-A-Stats",
+                "https://fbref.com/en/comps/11/3260/keepersadv/2019-2020-Serie-A-Stats"
+            ]
+        }
         else {
             URLs = [
                 "https://fbref.com/en/comps/11/stats/Serie-A-Stats",
@@ -221,6 +266,20 @@ let scrapeBundesligaPages = async () => {
                 "https://fbref.com/en/comps/20/2109/misc/2018-2019-Bundesliga-Stats",
                 "https://fbref.com/en/comps/20/2109/keepers/2018-2019-Bundesliga-Stats",
                 "https://fbref.com/en/comps/20/2109/keepersadv/2018-2019-Bundesliga-Stats"
+            ]
+        }
+        else if (SEASON === "19-20"){
+            URLs = [
+                "https://fbref.com/en/comps/20/3248/stats/2018-2019-Bundesliga-Stats",
+                "https://fbref.com/en/comps/20/3248/shooting/2018-2019-Bundesliga-Stats",
+                "https://fbref.com/en/comps/20/3248/passing/2018-2019-Bundesliga-Stats",
+                "https://fbref.com/en/comps/20/3248/passing_types/2018-2019-Bundesliga-Stats",
+                "https://fbref.com/en/comps/20/3248/gca/2018-2019-Bundesliga-Stats",
+                "https://fbref.com/en/comps/20/3248/defense/2018-2019-Bundesliga-Stats",
+                "https://fbref.com/en/comps/20/3248/possession/2018-2019-Bundesliga-Stats",
+                "https://fbref.com/en/comps/20/3248/misc/2018-2019-Bundesliga-Stats",
+                "https://fbref.com/en/comps/20/3248/keepers/2018-2019-Bundesliga-Stats",
+                "https://fbref.com/en/comps/20/3248/keepersadv/2018-2019-Bundesliga-Stats"
             ]
         }
         else {
@@ -264,7 +323,7 @@ let scrapeLigue1Pages = async () => {
                 "https://fbref.com/en/comps/13/2104/keepersadv/2018-2019-Ligue-1-Stats"
             ]
         }
-        else {
+        else if (SEASON === "19-20"){
             URLs = [
                 "https://fbref.com/en/comps/13/3243/stats/2019-2020-Ligue-1-Stats",
                 "https://fbref.com/en/comps/13/3243/shooting/2019-2020-Ligue-1-Stats",
@@ -276,6 +335,20 @@ let scrapeLigue1Pages = async () => {
                 "https://fbref.com/en/comps/13/3243/misc/2019-2020-Ligue-1-Stats",
                 "https://fbref.com/en/comps/13/3243/keepers/2019-2020-Ligue-1-Stats",
                 "https://fbref.com/en/comps/13/3243/keepersadv/2019-2020-Ligue-1-Stats"
+            ]
+        }
+        else {
+            URLs = [
+                "https://fbref.com/en/comps/13/stats/Ligue-1-Stats",
+                "https://fbref.com/en/comps/13/shooting/Ligue-1-Stats",
+                "https://fbref.com/en/comps/13/passing/Ligue-1-Stats",
+                "https://fbref.com/en/comps/13/passing_types/Ligue-1-Stats",
+                "https://fbref.com/en/comps/13/gca/Ligue-1-Stats",
+                "https://fbref.com/en/comps/13/defense/Ligue-1-Stats",
+                "https://fbref.com/en/comps/13/possession/Ligue-1-Stats",
+                "https://fbref.com/en/comps/13/misc/Ligue-1-Stats",
+                "https://fbref.com/en/comps/13/keepers/Ligue-1-Stats",
+                "https://fbref.com/en/comps/13/keepersadv/Ligue-1-Stats",
             ]
         }
         await loadPages(URLs);
@@ -305,7 +378,7 @@ let scrapeChampionsLeaguePages = async () => {
                 "https://fbref.com/en/comps/8/2102/keepersadv/2018-2019-Champions-League-Stats"
             ]
         }
-        else {
+        else if (SEASON === "19-20"){
             URLs = [
                 "https://fbref.com/en/comps/8/2900/stats/2019-2020-Champions-League-Stats",
                 "https://fbref.com/en/comps/8/2900/shooting/2019-2020-Champions-League-Stats",
@@ -317,6 +390,20 @@ let scrapeChampionsLeaguePages = async () => {
                 "https://fbref.com/en/comps/8/2900/misc/2019-2020-Champions-League-Stats",
                 "https://fbref.com/en/comps/8/2900/keepers/2019-2020-Champions-League-Stats",
                 "https://fbref.com/en/comps/8/2900/keepersadv/2019-2020-Champions-League-Stats"
+            ]
+        }
+        else {
+            URLs = [
+                "https://fbref.com/en/comps/8/stats/Champions-League-Stats",
+                "https://fbref.com/en/comps/8/shooting/Champions-League-Stats",
+                "https://fbref.com/en/comps/8/passing/Champions-League-Stats",
+                "https://fbref.com/en/comps/8/passing_types/Champions-League-Stats",
+                "https://fbref.com/en/comps/8/gca/Champions-League-Stats",
+                "https://fbref.com/en/comps/8/defense/Champions-League-Stats",
+                "https://fbref.com/en/comps/8/possession/Champions-League-Stats",
+                "https://fbref.com/en/comps/8/misc/Champions-League-Stats",
+                "https://fbref.com/en/comps/8/keepers/Champions-League-Stats",
+                "https://fbref.com/en/comps/8/keepersadv/Champions-League-Stats",
             ]
         }
         await loadPages(URLs);
@@ -344,6 +431,20 @@ let scrapeEuropaLeaguePages = async () => {
                 "https://fbref.com/en/comps/19/2103/misc/2018-2019-Europa-League-Stats",
                 "https://fbref.com/en/comps/19/2103/keepers/2018-2019-Europa-League-Stats",
                 "https://fbref.com/en/comps/19/2103/keepersadv/2018-2019-Europa-League-Stats"
+            ]
+        }
+        else if (SEASON === "19-20"){
+            URLs = [
+                "https://fbref.com/en/comps/19/2901/stats/2019-2020-Europa-League-Stats",
+                "https://fbref.com/en/comps/19/2901/shooting/2019-2020-Europa-League-Stats",
+                "https://fbref.com/en/comps/19/2901/passing/2019-2020-Europa-League-Stats",
+                "https://fbref.com/en/comps/19/2901/passing_types/2019-2020-Europa-League-Stats",
+                "https://fbref.com/en/comps/19/2901/gca/2019-2020-Europa-League-Stats",
+                "https://fbref.com/en/comps/19/2901/defense/2019-2020-Europa-League-Stats",
+                "https://fbref.com/en/comps/19/2901/possession/2019-2020-Europa-League-Stats",
+                "https://fbref.com/en/comps/19/2901/misc/2019-2020-Europa-League-Stats",
+                "https://fbref.com/en/comps/19/2901/keepers/2019-2020-Europa-League-Stats",
+                "https://fbref.com/en/comps/19/2901/keepersadv/2019-2020-Europa-League-Stats"
             ]
         }
         else {
@@ -391,9 +492,16 @@ saveJSONs = async (competition) => {
     return new Promise(function (resolve, reject) {
 
         let retrieveJSONPromises = [];
+
+        let unhideTable = competition === "europaLeague";
+
         for (let i=0; i<TABLE_TYPES.length; i++){
-            retrieveJSONPromises.push(retrieveJSON(PAGES[i], TABLE_TYPES[i]))
+            if (TABLE_TYPES[i].startsWith("keeper")){
+                unhideTable = false;
+            }
+            retrieveJSONPromises.push(retrieveJSON(PAGES[i], TABLE_TYPES[i], unhideTable))
         }
+
         Promise.all(retrieveJSONPromises).then(
             (result) => {
                 (async function loop() {
@@ -447,15 +555,30 @@ saveJSONs = async (competition) => {
 };
 
 
-let retrieveJSON = async (page, tableType) => {
+let retrieveJSON = async (page, tableType, unhideTable = false) => {
 
     return new Promise(async function (resolve, reject) {
 
-        let buttonSelector = `#all_stats_${tableType} > div.section_heading > div > ul > li.hasmore > div > ul > li:nth-child(4) > button`; //convert to csv button selector;
+        // await page.waitFor(10000);
+
+        if (unhideTable){
+            let unhideTableButtonSelector = `#stats_${tableType}_control`;
+
+            await page.waitForSelector(unhideTableButtonSelector);
+            await page.evaluate((unhideTableButtonSelector) => document.querySelector(unhideTableButtonSelector).click(), unhideTableButtonSelector);
+
+            let tableSelector = `.table_outer_container`;
+            await page.waitForSelector(tableSelector);
+
+            await page.waitForSelector(unhideTableButtonSelector);
+            await page.evaluate((unhideTableButtonSelector) => document.querySelector(unhideTableButtonSelector).click(), unhideTableButtonSelector);
+        }
+
+        let convertToCsvButtonSelector = `#all_stats_${tableType} > div.section_heading > div > ul > li.hasmore > div > ul > li:nth-child(4) > button`; //convert to csv button selector;
         let csvSelector = `#csv_stats_${tableType}`;
 
         await page.waitForSelector(`#stats_${tableType}`);
-        await page.waitForSelector(buttonSelector);
+        await page.waitForSelector(convertToCsvButtonSelector);
 
         let returnValues = await page.evaluate(async (buttonSelector, csvSelector, tableType) => {
             let playerCodes = [];
@@ -486,7 +609,7 @@ let retrieveJSON = async (page, tableType) => {
             csv[0] = csv[0].join(",");
             csv = csv.join("\n");
             return [csv, playerCodes, playerURLs];
-        }, buttonSelector, csvSelector, tableType);
+        }, convertToCsvButtonSelector, csvSelector, tableType);
 
         let csv = returnValues[0];
         let playerCodes = returnValues[1];
@@ -499,10 +622,12 @@ let retrieveJSON = async (page, tableType) => {
                 hash: true
             });
 
-        // console.log([Object.keys(json).length, playerCodes.length]);
+        //if the table is hidden by default, there seems to be a bug where the table is duplicated in the HTML
+        //therefore, we disregard the second half of the player codes array.
+        let numPlayerCodes = unhideTable ? playerCodes.length / 2 : playerCodes.length;
 
         if (tableType === "standard" || tableType === "keeper"){
-            for (let i=0; i<playerCodes.length; i++){
+            for (let i=0; i<numPlayerCodes; i++){
                 //note that we increment the key by 1 because the fbref CSV row numbers start at 1, not 0
                 json[(i+1).toString(10)]["code"] = playerCodes[i];
                 json[(i+1).toString(10)]["url"] = playerURLs[i];

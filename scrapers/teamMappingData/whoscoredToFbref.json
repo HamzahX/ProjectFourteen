@@ -59,6 +59,102 @@
 	"Norwich": {
 		"fbref": "Norwich City"
 	},
+    "Cardiff": {
+        "fbref": "Cardiff City"
+    },
+    "Fulham": {
+        "fbref": "Fulham"
+    },
+    "Huddersfield": {
+        "fbref": "Huddersfield"
+    },
+    "Leeds": {
+        "fbref": "Leeds United"
+    },
+    "West Bromwich Albion": {
+        "fbref": "West Brom"
+    },
+
+
+
+    "Real Madrid": {
+        "fbref": "Real Madrid"
+    },
+    "Barcelona": {
+        "fbref": "Barcelona"
+    },
+    "Getafe": {
+        "fbref": "Getafe"
+    },
+    "Sevilla": {
+        "fbref": "Sevilla"
+    },
+    "Valencia": {
+        "fbref": "Valencia"
+    },
+    "Atletico Madrid": {
+        "fbref": "Atlético Madrid"
+    },
+    "Villarreal": {
+        "fbref": "Villarreal"
+    },
+    "Real Sociedad": {
+        "fbref": "Real Sociedad"
+    },
+    "Athletic Bilbao": {
+        "fbref": "Athletic Club"
+    },
+    "Granada": {
+        "fbref": "Granada"
+    },
+    "Osasuna": {
+        "fbref": "Osasuna"
+    },
+    "Real Betis": {
+        "fbref": "Betis"
+    },
+    "Levante": {
+        "fbref": "Levante"
+    },
+    "Real Valladolid": {
+        "fbref": "Valladolid"
+    },
+    "Deportivo Alaves": {
+        "fbref": "Alavés"
+    },
+    "Eibar": {
+        "fbref": "Eibar"
+    },
+    "Mallorca": {
+        "fbref": "Mallorca"
+    },
+    "Leganes": {
+        "fbref": "Leganés"
+    },
+    "Celta Vigo": {
+        "fbref": "Celta Vigo"
+    },
+    "Espanyol": {
+        "fbref": "Espanyol"
+    },
+    "Girona": {
+        "fbref": "Girona"
+    },
+    "SD Huesca": {
+        "fbref": "Huesca"
+    },
+    "Rayo Vallecano": {
+        "fbref": "Rayo Vallecano"
+    },
+    "Cadiz": {
+        "fbref": "Cádiz"
+    },
+    "Elche": {
+        "fbref": "Elche"
+    },
+
+
+
 	"Juventus": {
 		"fbref": "Juventus"
 	},
@@ -119,66 +215,27 @@
 	"SPAL 2013": {
 		"fbref": "SPAL"
 	},
-	"Real Madrid": {
-		"fbref": "Real Madrid"
-	},
-	"Barcelona": {
-		"fbref": "Barcelona"
-	},
-	"Getafe": {
-		"fbref": "Getafe"
-	},
-	"Sevilla": {
-		"fbref": "Sevilla"
-	},
-	"Valencia": {
-		"fbref": "Valencia"
-	},
-	"Atletico Madrid": {
-		"fbref": "Atlético Madrid"
-	},
-	"Villarreal": {
-		"fbref": "Villarreal"
-	},
-	"Real Sociedad": {
-		"fbref": "Real Sociedad"
-	},
-	"Athletic Bilbao": {
-		"fbref": "Athletic Club"
-	},
-	"Granada": {
-		"fbref": "Granada"
-	},
-	"Osasuna": {
-		"fbref": "Osasuna"
-	},
-	"Real Betis": {
-		"fbref": "Betis"
-	},
-	"Levante": {
-		"fbref": "Levante"
-	},
-	"Real Valladolid": {
-		"fbref": "Valladolid"
-	},
-	"Deportivo Alaves": {
-		"fbref": "Alavés"
-	},
-	"Eibar": {
-		"fbref": "Eibar"
-	},
-	"Mallorca": {
-		"fbref": "Mallorca"
-	},
-	"Leganes": {
-		"fbref": "Leganés"
-	},
-	"Celta Vigo": {
-		"fbref": "Celta Vigo"
-	},
-	"Espanyol": {
-		"fbref": "Espanyol"
-	},
+    "Empoli": {
+        "fbref": "Empoli"
+    },
+    "Frosinone": {
+        "fbref": "Frosinone"
+    },
+    "Chievo": {
+        "fbref": "Chievo"
+    },
+    "Benevento": {
+        "fbref": "Benevento"
+    },
+    "Crotone": {
+        "fbref": "Crotone"
+    },
+    "Spezia": {
+        "fbref": "Spezia"
+    },
+
+
+
 	"Bayern Munich": {
 		"fbref": "Bayern Munich"
 	},
@@ -236,6 +293,18 @@
 	"VfB Stuttgart": {
 		"fbref": "Stuttgart"
 	},
+    "Hannover 96": {
+        "fbref": "Hannover 96"
+    },
+    "Nuernberg": {
+        "fbref": "Nürnberg"
+    },
+    "Arminia Bielefeld": {
+        "fbref": "Arminia"
+    },
+
+
+
 	"Paris Saint-Germain": {
 		"fbref": "Paris S-G"
 	},
@@ -296,45 +365,21 @@
 	"Toulouse": {
 		"fbref": "Toulouse"
 	},
-	"Cardiff": {
-		"fbref": "Cardiff City"
-	},
-	"Fulham": {
-		"fbref": "Fulham"
-	},
-	"Huddersfield": {
-		"fbref": "Huddersfield"
-	},
-	"Girona": {
-		"fbref": "Girona"
-	},
-	"SD Huesca": {
-		"fbref": "Huesca"
-	},
-	"Rayo Vallecano": {
-		"fbref": "Rayo Vallecano"
-	},
-	"Empoli": {
-		"fbref": "Empoli"
-	},
-	"Frosinone": {
-		"fbref": "Frosinone"
-	},
-	"Chievo": {
-		"fbref": "Chievo"
-	},
-	"Hannover 96": {
-		"fbref": "Hannover 96"
-	},
-	"Nuernberg": {
-		"fbref": "Nürnberg"
-	},
 	"Caen": {
 		"fbref": "Caen"
 	},
 	"Guingamp": {
 		"fbref": "Guingamp"
 	},
+    "Lorient": {
+        "fbref": "Lorient"
+    },
+    "Lens": {
+        "fbref": "Lens"
+    },
+
+
+
 	"Ajax": {
 		"fbref": "Ajax"
 	},
@@ -389,6 +434,12 @@
 	"FC Basel 1893": {
 		"fbref": "Basel"
 	},
+    "FC Midtjylland": {
+        "fbref": "Midtjylland"
+    },
+
+
+
 	"AEK Athens": {
 		"fbref": "AEK Athens"
 	},
@@ -529,5 +580,44 @@
 	},
 	"Anderlecht": {
 		"fbref": "Anderlecht"
-	}
+	},
+    "Royal Antwerp": {
+        "fbref": "Antwerp"
+    },
+    "Molde": {
+        "fbref": "Molde"
+    },
+    "Maccabi Tel Aviv": {
+        "fbref": "Maccabi Tel Aviv"
+    },
+    "Hapoel Beer Sheva": {
+        "fbref": "Be'er Sheva"
+    },
+    "PFC CSKA-Sofia": {
+        "fbref": "CSKA Sofia"
+    },
+    "Omonia Nicosia": {
+        "fbref": "AC Omonia"
+    },
+    "Sivasspor": {
+        "fbref": "Sivasspor"
+    },
+    "Lech Poznan": {
+        "fbref": "Lech Poznań"
+    },
+    "Rijeka": {
+        "fbref": "Rijeka"
+    },
+    "Slovan Liberec": {
+        "fbref": "lovan Liberec"
+    },
+    "Dundalk": {
+        "fbref": "Dundalk"
+    },
+    "Zorya": {
+        "fbref": "Zorya Luhansk"
+    },
+    "Sparta Prague": {
+        "fbref": "Sparta Prague"
+    }
 }

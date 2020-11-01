@@ -1,24 +1,27 @@
+//initialize constants
+const puppeteer = require('puppeteer');
+const path = require('path');
+const fs = require('fs');
+
+const scriptName = path.basename(__filename);
+const suppotedSeasons = ["18-19", "19-20", "20-21"];
+
 var SEASON;
 //parse command line arguments to get the season
 let ARGS = process.argv.slice(2);
 if (ARGS.length !== 1){
-    console.log("Incorrect number of args. Usage: node possessionScraper <season>");
+    console.log(`Incorrect number of args. Usage: node ${scriptName} <season>`);
     process.exit(-1);
 }
 else {
-    if (ARGS[0] !== "18-19" && ARGS[0] !== "19-20"){
-        console.log("Incorrect args.");
+    if (!suppotedSeasons.includes(ARGS[0])){
+        console.log("Incorrect season arg. Supported seasons are supportedSeason");
         process.exit(-1);
     }
     else {
         SEASON = ARGS[0];
     }
 }
-
-//initialize constants
-const puppeteer = require('puppeteer');
-const path = require('path');
-const fs = require('fs');
 
 //globals
 var BROWSER;
@@ -35,14 +38,25 @@ if (SEASON === "18-19"){
         "https://fbref.com/en/comps/19/2103/stats/2018-2019-Europa-League-Stats"
     ];
 }
+else if (SEASON === "19-20"){
+    URLs = [
+        "https://fbref.com/en/comps/9/3232/2019-2020-Premier-League-Stats",
+        "https://fbref.com/en/comps/12/3239/2019-2020-La-Liga-Stats",
+        "https://fbref.com/en/comps/11/3260/2019-2020-Serie-A-Stats",
+        "https://fbref.com/en/comps/20/3248/2019-2020-Bundesliga-Stats",
+        "https://fbref.com/en/comps/13/3243/2019-2020-Ligue-1-Stats",
+        "https://fbref.com/en/comps/8/2900/stats/2019-2020-Champions-League-Stats",
+        "https://fbref.com/en/comps/19/2901/stats/2019-2020-Europa-League-Stats"
+    ];
+}
 else {
     URLs = [
         "https://fbref.com/en/comps/9/Premier-League-Stats",
         "https://fbref.com/en/comps/12/La-Liga-Stats",
         "https://fbref.com/en/comps/11/Serie-A-Stats",
         "https://fbref.com/en/comps/20/Bundesliga-Stats",
-        "https://fbref.com/en/comps/13/3243/2019-2020-Ligue-1-Stats",
-        "https://fbref.com/en/comps/8/2900/stats/2019-2020-Champions-League-Stats",
+        "https://fbref.com/en/comps/13/Ligue-1-Stats",
+        "https://fbref.com/en/comps/8/stats/Champions-League-Stats",
         "https://fbref.com/en/comps/19/stats/Europa-League-Stats"
     ];
 }
