@@ -76,6 +76,8 @@ const COMPETITION_NAMES = [
 ];
 var metadataArray = [];
 
+var WHOSCORED_TO_FBREF_PLAYERS = JSON.parse(fs.readFileSync(path.join(__dirname, '/playerMappingData/whoscoredToFbref.json')));
+
 //load position data; the list of players who play in each position
 let FWPlayers = JSON.parse(fs.readFileSync(path.join(__dirname, `/positionData/${SEASON}/FWPlayers.json`)))['codes'];
 let AMPlayers = JSON.parse(fs.readFileSync(path.join(__dirname, `/positionData/${SEASON}/AMPlayers.json`)))['codes'];
@@ -180,12 +182,12 @@ let pageSetup = async (page, isFirstIteration, competitionName) => {
             await page.waitForSelector('#player-table-statistics-body');
 
             //if it's not a European competition, set the minimum number of appearances to 4 (more than 3)
-            if (competitionName !== "Champions League" && competitionName !== "Europa League"){
-                await page.select('#appearancesComparisonType', '2');
-                await page.focus('#appearances');
-                await page.keyboard.press('Backspace');
-                await page.keyboard.type('3');
-            }
+            // if (competitionName !== "Champions League" && competitionName !== "Europa League"){
+            //     await page.select('#appearancesComparisonType', '2');
+            //     await page.focus('#appearances');
+            //     await page.keyboard.press('Backspace');
+            //     await page.keyboard.type('3');
+            // }
 
             // select 'total' from 'accumulation' drop-down
             await page.select('#statsAccumulationType', '2');
@@ -225,21 +227,15 @@ let scrapingLoop = async (page, competitionName) => {
     await page.evaluate((competitionName) => {
 
         window.initializePlayer = function(data, playerLink, club) {
-            // let url = playerLink.substring(playerLink.indexOf('href="')+6, playerLink.indexOf('">', 0));
-            // url = url.replace("/Players/", "");
-            // let playerCode = url.substring(0, url.indexOf("/"));
             let url = playerLink.getAttribute("href");
             url = url.replace("/Players/", "");
             let playerCode = url.substring(0, url.indexOf("/"));
 
-            // let clubName = club.substring(club.indexOf('"team-name">')+12, club.indexOf(', </span', 0)).replace(".", "'");
             let clubName = club.textContent;
             clubName = clubName
                 .substring(0, clubName.indexOf(","))
                 .replace(".", "'");
             let competitionAndClub = `${competitionName} | ${clubName}`;
-
-            console.log(club);
 
             playerCode = playerCode + "|" + clubName;
             data[playerCode] = {};
@@ -290,7 +286,7 @@ let scrapingLoop = async (page, competitionName) => {
  */
 let scrapeMetadata = async (page) => {
 
-    return await page.evaluate((SEASON) => {
+    return await page.evaluate((SEASON, WHOSCORED_TO_FBREF_PLAYERS) => {
 
         let data = {};
 
@@ -331,6 +327,15 @@ let scrapeMetadata = async (page) => {
             let apps = parseInt(starts.innerText);
             let mins = parseInt(minutes.innerText);
 
+            //when scraping for a league season, a player is only included if they've made 4+ apps or if they are
+            //already in the database
+            if (!aCompetition.startsWith("Champions League") && !aCompetition.startsWith("Europa League")){
+                if (apps < 4 && WHOSCORED_TO_FBREF_PLAYERS[aPlayer.split("|")[0]] === undefined){
+                    delete data[aPlayer];
+                    continue;
+                }
+            }
+
             data[aPlayer]['name'] = playerName;
             data[aPlayer]['age'] = parseInt(playerAge, 10);
             data[aPlayer]['countryCode'] = playerCountryCode;
@@ -342,7 +347,7 @@ let scrapeMetadata = async (page) => {
             data[aPlayer][SEASON][aCompetition]['whoscoredMins'] = mins;
         }
         return data;
-    }, SEASON);
+    }, SEASON, WHOSCORED_TO_FBREF_PLAYERS);
 
 };
 

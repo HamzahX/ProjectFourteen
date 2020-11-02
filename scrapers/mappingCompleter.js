@@ -62,17 +62,18 @@ let saveMapping = async () => {
         for (let whoscoredCode in METADATA){
             let fbrefCode = WHOSCORED_TO_FBREF_PLAYERS[whoscoredCode];
             if (fbrefCode === undefined || whoscoredCode === fbrefCode){
+                console.log("Unmapped player. Check player mapping files");
                 reject();
             }
         }
         await fs.writeFile(path.join(__dirname, `playerMappingData/fbrefToWhoscored.json`), JSON.stringify(FBREF_TO_WHOSCORED_PLAYERS, null, '\t'), async function(err) {
             if (err) {
-                console.log(err);
+                console.log("HERE");
                 reject();
             }
             await fs.writeFile(path.join(__dirname, `playerMappingData/whoscoredToFbref.json`), JSON.stringify(WHOSCORED_TO_FBREF_PLAYERS, null, '\t'), async function(err) {
                 if (err) {
-                    console.log(err);
+                    console.log("HERE");
                     reject();
                 }
                 else {
@@ -90,9 +91,9 @@ setup()
     .then(async () => {
         await completeMapping();
     })
-    .then(async () => {
-        await saveMapping();
-    })
+    // .then(async () => {
+    //     await saveMapping();
+    // })
     .then(() => {
         console.timeEnd('mapping completion');
         process.exit(0);

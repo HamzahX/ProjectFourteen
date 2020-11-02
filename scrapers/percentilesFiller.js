@@ -1,23 +1,26 @@
+//initialize constants
+const path = require('path');
+const fs = require('fs');
+
+const scriptName = path.basename(__filename);
+const suppotedSeasons = ["18-19", "19-20", "20-21"];
+
 var SEASON;
 //parse command line arguments to get the season
 let ARGS = process.argv.slice(2);
 if (ARGS.length !== 1){
-    console.log("Incorrect number of args. Usage: node percentilesGenerator <season>");
+    console.log(`Incorrect number of args. Usage: node ${scriptName} <season>`);
     process.exit(-1);
 }
 else {
-    if (ARGS[0] !== "18-19" && ARGS[0] !== "19-20"){
-        console.log("Incorrect season arg. Supported seasons are 18-19 and 19-20");
+    if (!suppotedSeasons.includes(ARGS[0])){
+        console.log("Incorrect season arg. Supported seasons are supportedSeason");
         process.exit(-1);
     }
     else {
         SEASON = ARGS[0];
     }
 }
-
-//initialize constants
-const path = require('path');
-const fs = require('fs');
 
 //globals
 var PROCESSED;

@@ -1,23 +1,26 @@
+//initialize constants
+const path = require('path');
+const fs = require('fs');
+
+const scriptName = path.basename(__filename);
+const suppotedSeasons = ["18-19", "19-20", "20-21"];
+
 var SEASON;
 //parse command line arguments to get the season
 let ARGS = process.argv.slice(2);
 if (ARGS.length !== 1){
-    console.log("Incorrect number of args. Usage: node lookupStatsFiller <season>");
+    console.log(`Incorrect number of args. Usage: node ${scriptName} <season>`);
     process.exit(-1);
 }
 else {
-    if (ARGS[0] !== "18-19" && ARGS[0] !== "19-20"){
-        console.log("Incorrect season arg. Supported seasons are 18-19 and 19-20");
+    if (!suppotedSeasons.includes(ARGS[0])){
+        console.log("Incorrect season arg. Supported seasons are supportedSeason");
         process.exit(-1);
     }
     else {
         SEASON = ARGS[0];
     }
 }
-
-//initialize constants
-const path = require('path');
-const fs = require('fs');
 
 //globals
 var PROCESSED;
@@ -51,9 +54,18 @@ let calculaterawStats = async () => {
 
     for (let stat in ALL_STATS){
 
-        ALL_STATS[stat]["ranges"][SEASON] = {
-            "min": Infinity,
-            "max": -Infinity
+        if (stat === "age"){
+            ALL_STATS[stat]["ranges"] = {
+                "min": Infinity,
+                "max": -Infinity
+            }
+        }
+
+        else {
+            ALL_STATS[stat]["ranges"][SEASON] = {
+                "min": Infinity,
+                "max": -Infinity
+            }
         }
 
     }
@@ -157,15 +169,21 @@ let calculaterawStats = async () => {
 
         }
 
-        //same as above but for season ages
-        if (PROCESSED[player]["ages"][SEASON] < ALL_STATS["age"]["ranges"][SEASON]["min"]){
-            ALL_STATS["age"]["ranges"][SEASON]["min"] = PROCESSED[player]["ages"][SEASON];
-            ALL_STATS["age"]["ranges"][SEASON]["minName"] = PROCESSED[player]["name"];
+
+
+    }
+
+    //same as above but for season ages
+    for (let player in PROCESSED){
+
+        if (PROCESSED[player]["age"] < ALL_STATS["age"]["ranges"]["min"]){
+            ALL_STATS["age"]["ranges"]["min"] = PROCESSED[player]["age"];
+            ALL_STATS["age"]["ranges"]["minName"] = PROCESSED[player]["name"];
         }
 
-        if (PROCESSED[player]["ages"][SEASON] > ALL_STATS["age"]["ranges"][SEASON]["max"]){
-            ALL_STATS["age"]["ranges"][SEASON]["max"] = PROCESSED[player]["ages"][SEASON];
-            ALL_STATS["age"]["ranges"][SEASON]["maxName"] = PROCESSED[player]["name"];
+        if (PROCESSED[player]["age"][SEASON] > ALL_STATS["age"]["ranges"]["max"]){
+            ALL_STATS["age"]["ranges"]["max"] = PROCESSED[player]["age"];
+            ALL_STATS["age"]["ranges"]["maxName"] = PROCESSED[player]["name"];
         }
 
     }
@@ -191,6 +209,10 @@ let calculatePercentileRanks = async () => {
 
         let positions = PROCESSED[player]["percentileEntries"][SEASON];
         let rawStats = PROCESSED[player]["lookupStats"]["rawStats"][SEASON];
+
+        if (rawStats === undefined){
+            console.log(player);
+        }
 
         for (let i=0; i<positions.length; i++){
 

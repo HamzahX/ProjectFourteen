@@ -1,24 +1,27 @@
+//initialize helpers
+const path = require('path');
+const fs = require('fs');
+const countryCodes = require('./countryCodes.js');
+
+const scriptName = path.basename(__filename);
+const suppotedSeasons = ["18-19", "19-20", "20-21"];
+
 var SEASON;
 //parse command line arguments to get the season
 let ARGS = process.argv.slice(2);
 if (ARGS.length !== 1){
-    console.log("Incorrect number of args. Usage: node statsFiller <season>");
+    console.log(`Incorrect number of args. Usage: node ${scriptName} <season>`);
     process.exit(-1);
 }
 else {
-    if (ARGS[0] !== "18-19" && ARGS[0] !== "19-20"){
-        console.log("Incorrect season arg. Supported seasons are 18-19 and 19-20");
+    if (!suppotedSeasons.includes(ARGS[0])){
+        console.log("Incorrect season arg. Supported seasons are supportedSeason");
         process.exit(-1);
     }
     else {
         SEASON = ARGS[0];
     }
 }
-
-//initialize helpers
-const path = require('path');
-const fs = require('fs');
-const countryCodes = require('./countryCodes.js');
 
 //globals to store mappings
 var FBREF_TO_WHOSCORED_PLAYERS;
@@ -244,7 +247,7 @@ let processEntry = (aPlayer, competitionData, competitionName, isGoalkeeper) => 
     let whoscoredCode = FBREF_TO_WHOSCORED_PLAYERS[fbrefCode];
 
     //exit the function if the player doesn't exist in the mapping
-    if (whoscoredCode === undefined){
+    if (whoscoredCode === undefined || METADATA[whoscoredCode] === undefined){
         return;
     }
 
@@ -269,8 +272,7 @@ let processEntry = (aPlayer, competitionData, competitionName, isGoalkeeper) => 
         PROCESSED[whoscoredCode]["name2"] = fbrefName;
         PROCESSED[whoscoredCode]["simplifiedName"] = metadata["simplifiedName"];
         PROCESSED[whoscoredCode]["simplifiedName2"] = fbrefSimplifiedName;
-        PROCESSED[whoscoredCode]["currentAge"] = metadata["age"];
-        PROCESSED[whoscoredCode]["ages"] = {};
+        PROCESSED[whoscoredCode]["age"] = metadata["age"];
         PROCESSED[whoscoredCode]["nationality"] = metadata["nationality"] === "" ? countryCodes.getCountryName(entry['standard_Nation'].split(" ")[0].toUpperCase()) : metadata["nationality"];
         PROCESSED[whoscoredCode]["countryCode"] = metadata["countryCode"] === "" ? countryCodes.cleanCountryCode(entry['standard_Nation'].split(" ")[0]) : metadata["countryCode"];
         PROCESSED[whoscoredCode]["positions"] = metadata["positions"];
@@ -300,7 +302,6 @@ let processEntry = (aPlayer, competitionData, competitionName, isGoalkeeper) => 
     let stats;
     if (isGoalkeeper){
         stats = {
-            age: entry["keeper_Age"],
             minutes: entry["keeper_Min"],
             goalsAgainst: entry["keeper_adv_GA"] - entry["keeper_adv_OG"],
             psxg: entry["keeper_adv_PSxG"],
@@ -313,7 +314,6 @@ let processEntry = (aPlayer, competitionData, competitionName, isGoalkeeper) => 
     }
     else {
         stats = {
-            age: entry["standard_Age"],
             minutes: entry["standard_Min"],
             touches: entry["possession_Touches"],
             npg: entry["standard_Gls"] - entry["standard_PK"],
@@ -356,9 +356,6 @@ let processEntry = (aPlayer, competitionData, competitionName, isGoalkeeper) => 
             }
         }
     }
-
-    //populate the player ages
-    PROCESSED[whoscoredCode]["ages"][SEASON] = stats['age'];
 
     //populate the player stats
     if (METADATA[whoscoredCode][SEASON] !== undefined){

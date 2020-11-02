@@ -195,12 +195,13 @@ let processEntry = (aPlayer, competitionData, competitionName, isGoalkeeper) => 
     }
 
     //get the fbref name, apps, club and nationality
-    let query, apps, mins, club, nationality;
+    let query, apps, mins, club, age, nationality;
     if (!isGoalkeeper){
         query = playerInfo['standard_Player'].substring(0, playerInfo['standard_Player'].indexOf('\\'));
         apps = playerInfo['standard_MP'];
         mins = playerInfo['standard_Min'];
         club = playerInfo['standard_Squad'];
+        age = parseInt(playerInfo['standard_Age'].split("-")[0]);
         nationality = playerInfo['standard_Nation'].split(" ")[0];
     }
     else {
@@ -208,6 +209,7 @@ let processEntry = (aPlayer, competitionData, competitionName, isGoalkeeper) => 
         apps = playerInfo['keeper_MP'];
         mins = playerInfo['keeper_Min'];
         club = playerInfo['keeper_Squad'];
+        age = parseInt(playerInfo['keeper_Age'].split("-")[0]);
         nationality = playerInfo['keeper_Nation'].split(" ")[0];
     }
     if (apps < 4 && competitionName !== "Champions League" && competitionName !== "Europa League"){
@@ -225,13 +227,12 @@ let processEntry = (aPlayer, competitionData, competitionName, isGoalkeeper) => 
         whoscoredClub = FBREF_TO_WHOSCORED_TEAMS[club]["whoscored"];
     }
     else {
+        console.log(club);
         return;
     }
     //find all potential whoscored matches
-    let matches = findMatches(query, whoscoredClub, isGoalkeeper);
-    // if (matches.length !== 0){
-    //     console.log(matches);
-    // }
+    let matches = findMatches(query, whoscoredClub, age, isGoalkeeper);
+
     if (matches.length === 1){
         processMatch(matches[0], competitionName, whoscoredClub, apps, mins, code, nationality, "single");
     }
@@ -245,7 +246,7 @@ let processEntry = (aPlayer, competitionData, competitionName, isGoalkeeper) => 
 };
 
 
-let findMatches = (fbrefName, club, isGoalkeeper) => {
+let findMatches = (fbrefName, club, age, isGoalkeeper) => {
 
     let matchesCounter = {};
 
@@ -267,10 +268,9 @@ let findMatches = (fbrefName, club, isGoalkeeper) => {
             continue;
         }
 
-        //get the whoscored name without diacritics and convert it to lower case (for comparisons)
-        let whoscoredName = METADATA[player]['simplifiedName'].toLowerCase();
-        //split the whoscored name into an array. split by spaces and dashes
-        let whoscoredNameParts = whoscoredName.split(" ").join("-").split("-");
+        if (METADATA[player]["age"] !== age){
+            continue;
+        }
 
         //get a list of clubs a player in PROCESSED has played for in the relevant season
         let clubList = [];
@@ -280,6 +280,12 @@ let findMatches = (fbrefName, club, isGoalkeeper) => {
 
         //check if the current player has an entry for the query club
         if (clubList.includes(club)){
+
+            //get the whoscored name without diacritics and convert it to lower case (for comparisons)
+            let whoscoredName = METADATA[player]['simplifiedName'].toLowerCase();
+            //split the whoscored name into an array. split by spaces and dashes
+            let whoscoredNameParts = whoscoredName.split(" ").join("-").split("-");
+
             //double loop through whoscored name and fbref name and count matches in results dict
             for (let i=0; i<whoscoredNameParts.length; i++){
                 for (let j=0; j<fbrefNameParts.length; j++){
@@ -293,12 +299,9 @@ let findMatches = (fbrefName, club, isGoalkeeper) => {
                     }
                 }
             }
+
         }
 
-    }
-
-    if (fbrefName === "adrien truffert"){
-        console.log(matchesCounter);
     }
 
     let matches = [];
@@ -325,7 +328,9 @@ let findMatches = (fbrefName, club, isGoalkeeper) => {
 let processMatch = (match, competitionName, whoscoredClub, apps, mins, fbrefCode, nationality, matchType) => {
 
     let entries = match[SEASON];
+
     for (let entry in entries){
+
         if (
             entry === `${competitionName} | ${whoscoredClub}`
             && match[SEASON][entry]["whoscoredApps"] === apps
