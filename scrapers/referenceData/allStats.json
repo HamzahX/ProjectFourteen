@@ -29,9 +29,9 @@
 				"maxName": "Mariano"
 			},
 			"20-21": {
-				"min": -0.6122448979591837,
+				"min": -0.47619047619047616,
 				"max": 8.181818181818182,
-				"minName": "Hatem Ben Arfa",
+				"minName": "Christian Gentner",
 				"maxName": "Jessic Ngankam"
 			}
 		}
@@ -82,9 +82,9 @@
 			},
 			"20-21": {
 				"min": -0.1,
-				"max": 0.8,
+				"max": 1,
 				"minName": "Jorginho",
-				"maxName": "Toni Lato"
+				"maxName": "Luis Rioja"
 			}
 		}
 	},
@@ -124,7 +124,7 @@
 				"min": 0,
 				"max": 100,
 				"minName": "Jermain Defoe",
-				"maxName": "Raúl García"
+				"maxName": "Carlos Sánchez"
 			},
 			"19-20": {
 				"min": 0,
@@ -188,7 +188,7 @@
 				"min": 0,
 				"max": 100,
 				"minName": "Wes Morgan",
-				"maxName": "Pawel Dawidowicz"
+				"maxName": "Fernando Niño"
 			}
 		}
 	},
@@ -212,9 +212,9 @@
 			},
 			"20-21": {
 				"min": 0,
-				"max": 1.8000000000000003,
+				"max": 5.25,
 				"minName": "Cristiano Ronaldo",
-				"maxName": "Riccardo Saponara"
+				"maxName": "Noah Joel Sarenren Bazee"
 			}
 		}
 	},
@@ -238,9 +238,9 @@
 			},
 			"20-21": {
 				"min": 0,
-				"max": 4,
+				"max": 5.384615384615384,
 				"minName": "Cristiano Ronaldo",
-				"maxName": "Eric Maxim Choupo-Moting"
+				"maxName": "Noah Joel Sarenren Bazee"
 			}
 		}
 	},
@@ -472,7 +472,7 @@
 			},
 			"20-21": {
 				"min": 0,
-				"max": 73.10284147185432,
+				"max": 82.3683706606168,
 				"minName": "Robert Snodgrass",
 				"maxName": "Victor Mollejo"
 			}
@@ -706,9 +706,9 @@
 			},
 			"20-21": {
 				"min": 0,
-				"max": 10.714147537194313,
+				"max": 8.6006728176919,
 				"minName": "Cristiano Ronaldo",
-				"maxName": "Valentino Lazaro"
+				"maxName": "Guido Carrillo"
 			}
 		}
 	},
@@ -758,7 +758,7 @@
 			},
 			"20-21": {
 				"min": 0,
-				"max": 49.478490397831834,
+				"max": 43.61766497933313,
 				"minName": "Cristiano Ronaldo",
 				"maxName": "Robert Snodgrass"
 			}
@@ -811,7 +811,7 @@
 			"20-21": {
 				"min": 0,
 				"max": 100,
-				"minName": "Cristiano Ronaldo",
+				"minName": "Jimmy Briand",
 				"maxName": "Franck Ribéry"
 			}
 		}
@@ -862,7 +862,7 @@
 			},
 			"20-21": {
 				"min": 0,
-				"max": 70.42047987808012,
+				"max": 68.84530233873882,
 				"minName": "Cristiano Ronaldo",
 				"maxName": "Federico Peluso"
 			}
@@ -914,7 +914,7 @@
 			},
 			"20-21": {
 				"min": 0,
-				"max": 70.42047987808012,
+				"max": 68.84530233873882,
 				"minName": "Cristiano Ronaldo",
 				"maxName": "Federico Peluso"
 			}
@@ -991,10 +991,10 @@
 				"maxName": "Ciprian Tatarusanu"
 			},
 			"20-21": {
-				"min": 22.58064516129032,
-				"max": 71.42857142857143,
-				"minName": "Juan Musso",
-				"maxName": "Alex Meret"
+				"min": 27.083333333333332,
+				"max": 85.71428571428571,
+				"minName": "Jordi Masip",
+				"maxName": "Robin Olsen"
 			}
 		}
 	}

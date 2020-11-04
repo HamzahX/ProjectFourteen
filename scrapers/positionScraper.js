@@ -114,8 +114,8 @@ let pageSetup = async (page, isFirstIteration, position) => {
             await page.select('#appearancesComparisonType', '2');
             await page.focus('#appearances');
             await page.keyboard.press('Backspace');
-            // await page.keyboard.press('Backspace');
-            await page.keyboard.type('3');
+            await page.keyboard.press('Backspace');
+            await page.keyboard.type(SEASON === "20-21" ? '3' : '9');
 
             // select 'total' from 'accumulation' drop-down
             await page.select('#statsAccumulationType', '2');

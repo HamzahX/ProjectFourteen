@@ -91,9 +91,9 @@ setup()
     .then(async () => {
         await completeMapping();
     })
-    // .then(async () => {
-    //     await saveMapping();
-    // })
+    .then(async () => {
+        await saveMapping();
+    })
     .then(() => {
         console.timeEnd('mapping completion');
         process.exit(0);

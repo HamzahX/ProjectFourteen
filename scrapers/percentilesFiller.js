@@ -307,6 +307,11 @@ let calculateFBStats = async () => {
     for (let i=0; i<FB_CODES.length; i++){
 
         let code = FB_CODES[i];
+
+        if (PROCESSED[code] === undefined){
+            console.log(code);
+        }
+
         let aggregatedStats = aggregateStats(PROCESSED[code]["stats"][SEASON]);
         let minutes = aggregatedStats["minutes"];
         let touches = aggregatedStats["touches"];
