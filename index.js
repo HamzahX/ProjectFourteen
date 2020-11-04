@@ -19,8 +19,18 @@ var DB;
 var CLUBS_COLLECTION;
 var COUNTRIES_COLLECTION;
 var STATS_REFERENCE_COLLECTION;
+var STATS_BY_POSITION_COLLECTION;
 var PLAYERS_COLLECTION;
 var PERCENTILE_ARRAYS_COLLECTION;
+
+var STATS_BY_POSITION = {
+    "FW": [],
+    "AM": [],
+    "CM": [],
+    "FB": [],
+    "CB": [],
+    "GK": []
+};
 
 //percentile arrays
 var PERCENTILE_ARRAYS = {
@@ -40,6 +50,14 @@ var PERCENTILE_ARRAYS = {
         'CB': [],
         'GK': []
     },
+    "20-21": {
+        'FW': [],
+        'AM': [],
+        'CM': [],
+        'FB': [],
+        'CB': [],
+        'GK': []
+    },
     "combined": {
         'FW': [],
         'AM': [],
@@ -49,6 +67,113 @@ var PERCENTILE_ARRAYS = {
         'GK': []
     },
     "lastUpdated": null
+};
+
+
+/**
+ * Establishes a connection to the MongoDB database
+ * @returns {Promise<*>} Promise resolves when the connection has been successfully made
+ */
+let connectToDatabase = async () => {
+
+    return new Promise(function(resolve, reject) {
+
+        console.time('database connection');
+
+        //establish a connection to the database
+        mongoClient.connect(mongoURI, {useUnifiedTopology: true},function (err, client) {
+            if (err){
+                reject()
+            }
+            else {
+                DB = client.db("ProjectFourteen");
+
+                if (process.env.NODE_ENV === "production"){
+                    console.log("production");
+                    CLUBS_COLLECTION = DB.collection('Clubs');
+                    COUNTRIES_COLLECTION = DB.collection("Countries");
+                    STATS_REFERENCE_COLLECTION = DB.collection("StatsReferenceData");
+                    STATS_BY_POSITION_COLLECTION = DB.collection("StatsByPosition");
+                    PLAYERS_COLLECTION = DB.collection('Players');
+                    PERCENTILE_ARRAYS_COLLECTION = DB.collection('PercentileArrays');
+                }
+                else {
+                    console.log("development");
+                    CLUBS_COLLECTION = DB.collection('Clubs_Dev');
+                    COUNTRIES_COLLECTION = DB.collection("Countries_Dev");
+                    STATS_REFERENCE_COLLECTION = DB.collection("StatsReferenceData_Dev");
+                    STATS_BY_POSITION_COLLECTION = DB.collection("StatsByPosition_Dev");
+                    PLAYERS_COLLECTION = DB.collection('Players_Dev');
+                    PERCENTILE_ARRAYS_COLLECTION = DB.collection('PercentileArrays_Dev');
+                }
+                console.timeEnd('database connection');
+                resolve();
+            }
+        })
+
+    });
+
+};
+
+
+/**
+ * Retrieves the percentile arrays from the MongoDB database.
+ * @returns {Promise<*>} Promise resolves if the arrays have been successfully retrieved, rejects otherwise
+ */
+let getPercentileArrays = async () => {
+
+    return new Promise(async function(resolve, reject){
+
+        //retrieve all percentile arrays from the database
+        PERCENTILE_ARRAYS_COLLECTION.find({}).toArray(async function (err, docs) {
+            if (err){
+                reject();
+            }
+            else if (docs.length === 0){
+                reject();
+            }
+            else {
+                //populate the percentile array object and record the time of their last update
+                for (let i=0; i<docs.length; i++){
+                    PERCENTILE_ARRAYS[docs[i].season][docs[i].position] = docs[i].stats;
+                }
+                PERCENTILE_ARRAYS['lastUpdated'] = docs[0].lastUpdated;
+                resolve();
+            }
+        });
+
+    });
+
+};
+
+
+/**
+ * Retrieves the stats by position arrays from the MongoDB database.
+ * @returns {Promise<*>} Promise resolves if the arrays have been successfully retrieved, rejects otherwise
+ */
+let getStatsByPosition = async () => {
+
+    return new Promise(async function(resolve, reject){
+
+        //retrieve all percentile arrays from the database
+        STATS_BY_POSITION_COLLECTION.find({}).toArray(async function (err, docs) {
+            if (err){
+                reject();
+            }
+            else if (docs.length === 0){
+                reject();
+            }
+            else {
+                //populate the percentile array object and record the time of their last update
+                for (let i=0; i<docs.length; i++){
+                    STATS_BY_POSITION[docs[i].position] = docs[i].stats;
+                }
+                resolve();
+            }
+        });
+
+    });
+
 };
 
 
@@ -227,7 +352,8 @@ app.post('/api/stats', (req, res) => {
             if (req.body.percentilesTimestamp === undefined || clientLastUpdate === serverLastUpdate){
                 setTimeout(function(){
                     res.json({
-                        data: data
+                        data: data,
+                        statsByPosition: STATS_BY_POSITION
                     });
                 }, 300)
             }
@@ -235,6 +361,7 @@ app.post('/api/stats', (req, res) => {
                 setTimeout(function(){
                     res.json({
                         data: data,
+                        statsByPosition: STATS_BY_POSITION,
                         newPercentileArrays: PERCENTILE_ARRAYS
                     })
                 }, 300)
@@ -270,7 +397,8 @@ app.post('/api/comparisonStats', (req, res) => {
             if (req.body.percentilesTimestamp === undefined || clientLastUpdate === serverLastUpdate){
                 setTimeout(function(){
                     res.json({
-                        data: data
+                        data: data,
+                        statsByPosition: STATS_BY_POSITION
                     });
                 }, 300)
             }
@@ -278,6 +406,7 @@ app.post('/api/comparisonStats', (req, res) => {
                 setTimeout(function(){
                     res.json({
                         data: data,
+                        statsByPosition: STATS_BY_POSITION,
                         newPercentileArrays: PERCENTILE_ARRAYS
                     })
                 }, 300)
@@ -291,81 +420,6 @@ app.post('/api/comparisonStats', (req, res) => {
         });
 
 });
-
-
-/**
- * Establishes a connection to the MongoDB database
- * @returns {Promise<*>} Promise resolves when the connection has been successfully made
- */
-let connectToDatabase = async () => {
-
-    return new Promise(function(resolve, reject) {
-
-        console.time('database connection');
-
-        //establish a connection to the database
-        mongoClient.connect(mongoURI, {useUnifiedTopology: true},function (err, client) {
-            if (err){
-                reject()
-            }
-            else {
-                DB = client.db("ProjectFourteen");
-
-                if (process.env.NODE_ENV === "production"){
-                    console.log("production");
-                    CLUBS_COLLECTION = DB.collection('Clubs');
-                    COUNTRIES_COLLECTION = DB.collection("Countries");
-                    STATS_REFERENCE_COLLECTION = DB.collection("StatsReferenceData");
-                    PLAYERS_COLLECTION = DB.collection('Players');
-                    PERCENTILE_ARRAYS_COLLECTION = DB.collection('PercentileArrays');
-                }
-                else {
-                    console.log("development");
-                    CLUBS_COLLECTION = DB.collection('Clubs_Dev');
-                    COUNTRIES_COLLECTION = DB.collection("Countries_Dev");
-                    STATS_REFERENCE_COLLECTION = DB.collection("StatsReferenceData_Dev");
-                    PLAYERS_COLLECTION = DB.collection('Players_Dev');
-                    PERCENTILE_ARRAYS_COLLECTION = DB.collection('PercentileArrays_Dev');
-                }
-                console.timeEnd('database connection');
-                resolve();
-            }
-        })
-
-    });
-
-};
-
-
-/**
- * Retrieves the percentile arrays from the MongoDB database.
- * @returns {Promise<*>} Promise resolves if the arrays have been successfully retrieved, rejects otherwise
- */
-let getPercentileArrays = async () => {
-
-    return new Promise(async function(resolve, reject){
-
-        //retrieve all percentile arrays from the database
-        PERCENTILE_ARRAYS_COLLECTION.find({}).toArray(async function (err, docs) {
-            if (err){
-                reject();
-            }
-            else if (docs.length === 0){
-                reject();
-            }
-            else {
-                //populate the percentile array object and record the time of their last update
-                for (let i=0; i<docs.length; i++){
-                    PERCENTILE_ARRAYS[docs[i].season][docs[i].position] = docs[i].stats;
-                }
-                PERCENTILE_ARRAYS['lastUpdated'] = docs[0].lastUpdated;
-                resolve();
-            }
-        });
-
-    });
-
-};
 
 
 /**
@@ -578,7 +632,7 @@ let search = async (aQuery, theType, isLive) => {
         else if (theType === "playersByClub"){
 
             //find all players whose array of clubs for the 19/20 season includes the query
-            PLAYERS_COLLECTION.find({"clubs.19-20": aQuery}).toArray(function(err, docs) {
+            PLAYERS_COLLECTION.find({"clubs.20-21": aQuery}).toArray(function(err, docs) {
                 if (err){
                     reject();
                 }
@@ -819,7 +873,7 @@ let buildPlayerSearchResult = (doc) => {
     return {
         code: doc.code,
         name: doc.name,
-        age: doc.currentAge,
+        age: doc.age,
         nationality: doc.nationality,
         countryCode: doc.countryCode,
         clubs: doc.clubs,
@@ -834,6 +888,9 @@ let buildPlayerSearchResult = (doc) => {
  * Connects to database, retrieves percentile array and begins listening for connections
  */
 connectToDatabase()
+    .then(() =>
+        getStatsByPosition()
+    )
     .then(() =>
         getPercentileArrays()
     )
