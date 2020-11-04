@@ -45,7 +45,7 @@ class Slice extends Component {
                     title: '4vw',
                     subtitle: '2.6vw',
                     noData: '2.7vw',
-                    xAxisLabels: '2.3vw',
+                    xAxisLabels: '2.15vw',
                     dataLabels: '2.3vw',
                     dataLabelsOutline: '0.3vw',
                     tooltipHeader: '2.3vw',
@@ -745,8 +745,60 @@ class Slice extends Component {
 
         }
 
-        return allSeasons.join(" | ");
+        return allSeasons;
     }
+
+    // competitionStringsComparison(allCompetitions, selectedCompetitions) {
+    //
+    //     let strings = [];
+    //
+    //     let seasons = {
+    //         0: [],
+    //         1: []
+    //     };
+    //
+    //     for (let player in seasons){
+    //
+    //         for (let season in selectedCompetitions[player]){
+    //             if (selectedCompetitions[player][season].length > 0){
+    //                 seasons[player].push(season);
+    //             }
+    //         }
+    //
+    //     }
+    //
+    //     let numRows = 0;
+    //     for (let player in seasons){
+    //         if (seasons[player].length > numRows){
+    //             numRows = seasons[player].length;
+    //         }
+    //     }
+    //
+    //     for (let i=0; i<numRows; i++){
+    //
+    //         let currentLineStrings = [];
+    //
+    //         for (let player in seasons){
+    //
+    //             if (seasons[player][i] !== undefined){
+    //
+    //                 let season = seasons[player][i];
+    //                 let currentSeasonString = this.temp(season, selectedCompetitions[player], allCompetitions[player]);
+    //
+    //                 currentLineStrings.push(currentSeasonString);
+    //
+    //             }
+    //             else {
+    //                 currentLineStrings.push("");
+    //             }
+    //
+    //         }
+    //
+    //         strings.push(currentLineStrings);
+    //
+    //     }
+    //
+    // }
 
 
     /**
@@ -761,19 +813,45 @@ class Slice extends Component {
         let template = this.props.template;
 
         let title;
+
         if (this.isForComparison) {
             title = `<span class="chart-title player-1"><a href=${this.props.url[0]} target="_blank" rel="noopener noreferrer">${this.props.names[0]}</a></span>`;
             title += `<span class="player-2"> vs <span class="chart-title"><a href=${this.props.url[1]} target="_blank" rel="noopener noreferrer">${this.props.names[1]}</a></span></span>`;
-            title += "<br>";
-            title += `<span class="player-1 competitions">${this.selectedCompetitionsString(this.props.competitions[0], this.props.selectedCompetitions[0], template)}</span>`;
-            title += `<span class="player-2 competitions"> - ${this.selectedCompetitionsString(this.props.competitions[1], this.props.selectedCompetitions[1], template)}</span>`;
+
+            if (this.isMobile && !this.isForExport){
+                let temp = {
+                    player1: this.selectedCompetitionsString(this.props.competitions[0], this.props.selectedCompetitions[0], template),
+                    player2: this.selectedCompetitionsString(this.props.competitions[1], this.props.selectedCompetitions[1], template)
+                };
+                title += "<div id='competitions-container' class='centered-around-separator'>";
+                for (let i=0; i<Math.max(temp.player1.length, temp.player2.length); i++){
+                    title += `<div><span class="player-1 competitions">${temp.player1[i] === undefined ? "" : temp.player1[i]}</span> │ <span class="player-2 competitions">${temp.player2[i] === undefined ? "" : temp.player2[i]}</span></div>`;
+                }
+                title += "</div>"
+            }
+            else {
+                title += '<br>';
+                title += `<div id='competitions-container'><span class="player-1 competitions">${this.selectedCompetitionsString(this.props.competitions[0], this.props.selectedCompetitions[0], template).join("&nbsp|&nbsp&nbsp")}</span>`;
+                title += `<span class="player-2 competitions"> - ${this.selectedCompetitionsString(this.props.competitions[1], this.props.selectedCompetitions[1], template).join("&nbsp|&nbsp&nbsp")}</span></div>`;
+            }
         }
         else {
             title = `<span class="chart-title player-1"><a href=${this.props.url} target="_blank" rel="noopener noreferrer">${this.props.name}</a>`;
             if (!this.isForExport){
                 title += `<a href=${this.props.url} target="_blank" rel="noopener noreferrer"><i id="link-icon" class="fa fa-external-link"></i></a></span>`;
             }
-            title += `<br><span class="player-1 competitions">${this.selectedCompetitionsString(this.props.competitions, this.props.selectedCompetitions, template)}</span><br>`;
+
+            let competitionStringParts = this.selectedCompetitionsString(this.props.competitions, this.props.selectedCompetitions, template);
+            if (this.isMobile && !this.isForExport){
+                title += "<div id='competitions-container'>";
+                for (let i=0; i<competitionStringParts.length; i++){
+                    title += `<span class="player-1 competitions">${competitionStringParts[i]}</span><br>`;
+                }
+                title += "</div>"
+            }
+            else {
+                title += `<br><div id='competitions-container'><span class="player-1 competitions">${competitionStringParts.join("&nbsp|&nbsp&nbsp")}</span></div>`;
+            }
         }
         chartOptions.title.text = title;
 
@@ -788,15 +866,15 @@ class Slice extends Component {
             chartOptions.xAxis.visible = true;
             chartOptions.yAxis.visible = true;
             if (this.isForComparison) {
-                subtitle = `<span class="player-1">Season Age(s): <span class="player-1 age-minutes">${this.props.ages[0]}</span>   </span>`;
+                subtitle = `<span class="player-1">Age: <span class="player-1 age-minutes">${this.props.ages[0]}</span>   </span>`;
                 subtitle += `<span class="player-1">Minutes: <span class="player-1 age-minutes">${this.props.minutes[0].toLocaleString()}</span></span>`;
                 subtitle += "<b> - </b>";
-                subtitle += `<span class="player-2">Season Age(s): <span class="age-minutes">${this.props.ages[1]}</span>   </span>`;
+                subtitle += `<span class="player-2">Age: <span class="age-minutes">${this.props.ages[1]}</span>   </span>`;
                 subtitle += `<span class="player-2">Minutes: <span class="age-minutes">${this.props.minutes[1].toLocaleString()}</span></span>`;
                 subtitle += "<br>"
             }
             else {
-                subtitle = `Season Age(s): <span class="player-1 age-minutes">${this.props.ages}</span>  `;
+                subtitle = `Age: <span class="player-1 age-minutes">${this.props.age}</span>  `;
                 subtitle += `Minutes: <span class="player-1 age-minutes">${this.props.minutes.toLocaleString()}</span><br>`;
             }
             subtitle += `${this.subtitles[this.props.template]}`;

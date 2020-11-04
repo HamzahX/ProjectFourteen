@@ -25,7 +25,7 @@ class PlayerSearchResult extends Component {
         for (let i=seasons.length-1; i>=0; i--){
             let season = seasons[i];
             let currentSeasonPositions = positions[season];
-            latestPositions = (currentSeasonPositions === undefined || currentSeasonPositions.length < 1) ? ["-"] : currentSeasonPositions;
+            latestPositions = (currentSeasonPositions === undefined || currentSeasonPositions.length < 1 || currentSeasonPositions[0] === "N/A") ? ["-"] : currentSeasonPositions;
             if (latestPositions[0] !== "-"){
                 break;
             }

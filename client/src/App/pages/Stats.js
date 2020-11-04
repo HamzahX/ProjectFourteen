@@ -82,6 +82,7 @@ class Stats extends Component {
             showExportLoaderOverlay: false,
             renderForExport: false,
             percentileArrays: this.props.percentileArrays,
+            statsByPosition: {},
             code: this.props.match.params.code,
             name: '',
             url: '',
@@ -208,20 +209,33 @@ class Stats extends Component {
             }
         }
 
+        let seasons = Object.keys(playerData.stats);
+
+        let competitions = {};
+        let selectedCompetitions = {};
+
         //retrieve player competitions. stored in an object where the keys are seasons and the values are arrays
         //of the competitions for the season
-        let competitions = {};
         for (let season in playerData.stats){
+
             competitions[season] = [];
+            selectedCompetitions[season] = [];
+
             for (let competition in playerData.stats[season]){
                 competitions[season].push(competition);
+                //only 2 most recent season in selected competitions
+                if (season === seasons[seasons.length - 1] || season === seasons[seasons.length - 2]){
+                    selectedCompetitions[season].push(competition);
+                }
             }
+
         }
 
         if (this._isMounted){
 
             this.setState({
                 isLoading: false,
+                statsByPosition: response.statsByPosition,
                 name: playerData.name,
                 url: "https://www.fbref.com" + playerData.fbrefURL,
                 age: playerData.age,
@@ -235,7 +249,7 @@ class Stats extends Component {
                 lastUpdated: dateFormat(playerData.lastUpdated, "dd/mm/yyyy, h:MM TT", true),
                 template: template,
                 competitions: JSON.parse(JSON.stringify(competitions)),
-                selectedCompetitions: JSON.parse(JSON.stringify(competitions))
+                selectedCompetitions: JSON.parse(JSON.stringify(selectedCompetitions))
             });
 
             document.title = `${playerData.name} | Football Slices`;
@@ -268,9 +282,11 @@ class Stats extends Component {
             showCompareSearchOverlay,
             showExportLoaderOverlay,
             renderForExport,
+            statsByPosition,
             code,
             url,
             name,
+            age,
             clubs,
             stats,
             isGK,
@@ -323,7 +339,7 @@ class Stats extends Component {
                 filteredStats = this.filterStats(stats);
                 if (Object.keys(filteredStats).length !== 0){
                     let calculatedStats = this.calculateStats(filteredStats);
-                    let chartInput = this.constructChartInput(calculatedStats.statsPer90, calculatedStats.percentiles);
+                    let chartInput = this.constructChartInput(statsByPosition, calculatedStats.statsPer90, calculatedStats.percentiles);
                     series.push(chartInput);
                 }
             }
@@ -347,7 +363,7 @@ class Stats extends Component {
                     name={name}
                     competitions={competitions}
                     selectedCompetitions={selectedCompetitions}
-                    ages={this.ageRangesString(filteredStats['age'])}
+                    age={age}
                     minutes={filteredStats['minutes']}
                     padjTypes={pAdjTypes}
                     series={series}
@@ -410,7 +426,7 @@ class Stats extends Component {
                             name={name}
                             competitions={competitions}
                             selectedCompetitions={selectedCompetitions}
-                            ages={this.ageRangesString(filteredStats['age'])}
+                            age={age}
                             minutes={filteredStats['minutes']}
                             padjTypes={pAdjTypes}
                             series={series}

@@ -248,7 +248,7 @@ class Home extends Component {
                                 </p>
                                 <p>
                                     It is built on a database of <b>{databaseSize.toLocaleString()} players</b> from <b>Europe's top 5 leagues</b>,
-                                    with stats from the <b>2018/19</b> and <b>2019/20</b> seasons.
+                                    with stats from the <b>2018/19 season onwards</b>.
                                 </p>
                                 <p>
                                     Football Slices is made possible by the incredible work done by the people over
@@ -258,6 +258,7 @@ class Home extends Component {
                                     complete stats sheet. Please do make sure to check out FBref and spread the word about
                                     them if you'd like to see them continue adding more data to their site.
                                 </p>
+                                <br/>
                                 <p><span className="accented-p">Interpreting the Slices</span></p>
                                 <p>
                                     A Football Slice is made up of a number of wedges (12 for outfield players, 3 for goalkeepers),
@@ -429,8 +430,7 @@ class Home extends Component {
                                     <p><span className="accented-p">Who's included in the database? How often is it updated?</span></p>
                                     <p>
                                         The database includes all top 5 league players who've made 4 or more league appearances
-                                        in the 2018/19 or 2019/20 seasons. 2020/21 data will be added shortly, and then
-                                        subsequently updated about once a week.
+                                        in any of the covered seasons. It is updated about once a week.
                                     </p>
                                 </div>
                                 <div className="faq-item">

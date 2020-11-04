@@ -91,6 +91,7 @@ class Compare extends Component {
             showExportLoaderOverlay: false,
             renderForExport: false,
             percentileArrays: this.props.percentileArrays,
+            statsByPosition: {},
             codes: codes,
             names: {},
             urls: {},
@@ -230,6 +231,7 @@ class Compare extends Component {
         let outfieldGKStats = {};
         let standardStats = {};
         let competitions = {};
+        let selectedCompetitions = {};
 
         //retrieve the information for the 2 players and store in objects
         for (let code in playerData){
@@ -249,14 +251,26 @@ class Compare extends Component {
             outfieldGKStats[code] = playerData[code].outfieldGKStats;
             standardStats[code] = playerData[code].stats;
 
+            let seasons = Object.keys(stats[code]);
+
             competitions[code] = {};
+            selectedCompetitions[code] = {};
+
             //retrieve player competitions. stored in an object where the keys are seasons and the values are arrays
             //of the competitions for the season
             for (let season in stats[code]){
+
                 competitions[code][season] = [];
+                selectedCompetitions[code][season] = [];
+
                 for (let competition in stats[code][season]){
                     competitions[code][season].push(competition);
+                    //only 2 most recent season in selected competitions
+                    if (season === seasons[seasons.length - 1] || season === seasons[seasons.length - 2]){
+                        selectedCompetitions[code][season].push(competition);
+                    }
                 }
+
             }
 
         }
@@ -270,6 +284,7 @@ class Compare extends Component {
                 ages: JSON.parse(JSON.stringify(ages)),
                 clubs: JSON.parse(JSON.stringify(clubs)),
                 percentileEntries: JSON.parse(JSON.stringify(percentileEntries)),
+                statsByPosition: JSON.parse(JSON.stringify(response.statsByPosition)),
                 stats: JSON.parse(JSON.stringify(stats)),
                 isGK: template === "GK",
                 isOutfieldGK: JSON.parse(JSON.stringify(isOutfieldGK)),
@@ -278,7 +293,7 @@ class Compare extends Component {
                 lastUpdated: dateFormat(playerData[codes[0]].lastUpdated, "dd/mm/yyyy, h:MM TT", true),
                 template: template,
                 competitions: JSON.parse(JSON.stringify(competitions)),
-                selectedCompetitions: JSON.parse(JSON.stringify(competitions))
+                selectedCompetitions: JSON.parse(JSON.stringify(selectedCompetitions))
             });
 
             document.title = `${names[codes[0]]} vs ${names[codes[1]]} | Football Slices`;
@@ -310,9 +325,11 @@ class Compare extends Component {
             showCompareSearchOverlay,
             showExportLoaderOverlay,
             renderForExport,
+            statsByPosition,
             codes,
             urls,
             names,
+            ages,
             clubs,
             stats,
             isGK,
@@ -365,6 +382,7 @@ class Compare extends Component {
                 if (template !== null && template !== "N/A"){
                     let calculatedStats = this.calculateStats(filteredStats[code], code);
                     let chartInput = this.constructChartInput(
+                        statsByPosition,
                         calculatedStats.statsPer90,
                         calculatedStats.percentiles,
                         code,
@@ -408,7 +426,7 @@ class Compare extends Component {
                         [selectedCompetitions[code1], selectedCompetitions[code2]]
                     }
                     ages={
-                        [this.ageRangesString(filteredStats[code1]['age']), this.ageRangesString(filteredStats[code2]['age'])]
+                        [ages[code1], ages[code2]]
                     }
                     minutes={
                         [filteredStats[code1]['minutes'], filteredStats[code2]['minutes']]
@@ -486,7 +504,7 @@ class Compare extends Component {
                                 [selectedCompetitions[code1], selectedCompetitions[code2]]
                             }
                             ages={
-                                [this.ageRangesString(filteredStats[code1]['age']), this.ageRangesString(filteredStats[code2]['age'])]
+                                [ages[code1], ages[code2]]
                             }
                             minutes={
                                 [filteredStats[code1]['minutes'], filteredStats[code2]['minutes']]

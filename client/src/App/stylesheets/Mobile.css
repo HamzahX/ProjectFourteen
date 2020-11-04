@@ -374,10 +374,17 @@ h3 {
             /*flex: 1;*/
             flex: 0 1 100%;
             -webkit-flex: 0 1 100%;
-            min-height: 1150px;
+            min-height: 1180px;
         }
 
             #stats-screen #chart .chart-title:after {
                 padding-left: 16px;
             }
 
+        #chart .chart-title {
+            font-size: 0.9em;
+        }
+
+        #export #competitions-container{
+            font-size: 0.45em;
+        }
