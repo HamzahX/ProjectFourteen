@@ -1136,7 +1136,7 @@ button:hover {
             width: 1200px;
             height: 1100px;
             opacity: 0;
-            transform: scale(0.1);
+            transform: scale(0.3);
             background-image: url(../assets/exportBackground.png);
             background-size: 100%;
             -webkit-background-size: 100%;
