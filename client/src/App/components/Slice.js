@@ -679,7 +679,7 @@ class Slice extends Component {
         let allSeasons = [];
 
         if (template === null || template === "N/A"){
-            return this.isForComparison ? "" : "-";
+            return this.isForComparison ? [""] : ["-"];
         }
 
         for (let season in selectedCompetitions){
