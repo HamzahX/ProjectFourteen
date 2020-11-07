@@ -119,11 +119,15 @@ class Search extends Component {
         if (this._isMounted){
 
             this.setState({
-                error: null,
-                isLoading: false,
-                playerSearchResults: playerSearchResults,
-                filteredPlayerSearchResults: playerSearchResults,
-                clubSearchResults: clubSearchResults,
+                searchResults: []
+            }, () => {
+                this.setState({
+                    error: null,
+                    isLoading: false,
+                    playerSearchResults: playerSearchResults,
+                    filteredPlayerSearchResults: playerSearchResults,
+                    clubSearchResults: clubSearchResults,
+                });
             });
 
             document.title = "Search Results | Football Slices";

@@ -6,9 +6,8 @@ const path = require('path');
 const bodyParser = require('body-parser');
 const port = process.env.PORT || 5000;
 
-//chart render library
-//const domtoimage = require('dom-to-image');
-//import domtoimage from "dom-to-image";
+//lodash functions
+const keyBy = require('lodash.keyby');
 
 //mongoDB constants
 const mongoClient = require('mongodb').MongoClient;
@@ -494,7 +493,8 @@ let getReferenceData = async () => {
         let referenceData = {
             countries: null,
             clubs: null,
-            statsReferenceData: null
+            statsReferenceData: null,
+            statsByPosition: null
         };
 
         COUNTRIES_COLLECTION.find({})
@@ -520,7 +520,8 @@ let getReferenceData = async () => {
                                 reject();
                             }
                             else {
-                                referenceData.statsReferenceData = docs;
+                                referenceData.statsReferenceData = keyBy(docs, "key");
+                                referenceData.statsByPosition = STATS_BY_POSITION;
                                 resolve(referenceData);
                             }
                         });
@@ -668,13 +669,13 @@ let advancedSearch = async (parameters) => {
 
         let season = parameters.season;
 
-        if (parameters.currentAge !== undefined){
+        if (parameters.ages !== undefined){
 
-            let minAge = parameters.currentAge.min || -Infinity;
-            let maxAge = parameters.currentAge.max || Infinity;
+            let minAge = parameters.ages.min || -Infinity;
+            let maxAge = parameters.ages.max || Infinity;
 
             query['$and'].push({
-                currentAge: {
+                age: {
                     '$gte': minAge,
                     '$lte': maxAge
                 }
@@ -682,7 +683,7 @@ let advancedSearch = async (parameters) => {
 
         }
 
-        if (parameters.nationalities !== undefined){
+        if (parameters.nationalities.length > 0){
 
             query['$and'].push({
                 countryCode: {
@@ -692,21 +693,7 @@ let advancedSearch = async (parameters) => {
 
         }
 
-        if (parameters.seasonAge !== undefined){
-
-            let minAge = parameters.seasonAge.min || -Infinity;
-            let maxAge = parameters.seasonAge.max || Infinity;
-
-            query['$and'].push({
-                [`ages.${season}`]: {
-                    '$gte': minAge,
-                    '$lte': maxAge
-                }
-            })
-
-        }
-
-        if (parameters.clubs !== undefined){
+        if (parameters.clubs.length > 0){
 
             query['$and'].push({
                 [`clubs.${season}`]: {
@@ -716,15 +703,17 @@ let advancedSearch = async (parameters) => {
 
         }
 
-        if (parameters.position !== undefined){
+        if (parameters.positions.length > 0){
 
             query['$and'].push({
-                [`positions.${season}`]: parameters.position
+                [`positions.${season}`]: {
+                    '$in': parameters.positions,
+                }
             })
 
         }
 
-        if (parameters.rawStats !== undefined){
+        if (Object.keys(parameters.rawStats).length > 0){
 
             for (let stat in parameters.rawStats){
 
@@ -742,7 +731,7 @@ let advancedSearch = async (parameters) => {
 
         }
 
-        if (parameters.percentileRanks !== undefined){
+        if (Object.keys(parameters.percentileRanks).length > 0){
 
             for (let stat in parameters.percentileRanks){
 
@@ -768,7 +757,7 @@ let advancedSearch = async (parameters) => {
                 reject();
             }
             else if (docs.length === 0) {
-                reject();
+                resolve(searchResults);
             }
             else {
                 for (let i=0; i<docs.length; i++){

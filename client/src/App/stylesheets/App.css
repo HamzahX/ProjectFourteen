@@ -741,11 +741,28 @@ button:hover {
 
             .search-filter-inputs {
                 flex: 1 1 100%;
+                padding-top: 1em;
             }
 
                 #advanced-search-filter-inputs {
                     flex: 1 1 80%;
                     overflow-y: scroll;
+                }
+
+                #advanced-search-filter-inputs h3 {
+                    margin-bottom: 0;
+                }
+
+                #advanced-search-filter-inputs h4 {
+                    margin-left: 7px;
+                }
+
+                #advanced-search-filter-inputs .ant-select {
+                    margin-bottom: 10px;
+                }
+
+                #advanced-search-filter-inputs .ant-slider {
+                    margin-bottom: 15px;
                 }
 
             #search-filters h3, #search-results h3 {

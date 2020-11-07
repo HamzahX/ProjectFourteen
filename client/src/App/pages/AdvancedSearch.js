@@ -1,4 +1,7 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
+
+//import lodash functions
+import set from 'lodash.set';
 
 //import components
 import SearchBar from "../components/SearchBar";
@@ -6,8 +9,8 @@ import LoadingSpinner from "../components/LoadingSpinner";
 import LoaderOverlay from "../components/LoaderOverlay";
 import PlayerSearchResult from "../components/PlayerSearchResult";
 
-import { Select } from 'antd';
-
+//import antd components
+import {Select, Slider} from 'antd';
 const Option = Select.Option;
 
 
@@ -18,6 +21,8 @@ class AdvancedSearch extends Component {
 
     //class variable to track if the component is mounted
     _isMounted = false;
+
+    _referenceData = {};
 
     /**
      * Constructor
@@ -32,6 +37,7 @@ class AdvancedSearch extends Component {
         let seasons = {
             "18-19": "18/19",
             "19-20": "19/20",
+            "20-21": "20/21"
         };
         let seasonOptions = [];
 
@@ -46,6 +52,27 @@ class AdvancedSearch extends Component {
             )
         }
 
+        let positions = {
+            "FW": "Forward",
+            "AM": "Attacking Midfielder / Winger",
+            "CM": "Central / Defensive Midfielder",
+            "FB": "Full-back",
+            "CB": "Center-back",
+            "GK": "Goalkeeper"
+        };
+        let positionsOptions = [];
+
+        for (let position in positions){
+            positionsOptions.push(
+                <Option
+                    key={position}
+                    value={position}
+                >
+                    {positions[position]}
+                </Option>
+            )
+        }
+
         this.state = {
 
             isLoading: true,
@@ -54,36 +81,22 @@ class AdvancedSearch extends Component {
 
             selectLists: {
                 seasons: seasonOptions,
-                currentAges: {},
-                nationalities: {},
-                clubs: {},
-                positions: {
-                    "FW": "Forward",
-                    "AM": "Attacking Midfielder / Winger",
-                    "CM": "Central / Defensive Midfielder",
-                    "FB": "Full-back",
-                    "CB": "Center-back",
-                    "GK": "Goalkeeper"
-                },
-                rawStats: {},
-                percentileRanks: {}
+                ages: {},
+                nationalities: [],
+                clubs: [],
+                positions: positionsOptions,
+                rawStats: [],
+                percentileRanks: []
             },
 
             parameters: {
                 season: null,
-                currentAge: {
-                    min: null,
-                    max: null
-                },
+                ages: {},
                 nationalities: [],
-                seasonAge: {
-                    min: null,
-                    max: null
-                },
                 clubs: [],
                 positions: [],
-                rawStats: [],
-                percentileRanks: []
+                rawStats: {},
+                percentileRanks: {}
             },
 
             searchResults: []
@@ -134,12 +147,105 @@ class AdvancedSearch extends Component {
 
 
     /**
+     * Function to process the reference data and save to state
+     * @param {Object} referenceData - object containing reference data
+     */
+    processReferenceData = (referenceData) => {
+
+        this._referenceData = referenceData;
+
+        console.log(referenceData);
+
+        let selectLists = this.state.selectLists;
+        let parameters = this.state.parameters;
+
+        let ageReferenceData = referenceData.statsReferenceData["age"];
+        selectLists.ages = {
+            min: ageReferenceData.ranges.min,
+            max: ageReferenceData.ranges.max
+        };
+
+        parameters.ages = JSON.parse(JSON.stringify(selectLists.ages));
+
+        let nationalitiesOptions = [];
+        for (let i=0; i<referenceData.countries.length; i++){
+
+            let country = referenceData.countries[i];
+
+            nationalitiesOptions.push(
+                <Option
+                    key={country.code.toLowerCase()}
+                    value={country.code.toLowerCase()}
+                >
+                    {country.name}
+                </Option>
+            )
+
+        }
+        selectLists.nationalities = nationalitiesOptions;
+
+        let clubsOptions = [];
+        for (let i=0; i<referenceData.clubs.length; i++){
+
+            let club = referenceData.clubs[i];
+
+            clubsOptions.push(
+                <Option
+                    key={club.name}
+                    value={club.name}
+                >
+                    {club.name}
+                </Option>
+            )
+
+        }
+        selectLists.clubs = clubsOptions;
+
+        let rawStatsOptions = [];
+        for (let stat in referenceData.statsReferenceData){
+
+            let statData = referenceData.statsReferenceData[stat];
+
+            if (stat === "age"){
+                continue;
+            }
+
+            rawStatsOptions.push(
+                <Option
+                    key={stat}
+                    value={stat}
+                >
+                    {`${statData.label} ${statData.suffix}`}
+                </Option>
+            )
+
+        }
+        selectLists.rawStats = rawStatsOptions;
+
+        if (this._isMounted){
+
+            this.setState({
+                error: null,
+                isLoading: false,
+                parameters: parameters,
+                selectLists: selectLists
+            });
+
+            document.title = 'Advanced Search | Football Slices';
+
+            this.props.recordPageViewGA(window.location.pathname);
+        }
+
+    };
+
+
+    /**
      * Function to send a post request to the server to retrieve the search results matching the query
      */
     getSearchResults = () => {
 
         this.setState({
-            showSearchLoaderOverlay: false
+            showSearchLoaderOverlay: true,
         });
 
         let parameters = this.state.parameters;
@@ -165,33 +271,9 @@ class AdvancedSearch extends Component {
         .then(searchResults => this.processSearchResults(searchResults))
         .catch(error => {
             if (this._isMounted){
-                this.setState({error, isLoading: false})
+                this.setState({error})
             }
         });
-
-    };
-
-
-    /**
-     * Function to process the reference data and save to state
-     * @param {Object} referenceData - object containing reference data
-     */
-    processReferenceData = (referenceData) => {
-
-        console.log(referenceData);
-
-        if (this._isMounted){
-
-            this.setState({
-                error: null,
-                isLoading: false,
-                //selectLists: selectLists
-            });
-
-            document.title = 'Advanced Search | Football Slices';
-
-            this.props.recordPageViewGA(window.location.pathname);
-        }
 
     };
 
@@ -205,9 +287,13 @@ class AdvancedSearch extends Component {
         if (this._isMounted){
 
             this.setState({
-                error: null,
-                showSearchLoaderOverlay: false,
-                searchResults: searchResults
+                searchResults: []
+            }, () => {
+                this.setState({
+                    error: null,
+                    showSearchLoaderOverlay: false,
+                    searchResults: searchResults
+                });
             });
 
         }
@@ -215,11 +301,11 @@ class AdvancedSearch extends Component {
     };
 
 
-    handleSeasonChange = (value) => {
+    handleSingleSelectChange = (key, value) => {
 
         let parameters = this.state.parameters;
 
-        parameters.season = value;
+        parameters[key] = value;
 
         this.setState({
             parameters: parameters
@@ -228,6 +314,147 @@ class AdvancedSearch extends Component {
         console.log(this.state.parameters);
 
     };
+
+
+    handleSelectListAdd = (key, value) => {
+
+        let parameters = this.state.parameters;
+
+        parameters[`${key}`].push(value);
+
+        this.setState({
+            parameters: parameters
+        });
+
+        if (key === "positions"){
+            this.buildPercentileRankSelectList()
+        }
+
+        console.log(this.state.parameters);
+
+    };
+
+
+    handleSelectListRemove = (key, value) => {
+
+        let parameters = this.state.parameters;
+
+        let index = parameters[`${key}`].indexOf(value);
+        if (index > -1) {
+            parameters[`${key}`].splice(index, 1);
+        }
+
+        this.setState({
+            parameters: parameters
+        });
+
+        if (key === "positions"){
+            this.buildPercentileRankSelectList()
+        }
+
+        console.log(this.state.parameters);
+
+    };
+
+
+    buildPercentileRankSelectList = () => {
+
+        let parameters = this.state.parameters;
+        let selectLists = this.state.selectLists;
+
+        let percentileRankOptions = [];
+
+        if (parameters.positions.length !== 1){
+
+            selectLists.percentileRanks = percentileRankOptions;
+
+            this.setState({
+                selectLists: selectLists
+            });
+
+            return;
+        }
+
+        let position = parameters.positions[0];
+
+        for (let stat in this._referenceData.statsReferenceData){
+
+            let statData = this._referenceData.statsReferenceData[stat];
+
+            if (!this._referenceData.statsByPosition[position].includes(stat)){
+                continue;
+            }
+
+            percentileRankOptions.push(
+                <Option
+                    key={stat}
+                    value={stat}
+                >
+                    {`${statData.label} ${statData.suffix}`}
+                </Option>
+            )
+
+        }
+        selectLists.percentileRanks = percentileRankOptions;
+
+        this.setState({
+            selectLists: selectLists
+        });
+
+    };
+
+
+    handleLookupStatAdd = (parametersKey, stat) => {
+
+        let parameters = this.state.parameters;
+
+        let season = this.state.parameters.season;
+        let referenceData = this._referenceData.statsReferenceData[stat];
+
+        parameters[`${parametersKey}`][stat] = {
+            min: referenceData.ranges[season].min,
+            max: referenceData.ranges[season].max,
+        };
+
+        this.setState({
+            parameters: parameters
+        });
+
+        console.log(this.state.parameters);
+
+    };
+
+
+    handleLookupStatRemove = (parametersKey, stat) => {
+
+        let parameters = this.state.parameters;
+
+        delete parameters[parametersKey][stat];
+
+        this.setState({
+            parameters: parameters
+        });
+
+        console.log(this.state.parameters);
+
+    };
+
+
+    handleRangeSliderChange = (key, values) => {
+
+        let parameters = this.state.parameters;
+
+        set(parameters, `${key}.min`, values[0]);
+        set(parameters, `${key}.max`, values[1]);
+
+        this.setState({
+            parameters: parameters
+        });
+
+        console.log(this.state.parameters);
+
+    };
+
 
     /**
      * Called just before the component un-mounts
@@ -248,6 +475,7 @@ class AdvancedSearch extends Component {
             showSearchLoaderOverlay,
             error,
             selectLists,
+            parameters,
             searchResults
         } = this.state;
 
@@ -277,6 +505,34 @@ class AdvancedSearch extends Component {
         //build search page otherwise
         else {
 
+            let season = parameters.season;
+
+            let rawStatsSliders = [];
+            for (let stat in parameters.rawStats){
+
+                let statData = this._referenceData.statsReferenceData[stat];
+
+                rawStatsSliders.push(
+                    <h4>{`${statData.label} ${statData.suffix}`}</h4>
+                );
+
+                rawStatsSliders.push(
+                    <Slider
+                        key={`rawStatSlider-${stat}`}
+                        range={true}
+                        defaultValue={[parameters.rawStats[stat].min, parameters.rawStats[stat].max]}
+                        min={season === null ? 0 : statData.ranges[season].min}
+                        max={season === null ? 0 : statData.ranges[season].max}
+                        step={statData.step}
+                        onChange={(values) => this.handleRangeSliderChange(`rawStats.${stat}`, values)}
+                    />
+                );
+
+            }
+
+            let percentileRanksSliders = [];
+
+
             //construct the player cards
             let playerCards = [];
             for (let i=0; i<searchResults.length; i++){
@@ -297,6 +553,7 @@ class AdvancedSearch extends Component {
                 );
             }
 
+
             //return JSX code for the search page
             return (
                 <div id="main">
@@ -312,20 +569,85 @@ class AdvancedSearch extends Component {
                     <div className="screen" id="search-screen">
                         <div className="filter" id="advanced-search-filters">
                             <div className="filter-inputs search-filter-inputs" id="advanced-search-filter-inputs">
+                                <h3>Season</h3>
                                 <Select
                                     placeholder={"Select a season"}
                                     style={{ width: '100%' }}
-                                    onChange={this.handleSeasonChange}
+                                    onChange={(val) => this.handleSingleSelectChange("season", val)}
                                 >
                                     {selectLists.seasons}
                                 </Select>
+                                <h3>Current Age</h3>
+                                <Slider
+                                    range={true}
+                                    defaultValue={[selectLists.ages.min, selectLists.ages.max]}
+                                    min={selectLists.ages.min}
+                                    max={selectLists.ages.max}
+                                    onChange={(values) => this.handleRangeSliderChange("ages", values)}
+                                />
+                                <h3>Nationalities</h3>
+                                <Select
+                                    placeholder={"Select nationalities"}
+                                    style={{ width: '100%' }}
+                                    mode={"multiple"}
+                                    onSelect={(val) => this.handleSelectListAdd("nationalities", val)}
+                                    onDeselect={(val) => this.handleSelectListRemove("nationalities", val)}
+                                >
+                                    {selectLists.nationalities}
+                                </Select>
+                                <h3>Clubs</h3>
+                                <Select
+                                    placeholder={"Select clubs"}
+                                    style={{ width: '100%' }}
+                                    disabled={parameters.season === null}
+                                    mode={"multiple"}
+                                    onSelect={(val) => this.handleSelectListAdd("clubs", val)}
+                                    onDeselect={(val) => this.handleSelectListRemove("clubs", val)}
+                                >
+                                    {selectLists.clubs}
+                                </Select>
+                                <h3>Positions</h3>
+                                <Select
+                                    placeholder={"Select positions"}
+                                    style={{ width: '100%' }}
+                                    disabled={parameters.season === null}
+                                    mode={"multiple"}
+                                    onSelect={(val) => this.handleSelectListAdd("positions", val)}
+                                    onDeselect={(val) => this.handleSelectListRemove("positions", val)}
+                                >
+                                    {selectLists.positions}
+                                </Select>
+                                <h3>Raw Stat Filters</h3>
+                                <Select
+                                    placeholder={"Select stats to add range filters"}
+                                    style={{ width: '100%' }}
+                                    disabled={parameters.season === null}
+                                    mode={"multiple"}
+                                    onSelect={(val) => this.handleLookupStatAdd("rawStats", val)}
+                                    onDeselect={(val) => this.handleLookupStatRemove("rawStats", val)}
+                                >
+                                    {selectLists.rawStats}
+                                </Select>
+                                {rawStatsSliders}
+                                <h3>Percentile Rank Filters</h3>
+                                <Select
+                                    placeholder={"Select stats to add range filters"}
+                                    style={{ width: '100%' }}
+                                    disabled={parameters.season === null}
+                                    mode={"multiple"}
+                                    onSelect={(val) => this.handleLookupStatAdd("percentileRanks", val)}
+                                    onDeselect={(val) => this.handleLookupStatRemove("percentileRanks", val)}
+                                >
+                                    {selectLists.percentileRanks}
+                                </Select>
+                                {percentileRanksSliders}
                             </div>
                             <div className="filter-buttons" id="advanced-search-filter-buttons">
                                 <div className="filter-button">
-                                    <button id="reset-filters-button" type="button">Reset All Filters</button>
+                                    <button id="reset-filters-button" type="button" onClick={this.resetParameters}>Reset All Filters</button>
                                 </div>
                                 <div className="filter-button">
-                                    <button id="search-button" type="button">Search</button>
+                                    <button id="search-button" type="button" onClick={this.getSearchResults}>Search</button>
                                 </div>
                             </div>
                         </div>

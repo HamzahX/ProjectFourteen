@@ -99,6 +99,8 @@ let calculaterawStats = async () => {
             let minutesOverNinety = aggregatedStats["minutes"] / 90;
             let touchesOverHundred = aggregatedStats["touches"] / 100;
 
+            rawStats["minutes"] = aggregatedStats["minutes"];
+
             rawStats["npg"] = returnFinite(aggregatedStats["npg"] / minutesOverNinety);
             rawStats["npxg"] = returnFinite(aggregatedStats["npxg"] / minutesOverNinety);
             rawStats["npxgPerShot"] = returnFinite(aggregatedStats["npxg"] / aggregatedStats["shots"]);
@@ -157,7 +159,14 @@ let calculaterawStats = async () => {
 
         for (let stat in rawStats){
 
-            if (rawStats[stat] < ALL_STATS[stat]["ranges"][SEASON]["min"]){
+            //TODO: consider filtering by number of actions as opposed to minutes.
+            //TODO: e.g.: filter npxg/shot by min of 20 shots
+
+            if (stat !== "minutes" && rawStats["minutes"] < 400){
+                continue;
+            }
+
+            if ((stat === "gsaa" || rawStats[stat] >= 0) && rawStats[stat] < ALL_STATS[stat]["ranges"][SEASON]["min"]){
                 ALL_STATS[stat]["ranges"][SEASON]["min"] = rawStats[stat];
                 ALL_STATS[stat]["ranges"][SEASON]["minName"] = PROCESSED[player]["name"];
             }
@@ -181,7 +190,7 @@ let calculaterawStats = async () => {
             ALL_STATS["age"]["ranges"]["minName"] = PROCESSED[player]["name"];
         }
 
-        if (PROCESSED[player]["age"][SEASON] > ALL_STATS["age"]["ranges"]["max"]){
+        if (PROCESSED[player]["age"] > ALL_STATS["age"]["ranges"]["max"]){
             ALL_STATS["age"]["ranges"]["max"] = PROCESSED[player]["age"];
             ALL_STATS["age"]["ranges"]["maxName"] = PROCESSED[player]["name"];
         }

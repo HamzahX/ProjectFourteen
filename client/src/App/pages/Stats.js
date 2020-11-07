@@ -124,7 +124,9 @@ class Stats extends Component {
      */
     //TODO: re-factor because componentWillReceiveProps has been deprecated
     UNSAFE_componentWillReceiveProps(nextProps, nextContext) {
+
         let { code } = nextProps.match.params;
+
         this.setState({
             redirect: false,
             isLoading: true,
@@ -132,6 +134,7 @@ class Stats extends Component {
         }, () => {
             this.getStats();
         });
+
     }
 
 
