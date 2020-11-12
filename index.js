@@ -752,7 +752,7 @@ let advancedSearch = async (parameters) => {
         let searchResults = [];
 
         //find the player who match the query
-        PLAYERS_COLLECTION.find(query).toArray(function (err, docs) {
+        PLAYERS_COLLECTION.find(query).limit(1000).toArray(function (err, docs) {
             if (err) {
                 reject();
             }

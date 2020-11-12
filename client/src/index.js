@@ -2,11 +2,16 @@ import React from 'react';
 import { render } from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
 
-import './index.css';
+import './index.less';
 import App from './App/App';
+
+import { QueryParamProvider } from 'use-query-params';
 
 render((
     <BrowserRouter>
-        <App/>
+        <QueryParamProvider
+        >
+            <App />
+        </QueryParamProvider>
     </BrowserRouter>
 ), document.getElementById('root'));

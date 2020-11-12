@@ -152,7 +152,7 @@ class App extends Component {
                             recordPageViewGA={this.recordPageViewGA}
                         />}
                     />
-                    <Route exact path='/advancedSearch' render={(props) =>
+                    <Route path='/advancedSearch' render={(props) =>
                         <AdvancedSearch
                             {...props}
                             isMobile={isMobileOnly}

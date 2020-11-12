@@ -1,13 +1,20 @@
 import React, {Component} from 'react';
+import {
+    withQueryParams,
+    JsonParam,
+} from 'use-query-params';
 
 //import lodash functions
 import set from 'lodash.set';
+import isEqual from 'lodash.isequal';
 
 //import components
 import SearchBar from "../components/SearchBar";
 import LoadingSpinner from "../components/LoadingSpinner";
 import LoaderOverlay from "../components/LoaderOverlay";
 import PlayerSearchResult from "../components/PlayerSearchResult";
+
+import Collapsible from 'react-collapsible';
 
 //import antd components
 import {Select, Slider} from 'antd';
@@ -23,6 +30,7 @@ class AdvancedSearch extends Component {
     _isMounted = false;
 
     _referenceData = {};
+    _parametersOriginalState = {};
 
     /**
      * Constructor
@@ -79,7 +87,7 @@ class AdvancedSearch extends Component {
             showSearchLoaderOverlay: false,
             error: null,
 
-            selectLists: {
+            filterOptions: {
                 seasons: seasonOptions,
                 ages: {},
                 nationalities: [],
@@ -154,18 +162,23 @@ class AdvancedSearch extends Component {
 
         this._referenceData = referenceData;
 
-        console.log(referenceData);
-
-        let selectLists = this.state.selectLists;
+        let filterOptions = this.state.filterOptions;
         let parameters = this.state.parameters;
+        let queryParameters = this.props.query.parameters;
 
         let ageReferenceData = referenceData.statsReferenceData["age"];
-        selectLists.ages = {
+
+        filterOptions.ages = {
             min: ageReferenceData.ranges.min,
             max: ageReferenceData.ranges.max
         };
 
-        parameters.ages = JSON.parse(JSON.stringify(selectLists.ages));
+        parameters.ages = JSON.parse(JSON.stringify(filterOptions.ages));
+        this._parametersOriginalState = JSON.parse(JSON.stringify(this.state.parameters));
+
+        if (queryParameters !== undefined){
+            parameters = JSON.parse(JSON.stringify(queryParameters));
+        }
 
         let nationalitiesOptions = [];
         for (let i=0; i<referenceData.countries.length; i++){
@@ -182,7 +195,7 @@ class AdvancedSearch extends Component {
             )
 
         }
-        selectLists.nationalities = nationalitiesOptions;
+        filterOptions.nationalities = nationalitiesOptions;
 
         let clubsOptions = [];
         for (let i=0; i<referenceData.clubs.length; i++){
@@ -199,7 +212,7 @@ class AdvancedSearch extends Component {
             )
 
         }
-        selectLists.clubs = clubsOptions;
+        filterOptions.clubs = clubsOptions;
 
         let rawStatsOptions = [];
         for (let stat in referenceData.statsReferenceData){
@@ -220,20 +233,34 @@ class AdvancedSearch extends Component {
             )
 
         }
-        selectLists.rawStats = rawStatsOptions;
+        filterOptions.rawStats = rawStatsOptions;
+
+
 
         if (this._isMounted){
 
             this.setState({
+                parameters: parameters,
+                filterOptions: filterOptions
+            });
+
+            if (parameters.positions.length === 1){
+                this.buildPercentileRankSelectList();
+            }
+
+            this.setState({
                 error: null,
                 isLoading: false,
-                parameters: parameters,
-                selectLists: selectLists
             });
 
             document.title = 'Advanced Search | Football Slices';
 
             this.props.recordPageViewGA(window.location.pathname);
+
+            if (queryParameters !== undefined && !isEqual(queryParameters, this._parametersOriginalState)){
+                this.getSearchResults();
+            }
+
         }
 
     };
@@ -248,7 +275,37 @@ class AdvancedSearch extends Component {
             showSearchLoaderOverlay: true,
         });
 
-        let parameters = this.state.parameters;
+        //clear deep clone of parameters and clean it
+        let parameters = JSON.parse(JSON.stringify(this.state.parameters));
+
+        //delete percentile ranks parameters if not exactly 1 position is selected
+        if (parameters.positions.length !== 1){
+
+            for (let stat in parameters.percentileRanks){
+                delete parameters.percentileRanks[stat];
+            }
+
+        }
+
+        let season = parameters.season;
+
+        //because range slider min/max values are not true min/maxes, we set the min/max to -infinity/infinity
+        //if the slider is at the max allowed value
+        for (let stat in parameters.rawStats){
+
+            let statRanges = this._referenceData.statsReferenceData[stat].ranges[season];
+
+            if (parameters.rawStats[stat].min === statRanges.min){
+                parameters.rawStats[stat].min = null
+            }
+
+            if (parameters.rawStats[stat].max === statRanges.max){
+                parameters.rawStats[stat].max = null
+            }
+
+        }
+
+        console.log(parameters);
 
         //retrieve search results
         fetch('/api/advancedSearch', {
@@ -307,11 +364,56 @@ class AdvancedSearch extends Component {
 
         parameters[key] = value;
 
+        //update slider values if they exceed bounds of new limits after season is changed
+        if (key === "season"){
+
+            let season = parameters.season;
+
+            for (let stat in parameters.rawStats){
+
+                let statData = this._referenceData.statsReferenceData[stat];
+
+                if (parameters.rawStats[stat].max > statData.ranges[season].max){
+                    parameters.rawStats[stat].max = statData.ranges[season].max;
+                }
+
+                if (parameters.rawStats[stat].min > statData.ranges[season].min){
+                    parameters.rawStats[stat].min = statData.ranges[season].min;
+                }
+
+            }
+
+        }
+
         this.setState({
             parameters: parameters
         });
 
-        console.log(this.state.parameters);
+        this.props.setQuery({
+            parameters: parameters
+        });
+
+        console.log(parameters);
+
+    };
+
+
+    handleRangeSliderChange = (key, values) => {
+
+        let parameters = this.state.parameters;
+
+        set(parameters, `${key}.min`, values[0]);
+        set(parameters, `${key}.max`, values[1]);
+
+        this.setState({
+            parameters: parameters
+        });
+
+        this.props.setQuery({
+            parameters: parameters
+        });
+
+        console.log(parameters);
 
     };
 
@@ -326,11 +428,15 @@ class AdvancedSearch extends Component {
             parameters: parameters
         });
 
+        this.props.setQuery({
+            parameters: parameters
+        });
+
+        console.log(parameters);
+
         if (key === "positions"){
             this.buildPercentileRankSelectList()
         }
-
-        console.log(this.state.parameters);
 
     };
 
@@ -348,84 +454,129 @@ class AdvancedSearch extends Component {
             parameters: parameters
         });
 
+        this.props.setQuery({
+            parameters: parameters
+        });
+
+        console.log(this.state.parameters);
+
         if (key === "positions"){
             this.buildPercentileRankSelectList()
         }
-
-        console.log(this.state.parameters);
 
     };
 
 
     buildPercentileRankSelectList = () => {
 
+        let filterOptions = this.state.filterOptions;
         let parameters = this.state.parameters;
-        let selectLists = this.state.selectLists;
 
         let percentileRankOptions = [];
 
         if (parameters.positions.length !== 1){
 
-            selectLists.percentileRanks = percentileRankOptions;
+            filterOptions.percentileRanks = percentileRankOptions;
 
             this.setState({
-                selectLists: selectLists
+                filterOptions: filterOptions
             });
 
-            return;
         }
+        else {
 
-        let position = parameters.positions[0];
+            let position = parameters.positions[0];
 
-        for (let stat in this._referenceData.statsReferenceData){
+            for (let stat in this._referenceData.statsReferenceData){
 
-            let statData = this._referenceData.statsReferenceData[stat];
+                let statData = this._referenceData.statsReferenceData[stat];
 
-            if (!this._referenceData.statsByPosition[position].includes(stat)){
-                continue;
+                if (!this._referenceData.statsByPosition[position].includes(stat)){
+
+                    if (parameters.percentileRanks.hasOwnProperty(stat)){
+                        delete parameters.percentileRanks[stat];
+                    }
+
+                    continue;
+                }
+
+                percentileRankOptions.push(
+                    <Option
+                        key={stat}
+                        value={stat}
+                    >
+                        {`${statData.label} ${statData.suffix}`}
+                    </Option>
+                )
+
             }
 
-            percentileRankOptions.push(
-                <Option
-                    key={stat}
-                    value={stat}
-                >
-                    {`${statData.label} ${statData.suffix}`}
-                </Option>
-            )
+            filterOptions.percentileRanks = percentileRankOptions;
+
+            this.setState({
+                filterOptions: filterOptions,
+                parameters: parameters
+            });
+
+            this.props.setQuery({
+                parameters: parameters
+            });
 
         }
-        selectLists.percentileRanks = percentileRankOptions;
 
-        this.setState({
-            selectLists: selectLists
-        });
+        console.log(parameters);
 
     };
 
 
-    handleLookupStatAdd = (parametersKey, stat) => {
+    handleSelectListClear = (key) => {
 
         let parameters = this.state.parameters;
 
-        let season = this.state.parameters.season;
+        parameters[key] = [];
+
+        this.setState({
+            parameters: parameters
+        });
+
+        this.props.setQuery({
+            parameters: parameters
+        });
+
+        console.log(parameters);
+
+    };
+
+
+    handleLookupStatSelectListAdd = (parametersKey, stat) => {
+
+        let parameters = this.state.parameters;
+
+        let season = parameters.season;
         let referenceData = this._referenceData.statsReferenceData[stat];
 
+        let min = parametersKey === "percentileRanks" ? 0 : referenceData.ranges[season].min;
+        let max = parametersKey === "percentileRanks" ? 100 : referenceData.ranges[season].max;
+
         parameters[`${parametersKey}`][stat] = {
-            min: referenceData.ranges[season].min,
-            max: referenceData.ranges[season].max,
+            min: min,
+            max: max,
         };
 
         this.setState({
             parameters: parameters
         });
 
-        console.log(this.state.parameters);
+        this.props.setQuery({
+            parameters: parameters
+        });
+
+        console.log(parameters);
 
     };
 
 
-    handleLookupStatRemove = (parametersKey, stat) => {
+    handleLookupStatSelectListRemove = (parametersKey, stat) => {
 
         let parameters = this.state.parameters;
 
@@ -435,23 +586,47 @@ class AdvancedSearch extends Component {
             parameters: parameters
         });
 
-        console.log(this.state.parameters);
+        this.props.setQuery({
+            parameters: parameters
+        });
+
+        console.log(parameters);
 
     };
 
 
-    handleRangeSliderChange = (key, values) => {
+    handleLookupStatsSelectListClear = (key) => {
 
         let parameters = this.state.parameters;
 
-        set(parameters, `${key}.min`, values[0]);
-        set(parameters, `${key}.max`, values[1]);
+        parameters[key] = {};
 
         this.setState({
             parameters: parameters
         });
 
-        console.log(this.state.parameters);
+        this.props.setQuery({
+            parameters: parameters
+        });
+
+        console.log(parameters);
+
+    };
+
+
+    resetParameters = () => {
+
+        let parametersOriginalState = JSON.parse(JSON.stringify(this._parametersOriginalState));
+
+        this.setState({
+            parameters: parametersOriginalState
+        });
+
+        this.props.setQuery({
+            parameters: parametersOriginalState
+        });
+
+        console.log(parametersOriginalState);
 
     };
 
@@ -474,7 +649,7 @@ class AdvancedSearch extends Component {
             isLoading,
             showSearchLoaderOverlay,
             error,
-            selectLists,
+            filterOptions,
             parameters,
             searchResults
         } = this.state;
@@ -513,16 +688,16 @@ class AdvancedSearch extends Component {
                 let statData = this._referenceData.statsReferenceData[stat];
 
                 rawStatsSliders.push(
-                    <h4>{`${statData.label} ${statData.suffix}`}</h4>
+                    <h4 key={statData.key}>{`${statData.label} ${statData.suffix}`}</h4>
                 );
 
                 rawStatsSliders.push(
                     <Slider
                         key={`rawStatSlider-${stat}`}
                         range={true}
-                        defaultValue={[parameters.rawStats[stat].min, parameters.rawStats[stat].max]}
-                        min={season === null ? 0 : statData.ranges[season].min}
-                        max={season === null ? 0 : statData.ranges[season].max}
+                        value={[parameters.rawStats[stat].min, parameters.rawStats[stat].max]}
+                        min={statData.ranges[season].min}
+                        max={statData.ranges[season].max + 0.000001}
                         step={statData.step}
                         onChange={(values) => this.handleRangeSliderChange(`rawStats.${stat}`, values)}
                     />
@@ -531,7 +706,28 @@ class AdvancedSearch extends Component {
             }
 
             let percentileRanksSliders = [];
+            for (let stat in parameters.percentileRanks){
 
+                let statData = this._referenceData.statsReferenceData[stat];
+
+                percentileRanksSliders.push(
+                    <h4 key={statData.key}>{`${statData.label} ${statData.suffix}`}</h4>
+                );
+
+                percentileRanksSliders.push(
+                    <Slider
+                        key={`percentileRanksSlider-${stat}`}
+                        disabled={parameters.positions.length !== 1}
+                        range={true}
+                        value={[parameters.percentileRanks[stat].min, parameters.percentileRanks[stat].max]}
+                        min={0}
+                        max={season === null ? 0 : 100}
+                        step={5}
+                        onChange={(values) => this.handleRangeSliderChange(`percentileRanks.${stat}`, values)}
+                    />
+                );
+
+            }
 
             //construct the player cards
             let playerCards = [];
@@ -569,78 +765,132 @@ class AdvancedSearch extends Component {
                     <div className="screen" id="search-screen">
                         <div className="filter" id="advanced-search-filters">
                             <div className="filter-inputs search-filter-inputs" id="advanced-search-filter-inputs">
-                                <h3>Season</h3>
+                                <h4>Season</h4>
                                 <Select
+                                    value={parameters.season}
                                     placeholder={"Select a season"}
                                     style={{ width: '100%' }}
                                     onChange={(val) => this.handleSingleSelectChange("season", val)}
                                 >
-                                    {selectLists.seasons}
+                                    {filterOptions.seasons}
                                 </Select>
-                                <h3>Current Age</h3>
-                                <Slider
-                                    range={true}
-                                    defaultValue={[selectLists.ages.min, selectLists.ages.max]}
-                                    min={selectLists.ages.min}
-                                    max={selectLists.ages.max}
-                                    onChange={(values) => this.handleRangeSliderChange("ages", values)}
-                                />
-                                <h3>Nationalities</h3>
-                                <Select
-                                    placeholder={"Select nationalities"}
-                                    style={{ width: '100%' }}
-                                    mode={"multiple"}
-                                    onSelect={(val) => this.handleSelectListAdd("nationalities", val)}
-                                    onDeselect={(val) => this.handleSelectListRemove("nationalities", val)}
+                                <Collapsible
+                                    open={true}
+                                    trigger="Metadata"
+                                    className="filter-headers"
+                                    transitionTime={200}
+                                    transitionCloseTime={200}
                                 >
-                                    {selectLists.nationalities}
-                                </Select>
-                                <h3>Clubs</h3>
-                                <Select
-                                    placeholder={"Select clubs"}
-                                    style={{ width: '100%' }}
-                                    disabled={parameters.season === null}
-                                    mode={"multiple"}
-                                    onSelect={(val) => this.handleSelectListAdd("clubs", val)}
-                                    onDeselect={(val) => this.handleSelectListRemove("clubs", val)}
+                                    <h4>Current Age</h4>
+                                    <Slider
+                                        value={[parameters.ages.min, parameters.ages.max]}
+                                        range={true}
+                                        defaultValue={[filterOptions.ages.min, filterOptions.ages.max]}
+                                        min={filterOptions.ages.min}
+                                        max={filterOptions.ages.max}
+                                        onChange={(values) => this.handleRangeSliderChange("ages", values)}
+                                    />
+                                    <h4>Nationalities</h4>
+                                    <Select
+                                        value={parameters.nationalities.map(x => x)}
+                                        placeholder={"Select nationalities"}
+                                        style={{ width: '100%' }}
+                                        mode={"multiple"}
+                                        allowClear={true}
+                                        onSelect={(val) => this.handleSelectListAdd("nationalities", val)}
+                                        onDeselect={(val) => this.handleSelectListRemove("nationalities", val)}
+                                        onClear={() => this.handleSelectListClear("nationalities")}
+                                        filterOption={(input, option) =>
+                                            option.props.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
+                                        }
+                                    >
+                                        {filterOptions.nationalities}
+                                    </Select>
+                                    <h4>Clubs</h4>
+                                    <Select
+                                        value={parameters.clubs.map(x => x)}
+                                        placeholder={"Select clubs"}
+                                        style={{ width: '100%' }}
+                                        disabled={parameters.season === null}
+                                        mode={"multiple"}
+                                        allowClear={true}
+                                        onSelect={(val) => this.handleSelectListAdd("clubs", val)}
+                                        onDeselect={(val) => this.handleSelectListRemove("clubs", val)}
+                                        onClear={() => this.handleSelectListClear("clubs")}
+                                        filterOption={(input, option) =>
+                                            option.props.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
+                                        }
+                                    >
+                                        {filterOptions.clubs}
+                                    </Select>
+                                    <h4>Positions</h4>
+                                    <Select
+                                        value={parameters.positions.map(x => x)}
+                                        placeholder={"Select positions"}
+                                        style={{ width: '100%' }}
+                                        disabled={parameters.season === null}
+                                        mode={"multiple"}
+                                        allowClear={true}
+                                        onSelect={(val) => this.handleSelectListAdd("positions", val)}
+                                        onDeselect={(val) => this.handleSelectListRemove("positions", val)}
+                                        onClear={() => this.handleSelectListClear("positions")}
+                                        filterOption={(input, option) =>
+                                            option.props.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
+                                        }
+                                    >
+                                        {filterOptions.positions}
+                                    </Select>
+                                </Collapsible>
+                                <Collapsible
+                                    open={true}
+                                    trigger="Raw Stat Filters"
+                                    className="filter-headers"
+                                    transitionTime={200}
+                                    transitionCloseTime={200}
                                 >
-                                    {selectLists.clubs}
-                                </Select>
-                                <h3>Positions</h3>
-                                <Select
-                                    placeholder={"Select positions"}
-                                    style={{ width: '100%' }}
-                                    disabled={parameters.season === null}
-                                    mode={"multiple"}
-                                    onSelect={(val) => this.handleSelectListAdd("positions", val)}
-                                    onDeselect={(val) => this.handleSelectListRemove("positions", val)}
+                                    <Select
+                                        value={Object.keys(parameters.rawStats)}
+                                        placeholder={"Select stats to add range filters"}
+                                        style={{ width: '100%' }}
+                                        disabled={parameters.season === null}
+                                        mode={"multiple"}
+                                        allowClear={true}
+                                        onSelect={(val) => this.handleLookupStatSelectListAdd("rawStats", val)}
+                                        onDeselect={(val) => this.handleLookupStatSelectListRemove("rawStats", val)}
+                                        onClear={() => this.handleLookupStatsSelectListClear("rawStats")}
+                                        filterOption={(input, option) =>
+                                            option.props.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
+                                        }
+                                    >
+                                        {filterOptions.rawStats}
+                                    </Select>
+                                    {rawStatsSliders}
+                                </Collapsible>
+                                <Collapsible
+                                    open={true}
+                                    trigger="Percentile Rank Filters"
+                                    className="filter-headers"
+                                    transitionTime={200}
+                                    transitionCloseTime={200}
                                 >
-                                    {selectLists.positions}
-                                </Select>
-                                <h3>Raw Stat Filters</h3>
-                                <Select
-                                    placeholder={"Select stats to add range filters"}
-                                    style={{ width: '100%' }}
-                                    disabled={parameters.season === null}
-                                    mode={"multiple"}
-                                    onSelect={(val) => this.handleLookupStatAdd("rawStats", val)}
-                                    onDeselect={(val) => this.handleLookupStatRemove("rawStats", val)}
-                                >
-                                    {selectLists.rawStats}
-                                </Select>
-                                {rawStatsSliders}
-                                <h3>Percentile Rank Filters</h3>
-                                <Select
-                                    placeholder={"Select stats to add range filters"}
-                                    style={{ width: '100%' }}
-                                    disabled={parameters.season === null}
-                                    mode={"multiple"}
-                                    onSelect={(val) => this.handleLookupStatAdd("percentileRanks", val)}
-                                    onDeselect={(val) => this.handleLookupStatRemove("percentileRanks", val)}
-                                >
-                                    {selectLists.percentileRanks}
-                                </Select>
-                                {percentileRanksSliders}
+                                    <Select
+                                        value={Object.keys(parameters.percentileRanks)}
+                                        placeholder={"Select stats to add range filters"}
+                                        style={{ width: '100%' }}
+                                        disabled={parameters.season === null || parameters.positions.length !== 1}
+                                        mode={"multiple"}
+                                        allowClear={true}
+                                        onSelect={(val) => this.handleLookupStatSelectListAdd("percentileRanks", val)}
+                                        onDeselect={(val) => this.handleLookupStatSelectListRemove("percentileRanks", val)}
+                                        onClear={() => this.handleLookupStatsSelectListClear("percentileRanks")}
+                                        filterOption={(input, option) =>
+                                            option.props.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
+                                        }
+                                    >
+                                        {filterOptions.percentileRanks}
+                                    </Select>
+                                    {percentileRanksSliders}
+                                </Collapsible>
                             </div>
                             <div className="filter-buttons" id="advanced-search-filter-buttons">
                                 <div className="filter-button">
@@ -667,4 +917,7 @@ class AdvancedSearch extends Component {
 
 }
 
-export default AdvancedSearch;
+export default withQueryParams({
+    parameters: JsonParam
+}, AdvancedSearch);
+

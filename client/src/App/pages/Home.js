@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import OutsideClickHandler from 'react-outside-click-handler';
 import $ from "jquery";
 
@@ -226,15 +227,13 @@ class Home extends Component {
                             isMobile={this.isMobile}
                             page="home"
                         />
-                        {/*<Link to={"/stats/" + samplePlayer.code}>*/}
-                        {/*    <button id="lucky-button">*/}
-                        {/*        Slice of Luck*/}
-                        {/*    </button>*/}
-                        {/*</Link>*/}
-                        {/*<p>Trending:</p>*/}
-                        {/*<div id="sample-results">*/}
-                        {/*    {samplePlayerButtons}*/}
-                        {/*</div>*/}
+                        <br/>
+                        <br/>
+                        <Link to={"/advancedSearch"}>
+                            <button id="lucky-button">
+                                Advanced Search
+                            </button>
+                        </Link>
                     </div>
                     <div id="about" className="homepage-section-container centered-section">
                         <div id="about-section-container">

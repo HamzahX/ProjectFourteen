@@ -80,6 +80,7 @@ body {
     width: 100%;
     min-height: 100%;
     height: 100%;
+    line-height: 1;
 }
 
 body::after{
@@ -102,6 +103,7 @@ h1 {
     font-size: 4.8em;
     margin-top: 0;
     margin-bottom: 0.2em;
+    font-weight: 600;
 }
 
 h2 {
@@ -116,15 +118,17 @@ h3 {
     font-size: 1.2em;
     margin-bottom: 10px;
     color: #B23535;
+    font-weight: 600;
 }
 
 h4 {
     margin-bottom: 5px;
     line-height: 1;
+    font-weight: 700;
 }
 
-p {
-    font-size: 1.1em;
+p, li {
+    font-size: 1.15em;
 }
 
 .accented-p {
@@ -470,12 +474,13 @@ button:hover {
         .homepage-section-container p {
             color: #222222;
             font-family: Tahoma, Arial, Helvetica, sans-serif;
+            line-height: 1.4;
         }
 
         .homepage-section-container li {
-            font-size: 1.1em;
             color: #373737;
             font-family: Tahoma, Arial, Helvetica, sans-serif;
+            line-height: 1.3;
         }
 
         .homepage-section-container a {
@@ -568,7 +573,7 @@ button:hover {
             flex-direction: column;
             justify-content: center;
             font-family: "Courier New", monospace;
-            font-size: 1.1em;
+            font-size: 1.16em;
             font-weight: bold;
             color: #e75453;
             line-height: 90%;
@@ -653,10 +658,10 @@ button:hover {
                     display: -webkit-flex;
                     justify-content: space-between;
                     width: 100%;
-                    padding-top: 10px;
-                    padding-bottom: 10px;
+                    padding-top: 12px;
+                    padding-bottom: 12px;
                     font-weight: bold;
-                    font-size: 1.1em;
+                    font-size: 1.18em;
                     color: #B23535;
                 }
 
@@ -754,7 +759,7 @@ button:hover {
                 }
 
                 #advanced-search-filter-inputs h4 {
-                    margin-left: 7px;
+                    font-weight: 600;
                 }
 
                 #advanced-search-filter-inputs .ant-select {
@@ -762,7 +767,7 @@ button:hover {
                 }
 
                 #advanced-search-filter-inputs .ant-slider {
-                    margin-bottom: 15px;
+                    margin-bottom: 13px;
                 }
 
             #search-filters h3, #search-results h3 {
@@ -813,7 +818,7 @@ button:hover {
 
             #player-search-results, #club-search-results {
                 display: grid;
-                grid-template-columns: repeat(3, 1fr);
+                grid-template-columns: repeat(4, 1fr);
                 grid-auto-rows: minmax(min-content, max-content);
                 grid-column-gap: 1%;
                 grid-row-gap: 1.6vh;
@@ -931,8 +936,12 @@ button:hover {
                 font-size: 250%;
             }
 
-            #glossary-overlay #glossary-container p, #glossary-overlay #glossary-container li {
-                font-size: 1.1em;
+            #glossary-overlay #glossary-container p {
+                line-height: 1.4;
+            }
+
+            #glossary-overlay #glossary-container li {
+                line-height: 1.3;
             }
 
             .help-section-container {
@@ -940,19 +949,16 @@ button:hover {
             }
 
             .help-section-container p {
-                font-size: 1em;
                 color: #222222;
                 font-family: Tahoma, Arial, Helvetica, sans-serif;
             }
 
             .help-section-container li {
-                font-size: 0.98em;
                 color: #373737;
                 font-family: Tahoma, Arial, Helvetica, sans-serif;
             }
 
             .help-section-container a {
-                font-size: 0.9em;
                 color: #878787;
             }
 
@@ -968,6 +974,7 @@ button:hover {
             #compare-search-overlay span h3 {
                 color: white;
                 text-align: center;
+                margin-top: 20px;
             }
 
             #compare-search-overlay #searchbar-container1 {
@@ -1071,7 +1078,7 @@ button:hover {
                 }
 
                 #chart #competitions-container, #export #competitions-container {
-                    font-size: 0.52em;
+                    font-size: 0.57em;
                     line-height: 1.2em;
                     font-weight: normal;
                     padding-top: 0;
@@ -1125,14 +1132,14 @@ button:hover {
 
             /*outer border*/
             .highcharts-container  svg .highcharts-yaxis-grid path:nth-child(6){
-                stroke: #222222;
+                stroke: #777777;
                 stroke-width: 2;
             }
 
             /*inner border*/
             .highcharts-container  svg .highcharts-yaxis-grid path:nth-child(2) {
                 fill: #fafbfc !important;
-                stroke: #222222;
+                stroke: #777777;
                 stroke-width: 2;
                 z-index: 7 !important;
             }
@@ -1140,7 +1147,7 @@ button:hover {
             /*axis-lines (in-between inner and outer)*/
             .highcharts-container  svg .highcharts-yaxis-grid path:not(:nth-child(2)):not(:nth-child(6)):not(:nth-child(7)) {
                 stroke: #7b7b7b;
-                opacity: 0.5 !important;
+                opacity: 0.4 !important;
             }
 
         #chart {
@@ -1176,11 +1183,20 @@ button:hover {
 
 
 
+@media (max-width: 1500px){
+
+    #player-search-results, #club-search-results {
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-row-gap: 0.8vh;
+    }
+
+}
+
 @media (max-width: 1200px){
 
     #player-search-results, #club-search-results {
         grid-template-columns: 1fr 1fr;
-        grid-row-gap: 0.8vh;
+        /*grid-row-gap: 0.8vh;*/
     }
 
 }

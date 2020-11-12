@@ -168,7 +168,7 @@ class SliceOptions extends Component {
             <Collapsible
                 open={this.templateOpen}
                 trigger="Template"
-                className="chart-filter-headers"
+                className="filter-headers"
                 transitionTime={200}
                 transitionCloseTime={200}
             >
@@ -179,7 +179,7 @@ class SliceOptions extends Component {
             <Collapsible
                 open={false}
                 trigger="Template"
-                className="chart-filter-headers"
+                className="filter-headers"
                 transitionTime={200}
                 transitionCloseTime={200}
             >
@@ -203,7 +203,7 @@ class SliceOptions extends Component {
                         key={`Competitions ${code})`}
                         open={!this.templateOpen && !this.isMobile}
                         trigger={`Competitions | ${this.names[this.codes[i]]}`}
-                        className="chart-filter-headers"
+                        className="filter-headers"
                         transitionTime={200}
                         transitionCloseTime={200}
                     >
@@ -221,7 +221,7 @@ class SliceOptions extends Component {
                     key={"_"}
                     open={!this.templateOpen && !this.isMobile}
                     trigger={`Competitions`}
-                    className="chart-filter-headers"
+                    className="filter-headers"
                     transitionTime={200}
                     transitionCloseTime={200}
                 >
@@ -257,7 +257,7 @@ class SliceOptions extends Component {
                 <Collapsible
                     open={false}
                     trigger="Data Labels"
-                    className="chart-filter-headers"
+                    className="filter-headers"
                     transitionTime={200}
                     transitionCloseTime={200}
                 >
@@ -290,7 +290,7 @@ class SliceOptions extends Component {
             <Collapsible
                 open={false}
                 trigger="Possession Adjustment"
-                className="chart-filter-headers"
+                className="filter-headers"
                 transitionTime={200}
                 transitionCloseTime={200}
             >

@@ -409,7 +409,7 @@ class Slice extends Component {
                     padding: 31
                 },
                 gridLineWidth: 2,
-                gridLineColor: '#4a4a4a',
+                gridLineColor: '#777777',
                 gridZIndex: 2
             },
             yAxis: {
