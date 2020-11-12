@@ -79,12 +79,14 @@ var metadataArray = [];
 var WHOSCORED_TO_FBREF_PLAYERS = JSON.parse(fs.readFileSync(path.join(__dirname, '/playerMappingData/whoscoredToFbref.json')));
 
 //load position data; the list of players who play in each position
-let FWPlayers = JSON.parse(fs.readFileSync(path.join(__dirname, `/positionData/${SEASON}/FWPlayers.json`)))['codes'];
-let AMPlayers = JSON.parse(fs.readFileSync(path.join(__dirname, `/positionData/${SEASON}/AMPlayers.json`)))['codes'];
-let CMPlayers = JSON.parse(fs.readFileSync(path.join(__dirname, `/positionData/${SEASON}/CMPlayers.json`)))['codes'];
-let FBPlayers = JSON.parse(fs.readFileSync(path.join(__dirname, `/positionData/${SEASON}/FBPlayers.json`)))['codes'];
-let CBPlayers = JSON.parse(fs.readFileSync(path.join(__dirname, `/positionData/${SEASON}/CBPlayers.json`)))['codes'];
-let GKPlayers = JSON.parse(fs.readFileSync(path.join(__dirname, `/positionData/${SEASON}/GKPlayers.json`)))['codes'];
+let FWPlayers = JSON.parse(fs.readFileSync(path.join(__dirname, `/positionData/${SEASON}/FWPercentilePlayers.json`)))['codes'];
+let AMPlayers = JSON.parse(fs.readFileSync(path.join(__dirname, `/positionData/${SEASON}/AMPercentilePlayers.json`)))['codes'];
+let CMPlayers = JSON.parse(fs.readFileSync(path.join(__dirname, `/positionData/${SEASON}/CMPercentilePlayers.json`)))['codes'];
+let FBPlayers = JSON.parse(fs.readFileSync(path.join(__dirname, `/positionData/${SEASON}/FBPercentilePlayers.json`)))['codes'];
+let CBPlayers = JSON.parse(fs.readFileSync(path.join(__dirname, `/positionData/${SEASON}/CBPercentilePlayers.json`)))['codes'];
+let GKPlayers = JSON.parse(fs.readFileSync(path.join(__dirname, `/positionData/${SEASON}/GKPercentilePlayers.json`)))['codes'];
+
+let APPS_PER_POSITION = JSON.parse(fs.readFileSync(path.join(__dirname, `/positionData/${SEASON}/appsPerPosition.json`)));
 
 /**
  * Launches a browser window using puppeteer and navigates to the appropriate URL based on the command line arguments
@@ -532,8 +534,28 @@ let processPlayerPosition = (positionString, code) => {
         positions.push("GK");
     }
 
+    //if the player does not exist in any of the lists of players used for the percentile arrays
     if (positions.length === 0) {
-        positions.push("N/A");
+
+        if (APPS_PER_POSITION[code] !== undefined){
+
+            let max = 0;
+
+            //set their position(s) to the position they've made the most starts in for the current season
+            for (let position in APPS_PER_POSITION[code]){
+                if (APPS_PER_POSITION[code][position] > max){
+                    positions = [position];
+                    max = APPS_PER_POSITION[code][position];
+                }
+                else if (APPS_PER_POSITION[code][position] === max){
+                    positions.push(position);
+                }
+            }
+
+        }
+        else {
+            positions.push("N/A");
+        }
     }
 
     return positions;

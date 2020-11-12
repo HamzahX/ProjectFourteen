@@ -44,12 +44,12 @@ let setup = async () => {
 
     PROCESSED = JSON.parse(fs.readFileSync(path.join(__dirname, '/playerData/processed.json')));
 
-    FW_CODES = JSON.parse(fs.readFileSync(path.join(__dirname, `positionData/${SEASON}/FWPlayers.json`)))["codes"];
-    AM_CODES = JSON.parse(fs.readFileSync(path.join(__dirname, `positionData/${SEASON}/AMPlayers.json`)))["codes"];
-    CM_CODES = JSON.parse(fs.readFileSync(path.join(__dirname, `positionData/${SEASON}/CMPlayers.json`)))["codes"];
-    FB_CODES = JSON.parse(fs.readFileSync(path.join(__dirname, `positionData/${SEASON}/FBPlayers.json`)))["codes"];
-    CB_CODES = JSON.parse(fs.readFileSync(path.join(__dirname, `positionData/${SEASON}/CBPlayers.json`)))["codes"];
-    GK_CODES = JSON.parse(fs.readFileSync(path.join(__dirname, `positionData/${SEASON}/GKPlayers.json`)))["codes"];
+    FW_CODES = JSON.parse(fs.readFileSync(path.join(__dirname, `positionData/${SEASON}/FWPercentilePlayers.json`)))["codes"];
+    AM_CODES = JSON.parse(fs.readFileSync(path.join(__dirname, `positionData/${SEASON}/AMPercentilePlayers.json`)))["codes"];
+    CM_CODES = JSON.parse(fs.readFileSync(path.join(__dirname, `positionData/${SEASON}/CMPercentilePlayers.json`)))["codes"];
+    FB_CODES = JSON.parse(fs.readFileSync(path.join(__dirname, `positionData/${SEASON}/FBPercentilePlayers.json`)))["codes"];
+    CB_CODES = JSON.parse(fs.readFileSync(path.join(__dirname, `positionData/${SEASON}/CBPercentilePlayers.json`)))["codes"];
+    GK_CODES = JSON.parse(fs.readFileSync(path.join(__dirname, `positionData/${SEASON}/GKPercentilePlayers.json`)))["codes"];
 
     FW_PERCENTILE_DATA = {
         npg: [],

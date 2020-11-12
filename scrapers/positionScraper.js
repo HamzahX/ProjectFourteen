@@ -51,6 +51,7 @@ else {
         "https://www.whoscored.com/Statistics"
     ]
 }
+let APPEARANCES_PER_POSITION_COUNTER = {};
 
 
 let setup = async () => {
@@ -115,7 +116,7 @@ let pageSetup = async (page, isFirstIteration, position) => {
             await page.focus('#appearances');
             await page.keyboard.press('Backspace');
             await page.keyboard.press('Backspace');
-            await page.keyboard.type(SEASON === "20-21" ? '3' : '9');
+            //await page.keyboard.type(SEASON === "20-21" ? '3' : '9');
 
             // select 'total' from 'accumulation' drop-down
             await page.select('#statsAccumulationType', '2');
@@ -208,7 +209,7 @@ let pageSetup = async (page, isFirstIteration, position) => {
             await page.evaluate((selector) => document.querySelector(selector).click(), selector);
             await page.waitForFunction('document.querySelector("#statistics-table-detailed-loading").style.display == "none"');
 
-            await page.waitFor(3000);
+            await page.waitFor(5000);
             resolve(page);
 
         } else {
@@ -232,7 +233,7 @@ let getPlayers = async(position) => {
         let rawData = {names:[], codes:[]};
         pageSetup(page, true, position)
             .then(() =>
-                getNamesAndCodes(page)
+                getNamesAndCodes(page, position)
             )
             .then( async (namesAndCodes) => {
                 rawData['names'] = rawData['names'].concat(namesAndCodes[0]);
@@ -248,18 +249,25 @@ let getPlayers = async(position) => {
 };
 
 
-let getNamesAndCodes = async (page) => {
+let getNamesAndCodes = async (page, position) => {
 
     let firstIteration = true;
-    //scrape needed data
     let namesAndCodes = [];
+
     return new Promise(async function(resolve, reject){
+
         let hasNextPage = true;
+
         (async function loop() {
             while (hasNextPage){
                 hasNextPage = await new Promise( (resolve, reject) =>
-                    scrapeNamesAndCodes(page, firstIteration)
-                        .then(async (result) => (namesAndCodes = combineResults(namesAndCodes, result), firstIteration = false))
+                    scrapeNamesAndCodes(page, position)
+                        .then(async (result) => {
+                            namesAndCodes = combineResults(namesAndCodes, result);
+                            APPEARANCES_PER_POSITION_COUNTER = result[2];
+                            console.log(APPEARANCES_PER_POSITION_COUNTER);
+                            firstIteration = false;
+                        })
                         .then(async () =>
                             resolve(await pageSetup(page, false))
                         )
@@ -274,45 +282,65 @@ let getNamesAndCodes = async (page) => {
                     await page.waitFor(1000);
                 }
             }
-            scrapeNamesAndCodes(page, firstIteration)
+            scrapeNamesAndCodes(page, position)
                 .then(async (result) =>
                     (namesAndCodes = combineResults(namesAndCodes, result), firstIteration = false)
                 ).then(() =>
                 (resolve(namesAndCodes), logResults(namesAndCodes))
             )
         })();
+
     });
 
 };
 
 
-let scrapeNamesAndCodes = async (page) => {
+let scrapeNamesAndCodes = async (page, position) => {
 
-    return await page.evaluate(() => {
+    return await page.evaluate((SEASON, APPEARANCES_PER_POSITION_COUNTER, position) => {
 
         let playerNames = [];
         let playerCodes = [];
 
         const names = Array.from(document.querySelectorAll('#statistics-table-detailed #top-player-stats-summary-grid tr .grid-ghost-cell .iconize-icon-left')); //get names
         const links = Array.from(document.querySelectorAll('#statistics-table-detailed #top-player-stats-summary-grid tr .grid-ghost-cell .player-link')); //get player links
+        const apps = Array.from(document.querySelectorAll('#statistics-table-detailed #top-player-stats-summary-grid tr td:nth-child(3)')); //get apps
 
         for (let i = 0; i < links.length; i++) {
 
             let nameCell = names[i];
             let linkCell = links[i];
+            let appsCell = apps[i];
 
             let name = nameCell.textContent.substring(0, nameCell.textContent.length - 1);
             let url = linkCell.getAttribute("href");
             url = url.replace("/Players/", "");
             let code = url.substring(0, url.indexOf("/"));
-            playerNames.push(name);
-            playerCodes.push(code);
+            let numApps = parseInt(appsCell.innerText);
+
+            if (numApps >= 10 || (SEASON === "20-21" && numApps >= 6)){
+                playerNames.push(name);
+                playerCodes.push(code);
+            }
+
+            if (APPEARANCES_PER_POSITION_COUNTER[code] === undefined) {
+                APPEARANCES_PER_POSITION_COUNTER[code] = {};
+            }
+
+            if (APPEARANCES_PER_POSITION_COUNTER[code][position] === undefined)
+            {
+                APPEARANCES_PER_POSITION_COUNTER[code][position] = numApps;
+            }
+            else {
+                APPEARANCES_PER_POSITION_COUNTER[code][position] += numApps;
+            }
+
 
         }
 
-        return [playerNames, playerCodes];
+        return [playerNames, playerCodes, APPEARANCES_PER_POSITION_COUNTER];
 
-    });
+    }, SEASON, APPEARANCES_PER_POSITION_COUNTER, position);
 
 };
 
@@ -321,7 +349,7 @@ let combineResults = (original, addition) => {
     let result = [];
     if (addition !== undefined && Array.isArray(addition[0])){
         if (original.length === 0){
-            result = addition;
+            result = [addition[0], addition[1]];
         }
         else {
             for (let i=0; i<original.length; i++){
@@ -356,22 +384,22 @@ let saveData =  async (rawData, position) => {
 
     switch (position) {
         case "FW":
-            filePath = `positionData/${SEASON}/FWPlayers.json`;
+            filePath = `positionData/${SEASON}/FWPercentilePlayers.json`;
             break;
         case "AM":
-            filePath = `positionData/${SEASON}/AMPlayers.json`;
+            filePath = `positionData/${SEASON}/AMPercentilePlayers.json`;
             break;
         case "CM":
-            filePath = `positionData/${SEASON}/CMPlayers.json`;
+            filePath = `positionData/${SEASON}/CMPercentilePlayers.json`;
             break;
         case "FB":
-            filePath = `positionData/${SEASON}/FBPlayers.json`;
+            filePath = `positionData/${SEASON}/FBPercentilePlayers.json`;
             break;
         case "CB":
-            filePath = `positionData/${SEASON}/CBPlayers.json`;
+            filePath = `positionData/${SEASON}/CBPercentilePlayers.json`;
             break;
         case "GK":
-            filePath = `positionData/${SEASON}/GKPlayers.json`;
+            filePath = `positionData/${SEASON}/GKPercentilePlayers.json`;
             break;
 
     }
@@ -426,6 +454,16 @@ setup()
                 resolve();
             })();
         })
+    })
+    .then(() => {
+        return new Promise(async function (resolve, reject) {
+            await fs.writeFile(path.join(__dirname, `positionData/${SEASON}/appsPerPosition.json`), JSON.stringify(APPEARANCES_PER_POSITION_COUNTER, null, '\t'), function(err) {
+                if (err) {
+                    console.log(err);
+                }
+                resolve();
+            });
+        });
     })
     .then(async () => {
         console.timeEnd('player positions scraped'), process.exit(0)

@@ -847,7 +847,7 @@
 		},
 		"85059|Crystal Palace": {
 			"name": "Wilfried Zaha",
-			"age": 27,
+			"age": 28,
 			"countryCode": "ci",
 			"position": "AM(LR),FW",
 			"club": "Crystal Palace",
@@ -2251,7 +2251,7 @@
 		},
 		"342842|Bournemouth": {
 			"name": "Chris Mepham",
-			"age": 22,
+			"age": 23,
 			"countryCode": "gb-wls",
 			"position": "D(C)",
 			"club": "Bournemouth",
@@ -2329,7 +2329,7 @@
 		},
 		"19545|Leicester": {
 			"name": "Kasper Schmeichel",
-			"age": 33,
+			"age": 34,
 			"countryCode": "dk",
 			"position": "GK",
 			"club": "Leicester",
@@ -2552,7 +2552,7 @@
 			"name": "Tanguy Ndombele",
 			"age": 23,
 			"countryCode": "fr",
-			"position": "DMC",
+			"position": "M(C)",
 			"club": "Tottenham",
 			"19-20": {
 				"Premier League | Tottenham": {
@@ -3447,7 +3447,7 @@
 		},
 		"302313|Manchester United": {
 			"name": "Daniel James",
-			"age": 22,
+			"age": 23,
 			"countryCode": "gb-wls",
 			"position": "AM(LR),FW",
 			"club": "Manchester United",
@@ -3564,7 +3564,7 @@
 		},
 		"122980|West Ham": {
 			"name": "Arthur Masuaku",
-			"age": 26,
+			"age": 27,
 			"countryCode": "cd",
 			"position": "D(L),M(L)",
 			"club": "West Ham",
@@ -3759,7 +3759,7 @@
 		},
 		"79554|Manchester United": {
 			"name": "David de Gea",
-			"age": 29,
+			"age": 30,
 			"countryCode": "es",
 			"position": "GK",
 			"club": "Manchester United",
@@ -3863,7 +3863,7 @@
 		},
 		"350088|Chelsea": {
 			"name": "Callum Hudson-Odoi",
-			"age": 19,
+			"age": 20,
 			"countryCode": "gb-eng",
 			"position": "AM(LR)",
 			"club": "Chelsea",
@@ -4760,7 +4760,7 @@
 		},
 		"29544|Everton": {
 			"name": "Morgan Schneiderlin",
-			"age": 30,
+			"age": 31,
 			"countryCode": "fr",
 			"position": "DMC",
 			"club": "Everton",
@@ -5488,7 +5488,7 @@
 		},
 		"107622|Brighton": {
 			"name": "Jürgen Locadia",
-			"age": 26,
+			"age": 27,
 			"countryCode": "nl",
 			"position": "AM(LR),FW",
 			"club": "Brighton",
@@ -7793,7 +7793,7 @@
 			"name": "Nélson Semedo",
 			"age": 26,
 			"countryCode": "pt",
-			"position": "D(R)",
+			"position": "D(R),M(R)",
 			"club": "Barcelona",
 			"19-20": {
 				"La Liga | Barcelona": {
@@ -7817,7 +7817,7 @@
 		},
 		"136810|Valencia": {
 			"name": "Jaume Doménech",
-			"age": 29,
+			"age": 30,
 			"countryCode": "es",
 			"position": "GK",
 			"club": "Valencia",
@@ -8209,7 +8209,7 @@
 			"name": "Ferran Torres",
 			"age": 20,
 			"countryCode": "es",
-			"position": "AM(R)",
+			"position": "AM(R),FW",
 			"club": "Valencia",
 			"19-20": {
 				"La Liga | Valencia": {
@@ -8532,7 +8532,7 @@
 		},
 		"113708|Sevilla": {
 			"name": "Óliver Torres",
-			"age": 25,
+			"age": 26,
 			"countryCode": "es",
 			"position": "M(CLR)",
 			"club": "Sevilla",
@@ -8922,7 +8922,7 @@
 		},
 		"109896|Levante": {
 			"name": "Sergio Postigo",
-			"age": 31,
+			"age": 32,
 			"countryCode": "es",
 			"position": "D(C)",
 			"club": "Levante",
@@ -9013,7 +9013,7 @@
 		},
 		"362431|Atletico Madrid": {
 			"name": "João Félix",
-			"age": 20,
+			"age": 21,
 			"countryCode": "pt",
 			"position": "AM(L),FW",
 			"club": "Atletico Madrid",
@@ -9260,7 +9260,7 @@
 		},
 		"243187|Levante": {
 			"name": "Toño",
-			"age": 30,
+			"age": 31,
 			"countryCode": "es",
 			"position": "D(L),M(L)",
 			"club": "Levante",
@@ -10326,7 +10326,7 @@
 		},
 		"79708|Deportivo Alaves": {
 			"name": "Víctor Laguardia",
-			"age": 30,
+			"age": 31,
 			"countryCode": "es",
 			"position": "D(C)",
 			"club": "Deportivo Alaves",
@@ -10612,7 +10612,7 @@
 		},
 		"323669|Getafe": {
 			"name": "Oghenekaro Etebo",
-			"age": 24,
+			"age": 25,
 			"countryCode": "ng",
 			"position": "M(CL),FW",
 			"club": "Getafe",
@@ -10718,7 +10718,7 @@
 			"name": "Pipa",
 			"age": 22,
 			"countryCode": "",
-			"position": "D(R)",
+			"position": "D(R),M(R)",
 			"club": "Espanyol",
 			"19-20": {
 				"La Liga | Espanyol": {
@@ -10731,7 +10731,7 @@
 			"name": "Pione Sisto",
 			"age": 25,
 			"countryCode": "dk",
-			"position": "AM(LR)",
+			"position": "AM(CLR)",
 			"club": "Celta Vigo",
 			"19-20": {
 				"La Liga | Celta Vigo": {
@@ -10770,7 +10770,7 @@
 			"name": "Bryan Gil",
 			"age": 19,
 			"countryCode": "es",
-			"position": "M(L)",
+			"position": "AM(L)",
 			"club": "Leganes",
 			"19-20": {
 				"La Liga | Leganes": {
@@ -11108,7 +11108,7 @@
 			"name": "Antonio Barragán",
 			"age": 33,
 			"countryCode": "es",
-			"position": "D(R),M(R)",
+			"position": "D(CR),M(R)",
 			"club": "Real Betis",
 			"19-20": {
 				"La Liga | Real Betis": {
@@ -11914,7 +11914,7 @@
 			"name": "Bryan Gil",
 			"age": 19,
 			"countryCode": "es",
-			"position": "M(L)",
+			"position": "AM(L)",
 			"club": "Sevilla",
 			"19-20": {
 				"La Liga | Sevilla": {
@@ -12315,7 +12315,7 @@
 		},
 		"354526|Getafe": {
 			"name": "Hugo Duro",
-			"age": 20,
+			"age": 21,
 			"countryCode": "es",
 			"position": "FW",
 			"club": "Getafe",
@@ -12356,7 +12356,7 @@
 			"name": "Lee Kang-In",
 			"age": 19,
 			"countryCode": "kr",
-			"position": "Midfielder",
+			"position": "FW",
 			"club": "Valencia",
 			"19-20": {
 				"La Liga | Valencia": {
@@ -13370,7 +13370,7 @@
 		},
 		"12267|Roma": {
 			"name": "Aleksandar Kolarov",
-			"age": 34,
+			"age": 35,
 			"countryCode": "rs",
 			"position": "D(CL),M(L)",
 			"club": "Roma",
@@ -14165,7 +14165,7 @@
 			"name": "Alex Berenguer",
 			"age": 25,
 			"countryCode": "es",
-			"position": "D(LR),M(CL),FW",
+			"position": "D(LR),M(CLR),FW",
 			"club": "Torino",
 			"19-20": {
 				"Serie A | Torino": {
@@ -14566,7 +14566,7 @@
 		},
 		"377283|Bologna": {
 			"name": "Takehiro Tomiyasu",
-			"age": 21,
+			"age": 22,
 			"countryCode": "jp",
 			"position": "D(CR)",
 			"club": "Bologna",
@@ -15086,7 +15086,7 @@
 		},
 		"93211|Cagliari": {
 			"name": "Luca Ceppitelli",
-			"age": 30,
+			"age": 31,
 			"countryCode": "it",
 			"position": "D(C)",
 			"club": "Cagliari",
@@ -15452,7 +15452,7 @@
 			"name": "Rafael Leão",
 			"age": 21,
 			"countryCode": "pt",
-			"position": "FW",
+			"position": "AM(L),FW",
 			"club": "AC Milan",
 			"19-20": {
 				"Serie A | AC Milan": {
@@ -15998,7 +15998,7 @@
 			"name": "Nahitan Nández",
 			"age": 24,
 			"countryCode": "uy",
-			"position": "DMC,M(R)",
+			"position": "M(CR)",
 			"club": "Cagliari",
 			"19-20": {
 				"Serie A | Cagliari": {
@@ -17322,7 +17322,7 @@
 		},
 		"78880|Genoa": {
 			"name": "Mattia Perin",
-			"age": 27,
+			"age": 28,
 			"countryCode": "it",
 			"position": "GK",
 			"club": "Genoa",
@@ -17725,7 +17725,7 @@
 		},
 		"255929|Verona": {
 			"name": "Federico Dimarco",
-			"age": 22,
+			"age": 23,
 			"countryCode": "it",
 			"position": "D(L),M(L)",
 			"club": "Verona",
@@ -18013,7 +18013,7 @@
 			"name": "Yevhen Shakhov",
 			"age": 29,
 			"countryCode": "ua",
-			"position": "AM(C)",
+			"position": "M(C)",
 			"club": "Lecce",
 			"19-20": {
 				"Serie A | Lecce": {
@@ -18557,7 +18557,7 @@
 		},
 		"299460|AC Milan": {
 			"name": "André Silva",
-			"age": 24,
+			"age": 25,
 			"countryCode": "pt",
 			"position": "FW",
 			"club": "AC Milan",
@@ -19714,7 +19714,7 @@
 		},
 		"255929|Inter": {
 			"name": "Federico Dimarco",
-			"age": 22,
+			"age": 23,
 			"countryCode": "it",
 			"position": "D(L),M(L)",
 			"club": "Inter",
@@ -19794,7 +19794,7 @@
 			"name": "Matteo Lovato",
 			"age": 20,
 			"countryCode": "it",
-			"position": "Defender",
+			"position": "D(C)",
 			"club": "Verona",
 			"19-20": {
 				"Serie A | Verona": {
@@ -20210,7 +20210,7 @@
 		},
 		"320834|Borussia Dortmund": {
 			"name": "Achraf Hakimi",
-			"age": 21,
+			"age": 22,
 			"countryCode": "ma",
 			"position": "D(LR),M(R)",
 			"club": "Borussia Dortmund",
@@ -21172,7 +21172,7 @@
 		},
 		"299460|Eintracht Frankfurt": {
 			"name": "André Silva",
-			"age": 24,
+			"age": 25,
 			"countryCode": "pt",
 			"position": "FW",
 			"club": "Eintracht Frankfurt",
@@ -21304,7 +21304,7 @@
 			"name": "Jonathan Schmid",
 			"age": 30,
 			"countryCode": "fr",
-			"position": "D(R),M(LR)",
+			"position": "D(R),M(CLR)",
 			"club": "Freiburg",
 			"19-20": {
 				"Bundesliga | Freiburg": {
@@ -21902,7 +21902,7 @@
 			"name": "Florian Wirtz",
 			"age": 17,
 			"countryCode": "",
-			"position": "Midfielder",
+			"position": "AM(C)",
 			"club": "Bayer Leverkusen",
 			"19-20": {
 				"Bundesliga | Bayer Leverkusen": {
@@ -23382,7 +23382,7 @@
 		},
 		"129171|Fortuna Duesseldorf": {
 			"name": "Kaan Ayhan",
-			"age": 25,
+			"age": 26,
 			"countryCode": "tr",
 			"position": "D(C),DMC",
 			"club": "Fortuna Duesseldorf",
@@ -23473,7 +23473,7 @@
 		},
 		"107622|Hoffenheim": {
 			"name": "Jürgen Locadia",
-			"age": 26,
+			"age": 27,
 			"countryCode": "nl",
 			"position": "AM(LR),FW",
 			"club": "Hoffenheim",
@@ -23642,7 +23642,7 @@
 		},
 		"107552|Schalke 04": {
 			"name": "Benito Raman",
-			"age": 25,
+			"age": 26,
 			"countryCode": "be",
 			"position": "AM(LR),FW",
 			"club": "Schalke 04",
@@ -25837,6 +25837,19 @@
 				}
 			}
 		},
+		"139623|Bayer Leverkusen": {
+			"name": "Joel Pohjanpalo",
+			"age": 26,
+			"countryCode": "fi",
+			"position": "FW",
+			"club": "Bayer Leverkusen",
+			"19-20": {
+				"Bundesliga | Bayer Leverkusen": {
+					"whoscoredApps": 1,
+					"whoscoredMins": 1
+				}
+			}
+		},
 		"96084|Mainz 05": {
 			"name": "Dong-Won Ji",
 			"age": 29,
@@ -26049,7 +26062,7 @@
 		},
 		"91961|Paris Saint-Germain": {
 			"name": "Marco Verratti",
-			"age": 27,
+			"age": 28,
 			"countryCode": "it",
 			"position": "DMC",
 			"club": "Paris Saint-Germain",
@@ -26309,7 +26322,7 @@
 		},
 		"369109|Rennes": {
 			"name": "Eduardo Camavinga",
-			"age": 17,
+			"age": 18,
 			"countryCode": "fr",
 			"position": "M(C)",
 			"club": "Rennes",
@@ -26896,7 +26909,7 @@
 			"name": "Maxwel Cornet",
 			"age": 24,
 			"countryCode": "ci",
-			"position": "M(LR),FW",
+			"position": "D(L),M(LR),FW",
 			"club": "Lyon",
 			"19-20": {
 				"Ligue 1 | Lyon": {
@@ -26997,7 +27010,7 @@
 			}
 		},
 		"321390|Rennes": {
-			"name": "Edouard Mendy",
+			"name": "Édouard Mendy",
 			"age": 28,
 			"countryCode": "sn",
 			"position": "GK",
@@ -27375,7 +27388,7 @@
 		},
 		"19845|Marseille": {
 			"name": "Yohann Pelé",
-			"age": 37,
+			"age": 38,
 			"countryCode": "fr",
 			"position": "GK",
 			"club": "Marseille",
@@ -27713,7 +27726,7 @@
 		},
 		"389064|Lyon": {
 			"name": "Melvin Bard",
-			"age": 19,
+			"age": 20,
 			"countryCode": "fr",
 			"position": "Defender",
 			"club": "Lyon",
@@ -28857,7 +28870,7 @@
 		},
 		"345396|Dijon": {
 			"name": "Mama Baldé",
-			"age": 24,
+			"age": 25,
 			"countryCode": "gw",
 			"position": "D(R),M(R),FW",
 			"club": "Dijon",
@@ -29535,7 +29548,7 @@
 			"name": "Martin Terrier",
 			"age": 23,
 			"countryCode": "fr",
-			"position": "AM(L),FW",
+			"position": "AM(CL),FW",
 			"club": "Lyon",
 			"19-20": {
 				"Ligue 1 | Lyon": {
@@ -30250,7 +30263,7 @@
 			"name": "Stephy Mavididi",
 			"age": 22,
 			"countryCode": "gb-eng",
-			"position": "AM(L),FW",
+			"position": "AM(LR),FW",
 			"club": "Dijon",
 			"19-20": {
 				"Ligue 1 | Dijon": {
@@ -31041,7 +31054,7 @@
 		},
 		"329409|Lille": {
 			"name": "Xeka",
-			"age": 25,
+			"age": 26,
 			"countryCode": "pt",
 			"position": "M(C)",
 			"club": "Lille",
@@ -32066,11 +32079,24 @@
 				}
 			}
 		},
+		"380613|Marseille": {
+			"name": "Isaac Lihadji",
+			"age": 18,
+			"countryCode": "",
+			"position": "Forward",
+			"club": "Marseille",
+			"19-20": {
+				"Ligue 1 | Marseille": {
+					"whoscoredApps": 2,
+					"whoscoredMins": 23
+				}
+			}
+		},
 		"348654|Lyon": {
 			"name": "Amine Gouiri",
 			"age": 20,
 			"countryCode": "fr",
-			"position": "Forward",
+			"position": "AM(L)",
 			"club": "Lyon",
 			"19-20": {
 				"Ligue 1 | Lyon": {
@@ -32657,7 +32683,7 @@
 			"name": "Ferran Torres",
 			"age": 20,
 			"countryCode": "es",
-			"position": "AM(R)",
+			"position": "AM(R),FW",
 			"club": "Valencia",
 			"19-20": {
 				"Champions League | Valencia": {
@@ -32707,7 +32733,7 @@
 		},
 		"320834|Borussia Dortmund": {
 			"name": "Achraf Hakimi",
-			"age": 21,
+			"age": 22,
 			"countryCode": "ma",
 			"position": "D(LR),M(R)",
 			"club": "Borussia Dortmund",
@@ -32876,7 +32902,7 @@
 		},
 		"243578|Club Brugge": {
 			"name": "Matej Mitrovic",
-			"age": 26,
+			"age": 27,
 			"countryCode": "hr",
 			"position": "D(C)",
 			"club": "Club Brugge",
@@ -32930,7 +32956,7 @@
 			"name": "Tanguy Ndombele",
 			"age": 23,
 			"countryCode": "fr",
-			"position": "DMC",
+			"position": "M(C)",
 			"club": "Tottenham",
 			"19-20": {
 				"Champions League | Tottenham": {
@@ -33214,7 +33240,7 @@
 		},
 		"362431|Atletico Madrid": {
 			"name": "João Félix",
-			"age": 20,
+			"age": 21,
 			"countryCode": "pt",
 			"position": "AM(L),FW",
 			"club": "Atletico Madrid",
@@ -33253,7 +33279,7 @@
 		},
 		"87643|Zenit St' Petersburg": {
 			"name": "Magomed Ozdoev",
-			"age": 27,
+			"age": 28,
 			"countryCode": "ru",
 			"position": "M(C)",
 			"club": "Zenit St' Petersburg",
@@ -33775,7 +33801,7 @@
 			"name": "Nélson Semedo",
 			"age": 26,
 			"countryCode": "pt",
-			"position": "D(R)",
+			"position": "D(R),M(R)",
 			"club": "Barcelona",
 			"19-20": {
 				"Champions League | Barcelona": {
@@ -34189,7 +34215,7 @@
 		},
 		"91961|Paris Saint-Germain": {
 			"name": "Marco Verratti",
-			"age": 27,
+			"age": 28,
 			"countryCode": "it",
 			"position": "DMC",
 			"club": "Paris Saint-Germain",
@@ -34318,7 +34344,7 @@
 			}
 		},
 		"296454|Shakhtar Donetsk": {
-			"name": "Junior Moraes",
+			"name": "Júnior Moraes",
 			"age": 33,
 			"countryCode": "ua",
 			"position": "FW",
@@ -35751,7 +35777,7 @@
 			"name": "Martin Terrier",
 			"age": 23,
 			"countryCode": "fr",
-			"position": "AM(L),FW",
+			"position": "AM(CL),FW",
 			"club": "Lyon",
 			"19-20": {
 				"Champions League | Lyon": {
@@ -36412,7 +36438,7 @@
 		},
 		"350088|Chelsea": {
 			"name": "Callum Hudson-Odoi",
-			"age": 19,
+			"age": 20,
 			"countryCode": "gb-eng",
 			"position": "AM(LR)",
 			"club": "Chelsea",
@@ -37428,7 +37454,7 @@
 			"name": "Maxwel Cornet",
 			"age": 24,
 			"countryCode": "ci",
-			"position": "M(LR),FW",
+			"position": "D(L),M(LR),FW",
 			"club": "Lyon",
 			"19-20": {
 				"Champions League | Lyon": {
@@ -38674,7 +38700,7 @@
 		},
 		"115118|Salzburg": {
 			"name": "Cican Stankovic",
-			"age": 27,
+			"age": 28,
 			"countryCode": "at",
 			"position": "GK",
 			"club": "Salzburg",
@@ -39012,7 +39038,7 @@
 		},
 		"364214|Club Brugge": {
 			"name": "Clinton Mata",
-			"age": 27,
+			"age": 28,
 			"countryCode": "ao",
 			"position": "D(CR)",
 			"club": "Club Brugge",
@@ -39285,7 +39311,7 @@
 		},
 		"136810|Valencia": {
 			"name": "Jaume Doménech",
-			"age": 29,
+			"age": 30,
 			"countryCode": "es",
 			"position": "GK",
 			"club": "Valencia",
@@ -39326,7 +39352,7 @@
 			"name": "Ladislav Takacs",
 			"age": 24,
 			"countryCode": "",
-			"position": "Defender",
+			"position": "Midfielder",
 			"club": "Slavia Prague",
 			"19-20": {
 				"Champions League | Slavia Prague": {
@@ -39456,7 +39482,7 @@
 			"name": "Rifat Zhemaletdinov",
 			"age": 24,
 			"countryCode": "ru",
-			"position": "AM(CLR),FW",
+			"position": "M(CLR),FW",
 			"club": "Lokomotiv Moscow",
 			"19-20": {
 				"Champions League | Lokomotiv Moscow": {
@@ -40208,7 +40234,7 @@
 		},
 		"329409|Lille": {
 			"name": "Xeka",
-			"age": 25,
+			"age": 26,
 			"countryCode": "pt",
 			"position": "M(C)",
 			"club": "Lille",
@@ -40509,7 +40535,7 @@
 			"name": "Lee Kang-In",
 			"age": 19,
 			"countryCode": "kr",
-			"position": "Midfielder",
+			"position": "FW",
 			"club": "Valencia",
 			"19-20": {
 				"Champions League | Valencia": {
@@ -41055,7 +41081,7 @@
 			"name": "Amine Gouiri",
 			"age": 20,
 			"countryCode": "fr",
-			"position": "Forward",
+			"position": "AM(L)",
 			"club": "Lyon",
 			"19-20": {
 				"Champions League | Lyon": {
@@ -41574,7 +41600,7 @@
 			}
 		},
 		"296454|Shakhtar Donetsk": {
-			"name": "Junior Moraes",
+			"name": "Júnior Moraes",
 			"age": 33,
 			"countryCode": "ua",
 			"position": "FW",
@@ -41629,7 +41655,7 @@
 			"name": "Ryan Christie",
 			"age": 25,
 			"countryCode": "gb-sct",
-			"position": "AM(C)",
+			"position": "AM(CR)",
 			"club": "Celtic",
 			"19-20": {
 				"Europa League | Celtic": {
@@ -41822,7 +41848,7 @@
 		},
 		"113708|Sevilla": {
 			"name": "Óliver Torres",
-			"age": 25,
+			"age": 26,
 			"countryCode": "es",
 			"position": "M(CLR)",
 			"club": "Sevilla",
@@ -42838,7 +42864,7 @@
 			"name": "Pipa",
 			"age": 22,
 			"countryCode": "",
-			"position": "D(R)",
+			"position": "D(R),M(R)",
 			"club": "Espanyol",
 			"19-20": {
 				"Europa League | Espanyol": {
@@ -43278,7 +43304,7 @@
 		},
 		"135563|Braga": {
 			"name": "Paulinho",
-			"age": 27,
+			"age": 28,
 			"countryCode": "pt",
 			"position": "FW",
 			"club": "Braga",
@@ -43538,7 +43564,7 @@
 		},
 		"26632|Qarabag FK": {
 			"name": "Míchel",
-			"age": 34,
+			"age": 35,
 			"countryCode": "es",
 			"position": "M(C)",
 			"club": "Qarabag FK",
@@ -43592,7 +43618,7 @@
 			"name": "Florian Wirtz",
 			"age": 17,
 			"countryCode": "",
-			"position": "Midfielder",
+			"position": "AM(C)",
 			"club": "Bayer Leverkusen",
 			"19-20": {
 				"Europa League | Bayer Leverkusen": {
@@ -43928,7 +43954,7 @@
 		},
 		"322689|Braga": {
 			"name": "André Horta",
-			"age": 23,
+			"age": 24,
 			"countryCode": "pt",
 			"position": "M(C)",
 			"club": "Braga",
@@ -43993,7 +44019,7 @@
 		},
 		"345988|Gent": {
 			"name": "Elisha Owusu",
-			"age": 22,
+			"age": 23,
 			"countryCode": "fr",
 			"position": "M(C)",
 			"club": "Gent",
@@ -44084,7 +44110,7 @@
 		},
 		"132443|Rangers": {
 			"name": "Borna Barisic",
-			"age": 27,
+			"age": 28,
 			"countryCode": "hr",
 			"position": "D(L)",
 			"club": "Rangers",
@@ -44099,7 +44125,7 @@
 			"name": "Mohammed Rharsalla Khadfi",
 			"age": 27,
 			"countryCode": "",
-			"position": "Midfielder",
+			"position": "Forward",
 			"club": "Slovan Bratislava",
 			"19-20": {
 				"Europa League | Slovan Bratislava": {
@@ -45280,7 +45306,7 @@
 		},
 		"299460|Eintracht Frankfurt": {
 			"name": "André Silva",
-			"age": 24,
+			"age": 25,
 			"countryCode": "pt",
 			"position": "FW",
 			"club": "Eintracht Frankfurt",
@@ -45878,7 +45904,7 @@
 		},
 		"126316|Partizan Belgrade": {
 			"name": "Takuma Asano",
-			"age": 25,
+			"age": 26,
 			"countryCode": "jp",
 			"position": "AM(CLR),FW",
 			"club": "Partizan Belgrade",
@@ -46684,7 +46710,7 @@
 		},
 		"87816|Wolfsberger AC": {
 			"name": "Alexander Kofler",
-			"age": 33,
+			"age": 34,
 			"countryCode": "at",
 			"position": "GK",
 			"club": "Wolfsberger AC",
@@ -47087,7 +47113,7 @@
 		},
 		"52760|CFR Cluj": {
 			"name": "Camora",
-			"age": 33,
+			"age": 34,
 			"countryCode": "pt",
 			"position": "D(L),M(L)",
 			"club": "CFR Cluj",
@@ -47438,7 +47464,7 @@
 		},
 		"376888|Celtic": {
 			"name": "Greg Taylor",
-			"age": 22,
+			"age": 23,
 			"countryCode": "gb-sct",
 			"position": "D(L),M(L)",
 			"club": "Celtic",
@@ -48088,7 +48114,7 @@
 		},
 		"377280|FC Copenhagen": {
 			"name": "Jens Stage",
-			"age": 23,
+			"age": 24,
 			"countryCode": "dk",
 			"position": "M(C)",
 			"club": "FC Copenhagen",
@@ -48374,7 +48400,7 @@
 		},
 		"12267|Roma": {
 			"name": "Aleksandar Kolarov",
-			"age": 34,
+			"age": 35,
 			"countryCode": "rs",
 			"position": "D(CL),M(L)",
 			"club": "Roma",
@@ -48584,7 +48610,7 @@
 			"name": "Oleksandr Zubkov",
 			"age": 24,
 			"countryCode": "ua",
-			"position": "Forward",
+			"position": "AM(R)",
 			"club": "Ferencvaros",
 			"19-20": {
 				"Europa League | Ferencvaros": {
@@ -48646,7 +48672,7 @@
 			}
 		},
 		"383836|FC Olexandriya": {
-			"name": "Evgen Banada",
+			"name": "Yevhen Banada",
 			"age": 28,
 			"countryCode": "ua",
 			"position": "M(C)",
@@ -48740,7 +48766,7 @@
 			"name": "Dorin Rotariu",
 			"age": 25,
 			"countryCode": "ro",
-			"position": "Midfielder",
+			"position": "Forward",
 			"club": "FC Astana",
 			"19-20": {
 				"Europa League | FC Astana": {
@@ -48870,7 +48896,7 @@
 			"name": "Isael",
 			"age": 32,
 			"countryCode": "br",
-			"position": "Forward",
+			"position": "Midfielder",
 			"club": "Ferencvaros",
 			"19-20": {
 				"Europa League | Ferencvaros": {
@@ -49245,7 +49271,7 @@
 		},
 		"251101|APOEL Nicosia": {
 			"name": "Nicolas Ioannou",
-			"age": 24,
+			"age": 25,
 			"countryCode": "cy",
 			"position": "D(CL)",
 			"club": "APOEL Nicosia",
@@ -49400,7 +49426,7 @@
 			}
 		},
 		"300755|AZ Alkmaar": {
-			"name": "Pantelis Hatzidiakos",
+			"name": "Pantelis Chatzidiakos",
 			"age": 23,
 			"countryCode": "gr",
 			"position": "D(C)",
@@ -49569,7 +49595,7 @@
 			}
 		},
 		"320439|Rosenborg": {
-			"name": "Samuel Adeniyi Adegbenro",
+			"name": "Samuel Adegbenro",
 			"age": 24,
 			"countryCode": "ng",
 			"position": "AM(CLR),FW",
@@ -49624,7 +49650,7 @@
 			"name": "Bryan Gil",
 			"age": 19,
 			"countryCode": "es",
-			"position": "M(L)",
+			"position": "AM(L)",
 			"club": "Sevilla",
 			"19-20": {
 				"Europa League | Sevilla": {
@@ -49804,7 +49830,7 @@
 		},
 		"302313|Manchester United": {
 			"name": "Daniel James",
-			"age": 22,
+			"age": 23,
 			"countryCode": "gb-wls",
 			"position": "AM(LR),FW",
 			"club": "Manchester United",
@@ -50092,7 +50118,7 @@
 			"name": "Marcel Heister",
 			"age": 28,
 			"countryCode": "de",
-			"position": "Defender",
+			"position": "Midfielder",
 			"club": "Ferencvaros",
 			"19-20": {
 				"Europa League | Ferencvaros": {
@@ -50389,7 +50415,7 @@
 		},
 		"115118|Salzburg": {
 			"name": "Cican Stankovic",
-			"age": 27,
+			"age": 28,
 			"countryCode": "at",
 			"position": "GK",
 			"club": "Salzburg",
@@ -50870,7 +50896,7 @@
 		},
 		"364214|Club Brugge": {
 			"name": "Clinton Mata",
-			"age": 27,
+			"age": 28,
 			"countryCode": "ao",
 			"position": "D(CR)",
 			"club": "Club Brugge",
@@ -51015,7 +51041,7 @@
 			"name": "Ryan Thomas",
 			"age": 25,
 			"countryCode": "nz",
-			"position": "AM(CL)",
+			"position": "M(CL)",
 			"club": "PSV Eindhoven",
 			"19-20": {
 				"Europa League | PSV Eindhoven": {
@@ -51208,7 +51234,7 @@
 		},
 		"79554|Manchester United": {
 			"name": "David de Gea",
-			"age": 29,
+			"age": 30,
 			"countryCode": "es",
 			"position": "GK",
 			"club": "Manchester United",
@@ -51754,7 +51780,7 @@
 		},
 		"367802|Besiktas": {
 			"name": "Kartal Kayra Yilmaz",
-			"age": 19,
+			"age": 20,
 			"countryCode": "",
 			"position": "Midfielder",
 			"club": "Besiktas",
@@ -51990,7 +52016,7 @@
 			"name": "Dogbole Franck Anderson Niangbo",
 			"age": 21,
 			"countryCode": "ci",
-			"position": "FW",
+			"position": "AM(L),FW",
 			"club": "Wolfsberger AC",
 			"19-20": {
 				"Europa League | Wolfsberger AC": {
@@ -52510,7 +52536,7 @@
 			"name": "Guillermo Molins",
 			"age": 32,
 			"countryCode": "se",
-			"position": "Forward",
+			"position": "Midfielder",
 			"club": "Malmoe FF",
 			"19-20": {
 				"Europa League | Malmoe FF": {
@@ -52963,7 +52989,7 @@
 		},
 		"354526|Getafe": {
 			"name": "Hugo Duro",
-			"age": 20,
+			"age": 21,
 			"countryCode": "es",
 			"position": "FW",
 			"club": "Getafe",
@@ -53940,7 +53966,7 @@
 			"name": "Kenan Bajric",
 			"age": 25,
 			"countryCode": "si",
-			"position": "Defender",
+			"position": "Midfielder",
 			"club": "Slovan Bratislava",
 			"19-20": {
 				"Europa League | Slovan Bratislava": {
@@ -54666,7 +54692,7 @@
 		},
 		"149140|Braga": {
 			"name": "Raúl Silva",
-			"age": 30,
+			"age": 31,
 			"countryCode": "br",
 			"position": "D(C)",
 			"club": "Braga",
@@ -54757,7 +54783,7 @@
 		},
 		"243578|Club Brugge": {
 			"name": "Matej Mitrovic",
-			"age": 26,
+			"age": 27,
 			"countryCode": "hr",
 			"position": "D(C)",
 			"club": "Club Brugge",
@@ -55043,7 +55069,7 @@
 		},
 		"369109|Rennes": {
 			"name": "Eduardo Camavinga",
-			"age": 17,
+			"age": 18,
 			"countryCode": "fr",
 			"position": "M(C)",
 			"club": "Rennes",
@@ -55199,7 +55225,7 @@
 		},
 		"107158|Ajax": {
 			"name": "Bruno Varela",
-			"age": 25,
+			"age": 26,
 			"countryCode": "pt",
 			"position": "GK",
 			"club": "Ajax",
@@ -55305,7 +55331,7 @@
 			"name": "Mavis Tchibota",
 			"age": 24,
 			"countryCode": "cg",
-			"position": "Midfielder",
+			"position": "Forward",
 			"club": "Ludogorets Razgrad",
 			"19-20": {
 				"Europa League | Ludogorets Razgrad": {
@@ -55354,7 +55380,7 @@
 			}
 		},
 		"387454|FC Olexandriya": {
-			"name": "Timur Stetskov",
+			"name": "Tymur Stetskov",
 			"age": 22,
 			"countryCode": "se",
 			"position": "Defender",
@@ -55760,7 +55786,7 @@
 			"name": "Abbas Huseynov",
 			"age": 25,
 			"countryCode": "az",
-			"position": "Defender",
+			"position": "D(R)",
 			"club": "Qarabag FK",
 			"19-20": {
 				"Europa League | Qarabag FK": {
@@ -55836,7 +55862,7 @@
 		},
 		"343196|Rosenborg": {
 			"name": "Bjørn Maars Johnsen",
-			"age": 28,
+			"age": 29,
 			"countryCode": "no",
 			"position": "FW",
 			"club": "Rosenborg",
@@ -56306,7 +56332,7 @@
 			"name": "Mirko Antonucci",
 			"age": 21,
 			"countryCode": "it",
-			"position": "Forward",
+			"position": "Midfielder",
 			"club": "Roma",
 			"19-20": {
 				"Europa League | Roma": {
@@ -56342,7 +56368,7 @@
 			}
 		},
 		"346196|FC Copenhagen": {
-			"name": "Carl Johan Holse Justesen",
+			"name": "Carlo Holse",
 			"age": 21,
 			"countryCode": "dk",
 			"position": "Forward",
@@ -56550,7 +56576,7 @@
 			}
 		},
 		"91282|FC Astana": {
-			"name": "Rangelo Maria Janga",
+			"name": "Rangelo Janga",
 			"age": 28,
 			"countryCode": "nl",
 			"position": "Forward",
@@ -57031,7 +57057,7 @@
 			}
 		},
 		"321390|Rennes": {
-			"name": "Edouard Mendy",
+			"name": "Édouard Mendy",
 			"age": 28,
 			"countryCode": "sn",
 			"position": "GK",
@@ -57255,7 +57281,7 @@
 			"name": "Dogbole Franck Anderson Niangbo",
 			"age": 21,
 			"countryCode": "ci",
-			"position": "FW",
+			"position": "AM(L),FW",
 			"club": "Gent",
 			"19-20": {
 				"Europa League | Gent": {

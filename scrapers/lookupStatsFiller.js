@@ -84,9 +84,10 @@ let calculaterawStats = async () => {
             PROCESSED[player]["lookupStats"]["rawStats"] = {};
         }
 
-        let rawStats = {};
-
         let aggregatedStats = aggregateStats(PROCESSED[player]["stats"][SEASON]);
+
+        let rawStats = {};
+        rawStats["minutes"] = aggregatedStats["minutes"];
 
         if (PROCESSED[player]["positions"][SEASON].includes("GK") && PROCESSED[player]["outfieldGKStats"] === undefined)
         {
@@ -98,8 +99,6 @@ let calculaterawStats = async () => {
 
             let minutesOverNinety = aggregatedStats["minutes"] / 90;
             let touchesOverHundred = aggregatedStats["touches"] / 100;
-
-            rawStats["minutes"] = aggregatedStats["minutes"];
 
             rawStats["npg"] = returnFinite(aggregatedStats["npg"] / minutesOverNinety);
             rawStats["npxg"] = returnFinite(aggregatedStats["npxg"] / minutesOverNinety);
@@ -155,30 +154,36 @@ let calculaterawStats = async () => {
 
         }
 
-        PROCESSED[player]["lookupStats"]["rawStats"][SEASON] = rawStats;
-
         for (let stat in rawStats){
+
+            let precision = ALL_STATS[stat]["precision"];
+
+            rawStats[stat] = truncateNum(rawStats[stat], precision);
 
             //TODO: consider filtering by number of actions as opposed to minutes.
             //TODO: e.g.: filter npxg/shot by min of 20 shots
-
             if (stat !== "minutes" && rawStats["minutes"] < 400){
                 continue;
             }
 
-            if ((stat === "gsaa" || rawStats[stat] >= 0) && rawStats[stat] < ALL_STATS[stat]["ranges"][SEASON]["min"]){
-                ALL_STATS[stat]["ranges"][SEASON]["min"] = rawStats[stat];
+            let step = ALL_STATS[stat]["step"];
+
+            let potentialMin = truncateNum(Math.floor(rawStats[stat]/step) * step, precision);
+            let potentialMax = truncateNum(Math.ceil(rawStats[stat]/step) * step, precision);
+
+            if ((stat === "gsaa" || rawStats[stat] >= 0) && potentialMin < ALL_STATS[stat]["ranges"][SEASON]["min"]){
+                ALL_STATS[stat]["ranges"][SEASON]["min"] = potentialMin;
                 ALL_STATS[stat]["ranges"][SEASON]["minName"] = PROCESSED[player]["name"];
             }
 
-            if (rawStats[stat] > ALL_STATS[stat]["ranges"][SEASON]["max"]){
-                ALL_STATS[stat]["ranges"][SEASON]["max"] = rawStats[stat];
+            if (potentialMax > ALL_STATS[stat]["ranges"][SEASON]["max"]){
+                ALL_STATS[stat]["ranges"][SEASON]["max"] = potentialMax;
                 ALL_STATS[stat]["ranges"][SEASON]["maxName"] = PROCESSED[player]["name"];
             }
 
         }
 
-
+        PROCESSED[player]["lookupStats"]["rawStats"][SEASON] = rawStats;
 
     }
 
@@ -282,6 +287,13 @@ let returnFinite = (value) => {
     }
 
     return value
+
+};
+
+
+let truncateNum = (value, precision) => {
+
+    return parseFloat(Math.round(value * (10**precision)) / (10**precision).toFixed(precision));
 
 };
 
