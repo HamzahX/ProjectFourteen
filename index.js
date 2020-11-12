@@ -739,7 +739,7 @@ let advancedSearch = async (parameters) => {
                 let max = parameters.percentileRanks[stat].max || 100;
 
                 query['$and'].push({
-                    [`lookupStats.percentileRanks.${season}.${parameters.position}${stat}`]: {
+                    [`lookupStats.percentileRanks.${season}.${parameters.positions[0]}.${stat}`]: {
                         '$gte': min,
                         '$lte': max
                     }
