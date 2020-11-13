@@ -825,7 +825,7 @@ button:hover {
             }
 
                 #search-results .search-result {
-                    padding: 3.3%;
+                    padding: 3.3% 3.3% 4.5%;
                     border: darkgrey 1px solid;
                     box-shadow: 0 1px 4px lightgray;
                     border-radius: 6px;
@@ -855,6 +855,12 @@ button:hover {
                     font-size: 1.4em;
                     color: #e75453;
                     font-weight: bold;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    overflow: hidden;
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
                 }
 
                 #search-results .search-result .club, #search-results .search-result .nationality {
@@ -1000,6 +1006,10 @@ button:hover {
                 flex: 1 1 70%;
                 overflow-y: scroll;
             }
+
+                .chart-filter-inputs input {
+                    margin-right: 5px;
+                }
 
             #chart-filter-inputs-laptop {
                 display: block;
