@@ -824,6 +824,17 @@ button:hover {
                 grid-row-gap: 1.6vh;
             }
 
+            #player-search-results-table {
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+            }
+
+            .rdt_TableHeader {
+                display: none !important;
+            }
+
                 #search-results .search-result {
                     padding: 3.3% 3.3% 4.5%;
                     border: darkgrey 1px solid;

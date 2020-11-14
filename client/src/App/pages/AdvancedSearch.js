@@ -18,7 +18,7 @@ import Collapsible from 'react-collapsible';
 
 //import pre-made components
 import {Select, Slider} from 'antd';
-import DataTable from "react-data-table-component";
+import DataTable, { createTheme } from 'react-data-table-component';
 
 
 const Option = Select.Option;
@@ -35,6 +35,48 @@ class AdvancedSearch extends Component {
     _firstSearchMade = false;
     _referenceData = {};
     _parametersOriginalState = {};
+
+    _baseColumns = [
+        {
+            name: 'Name',
+            selector: 'name',
+            sortable: true
+        },
+        {
+            name: 'Current Age',
+            selector: 'age',
+            sortable: true
+        },
+        {
+            name: 'Nationality',
+            selector: 'nationality',
+            sortable: true
+        },
+        {
+            name: 'Club(s)',
+            selector: 'clubs',
+            sortable: true
+        },
+        {
+            name: 'Positions',
+            selector: 'positions',
+            sortable: true
+        }
+    ];
+
+    _customStyles = {
+        headCells: {
+            style: {
+                fontSize: '1.1em',
+                fontWeight: 'bold',
+                color: '#000000'
+            },
+        },
+        cells: {
+            style: {
+            },
+        },
+    };
 
     /**
      * Constructor
@@ -113,37 +155,17 @@ class AdvancedSearch extends Component {
 
             displayType: "table",
 
-            tableColumns: [
-                {
-                    name: 'Name',
-                    selector: 'name',
-                    sortable: true
-                },
-                {
-                    name: 'Current Age',
-                    selector: 'age',
-                    sortable: true
-                },
-                {
-                    name: 'Nationality',
-                    selector: 'nationality',
-                    sortable: true
-                },
-                {
-                    name: 'Club(s)',
-                    selector: 'clubs',
-                    sortable: true
-                },
-                {
-                    name: 'Positions',
-                    selector: 'positions',
-                    sortable: true
-                }
-            ],
+            tableColumns: JSON.parse(JSON.stringify(this._baseColumns)),
 
             searchResults: []
 
         };
+
+        createTheme('basic', {
+            background: {
+                default: '#fafbfc',
+            }
+        });
 
         this.getReferenceData();
 
@@ -375,9 +397,42 @@ class AdvancedSearch extends Component {
      */
     processSearchResults = (searchResults) => {
 
-        if (this._isMounted){
+        let parameters = this.state.parameters;
+        let displayType = this.state.displayType;
 
-            this._firstSearchMade = true;
+        let tableColumns;
+
+        if (displayType === "table"){
+
+            tableColumns = JSON.parse(JSON.stringify(this._baseColumns));
+
+            for (let stat in parameters.rawStats){
+
+                let statData = this._referenceData.statsReferenceData[stat];
+
+                tableColumns.push({
+                    name: `${statData.label} ${statData.suffix}`,
+                    selector: `raw_${stat}`,
+                    sortable: true,
+                    sortFunction: (rowA, rowB) => { return parseInt(rowA[`raw_${stat}`]) - parseInt(rowB[`raw_${stat}`]) }
+                })
+            }
+
+            for (let stat in parameters.percentileRanks){
+
+                let statData = this._referenceData.statsReferenceData[stat];
+
+                tableColumns.push({
+                    name: `${statData.label} ${statData.suffix} (% Rank)`,
+                    selector: `percentile_${stat}`,
+                    sortable: true,
+                    sortFunction: (rowA, rowB) => { return parseInt(rowA[`percentile_${stat}`]) - parseInt(rowB[`percentile_${stat}`]) }
+                })
+            }
+
+        }
+
+        if (this._isMounted){
 
             this.setState({
                 searchResults: []
@@ -385,6 +440,7 @@ class AdvancedSearch extends Component {
                 this.setState({
                     error: null,
                     showSearchLoaderOverlay: false,
+                    tableColumns: tableColumns,
                     searchResults: searchResults
                 });
             });
@@ -767,6 +823,8 @@ class AdvancedSearch extends Component {
 
             }
 
+            console.log(searchResults);
+
             let results;
 
             if (displayType === "cards"){
@@ -804,13 +862,22 @@ class AdvancedSearch extends Component {
 
                 let tableRows = [];
 
+                season = season === null ? "20-21" : season;
+
                 for (let i=0; i<searchResults.length; i++){
 
                     let current = searchResults[i];
                     let row = {};
 
                     for (let key in current){
-                        row[key] = current[key].toString();
+
+                        if (typeof current[key] === 'object'){
+                            row[key] = current[key][season].join(", ");
+                        }
+                        else {
+                            row[key] = current[key];
+                        }
+
                     }
 
                     tableRows.push(row);
@@ -820,10 +887,17 @@ class AdvancedSearch extends Component {
                 if (tableRows.length > 0){
 
                     results =
-                        <DataTable
-                            columns={tableColumns}
-                            data={tableRows}
-                        />;
+                        <div id="player-search-results-table">
+                            <DataTable
+                                title={""}
+                                columns={tableColumns}
+                                data={tableRows}
+                                theme={"basic"}
+                                customStyles={this._customStyles}
+                                striped={true}
+                                pagination={true}
+                            />
+                        </div>;
 
                 }
 
