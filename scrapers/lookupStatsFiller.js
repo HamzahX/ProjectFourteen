@@ -27,13 +27,21 @@ var PROCESSED;
 var ALL_STATS;
 var STATS_BY_POSITION;
 
-var PERCENTILE_DATA = {
-    "FW": {},
-    "AM": {},
-    "CM": {},
-    "FB": {},
-    "CB": {},
-    "GK": {},
+var PERCENTILE_ARRAYS = {
+    "FW": [],
+    "AM": [],
+    "CM": [],
+    "FB": [],
+    "CB": [],
+    "GK": [],
+};
+var PERCENTILE_PLAYERS = {
+    "FW": [],
+    "AM": [],
+    "CM": [],
+    "FB": [],
+    "CB": [],
+    "GK": [],
 };
 
 
@@ -43,8 +51,9 @@ let setup = async () => {
     ALL_STATS = JSON.parse(fs.readFileSync(path.join(__dirname, '/referenceData/allStats.json')));
     STATS_BY_POSITION = JSON.parse(fs.readFileSync(path.join(__dirname, '/referenceData/statsByPosition.json')));
 
-    for (let position in PERCENTILE_DATA){
-        PERCENTILE_DATA[position] = JSON.parse(fs.readFileSync(path.join(__dirname, `/percentileData/${SEASON}/${position}Percentiles.json`)))
+    for (let position in PERCENTILE_ARRAYS){
+        PERCENTILE_ARRAYS[position] = JSON.parse(fs.readFileSync(path.join(__dirname, `/percentileData/${SEASON}/${position}Percentiles.json`)));
+        PERCENTILE_PLAYERS[position] = JSON.parse(fs.readFileSync(path.join(__dirname, `/positionData/${SEASON}/${position}PercentilePlayers.json`)))['codes'];
     }
 
 };
@@ -233,12 +242,17 @@ let calculatePercentileRanks = async () => {
             let position = positions[i];
             let percentileRanks = {};
 
+            let isInPercentileArrays = PERCENTILE_PLAYERS[position].includes(player);
+            let numOccurences = isInPercentileArrays ? 1 : 0;
+
             for (let i=0; i<STATS_BY_POSITION[position].length; i++){
 
                 let stat = STATS_BY_POSITION[position][i];
 
                 let playerValue = rawStats[stat];
-                percentileRanks[stat] = percentileRank(PERCENTILE_DATA[position][stat], playerValue, 1) * 100;
+
+                let percentileRank = calculatePercentileRank(PERCENTILE_ARRAYS[position][stat], playerValue, numOccurences) * 100;
+                percentileRanks[stat] = truncateNum(percentileRank, 0);
 
                 //reverse percentile ranks for "less is better" stats
                 if (stat === "padjFouls" ||
@@ -298,7 +312,7 @@ let truncateNum = (value, precision) => {
 };
 
 
-function percentileRank(array, value, occurrences){
+function calculatePercentileRank(array, value, occurrences){
 
     //taken from: https://gist.github.com/IceCreamYou/6ffa1b18c4c8f6aeaad2
     if (!isFinite(value)){
@@ -312,7 +326,12 @@ function percentileRank(array, value, occurrences){
                 i += (value - array[i-1]) / (array[i] - array[i-1]);
             }
             //adjust the returned percentile by disregarding the entries that belong to the player
-            return (i / length) - (occurrences/array.length);
+            if (i >= length - 1){
+                return (i / length);
+            }
+            else {
+                return (i / length) - (occurrences/(array.length-occurrences));
+            }
         }
     }
 
