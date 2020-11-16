@@ -28,7 +28,7 @@ import SliceOptions from "../components/SliceOptions";
 import Slice from "../components/Slice";
 import GlossaryOverlay from "../components/GlossaryOverlay";
 import CompareSearchOverlay from "../components/CompareSearchOverlay";
-import ExportLoaderOverlay from "../components/LoaderOverlay";
+import LoaderOverlay from "../components/LoaderOverlay";
 
 //initialize cookies
 const cookies = new Cookies();
@@ -387,8 +387,7 @@ class Stats extends Component {
                         currentPlayerName={name}
                         toggleCompareSearchOverlay={this.toggleCompareSearchOverlay}
                     />
-                    <ExportLoaderOverlay
-                        isMobile={this.isMobile}
+                    <LoaderOverlay
                         display={showExportLoaderOverlay}
                     />
                     <SearchBar

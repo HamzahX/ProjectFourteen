@@ -362,7 +362,7 @@ export function calculateStats(filteredStats, playerCode = undefined){
     if (template !== "N/A") {
         for (let stat in statsPer90) {
             if (isFinite(statsPer90[stat])) {
-                percentiles[stat] = percentileRank(percentileArrays[percentileSeason][template][stat], statsPer90[stat], percentileArrayOccurrences) * 100;
+                percentiles[stat] = calculatePercentileRank(percentileArrays[percentileSeason][template][stat], statsPer90[stat], percentileArrayOccurrences) * 100;
             }
             //handle cases where the per 90 value is NaN (e.g.: as a result of divide by 0 error)
             else {
@@ -400,7 +400,7 @@ export function calculateStats(filteredStats, playerCode = undefined){
  * @param {number} occurrences - the number of occurrences of the player's numbers within the percentile array
  * @return {number} the percentile rank of the value in the array (adjusted for the double-counting problem)
  */
-function percentileRank(array, value, occurrences){
+function calculatePercentileRank(array, value, occurrences){
 
     //taken from: https://gist.github.com/IceCreamYou/6ffa1b18c4c8f6aeaad2
     if (!isFinite(value)){
@@ -559,7 +559,7 @@ function roundNumbers(someStats, precision){
  * @param {number} aNumber - the number to which the ordinal suffix is being appended
  * @return {string} - the number with the ordinal suffix appended to it
  */
-function ordinalSuffix(aNumber){
+export function ordinalSuffix(aNumber){
 
     //taken from: https://stackoverflow.com/questions/13627308/add-st-nd-rd-and-th-ordinal-suffix-to-a-number
     let j = aNumber % 10,
