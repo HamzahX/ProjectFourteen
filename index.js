@@ -504,7 +504,7 @@ let getReferenceData = async () => {
                 reject();
             }
             else {
-                referenceData.countries = docs;
+                referenceData.countries = docs.sort((a, b) => a.name.localeCompare(b.name));
                 CLUBS_COLLECTION.find({})
                 .toArray(function(err, docs) {
                     if (err){
@@ -512,7 +512,7 @@ let getReferenceData = async () => {
                         reject();
                     }
                     else {
-                        referenceData.clubs = docs;
+                        referenceData.clubs = docs.sort((a, b) => a.name.localeCompare(b.name));
                         STATS_REFERENCE_COLLECTION.find({})
                         .toArray(function(err, docs) {
                             if (err){
@@ -752,7 +752,7 @@ let advancedSearch = async (parameters) => {
         let searchResults = [];
 
         //find the player who match the query
-        PLAYERS_COLLECTION.find(query).limit(1000).toArray(function (err, docs) {
+        PLAYERS_COLLECTION.find(query).limit(500).toArray(function (err, docs) {
             if (err) {
                 reject();
             }
