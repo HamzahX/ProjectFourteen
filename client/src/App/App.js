@@ -49,6 +49,8 @@ class App extends Component {
 
         let percentileArrays = JSON.parse(localStorage.getItem('percentileArrays'));
 
+        console.log(percentileArrays);
+
         if (percentileArrays === null){
             percentileArrays = {
                 lastUpdated: null

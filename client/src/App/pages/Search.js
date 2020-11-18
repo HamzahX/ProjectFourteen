@@ -234,6 +234,8 @@ class Search extends Component {
         //build search page otherwise
         else {
 
+            let season = searchByClub ? "20-21" : null;
+
             //construct the player cards
             let playerCards = [];
             for (let i=0; i<filteredPlayerSearchResults.length; i++){
@@ -245,6 +247,7 @@ class Search extends Component {
                         code={current.code}
                         name={current.name}
                         age={current.age}
+                        season={season}
                         clubs={current.clubs}
                         nationality={current.nationality}
                         countryCode={current.countryCode}

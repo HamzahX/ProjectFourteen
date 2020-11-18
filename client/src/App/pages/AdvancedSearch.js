@@ -18,7 +18,12 @@ import LoaderOverlay from "../components/LoaderOverlay";
 import PlayerSearchResult from "../components/PlayerSearchResult";
 
 //import utilityFunction
-import {ordinalSuffix} from "../utilities/SliceUtilities"
+import { ordinalSuffix } from "../utilities/SliceUtilities"
+
+//import utility functions, constants
+import {
+    getAllEntriesFromObject
+} from "../utilities/SearchResultUtilities"
 
 //import pre-made components
 import Collapsible from 'react-collapsible';
@@ -563,8 +568,6 @@ class AdvancedSearch extends Component {
 
             let tableRows = [];
 
-            season = season === null ? "20-21" : season;
-
             for (let i=0; i<searchResults.length; i++){
 
                 let current = searchResults[i];
@@ -573,7 +576,15 @@ class AdvancedSearch extends Component {
                 for (let key in current){
 
                     if (typeof current[key] === 'object'){
-                        row[key] = current[key][season]?.join(", ");
+
+                        if (season !== null){
+                            row[key] = current[key][season].join(", ");
+                        }
+
+                        else {
+                            row[key] = getAllEntriesFromObject(current[key]).join(", ");
+                        }
+
                     }
                     else {
                         row[key] = current[key];

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import Flag from "react-flags";
+import { getAllEntriesFromObject } from "../utilities/SearchResultUtilities";
 
 /**
  * Component to render a player search result
@@ -13,22 +14,19 @@ class PlayerSearchResult extends Component {
 
         this.isMobile = this.props.isMobile;
 
+        let season = this.props.season;
+
         let clubs = this.props.clubs;
         let positions = this.props.positions;
-        let seasons = Object.keys(clubs);
 
-        //set the player clubs entry to their most recent season's clubs
-        clubs = clubs[seasons[seasons.length-1]];
+        if (season !== null){
+            clubs = clubs[season];
+            positions = positions[season];
+        }
 
-        //set the player positions to the latest season for which they have position info
-        let latestPositions;
-        for (let i=seasons.length-1; i>=0; i--){
-            let season = seasons[i];
-            let currentSeasonPositions = positions[season];
-            latestPositions = (currentSeasonPositions === undefined || currentSeasonPositions.length < 1 || currentSeasonPositions[0] === "N/A") ? ["-"] : currentSeasonPositions;
-            if (latestPositions[0] !== "-"){
-                break;
-            }
+        else {
+            clubs = getAllEntriesFromObject(clubs);
+            positions = getAllEntriesFromObject(positions);
         }
 
         this.state = {
@@ -41,7 +39,7 @@ class PlayerSearchResult extends Component {
             clubs: clubs,
             nationality: this.props.nationality,
             countryCode: this.props.countryCode,
-            positions: latestPositions
+            positions: positions
         };
 
     }
