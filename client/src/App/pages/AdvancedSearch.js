@@ -548,6 +548,7 @@ class AdvancedSearch extends Component {
                         code={current.code}
                         name={current.name}
                         age={current.age}
+                        season={season}
                         clubs={current.clubs}
                         nationality={current.nationality}
                         countryCode={current.countryCode}
@@ -1017,13 +1018,13 @@ class AdvancedSearch extends Component {
                                 <h4>Results Display</h4>
                                 <div id="display-type-buttons-container">
                                     <button
-                                        className={`fas fa-table display-type-button ${displayType === "table" ? "selected" : null}`}
-                                        onClick={this.handleTableButtonClick}
+                                        className={`fas fa-th display-type-button ${displayType === "cards" ? "selected" : null}`}
+                                        onClick={this.handleCardsButtonClick}
                                     />
                                     │
                                     <button
-                                        className={`fas fa-th display-type-button ${displayType === "cards" ? "selected" : null}`}
-                                        onClick={this.handleCardsButtonClick}
+                                        className={`fas fa-table display-type-button ${displayType === "table" ? "selected" : null}`}
+                                        onClick={this.handleTableButtonClick}
                                     />
                                 </div>
                                 <h4>Season</h4>

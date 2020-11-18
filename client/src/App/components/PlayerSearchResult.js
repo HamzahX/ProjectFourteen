@@ -94,8 +94,8 @@ class PlayerSearchResult extends Component {
                         />
                     </div>
                     <div className="bio-extra">
-                        <span className="club">{clubs.join(", ")}</span>
-                        <span className="position-age">{`${age} | ${positions.join(", ")}`}</span>
+                        <span className="club">{clubs?.join(", ")}</span>
+                        <span className="position-age">{`${age} | ${positions?.join(", ")}`}</span>
                     </div>
                 </div>
             </Link>
