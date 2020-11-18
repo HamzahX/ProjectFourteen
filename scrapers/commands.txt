@@ -10,5 +10,6 @@ Populating:
 Finalizing:
     - node databaseUploaderProduction
 
+Metadata (process only)
     node metadataScraper 18-19 true && node metadataScraper 19-20 true && node metadataScraper 20-21 true
 
