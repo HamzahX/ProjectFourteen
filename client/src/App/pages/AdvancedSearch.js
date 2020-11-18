@@ -1,24 +1,38 @@
 import React, {Component} from 'react';
+import withRouter from "react-router-dom/es/withRouter";
 import {
     withQueryParams,
     JsonParam,
 } from 'use-query-params';
 
+import Cookies from 'universal-cookie';
+
 //import lodash functions
 import set from 'lodash.set';
 import isEqual from 'lodash.isequal';
 
-//import components
+//import custom components
 import SearchBar from "../components/SearchBar";
 import LoadingSpinner from "../components/LoadingSpinner";
 import LoaderOverlay from "../components/LoaderOverlay";
 import PlayerSearchResult from "../components/PlayerSearchResult";
 
-import Collapsible from 'react-collapsible';
+//import utilityFunction
+import { ordinalSuffix } from "../utilities/SliceUtilities"
 
-//import antd components
+//import utility functions, constants
+import {
+    getAllEntriesFromObject
+} from "../utilities/SearchResultUtilities"
+
+//import pre-made components
+import Collapsible from 'react-collapsible';
 import {Select, Slider} from 'antd';
+import DataTable, { createTheme } from 'react-data-table-component';
+
+
 const Option = Select.Option;
+const cookies = new Cookies();
 
 
 /**
@@ -29,8 +43,56 @@ class AdvancedSearch extends Component {
     //class variable to track if the component is mounted
     _isMounted = false;
 
+    _firstSearchMade = false;
     _referenceData = {};
     _parametersOriginalState = {};
+
+    _baseColumns = [
+        {
+            name: 'Name',
+            selector: 'name',
+            style: {
+                fontSize: '1.15em',
+                fontWeight: 'bold',
+                color: '#e75453'
+            },
+            sortable: true
+        },
+        {
+            name: 'Current Age',
+            selector: 'age',
+            sortable: true
+        },
+        {
+            name: 'Nationality',
+            selector: 'nationality',
+            sortable: true
+        },
+        {
+            name: 'Club(s)',
+            selector: 'clubs',
+            sortable: true
+        },
+        {
+            name: 'Position(s)',
+            selector: 'positions',
+            sortable: true
+        }
+    ];
+
+    _customStyles = {
+        headCells: {
+            style: {
+                fontSize: '1.1em',
+                fontWeight: 'bold',
+                color: '#000000'
+            },
+        },
+        cells: {
+            style: {
+            },
+        },
+    };
 
     /**
      * Constructor
@@ -39,6 +101,8 @@ class AdvancedSearch extends Component {
     constructor(props){
 
         super(props);
+
+        this.ordinalSuffix = ordinalSuffix.bind(this);
 
         this.isMobile = this.props.isMobile;
 
@@ -81,6 +145,8 @@ class AdvancedSearch extends Component {
             )
         }
 
+        let displayTypeCookie = cookies.get('displayType');
+
         this.state = {
 
             isLoading: true,
@@ -107,9 +173,24 @@ class AdvancedSearch extends Component {
                 percentileRanks: {}
             },
 
-            searchResults: []
+            displayType: displayTypeCookie || "cards",
+
+            tableColumns: JSON.parse(JSON.stringify(this._baseColumns)),
+
+            searchResults: [],
+
+            searchResultsDisplay: null
 
         };
+
+        createTheme('basic', {
+            background: {
+                default: '#fafbfc',
+            },
+            striped: {
+                default: '#f3f4f5',
+            }
+        });
 
         this.getReferenceData();
 
@@ -159,6 +240,8 @@ class AdvancedSearch extends Component {
      * @param {Object} referenceData - object containing reference data
      */
     processReferenceData = (referenceData) => {
+
+        console.log(referenceData);
 
         this._referenceData = referenceData;
 
@@ -214,10 +297,20 @@ class AdvancedSearch extends Component {
         }
         filterOptions.clubs = clubsOptions;
 
-        let rawStatsOptions = [];
+        let statsReferenceDataArray = [];
         for (let stat in referenceData.statsReferenceData){
+            let temp = referenceData.statsReferenceData[stat];
+            temp.stat = stat;
+            statsReferenceDataArray.push(temp);
+        }
 
-            let statData = referenceData.statsReferenceData[stat];
+        statsReferenceDataArray.sort((a, b) => a.displayOrder - b.displayOrder);
+
+        let rawStatsOptions = [];
+        for (let i=0; i<statsReferenceDataArray.length; i++){
+
+            let statData = statsReferenceDataArray[i];
+            let stat = statData.stat;
 
             if (stat === "age"){
                 continue;
@@ -235,8 +328,6 @@ class AdvancedSearch extends Component {
         }
         filterOptions.rawStats = rawStatsOptions;
 
-
-
         if (this._isMounted){
 
             this.setState({
@@ -248,17 +339,19 @@ class AdvancedSearch extends Component {
                 this.buildPercentileRankSelectList();
             }
 
+            let handleQueryParameters = queryParameters !== undefined && !isEqual(queryParameters, this._parametersOriginalState);
+
             this.setState({
                 error: null,
-                isLoading: false,
+                isLoading: handleQueryParameters,
             });
 
             document.title = 'Advanced Search | Football Slices';
 
             this.props.recordPageViewGA(window.location.pathname);
 
-            if (queryParameters !== undefined && !isEqual(queryParameters, this._parametersOriginalState)){
-                this.getSearchResults();
+            if (handleQueryParameters){
+                this.getSearchResults(true);
             }
 
         }
@@ -269,10 +362,10 @@ class AdvancedSearch extends Component {
     /**
      * Function to send a post request to the server to retrieve the search results matching the query
      */
-    getSearchResults = () => {
+    getSearchResults = (fromQueryString = false) => {
 
         this.setState({
-            showSearchLoaderOverlay: true,
+            showSearchLoaderOverlay: fromQueryString !== true,
         });
 
         //clear deep clone of parameters and clean it
@@ -325,7 +418,10 @@ class AdvancedSearch extends Component {
                throw new Error("Failed to fetch search results. Please refresh the page and try again.")
             }
         })
-        .then(searchResults => this.processSearchResults(searchResults))
+        .then(searchResults => {
+            this._firstSearchMade = true;
+            this.processSearchResults(searchResults, fromQueryString)
+        })
         .catch(error => {
             if (this._isMounted){
                 this.setState({error})
@@ -338,22 +434,193 @@ class AdvancedSearch extends Component {
     /**
      * Function to process the search results and save to state
      * @param {Object} searchResults - object containing search results
+     * @param fromQueryString
+     * parameters
      */
-    processSearchResults = (searchResults) => {
+    processSearchResults = (searchResults, fromQueryString = false) => {
+
+        let parameters = this.state.parameters;
+        let displayType = this.state.displayType;
+
+        let tableColumns;
+
+        if (displayType === "table"){
+
+            tableColumns = JSON.parse(JSON.stringify(this._baseColumns));
+
+            for (let stat in parameters.rawStats){
+
+                let statData = this._referenceData.statsReferenceData[stat];
+
+                tableColumns.push({
+                    name: `${statData.label} ${statData.suffix}`,
+                    selector: `raw_${stat}`,
+                    sortable: true,
+                    format: row => parseFloat(row[`raw_${stat}`])
+                })
+            }
+
+            for (let stat in parameters.percentileRanks){
+
+                let statData = this._referenceData.statsReferenceData[stat];
+
+                tableColumns.push({
+                    name: `${statData.label} ${statData.suffix} (Percentile Rank)`,
+                    selector: `percentile_${stat}`,
+                    sortable: true,
+                    sortFunction: (rowA, rowB) => { return parseFloat(rowA[`percentile_${stat}`]) - parseFloat(rowB[`percentile_${stat}`]) },
+                    format: row => this.ordinalSuffix(row[`percentile_${stat}`]) + " percentile"
+                })
+            }
+
+        }
 
         if (this._isMounted){
 
             this.setState({
-                searchResults: []
+                searchResults: [],
+                searchResultsDisplay: null
             }, () => {
                 this.setState({
                     error: null,
+                    isLoading: false,
                     showSearchLoaderOverlay: false,
+                    tableColumns: tableColumns,
                     searchResults: searchResults
+                }, () => {
+                    this.buildSearchResultsDisplay();
                 });
             });
 
         }
+
+    };
+
+
+    handleTableButtonClick = () => {
+
+        this.setState({
+            displayType: "table"
+        }, () => {
+            this.processSearchResults(this.state.searchResults);
+        });
+
+        cookies.set('displayType', "table", {path: '/'});
+
+    };
+
+
+    handleCardsButtonClick = () => {
+
+        this.setState({
+            displayType: "cards"
+        }, () => {
+            this.processSearchResults(this.state.searchResults);
+        });
+
+        cookies.set('displayType', "cards", {path: '/'});
+
+    };
+
+
+    buildSearchResultsDisplay = () => {
+
+        let season = this.state.parameters.season;
+        let searchResults = this.state.searchResults;
+
+        let displayType = this.state.displayType;
+        let tableColumns = this.state.tableColumns;
+
+        let searchResultsDisplay;
+
+        if (displayType === "cards"){
+
+            let playerCards = [];
+
+            for (let i=0; i<searchResults.length; i++){
+
+                let current = searchResults[i];
+
+                playerCards.push(
+                    <PlayerSearchResult
+                        isMobile={this.isMobile}
+                        page="search"
+                        code={current.code}
+                        name={current.name}
+                        age={current.age}
+                        clubs={current.clubs}
+                        nationality={current.nationality}
+                        countryCode={current.countryCode}
+                        positions={current.positions}
+                        key={i}
+                    />
+                );
+
+            }
+
+            searchResultsDisplay =
+                <div id="player-search-results">
+                    {playerCards}
+                </div>;
+
+        }
+        else if (displayType === "table"){
+
+            let tableRows = [];
+
+            for (let i=0; i<searchResults.length; i++){
+
+                let current = searchResults[i];
+                let row = {};
+
+                for (let key in current){
+
+                    if (typeof current[key] === 'object'){
+
+                        if (season !== null){
+                            row[key] = current[key][season].join(", ");
+                        }
+
+                        else {
+                            row[key] = getAllEntriesFromObject(current[key]).join(", ");
+                        }
+
+                    }
+                    else {
+                        row[key] = current[key];
+                    }
+
+                }
+
+                tableRows.push(row);
+
+            }
+
+            if (tableRows.length > 0){
+
+                searchResultsDisplay =
+                    <div id="player-search-results-table">
+                        <DataTable
+                            title={""}
+                            columns={tableColumns}
+                            data={tableRows}
+                            theme={"basic"}
+                            customStyles={this._customStyles}
+                            striped={false}
+                            highlightOnHover={true}
+                            pointerOnHover={true}
+                            onRowClicked={(row) => (this.props.history.push(`/stats/${row.code}`))}
+                            pagination={true}
+                        />
+                    </div>;
+
+            }
+
+        }
+
+        this.setState({
+            searchResultsDisplay: searchResultsDisplay
+        })
 
     };
 
@@ -377,7 +644,7 @@ class AdvancedSearch extends Component {
                     parameters.rawStats[stat].max = statData.ranges[season].max;
                 }
 
-                if (parameters.rawStats[stat].min > statData.ranges[season].min){
+                if (parameters.rawStats[stat].min < statData.ranges[season].min){
                     parameters.rawStats[stat].min = statData.ranges[season].min;
                 }
 
@@ -391,7 +658,7 @@ class AdvancedSearch extends Component {
 
         this.props.setQuery({
             parameters: parameters
-        });
+        }, 'replaceIn');
 
         console.log(parameters);
 
@@ -411,7 +678,7 @@ class AdvancedSearch extends Component {
 
         this.props.setQuery({
             parameters: parameters
-        });
+        }, 'replaceIn');
 
         console.log(parameters);
 
@@ -430,7 +697,7 @@ class AdvancedSearch extends Component {
 
         this.props.setQuery({
             parameters: parameters
-        });
+        }, 'replaceIn');
 
         console.log(parameters);
 
@@ -456,7 +723,7 @@ class AdvancedSearch extends Component {
 
         this.props.setQuery({
             parameters: parameters
-        });
+        }, 'replaceIn');
 
         console.log(this.state.parameters);
 
@@ -520,7 +787,7 @@ class AdvancedSearch extends Component {
 
             this.props.setQuery({
                 parameters: parameters
-            });
+            }, 'replaceIn');
 
         }
 
@@ -541,7 +808,7 @@ class AdvancedSearch extends Component {
 
         this.props.setQuery({
             parameters: parameters
-        });
+        }, 'replaceIn');
 
         console.log(parameters);
 
@@ -569,7 +836,7 @@ class AdvancedSearch extends Component {
 
         this.props.setQuery({
             parameters: parameters
-        });
+        }, 'replaceIn');
 
         console.log(parameters);
 
@@ -588,7 +855,7 @@ class AdvancedSearch extends Component {
 
         this.props.setQuery({
             parameters: parameters
-        });
+        }, 'replaceIn');
 
         console.log(parameters);
 
@@ -607,7 +874,7 @@ class AdvancedSearch extends Component {
 
         this.props.setQuery({
             parameters: parameters
-        });
+        }, 'replaceIn');
 
         console.log(parameters);
 
@@ -624,7 +891,7 @@ class AdvancedSearch extends Component {
 
         this.props.setQuery({
             parameters: parametersOriginalState
-        });
+        }, 'replaceIn');
 
         console.log(parametersOriginalState);
 
@@ -651,7 +918,9 @@ class AdvancedSearch extends Component {
             error,
             filterOptions,
             parameters,
-            searchResults
+            searchResults,
+            displayType,
+            searchResultsDisplay
         } = this.state;
 
         //display loading spinner while the server responds to POST request for the reference data
@@ -729,32 +998,12 @@ class AdvancedSearch extends Component {
 
             }
 
-            //construct the player cards
-            let playerCards = [];
-            for (let i=0; i<searchResults.length; i++){
-                let current = searchResults[i];
-                playerCards.push(
-                    <PlayerSearchResult
-                        isMobile={this.isMobile}
-                        page="search"
-                        code={current.code}
-                        name={current.name}
-                        age={current.age}
-                        clubs={current.clubs}
-                        nationality={current.nationality}
-                        countryCode={current.countryCode}
-                        positions={current.positions}
-                        key={i}
-                    />
-                );
-            }
-
+            console.log(searchResults);
 
             //return JSX code for the search page
             return (
                 <div id="main">
                     <LoaderOverlay
-                        isMobile={this.isMobile}
                         display={showSearchLoaderOverlay}
                     />
                     <SearchBar
@@ -765,6 +1014,18 @@ class AdvancedSearch extends Component {
                     <div className="screen" id="search-screen">
                         <div className="filter" id="advanced-search-filters">
                             <div className="filter-inputs search-filter-inputs" id="advanced-search-filter-inputs">
+                                <h4>Results Display</h4>
+                                <div id="display-type-buttons-container">
+                                    <button
+                                        className={`fas fa-table display-type-button ${displayType === "table" ? "selected" : null}`}
+                                        onClick={this.handleTableButtonClick}
+                                    />
+                                    │
+                                    <button
+                                        className={`fas fa-th display-type-button ${displayType === "cards" ? "selected" : null}`}
+                                        onClick={this.handleCardsButtonClick}
+                                    />
+                                </div>
                                 <h4>Season</h4>
                                 <Select
                                     value={parameters.season}
@@ -902,10 +1163,8 @@ class AdvancedSearch extends Component {
                             </div>
                         </div>
                         <div className="result" id="search-results">
-                            {playerCards.length === 0 ? <p>No results found</p> : null}
-                            <div id="player-search-results">
-                                {playerCards}
-                            </div>
+                            {searchResults.length === 0 && this._firstSearchMade ? <p>No results found</p> : null}
+                            {searchResultsDisplay}
                         </div>
                     </div>
                 </div>
@@ -919,5 +1178,5 @@ class AdvancedSearch extends Component {
 
 export default withQueryParams({
     parameters: JsonParam
-}, AdvancedSearch);
+}, withRouter(AdvancedSearch));
 

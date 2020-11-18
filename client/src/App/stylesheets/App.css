@@ -619,18 +619,21 @@ button:hover {
         position: relative;
     }
 
-        .screen2 #glossary-button {
-            position: absolute;
+        #glossary-button, .display-type-button {
             height: auto;
             width: auto;
-            top: 0;
-            right: 0;
             font-family: 'FontAwesome', sans-serif;
             font-size: 1.5em;
             z-index: 7;
         }
 
-            .screen2 #glossary-button:hover {
+        #glossary-button {
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+
+            #glossary-button:hover, .display-type-button:hover, .display-type-button.selected {
                 color: #b23535;
             }
 
@@ -754,21 +757,28 @@ button:hover {
                     overflow-y: scroll;
                 }
 
-                #advanced-search-filter-inputs h3 {
-                    margin-bottom: 0;
-                }
+                    #display-type-buttons-container {
+                        display: flex;
+                        flex-direction: row;
+                        align-items: center;
+                        margin-bottom: 10px;
+                    }
 
-                #advanced-search-filter-inputs h4 {
-                    font-weight: 600;
-                }
+                    #advanced-search-filter-inputs h3 {
+                        margin-bottom: 0;
+                    }
 
-                #advanced-search-filter-inputs .ant-select {
-                    margin-bottom: 10px;
-                }
+                    #advanced-search-filter-inputs h4 {
+                        font-weight: 600;
+                    }
 
-                #advanced-search-filter-inputs .ant-slider {
-                    margin-bottom: 13px;
-                }
+                    #advanced-search-filter-inputs .ant-select {
+                        margin-bottom: 10px;
+                    }
+
+                    #advanced-search-filter-inputs .ant-slider {
+                        margin-bottom: 13px;
+                    }
 
             #search-filters h3, #search-results h3 {
                 font-weight: unset;
@@ -803,6 +813,7 @@ button:hover {
         #search-results {
             border: none;
             overflow-y: scroll;
+            position: relative;
         }
 
             #search-results h3 {
@@ -824,8 +835,19 @@ button:hover {
                 grid-row-gap: 1.6vh;
             }
 
+            #player-search-results-table {
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+            }
+
+            .rdt_TableHeader {
+                display: none !important;
+            }
+
                 #search-results .search-result {
-                    padding: 3.3%;
+                    padding: 3.3% 3.3% 4.5%;
                     border: darkgrey 1px solid;
                     box-shadow: 0 1px 4px lightgray;
                     border-radius: 6px;
@@ -855,6 +877,12 @@ button:hover {
                     font-size: 1.4em;
                     color: #e75453;
                     font-weight: bold;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    overflow: hidden;
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
                 }
 
                 #search-results .search-result .club, #search-results .search-result .nationality {
@@ -1000,6 +1028,10 @@ button:hover {
                 flex: 1 1 70%;
                 overflow-y: scroll;
             }
+
+                .chart-filter-inputs input {
+                    margin-right: 3px;
+                }
 
             #chart-filter-inputs-laptop {
                 display: block;

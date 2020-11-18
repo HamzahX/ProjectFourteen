@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { withRouter, Route, Switch } from 'react-router-dom';
+import { createBrowserHistory } from 'history'
 import ReactGA from 'react-ga';
 import {isMobileOnly, isSafari} from 'react-device-detect';
 
@@ -22,6 +23,15 @@ if (isMobileOnly){
 //initialize Google Analytics
 ReactGA.initialize('UA-179497563-1');
 
+const history = createBrowserHistory();
+history.listen((location, action) => {
+    console.log(location);
+    console.log(location.location);
+    if (location.action === "POP" && location.location.pathname === "/advancedSearch"){
+        window.location.reload(false);
+    }
+});
+
 
 /**
  * Main app component. Handles routing, and the retrieval of percentile arrays.
@@ -38,6 +48,8 @@ class App extends Component {
         super(props);
 
         let percentileArrays = JSON.parse(localStorage.getItem('percentileArrays'));
+
+        console.log(percentileArrays);
 
         if (percentileArrays === null){
             percentileArrays = {
@@ -152,7 +164,7 @@ class App extends Component {
                             recordPageViewGA={this.recordPageViewGA}
                         />}
                     />
-                    <Route path='/advancedSearch' render={(props) =>
+                    <Route exact path='/advancedSearch' render={(props) =>
                         <AdvancedSearch
                             {...props}
                             isMobile={isMobileOnly}

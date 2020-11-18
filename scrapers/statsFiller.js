@@ -318,7 +318,7 @@ let processEntry = (aPlayer, competitionData, competitionName, isGoalkeeper) => 
             touches: entry["possession_Touches"],
             npg: entry["standard_Gls"] - entry["standard_PK"],
             npxg: entry["standard_npxG"],
-            shots: entry["shooting_Sh"] - entry["standard_PK"],
+            shots: entry["shooting_Sh"],
             succAerials: entry["misc_Won"],
             attAerials: entry["misc_Won"] + entry["misc_Lost"],
             boxTouches: entry["possession_Att Pen"],

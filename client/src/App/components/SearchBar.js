@@ -351,6 +351,7 @@ class SearchBar extends Component {
                     code={current.code}
                     name={current.name}
                     age={current.age}
+                    season={null}
                     clubs={current.clubs}
                     nationality={current.nationality}
                     countryCode={current.countryCode}

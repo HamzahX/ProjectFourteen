@@ -11,7 +11,7 @@ import SliceOptions from "../components/SliceOptions";
 import Slice from "../components/Slice";
 import GlossaryOverlay from "../components/GlossaryOverlay";
 import CompareSearchScreen from "../components/CompareSearchOverlay";
-import ExportLoaderScreen from "../components/LoaderOverlay";
+import LoaderOverlay from "../components/LoaderOverlay";
 
 //import utility functions
 import {
@@ -450,8 +450,7 @@ class Compare extends Component {
                         currentPlayerName={names[codes[0]]}
                         toggleCompareSearchOverlay={this.toggleCompareSearchOverlay}
                     />
-                    <ExportLoaderScreen
-                        isMobile={this.isMobile}
+                    <LoaderOverlay
                         display={showExportLoaderOverlay}
                     />
                     <SearchBar

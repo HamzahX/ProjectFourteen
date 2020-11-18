@@ -504,7 +504,7 @@ let getReferenceData = async () => {
                 reject();
             }
             else {
-                referenceData.countries = docs;
+                referenceData.countries = docs.sort((a, b) => a.name.localeCompare(b.name));
                 CLUBS_COLLECTION.find({})
                 .toArray(function(err, docs) {
                     if (err){
@@ -512,7 +512,7 @@ let getReferenceData = async () => {
                         reject();
                     }
                     else {
-                        referenceData.clubs = docs;
+                        referenceData.clubs = docs.sort((a, b) => a.name.localeCompare(b.name));
                         STATS_REFERENCE_COLLECTION.find({})
                         .toArray(function(err, docs) {
                             if (err){
@@ -669,6 +669,14 @@ let advancedSearch = async (parameters) => {
 
         let season = parameters.season;
 
+        if (season !== null){
+
+            query['$and'].push({
+                [`stats.${season}`]: {$exists: true}
+            })
+
+        }
+
         if (parameters.ages !== undefined){
 
             let minAge = parameters.ages.min || -Infinity;
@@ -752,7 +760,7 @@ let advancedSearch = async (parameters) => {
         let searchResults = [];
 
         //find the player who match the query
-        PLAYERS_COLLECTION.find(query).limit(1000).toArray(function (err, docs) {
+        PLAYERS_COLLECTION.find(query).limit(500).toArray(function (err, docs) {
             if (err) {
                 reject();
             }
@@ -761,8 +769,19 @@ let advancedSearch = async (parameters) => {
             }
             else {
                 for (let i=0; i<docs.length; i++){
+
                     let playerSearchResult = buildPlayerSearchResult(docs[i]);
+
+                    for (let stat in parameters.rawStats){
+                        playerSearchResult[`raw_${stat}`] = docs[i].lookupStats.rawStats[parameters.season][stat];
+                    }
+
+                    for (let stat in parameters.percentileRanks){
+                        playerSearchResult[`percentile_${stat}`] = docs[i].lookupStats.percentileRanks[parameters.season][parameters.positions[0]][stat];
+                    }
+
                     searchResults.push(playerSearchResult);
+
                 }
                 resolve(searchResults);
             }
