@@ -669,6 +669,14 @@ let advancedSearch = async (parameters) => {
 
         let season = parameters.season;
 
+        if (season !== null){
+
+            query['$and'].push({
+                [`stats.${season}`]: {$exists: true}
+            })
+
+        }
+
         if (parameters.ages !== undefined){
 
             let minAge = parameters.ages.min || -Infinity;
