@@ -169,9 +169,34 @@ let calculaterawStats = async () => {
 
             rawStats[stat] = truncateNum(rawStats[stat], precision);
 
-            //TODO: consider filtering by number of actions as opposed to minutes.
-            //TODO: e.g.: filter npxg/shot by min of 20 shots
-            if (stat !== "minutes" && rawStats["minutes"] < 400){
+            if (stat === "npxgPerShot" && aggregatedStats["shots"] < 20){
+                continue;
+            }
+            else if (stat === "aerialSuccRate" && aggregatedStats["attAerials"] < 10){
+                continue;
+            }
+            else if (stat === "dribbleSuccRate" && aggregatedStats["attDribbles"] < 10){
+                continue;
+            }
+            else if (stat === "passSuccRate" && aggregatedStats["attPasses"] < 50){
+                continue;
+            }
+            else if (stat === "dribbleTackleRate" && aggregatedStats["attDribbleTackles"] < 10){
+                continue;
+            }
+            else if (stat === "longPassSuccRate" && aggregatedStats["attLongPasses"] < 25){
+                continue;
+            }
+            else if (stat === "gsaa" && aggregatedStats["sota"] < 10){
+                continue;
+            }
+            else if (stat === "crossStopRate" && aggregatedStats["attCrosses"] < 10){
+                continue;
+            }
+            else if (stat === "launchedPassSuccRate" && aggregatedStats["attLaunchedPasses"] < 10){
+                continue;
+            }
+            else if (stat !== "minutes" && rawStats["minutes"] < 400){
                 continue;
             }
 
