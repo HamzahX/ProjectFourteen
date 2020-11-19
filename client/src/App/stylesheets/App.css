@@ -401,7 +401,7 @@ button:hover {
         #lucky-button {
             font-size: 1em;
             font-weight: bold;
-            padding: 10px 15px;
+            padding: 12px 15px;
             border: black solid 1px;
             border-radius: 7px;
             background-color: white;
@@ -778,6 +778,10 @@ button:hover {
 
                     #advanced-search-filter-inputs .ant-slider {
                         margin-bottom: 13px;
+                    }
+
+                    .hideTooltip {
+                        display: none !important;
                     }
 
             #search-filters h3, #search-results h3 {

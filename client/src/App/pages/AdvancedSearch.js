@@ -27,7 +27,7 @@ import {
 
 //import pre-made components
 import Collapsible from 'react-collapsible';
-import {Select, Slider} from 'antd';
+import {Select, Slider, Tooltip} from 'antd';
 import DataTable, { createTheme } from 'react-data-table-component';
 
 
@@ -580,6 +580,9 @@ class AdvancedSearch extends Component {
 
                         if (season !== null){
                             row[key] = current[key][season].join(", ");
+                            if (row[key] === "N/A"){
+                                row[key] = "-";
+                            }
                         }
 
                         else {
@@ -967,7 +970,7 @@ class AdvancedSearch extends Component {
                         range={true}
                         value={[parameters.rawStats[stat].min, parameters.rawStats[stat].max]}
                         min={statData.ranges[season].min}
-                        max={statData.ranges[season].max + 0.000001}
+                        max={statData.ranges[season].max + 0.0001}
                         step={statData.step}
                         onChange={(values) => this.handleRangeSliderChange(`rawStats.${stat}`, values)}
                     />
@@ -1069,39 +1072,49 @@ class AdvancedSearch extends Component {
                                         {filterOptions.nationalities}
                                     </Select>
                                     <h4>Clubs</h4>
-                                    <Select
-                                        value={parameters.clubs.map(x => x)}
-                                        placeholder={"Select clubs"}
-                                        style={{ width: '100%' }}
-                                        disabled={parameters.season === null}
-                                        mode={"multiple"}
-                                        allowClear={true}
-                                        onSelect={(val) => this.handleSelectListAdd("clubs", val)}
-                                        onDeselect={(val) => this.handleSelectListRemove("clubs", val)}
-                                        onClear={() => this.handleSelectListClear("clubs")}
-                                        filterOption={(input, option) =>
-                                            option.props.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
-                                        }
+                                    <Tooltip
+                                        title={"Select a season to use this filter"}
+                                        overlayClassName={parameters.season !== null ? "hideTooltip" : null}
                                     >
-                                        {filterOptions.clubs}
-                                    </Select>
+                                        <Select
+                                            value={parameters.clubs.map(x => x)}
+                                            placeholder={"Select clubs"}
+                                            style={{ width: '100%' }}
+                                            disabled={parameters.season === null}
+                                            mode={"multiple"}
+                                            allowClear={true}
+                                            onSelect={(val) => this.handleSelectListAdd("clubs", val)}
+                                            onDeselect={(val) => this.handleSelectListRemove("clubs", val)}
+                                            onClear={() => this.handleSelectListClear("clubs")}
+                                            filterOption={(input, option) =>
+                                                option.props.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
+                                            }
+                                        >
+                                            {filterOptions.clubs}
+                                        </Select>
+                                    </Tooltip>
                                     <h4>Positions</h4>
-                                    <Select
-                                        value={parameters.positions.map(x => x)}
-                                        placeholder={"Select positions"}
-                                        style={{ width: '100%' }}
-                                        disabled={parameters.season === null}
-                                        mode={"multiple"}
-                                        allowClear={true}
-                                        onSelect={(val) => this.handleSelectListAdd("positions", val)}
-                                        onDeselect={(val) => this.handleSelectListRemove("positions", val)}
-                                        onClear={() => this.handleSelectListClear("positions")}
-                                        filterOption={(input, option) =>
-                                            option.props.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
-                                        }
+                                    <Tooltip
+                                        title={"Select a season to use this filter"}
+                                        overlayClassName={parameters.season !== null ? "hideTooltip" : null}
                                     >
-                                        {filterOptions.positions}
-                                    </Select>
+                                        <Select
+                                            value={parameters.positions.map(x => x)}
+                                            placeholder={"Select positions"}
+                                            style={{ width: '100%' }}
+                                            disabled={parameters.season === null}
+                                            mode={"multiple"}
+                                            allowClear={true}
+                                            onSelect={(val) => this.handleSelectListAdd("positions", val)}
+                                            onDeselect={(val) => this.handleSelectListRemove("positions", val)}
+                                            onClear={() => this.handleSelectListClear("positions")}
+                                            filterOption={(input, option) =>
+                                                option.props.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
+                                            }
+                                        >
+                                            {filterOptions.positions}
+                                        </Select>
+                                    </Tooltip>
                                 </Collapsible>
                                 <Collapsible
                                     open={true}
@@ -1110,22 +1123,27 @@ class AdvancedSearch extends Component {
                                     transitionTime={200}
                                     transitionCloseTime={200}
                                 >
-                                    <Select
-                                        value={Object.keys(parameters.rawStats)}
-                                        placeholder={"Select stats to add range filters"}
-                                        style={{ width: '100%' }}
-                                        disabled={parameters.season === null}
-                                        mode={"multiple"}
-                                        allowClear={true}
-                                        onSelect={(val) => this.handleLookupStatSelectListAdd("rawStats", val)}
-                                        onDeselect={(val) => this.handleLookupStatSelectListRemove("rawStats", val)}
-                                        onClear={() => this.handleLookupStatsSelectListClear("rawStats")}
-                                        filterOption={(input, option) =>
-                                            option.props.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
-                                        }
+                                    <Tooltip
+                                        title={"Select a season to use this filter"}
+                                        overlayClassName={parameters.season !== null ? "hideTooltip" : null}
                                     >
-                                        {filterOptions.rawStats}
-                                    </Select>
+                                        <Select
+                                            value={Object.keys(parameters.rawStats)}
+                                            placeholder={"Select stats to add range filters"}
+                                            style={{ width: '100%' }}
+                                            disabled={parameters.season === null}
+                                            mode={"multiple"}
+                                            allowClear={true}
+                                            onSelect={(val) => this.handleLookupStatSelectListAdd("rawStats", val)}
+                                            onDeselect={(val) => this.handleLookupStatSelectListRemove("rawStats", val)}
+                                            onClear={() => this.handleLookupStatsSelectListClear("rawStats")}
+                                            filterOption={(input, option) =>
+                                                option.props.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
+                                            }
+                                        >
+                                            {filterOptions.rawStats}
+                                        </Select>
+                                    </Tooltip>
                                     {rawStatsSliders}
                                 </Collapsible>
                                 <Collapsible
@@ -1135,22 +1153,27 @@ class AdvancedSearch extends Component {
                                     transitionTime={200}
                                     transitionCloseTime={200}
                                 >
-                                    <Select
-                                        value={Object.keys(parameters.percentileRanks)}
-                                        placeholder={"Select stats to add range filters"}
-                                        style={{ width: '100%' }}
-                                        disabled={parameters.season === null || parameters.positions.length !== 1}
-                                        mode={"multiple"}
-                                        allowClear={true}
-                                        onSelect={(val) => this.handleLookupStatSelectListAdd("percentileRanks", val)}
-                                        onDeselect={(val) => this.handleLookupStatSelectListRemove("percentileRanks", val)}
-                                        onClear={() => this.handleLookupStatsSelectListClear("percentileRanks")}
-                                        filterOption={(input, option) =>
-                                            option.props.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
-                                        }
+                                    <Tooltip
+                                        title={parameters.season === null ? "Select a season to use this filter" : "Select exactly one position to use this filter"}
+                                        overlayClassName={parameters.season !== null && parameters.positions.length === 1 ? "hideTooltip" : null}
                                     >
-                                        {filterOptions.percentileRanks}
-                                    </Select>
+                                        <Select
+                                            value={Object.keys(parameters.percentileRanks)}
+                                            placeholder={"Select stats to add range filters"}
+                                            style={{ width: '100%' }}
+                                            disabled={parameters.season === null || parameters.positions.length !== 1}
+                                            mode={"multiple"}
+                                            allowClear={true}
+                                            onSelect={(val) => this.handleLookupStatSelectListAdd("percentileRanks", val)}
+                                            onDeselect={(val) => this.handleLookupStatSelectListRemove("percentileRanks", val)}
+                                            onClear={() => this.handleLookupStatsSelectListClear("percentileRanks")}
+                                            filterOption={(input, option) =>
+                                                option.props.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
+                                            }
+                                        >
+                                            {filterOptions.percentileRanks}
+                                        </Select>
+                                    </Tooltip>
                                     {percentileRanksSliders}
                                 </Collapsible>
                             </div>

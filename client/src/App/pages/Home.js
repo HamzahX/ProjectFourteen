@@ -229,6 +229,7 @@ class Home extends Component {
                         />
                         <br/>
                         <br/>
+                        <br/>
                         <Link to={"/advancedSearch"}>
                             <button id="lucky-button">
                                 Advanced Search
