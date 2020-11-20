@@ -734,6 +734,7 @@ button:hover {
 
         .result {
             flex: 1 1 80%;
+            width: 75vw;
             max-width: 80%;
             margin: 0.5% 1% 1% 0.5%;
             z-index: 2;
@@ -816,8 +817,11 @@ button:hover {
 
         #search-results {
             border: none;
-            overflow-y: scroll;
             position: relative;
+        }
+
+        #search-results.scrollable {
+            overflow-y: scroll;
         }
 
             #search-results h3 {
@@ -1395,6 +1399,7 @@ button:hover {
                     }
 
             .result {
+                width: unset;
                 max-width: unset;
                 margin: 1% 1% 1% 1%;
             }

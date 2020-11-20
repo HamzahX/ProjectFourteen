@@ -243,7 +243,7 @@ let calculatePercentileRanks = async () => {
 
     for (let player in PROCESSED){
 
-        if (PROCESSED[player]["percentileEntries"][SEASON] === undefined || PROCESSED[player]["percentileEntries"][SEASON].length === 0){
+        if (PROCESSED[player]["positions"][SEASON] === undefined || PROCESSED[player]["positions"][SEASON][0] === "N/A"){
             continue;
         }
 
@@ -255,11 +255,12 @@ let calculatePercentileRanks = async () => {
             PROCESSED[player]["lookupStats"]["percentileRanks"][SEASON] = {};
         }
 
-        let positions = PROCESSED[player]["percentileEntries"][SEASON];
+        let positions = PROCESSED[player]["positions"][SEASON];
         let rawStats = PROCESSED[player]["lookupStats"]["rawStats"][SEASON];
 
         if (rawStats === undefined){
             console.log(player);
+            continue;
         }
 
         for (let i=0; i<positions.length; i++){
@@ -350,13 +351,7 @@ function calculatePercentileRank(array, value, occurrences){
             if (value !== array[i-1]) {
                 i += (value - array[i-1]) / (array[i] - array[i-1]);
             }
-            //adjust the returned percentile by disregarding the entries that belong to the player
-            if (i >= length - 1){
-                return (i / length);
-            }
-            else {
-                return (i / length) - (occurrences/(array.length-occurrences));
-            }
+            return i / length;
         }
     }
 

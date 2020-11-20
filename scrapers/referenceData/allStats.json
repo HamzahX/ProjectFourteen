@@ -112,21 +112,21 @@
 		"ranges": {
 			"18-19": {
 				"min": 0,
-				"max": 0.3,
-				"minName": "Daniel Baier",
+				"max": 0.28,
+				"minName": "Ivan Radovanovic",
 				"maxName": "Edinson Cavani"
 			},
 			"19-20": {
-				"min": 0,
+				"min": 0.02,
 				"max": 0.3,
 				"minName": "Alexander Tettey",
 				"maxName": "Mauro Icardi"
 			},
 			"20-21": {
-				"min": 0.05,
-				"max": 0.3,
-				"minName": "Alejandro Gómez",
-				"maxName": "Paco Alcácer"
+				"min": 0.04,
+				"max": 0.26,
+				"minName": "Bruno Fernandes",
+				"maxName": "Edin Dzeko"
 			}
 		}
 	},

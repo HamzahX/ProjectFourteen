@@ -242,6 +242,7 @@ h3 {
                 }
 
         .result {
+            width: unset;
             max-width: unset;
             margin: 1% 1% 1% 1%;
         }
