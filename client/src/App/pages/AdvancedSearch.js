@@ -84,15 +84,10 @@ class AdvancedSearch extends Component {
     _customStyles = {
         headCells: {
             style: {
-                fontSize: this.props.isMobile ? '1.2em' : '0.9em',
+                fontSize: '0.9em',
                 fontWeight: 'bold',
                 color: '#000000'
             },
-        },
-        rows: {
-            style: {
-                minHeight: this.props.isMobile ? '110px' : null,
-            }
         },
     };
 
