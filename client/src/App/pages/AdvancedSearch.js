@@ -175,7 +175,7 @@ class AdvancedSearch extends Component {
                 percentileRanks: {}
             },
 
-            displayType: displayTypeCookie || "cards",
+            displayType: this.isMobile ? "cards" : displayTypeCookie || "cards",
 
             tableColumns: JSON.parse(JSON.stringify(this._baseColumns)),
 
@@ -1063,8 +1063,8 @@ class AdvancedSearch extends Component {
                     <div className="screen" id="search-screen">
                         <div className="filter" id="advanced-search-filters">
                             <div className="filter-inputs search-filter-inputs" id="advanced-search-filter-inputs">
-                                <h4 style={{'display': this.props.isMobile ? "none" : "block"}}>Results Display</h4>
-                                <div style={{'display': this.props.isMobile ? "none" : "block"}} id="display-type-buttons-container">
+                                <h4 style={{'display': this.isMobile ? "none" : "block"}}>Results Display</h4>
+                                <div style={{'display': this.isMobile ? "none" : "block"}} id="display-type-buttons-container">
                                     <button
                                         className={`fas fa-th display-type-button ${displayType === "cards" ? "selected" : null}`}
                                         onClick={this.handleCardsButtonClick}
