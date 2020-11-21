@@ -53,7 +53,7 @@ class AdvancedSearch extends Component {
             name: 'Name',
             selector: 'name',
             style: {
-                fontSize: '1.15em',
+                fontSize: this.props.isMobile ? '3em' : '1.15em',
                 fontWeight: 'bold',
                 color: '#e75453'
             },
@@ -84,16 +84,15 @@ class AdvancedSearch extends Component {
     _customStyles = {
         headCells: {
             style: {
-                fontSize: '1.1em',
+                fontSize: this.props.isMobile ? '1.2em' : '0.9em',
                 fontWeight: 'bold',
-                color: '#000000',
-
-
+                color: '#000000'
             },
         },
-        cells: {
+        rows: {
             style: {
-            },
+                minHeight: this.props.isMobile ? '110px' : null,
+            }
         },
     };
 
@@ -176,7 +175,7 @@ class AdvancedSearch extends Component {
                 percentileRanks: {}
             },
 
-            displayType: displayTypeCookie || "cards",
+            displayType: this.isMobile ? "cards" : displayTypeCookie || "cards",
 
             tableColumns: JSON.parse(JSON.stringify(this._baseColumns)),
 
@@ -682,8 +681,6 @@ class AdvancedSearch extends Component {
                     parameters.rawStats[stat].min = statData.ranges[season].min;
                 }
 
-                //if old max/min was set to slider max
-
             }
 
         }
@@ -928,8 +925,12 @@ class AdvancedSearch extends Component {
         let parametersOriginalState = JSON.parse(JSON.stringify(this._parametersOriginalState));
 
         this.setState({
-            parameters: parametersOriginalState
+            parameters: parametersOriginalState,
+            searchResults: [],
+            searchResultsDisplay: null
         });
+
+        this._firstSearchMade = false;
 
         this.props.setQuery({
             parameters: parametersOriginalState
@@ -1062,8 +1063,8 @@ class AdvancedSearch extends Component {
                     <div className="screen" id="search-screen">
                         <div className="filter" id="advanced-search-filters">
                             <div className="filter-inputs search-filter-inputs" id="advanced-search-filter-inputs">
-                                <h4>Results Display</h4>
-                                <div id="display-type-buttons-container">
+                                <h4 style={{'display': this.isMobile ? "none" : "block"}}>Results Display</h4>
+                                <div style={{'display': this.isMobile ? "none" : "block"}} id="display-type-buttons-container">
                                     <button
                                         className={`fas fa-th display-type-button ${displayType === "cards" ? "selected" : null}`}
                                         onClick={this.handleCardsButtonClick}

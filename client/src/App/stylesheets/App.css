@@ -627,6 +627,10 @@ button:hover {
             z-index: 7;
         }
 
+        .display-type-button {
+            padding-right: 8px;
+        }
+
         #glossary-button {
             position: absolute;
             top: 0;

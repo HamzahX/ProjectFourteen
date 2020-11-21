@@ -22,6 +22,10 @@ class PlayerSearchResult extends Component {
         if (season !== null){
             clubs = clubs[season];
             positions = positions[season];
+
+            if (positions[0] === "N/A"){
+                positions[0] = "-";
+            }
         }
 
         else {
