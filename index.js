@@ -661,103 +661,103 @@ let search = async (aQuery, theType, isLive) => {
  */
 let advancedSearch = async (parameters) => {
 
+    let query = {
+        '$and': []
+    };
+
+    let season = parameters.season;
+
+    if (season !== null){
+
+        query['$and'].push({
+            [`stats.${season}`]: {$exists: true}
+        })
+
+    }
+
+    if (parameters.ages !== undefined){
+
+        let minAge = parameters.ages.min || -Infinity;
+        let maxAge = parameters.ages.max || Infinity;
+
+        query['$and'].push({
+            age: {
+                '$gte': minAge,
+                '$lte': maxAge
+            }
+        })
+
+    }
+
+    if (parameters.nationalities.length > 0){
+
+        query['$and'].push({
+            countryCode: {
+                '$in': parameters.nationalities,
+            }
+        })
+
+    }
+
+    if (parameters.clubs.length > 0){
+
+        query['$and'].push({
+            [`clubs.${season}`]: {
+                '$in': parameters.clubs,
+            }
+        })
+
+    }
+
+    if (parameters.positions.length > 0){
+
+        query['$and'].push({
+            [`positions.${season}`]: {
+                '$in': parameters.positions,
+            }
+        })
+
+    }
+
+    if (Object.keys(parameters.rawStats).length > 0){
+
+        for (let stat in parameters.rawStats){
+
+            let min = parameters.rawStats[stat].min || -Infinity;
+            let max = parameters.rawStats[stat].max || Infinity;
+
+            query['$and'].push({
+                [`lookupStats.rawStats.${season}.${stat}`]: {
+                    '$gte': min,
+                    '$lte': max
+                }
+            })
+
+        }
+
+    }
+
+    if (Object.keys(parameters.percentileRanks).length > 0){
+
+        for (let stat in parameters.percentileRanks){
+
+            let min = parameters.percentileRanks[stat].min || 0;
+            let max = parameters.percentileRanks[stat].max || 100;
+
+            query['$and'].push({
+                [`lookupStats.percentileRanks.${season}.${parameters.positions[0]}.${stat}`]: {
+                    '$gte': min,
+                    '$lte': max
+                }
+            })
+
+        }
+
+    }
+
+    let searchResults = [];
+
     return new Promise(async function(resolve, reject){
-
-        let query = {
-            '$and': []
-        };
-
-        let season = parameters.season;
-
-        if (season !== null){
-
-            query['$and'].push({
-                [`stats.${season}`]: {$exists: true}
-            })
-
-        }
-
-        if (parameters.ages !== undefined){
-
-            let minAge = parameters.ages.min || -Infinity;
-            let maxAge = parameters.ages.max || Infinity;
-
-            query['$and'].push({
-                age: {
-                    '$gte': minAge,
-                    '$lte': maxAge
-                }
-            })
-
-        }
-
-        if (parameters.nationalities.length > 0){
-
-            query['$and'].push({
-                countryCode: {
-                    '$in': parameters.nationalities,
-                }
-            })
-
-        }
-
-        if (parameters.clubs.length > 0){
-
-            query['$and'].push({
-                [`clubs.${season}`]: {
-                    '$in': parameters.clubs,
-                }
-            })
-
-        }
-
-        if (parameters.positions.length > 0){
-
-            query['$and'].push({
-                [`positions.${season}`]: {
-                    '$in': parameters.positions,
-                }
-            })
-
-        }
-
-        if (Object.keys(parameters.rawStats).length > 0){
-
-            for (let stat in parameters.rawStats){
-
-                let min = parameters.rawStats[stat].min || -Infinity;
-                let max = parameters.rawStats[stat].max || Infinity;
-
-                query['$and'].push({
-                    [`lookupStats.rawStats.${season}.${stat}`]: {
-                        '$gte': min,
-                        '$lte': max
-                    }
-                })
-
-            }
-
-        }
-
-        if (Object.keys(parameters.percentileRanks).length > 0){
-
-            for (let stat in parameters.percentileRanks){
-
-                let min = parameters.percentileRanks[stat].min || 0;
-                let max = parameters.percentileRanks[stat].max || 100;
-
-                query['$and'].push({
-                    [`lookupStats.percentileRanks.${season}.${parameters.positions[0]}.${stat}`]: {
-                        '$gte': min,
-                        '$lte': max
-                    }
-                })
-
-            }
-
-        }
-
-        let searchResults = [];
 
         //find the player who match the query
         PLAYERS_COLLECTION.find(query).limit(500).toArray(function (err, docs) {

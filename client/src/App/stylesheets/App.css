@@ -401,7 +401,7 @@ button:hover {
         #lucky-button {
             font-size: 1em;
             font-weight: bold;
-            padding: 10px 15px;
+            padding: 12px 15px;
             border: black solid 1px;
             border-radius: 7px;
             background-color: white;
@@ -734,6 +734,7 @@ button:hover {
 
         .result {
             flex: 1 1 80%;
+            width: 75vw;
             max-width: 80%;
             margin: 0.5% 1% 1% 0.5%;
             z-index: 2;
@@ -780,6 +781,10 @@ button:hover {
                         margin-bottom: 13px;
                     }
 
+                    .hideTooltip {
+                        display: none !important;
+                    }
+
             #search-filters h3, #search-results h3 {
                 font-weight: unset;
                 font-family: unset;
@@ -812,8 +817,11 @@ button:hover {
 
         #search-results {
             border: none;
-            overflow-y: scroll;
             position: relative;
+        }
+
+        #search-results.scrollable {
+            overflow-y: scroll;
         }
 
             #search-results h3 {
@@ -844,6 +852,10 @@ button:hover {
 
             .rdt_TableHeader {
                 display: none !important;
+            }
+
+            .rdt_TableHeadRow {
+                width: 98.8% !important;
             }
 
                 #search-results .search-result {
@@ -1391,6 +1403,7 @@ button:hover {
                     }
 
             .result {
+                width: unset;
                 max-width: unset;
                 margin: 1% 1% 1% 1%;
             }

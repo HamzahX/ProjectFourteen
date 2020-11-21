@@ -27,7 +27,7 @@ import {
 
 //import pre-made components
 import Collapsible from 'react-collapsible';
-import {Select, Slider} from 'antd';
+import {Select, Slider, Tooltip} from 'antd';
 import DataTable, { createTheme } from 'react-data-table-component';
 
 
@@ -45,6 +45,7 @@ class AdvancedSearch extends Component {
 
     _firstSearchMade = false;
     _referenceData = {};
+    _statsReferenceDataArraySorted = [];
     _parametersOriginalState = {};
 
     _baseColumns = [
@@ -85,7 +86,9 @@ class AdvancedSearch extends Component {
             style: {
                 fontSize: '1.1em',
                 fontWeight: 'bold',
-                color: '#000000'
+                color: '#000000',
+
+
             },
         },
         cells: {
@@ -164,7 +167,7 @@ class AdvancedSearch extends Component {
             },
 
             parameters: {
-                season: null,
+                season: "20-21",
                 ages: {},
                 nationalities: [],
                 clubs: [],
@@ -245,6 +248,17 @@ class AdvancedSearch extends Component {
 
         this._referenceData = referenceData;
 
+        let statsReferenceDataArray = [];
+        for (let stat in referenceData.statsReferenceData){
+            let temp = referenceData.statsReferenceData[stat];
+            temp.stat = stat;
+            statsReferenceDataArray.push(temp);
+        }
+
+        statsReferenceDataArray.sort((a, b) => a.displayOrder - b.displayOrder);
+
+        this._statsReferenceDataArraySorted = statsReferenceDataArray;
+
         let filterOptions = this.state.filterOptions;
         let parameters = this.state.parameters;
         let queryParameters = this.props.query.parameters;
@@ -257,6 +271,15 @@ class AdvancedSearch extends Component {
         };
 
         parameters.ages = JSON.parse(JSON.stringify(filterOptions.ages));
+
+        let season = parameters.season;
+        let minutesReferenceData = referenceData.statsReferenceData["minutes"];
+
+        parameters.rawStats.minutes = {
+            min: minutesReferenceData.ranges[season].min,
+            max: minutesReferenceData.ranges[season].max,
+        };
+
         this._parametersOriginalState = JSON.parse(JSON.stringify(this.state.parameters));
 
         if (queryParameters !== undefined){
@@ -297,22 +320,13 @@ class AdvancedSearch extends Component {
         }
         filterOptions.clubs = clubsOptions;
 
-        let statsReferenceDataArray = [];
-        for (let stat in referenceData.statsReferenceData){
-            let temp = referenceData.statsReferenceData[stat];
-            temp.stat = stat;
-            statsReferenceDataArray.push(temp);
-        }
-
-        statsReferenceDataArray.sort((a, b) => a.displayOrder - b.displayOrder);
-
         let rawStatsOptions = [];
         for (let i=0; i<statsReferenceDataArray.length; i++){
 
             let statData = statsReferenceDataArray[i];
             let stat = statData.stat;
 
-            if (stat === "age"){
+            if (stat === "age" || stat === "minutes"){
                 continue;
             }
 
@@ -460,17 +474,19 @@ class AdvancedSearch extends Component {
                 })
             }
 
-            for (let stat in parameters.percentileRanks){
+            if (parameters.positions.length === 1){
+                for (let stat in parameters.percentileRanks){
 
-                let statData = this._referenceData.statsReferenceData[stat];
+                    let statData = this._referenceData.statsReferenceData[stat];
 
-                tableColumns.push({
-                    name: `${statData.label} ${statData.suffix} (Percentile Rank)`,
-                    selector: `percentile_${stat}`,
-                    sortable: true,
-                    sortFunction: (rowA, rowB) => { return parseFloat(rowA[`percentile_${stat}`]) - parseFloat(rowB[`percentile_${stat}`]) },
-                    format: row => this.ordinalSuffix(row[`percentile_${stat}`]) + " percentile"
-                })
+                    tableColumns.push({
+                        name: `${statData.label} ${statData.suffix} (Percentile Rank)`,
+                        selector: `percentile_${stat}`,
+                        sortable: true,
+                        sortFunction: (rowA, rowB) => { return parseFloat(rowA[`percentile_${stat}`]) - parseFloat(rowB[`percentile_${stat}`]) },
+                        format: row => this.ordinalSuffix(row[`percentile_${stat}`]) + " percentile"
+                    })
+                }
             }
 
         }
@@ -580,6 +596,9 @@ class AdvancedSearch extends Component {
 
                         if (season !== null){
                             row[key] = current[key][season].join(", ");
+                            if (row[key] === "N/A"){
+                                row[key] = "-";
+                            }
                         }
 
                         else {
@@ -612,6 +631,10 @@ class AdvancedSearch extends Component {
                             pointerOnHover={true}
                             onRowClicked={(row) => (this.props.history.push(`/stats/${row.code}`))}
                             pagination={true}
+                            paginationPerPage={30}
+                            fixedHeader={true} //causes mis-aligned header bug by adding permanent scrollbar
+                            allowOverflow={true}
+                            overflowY={true}
                         />
                     </div>;
 
@@ -630,6 +653,8 @@ class AdvancedSearch extends Component {
 
         let parameters = this.state.parameters;
 
+        let oldValue = parameters[key];
+
         parameters[key] = value;
 
         //update slider values if they exceed bounds of new limits after season is changed
@@ -641,13 +666,23 @@ class AdvancedSearch extends Component {
 
                 let statData = this._referenceData.statsReferenceData[stat];
 
-                if (parameters.rawStats[stat].max > statData.ranges[season].max){
+                //if current max/min is greater/less than new max/min
+                //or if current max/min is equal to slider max/min
+                //update
+                if (
+                    parameters.rawStats[stat].max > statData.ranges[season].max ||
+                    parameters.rawStats[stat].max === statData.ranges[oldValue].max
+                ){
                     parameters.rawStats[stat].max = statData.ranges[season].max;
                 }
 
-                if (parameters.rawStats[stat].min < statData.ranges[season].min){
+                if (parameters.rawStats[stat].min < statData.ranges[season].min ||
+                    parameters.rawStats[stat].min === statData.ranges[oldValue].min
+                ){
                     parameters.rawStats[stat].min = statData.ranges[season].min;
                 }
+
+                //if old max/min was set to slider max
 
             }
 
@@ -740,11 +775,9 @@ class AdvancedSearch extends Component {
         let filterOptions = this.state.filterOptions;
         let parameters = this.state.parameters;
 
-        let percentileRankOptions = [];
-
         if (parameters.positions.length !== 1){
 
-            filterOptions.percentileRanks = percentileRankOptions;
+            filterOptions.percentileRanks = [];
 
             this.setState({
                 filterOptions: filterOptions
@@ -753,9 +786,13 @@ class AdvancedSearch extends Component {
         }
         else {
 
+            let percentileRankOptions = [];
+
             let position = parameters.positions[0];
 
-            for (let stat in this._referenceData.statsReferenceData){
+            for (let i=0; i<this._statsReferenceDataArraySorted.length; i++){
+
+                let stat = this._statsReferenceDataArraySorted[i].stat;
 
                 let statData = this._referenceData.statsReferenceData[stat];
 
@@ -867,7 +904,11 @@ class AdvancedSearch extends Component {
 
         let parameters = this.state.parameters;
 
-        parameters[key] = {};
+        for (let stat in parameters[key]){
+            if (stat !== "minutes"){
+                delete parameters[key][stat];
+            }
+        }
 
         this.setState({
             parameters: parameters
@@ -955,6 +996,10 @@ class AdvancedSearch extends Component {
             let rawStatsSliders = [];
             for (let stat in parameters.rawStats){
 
+                if (stat === "minutes"){
+                    continue;
+                }
+
                 let statData = this._referenceData.statsReferenceData[stat];
 
                 rawStatsSliders.push(
@@ -967,7 +1012,7 @@ class AdvancedSearch extends Component {
                         range={true}
                         value={[parameters.rawStats[stat].min, parameters.rawStats[stat].max]}
                         min={statData.ranges[season].min}
-                        max={statData.ranges[season].max + 0.000001}
+                        max={statData.ranges[season].max + 0.0001}
                         step={statData.step}
                         onChange={(values) => this.handleRangeSliderChange(`rawStats.${stat}`, values)}
                     />
@@ -1000,6 +1045,8 @@ class AdvancedSearch extends Component {
             }
 
             console.log(searchResults);
+
+            let minutesReferenceData = this._referenceData.statsReferenceData["minutes"];
 
             //return JSX code for the search page
             return (
@@ -1052,6 +1099,16 @@ class AdvancedSearch extends Component {
                                         max={filterOptions.ages.max}
                                         onChange={(values) => this.handleRangeSliderChange("ages", values)}
                                     />
+                                    <h4>Minutes</h4>
+                                    <Slider
+                                        key={`rawStatSlider-minutes`}
+                                        range={true}
+                                        value={[parameters.rawStats["minutes"].min, parameters.rawStats["minutes"].max]}
+                                        min={minutesReferenceData.ranges[season].min}
+                                        max={minutesReferenceData.ranges[season].max + 0.0001}
+                                        step={50}
+                                        onChange={(values) => this.handleRangeSliderChange(`rawStats.minutes`, values)}
+                                    />
                                     <h4>Nationalities</h4>
                                     <Select
                                         value={parameters.nationalities.map(x => x)}
@@ -1069,39 +1126,49 @@ class AdvancedSearch extends Component {
                                         {filterOptions.nationalities}
                                     </Select>
                                     <h4>Clubs</h4>
-                                    <Select
-                                        value={parameters.clubs.map(x => x)}
-                                        placeholder={"Select clubs"}
-                                        style={{ width: '100%' }}
-                                        disabled={parameters.season === null}
-                                        mode={"multiple"}
-                                        allowClear={true}
-                                        onSelect={(val) => this.handleSelectListAdd("clubs", val)}
-                                        onDeselect={(val) => this.handleSelectListRemove("clubs", val)}
-                                        onClear={() => this.handleSelectListClear("clubs")}
-                                        filterOption={(input, option) =>
-                                            option.props.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
-                                        }
+                                    <Tooltip
+                                        title={"Select a season to use this filter"}
+                                        overlayClassName={parameters.season !== null ? "hideTooltip" : null}
                                     >
-                                        {filterOptions.clubs}
-                                    </Select>
+                                        <Select
+                                            value={parameters.clubs.map(x => x)}
+                                            placeholder={"Select clubs"}
+                                            style={{ width: '100%' }}
+                                            disabled={parameters.season === null}
+                                            mode={"multiple"}
+                                            allowClear={true}
+                                            onSelect={(val) => this.handleSelectListAdd("clubs", val)}
+                                            onDeselect={(val) => this.handleSelectListRemove("clubs", val)}
+                                            onClear={() => this.handleSelectListClear("clubs")}
+                                            filterOption={(input, option) =>
+                                                option.props.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
+                                            }
+                                        >
+                                            {filterOptions.clubs}
+                                        </Select>
+                                    </Tooltip>
                                     <h4>Positions</h4>
-                                    <Select
-                                        value={parameters.positions.map(x => x)}
-                                        placeholder={"Select positions"}
-                                        style={{ width: '100%' }}
-                                        disabled={parameters.season === null}
-                                        mode={"multiple"}
-                                        allowClear={true}
-                                        onSelect={(val) => this.handleSelectListAdd("positions", val)}
-                                        onDeselect={(val) => this.handleSelectListRemove("positions", val)}
-                                        onClear={() => this.handleSelectListClear("positions")}
-                                        filterOption={(input, option) =>
-                                            option.props.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
-                                        }
+                                    <Tooltip
+                                        title={"Select a season to use this filter"}
+                                        overlayClassName={parameters.season !== null ? "hideTooltip" : null}
                                     >
-                                        {filterOptions.positions}
-                                    </Select>
+                                        <Select
+                                            value={parameters.positions.map(x => x)}
+                                            placeholder={"Select positions"}
+                                            style={{ width: '100%' }}
+                                            disabled={parameters.season === null}
+                                            mode={"multiple"}
+                                            allowClear={true}
+                                            onSelect={(val) => this.handleSelectListAdd("positions", val)}
+                                            onDeselect={(val) => this.handleSelectListRemove("positions", val)}
+                                            onClear={() => this.handleSelectListClear("positions")}
+                                            filterOption={(input, option) =>
+                                                option.props.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
+                                            }
+                                        >
+                                            {filterOptions.positions}
+                                        </Select>
+                                    </Tooltip>
                                 </Collapsible>
                                 <Collapsible
                                     open={true}
@@ -1110,22 +1177,27 @@ class AdvancedSearch extends Component {
                                     transitionTime={200}
                                     transitionCloseTime={200}
                                 >
-                                    <Select
-                                        value={Object.keys(parameters.rawStats)}
-                                        placeholder={"Select stats to add range filters"}
-                                        style={{ width: '100%' }}
-                                        disabled={parameters.season === null}
-                                        mode={"multiple"}
-                                        allowClear={true}
-                                        onSelect={(val) => this.handleLookupStatSelectListAdd("rawStats", val)}
-                                        onDeselect={(val) => this.handleLookupStatSelectListRemove("rawStats", val)}
-                                        onClear={() => this.handleLookupStatsSelectListClear("rawStats")}
-                                        filterOption={(input, option) =>
-                                            option.props.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
-                                        }
+                                    <Tooltip
+                                        title={"Select a season to use this filter"}
+                                        overlayClassName={parameters.season !== null ? "hideTooltip" : null}
                                     >
-                                        {filterOptions.rawStats}
-                                    </Select>
+                                        <Select
+                                            value={Object.keys(parameters.rawStats).filter(i => i !== "minutes")}
+                                            placeholder={"Select stats to add range filters"}
+                                            style={{ width: '100%' }}
+                                            disabled={parameters.season === null}
+                                            mode={"multiple"}
+                                            allowClear={true}
+                                            onSelect={(val) => this.handleLookupStatSelectListAdd("rawStats", val)}
+                                            onDeselect={(val) => this.handleLookupStatSelectListRemove("rawStats", val)}
+                                            onClear={() => this.handleLookupStatsSelectListClear("rawStats")}
+                                            filterOption={(input, option) =>
+                                                option.props.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
+                                            }
+                                        >
+                                            {filterOptions.rawStats}
+                                        </Select>
+                                    </Tooltip>
                                     {rawStatsSliders}
                                 </Collapsible>
                                 <Collapsible
@@ -1135,22 +1207,27 @@ class AdvancedSearch extends Component {
                                     transitionTime={200}
                                     transitionCloseTime={200}
                                 >
-                                    <Select
-                                        value={Object.keys(parameters.percentileRanks)}
-                                        placeholder={"Select stats to add range filters"}
-                                        style={{ width: '100%' }}
-                                        disabled={parameters.season === null || parameters.positions.length !== 1}
-                                        mode={"multiple"}
-                                        allowClear={true}
-                                        onSelect={(val) => this.handleLookupStatSelectListAdd("percentileRanks", val)}
-                                        onDeselect={(val) => this.handleLookupStatSelectListRemove("percentileRanks", val)}
-                                        onClear={() => this.handleLookupStatsSelectListClear("percentileRanks")}
-                                        filterOption={(input, option) =>
-                                            option.props.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
-                                        }
+                                    <Tooltip
+                                        title={parameters.season === null ? "Select a season to use this filter" : "Select exactly one position to use this filter"}
+                                        overlayClassName={parameters.season !== null && parameters.positions.length === 1 ? "hideTooltip" : null}
                                     >
-                                        {filterOptions.percentileRanks}
-                                    </Select>
+                                        <Select
+                                            value={Object.keys(parameters.percentileRanks)}
+                                            placeholder={"Select stats to add range filters"}
+                                            style={{ width: '100%' }}
+                                            disabled={parameters.season === null || parameters.positions.length !== 1}
+                                            mode={"multiple"}
+                                            allowClear={true}
+                                            onSelect={(val) => this.handleLookupStatSelectListAdd("percentileRanks", val)}
+                                            onDeselect={(val) => this.handleLookupStatSelectListRemove("percentileRanks", val)}
+                                            onClear={() => this.handleLookupStatsSelectListClear("percentileRanks")}
+                                            filterOption={(input, option) =>
+                                                option.props.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
+                                            }
+                                        >
+                                            {filterOptions.percentileRanks}
+                                        </Select>
+                                    </Tooltip>
                                     {percentileRanksSliders}
                                 </Collapsible>
                             </div>
@@ -1163,7 +1240,7 @@ class AdvancedSearch extends Component {
                                 </div>
                             </div>
                         </div>
-                        <div className="result" id="search-results">
+                        <div className={`result ${displayType === "cards" ? "scrollable" : null}`} id="search-results">
                             {searchResults.length === 0 && this._firstSearchMade ? <p>No results found</p> : null}
                             {searchResultsDisplay}
                         </div>
