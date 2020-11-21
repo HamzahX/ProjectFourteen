@@ -86,7 +86,9 @@ class AdvancedSearch extends Component {
             style: {
                 fontSize: '1.1em',
                 fontWeight: 'bold',
-                color: '#000000'
+                color: '#000000',
+
+
             },
         },
         cells: {
@@ -630,10 +632,9 @@ class AdvancedSearch extends Component {
                             onRowClicked={(row) => (this.props.history.push(`/stats/${row.code}`))}
                             pagination={true}
                             paginationPerPage={30}
-                            fixedHeader={true}
+                            fixedHeader={true} //causes mis-aligned header bug by adding permanent scrollbar
                             allowOverflow={true}
                             overflowY={true}
-                            overflowX={true}
                         />
                     </div>;
 
@@ -1098,6 +1099,16 @@ class AdvancedSearch extends Component {
                                         max={filterOptions.ages.max}
                                         onChange={(values) => this.handleRangeSliderChange("ages", values)}
                                     />
+                                    <h4>Minutes</h4>
+                                    <Slider
+                                        key={`rawStatSlider-minutes`}
+                                        range={true}
+                                        value={[parameters.rawStats["minutes"].min, parameters.rawStats["minutes"].max]}
+                                        min={minutesReferenceData.ranges[season].min}
+                                        max={minutesReferenceData.ranges[season].max + 0.0001}
+                                        step={50}
+                                        onChange={(values) => this.handleRangeSliderChange(`rawStats.minutes`, values)}
+                                    />
                                     <h4>Nationalities</h4>
                                     <Select
                                         value={parameters.nationalities.map(x => x)}
@@ -1166,16 +1177,6 @@ class AdvancedSearch extends Component {
                                     transitionTime={200}
                                     transitionCloseTime={200}
                                 >
-                                    <h4>Minutes</h4>
-                                    <Slider
-                                        key={`rawStatSlider-minutes`}
-                                        range={true}
-                                        value={[parameters.rawStats["minutes"].min, parameters.rawStats["minutes"].max]}
-                                        min={minutesReferenceData.ranges[season].min}
-                                        max={minutesReferenceData.ranges[season].max + 0.0001}
-                                        step={50}
-                                        onChange={(values) => this.handleRangeSliderChange(`rawStats.minutes`, values)}
-                                    />
                                     <Tooltip
                                         title={"Select a season to use this filter"}
                                         overlayClassName={parameters.season !== null ? "hideTooltip" : null}

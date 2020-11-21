@@ -854,6 +854,10 @@ button:hover {
                 display: none !important;
             }
 
+            .rdt_TableHeadRow {
+                width: 98.8% !important;
+            }
+
                 #search-results .search-result {
                     padding: 3.3% 3.3% 4.5%;
                     border: darkgrey 1px solid;
