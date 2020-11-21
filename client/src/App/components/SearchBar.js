@@ -244,9 +244,14 @@ class SearchBar extends Component {
                 "width": "100%",
                 "z-index": 7
             });
+
             $("h1").css({
                 "display": "none"
-            })
+            });
+
+            $("#lucky-button").css({
+                "display": "none"
+            });
         }
         this.setState({
             liveResultsOpen: this.liveSearchEnabled && query.length > 0
@@ -266,9 +271,15 @@ class SearchBar extends Component {
                 "width": '75%',
                 "z-index": 1
             });
+
             $("h1").css({
                 "display": "block"
-            })
+            });
+
+            $("#lucky-button").css({
+                "display": "block"
+            });
+
         }
 
         this.setState({

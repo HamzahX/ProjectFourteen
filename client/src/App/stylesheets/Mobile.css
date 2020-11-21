@@ -1,5 +1,5 @@
 body {
-    font-size: 195%;
+    font-size: 190%;
     background-color: #fafbfd;
 }
 
@@ -98,6 +98,11 @@ h3 {
         min-width: 98%;
         width: 98%;
         /*max-height: 600px;*/
+    }
+
+    #lucky-button {
+        font-size: 1.1em;
+        padding: 25px 30px;
     }
 
     /*#sample-results {*/
@@ -269,6 +274,14 @@ h3 {
                     padding: 2%;
                 }
 
+            #advanced-search-filters h4 {
+                margin-bottom: 20px;
+            }
+
+            .Collapsible__contentInner h4 {
+                margin-top: 30px;
+            }
+
             #advanced-search-filter-inputs {
                 padding-top: 2%;
             }
@@ -277,13 +290,72 @@ h3 {
                 font-size: unset;
             }
 
+            .ant-select-selector {
+                min-height: 75px !important;
+            }
+
+            .ant-slider {
+                margin-left: 30px;
+                margin-right: 30px;
+            }
+
+            .ant-slider-handle {
+                height: 40px;
+                width: 40px;
+                margin-top: unset;
+                transform: translateX(-50%) translateY(-40%) !important;
+            }
+
+            .ant-slider-track {
+                height: 10px
+            }
+
+            .ant-tooltip {
+                font-size: 35px;
+            }
+
+            .ant-select-item {
+                padding-top: 20px;
+                padding-bottom: 20px;
+                line-height: unset;
+                font-size: 200%;
+            }
+
+            .ant-select-clear {
+                height: 25px;
+                width: 25px;
+            }
+
+            .ant-select-selector .ant-select-selection-item {
+                transform: translateY(30%);
+            }
+
+            .ant-select-multiple .ant-select-selection-item {
+                height: unset;
+                line-height: unset;
+                transform: translateY(-5%);
+            }
+
             #advanced-search-filter-buttons {
                 flex: 1 1 30%;
             }
 
-        #search-results {
+        #search-results.scrollable {
             overflow-y: unset;
         }
+
+            .rdt_TableHeadRow {
+                width: 100% !important;
+            }
+
+            .rdt_TableRow {
+                padding-top: 30px;
+                padding-bottom: 30px;
+            }
+
+            .rdt_TableCell {
+                font-size: 2.5em;
+            }
 
             #search-results h3 {
                 margin-left: 20px;
@@ -332,7 +404,7 @@ h3 {
         }
 
         #glossary-overlay #glossary-container p, #glossary-overlay #glossary-container li {
-            font-size: 50%;
+            font-size: 100%;
         }
 
         #chart-filters {
@@ -361,7 +433,7 @@ h3 {
                         max-width: 50%;
                     }
 
-                #chart-filter-inputs-mobile .Collapsible__trigger {
+                .filter-inputs .Collapsible__trigger {
                     padding-top: 21px;
                     padding-bottom: 21px;
                 }
