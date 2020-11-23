@@ -719,6 +719,24 @@ let advancedSearch = async (parameters) => {
 
     }
 
+    if (Object.keys(parameters.aggregateStats).length > 0){
+
+        for (let stat in parameters.aggregateStats){
+
+            let min = parameters.aggregateStats[stat].min || -Infinity;
+            let max = parameters.aggregateStats[stat].max || Infinity;
+
+            query['$and'].push({
+                [`lookupStats.aggregateStats.${season}.${stat}`]: {
+                    '$gte': min,
+                    '$lte': max
+                }
+            })
+
+        }
+
+    }
+
     if (Object.keys(parameters.rawStats).length > 0){
 
         for (let stat in parameters.rawStats){
@@ -760,7 +778,7 @@ let advancedSearch = async (parameters) => {
     return new Promise(async function(resolve, reject){
 
         //find the player who match the query
-        PLAYERS_COLLECTION.find(query).limit(500).toArray(function (err, docs) {
+        PLAYERS_COLLECTION.find(query).toArray(function (err, docs) {
             if (err) {
                 reject();
             }
@@ -771,6 +789,10 @@ let advancedSearch = async (parameters) => {
                 for (let i=0; i<docs.length; i++){
 
                     let playerSearchResult = buildPlayerSearchResult(docs[i]);
+
+                    for (let stat in parameters.aggregateStats){
+                        playerSearchResult[`aggregate_${stat}`] = docs[i].lookupStats.aggregateStats[parameters.season][stat];
+                    }
 
                     for (let stat in parameters.rawStats){
                         playerSearchResult[`raw_${stat}`] = docs[i].lookupStats.rawStats[parameters.season][stat];
@@ -783,6 +805,25 @@ let advancedSearch = async (parameters) => {
                     searchResults.push(playerSearchResult);
 
                 }
+
+                let numFilters = Object.keys(parameters.aggregateStats).length - 1 + //subtract one because minutes filter is a special case
+                    Object.keys(parameters.rawStats).length +
+                    Object.keys(parameters.percentileRanks).length;
+
+                if (numFilters === 1){
+
+                    let fields = Object.keys(searchResults[0]).filter(i =>
+                        (i.startsWith("aggregate") ||
+                        i.startsWith("raw") ||
+                        i.startsWith("percentile")) &&
+                        i !== "aggregate_minutes"
+                    );
+
+                    let fieldToSort = fields[0];
+
+                    searchResults.sort((a, b) => { return parseFloat(b[fieldToSort]) - parseFloat(a[fieldToSort]) });
+                }
+
                 resolve(searchResults);
             }
         });

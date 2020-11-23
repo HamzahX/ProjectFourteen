@@ -71,9 +71,17 @@ let calculaterawStats = async () => {
         }
 
         else {
-            ALL_STATS[stat]["ranges"][SEASON] = {
-                "min": Infinity,
-                "max": -Infinity
+            if (ALL_STATS[stat]["types"].includes("average")){
+                ALL_STATS[stat]["ranges"][SEASON] = {
+                    "min": Infinity,
+                    "max": -Infinity
+                }
+            }
+            if (ALL_STATS[stat]["types"].includes("aggregate")){
+                ALL_STATS[stat]["ranges_agg"][SEASON] = {
+                    "min": Infinity,
+                    "max": -Infinity
+                }
             }
         }
 
@@ -87,6 +95,10 @@ let calculaterawStats = async () => {
 
         if (PROCESSED[player]["lookupStats"] === undefined){
             PROCESSED[player]["lookupStats"] = {};
+        }
+
+        if (PROCESSED[player]["lookupStats"]["aggregateStats"] === undefined){
+            PROCESSED[player]["lookupStats"]["aggregateStats"] = {};
         }
 
         if (PROCESSED[player]["lookupStats"]["rawStats"] === undefined){
@@ -217,7 +229,31 @@ let calculaterawStats = async () => {
 
         }
 
+        for (let stat in aggregatedStats){
+
+            if (ALL_STATS[stat] === undefined){
+                continue;
+            }
+
+            let step = ALL_STATS[stat]["step_agg"];
+
+            let potentialMin = Math.floor(aggregatedStats[stat]/step) * step;
+            let potentialMax = Math.ceil(aggregatedStats[stat]/step) * step;
+
+            if (aggregatedStats[stat] >= 0 && potentialMin < ALL_STATS[stat]["ranges_agg"][SEASON]["min"]){
+                ALL_STATS[stat]["ranges_agg"][SEASON]["min"] = potentialMin;
+                ALL_STATS[stat]["ranges_agg"][SEASON]["minName"] = PROCESSED[player]["name"];
+            }
+
+            if (potentialMax > ALL_STATS[stat]["ranges_agg"][SEASON]["max"]){
+                ALL_STATS[stat]["ranges_agg"][SEASON]["max"] = potentialMax;
+                ALL_STATS[stat]["ranges_agg"][SEASON]["maxName"] = PROCESSED[player]["name"];
+            }
+
+        }
+
         PROCESSED[player]["lookupStats"]["rawStats"][SEASON] = rawStats;
+        PROCESSED[player]["lookupStats"]["aggregateStats"][SEASON] = aggregatedStats;
 
     }
 

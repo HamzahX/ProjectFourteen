@@ -57,6 +57,7 @@ class AdvancedSearch extends Component {
                 fontWeight: 'bold',
                 color: '#e75453'
             },
+            minWidth: '300px',
             sortable: true
         },
         {
@@ -84,7 +85,7 @@ class AdvancedSearch extends Component {
     _customStyles = {
         headCells: {
             style: {
-                fontSize: '0.9em',
+                fontSize: '1em',
                 fontWeight: 'bold',
                 color: '#000000'
             },
@@ -156,6 +157,7 @@ class AdvancedSearch extends Component {
                 nationalities: [],
                 clubs: [],
                 positions: positionsOptions,
+                aggregateStats: [],
                 rawStats: [],
                 percentileRanks: []
             },
@@ -166,6 +168,7 @@ class AdvancedSearch extends Component {
                 nationalities: [],
                 clubs: [],
                 positions: [],
+                aggregateStats: {},
                 rawStats: {},
                 percentileRanks: {}
             },
@@ -269,7 +272,7 @@ class AdvancedSearch extends Component {
         let season = parameters.season;
         let minutesReferenceData = referenceData.statsReferenceData["minutes"];
 
-        parameters.rawStats.minutes = {
+        parameters.aggregateStats.minutes = {
             min: minutesReferenceData.ranges[season].min,
             max: minutesReferenceData.ranges[season].max,
         };
@@ -314,13 +317,35 @@ class AdvancedSearch extends Component {
         }
         filterOptions.clubs = clubsOptions;
 
+        let aggregateStatsOptions = [];
+        for (let i=0; i<statsReferenceDataArray.length; i++){
+
+            let statData = statsReferenceDataArray[i];
+            let stat = statData.stat;
+
+            if (!statData.types.includes("aggregate") || stat === "minutes"){
+                continue;
+            }
+
+            aggregateStatsOptions.push(
+                <Option
+                    key={stat}
+                    value={stat}
+                >
+                    {`${statData.label}`}
+                </Option>
+            )
+
+        }
+        filterOptions.aggregateStats = aggregateStatsOptions;
+
         let rawStatsOptions = [];
         for (let i=0; i<statsReferenceDataArray.length; i++){
 
             let statData = statsReferenceDataArray[i];
             let stat = statData.stat;
 
-            if (stat === "age" || stat === "minutes"){
+            if (!statData.types.includes("average")){
                 continue;
             }
 
@@ -455,6 +480,18 @@ class AdvancedSearch extends Component {
         if (displayType === "table"){
 
             tableColumns = JSON.parse(JSON.stringify(this._baseColumns));
+
+            for (let stat in parameters.aggregateStats){
+
+                let statData = this._referenceData.statsReferenceData[stat];
+
+                tableColumns.push({
+                    name: `${statData.label}`,
+                    selector: `aggregate_${stat}`,
+                    sortable: true,
+                    format: row => parseFloat(row[`aggregate_${stat}`])
+                })
+            }
 
             for (let stat in parameters.rawStats){
 
@@ -629,6 +666,7 @@ class AdvancedSearch extends Component {
                             fixedHeader={true} //causes mis-aligned header bug by adding permanent scrollbar
                             allowOverflow={true}
                             overflowY={true}
+                            defaultSortAsc={false}
                         />
                     </div>;
 
@@ -852,8 +890,10 @@ class AdvancedSearch extends Component {
         let season = parameters.season;
         let referenceData = this._referenceData.statsReferenceData[stat];
 
-        let min = parametersKey === "percentileRanks" ? 0 : referenceData.ranges[season].min;
-        let max = parametersKey === "percentileRanks" ? 100 : referenceData.ranges[season].max;
+        let rangesKey = parametersKey === "rawStats" ? "ranges" : "ranges_agg";
+
+        let min = parametersKey === "percentileRanks" ? 0 : referenceData[rangesKey][season].min;
+        let max = parametersKey === "percentileRanks" ? 100 : referenceData[rangesKey][season].max;
 
         parameters[`${parametersKey}`][stat] = {
             min: min,
@@ -989,12 +1029,36 @@ class AdvancedSearch extends Component {
 
             let season = parameters.season;
 
-            let rawStatsSliders = [];
-            for (let stat in parameters.rawStats){
+            let aggregateStatSliders = [];
+            for (let stat in parameters.aggregateStats){
 
                 if (stat === "minutes"){
                     continue;
                 }
+
+                let statData = this._referenceData.statsReferenceData[stat];
+
+                aggregateStatSliders.push(
+                    <h4 key={statData.key}>{`${statData.label}`}</h4>
+                );
+
+                aggregateStatSliders.push(
+                    <Slider
+                        key={`aggregateStatSlider-${stat}`}
+                        range={true}
+                        value={[parameters.aggregateStats[stat].min, parameters.aggregateStats[stat].max]}
+                        min={statData.ranges_agg[season].min}
+                        max={statData.ranges_agg[season].max + 0.0001}
+                        step={statData.step_agg}
+                        onChange={(values) => this.handleRangeSliderChange(`aggregateStats.${stat}`, values)}
+                    />
+                );
+
+            }
+
+
+            let rawStatsSliders = [];
+            for (let stat in parameters.rawStats){
 
                 let statData = this._referenceData.statsReferenceData[stat];
 
@@ -1099,11 +1163,11 @@ class AdvancedSearch extends Component {
                                     <Slider
                                         key={`rawStatSlider-minutes`}
                                         range={true}
-                                        value={[parameters.rawStats["minutes"].min, parameters.rawStats["minutes"].max]}
-                                        min={minutesReferenceData.ranges[season].min}
-                                        max={minutesReferenceData.ranges[season].max + 0.0001}
+                                        value={[parameters.aggregateStats["minutes"].min, parameters.aggregateStats["minutes"].max]}
+                                        min={minutesReferenceData.ranges_agg[season].min}
+                                        max={minutesReferenceData.ranges_agg[season].max + 0.0001}
                                         step={50}
-                                        onChange={(values) => this.handleRangeSliderChange(`rawStats.minutes`, values)}
+                                        onChange={(values) => this.handleRangeSliderChange(`aggregateStats.minutes`, values)}
                                     />
                                     <h4>Nationalities</h4>
                                     <Select
@@ -1168,6 +1232,36 @@ class AdvancedSearch extends Component {
                                 </Collapsible>
                                 <Collapsible
                                     open={true}
+                                    trigger="Aggregate Stat Filters"
+                                    className="filter-headers"
+                                    transitionTime={200}
+                                    transitionCloseTime={200}
+                                >
+                                    <Tooltip
+                                        title={"Select a season to use this filter"}
+                                        overlayClassName={parameters.season !== null ? "hideTooltip" : null}
+                                    >
+                                        <Select
+                                            value={Object.keys(parameters.aggregateStats).filter(i => i !== "minutes")}
+                                            placeholder={"Select stats to add range filters"}
+                                            style={{ width: '100%' }}
+                                            disabled={parameters.season === null}
+                                            mode={"multiple"}
+                                            allowClear={true}
+                                            onSelect={(val) => this.handleLookupStatSelectListAdd("aggregateStats", val)}
+                                            onDeselect={(val) => this.handleLookupStatSelectListRemove("aggregateStats", val)}
+                                            onClear={() => this.handleLookupStatsSelectListClear("aggregateStats")}
+                                            filterOption={(input, option) =>
+                                                option.props.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
+                                            }
+                                        >
+                                            {filterOptions.aggregateStats}
+                                        </Select>
+                                    </Tooltip>
+                                    {aggregateStatSliders}
+                                </Collapsible>
+                                <Collapsible
+                                    open={true}
                                     trigger="Raw Stat Filters"
                                     className="filter-headers"
                                     transitionTime={200}
@@ -1178,7 +1272,7 @@ class AdvancedSearch extends Component {
                                         overlayClassName={parameters.season !== null ? "hideTooltip" : null}
                                     >
                                         <Select
-                                            value={Object.keys(parameters.rawStats).filter(i => i !== "minutes")}
+                                            value={Object.keys(parameters.rawStats)}
                                             placeholder={"Select stats to add range filters"}
                                             style={{ width: '100%' }}
                                             disabled={parameters.season === null}
