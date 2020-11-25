@@ -59,7 +59,7 @@ let setup = async () => {
 };
 
 
-let calculaterawStats = async () => {
+let calculateRawStats = async () => {
 
     for (let stat in ALL_STATS){
 
@@ -421,7 +421,7 @@ console.time('look-up stats filling');
 
 setup()
     .then(async () => {
-        await calculaterawStats()
+        await calculateRawStats()
     })
     .then(async () => {
         await calculatePercentileRanks()

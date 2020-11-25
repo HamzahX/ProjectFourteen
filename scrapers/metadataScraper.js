@@ -408,6 +408,14 @@ let processRawData = async () => {
         processedMetadata = JSON.parse(fs.readFileSync(path.join(__dirname, `/playerData/metadata.json`)));
     }
 
+    let leagueCodes = {
+        "Premier League": "_england",
+        "La Liga": "es",
+        "Serie A": "it",
+        "Bundesliga": "de",
+        "Ligue 1": "fr"
+    };
+
     //loop to rawMetatdata.length - 2 because the last 2 element contain CL and EL data
     //and we don't want to create new entries for CL/EL players if they are not in the top 5 leagues
     for (let i=0; i<rawMetadata.length-2; i++){
@@ -425,9 +433,13 @@ let processRawData = async () => {
 
     //loop through all rawData this time and fill player's objects in processedData
     for (let i = 0; i < rawMetadata.length; i++) {
+
         for (let player in rawMetadata[i]) { //for every player in a rawData object
+
             let processedPlayer = player.substring(0, player.indexOf("|"));
+
             if (processedMetadata[processedPlayer] !== undefined){
+
                 for (let entry in rawMetadata[i][player]){ //for every entry in that object
                     if (entry === "age"){
                         processedMetadata[processedPlayer][entry] = rawMetadata[i][player][entry];
@@ -477,6 +489,17 @@ let processRawData = async () => {
                             competition = competition.split(" | ")[0];
                             if (competition !== "Champions League" && competition !== "Europa League"){
                                 processedMetadata[processedPlayer][entry] = rawMetadata[i][player][entry];
+                                if (processedMetadata[processedPlayer]['leagues'] === undefined){
+                                    processedMetadata[processedPlayer]['leagues'] = {};
+                                }
+                                if (processedMetadata[processedPlayer]["leagues"][SEASON] === undefined){
+                                    processedMetadata[processedPlayer]["leagues"][SEASON] = [leagueCodes[competition]];
+                                }
+                                else {
+                                    if (!processedMetadata[processedPlayer]["leagues"][SEASON].includes(leagueCodes[competition])){
+                                        processedMetadata[processedPlayer]["leagues"][SEASON].push(leagueCodes[competition])
+                                    }
+                                }
                             }
                         }
                     }
@@ -487,8 +510,11 @@ let processRawData = async () => {
                             Object.assign(processedMetadata[processedPlayer][entry], rawMetadata[i][player][entry]);
                         }
                     }
+
                 }
+
             }
+
         }
     }
 

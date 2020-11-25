@@ -16,21 +16,7 @@ let counter = 0;
 
 for (let stat in ALL_STATS){
 
-    if (stat === "age" || stat === "minutes"){
-        continue;
-    }
-
-    if (ALL_STATS[stat]["types"] === undefined){
-        console.log(stat);
-    }
-
-    if (ALL_STATS[stat]["types"].includes("aggregate")){
-        ALL_STATS[stat]["ranges_agg"] = {};
-    }
-
-    if (ALL_STATS[stat]["types"].length === 1 && ALL_STATS[stat]["types"][0] === "aggregate"){
-        delete ALL_STATS[stat]["ranges"];
-    }
+    ALL_STATS[stat]["displayOrder"] = counter++;
 
 }
 
