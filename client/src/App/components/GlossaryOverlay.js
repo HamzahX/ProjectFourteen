@@ -2,8 +2,7 @@ import React, { Component } from 'react';
 
 
 /**
- * Component to render the player comparison search screen
- * Also handles the live search requests and aborts
+ * Component to render the glossary overlay
  */
 class GlossaryOverlay extends Component {
 

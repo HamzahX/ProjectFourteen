@@ -22,6 +22,7 @@ import { ordinalSuffix } from "../utilities/SliceUtilities"
 
 //import utility functions, constants
 import {
+    getLeaguesDisplay,
     getAllEntriesFromObject
 } from "../utilities/SearchResultUtilities"
 
@@ -57,7 +58,7 @@ class AdvancedSearch extends Component {
                 fontWeight: 'bold',
                 color: '#e75453'
             },
-            minWidth: '300px',
+            minWidth: '250px',
             sortable: true
         },
         {
@@ -68,6 +69,11 @@ class AdvancedSearch extends Component {
         {
             name: 'Nationality',
             selector: 'nationality',
+            sortable: true
+        },
+        {
+            name: 'League(s)',
+            selector: 'leagues',
             sortable: true
         },
         {
@@ -143,6 +149,26 @@ class AdvancedSearch extends Component {
             )
         }
 
+        let leagues = {
+            "_england": "Premier League",
+            "es": "La Liga",
+            "it": "Serie A",
+            "de": "Bundesliga",
+            "fr": "Ligue 1"
+        };
+        let leaguesOptions = [];
+
+        for (let league in leagues){
+            leaguesOptions.push(
+                <Option
+                    key={league}
+                    value={league}
+                >
+                    {leagues[league]}
+                </Option>
+            )
+        }
+
         let displayTypeCookie = cookies.get('displayType');
 
         this.state = {
@@ -155,6 +181,7 @@ class AdvancedSearch extends Component {
                 seasons: seasonOptions,
                 ages: {},
                 nationalities: [],
+                leagues: leaguesOptions,
                 clubs: [],
                 positions: positionsOptions,
                 aggregateStats: [],
@@ -166,6 +193,7 @@ class AdvancedSearch extends Component {
                 season: "20-21",
                 ages: {},
                 nationalities: [],
+                leagues: [],
                 clubs: [],
                 positions: [],
                 aggregateStats: {},
@@ -273,8 +301,8 @@ class AdvancedSearch extends Component {
         let minutesReferenceData = referenceData.statsReferenceData["minutes"];
 
         parameters.aggregateStats.minutes = {
-            min: minutesReferenceData.ranges[season].min,
-            max: minutesReferenceData.ranges[season].max,
+            min: minutesReferenceData.ranges_agg[season].min,
+            max: minutesReferenceData.ranges_agg[season].max,
         };
 
         this._parametersOriginalState = JSON.parse(JSON.stringify(this.state.parameters));
@@ -372,6 +400,10 @@ class AdvancedSearch extends Component {
                 this.buildPercentileRankSelectList();
             }
 
+            if (parameters.leagues.length > 0){
+                this.buildClubsSelectList();
+            }
+
             let handleQueryParameters = queryParameters !== undefined && !isEqual(queryParameters, this._parametersOriginalState);
 
             this.setState({
@@ -453,7 +485,7 @@ class AdvancedSearch extends Component {
         })
         .then(searchResults => {
             this._firstSearchMade = true;
-            this.processSearchResults(searchResults, fromQueryString)
+            this.processSearchResults(searchResults)
         })
         .catch(error => {
             if (this._isMounted){
@@ -467,10 +499,9 @@ class AdvancedSearch extends Component {
     /**
      * Function to process the search results and save to state
      * @param {Object} searchResults - object containing search results
-     * @param fromQueryString
      * parameters
      */
-    processSearchResults = (searchResults, fromQueryString = false) => {
+    processSearchResults = (searchResults) => {
 
         let parameters = this.state.parameters;
         let displayType = this.state.displayType;
@@ -626,10 +657,17 @@ class AdvancedSearch extends Component {
                     if (typeof current[key] === 'object'){
 
                         if (season !== null){
-                            row[key] = current[key][season].join(", ");
-                            if (row[key] === "N/A"){
-                                row[key] = "-";
+
+                            if (key === "leagues"){
+                                row[key] = getLeaguesDisplay(current[key][season])
                             }
+                            else {
+                                row[key] = current[key][season].join(", ");
+                                if (row[key] === "N/A"){
+                                    row[key] = "-";
+                                }
+                            }
+
                         }
 
                         else {
@@ -689,18 +727,18 @@ class AdvancedSearch extends Component {
 
         parameters[key] = value;
 
-        //update slider values if they exceed bounds of new limits after season is changed
+        //changing the season changes the min/max values on the sliders so we update accordingly
         if (key === "season"){
 
             let season = parameters.season;
 
+            //if current max/min is greater/less than new max/min
+            //or if current max/min is equal to slider max/min
+            //update raw stat slider
             for (let stat in parameters.rawStats){
 
                 let statData = this._referenceData.statsReferenceData[stat];
 
-                //if current max/min is greater/less than new max/min
-                //or if current max/min is equal to slider max/min
-                //update
                 if (
                     parameters.rawStats[stat].max > statData.ranges[season].max ||
                     parameters.rawStats[stat].max === statData.ranges[oldValue].max
@@ -712,6 +750,26 @@ class AdvancedSearch extends Component {
                     parameters.rawStats[stat].min === statData.ranges[oldValue].min
                 ){
                     parameters.rawStats[stat].min = statData.ranges[season].min;
+                }
+
+            }
+
+            //same as above but for aggregate stats
+            for (let stat in parameters.aggregateStats){
+
+                let statData = this._referenceData.statsReferenceData[stat];
+
+                if (
+                    parameters.aggregateStats[stat].max > statData.ranges_agg[season].max ||
+                    parameters.aggregateStats[stat].max === statData.ranges_agg[oldValue].max
+                ){
+                    parameters.aggregateStats[stat].max = statData.ranges_agg[season].max;
+                }
+
+                if (parameters.aggregateStats[stat].min < statData.ranges_agg[season].min ||
+                    parameters.aggregateStats[stat].min === statData.ranges_agg[oldValue].min
+                ){
+                    parameters.aggregateStats[stat].min = statData.ranges_agg[season].min;
                 }
 
             }
@@ -768,7 +826,10 @@ class AdvancedSearch extends Component {
         console.log(parameters);
 
         if (key === "positions"){
-            this.buildPercentileRankSelectList()
+            this.buildPercentileRankSelectList();
+        }
+        else if (key === "leagues"){
+            this.buildClubsSelectList();
         }
 
     };
@@ -795,6 +856,35 @@ class AdvancedSearch extends Component {
 
         if (key === "positions"){
             this.buildPercentileRankSelectList()
+        }
+        else if (key === "leagues"){
+            this.buildClubsSelectList();
+        }
+
+    };
+
+
+    handleSelectListClear = (key) => {
+
+        let parameters = this.state.parameters;
+
+        parameters[key] = [];
+
+        this.setState({
+            parameters: parameters
+        });
+
+        this.props.setQuery({
+            parameters: parameters
+        }, 'replaceIn');
+
+        console.log(parameters);
+
+        if (key === "positions"){
+            this.buildPercentileRankSelectList()
+        }
+        else if (key === "leagues"){
+            this.buildClubsSelectList();
         }
 
     };
@@ -864,13 +954,44 @@ class AdvancedSearch extends Component {
     };
 
 
-    handleSelectListClear = (key) => {
+    buildClubsSelectList = () => {
 
         let parameters = this.state.parameters;
+        let filterOptions = this.state.filterOptions;
 
-        parameters[key] = [];
+        let clubsReferenceData = this._referenceData.clubs;
+
+        let selectedLeagues = parameters.leagues;
+
+        let eligibleClubs = clubsReferenceData
+            .filter(x => selectedLeagues.includes(x.countryCode))
+            .map(x => x.name);
+
+        let clubsOptions = [];
+        for (let i=0; i<clubsReferenceData.length; i++){
+
+            let club = clubsReferenceData[i];
+
+            if (!eligibleClubs.includes(club.name)){
+                continue;
+            }
+
+            clubsOptions.push(
+                <Option
+                    key={club.name}
+                    value={club.name}
+                >
+                    {club.name}
+                </Option>
+            )
+
+        }
+        filterOptions.clubs = clubsOptions;
+
+        parameters.clubs = parameters.clubs.filter(x => eligibleClubs.includes(x));
 
         this.setState({
+            filterOptions: filterOptions,
             parameters: parameters
         });
 
@@ -1108,6 +1229,8 @@ class AdvancedSearch extends Component {
 
             let minutesReferenceData = this._referenceData.statsReferenceData["minutes"];
 
+            console.log(minutesReferenceData);
+
             //return JSX code for the search page
             return (
                 <div id="main">
@@ -1166,7 +1289,7 @@ class AdvancedSearch extends Component {
                                         value={[parameters.aggregateStats["minutes"].min, parameters.aggregateStats["minutes"].max]}
                                         min={minutesReferenceData.ranges_agg[season].min}
                                         max={minutesReferenceData.ranges_agg[season].max + 0.0001}
-                                        step={50}
+                                        step={minutesReferenceData.step_agg}
                                         onChange={(values) => this.handleRangeSliderChange(`aggregateStats.minutes`, values)}
                                     />
                                     <h4>Nationalities</h4>
@@ -1185,6 +1308,27 @@ class AdvancedSearch extends Component {
                                     >
                                         {filterOptions.nationalities}
                                     </Select>
+                                    <h4>Leagues</h4>
+                                    <Tooltip
+                                        title={"Select a season to use this filter"}
+                                        overlayClassName={parameters.season !== null ? "hideTooltip" : null}
+                                    >
+                                        <Select
+                                            value={parameters.leagues.map(x => x)}
+                                            placeholder={"Select leagues"}
+                                            style={{ width: '100%' }}
+                                            mode={"multiple"}
+                                            allowClear={true}
+                                            onSelect={(val) => this.handleSelectListAdd("leagues", val)}
+                                            onDeselect={(val) => this.handleSelectListRemove("leagues", val)}
+                                            onClear={() => this.handleSelectListClear("leagues")}
+                                            filterOption={(input, option) =>
+                                                option.props.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
+                                            }
+                                        >
+                                            {filterOptions.leagues}
+                                        </Select>
+                                    </Tooltip>
                                     <h4>Clubs</h4>
                                     <Tooltip
                                         title={"Select a season to use this filter"}
@@ -1232,7 +1376,7 @@ class AdvancedSearch extends Component {
                                 </Collapsible>
                                 <Collapsible
                                     open={true}
-                                    trigger="Aggregate Stat Filters"
+                                    trigger="Totals"
                                     className="filter-headers"
                                     transitionTime={200}
                                     transitionCloseTime={200}
@@ -1243,7 +1387,7 @@ class AdvancedSearch extends Component {
                                     >
                                         <Select
                                             value={Object.keys(parameters.aggregateStats).filter(i => i !== "minutes")}
-                                            placeholder={"Select stats to add range filters"}
+                                            placeholder={"Select stats to add range sliders"}
                                             style={{ width: '100%' }}
                                             disabled={parameters.season === null}
                                             mode={"multiple"}
@@ -1262,7 +1406,7 @@ class AdvancedSearch extends Component {
                                 </Collapsible>
                                 <Collapsible
                                     open={true}
-                                    trigger="Raw Stat Filters"
+                                    trigger="Averages"
                                     className="filter-headers"
                                     transitionTime={200}
                                     transitionCloseTime={200}
@@ -1273,7 +1417,7 @@ class AdvancedSearch extends Component {
                                     >
                                         <Select
                                             value={Object.keys(parameters.rawStats)}
-                                            placeholder={"Select stats to add range filters"}
+                                            placeholder={"Select stats to add range sliders"}
                                             style={{ width: '100%' }}
                                             disabled={parameters.season === null}
                                             mode={"multiple"}
@@ -1292,7 +1436,7 @@ class AdvancedSearch extends Component {
                                 </Collapsible>
                                 <Collapsible
                                     open={true}
-                                    trigger="Percentile Rank Filters"
+                                    trigger="Percentile Ranks"
                                     className="filter-headers"
                                     transitionTime={200}
                                     transitionCloseTime={200}
@@ -1303,7 +1447,7 @@ class AdvancedSearch extends Component {
                                     >
                                         <Select
                                             value={Object.keys(parameters.percentileRanks)}
-                                            placeholder={"Select stats to add range filters"}
+                                            placeholder={"Select stats to add range sliders"}
                                             style={{ width: '100%' }}
                                             disabled={parameters.season === null || parameters.positions.length !== 1}
                                             mode={"multiple"}
