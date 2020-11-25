@@ -34,36 +34,12 @@ var STATS_BY_POSITION = {
 //percentile arrays
 var PERCENTILE_ARRAYS = {
     "18-19": {
-        'FW': [],
-        'AM': [],
-        'CM': [],
-        'FB': [],
-        'CB': [],
-        'GK': []
     },
     "19-20": {
-        'FW': [],
-        'AM': [],
-        'CM': [],
-        'FB': [],
-        'CB': [],
-        'GK': []
     },
     "20-21": {
-        'FW': [],
-        'AM': [],
-        'CM': [],
-        'FB': [],
-        'CB': [],
-        'GK': []
     },
     "combined": {
-        'FW': [],
-        'AM': [],
-        'CM': [],
-        'FB': [],
-        'CB': [],
-        'GK': []
     },
     "lastUpdated": null
 };
@@ -699,6 +675,16 @@ let advancedSearch = async (parameters) => {
 
     }
 
+    if (parameters.leagues.length > 0){
+
+        query['$and'].push({
+            [`leagues.${season}`]: {
+                '$in': parameters.leagues,
+            }
+        })
+
+    }
+
     if (parameters.clubs.length > 0){
 
         query['$and'].push({
@@ -786,6 +772,7 @@ let advancedSearch = async (parameters) => {
                 resolve(searchResults);
             }
             else {
+
                 for (let i=0; i<docs.length; i++){
 
                     let playerSearchResult = buildPlayerSearchResult(docs[i]);
@@ -806,25 +793,20 @@ let advancedSearch = async (parameters) => {
 
                 }
 
-                let numFilters = Object.keys(parameters.aggregateStats).length - 1 + //subtract one because minutes filter is a special case
-                    Object.keys(parameters.rawStats).length +
-                    Object.keys(parameters.percentileRanks).length;
+                let statsFields = Object.keys(searchResults[0]).filter(i =>
+                    (i.startsWith("aggregate") ||
+                     i.startsWith("raw") ||
+                     i.startsWith("percentile")) &&
+                     i !== "aggregate_minutes"
+                );
 
-                if (numFilters === 1){
-
-                    let fields = Object.keys(searchResults[0]).filter(i =>
-                        (i.startsWith("aggregate") ||
-                        i.startsWith("raw") ||
-                        i.startsWith("percentile")) &&
-                        i !== "aggregate_minutes"
-                    );
-
-                    let fieldToSort = fields[0];
-
+                if (statsFields.length > 0){
+                    let fieldToSort = statsFields[0];
                     searchResults.sort((a, b) => { return parseFloat(b[fieldToSort]) - parseFloat(a[fieldToSort]) });
                 }
 
                 resolve(searchResults);
+
             }
         });
 
@@ -925,6 +907,7 @@ let buildPlayerSearchResult = (doc) => {
         age: doc.age,
         nationality: doc.nationality,
         countryCode: doc.countryCode,
+        leagues: doc.leagues,
         clubs: doc.clubs,
         positions: doc.positions
     };

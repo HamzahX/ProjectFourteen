@@ -1,3 +1,21 @@
+const leagueNames = {
+    "_england": "Premier League",
+    "es": "La Liga",
+    "it": "Serie A",
+    "de": "Bundesliga",
+    "fr": "Ligue 1"
+};
+
+
+export function getLeaguesDisplay(leagueCodesArray){
+
+    let leagueNamesArray = leagueCodesArray.map(x => leagueNames[x]);
+
+    return leagueNamesArray.join(", ");
+
+}
+
+
 export function getMostRecentPositions(positions){
 
     let latestPositions = [];
@@ -24,11 +42,13 @@ export function getAllEntriesFromObject(object){
 
         for (let entry in object[season]){
 
-            if (object[season][entry] === "N/A")
-                object[season][entry] = "-";
+            let value = object[season][entry];
 
-            if (!allInfo.includes(object[season][entry])){
-                allInfo.unshift(object[season][entry])
+            if (value === "N/A")
+                value = "-";
+
+            if (!allInfo.includes(value)){
+                allInfo.unshift(value)
             }
 
         }

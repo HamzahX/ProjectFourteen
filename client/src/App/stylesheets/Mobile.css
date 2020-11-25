@@ -279,6 +279,10 @@ h3 {
                 margin-bottom: 20px;
             }
 
+            #advanced-search-filter-inputs .ant-slider {
+                margin-bottom: 50px;
+            }
+
             .Collapsible__contentInner h4 {
                 margin-top: 30px;
             }

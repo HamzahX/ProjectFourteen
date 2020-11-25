@@ -275,9 +275,10 @@ let processEntry = (aPlayer, competitionData, competitionName, isGoalkeeper) => 
         PROCESSED[whoscoredCode]["age"] = metadata["age"];
         PROCESSED[whoscoredCode]["nationality"] = metadata["nationality"] === "" ? countryCodes.getCountryName(entry['standard_Nation'].split(" ")[0].toUpperCase()) : metadata["nationality"];
         PROCESSED[whoscoredCode]["countryCode"] = metadata["countryCode"] === "" ? countryCodes.cleanCountryCode(entry['standard_Nation'].split(" ")[0]) : metadata["countryCode"];
+        PROCESSED[whoscoredCode]["leagues"] = metadata["leagues"];
+        PROCESSED[whoscoredCode]["clubs"] = metadata["clubs"];
         PROCESSED[whoscoredCode]["positions"] = metadata["positions"];
         PROCESSED[whoscoredCode]["percentileEntries"] = {};
-        PROCESSED[whoscoredCode]["clubs"] = metadata["clubs"];
         PROCESSED[whoscoredCode]["stats"] = {};
     }
 
