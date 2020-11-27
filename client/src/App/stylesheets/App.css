@@ -619,7 +619,7 @@ button:hover {
         position: relative;
     }
 
-        #glossary-button, .display-type-button {
+        .explanation-button, .display-type-button {
             height: auto;
             width: auto;
             font-family: 'FontAwesome', sans-serif;
@@ -631,13 +631,18 @@ button:hover {
             padding-right: 8px;
         }
 
-        #glossary-button {
+        .explanation-button {
             position: absolute;
             top: 0;
             right: 0;
         }
 
-            #glossary-button:hover, .display-type-button:hover, .display-type-button.selected {
+        #advanced-search-filter-inputs .explanation-button {
+            top: 0.5em;
+            right: 0.2em;
+        }
+
+            .explanation-button:hover, .display-type-button:hover, .display-type-button.selected {
                 color: #b23535;
             }
 
@@ -760,6 +765,7 @@ button:hover {
                 #advanced-search-filter-inputs {
                     flex: 1 1 80%;
                     overflow-y: scroll;
+                    position: relative;
                 }
 
                     #display-type-buttons-container {
@@ -822,6 +828,8 @@ button:hover {
         #search-results {
             border: none;
             position: relative;
+            display: flex;
+            flex-direction: column;
         }
 
         #search-results.scrollable {
@@ -837,6 +845,7 @@ button:hover {
                 font-style: italic;
                 color: grey;
                 font-size: 1em;
+                margin-bottom: 0.4em;
             }
 
             #player-search-results, #club-search-results {
@@ -848,10 +857,14 @@ button:hover {
             }
 
             #player-search-results-table {
-                height: 100%;
+                flex-grow: 1;
                 display: flex;
                 flex-direction: column;
                 justify-content: space-between;
+            }
+
+            #player-search-results-table div:nth-child(2) {
+                padding-bottom: 0 !important;
             }
 
             .rdt_TableHeader {
@@ -859,7 +872,7 @@ button:hover {
             }
 
             .rdt_TableHeadRow {
-                width: 98.8% !important;
+                width: 99% !important;
             }
 
                 #search-results .search-result {
@@ -938,6 +951,37 @@ button:hover {
                 height: 80%;
                 background-color: #fafbfc;
                 border-radius: 13px;
+                min-width: 400px;
+                width: 70%;
+                overflow-y: auto;
+            }
+
+            .overlay .overlay-inner-containerr h2 {
+                font-size: 250%;
+            }
+
+            .overlay .overlay-inner-container p {
+                line-height: 1.4;
+                color: #222222;
+                font-family: Tahoma, Arial, Helvetica, sans-serif;
+            }
+
+            .overlay .overlay-inner-container li {
+                line-height: 1.3;
+                color: #373737;
+                font-family: Tahoma, Arial, Helvetica, sans-serif;
+            }
+
+            .help-section-container {
+                padding: 4% 4% 2%;
+            }
+
+            .help-section-container a {
+                color: #878787;
+            }
+
+            .help-section-container a:hover {
+                color: orangered;
             }
 
             .close-overlay {
@@ -966,48 +1010,8 @@ button:hover {
 
         }
 
-            #glossary-overlay #glossary-container {
-                min-width: 400px;
-                width: 70%;
-                overflow-y: auto;
-            }
-
             #glossary-overlay #glossary-container #glossary-section-container {
                 padding: 0 4% 4%;
-            }
-
-            #glossary-overlay #glossary-container h2 {
-                font-size: 250%;
-            }
-
-            #glossary-overlay #glossary-container p {
-                line-height: 1.4;
-            }
-
-            #glossary-overlay #glossary-container li {
-                line-height: 1.3;
-            }
-
-            .help-section-container {
-                padding: 4% 4% 2%;
-            }
-
-            .help-section-container p {
-                color: #222222;
-                font-family: Tahoma, Arial, Helvetica, sans-serif;
-            }
-
-            .help-section-container li {
-                color: #373737;
-                font-family: Tahoma, Arial, Helvetica, sans-serif;
-            }
-
-            .help-section-container a {
-                color: #878787;
-            }
-
-            .help-section-container a:hover {
-                color: orangered;
             }
 
         #compare-search-overlay {
