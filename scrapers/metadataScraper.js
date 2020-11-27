@@ -570,10 +570,6 @@ let processPlayerPosition = (positionString, code) => {
             //set their position(s) to the position they've made the most starts in for the current season
             for (let position in APPS_PER_POSITION[code]){
 
-                if (APPS_PER_POSITION[code][position] < 2){
-                    continue;
-                }
-
                 if (Math.abs(APPS_PER_POSITION[code][position] - max) <= 2){
                     positions.push(position);
                 }

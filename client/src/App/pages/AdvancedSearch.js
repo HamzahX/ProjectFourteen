@@ -15,29 +15,28 @@ import isEqual from 'lodash.isequal';
 import SearchBar from "../components/SearchBar";
 import LoadingSpinner from "../components/LoadingSpinner";
 import LoaderOverlay from "../components/LoaderOverlay";
+import ExplanationOverlay from "../components/ExplanationOverlay";
 import PlayerSearchResult from "../components/PlayerSearchResult";
-
-//import utilityFunction
-import { ordinalSuffix } from "../utilities/SliceUtilities"
-
-//import utility functions, constants
-import {
-    getLeaguesDisplay,
-    getAllEntriesFromObject
-} from "../utilities/SearchResultUtilities"
 
 //import pre-made components
 import Collapsible from 'react-collapsible';
 import {Select, Slider, Tooltip} from 'antd';
 import DataTable, { createTheme } from 'react-data-table-component';
 
+//import utility functions, constants
+import {
+    getLeaguesDisplay,
+    getAllEntriesFromObject
+} from "../utilities/SearchResultUtilities"
+import { ordinalSuffix } from "../utilities/SliceUtilities"
 
+//initialize constants
 const Option = Select.Option;
 const cookies = new Cookies();
 
 
 /**
- * Search page component
+ * Advanced Search page component
  */
 class AdvancedSearch extends Component {
 
@@ -174,8 +173,9 @@ class AdvancedSearch extends Component {
         this.state = {
 
             isLoading: true,
-            showSearchLoaderOverlay: false,
             error: null,
+            showSearchLoaderOverlay: false,
+            showExplanationOverlay: false,
 
             filterOptions: {
                 seasons: seasonOptions,
@@ -575,6 +575,17 @@ class AdvancedSearch extends Component {
     };
 
 
+    toggleExplanationOverlay = () => {
+
+        let currentState = this.state.showExplanationOverlay;
+
+        this.setState({
+            showExplanationOverlay: !currentState
+        });
+
+    };
+
+
     handleTableButtonClick = () => {
 
         this.setState({
@@ -704,6 +715,7 @@ class AdvancedSearch extends Component {
                             fixedHeader={true} //causes mis-aligned header bug by adding permanent scrollbar
                             allowOverflow={true}
                             overflowY={true}
+                            overflowX={true}
                             defaultSortAsc={false}
                         />
                     </div>;
@@ -959,13 +971,21 @@ class AdvancedSearch extends Component {
         let parameters = this.state.parameters;
         let filterOptions = this.state.filterOptions;
 
-        let clubsReferenceData = this._referenceData.clubs;
-
         let selectedLeagues = parameters.leagues;
 
-        let eligibleClubs = clubsReferenceData
-            .filter(x => selectedLeagues.includes(x.countryCode))
-            .map(x => x.name);
+        let clubsReferenceData = this._referenceData.clubs;
+
+        let eligibleClubs;
+
+        if (selectedLeagues.length === 0){
+            eligibleClubs = clubsReferenceData
+                .map(x => x.name);
+        }
+        else {
+            eligibleClubs = clubsReferenceData
+                .filter(x => selectedLeagues.includes(x.countryCode))
+                .map(x => x.name);
+        }
 
         let clubsOptions = [];
         for (let i=0; i<clubsReferenceData.length; i++){
@@ -1113,8 +1133,9 @@ class AdvancedSearch extends Component {
 
         let {
             isLoading,
-            showSearchLoaderOverlay,
             error,
+            showSearchLoaderOverlay,
+            showExplanationOverlay,
             filterOptions,
             parameters,
             searchResults,
@@ -1237,6 +1258,10 @@ class AdvancedSearch extends Component {
                     <LoaderOverlay
                         display={showSearchLoaderOverlay}
                     />
+                    <ExplanationOverlay
+                        display={showExplanationOverlay}
+                        toggleExplanationOverlay={this.toggleExplanationOverlay}
+                    />
                     <SearchBar
                         isMobile={this.isMobile}
                         page="search"
@@ -1245,6 +1270,7 @@ class AdvancedSearch extends Component {
                     <div className="screen" id="search-screen">
                         <div className="filter" id="advanced-search-filters">
                             <div className="filter-inputs search-filter-inputs" id="advanced-search-filter-inputs">
+                                <button className="fas fa-question-circle explanation-button" onClick={this.toggleExplanationOverlay}/>
                                 <h4 style={{'display': this.isMobile ? "none" : "block"}}>Results Display</h4>
                                 <div style={{'display': this.isMobile ? "none" : "block"}} id="display-type-buttons-container">
                                     <button
@@ -1467,7 +1493,7 @@ class AdvancedSearch extends Component {
                             </div>
                             <div className="filter-buttons" id="advanced-search-filter-buttons">
                                 <div className="filter-button">
-                                    <button id="reset-filters-button" type="button" onClick={this.resetParameters}>Reset All Filters</button>
+                                    <button id="reset-filters-button" type="button" onClick={this.resetParameters}>Reset</button>
                                 </div>
                                 <div className="filter-button">
                                     <button id="search-button" type="button" onClick={this.getSearchResults}>Search</button>
@@ -1475,6 +1501,7 @@ class AdvancedSearch extends Component {
                             </div>
                         </div>
                         <div className={`result ${displayType === "cards" ? "scrollable" : null}`} id="search-results">
+                            {searchResults.length > 0 ? <p>Data Sources: Fbref.com | StatsBomb. Displaying stats from the Top 5 Leagues, Champions League & Europa League.</p> : null}
                             {searchResults.length === 0 && this._firstSearchMade ? <p>No results found</p> : null}
                             {searchResultsDisplay}
                         </div>

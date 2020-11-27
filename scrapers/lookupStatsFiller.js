@@ -253,6 +253,11 @@ let calculateRawStats = async () => {
         }
 
         PROCESSED[player]["lookupStats"]["rawStats"][SEASON] = rawStats;
+
+        for (let stat in aggregatedStats){
+            aggregatedStats[stat] = truncateNum(aggregatedStats[stat], 1);
+        }
+
         PROCESSED[player]["lookupStats"]["aggregateStats"][SEASON] = aggregatedStats;
 
     }

@@ -962,7 +962,7 @@ class Slice extends Component {
 
         let helpButton = null;
         if (!this.isForExport)
-            helpButton = <button className="fas fa-question-circle" id="glossary-button" onClick={this.props.toggleGlossaryOverlay}/>;
+            helpButton = <button className="fas fa-question-circle explanation-button" onClick={this.props.toggleGlossaryOverlay}/>;
 
         //pass chart options to the Highcharts component and render
         return (
