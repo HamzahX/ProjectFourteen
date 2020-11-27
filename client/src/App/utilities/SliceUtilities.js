@@ -414,7 +414,8 @@ function calculatePercentileRank(array, value, occurrences){
                 i += (value - array[i-1]) / (array[i] - array[i-1]);
             }
             //adjust the returned percentile by disregarding the entries that belong to the player
-            return (i / length) - (occurrences/array.length);
+            //return (i / length) - (occurrences/array.length);
+            return (i/length);
         }
     }
     return 1;
