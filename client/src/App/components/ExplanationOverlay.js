@@ -29,7 +29,7 @@ class ExplanationOverlay extends Component {
                     <div className="help-section-container">
                         <h2>Advanced Search</h2>
                         <p>
-                            The advanced search page allows you to filter the entire Football Slices database using as
+                            The advanced search page allows you to explore the entire Football Slices database using as
                             many filters as you'd like. These include everything from player metadata such as ages
                             and nationalities, to performance metrics like non-penalty expected goals and successful
                             dribbles.
