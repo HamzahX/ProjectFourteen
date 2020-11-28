@@ -283,6 +283,10 @@ h3 {
                 margin-bottom: 50px;
             }
 
+            #advanced-search-filter-inputs .explanation-button {
+                top: 0.2em;
+            }
+
             .Collapsible__contentInner h4 {
                 margin-top: 30px;
             }
@@ -399,16 +403,16 @@ h3 {
                     height: 100%;
                 }
 
-        #glossary-overlay #glossary-container {
+        .overlay .overlay-inner-container {
             width: 90%;
             overflow-y: scroll;
         }
 
-        #glossary-overlay #glossary-container h2 {
+        .overlay .overlay-inner-container h2 {
             font-size: 200%;
         }
 
-        #glossary-overlay #glossary-container p, #glossary-overlay #glossary-container li {
+        .overlay .overlay-inner-container p, .overlay .overlay-inner-container li {
             font-size: 100%;
         }
 

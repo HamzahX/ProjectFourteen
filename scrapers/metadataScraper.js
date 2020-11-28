@@ -445,16 +445,20 @@ let processRawData = async () => {
                         processedMetadata[processedPlayer][entry] = rawMetadata[i][player][entry];
                     }
                     else if (entry === "position"){
+
                         if (processedMetadata[processedPlayer]['positions'] === undefined){
                             processedMetadata[processedPlayer]['positions'] = {};
                         }
                         processedMetadata[processedPlayer]["positions"][SEASON] = processPlayerPosition(rawMetadata[i][player][entry], processedPlayer);
+
                     }
                     if (entry === "club"){
+
+                        let playerClub = rawMetadata[i][player]['club'];
+
                         if (processedMetadata[processedPlayer]['clubs'] === undefined){
                             processedMetadata[processedPlayer]['clubs'] = {};
                         }
-                        let playerClub = rawMetadata[i][player]['club'];
                         if (processedMetadata[processedPlayer]['clubs'][SEASON] === undefined){
                             if (i < rawMetadata.length-2){ //if the entry is not for CL/EL
                                 processedMetadata[processedPlayer]['clubs'][SEASON] = [playerClub]
@@ -465,6 +469,23 @@ let processRawData = async () => {
                                 processedMetadata[processedPlayer]['clubs'][SEASON].push(playerClub);
                             }
                         }
+
+                        let playerLeague = Object.keys(rawMetadata[i][player][SEASON])[0].split(" | ")[0];
+
+                        if (playerLeague !== "Champions League" && playerLeague !== "Europa League"){
+                            if (processedMetadata[processedPlayer]['leagues'] === undefined){
+                                processedMetadata[processedPlayer]['leagues'] = {};
+                            }
+                            if (processedMetadata[processedPlayer]["leagues"][SEASON] === undefined){
+                                processedMetadata[processedPlayer]["leagues"][SEASON] = [leagueCodes[playerLeague]];
+                            }
+                            else {
+                                if (!processedMetadata[processedPlayer]["leagues"][SEASON].includes(leagueCodes[playerLeague])){
+                                    processedMetadata[processedPlayer]["leagues"][SEASON].push(leagueCodes[playerLeague])
+                                }
+                            }
+                        }
+
                     }
                     if (processedMetadata[processedPlayer][entry] === undefined){
                         // initialize the player's stats for said entry in processedData
@@ -489,17 +510,6 @@ let processRawData = async () => {
                             competition = competition.split(" | ")[0];
                             if (competition !== "Champions League" && competition !== "Europa League"){
                                 processedMetadata[processedPlayer][entry] = rawMetadata[i][player][entry];
-                                if (processedMetadata[processedPlayer]['leagues'] === undefined){
-                                    processedMetadata[processedPlayer]['leagues'] = {};
-                                }
-                                if (processedMetadata[processedPlayer]["leagues"][SEASON] === undefined){
-                                    processedMetadata[processedPlayer]["leagues"][SEASON] = [leagueCodes[competition]];
-                                }
-                                else {
-                                    if (!processedMetadata[processedPlayer]["leagues"][SEASON].includes(leagueCodes[competition])){
-                                        processedMetadata[processedPlayer]["leagues"][SEASON].push(leagueCodes[competition])
-                                    }
-                                }
                             }
                         }
                     }

@@ -269,8 +269,6 @@ class AdvancedSearch extends Component {
      */
     processReferenceData = (referenceData) => {
 
-        console.log(referenceData);
-
         this._referenceData = referenceData;
 
         let statsReferenceDataArray = [];
@@ -462,8 +460,6 @@ class AdvancedSearch extends Component {
             }
 
         }
-
-        console.log(parameters);
 
         //retrieve search results
         fetch('/api/advancedSearch', {
@@ -796,8 +792,6 @@ class AdvancedSearch extends Component {
             parameters: parameters
         }, 'replaceIn');
 
-        console.log(parameters);
-
     };
 
 
@@ -816,8 +810,6 @@ class AdvancedSearch extends Component {
             parameters: parameters
         }, 'replaceIn');
 
-        console.log(parameters);
-
     };
 
 
@@ -834,8 +826,6 @@ class AdvancedSearch extends Component {
         this.props.setQuery({
             parameters: parameters
         }, 'replaceIn');
-
-        console.log(parameters);
 
         if (key === "positions"){
             this.buildPercentileRankSelectList();
@@ -864,8 +854,6 @@ class AdvancedSearch extends Component {
             parameters: parameters
         }, 'replaceIn');
 
-        console.log(this.state.parameters);
-
         if (key === "positions"){
             this.buildPercentileRankSelectList()
         }
@@ -889,8 +877,6 @@ class AdvancedSearch extends Component {
         this.props.setQuery({
             parameters: parameters
         }, 'replaceIn');
-
-        console.log(parameters);
 
         if (key === "positions"){
             this.buildPercentileRankSelectList()
@@ -961,8 +947,6 @@ class AdvancedSearch extends Component {
 
         }
 
-        console.log(parameters);
-
     };
 
 
@@ -1019,8 +1003,6 @@ class AdvancedSearch extends Component {
             parameters: parameters
         }, 'replaceIn');
 
-        console.log(parameters);
-
     };
 
 
@@ -1049,8 +1031,6 @@ class AdvancedSearch extends Component {
             parameters: parameters
         }, 'replaceIn');
 
-        console.log(parameters);
-
     };
 
 
@@ -1067,8 +1047,6 @@ class AdvancedSearch extends Component {
         this.props.setQuery({
             parameters: parameters
         }, 'replaceIn');
-
-        console.log(parameters);
 
     };
 
@@ -1091,8 +1069,6 @@ class AdvancedSearch extends Component {
             parameters: parameters
         }, 'replaceIn');
 
-        console.log(parameters);
-
     };
 
 
@@ -1111,8 +1087,6 @@ class AdvancedSearch extends Component {
         this.props.setQuery({
             parameters: parametersOriginalState
         }, 'replaceIn');
-
-        console.log(parametersOriginalState);
 
     };
 
@@ -1246,11 +1220,7 @@ class AdvancedSearch extends Component {
 
             }
 
-            console.log(searchResults);
-
             let minutesReferenceData = this._referenceData.statsReferenceData["minutes"];
-
-            console.log(minutesReferenceData);
 
             //return JSX code for the search page
             return (
@@ -1293,7 +1263,7 @@ class AdvancedSearch extends Component {
                                     {filterOptions.seasons}
                                 </Select>
                                 <Collapsible
-                                    open={true}
+                                    open={!this.isMobile}
                                     trigger="Metadata"
                                     className="filter-headers"
                                     transitionTime={200}
@@ -1401,7 +1371,7 @@ class AdvancedSearch extends Component {
                                     </Tooltip>
                                 </Collapsible>
                                 <Collapsible
-                                    open={true}
+                                    open={!this.isMobile}
                                     trigger="Totals"
                                     className="filter-headers"
                                     transitionTime={200}
@@ -1431,7 +1401,7 @@ class AdvancedSearch extends Component {
                                     {aggregateStatSliders}
                                 </Collapsible>
                                 <Collapsible
-                                    open={true}
+                                    open={!this.isMobile}
                                     trigger="Averages"
                                     className="filter-headers"
                                     transitionTime={200}
@@ -1461,7 +1431,7 @@ class AdvancedSearch extends Component {
                                     {rawStatsSliders}
                                 </Collapsible>
                                 <Collapsible
-                                    open={true}
+                                    open={!this.isMobile}
                                     trigger="Percentile Ranks"
                                     className="filter-headers"
                                     transitionTime={200}
@@ -1501,7 +1471,7 @@ class AdvancedSearch extends Component {
                             </div>
                         </div>
                         <div className={`result ${displayType === "cards" ? "scrollable" : null}`} id="search-results">
-                            {searchResults.length > 0 ? <p>Data Sources: Fbref.com | StatsBomb. Displaying stats from the Top 5 Leagues, Champions League & Europa League.</p> : null}
+                            {searchResults.length > 0 ? <p style={{marginLeft: '0px'}}>Data Sources: Fbref.com | StatsBomb. Displaying stats from the Top 5 Leagues, Champions League & Europa League.</p> : null}
                             {searchResults.length === 0 && this._firstSearchMade ? <p>No results found</p> : null}
                             {searchResultsDisplay}
                         </div>
