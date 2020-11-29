@@ -451,19 +451,19 @@
 		"isReversed": false,
 		"displayOrder": 11,
 		"precision": 2,
-		"step": 0.025,
+		"step": 0.02,
 		"step_agg": 1,
 		"ranges": {
 			"18-19": {
 				"min": 0,
-				"max": 0.45,
+				"max": 0.44,
 				"minName": "Daniele Bonera",
 				"maxName": "Lionel Messi"
 			},
 			"19-20": {
 				"min": 0,
-				"max": 0.6,
-				"minName": "Aaron Lennon",
+				"max": 0.58,
+				"minName": "Dante",
 				"maxName": "Ángel Di María"
 			},
 			"20-21": {
