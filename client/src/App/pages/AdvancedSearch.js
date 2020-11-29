@@ -29,6 +29,7 @@ import {
     getAllEntriesFromObject
 } from "../utilities/SearchResultUtilities"
 import { ordinalSuffix } from "../utilities/SliceUtilities"
+import dateFormat from "dateformat";
 
 //initialize constants
 const Option = Select.Option;
@@ -1471,7 +1472,15 @@ class AdvancedSearch extends Component {
                             </div>
                         </div>
                         <div className={`result ${displayType === "cards" ? "scrollable" : null}`} id="search-results">
-                            {searchResults.length > 0 ? <p style={{marginLeft: '0px'}}>Data Sources: Fbref.com | StatsBomb. Displaying stats from the Top 5 Leagues, Champions League & Europa League.</p> : null}
+                            {
+                                searchResults.length > 0 ?
+                                <p style={{marginLeft: '0px'}}>
+                                    Data Sources: Fbref.com | StatsBomb. Last Updated:
+                                    {dateFormat(searchResults[0].lastUpdated, "dd/mm/yyyy, h:MM TT", true)} UTC. Displaying
+                                    stats from the Top 5 Leagues, Champions League & Europa League.
+                                </p> :
+                                null
+                            }
                             {searchResults.length === 0 && this._firstSearchMade ? <p>No results found</p> : null}
                             {searchResultsDisplay}
                         </div>
