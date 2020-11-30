@@ -852,7 +852,8 @@ let buildPlayerSearchResult = (doc) => {
         countryCodes: doc.countryCodes,
         leagues: doc.leagues,
         clubs: doc.clubs,
-        positions: doc.positions
+        positions: doc.positions,
+        lastUpdated: doc.lastUpdated
     };
 
 };

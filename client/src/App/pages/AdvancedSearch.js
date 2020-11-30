@@ -1482,9 +1482,8 @@ class AdvancedSearch extends Component {
                             {
                                 searchResults.length > 0 ?
                                 <p style={{marginLeft: '0px'}}>
-                                    Data Sources: Fbref.com | StatsBomb. Last Updated:
-                                    {dateFormat(searchResults[0].lastUpdated, "dd/mm/yyyy, h:MM TT", true)} UTC. Displaying
-                                    stats from the Top 5 Leagues, Champions League & Europa League.
+                                    Data Sources: FBref.com & StatsBomb | Last Updated: {dateFormat(searchResults[0].lastUpdated, "dd/mm/yyyy, h:MM TT", true)} UTC | Displaying
+                                    stats from the Top 5 Leagues, Champions League & Europa League
                                 </p> :
                                 null
                             }
