@@ -41,8 +41,8 @@ class PlayerSearchResult extends Component {
             name: this.props.name,
             age: this.props.age,
             clubs: clubs,
-            nationality: this.props.nationality,
-            countryCode: this.props.countryCode,
+            nationalities: this.props.nationalities,
+            countryCodes: this.props.countryCodes,
             positions: positions
         };
 
@@ -62,8 +62,8 @@ class PlayerSearchResult extends Component {
             name,
             age,
             clubs,
-            nationality,
-            countryCode,
+            nationalities,
+            countryCodes,
             positions
         } = this.state;
 
@@ -79,23 +79,35 @@ class PlayerSearchResult extends Component {
 
         let flagSizeMultiplier = this.isMobile ? 1.8 : 1;
 
-        //console.log(`${nationality} | ${countryCode}`);
+        let flagsDisplay = [];
+
+        for (let i=0; i<countryCodes.length; i++){
+
+            let countryCode = countryCodes[i];
+
+            flagsDisplay.push(
+                <Flag
+                    basePath={"/flags"}
+                    country={countryCode}
+                    format="png"
+                    pngSize={32}
+                    width={(page === "live" ? 20 : 28) * flagSizeMultiplier}
+                    height={(page === "live" ? 20 : 28) * flagSizeMultiplier}
+                    shiny={true}
+                    alt={`${nationalities} Flags`}
+                />
+            )
+
+        }
 
         return (
             <Link to={link}>
                 <div tabIndex="0" className="search-result">
                     <div className="bio">
                         <span className="name">{name}</span>
-                        <Flag
-                            basePath={"/flags"}
-                            country={countryCode}
-                            format="png"
-                            pngSize={32}
-                            width={(page === "live" ? 20 : 28) * flagSizeMultiplier}
-                            height={(page === "live" ? 20 : 28) * flagSizeMultiplier}
-                            shiny={true}
-                            alt={`${nationality} Flag`}
-                        />
+                        <div>
+                            {flagsDisplay}
+                        </div>
                     </div>
                     <div className="bio-extra">
                         <span className="club">{clubs?.join(", ")}</span>

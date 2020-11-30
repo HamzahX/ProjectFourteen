@@ -264,8 +264,11 @@ let processEntry = (aPlayer, competitionData, competitionName, isGoalkeeper) => 
 
     //populate the player metadata
     if (PROCESSED[whoscoredCode] === undefined){
+
         PROCESSED[whoscoredCode] = {};
+
         let metadata = METADATA[whoscoredCode];
+
         PROCESSED[whoscoredCode]["fbrefCode"] = fbrefCode;
         PROCESSED[whoscoredCode]["fbrefURL"] = entry["url"];
         PROCESSED[whoscoredCode]["name"] = metadata["name"];
@@ -273,13 +276,38 @@ let processEntry = (aPlayer, competitionData, competitionName, isGoalkeeper) => 
         PROCESSED[whoscoredCode]["simplifiedName"] = metadata["simplifiedName"];
         PROCESSED[whoscoredCode]["simplifiedName2"] = fbrefSimplifiedName;
         PROCESSED[whoscoredCode]["age"] = metadata["age"];
-        PROCESSED[whoscoredCode]["nationality"] = metadata["nationality"] === "" ? countryCodes.getCountryName(entry['standard_Nation'].split(" ")[0].toUpperCase()) : metadata["nationality"];
-        PROCESSED[whoscoredCode]["countryCode"] = metadata["countryCode"] === "" ? countryCodes.cleanCountryCode(entry['standard_Nation'].split(" ")[0]) : metadata["countryCode"];
+
+        if (metadata["countryCode"] === ""){
+            metadata["countryCode"] = countryCodes.cleanCountryCode(entry['standard_Nation'].split(" ")[0]);
+        }
+
+        if (metadata["nationality"] === ""){
+            metadata["nationality"] = countryCodes.getCountryName(entry['standard_Nation'].split(" ")[0].toUpperCase());
+        }
+
+        let fbrefCountryCode = countryCodes.cleanCountryCode(entry['standard_Nation'].split(" ")[0]);
+        let fbrefNationality = countryCodes.getCountryName(entry['standard_Nation'].split(" ")[0].toUpperCase());
+
+        if (metadata["countryCode"] === fbrefCountryCode){
+            PROCESSED[whoscoredCode]["countryCodes"] = [metadata["countryCode"]];
+        }
+        else {
+            PROCESSED[whoscoredCode]["countryCodes"] = [metadata["countryCode"], fbrefCountryCode];
+        }
+
+        if (metadata["nationality"] === fbrefNationality){
+            PROCESSED[whoscoredCode]["nationalities"] = [metadata["nationality"]];
+        }
+        else {
+            PROCESSED[whoscoredCode]["nationalities"] = [metadata["nationality"], fbrefNationality];
+        }
+
         PROCESSED[whoscoredCode]["leagues"] = metadata["leagues"];
         PROCESSED[whoscoredCode]["clubs"] = metadata["clubs"];
         PROCESSED[whoscoredCode]["positions"] = metadata["positions"];
         PROCESSED[whoscoredCode]["percentileEntries"] = {};
         PROCESSED[whoscoredCode]["stats"] = {};
+
     }
 
     if (isOutfieldGoalkeeper && PROCESSED[whoscoredCode]["outfieldGKStats"] === undefined){

@@ -898,6 +898,10 @@ button:hover {
                     justify-content: space-between;
                 }
 
+                    .search-result .bio div img {
+                        margin-left: 3px;
+                    }
+
                     .search-result .bio-extra .position-age {
                         color: grey;
                     }

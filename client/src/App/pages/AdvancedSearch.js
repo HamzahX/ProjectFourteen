@@ -68,7 +68,7 @@ class AdvancedSearch extends Component {
         },
         {
             name: 'Nationality',
-            selector: 'nationality',
+            selector: 'nationalities',
             sortable: true
         },
         {
@@ -636,8 +636,8 @@ class AdvancedSearch extends Component {
                         age={current.age}
                         season={season}
                         clubs={current.clubs}
-                        nationality={current.nationality}
-                        countryCode={current.countryCode}
+                        nationalities={current.nationalities}
+                        countryCodes={current.countryCodes}
                         positions={current.positions}
                         key={i}
                     />
@@ -662,7 +662,10 @@ class AdvancedSearch extends Component {
 
                 for (let key in current){
 
-                    if (typeof current[key] === 'object'){
+                    if (Array.isArray(current[key])){
+                        row[key] = current[key].join(", ");
+                    }
+                    else if (typeof current[key] === 'object'){
 
                         if (season !== null){
 
@@ -1081,13 +1084,17 @@ class AdvancedSearch extends Component {
             parameters: parametersOriginalState,
             searchResults: [],
             searchResultsDisplay: null
+        }, () => {
+
+            this._firstSearchMade = false;
+
+            this.props.setQuery({
+                parameters: parametersOriginalState
+            }, 'replaceIn');
+
+            this.buildClubsSelectList();
+
         });
-
-        this._firstSearchMade = false;
-
-        this.props.setQuery({
-            parameters: parametersOriginalState
-        }, 'replaceIn');
 
     };
 

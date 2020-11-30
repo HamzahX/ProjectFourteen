@@ -190,25 +190,6 @@ app.post('/api/percentiles', (req, res) => {
 
 
 /**
- * Retrieves a sample and sends to client upon request
- * @param {express.Request} req
- * @param {express.Response} res
- */
-app.post('/api/samplePlayer', (req, res) => {
-
-    getSamplePlayer().then(
-        (samplePlayer) => {
-            res.json(samplePlayer);
-        }, () => {
-            res.status(400);
-            res.json([]);
-        }
-    )
-
-});
-
-
-/**
  * Retrieves the number of players currently in the database and sends to the client
  * @param {express.Request} req
  * @param {express.Response} res
@@ -395,44 +376,6 @@ app.post('/api/comparisonStats', (req, res) => {
         });
 
 });
-
-
-/**
- * Queries the database to retrieve a random players
- * @returns {Promise<*>} Promise object represents the metadata of the random player
- */
-let getSamplePlayer = async () => {
-
-    return new Promise(async function(resolve, reject){
-
-        //retrieve 3 players with recorded positions in the 19/20 seasons
-        PLAYERS_COLLECTION.aggregate([
-            {$match: {"positions.19-20": {$exists: true }}},
-            {$match: {"positions.19-20": {$ne: "N/A"}}},
-            {$sample: {size: 1}}
-        ])
-        .toArray(function (err, docs) {
-            if (err) {
-                reject();
-            }
-            else if (docs.length === 0) {
-                reject();
-            }
-            else {
-                //retrieve sample player metadata and resolve
-                let samplePlayer = {
-                    code: docs[0].code,
-                    name: docs[0].name,
-                    clubs: docs[0].clubs,
-                    nationality: docs[0].nationality
-                };
-                resolve(samplePlayer);
-            }
-        });
-
-    });
-
-};
 
 
 /**
@@ -668,7 +611,7 @@ let advancedSearch = async (parameters) => {
     if (parameters.nationalities.length > 0){
 
         query['$and'].push({
-            countryCode: {
+            countryCodes: {
                 '$in': parameters.nationalities,
             }
         })
@@ -905,8 +848,8 @@ let buildPlayerSearchResult = (doc) => {
         code: doc.code,
         name: doc.name,
         age: doc.age,
-        nationality: doc.nationality,
-        countryCode: doc.countryCode,
+        nationalities: doc.nationalities,
+        countryCodes: doc.countryCodes,
         leagues: doc.leagues,
         clubs: doc.clubs,
         positions: doc.positions

@@ -249,8 +249,8 @@ class Search extends Component {
                         age={current.age}
                         season={season}
                         clubs={current.clubs}
-                        nationality={current.nationality}
-                        countryCode={current.countryCode}
+                        nationalities={current.nationalities}
+                        countryCodes={current.countryCodes}
                         positions={current.positions}
                         key={i}
                     />

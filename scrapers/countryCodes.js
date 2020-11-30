@@ -25,7 +25,7 @@ function cleanCountryCode(countryCode) {
 
     return countryCode;
 
-};
+}
 
 function getCountryName (countryCode) {
 
