@@ -276,7 +276,7 @@ app.post('/api/advancedSearch', (req, res) => {
         (searchResults) => {
             setTimeout(function(){
                 res.json(searchResults);
-            }, 100)
+            }, 300)
         },
         () => {
             setTimeout(function(){
@@ -379,7 +379,7 @@ app.post('/api/comparisonStats', (req, res) => {
 
 
 /**
- * Queries the database for the number of players currently stored within in
+ * Queries the database for the number of players currently stored within it
  * @returns {Promise<*>} Single value object containing the number of players
  */
 let getDatabaseSize = async () => {
@@ -530,7 +530,7 @@ let search = async (aQuery, theType, isLive) => {
                             {simplifiedName2: {$regex: regex4, $options: 'i'}},
                     ]}
                 )
-                .limit(isLive ? 10 : 0)
+                .limit(isLive ? 15 : 0)
                 .toArray(function(err, docs) {
                     if (err){
                         console.log(err);
@@ -580,6 +580,9 @@ let search = async (aQuery, theType, isLive) => {
  */
 let advancedSearch = async (parameters) => {
 
+    console.log("Advanced Search request. Parameters:");
+    console.log(parameters);
+
     let query = {
         '$and': []
     };
@@ -594,10 +597,10 @@ let advancedSearch = async (parameters) => {
 
     }
 
-    if (parameters.ages !== undefined){
+    if (parameters.ages !== null){
 
-        let minAge = parameters.ages.min || -Infinity;
-        let maxAge = parameters.ages.max || Infinity;
+        let minAge = parameters.ages.min === null ? -Infinity : parameters.ages.min;
+        let maxAge = parameters.ages.max === null ? Infinity : parameters.ages.max;
 
         query['$and'].push({
             age: {
@@ -652,8 +655,8 @@ let advancedSearch = async (parameters) => {
 
         for (let stat in parameters.aggregateStats){
 
-            let min = parameters.aggregateStats[stat].min || -Infinity;
-            let max = parameters.aggregateStats[stat].max || Infinity;
+            let min = parameters.aggregateStats[stat].min === null ? -Infinity : parameters.aggregateStats[stat].min;
+            let max = parameters.aggregateStats[stat].max === null ? Infinity : parameters.aggregateStats[stat].max;
 
             query['$and'].push({
                 [`lookupStats.aggregateStats.${season}.${stat}`]: {
@@ -670,8 +673,8 @@ let advancedSearch = async (parameters) => {
 
         for (let stat in parameters.rawStats){
 
-            let min = parameters.rawStats[stat].min || -Infinity;
-            let max = parameters.rawStats[stat].max || Infinity;
+            let min = parameters.rawStats[stat].min === null ? -Infinity : parameters.rawStats[stat].min;
+            let max = parameters.rawStats[stat].max === null ? Infinity : parameters.rawStats[stat].max;
 
             query['$and'].push({
                 [`lookupStats.rawStats.${season}.${stat}`]: {
@@ -688,8 +691,8 @@ let advancedSearch = async (parameters) => {
 
         for (let stat in parameters.percentileRanks){
 
-            let min = parameters.percentileRanks[stat].min || 0;
-            let max = parameters.percentileRanks[stat].max || 100;
+            let min = parameters.percentileRanks[stat].min === null ? 0 : parameters.percentileRanks[stat].min;
+            let max = parameters.percentileRanks[stat].max === null ? 100 : parameters.percentileRanks[stat].max;
 
             query['$and'].push({
                 [`lookupStats.percentileRanks.${season}.${parameters.positions[0]}.${stat}`]: {
