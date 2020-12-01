@@ -3,7 +3,7 @@ const path = require('path');
 const fs = require('fs');
 
 const scriptName = path.basename(__filename);
-const suppotedSeasons = ["18-19", "19-20", "20-21"];
+const supportedSeasons = ["18-19", "19-20", "20-21"];
 
 var SEASON;
 //parse command line arguments to get the season
@@ -13,7 +13,7 @@ if (ARGS.length !== 1){
     process.exit(-1);
 }
 else {
-    if (!suppotedSeasons.includes(ARGS[0])){
+    if (!supportedSeasons.includes(ARGS[0])){
         console.log("Incorrect season arg. Supported seasons are supportedSeason");
         process.exit(-1);
     }

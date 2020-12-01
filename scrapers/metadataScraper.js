@@ -5,7 +5,7 @@ const fs = require('fs');
 const countryCodes = require('./countryCodes.js');
 
 const scriptName = path.basename(__filename);
-const suppotedSeasons = ["18-19", "19-20", "20-21"];
+const supportedSeasons = ["18-19", "19-20", "20-21"];
 const booleans = ["true", "false"];
 
 var SEASON;
@@ -17,7 +17,7 @@ if (ARGS.length !== 2){
     process.exit(-1);
 }
 else {
-    if (!suppotedSeasons.includes(ARGS[0]) || !booleans.includes(ARGS[1])){
+    if (!supportedSeasons.includes(ARGS[0]) || !booleans.includes(ARGS[1])){
         console.log("Incorrect season arg. Supported seasons are supportedSeason");
         process.exit(-1);
     }
@@ -401,7 +401,7 @@ let processRawData = async () => {
 
     let rawMetadata = JSON.parse(fs.readFileSync(path.join(__dirname, `/playerData/raw_${SEASON}.json`)));
     let processedMetadata;
-    if (SEASON === suppotedSeasons[0]){
+    if (SEASON === supportedSeasons[0]){
         processedMetadata = {};
     }
     else {
@@ -580,7 +580,7 @@ let processPlayerPosition = (positionString, code) => {
             //set their position(s) to the position they've made the most starts in for the current season
             for (let position in APPS_PER_POSITION[code]){
 
-                if (Math.abs(APPS_PER_POSITION[code][position] - max) <= 2){
+                if (Math.abs(APPS_PER_POSITION[code][position] - max) <= 2 && APPS_PER_POSITION[code][position] > 1){
                     positions.push(position);
                 }
                 else if (APPS_PER_POSITION[code][position] > max){

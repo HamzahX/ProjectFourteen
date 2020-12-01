@@ -25,8 +25,6 @@ ReactGA.initialize('UA-179497563-1');
 
 const history = createBrowserHistory();
 history.listen((location, action) => {
-    console.log(location);
-    console.log(location.location);
     if (location.action === "POP" && location.location.pathname === "/advancedSearch"){
         window.location.reload(false);
     }

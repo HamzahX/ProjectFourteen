@@ -5,7 +5,7 @@ const fs = require('fs');
 const isEqual = require('lodash.isequal');
 
 const scriptName = path.basename(__filename);
-const suppotedSeasons = ["18-19", "19-20", "20-21"];
+const supportedSeasons = ["18-19", "19-20", "20-21"];
 
 var SEASON;
 //parse command line arguments to get the season
@@ -15,7 +15,7 @@ if (ARGS.length !== 1){
     process.exit(-1);
 }
 else {
-    if (!suppotedSeasons.includes(ARGS[0])){
+    if (!supportedSeasons.includes(ARGS[0])){
         console.log("Incorrect season arg. Supported seasons are supportedSeason");
         process.exit(-1);
     }
@@ -99,7 +99,7 @@ let pageSetup = async (page, isFirstIteration, position) => {
             let selector;
             //whoscored data for previous seasons is stored separately (by competition)
             //data for the current season is stored together. Hence the different selectors
-            if (SEASON === suppotedSeasons[suppotedSeasons.length - 1]){
+            if (SEASON === supportedSeasons[supportedSeasons.length - 1]){
                 // navigate to 'detailed' tab (current season)
                 selector = 'a[href="#top-player-stats-detailed"]';
             }
@@ -112,11 +112,11 @@ let pageSetup = async (page, isFirstIteration, position) => {
             await page.waitForSelector('#statistics-table-detailed');
 
             //set minimum apps to 10
-            await page.select('#appearancesComparisonType', '2');
-            await page.focus('#appearances');
-            await page.keyboard.press('Backspace');
-            await page.keyboard.press('Backspace');
-            //await page.keyboard.type(SEASON === "20-21" ? '3' : '9');
+            // await page.select('#appearancesComparisonType', '2');
+            // await page.focus('#appearances');
+            // await page.keyboard.press('Backspace');
+            // await page.keyboard.press('Backspace');
+            // await page.keyboard.type(SEASON === "20-21" ? '3' : '9');
 
             // select 'total' from 'accumulation' drop-down
             await page.select('#statsAccumulationType', '2');
