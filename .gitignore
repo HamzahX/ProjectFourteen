@@ -1,7 +1,3 @@
 .idea/
 node_modules/
 scrapers/equipfc.js
-scrapers/databaseUploaderDev.js
-scrapers/databaseUploaderProduction.js
-scrapers/temp.js
-scrapers/temp.js
