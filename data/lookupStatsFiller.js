@@ -299,8 +299,9 @@ let calculatePercentileRanks = async () => {
         let positions = PROCESSED[player]["positions"][SEASON];
         let averageStats = PROCESSED[player]["lookupStats"]["averageStats"][SEASON];
 
+        //occasionally some players have an appearance logged in whoscored but not in fbref.
+        //no biggie, typically 1 minute appearances and such. we just skip.
         if (averageStats === undefined){
-            console.log(player);
             continue;
         }
 
