@@ -186,7 +186,7 @@ class AdvancedSearch extends Component {
                 clubs: [],
                 positions: positionsOptions,
                 aggregateStats: [],
-                rawStats: [],
+                averageStats: [],
                 percentileRanks: []
             },
 
@@ -198,7 +198,7 @@ class AdvancedSearch extends Component {
                 clubs: [],
                 positions: [],
                 aggregateStats: {},
-                rawStats: {},
+                averageStats: {},
                 percentileRanks: {}
             },
 
@@ -366,7 +366,7 @@ class AdvancedSearch extends Component {
         }
         filterOptions.aggregateStats = aggregateStatsOptions;
 
-        let rawStatsOptions = [];
+        let averageStatsOptions = [];
         for (let i=0; i<statsReferenceDataArray.length; i++){
 
             let statData = statsReferenceDataArray[i];
@@ -376,7 +376,7 @@ class AdvancedSearch extends Component {
                 continue;
             }
 
-            rawStatsOptions.push(
+            averageStatsOptions.push(
                 <Option
                     key={stat}
                     value={stat}
@@ -386,7 +386,7 @@ class AdvancedSearch extends Component {
             )
 
         }
-        filterOptions.rawStats = rawStatsOptions;
+        filterOptions.averageStats = averageStatsOptions;
 
         if (this._isMounted){
 
@@ -448,16 +448,16 @@ class AdvancedSearch extends Component {
 
         //because range slider min/max values are not true min/maxes, we set the min/max to -infinity/infinity
         //if the slider is at the max allowed value
-        for (let stat in parameters.rawStats){
+        for (let stat in parameters.averageStats){
 
             let statRanges = this._referenceData.statsReferenceData[stat].ranges[season];
 
-            if (parameters.rawStats[stat].min === statRanges.min){
-                parameters.rawStats[stat].min = null
+            if (parameters.averageStats[stat].min === statRanges.min){
+                parameters.averageStats[stat].min = null
             }
 
-            if (parameters.rawStats[stat].max === statRanges.max){
-                parameters.rawStats[stat].max = null
+            if (parameters.averageStats[stat].max === statRanges.max){
+                parameters.averageStats[stat].max = null
             }
 
         }
@@ -521,7 +521,7 @@ class AdvancedSearch extends Component {
                 })
             }
 
-            for (let stat in parameters.rawStats){
+            for (let stat in parameters.averageStats){
 
                 let statData = this._referenceData.statsReferenceData[stat];
 
@@ -747,21 +747,21 @@ class AdvancedSearch extends Component {
             //if current max/min is greater/less than new max/min
             //or if current max/min is equal to slider max/min
             //update raw stat slider
-            for (let stat in parameters.rawStats){
+            for (let stat in parameters.averageStats){
 
                 let statData = this._referenceData.statsReferenceData[stat];
 
                 if (
-                    parameters.rawStats[stat].max > statData.ranges[season].max ||
-                    parameters.rawStats[stat].max === statData.ranges[oldValue].max
+                    parameters.averageStats[stat].max > statData.ranges[season].max ||
+                    parameters.averageStats[stat].max === statData.ranges[oldValue].max
                 ){
-                    parameters.rawStats[stat].max = statData.ranges[season].max;
+                    parameters.averageStats[stat].max = statData.ranges[season].max;
                 }
 
-                if (parameters.rawStats[stat].min < statData.ranges[season].min ||
-                    parameters.rawStats[stat].min === statData.ranges[oldValue].min
+                if (parameters.averageStats[stat].min < statData.ranges[season].min ||
+                    parameters.averageStats[stat].min === statData.ranges[oldValue].min
                 ){
-                    parameters.rawStats[stat].min = statData.ranges[season].min;
+                    parameters.averageStats[stat].min = statData.ranges[season].min;
                 }
 
             }
@@ -1017,7 +1017,7 @@ class AdvancedSearch extends Component {
         let season = parameters.season;
         let referenceData = this._referenceData.statsReferenceData[stat];
 
-        let rangesKey = parametersKey === "rawStats" ? "ranges" : "ranges_agg";
+        let rangesKey = parametersKey === "averageStats" ? "ranges" : "ranges_agg";
 
         let min = parametersKey === "percentileRanks" ? 0 : referenceData[rangesKey][season].min;
         let max = parametersKey === "percentileRanks" ? 100 : referenceData[rangesKey][season].max;
@@ -1181,24 +1181,24 @@ class AdvancedSearch extends Component {
             }
 
 
-            let rawStatsSliders = [];
-            for (let stat in parameters.rawStats){
+            let averageStatsSliders = [];
+            for (let stat in parameters.averageStats){
 
                 let statData = this._referenceData.statsReferenceData[stat];
 
-                rawStatsSliders.push(
+                averageStatsSliders.push(
                     <h4 key={statData.key}>{`${statData.label} ${statData.suffix}`}</h4>
                 );
 
-                rawStatsSliders.push(
+                averageStatsSliders.push(
                     <Slider
-                        key={`rawStatSlider-${stat}`}
+                        key={`averageStatslider-${stat}`}
                         range={true}
-                        value={[parameters.rawStats[stat].min, parameters.rawStats[stat].max]}
+                        value={[parameters.averageStats[stat].min, parameters.averageStats[stat].max]}
                         min={statData.ranges[season].min}
                         max={statData.ranges[season].max + 0.0001}
                         step={statData.step}
-                        onChange={(values) => this.handleRangeSliderChange(`rawStats.${stat}`, values)}
+                        onChange={(values) => this.handleRangeSliderChange(`averageStats.${stat}`, values)}
                     />
                 );
 
@@ -1288,7 +1288,7 @@ class AdvancedSearch extends Component {
                                     />
                                     <h4>Minutes</h4>
                                     <Slider
-                                        key={`rawStatSlider-minutes`}
+                                        key={`averageStatslider-minutes`}
                                         range={true}
                                         value={[parameters.aggregateStats["minutes"].min, parameters.aggregateStats["minutes"].max]}
                                         min={minutesReferenceData.ranges_agg[season].min}
@@ -1420,23 +1420,23 @@ class AdvancedSearch extends Component {
                                         overlayClassName={parameters.season !== null ? "hideTooltip" : null}
                                     >
                                         <Select
-                                            value={Object.keys(parameters.rawStats)}
+                                            value={Object.keys(parameters.averageStats)}
                                             placeholder={"Select stats to add range sliders"}
                                             style={{ width: '100%' }}
                                             disabled={parameters.season === null}
                                             mode={"multiple"}
                                             allowClear={true}
-                                            onSelect={(val) => this.handleLookupStatSelectListAdd("rawStats", val)}
-                                            onDeselect={(val) => this.handleLookupStatSelectListRemove("rawStats", val)}
-                                            onClear={() => this.handleLookupStatsSelectListClear("rawStats")}
+                                            onSelect={(val) => this.handleLookupStatSelectListAdd("averageStats", val)}
+                                            onDeselect={(val) => this.handleLookupStatSelectListRemove("averageStats", val)}
+                                            onClear={() => this.handleLookupStatsSelectListClear("averageStats")}
                                             filterOption={(input, option) =>
                                                 option.props.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
                                             }
                                         >
-                                            {filterOptions.rawStats}
+                                            {filterOptions.averageStats}
                                         </Select>
                                     </Tooltip>
-                                    {rawStatsSliders}
+                                    {averageStatsSliders}
                                 </Collapsible>
                                 <Collapsible
                                     open={!this.isMobile}

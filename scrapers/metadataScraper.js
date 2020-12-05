@@ -253,7 +253,7 @@ let scrapingLoop = async (page, competitionName) => {
     return new Promise(async function(resolve, reject){
         let hasNextPage = true;
         (async function loop() {
-            //loop while the table has a next page and store the results in rawStats
+            //loop while the table has a next page and store the results in averageStats
             while (hasNextPage){
                 hasNextPage = await new Promise( (resolve, reject) =>
                     scrapeMetadata(page)

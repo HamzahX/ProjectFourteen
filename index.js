@@ -669,15 +669,15 @@ let advancedSearch = async (parameters) => {
 
     }
 
-    if (Object.keys(parameters.rawStats).length > 0){
+    if (Object.keys(parameters.averageStats).length > 0){
 
-        for (let stat in parameters.rawStats){
+        for (let stat in parameters.averageStats){
 
-            let min = parameters.rawStats[stat].min === null ? -Infinity : parameters.rawStats[stat].min;
-            let max = parameters.rawStats[stat].max === null ? Infinity : parameters.rawStats[stat].max;
+            let min = parameters.averageStats[stat].min === null ? -Infinity : parameters.averageStats[stat].min;
+            let max = parameters.averageStats[stat].max === null ? Infinity : parameters.averageStats[stat].max;
 
             query['$and'].push({
-                [`lookupStats.rawStats.${season}.${stat}`]: {
+                [`lookupStats.averageStats.${season}.${stat}`]: {
                     '$gte': min,
                     '$lte': max
                 }
@@ -727,8 +727,8 @@ let advancedSearch = async (parameters) => {
                         playerSearchResult[`aggregate_${stat}`] = docs[i].lookupStats.aggregateStats[parameters.season][stat];
                     }
 
-                    for (let stat in parameters.rawStats){
-                        playerSearchResult[`raw_${stat}`] = docs[i].lookupStats.rawStats[parameters.season][stat];
+                    for (let stat in parameters.averageStats){
+                        playerSearchResult[`raw_${stat}`] = docs[i].lookupStats.averageStats[parameters.season][stat];
                     }
 
                     for (let stat in parameters.percentileRanks){

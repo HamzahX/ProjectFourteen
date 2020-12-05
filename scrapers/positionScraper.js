@@ -265,7 +265,6 @@ let getNamesAndCodes = async (page, position) => {
                         .then(async (result) => {
                             namesAndCodes = combineResults(namesAndCodes, result);
                             APPEARANCES_PER_POSITION_COUNTER = result[2];
-                            console.log(APPEARANCES_PER_POSITION_COUNTER);
                             firstIteration = false;
                         })
                         .then(async () =>
