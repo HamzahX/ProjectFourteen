@@ -2,6 +2,9 @@
 const path = require('path');
 const fs = require('fs');
 
+const mean = require('mathjs').mean;
+const std = require('mathjs').std;
+
 const scriptName = path.basename(__filename);
 const supportedSeasons = ["18-19", "19-20", "20-21"];
 
@@ -38,6 +41,8 @@ var CM_PERCENTILE_DATA;
 var FB_PERCENTILE_DATA;
 var CB_PERCENTILE_DATA;
 var GK_PERCENTILE_DATA;
+
+var Z_SCORE_INFO;
 
 
 let setup = async () => {
@@ -169,6 +174,15 @@ let setup = async () => {
         launchedPassSuccRate: []
     };
 
+    Z_SCORE_INFO = {
+        "FW": {},
+        "AM": {},
+        "CM": {},
+        "FB": {},
+        "CB": {},
+        "GK": {},
+    };
+
 };
 
 
@@ -206,6 +220,8 @@ let calculateFWStats = async () => {
         addToArray(FW_PERCENTILE_DATA["succPressures"], (aggregatedStats["succPressures"] / (minutes/90)));
         addToArray(FW_PERCENTILE_DATA["padjSuccPressures"], (aggregatedStats["padjSuccPressures"] / (minutes/90)));
     }
+
+    populateZScoreInfo("FW", FW_PERCENTILE_DATA);
 
     await saveData(FW_PERCENTILE_DATA, "FW");
 
@@ -250,6 +266,8 @@ let calculateAMStats = async () => {
         addToArray(AM_PERCENTILE_DATA["padjSuccPressures"], (aggregatedStats["padjSuccPressures"] / (minutes/90)));
 
     }
+
+    populateZScoreInfo("AM", AM_PERCENTILE_DATA);
 
     await saveData(AM_PERCENTILE_DATA, "AM");
 
@@ -297,6 +315,8 @@ let calculateCMStats = async () => {
         addToArray(CM_PERCENTILE_DATA["dribbleTackleRate"], ((aggregatedStats["succDribbleTackles"] / aggregatedStats["attDribbleTackles"]) * 100));
 
     }
+
+    populateZScoreInfo("CM", CM_PERCENTILE_DATA);
 
     await saveData(CM_PERCENTILE_DATA, "CM");
 
@@ -348,6 +368,8 @@ let calculateFBStats = async () => {
 
     }
 
+    populateZScoreInfo("FB", FB_PERCENTILE_DATA);
+
     await saveData(FB_PERCENTILE_DATA, "FB");
 
 };
@@ -393,6 +415,8 @@ let calculateCBStats = async () => {
 
     }
 
+    populateZScoreInfo("CB", CB_PERCENTILE_DATA);
+
     await saveData(CB_PERCENTILE_DATA, "CB");
 
 };
@@ -410,6 +434,8 @@ let calculateGKStats = async () => {
         addToArray(GK_PERCENTILE_DATA["launchedPassSuccRate"], ((aggregatedStats["succLaunchedPasses"] / aggregatedStats["attLaunchedPasses"]) * 100));
 
     }
+
+    populateZScoreInfo("GK", GK_PERCENTILE_DATA);
 
     await saveData(GK_PERCENTILE_DATA, "GK");
 
@@ -439,6 +465,22 @@ let addToArray = (array, value) => {
     }
     else {
         array.push(0)
+    }
+
+};
+
+
+let populateZScoreInfo = (position, statDict) => {
+
+    for (let stat in statDict){
+
+        if (Z_SCORE_INFO[position][stat] === undefined){
+            Z_SCORE_INFO[position][stat] = {};
+        }
+
+        Z_SCORE_INFO[position][stat]["mean"] = mean(statDict[stat]);
+        Z_SCORE_INFO[position][stat]["stdDev"] = std(statDict[stat]);
+
     }
 
 };
@@ -486,7 +528,21 @@ let saveData =  async (percentileData, position) => {
 };
 
 
-console.time('percentiles generation');
+let saveZScoreInfo = async () => {
+
+    return new Promise(async function (resolve, reject) {
+        await fs.writeFile(path.join(__dirname, `zScoreData/${SEASON}.json`), JSON.stringify(Z_SCORE_INFO, null, '\t'), function(err) {
+            if (err) {
+                console.log(err);
+            }
+            resolve();
+        });
+    });
+
+};
+
+
+console.time('percentile arrays filling');
 
 setup()
     .then(async () => {
@@ -496,9 +552,10 @@ setup()
         await calculateFBStats();
         await calculateCBStats();
         await calculateGKStats();
+        await saveZScoreInfo();
     })
     .then(async () => {
-        console.timeEnd('percentiles generation');
+        console.timeEnd('percentile arrays filling');
         process.exit(0);
     })
     .catch(async(anError) => {

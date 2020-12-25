@@ -86,7 +86,15 @@ let FBPlayers = JSON.parse(fs.readFileSync(path.join(__dirname, `/positionData/$
 let CBPlayers = JSON.parse(fs.readFileSync(path.join(__dirname, `/positionData/${SEASON}/CBPercentilePlayers.json`)))['codes'];
 let GKPlayers = JSON.parse(fs.readFileSync(path.join(__dirname, `/positionData/${SEASON}/GKPercentilePlayers.json`)))['codes'];
 
-let APPS_PER_POSITION = JSON.parse(fs.readFileSync(path.join(__dirname, `/positionData/${SEASON}/appsPerPosition.json`)));
+let APPS_PER_POSITION = {
+    "18-19": {},
+    "19-20": {},
+    "20-21": {},
+};
+
+for (let season in supportedSeasons){
+    APPS_PER_POSITION[season] = JSON.parse(fs.readFileSync(path.join(__dirname, `/positionData/${SEASON}/appsPerPosition.json`)));
+}
 
 /**
  * Launches a browser window using puppeteer and navigates to the appropriate URL based on the command line arguments
@@ -573,22 +581,27 @@ let processPlayerPosition = (positionString, code) => {
     //if the player does not exist in any of the lists of players used for the percentile arrays
     if (positions.length === 0) {
 
-        if (APPS_PER_POSITION[code] !== undefined){
+        if (APPS_PER_POSITION[SEASON][code] !== undefined){
 
             let max = 0;
 
             //set their position(s) to the position they've made the most starts in for the current season
-            for (let position in APPS_PER_POSITION[code]){
+            for (let position in APPS_PER_POSITION[SEASON][code]){
 
-                if (Math.abs(APPS_PER_POSITION[code][position] - max) <= 2 && APPS_PER_POSITION[code][position] > 1){
+                //minimum of 3 to register
+                if (APPS_PER_POSITION[SEASON][code][position] < 3){
+                    continue;
+                }
+
+                if (Math.abs(APPS_PER_POSITION[SEASON][code][position] - max) <= 2){
                     positions.push(position);
                 }
-                else if (APPS_PER_POSITION[code][position] > max){
+                else if (APPS_PER_POSITION[SEASON][code][position] > max){
                     positions = [position];
                 }
 
-                if (APPS_PER_POSITION[code][position] > max){
-                    max = APPS_PER_POSITION[code][position];
+                if (APPS_PER_POSITION[SEASON][code][position] > max){
+                    max = APPS_PER_POSITION[SEASON][code][position];
                 }
 
             }

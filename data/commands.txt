@@ -8,7 +8,7 @@ Metadata (process only):
     - node metadataScraper 18-19 true && node metadataScraper 19-20 true && node metadataScraper 20-21 true
 
 Populating:
-    - node mappingCompleter && node statsFiller 18-19 && node statsFiller 19-20 && node statsFiller 20-21 && node percentilesFiller 18-19 && node percentilesFiller 19-20 && node percentilesFiller 20-21 && node lookupStatsFiller 18-19 && node lookupStatsFiller 19-20 && node lookupStatsFiller 20-21 && node databaseUploaderDev
+    - node mappingCompleter && node statsFiller 18-19 && node statsFiller 19-20 && node statsFiller 20-21 && node percentileArraysFiller 18-19 && node percentileArraysFiller 19-20 && node percentileArraysFiller 20-21 && node lookupStatsFiller 18-19 && node lookupStatsFiller 19-20 && node lookupStatsFiller 20-21 && node databaseUploaderDev
 
 Finalizing:
     - node databaseUploaderProduction
