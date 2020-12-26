@@ -14,6 +14,7 @@ var STATS_REFERENCE_COLLECTION;
 var STATS_BY_POSITION_COLLECTION;
 var PLAYERS_COLLECTION;
 var PERCENTILE_ARRAYS_COLLECTION;
+var Z_SCORE_DATA_COLLECTION;
 
 var FBREF_TO_WHOSCORED_TEAMS;
 var COUNTRIES;
@@ -54,6 +55,7 @@ var PERCENTILE_ARRAYS = {
         'GK': {}
     }
 };
+var Z_SCORE_DATA = {};
 var POSSESSION_DATA = {
     "18-19": {
 
@@ -91,6 +93,8 @@ let setup = async () => {
             PERCENTILE_ARRAYS[season]['FB'] = JSON.parse(fs.readFileSync(path.join(__dirname, `/percentileData/${season}/FBPercentiles.json`)));
             PERCENTILE_ARRAYS[season]['CB'] = JSON.parse(fs.readFileSync(path.join(__dirname, `/percentileData/${season}/CBPercentiles.json`)));
             PERCENTILE_ARRAYS[season]['GK'] = JSON.parse(fs.readFileSync(path.join(__dirname, `/percentileData/${season}/GKPercentiles.json`)));
+
+            Z_SCORE_DATA[season] = JSON.parse(fs.readFileSync(path.join(__dirname, `/zScoreData/${season}.json`)));
         }
     }
 
@@ -141,6 +145,7 @@ let setup = async () => {
             STATS_BY_POSITION_COLLECTION = DB.collection("StatsByPosition_Dev");
             PLAYERS_COLLECTION = DB.collection("Players_Dev");
             PERCENTILE_ARRAYS_COLLECTION = DB.collection("PercentileArrays_Dev");
+            Z_SCORE_DATA_COLLECTION = DB.collection("ZScoreData_Dev");
 
             console.timeEnd('database connection');
 
@@ -434,6 +439,49 @@ let uploadPercentilesArrays = async () => {
 };
 
 
+let uploadZScoreData = async () => {
+
+    return new Promise(function (resolve, reject) {
+
+        (async function loop() {
+
+            for (let season in PERCENTILE_ARRAYS){
+
+                let bulkInsertArray = [];
+
+                for (let position in Z_SCORE_DATA[season]){
+                    bulkInsertArray.push({
+                        season: season,
+                        position: position,
+                        data: Z_SCORE_DATA[season][position],
+                        lastUpdated: TIMESTAMP
+                    })
+                }
+
+                await new Promise(function (resolve, reject) {
+                    Z_SCORE_DATA_COLLECTION.deleteMany({season: season}).then(
+                        () => {
+                            Z_SCORE_DATA_COLLECTION.insertMany(bulkInsertArray, function(err, res) {
+                                if (err) {
+                                    console.log(err);
+                                }
+                                resolve();
+                            });
+                        }
+                    );
+                });
+
+            }
+
+            resolve();
+
+        })();
+
+    });
+
+};
+
+
 console.time('dev database uploading');
 setup()
     .then(async () => {
@@ -453,6 +501,9 @@ setup()
     })
     .then(async () => {
         await uploadPercentilesArrays()
+    })
+    .then(async () => {
+        await uploadZScoreData()
     })
     .then(async () => {
         console.timeEnd('dev database uploading');
