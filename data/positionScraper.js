@@ -317,7 +317,7 @@ let scrapeNamesAndCodes = async (page, position) => {
             let code = url.substring(0, url.indexOf("/"));
             let numApps = parseInt(appsCell.innerText);
 
-            if (numApps >= 10 || (SEASON === "20-21" && numApps >= 6)){
+            if (numApps >= 10 || (SEASON === "20-21" && numApps >= 7)){
                 playerNames.push(name);
                 playerCodes.push(code);
             }
