@@ -92,9 +92,14 @@ let APPS_PER_POSITION = {
     "20-21": {},
 };
 
-for (let season in supportedSeasons){
-    APPS_PER_POSITION[season] = JSON.parse(fs.readFileSync(path.join(__dirname, `/positionData/${SEASON}/appsPerPosition.json`)));
+for (let i=0; i<supportedSeasons.length; i++){
+
+    let season = supportedSeasons[i];
+    APPS_PER_POSITION[season] = JSON.parse(fs.readFileSync(path.join(__dirname, `/positionData/${season}/appsPerPosition.json`)));
+
 }
+
+let PROCESSED_METADATA;
 
 /**
  * Launches a browser window using puppeteer and navigates to the appropriate URL based on the command line arguments
@@ -408,12 +413,12 @@ let saveRawData = async() => {
 let processRawData = async () => {
 
     let rawMetadata = JSON.parse(fs.readFileSync(path.join(__dirname, `/playerData/raw_${SEASON}.json`)));
-    let processedMetadata;
+
     if (SEASON === supportedSeasons[0]){
-        processedMetadata = {};
+        PROCESSED_METADATA = {};
     }
     else {
-        processedMetadata = JSON.parse(fs.readFileSync(path.join(__dirname, `/playerData/metadata.json`)));
+        PROCESSED_METADATA = JSON.parse(fs.readFileSync(path.join(__dirname, `/playerData/metadata.json`)));
     }
 
     let leagueCodes = {
@@ -432,8 +437,8 @@ let processRawData = async () => {
 
         for (let player in aCompetiton){
             let code = player.substring(0, player.indexOf("|"));
-            if (processedMetadata[code] === undefined){
-                processedMetadata[code] = {"mapped": false};
+            if (PROCESSED_METADATA[code] === undefined){
+                PROCESSED_METADATA[code] = {"mapped": false};
             }
         }
 
@@ -446,68 +451,68 @@ let processRawData = async () => {
 
             let processedPlayer = player.substring(0, player.indexOf("|"));
 
-            if (processedMetadata[processedPlayer] !== undefined){
+            if (PROCESSED_METADATA[processedPlayer] !== undefined){
 
                 for (let entry in rawMetadata[i][player]){ //for every entry in that object
                     if (entry === "age"){
-                        processedMetadata[processedPlayer][entry] = rawMetadata[i][player][entry];
+                        PROCESSED_METADATA[processedPlayer][entry] = rawMetadata[i][player][entry];
                     }
                     else if (entry === "position"){
 
-                        if (processedMetadata[processedPlayer]['positions'] === undefined){
-                            processedMetadata[processedPlayer]['positions'] = {};
+                        if (PROCESSED_METADATA[processedPlayer]['positions'] === undefined){
+                            PROCESSED_METADATA[processedPlayer]['positions'] = {};
                         }
-                        processedMetadata[processedPlayer]["positions"][SEASON] = processPlayerPosition(rawMetadata[i][player][entry], processedPlayer);
+                        PROCESSED_METADATA[processedPlayer]["positions"][SEASON] = processPlayerPosition(rawMetadata[i][player][entry], processedPlayer);
 
                     }
                     if (entry === "club"){
 
                         let playerClub = rawMetadata[i][player]['club'];
 
-                        if (processedMetadata[processedPlayer]['clubs'] === undefined){
-                            processedMetadata[processedPlayer]['clubs'] = {};
+                        if (PROCESSED_METADATA[processedPlayer]['clubs'] === undefined){
+                            PROCESSED_METADATA[processedPlayer]['clubs'] = {};
                         }
-                        if (processedMetadata[processedPlayer]['clubs'][SEASON] === undefined){
+                        if (PROCESSED_METADATA[processedPlayer]['clubs'][SEASON] === undefined){
                             if (i < rawMetadata.length-2){ //if the entry is not for CL/EL
-                                processedMetadata[processedPlayer]['clubs'][SEASON] = [playerClub]
+                                PROCESSED_METADATA[processedPlayer]['clubs'][SEASON] = [playerClub]
                             }
                         }
                         else {
-                            if (!processedMetadata[processedPlayer]['clubs'][SEASON].includes(playerClub)){
-                                processedMetadata[processedPlayer]['clubs'][SEASON].push(playerClub);
+                            if (!PROCESSED_METADATA[processedPlayer]['clubs'][SEASON].includes(playerClub)){
+                                PROCESSED_METADATA[processedPlayer]['clubs'][SEASON].push(playerClub);
                             }
                         }
 
                         let playerLeague = Object.keys(rawMetadata[i][player][SEASON])[0].split(" | ")[0];
 
                         if (playerLeague !== "Champions League" && playerLeague !== "Europa League"){
-                            if (processedMetadata[processedPlayer]['leagues'] === undefined){
-                                processedMetadata[processedPlayer]['leagues'] = {};
+                            if (PROCESSED_METADATA[processedPlayer]['leagues'] === undefined){
+                                PROCESSED_METADATA[processedPlayer]['leagues'] = {};
                             }
-                            if (processedMetadata[processedPlayer]["leagues"][SEASON] === undefined){
-                                processedMetadata[processedPlayer]["leagues"][SEASON] = [leagueCodes[playerLeague]];
+                            if (PROCESSED_METADATA[processedPlayer]["leagues"][SEASON] === undefined){
+                                PROCESSED_METADATA[processedPlayer]["leagues"][SEASON] = [leagueCodes[playerLeague]];
                             }
                             else {
-                                if (!processedMetadata[processedPlayer]["leagues"][SEASON].includes(leagueCodes[playerLeague])){
-                                    processedMetadata[processedPlayer]["leagues"][SEASON].push(leagueCodes[playerLeague])
+                                if (!PROCESSED_METADATA[processedPlayer]["leagues"][SEASON].includes(leagueCodes[playerLeague])){
+                                    PROCESSED_METADATA[processedPlayer]["leagues"][SEASON].push(leagueCodes[playerLeague])
                                 }
                             }
                         }
 
                     }
-                    if (processedMetadata[processedPlayer][entry] === undefined){
+                    if (PROCESSED_METADATA[processedPlayer][entry] === undefined){
                         // initialize the player's stats for said entry in processedData
                         if (entry === 'countryCode'){
-                            if (processedMetadata[processedPlayer]['nationality'] === undefined){
-                                processedMetadata[processedPlayer]['nationality'] = countryCodes.getCountryName(rawMetadata[i][player][entry].toUpperCase());
+                            if (PROCESSED_METADATA[processedPlayer]['nationality'] === undefined){
+                                PROCESSED_METADATA[processedPlayer]['nationality'] = countryCodes.getCountryName(rawMetadata[i][player][entry].toUpperCase());
                             }
-                            if (processedMetadata[processedPlayer]['countryCode'] === undefined){
-                                processedMetadata[processedPlayer]['countryCode'] = countryCodes.cleanCountryCode(rawMetadata[i][player][entry]);
+                            if (PROCESSED_METADATA[processedPlayer]['countryCode'] === undefined){
+                                PROCESSED_METADATA[processedPlayer]['countryCode'] = countryCodes.cleanCountryCode(rawMetadata[i][player][entry]);
                             }
                         }
                         else if (entry === 'name'){
-                            processedMetadata[processedPlayer]['name'] = rawMetadata[i][player]['name'];
-                            processedMetadata[processedPlayer]['simplifiedName'] = processedMetadata[processedPlayer]['name']
+                            PROCESSED_METADATA[processedPlayer]['name'] = rawMetadata[i][player]['name'];
+                            PROCESSED_METADATA[processedPlayer]['simplifiedName'] = PROCESSED_METADATA[processedPlayer]['name']
                                                                                     .normalize("NFD")
                                                                                     .replace(/[\u0300-\u036f]/g, "")
                                                                                     .replace("Ø", "O")
@@ -517,7 +522,7 @@ let processRawData = async () => {
                             let competition = Object.keys(rawMetadata[i][player][entry])[0];
                             competition = competition.split(" | ")[0];
                             if (competition !== "Champions League" && competition !== "Europa League"){
-                                processedMetadata[processedPlayer][entry] = rawMetadata[i][player][entry];
+                                PROCESSED_METADATA[processedPlayer][entry] = rawMetadata[i][player][entry];
                             }
                         }
                     }
@@ -525,7 +530,7 @@ let processRawData = async () => {
                         // if the entry is an object, it represents stats. therefore, combine the existing stats
                         // with the new stats
                         if (typeof rawMetadata[i][player][entry] === 'object'){
-                            Object.assign(processedMetadata[processedPlayer][entry], rawMetadata[i][player][entry]);
+                            Object.assign(PROCESSED_METADATA[processedPlayer][entry], rawMetadata[i][player][entry]);
                         }
                     }
 
@@ -538,7 +543,7 @@ let processRawData = async () => {
 
     return new Promise(async function (resolve, reject) {
         //save processedData to a file
-        await fs.writeFile(path.join(__dirname, `playerData/metadata.json`), JSON.stringify(processedMetadata, null, '\t'), function(err) {
+        await fs.writeFile(path.join(__dirname, `playerData/metadata.json`), JSON.stringify(PROCESSED_METADATA, null, '\t'), function(err) {
             if (err) {
                 console.log(err);
                 reject();
@@ -581,6 +586,20 @@ let processPlayerPosition = (positionString, code) => {
     //if the player does not exist in any of the lists of players used for the percentile arrays
     if (positions.length === 0) {
 
+        let latestKnownPosition = null;
+
+        for (let season in PROCESSED_METADATA[code]["positions"]){
+
+            if (PROCESSED_METADATA[code]["positions"][season][0] !== undefined && PROCESSED_METADATA[code]["positions"][season][0] !== "N/A"){
+                latestKnownPosition = PROCESSED_METADATA[code]["positions"][season][0];
+            }
+
+            if (season === SEASON){
+                break;
+            }
+
+        }
+
         if (APPS_PER_POSITION[SEASON][code] !== undefined){
 
             let max = 0;
@@ -589,7 +608,7 @@ let processPlayerPosition = (positionString, code) => {
             for (let position in APPS_PER_POSITION[SEASON][code]){
 
                 //minimum of 3 to register
-                if (APPS_PER_POSITION[SEASON][code][position] < 3){
+                if (APPS_PER_POSITION[SEASON][code][position] < 3 && latestKnownPosition !== null){
                     continue;
                 }
 
@@ -606,14 +625,38 @@ let processPlayerPosition = (positionString, code) => {
 
             }
 
-            if (positions.length === 0){
-                positions.push("N/A");
-            }
+        }
 
+        if (positions.length === 0){
+
+            if (latestKnownPosition === null){
+
+                if (positionString.startsWith("Forward") || positionString.startsWith("FW"))
+                    positions.push("FW");
+
+                else if (positionString.startsWith("AM") || positionString.startsWith("M(L") || positionString.startsWith("M(R") || (positionString.startsWith("M(C") && positionString.includes("FW")))
+                    positions.push("AM");
+
+                else if (positionString.startsWith("Midfielder") || positionString.startsWith("M(C") || positionString.startsWith("DMC"))
+                    positions.push("CM");
+
+                else if (positionString.startsWith("D(R") || positionString.startsWith("D(L"))
+                    positions.push("FB");
+
+                else if (positionString.startsWith("Defender") || positionString.startsWith("D(C"))
+                    positions.push("CB");
+
+                else{
+                    console.log("Unhandled position string: " + positionString);
+                    positions.push("N/A");
+                }
+
+            }
+            else {
+                positions.push(latestKnownPosition)
+            }
         }
-        else {
-            positions.push("N/A");
-        }
+
     }
 
     return positions;
