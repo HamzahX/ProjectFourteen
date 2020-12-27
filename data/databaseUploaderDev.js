@@ -447,6 +447,9 @@ let uploadZScoreData = async () => {
 
             for (let season in PERCENTILE_ARRAYS){
 
+                if (season === "combined")
+                    continue;
+
                 let bulkInsertArray = [];
 
                 for (let position in Z_SCORE_DATA[season]){
