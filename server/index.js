@@ -589,6 +589,8 @@ let advancedSearch = async (parameters) => {
 
     let season = parameters.season;
 
+    let includeEuropeanCompetitionsSuffix = parameters.includeEuropeanCompetitions ? "allComps" : "league";
+
     if (season !== null){
 
         query['$and'].push({
@@ -659,7 +661,7 @@ let advancedSearch = async (parameters) => {
             let max = parameters.aggregateStats[stat].max === null ? Infinity : parameters.aggregateStats[stat].max;
 
             query['$and'].push({
-                [`lookupStats.aggregateStats.${season}.${stat}`]: {
+                [`lookupStats.aggregateStats.${season}.${includeEuropeanCompetitionsSuffix}.${stat}`]: {
                     '$gte': min,
                     '$lte': max
                 }
@@ -677,7 +679,7 @@ let advancedSearch = async (parameters) => {
             let max = parameters.averageStats[stat].max === null ? Infinity : parameters.averageStats[stat].max;
 
             query['$and'].push({
-                [`lookupStats.averageStats.${season}.${stat}`]: {
+                [`lookupStats.averageStats.${season}.${includeEuropeanCompetitionsSuffix}.${stat}`]: {
                     '$gte': min,
                     '$lte': max
                 }
@@ -695,7 +697,7 @@ let advancedSearch = async (parameters) => {
             let max = parameters.percentileRanks[stat].max === null ? 100 : parameters.percentileRanks[stat].max;
 
             query['$and'].push({
-                [`lookupStats.percentileRanks.${season}.${parameters.positions[0]}.${stat}`]: {
+                [`lookupStats.percentileRanks.${season}.${includeEuropeanCompetitionsSuffix}.${parameters.positions[0]}.${stat}`]: {
                     '$gte': min,
                     '$lte': max
                 }
@@ -724,15 +726,15 @@ let advancedSearch = async (parameters) => {
                     let playerSearchResult = buildPlayerSearchResult(docs[i]);
 
                     for (let stat in parameters.aggregateStats){
-                        playerSearchResult[`aggregate_${stat}`] = docs[i].lookupStats.aggregateStats[parameters.season][stat];
+                        playerSearchResult[`aggregate_${stat}`] = docs[i].lookupStats.aggregateStats[parameters.season][includeEuropeanCompetitionsSuffix][stat];
                     }
 
                     for (let stat in parameters.averageStats){
-                        playerSearchResult[`raw_${stat}`] = docs[i].lookupStats.averageStats[parameters.season][stat];
+                        playerSearchResult[`raw_${stat}`] = docs[i].lookupStats.averageStats[parameters.season][includeEuropeanCompetitionsSuffix][stat];
                     }
 
                     for (let stat in parameters.percentileRanks){
-                        playerSearchResult[`percentile_${stat}`] = docs[i].lookupStats.percentileRanks[parameters.season][parameters.positions[0]][stat];
+                        playerSearchResult[`percentile_${stat}`] = docs[i].lookupStats.percentileRanks[parameters.season][includeEuropeanCompetitionsSuffix][parameters.positions[0]][stat];
                     }
 
                     searchResults.push(playerSearchResult);
