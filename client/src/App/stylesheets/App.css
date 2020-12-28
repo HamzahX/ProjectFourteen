@@ -703,16 +703,20 @@ button:hover {
                 .filter-inputs form {
                 }
 
-                .filter-inputs form label {
+                .filter-inputs label {
                     display: block;
                     padding: 10px;
                 }
 
-                .filter-inputs form .selectable-label:hover {
+                .filter-inputs label input {
+                    margin-right: 3px;
+                }
+
+                .filter-inputs .selectable-label:hover {
                     box-shadow: 0 0 6px lightgray;
                 }
 
-                .filter-inputs form .blocked-label:hover {
+                .filter-inputs .blocked-label:hover {
                     cursor: not-allowed;
                 }
 
@@ -1053,10 +1057,6 @@ button:hover {
                 overflow-y: scroll;
             }
 
-                .chart-filter-inputs input {
-                    margin-right: 3px;
-                }
-
             #chart-filter-inputs-laptop {
                 display: block;
             }
@@ -1262,7 +1262,7 @@ button:hover {
 @media (max-width: 960px) {
 
     h1 {
-        font-size: 8vw;
+        font-size: 6.7vw;
     }
 
     #navbar-container {

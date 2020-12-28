@@ -178,6 +178,8 @@ class AdvancedSearch extends Component {
             showSearchLoaderOverlay: false,
             showExplanationOverlay: false,
 
+            displayType: this.isMobile ? "cards" : displayTypeCookie || "cards",
+
             filterOptions: {
                 seasons: seasonOptions,
                 ages: {},
@@ -192,6 +194,7 @@ class AdvancedSearch extends Component {
 
             parameters: {
                 season: "20-21",
+                includeEuropeanCompetitions: true,
                 ages: {},
                 nationalities: [],
                 leagues: [],
@@ -201,8 +204,6 @@ class AdvancedSearch extends Component {
                 averageStats: {},
                 percentileRanks: {}
             },
-
-            displayType: this.isMobile ? "cards" : displayTypeCookie || "cards",
 
             tableColumns: JSON.parse(JSON.stringify(this._baseColumns)),
 
@@ -796,6 +797,31 @@ class AdvancedSearch extends Component {
             parameters: parameters
         }, 'replaceIn');
 
+        if (key === "season" && this._firstSearchMade && this.state.searchResults.length > 0){
+            this.getSearchResults();
+        }
+
+    };
+
+
+    handleIncludeEuropeanCompetitionsClick = () => {
+
+        let parameters = this.state.parameters;
+
+        parameters.includeEuropeanCompetitions = !parameters.includeEuropeanCompetitions;
+
+        this.setState({
+            parameters: parameters
+        });
+
+        this.props.setQuery({
+            parameters: parameters
+        }, 'replaceIn');
+
+        if (this._firstSearchMade && this.state.searchResults.length > 0){
+            this.getSearchResults();
+        }
+
     };
 
 
@@ -1270,6 +1296,17 @@ class AdvancedSearch extends Component {
                                 >
                                     {filterOptions.seasons}
                                 </Select>
+                                <label
+                                    className={`${parameters.includeEuropeanCompetitions ? "selected-label" : null} selectable-label`}
+                                    key={'includeEuropeanCometitionsCheckbox'}
+                                >
+                                    <input className=""
+                                           type="checkbox"
+                                           value={"Include European Competitions"}
+                                           onChange={this.handleIncludeEuropeanCompetitionsClick}
+                                           checked={parameters.includeEuropeanCompetitions}
+                                    /> <b>Include European Competition Stats?</b>
+                                </label>
                                 <Collapsible
                                     open={!this.isMobile}
                                     trigger="Metadata"
@@ -1481,9 +1518,11 @@ class AdvancedSearch extends Component {
                         <div className={`result ${displayType === "cards" ? "scrollable" : null}`} id="search-results">
                             {
                                 searchResults.length > 0 ?
-                                <p style={{marginLeft: '0px'}}>
-                                    Data Sources: FBref.com & StatsBomb | Last Updated: {dateFormat(searchResults[0].lastUpdated, "dd/mm/yyyy, h:MM TT", true)} UTC | Displaying
-                                    stats from the Top 5 Leagues, Champions League & Europa League
+                                <p style={{marginLeft: '0px', lineHeight: '1.3'}}>
+                                    Season: {parameters.season.replace("-", "/")} | Top 5 League Players
+                                     ({parameters.includeEuropeanCompetitions ? 'League + Champions League & Europa League Stats' : 'League Stats Only'})
+                                    <br/>
+                                    Data Sources: FBref.com & StatsBomb | Last Updated: {dateFormat(searchResults[0].lastUpdated, "dd/mm/yyyy, h:MM TT", true)} UTC
                                 </p> :
                                 null
                             }
