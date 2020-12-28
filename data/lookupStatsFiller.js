@@ -59,7 +59,7 @@ let setup = async () => {
 };
 
 
-let calculateaverageStats = async () => {
+let calculateAverageStats = async () => {
 
     for (let stat in ALL_STATS){
 
@@ -96,173 +96,38 @@ let calculateaverageStats = async () => {
         if (PROCESSED[player]["lookupStats"] === undefined){
             PROCESSED[player]["lookupStats"] = {};
         }
-
         if (PROCESSED[player]["lookupStats"]["aggregateStats"] === undefined){
             PROCESSED[player]["lookupStats"]["aggregateStats"] = {};
         }
-
         if (PROCESSED[player]["lookupStats"]["averageStats"] === undefined){
             PROCESSED[player]["lookupStats"]["averageStats"] = {};
         }
 
-        let aggregatedStats = aggregateStats(PROCESSED[player]["stats"][SEASON]);
+        //all comps
+        let aggregatedStats_allComps = aggregateStats(PROCESSED[player]["stats"][SEASON]);
+        PROCESSED[player]["lookupStats"]["averageStats"][SEASON] = {};
+        PROCESSED[player]["lookupStats"]["averageStats"][SEASON]["allComps"] = temp_average(player, aggregatedStats_allComps);
 
-        let averageStats = {};
-        averageStats["minutes"] = aggregatedStats["minutes"];
-
-        if (PROCESSED[player]["positions"][SEASON].includes("GK") && PROCESSED[player]["outfieldGKStats"] === undefined)
-        {
-            averageStats["gsaa"] = returnFinite(((aggregatedStats["psxg"] - aggregatedStats["goalsAgainst"]) / aggregatedStats["sota"]) * 100);
-            averageStats["crossStopRate"] = returnFinite((aggregatedStats["stoppedCrosses"] / aggregatedStats["attCrosses"]) * 100);
-            averageStats["launchedPassSuccRate"] = returnFinite((aggregatedStats["succLaunchedPasses"] / aggregatedStats["attLaunchedPasses"]) * 100);
-        }
-        else {
-
-            let minutesOverNinety = aggregatedStats["minutes"] / 90;
-            let touchesOverHundred = aggregatedStats["touches"] / 100;
-
-            averageStats["npg"] = returnFinite(aggregatedStats["npg"] / minutesOverNinety);
-            averageStats["npxg"] = returnFinite(aggregatedStats["npxg"] / minutesOverNinety);
-            averageStats["npxgPerShot"] = returnFinite(aggregatedStats["npxg"] / aggregatedStats["shots"]);
-
-            averageStats["succAerials"] = returnFinite(aggregatedStats["succAerials"] / minutesOverNinety);
-            averageStats["aerialSuccRate"] = returnFinite((aggregatedStats["succAerials"] / aggregatedStats["attAerials"]) * 100);
-
-            averageStats["boxTouches"] = returnFinite(aggregatedStats["boxTouches"] / minutesOverNinety);
-            averageStats["padjBoxTouches"] = returnFinite(aggregatedStats["boxTouches"] / touchesOverHundred);
-
-            averageStats["xa"] = returnFinite(aggregatedStats["xa"] / minutesOverNinety);
-            averageStats["padjXA"] = returnFinite(aggregatedStats["xa"] / touchesOverHundred);
-
-            averageStats["ppa"] = returnFinite(aggregatedStats["ppa"] / minutesOverNinety);
-            averageStats["padjPPA"] = returnFinite(aggregatedStats["ppa"] / touchesOverHundred);
-
-            averageStats["succDribbles"] = returnFinite(aggregatedStats["succDribbles"] / minutesOverNinety);
-            averageStats["padjSuccDribbles"] = returnFinite(aggregatedStats["succDribbles"] / touchesOverHundred);
-            averageStats["dribbleSuccRate"] = returnFinite((aggregatedStats["succDribbles"] / aggregatedStats["attDribbles"]) * 100);
-
-            averageStats["turnovers"] = returnFinite((aggregatedStats["timesDispossessed"] + aggregatedStats["miscontrols"]) / minutesOverNinety);
-            averageStats["padjTurnovers"] = returnFinite((aggregatedStats["timesDispossessed"] + aggregatedStats["miscontrols"]) / touchesOverHundred);
-
-            averageStats["succPressures"] = returnFinite(aggregatedStats["succPressures"] / minutesOverNinety);
-            averageStats["padjSuccPressures"] = returnFinite(aggregatedStats["padjSuccPressures"] / minutesOverNinety);
-
-            averageStats["sca"] = returnFinite(aggregatedStats["sca"] / minutesOverNinety);
-            averageStats["padjSCA"] = returnFinite(aggregatedStats["sca"] / touchesOverHundred);
-
-            averageStats["progDistance"] = returnFinite(aggregatedStats["progDistance"] / minutesOverNinety);
-            averageStats["padjProgDistance"] = returnFinite(aggregatedStats["progDistance"] / touchesOverHundred);
-
-            averageStats["passSuccRate"] = returnFinite((aggregatedStats["succPasses"] / aggregatedStats["attPasses"]) * 100);
-
-            averageStats["pft"] = returnFinite(aggregatedStats["pft"] / minutesOverNinety);
-            averageStats["padjPFT"] = returnFinite(aggregatedStats["pft"] / touchesOverHundred);
-
-            averageStats["interceptions"] = returnFinite(aggregatedStats["interceptions"] / minutesOverNinety);
-            averageStats["padjInterceptions"] = returnFinite(aggregatedStats["padjInterceptions"] / minutesOverNinety);
-
-            averageStats["succTackles"] = returnFinite(aggregatedStats["succTackles"] / minutesOverNinety);
-            averageStats["padjSuccTackles"] = returnFinite(aggregatedStats["padjSuccTackles"] / minutesOverNinety);
-            averageStats["dribbleTackleRate"] = returnFinite((aggregatedStats["succDribbleTackles"] / aggregatedStats["attDribbleTackles"]) * 100);
-
-            averageStats["longPassSuccRate"] = returnFinite((aggregatedStats["succLongPasses"] / aggregatedStats["attLongPasses"]) * 100);
-
-            averageStats["fouls"] = returnFinite(aggregatedStats["fouls"] / minutesOverNinety);
-            averageStats["padjFouls"] = returnFinite(aggregatedStats["padjFouls"] / minutesOverNinety);
-
-            averageStats["clearances"] = returnFinite(aggregatedStats["clearances"] / minutesOverNinety);
-            averageStats["padjClearances"] = returnFinite(aggregatedStats["padjClearances"] / minutesOverNinety);
-
+        for (let stat in aggregatedStats_allComps){
+            aggregatedStats_allComps[stat] = truncateNum(aggregatedStats_allComps[stat], 1);
         }
 
-        for (let stat in averageStats){
+        PROCESSED[player]["lookupStats"]["aggregateStats"][SEASON] = {};
+        PROCESSED[player]["lookupStats"]["aggregateStats"][SEASON]["allComps"] = aggregatedStats_allComps;
 
-            let precision = ALL_STATS[stat]["precision"];
+        //league only
+        let aggregatedStats_league = aggregateStats(PROCESSED[player]["stats"][SEASON], false);
+        PROCESSED[player]["lookupStats"]["averageStats"][SEASON]["league"] = temp_average(player, aggregatedStats_league);
 
-            averageStats[stat] = truncateNum(averageStats[stat], precision);
-
-            if (stat === "npxgPerShot" && aggregatedStats["shots"] < 20){
-                continue;
-            }
-            else if (stat === "aerialSuccRate" && aggregatedStats["attAerials"] < 10){
-                continue;
-            }
-            else if (stat === "dribbleSuccRate" && aggregatedStats["attDribbles"] < 10){
-                continue;
-            }
-            else if (stat === "passSuccRate" && aggregatedStats["attPasses"] < 50){
-                continue;
-            }
-            else if (stat === "dribbleTackleRate" && aggregatedStats["attDribbleTackles"] < 10){
-                continue;
-            }
-            else if (stat === "longPassSuccRate" && aggregatedStats["attLongPasses"] < 25){
-                continue;
-            }
-            else if (stat === "gsaa" && aggregatedStats["sota"] < 10){
-                continue;
-            }
-            else if (stat === "crossStopRate" && aggregatedStats["attCrosses"] < 10){
-                continue;
-            }
-            else if (stat === "launchedPassSuccRate" && aggregatedStats["attLaunchedPasses"] < 10){
-                continue;
-            }
-            else if (stat !== "minutes" && averageStats["minutes"] < 400){
-                continue;
-            }
-
-            let step = ALL_STATS[stat]["step"];
-
-            let potentialMin = truncateNum(Math.floor(averageStats[stat]/step) * step, precision);
-            let potentialMax = truncateNum(Math.ceil(averageStats[stat]/step) * step, precision);
-
-            if ((stat === "gsaa" || averageStats[stat] >= 0) && potentialMin < ALL_STATS[stat]["ranges"][SEASON]["min"]){
-                ALL_STATS[stat]["ranges"][SEASON]["min"] = potentialMin;
-                ALL_STATS[stat]["ranges"][SEASON]["minName"] = PROCESSED[player]["name"];
-            }
-
-            if (potentialMax > ALL_STATS[stat]["ranges"][SEASON]["max"]){
-                ALL_STATS[stat]["ranges"][SEASON]["max"] = potentialMax;
-                ALL_STATS[stat]["ranges"][SEASON]["maxName"] = PROCESSED[player]["name"];
-            }
-
+        for (let stat in aggregatedStats_league){
+            aggregatedStats_league[stat] = truncateNum(aggregatedStats_league[stat], 1);
         }
 
-        for (let stat in aggregatedStats){
-
-            if (ALL_STATS[stat] === undefined){
-                continue;
-            }
-
-            let step = ALL_STATS[stat]["step_agg"];
-
-            let potentialMin = Math.floor(aggregatedStats[stat]/step) * step;
-            let potentialMax = Math.ceil(aggregatedStats[stat]/step) * step;
-
-            if (aggregatedStats[stat] >= 0 && potentialMin < ALL_STATS[stat]["ranges_agg"][SEASON]["min"]){
-                ALL_STATS[stat]["ranges_agg"][SEASON]["min"] = potentialMin;
-                ALL_STATS[stat]["ranges_agg"][SEASON]["minName"] = PROCESSED[player]["name"];
-            }
-
-            if (potentialMax > ALL_STATS[stat]["ranges_agg"][SEASON]["max"]){
-                ALL_STATS[stat]["ranges_agg"][SEASON]["max"] = potentialMax;
-                ALL_STATS[stat]["ranges_agg"][SEASON]["maxName"] = PROCESSED[player]["name"];
-            }
-
-        }
-
-        PROCESSED[player]["lookupStats"]["averageStats"][SEASON] = averageStats;
-
-        for (let stat in aggregatedStats){
-            aggregatedStats[stat] = truncateNum(aggregatedStats[stat], 1);
-        }
-
-        PROCESSED[player]["lookupStats"]["aggregateStats"][SEASON] = aggregatedStats;
+        PROCESSED[player]["lookupStats"]["aggregateStats"][SEASON]["league"] = aggregatedStats_league;
 
     }
 
-    //same as above but for season ages
+    //set age ranges
     for (let player in PROCESSED){
 
         if (PROCESSED[player]["age"] < ALL_STATS["age"]["ranges"]["min"]){
@@ -276,6 +141,158 @@ let calculateaverageStats = async () => {
         }
 
     }
+
+};
+
+
+let temp_average = (player, aggregatedStats) => {
+
+    let averageStats = {};
+    averageStats["minutes"] = aggregatedStats["minutes"];
+
+    if (PROCESSED[player]["positions"][SEASON].includes("GK") && PROCESSED[player]["outfieldGKStats"] === undefined)
+    {
+        averageStats["gsaa"] = returnFinite(((aggregatedStats["psxg"] - aggregatedStats["goalsAgainst"]) / aggregatedStats["sota"]) * 100);
+        averageStats["crossStopRate"] = returnFinite((aggregatedStats["stoppedCrosses"] / aggregatedStats["attCrosses"]) * 100);
+        averageStats["launchedPassSuccRate"] = returnFinite((aggregatedStats["succLaunchedPasses"] / aggregatedStats["attLaunchedPasses"]) * 100);
+    }
+    else {
+
+        let minutesOverNinety = aggregatedStats["minutes"] / 90;
+        let touchesOverHundred = aggregatedStats["touches"] / 100;
+
+        averageStats["npg"] = returnFinite(aggregatedStats["npg"] / minutesOverNinety);
+        averageStats["npxg"] = returnFinite(aggregatedStats["npxg"] / minutesOverNinety);
+        averageStats["npxgPerShot"] = returnFinite(aggregatedStats["npxg"] / aggregatedStats["shots"]);
+
+        averageStats["succAerials"] = returnFinite(aggregatedStats["succAerials"] / minutesOverNinety);
+        averageStats["aerialSuccRate"] = returnFinite((aggregatedStats["succAerials"] / aggregatedStats["attAerials"]) * 100);
+
+        averageStats["boxTouches"] = returnFinite(aggregatedStats["boxTouches"] / minutesOverNinety);
+        averageStats["padjBoxTouches"] = returnFinite(aggregatedStats["boxTouches"] / touchesOverHundred);
+
+        averageStats["xa"] = returnFinite(aggregatedStats["xa"] / minutesOverNinety);
+        averageStats["padjXA"] = returnFinite(aggregatedStats["xa"] / touchesOverHundred);
+
+        averageStats["ppa"] = returnFinite(aggregatedStats["ppa"] / minutesOverNinety);
+        averageStats["padjPPA"] = returnFinite(aggregatedStats["ppa"] / touchesOverHundred);
+
+        averageStats["succDribbles"] = returnFinite(aggregatedStats["succDribbles"] / minutesOverNinety);
+        averageStats["padjSuccDribbles"] = returnFinite(aggregatedStats["succDribbles"] / touchesOverHundred);
+        averageStats["dribbleSuccRate"] = returnFinite((aggregatedStats["succDribbles"] / aggregatedStats["attDribbles"]) * 100);
+
+        averageStats["turnovers"] = returnFinite((aggregatedStats["timesDispossessed"] + aggregatedStats["miscontrols"]) / minutesOverNinety);
+        averageStats["padjTurnovers"] = returnFinite((aggregatedStats["timesDispossessed"] + aggregatedStats["miscontrols"]) / touchesOverHundred);
+
+        averageStats["succPressures"] = returnFinite(aggregatedStats["succPressures"] / minutesOverNinety);
+        averageStats["padjSuccPressures"] = returnFinite(aggregatedStats["padjSuccPressures"] / minutesOverNinety);
+
+        averageStats["sca"] = returnFinite(aggregatedStats["sca"] / minutesOverNinety);
+        averageStats["padjSCA"] = returnFinite(aggregatedStats["sca"] / touchesOverHundred);
+
+        averageStats["progDistance"] = returnFinite(aggregatedStats["progDistance"] / minutesOverNinety);
+        averageStats["padjProgDistance"] = returnFinite(aggregatedStats["progDistance"] / touchesOverHundred);
+
+        averageStats["passSuccRate"] = returnFinite((aggregatedStats["succPasses"] / aggregatedStats["attPasses"]) * 100);
+
+        averageStats["pft"] = returnFinite(aggregatedStats["pft"] / minutesOverNinety);
+        averageStats["padjPFT"] = returnFinite(aggregatedStats["pft"] / touchesOverHundred);
+
+        averageStats["interceptions"] = returnFinite(aggregatedStats["interceptions"] / minutesOverNinety);
+        averageStats["padjInterceptions"] = returnFinite(aggregatedStats["padjInterceptions"] / minutesOverNinety);
+
+        averageStats["succTackles"] = returnFinite(aggregatedStats["succTackles"] / minutesOverNinety);
+        averageStats["padjSuccTackles"] = returnFinite(aggregatedStats["padjSuccTackles"] / minutesOverNinety);
+        averageStats["dribbleTackleRate"] = returnFinite((aggregatedStats["succDribbleTackles"] / aggregatedStats["attDribbleTackles"]) * 100);
+
+        averageStats["longPassSuccRate"] = returnFinite((aggregatedStats["succLongPasses"] / aggregatedStats["attLongPasses"]) * 100);
+
+        averageStats["fouls"] = returnFinite(aggregatedStats["fouls"] / minutesOverNinety);
+        averageStats["padjFouls"] = returnFinite(aggregatedStats["padjFouls"] / minutesOverNinety);
+
+        averageStats["clearances"] = returnFinite(aggregatedStats["clearances"] / minutesOverNinety);
+        averageStats["padjClearances"] = returnFinite(aggregatedStats["padjClearances"] / minutesOverNinety);
+
+    }
+
+    for (let stat in averageStats){
+
+        let precision = ALL_STATS[stat]["precision"];
+
+        averageStats[stat] = truncateNum(averageStats[stat], precision);
+
+        if (stat === "npxgPerShot" && aggregatedStats["shots"] < 20){
+            continue;
+        }
+        else if (stat === "aerialSuccRate" && aggregatedStats["attAerials"] < 10){
+            continue;
+        }
+        else if (stat === "dribbleSuccRate" && aggregatedStats["attDribbles"] < 10){
+            continue;
+        }
+        else if (stat === "passSuccRate" && aggregatedStats["attPasses"] < 50){
+            continue;
+        }
+        else if (stat === "dribbleTackleRate" && aggregatedStats["attDribbleTackles"] < 10){
+            continue;
+        }
+        else if (stat === "longPassSuccRate" && aggregatedStats["attLongPasses"] < 25){
+            continue;
+        }
+        else if (stat === "gsaa" && aggregatedStats["sota"] < 10){
+            continue;
+        }
+        else if (stat === "crossStopRate" && aggregatedStats["attCrosses"] < 10){
+            continue;
+        }
+        else if (stat === "launchedPassSuccRate" && aggregatedStats["attLaunchedPasses"] < 10){
+            continue;
+        }
+        else if (stat !== "minutes" && averageStats["minutes"] < 400){
+            continue;
+        }
+
+        let step = ALL_STATS[stat]["step"];
+
+        let potentialMin = truncateNum(Math.floor(averageStats[stat]/step) * step, precision);
+        let potentialMax = truncateNum(Math.ceil(averageStats[stat]/step) * step, precision);
+
+        if ((stat === "gsaa" || averageStats[stat] >= 0) && potentialMin < ALL_STATS[stat]["ranges"][SEASON]["min"]){
+            ALL_STATS[stat]["ranges"][SEASON]["min"] = potentialMin;
+            ALL_STATS[stat]["ranges"][SEASON]["minName"] = PROCESSED[player]["name"];
+        }
+
+        if (potentialMax > ALL_STATS[stat]["ranges"][SEASON]["max"]){
+            ALL_STATS[stat]["ranges"][SEASON]["max"] = potentialMax;
+            ALL_STATS[stat]["ranges"][SEASON]["maxName"] = PROCESSED[player]["name"];
+        }
+
+    }
+
+    for (let stat in aggregatedStats){
+
+        if (ALL_STATS[stat] === undefined){
+            continue;
+        }
+
+        let step = ALL_STATS[stat]["step_agg"];
+
+        let potentialMin = Math.floor(aggregatedStats[stat]/step) * step;
+        let potentialMax = Math.ceil(aggregatedStats[stat]/step) * step;
+
+        if (aggregatedStats[stat] >= 0 && potentialMin < ALL_STATS[stat]["ranges_agg"][SEASON]["min"]){
+            ALL_STATS[stat]["ranges_agg"][SEASON]["min"] = potentialMin;
+            ALL_STATS[stat]["ranges_agg"][SEASON]["minName"] = PROCESSED[player]["name"];
+        }
+
+        if (potentialMax > ALL_STATS[stat]["ranges_agg"][SEASON]["max"]){
+            ALL_STATS[stat]["ranges_agg"][SEASON]["max"] = potentialMax;
+            ALL_STATS[stat]["ranges_agg"][SEASON]["maxName"] = PROCESSED[player]["name"];
+        }
+
+    }
+
+    return averageStats;
 
 };
 
@@ -297,43 +314,27 @@ let calculatePercentileRanks = async () => {
         }
 
         let positions = PROCESSED[player]["positions"][SEASON];
-        let averageStats = PROCESSED[player]["lookupStats"]["averageStats"][SEASON];
 
         //occasionally some players have an appearance logged in whoscored but not in fbref.
         //no biggie, typically 1 minute appearances and such. we just skip.
-        if (averageStats === undefined){
+        if (PROCESSED[player]["lookupStats"]["averageStats"][SEASON] === undefined){
             continue;
+        }
+
+        let averageStats_allComps = PROCESSED[player]["lookupStats"]["averageStats"][SEASON]["allComps"];
+        let averageStats_league = PROCESSED[player]["lookupStats"]["averageStats"][SEASON]["league"];
+
+        if (PROCESSED[player]["lookupStats"]["percentileRanks"][SEASON]["allComps"] === undefined) {
+
+            PROCESSED[player]["lookupStats"]["percentileRanks"][SEASON]["allComps"] = {};
+            PROCESSED[player]["lookupStats"]["percentileRanks"][SEASON]["league"] = {};
         }
 
         for (let i=0; i<positions.length; i++){
 
             let position = positions[i];
-            let percentileRanks = {};
-
-            let isInPercentileArrays = PERCENTILE_PLAYERS[position].includes(player);
-            let numOccurences = isInPercentileArrays ? 1 : 0;
-
-            for (let i=0; i<STATS_BY_POSITION[position].length; i++){
-
-                let stat = STATS_BY_POSITION[position][i];
-
-                let playerValue = averageStats[stat];
-
-                let percentileRank = calculatePercentileRank(PERCENTILE_ARRAYS[position][stat], playerValue, numOccurences) * 100;
-                percentileRanks[stat] = truncateNum(percentileRank, 0);
-
-                //reverse percentile ranks for "less is better" stats
-                if (stat === "padjFouls" ||
-                    stat === "fouls" ||
-                    stat === "turnovers" ||
-                    stat === "padjTurnovers"
-                ) {
-                    percentileRanks[stat] = 100 - percentileRanks[stat];
-                }
-
-            }
-
-            PROCESSED[player]["lookupStats"]["percentileRanks"][SEASON][position] = percentileRanks;
+            PROCESSED[player]["lookupStats"]["percentileRanks"][SEASON]["allComps"][position] = temp_percentile(player, position, averageStats_allComps);
+            PROCESSED[player]["lookupStats"]["percentileRanks"][SEASON]["league"][position] = temp_percentile(player, position, averageStats_league);
 
         }
 
@@ -342,11 +343,47 @@ let calculatePercentileRanks = async () => {
 };
 
 
-let aggregateStats = (stats) => {
+let temp_percentile = (player, position, averageStats) => {
+
+    let percentileRanks = {};
+
+    let isInPercentileArrays = PERCENTILE_PLAYERS[position].includes(player);
+    let numOccurences = isInPercentileArrays ? 1 : 0;
+
+    for (let i=0; i<STATS_BY_POSITION[position].length; i++){
+
+        let stat = STATS_BY_POSITION[position][i];
+
+        let playerValue = averageStats[stat];
+
+        let percentileRank = calculatePercentileRank(PERCENTILE_ARRAYS[position][stat], playerValue, numOccurences) * 100;
+        percentileRanks[stat] = truncateNum(percentileRank, 0);
+
+        //reverse percentile ranks for "less is better" stats
+        if (stat === "padjFouls" ||
+            stat === "fouls" ||
+            stat === "turnovers" ||
+            stat === "padjTurnovers"
+        ) {
+            percentileRanks[stat] = 100 - percentileRanks[stat];
+        }
+
+    }
+
+    return percentileRanks;
+
+};
+
+
+let aggregateStats = (stats, includeEuropeanCompetitions = true) => {
 
     let aggregatedStats = {};
 
     for (let competition in stats){
+
+        if (!includeEuropeanCompetitions && (competition.startsWith("Champions League") || competition.startsWith("Europa League")))
+            continue;
+
         for (let stat in stats[competition]){
             if (!(stat in aggregatedStats)){
                 aggregatedStats[stat] = stats[competition][stat]
@@ -355,6 +392,7 @@ let aggregateStats = (stats) => {
                 aggregatedStats[stat] += stats[competition][stat]
             }
         }
+
     }
 
     return aggregatedStats;
@@ -427,7 +465,7 @@ console.time('look-up stats filling');
 
 setup()
     .then(async () => {
-        await calculateaverageStats()
+        await calculateAverageStats()
     })
     .then(async () => {
         await calculatePercentileRanks()

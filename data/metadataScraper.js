@@ -462,8 +462,9 @@ let processRawData = async () => {
                         if (PROCESSED_METADATA[processedPlayer]['positions'] === undefined){
                             PROCESSED_METADATA[processedPlayer]['positions'] = {};
                         }
-                        PROCESSED_METADATA[processedPlayer]["positions"][SEASON] = processPlayerPosition(rawMetadata[i][player][entry], processedPlayer);
-
+                        if (i < rawMetadata.length-2){ //if the entry is not for CL/EL
+                            PROCESSED_METADATA[processedPlayer]["positions"][SEASON] = processPlayerPosition(rawMetadata[i][player][entry], processedPlayer);
+                        }
                     }
                     if (entry === "club"){
 
