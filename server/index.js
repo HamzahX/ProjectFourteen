@@ -6,6 +6,9 @@ const path = require('path');
 const bodyParser = require('body-parser');
 const port = process.env.PORT || 5000;
 
+//utilities
+const utilities = require('./utilities.js');
+
 //lodash functions
 const keyBy = require('lodash.keyby');
 
@@ -22,6 +25,8 @@ var STATS_BY_POSITION_COLLECTION;
 var PLAYERS_COLLECTION;
 var PERCENTILE_ARRAYS_COLLECTION;
 
+var CLUBS = [];
+var STATS_REFERENCE = {};
 var STATS_BY_POSITION = {
     "FW": [],
     "AM": [],
@@ -113,6 +118,52 @@ let getPercentileArrays = async () => {
                     PERCENTILE_ARRAYS[docs[i].season][docs[i].position] = docs[i].stats;
                 }
                 PERCENTILE_ARRAYS['lastUpdated'] = docs[0].lastUpdated;
+                resolve();
+            }
+        });
+
+    });
+
+};
+
+
+let getClubs = async () => {
+
+    return new Promise(async function(resolve, reject){
+
+        //retrieve all percentile arrays from the database
+        CLUBS_COLLECTION.find({}).toArray(async function (err, docs) {
+            if (err){
+                reject();
+            }
+            else if (docs.length === 0){
+                reject();
+            }
+            else {
+                CLUBS = docs;
+                resolve();
+            }
+        });
+
+    });
+
+};
+
+
+let getStatsReference = async () => {
+
+    return new Promise(async function(resolve, reject){
+
+        //retrieve all percentile arrays from the database
+        STATS_REFERENCE_COLLECTION.find({}).toArray(async function (err, docs) {
+            if (err){
+                reject();
+            }
+            else if (docs.length === 0){
+                reject();
+            }
+            else {
+                STATS_REFERENCE = keyBy(docs, "key");
                 resolve();
             }
         });
@@ -589,8 +640,6 @@ let advancedSearch = async (parameters) => {
 
     let season = parameters.season;
 
-    let includeEuropeanCompetitionsSuffix = parameters.includeEuropeanCompetitions ? "allComps" : "league";
-
     if (season !== null){
 
         query['$and'].push({
@@ -653,63 +702,67 @@ let advancedSearch = async (parameters) => {
 
     }
 
-    if (Object.keys(parameters.aggregateStats).length > 0){
-
-        for (let stat in parameters.aggregateStats){
-
-            let min = parameters.aggregateStats[stat].min === null ? -Infinity : parameters.aggregateStats[stat].min;
-            let max = parameters.aggregateStats[stat].max === null ? Infinity : parameters.aggregateStats[stat].max;
-
-            query['$and'].push({
-                [`lookupStats.aggregateStats.${season}.${includeEuropeanCompetitionsSuffix}.${stat}`]: {
-                    '$gte': min,
-                    '$lte': max
-                }
-            })
-
-        }
-
-    }
-
-    if (Object.keys(parameters.averageStats).length > 0){
-
-        for (let stat in parameters.averageStats){
-
-            let min = parameters.averageStats[stat].min === null ? -Infinity : parameters.averageStats[stat].min;
-            let max = parameters.averageStats[stat].max === null ? Infinity : parameters.averageStats[stat].max;
-
-            query['$and'].push({
-                [`lookupStats.averageStats.${season}.${includeEuropeanCompetitionsSuffix}.${stat}`]: {
-                    '$gte': min,
-                    '$lte': max
-                }
-            })
-
-        }
-
-    }
-
-    if (Object.keys(parameters.percentileRanks).length > 0){
-
-        for (let stat in parameters.percentileRanks){
-
-            let min = parameters.percentileRanks[stat].min === null ? 0 : parameters.percentileRanks[stat].min;
-            let max = parameters.percentileRanks[stat].max === null ? 100 : parameters.percentileRanks[stat].max;
-
-            query['$and'].push({
-                [`lookupStats.percentileRanks.${season}.${includeEuropeanCompetitionsSuffix}.${parameters.positions[0]}.${stat}`]: {
-                    '$gte': min,
-                    '$lte': max
-                }
-            })
-
-        }
-
-    }
+    // let includeEuropeanCompetitionsSuffix = parameters.includeEuropeanCompetitions ? "allComps" : "league";
+    //
+    // if (Object.keys(parameters.aggregateStats).length > 0){
+    //
+    //     for (let stat in parameters.aggregateStats){
+    //
+    //         let min = parameters.aggregateStats[stat].min === null ? -Infinity : parameters.aggregateStats[stat].min;
+    //         let max = parameters.aggregateStats[stat].max === null ? Infinity : parameters.aggregateStats[stat].max;
+    //
+    //         query['$and'].push({
+    //             [`lookupStats.aggregateStats.${season}.${includeEuropeanCompetitionsSuffix}.${stat}`]: {
+    //                 '$gte': min,
+    //                 '$lte': max
+    //             }
+    //         })
+    //
+    //     }
+    //
+    // }
+    //
+    // if (Object.keys(parameters.averageStats).length > 0){
+    //
+    //     for (let stat in parameters.averageStats){
+    //
+    //         let min = parameters.averageStats[stat].min === null ? -Infinity : parameters.averageStats[stat].min;
+    //         let max = parameters.averageStats[stat].max === null ? Infinity : parameters.averageStats[stat].max;
+    //
+    //         query['$and'].push({
+    //             [`lookupStats.averageStats.${season}.${includeEuropeanCompetitionsSuffix}.${stat}`]: {
+    //                 '$gte': min,
+    //                 '$lte': max
+    //             }
+    //         })
+    //
+    //     }
+    //
+    // }
+    //
+    // if (Object.keys(parameters.percentileRanks).length > 0){
+    //
+    //     for (let stat in parameters.percentileRanks){
+    //
+    //         let min = parameters.percentileRanks[stat].min === null ? 0 : parameters.percentileRanks[stat].min;
+    //         let max = parameters.percentileRanks[stat].max === null ? 100 : parameters.percentileRanks[stat].max;
+    //
+    //         query['$and'].push({
+    //             [`lookupStats.percentileRanks.${season}.${includeEuropeanCompetitionsSuffix}.${parameters.positions[0]}.${stat}`]: {
+    //                 '$gte': min,
+    //                 '$lte': max
+    //             }
+    //         })
+    //
+    //     }
+    //
+    // }
 
     let searchResults = [];
 
     return new Promise(async function(resolve, reject){
+
+        console.time("db query");
 
         //find the player who match the query
         PLAYERS_COLLECTION.find(query).toArray(function (err, docs) {
@@ -721,39 +774,101 @@ let advancedSearch = async (parameters) => {
             }
             else {
 
+                console.timeEnd("db query");
+
+                for (let stat in parameters.aggregateStats){
+                    parameters.aggregateStats[stat].min = parameters.aggregateStats[stat].min === null ? -Infinity : parameters.aggregateStats[stat].min;
+                    parameters.aggregateStats[stat].max = parameters.aggregateStats[stat].max === null ? Infinity : parameters.aggregateStats[stat].max;
+                }
+                for (let stat in parameters.averageStats){
+                    parameters.averageStats[stat].min = parameters.averageStats[stat].min === null ? -Infinity : parameters.averageStats[stat].min;
+                    parameters.averageStats[stat].max = parameters.averageStats[stat].max === null ? Infinity : parameters.averageStats[stat].max;
+                }
+                for (let stat in parameters.percentileRanks){
+                    parameters.percentileRanks[stat].min = parameters.percentileRanks[stat].min === null ? -Infinity : parameters.percentileRanks[stat].min;
+                    parameters.percentileRanks[stat].max = parameters.percentileRanks[stat].max === null ? Infinity : parameters.percentileRanks[stat].max;
+                }
+
+                console.time("number calculations");
+
+                outer:
                 for (let i=0; i<docs.length; i++){
+
+                    let player = docs[i];
+
+                    let aggregateStatsLeaguesAndClubs = utilities.aggregateStats(player.stats[parameters.season], parameters.leagues, parameters.clubs, CLUBS, parameters.includeEuropeanCompetitions);
+
+                    let aggregateStats = aggregateStatsLeaguesAndClubs[0];
+                    let averageStats = utilities.calculateAverageStats(aggregateStats, player.positions[parameters.season], player.outfieldGKStats, STATS_REFERENCE);
+
+                    let percentileRanks;
+                    if (parameters.positions.length === 1){
+                        percentileRanks = utilities.calculatePercentileRanks(STATS_BY_POSITION[parameters.positions[0]], PERCENTILE_ARRAYS[parameters.season][parameters.positions[0]], averageStats);
+                    }
 
                     let playerSearchResult = buildPlayerSearchResult(docs[i]);
 
+                    playerSearchResult.leagues[parameters.season] = aggregateStatsLeaguesAndClubs[1];
+                    playerSearchResult.clubs[parameters.season] = aggregateStatsLeaguesAndClubs[2];
+
                     for (let stat in parameters.aggregateStats){
-                        playerSearchResult[`aggregate_${stat}`] = docs[i].lookupStats.aggregateStats[parameters.season][includeEuropeanCompetitionsSuffix][stat];
+
+                        if (aggregateStats[stat] === undefined || aggregateStats[stat] < parameters.aggregateStats[stat].min || aggregateStats[stat] > parameters.aggregateStats[stat].max)
+                            continue outer;
+
+                        playerSearchResult[`aggregate_${stat}`] = aggregateStats[stat];
+
                     }
 
                     for (let stat in parameters.averageStats){
-                        playerSearchResult[`raw_${stat}`] = docs[i].lookupStats.averageStats[parameters.season][includeEuropeanCompetitionsSuffix][stat];
+
+                        if (averageStats[stat] === undefined || averageStats[stat] < parameters.averageStats[stat].min || averageStats[stat] > parameters.averageStats[stat].max)
+                            continue outer;
+
+                        playerSearchResult[`raw_${stat}`] = averageStats[stat];
+
                     }
 
                     for (let stat in parameters.percentileRanks){
-                        playerSearchResult[`percentile_${stat}`] = docs[i].lookupStats.percentileRanks[parameters.season][includeEuropeanCompetitionsSuffix][parameters.positions[0]][stat];
+
+                        if (percentileRanks[stat] === undefined || percentileRanks[stat] < parameters.percentileRanks[stat].min || percentileRanks[stat] > parameters.percentileRanks[stat].max)
+                            continue outer;
+
+                        playerSearchResult[`percentile_${stat}`] = percentileRanks[stat];
+
                     }
 
                     searchResults.push(playerSearchResult);
 
                 }
 
-                let statsFields = Object.keys(searchResults[0]).filter(i =>
-                    (i.startsWith("aggregate") ||
-                     i.startsWith("raw") ||
-                     i.startsWith("percentile")) &&
-                     i !== "aggregate_minutes"
-                );
+                console.timeEnd("number calculations");
 
-                if (statsFields.length > 0){
-                    let fieldToSort = statsFields[0];
-                    searchResults.sort((a, b) => { return parseFloat(b[fieldToSort]) - parseFloat(a[fieldToSort]) });
+                if (searchResults.length === 0){
+                    resolve(searchResults);
                 }
+                else {
 
-                resolve(searchResults);
+                    if (parameters.leagues.length > 0){
+                        searchResults.forEach(s => s.leagues[parameters.season] = s.leagues[parameters.season].filter(l => parameters.leagues.includes(l)));
+                    }
+
+                    let statsFields = Object.keys(searchResults[0])
+                        .filter(
+                            i => (i.startsWith("aggregate") || i.startsWith("raw") || i.startsWith("percentile")) && i !== "aggregate_minutes"
+                        );
+
+                    if (statsFields.length > 0){
+                        let fieldToSort = statsFields[0];
+                        searchResults.sort((a, b) => { return parseFloat(b[fieldToSort]) - parseFloat(a[fieldToSort]) });
+                    }
+                    else {
+                        searchResults.sort((a, b) => { return parseFloat(b["aggregate_minutes"]) - parseFloat(a["aggregate_minutes"]) });
+                    }
+
+                    resolve(searchResults);
+
+                }
 
             }
         });
@@ -869,6 +984,12 @@ let buildPlayerSearchResult = (doc) => {
  * Connects to database, retrieves percentile array and begins listening for connections
  */
 connectToDatabase()
+    .then(() =>
+        getClubs()
+    )
+    .then(() =>
+        getStatsReference()
+    )
     .then(() =>
         getStatsByPosition()
     )
