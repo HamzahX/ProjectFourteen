@@ -871,6 +871,10 @@ button:hover {
                 padding-bottom: 0 !important;
             }
 
+            #player-search-results-table .table-link:hover {
+                text-decoration: underline;
+            }
+
             .rdt_TableHeader {
                 display: none !important;
             }

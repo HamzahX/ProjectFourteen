@@ -35,6 +35,8 @@ import dateFormat from "dateformat";
 const Option = Select.Option;
 const cookies = new Cookies();
 
+const _ = require('lodash');
+
 
 /**
  * Advanced Search page component
@@ -59,32 +61,49 @@ class AdvancedSearch extends Component {
                 color: '#e75453'
             },
             minWidth: '250px',
-            sortable: true
+            sortable: true,
+            ignoreRowClick: true,
+            cell: row => {
+                return (
+                    <a
+                        className="table-link"
+                        href={'/stats/' + row.code}
+                        target="_blank"
+                        rel="noopener noreferrer">
+                        {row.name}
+                    </a>
+                );
+            }
         },
         {
             name: 'Current Age',
             selector: 'age',
-            sortable: true
+            sortable: true,
+            ignoreRowClick: true
         },
         {
             name: 'Nationality',
             selector: 'nationalities',
-            sortable: true
+            sortable: true,
+            ignoreRowClick: true
         },
         {
             name: 'League(s)',
             selector: 'leagues',
-            sortable: true
+            sortable: true,
+            ignoreRowClick: true
         },
         {
             name: 'Club(s)',
             selector: 'clubs',
-            sortable: true
+            sortable: true,
+            ignoreRowClick: true
         },
         {
             name: 'Position(s)',
             selector: 'positions',
-            sortable: true
+            sortable: true,
+            ignoreRowClick: true
         }
     ];
 
@@ -205,7 +224,7 @@ class AdvancedSearch extends Component {
                 percentileRanks: {}
             },
 
-            tableColumns: JSON.parse(JSON.stringify(this._baseColumns)),
+            tableColumns: _.cloneDeep(this._baseColumns),
 
             searchResults: [],
 
@@ -508,7 +527,7 @@ class AdvancedSearch extends Component {
 
         if (displayType === "table"){
 
-            tableColumns = JSON.parse(JSON.stringify(this._baseColumns));
+            tableColumns = _.cloneDeep(this._baseColumns);
 
             for (let stat in parameters.aggregateStats){
 
@@ -518,6 +537,7 @@ class AdvancedSearch extends Component {
                     name: `${statData.label}`,
                     selector: `aggregate_${stat}`,
                     sortable: true,
+                    ignoreRowClick: true,
                     format: row => parseFloat(row[`aggregate_${stat}`])
                 })
             }
@@ -530,6 +550,7 @@ class AdvancedSearch extends Component {
                     name: `${statData.label} ${statData.suffix}`,
                     selector: `raw_${stat}`,
                     sortable: true,
+                    ignoreRowClick: true,
                     format: row => parseFloat(row[`raw_${stat}`])
                 })
             }
@@ -543,6 +564,7 @@ class AdvancedSearch extends Component {
                         name: `${statData.label} ${statData.suffix} (Percentile Rank)`,
                         selector: `percentile_${stat}`,
                         sortable: true,
+                        ignoreRowClick: true,
                         sortFunction: (rowA, rowB) => { return parseFloat(rowA[`percentile_${stat}`]) - parseFloat(rowB[`percentile_${stat}`]) },
                         format: row => this.ordinalSuffix(row[`percentile_${stat}`]) + " percentile"
                     })
@@ -708,9 +730,8 @@ class AdvancedSearch extends Component {
                             theme={"basic"}
                             customStyles={this._customStyles}
                             striped={false}
-                            highlightOnHover={true}
-                            pointerOnHover={true}
-                            onRowClicked={(row) => (this.props.history.push(`/stats/${row.code}`))}
+                            //highlightOnHover={true}
+                            //pointerOnHover={true}
                             pagination={true}
                             paginationPerPage={30}
                             fixedHeader={true} //causes mis-aligned header bug by adding permanent scrollbar
@@ -1133,6 +1154,21 @@ class AdvancedSearch extends Component {
     }
 
 
+    tooltipFormatter = (value, min, max) => {
+
+        if (value === min)
+            return "min";
+
+        else if (value === max)
+            return "max";
+
+        else
+            return value;
+
+    };
+
+
+
     /**
      * render function
      * @return {*} - JSX code for the search page
@@ -1201,6 +1237,7 @@ class AdvancedSearch extends Component {
                         max={statData.ranges_agg[season].max + 0.0001}
                         step={statData.step_agg}
                         onChange={(values) => this.handleRangeSliderChange(`aggregateStats.${stat}`, values)}
+                        tipFormatter={value => {return this.tooltipFormatter(value, statData.ranges_agg[season].min, statData.ranges_agg[season].max)}}
                     />
                 );
 
@@ -1225,6 +1262,7 @@ class AdvancedSearch extends Component {
                         max={statData.ranges[season].max + 0.0001}
                         step={statData.step}
                         onChange={(values) => this.handleRangeSliderChange(`averageStats.${stat}`, values)}
+                        tipFormatter={value => {return this.tooltipFormatter(value, statData.ranges[season].min, statData.ranges[season].max)}}
                     />
                 );
 
@@ -1298,14 +1336,14 @@ class AdvancedSearch extends Component {
                                 </Select>
                                 <label
                                     className={`${parameters.includeEuropeanCompetitions ? "selected-label" : null} selectable-label`}
-                                    key={'includeEuropeanCometitionsCheckbox'}
+                                    key={'includeEuropeanCompetitionsCheckbox'}
                                 >
                                     <input className=""
                                            type="checkbox"
                                            value={"Include European Competitions"}
                                            onChange={this.handleIncludeEuropeanCompetitionsClick}
                                            checked={parameters.includeEuropeanCompetitions}
-                                    /> <b>Include European Competition Stats?</b>
+                                    /> <b>Include CL/EL Stats?</b>
                                 </label>
                                 <Collapsible
                                     open={!this.isMobile}
@@ -1520,7 +1558,7 @@ class AdvancedSearch extends Component {
                                 searchResults.length > 0 ?
                                 <p style={{marginLeft: '0px', lineHeight: '1.3'}}>
                                     Season: {parameters.season.replace("-", "/")} | Top 5 League Players
-                                     ({parameters.includeEuropeanCompetitions ? 'League + Champions League & Europa League Stats' : 'League Stats Only'})
+                                     ({parameters.includeEuropeanCompetitions ? 'League + CL/EL Stats' : 'League Stats Only'})
                                     <br/>
                                     Data Sources: FBref.com & StatsBomb | Last Updated: {dateFormat(searchResults[0].lastUpdated, "dd/mm/yyyy, h:MM TT", true)} UTC
                                 </p> :
