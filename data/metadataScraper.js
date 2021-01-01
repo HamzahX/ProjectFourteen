@@ -584,83 +584,78 @@ let processPlayerPosition = (positionString, code) => {
         positions.push("GK");
     }
 
-    //if the player does not exist in any of the lists of players used for the percentile arrays
-    if (positions.length === 0) {
+    let latestKnownPosition = null;
 
-        let latestKnownPosition = null;
+    for (let season in PROCESSED_METADATA[code]["positions"]){
 
-        for (let season in PROCESSED_METADATA[code]["positions"]){
-
-            if (PROCESSED_METADATA[code]["positions"][season][0] !== undefined && PROCESSED_METADATA[code]["positions"][season][0] !== "N/A"){
-                latestKnownPosition = PROCESSED_METADATA[code]["positions"][season][0];
-            }
-
-            if (season === SEASON){
-                break;
-            }
-
+        if (PROCESSED_METADATA[code]["positions"][season][0] !== undefined && PROCESSED_METADATA[code]["positions"][season][0] !== "N/A"){
+            latestKnownPosition = PROCESSED_METADATA[code]["positions"][season][0];
         }
 
-        if (APPS_PER_POSITION[SEASON][code] !== undefined){
-
-            let max = 0;
-
-            //set their position(s) to the position they've made the most starts in for the current season
-            for (let position in APPS_PER_POSITION[SEASON][code]){
-
-                //minimum of 3 to register
-                if (APPS_PER_POSITION[SEASON][code][position] < 3 && latestKnownPosition !== null){
-                    continue;
-                }
-
-                if (Math.abs(APPS_PER_POSITION[SEASON][code][position] - max) <= 2){
-                    positions.push(position);
-                }
-                else if (APPS_PER_POSITION[SEASON][code][position] > max){
-                    positions = [position];
-                }
-
-                if (APPS_PER_POSITION[SEASON][code][position] > max){
-                    max = APPS_PER_POSITION[SEASON][code][position];
-                }
-
-            }
-
-        }
-
-        if (positions.length === 0){
-
-            if (latestKnownPosition === null){
-
-                if (positionString.startsWith("Forward") || positionString.startsWith("FW"))
-                    positions.push("FW");
-
-                else if (positionString.startsWith("AM") || positionString.startsWith("M(L") || positionString.startsWith("M(R") || (positionString.startsWith("M(C") && positionString.includes("FW")))
-                    positions.push("AM");
-
-                else if (positionString.startsWith("Midfielder") || positionString.startsWith("M(C") || positionString.startsWith("DMC"))
-                    positions.push("CM");
-
-                else if (positionString.startsWith("D(R") || positionString.startsWith("D(L"))
-                    positions.push("FB");
-
-                else if (positionString.startsWith("Defender") || positionString.startsWith("D(C"))
-                    positions.push("CB");
-
-                else{
-                    console.log("Unhandled position string: " + positionString);
-                    positions.push("N/A");
-                }
-
-            }
-            else {
-                positions.push(latestKnownPosition)
-            }
+        if (season === SEASON){
+            break;
         }
 
     }
 
-    return positions;
+    if (APPS_PER_POSITION[SEASON][code] !== undefined){
+
+        let max = 0;
+
+        //set their position(s) to the position they've made the most starts in for the current season
+        for (let position in APPS_PER_POSITION[SEASON][code]){
+
+            //minimum of 3 to register
+            if (APPS_PER_POSITION[SEASON][code][position] < 3 && latestKnownPosition !== null){
+                continue;
+            }
+
+            if (Math.abs(APPS_PER_POSITION[SEASON][code][position] - max) <= 2){
+                positions.push(position);
+            }
+            else if (APPS_PER_POSITION[SEASON][code][position] > max){
+                positions = [position];
+            }
+
+            if (APPS_PER_POSITION[SEASON][code][position] > max){
+                max = APPS_PER_POSITION[SEASON][code][position];
+            }
+
+        }
+
+    }
+
+    if (positions.length === 0){
+
+        if (latestKnownPosition === null){
+
+            if (positionString.startsWith("Forward") || positionString.startsWith("FW"))
+                positions.push("FW");
+
+            else if (positionString.startsWith("AM") || positionString.startsWith("M(L") || positionString.startsWith("M(R") || (positionString.startsWith("M(C") && positionString.includes("FW")))
+                positions.push("AM");
+
+            else if (positionString.startsWith("Midfielder") || positionString.startsWith("M(C") || positionString.startsWith("DMC"))
+                positions.push("CM");
+
+            else if (positionString.startsWith("D(R") || positionString.startsWith("D(L"))
+                positions.push("FB");
+
+            else if (positionString.startsWith("Defender") || positionString.startsWith("D(C"))
+                positions.push("CB");
+
+            else{
+                console.log("Unhandled position string: " + positionString);
+                positions.push("N/A");
+            }
+
+        }
+        else {
+            positions.push(latestKnownPosition)
+        }
+    }
+
+    return [...new Set(positions)];
 
 };
 
