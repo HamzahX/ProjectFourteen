@@ -345,7 +345,7 @@ class Slice extends Component {
                 tooltipPositioner = function (labelWidth, labelHeight, point) {
                     let xPos = point.plotX;
                     let yPos = point.plotY;
-                    return {x: xPos, y: yPos - 35};
+                    return {x: xPos, y: yPos - 15};
                 }
             }
 
