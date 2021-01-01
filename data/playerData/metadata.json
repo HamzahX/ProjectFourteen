@@ -696,8 +696,8 @@
 		},
 		"20-21": {
 			"Premier League | Liverpool": {
-				"whoscoredApps": 8,
-				"whoscoredMins": 258
+				"whoscoredApps": 9,
+				"whoscoredMins": 331
 			},
 			"Champions League | Liverpool": {
 				"whoscoredApps": 4,
@@ -2070,7 +2070,7 @@
 				"CM"
 			],
 			"20-21": [
-				"CM"
+				"AM"
 			]
 		},
 		"clubs": {
@@ -2109,8 +2109,8 @@
 		},
 		"20-21": {
 			"Premier League | West Ham": {
-				"whoscoredApps": 7,
-				"whoscoredMins": 179
+				"whoscoredApps": 8,
+				"whoscoredMins": 225
 			}
 		}
 	},
@@ -2642,8 +2642,8 @@
 		},
 		"20-21": {
 			"La Liga | Sevilla": {
-				"whoscoredApps": 12,
-				"whoscoredMins": 1015
+				"whoscoredApps": 13,
+				"whoscoredMins": 1105
 			},
 			"Champions League | Sevilla": {
 				"whoscoredApps": 4,
@@ -2809,8 +2809,8 @@
 		},
 		"20-21": {
 			"La Liga | Osasuna": {
-				"whoscoredApps": 2,
-				"whoscoredMins": 180
+				"whoscoredApps": 3,
+				"whoscoredMins": 188
 			}
 		}
 	},
@@ -2876,8 +2876,8 @@
 		},
 		"20-21": {
 			"La Liga | Real Madrid": {
-				"whoscoredApps": 12,
-				"whoscoredMins": 1036
+				"whoscoredApps": 13,
+				"whoscoredMins": 1126
 			},
 			"Champions League | Real Madrid": {
 				"whoscoredApps": 3,
@@ -3245,8 +3245,8 @@
 		},
 		"20-21": {
 			"La Liga | SD Huesca": {
-				"whoscoredApps": 6,
-				"whoscoredMins": 490
+				"whoscoredApps": 7,
+				"whoscoredMins": 570
 			}
 		}
 	},
@@ -3660,8 +3660,8 @@
 		},
 		"20-21": {
 			"La Liga | Deportivo Alaves": {
-				"whoscoredApps": 9,
-				"whoscoredMins": 609
+				"whoscoredApps": 10,
+				"whoscoredMins": 623
 			}
 		}
 	},
@@ -4272,8 +4272,8 @@
 		},
 		"20-21": {
 			"La Liga | Athletic Bilbao": {
-				"whoscoredApps": 14,
-				"whoscoredMins": 727
+				"whoscoredApps": 15,
+				"whoscoredMins": 744
 			}
 		}
 	},
@@ -4784,8 +4784,8 @@
 		},
 		"20-21": {
 			"Premier League | Crystal Palace": {
-				"whoscoredApps": 7,
-				"whoscoredMins": 630
+				"whoscoredApps": 8,
+				"whoscoredMins": 720
 			}
 		}
 	},
@@ -5217,8 +5217,8 @@
 		},
 		"20-21": {
 			"La Liga | Villarreal": {
-				"whoscoredApps": 15,
-				"whoscoredMins": 1332
+				"whoscoredApps": 16,
+				"whoscoredMins": 1422
 			},
 			"Europa League | Villarreal": {
 				"whoscoredApps": 2,
@@ -6116,7 +6116,6 @@
 				"AM"
 			],
 			"20-21": [
-				"FW",
 				"AM"
 			]
 		},
@@ -6157,8 +6156,8 @@
 		},
 		"20-21": {
 			"Premier League | Southampton": {
-				"whoscoredApps": 9,
-				"whoscoredMins": 750
+				"whoscoredApps": 11,
+				"whoscoredMins": 930
 			},
 			"Premier League | Everton": {
 				"whoscoredApps": 1,
@@ -6220,8 +6219,8 @@
 		},
 		"20-21": {
 			"Premier League | Southampton": {
-				"whoscoredApps": 8,
-				"whoscoredMins": 61
+				"whoscoredApps": 10,
+				"whoscoredMins": 183
 			}
 		}
 	},
@@ -6388,7 +6387,7 @@
 		"mapped": false,
 		"name": "Domenico Criscito",
 		"simplifiedName": "Domenico Criscito",
-		"age": 33,
+		"age": 34,
 		"nationality": "Italy",
 		"countryCode": "it",
 		"positions": {
@@ -6733,8 +6732,7 @@
 				"FB"
 			],
 			"20-21": [
-				"FB",
-				"CB"
+				"FB"
 			]
 		},
 		"clubs": {
@@ -6777,8 +6775,8 @@
 		},
 		"20-21": {
 			"La Liga | Elche": {
-				"whoscoredApps": 10,
-				"whoscoredMins": 900
+				"whoscoredApps": 11,
+				"whoscoredMins": 990
 			}
 		}
 	},
@@ -7791,8 +7789,8 @@
 		},
 		"20-21": {
 			"Premier League | Manchester City": {
-				"whoscoredApps": 3,
-				"whoscoredMins": 125
+				"whoscoredApps": 4,
+				"whoscoredMins": 138
 			},
 			"Champions League | Manchester City": {
 				"whoscoredApps": 3,
@@ -7862,8 +7860,8 @@
 		},
 		"20-21": {
 			"La Liga | Real Madrid": {
-				"whoscoredApps": 13,
-				"whoscoredMins": 1153
+				"whoscoredApps": 14,
+				"whoscoredMins": 1243
 			},
 			"Champions League | Real Madrid": {
 				"whoscoredApps": 5,
@@ -8123,8 +8121,8 @@
 		},
 		"20-21": {
 			"Premier League | West Bromwich Albion": {
-				"whoscoredApps": 8,
-				"whoscoredMins": 631
+				"whoscoredApps": 10,
+				"whoscoredMins": 677
 			}
 		}
 	},
@@ -8302,8 +8300,8 @@
 		},
 		"20-21": {
 			"Premier League | Wolverhampton Wanderers": {
-				"whoscoredApps": 12,
-				"whoscoredMins": 809
+				"whoscoredApps": 14,
+				"whoscoredMins": 982
 			}
 		}
 	},
@@ -8816,8 +8814,8 @@
 		},
 		"20-21": {
 			"La Liga | Granada": {
-				"whoscoredApps": 11,
-				"whoscoredMins": 635
+				"whoscoredApps": 12,
+				"whoscoredMins": 703
 			},
 			"Europa League | Granada": {
 				"whoscoredApps": 3,
@@ -8897,8 +8895,8 @@
 		},
 		"20-21": {
 			"Premier League | Sheffield United": {
-				"whoscoredApps": 12,
-				"whoscoredMins": 683
+				"whoscoredApps": 14,
+				"whoscoredMins": 836
 			}
 		}
 	},
@@ -9385,8 +9383,8 @@
 		},
 		"20-21": {
 			"Premier League | Manchester City": {
-				"whoscoredApps": 6,
-				"whoscoredMins": 290
+				"whoscoredApps": 7,
+				"whoscoredMins": 323
 			},
 			"Champions League | Manchester City": {
 				"whoscoredApps": 4,
@@ -9568,8 +9566,8 @@
 		},
 		"20-21": {
 			"La Liga | Valencia": {
-				"whoscoredApps": 9,
-				"whoscoredMins": 363
+				"whoscoredApps": 10,
+				"whoscoredMins": 429
 			}
 		}
 	},
@@ -9627,8 +9625,8 @@
 		},
 		"20-21": {
 			"Premier League | Leicester": {
-				"whoscoredApps": 14,
-				"whoscoredMins": 1260
+				"whoscoredApps": 16,
+				"whoscoredMins": 1440
 			},
 			"Europa League | Leicester": {
 				"whoscoredApps": 4,
@@ -10153,8 +10151,8 @@
 		},
 		"20-21": {
 			"La Liga | Real Madrid": {
-				"whoscoredApps": 5,
-				"whoscoredMins": 429
+				"whoscoredApps": 6,
+				"whoscoredMins": 519
 			},
 			"Champions League | Real Madrid": {
 				"whoscoredApps": 1,
@@ -10217,8 +10215,8 @@
 		},
 		"20-21": {
 			"Premier League | Crystal Palace": {
-				"whoscoredApps": 12,
-				"whoscoredMins": 1020
+				"whoscoredApps": 14,
+				"whoscoredMins": 1111
 			}
 		}
 	},
@@ -10460,8 +10458,8 @@
 		},
 		"20-21": {
 			"La Liga | Real Madrid": {
-				"whoscoredApps": 14,
-				"whoscoredMins": 1040
+				"whoscoredApps": 15,
+				"whoscoredMins": 1130
 			},
 			"Champions League | Real Madrid": {
 				"whoscoredApps": 6,
@@ -10523,8 +10521,8 @@
 		},
 		"20-21": {
 			"Premier League | West Ham": {
-				"whoscoredApps": 14,
-				"whoscoredMins": 1260
+				"whoscoredApps": 16,
+				"whoscoredMins": 1440
 			}
 		}
 	},
@@ -10586,8 +10584,8 @@
 		},
 		"20-21": {
 			"La Liga | Real Betis": {
-				"whoscoredApps": 6,
-				"whoscoredMins": 300
+				"whoscoredApps": 7,
+				"whoscoredMins": 365
 			}
 		}
 	},
@@ -11144,8 +11142,8 @@
 		},
 		"20-21": {
 			"Premier League | Brighton": {
-				"whoscoredApps": 12,
-				"whoscoredMins": 703
+				"whoscoredApps": 13,
+				"whoscoredMins": 749
 			}
 		}
 	},
@@ -11329,8 +11327,8 @@
 		},
 		"20-21": {
 			"Premier League | Leicester": {
-				"whoscoredApps": 10,
-				"whoscoredMins": 890
+				"whoscoredApps": 12,
+				"whoscoredMins": 1070
 			},
 			"Europa League | Leicester": {
 				"whoscoredApps": 3,
@@ -11659,8 +11657,8 @@
 		},
 		"20-21": {
 			"La Liga | Atletico Madrid": {
-				"whoscoredApps": 10,
-				"whoscoredMins": 673
+				"whoscoredApps": 11,
+				"whoscoredMins": 753
 			},
 			"Champions League | Atletico Madrid": {
 				"whoscoredApps": 4,
@@ -11784,8 +11782,8 @@
 		},
 		"20-21": {
 			"La Liga | Getafe": {
-				"whoscoredApps": 13,
-				"whoscoredMins": 650
+				"whoscoredApps": 14,
+				"whoscoredMins": 740
 			}
 		}
 	},
@@ -11996,8 +11994,8 @@
 		},
 		"20-21": {
 			"La Liga | SD Huesca": {
-				"whoscoredApps": 10,
-				"whoscoredMins": 791
+				"whoscoredApps": 11,
+				"whoscoredMins": 858
 			}
 		}
 	},
@@ -12308,8 +12306,8 @@
 		},
 		"20-21": {
 			"Premier League | West Bromwich Albion": {
-				"whoscoredApps": 1,
-				"whoscoredMins": 3
+				"whoscoredApps": 2,
+				"whoscoredMins": 93
 			}
 		}
 	},
@@ -12408,8 +12406,8 @@
 		},
 		"20-21": {
 			"La Liga | Sevilla": {
-				"whoscoredApps": 13,
-				"whoscoredMins": 860
+				"whoscoredApps": 14,
+				"whoscoredMins": 936
 			},
 			"Champions League | Sevilla": {
 				"whoscoredApps": 6,
@@ -12548,8 +12546,8 @@
 		},
 		"20-21": {
 			"Premier League | Southampton": {
-				"whoscoredApps": 13,
-				"whoscoredMins": 1159
+				"whoscoredApps": 15,
+				"whoscoredMins": 1339
 			}
 		}
 	},
@@ -12874,8 +12872,8 @@
 		},
 		"20-21": {
 			"La Liga | Real Sociedad": {
-				"whoscoredApps": 9,
-				"whoscoredMins": 639
+				"whoscoredApps": 10,
+				"whoscoredMins": 729
 			},
 			"Europa League | Real Sociedad": {
 				"whoscoredApps": 6,
@@ -12941,8 +12939,8 @@
 		},
 		"20-21": {
 			"Premier League | Wolverhampton Wanderers": {
-				"whoscoredApps": 14,
-				"whoscoredMins": 1260
+				"whoscoredApps": 16,
+				"whoscoredMins": 1440
 			}
 		}
 	},
@@ -13544,8 +13542,8 @@
 		},
 		"20-21": {
 			"Premier League | Newcastle United": {
-				"whoscoredApps": 7,
-				"whoscoredMins": 180
+				"whoscoredApps": 8,
+				"whoscoredMins": 199
 			}
 		}
 	},
@@ -13632,8 +13630,8 @@
 		},
 		"20-21": {
 			"Premier League | West Ham": {
-				"whoscoredApps": 14,
-				"whoscoredMins": 1233
+				"whoscoredApps": 16,
+				"whoscoredMins": 1413
 			}
 		}
 	},
@@ -13960,8 +13958,8 @@
 		},
 		"20-21": {
 			"La Liga | Cadiz": {
-				"whoscoredApps": 12,
-				"whoscoredMins": 803
+				"whoscoredApps": 13,
+				"whoscoredMins": 887
 			}
 		}
 	},
@@ -14158,8 +14156,8 @@
 		},
 		"20-21": {
 			"Premier League | Burnley": {
-				"whoscoredApps": 6,
-				"whoscoredMins": 191
+				"whoscoredApps": 8,
+				"whoscoredMins": 355
 			}
 		}
 	},
@@ -14217,8 +14215,8 @@
 		},
 		"20-21": {
 			"Premier League | Burnley": {
-				"whoscoredApps": 3,
-				"whoscoredMins": 204
+				"whoscoredApps": 5,
+				"whoscoredMins": 231
 			}
 		}
 	},
@@ -14351,8 +14349,8 @@
 		},
 		"20-21": {
 			"Premier League | Manchester United": {
-				"whoscoredApps": 7,
-				"whoscoredMins": 194
+				"whoscoredApps": 9,
+				"whoscoredMins": 300
 			},
 			"Champions League | Manchester United": {
 				"whoscoredApps": 4,
@@ -14481,8 +14479,8 @@
 		},
 		"20-21": {
 			"Premier League | Chelsea": {
-				"whoscoredApps": 8,
-				"whoscoredMins": 287
+				"whoscoredApps": 9,
+				"whoscoredMins": 359
 			},
 			"Champions League | Chelsea": {
 				"whoscoredApps": 4,
@@ -15430,8 +15428,8 @@
 		},
 		"20-21": {
 			"Premier League | Tottenham": {
-				"whoscoredApps": 14,
-				"whoscoredMins": 1260
+				"whoscoredApps": 15,
+				"whoscoredMins": 1350
 			},
 			"Europa League | Tottenham": {
 				"whoscoredApps": 1,
@@ -15656,8 +15654,8 @@
 		},
 		"20-21": {
 			"La Liga | Real Valladolid": {
-				"whoscoredApps": 13,
-				"whoscoredMins": 943
+				"whoscoredApps": 14,
+				"whoscoredMins": 1012
 			}
 		}
 	},
@@ -15971,8 +15969,8 @@
 		},
 		"20-21": {
 			"Premier League | Chelsea": {
-				"whoscoredApps": 6,
-				"whoscoredMins": 410
+				"whoscoredApps": 7,
+				"whoscoredMins": 500
 			},
 			"Champions League | Chelsea": {
 				"whoscoredApps": 4,
@@ -16019,8 +16017,8 @@
 		},
 		"20-21": {
 			"La Liga | Osasuna": {
-				"whoscoredApps": 14,
-				"whoscoredMins": 1066
+				"whoscoredApps": 15,
+				"whoscoredMins": 1156
 			}
 		}
 	},
@@ -16288,8 +16286,8 @@
 		},
 		"20-21": {
 			"La Liga | SD Huesca": {
-				"whoscoredApps": 11,
-				"whoscoredMins": 656
+				"whoscoredApps": 12,
+				"whoscoredMins": 746
 			}
 		}
 	},
@@ -16582,7 +16580,7 @@
 		"mapped": false,
 		"name": "Adil Rami",
 		"simplifiedName": "Adil Rami",
-		"age": 34,
+		"age": 35,
 		"nationality": "France",
 		"countryCode": "fr",
 		"positions": {
@@ -16932,8 +16930,8 @@
 		},
 		"20-21": {
 			"La Liga | Valencia": {
-				"whoscoredApps": 15,
-				"whoscoredMins": 1314
+				"whoscoredApps": 16,
+				"whoscoredMins": 1404
 			}
 		}
 	},
@@ -17050,8 +17048,8 @@
 		},
 		"20-21": {
 			"La Liga | Eibar": {
-				"whoscoredApps": 11,
-				"whoscoredMins": 785
+				"whoscoredApps": 12,
+				"whoscoredMins": 875
 			}
 		}
 	},
@@ -17175,8 +17173,8 @@
 		},
 		"20-21": {
 			"Premier League | West Bromwich Albion": {
-				"whoscoredApps": 5,
-				"whoscoredMins": 361
+				"whoscoredApps": 6,
+				"whoscoredMins": 451
 			}
 		}
 	},
@@ -17433,7 +17431,7 @@
 		"mapped": false,
 		"name": "Seydou Doumbia",
 		"simplifiedName": "Seydou Doumbia",
-		"age": 32,
+		"age": 33,
 		"nationality": "Cote D'Ivoire",
 		"countryCode": "ci",
 		"positions": {
@@ -17648,8 +17646,8 @@
 		},
 		"20-21": {
 			"La Liga | Villarreal": {
-				"whoscoredApps": 13,
-				"whoscoredMins": 1153
+				"whoscoredApps": 14,
+				"whoscoredMins": 1243
 			},
 			"Europa League | Villarreal": {
 				"whoscoredApps": 3,
@@ -17858,8 +17856,8 @@
 		},
 		"20-21": {
 			"Premier League | Chelsea": {
-				"whoscoredApps": 10,
-				"whoscoredMins": 883
+				"whoscoredApps": 11,
+				"whoscoredMins": 973
 			},
 			"Champions League | Chelsea": {
 				"whoscoredApps": 3,
@@ -18547,8 +18545,8 @@
 		},
 		"20-21": {
 			"Premier League | Leeds": {
-				"whoscoredApps": 5,
-				"whoscoredMins": 164
+				"whoscoredApps": 7,
+				"whoscoredMins": 215
 			}
 		}
 	},
@@ -18788,8 +18786,8 @@
 		},
 		"20-21": {
 			"Premier League | Tottenham": {
-				"whoscoredApps": 12,
-				"whoscoredMins": 1023
+				"whoscoredApps": 13,
+				"whoscoredMins": 1043
 			},
 			"Europa League | Tottenham": {
 				"whoscoredApps": 4,
@@ -19440,8 +19438,8 @@
 		},
 		"20-21": {
 			"La Liga | Barcelona": {
-				"whoscoredApps": 9,
-				"whoscoredMins": 283
+				"whoscoredApps": 10,
+				"whoscoredMins": 349
 			},
 			"Champions League | Barcelona": {
 				"whoscoredApps": 6,
@@ -19488,8 +19486,8 @@
 		},
 		"20-21": {
 			"Premier League | Sheffield United": {
-				"whoscoredApps": 9,
-				"whoscoredMins": 663
+				"whoscoredApps": 10,
+				"whoscoredMins": 697
 			}
 		}
 	},
@@ -19838,8 +19836,8 @@
 		},
 		"20-21": {
 			"La Liga | Granada": {
-				"whoscoredApps": 12,
-				"whoscoredMins": 514
+				"whoscoredApps": 13,
+				"whoscoredMins": 536
 			},
 			"Europa League | Granada": {
 				"whoscoredApps": 6,
@@ -20423,8 +20421,8 @@
 		},
 		"20-21": {
 			"La Liga | Real Madrid": {
-				"whoscoredApps": 13,
-				"whoscoredMins": 948
+				"whoscoredApps": 14,
+				"whoscoredMins": 1026
 			},
 			"Champions League | Real Madrid": {
 				"whoscoredApps": 6,
@@ -20545,8 +20543,8 @@
 		},
 		"20-21": {
 			"Premier League | Everton": {
-				"whoscoredApps": 7,
-				"whoscoredMins": 456
+				"whoscoredApps": 8,
+				"whoscoredMins": 480
 			}
 		}
 	},
@@ -20593,8 +20591,8 @@
 		},
 		"20-21": {
 			"La Liga | Sevilla": {
-				"whoscoredApps": 11,
-				"whoscoredMins": 987
+				"whoscoredApps": 12,
+				"whoscoredMins": 1077
 			},
 			"Champions League | Sevilla": {
 				"whoscoredApps": 5,
@@ -20792,8 +20790,8 @@
 		},
 		"20-21": {
 			"La Liga | Villarreal": {
-				"whoscoredApps": 15,
-				"whoscoredMins": 1350
+				"whoscoredApps": 16,
+				"whoscoredMins": 1440
 			}
 		}
 	},
@@ -21590,8 +21588,8 @@
 		},
 		"20-21": {
 			"Premier League | Burnley": {
-				"whoscoredApps": 10,
-				"whoscoredMins": 623
+				"whoscoredApps": 12,
+				"whoscoredMins": 792
 			}
 		}
 	},
@@ -21720,8 +21718,8 @@
 		},
 		"20-21": {
 			"La Liga | Real Madrid": {
-				"whoscoredApps": 3,
-				"whoscoredMins": 153
+				"whoscoredApps": 4,
+				"whoscoredMins": 166
 			},
 			"Champions League | Real Madrid": {
 				"whoscoredApps": 3,
@@ -21913,8 +21911,8 @@
 		},
 		"20-21": {
 			"Premier League | Liverpool": {
-				"whoscoredApps": 14,
-				"whoscoredMins": 1150
+				"whoscoredApps": 16,
+				"whoscoredMins": 1262
 			},
 			"Champions League | Liverpool": {
 				"whoscoredApps": 5,
@@ -22228,8 +22226,8 @@
 		},
 		"20-21": {
 			"Premier League | Crystal Palace": {
-				"whoscoredApps": 14,
-				"whoscoredMins": 1260
+				"whoscoredApps": 16,
+				"whoscoredMins": 1440
 			}
 		}
 	},
@@ -22433,8 +22431,8 @@
 		},
 		"20-21": {
 			"Premier League | Burnley": {
-				"whoscoredApps": 11,
-				"whoscoredMins": 540
+				"whoscoredApps": 12,
+				"whoscoredMins": 556
 			}
 		}
 	},
@@ -22492,8 +22490,8 @@
 		},
 		"20-21": {
 			"Premier League | Crystal Palace": {
-				"whoscoredApps": 1,
-				"whoscoredMins": 27
+				"whoscoredApps": 2,
+				"whoscoredMins": 117
 			}
 		}
 	},
@@ -23422,8 +23420,8 @@
 		},
 		"20-21": {
 			"La Liga | Cadiz": {
-				"whoscoredApps": 11,
-				"whoscoredMins": 946
+				"whoscoredApps": 12,
+				"whoscoredMins": 1036
 			}
 		}
 	},
@@ -23606,8 +23604,8 @@
 		},
 		"20-21": {
 			"Premier League | Aston Villa": {
-				"whoscoredApps": 4,
-				"whoscoredMins": 125
+				"whoscoredApps": 5,
+				"whoscoredMins": 129
 			}
 		}
 	},
@@ -24192,8 +24190,8 @@
 		},
 		"20-21": {
 			"Premier League | Sheffield United": {
-				"whoscoredApps": 14,
-				"whoscoredMins": 1162
+				"whoscoredApps": 16,
+				"whoscoredMins": 1342
 			}
 		}
 	},
@@ -25525,8 +25523,8 @@
 		},
 		"20-21": {
 			"Premier League | Manchester United": {
-				"whoscoredApps": 7,
-				"whoscoredMins": 435
+				"whoscoredApps": 8,
+				"whoscoredMins": 525
 			},
 			"Champions League | Manchester United": {
 				"whoscoredApps": 4,
@@ -25751,8 +25749,8 @@
 		},
 		"20-21": {
 			"Premier League | Southampton": {
-				"whoscoredApps": 14,
-				"whoscoredMins": 1260
+				"whoscoredApps": 16,
+				"whoscoredMins": 1440
 			}
 		}
 	},
@@ -25892,8 +25890,8 @@
 		},
 		"20-21": {
 			"La Liga | Eibar": {
-				"whoscoredApps": 14,
-				"whoscoredMins": 1030
+				"whoscoredApps": 15,
+				"whoscoredMins": 1120
 			}
 		}
 	},
@@ -26029,8 +26027,8 @@
 		},
 		"20-21": {
 			"Premier League | Brighton": {
-				"whoscoredApps": 8,
-				"whoscoredMins": 539
+				"whoscoredApps": 9,
+				"whoscoredMins": 622
 			}
 		}
 	},
@@ -26246,6 +26244,7 @@
 		"positions": {
 			"20-21": [
 				"AM",
+				"CM",
 				"FB"
 			]
 		},
@@ -26261,8 +26260,8 @@
 		},
 		"20-21": {
 			"Premier League | West Bromwich Albion": {
-				"whoscoredApps": 11,
-				"whoscoredMins": 430
+				"whoscoredApps": 13,
+				"whoscoredMins": 566
 			}
 		}
 	},
@@ -27264,8 +27263,8 @@
 		},
 		"20-21": {
 			"Premier League | West Ham": {
-				"whoscoredApps": 6,
-				"whoscoredMins": 107
+				"whoscoredApps": 8,
+				"whoscoredMins": 224
 			}
 		}
 	},
@@ -27581,8 +27580,8 @@
 		},
 		"20-21": {
 			"Premier League | Leicester": {
-				"whoscoredApps": 9,
-				"whoscoredMins": 530
+				"whoscoredApps": 10,
+				"whoscoredMins": 611
 			},
 			"Europa League | Leicester": {
 				"whoscoredApps": 3,
@@ -27764,8 +27763,8 @@
 		},
 		"20-21": {
 			"Premier League | Sheffield United": {
-				"whoscoredApps": 11,
-				"whoscoredMins": 990
+				"whoscoredApps": 13,
+				"whoscoredMins": 1170
 			}
 		}
 	},
@@ -27984,7 +27983,7 @@
 		"mapped": false,
 		"name": "Jack Wilshere",
 		"simplifiedName": "Jack Wilshere",
-		"age": 28,
+		"age": 29,
 		"nationality": "England",
 		"countryCode": "_england",
 		"positions": {
@@ -28291,8 +28290,8 @@
 		},
 		"20-21": {
 			"Premier League | Crystal Palace": {
-				"whoscoredApps": 6,
-				"whoscoredMins": 540
+				"whoscoredApps": 7,
+				"whoscoredMins": 630
 			}
 		}
 	},
@@ -29106,8 +29105,8 @@
 		},
 		"20-21": {
 			"Premier League | Arsenal": {
-				"whoscoredApps": 13,
-				"whoscoredMins": 1167
+				"whoscoredApps": 14,
+				"whoscoredMins": 1257
 			},
 			"Europa League | Arsenal": {
 				"whoscoredApps": 1,
@@ -29250,8 +29249,8 @@
 		},
 		"20-21": {
 			"La Liga | Real Betis": {
-				"whoscoredApps": 9,
-				"whoscoredMins": 774
+				"whoscoredApps": 10,
+				"whoscoredMins": 805
 			}
 		}
 	},
@@ -29728,8 +29727,8 @@
 		},
 		"20-21": {
 			"La Liga | Levante": {
-				"whoscoredApps": 5,
-				"whoscoredMins": 236
+				"whoscoredApps": 6,
+				"whoscoredMins": 254
 			}
 		}
 	},
@@ -29965,8 +29964,8 @@
 		},
 		"20-21": {
 			"La Liga | Barcelona": {
-				"whoscoredApps": 13,
-				"whoscoredMins": 874
+				"whoscoredApps": 14,
+				"whoscoredMins": 882
 			},
 			"Champions League | Barcelona": {
 				"whoscoredApps": 4,
@@ -30238,8 +30237,8 @@
 		},
 		"20-21": {
 			"Premier League | Newcastle United": {
-				"whoscoredApps": 12,
-				"whoscoredMins": 1036
+				"whoscoredApps": 14,
+				"whoscoredMins": 1216
 			}
 		}
 	},
@@ -30465,7 +30464,7 @@
 				"AM"
 			],
 			"20-21": [
-				"AM"
+				"FW"
 			]
 		},
 		"clubs": {
@@ -30780,8 +30779,8 @@
 		},
 		"20-21": {
 			"La Liga | SD Huesca": {
-				"whoscoredApps": 15,
-				"whoscoredMins": 1350
+				"whoscoredApps": 16,
+				"whoscoredMins": 1440
 			}
 		}
 	},
@@ -30839,8 +30838,8 @@
 		},
 		"20-21": {
 			"La Liga | Athletic Bilbao": {
-				"whoscoredApps": 13,
-				"whoscoredMins": 959
+				"whoscoredApps": 14,
+				"whoscoredMins": 1049
 			}
 		}
 	},
@@ -32028,8 +32027,8 @@
 		},
 		"20-21": {
 			"Premier League | Crystal Palace": {
-				"whoscoredApps": 14,
-				"whoscoredMins": 1233
+				"whoscoredApps": 16,
+				"whoscoredMins": 1413
 			}
 		}
 	},
@@ -32695,8 +32694,8 @@
 		},
 		"20-21": {
 			"La Liga | Deportivo Alaves": {
-				"whoscoredApps": 9,
-				"whoscoredMins": 153
+				"whoscoredApps": 10,
+				"whoscoredMins": 243
 			}
 		}
 	},
@@ -32858,8 +32857,8 @@
 		},
 		"20-21": {
 			"Premier League | Crystal Palace": {
-				"whoscoredApps": 11,
-				"whoscoredMins": 709
+				"whoscoredApps": 12,
+				"whoscoredMins": 715
 			}
 		}
 	},
@@ -32867,7 +32866,7 @@
 		"mapped": false,
 		"name": "Harry Arter",
 		"simplifiedName": "Harry Arter",
-		"age": 30,
+		"age": 31,
 		"nationality": "Ireland",
 		"countryCode": "ie",
 		"positions": {
@@ -33140,8 +33139,8 @@
 		},
 		"20-21": {
 			"Premier League | West Ham": {
-				"whoscoredApps": 14,
-				"whoscoredMins": 1260
+				"whoscoredApps": 16,
+				"whoscoredMins": 1440
 			}
 		}
 	},
@@ -33228,8 +33227,8 @@
 		},
 		"20-21": {
 			"Premier League | Crystal Palace": {
-				"whoscoredApps": 9,
-				"whoscoredMins": 308
+				"whoscoredApps": 11,
+				"whoscoredMins": 488
 			}
 		}
 	},
@@ -33364,8 +33363,8 @@
 		},
 		"20-21": {
 			"La Liga | Sevilla": {
-				"whoscoredApps": 13,
-				"whoscoredMins": 597
+				"whoscoredApps": 14,
+				"whoscoredMins": 599
 			},
 			"Champions League | Sevilla": {
 				"whoscoredApps": 4,
@@ -33463,7 +33462,7 @@
 				"FB"
 			],
 			"20-21": [
-				"AM"
+				"FB"
 			]
 		},
 		"clubs": {
@@ -33502,8 +33501,8 @@
 		},
 		"20-21": {
 			"Premier League | Newcastle United": {
-				"whoscoredApps": 4,
-				"whoscoredMins": 272
+				"whoscoredApps": 6,
+				"whoscoredMins": 424
 			}
 		}
 	},
@@ -33598,8 +33597,8 @@
 		},
 		"20-21": {
 			"Premier League | Liverpool": {
-				"whoscoredApps": 11,
-				"whoscoredMins": 868
+				"whoscoredApps": 13,
+				"whoscoredMins": 1048
 			},
 			"Champions League | Liverpool": {
 				"whoscoredApps": 5,
@@ -33655,7 +33654,7 @@
 		"mapped": false,
 		"name": "Keko",
 		"simplifiedName": "Keko",
-		"age": 28,
+		"age": 29,
 		"nationality": "Spain",
 		"countryCode": "es",
 		"positions": {
@@ -33794,8 +33793,8 @@
 		},
 		"20-21": {
 			"La Liga | Valencia": {
-				"whoscoredApps": 4,
-				"whoscoredMins": 224
+				"whoscoredApps": 5,
+				"whoscoredMins": 314
 			}
 		}
 	},
@@ -34037,6 +34036,7 @@
 				"CM"
 			],
 			"20-21": [
+				"AM",
 				"CM"
 			]
 		},
@@ -34076,8 +34076,8 @@
 		},
 		"20-21": {
 			"Premier League | Everton": {
-				"whoscoredApps": 13,
-				"whoscoredMins": 670
+				"whoscoredApps": 14,
+				"whoscoredMins": 760
 			}
 		}
 	},
@@ -34125,8 +34125,8 @@
 		},
 		"20-21": {
 			"Premier League | Crystal Palace": {
-				"whoscoredApps": 8,
-				"whoscoredMins": 702
+				"whoscoredApps": 9,
+				"whoscoredMins": 792
 			}
 		}
 	},
@@ -34295,8 +34295,8 @@
 		},
 		"20-21": {
 			"Premier League | West Ham": {
-				"whoscoredApps": 7,
-				"whoscoredMins": 531
+				"whoscoredApps": 8,
+				"whoscoredMins": 544
 			}
 		}
 	},
@@ -34324,8 +34324,8 @@
 		},
 		"20-21": {
 			"Premier League | Leeds": {
-				"whoscoredApps": 14,
-				"whoscoredMins": 1193
+				"whoscoredApps": 16,
+				"whoscoredMins": 1317
 			}
 		}
 	},
@@ -34567,7 +34567,7 @@
 		"mapped": false,
 		"name": "Gaëtan Charbonnier",
 		"simplifiedName": "Gaetan Charbonnier",
-		"age": 31,
+		"age": 32,
 		"nationality": "France",
 		"countryCode": "fr",
 		"positions": {
@@ -34665,8 +34665,8 @@
 		},
 		"20-21": {
 			"La Liga | Getafe": {
-				"whoscoredApps": 6,
-				"whoscoredMins": 517
+				"whoscoredApps": 7,
+				"whoscoredMins": 607
 			}
 		}
 	},
@@ -35206,8 +35206,8 @@
 		},
 		"20-21": {
 			"Premier League | Newcastle United": {
-				"whoscoredApps": 5,
-				"whoscoredMins": 450
+				"whoscoredApps": 7,
+				"whoscoredMins": 630
 			}
 		}
 	},
@@ -35745,8 +35745,8 @@
 		},
 		"20-21": {
 			"Premier League | Newcastle United": {
-				"whoscoredApps": 13,
-				"whoscoredMins": 1170
+				"whoscoredApps": 15,
+				"whoscoredMins": 1350
 			}
 		}
 	},
@@ -35833,8 +35833,8 @@
 		},
 		"20-21": {
 			"Premier League | Crystal Palace": {
-				"whoscoredApps": 10,
-				"whoscoredMins": 567
+				"whoscoredApps": 12,
+				"whoscoredMins": 726
 			}
 		}
 	},
@@ -36636,8 +36636,8 @@
 		},
 		"20-21": {
 			"Premier League | Crystal Palace": {
-				"whoscoredApps": 12,
-				"whoscoredMins": 926
+				"whoscoredApps": 14,
+				"whoscoredMins": 1024
 			}
 		}
 	},
@@ -36868,8 +36868,8 @@
 		},
 		"20-21": {
 			"La Liga | Villarreal": {
-				"whoscoredApps": 8,
-				"whoscoredMins": 169
+				"whoscoredApps": 9,
+				"whoscoredMins": 176
 			},
 			"Europa League | Villarreal": {
 				"whoscoredApps": 4,
@@ -37056,8 +37056,8 @@
 		},
 		"20-21": {
 			"Premier League | Brighton": {
-				"whoscoredApps": 12,
-				"whoscoredMins": 617
+				"whoscoredApps": 14,
+				"whoscoredMins": 714
 			}
 		}
 	},
@@ -37464,15 +37464,24 @@
 		"positions": {
 			"19-20": [
 				"CB"
+			],
+			"20-21": [
+				"CB"
 			]
 		},
 		"clubs": {
 			"19-20": [
 				"Watford"
+			],
+			"20-21": [
+				"West Ham"
 			]
 		},
 		"leagues": {
 			"19-20": [
+				"_england"
+			],
+			"20-21": [
 				"_england"
 			]
 		},
@@ -37480,6 +37489,12 @@
 			"Premier League | Watford": {
 				"whoscoredApps": 29,
 				"whoscoredMins": 2361
+			}
+		},
+		"20-21": {
+			"Premier League | West Ham": {
+				"whoscoredApps": 1,
+				"whoscoredMins": 90
 			}
 		}
 	},
@@ -37545,8 +37560,8 @@
 		},
 		"20-21": {
 			"Premier League | Arsenal": {
-				"whoscoredApps": 11,
-				"whoscoredMins": 664
+				"whoscoredApps": 13,
+				"whoscoredMins": 778
 			},
 			"Europa League | Arsenal": {
 				"whoscoredApps": 3,
@@ -37616,8 +37631,8 @@
 		},
 		"20-21": {
 			"Premier League | Manchester City": {
-				"whoscoredApps": 12,
-				"whoscoredMins": 1012
+				"whoscoredApps": 13,
+				"whoscoredMins": 1102
 			},
 			"Champions League | Manchester City": {
 				"whoscoredApps": 2,
@@ -37803,8 +37818,8 @@
 		},
 		"20-21": {
 			"Premier League | Burnley": {
-				"whoscoredApps": 13,
-				"whoscoredMins": 1113
+				"whoscoredApps": 15,
+				"whoscoredMins": 1293
 			}
 		}
 	},
@@ -37964,8 +37979,8 @@
 		},
 		"20-21": {
 			"La Liga | Barcelona": {
-				"whoscoredApps": 11,
-				"whoscoredMins": 555
+				"whoscoredApps": 12,
+				"whoscoredMins": 645
 			},
 			"Champions League | Barcelona": {
 				"whoscoredApps": 4,
@@ -38169,8 +38184,8 @@
 		},
 		"20-21": {
 			"La Liga | Real Madrid": {
-				"whoscoredApps": 15,
-				"whoscoredMins": 1350
+				"whoscoredApps": 16,
+				"whoscoredMins": 1440
 			},
 			"Champions League | Real Madrid": {
 				"whoscoredApps": 6,
@@ -38313,8 +38328,8 @@
 		},
 		"20-21": {
 			"Premier League | Liverpool": {
-				"whoscoredApps": 7,
-				"whoscoredMins": 497
+				"whoscoredApps": 8,
+				"whoscoredMins": 557
 			},
 			"Champions League | Liverpool": {
 				"whoscoredApps": 2,
@@ -38376,8 +38391,8 @@
 		},
 		"20-21": {
 			"La Liga | Deportivo Alaves": {
-				"whoscoredApps": 14,
-				"whoscoredMins": 1158
+				"whoscoredApps": 15,
+				"whoscoredMins": 1248
 			}
 		}
 	},
@@ -38626,8 +38641,8 @@
 		},
 		"20-21": {
 			"Premier League | Liverpool": {
-				"whoscoredApps": 2,
-				"whoscoredMins": 135
+				"whoscoredApps": 3,
+				"whoscoredMins": 152
 			}
 		}
 	},
@@ -38718,8 +38733,8 @@
 		},
 		"20-21": {
 			"Premier League | West Bromwich Albion": {
-				"whoscoredApps": 12,
-				"whoscoredMins": 872
+				"whoscoredApps": 14,
+				"whoscoredMins": 1052
 			}
 		}
 	},
@@ -38979,7 +38994,7 @@
 		"mapped": false,
 		"name": "Shane Duffy",
 		"simplifiedName": "Shane Duffy",
-		"age": 28,
+		"age": 29,
 		"nationality": "Ireland",
 		"countryCode": "ie",
 		"positions": {
@@ -39110,8 +39125,8 @@
 		},
 		"20-21": {
 			"Premier League | Tottenham": {
-				"whoscoredApps": 5,
-				"whoscoredMins": 189
+				"whoscoredApps": 6,
+				"whoscoredMins": 195
 			},
 			"Europa League | Tottenham": {
 				"whoscoredApps": 2,
@@ -39158,8 +39173,8 @@
 		},
 		"20-21": {
 			"La Liga | SD Huesca": {
-				"whoscoredApps": 14,
-				"whoscoredMins": 995
+				"whoscoredApps": 15,
+				"whoscoredMins": 1051
 			}
 		}
 	},
@@ -39344,8 +39359,8 @@
 		},
 		"20-21": {
 			"Premier League | Liverpool": {
-				"whoscoredApps": 2,
-				"whoscoredMins": 51
+				"whoscoredApps": 3,
+				"whoscoredMins": 52
 			},
 			"Champions League | Liverpool": {
 				"whoscoredApps": 2,
@@ -39459,8 +39474,8 @@
 		},
 		"20-21": {
 			"La Liga | Atletico Madrid": {
-				"whoscoredApps": 13,
-				"whoscoredMins": 1170
+				"whoscoredApps": 14,
+				"whoscoredMins": 1260
 			},
 			"Champions League | Atletico Madrid": {
 				"whoscoredApps": 6,
@@ -39615,6 +39630,9 @@
 			],
 			"19-20": [
 				"FB"
+			],
+			"20-21": [
+				"FB"
 			]
 		},
 		"clubs": {
@@ -39623,6 +39641,9 @@
 			],
 			"19-20": [
 				"Atletico Madrid"
+			],
+			"20-21": [
+				"Atletico Madrid"
 			]
 		},
 		"leagues": {
@@ -39630,6 +39651,9 @@
 				"it"
 			],
 			"19-20": [
+				"es"
+			],
+			"20-21": [
 				"es"
 			]
 		},
@@ -39651,6 +39675,12 @@
 			"Champions League | Atletico Madrid": {
 				"whoscoredApps": 2,
 				"whoscoredMins": 120
+			}
+		},
+		"20-21": {
+			"La Liga | Atletico Madrid": {
+				"whoscoredApps": 1,
+				"whoscoredMins": 57
 			}
 		}
 	},
@@ -39845,8 +39875,8 @@
 		},
 		"20-21": {
 			"La Liga | Sevilla": {
-				"whoscoredApps": 10,
-				"whoscoredMins": 264
+				"whoscoredApps": 11,
+				"whoscoredMins": 266
 			},
 			"Champions League | Sevilla": {
 				"whoscoredApps": 6,
@@ -39926,6 +39956,9 @@
 			],
 			"19-20": [
 				"CM"
+			],
+			"20-21": [
+				"CM"
 			]
 		},
 		"clubs": {
@@ -39934,6 +39967,9 @@
 			],
 			"19-20": [
 				"Brighton"
+			],
+			"20-21": [
+				"Brighton"
 			]
 		},
 		"leagues": {
@@ -39941,6 +39977,9 @@
 				"_england"
 			],
 			"19-20": [
+				"_england"
+			],
+			"20-21": [
 				"_england"
 			]
 		},
@@ -39954,6 +39993,12 @@
 			"Premier League | Brighton": {
 				"whoscoredApps": 35,
 				"whoscoredMins": 2830
+			}
+		},
+		"20-21": {
+			"Premier League | Brighton": {
+				"whoscoredApps": 1,
+				"whoscoredMins": 68
 			}
 		}
 	},
@@ -40399,8 +40444,8 @@
 		},
 		"20-21": {
 			"Premier League | Manchester City": {
-				"whoscoredApps": 8,
-				"whoscoredMins": 570
+				"whoscoredApps": 9,
+				"whoscoredMins": 660
 			},
 			"Champions League | Manchester City": {
 				"whoscoredApps": 5,
@@ -40499,8 +40544,8 @@
 		},
 		"20-21": {
 			"La Liga | Atletico Madrid": {
-				"whoscoredApps": 12,
-				"whoscoredMins": 1080
+				"whoscoredApps": 13,
+				"whoscoredMins": 1170
 			},
 			"Champions League | Atletico Madrid": {
 				"whoscoredApps": 6,
@@ -40562,8 +40607,8 @@
 		},
 		"20-21": {
 			"La Liga | Real Sociedad": {
-				"whoscoredApps": 11,
-				"whoscoredMins": 624
+				"whoscoredApps": 12,
+				"whoscoredMins": 629
 			},
 			"Europa League | Real Sociedad": {
 				"whoscoredApps": 6,
@@ -40655,8 +40700,8 @@
 		},
 		"20-21": {
 			"La Liga | Athletic Bilbao": {
-				"whoscoredApps": 15,
-				"whoscoredMins": 982
+				"whoscoredApps": 16,
+				"whoscoredMins": 1072
 			}
 		}
 	},
@@ -40865,8 +40910,8 @@
 		},
 		"20-21": {
 			"Premier League | Crystal Palace": {
-				"whoscoredApps": 9,
-				"whoscoredMins": 738
+				"whoscoredApps": 10,
+				"whoscoredMins": 828
 			}
 		}
 	},
@@ -41506,8 +41551,8 @@
 		},
 		"20-21": {
 			"Premier League | Burnley": {
-				"whoscoredApps": 13,
-				"whoscoredMins": 1170
+				"whoscoredApps": 15,
+				"whoscoredMins": 1350
 			}
 		}
 	},
@@ -41830,8 +41875,8 @@
 		},
 		"20-21": {
 			"Premier League | Manchester United": {
-				"whoscoredApps": 11,
-				"whoscoredMins": 946
+				"whoscoredApps": 13,
+				"whoscoredMins": 1126
 			},
 			"Champions League | Manchester United": {
 				"whoscoredApps": 5,
@@ -41882,8 +41927,8 @@
 		},
 		"20-21": {
 			"La Liga | Real Betis": {
-				"whoscoredApps": 8,
-				"whoscoredMins": 504
+				"whoscoredApps": 9,
+				"whoscoredMins": 594
 			}
 		}
 	},
@@ -41945,8 +41990,8 @@
 		},
 		"20-21": {
 			"La Liga | Granada": {
-				"whoscoredApps": 10,
-				"whoscoredMins": 637
+				"whoscoredApps": 11,
+				"whoscoredMins": 727
 			},
 			"Europa League | Granada": {
 				"whoscoredApps": 6,
@@ -42154,8 +42199,8 @@
 		},
 		"20-21": {
 			"La Liga | Deportivo Alaves": {
-				"whoscoredApps": 14,
-				"whoscoredMins": 1108
+				"whoscoredApps": 15,
+				"whoscoredMins": 1198
 			}
 		}
 	},
@@ -42213,8 +42258,8 @@
 		},
 		"20-21": {
 			"La Liga | SD Huesca": {
-				"whoscoredApps": 14,
-				"whoscoredMins": 1260
+				"whoscoredApps": 15,
+				"whoscoredMins": 1350
 			}
 		}
 	},
@@ -42242,8 +42287,8 @@
 		},
 		"20-21": {
 			"La Liga | Cadiz": {
-				"whoscoredApps": 7,
-				"whoscoredMins": 345
+				"whoscoredApps": 8,
+				"whoscoredMins": 376
 			}
 		}
 	},
@@ -42301,8 +42346,8 @@
 		},
 		"20-21": {
 			"La Liga | Eibar": {
-				"whoscoredApps": 14,
-				"whoscoredMins": 1125
+				"whoscoredApps": 15,
+				"whoscoredMins": 1198
 			}
 		}
 	},
@@ -42467,8 +42512,8 @@
 		},
 		"20-21": {
 			"La Liga | Celta Vigo": {
-				"whoscoredApps": 12,
-				"whoscoredMins": 1080
+				"whoscoredApps": 13,
+				"whoscoredMins": 1170
 			}
 		}
 	},
@@ -42615,8 +42660,8 @@
 		},
 		"20-21": {
 			"Premier League | Burnley": {
-				"whoscoredApps": 9,
-				"whoscoredMins": 810
+				"whoscoredApps": 11,
+				"whoscoredMins": 990
 			}
 		}
 	},
@@ -42683,8 +42728,8 @@
 		},
 		"20-21": {
 			"La Liga | Barcelona": {
-				"whoscoredApps": 13,
-				"whoscoredMins": 932
+				"whoscoredApps": 14,
+				"whoscoredMins": 998
 			},
 			"Champions League | Barcelona": {
 				"whoscoredApps": 5,
@@ -43188,8 +43233,8 @@
 		},
 		"20-21": {
 			"La Liga | Deportivo Alaves": {
-				"whoscoredApps": 12,
-				"whoscoredMins": 1036
+				"whoscoredApps": 13,
+				"whoscoredMins": 1126
 			}
 		}
 	},
@@ -43256,8 +43301,8 @@
 		},
 		"20-21": {
 			"La Liga | Atletico Madrid": {
-				"whoscoredApps": 13,
-				"whoscoredMins": 985
+				"whoscoredApps": 14,
+				"whoscoredMins": 1075
 			},
 			"Champions League | Atletico Madrid": {
 				"whoscoredApps": 6,
@@ -43327,8 +43372,8 @@
 		},
 		"20-21": {
 			"La Liga | Barcelona": {
-				"whoscoredApps": 11,
-				"whoscoredMins": 633
+				"whoscoredApps": 12,
+				"whoscoredMins": 657
 			},
 			"Champions League | Barcelona": {
 				"whoscoredApps": 2,
@@ -43398,8 +43443,8 @@
 		},
 		"20-21": {
 			"La Liga | Barcelona": {
-				"whoscoredApps": 8,
-				"whoscoredMins": 720
+				"whoscoredApps": 9,
+				"whoscoredMins": 810
 			},
 			"Champions League | Barcelona": {
 				"whoscoredApps": 3,
@@ -43623,8 +43668,8 @@
 		},
 		"20-21": {
 			"Premier League | Arsenal": {
-				"whoscoredApps": 2,
-				"whoscoredMins": 44
+				"whoscoredApps": 3,
+				"whoscoredMins": 45
 			},
 			"Europa League | Arsenal": {
 				"whoscoredApps": 5,
@@ -44016,8 +44061,8 @@
 		},
 		"20-21": {
 			"La Liga | Real Betis": {
-				"whoscoredApps": 8,
-				"whoscoredMins": 720
+				"whoscoredApps": 9,
+				"whoscoredMins": 810
 			}
 		}
 	},
@@ -44385,8 +44430,8 @@
 		},
 		"20-21": {
 			"Premier League | West Bromwich Albion": {
-				"whoscoredApps": 3,
-				"whoscoredMins": 77
+				"whoscoredApps": 4,
+				"whoscoredMins": 89
 			}
 		}
 	},
@@ -44556,8 +44601,8 @@
 		},
 		"20-21": {
 			"Premier League | Brighton": {
-				"whoscoredApps": 7,
-				"whoscoredMins": 484
+				"whoscoredApps": 9,
+				"whoscoredMins": 664
 			}
 		}
 	},
@@ -45103,8 +45148,8 @@
 		},
 		"20-21": {
 			"Premier League | Newcastle United": {
-				"whoscoredApps": 7,
-				"whoscoredMins": 412
+				"whoscoredApps": 9,
+				"whoscoredMins": 592
 			}
 		}
 	},
@@ -45234,7 +45279,8 @@
 		"countryCode": "_england",
 		"positions": {
 			"20-21": [
-				"FB"
+				"FB",
+				"CB"
 			]
 		},
 		"clubs": {
@@ -45249,8 +45295,8 @@
 		},
 		"20-21": {
 			"Premier League | Leeds": {
-				"whoscoredApps": 14,
-				"whoscoredMins": 1240
+				"whoscoredApps": 16,
+				"whoscoredMins": 1420
 			}
 		}
 	},
@@ -45579,7 +45625,7 @@
 		"mapped": false,
 		"name": "Abdoulaye Ba",
 		"simplifiedName": "Abdoulaye Ba",
-		"age": 29,
+		"age": 30,
 		"nationality": "Senegal",
 		"countryCode": "sn",
 		"positions": {
@@ -45730,8 +45776,8 @@
 		},
 		"20-21": {
 			"La Liga | Real Betis": {
-				"whoscoredApps": 4,
-				"whoscoredMins": 126
+				"whoscoredApps": 5,
+				"whoscoredMins": 185
 			}
 		}
 	},
@@ -46264,8 +46310,8 @@
 		},
 		"20-21": {
 			"La Liga | Getafe": {
-				"whoscoredApps": 4,
-				"whoscoredMins": 38
+				"whoscoredApps": 5,
+				"whoscoredMins": 128
 			}
 		}
 	},
@@ -46570,8 +46616,8 @@
 		},
 		"20-21": {
 			"Premier League | Leeds": {
-				"whoscoredApps": 12,
-				"whoscoredMins": 626
+				"whoscoredApps": 14,
+				"whoscoredMins": 755
 			}
 		}
 	},
@@ -46658,8 +46704,8 @@
 		},
 		"20-21": {
 			"La Liga | Eibar": {
-				"whoscoredApps": 9,
-				"whoscoredMins": 810
+				"whoscoredApps": 10,
+				"whoscoredMins": 827
 			}
 		}
 	},
@@ -46717,8 +46763,8 @@
 		},
 		"20-21": {
 			"La Liga | Deportivo Alaves": {
-				"whoscoredApps": 12,
-				"whoscoredMins": 939
+				"whoscoredApps": 13,
+				"whoscoredMins": 1015
 			}
 		}
 	},
@@ -46784,8 +46830,8 @@
 		},
 		"20-21": {
 			"Premier League | Tottenham": {
-				"whoscoredApps": 14,
-				"whoscoredMins": 1254
+				"whoscoredApps": 15,
+				"whoscoredMins": 1344
 			},
 			"Europa League | Tottenham": {
 				"whoscoredApps": 3,
@@ -46847,8 +46893,8 @@
 		},
 		"20-21": {
 			"Premier League | West Ham": {
-				"whoscoredApps": 4,
-				"whoscoredMins": 230
+				"whoscoredApps": 5,
+				"whoscoredMins": 320
 			}
 		}
 	},
@@ -47462,8 +47508,8 @@
 		},
 		"20-21": {
 			"La Liga | Real Valladolid": {
-				"whoscoredApps": 7,
-				"whoscoredMins": 412
+				"whoscoredApps": 8,
+				"whoscoredMins": 502
 			}
 		}
 	},
@@ -47559,7 +47605,7 @@
 		"mapped": false,
 		"name": "Marcos Alonso",
 		"simplifiedName": "Marcos Alonso",
-		"age": 29,
+		"age": 30,
 		"nationality": "Spain",
 		"countryCode": "es",
 		"positions": {
@@ -47902,8 +47948,8 @@
 		},
 		"20-21": {
 			"Premier League | Liverpool": {
-				"whoscoredApps": 1,
-				"whoscoredMins": 16
+				"whoscoredApps": 2,
+				"whoscoredMins": 23
 			}
 		}
 	},
@@ -48483,8 +48529,8 @@
 		},
 		"20-21": {
 			"Premier League | Crystal Palace": {
-				"whoscoredApps": 12,
-				"whoscoredMins": 1071
+				"whoscoredApps": 14,
+				"whoscoredMins": 1251
 			}
 		}
 	},
@@ -48860,8 +48906,8 @@
 		},
 		"20-21": {
 			"Premier League | Brighton": {
-				"whoscoredApps": 11,
-				"whoscoredMins": 990
+				"whoscoredApps": 13,
+				"whoscoredMins": 1170
 			}
 		}
 	},
@@ -49089,8 +49135,8 @@
 		},
 		"20-21": {
 			"Premier League | Sheffield United": {
-				"whoscoredApps": 6,
-				"whoscoredMins": 459
+				"whoscoredApps": 8,
+				"whoscoredMins": 605
 			}
 		}
 	},
@@ -49240,8 +49286,8 @@
 		},
 		"20-21": {
 			"La Liga | Elche": {
-				"whoscoredApps": 12,
-				"whoscoredMins": 972
+				"whoscoredApps": 13,
+				"whoscoredMins": 1062
 			}
 		}
 	},
@@ -49359,8 +49405,8 @@
 		},
 		"20-21": {
 			"La Liga | Eibar": {
-				"whoscoredApps": 14,
-				"whoscoredMins": 852
+				"whoscoredApps": 15,
+				"whoscoredMins": 942
 			}
 		}
 	},
@@ -49892,8 +49938,8 @@
 		},
 		"20-21": {
 			"La Liga | Celta Vigo": {
-				"whoscoredApps": 13,
-				"whoscoredMins": 891
+				"whoscoredApps": 14,
+				"whoscoredMins": 981
 			}
 		}
 	},
@@ -50060,8 +50106,8 @@
 		},
 		"20-21": {
 			"La Liga | Real Madrid": {
-				"whoscoredApps": 12,
-				"whoscoredMins": 945
+				"whoscoredApps": 13,
+				"whoscoredMins": 1035
 			},
 			"Champions League | Real Madrid": {
 				"whoscoredApps": 5,
@@ -50160,8 +50206,8 @@
 		},
 		"20-21": {
 			"Premier League | Arsenal": {
-				"whoscoredApps": 10,
-				"whoscoredMins": 726
+				"whoscoredApps": 12,
+				"whoscoredMins": 906
 			},
 			"Europa League | Arsenal": {
 				"whoscoredApps": 3,
@@ -50296,8 +50342,8 @@
 		},
 		"20-21": {
 			"La Liga | Levante": {
-				"whoscoredApps": 5,
-				"whoscoredMins": 348
+				"whoscoredApps": 6,
+				"whoscoredMins": 438
 			}
 		}
 	},
@@ -50786,8 +50832,8 @@
 		},
 		"20-21": {
 			"Premier League | West Ham": {
-				"whoscoredApps": 6,
-				"whoscoredMins": 106
+				"whoscoredApps": 8,
+				"whoscoredMins": 211
 			}
 		}
 	},
@@ -50890,8 +50936,8 @@
 		},
 		"20-21": {
 			"La Liga | Cadiz": {
-				"whoscoredApps": 11,
-				"whoscoredMins": 504
+				"whoscoredApps": 12,
+				"whoscoredMins": 564
 			}
 		}
 	},
@@ -51063,8 +51109,8 @@
 		},
 		"20-21": {
 			"La Liga | Real Betis": {
-				"whoscoredApps": 9,
-				"whoscoredMins": 684
+				"whoscoredApps": 10,
+				"whoscoredMins": 774
 			}
 		}
 	},
@@ -51225,8 +51271,8 @@
 		},
 		"20-21": {
 			"Premier League | Leicester": {
-				"whoscoredApps": 13,
-				"whoscoredMins": 1019
+				"whoscoredApps": 14,
+				"whoscoredMins": 1109
 			},
 			"Europa League | Leicester": {
 				"whoscoredApps": 4,
@@ -51337,8 +51383,8 @@
 		},
 		"20-21": {
 			"Premier League | Sheffield United": {
-				"whoscoredApps": 8,
-				"whoscoredMins": 425
+				"whoscoredApps": 10,
+				"whoscoredMins": 476
 			}
 		}
 	},
@@ -51663,8 +51709,8 @@
 		},
 		"20-21": {
 			"Premier League | Southampton": {
-				"whoscoredApps": 14,
-				"whoscoredMins": 1218
+				"whoscoredApps": 15,
+				"whoscoredMins": 1308
 			}
 		}
 	},
@@ -52570,8 +52616,8 @@
 		},
 		"20-21": {
 			"La Liga | Levante": {
-				"whoscoredApps": 12,
-				"whoscoredMins": 1080
+				"whoscoredApps": 13,
+				"whoscoredMins": 1170
 			}
 		}
 	},
@@ -52833,8 +52879,8 @@
 		},
 		"20-21": {
 			"La Liga | Celta Vigo": {
-				"whoscoredApps": 15,
-				"whoscoredMins": 1348
+				"whoscoredApps": 16,
+				"whoscoredMins": 1421
 			}
 		}
 	},
@@ -52892,8 +52938,8 @@
 		},
 		"20-21": {
 			"La Liga | Real Valladolid": {
-				"whoscoredApps": 9,
-				"whoscoredMins": 810
+				"whoscoredApps": 10,
+				"whoscoredMins": 900
 			}
 		}
 	},
@@ -52993,8 +53039,8 @@
 		},
 		"20-21": {
 			"La Liga | Celta Vigo": {
-				"whoscoredApps": 15,
-				"whoscoredMins": 1114
+				"whoscoredApps": 16,
+				"whoscoredMins": 1197
 			}
 		}
 	},
@@ -53365,8 +53411,8 @@
 		},
 		"20-21": {
 			"Premier League | Southampton": {
-				"whoscoredApps": 11,
-				"whoscoredMins": 891
+				"whoscoredApps": 12,
+				"whoscoredMins": 981
 			}
 		}
 	},
@@ -53491,8 +53537,8 @@
 		},
 		"20-21": {
 			"La Liga | Real Betis": {
-				"whoscoredApps": 14,
-				"whoscoredMins": 687
+				"whoscoredApps": 15,
+				"whoscoredMins": 724
 			}
 		}
 	},
@@ -53550,8 +53596,8 @@
 		},
 		"20-21": {
 			"Premier League | Crystal Palace": {
-				"whoscoredApps": 12,
-				"whoscoredMins": 776
+				"whoscoredApps": 14,
+				"whoscoredMins": 942
 			}
 		}
 	},
@@ -53647,8 +53693,8 @@
 		},
 		"20-21": {
 			"Premier League | Tottenham": {
-				"whoscoredApps": 14,
-				"whoscoredMins": 1179
+				"whoscoredApps": 15,
+				"whoscoredMins": 1263
 			},
 			"Europa League | Tottenham": {
 				"whoscoredApps": 5,
@@ -53967,8 +54013,8 @@
 		},
 		"20-21": {
 			"Premier League | Arsenal": {
-				"whoscoredApps": 14,
-				"whoscoredMins": 1260
+				"whoscoredApps": 16,
+				"whoscoredMins": 1440
 			},
 			"Europa League | Arsenal": {
 				"whoscoredApps": 2,
@@ -54187,8 +54233,8 @@
 		},
 		"20-21": {
 			"Premier League | Fulham": {
-				"whoscoredApps": 13,
-				"whoscoredMins": 1170
+				"whoscoredApps": 14,
+				"whoscoredMins": 1260
 			}
 		}
 	},
@@ -54377,8 +54423,8 @@
 		},
 		"20-21": {
 			"Premier League | Southampton": {
-				"whoscoredApps": 4,
-				"whoscoredMins": 315
+				"whoscoredApps": 6,
+				"whoscoredMins": 495
 			}
 		}
 	},
@@ -55168,8 +55214,8 @@
 		},
 		"20-21": {
 			"La Liga | Real Madrid": {
-				"whoscoredApps": 14,
-				"whoscoredMins": 1260
+				"whoscoredApps": 15,
+				"whoscoredMins": 1350
 			},
 			"Champions League | Real Madrid": {
 				"whoscoredApps": 6,
@@ -55290,8 +55336,8 @@
 		},
 		"20-21": {
 			"Premier League | Burnley": {
-				"whoscoredApps": 9,
-				"whoscoredMins": 520
+				"whoscoredApps": 10,
+				"whoscoredMins": 610
 			}
 		}
 	},
@@ -55334,8 +55380,8 @@
 		},
 		"20-21": {
 			"La Liga | Osasuna": {
-				"whoscoredApps": 7,
-				"whoscoredMins": 498
+				"whoscoredApps": 8,
+				"whoscoredMins": 588
 			}
 		}
 	},
@@ -55363,8 +55409,8 @@
 		},
 		"20-21": {
 			"La Liga | Cadiz": {
-				"whoscoredApps": 9,
-				"whoscoredMins": 489
+				"whoscoredApps": 10,
+				"whoscoredMins": 550
 			}
 		}
 	},
@@ -55436,8 +55482,8 @@
 		},
 		"20-21": {
 			"La Liga | SD Huesca": {
-				"whoscoredApps": 11,
-				"whoscoredMins": 985
+				"whoscoredApps": 12,
+				"whoscoredMins": 1075
 			}
 		}
 	},
@@ -55559,8 +55605,8 @@
 		},
 		"20-21": {
 			"Premier League | Southampton": {
-				"whoscoredApps": 11,
-				"whoscoredMins": 937
+				"whoscoredApps": 13,
+				"whoscoredMins": 1039
 			}
 		}
 	},
@@ -55793,8 +55839,8 @@
 		},
 		"20-21": {
 			"La Liga | Celta Vigo": {
-				"whoscoredApps": 9,
-				"whoscoredMins": 302
+				"whoscoredApps": 10,
+				"whoscoredMins": 319
 			}
 		}
 	},
@@ -55911,8 +55957,8 @@
 		},
 		"20-21": {
 			"La Liga | Eibar": {
-				"whoscoredApps": 6,
-				"whoscoredMins": 208
+				"whoscoredApps": 7,
+				"whoscoredMins": 217
 			}
 		}
 	},
@@ -56007,8 +56053,8 @@
 		},
 		"20-21": {
 			"Premier League | Chelsea": {
-				"whoscoredApps": 10,
-				"whoscoredMins": 531
+				"whoscoredApps": 11,
+				"whoscoredMins": 577
 			},
 			"Champions League | Chelsea": {
 				"whoscoredApps": 6,
@@ -56208,8 +56254,8 @@
 		},
 		"20-21": {
 			"Premier League | Tottenham": {
-				"whoscoredApps": 6,
-				"whoscoredMins": 526
+				"whoscoredApps": 7,
+				"whoscoredMins": 616
 			},
 			"Europa League | Tottenham": {
 				"whoscoredApps": 5,
@@ -56332,7 +56378,7 @@
 		"mapped": false,
 		"name": "Juan Sánchez Miño",
 		"simplifiedName": "Juan Sanchez Mino",
-		"age": 30,
+		"age": 31,
 		"nationality": "Argentina",
 		"countryCode": "ar",
 		"positions": {
@@ -56354,8 +56400,8 @@
 		},
 		"20-21": {
 			"La Liga | Elche": {
-				"whoscoredApps": 7,
-				"whoscoredMins": 361
+				"whoscoredApps": 8,
+				"whoscoredMins": 451
 			}
 		}
 	},
@@ -56734,8 +56780,8 @@
 		},
 		"20-21": {
 			"Premier League | Fulham": {
-				"whoscoredApps": 4,
-				"whoscoredMins": 116
+				"whoscoredApps": 5,
+				"whoscoredMins": 117
 			}
 		}
 	},
@@ -56860,8 +56906,8 @@
 		},
 		"20-21": {
 			"Premier League | Burnley": {
-				"whoscoredApps": 7,
-				"whoscoredMins": 630
+				"whoscoredApps": 9,
+				"whoscoredMins": 810
 			}
 		}
 	},
@@ -57136,8 +57182,8 @@
 		},
 		"20-21": {
 			"La Liga | Cadiz": {
-				"whoscoredApps": 15,
-				"whoscoredMins": 1163
+				"whoscoredApps": 16,
+				"whoscoredMins": 1208
 			}
 		}
 	},
@@ -57401,8 +57447,8 @@
 		},
 		"20-21": {
 			"La Liga | Deportivo Alaves": {
-				"whoscoredApps": 15,
-				"whoscoredMins": 1350
+				"whoscoredApps": 16,
+				"whoscoredMins": 1440
 			}
 		}
 	},
@@ -57663,8 +57709,8 @@
 		},
 		"20-21": {
 			"Premier League | Liverpool": {
-				"whoscoredApps": 14,
-				"whoscoredMins": 1132
+				"whoscoredApps": 16,
+				"whoscoredMins": 1312
 			},
 			"Champions League | Liverpool": {
 				"whoscoredApps": 6,
@@ -57753,19 +57799,34 @@
 		"nationality": "Germany",
 		"countryCode": "de",
 		"positions": {
+			"19-20": [
+				"AM"
+			],
 			"20-21": [
 				"AM"
 			]
 		},
 		"clubs": {
+			"19-20": [
+				"Union Berlin"
+			],
 			"20-21": [
 				"Union Berlin"
 			]
 		},
 		"leagues": {
+			"19-20": [
+				"de"
+			],
 			"20-21": [
 				"de"
 			]
+		},
+		"19-20": {
+			"Bundesliga | Union Berlin": {
+				"whoscoredApps": 3,
+				"whoscoredMins": 121
+			}
 		},
 		"20-21": {
 			"Bundesliga | Union Berlin": {
@@ -57832,8 +57893,8 @@
 		},
 		"20-21": {
 			"La Liga | Getafe": {
-				"whoscoredApps": 13,
-				"whoscoredMins": 455
+				"whoscoredApps": 14,
+				"whoscoredMins": 543
 			}
 		}
 	},
@@ -57958,8 +58019,8 @@
 		},
 		"20-21": {
 			"La Liga | Osasuna": {
-				"whoscoredApps": 10,
-				"whoscoredMins": 751
+				"whoscoredApps": 11,
+				"whoscoredMins": 841
 			}
 		}
 	},
@@ -58708,8 +58769,8 @@
 		},
 		"20-21": {
 			"La Liga | Villarreal": {
-				"whoscoredApps": 13,
-				"whoscoredMins": 1145
+				"whoscoredApps": 14,
+				"whoscoredMins": 1235
 			},
 			"Europa League | Villarreal": {
 				"whoscoredApps": 3,
@@ -58779,8 +58840,8 @@
 		},
 		"20-21": {
 			"Premier League | Manchester City": {
-				"whoscoredApps": 12,
-				"whoscoredMins": 1000
+				"whoscoredApps": 13,
+				"whoscoredMins": 1090
 			},
 			"Champions League | Manchester City": {
 				"whoscoredApps": 6,
@@ -58846,8 +58907,8 @@
 		},
 		"20-21": {
 			"Premier League | Wolverhampton Wanderers": {
-				"whoscoredApps": 13,
-				"whoscoredMins": 1170
+				"whoscoredApps": 15,
+				"whoscoredMins": 1350
 			}
 		}
 	},
@@ -58972,8 +59033,8 @@
 		},
 		"20-21": {
 			"Premier League | Manchester United": {
-				"whoscoredApps": 10,
-				"whoscoredMins": 643
+				"whoscoredApps": 12,
+				"whoscoredMins": 769
 			},
 			"Champions League | Manchester United": {
 				"whoscoredApps": 5,
@@ -59049,8 +59110,8 @@
 		},
 		"20-21": {
 			"Premier League | Crystal Palace": {
-				"whoscoredApps": 9,
-				"whoscoredMins": 410
+				"whoscoredApps": 10,
+				"whoscoredMins": 426
 			}
 		}
 	},
@@ -59141,8 +59202,8 @@
 		},
 		"20-21": {
 			"La Liga | Osasuna": {
-				"whoscoredApps": 8,
-				"whoscoredMins": 536
+				"whoscoredApps": 9,
+				"whoscoredMins": 549
 			}
 		}
 	},
@@ -59499,8 +59560,8 @@
 		},
 		"20-21": {
 			"Premier League | Manchester United": {
-				"whoscoredApps": 13,
-				"whoscoredMins": 1170
+				"whoscoredApps": 15,
+				"whoscoredMins": 1350
 			},
 			"Champions League | Manchester United": {
 				"whoscoredApps": 5,
@@ -59729,8 +59790,8 @@
 		},
 		"20-21": {
 			"Premier League | Manchester United": {
-				"whoscoredApps": 12,
-				"whoscoredMins": 1080
+				"whoscoredApps": 13,
+				"whoscoredMins": 1146
 			},
 			"Champions League | Manchester United": {
 				"whoscoredApps": 5,
@@ -60086,8 +60147,8 @@
 		},
 		"20-21": {
 			"La Liga | Deportivo Alaves": {
-				"whoscoredApps": 13,
-				"whoscoredMins": 1032
+				"whoscoredApps": 14,
+				"whoscoredMins": 1108
 			}
 		}
 	},
@@ -60356,8 +60417,8 @@
 		},
 		"20-21": {
 			"La Liga | Granada": {
-				"whoscoredApps": 12,
-				"whoscoredMins": 1037
+				"whoscoredApps": 13,
+				"whoscoredMins": 1110
 			},
 			"Europa League | Granada": {
 				"whoscoredApps": 4,
@@ -60389,8 +60450,8 @@
 		},
 		"20-21": {
 			"La Liga | Elche": {
-				"whoscoredApps": 13,
-				"whoscoredMins": 1170
+				"whoscoredApps": 14,
+				"whoscoredMins": 1260
 			}
 		}
 	},
@@ -60521,8 +60582,8 @@
 		},
 		"20-21": {
 			"La Liga | Villarreal": {
-				"whoscoredApps": 12,
-				"whoscoredMins": 1023
+				"whoscoredApps": 13,
+				"whoscoredMins": 1113
 			},
 			"Europa League | Villarreal": {
 				"whoscoredApps": 3,
@@ -60621,8 +60682,8 @@
 		},
 		"20-21": {
 			"Premier League | Manchester City": {
-				"whoscoredApps": 5,
-				"whoscoredMins": 450
+				"whoscoredApps": 6,
+				"whoscoredMins": 540
 			},
 			"Champions League | Manchester City": {
 				"whoscoredApps": 5,
@@ -60919,8 +60980,8 @@
 		},
 		"20-21": {
 			"Premier League | Everton": {
-				"whoscoredApps": 4,
-				"whoscoredMins": 174
+				"whoscoredApps": 5,
+				"whoscoredMins": 209
 			}
 		}
 	},
@@ -61276,8 +61337,8 @@
 		},
 		"20-21": {
 			"Premier League | Tottenham": {
-				"whoscoredApps": 14,
-				"whoscoredMins": 1260
+				"whoscoredApps": 15,
+				"whoscoredMins": 1350
 			},
 			"Europa League | Tottenham": {
 				"whoscoredApps": 5,
@@ -61860,8 +61921,8 @@
 		},
 		"20-21": {
 			"La Liga | Atletico Madrid": {
-				"whoscoredApps": 11,
-				"whoscoredMins": 631
+				"whoscoredApps": 12,
+				"whoscoredMins": 721
 			},
 			"Champions League | Atletico Madrid": {
 				"whoscoredApps": 4,
@@ -61971,8 +62032,8 @@
 		},
 		"20-21": {
 			"La Liga | Villarreal": {
-				"whoscoredApps": 14,
-				"whoscoredMins": 994
+				"whoscoredApps": 15,
+				"whoscoredMins": 1077
 			},
 			"Europa League | Villarreal": {
 				"whoscoredApps": 5,
@@ -62023,8 +62084,8 @@
 		},
 		"20-21": {
 			"Premier League | Aston Villa": {
-				"whoscoredApps": 12,
-				"whoscoredMins": 1080
+				"whoscoredApps": 14,
+				"whoscoredMins": 1260
 			}
 		}
 	},
@@ -62387,8 +62448,8 @@
 		},
 		"20-21": {
 			"Premier League | Tottenham": {
-				"whoscoredApps": 10,
-				"whoscoredMins": 497
+				"whoscoredApps": 11,
+				"whoscoredMins": 587
 			},
 			"Europa League | Tottenham": {
 				"whoscoredApps": 6,
@@ -62487,8 +62548,8 @@
 		},
 		"20-21": {
 			"Premier League | Chelsea": {
-				"whoscoredApps": 1,
-				"whoscoredMins": 90
+				"whoscoredApps": 2,
+				"whoscoredMins": 180
 			},
 			"Champions League | Chelsea": {
 				"whoscoredApps": 4,
@@ -63725,8 +63786,8 @@
 		},
 		"20-21": {
 			"Premier League | Southampton": {
-				"whoscoredApps": 14,
-				"whoscoredMins": 1260
+				"whoscoredApps": 16,
+				"whoscoredMins": 1440
 			}
 		}
 	},
@@ -63904,8 +63965,8 @@
 		},
 		"20-21": {
 			"La Liga | Sevilla": {
-				"whoscoredApps": 9,
-				"whoscoredMins": 502
+				"whoscoredApps": 10,
+				"whoscoredMins": 565
 			},
 			"Champions League | Sevilla": {
 				"whoscoredApps": 2,
@@ -63937,8 +63998,8 @@
 		},
 		"20-21": {
 			"Premier League | West Bromwich Albion": {
-				"whoscoredApps": 14,
-				"whoscoredMins": 1260
+				"whoscoredApps": 16,
+				"whoscoredMins": 1440
 			}
 		}
 	},
@@ -63967,8 +64028,8 @@
 		},
 		"20-21": {
 			"La Liga | Cadiz": {
-				"whoscoredApps": 13,
-				"whoscoredMins": 417
+				"whoscoredApps": 14,
+				"whoscoredMins": 423
 			}
 		}
 	},
@@ -64011,8 +64072,8 @@
 		},
 		"20-21": {
 			"Premier League | Burnley": {
-				"whoscoredApps": 12,
-				"whoscoredMins": 1080
+				"whoscoredApps": 14,
+				"whoscoredMins": 1260
 			}
 		}
 	},
@@ -64354,8 +64415,8 @@
 		},
 		"20-21": {
 			"Premier League | Chelsea": {
-				"whoscoredApps": 13,
-				"whoscoredMins": 1170
+				"whoscoredApps": 14,
+				"whoscoredMins": 1260
 			},
 			"Champions League | Chelsea": {
 				"whoscoredApps": 4,
@@ -64515,8 +64576,7 @@
 				"CM"
 			],
 			"20-21": [
-				"AM",
-				"CM"
+				"AM"
 			]
 		},
 		"clubs": {
@@ -64555,8 +64615,8 @@
 		},
 		"20-21": {
 			"Premier League | Leicester": {
-				"whoscoredApps": 12,
-				"whoscoredMins": 595
+				"whoscoredApps": 13,
+				"whoscoredMins": 660
 			},
 			"Europa League | Leicester": {
 				"whoscoredApps": 6,
@@ -64710,8 +64770,8 @@
 		},
 		"20-21": {
 			"La Liga | Celta Vigo": {
-				"whoscoredApps": 14,
-				"whoscoredMins": 1085
+				"whoscoredApps": 15,
+				"whoscoredMins": 1158
 			}
 		}
 	},
@@ -64963,8 +65023,8 @@
 		},
 		"20-21": {
 			"La Liga | Levante": {
-				"whoscoredApps": 13,
-				"whoscoredMins": 1086
+				"whoscoredApps": 14,
+				"whoscoredMins": 1176
 			}
 		}
 	},
@@ -65359,8 +65419,8 @@
 		},
 		"20-21": {
 			"La Liga | Real Madrid": {
-				"whoscoredApps": 8,
-				"whoscoredMins": 652
+				"whoscoredApps": 9,
+				"whoscoredMins": 742
 			},
 			"Champions League | Real Madrid": {
 				"whoscoredApps": 1,
@@ -65422,8 +65482,8 @@
 		},
 		"20-21": {
 			"La Liga | Athletic Bilbao": {
-				"whoscoredApps": 14,
-				"whoscoredMins": 1260
+				"whoscoredApps": 15,
+				"whoscoredMins": 1350
 			}
 		}
 	},
@@ -65607,8 +65667,8 @@
 		},
 		"20-21": {
 			"La Liga | Real Sociedad": {
-				"whoscoredApps": 16,
-				"whoscoredMins": 964
+				"whoscoredApps": 17,
+				"whoscoredMins": 1038
 			},
 			"Europa League | Real Sociedad": {
 				"whoscoredApps": 6,
@@ -65908,8 +65968,8 @@
 		},
 		"20-21": {
 			"Premier League | Chelsea": {
-				"whoscoredApps": 8,
-				"whoscoredMins": 523
+				"whoscoredApps": 10,
+				"whoscoredMins": 640
 			},
 			"Champions League | Chelsea": {
 				"whoscoredApps": 6,
@@ -65971,8 +66031,8 @@
 		},
 		"20-21": {
 			"Premier League | Leicester": {
-				"whoscoredApps": 13,
-				"whoscoredMins": 1099
+				"whoscoredApps": 15,
+				"whoscoredMins": 1214
 			},
 			"Europa League | Leicester": {
 				"whoscoredApps": 2,
@@ -66165,8 +66225,8 @@
 		},
 		"20-21": {
 			"Premier League | Burnley": {
-				"whoscoredApps": 13,
-				"whoscoredMins": 1170
+				"whoscoredApps": 15,
+				"whoscoredMins": 1269
 			}
 		}
 	},
@@ -66640,8 +66700,8 @@
 		},
 		"20-21": {
 			"Premier League | Everton": {
-				"whoscoredApps": 14,
-				"whoscoredMins": 1260
+				"whoscoredApps": 15,
+				"whoscoredMins": 1326
 			}
 		}
 	},
@@ -66772,8 +66832,8 @@
 		},
 		"20-21": {
 			"La Liga | Eibar": {
-				"whoscoredApps": 11,
-				"whoscoredMins": 823
+				"whoscoredApps": 12,
+				"whoscoredMins": 913
 			}
 		}
 	},
@@ -66893,8 +66953,8 @@
 		},
 		"20-21": {
 			"La Liga | Real Valladolid": {
-				"whoscoredApps": 5,
-				"whoscoredMins": 301
+				"whoscoredApps": 6,
+				"whoscoredMins": 380
 			}
 		}
 	},
@@ -67024,8 +67084,8 @@
 		},
 		"20-21": {
 			"Premier League | Liverpool": {
-				"whoscoredApps": 13,
-				"whoscoredMins": 1081
+				"whoscoredApps": 15,
+				"whoscoredMins": 1261
 			},
 			"Champions League | Liverpool": {
 				"whoscoredApps": 6,
@@ -67431,8 +67491,8 @@
 		},
 		"20-21": {
 			"Premier League | Sheffield United": {
-				"whoscoredApps": 13,
-				"whoscoredMins": 1092
+				"whoscoredApps": 15,
+				"whoscoredMins": 1272
 			}
 		}
 	},
@@ -68007,7 +68067,7 @@
 		"mapped": false,
 		"name": "Salvatore Molina",
 		"simplifiedName": "Salvatore Molina",
-		"age": 28,
+		"age": 29,
 		"nationality": "Italy",
 		"countryCode": "it",
 		"positions": {
@@ -68382,8 +68442,8 @@
 		},
 		"20-21": {
 			"La Liga | Osasuna": {
-				"whoscoredApps": 12,
-				"whoscoredMins": 707
+				"whoscoredApps": 13,
+				"whoscoredMins": 796
 			}
 		}
 	},
@@ -68515,8 +68575,8 @@
 		},
 		"20-21": {
 			"La Liga | Celta Vigo": {
-				"whoscoredApps": 13,
-				"whoscoredMins": 1160
+				"whoscoredApps": 14,
+				"whoscoredMins": 1250
 			}
 		}
 	},
@@ -68559,8 +68619,8 @@
 		},
 		"20-21": {
 			"La Liga | SD Huesca": {
-				"whoscoredApps": 15,
-				"whoscoredMins": 1104
+				"whoscoredApps": 16,
+				"whoscoredMins": 1194
 			}
 		}
 	},
@@ -68646,8 +68706,8 @@
 		},
 		"20-21": {
 			"Premier League | Leeds": {
-				"whoscoredApps": 14,
-				"whoscoredMins": 1190
+				"whoscoredApps": 16,
+				"whoscoredMins": 1370
 			}
 		}
 	},
@@ -68713,8 +68773,8 @@
 		},
 		"20-21": {
 			"Premier League | Aston Villa": {
-				"whoscoredApps": 10,
-				"whoscoredMins": 401
+				"whoscoredApps": 12,
+				"whoscoredMins": 536
 			}
 		}
 	},
@@ -68772,8 +68832,8 @@
 		},
 		"20-21": {
 			"La Liga | Levante": {
-				"whoscoredApps": 12,
-				"whoscoredMins": 696
+				"whoscoredApps": 13,
+				"whoscoredMins": 758
 			}
 		}
 	},
@@ -68993,8 +69053,8 @@
 		},
 		"20-21": {
 			"Premier League | Liverpool": {
-				"whoscoredApps": 13,
-				"whoscoredMins": 1062
+				"whoscoredApps": 15,
+				"whoscoredMins": 1242
 			},
 			"Champions League | Liverpool": {
 				"whoscoredApps": 6,
@@ -69041,8 +69101,8 @@
 		},
 		"20-21": {
 			"Premier League | Brighton": {
-				"whoscoredApps": 13,
-				"whoscoredMins": 1170
+				"whoscoredApps": 15,
+				"whoscoredMins": 1350
 			}
 		}
 	},
@@ -69070,8 +69130,8 @@
 		},
 		"20-21": {
 			"La Liga | Elche": {
-				"whoscoredApps": 13,
-				"whoscoredMins": 1170
+				"whoscoredApps": 14,
+				"whoscoredMins": 1260
 			}
 		}
 	},
@@ -69589,8 +69649,8 @@
 		},
 		"20-21": {
 			"Premier League | Everton": {
-				"whoscoredApps": 12,
-				"whoscoredMins": 1080
+				"whoscoredApps": 13,
+				"whoscoredMins": 1170
 			}
 		}
 	},
@@ -69796,8 +69856,8 @@
 		},
 		"20-21": {
 			"Premier League | Brighton": {
-				"whoscoredApps": 10,
-				"whoscoredMins": 681
+				"whoscoredApps": 11,
+				"whoscoredMins": 771
 			}
 		}
 	},
@@ -69867,8 +69927,8 @@
 		},
 		"20-21": {
 			"La Liga | Valencia": {
-				"whoscoredApps": 8,
-				"whoscoredMins": 458
+				"whoscoredApps": 9,
+				"whoscoredMins": 534
 			}
 		}
 	},
@@ -70089,7 +70149,7 @@
 		"mapped": false,
 		"name": "Pierre-Yves Polomat",
 		"simplifiedName": "Pierre-Yves Polomat",
-		"age": 26,
+		"age": 27,
 		"nationality": "France",
 		"countryCode": "fr",
 		"positions": {
@@ -70347,8 +70407,8 @@
 		},
 		"20-21": {
 			"Premier League | West Ham": {
-				"whoscoredApps": 11,
-				"whoscoredMins": 985
+				"whoscoredApps": 12,
+				"whoscoredMins": 1075
 			}
 		}
 	},
@@ -70548,8 +70608,8 @@
 		},
 		"20-21": {
 			"La Liga | Atletico Madrid": {
-				"whoscoredApps": 10,
-				"whoscoredMins": 638
+				"whoscoredApps": 11,
+				"whoscoredMins": 671
 			},
 			"Champions League | Atletico Madrid": {
 				"whoscoredApps": 4,
@@ -70842,6 +70902,7 @@
 				"AM"
 			],
 			"20-21": [
+				"FW",
 				"AM"
 			]
 		},
@@ -70869,8 +70930,8 @@
 		},
 		"20-21": {
 			"Premier League | Aston Villa": {
-				"whoscoredApps": 12,
-				"whoscoredMins": 1080
+				"whoscoredApps": 14,
+				"whoscoredMins": 1260
 			}
 		}
 	},
@@ -71101,8 +71162,8 @@
 		},
 		"20-21": {
 			"La Liga | Sevilla": {
-				"whoscoredApps": 11,
-				"whoscoredMins": 561
+				"whoscoredApps": 12,
+				"whoscoredMins": 575
 			},
 			"Champions League | Sevilla": {
 				"whoscoredApps": 5,
@@ -71388,8 +71449,8 @@
 		},
 		"20-21": {
 			"Premier League | Brighton": {
-				"whoscoredApps": 11,
-				"whoscoredMins": 834
+				"whoscoredApps": 13,
+				"whoscoredMins": 940
 			}
 		}
 	},
@@ -71455,8 +71516,8 @@
 		},
 		"20-21": {
 			"Premier League | Chelsea": {
-				"whoscoredApps": 14,
-				"whoscoredMins": 1253
+				"whoscoredApps": 16,
+				"whoscoredMins": 1417
 			},
 			"Champions League | Chelsea": {
 				"whoscoredApps": 6,
@@ -71526,8 +71587,8 @@
 		},
 		"20-21": {
 			"Premier League | Liverpool": {
-				"whoscoredApps": 11,
-				"whoscoredMins": 990
+				"whoscoredApps": 13,
+				"whoscoredMins": 1170
 			},
 			"Champions League | Liverpool": {
 				"whoscoredApps": 3,
@@ -71796,8 +71857,8 @@
 		},
 		"20-21": {
 			"Premier League | Manchester United": {
-				"whoscoredApps": 10,
-				"whoscoredMins": 735
+				"whoscoredApps": 11,
+				"whoscoredMins": 825
 			},
 			"Champions League | Manchester United": {
 				"whoscoredApps": 4,
@@ -72527,8 +72588,8 @@
 		},
 		"20-21": {
 			"Premier League | Fulham": {
-				"whoscoredApps": 12,
-				"whoscoredMins": 782
+				"whoscoredApps": 13,
+				"whoscoredMins": 789
 			}
 		}
 	},
@@ -72646,8 +72707,8 @@
 		},
 		"20-21": {
 			"La Liga | Atletico Madrid": {
-				"whoscoredApps": 10,
-				"whoscoredMins": 503
+				"whoscoredApps": 11,
+				"whoscoredMins": 593
 			},
 			"Champions League | Atletico Madrid": {
 				"whoscoredApps": 4,
@@ -73006,8 +73067,8 @@
 		},
 		"20-21": {
 			"La Liga | Sevilla": {
-				"whoscoredApps": 13,
-				"whoscoredMins": 998
+				"whoscoredApps": 14,
+				"whoscoredMins": 1088
 			},
 			"Champions League | Sevilla": {
 				"whoscoredApps": 6,
@@ -73077,8 +73138,8 @@
 		},
 		"20-21": {
 			"Premier League | Liverpool": {
-				"whoscoredApps": 14,
-				"whoscoredMins": 1260
+				"whoscoredApps": 16,
+				"whoscoredMins": 1440
 			},
 			"Champions League | Liverpool": {
 				"whoscoredApps": 6,
@@ -73230,7 +73291,7 @@
 		"mapped": false,
 		"name": "Louis Schaub",
 		"simplifiedName": "Louis Schaub",
-		"age": 25,
+		"age": 26,
 		"nationality": "Austria",
 		"countryCode": "at",
 		"positions": {
@@ -73376,8 +73437,8 @@
 		},
 		"20-21": {
 			"Premier League | Liverpool": {
-				"whoscoredApps": 12,
-				"whoscoredMins": 1021
+				"whoscoredApps": 14,
+				"whoscoredMins": 1201
 			},
 			"Champions League | Liverpool": {
 				"whoscoredApps": 5,
@@ -73531,8 +73592,8 @@
 		},
 		"20-21": {
 			"La Liga | Granada": {
-				"whoscoredApps": 4,
-				"whoscoredMins": 44
+				"whoscoredApps": 5,
+				"whoscoredMins": 61
 			}
 		}
 	},
@@ -73737,7 +73798,7 @@
 		"mapped": false,
 		"name": "Abdoulaye Doucouré",
 		"simplifiedName": "Abdoulaye Doucoure",
-		"age": 27,
+		"age": 28,
 		"nationality": "France",
 		"countryCode": "fr",
 		"positions": {
@@ -73788,8 +73849,8 @@
 		},
 		"20-21": {
 			"Premier League | Everton": {
-				"whoscoredApps": 14,
-				"whoscoredMins": 1182
+				"whoscoredApps": 15,
+				"whoscoredMins": 1272
 			}
 		}
 	},
@@ -74273,8 +74334,8 @@
 		},
 		"20-21": {
 			"Premier League | Tottenham": {
-				"whoscoredApps": 13,
-				"whoscoredMins": 1170
+				"whoscoredApps": 14,
+				"whoscoredMins": 1260
 			},
 			"Europa League | Tottenham": {
 				"whoscoredApps": 2,
@@ -74369,8 +74430,8 @@
 		},
 		"20-21": {
 			"Premier League | Everton": {
-				"whoscoredApps": 9,
-				"whoscoredMins": 506
+				"whoscoredApps": 10,
+				"whoscoredMins": 522
 			}
 		}
 	},
@@ -74413,8 +74474,8 @@
 		},
 		"20-21": {
 			"Premier League | Leeds": {
-				"whoscoredApps": 10,
-				"whoscoredMins": 672
+				"whoscoredApps": 11,
+				"whoscoredMins": 681
 			}
 		}
 	},
@@ -74888,8 +74949,8 @@
 		},
 		"20-21": {
 			"Premier League | Manchester United": {
-				"whoscoredApps": 9,
-				"whoscoredMins": 758
+				"whoscoredApps": 11,
+				"whoscoredMins": 893
 			},
 			"Champions League | Manchester United": {
 				"whoscoredApps": 4,
@@ -75009,8 +75070,8 @@
 		},
 		"20-21": {
 			"Premier League | Newcastle United": {
-				"whoscoredApps": 3,
-				"whoscoredMins": 53
+				"whoscoredApps": 4,
+				"whoscoredMins": 61
 			}
 		}
 	},
@@ -75128,8 +75189,8 @@
 		},
 		"20-21": {
 			"La Liga | Villarreal": {
-				"whoscoredApps": 5,
-				"whoscoredMins": 155
+				"whoscoredApps": 6,
+				"whoscoredMins": 245
 			},
 			"Europa League | Villarreal": {
 				"whoscoredApps": 5,
@@ -75476,6 +75537,35 @@
 			}
 		}
 	},
+	"118898": {
+		"mapped": false,
+		"name": "Víctor Rodríguez",
+		"simplifiedName": "Victor Rodriguez",
+		"age": 31,
+		"nationality": "Spain",
+		"countryCode": "es",
+		"positions": {
+			"20-21": [
+				"CM"
+			]
+		},
+		"clubs": {
+			"20-21": [
+				"Elche"
+			]
+		},
+		"leagues": {
+			"20-21": [
+				"es"
+			]
+		},
+		"20-21": {
+			"La Liga | Elche": {
+				"whoscoredApps": 4,
+				"whoscoredMins": 131
+			}
+		}
+	},
 	"119001": {
 		"mapped": false,
 		"name": "Samúel Fridjónsson",
@@ -75607,8 +75697,8 @@
 		},
 		"20-21": {
 			"La Liga | Osasuna": {
-				"whoscoredApps": 14,
-				"whoscoredMins": 1187
+				"whoscoredApps": 15,
+				"whoscoredMins": 1276
 			}
 		}
 	},
@@ -75841,8 +75931,8 @@
 		},
 		"20-21": {
 			"La Liga | Valencia": {
-				"whoscoredApps": 12,
-				"whoscoredMins": 1037
+				"whoscoredApps": 13,
+				"whoscoredMins": 1127
 			}
 		}
 	},
@@ -75858,7 +75948,6 @@
 				"FW"
 			],
 			"20-21": [
-				"FW",
 				"AM"
 			]
 		},
@@ -75886,8 +75975,8 @@
 		},
 		"20-21": {
 			"Premier League | Brighton": {
-				"whoscoredApps": 12,
-				"whoscoredMins": 917
+				"whoscoredApps": 14,
+				"whoscoredMins": 1030
 			}
 		}
 	},
@@ -76033,8 +76122,8 @@
 		},
 		"20-21": {
 			"La Liga | Celta Vigo": {
-				"whoscoredApps": 8,
-				"whoscoredMins": 720
+				"whoscoredApps": 9,
+				"whoscoredMins": 810
 			}
 		}
 	},
@@ -76927,8 +77016,8 @@
 		},
 		"20-21": {
 			"Premier League | Wolverhampton Wanderers": {
-				"whoscoredApps": 9,
-				"whoscoredMins": 495
+				"whoscoredApps": 10,
+				"whoscoredMins": 570
 			},
 			"Ligue 1 | Lyon": {
 				"whoscoredApps": 1,
@@ -77043,8 +77132,8 @@
 		},
 		"20-21": {
 			"La Liga | Real Valladolid": {
-				"whoscoredApps": 13,
-				"whoscoredMins": 726
+				"whoscoredApps": 14,
+				"whoscoredMins": 816
 			}
 		}
 	},
@@ -77139,8 +77228,8 @@
 		},
 		"20-21": {
 			"Premier League | Manchester City": {
-				"whoscoredApps": 13,
-				"whoscoredMins": 1170
+				"whoscoredApps": 14,
+				"whoscoredMins": 1260
 			},
 			"Champions League | Manchester City": {
 				"whoscoredApps": 5,
@@ -77186,7 +77275,7 @@
 		"mapped": false,
 		"name": "Issiaga Sylla",
 		"simplifiedName": "Issiaga Sylla",
-		"age": 26,
+		"age": 27,
 		"nationality": "Guinea",
 		"countryCode": "gn",
 		"positions": {
@@ -77583,8 +77672,8 @@
 		},
 		"20-21": {
 			"Premier League | Manchester United": {
-				"whoscoredApps": 9,
-				"whoscoredMins": 638
+				"whoscoredApps": 11,
+				"whoscoredMins": 739
 			},
 			"Champions League | Manchester United": {
 				"whoscoredApps": 5,
@@ -77941,7 +78030,7 @@
 		"mapped": false,
 		"name": "Amato Ciciretti",
 		"simplifiedName": "Amato Ciciretti",
-		"age": 26,
+		"age": 27,
 		"nationality": "Italy",
 		"countryCode": "it",
 		"positions": {
@@ -78165,8 +78254,8 @@
 		},
 		"20-21": {
 			"Premier League | Brighton": {
-				"whoscoredApps": 13,
-				"whoscoredMins": 1114
+				"whoscoredApps": 15,
+				"whoscoredMins": 1226
 			}
 		}
 	},
@@ -78224,8 +78313,8 @@
 		},
 		"20-21": {
 			"Premier League | Manchester City": {
-				"whoscoredApps": 5,
-				"whoscoredMins": 379
+				"whoscoredApps": 6,
+				"whoscoredMins": 469
 			},
 			"Champions League | Manchester City": {
 				"whoscoredApps": 2,
@@ -78376,8 +78465,8 @@
 		},
 		"20-21": {
 			"Premier League | Aston Villa": {
-				"whoscoredApps": 12,
-				"whoscoredMins": 1080
+				"whoscoredApps": 13,
+				"whoscoredMins": 1125
 			}
 		}
 	},
@@ -78596,8 +78685,8 @@
 		},
 		"20-21": {
 			"Premier League | Manchester United": {
-				"whoscoredApps": 13,
-				"whoscoredMins": 1037
+				"whoscoredApps": 15,
+				"whoscoredMins": 1217
 			},
 			"Champions League | Manchester United": {
 				"whoscoredApps": 6,
@@ -79197,8 +79286,8 @@
 		},
 		"20-21": {
 			"Premier League | Liverpool": {
-				"whoscoredApps": 2,
-				"whoscoredMins": 7
+				"whoscoredApps": 3,
+				"whoscoredMins": 8
 			},
 			"Champions League | Liverpool": {
 				"whoscoredApps": 3,
@@ -79510,8 +79599,8 @@
 		},
 		"20-21": {
 			"Premier League | Arsenal": {
-				"whoscoredApps": 8,
-				"whoscoredMins": 694
+				"whoscoredApps": 10,
+				"whoscoredMins": 874
 			},
 			"Europa League | Arsenal": {
 				"whoscoredApps": 5,
@@ -79577,8 +79666,8 @@
 		},
 		"20-21": {
 			"Premier League | Arsenal": {
-				"whoscoredApps": 12,
-				"whoscoredMins": 1049
+				"whoscoredApps": 14,
+				"whoscoredMins": 1229
 			},
 			"Europa League | Arsenal": {
 				"whoscoredApps": 1,
@@ -79610,8 +79699,8 @@
 		},
 		"20-21": {
 			"La Liga | Elche": {
-				"whoscoredApps": 10,
-				"whoscoredMins": 860
+				"whoscoredApps": 11,
+				"whoscoredMins": 950
 			}
 		}
 	},
@@ -79969,8 +80058,8 @@
 		},
 		"20-21": {
 			"La Liga | Elche": {
-				"whoscoredApps": 4,
-				"whoscoredMins": 79
+				"whoscoredApps": 5,
+				"whoscoredMins": 82
 			}
 		}
 	},
@@ -80279,8 +80368,8 @@
 		},
 		"20-21": {
 			"Premier League | Manchester United": {
-				"whoscoredApps": 5,
-				"whoscoredMins": 384
+				"whoscoredApps": 6,
+				"whoscoredMins": 430
 			},
 			"Champions League | Manchester United": {
 				"whoscoredApps": 4,
@@ -80418,8 +80507,8 @@
 		},
 		"20-21": {
 			"La Liga | Celta Vigo": {
-				"whoscoredApps": 12,
-				"whoscoredMins": 627
+				"whoscoredApps": 13,
+				"whoscoredMins": 717
 			}
 		}
 	},
@@ -80709,8 +80798,8 @@
 		},
 		"20-21": {
 			"Premier League | Newcastle United": {
-				"whoscoredApps": 2,
-				"whoscoredMins": 94
+				"whoscoredApps": 4,
+				"whoscoredMins": 274
 			}
 		}
 	},
@@ -81016,8 +81105,8 @@
 		},
 		"20-21": {
 			"La Liga | Atletico Madrid": {
-				"whoscoredApps": 13,
-				"whoscoredMins": 781
+				"whoscoredApps": 14,
+				"whoscoredMins": 800
 			},
 			"Champions League | Atletico Madrid": {
 				"whoscoredApps": 6,
@@ -81127,8 +81216,8 @@
 		},
 		"20-21": {
 			"La Liga | Granada": {
-				"whoscoredApps": 12,
-				"whoscoredMins": 749
+				"whoscoredApps": 13,
+				"whoscoredMins": 822
 			},
 			"Europa League | Granada": {
 				"whoscoredApps": 5,
@@ -81140,7 +81229,7 @@
 		"mapped": false,
 		"name": "Rony Lopes",
 		"simplifiedName": "Rony Lopes",
-		"age": 24,
+		"age": 25,
 		"nationality": "Portugal",
 		"countryCode": "pt",
 		"positions": {
@@ -81600,7 +81689,7 @@
 		"mapped": false,
 		"name": "Alex Cordaz",
 		"simplifiedName": "Alex Cordaz",
-		"age": 37,
+		"age": 38,
 		"nationality": "Italy",
 		"countryCode": "it",
 		"positions": {
@@ -81863,8 +81952,8 @@
 		},
 		"20-21": {
 			"Premier League | Manchester City": {
-				"whoscoredApps": 9,
-				"whoscoredMins": 810
+				"whoscoredApps": 10,
+				"whoscoredMins": 900
 			},
 			"Champions League | Manchester City": {
 				"whoscoredApps": 5,
@@ -82994,8 +83083,8 @@
 		},
 		"20-21": {
 			"Premier League | Chelsea": {
-				"whoscoredApps": 4,
-				"whoscoredMins": 316
+				"whoscoredApps": 5,
+				"whoscoredMins": 406
 			},
 			"Champions League | Chelsea": {
 				"whoscoredApps": 2,
@@ -83257,8 +83346,8 @@
 		},
 		"20-21": {
 			"La Liga | Athletic Bilbao": {
-				"whoscoredApps": 15,
-				"whoscoredMins": 1250
+				"whoscoredApps": 16,
+				"whoscoredMins": 1340
 			}
 		}
 	},
@@ -83543,8 +83632,8 @@
 		},
 		"20-21": {
 			"Premier League | Chelsea": {
-				"whoscoredApps": 14,
-				"whoscoredMins": 1208
+				"whoscoredApps": 16,
+				"whoscoredMins": 1272
 			},
 			"Champions League | Chelsea": {
 				"whoscoredApps": 6,
@@ -83808,8 +83897,8 @@
 		},
 		"20-21": {
 			"La Liga | Valencia": {
-				"whoscoredApps": 12,
-				"whoscoredMins": 333
+				"whoscoredApps": 13,
+				"whoscoredMins": 403
 			}
 		}
 	},
@@ -84102,8 +84191,8 @@
 		},
 		"20-21": {
 			"Premier League | Burnley": {
-				"whoscoredApps": 11,
-				"whoscoredMins": 990
+				"whoscoredApps": 13,
+				"whoscoredMins": 1170
 			}
 		}
 	},
@@ -84275,8 +84364,8 @@
 		},
 		"20-21": {
 			"La Liga | SD Huesca": {
-				"whoscoredApps": 9,
-				"whoscoredMins": 237
+				"whoscoredApps": 10,
+				"whoscoredMins": 247
 			}
 		}
 	},
@@ -84470,8 +84559,8 @@
 		},
 		"20-21": {
 			"La Liga | Eibar": {
-				"whoscoredApps": 11,
-				"whoscoredMins": 604
+				"whoscoredApps": 12,
+				"whoscoredMins": 621
 			}
 		}
 	},
@@ -84930,8 +85019,8 @@
 		},
 		"20-21": {
 			"La Liga | Granada": {
-				"whoscoredApps": 10,
-				"whoscoredMins": 434
+				"whoscoredApps": 11,
+				"whoscoredMins": 524
 			},
 			"Europa League | Granada": {
 				"whoscoredApps": 3,
@@ -85160,8 +85249,8 @@
 		},
 		"20-21": {
 			"La Liga | Atletico Madrid": {
-				"whoscoredApps": 11,
-				"whoscoredMins": 478
+				"whoscoredApps": 12,
+				"whoscoredMins": 549
 			},
 			"Champions League | Atletico Madrid": {
 				"whoscoredApps": 6,
@@ -85300,8 +85389,8 @@
 		},
 		"20-21": {
 			"Premier League | Brighton": {
-				"whoscoredApps": 9,
-				"whoscoredMins": 174
+				"whoscoredApps": 11,
+				"whoscoredMins": 250
 			}
 		}
 	},
@@ -85456,8 +85545,8 @@
 		},
 		"20-21": {
 			"La Liga | Osasuna": {
-				"whoscoredApps": 8,
-				"whoscoredMins": 459
+				"whoscoredApps": 9,
+				"whoscoredMins": 505
 			}
 		}
 	},
@@ -85696,7 +85785,7 @@
 				"FW"
 			],
 			"20-21": [
-				"FW"
+				"AM"
 			]
 		},
 		"clubs": {
@@ -85735,8 +85824,8 @@
 		},
 		"20-21": {
 			"La Liga | Elche": {
-				"whoscoredApps": 7,
-				"whoscoredMins": 288
+				"whoscoredApps": 8,
+				"whoscoredMins": 362
 			}
 		}
 	},
@@ -86084,8 +86173,8 @@
 		},
 		"20-21": {
 			"Premier League | Newcastle United": {
-				"whoscoredApps": 12,
-				"whoscoredMins": 1060
+				"whoscoredApps": 13,
+				"whoscoredMins": 1150
 			}
 		}
 	},
@@ -86113,8 +86202,8 @@
 		},
 		"20-21": {
 			"Premier League | Leeds": {
-				"whoscoredApps": 14,
-				"whoscoredMins": 1251
+				"whoscoredApps": 16,
+				"whoscoredMins": 1431
 			}
 		}
 	},
@@ -86201,8 +86290,8 @@
 		},
 		"20-21": {
 			"Premier League | Aston Villa": {
-				"whoscoredApps": 2,
-				"whoscoredMins": 180
+				"whoscoredApps": 4,
+				"whoscoredMins": 360
 			}
 		}
 	},
@@ -86245,8 +86334,8 @@
 		},
 		"20-21": {
 			"Premier League | Sheffield United": {
-				"whoscoredApps": 14,
-				"whoscoredMins": 1260
+				"whoscoredApps": 16,
+				"whoscoredMins": 1440
 			}
 		}
 	},
@@ -86334,8 +86423,8 @@
 		},
 		"20-21": {
 			"Premier League | Fulham": {
-				"whoscoredApps": 13,
-				"whoscoredMins": 853
+				"whoscoredApps": 14,
+				"whoscoredMins": 936
 			}
 		}
 	},
@@ -86437,8 +86526,8 @@
 		},
 		"20-21": {
 			"La Liga | Getafe": {
-				"whoscoredApps": 12,
-				"whoscoredMins": 406
+				"whoscoredApps": 13,
+				"whoscoredMins": 427
 			}
 		}
 	},
@@ -86682,8 +86771,8 @@
 		},
 		"20-21": {
 			"La Liga | Real Betis": {
-				"whoscoredApps": 13,
-				"whoscoredMins": 1074
+				"whoscoredApps": 14,
+				"whoscoredMins": 1133
 			}
 		}
 	},
@@ -86954,8 +87043,8 @@
 		},
 		"20-21": {
 			"La Liga | Sevilla": {
-				"whoscoredApps": 13,
-				"whoscoredMins": 1160
+				"whoscoredApps": 14,
+				"whoscoredMins": 1250
 			},
 			"Champions League | Sevilla": {
 				"whoscoredApps": 6,
@@ -87027,8 +87116,8 @@
 		},
 		"20-21": {
 			"La Liga | Real Betis": {
-				"whoscoredApps": 13,
-				"whoscoredMins": 839
+				"whoscoredApps": 14,
+				"whoscoredMins": 892
 			}
 		}
 	},
@@ -87139,7 +87228,7 @@
 		"mapped": false,
 		"name": "Mahmoud Dahoud",
 		"simplifiedName": "Mahmoud Dahoud",
-		"age": 24,
+		"age": 25,
 		"nationality": "Germany",
 		"countryCode": "de",
 		"positions": {
@@ -87481,8 +87570,8 @@
 		},
 		"20-21": {
 			"La Liga | Levante": {
-				"whoscoredApps": 14,
-				"whoscoredMins": 871
+				"whoscoredApps": 15,
+				"whoscoredMins": 960
 			}
 		}
 	},
@@ -87628,8 +87717,8 @@
 		},
 		"20-21": {
 			"Premier League | Leicester": {
-				"whoscoredApps": 7,
-				"whoscoredMins": 443
+				"whoscoredApps": 9,
+				"whoscoredMins": 542
 			},
 			"Europa League | Leicester": {
 				"whoscoredApps": 4,
@@ -87954,8 +88043,8 @@
 		},
 		"20-21": {
 			"La Liga | Levante": {
-				"whoscoredApps": 9,
-				"whoscoredMins": 174
+				"whoscoredApps": 10,
+				"whoscoredMins": 202
 			}
 		}
 	},
@@ -88062,8 +88151,8 @@
 		},
 		"20-21": {
 			"La Liga | Deportivo Alaves": {
-				"whoscoredApps": 11,
-				"whoscoredMins": 485
+				"whoscoredApps": 12,
+				"whoscoredMins": 531
 			}
 		}
 	},
@@ -88121,8 +88210,8 @@
 		},
 		"20-21": {
 			"La Liga | Deportivo Alaves": {
-				"whoscoredApps": 12,
-				"whoscoredMins": 849
+				"whoscoredApps": 13,
+				"whoscoredMins": 894
 			}
 		}
 	},
@@ -88150,8 +88239,8 @@
 		},
 		"20-21": {
 			"Premier League | Fulham": {
-				"whoscoredApps": 10,
-				"whoscoredMins": 627
+				"whoscoredApps": 11,
+				"whoscoredMins": 717
 			}
 		}
 	},
@@ -88526,8 +88615,8 @@
 		},
 		"20-21": {
 			"La Liga | Atletico Madrid": {
-				"whoscoredApps": 4,
-				"whoscoredMins": 360
+				"whoscoredApps": 5,
+				"whoscoredMins": 370
 			},
 			"Champions League | Atletico Madrid": {
 				"whoscoredApps": 3,
@@ -88632,8 +88721,8 @@
 		},
 		"20-21": {
 			"La Liga | Cadiz": {
-				"whoscoredApps": 12,
-				"whoscoredMins": 1080
+				"whoscoredApps": 13,
+				"whoscoredMins": 1170
 			}
 		}
 	},
@@ -88740,8 +88829,8 @@
 		},
 		"20-21": {
 			"La Liga | Sevilla": {
-				"whoscoredApps": 10,
-				"whoscoredMins": 900
+				"whoscoredApps": 11,
+				"whoscoredMins": 990
 			},
 			"Champions League | Sevilla": {
 				"whoscoredApps": 3,
@@ -89110,8 +89199,8 @@
 		},
 		"20-21": {
 			"Premier League | Leicester": {
-				"whoscoredApps": 14,
-				"whoscoredMins": 1260
+				"whoscoredApps": 16,
+				"whoscoredMins": 1383
 			},
 			"Europa League | Leicester": {
 				"whoscoredApps": 5,
@@ -89173,8 +89262,8 @@
 		},
 		"20-21": {
 			"Premier League | Newcastle United": {
-				"whoscoredApps": 10,
-				"whoscoredMins": 731
+				"whoscoredApps": 12,
+				"whoscoredMins": 911
 			}
 		}
 	},
@@ -89434,8 +89523,8 @@
 		},
 		"20-21": {
 			"Premier League | Fulham": {
-				"whoscoredApps": 10,
-				"whoscoredMins": 900
+				"whoscoredApps": 11,
+				"whoscoredMins": 990
 			}
 		}
 	},
@@ -89662,8 +89751,8 @@
 		},
 		"20-21": {
 			"Premier League | Manchester City": {
-				"whoscoredApps": 7,
-				"whoscoredMins": 464
+				"whoscoredApps": 8,
+				"whoscoredMins": 554
 			},
 			"Champions League | Manchester City": {
 				"whoscoredApps": 6,
@@ -89725,8 +89814,8 @@
 		},
 		"20-21": {
 			"Premier League | Southampton": {
-				"whoscoredApps": 14,
-				"whoscoredMins": 1172
+				"whoscoredApps": 16,
+				"whoscoredMins": 1352
 			}
 		}
 	},
@@ -89842,8 +89931,8 @@
 		},
 		"20-21": {
 			"Premier League | Aston Villa": {
-				"whoscoredApps": 12,
-				"whoscoredMins": 1080
+				"whoscoredApps": 14,
+				"whoscoredMins": 1260
 			}
 		}
 	},
@@ -89938,8 +90027,8 @@
 		},
 		"20-21": {
 			"La Liga | Valencia": {
-				"whoscoredApps": 15,
-				"whoscoredMins": 1350
+				"whoscoredApps": 16,
+				"whoscoredMins": 1440
 			}
 		}
 	},
@@ -90002,8 +90091,8 @@
 		},
 		"20-21": {
 			"Premier League | Everton": {
-				"whoscoredApps": 13,
-				"whoscoredMins": 689
+				"whoscoredApps": 14,
+				"whoscoredMins": 779
 			}
 		}
 	},
@@ -90093,6 +90182,9 @@
 			],
 			"19-20": [
 				"AM"
+			],
+			"20-21": [
+				"AM"
 			]
 		},
 		"clubs": {
@@ -90101,6 +90193,9 @@
 			],
 			"19-20": [
 				"Leicester"
+			],
+			"20-21": [
+				"Leicester"
 			]
 		},
 		"leagues": {
@@ -90108,6 +90203,9 @@
 				"_england"
 			],
 			"19-20": [
+				"_england"
+			],
+			"20-21": [
 				"_england"
 			]
 		},
@@ -90121,6 +90219,12 @@
 			"Premier League | Leicester": {
 				"whoscoredApps": 21,
 				"whoscoredMins": 609
+			}
+		},
+		"20-21": {
+			"Premier League | Leicester": {
+				"whoscoredApps": 1,
+				"whoscoredMins": 18
 			}
 		}
 	},
@@ -90148,8 +90252,8 @@
 		},
 		"20-21": {
 			"La Liga | Celta Vigo": {
-				"whoscoredApps": 15,
-				"whoscoredMins": 1248
+				"whoscoredApps": 16,
+				"whoscoredMins": 1331
 			}
 		}
 	},
@@ -90207,8 +90311,8 @@
 		},
 		"20-21": {
 			"Premier League | Leicester": {
-				"whoscoredApps": 13,
-				"whoscoredMins": 795
+				"whoscoredApps": 14,
+				"whoscoredMins": 885
 			},
 			"Europa League | Leicester": {
 				"whoscoredApps": 5,
@@ -90240,8 +90344,8 @@
 		},
 		"20-21": {
 			"Premier League | West Ham": {
-				"whoscoredApps": 7,
-				"whoscoredMins": 276
+				"whoscoredApps": 8,
+				"whoscoredMins": 307
 			}
 		}
 	},
@@ -90269,8 +90373,8 @@
 		},
 		"20-21": {
 			"Premier League | Leeds": {
-				"whoscoredApps": 12,
-				"whoscoredMins": 731
+				"whoscoredApps": 14,
+				"whoscoredMins": 911
 			}
 		}
 	},
@@ -90431,8 +90535,8 @@
 		},
 		"20-21": {
 			"Premier League | Fulham": {
-				"whoscoredApps": 12,
-				"whoscoredMins": 879
+				"whoscoredApps": 13,
+				"whoscoredMins": 969
 			}
 		}
 	},
@@ -90460,8 +90564,8 @@
 		},
 		"20-21": {
 			"La Liga | Levante": {
-				"whoscoredApps": 13,
-				"whoscoredMins": 937
+				"whoscoredApps": 14,
+				"whoscoredMins": 1008
 			}
 		}
 	},
@@ -90527,8 +90631,8 @@
 		},
 		"20-21": {
 			"La Liga | Real Madrid": {
-				"whoscoredApps": 13,
-				"whoscoredMins": 552
+				"whoscoredApps": 14,
+				"whoscoredMins": 638
 			},
 			"Champions League | Real Madrid": {
 				"whoscoredApps": 5,
@@ -90959,8 +91063,8 @@
 		},
 		"20-21": {
 			"Premier League | Sheffield United": {
-				"whoscoredApps": 12,
-				"whoscoredMins": 777
+				"whoscoredApps": 13,
+				"whoscoredMins": 822
 			}
 		}
 	},
@@ -91003,8 +91107,8 @@
 		},
 		"20-21": {
 			"Premier League | West Bromwich Albion": {
-				"whoscoredApps": 13,
-				"whoscoredMins": 595
+				"whoscoredApps": 15,
+				"whoscoredMins": 758
 			}
 		}
 	},
@@ -91047,8 +91151,8 @@
 		},
 		"20-21": {
 			"Premier League | Burnley": {
-				"whoscoredApps": 12,
-				"whoscoredMins": 1080
+				"whoscoredApps": 14,
+				"whoscoredMins": 1260
 			}
 		}
 	},
@@ -91515,8 +91619,8 @@
 		},
 		"20-21": {
 			"Premier League | Wolverhampton Wanderers": {
-				"whoscoredApps": 14,
-				"whoscoredMins": 762
+				"whoscoredApps": 16,
+				"whoscoredMins": 942
 			}
 		}
 	},
@@ -91803,8 +91907,8 @@
 		},
 		"20-21": {
 			"Premier League | Sheffield United": {
-				"whoscoredApps": 8,
-				"whoscoredMins": 418
+				"whoscoredApps": 10,
+				"whoscoredMins": 598
 			}
 		}
 	},
@@ -91862,8 +91966,8 @@
 		},
 		"20-21": {
 			"La Liga | Levante": {
-				"whoscoredApps": 10,
-				"whoscoredMins": 629
+				"whoscoredApps": 11,
+				"whoscoredMins": 719
 			}
 		}
 	},
@@ -91925,8 +92029,8 @@
 		},
 		"20-21": {
 			"La Liga | Getafe": {
-				"whoscoredApps": 12,
-				"whoscoredMins": 591
+				"whoscoredApps": 13,
+				"whoscoredMins": 660
 			}
 		}
 	},
@@ -92386,7 +92490,7 @@
 		"mapped": false,
 		"name": "Lago Junior",
 		"simplifiedName": "Lago Junior",
-		"age": 29,
+		"age": 30,
 		"nationality": "Cote D'Ivoire",
 		"countryCode": "ci",
 		"positions": {
@@ -92479,8 +92583,8 @@
 		},
 		"20-21": {
 			"La Liga | Deportivo Alaves": {
-				"whoscoredApps": 13,
-				"whoscoredMins": 831
+				"whoscoredApps": 14,
+				"whoscoredMins": 898
 			}
 		}
 	},
@@ -92586,8 +92690,8 @@
 		},
 		"20-21": {
 			"Premier League | Leicester": {
-				"whoscoredApps": 7,
-				"whoscoredMins": 600
+				"whoscoredApps": 8,
+				"whoscoredMins": 690
 			},
 			"Europa League | Leicester": {
 				"whoscoredApps": 1,
@@ -92732,8 +92836,8 @@
 		},
 		"20-21": {
 			"Premier League | Crystal Palace": {
-				"whoscoredApps": 11,
-				"whoscoredMins": 502
+				"whoscoredApps": 13,
+				"whoscoredMins": 597
 			}
 		}
 	},
@@ -93168,8 +93272,8 @@
 		},
 		"20-21": {
 			"Premier League | Everton": {
-				"whoscoredApps": 14,
-				"whoscoredMins": 1240
+				"whoscoredApps": 15,
+				"whoscoredMins": 1330
 			}
 		}
 	},
@@ -93185,6 +93289,7 @@
 				"AM"
 			],
 			"20-21": [
+				"AM",
 				"FB"
 			]
 		},
@@ -93212,8 +93317,8 @@
 		},
 		"20-21": {
 			"Premier League | Newcastle United": {
-				"whoscoredApps": 7,
-				"whoscoredMins": 465
+				"whoscoredApps": 9,
+				"whoscoredMins": 622
 			}
 		}
 	},
@@ -93300,8 +93405,8 @@
 		},
 		"20-21": {
 			"La Liga | Real Valladolid": {
-				"whoscoredApps": 15,
-				"whoscoredMins": 980
+				"whoscoredApps": 16,
+				"whoscoredMins": 1059
 			}
 		}
 	},
@@ -93490,8 +93595,8 @@
 		},
 		"20-21": {
 			"La Liga | Real Valladolid": {
-				"whoscoredApps": 11,
-				"whoscoredMins": 809
+				"whoscoredApps": 12,
+				"whoscoredMins": 820
 			}
 		}
 	},
@@ -94019,8 +94124,8 @@
 		},
 		"20-21": {
 			"La Liga | Granada": {
-				"whoscoredApps": 13,
-				"whoscoredMins": 1170
+				"whoscoredApps": 14,
+				"whoscoredMins": 1260
 			},
 			"Europa League | Granada": {
 				"whoscoredApps": 5,
@@ -94851,8 +94956,8 @@
 		},
 		"20-21": {
 			"La Liga | Sevilla": {
-				"whoscoredApps": 10,
-				"whoscoredMins": 439
+				"whoscoredApps": 11,
+				"whoscoredMins": 466
 			},
 			"Champions League | Sevilla": {
 				"whoscoredApps": 4,
@@ -95144,8 +95249,8 @@
 		},
 		"20-21": {
 			"Premier League | West Ham": {
-				"whoscoredApps": 14,
-				"whoscoredMins": 1260
+				"whoscoredApps": 16,
+				"whoscoredMins": 1440
 			}
 		}
 	},
@@ -95241,8 +95346,8 @@
 		},
 		"20-21": {
 			"La Liga | Cadiz": {
-				"whoscoredApps": 15,
-				"whoscoredMins": 1239
+				"whoscoredApps": 16,
+				"whoscoredMins": 1329
 			}
 		}
 	},
@@ -95437,8 +95542,8 @@
 		},
 		"20-21": {
 			"Premier League | Tottenham": {
-				"whoscoredApps": 5,
-				"whoscoredMins": 283
+				"whoscoredApps": 6,
+				"whoscoredMins": 373
 			},
 			"Europa League | Tottenham": {
 				"whoscoredApps": 5,
@@ -95653,8 +95758,7 @@
 				"AM"
 			],
 			"20-21": [
-				"AM",
-				"FB"
+				"AM"
 			]
 		},
 		"clubs": {
@@ -95701,8 +95805,8 @@
 		},
 		"20-21": {
 			"La Liga | Real Madrid": {
-				"whoscoredApps": 12,
-				"whoscoredMins": 859
+				"whoscoredApps": 13,
+				"whoscoredMins": 936
 			},
 			"Champions League | Real Madrid": {
 				"whoscoredApps": 5,
@@ -95883,8 +95987,8 @@
 		},
 		"20-21": {
 			"Premier League | Arsenal": {
-				"whoscoredApps": 13,
-				"whoscoredMins": 851
+				"whoscoredApps": 14,
+				"whoscoredMins": 860
 			},
 			"Europa League | Arsenal": {
 				"whoscoredApps": 5,
@@ -96640,8 +96744,8 @@
 		},
 		"20-21": {
 			"La Liga | Celta Vigo": {
-				"whoscoredApps": 14,
-				"whoscoredMins": 1258
+				"whoscoredApps": 15,
+				"whoscoredMins": 1348
 			}
 		}
 	},
@@ -96957,7 +97061,7 @@
 		"mapped": false,
 		"name": "Ollie Watkins",
 		"simplifiedName": "Ollie Watkins",
-		"age": 24,
+		"age": 25,
 		"nationality": "England",
 		"countryCode": "_england",
 		"positions": {
@@ -96977,8 +97081,8 @@
 		},
 		"20-21": {
 			"Premier League | Aston Villa": {
-				"whoscoredApps": 12,
-				"whoscoredMins": 1080
+				"whoscoredApps": 14,
+				"whoscoredMins": 1260
 			}
 		}
 	},
@@ -97639,8 +97743,8 @@
 		},
 		"20-21": {
 			"Premier League | Newcastle United": {
-				"whoscoredApps": 12,
-				"whoscoredMins": 729
+				"whoscoredApps": 14,
+				"whoscoredMins": 890
 			}
 		}
 	},
@@ -98087,8 +98191,8 @@
 		},
 		"20-21": {
 			"Premier League | Fulham": {
-				"whoscoredApps": 8,
-				"whoscoredMins": 692
+				"whoscoredApps": 9,
+				"whoscoredMins": 782
 			},
 			"Ligue 1 | Lyon": {
 				"whoscoredApps": 3,
@@ -98261,8 +98365,8 @@
 		},
 		"20-21": {
 			"La Liga | Cadiz": {
-				"whoscoredApps": 7,
-				"whoscoredMins": 237
+				"whoscoredApps": 8,
+				"whoscoredMins": 243
 			}
 		}
 	},
@@ -98405,8 +98509,8 @@
 		},
 		"20-21": {
 			"Premier League | Aston Villa": {
-				"whoscoredApps": 6,
-				"whoscoredMins": 231
+				"whoscoredApps": 8,
+				"whoscoredMins": 398
 			}
 		}
 	},
@@ -99638,8 +99742,8 @@
 		},
 		"20-21": {
 			"La Liga | Barcelona": {
-				"whoscoredApps": 13,
-				"whoscoredMins": 897
+				"whoscoredApps": 14,
+				"whoscoredMins": 979
 			},
 			"Champions League | Barcelona": {
 				"whoscoredApps": 6,
@@ -99713,19 +99817,34 @@
 		"nationality": "Cape Verde",
 		"countryCode": "cv",
 		"positions": {
+			"18-19": [
+				"CB"
+			],
 			"20-21": [
 				"CB"
 			]
 		},
 		"clubs": {
+			"18-19": [
+				"Toulouse"
+			],
 			"20-21": [
 				"Lens"
 			]
 		},
 		"leagues": {
+			"18-19": [
+				"fr"
+			],
 			"20-21": [
 				"fr"
 			]
+		},
+		"18-19": {
+			"Ligue 1 | Toulouse": {
+				"whoscoredApps": 3,
+				"whoscoredMins": 136
+			}
 		},
 		"20-21": {
 			"Ligue 1 | Lens": {
@@ -99793,8 +99912,8 @@
 		},
 		"20-21": {
 			"Premier League | Wolverhampton Wanderers": {
-				"whoscoredApps": 9,
-				"whoscoredMins": 788
+				"whoscoredApps": 11,
+				"whoscoredMins": 968
 			}
 		}
 	},
@@ -99944,8 +100063,8 @@
 		},
 		"20-21": {
 			"Premier League | West Ham": {
-				"whoscoredApps": 13,
-				"whoscoredMins": 709
+				"whoscoredApps": 15,
+				"whoscoredMins": 876
 			}
 		}
 	},
@@ -100412,8 +100531,8 @@
 		},
 		"20-21": {
 			"La Liga | Athletic Bilbao": {
-				"whoscoredApps": 10,
-				"whoscoredMins": 634
+				"whoscoredApps": 11,
+				"whoscoredMins": 651
 			}
 		}
 	},
@@ -100475,8 +100594,8 @@
 		},
 		"20-21": {
 			"Premier League | Wolverhampton Wanderers": {
-				"whoscoredApps": 14,
-				"whoscoredMins": 883
+				"whoscoredApps": 16,
+				"whoscoredMins": 1063
 			}
 		}
 	},
@@ -100664,8 +100783,8 @@
 		},
 		"20-21": {
 			"La Liga | Athletic Bilbao": {
-				"whoscoredApps": 3,
-				"whoscoredMins": 37
+				"whoscoredApps": 4,
+				"whoscoredMins": 42
 			}
 		}
 	},
@@ -100725,8 +100844,8 @@
 		},
 		"20-21": {
 			"La Liga | Athletic Bilbao": {
-				"whoscoredApps": 12,
-				"whoscoredMins": 846
+				"whoscoredApps": 13,
+				"whoscoredMins": 902
 			},
 			"Serie A | Torino": {
 				"whoscoredApps": 2,
@@ -100798,8 +100917,8 @@
 		},
 		"20-21": {
 			"La Liga | Granada": {
-				"whoscoredApps": 8,
-				"whoscoredMins": 662
+				"whoscoredApps": 9,
+				"whoscoredMins": 663
 			},
 			"Europa League | Granada": {
 				"whoscoredApps": 4,
@@ -100920,8 +101039,8 @@
 		},
 		"20-21": {
 			"La Liga | Real Sociedad": {
-				"whoscoredApps": 15,
-				"whoscoredMins": 1205
+				"whoscoredApps": 16,
+				"whoscoredMins": 1295
 			},
 			"Europa League | Real Sociedad": {
 				"whoscoredApps": 6,
@@ -101064,8 +101183,8 @@
 		},
 		"20-21": {
 			"La Liga | Sevilla": {
-				"whoscoredApps": 12,
-				"whoscoredMins": 823
+				"whoscoredApps": 13,
+				"whoscoredMins": 911
 			},
 			"Champions League | Sevilla": {
 				"whoscoredApps": 5,
@@ -101185,8 +101304,8 @@
 		},
 		"20-21": {
 			"La Liga | Levante": {
-				"whoscoredApps": 10,
-				"whoscoredMins": 254
+				"whoscoredApps": 11,
+				"whoscoredMins": 344
 			}
 		}
 	},
@@ -101302,8 +101421,8 @@
 		},
 		"20-21": {
 			"La Liga | Eibar": {
-				"whoscoredApps": 10,
-				"whoscoredMins": 825
+				"whoscoredApps": 11,
+				"whoscoredMins": 898
 			}
 		}
 	},
@@ -101365,8 +101484,8 @@
 		},
 		"20-21": {
 			"Premier League | Arsenal": {
-				"whoscoredApps": 10,
-				"whoscoredMins": 436
+				"whoscoredApps": 11,
+				"whoscoredMins": 455
 			},
 			"Europa League | Arsenal": {
 				"whoscoredApps": 6,
@@ -101535,8 +101654,8 @@
 		},
 		"20-21": {
 			"La Liga | Osasuna": {
-				"whoscoredApps": 13,
-				"whoscoredMins": 1170
+				"whoscoredApps": 14,
+				"whoscoredMins": 1260
 			}
 		}
 	},
@@ -102371,7 +102490,7 @@
 		"mapped": false,
 		"name": "Andreas Pereira",
 		"simplifiedName": "Andreas Pereira",
-		"age": 24,
+		"age": 25,
 		"nationality": "Brazil",
 		"countryCode": "br",
 		"positions": {
@@ -102869,7 +102988,7 @@
 				"FB"
 			],
 			"20-21": [
-				"FB"
+				"CB"
 			]
 		},
 		"clubs": {
@@ -102896,8 +103015,8 @@
 		},
 		"20-21": {
 			"Premier League | Leicester": {
-				"whoscoredApps": 3,
-				"whoscoredMins": 176
+				"whoscoredApps": 4,
+				"whoscoredMins": 266
 			}
 		}
 	},
@@ -103111,8 +103230,8 @@
 		},
 		"20-21": {
 			"Premier League | Manchester United": {
-				"whoscoredApps": 2,
-				"whoscoredMins": 97
+				"whoscoredApps": 4,
+				"whoscoredMins": 277
 			}
 		}
 	},
@@ -103357,8 +103476,8 @@
 		},
 		"20-21": {
 			"Premier League | Sheffield United": {
-				"whoscoredApps": 8,
-				"whoscoredMins": 541
+				"whoscoredApps": 10,
+				"whoscoredMins": 614
 			}
 		}
 	},
@@ -103546,8 +103665,8 @@
 		},
 		"20-21": {
 			"Premier League | West Bromwich Albion": {
-				"whoscoredApps": 10,
-				"whoscoredMins": 729
+				"whoscoredApps": 12,
+				"whoscoredMins": 868
 			}
 		}
 	},
@@ -104195,8 +104314,8 @@
 		},
 		"20-21": {
 			"Premier League | West Bromwich Albion": {
-				"whoscoredApps": 13,
-				"whoscoredMins": 1170
+				"whoscoredApps": 15,
+				"whoscoredMins": 1350
 			}
 		}
 	},
@@ -104266,8 +104385,8 @@
 		},
 		"20-21": {
 			"La Liga | Valencia": {
-				"whoscoredApps": 12,
-				"whoscoredMins": 877
+				"whoscoredApps": 13,
+				"whoscoredMins": 950
 			}
 		}
 	},
@@ -104561,8 +104680,8 @@
 		},
 		"20-21": {
 			"La Liga | Atletico Madrid": {
-				"whoscoredApps": 5,
-				"whoscoredMins": 182
+				"whoscoredApps": 6,
+				"whoscoredMins": 201
 			},
 			"Champions League | Atletico Madrid": {
 				"whoscoredApps": 4,
@@ -105523,8 +105642,8 @@
 		},
 		"20-21": {
 			"La Liga | Atletico Madrid": {
-				"whoscoredApps": 13,
-				"whoscoredMins": 838
+				"whoscoredApps": 14,
+				"whoscoredMins": 928
 			},
 			"Champions League | Atletico Madrid": {
 				"whoscoredApps": 6,
@@ -105886,8 +106005,8 @@
 		},
 		"20-21": {
 			"Premier League | Arsenal": {
-				"whoscoredApps": 8,
-				"whoscoredMins": 384
+				"whoscoredApps": 9,
+				"whoscoredMins": 385
 			},
 			"Europa League | Arsenal": {
 				"whoscoredApps": 5,
@@ -105951,8 +106070,8 @@
 		},
 		"20-21": {
 			"La Liga | Athletic Bilbao": {
-				"whoscoredApps": 15,
-				"whoscoredMins": 1151
+				"whoscoredApps": 16,
+				"whoscoredMins": 1207
 			}
 		}
 	},
@@ -106160,8 +106279,8 @@
 		},
 		"20-21": {
 			"Premier League | Fulham": {
-				"whoscoredApps": 9,
-				"whoscoredMins": 518
+				"whoscoredApps": 10,
+				"whoscoredMins": 608
 			},
 			"Premier League | Chelsea": {
 				"whoscoredApps": 1,
@@ -106409,8 +106528,8 @@
 		},
 		"20-21": {
 			"Premier League | Southampton": {
-				"whoscoredApps": 14,
-				"whoscoredMins": 1207
+				"whoscoredApps": 16,
+				"whoscoredMins": 1355
 			}
 		}
 	},
@@ -106844,8 +106963,8 @@
 		},
 		"20-21": {
 			"La Liga | Eibar": {
-				"whoscoredApps": 15,
-				"whoscoredMins": 1350
+				"whoscoredApps": 16,
+				"whoscoredMins": 1440
 			}
 		}
 	},
@@ -107991,8 +108110,8 @@
 		},
 		"20-21": {
 			"La Liga | Deportivo Alaves": {
-				"whoscoredApps": 14,
-				"whoscoredMins": 1182
+				"whoscoredApps": 15,
+				"whoscoredMins": 1272
 			}
 		}
 	},
@@ -108108,8 +108227,8 @@
 		},
 		"20-21": {
 			"La Liga | Athletic Bilbao": {
-				"whoscoredApps": 11,
-				"whoscoredMins": 606
+				"whoscoredApps": 12,
+				"whoscoredMins": 696
 			}
 		}
 	},
@@ -108168,8 +108287,8 @@
 		},
 		"20-21": {
 			"La Liga | Levante": {
-				"whoscoredApps": 14,
-				"whoscoredMins": 988
+				"whoscoredApps": 15,
+				"whoscoredMins": 1007
 			}
 		}
 	},
@@ -108373,8 +108492,8 @@
 		},
 		"20-21": {
 			"Premier League | West Bromwich Albion": {
-				"whoscoredApps": 13,
-				"whoscoredMins": 1149
+				"whoscoredApps": 15,
+				"whoscoredMins": 1329
 			}
 		}
 	},
@@ -108691,8 +108810,8 @@
 		},
 		"20-21": {
 			"Premier League | Leeds": {
-				"whoscoredApps": 11,
-				"whoscoredMins": 946
+				"whoscoredApps": 13,
+				"whoscoredMins": 1126
 			}
 		}
 	},
@@ -108735,8 +108854,8 @@
 		},
 		"20-21": {
 			"La Liga | Real Sociedad": {
-				"whoscoredApps": 16,
-				"whoscoredMins": 1440
+				"whoscoredApps": 17,
+				"whoscoredMins": 1530
 			},
 			"Europa League | Real Sociedad": {
 				"whoscoredApps": 5,
@@ -108951,8 +109070,8 @@
 		},
 		"20-21": {
 			"La Liga | Elche": {
-				"whoscoredApps": 12,
-				"whoscoredMins": 948
+				"whoscoredApps": 13,
+				"whoscoredMins": 964
 			}
 		}
 	},
@@ -109454,8 +109573,8 @@
 		},
 		"20-21": {
 			"La Liga | Villarreal": {
-				"whoscoredApps": 10,
-				"whoscoredMins": 750
+				"whoscoredApps": 11,
+				"whoscoredMins": 840
 			},
 			"Europa League | Villarreal": {
 				"whoscoredApps": 3,
@@ -110069,8 +110188,8 @@
 		},
 		"20-21": {
 			"La Liga | Barcelona": {
-				"whoscoredApps": 14,
-				"whoscoredMins": 1186
+				"whoscoredApps": 15,
+				"whoscoredMins": 1276
 			},
 			"Champions League | Barcelona": {
 				"whoscoredApps": 5,
@@ -110126,8 +110245,8 @@
 		},
 		"20-21": {
 			"Premier League | Tottenham": {
-				"whoscoredApps": 9,
-				"whoscoredMins": 567
+				"whoscoredApps": 10,
+				"whoscoredMins": 594
 			},
 			"Europa League | Tottenham": {
 				"whoscoredApps": 4,
@@ -110433,8 +110552,8 @@
 		},
 		"20-21": {
 			"La Liga | Real Valladolid": {
-				"whoscoredApps": 10,
-				"whoscoredMins": 795
+				"whoscoredApps": 11,
+				"whoscoredMins": 885
 			}
 		}
 	},
@@ -110536,8 +110655,8 @@
 		},
 		"20-21": {
 			"La Liga | Cadiz": {
-				"whoscoredApps": 8,
-				"whoscoredMins": 231
+				"whoscoredApps": 9,
+				"whoscoredMins": 277
 			}
 		}
 	},
@@ -110740,7 +110859,7 @@
 		"mapped": false,
 		"name": "Nahitan Nández",
 		"simplifiedName": "Nahitan Nandez",
-		"age": 24,
+		"age": 25,
 		"nationality": "Uruguay",
 		"countryCode": "uy",
 		"positions": {
@@ -111148,8 +111267,8 @@
 		},
 		"20-21": {
 			"Premier League | West Ham": {
-				"whoscoredApps": 11,
-				"whoscoredMins": 990
+				"whoscoredApps": 12,
+				"whoscoredMins": 1080
 			}
 		}
 	},
@@ -111361,8 +111480,8 @@
 		},
 		"20-21": {
 			"La Liga | Cadiz": {
-				"whoscoredApps": 15,
-				"whoscoredMins": 1124
+				"whoscoredApps": 16,
+				"whoscoredMins": 1208
 			}
 		}
 	},
@@ -111986,8 +112105,8 @@
 		},
 		"20-21": {
 			"Premier League | Everton": {
-				"whoscoredApps": 8,
-				"whoscoredMins": 689
+				"whoscoredApps": 9,
+				"whoscoredMins": 779
 			}
 		}
 	},
@@ -112182,8 +112301,8 @@
 		},
 		"20-21": {
 			"Premier League | Arsenal": {
-				"whoscoredApps": 11,
-				"whoscoredMins": 945
+				"whoscoredApps": 13,
+				"whoscoredMins": 1125
 			},
 			"Europa League | Arsenal": {
 				"whoscoredApps": 1,
@@ -112735,8 +112854,8 @@
 		},
 		"20-21": {
 			"Premier League | Leicester": {
-				"whoscoredApps": 7,
-				"whoscoredMins": 162
+				"whoscoredApps": 8,
+				"whoscoredMins": 234
 			},
 			"Europa League | Leicester": {
 				"whoscoredApps": 6,
@@ -112798,7 +112917,7 @@
 		"mapped": false,
 		"name": "Chidozie Awaziem",
 		"simplifiedName": "Chidozie Awaziem",
-		"age": 23,
+		"age": 24,
 		"nationality": "Nigeria",
 		"countryCode": "ng",
 		"positions": {
@@ -113479,8 +113598,8 @@
 		},
 		"20-21": {
 			"La Liga | Osasuna": {
-				"whoscoredApps": 8,
-				"whoscoredMins": 452
+				"whoscoredApps": 9,
+				"whoscoredMins": 453
 			}
 		}
 	},
@@ -113816,8 +113935,8 @@
 		},
 		"20-21": {
 			"La Liga | Real Valladolid": {
-				"whoscoredApps": 12,
-				"whoscoredMins": 1080
+				"whoscoredApps": 13,
+				"whoscoredMins": 1170
 			}
 		}
 	},
@@ -115348,8 +115467,8 @@
 		},
 		"20-21": {
 			"Premier League | Sheffield United": {
-				"whoscoredApps": 3,
-				"whoscoredMins": 63
+				"whoscoredApps": 5,
+				"whoscoredMins": 140
 			}
 		}
 	},
@@ -115678,8 +115797,8 @@
 		},
 		"20-21": {
 			"Premier League | Wolverhampton Wanderers": {
-				"whoscoredApps": 12,
-				"whoscoredMins": 1051
+				"whoscoredApps": 13,
+				"whoscoredMins": 1141
 			}
 		}
 	},
@@ -115741,8 +115860,8 @@
 		},
 		"20-21": {
 			"La Liga | Getafe": {
-				"whoscoredApps": 12,
-				"whoscoredMins": 918
+				"whoscoredApps": 13,
+				"whoscoredMins": 1008
 			}
 		}
 	},
@@ -116403,8 +116522,8 @@
 		},
 		"20-21": {
 			"Premier League | West Ham": {
-				"whoscoredApps": 14,
-				"whoscoredMins": 1107
+				"whoscoredApps": 15,
+				"whoscoredMins": 1197
 			}
 		}
 	},
@@ -116579,8 +116698,8 @@
 		},
 		"20-21": {
 			"Premier League | West Bromwich Albion": {
-				"whoscoredApps": 10,
-				"whoscoredMins": 789
+				"whoscoredApps": 12,
+				"whoscoredMins": 835
 			}
 		}
 	},
@@ -116757,8 +116876,8 @@
 		},
 		"20-21": {
 			"Premier League | Arsenal": {
-				"whoscoredApps": 13,
-				"whoscoredMins": 1161
+				"whoscoredApps": 15,
+				"whoscoredMins": 1341
 			},
 			"Europa League | Arsenal": {
 				"whoscoredApps": 4,
@@ -116898,8 +117017,8 @@
 		},
 		"20-21": {
 			"Premier League | Everton": {
-				"whoscoredApps": 5,
-				"whoscoredMins": 442
+				"whoscoredApps": 6,
+				"whoscoredMins": 532
 			}
 		}
 	},
@@ -117146,7 +117265,7 @@
 		"mapped": false,
 		"name": "Victor Osimhen",
 		"simplifiedName": "Victor Osimhen",
-		"age": 21,
+		"age": 22,
 		"nationality": "Nigeria",
 		"countryCode": "ng",
 		"positions": {
@@ -117667,8 +117786,8 @@
 		},
 		"20-21": {
 			"La Liga | Real Sociedad": {
-				"whoscoredApps": 11,
-				"whoscoredMins": 716
+				"whoscoredApps": 12,
+				"whoscoredMins": 784
 			},
 			"Europa League | Real Sociedad": {
 				"whoscoredApps": 5,
@@ -117815,8 +117934,8 @@
 		},
 		"20-21": {
 			"La Liga | Real Sociedad": {
-				"whoscoredApps": 13,
-				"whoscoredMins": 750
+				"whoscoredApps": 14,
+				"whoscoredMins": 835
 			},
 			"Europa League | Real Sociedad": {
 				"whoscoredApps": 6,
@@ -117867,8 +117986,8 @@
 		},
 		"20-21": {
 			"Premier League | Manchester United": {
-				"whoscoredApps": 1,
-				"whoscoredMins": 23
+				"whoscoredApps": 2,
+				"whoscoredMins": 47
 			},
 			"Champions League | Manchester United": {
 				"whoscoredApps": 5,
@@ -117930,8 +118049,8 @@
 		},
 		"20-21": {
 			"Premier League | Chelsea": {
-				"whoscoredApps": 11,
-				"whoscoredMins": 901
+				"whoscoredApps": 13,
+				"whoscoredMins": 1081
 			},
 			"Champions League | Chelsea": {
 				"whoscoredApps": 4,
@@ -118189,8 +118308,8 @@
 		},
 		"20-21": {
 			"Premier League | Fulham": {
-				"whoscoredApps": 11,
-				"whoscoredMins": 921
+				"whoscoredApps": 12,
+				"whoscoredMins": 1011
 			}
 		}
 	},
@@ -118391,8 +118510,8 @@
 		},
 		"20-21": {
 			"La Liga | Barcelona": {
-				"whoscoredApps": 8,
-				"whoscoredMins": 366
+				"whoscoredApps": 9,
+				"whoscoredMins": 411
 			},
 			"Champions League | Barcelona": {
 				"whoscoredApps": 4,
@@ -118404,7 +118523,7 @@
 		"mapped": false,
 		"name": "Ludovic Blas",
 		"simplifiedName": "Ludovic Blas",
-		"age": 22,
+		"age": 23,
 		"nationality": "France",
 		"countryCode": "fr",
 		"positions": {
@@ -118622,8 +118741,8 @@
 		},
 		"20-21": {
 			"Premier League | Manchester United": {
-				"whoscoredApps": 13,
-				"whoscoredMins": 1095
+				"whoscoredApps": 15,
+				"whoscoredMins": 1275
 			},
 			"Champions League | Manchester United": {
 				"whoscoredApps": 6,
@@ -118800,8 +118919,8 @@
 		},
 		"20-21": {
 			"La Liga | SD Huesca": {
-				"whoscoredApps": 12,
-				"whoscoredMins": 508
+				"whoscoredApps": 13,
+				"whoscoredMins": 575
 			}
 		}
 	},
@@ -118829,8 +118948,8 @@
 		},
 		"20-21": {
 			"La Liga | SD Huesca": {
-				"whoscoredApps": 15,
-				"whoscoredMins": 956
+				"whoscoredApps": 16,
+				"whoscoredMins": 990
 			}
 		}
 	},
@@ -118938,8 +119057,8 @@
 		},
 		"20-21": {
 			"Premier League | Leeds": {
-				"whoscoredApps": 9,
-				"whoscoredMins": 595
+				"whoscoredApps": 11,
+				"whoscoredMins": 746
 			},
 			"Ligue 1 | Rennes": {
 				"whoscoredApps": 6,
@@ -119053,8 +119172,8 @@
 		},
 		"20-21": {
 			"Premier League | Wolverhampton Wanderers": {
-				"whoscoredApps": 13,
-				"whoscoredMins": 1002
+				"whoscoredApps": 15,
+				"whoscoredMins": 1127
 			}
 		}
 	},
@@ -119320,8 +119439,7 @@
 				"FW"
 			],
 			"20-21": [
-				"FW",
-				"AM"
+				"FW"
 			]
 		},
 		"clubs": {
@@ -119682,8 +119800,8 @@
 		},
 		"20-21": {
 			"La Liga | Sevilla": {
-				"whoscoredApps": 10,
-				"whoscoredMins": 900
+				"whoscoredApps": 11,
+				"whoscoredMins": 990
 			},
 			"Champions League | Sevilla": {
 				"whoscoredApps": 5,
@@ -120011,8 +120129,8 @@
 		},
 		"20-21": {
 			"Premier League | Aston Villa": {
-				"whoscoredApps": 10,
-				"whoscoredMins": 900
+				"whoscoredApps": 12,
+				"whoscoredMins": 1033
 			}
 		}
 	},
@@ -120055,8 +120173,8 @@
 		},
 		"20-21": {
 			"Premier League | Leicester": {
-				"whoscoredApps": 14,
-				"whoscoredMins": 1260
+				"whoscoredApps": 16,
+				"whoscoredMins": 1440
 			},
 			"Europa League | Leicester": {
 				"whoscoredApps": 6,
@@ -120147,8 +120265,8 @@
 		},
 		"20-21": {
 			"La Liga | Levante": {
-				"whoscoredApps": 4,
-				"whoscoredMins": 244
+				"whoscoredApps": 5,
+				"whoscoredMins": 312
 			}
 		}
 	},
@@ -120355,8 +120473,8 @@
 		},
 		"20-21": {
 			"Premier League | Manchester United": {
-				"whoscoredApps": 4,
-				"whoscoredMins": 270
+				"whoscoredApps": 5,
+				"whoscoredMins": 324
 			},
 			"Champions League | Manchester United": {
 				"whoscoredApps": 2,
@@ -120562,8 +120680,8 @@
 		},
 		"20-21": {
 			"Premier League | Brighton": {
-				"whoscoredApps": 1,
-				"whoscoredMins": 24
+				"whoscoredApps": 2,
+				"whoscoredMins": 114
 			}
 		}
 	},
@@ -120571,7 +120689,7 @@
 		"mapped": false,
 		"name": "Gianluca Scamacca",
 		"simplifiedName": "Gianluca Scamacca",
-		"age": 21,
+		"age": 22,
 		"nationality": "Italy",
 		"countryCode": "it",
 		"positions": {
@@ -120640,8 +120758,8 @@
 		},
 		"20-21": {
 			"La Liga | Eibar": {
-				"whoscoredApps": 4,
-				"whoscoredMins": 187
+				"whoscoredApps": 5,
+				"whoscoredMins": 277
 			}
 		}
 	},
@@ -120774,8 +120892,8 @@
 		},
 		"20-21": {
 			"Premier League | Chelsea": {
-				"whoscoredApps": 7,
-				"whoscoredMins": 426
+				"whoscoredApps": 9,
+				"whoscoredMins": 606
 			},
 			"Champions League | Chelsea": {
 				"whoscoredApps": 3,
@@ -120787,7 +120905,7 @@
 		"mapped": false,
 		"name": "Charles Traoré",
 		"simplifiedName": "Charles Traore",
-		"age": 28,
+		"age": 29,
 		"nationality": "Mali",
 		"countryCode": "ml",
 		"positions": {
@@ -121283,8 +121401,8 @@
 		},
 		"20-21": {
 			"Premier League | Brighton": {
-				"whoscoredApps": 13,
-				"whoscoredMins": 1151
+				"whoscoredApps": 15,
+				"whoscoredMins": 1331
 			}
 		}
 	},
@@ -121327,8 +121445,8 @@
 		},
 		"20-21": {
 			"Premier League | Aston Villa": {
-				"whoscoredApps": 2,
-				"whoscoredMins": 38
+				"whoscoredApps": 3,
+				"whoscoredMins": 41
 			}
 		}
 	},
@@ -121458,8 +121576,8 @@
 		},
 		"20-21": {
 			"Premier League | Manchester City": {
-				"whoscoredApps": 13,
-				"whoscoredMins": 1126
+				"whoscoredApps": 14,
+				"whoscoredMins": 1183
 			},
 			"Champions League | Manchester City": {
 				"whoscoredApps": 5,
@@ -121925,8 +122043,8 @@
 		},
 		"20-21": {
 			"La Liga | Sevilla": {
-				"whoscoredApps": 10,
-				"whoscoredMins": 777
+				"whoscoredApps": 11,
+				"whoscoredMins": 867
 			},
 			"Champions League | Sevilla": {
 				"whoscoredApps": 3,
@@ -121987,8 +122105,8 @@
 		},
 		"20-21": {
 			"La Liga | Elche": {
-				"whoscoredApps": 10,
-				"whoscoredMins": 746
+				"whoscoredApps": 11,
+				"whoscoredMins": 833
 			}
 		}
 	},
@@ -122060,8 +122178,8 @@
 		},
 		"20-21": {
 			"La Liga | Real Betis": {
-				"whoscoredApps": 15,
-				"whoscoredMins": 1252
+				"whoscoredApps": 16,
+				"whoscoredMins": 1311
 			}
 		}
 	},
@@ -122241,8 +122359,8 @@
 		},
 		"20-21": {
 			"Premier League | Newcastle United": {
-				"whoscoredApps": 12,
-				"whoscoredMins": 675
+				"whoscoredApps": 14,
+				"whoscoredMins": 780
 			}
 		}
 	},
@@ -122318,8 +122436,8 @@
 		},
 		"20-21": {
 			"Premier League | Fulham": {
-				"whoscoredApps": 11,
-				"whoscoredMins": 990
+				"whoscoredApps": 12,
+				"whoscoredMins": 1080
 			}
 		}
 	},
@@ -122421,8 +122539,8 @@
 		},
 		"20-21": {
 			"Premier League | West Bromwich Albion": {
-				"whoscoredApps": 12,
-				"whoscoredMins": 868
+				"whoscoredApps": 14,
+				"whoscoredMins": 1030
 			}
 		}
 	},
@@ -122687,8 +122805,8 @@
 		},
 		"20-21": {
 			"Premier League | Leicester": {
-				"whoscoredApps": 2,
-				"whoscoredMins": 13
+				"whoscoredApps": 3,
+				"whoscoredMins": 70
 			},
 			"Europa League | Leicester": {
 				"whoscoredApps": 6,
@@ -123004,8 +123122,8 @@
 		},
 		"20-21": {
 			"Premier League | Manchester City": {
-				"whoscoredApps": 11,
-				"whoscoredMins": 970
+				"whoscoredApps": 12,
+				"whoscoredMins": 1060
 			},
 			"Champions League | Manchester City": {
 				"whoscoredApps": 4,
@@ -123168,8 +123286,8 @@
 		},
 		"20-21": {
 			"La Liga | Valencia": {
-				"whoscoredApps": 11,
-				"whoscoredMins": 909
+				"whoscoredApps": 12,
+				"whoscoredMins": 999
 			}
 		}
 	},
@@ -123285,8 +123403,8 @@
 		},
 		"20-21": {
 			"Premier League | Southampton": {
-				"whoscoredApps": 14,
-				"whoscoredMins": 1260
+				"whoscoredApps": 16,
+				"whoscoredMins": 1440
 			}
 		}
 	},
@@ -123650,7 +123768,6 @@
 				"FB"
 			],
 			"20-21": [
-				"FB",
 				"CB"
 			]
 		},
@@ -123690,8 +123807,8 @@
 		},
 		"20-21": {
 			"Premier League | Fulham": {
-				"whoscoredApps": 11,
-				"whoscoredMins": 990
+				"whoscoredApps": 12,
+				"whoscoredMins": 1080
 			}
 		}
 	},
@@ -123750,8 +123867,8 @@
 		},
 		"20-21": {
 			"La Liga | Real Sociedad": {
-				"whoscoredApps": 9,
-				"whoscoredMins": 691
+				"whoscoredApps": 10,
+				"whoscoredMins": 781
 			},
 			"Europa League | Real Sociedad": {
 				"whoscoredApps": 2,
@@ -123943,8 +124060,8 @@
 		},
 		"20-21": {
 			"Premier League | Everton": {
-				"whoscoredApps": 7,
-				"whoscoredMins": 263
+				"whoscoredApps": 8,
+				"whoscoredMins": 337
 			}
 		}
 	},
@@ -124040,8 +124157,8 @@
 		},
 		"20-21": {
 			"Premier League | Sheffield United": {
-				"whoscoredApps": 14,
-				"whoscoredMins": 1260
+				"whoscoredApps": 16,
+				"whoscoredMins": 1440
 			}
 		}
 	},
@@ -124345,8 +124462,8 @@
 		},
 		"20-21": {
 			"Premier League | Chelsea": {
-				"whoscoredApps": 13,
-				"whoscoredMins": 689
+				"whoscoredApps": 14,
+				"whoscoredMins": 779
 			},
 			"Champions League | Chelsea": {
 				"whoscoredApps": 5,
@@ -124870,8 +124987,8 @@
 		},
 		"20-21": {
 			"La Liga | Elche": {
-				"whoscoredApps": 12,
-				"whoscoredMins": 932
+				"whoscoredApps": 13,
+				"whoscoredMins": 1022
 			}
 		}
 	},
@@ -124899,8 +125016,8 @@
 		},
 		"20-21": {
 			"Premier League | Leeds": {
-				"whoscoredApps": 13,
-				"whoscoredMins": 1074
+				"whoscoredApps": 15,
+				"whoscoredMins": 1254
 			}
 		}
 	},
@@ -125292,8 +125409,8 @@
 		},
 		"20-21": {
 			"Premier League | Everton": {
-				"whoscoredApps": 12,
-				"whoscoredMins": 1080
+				"whoscoredApps": 13,
+				"whoscoredMins": 1170
 			}
 		}
 	},
@@ -125336,8 +125453,8 @@
 		},
 		"20-21": {
 			"Premier League | Aston Villa": {
-				"whoscoredApps": 12,
-				"whoscoredMins": 1080
+				"whoscoredApps": 14,
+				"whoscoredMins": 1260
 			}
 		}
 	},
@@ -125470,8 +125587,8 @@
 		},
 		"20-21": {
 			"La Liga | Granada": {
-				"whoscoredApps": 13,
-				"whoscoredMins": 869
+				"whoscoredApps": 14,
+				"whoscoredMins": 959
 			},
 			"Europa League | Granada": {
 				"whoscoredApps": 5,
@@ -125682,8 +125799,8 @@
 		},
 		"20-21": {
 			"Premier League | Liverpool": {
-				"whoscoredApps": 12,
-				"whoscoredMins": 962
+				"whoscoredApps": 14,
+				"whoscoredMins": 1142
 			},
 			"Champions League | Liverpool": {
 				"whoscoredApps": 4,
@@ -126349,7 +126466,8 @@
 		"countryCode": "fr",
 		"positions": {
 			"20-21": [
-				"FB"
+				"FB",
+				"CB"
 			]
 		},
 		"clubs": {
@@ -126812,8 +126930,8 @@
 		},
 		"20-21": {
 			"La Liga | Celta Vigo": {
-				"whoscoredApps": 12,
-				"whoscoredMins": 694
+				"whoscoredApps": 13,
+				"whoscoredMins": 695
 			}
 		}
 	},
@@ -127112,7 +127230,7 @@
 		"mapped": false,
 		"name": "Tanguy Ndombele",
 		"simplifiedName": "Tanguy Ndombele",
-		"age": 23,
+		"age": 24,
 		"nationality": "France",
 		"countryCode": "fr",
 		"positions": {
@@ -127170,8 +127288,8 @@
 		},
 		"20-21": {
 			"Premier League | Tottenham": {
-				"whoscoredApps": 12,
-				"whoscoredMins": 665
+				"whoscoredApps": 13,
+				"whoscoredMins": 735
 			},
 			"Europa League | Tottenham": {
 				"whoscoredApps": 4,
@@ -127239,8 +127357,8 @@
 		},
 		"20-21": {
 			"Premier League | Chelsea": {
-				"whoscoredApps": 10,
-				"whoscoredMins": 900
+				"whoscoredApps": 12,
+				"whoscoredMins": 1080
 			},
 			"Ligue 1 | Rennes": {
 				"whoscoredApps": 1,
@@ -127276,8 +127394,8 @@
 		},
 		"20-21": {
 			"Premier League | Brighton": {
-				"whoscoredApps": 14,
-				"whoscoredMins": 1222
+				"whoscoredApps": 15,
+				"whoscoredMins": 1312
 			}
 		}
 	},
@@ -127305,8 +127423,8 @@
 		},
 		"20-21": {
 			"Premier League | Aston Villa": {
-				"whoscoredApps": 11,
-				"whoscoredMins": 955
+				"whoscoredApps": 13,
+				"whoscoredMins": 1135
 			}
 		}
 	},
@@ -127502,8 +127620,8 @@
 		},
 		"20-21": {
 			"La Liga | Valencia": {
-				"whoscoredApps": 10,
-				"whoscoredMins": 853
+				"whoscoredApps": 11,
+				"whoscoredMins": 943
 			}
 		}
 	},
@@ -127787,8 +127905,8 @@
 		},
 		"20-21": {
 			"Premier League | Sheffield United": {
-				"whoscoredApps": 8,
-				"whoscoredMins": 636
+				"whoscoredApps": 10,
+				"whoscoredMins": 792
 			}
 		}
 	},
@@ -127972,8 +128090,8 @@
 		},
 		"20-21": {
 			"Premier League | West Bromwich Albion": {
-				"whoscoredApps": 10,
-				"whoscoredMins": 527
+				"whoscoredApps": 11,
+				"whoscoredMins": 545
 			}
 		}
 	},
@@ -128016,8 +128134,8 @@
 		},
 		"20-21": {
 			"Premier League | West Ham": {
-				"whoscoredApps": 14,
-				"whoscoredMins": 1168
+				"whoscoredApps": 16,
+				"whoscoredMins": 1232
 			}
 		}
 	},
@@ -128180,8 +128298,8 @@
 		},
 		"20-21": {
 			"Premier League | Tottenham": {
-				"whoscoredApps": 4,
-				"whoscoredMins": 360
+				"whoscoredApps": 5,
+				"whoscoredMins": 450
 			},
 			"Europa League | Tottenham": {
 				"whoscoredApps": 5,
@@ -128476,8 +128594,8 @@
 		},
 		"20-21": {
 			"La Liga | Granada": {
-				"whoscoredApps": 12,
-				"whoscoredMins": 945
+				"whoscoredApps": 13,
+				"whoscoredMins": 1021
 			},
 			"Europa League | Granada": {
 				"whoscoredApps": 4,
@@ -128725,8 +128843,8 @@
 		},
 		"20-21": {
 			"La Liga | Real Valladolid": {
-				"whoscoredApps": 12,
-				"whoscoredMins": 813
+				"whoscoredApps": 13,
+				"whoscoredMins": 903
 			}
 		}
 	},
@@ -128890,7 +129008,7 @@
 		"mapped": false,
 		"name": "Habib Maïga",
 		"simplifiedName": "Habib Maiga",
-		"age": 24,
+		"age": 25,
 		"nationality": "Cote D'Ivoire",
 		"countryCode": "ci",
 		"positions": {
@@ -129408,8 +129526,8 @@
 		},
 		"20-21": {
 			"La Liga | Sevilla": {
-				"whoscoredApps": 13,
-				"whoscoredMins": 666
+				"whoscoredApps": 14,
+				"whoscoredMins": 754
 			},
 			"Champions League | Sevilla": {
 				"whoscoredApps": 6,
@@ -129645,7 +129763,7 @@
 		"mapped": false,
 		"name": "Josh Maja",
 		"simplifiedName": "Josh Maja",
-		"age": 21,
+		"age": 22,
 		"nationality": "Nigeria",
 		"countryCode": "ng",
 		"positions": {
@@ -129796,8 +129914,8 @@
 		},
 		"20-21": {
 			"Premier League | Chelsea": {
-				"whoscoredApps": 12,
-				"whoscoredMins": 773
+				"whoscoredApps": 14,
+				"whoscoredMins": 807
 			},
 			"Champions League | Chelsea": {
 				"whoscoredApps": 5,
@@ -130069,6 +130187,7 @@
 				"CM"
 			],
 			"20-21": [
+				"CM",
 				"CB"
 			]
 		},
@@ -130108,8 +130227,8 @@
 		},
 		"20-21": {
 			"Premier League | Leicester": {
-				"whoscoredApps": 6,
-				"whoscoredMins": 461
+				"whoscoredApps": 7,
+				"whoscoredMins": 551
 			},
 			"Europa League | Leicester": {
 				"whoscoredApps": 2,
@@ -130735,8 +130854,8 @@
 		},
 		"20-21": {
 			"La Liga | SD Huesca": {
-				"whoscoredApps": 4,
-				"whoscoredMins": 360
+				"whoscoredApps": 5,
+				"whoscoredMins": 450
 			}
 		}
 	},
@@ -130869,7 +130988,7 @@
 		"mapped": false,
 		"name": "Moussa Koné",
 		"simplifiedName": "Moussa Kone",
-		"age": 23,
+		"age": 24,
 		"nationality": "Senegal",
 		"countryCode": "sn",
 		"positions": {
@@ -131035,8 +131154,8 @@
 		},
 		"20-21": {
 			"La Liga | Real Betis": {
-				"whoscoredApps": 11,
-				"whoscoredMins": 923
+				"whoscoredApps": 12,
+				"whoscoredMins": 1013
 			}
 		}
 	},
@@ -131112,8 +131231,8 @@
 		},
 		"20-21": {
 			"La Liga | Real Valladolid": {
-				"whoscoredApps": 7,
-				"whoscoredMins": 381
+				"whoscoredApps": 8,
+				"whoscoredMins": 471
 			}
 		}
 	},
@@ -132284,8 +132403,8 @@
 		},
 		"20-21": {
 			"La Liga | Athletic Bilbao": {
-				"whoscoredApps": 14,
-				"whoscoredMins": 599
+				"whoscoredApps": 15,
+				"whoscoredMins": 684
 			}
 		}
 	},
@@ -132351,8 +132470,8 @@
 		},
 		"20-21": {
 			"Premier League | Manchester City": {
-				"whoscoredApps": 9,
-				"whoscoredMins": 504
+				"whoscoredApps": 10,
+				"whoscoredMins": 505
 			},
 			"Champions League | Manchester City": {
 				"whoscoredApps": 6,
@@ -132474,8 +132593,8 @@
 		},
 		"20-21": {
 			"Premier League | Leicester": {
-				"whoscoredApps": 13,
-				"whoscoredMins": 923
+				"whoscoredApps": 15,
+				"whoscoredMins": 1103
 			},
 			"Europa League | Leicester": {
 				"whoscoredApps": 6,
@@ -132623,7 +132742,7 @@
 		"mapped": false,
 		"name": "Ghislain Konan",
 		"simplifiedName": "Ghislain Konan",
-		"age": 24,
+		"age": 25,
 		"nationality": "Cote D'Ivoire",
 		"countryCode": "ci",
 		"positions": {
@@ -132925,8 +133044,8 @@
 		},
 		"20-21": {
 			"Premier League | Manchester United": {
-				"whoscoredApps": 12,
-				"whoscoredMins": 1080
+				"whoscoredApps": 13,
+				"whoscoredMins": 1170
 			},
 			"Champions League | Manchester United": {
 				"whoscoredApps": 6,
@@ -133275,8 +133394,8 @@
 		},
 		"20-21": {
 			"Premier League | West Ham": {
-				"whoscoredApps": 14,
-				"whoscoredMins": 1260
+				"whoscoredApps": 16,
+				"whoscoredMins": 1440
 			}
 		}
 	},
@@ -133356,8 +133475,8 @@
 		},
 		"20-21": {
 			"Premier League | Crystal Palace": {
-				"whoscoredApps": 13,
-				"whoscoredMins": 823
+				"whoscoredApps": 14,
+				"whoscoredMins": 913
 			}
 		}
 	},
@@ -133561,8 +133680,8 @@
 		},
 		"20-21": {
 			"La Liga | Athletic Bilbao": {
-				"whoscoredApps": 15,
-				"whoscoredMins": 1350
+				"whoscoredApps": 16,
+				"whoscoredMins": 1440
 			}
 		}
 	},
@@ -133620,7 +133739,7 @@
 		"mapped": false,
 		"name": "Djené Dakonam",
 		"simplifiedName": "Djene Dakonam",
-		"age": 28,
+		"age": 29,
 		"nationality": "Togo",
 		"countryCode": "tg",
 		"positions": {
@@ -133674,8 +133793,8 @@
 		},
 		"20-21": {
 			"La Liga | Getafe": {
-				"whoscoredApps": 13,
-				"whoscoredMins": 1157
+				"whoscoredApps": 14,
+				"whoscoredMins": 1247
 			}
 		}
 	},
@@ -134711,6 +134830,7 @@
 		"countryCode": "es",
 		"positions": {
 			"20-21": [
+				"AM",
 				"CM"
 			]
 		},
@@ -134726,8 +134846,8 @@
 		},
 		"20-21": {
 			"La Liga | Real Sociedad": {
-				"whoscoredApps": 4,
-				"whoscoredMins": 179
+				"whoscoredApps": 5,
+				"whoscoredMins": 269
 			},
 			"Europa League | Real Sociedad": {
 				"whoscoredApps": 1,
@@ -134750,7 +134870,7 @@
 				"CB"
 			],
 			"20-21": [
-				"CB"
+				"CM"
 			]
 		},
 		"clubs": {
@@ -134797,8 +134917,8 @@
 		},
 		"20-21": {
 			"La Liga | Villarreal": {
-				"whoscoredApps": 3,
-				"whoscoredMins": 116
+				"whoscoredApps": 4,
+				"whoscoredMins": 162
 			},
 			"Europa League | Villarreal": {
 				"whoscoredApps": 4,
@@ -134874,8 +134994,8 @@
 		},
 		"20-21": {
 			"La Liga | Eibar": {
-				"whoscoredApps": 14,
-				"whoscoredMins": 1053
+				"whoscoredApps": 15,
+				"whoscoredMins": 1143
 			}
 		}
 	},
@@ -134976,8 +135096,8 @@
 		},
 		"20-21": {
 			"La Liga | Osasuna": {
-				"whoscoredApps": 14,
-				"whoscoredMins": 640
+				"whoscoredApps": 15,
+				"whoscoredMins": 730
 			}
 		}
 	},
@@ -135216,8 +135336,8 @@
 		},
 		"20-21": {
 			"La Liga | Osasuna": {
-				"whoscoredApps": 12,
-				"whoscoredMins": 248
+				"whoscoredApps": 13,
+				"whoscoredMins": 249
 			}
 		}
 	},
@@ -135259,7 +135379,8 @@
 		"countryCode": "_england",
 		"positions": {
 			"20-21": [
-				"FW"
+				"FW",
+				"AM"
 			]
 		},
 		"clubs": {
@@ -135274,8 +135395,8 @@
 		},
 		"20-21": {
 			"Premier League | Sheffield United": {
-				"whoscoredApps": 10,
-				"whoscoredMins": 405
+				"whoscoredApps": 12,
+				"whoscoredMins": 571
 			}
 		}
 	},
@@ -135386,8 +135507,8 @@
 		},
 		"20-21": {
 			"Premier League | Manchester United": {
-				"whoscoredApps": 11,
-				"whoscoredMins": 765
+				"whoscoredApps": 13,
+				"whoscoredMins": 856
 			},
 			"Champions League | Manchester United": {
 				"whoscoredApps": 5,
@@ -135505,8 +135626,8 @@
 		},
 		"20-21": {
 			"La Liga | Real Madrid": {
-				"whoscoredApps": 13,
-				"whoscoredMins": 763
+				"whoscoredApps": 14,
+				"whoscoredMins": 767
 			},
 			"Champions League | Real Madrid": {
 				"whoscoredApps": 6,
@@ -135649,8 +135770,8 @@
 		},
 		"20-21": {
 			"Premier League | Aston Villa": {
-				"whoscoredApps": 11,
-				"whoscoredMins": 957
+				"whoscoredApps": 13,
+				"whoscoredMins": 1137
 			}
 		}
 	},
@@ -135712,8 +135833,8 @@
 		},
 		"20-21": {
 			"Premier League | Wolverhampton Wanderers": {
-				"whoscoredApps": 14,
-				"whoscoredMins": 1111
+				"whoscoredApps": 16,
+				"whoscoredMins": 1269
 			}
 		}
 	},
@@ -135884,7 +136005,6 @@
 				"FB"
 			],
 			"20-21": [
-				"AM",
 				"FB"
 			]
 		},
@@ -135921,8 +136041,8 @@
 		},
 		"20-21": {
 			"La Liga | Eibar": {
-				"whoscoredApps": 10,
-				"whoscoredMins": 768
+				"whoscoredApps": 11,
+				"whoscoredMins": 858
 			}
 		}
 	},
@@ -136261,7 +136381,7 @@
 		"mapped": false,
 		"name": "Mathias Jensen",
 		"simplifiedName": "Mathias Jensen",
-		"age": 24,
+		"age": 25,
 		"nationality": "Denmark",
 		"countryCode": "dk",
 		"positions": {
@@ -136962,8 +137082,8 @@
 		},
 		"20-21": {
 			"Premier League | Arsenal": {
-				"whoscoredApps": 4,
-				"whoscoredMins": 196
+				"whoscoredApps": 5,
+				"whoscoredMins": 221
 			},
 			"Europa League | Arsenal": {
 				"whoscoredApps": 5,
@@ -137431,8 +137551,8 @@
 		},
 		"20-21": {
 			"Premier League | Chelsea": {
-				"whoscoredApps": 13,
-				"whoscoredMins": 1080
+				"whoscoredApps": 15,
+				"whoscoredMins": 1260
 			},
 			"Champions League | Chelsea": {
 				"whoscoredApps": 5,
@@ -138067,8 +138187,8 @@
 		},
 		"20-21": {
 			"La Liga | Real Sociedad": {
-				"whoscoredApps": 12,
-				"whoscoredMins": 747
+				"whoscoredApps": 13,
+				"whoscoredMins": 793
 			},
 			"Europa League | Real Sociedad": {
 				"whoscoredApps": 3,
@@ -138194,8 +138314,8 @@
 		},
 		"20-21": {
 			"La Liga | Atletico Madrid": {
-				"whoscoredApps": 11,
-				"whoscoredMins": 977
+				"whoscoredApps": 12,
+				"whoscoredMins": 1067
 			},
 			"Champions League | Atletico Madrid": {
 				"whoscoredApps": 4,
@@ -138374,8 +138494,8 @@
 		},
 		"20-21": {
 			"La Liga | Athletic Bilbao": {
-				"whoscoredApps": 6,
-				"whoscoredMins": 456
+				"whoscoredApps": 7,
+				"whoscoredMins": 546
 			}
 		}
 	},
@@ -138510,8 +138630,8 @@
 		},
 		"20-21": {
 			"La Liga | Villarreal": {
-				"whoscoredApps": 15,
-				"whoscoredMins": 1350
+				"whoscoredApps": 16,
+				"whoscoredMins": 1440
 			},
 			"Europa League | Villarreal": {
 				"whoscoredApps": 1,
@@ -138523,7 +138643,7 @@
 		"mapped": false,
 		"name": "Yildirim Mert Çetin",
 		"simplifiedName": "Yildirim Mert Cetin",
-		"age": 23,
+		"age": 24,
 		"nationality": "",
 		"countryCode": "",
 		"positions": {
@@ -138661,8 +138781,8 @@
 		},
 		"20-21": {
 			"La Liga | Celta Vigo": {
-				"whoscoredApps": 12,
-				"whoscoredMins": 785
+				"whoscoredApps": 13,
+				"whoscoredMins": 875
 			}
 		}
 	},
@@ -138757,8 +138877,8 @@
 		},
 		"20-21": {
 			"La Liga | Real Madrid": {
-				"whoscoredApps": 12,
-				"whoscoredMins": 702
+				"whoscoredApps": 13,
+				"whoscoredMins": 714
 			},
 			"Champions League | Real Madrid": {
 				"whoscoredApps": 3,
@@ -138917,7 +139037,7 @@
 		"mapped": false,
 		"name": "Kouadio Dabila",
 		"simplifiedName": "Kouadio Dabila",
-		"age": 23,
+		"age": 24,
 		"nationality": "",
 		"countryCode": "",
 		"positions": {
@@ -139012,8 +139132,8 @@
 		},
 		"20-21": {
 			"Premier League | Brighton": {
-				"whoscoredApps": 4,
-				"whoscoredMins": 61
+				"whoscoredApps": 5,
+				"whoscoredMins": 128
 			}
 		}
 	},
@@ -139669,8 +139789,8 @@
 		},
 		"20-21": {
 			"La Liga | Real Sociedad": {
-				"whoscoredApps": 12,
-				"whoscoredMins": 1007
+				"whoscoredApps": 13,
+				"whoscoredMins": 1075
 			},
 			"Europa League | Real Sociedad": {
 				"whoscoredApps": 4,
@@ -139980,8 +140100,8 @@
 		},
 		"20-21": {
 			"La Liga | Eibar": {
-				"whoscoredApps": 5,
-				"whoscoredMins": 114
+				"whoscoredApps": 6,
+				"whoscoredMins": 195
 			}
 		}
 	},
@@ -140132,8 +140252,8 @@
 		},
 		"20-21": {
 			"La Liga | Getafe": {
-				"whoscoredApps": 12,
-				"whoscoredMins": 1029
+				"whoscoredApps": 13,
+				"whoscoredMins": 1119
 			}
 		}
 	},
@@ -140530,6 +140650,35 @@
 			}
 		}
 	},
+	"349484": {
+		"mapped": false,
+		"name": "Ben Johnson",
+		"simplifiedName": "Ben Johnson",
+		"age": 20,
+		"nationality": "England",
+		"countryCode": "_england",
+		"positions": {
+			"20-21": [
+				"AM"
+			]
+		},
+		"clubs": {
+			"20-21": [
+				"West Ham"
+			]
+		},
+		"leagues": {
+			"20-21": [
+				"_england"
+			]
+		},
+		"20-21": {
+			"Premier League | West Ham": {
+				"whoscoredApps": 4,
+				"whoscoredMins": 141
+			}
+		}
+	},
 	"349494": {
 		"mapped": false,
 		"name": "Aitor Ruibal",
@@ -140570,8 +140719,8 @@
 		},
 		"20-21": {
 			"La Liga | Real Betis": {
-				"whoscoredApps": 9,
-				"whoscoredMins": 452
+				"whoscoredApps": 10,
+				"whoscoredMins": 542
 			}
 		}
 	},
@@ -140629,8 +140778,8 @@
 		},
 		"20-21": {
 			"Premier League | Fulham": {
-				"whoscoredApps": 14,
-				"whoscoredMins": 1104
+				"whoscoredApps": 15,
+				"whoscoredMins": 1194
 			}
 		}
 	},
@@ -140722,8 +140871,8 @@
 		},
 		"20-21": {
 			"Premier League | Everton": {
-				"whoscoredApps": 2,
-				"whoscoredMins": 33
+				"whoscoredApps": 3,
+				"whoscoredMins": 88
 			}
 		}
 	},
@@ -140879,6 +141028,7 @@
 				"AM"
 			],
 			"20-21": [
+				"FW",
 				"AM"
 			]
 		},
@@ -140930,8 +141080,8 @@
 		},
 		"20-21": {
 			"Premier League | Manchester City": {
-				"whoscoredApps": 9,
-				"whoscoredMins": 494
+				"whoscoredApps": 10,
+				"whoscoredMins": 571
 			},
 			"Champions League | Manchester City": {
 				"whoscoredApps": 5,
@@ -141197,8 +141347,8 @@
 		},
 		"20-21": {
 			"Premier League | Chelsea": {
-				"whoscoredApps": 5,
-				"whoscoredMins": 169
+				"whoscoredApps": 7,
+				"whoscoredMins": 304
 			},
 			"Champions League | Chelsea": {
 				"whoscoredApps": 5,
@@ -141245,8 +141395,8 @@
 		},
 		"20-21": {
 			"Premier League | Newcastle United": {
-				"whoscoredApps": 12,
-				"whoscoredMins": 989
+				"whoscoredApps": 14,
+				"whoscoredMins": 1017
 			}
 		}
 	},
@@ -141444,8 +141594,8 @@
 		},
 		"20-21": {
 			"La Liga | Barcelona": {
-				"whoscoredApps": 2,
-				"whoscoredMins": 48
+				"whoscoredApps": 3,
+				"whoscoredMins": 138
 			},
 			"Champions League | Barcelona": {
 				"whoscoredApps": 5,
@@ -141608,7 +141758,7 @@
 		"mapped": false,
 		"name": "Loren Morón",
 		"simplifiedName": "Loren Moron",
-		"age": 26,
+		"age": 27,
 		"nationality": "Spain",
 		"countryCode": "es",
 		"positions": {
@@ -142266,8 +142416,8 @@
 		},
 		"20-21": {
 			"La Liga | SD Huesca": {
-				"whoscoredApps": 9,
-				"whoscoredMins": 172
+				"whoscoredApps": 10,
+				"whoscoredMins": 195
 			}
 		}
 	},
@@ -142354,8 +142504,8 @@
 		},
 		"20-21": {
 			"Premier League | Liverpool": {
-				"whoscoredApps": 9,
-				"whoscoredMins": 520
+				"whoscoredApps": 11,
+				"whoscoredMins": 671
 			},
 			"Champions League | Liverpool": {
 				"whoscoredApps": 4,
@@ -142507,8 +142657,8 @@
 		},
 		"20-21": {
 			"Premier League | Wolverhampton Wanderers": {
-				"whoscoredApps": 5,
-				"whoscoredMins": 335
+				"whoscoredApps": 7,
+				"whoscoredMins": 441
 			},
 			"Ligue 1 | Angers": {
 				"whoscoredApps": 3,
@@ -142541,8 +142691,8 @@
 		},
 		"20-21": {
 			"Premier League | Leeds": {
-				"whoscoredApps": 5,
-				"whoscoredMins": 302
+				"whoscoredApps": 7,
+				"whoscoredMins": 482
 			}
 		}
 	},
@@ -142922,7 +143072,7 @@
 		"mapped": false,
 		"name": "Anthony Racioppi",
 		"simplifiedName": "Anthony Racioppi",
-		"age": 21,
+		"age": 22,
 		"nationality": "Switzerland",
 		"countryCode": "ch",
 		"positions": {
@@ -142988,8 +143138,8 @@
 		},
 		"20-21": {
 			"Premier League | Southampton": {
-				"whoscoredApps": 6,
-				"whoscoredMins": 24
+				"whoscoredApps": 7,
+				"whoscoredMins": 114
 			},
 			"Ligue 1 | Brest": {
 				"whoscoredApps": 5,
@@ -143437,8 +143587,8 @@
 		},
 		"20-21": {
 			"Premier League | Chelsea": {
-				"whoscoredApps": 12,
-				"whoscoredMins": 993
+				"whoscoredApps": 13,
+				"whoscoredMins": 1083
 			},
 			"Champions League | Chelsea": {
 				"whoscoredApps": 3,
@@ -143581,7 +143731,7 @@
 		"mapped": false,
 		"name": "Jean-Clair Todibo",
 		"simplifiedName": "Jean-Clair Todibo",
-		"age": 20,
+		"age": 21,
 		"nationality": "France",
 		"countryCode": "fr",
 		"positions": {
@@ -143683,19 +143833,34 @@
 		"nationality": "",
 		"countryCode": "",
 		"positions": {
+			"19-20": [
+				"FB"
+			],
 			"20-21": [
 				"FB"
 			]
 		},
 		"clubs": {
+			"19-20": [
+				"Atalanta"
+			],
 			"20-21": [
 				"Genoa"
 			]
 		},
 		"leagues": {
+			"19-20": [
+				"it"
+			],
 			"20-21": [
 				"it"
 			]
+		},
+		"19-20": {
+			"Serie A | Atalanta": {
+				"whoscoredApps": 1,
+				"whoscoredMins": 16
+			}
 		},
 		"20-21": {
 			"Serie A | Genoa": {
@@ -143728,8 +143893,8 @@
 		},
 		"20-21": {
 			"Premier League | Leeds": {
-				"whoscoredApps": 6,
-				"whoscoredMins": 215
+				"whoscoredApps": 8,
+				"whoscoredMins": 271
 			}
 		}
 	},
@@ -144280,8 +144445,8 @@
 		},
 		"20-21": {
 			"La Liga | Real Betis": {
-				"whoscoredApps": 5,
-				"whoscoredMins": 250
+				"whoscoredApps": 6,
+				"whoscoredMins": 340
 			}
 		}
 	},
@@ -144355,8 +144520,37 @@
 		},
 		"20-21": {
 			"Premier League | Brighton": {
-				"whoscoredApps": 7,
-				"whoscoredMins": 477
+				"whoscoredApps": 8,
+				"whoscoredMins": 522
+			}
+		}
+	},
+	"362151": {
+		"mapped": false,
+		"name": "Robert Sánchez",
+		"simplifiedName": "Robert Sanchez",
+		"age": 23,
+		"nationality": "Spain",
+		"countryCode": "es",
+		"positions": {
+			"20-21": [
+				"GK"
+			]
+		},
+		"clubs": {
+			"20-21": [
+				"Brighton"
+			]
+		},
+		"leagues": {
+			"20-21": [
+				"_england"
+			]
+		},
+		"20-21": {
+			"Premier League | Brighton": {
+				"whoscoredApps": 5,
+				"whoscoredMins": 450
 			}
 		}
 	},
@@ -144422,8 +144616,8 @@
 		},
 		"20-21": {
 			"Premier League | Tottenham": {
-				"whoscoredApps": 10,
-				"whoscoredMins": 818
+				"whoscoredApps": 11,
+				"whoscoredMins": 881
 			},
 			"Europa League | Tottenham": {
 				"whoscoredApps": 3,
@@ -144640,8 +144834,8 @@
 		},
 		"20-21": {
 			"La Liga | Real Valladolid": {
-				"whoscoredApps": 10,
-				"whoscoredMins": 417
+				"whoscoredApps": 11,
+				"whoscoredMins": 438
 			}
 		}
 	},
@@ -144772,8 +144966,8 @@
 		},
 		"20-21": {
 			"La Liga | Celta Vigo": {
-				"whoscoredApps": 11,
-				"whoscoredMins": 451
+				"whoscoredApps": 12,
+				"whoscoredMins": 468
 			}
 		}
 	},
@@ -144878,8 +145072,8 @@
 		},
 		"20-21": {
 			"La Liga | Atletico Madrid": {
-				"whoscoredApps": 12,
-				"whoscoredMins": 780
+				"whoscoredApps": 13,
+				"whoscoredMins": 851
 			},
 			"Champions League | Atletico Madrid": {
 				"whoscoredApps": 6,
@@ -146179,8 +146373,8 @@
 		},
 		"20-21": {
 			"Premier League | West Bromwich Albion": {
-				"whoscoredApps": 9,
-				"whoscoredMins": 730
+				"whoscoredApps": 11,
+				"whoscoredMins": 910
 			}
 		}
 	},
@@ -146227,24 +146421,39 @@
 		"nationality": "Spain",
 		"countryCode": "es",
 		"positions": {
+			"18-19": [
+				"FW"
+			],
 			"20-21": [
 				"AM"
 			]
 		},
 		"clubs": {
+			"18-19": [
+				"Real Sociedad"
+			],
 			"20-21": [
 				"Real Sociedad"
 			]
 		},
 		"leagues": {
+			"18-19": [
+				"es"
+			],
 			"20-21": [
 				"es"
 			]
 		},
+		"18-19": {
+			"La Liga | Real Sociedad": {
+				"whoscoredApps": 1,
+				"whoscoredMins": 4
+			}
+		},
 		"20-21": {
 			"La Liga | Real Sociedad": {
-				"whoscoredApps": 6,
-				"whoscoredMins": 342
+				"whoscoredApps": 7,
+				"whoscoredMins": 364
 			},
 			"Europa League | Real Sociedad": {
 				"whoscoredApps": 1,
@@ -146657,8 +146866,8 @@
 		},
 		"20-21": {
 			"La Liga | Getafe": {
-				"whoscoredApps": 14,
-				"whoscoredMins": 1260
+				"whoscoredApps": 15,
+				"whoscoredMins": 1350
 			}
 		}
 	},
@@ -146710,7 +146919,7 @@
 		"mapped": false,
 		"name": "Lucas Buades",
 		"simplifiedName": "Lucas Buades",
-		"age": 22,
+		"age": 23,
 		"nationality": "France",
 		"countryCode": "fr",
 		"positions": {
@@ -146881,8 +147090,8 @@
 		},
 		"20-21": {
 			"La Liga | Villarreal": {
-				"whoscoredApps": 14,
-				"whoscoredMins": 608
+				"whoscoredApps": 15,
+				"whoscoredMins": 635
 			},
 			"Europa League | Villarreal": {
 				"whoscoredApps": 4,
@@ -146929,8 +147138,8 @@
 		},
 		"20-21": {
 			"Premier League | Southampton": {
-				"whoscoredApps": 10,
-				"whoscoredMins": 592
+				"whoscoredApps": 12,
+				"whoscoredMins": 671
 			}
 		}
 	},
@@ -148079,8 +148288,8 @@
 		},
 		"20-21": {
 			"La Liga | Real Sociedad": {
-				"whoscoredApps": 13,
-				"whoscoredMins": 1098
+				"whoscoredApps": 14,
+				"whoscoredMins": 1188
 			},
 			"Europa League | Real Sociedad": {
 				"whoscoredApps": 6,
@@ -148309,8 +148518,8 @@
 		},
 		"20-21": {
 			"Premier League | Arsenal": {
-				"whoscoredApps": 12,
-				"whoscoredMins": 994
+				"whoscoredApps": 14,
+				"whoscoredMins": 1165
 			},
 			"Europa League | Arsenal": {
 				"whoscoredApps": 2,
@@ -148623,7 +148832,7 @@
 		"mapped": false,
 		"name": "Benjamin Goller",
 		"simplifiedName": "Benjamin Goller",
-		"age": 21,
+		"age": 22,
 		"nationality": "Germany",
 		"countryCode": "de",
 		"positions": {
@@ -148840,8 +149049,8 @@
 		},
 		"20-21": {
 			"Premier League | Manchester United": {
-				"whoscoredApps": 9,
-				"whoscoredMins": 561
+				"whoscoredApps": 10,
+				"whoscoredMins": 625
 			},
 			"Champions League | Manchester United": {
 				"whoscoredApps": 5,
@@ -148853,7 +149062,7 @@
 		"mapped": false,
 		"name": "Ander Barrenetxea",
 		"simplifiedName": "Ander Barrenetxea",
-		"age": 18,
+		"age": 19,
 		"nationality": "Spain",
 		"countryCode": "es",
 		"positions": {
@@ -148903,8 +149112,8 @@
 		},
 		"20-21": {
 			"La Liga | Real Sociedad": {
-				"whoscoredApps": 13,
-				"whoscoredMins": 631
+				"whoscoredApps": 14,
+				"whoscoredMins": 648
 			},
 			"Europa League | Real Sociedad": {
 				"whoscoredApps": 4,
@@ -149254,8 +149463,8 @@
 		},
 		"20-21": {
 			"Premier League | Wolverhampton Wanderers": {
-				"whoscoredApps": 8,
-				"whoscoredMins": 642
+				"whoscoredApps": 9,
+				"whoscoredMins": 732
 			}
 		}
 	},
@@ -149263,7 +149472,7 @@
 		"mapped": false,
 		"name": "Trincão",
 		"simplifiedName": "Trincao",
-		"age": 20,
+		"age": 21,
 		"nationality": "Portugal",
 		"countryCode": "pt",
 		"positions": {
@@ -149283,8 +149492,8 @@
 		},
 		"20-21": {
 			"La Liga | Barcelona": {
-				"whoscoredApps": 13,
-				"whoscoredMins": 256
+				"whoscoredApps": 14,
+				"whoscoredMins": 280
 			},
 			"Champions League | Barcelona": {
 				"whoscoredApps": 5,
@@ -149428,8 +149637,8 @@
 		},
 		"20-21": {
 			"La Liga | Osasuna": {
-				"whoscoredApps": 10,
-				"whoscoredMins": 528
+				"whoscoredApps": 11,
+				"whoscoredMins": 573
 			}
 		}
 	},
@@ -149536,8 +149745,8 @@
 		},
 		"20-21": {
 			"La Liga | Real Betis": {
-				"whoscoredApps": 6,
-				"whoscoredMins": 92
+				"whoscoredApps": 7,
+				"whoscoredMins": 123
 			}
 		}
 	},
@@ -149632,8 +149841,8 @@
 		},
 		"20-21": {
 			"Premier League | Leeds": {
-				"whoscoredApps": 7,
-				"whoscoredMins": 181
+				"whoscoredApps": 8,
+				"whoscoredMins": 201
 			}
 		}
 	},
@@ -149830,6 +150039,36 @@
 			}
 		}
 	},
+	"369466": {
+		"mapped": false,
+		"name": "Josh Benson",
+		"simplifiedName": "Josh Benson",
+		"age": 21,
+		"nationality": "",
+		"countryCode": "",
+		"positions": {
+			"20-21": [
+				"AM",
+				"CM"
+			]
+		},
+		"clubs": {
+			"20-21": [
+				"Burnley"
+			]
+		},
+		"leagues": {
+			"20-21": [
+				"_england"
+			]
+		},
+		"20-21": {
+			"Premier League | Burnley": {
+				"whoscoredApps": 5,
+				"whoscoredMins": 252
+			}
+		}
+	},
 	"369470": {
 		"mapped": false,
 		"name": "Kai Pröger",
@@ -149898,8 +150137,8 @@
 		},
 		"20-21": {
 			"La Liga | SD Huesca": {
-				"whoscoredApps": 15,
-				"whoscoredMins": 1209
+				"whoscoredApps": 16,
+				"whoscoredMins": 1299
 			}
 		}
 	},
@@ -150045,8 +150284,8 @@
 		},
 		"20-21": {
 			"La Liga | Real Valladolid": {
-				"whoscoredApps": 6,
-				"whoscoredMins": 181
+				"whoscoredApps": 7,
+				"whoscoredMins": 202
 			}
 		}
 	},
@@ -150058,19 +150297,34 @@
 		"nationality": "Spain",
 		"countryCode": "es",
 		"positions": {
+			"18-19": [
+				"FW"
+			],
 			"20-21": [
-				"AM"
+				"FW"
 			]
 		},
 		"clubs": {
+			"18-19": [
+				"Deportivo Alaves"
+			],
 			"20-21": [
 				"Valencia"
 			]
 		},
 		"leagues": {
+			"18-19": [
+				"es"
+			],
 			"20-21": [
 				"es"
 			]
+		},
+		"18-19": {
+			"La Liga | Deportivo Alaves": {
+				"whoscoredApps": 2,
+				"whoscoredMins": 14
+			}
 		},
 		"20-21": {
 			"La Liga | Valencia": {
@@ -150266,6 +150520,35 @@
 			"Serie A | Cagliari": {
 				"whoscoredApps": 7,
 				"whoscoredMins": 187
+			}
+		}
+	},
+	"369813": {
+		"mapped": false,
+		"name": "Jacob Ramsey",
+		"simplifiedName": "Jacob Ramsey",
+		"age": 19,
+		"nationality": "England",
+		"countryCode": "_england",
+		"positions": {
+			"20-21": [
+				"CM"
+			]
+		},
+		"clubs": {
+			"20-21": [
+				"Aston Villa"
+			]
+		},
+		"leagues": {
+			"20-21": [
+				"_england"
+			]
+		},
+		"20-21": {
+			"Premier League | Aston Villa": {
+				"whoscoredApps": 4,
+				"whoscoredMins": 114
 			}
 		}
 	},
@@ -150538,8 +150821,8 @@
 		},
 		"20-21": {
 			"La Liga | SD Huesca": {
-				"whoscoredApps": 8,
-				"whoscoredMins": 455
+				"whoscoredApps": 9,
+				"whoscoredMins": 478
 			}
 		}
 	},
@@ -150676,19 +150959,34 @@
 		"nationality": "",
 		"countryCode": "",
 		"positions": {
+			"19-20": [
+				"CM"
+			],
 			"20-21": [
 				"CM"
 			]
 		},
 		"clubs": {
+			"19-20": [
+				"FC Koln"
+			],
 			"20-21": [
 				"VfB Stuttgart"
 			]
 		},
 		"leagues": {
+			"19-20": [
+				"de"
+			],
 			"20-21": [
 				"de"
 			]
+		},
+		"19-20": {
+			"Bundesliga | FC Koln": {
+				"whoscoredApps": 1,
+				"whoscoredMins": 20
+			}
 		},
 		"20-21": {
 			"Bundesliga | VfB Stuttgart": {
@@ -150966,8 +151264,8 @@
 		},
 		"20-21": {
 			"La Liga | Real Sociedad": {
-				"whoscoredApps": 14,
-				"whoscoredMins": 730
+				"whoscoredApps": 15,
+				"whoscoredMins": 775
 			},
 			"Europa League | Real Sociedad": {
 				"whoscoredApps": 6,
@@ -151087,8 +151385,8 @@
 		},
 		"20-21": {
 			"La Liga | Barcelona": {
-				"whoscoredApps": 1,
-				"whoscoredMins": 3
+				"whoscoredApps": 2,
+				"whoscoredMins": 5
 			},
 			"Champions League | Barcelona": {
 				"whoscoredApps": 3,
@@ -151353,8 +151651,8 @@
 		},
 		"20-21": {
 			"Premier League | Leicester": {
-				"whoscoredApps": 10,
-				"whoscoredMins": 900
+				"whoscoredApps": 11,
+				"whoscoredMins": 990
 			},
 			"Ligue 1 | Saint-Etienne": {
 				"whoscoredApps": 4,
@@ -151642,8 +151940,8 @@
 		},
 		"20-21": {
 			"La Liga | Real Sociedad": {
-				"whoscoredApps": 7,
-				"whoscoredMins": 331
+				"whoscoredApps": 8,
+				"whoscoredMins": 353
 			},
 			"Europa League | Real Sociedad": {
 				"whoscoredApps": 3,
@@ -151704,8 +152002,8 @@
 		},
 		"20-21": {
 			"Premier League | West Bromwich Albion": {
-				"whoscoredApps": 10,
-				"whoscoredMins": 890
+				"whoscoredApps": 12,
+				"whoscoredMins": 1070
 			}
 		}
 	},
@@ -151783,8 +152081,8 @@
 		},
 		"20-21": {
 			"La Liga | Valencia": {
-				"whoscoredApps": 13,
-				"whoscoredMins": 433
+				"whoscoredApps": 14,
+				"whoscoredMins": 457
 			}
 		}
 	},
@@ -151894,7 +152192,7 @@
 		"mapped": false,
 		"name": "Andreas Skov Olsen",
 		"simplifiedName": "Andreas Skov Olsen",
-		"age": 20,
+		"age": 21,
 		"nationality": "Denmark",
 		"countryCode": "dk",
 		"positions": {
@@ -152126,7 +152424,7 @@
 		"mapped": false,
 		"name": "Ngonda Muzinga",
 		"simplifiedName": "Ngonda Muzinga",
-		"age": 25,
+		"age": 26,
 		"nationality": "",
 		"countryCode": "",
 		"positions": {
@@ -152297,8 +152595,8 @@
 		},
 		"20-21": {
 			"La Liga | Barcelona": {
-				"whoscoredApps": 11,
-				"whoscoredMins": 743
+				"whoscoredApps": 12,
+				"whoscoredMins": 789
 			},
 			"Champions League | Barcelona": {
 				"whoscoredApps": 5,
@@ -152458,8 +152756,8 @@
 		},
 		"20-21": {
 			"Premier League | Leeds": {
-				"whoscoredApps": 14,
-				"whoscoredMins": 1260
+				"whoscoredApps": 16,
+				"whoscoredMins": 1440
 			}
 		}
 	},
@@ -152696,8 +152994,8 @@
 		},
 		"20-21": {
 			"Premier League | Wolverhampton Wanderers": {
-				"whoscoredApps": 9,
-				"whoscoredMins": 326
+				"whoscoredApps": 11,
+				"whoscoredMins": 438
 			}
 		}
 	},
@@ -152744,8 +153042,8 @@
 		},
 		"20-21": {
 			"Premier League | Arsenal": {
-				"whoscoredApps": 1,
-				"whoscoredMins": 19
+				"whoscoredApps": 3,
+				"whoscoredMins": 156
 			}
 		}
 	},
@@ -152938,8 +153236,8 @@
 		},
 		"20-21": {
 			"La Liga | Athletic Bilbao": {
-				"whoscoredApps": 11,
-				"whoscoredMins": 199
+				"whoscoredApps": 12,
+				"whoscoredMins": 233
 			}
 		}
 	},
@@ -153145,19 +153443,34 @@
 		"nationality": "Germany",
 		"countryCode": "de",
 		"positions": {
+			"19-20": [
+				"CM"
+			],
 			"20-21": [
 				"CM"
 			]
 		},
 		"clubs": {
+			"19-20": [
+				"Freiburg"
+			],
 			"20-21": [
 				"Freiburg"
 			]
 		},
 		"leagues": {
+			"19-20": [
+				"de"
+			],
 			"20-21": [
 				"de"
 			]
+		},
+		"19-20": {
+			"Bundesliga | Freiburg": {
+				"whoscoredApps": 1,
+				"whoscoredMins": 34
+			}
 		},
 		"20-21": {
 			"Bundesliga | Freiburg": {
@@ -153511,8 +153824,8 @@
 		},
 		"20-21": {
 			"La Liga | Granada": {
-				"whoscoredApps": 12,
-				"whoscoredMins": 828
+				"whoscoredApps": 13,
+				"whoscoredMins": 918
 			},
 			"Europa League | Granada": {
 				"whoscoredApps": 5,
@@ -153607,8 +153920,8 @@
 		},
 		"20-21": {
 			"La Liga | Granada": {
-				"whoscoredApps": 12,
-				"whoscoredMins": 1068
+				"whoscoredApps": 13,
+				"whoscoredMins": 1158
 			},
 			"Europa League | Granada": {
 				"whoscoredApps": 6,
@@ -153655,8 +153968,8 @@
 		},
 		"20-21": {
 			"La Liga | Osasuna": {
-				"whoscoredApps": 13,
-				"whoscoredMins": 996
+				"whoscoredApps": 14,
+				"whoscoredMins": 1086
 			}
 		}
 	},
@@ -153699,8 +154012,8 @@
 		},
 		"20-21": {
 			"La Liga | Osasuna": {
-				"whoscoredApps": 12,
-				"whoscoredMins": 1080
+				"whoscoredApps": 13,
+				"whoscoredMins": 1157
 			}
 		}
 	},
@@ -153743,8 +154056,8 @@
 		},
 		"20-21": {
 			"La Liga | Deportivo Alaves": {
-				"whoscoredApps": 13,
-				"whoscoredMins": 919
+				"whoscoredApps": 14,
+				"whoscoredMins": 1009
 			}
 		}
 	},
@@ -153787,8 +154100,8 @@
 		},
 		"20-21": {
 			"La Liga | Deportivo Alaves": {
-				"whoscoredApps": 10,
-				"whoscoredMins": 181
+				"whoscoredApps": 11,
+				"whoscoredMins": 204
 			}
 		}
 	},
@@ -154100,8 +154413,8 @@
 		},
 		"20-21": {
 			"Premier League | Newcastle United": {
-				"whoscoredApps": 1,
-				"whoscoredMins": 29
+				"whoscoredApps": 3,
+				"whoscoredMins": 209
 			}
 		}
 	},
@@ -154222,8 +154535,8 @@
 		},
 		"20-21": {
 			"Premier League | Southampton": {
-				"whoscoredApps": 4,
-				"whoscoredMins": 16
+				"whoscoredApps": 5,
+				"whoscoredMins": 17
 			}
 		}
 	},
@@ -154300,8 +154613,8 @@
 		},
 		"20-21": {
 			"La Liga | Real Valladolid": {
-				"whoscoredApps": 11,
-				"whoscoredMins": 560
+				"whoscoredApps": 12,
+				"whoscoredMins": 629
 			}
 		}
 	},
@@ -154900,8 +155213,8 @@
 		},
 		"20-21": {
 			"La Liga | Barcelona": {
-				"whoscoredApps": 6,
-				"whoscoredMins": 476
+				"whoscoredApps": 7,
+				"whoscoredMins": 566
 			},
 			"Champions League | Barcelona": {
 				"whoscoredApps": 3,
@@ -154918,7 +155231,7 @@
 		"countryCode": "pt",
 		"positions": {
 			"20-21": [
-				"CM"
+				"AM"
 			]
 		},
 		"clubs": {
@@ -154933,8 +155246,8 @@
 		},
 		"20-21": {
 			"Premier League | Wolverhampton Wanderers": {
-				"whoscoredApps": 6,
-				"whoscoredMins": 52
+				"whoscoredApps": 8,
+				"whoscoredMins": 108
 			}
 		}
 	},
@@ -155025,8 +155338,8 @@
 		},
 		"20-21": {
 			"La Liga | Levante": {
-				"whoscoredApps": 14,
-				"whoscoredMins": 546
+				"whoscoredApps": 15,
+				"whoscoredMins": 608
 			}
 		}
 	},
@@ -155322,11 +155635,40 @@
 			}
 		}
 	},
+	"387480": {
+		"mapped": false,
+		"name": "Vicente Esquerdo",
+		"simplifiedName": "Vicente Esquerdo",
+		"age": 21,
+		"nationality": "Spain",
+		"countryCode": "es",
+		"positions": {
+			"20-21": [
+				"CM"
+			]
+		},
+		"clubs": {
+			"20-21": [
+				"Valencia"
+			]
+		},
+		"leagues": {
+			"20-21": [
+				"es"
+			]
+		},
+		"20-21": {
+			"La Liga | Valencia": {
+				"whoscoredApps": 4,
+				"whoscoredMins": 233
+			}
+		}
+	},
 	"387578": {
 		"mapped": false,
 		"name": "Hianga'a M'Bock",
 		"simplifiedName": "Hianga'a M'Bock",
-		"age": 20,
+		"age": 21,
 		"nationality": "",
 		"countryCode": "",
 		"positions": {
@@ -155918,8 +156260,8 @@
 		},
 		"20-21": {
 			"Premier League | Crystal Palace": {
-				"whoscoredApps": 6,
-				"whoscoredMins": 540
+				"whoscoredApps": 7,
+				"whoscoredMins": 630
 			}
 		}
 	},
@@ -156212,8 +156554,8 @@
 		},
 		"20-21": {
 			"La Liga | Villarreal": {
-				"whoscoredApps": 5,
-				"whoscoredMins": 222
+				"whoscoredApps": 6,
+				"whoscoredMins": 285
 			},
 			"Europa League | Villarreal": {
 				"whoscoredApps": 3,
@@ -156454,8 +156796,8 @@
 		},
 		"20-21": {
 			"La Liga | Athletic Bilbao": {
-				"whoscoredApps": 8,
-				"whoscoredMins": 459
+				"whoscoredApps": 9,
+				"whoscoredMins": 515
 			}
 		}
 	},
@@ -156856,6 +157198,36 @@
 			}
 		}
 	},
+	"395188": {
+		"mapped": false,
+		"name": "Rodrigo Sánchez",
+		"simplifiedName": "Rodrigo Sanchez",
+		"age": 20,
+		"nationality": "",
+		"countryCode": "",
+		"positions": {
+			"20-21": [
+				"AM",
+				"CM"
+			]
+		},
+		"clubs": {
+			"20-21": [
+				"Real Betis"
+			]
+		},
+		"leagues": {
+			"20-21": [
+				"es"
+			]
+		},
+		"20-21": {
+			"La Liga | Real Betis": {
+				"whoscoredApps": 4,
+				"whoscoredMins": 177
+			}
+		}
+	},
 	"395234": {
 		"mapped": false,
 		"name": "Javier López",
@@ -156972,8 +157344,8 @@
 		},
 		"20-21": {
 			"La Liga | Celta Vigo": {
-				"whoscoredApps": 6,
-				"whoscoredMins": 331
+				"whoscoredApps": 7,
+				"whoscoredMins": 338
 			}
 		}
 	},
@@ -156985,19 +157357,34 @@
 		"nationality": "",
 		"countryCode": "",
 		"positions": {
+			"19-20": [
+				"CM"
+			],
 			"20-21": [
 				"CM"
 			]
 		},
 		"clubs": {
+			"19-20": [
+				"Southampton"
+			],
 			"20-21": [
 				"Southampton"
 			]
 		},
 		"leagues": {
+			"19-20": [
+				"_england"
+			],
 			"20-21": [
 				"_england"
 			]
+		},
+		"19-20": {
+			"Premier League | Southampton": {
+				"whoscoredApps": 1,
+				"whoscoredMins": 2
+			}
 		},
 		"20-21": {
 			"Premier League | Southampton": {
@@ -157075,8 +157462,8 @@
 		},
 		"20-21": {
 			"La Liga | Real Valladolid": {
-				"whoscoredApps": 11,
-				"whoscoredMins": 481
+				"whoscoredApps": 12,
+				"whoscoredMins": 492
 			}
 		}
 	},
@@ -157084,7 +157471,7 @@
 		"mapped": false,
 		"name": "Bosko Sutalo",
 		"simplifiedName": "Bosko Sutalo",
-		"age": 20,
+		"age": 21,
 		"nationality": "",
 		"countryCode": "",
 		"positions": {
@@ -157223,6 +157610,39 @@
 			"Serie A | Verona": {
 				"whoscoredApps": 12,
 				"whoscoredMins": 758
+			}
+		}
+	},
+	"396317": {
+		"mapped": false,
+		"name": "Luke Thomas",
+		"simplifiedName": "Luke Thomas",
+		"age": 19,
+		"nationality": "",
+		"countryCode": "",
+		"positions": {
+			"20-21": [
+				"FB"
+			]
+		},
+		"clubs": {
+			"20-21": [
+				"Leicester"
+			]
+		},
+		"leagues": {
+			"20-21": [
+				"_england"
+			]
+		},
+		"20-21": {
+			"Premier League | Leicester": {
+				"whoscoredApps": 4,
+				"whoscoredMins": 272
+			},
+			"Europa League | Leicester": {
+				"whoscoredApps": 5,
+				"whoscoredMins": 360
 			}
 		}
 	},
@@ -157366,8 +157786,8 @@
 		},
 		"20-21": {
 			"La Liga | Barcelona": {
-				"whoscoredApps": 5,
-				"whoscoredMins": 395
+				"whoscoredApps": 6,
+				"whoscoredMins": 485
 			},
 			"Champions League | Barcelona": {
 				"whoscoredApps": 3,
@@ -158038,8 +158458,8 @@
 		},
 		"20-21": {
 			"La Liga | Celta Vigo": {
-				"whoscoredApps": 11,
-				"whoscoredMins": 343
+				"whoscoredApps": 12,
+				"whoscoredMins": 350
 			}
 		}
 	},
@@ -158125,8 +158545,8 @@
 		},
 		"20-21": {
 			"La Liga | Granada": {
-				"whoscoredApps": 6,
-				"whoscoredMins": 102
+				"whoscoredApps": 7,
+				"whoscoredMins": 119
 			},
 			"Europa League | Granada": {
 				"whoscoredApps": 6,
@@ -158158,8 +158578,8 @@
 		},
 		"20-21": {
 			"La Liga | Athletic Bilbao": {
-				"whoscoredApps": 13,
-				"whoscoredMins": 444
+				"whoscoredApps": 14,
+				"whoscoredMins": 478
 			}
 		}
 	},
@@ -158216,8 +158636,8 @@
 		},
 		"20-21": {
 			"La Liga | Cadiz": {
-				"whoscoredApps": 9,
-				"whoscoredMins": 725
+				"whoscoredApps": 10,
+				"whoscoredMins": 815
 			}
 		}
 	},
@@ -158245,8 +158665,8 @@
 		},
 		"20-21": {
 			"La Liga | Cadiz": {
-				"whoscoredApps": 11,
-				"whoscoredMins": 894
+				"whoscoredApps": 12,
+				"whoscoredMins": 984
 			}
 		}
 	},
@@ -158332,8 +158752,8 @@
 		},
 		"20-21": {
 			"La Liga | Cadiz": {
-				"whoscoredApps": 13,
-				"whoscoredMins": 920
+				"whoscoredApps": 14,
+				"whoscoredMins": 1010
 			}
 		}
 	},
@@ -158419,8 +158839,8 @@
 		},
 		"20-21": {
 			"La Liga | Valencia": {
-				"whoscoredApps": 14,
-				"whoscoredMins": 970
+				"whoscoredApps": 15,
+				"whoscoredMins": 984
 			}
 		}
 	},
@@ -158448,8 +158868,8 @@
 		},
 		"20-21": {
 			"La Liga | Levante": {
-				"whoscoredApps": 12,
-				"whoscoredMins": 526
+				"whoscoredApps": 13,
+				"whoscoredMins": 598
 			}
 		}
 	},
@@ -158477,8 +158897,8 @@
 		},
 		"20-21": {
 			"La Liga | Levante": {
-				"whoscoredApps": 9,
-				"whoscoredMins": 405
+				"whoscoredApps": 10,
+				"whoscoredMins": 433
 			}
 		}
 	},
@@ -158549,7 +158969,7 @@
 		"countryCode": "",
 		"positions": {
 			"20-21": [
-				"CB"
+				"FB"
 			]
 		},
 		"clubs": {
@@ -158892,7 +159312,7 @@
 		"mapped": false,
 		"name": "Raúl Guti",
 		"simplifiedName": "Raul Guti",
-		"age": 23,
+		"age": 24,
 		"nationality": "Spain",
 		"countryCode": "es",
 		"positions": {
@@ -158912,8 +159332,8 @@
 		},
 		"20-21": {
 			"La Liga | Elche": {
-				"whoscoredApps": 12,
-				"whoscoredMins": 886
+				"whoscoredApps": 13,
+				"whoscoredMins": 976
 			}
 		}
 	},
@@ -158941,8 +159361,8 @@
 		},
 		"20-21": {
 			"La Liga | Elche": {
-				"whoscoredApps": 12,
-				"whoscoredMins": 988
+				"whoscoredApps": 13,
+				"whoscoredMins": 1004
 			}
 		}
 	},
@@ -159086,8 +159506,8 @@
 		},
 		"20-21": {
 			"La Liga | Barcelona": {
-				"whoscoredApps": 14,
-				"whoscoredMins": 767
+				"whoscoredApps": 15,
+				"whoscoredMins": 855
 			},
 			"Champions League | Barcelona": {
 				"whoscoredApps": 5,
@@ -159177,8 +159597,8 @@
 		},
 		"20-21": {
 			"La Liga | Granada": {
-				"whoscoredApps": 11,
-				"whoscoredMins": 562
+				"whoscoredApps": 12,
+				"whoscoredMins": 651
 			},
 			"Europa League | Granada": {
 				"whoscoredApps": 6,
@@ -159240,8 +159660,8 @@
 		},
 		"20-21": {
 			"La Liga | Cadiz": {
-				"whoscoredApps": 9,
-				"whoscoredMins": 423
+				"whoscoredApps": 10,
+				"whoscoredMins": 453
 			}
 		}
 	},
@@ -159269,8 +159689,8 @@
 		},
 		"20-21": {
 			"La Liga | Villarreal": {
-				"whoscoredApps": 7,
-				"whoscoredMins": 193
+				"whoscoredApps": 8,
+				"whoscoredMins": 238
 			},
 			"Europa League | Villarreal": {
 				"whoscoredApps": 5,
@@ -159308,6 +159728,35 @@
 			"Champions League | Borussia Dortmund": {
 				"whoscoredApps": 1,
 				"whoscoredMins": 32
+			}
+		}
+	},
+	"407353": {
+		"mapped": false,
+		"name": "John Patrick",
+		"simplifiedName": "John Patrick",
+		"age": 17,
+		"nationality": "",
+		"countryCode": "",
+		"positions": {
+			"20-21": [
+				"CM"
+			]
+		},
+		"clubs": {
+			"20-21": [
+				"Getafe"
+			]
+		},
+		"leagues": {
+			"20-21": [
+				"es"
+			]
+		},
+		"20-21": {
+			"La Liga | Getafe": {
+				"whoscoredApps": 4,
+				"whoscoredMins": 44
 			}
 		}
 	}

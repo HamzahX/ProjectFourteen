@@ -347,8 +347,8 @@ let temp_percentile = (player, position, averageStats) => {
 
     let percentileRanks = {};
 
-    let isInPercentileArrays = PERCENTILE_PLAYERS[position].includes(player);
-    let numOccurences = isInPercentileArrays ? 1 : 0;
+    // let isInPercentileArrays = PERCENTILE_PLAYERS[position].includes(player);
+    // let numOccurences = isInPercentileArrays ? 1 : 0;
 
     for (let i=0; i<STATS_BY_POSITION[position].length; i++){
 
@@ -356,7 +356,7 @@ let temp_percentile = (player, position, averageStats) => {
 
         let playerValue = averageStats[stat];
 
-        let percentileRank = calculatePercentileRank(PERCENTILE_ARRAYS[position][stat], playerValue, numOccurences) * 100;
+        let percentileRank = calculatePercentileRank(PERCENTILE_ARRAYS[position][stat], playerValue) * 100;
         percentileRanks[stat] = truncateNum(percentileRank, 0);
 
         //reverse percentile ranks for "less is better" stats
@@ -418,7 +418,7 @@ let truncateNum = (value, precision) => {
 };
 
 
-function calculatePercentileRank(array, value, occurrences){
+function calculatePercentileRank(array, value){
 
     //taken from: https://gist.github.com/IceCreamYou/6ffa1b18c4c8f6aeaad2
     if (!isFinite(value)){
