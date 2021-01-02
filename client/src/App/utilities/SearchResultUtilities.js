@@ -40,16 +40,17 @@ export function getAllEntriesFromObject(object){
 
     for (let season in object){
 
-        for (let entry in object[season]){
+        for (let i=0; i<object[season].length; i++){
 
-            let value = object[season][entry];
+            let value = object[season][i];
 
             if (value === "N/A")
                 value = "-";
 
-            if (!allInfo.includes(value)){
-                allInfo.unshift(value)
-            }
+            if (allInfo.includes(value))
+                allInfo = allInfo.filter(item => item !== value);
+
+            allInfo.unshift(value)
 
         }
 

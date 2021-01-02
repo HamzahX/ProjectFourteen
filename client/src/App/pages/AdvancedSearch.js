@@ -62,14 +62,23 @@ class AdvancedSearch extends Component {
             },
             minWidth: '250px',
             sortable: true,
+            sortFunction: (rowA, rowB) =>
+                (rowA.name.normalize("NFD")
+                    .replace(/[\u0300-\u036f]/g, "")
+                    .replace("Ø", "O")
+                    .replace("ø", "o"))
+                    .localeCompare((rowB.name.normalize("NFD")
+                        .replace(/[\u0300-\u036f]/g, "")
+                        .replace("Ø", "O")
+                        .replace("ø", "o")))
+            ,
             ignoreRowClick: true,
             cell: row => {
                 return (
                     <a
                         className="table-link"
                         href={'/stats/' + row.code}
-                        target="_blank"
-                        rel="noopener noreferrer">
+                    >
                         {row.name}
                     </a>
                 );
@@ -1237,7 +1246,6 @@ class AdvancedSearch extends Component {
                         max={statData.ranges_agg[season].max + 0.0001}
                         step={statData.step_agg}
                         onChange={(values) => this.handleRangeSliderChange(`aggregateStats.${stat}`, values)}
-                        tipFormatter={value => {return this.tooltipFormatter(value, statData.ranges_agg[season].min, statData.ranges_agg[season].max)}}
                     />
                 );
 
@@ -1557,8 +1565,7 @@ class AdvancedSearch extends Component {
                             {
                                 searchResults.length > 0 ?
                                 <p style={{marginLeft: '0px', lineHeight: '1.3'}}>
-                                    Season: {parameters.season.replace("-", "/")} | Top 5 League Players
-                                     ({parameters.includeEuropeanCompetitions ? 'League + CL/EL Stats' : 'League Stats Only'})
+                                    Season: {parameters.season.replace("-", "/")} | {parameters.includeEuropeanCompetitions ? 'League + CL/EL Stats' : 'League Stats Only'}
                                     <br/>
                                     Data Sources: FBref.com & StatsBomb | Last Updated: {dateFormat(searchResults[0].lastUpdated, "dd/mm/yyyy, h:MM TT", true)} UTC
                                 </p> :
