@@ -1,0 +1,1504 @@
+{
+	"Premier League": {
+		"Arsenal": {
+			"matchesPlayed": 38,
+			"defPenArea": 2266,
+			"def3rd": 6503,
+			"mid3rd": 9732,
+			"att3rd": 5642,
+			"attPenArea": 945
+		},
+		"Bournemouth": {
+			"matchesPlayed": 38,
+			"defPenArea": 2250,
+			"def3rd": 7056,
+			"mid3rd": 11636,
+			"att3rd": 7186,
+			"attPenArea": 1043
+		},
+		"Brighton": {
+			"matchesPlayed": 38,
+			"defPenArea": 1922,
+			"def3rd": 6891,
+			"mid3rd": 13011,
+			"att3rd": 7755,
+			"attPenArea": 1095
+		},
+		"Burnley": {
+			"matchesPlayed": 38,
+			"defPenArea": 2357,
+			"def3rd": 8147,
+			"mid3rd": 11767,
+			"att3rd": 7091,
+			"attPenArea": 1201
+		},
+		"Cardiff": {
+			"matchesPlayed": 38,
+			"defPenArea": 2258,
+			"def3rd": 7888,
+			"mid3rd": 13108,
+			"att3rd": 7236,
+			"attPenArea": 1139
+		},
+		"Chelsea": {
+			"matchesPlayed": 38,
+			"defPenArea": 2778,
+			"def3rd": 7669,
+			"mid3rd": 8710,
+			"att3rd": 4844,
+			"attPenArea": 692
+		},
+		"Crystal Palace": {
+			"matchesPlayed": 38,
+			"defPenArea": 2231,
+			"def3rd": 6919,
+			"mid3rd": 12515,
+			"att3rd": 7764,
+			"attPenArea": 992
+		},
+		"Everton": {
+			"matchesPlayed": 38,
+			"defPenArea": 2413,
+			"def3rd": 7615,
+			"mid3rd": 10476,
+			"att3rd": 5489,
+			"attPenArea": 815
+		},
+		"Fulham": {
+			"matchesPlayed": 38,
+			"defPenArea": 2232,
+			"def3rd": 7332,
+			"mid3rd": 11846,
+			"att3rd": 6985,
+			"attPenArea": 1196
+		},
+		"Huddersfield": {
+			"matchesPlayed": 38,
+			"defPenArea": 2406,
+			"def3rd": 7567,
+			"mid3rd": 12314,
+			"att3rd": 6382,
+			"attPenArea": 940
+		},
+		"Leicester": {
+			"matchesPlayed": 38,
+			"defPenArea": 2344,
+			"def3rd": 6853,
+			"mid3rd": 11219,
+			"att3rd": 6295,
+			"attPenArea": 852
+		},
+		"Liverpool": {
+			"matchesPlayed": 38,
+			"defPenArea": 2844,
+			"def3rd": 8058,
+			"mid3rd": 8901,
+			"att3rd": 4302,
+			"attPenArea": 616
+		},
+		"Manchester City": {
+			"matchesPlayed": 38,
+			"defPenArea": 3155,
+			"def3rd": 7758,
+			"mid3rd": 7433,
+			"att3rd": 3350,
+			"attPenArea": 491
+		},
+		"Manchester United": {
+			"matchesPlayed": 38,
+			"defPenArea": 2322,
+			"def3rd": 6771,
+			"mid3rd": 10244,
+			"att3rd": 6078,
+			"attPenArea": 946
+		},
+		"Newcastle United": {
+			"matchesPlayed": 38,
+			"defPenArea": 2176,
+			"def3rd": 7291,
+			"mid3rd": 13987,
+			"att3rd": 7804,
+			"attPenArea": 1057
+		},
+		"Southampton": {
+			"matchesPlayed": 38,
+			"defPenArea": 2360,
+			"def3rd": 8072,
+			"mid3rd": 11854,
+			"att3rd": 6914,
+			"attPenArea": 1086
+		},
+		"Tottenham": {
+			"matchesPlayed": 38,
+			"defPenArea": 2471,
+			"def3rd": 6993,
+			"mid3rd": 9113,
+			"att3rd": 5459,
+			"attPenArea": 849
+		},
+		"Watford": {
+			"matchesPlayed": 38,
+			"defPenArea": 2301,
+			"def3rd": 7217,
+			"mid3rd": 11494,
+			"att3rd": 6741,
+			"attPenArea": 1033
+		},
+		"West Ham": {
+			"matchesPlayed": 38,
+			"defPenArea": 2226,
+			"def3rd": 6823,
+			"mid3rd": 11670,
+			"att3rd": 6822,
+			"attPenArea": 995
+		},
+		"Wolverhampton Wanderers": {
+			"matchesPlayed": 38,
+			"defPenArea": 2174,
+			"def3rd": 6926,
+			"mid3rd": 13143,
+			"att3rd": 6809,
+			"attPenArea": 863
+		}
+	},
+	"La Liga": {
+		"Deportivo Alaves": {
+			"matchesPlayed": 38,
+			"defPenArea": 2177,
+			"def3rd": 6914,
+			"mid3rd": 11869,
+			"att3rd": 6361,
+			"attPenArea": 988
+		},
+		"Athletic Bilbao": {
+			"matchesPlayed": 38,
+			"defPenArea": 2334,
+			"def3rd": 7225,
+			"mid3rd": 10591,
+			"att3rd": 5481,
+			"attPenArea": 725
+		},
+		"Atletico Madrid": {
+			"matchesPlayed": 38,
+			"defPenArea": 2404,
+			"def3rd": 7277,
+			"mid3rd": 12076,
+			"att3rd": 6115,
+			"attPenArea": 740
+		},
+		"Barcelona": {
+			"matchesPlayed": 38,
+			"defPenArea": 2375,
+			"def3rd": 6716,
+			"mid3rd": 8734,
+			"att3rd": 4597,
+			"attPenArea": 721
+		},
+		"Real Betis": {
+			"matchesPlayed": 38,
+			"defPenArea": 2169,
+			"def3rd": 5897,
+			"mid3rd": 8352,
+			"att3rd": 4976,
+			"attPenArea": 809
+		},
+		"Celta Vigo": {
+			"matchesPlayed": 38,
+			"defPenArea": 2051,
+			"def3rd": 6145,
+			"mid3rd": 10865,
+			"att3rd": 5964,
+			"attPenArea": 918
+		},
+		"Eibar": {
+			"matchesPlayed": 38,
+			"defPenArea": 2864,
+			"def3rd": 8804,
+			"mid3rd": 9104,
+			"att3rd": 3848,
+			"attPenArea": 633
+		},
+		"Espanyol": {
+			"matchesPlayed": 38,
+			"defPenArea": 2214,
+			"def3rd": 6683,
+			"mid3rd": 10957,
+			"att3rd": 6354,
+			"attPenArea": 944
+		},
+		"Getafe": {
+			"matchesPlayed": 38,
+			"defPenArea": 2264,
+			"def3rd": 7874,
+			"mid3rd": 12323,
+			"att3rd": 5224,
+			"attPenArea": 748
+		},
+		"Girona": {
+			"matchesPlayed": 38,
+			"defPenArea": 2170,
+			"def3rd": 6677,
+			"mid3rd": 11443,
+			"att3rd": 6447,
+			"attPenArea": 975
+		},
+		"SD Huesca": {
+			"matchesPlayed": 38,
+			"defPenArea": 2301,
+			"def3rd": 7124,
+			"mid3rd": 11799,
+			"att3rd": 5932,
+			"attPenArea": 929
+		},
+		"Leganes": {
+			"matchesPlayed": 38,
+			"defPenArea": 2148,
+			"def3rd": 7241,
+			"mid3rd": 12724,
+			"att3rd": 6310,
+			"attPenArea": 748
+		},
+		"Levante": {
+			"matchesPlayed": 38,
+			"defPenArea": 2228,
+			"def3rd": 6762,
+			"mid3rd": 10602,
+			"att3rd": 6421,
+			"attPenArea": 1161
+		},
+		"Rayo Vallecano": {
+			"matchesPlayed": 38,
+			"defPenArea": 2144,
+			"def3rd": 6317,
+			"mid3rd": 10750,
+			"att3rd": 6140,
+			"attPenArea": 981
+		},
+		"Real Madrid": {
+			"matchesPlayed": 38,
+			"defPenArea": 2682,
+			"def3rd": 7190,
+			"mid3rd": 9525,
+			"att3rd": 4756,
+			"attPenArea": 681
+		},
+		"Real Sociedad": {
+			"matchesPlayed": 38,
+			"defPenArea": 2096,
+			"def3rd": 6657,
+			"mid3rd": 10412,
+			"att3rd": 5940,
+			"attPenArea": 903
+		},
+		"Sevilla": {
+			"matchesPlayed": 38,
+			"defPenArea": 2453,
+			"def3rd": 7135,
+			"mid3rd": 10569,
+			"att3rd": 5407,
+			"attPenArea": 786
+		},
+		"Valencia": {
+			"matchesPlayed": 38,
+			"defPenArea": 2335,
+			"def3rd": 7344,
+			"mid3rd": 12228,
+			"att3rd": 6532,
+			"attPenArea": 876
+		},
+		"Real Valladolid": {
+			"matchesPlayed": 38,
+			"defPenArea": 2065,
+			"def3rd": 6409,
+			"mid3rd": 11827,
+			"att3rd": 6205,
+			"attPenArea": 889
+		},
+		"Villarreal": {
+			"matchesPlayed": 38,
+			"defPenArea": 2198,
+			"def3rd": 6965,
+			"mid3rd": 11568,
+			"att3rd": 6362,
+			"attPenArea": 960
+		}
+	},
+	"Serie A": {
+		"Atalanta": {
+			"matchesPlayed": 38,
+			"defPenArea": 2678,
+			"def3rd": 7416,
+			"mid3rd": 10126,
+			"att3rd": 4796,
+			"attPenArea": 636
+		},
+		"Bologna": {
+			"matchesPlayed": 38,
+			"defPenArea": 2213,
+			"def3rd": 7198,
+			"mid3rd": 12024,
+			"att3rd": 6679,
+			"attPenArea": 872
+		},
+		"Cagliari": {
+			"matchesPlayed": 38,
+			"defPenArea": 2359,
+			"def3rd": 7930,
+			"mid3rd": 10687,
+			"att3rd": 6293,
+			"attPenArea": 1033
+		},
+		"Chievo": {
+			"matchesPlayed": 38,
+			"defPenArea": 2165,
+			"def3rd": 7545,
+			"mid3rd": 13188,
+			"att3rd": 7004,
+			"attPenArea": 1036
+		},
+		"Empoli": {
+			"matchesPlayed": 38,
+			"defPenArea": 2248,
+			"def3rd": 7128,
+			"mid3rd": 12036,
+			"att3rd": 6895,
+			"attPenArea": 1010
+		},
+		"Fiorentina": {
+			"matchesPlayed": 38,
+			"defPenArea": 2474,
+			"def3rd": 7035,
+			"mid3rd": 10216,
+			"att3rd": 5569,
+			"attPenArea": 739
+		},
+		"Frosinone": {
+			"matchesPlayed": 38,
+			"defPenArea": 2111,
+			"def3rd": 7088,
+			"mid3rd": 13468,
+			"att3rd": 8019,
+			"attPenArea": 1012
+		},
+		"Genoa": {
+			"matchesPlayed": 38,
+			"defPenArea": 2479,
+			"def3rd": 7941,
+			"mid3rd": 11992,
+			"att3rd": 6444,
+			"attPenArea": 898
+		},
+		"Inter": {
+			"matchesPlayed": 38,
+			"defPenArea": 2982,
+			"def3rd": 7710,
+			"mid3rd": 9101,
+			"att3rd": 4725,
+			"attPenArea": 721
+		},
+		"Juventus": {
+			"matchesPlayed": 38,
+			"defPenArea": 2537,
+			"def3rd": 7026,
+			"mid3rd": 10208,
+			"att3rd": 5433,
+			"attPenArea": 628
+		},
+		"Lazio": {
+			"matchesPlayed": 38,
+			"defPenArea": 2585,
+			"def3rd": 7628,
+			"mid3rd": 11876,
+			"att3rd": 5626,
+			"attPenArea": 732
+		},
+		"AC Milan": {
+			"matchesPlayed": 38,
+			"defPenArea": 2368,
+			"def3rd": 6832,
+			"mid3rd": 10771,
+			"att3rd": 5982,
+			"attPenArea": 814
+		},
+		"Napoli": {
+			"matchesPlayed": 38,
+			"defPenArea": 3029,
+			"def3rd": 8408,
+			"mid3rd": 9635,
+			"att3rd": 4814,
+			"attPenArea": 713
+		},
+		"Parma Calcio 1913": {
+			"matchesPlayed": 38,
+			"defPenArea": 1891,
+			"def3rd": 6390,
+			"mid3rd": 13554,
+			"att3rd": 8560,
+			"attPenArea": 1261
+		},
+		"Roma": {
+			"matchesPlayed": 38,
+			"defPenArea": 2699,
+			"def3rd": 8040,
+			"mid3rd": 10447,
+			"att3rd": 5508,
+			"attPenArea": 824
+		},
+		"Sampdoria": {
+			"matchesPlayed": 38,
+			"defPenArea": 2455,
+			"def3rd": 7741,
+			"mid3rd": 9805,
+			"att3rd": 5520,
+			"attPenArea": 894
+		},
+		"Sassuolo": {
+			"matchesPlayed": 38,
+			"defPenArea": 2221,
+			"def3rd": 6799,
+			"mid3rd": 10132,
+			"att3rd": 5863,
+			"attPenArea": 947
+		},
+		"SPAL 2013": {
+			"matchesPlayed": 38,
+			"defPenArea": 2196,
+			"def3rd": 6869,
+			"mid3rd": 10499,
+			"att3rd": 6068,
+			"attPenArea": 1010
+		},
+		"Torino": {
+			"matchesPlayed": 38,
+			"defPenArea": 2370,
+			"def3rd": 6873,
+			"mid3rd": 9784,
+			"att3rd": 5396,
+			"attPenArea": 804
+		},
+		"Udinese": {
+			"matchesPlayed": 38,
+			"defPenArea": 2018,
+			"def3rd": 6374,
+			"mid3rd": 13010,
+			"att3rd": 7309,
+			"attPenArea": 1063
+		}
+	},
+	"Bundesliga": {
+		"Augsburg": {
+			"matchesPlayed": 34,
+			"defPenArea": 2138,
+			"def3rd": 6966,
+			"mid3rd": 10782,
+			"att3rd": 5309,
+			"attPenArea": 922
+		},
+		"Bayern Munich": {
+			"matchesPlayed": 34,
+			"defPenArea": 2853,
+			"def3rd": 7173,
+			"mid3rd": 7095,
+			"att3rd": 2907,
+			"attPenArea": 365
+		},
+		"Borussia Dortmund": {
+			"matchesPlayed": 34,
+			"defPenArea": 2174,
+			"def3rd": 6938,
+			"mid3rd": 9332,
+			"att3rd": 4578,
+			"attPenArea": 704
+		},
+		"Fortuna Duesseldorf": {
+			"matchesPlayed": 34,
+			"defPenArea": 1817,
+			"def3rd": 6364,
+			"mid3rd": 12744,
+			"att3rd": 6096,
+			"attPenArea": 859
+		},
+		"Eintracht Frankfurt": {
+			"matchesPlayed": 34,
+			"defPenArea": 2310,
+			"def3rd": 7373,
+			"mid3rd": 10056,
+			"att3rd": 4943,
+			"attPenArea": 831
+		},
+		"Freiburg": {
+			"matchesPlayed": 34,
+			"defPenArea": 2032,
+			"def3rd": 6953,
+			"mid3rd": 11467,
+			"att3rd": 6040,
+			"attPenArea": 885
+		},
+		"Hannover 96": {
+			"matchesPlayed": 34,
+			"defPenArea": 1857,
+			"def3rd": 6295,
+			"mid3rd": 10731,
+			"att3rd": 5941,
+			"attPenArea": 952
+		},
+		"Hertha Berlin": {
+			"matchesPlayed": 34,
+			"defPenArea": 1956,
+			"def3rd": 6447,
+			"mid3rd": 10866,
+			"att3rd": 5456,
+			"attPenArea": 860
+		},
+		"Hoffenheim": {
+			"matchesPlayed": 34,
+			"defPenArea": 2345,
+			"def3rd": 6610,
+			"mid3rd": 9444,
+			"att3rd": 5073,
+			"attPenArea": 896
+		},
+		"Bayer Leverkusen": {
+			"matchesPlayed": 34,
+			"defPenArea": 2161,
+			"def3rd": 6247,
+			"mid3rd": 8889,
+			"att3rd": 4551,
+			"attPenArea": 695
+		},
+		"Borussia M'Gladbach": {
+			"matchesPlayed": 34,
+			"defPenArea": 2087,
+			"def3rd": 6689,
+			"mid3rd": 10781,
+			"att3rd": 4648,
+			"attPenArea": 798
+		},
+		"Mainz 05": {
+			"matchesPlayed": 34,
+			"defPenArea": 2370,
+			"def3rd": 7705,
+			"mid3rd": 10695,
+			"att3rd": 5322,
+			"attPenArea": 882
+		},
+		"Nuernberg": {
+			"matchesPlayed": 34,
+			"defPenArea": 1753,
+			"def3rd": 6226,
+			"mid3rd": 12164,
+			"att3rd": 6599,
+			"attPenArea": 984
+		},
+		"RB Leipzig": {
+			"matchesPlayed": 34,
+			"defPenArea": 2377,
+			"def3rd": 8305,
+			"mid3rd": 10111,
+			"att3rd": 4123,
+			"attPenArea": 601
+		},
+		"Schalke 04": {
+			"matchesPlayed": 34,
+			"defPenArea": 2225,
+			"def3rd": 7569,
+			"mid3rd": 10315,
+			"att3rd": 4930,
+			"attPenArea": 679
+		},
+		"VfB Stuttgart": {
+			"matchesPlayed": 34,
+			"defPenArea": 1996,
+			"def3rd": 6846,
+			"mid3rd": 10920,
+			"att3rd": 5723,
+			"attPenArea": 923
+		},
+		"Werder Bremen": {
+			"matchesPlayed": 34,
+			"defPenArea": 2256,
+			"def3rd": 6781,
+			"mid3rd": 10218,
+			"att3rd": 5133,
+			"attPenArea": 802
+		},
+		"Wolfsburg": {
+			"matchesPlayed": 34,
+			"defPenArea": 2047,
+			"def3rd": 6071,
+			"mid3rd": 8905,
+			"att3rd": 5283,
+			"attPenArea": 773
+		}
+	},
+	"Ligue 1": {
+		"Amiens": {
+			"matchesPlayed": 38,
+			"defPenArea": 2050,
+			"def3rd": 7287,
+			"mid3rd": 11303,
+			"att3rd": 5761,
+			"attPenArea": 851
+		},
+		"Angers": {
+			"matchesPlayed": 38,
+			"defPenArea": 2062,
+			"def3rd": 7441,
+			"mid3rd": 14380,
+			"att3rd": 6415,
+			"attPenArea": 817
+		},
+		"Bordeaux": {
+			"matchesPlayed": 38,
+			"defPenArea": 2035,
+			"def3rd": 6902,
+			"mid3rd": 11472,
+			"att3rd": 5844,
+			"attPenArea": 817
+		},
+		"Caen": {
+			"matchesPlayed": 38,
+			"defPenArea": 1871,
+			"def3rd": 7066,
+			"mid3rd": 12403,
+			"att3rd": 6058,
+			"attPenArea": 885
+		},
+		"Dijon": {
+			"matchesPlayed": 38,
+			"defPenArea": 2155,
+			"def3rd": 7591,
+			"mid3rd": 11469,
+			"att3rd": 5558,
+			"attPenArea": 841
+		},
+		"Guingamp": {
+			"matchesPlayed": 38,
+			"defPenArea": 2290,
+			"def3rd": 8081,
+			"mid3rd": 12479,
+			"att3rd": 5782,
+			"attPenArea": 806
+		},
+		"Lille": {
+			"matchesPlayed": 38,
+			"defPenArea": 2010,
+			"def3rd": 6981,
+			"mid3rd": 10703,
+			"att3rd": 5129,
+			"attPenArea": 740
+		},
+		"Lyon": {
+			"matchesPlayed": 38,
+			"defPenArea": 2306,
+			"def3rd": 6717,
+			"mid3rd": 8974,
+			"att3rd": 4751,
+			"attPenArea": 674
+		},
+		"Marseille": {
+			"matchesPlayed": 38,
+			"defPenArea": 2391,
+			"def3rd": 7345,
+			"mid3rd": 10166,
+			"att3rd": 4495,
+			"attPenArea": 642
+		},
+		"Monaco": {
+			"matchesPlayed": 38,
+			"defPenArea": 2274,
+			"def3rd": 7639,
+			"mid3rd": 11054,
+			"att3rd": 5362,
+			"attPenArea": 755
+		},
+		"Montpellier": {
+			"matchesPlayed": 38,
+			"defPenArea": 2166,
+			"def3rd": 7592,
+			"mid3rd": 12490,
+			"att3rd": 5388,
+			"attPenArea": 694
+		},
+		"Nantes": {
+			"matchesPlayed": 38,
+			"defPenArea": 2265,
+			"def3rd": 7639,
+			"mid3rd": 10818,
+			"att3rd": 5407,
+			"attPenArea": 747
+		},
+		"Nice": {
+			"matchesPlayed": 38,
+			"defPenArea": 2054,
+			"def3rd": 6720,
+			"mid3rd": 10355,
+			"att3rd": 5842,
+			"attPenArea": 852
+		},
+		"Nimes": {
+			"matchesPlayed": 38,
+			"defPenArea": 2199,
+			"def3rd": 7738,
+			"mid3rd": 11607,
+			"att3rd": 5525,
+			"attPenArea": 746
+		},
+		"Paris Saint-Germain": {
+			"matchesPlayed": 38,
+			"defPenArea": 2502,
+			"def3rd": 7218,
+			"mid3rd": 8520,
+			"att3rd": 4161,
+			"attPenArea": 635
+		},
+		"Reims": {
+			"matchesPlayed": 38,
+			"defPenArea": 2174,
+			"def3rd": 7468,
+			"mid3rd": 12552,
+			"att3rd": 6625,
+			"attPenArea": 783
+		},
+		"Rennes": {
+			"matchesPlayed": 38,
+			"defPenArea": 2171,
+			"def3rd": 7298,
+			"mid3rd": 10758,
+			"att3rd": 5250,
+			"attPenArea": 843
+		},
+		"Saint-Etienne": {
+			"matchesPlayed": 38,
+			"defPenArea": 2201,
+			"def3rd": 6883,
+			"mid3rd": 11000,
+			"att3rd": 5312,
+			"attPenArea": 786
+		},
+		"Strasbourg": {
+			"matchesPlayed": 38,
+			"defPenArea": 1901,
+			"def3rd": 6876,
+			"mid3rd": 11666,
+			"att3rd": 5993,
+			"attPenArea": 792
+		},
+		"Toulouse": {
+			"matchesPlayed": 38,
+			"defPenArea": 2069,
+			"def3rd": 6783,
+			"mid3rd": 11269,
+			"att3rd": 6405,
+			"attPenArea": 954
+		}
+	},
+	"Champions League": {
+		"AEK Athens": {
+			"matchesPlayed": 6,
+			"defPenArea": 268,
+			"def3rd": 1096,
+			"mid3rd": 2270,
+			"att3rd": 1251,
+			"attPenArea": 204
+		},
+		"Ajax": {
+			"matchesPlayed": 12,
+			"defPenArea": 814,
+			"def3rd": 2441,
+			"mid3rd": 3484,
+			"att3rd": 1700,
+			"attPenArea": 284
+		},
+		"Atletico Madrid": {
+			"matchesPlayed": 8,
+			"defPenArea": 503,
+			"def3rd": 1682,
+			"mid3rd": 2612,
+			"att3rd": 1334,
+			"attPenArea": 148
+		},
+		"Barcelona": {
+			"matchesPlayed": 12,
+			"defPenArea": 798,
+			"def3rd": 2240,
+			"mid3rd": 3251,
+			"att3rd": 1618,
+			"attPenArea": 271
+		},
+		"Bayern Munich": {
+			"matchesPlayed": 8,
+			"defPenArea": 554,
+			"def3rd": 1616,
+			"mid3rd": 2306,
+			"att3rd": 1048,
+			"attPenArea": 179
+		},
+		"Benfica": {
+			"matchesPlayed": 6,
+			"defPenArea": 385,
+			"def3rd": 1358,
+			"mid3rd": 2252,
+			"att3rd": 895,
+			"attPenArea": 134
+		},
+		"Club Brugge": {
+			"matchesPlayed": 6,
+			"defPenArea": 259,
+			"def3rd": 953,
+			"mid3rd": 2742,
+			"att3rd": 1476,
+			"attPenArea": 180
+		},
+		"CSKA Moscow": {
+			"matchesPlayed": 6,
+			"defPenArea": 346,
+			"def3rd": 1050,
+			"mid3rd": 2094,
+			"att3rd": 1187,
+			"attPenArea": 176
+		},
+		"Borussia Dortmund": {
+			"matchesPlayed": 8,
+			"defPenArea": 494,
+			"def3rd": 1520,
+			"mid3rd": 2380,
+			"att3rd": 1135,
+			"attPenArea": 141
+		},
+		"Galatasaray": {
+			"matchesPlayed": 6,
+			"defPenArea": 325,
+			"def3rd": 1062,
+			"mid3rd": 1566,
+			"att3rd": 787,
+			"attPenArea": 137
+		},
+		"Hoffenheim": {
+			"matchesPlayed": 6,
+			"defPenArea": 381,
+			"def3rd": 1071,
+			"mid3rd": 2033,
+			"att3rd": 1150,
+			"attPenArea": 210
+		},
+		"Inter": {
+			"matchesPlayed": 6,
+			"defPenArea": 428,
+			"def3rd": 1262,
+			"mid3rd": 2015,
+			"att3rd": 1154,
+			"attPenArea": 156
+		},
+		"Juventus": {
+			"matchesPlayed": 10,
+			"defPenArea": 627,
+			"def3rd": 1719,
+			"mid3rd": 2636,
+			"att3rd": 1691,
+			"attPenArea": 195
+		},
+		"Liverpool": {
+			"matchesPlayed": 13,
+			"defPenArea": 1113,
+			"def3rd": 3335,
+			"mid3rd": 3971,
+			"att3rd": 1481,
+			"attPenArea": 265
+		},
+		"Lokomotiv Moscow": {
+			"matchesPlayed": 6,
+			"defPenArea": 345,
+			"def3rd": 1203,
+			"mid3rd": 2061,
+			"att3rd": 978,
+			"attPenArea": 152
+		},
+		"Lyon": {
+			"matchesPlayed": 8,
+			"defPenArea": 462,
+			"def3rd": 1506,
+			"mid3rd": 3063,
+			"att3rd": 1703,
+			"attPenArea": 281
+		},
+		"Manchester City": {
+			"matchesPlayed": 10,
+			"defPenArea": 702,
+			"def3rd": 2038,
+			"mid3rd": 2360,
+			"att3rd": 929,
+			"attPenArea": 167
+		},
+		"Manchester United": {
+			"matchesPlayed": 10,
+			"defPenArea": 581,
+			"def3rd": 1944,
+			"mid3rd": 3914,
+			"att3rd": 1840,
+			"attPenArea": 267
+		},
+		"Monaco": {
+			"matchesPlayed": 6,
+			"defPenArea": 314,
+			"def3rd": 1168,
+			"mid3rd": 2422,
+			"att3rd": 1048,
+			"attPenArea": 142
+		},
+		"Napoli": {
+			"matchesPlayed": 6,
+			"defPenArea": 457,
+			"def3rd": 1450,
+			"mid3rd": 1850,
+			"att3rd": 825,
+			"attPenArea": 133
+		},
+		"Paris Saint-Germain": {
+			"matchesPlayed": 8,
+			"defPenArea": 481,
+			"def3rd": 1404,
+			"mid3rd": 2203,
+			"att3rd": 1097,
+			"attPenArea": 164
+		},
+		"FC Porto": {
+			"matchesPlayed": 10,
+			"defPenArea": 636,
+			"def3rd": 1891,
+			"mid3rd": 2570,
+			"att3rd": 1431,
+			"attPenArea": 221
+		},
+		"PSV Eindhoven": {
+			"matchesPlayed": 6,
+			"defPenArea": 355,
+			"def3rd": 1191,
+			"mid3rd": 2458,
+			"att3rd": 1541,
+			"attPenArea": 232
+		},
+		"Real Madrid": {
+			"matchesPlayed": 8,
+			"defPenArea": 680,
+			"def3rd": 1615,
+			"mid3rd": 1806,
+			"att3rd": 1102,
+			"attPenArea": 190
+		},
+		"FK Crvena Zvezda": {
+			"matchesPlayed": 6,
+			"defPenArea": 254,
+			"def3rd": 1089,
+			"mid3rd": 2928,
+			"att3rd": 1491,
+			"attPenArea": 239
+		},
+		"Roma": {
+			"matchesPlayed": 8,
+			"defPenArea": 556,
+			"def3rd": 1713,
+			"mid3rd": 2394,
+			"att3rd": 1413,
+			"attPenArea": 222
+		},
+		"Schalke 04": {
+			"matchesPlayed": 8,
+			"defPenArea": 458,
+			"def3rd": 1550,
+			"mid3rd": 2917,
+			"att3rd": 1301,
+			"attPenArea": 178
+		},
+		"Shakhtar Donetsk": {
+			"matchesPlayed": 6,
+			"defPenArea": 313,
+			"def3rd": 1094,
+			"mid3rd": 2151,
+			"att3rd": 965,
+			"attPenArea": 172
+		},
+		"Tottenham": {
+			"matchesPlayed": 13,
+			"defPenArea": 910,
+			"def3rd": 2736,
+			"mid3rd": 4038,
+			"att3rd": 1935,
+			"attPenArea": 296
+		},
+		"Valencia": {
+			"matchesPlayed": 6,
+			"defPenArea": 318,
+			"def3rd": 1098,
+			"mid3rd": 1904,
+			"att3rd": 990,
+			"attPenArea": 143
+		},
+		"Viktoria Plzen": {
+			"matchesPlayed": 6,
+			"defPenArea": 311,
+			"def3rd": 1047,
+			"mid3rd": 2467,
+			"att3rd": 1199,
+			"attPenArea": 215
+		},
+		"BSC Young Boys": {
+			"matchesPlayed": 6,
+			"defPenArea": 353,
+			"def3rd": 1216,
+			"mid3rd": 2286,
+			"att3rd": 1048,
+			"attPenArea": 176
+		}
+	},
+	"Europa League": {
+		"AEK Larnaca": {
+			"matchesPlayed": 6,
+			"defPenArea": 343,
+			"def3rd": 1187,
+			"mid3rd": 1732,
+			"att3rd": 962,
+			"attPenArea": 155
+		},
+		"Akhisarspor": {
+			"matchesPlayed": 6,
+			"defPenArea": 292,
+			"def3rd": 1124,
+			"mid3rd": 2288,
+			"att3rd": 1078,
+			"attPenArea": 165
+		},
+		"Anderlecht": {
+			"matchesPlayed": 6,
+			"defPenArea": 381,
+			"def3rd": 1001,
+			"mid3rd": 1208,
+			"att3rd": 767,
+			"attPenArea": 110
+		},
+		"Apollon Limassol": {
+			"matchesPlayed": 6,
+			"defPenArea": 281,
+			"def3rd": 957,
+			"mid3rd": 2020,
+			"att3rd": 1020,
+			"attPenArea": 146
+		},
+		"Arsenal": {
+			"matchesPlayed": 15,
+			"defPenArea": 890,
+			"def3rd": 2742,
+			"mid3rd": 3914,
+			"att3rd": 2061,
+			"attPenArea": 275
+		},
+		"FC Astana": {
+			"matchesPlayed": 6,
+			"defPenArea": 300,
+			"def3rd": 1167,
+			"mid3rd": 1937,
+			"att3rd": 957,
+			"attPenArea": 110
+		},
+		"BATE Borisov": {
+			"matchesPlayed": 8,
+			"defPenArea": 396,
+			"def3rd": 1467,
+			"mid3rd": 3205,
+			"att3rd": 2153,
+			"attPenArea": 316
+		},
+		"Benfica": {
+			"matchesPlayed": 6,
+			"defPenArea": 409,
+			"def3rd": 1193,
+			"mid3rd": 1579,
+			"att3rd": 871,
+			"attPenArea": 116
+		},
+		"Besiktas": {
+			"matchesPlayed": 6,
+			"defPenArea": 400,
+			"def3rd": 1188,
+			"mid3rd": 1692,
+			"att3rd": 874,
+			"attPenArea": 128
+		},
+		"Real Betis": {
+			"matchesPlayed": 8,
+			"defPenArea": 530,
+			"def3rd": 1441,
+			"mid3rd": 1755,
+			"att3rd": 745,
+			"attPenArea": 102
+		},
+		"Bordeaux": {
+			"matchesPlayed": 6,
+			"defPenArea": 357,
+			"def3rd": 1230,
+			"mid3rd": 1905,
+			"att3rd": 854,
+			"attPenArea": 113
+		},
+		"Celtic": {
+			"matchesPlayed": 8,
+			"defPenArea": 386,
+			"def3rd": 1310,
+			"mid3rd": 2666,
+			"att3rd": 1549,
+			"attPenArea": 201
+		},
+		"Chelsea": {
+			"matchesPlayed": 15,
+			"defPenArea": 1035,
+			"def3rd": 2849,
+			"mid3rd": 3102,
+			"att3rd": 1701,
+			"attPenArea": 220
+		},
+		"Club Brugge": {
+			"matchesPlayed": 2,
+			"defPenArea": 113,
+			"def3rd": 373,
+			"mid3rd": 440,
+			"att3rd": 315,
+			"attPenArea": 47
+		},
+		"Dinamo Zagreb": {
+			"matchesPlayed": 10,
+			"defPenArea": 545,
+			"def3rd": 1736,
+			"mid3rd": 3109,
+			"att3rd": 1833,
+			"attPenArea": 204
+		},
+		"Dynamo Kyiv": {
+			"matchesPlayed": 10,
+			"defPenArea": 545,
+			"def3rd": 1889,
+			"mid3rd": 3186,
+			"att3rd": 1610,
+			"attPenArea": 229
+		},
+		"Eintracht Frankfurt": {
+			"matchesPlayed": 14,
+			"defPenArea": 1040,
+			"def3rd": 3372,
+			"mid3rd": 4539,
+			"att3rd": 2050,
+			"attPenArea": 291
+		},
+		"F91 Dudelange": {
+			"matchesPlayed": 6,
+			"defPenArea": 217,
+			"def3rd": 860,
+			"mid3rd": 2458,
+			"att3rd": 1565,
+			"attPenArea": 221
+		},
+		"FC Copenhagen": {
+			"matchesPlayed": 6,
+			"defPenArea": 328,
+			"def3rd": 1184,
+			"mid3rd": 1644,
+			"att3rd": 735,
+			"attPenArea": 94
+		},
+		"Fenerbahce": {
+			"matchesPlayed": 8,
+			"defPenArea": 480,
+			"def3rd": 1488,
+			"mid3rd": 2066,
+			"att3rd": 1012,
+			"attPenArea": 158
+		},
+		"Galatasaray": {
+			"matchesPlayed": 2,
+			"defPenArea": 121,
+			"def3rd": 355,
+			"mid3rd": 470,
+			"att3rd": 263,
+			"attPenArea": 42
+		},
+		"Genk": {
+			"matchesPlayed": 8,
+			"defPenArea": 486,
+			"def3rd": 1423,
+			"mid3rd": 2187,
+			"att3rd": 1013,
+			"attPenArea": 158
+		},
+		"Inter": {
+			"matchesPlayed": 4,
+			"defPenArea": 248,
+			"def3rd": 730,
+			"mid3rd": 1011,
+			"att3rd": 572,
+			"attPenArea": 93
+		},
+		"Jablonec": {
+			"matchesPlayed": 6,
+			"defPenArea": 361,
+			"def3rd": 1306,
+			"mid3rd": 1868,
+			"att3rd": 820,
+			"attPenArea": 104
+		},
+		"FC Krasnodar": {
+			"matchesPlayed": 10,
+			"defPenArea": 674,
+			"def3rd": 1956,
+			"mid3rd": 3174,
+			"att3rd": 1764,
+			"attPenArea": 241
+		},
+		"Lazio": {
+			"matchesPlayed": 8,
+			"defPenArea": 509,
+			"def3rd": 1583,
+			"mid3rd": 2703,
+			"att3rd": 1255,
+			"attPenArea": 194
+		},
+		"Bayer Leverkusen": {
+			"matchesPlayed": 8,
+			"defPenArea": 635,
+			"def3rd": 1784,
+			"mid3rd": 1941,
+			"att3rd": 831,
+			"attPenArea": 120
+		},
+		"Ludogorets Razgrad": {
+			"matchesPlayed": 6,
+			"defPenArea": 368,
+			"def3rd": 1089,
+			"mid3rd": 1796,
+			"att3rd": 949,
+			"attPenArea": 115
+		},
+		"Malmoe FF": {
+			"matchesPlayed": 8,
+			"defPenArea": 390,
+			"def3rd": 1484,
+			"mid3rd": 3020,
+			"att3rd": 1389,
+			"attPenArea": 193
+		},
+		"Marseille": {
+			"matchesPlayed": 6,
+			"defPenArea": 417,
+			"def3rd": 1344,
+			"mid3rd": 1654,
+			"att3rd": 686,
+			"attPenArea": 122
+		},
+		"AC Milan": {
+			"matchesPlayed": 6,
+			"defPenArea": 439,
+			"def3rd": 1327,
+			"mid3rd": 2064,
+			"att3rd": 737,
+			"attPenArea": 97
+		},
+		"Napoli": {
+			"matchesPlayed": 6,
+			"defPenArea": 445,
+			"def3rd": 1132,
+			"mid3rd": 1578,
+			"att3rd": 961,
+			"attPenArea": 169
+		},
+		"Olympiacos": {
+			"matchesPlayed": 8,
+			"defPenArea": 497,
+			"def3rd": 1656,
+			"mid3rd": 2778,
+			"att3rd": 1308,
+			"attPenArea": 177
+		},
+		"PAOK Thessaloniki FC": {
+			"matchesPlayed": 6,
+			"defPenArea": 341,
+			"def3rd": 943,
+			"mid3rd": 1432,
+			"att3rd": 868,
+			"attPenArea": 123
+		},
+		"Qarabag FK": {
+			"matchesPlayed": 6,
+			"defPenArea": 333,
+			"def3rd": 1104,
+			"mid3rd": 2215,
+			"att3rd": 860,
+			"attPenArea": 103
+		},
+		"Rangers": {
+			"matchesPlayed": 6,
+			"defPenArea": 340,
+			"def3rd": 1159,
+			"mid3rd": 1881,
+			"att3rd": 799,
+			"attPenArea": 110
+		},
+		"Rapid Wien": {
+			"matchesPlayed": 8,
+			"defPenArea": 423,
+			"def3rd": 1556,
+			"mid3rd": 2891,
+			"att3rd": 1301,
+			"attPenArea": 184
+		},
+		"RB Leipzig": {
+			"matchesPlayed": 6,
+			"defPenArea": 489,
+			"def3rd": 1451,
+			"mid3rd": 1561,
+			"att3rd": 652,
+			"attPenArea": 90
+		},
+		"Salzburg": {
+			"matchesPlayed": 10,
+			"defPenArea": 785,
+			"def3rd": 2320,
+			"mid3rd": 2634,
+			"att3rd": 1286,
+			"attPenArea": 163
+		},
+		"Rennes": {
+			"matchesPlayed": 10,
+			"defPenArea": 600,
+			"def3rd": 1971,
+			"mid3rd": 3017,
+			"att3rd": 1424,
+			"attPenArea": 216
+		},
+		"Rosenborg": {
+			"matchesPlayed": 6,
+			"defPenArea": 245,
+			"def3rd": 996,
+			"mid3rd": 2383,
+			"att3rd": 1509,
+			"attPenArea": 278
+		},
+		"Sarpsborg 08": {
+			"matchesPlayed": 6,
+			"defPenArea": 393,
+			"def3rd": 1292,
+			"mid3rd": 2043,
+			"att3rd": 1039,
+			"attPenArea": 160
+		},
+		"Sevilla": {
+			"matchesPlayed": 10,
+			"defPenArea": 646,
+			"def3rd": 1960,
+			"mid3rd": 2670,
+			"att3rd": 1253,
+			"attPenArea": 191
+		},
+		"Shakhtar Donetsk": {
+			"matchesPlayed": 2,
+			"defPenArea": 63,
+			"def3rd": 285,
+			"mid3rd": 575,
+			"att3rd": 299,
+			"attPenArea": 42
+		},
+		"Slavia Prague": {
+			"matchesPlayed": 12,
+			"defPenArea": 903,
+			"def3rd": 2815,
+			"mid3rd": 3664,
+			"att3rd": 1426,
+			"attPenArea": 202
+		},
+		"Spartak Moscow": {
+			"matchesPlayed": 6,
+			"defPenArea": 365,
+			"def3rd": 1099,
+			"mid3rd": 1750,
+			"att3rd": 906,
+			"attPenArea": 140
+		},
+		"Spartak Trnava": {
+			"matchesPlayed": 6,
+			"defPenArea": 245,
+			"def3rd": 981,
+			"mid3rd": 1806,
+			"att3rd": 832,
+			"attPenArea": 136
+		},
+		"Sporting CP": {
+			"matchesPlayed": 8,
+			"defPenArea": 512,
+			"def3rd": 1718,
+			"mid3rd": 2426,
+			"att3rd": 1153,
+			"attPenArea": 155
+		},
+		"Standard Liege": {
+			"matchesPlayed": 6,
+			"defPenArea": 325,
+			"def3rd": 1173,
+			"mid3rd": 2038,
+			"att3rd": 1048,
+			"attPenArea": 157
+		},
+		"Valencia": {
+			"matchesPlayed": 8,
+			"defPenArea": 477,
+			"def3rd": 1666,
+			"mid3rd": 2953,
+			"att3rd": 1442,
+			"attPenArea": 188
+		},
+		"Fehervar FC": {
+			"matchesPlayed": 6,
+			"defPenArea": 273,
+			"def3rd": 936,
+			"mid3rd": 2260,
+			"att3rd": 1319,
+			"attPenArea": 172
+		},
+		"Viktoria Plzen": {
+			"matchesPlayed": 2,
+			"defPenArea": 104,
+			"def3rd": 321,
+			"mid3rd": 435,
+			"att3rd": 295,
+			"attPenArea": 41
+		},
+		"Villarreal": {
+			"matchesPlayed": 12,
+			"defPenArea": 721,
+			"def3rd": 2324,
+			"mid3rd": 3435,
+			"att3rd": 1597,
+			"attPenArea": 216
+		},
+		"Vorskla": {
+			"matchesPlayed": 6,
+			"defPenArea": 245,
+			"def3rd": 1008,
+			"mid3rd": 2441,
+			"att3rd": 1178,
+			"attPenArea": 171
+		},
+		"Zenit St' Petersburg": {
+			"matchesPlayed": 10,
+			"defPenArea": 485,
+			"def3rd": 1603,
+			"mid3rd": 3274,
+			"att3rd": 1935,
+			"attPenArea": 215
+		},
+		"FC Zuerich": {
+			"matchesPlayed": 8,
+			"defPenArea": 459,
+			"def3rd": 1684,
+			"mid3rd": 2818,
+			"att3rd": 1385,
+			"attPenArea": 167
+		}
+	}
+}

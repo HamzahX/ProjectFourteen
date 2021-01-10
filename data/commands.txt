@@ -1,8 +1,8 @@
 Full scrape:
-    - node positionScraper 18-19 && node positionScraper 19-20 && node positionScraper 20-21 && node metadataScraper 18-19 false && node metadataScraper 19-20 false && node metadataScraper 20-21 false && node statsScraper 18-19 && node statsScraper 19-20 && node statsScraper 20-21 && node possessionScraper 18-19 && node possessionScraper 19-20 && node possessionScraper 20-21 && node mappingCreator
+    - node positionScraper 18-19 && node positionScraper 19-20 && node positionScraper 20-21 && node metadataScraper 18-19 false && node metadataScraper 19-20 false && node metadataScraper 20-21 false && node statsScraper 18-19 && node statsScraper 19-20 && node statsScraper 20-21 && node possessionScraper 18-19 && node possessionScraper 19-20 && node possessionScraper 20-21 && node touchesAgainstScraper 18-19 && node touchesAgainstScraper 19-20 && node touchesAgainstScraper 20-21 && node mappingCreator
 
 Current season scrape:
-    - node positionScraper 20-21 && node metadataScraper 18-19 false && node metadataScraper 19-20 false && node metadataScraper 20-21 false && node statsScraper 20-21 && node possessionScraper 20-21 && node mappingCreator
+    - node positionScraper 20-21 && node metadataScraper 18-19 false && node metadataScraper 19-20 false && node metadataScraper 20-21 false && node statsScraper 20-21 && node possessionScraper 20-21 && node touchesAgainstScraper 20-21 && node mappingCreator
 
 Metadata (process only):
     - node metadataScraper 18-19 true && node metadataScraper 19-20 true && node metadataScraper 20-21 true
