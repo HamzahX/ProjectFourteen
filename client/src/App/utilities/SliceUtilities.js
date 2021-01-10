@@ -477,10 +477,10 @@ export function constructChartInput(statsByPosition, statsPer90, percentiles, pl
                 align: horizontalAlignments[i],
                 verticalAlign: verticalAlignments[i]
             },
-            color: Highcharts.Color(colors[i]).setOpacity(index !== 1 ? (isForComparison ? 0.55 : 0.85) : 0).get(),
+            color: Highcharts.Color(colors[i]).setOpacity(index !== 1 ? (isForComparison ? 0.85 : 0.85) : 0).get(),
             tooltipColor: index === 0 ? colors[i] : 'black',
             borderColor: isSecondPlayer ? 'black' : null,
-            borderWidth: isSecondPlayer ? 6 : 0
+            borderWidth: isSecondPlayer ? 5 : 0
         };
 
         i++;

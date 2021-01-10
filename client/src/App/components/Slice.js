@@ -42,7 +42,7 @@ class Slice extends Component {
         else {
             if (this.isMobile) {
                 this.fontSizes =  {
-                    title: '4vw',
+                    title: '4.2vw',
                     subtitle: '2.6vw',
                     noData: '2.7vw',
                     xAxisLabels: '2.15vw',
@@ -58,7 +58,7 @@ class Slice extends Component {
             }
             else {
                 this.fontSizes =  {
-                    title: '1.7em',
+                    title: '1.8em',
                     subtitle: '1.4em',
                     noData: '1.35em',
                     xAxisLabels: '1.15em',
@@ -428,7 +428,7 @@ class Slice extends Component {
                 showLastLabel: true,
                 min: -15,
                 max: 100,
-                tickPositions: [-15, 0, 25, 50, 75, 100, 102]
+                tickPositions: [-23, 0, 25, 50, 75, 100, 102]
             },
             series: undefined,
             colors: undefined,
@@ -544,8 +544,9 @@ class Slice extends Component {
         //relevant github issue and further explanation: https://github.com/highcharts/highcharts/issues/3321
         Highcharts.wrap(Highcharts.Axis.prototype, 'render', function (proceed) {
 
-            //console.log(this);
+            console.log(this);
             proceed.call(this);
+
             let chart = this.chart;
 
             if (!chart.seriesGroup) {
@@ -568,30 +569,34 @@ class Slice extends Component {
 
         });
 
-        // Highcharts.wrap(Highcharts.Tick.prototype, 'render', function (proceed) {
-        //
-        //     console.log(this);
-        //     proceed.call(this);
-        //     let chart = this.chart;
-        //     let axis = this.axis;
-        //
-        //     if (chart !== undefined){
-        //         // if (!chart.seriesGroup) {
-        //         //     chart.seriesGroup = chart.renderer.g('series-group')
-        //         //         .attr({
-        //         //             zIndex: 3
-        //         //         })
-        //         //         .add();
-        //         // }
-        //         axis.axisGroup
-        //             .attr({
-        //                 zIndex: this.pos === 0 ? 4 : 1,
-        //                 opacity: 0
-        //             })
-        //             .add(chart.seriesGroup);
-        //     }
-        //
-        // });
+        Highcharts.wrap(Highcharts.Tick.prototype, 'render', function (proceed) {
+
+            console.log(this);
+            proceed.call(this);
+
+            let chart = this.chart;
+
+
+            // let chart = this.chart;
+            // let axis = this.axis;
+            //
+            // if (chart !== undefined){
+            //     // if (!chart.seriesGroup) {
+            //     //     chart.seriesGroup = chart.renderer.g('series-group')
+            //     //         .attr({
+            //     //             zIndex: 3
+            //     //         })
+            //     //         .add();
+            //     // }
+            //     axis.axisGroup
+            //         .attr({
+            //             zIndex: this.pos === 0 ? 4 : 1,
+            //             opacity: 0
+            //         })
+            //         .add(chart.seriesGroup);
+            // }
+
+        });
 
         this.afterChartCreated = this.afterChartCreated.bind(this);
 
@@ -836,7 +841,7 @@ class Slice extends Component {
             }
         }
         else {
-            title = `<span class="chart-title player-1"><a href=${this.props.url} target="_blank" rel="noopener noreferrer">${this.props.name}</a>`;
+            title = `<span class="single-player-title chart-title"><a href=${this.props.url} target="_blank" rel="noopener noreferrer">${this.props.name}</a>`;
             if (!this.isForExport){
                 title += `<a href=${this.props.url} target="_blank" rel="noopener noreferrer"><i id="link-icon" class="fa fa-external-link"></i></a></span>`;
             }
@@ -845,12 +850,12 @@ class Slice extends Component {
             if (this.isMobile && !this.isForExport){
                 title += "<div id='competitions-container'>";
                 for (let i=0; i<competitionStringParts.length; i++){
-                    title += `<span class="player-1 competitions">${competitionStringParts[i]}</span><br>`;
+                    title += `<span class="single-player-title competitions">${competitionStringParts[i]}</span><br>`;
                 }
                 title += "</div>"
             }
             else {
-                title += `<br><div id='competitions-container'><span class="player-1 competitions">${competitionStringParts.join("&nbsp|&nbsp&nbsp")}</span></div>`;
+                title += `<br><div id='competitions-container'><span class="single-player-title competitions">${competitionStringParts.join("&nbsp|&nbsp&nbsp")}</span></div>`;
             }
         }
         chartOptions.title.text = title;
@@ -874,8 +879,8 @@ class Slice extends Component {
                 subtitle += "<br>"
             }
             else {
-                subtitle = `Age: <span class="player-1 age-minutes">${this.props.age}</span>  `;
-                subtitle += `Minutes: <span class="player-1 age-minutes">${this.props.minutes.toLocaleString()}</span><br>`;
+                subtitle = `Age: <span class="single-player-title age-minutes">${this.props.age}</span>  `;
+                subtitle += `Minutes: <span class="single-player-title age-minutes">${this.props.minutes.toLocaleString()}</span><br>`;
             }
             subtitle += `${this.subtitles[this.props.template]}`;
         }
@@ -942,7 +947,7 @@ class Slice extends Component {
 
         //set series colors
         chartOptions.colors = [
-            'rgba(231,84,83,0.55)',
+            '#e75453',
             '#fafbfc'
         ];
 

@@ -140,8 +140,11 @@ a {
     text-decoration: none;
 }
 
-input[type=radio], input[type=checkbox] {
-    /*transform: scale(1.25);*/
+a:hover {
+    color: unset;
+    opacity: 0.7;
+    transition: 0.1s;
+    cursor: pointer;
 }
 
 input:hover, input:focus {
@@ -381,6 +384,7 @@ button:hover {
         #home #searchbar-container1 {
             min-width: 400px;
             width: 35%;
+            max-width: 500px;
             height: 45px;
         }
 
@@ -1124,21 +1128,23 @@ button:hover {
                 }
 
                 #chart .chart-title:hover {
+                    opacity: 0.7;
+                    transition: 0.1s;
                     text-decoration: underline;
                     cursor: pointer;
                 }
 
                 #chart .chart-title #link-icon {
-                    vertical-align: baseline;
+                    vertical-align: super;
                     text-decoration: none;
                     margin: 0;
-                    padding: 0 0 0 10px;
+                    padding: 0 0 0 5px;
                     color: black;
-                    font-size: 0.8em;
+                    font-size: 0.6em;
                 }
 
                 #chart #competitions-container, #export #competitions-container {
-                    font-size: 0.57em;
+                    font-size: 0.54em;
                     line-height: 1.2em;
                     font-weight: normal;
                     padding-top: 0;
@@ -1161,6 +1167,11 @@ button:hover {
                 .centered-around-separator div span:last-of-type {
                     text-align: left;
                     padding-left: 5px;
+                }
+
+                #chart .single-player-title, #export .single-player-title {
+                    color: black;
+                    fill: black;
                 }
 
                 #chart .player-1, #export .player-1 {
@@ -1207,7 +1218,8 @@ button:hover {
             /*axis-lines (in-between inner and outer)*/
             .highcharts-container  svg .highcharts-yaxis-grid path:not(:nth-child(2)):not(:nth-child(6)):not(:nth-child(7)) {
                 stroke: #7b7b7b;
-                opacity: 0.4 !important;
+                opacity: 0.28 !important;
+                z-index: 0 !important;
             }
 
         #chart {
