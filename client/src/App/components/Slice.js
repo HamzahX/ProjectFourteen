@@ -26,8 +26,8 @@ class Slice extends Component {
         this.fontSizes = undefined;
         if (this.isForExport){
             this.fontSizes =  {
-                title: this.isMobile ? '4.6vw' : '2.3em',
-                subtitle: '2em',
+                title: this.isMobile ? '5.5vw' : '2.9em',
+                subtitle: this.isMobile ? '2.7vw' : '1.7em',
                 noData: '1.76em',
                 xAxisLabels: '1.8em',
                 dataLabels: '1.95em',
@@ -59,7 +59,7 @@ class Slice extends Component {
             else {
                 this.fontSizes =  {
                     title: '1.8em',
-                    subtitle: '1.4em',
+                    subtitle: '1.2em',
                     noData: '1.35em',
                     xAxisLabels: '1.15em',
                     dataLabels: '1.15em',
@@ -371,6 +371,7 @@ class Slice extends Component {
                 margin: 35
             },
             subtitle: {
+                useHTML: true,
                 text: undefined,
                 style: {
                     color: 'black',
@@ -569,34 +570,32 @@ class Slice extends Component {
 
         });
 
-        Highcharts.wrap(Highcharts.Tick.prototype, 'render', function (proceed) {
-
-            console.log(this);
-            proceed.call(this);
-
-            let chart = this.chart;
-
-
-            // let chart = this.chart;
-            // let axis = this.axis;
-            //
-            // if (chart !== undefined){
-            //     // if (!chart.seriesGroup) {
-            //     //     chart.seriesGroup = chart.renderer.g('series-group')
-            //     //         .attr({
-            //     //             zIndex: 3
-            //     //         })
-            //     //         .add();
-            //     // }
-            //     axis.axisGroup
-            //         .attr({
-            //             zIndex: this.pos === 0 ? 4 : 1,
-            //             opacity: 0
-            //         })
-            //         .add(chart.seriesGroup);
-            // }
-
-        });
+        // Highcharts.wrap(Highcharts.Tick.prototype, 'render', function (proceed) {
+        //
+        //     console.log(this);
+        //     proceed.call(this);
+        //
+        //     let chart = this.chart;
+        //
+        //     let axis = this.axis;
+        //
+        //     if (chart !== undefined){
+        //         if (!chart.seriesGroup) {
+        //             chart.seriesGroup = chart.renderer.g('series-group')
+        //                 .attr({
+        //                     zIndex: 3
+        //                 })
+        //                 .add();
+        //         }
+        //         axis.axisGroup
+        //             .attr({
+        //                 zIndex: this.pos === 0 ? 4 : 1,
+        //                 opacity: 0
+        //             })
+        //             .add(chart.seriesGroup);
+        //     }
+        //
+        // });
 
         this.afterChartCreated = this.afterChartCreated.bind(this);
 
@@ -820,8 +819,14 @@ class Slice extends Component {
         let title;
 
         if (this.isForComparison) {
-            title = `<span class="chart-title player-1"><a href=${this.props.url[0]} target="_blank" rel="noopener noreferrer">${this.props.names[0]}</a></span>`;
-            title += `<span class="player-2"> vs <span class="chart-title"><a href=${this.props.url[1]} target="_blank" rel="noopener noreferrer">${this.props.names[1]}</a></span></span>`;
+            if (!this.isForExport){
+                title = `<span class="chart-title player-1"><a href=${this.props.url[0]} target="_blank" rel="noopener noreferrer">${this.props.names[0]}</a><a href=${this.props.url} target="_blank" rel="noopener noreferrer"><i id="link-icon" class="fa fa-external-link"></i></a></span>`;
+                title += `<span class="player-2"> vs <span class="chart-title"><a href=${this.props.url[1]} target="_blank" rel="noopener noreferrer">${this.props.names[1]}</a><a href=${this.props.url} target="_blank" rel="noopener noreferrer"><i id="link-icon" class="fa fa-external-link"></i></a></span></span>`;
+            }
+            else {
+                title = `<span class="chart-title player-1"><a href=${this.props.url[0]} target="_blank" rel="noopener noreferrer">${this.props.names[0]}</a></span>`;
+                title += `<span class="player-2"> vs <span class="chart-title"><a href=${this.props.url[1]} target="_blank" rel="noopener noreferrer">${this.props.names[1]}</a></span></span>`;
+            }
 
             if (this.isMobile && !this.isForExport){
                 let temp = {
@@ -842,6 +847,7 @@ class Slice extends Component {
         }
         else {
             title = `<span class="single-player-title chart-title"><a href=${this.props.url} target="_blank" rel="noopener noreferrer">${this.props.name}</a>`;
+
             if (!this.isForExport){
                 title += `<a href=${this.props.url} target="_blank" rel="noopener noreferrer"><i id="link-icon" class="fa fa-external-link"></i></a></span>`;
             }
@@ -871,12 +877,21 @@ class Slice extends Component {
             chartOptions.xAxis.visible = true;
             chartOptions.yAxis.visible = true;
             if (this.isForComparison) {
-                subtitle = `<span class="player-1">Age: <span class="player-1 age-minutes">${this.props.ages[0]}</span>   </span>`;
-                subtitle += `<span class="player-1">Minutes: <span class="player-1 age-minutes">${this.props.minutes[0].toLocaleString()}</span></span>`;
-                subtitle += "<b> - </b>";
-                subtitle += `<span class="player-2">Age: <span class="age-minutes">${this.props.ages[1]}</span>   </span>`;
-                subtitle += `<span class="player-2">Minutes: <span class="age-minutes">${this.props.minutes[1].toLocaleString()}</span></span>`;
-                subtitle += "<br>"
+                if (this.isMobile && !this.isForExport){
+                    subtitle = `<div class="centered-around-separator"><div><span><span class="player-1">Age: <span class="player-1 age-minutes">${this.props.ages[0]}</span>  </span>`;
+                    subtitle += `<span class="player-1">Minutes: <span class="player-1 age-minutes">${this.props.minutes[0].toLocaleString()}</span></span></span>`;
+                    subtitle += "<b> - </b>";
+                    subtitle += `<span><span class="player-2">Age: <span class="age-minutes">${this.props.ages[1]}</span>  </span>`;
+                    subtitle += `<span class="player-2">Minutes: <span class="age-minutes">${this.props.minutes[1].toLocaleString()}</span></span></span></div></div>`;
+                }
+                else {
+                    subtitle = `<span class="player-1">Age: <span class="player-1 age-minutes">${this.props.ages[0]}</span>   </span>`;
+                    subtitle += `<span class="player-1">Minutes: <span class="player-1 age-minutes">${this.props.minutes[0].toLocaleString()}</span></span>`;
+                    subtitle += "<b> - </b>";
+                    subtitle += `<span class="player-2">Age: <span class="age-minutes">${this.props.ages[1]}</span>   </span>`;
+                    subtitle += `<span class="player-2">Minutes: <span class="age-minutes">${this.props.minutes[1].toLocaleString()}</span></span>`;
+                    subtitle += "<br>"
+                }
             }
             else {
                 subtitle = `Age: <span class="single-player-title age-minutes">${this.props.age}</span>  `;

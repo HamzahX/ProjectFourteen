@@ -87,6 +87,7 @@ h3 {
     #home #searchbar-container1 {
         min-width: 75%;
         height: 104px;
+        max-width: unset;
     }
 
         #home #searchbar-container1 #searchbar-input {
@@ -129,6 +130,8 @@ h3 {
     padding-top: 130px;
 }
 
+
+
 #about-section-container  {
     flex-direction: column;
 }
@@ -138,8 +141,11 @@ h3 {
         padding-top: 5%;
     }
 
-#glossary-section-container {
+#glossary-container #glossary-section-container {
+    padding-top: 0;
+}
 
+#glossary-section-container {
 }
 
     #glossary-section-container ul, #faq-section-container #faq-container {

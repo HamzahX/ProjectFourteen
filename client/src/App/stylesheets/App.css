@@ -1044,6 +1044,7 @@ button:hover {
             #compare-search-overlay #searchbar-container1 {
                 min-width: 400px;
                 width: 35%;
+                max-width: 500px;
                 margin: 0 auto;
                 height: 40px;
             }
@@ -1118,9 +1119,16 @@ button:hover {
 
             .highcharts-title {
                 text-align: center;
-                margin-bottom: 0.3em;
+                margin-bottom: 0;
                 width: 100%;
+                white-space: nowrap;
                 text-overflow: ellipsis;
+                line-height: 1.4;
+            }
+
+            .highcharts-subtitle {
+                text-align: center;
+                font-size: 0.3em;
             }
 
                 #chart .chart-title {
@@ -1135,20 +1143,28 @@ button:hover {
                 }
 
                 #chart .chart-title #link-icon {
-                    vertical-align: super;
+                    transform: translateY(-15%);
                     text-decoration: none;
                     margin: 0;
                     padding: 0 0 0 5px;
-                    color: black;
-                    font-size: 0.6em;
+                    /*color: black;*/
+                    font-size: 0.5em;
                 }
 
-                #chart #competitions-container, #export #competitions-container {
-                    font-size: 0.54em;
-                    line-height: 1.2em;
+                #competitions-container {
                     font-weight: normal;
                     padding-top: 0;
                     width: auto;
+                }
+
+                #chart #competitions-container {
+                    font-size: 0.54em;
+                    line-height: 1.2em;
+                }
+
+                #export #competitions-container {
+                    font-size: 0.43em;
+                    line-height: 0.9em;
                 }
 
                 .centered-around-separator div {
