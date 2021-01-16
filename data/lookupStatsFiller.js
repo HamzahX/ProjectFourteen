@@ -248,7 +248,7 @@ let temp_average = (player, aggregatedStats) => {
         else if (stat === "launchedPassSuccRate" && aggregatedStats["attLaunchedPasses"] < 10){
             continue;
         }
-        else if (stat !== "minutes" && averageStats["minutes"] < 400){
+        else if (stat !== "minutes" && averageStats["minutes"] < 600){
             continue;
         }
 

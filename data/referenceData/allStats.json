@@ -63,7 +63,7 @@
 			},
 			"20-21": {
 				"min": 0,
-				"max": 2100,
+				"max": 2300,
 				"minName": "Wes Morgan",
 				"maxName": "Mike Maignan"
 			}
@@ -93,9 +93,9 @@
 			},
 			"20-21": {
 				"min": 0,
-				"max": 1.4,
+				"max": 1.5,
 				"minName": "Joaquín",
-				"maxName": "Zlatan Ibrahimovic"
+				"maxName": "Luis Muriel"
 			}
 		},
 		"types": [
@@ -117,7 +117,7 @@
 			},
 			"20-21": {
 				"min": 0,
-				"max": 17,
+				"max": 18,
 				"minName": "Christian Maggio",
 				"maxName": "Robert Lewandowski"
 			}
@@ -171,7 +171,7 @@
 			},
 			"20-21": {
 				"min": 0,
-				"max": 13,
+				"max": 14,
 				"minName": "Christian Maggio",
 				"maxName": "Romelu Lukaku"
 			}
@@ -203,7 +203,7 @@
 			},
 			"20-21": {
 				"min": 0,
-				"max": 110,
+				"max": 130,
 				"minName": "Christian Maggio",
 				"maxName": "Lionel Messi"
 			}
@@ -227,13 +227,13 @@
 			"19-20": {
 				"min": 0.02,
 				"max": 0.29,
-				"minName": "Panagiotis Tachtsidis",
+				"minName": "Marcelo",
 				"maxName": "Mauro Icardi"
 			},
 			"20-21": {
 				"min": 0.03,
-				"max": 0.28,
-				"minName": "Baptiste Santamaría",
+				"max": 0.25,
+				"minName": "Nadiem Amiri",
 				"maxName": "Romelu Lukaku"
 			}
 		},
@@ -267,8 +267,8 @@
 			},
 			"20-21": {
 				"min": 0,
-				"max": 170,
-				"minName": "Christian Maggio",
+				"max": 210,
+				"minName": "Phil Jagielka",
 				"maxName": "Kike García"
 			}
 		}
@@ -321,7 +321,7 @@
 			},
 			"20-21": {
 				"min": 0,
-				"max": 120,
+				"max": 130,
 				"minName": "Christian Maggio",
 				"maxName": "Joselu"
 			}
@@ -350,9 +350,9 @@
 			},
 			"20-21": {
 				"min": 0,
-				"max": 95,
-				"minName": "Patrick Herrmann",
-				"maxName": "Toni Kroos"
+				"max": 90,
+				"minName": "Josip Ilicic",
+				"maxName": "Bruno Alves"
 			}
 		},
 		"types": [
@@ -383,7 +383,7 @@
 			},
 			"20-21": {
 				"min": 0,
-				"max": 12.5,
+				"max": 12,
 				"minName": "Pedro López",
 				"maxName": "Kylian Mbappé"
 			}
@@ -406,7 +406,7 @@
 			},
 			"20-21": {
 				"min": 0,
-				"max": 160,
+				"max": 180,
 				"minName": "Christian Maggio",
 				"maxName": "Kylian Mbappé"
 			}
@@ -435,7 +435,7 @@
 			},
 			"20-21": {
 				"min": 0,
-				"max": 29,
+				"max": 32,
 				"minName": "Pedro López",
 				"maxName": "Andrea Petagna"
 			}
@@ -468,9 +468,9 @@
 			},
 			"20-21": {
 				"min": 0,
-				"max": 0.58,
+				"max": 0.6,
 				"minName": "Hilton",
-				"maxName": "Pablo Sarabia"
+				"maxName": "Josip Ilicic"
 			}
 		},
 		"types": [
@@ -492,9 +492,9 @@
 			},
 			"20-21": {
 				"min": 0,
-				"max": 8,
+				"max": 9,
 				"minName": "Christian Maggio",
-				"maxName": "Thomas Müller"
+				"maxName": "Kevin De Bruyne"
 			}
 		}
 	},
@@ -509,9 +509,9 @@
 		"ranges": {
 			"18-19": {
 				"min": 0,
-				"max": 0.85,
+				"max": 1.55,
 				"minName": "Daniele Bonera",
-				"maxName": "Felix Klaus"
+				"maxName": "Raúl García"
 			},
 			"19-20": {
 				"min": 0,
@@ -521,9 +521,9 @@
 			},
 			"20-21": {
 				"min": 0,
-				"max": 1.45,
+				"max": 1.2,
 				"minName": "Dante",
-				"maxName": "Carlos Bacca"
+				"maxName": "Kelechi Iheanacho"
 			}
 		},
 		"types": [
@@ -554,7 +554,7 @@
 			},
 			"20-21": {
 				"min": 0,
-				"max": 8,
+				"max": 7.6,
 				"minName": "Cristián Zapata",
 				"maxName": "Lionel Messi"
 			}
@@ -577,7 +577,7 @@
 			},
 			"20-21": {
 				"min": 0,
-				"max": 140,
+				"max": 160,
 				"minName": "Christian Maggio",
 				"maxName": "Lionel Messi"
 			}
@@ -594,9 +594,9 @@
 		"ranges": {
 			"18-19": {
 				"min": 0,
-				"max": 11.5,
+				"max": 31,
 				"minName": "Daniele Bonera",
-				"maxName": "Carlos Vinicius"
+				"maxName": "Raúl García"
 			},
 			"19-20": {
 				"min": 0,
@@ -606,9 +606,9 @@
 			},
 			"20-21": {
 				"min": 0,
-				"max": 14.5,
-				"minName": "Ragnar Klavan",
-				"maxName": "Victor Osimhen"
+				"max": 11.5,
+				"minName": "Christian Fuchs",
+				"maxName": "Kelechi Iheanacho"
 			}
 		},
 		"types": [
@@ -639,7 +639,7 @@
 			},
 			"20-21": {
 				"min": 0,
-				"max": 5,
+				"max": 4.6,
 				"minName": "Hilton",
 				"maxName": "Lionel Messi"
 			}
@@ -662,7 +662,7 @@
 			},
 			"20-21": {
 				"min": 0,
-				"max": 90,
+				"max": 100,
 				"minName": "Christian Maggio",
 				"maxName": "Lionel Messi"
 			}
@@ -679,9 +679,9 @@
 		"ranges": {
 			"18-19": {
 				"min": 0,
-				"max": 6,
+				"max": 17,
 				"minName": "Daniele Bonera",
-				"maxName": "Lionel Messi"
+				"maxName": "Raúl García"
 			},
 			"19-20": {
 				"min": 0,
@@ -691,9 +691,9 @@
 			},
 			"20-21": {
 				"min": 0,
-				"max": 7,
-				"minName": "Jimmy Briand",
-				"maxName": "Jony"
+				"max": 6.8,
+				"minName": "Sergio Ramos",
+				"maxName": "David Silva"
 			}
 		},
 		"types": [
@@ -724,7 +724,7 @@
 			},
 			"20-21": {
 				"min": 0,
-				"max": 13.5,
+				"max": 13,
 				"minName": "Stefano Okaka",
 				"maxName": "Jordan Henderson"
 			}
@@ -747,7 +747,7 @@
 			},
 			"20-21": {
 				"min": 0,
-				"max": 200,
+				"max": 220,
 				"minName": "Christian Maggio",
 				"maxName": "Toni Kroos"
 			}
@@ -764,9 +764,9 @@
 		"ranges": {
 			"18-19": {
 				"min": 0,
-				"max": 12.5,
+				"max": 42,
 				"minName": "Sergio León",
-				"maxName": "Mason Holgate"
+				"maxName": "Raúl García"
 			},
 			"19-20": {
 				"min": 0,
@@ -776,8 +776,8 @@
 			},
 			"20-21": {
 				"min": 0,
-				"max": 13.5,
-				"minName": "Portu",
+				"max": 13,
+				"minName": "Salvador Ferrer",
 				"maxName": "Harry Winks"
 			}
 		},
@@ -803,14 +803,14 @@
 			"19-20": {
 				"min": 0,
 				"max": 900,
-				"minName": "Olivier Giroud",
+				"minName": "Jimmy Briand",
 				"maxName": "Aymeric Laporte"
 			},
 			"20-21": {
 				"min": 0,
 				"max": 900,
-				"minName": "Roberto Soldado",
-				"maxName": "Aleksandar Kolarov"
+				"minName": "Stefano Okaka",
+				"maxName": "Edmond Tapsoba"
 			}
 		},
 		"types": [
@@ -841,20 +841,20 @@
 		"step": 50,
 		"ranges": {
 			"18-19": {
-				"min": 100,
-				"max": 1000,
-				"minName": "Fernando Llorente",
-				"maxName": "Niklas Moisander"
+				"min": 50,
+				"max": 2000,
+				"minName": "Olivier Giroud",
+				"maxName": "Raúl García"
 			},
 			"19-20": {
-				"min": 0,
+				"min": 100,
 				"max": 950,
-				"minName": "Nicholas Opoku",
+				"minName": "Fernando Llorente",
 				"maxName": "Leonardo Bonucci"
 			},
 			"20-21": {
 				"min": 0,
-				"max": 1000,
+				"max": 1050,
 				"minName": "Salvador Ferrer",
 				"maxName": "Kevin Vogt"
 			}
@@ -889,8 +889,8 @@
 			},
 			"20-21": {
 				"min": 0,
-				"max": 1900,
-				"minName": "Christian Maggio",
+				"max": 2000,
+				"minName": "Phil Jagielka",
 				"maxName": "Andrew Robertson"
 			}
 		}
@@ -921,8 +921,8 @@
 			},
 			"20-21": {
 				"min": 0,
-				"max": 1500,
-				"minName": "Christian Maggio",
+				"max": 1700,
+				"minName": "Phil Jagielka",
 				"maxName": "Steven Nzonzi"
 			}
 		}
@@ -1047,7 +1047,7 @@
 			"20-21": {
 				"min": 20,
 				"max": 100,
-				"minName": "Pedro León",
+				"minName": "Portu",
 				"maxName": "Jason Denayer"
 			}
 		},
@@ -1082,7 +1082,7 @@
 			},
 			"20-21": {
 				"min": 0,
-				"max": 140,
+				"max": 160,
 				"minName": "Christian Maggio",
 				"maxName": "Lionel Messi"
 			}
@@ -1112,7 +1112,7 @@
 			},
 			"20-21": {
 				"min": 0,
-				"max": 7.8,
+				"max": 7,
 				"minName": "Dante",
 				"maxName": "Neymar"
 			}
@@ -1165,7 +1165,7 @@
 			},
 			"20-21": {
 				"min": 0,
-				"max": 13,
+				"max": 14,
 				"minName": "Dante",
 				"maxName": "Adama Traoré"
 			}
@@ -1196,7 +1196,7 @@
 				"maxName": "Dante"
 			},
 			"20-21": {
-				"min": 15,
+				"min": 10,
 				"max": 100,
 				"minName": "Lois Diony",
 				"maxName": "Danilo"
@@ -1231,7 +1231,7 @@
 				"min": 0,
 				"max": 8.5,
 				"minName": "Dante",
-				"maxName": "Opa Nguette"
+				"maxName": "Franck Ribéry"
 			}
 		},
 		"types": [
@@ -1261,9 +1261,9 @@
 			},
 			"20-21": {
 				"min": 0,
-				"max": 25,
+				"max": 23,
 				"minName": "Dante",
-				"maxName": "Aaron Connolly"
+				"maxName": "Taiwo Awoniyi"
 			}
 		},
 		"types": [
@@ -1281,22 +1281,22 @@
 		"step_agg": 20,
 		"ranges": {
 			"18-19": {
-				"min": 0,
-				"max": 15.5,
-				"minName": "Raúl García",
-				"maxName": "Raúl García"
+				"min": 0.5,
+				"max": 11.5,
+				"minName": "Scott Dann",
+				"maxName": "Sebastian Rode"
 			},
 			"19-20": {
-				"min": 0,
+				"min": 1,
 				"max": 12,
-				"minName": "Nicholas Opoku",
+				"minName": "Iván Ramis",
 				"maxName": "Konrad Laimer"
 			},
 			"20-21": {
 				"min": 0,
-				"max": 11,
+				"max": 9.5,
 				"minName": "Salvador Ferrer",
-				"maxName": "Jean-Daniel Akpa Akpro"
+				"maxName": "Adrián Cubas"
 			}
 		},
 		"types": [
@@ -1336,7 +1336,7 @@
 			"18-19": {
 				"min": 0,
 				"max": 16,
-				"minName": "Raúl García",
+				"minName": "Scott Dann",
 				"maxName": "Adam Lallana"
 			},
 			"19-20": {
@@ -1347,9 +1347,9 @@
 			},
 			"20-21": {
 				"min": 0,
-				"max": 14,
-				"minName": "Gary Cahill",
-				"maxName": "Jamal Musiala"
+				"max": 13,
+				"minName": "Scott Dann",
+				"maxName": "Idrissa Gueye"
 			}
 		},
 		"types": [
@@ -1400,9 +1400,9 @@
 			},
 			"20-21": {
 				"min": 0,
-				"max": 3.4,
+				"max": 3,
 				"minName": "Cristiano Ronaldo",
-				"maxName": "Giangiacomo Magnani"
+				"maxName": "Cristian Romero"
 			}
 		},
 		"types": [
@@ -1453,7 +1453,7 @@
 			},
 			"20-21": {
 				"min": 0,
-				"max": 4,
+				"max": 3.6,
 				"minName": "Cristiano Ronaldo",
 				"maxName": "Víctor Ruiz"
 			}
@@ -1494,9 +1494,9 @@
 		"ranges": {
 			"18-19": {
 				"min": 0,
-				"max": 7,
+				"max": 5.5,
 				"minName": "Arjen Robben",
-				"maxName": "Raúl García"
+				"maxName": "Adama Mbengue"
 			},
 			"19-20": {
 				"min": 0,
@@ -1506,9 +1506,9 @@
 			},
 			"20-21": {
 				"min": 0,
-				"max": 6,
+				"max": 5.5,
 				"minName": "Zlatan Ibrahimovic",
-				"maxName": "Laurent Abergel"
+				"maxName": "Serge Aurier"
 			}
 		},
 		"types": [
@@ -1529,7 +1529,7 @@
 			},
 			"20-21": {
 				"min": 0,
-				"max": 85,
+				"max": 90,
 				"minName": "Zlatan Ibrahimovic",
 				"maxName": "Laurent Abergel"
 			}
@@ -1582,9 +1582,9 @@
 			},
 			"20-21": {
 				"min": 0,
-				"max": 90,
+				"max": 100,
 				"minName": "Christian Maggio",
-				"maxName": "Valentin Rongier"
+				"maxName": "Benjamin André"
 			}
 		}
 	},
@@ -1646,7 +1646,7 @@
 			},
 			"20-21": {
 				"min": 0,
-				"max": 30,
+				"max": 35,
 				"minName": "Christian Maggio",
 				"maxName": "Hiroki Sakai"
 			}
@@ -1675,7 +1675,7 @@
 			},
 			"20-21": {
 				"min": 0,
-				"max": 85,
+				"max": 90,
 				"minName": "Burak Yilmaz",
 				"maxName": "Junior Sambia"
 			}
@@ -1708,9 +1708,9 @@
 			},
 			"20-21": {
 				"min": 0,
-				"max": 4.2,
-				"minName": "Cristián Zapata",
-				"maxName": "Yan Eteki"
+				"max": 4,
+				"minName": "Cristiano Ronaldo",
+				"maxName": "Fabien Lemoine"
 			}
 		},
 		"types": [
@@ -1731,7 +1731,7 @@
 			},
 			"20-21": {
 				"min": 0,
-				"max": 60,
+				"max": 70,
 				"minName": "Christian Maggio",
 				"maxName": "Mikel Merino"
 			}
@@ -1761,7 +1761,7 @@
 			},
 			"20-21": {
 				"min": 0,
-				"max": 4.4,
+				"max": 4.8,
 				"minName": "Cristián Zapata",
 				"maxName": "Thomas Delaney"
 			}
@@ -1784,7 +1784,7 @@
 			},
 			"20-21": {
 				"min": 0,
-				"max": 80,
+				"max": 90,
 				"minName": "Christian Maggio",
 				"maxName": "Mikel Merino"
 			}
@@ -1814,7 +1814,7 @@
 			},
 			"20-21": {
 				"min": 0,
-				"max": 13,
+				"max": 10,
 				"minName": "Joaquín",
 				"maxName": "Kiki Kouyate"
 			}
@@ -1837,7 +1837,7 @@
 			},
 			"20-21": {
 				"min": 0,
-				"max": 120,
+				"max": 150,
 				"minName": "Christian Maggio",
 				"maxName": "Germán Sánchez"
 			}
@@ -1867,9 +1867,9 @@
 			},
 			"20-21": {
 				"min": 0,
-				"max": 9.5,
+				"max": 8.5,
 				"minName": "Joaquín",
-				"maxName": "Ramy Bensebaini"
+				"maxName": "Mats Hummels"
 			}
 		},
 		"types": [
@@ -1890,9 +1890,9 @@
 			},
 			"20-21": {
 				"min": 0,
-				"max": 150,
+				"max": 170,
 				"minName": "Christian Maggio",
-				"maxName": "Kurt Zouma"
+				"maxName": "Mats Hummels"
 			}
 		}
 	},
@@ -1925,7 +1925,7 @@
 				"min": 0,
 				"max": 40,
 				"minName": "Gianluigi Buffon",
-				"maxName": "Walter Benítez"
+				"maxName": "Baptiste Reynet"
 			}
 		}
 	},
@@ -1958,7 +1958,7 @@
 				"min": 0,
 				"max": 40,
 				"minName": "Gianluigi Buffon",
-				"maxName": "Sam Johnstone"
+				"maxName": "Baptiste Reynet"
 			}
 		}
 	},
@@ -1989,7 +1989,7 @@
 			},
 			"20-21": {
 				"min": 0,
-				"max": 110,
+				"max": 120,
 				"minName": "Gianluigi Buffon",
 				"maxName": "Walter Benítez"
 			}
@@ -2017,9 +2017,9 @@
 				"maxName": "Jessy Moulin"
 			},
 			"20-21": {
-				"min": -20,
+				"min": -15,
 				"max": 15,
-				"minName": "Ralf Fährmann",
+				"minName": "Salvatore Sirigu",
 				"maxName": "Jan Oblak"
 			}
 		},
@@ -2088,7 +2088,7 @@
 			"20-21": {
 				"min": 0,
 				"max": 30,
-				"minName": "Pepe Reina",
+				"minName": "Gianluigi Buffon",
 				"maxName": "Alexandre Oukidja"
 			}
 		}
@@ -2116,9 +2116,9 @@
 			},
 			"20-21": {
 				"min": 0,
-				"max": 20,
-				"minName": "Gianluigi Buffon",
-				"maxName": "David Ospina"
+				"max": 17.5,
+				"minName": "Manuel Neuer",
+				"maxName": "Alexandre Oukidja"
 			}
 		},
 		"types": [
@@ -2152,9 +2152,9 @@
 			},
 			"20-21": {
 				"min": 0,
-				"max": 400,
+				"max": 500,
 				"minName": "Gianluigi Buffon",
-				"maxName": "Steve Mandanda"
+				"maxName": "Stefan Ortega Moreno"
 			}
 		}
 	},
@@ -2185,9 +2185,9 @@
 			},
 			"20-21": {
 				"min": 0,
-				"max": 180,
+				"max": 220,
 				"minName": "Gianluigi Buffon",
-				"maxName": "Fernando Pacheco"
+				"maxName": "Stefan Ortega Moreno"
 			}
 		}
 	},
@@ -2215,7 +2215,7 @@
 			"20-21": {
 				"min": 25,
 				"max": 70,
-				"minName": "Alex McCarthy",
+				"minName": "Ralf Fährmann",
 				"maxName": "Marc-André ter Stegen"
 			}
 		},
