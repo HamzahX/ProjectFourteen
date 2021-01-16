@@ -190,6 +190,7 @@ let retrieveJSON = async (page, competitionName) => {
         const tds_mid_3rd = Array.from(document.querySelectorAll('#stats_possession_squads tbody .side-against [data-stat="touches_mid_3rd"]'));
         const tds_att_3rd = Array.from(document.querySelectorAll('#stats_possession_squads tbody .side-against [data-stat="touches_att_3rd"]'));
         const tds_att_pen_area = Array.from(document.querySelectorAll('#stats_possession_squads tbody .side-against [data-stat="touches_att_pen_area"]'));
+        const tds_live = Array.from(document.querySelectorAll('#stats_possession_squads tbody .side-against [data-stat="touches_live_ball"]'));
 
         for (let i=0; i<ths.length; i++){
 
@@ -222,6 +223,7 @@ let retrieveJSON = async (page, competitionName) => {
             touchesAgainstStats[teamName]["mid3rd"] = parseInt(tds_mid_3rd[i].innerHTML);
             touchesAgainstStats[teamName]["att3rd"] = parseInt(tds_att_3rd[i].innerHTML);
             touchesAgainstStats[teamName]["attPenArea"] = parseInt(tds_att_pen_area[i].innerHTML);
+            touchesAgainstStats[teamName]["live"] = parseInt(tds_live[i].innerHTML);
 
         }
 
