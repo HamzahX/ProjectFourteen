@@ -360,7 +360,8 @@ app.post('/api/stats', (req, res) => {
                 setTimeout(function(){
                     res.json({
                         data: data,
-                        statsByPosition: STATS_BY_POSITION
+                        statsByPosition: STATS_BY_POSITION,
+                        statsReference: STATS_REFERENCE
                     });
                 }, 300)
             }
@@ -369,6 +370,7 @@ app.post('/api/stats', (req, res) => {
                     res.json({
                         data: data,
                         statsByPosition: STATS_BY_POSITION,
+                        statsReference: STATS_REFERENCE,
                         newPercentileArrays: PERCENTILE_ARRAYS
                     })
                 }, 300)
@@ -405,7 +407,8 @@ app.post('/api/comparisonStats', (req, res) => {
                 setTimeout(function(){
                     res.json({
                         data: data,
-                        statsByPosition: STATS_BY_POSITION
+                        statsByPosition: STATS_BY_POSITION,
+                        statsReference: STATS_REFERENCE
                     });
                 }, 300)
             }
@@ -414,6 +417,7 @@ app.post('/api/comparisonStats', (req, res) => {
                     res.json({
                         data: data,
                         statsByPosition: STATS_BY_POSITION,
+                        statsReference: STATS_REFERENCE,
                         newPercentileArrays: PERCENTILE_ARRAYS
                     })
                 }, 300)
@@ -453,7 +457,7 @@ let getDatabaseSize = async () => {
 
 
 /**
- * Queries the database for the reference data for
+ * Queries the database for the reference data for the advanced search page
  * @returns {Promise<*>} Object containing reference data
  */
 let getReferenceData = async () => {

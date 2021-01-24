@@ -387,7 +387,8 @@ export function calculateStats(filteredStats, playerCode = undefined){
 
     return {
         statsPer90: statsPer90,
-        percentiles: percentiles
+        percentiles: percentiles,
+        statsKeys: Object.keys(percentiles)
     };
 
 }

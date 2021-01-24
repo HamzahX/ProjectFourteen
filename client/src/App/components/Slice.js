@@ -22,6 +22,9 @@ class Slice extends Component {
         this.isForExport = this.props.isForExport;
         this.isForComparison = this.props.isForComparison;
 
+        this.statsByPosition = this.props.statsByPosition;
+        this.statsReference = this.props.statsReference;
+
         //set font size constants
         this.fontSizes = undefined;
         if (this.isForExport){
@@ -74,222 +77,6 @@ class Slice extends Component {
             }
         }
 
-        //set categories (x-axis labels) constants
-        if (this.isMobile && !this.isForExport){
-            this.categories = {
-                "FW": [
-                    'Non-Penalty Goals',
-                    'Non-Penalty xG',
-                    'Non-Penalty xG/Shot',
-                    'Aerials Won',
-                    'Aerial Win %',
-                    'Touches in Box',
-                    'xA',
-                    'Passes into Box',
-                    'Successful Dribbles',
-                    'Dribble Success %',
-                    'Turnovers',
-                    'Successful Pressures',
-                ],
-                "AM": [
-                    'Non-Penalty Goals',
-                    'Non-Penalty xG',
-                    'Non-Penalty xG/Shot',
-                    'xA',
-                    'OP Shot-Creating Actions',
-                    'Passes into Box',
-                    'Yards Progressed',
-                    'Pass Comp. %',
-                    'Successful Dribbles',
-                    'Dribble Success %',
-                    'Turnovers',
-                    'Successful Pressures',
-                ],
-                "CM": [
-                    'xA',
-                    'OP Shot-Creating Actions',
-                    'Passes into Final 1/3',
-                    'Yards Prog-ressed',
-                    'Pass Comp. %',
-                    'Successful Dribbles',
-                    'Dribble Success %',
-                    'Turnovers',
-                    'Successful Pressures',
-                    'Inter-ceptions',
-                    'Successful Tackles',
-                    'Tackle/ Dribbled Past %'
-                ],
-                "FB": [
-                    'xA',
-                    'Passes into Final 1/3',
-                    'Yards Progressed',
-                    'Pass Comp. %',
-                    'Successful Dribbles',
-                    'Dribble Success %',
-                    'Turnovers',
-                    'Successful Pressures',
-                    'Interceptions',
-                    'Succ. Tackles',
-                    'Tackle/ Dribbled Past %',
-                    'Aerial Win %'
-                ],
-                "CB": [
-                    'Passes into Final 1/3',
-                    'Yards Progressed',
-                    'Pass Comp. %',
-                    'Long Pass Comp. %',
-                    'Succ. Pressures',
-                    'Interceptions',
-                    'Successful Tackles',
-                    'Tackle/ Dribbled Past %',
-                    'Fouls Committed',
-                    'Aerials Won',
-                    'Aerial Win %',
-                    'Clearances'
-                ],
-                "GK": [
-                    "GSAA %",
-                    "Cross Stopping %",
-                    "Launched Pass Comp. %"
-                ],
-                "N/A": [
-                    "-",
-                    "-",
-                    "-",
-                    "-",
-                    "-",
-                    "-",
-                    "-",
-                    "-",
-                    "-",
-                    "-",
-                    "-",
-                    "-"
-                ]
-            };
-        }
-        else {
-            this.categories = {
-                "FW": [
-                    'Non-Penalty Goals',
-                    'Non-Penalty xG',
-                    'Non-Penalty xG/Shot',
-                    'Aerials Won',
-                    'Aerial Win %',
-                    'Touches in Box',
-                    'xA',
-                    'Passes into Box',
-                    'Successful Dribbles',
-                    'Dribble Success %',
-                    'Turnovers',
-                    'Successful Pressures',
-                ],
-                "AM": [
-                    'Non-Penalty Goals',
-                    'Non-Penalty xG',
-                    'Non-Penalty xG/Shot',
-                    'xA',
-                    'OP Shot-Creating Actions',
-                    'Passes into Box',
-                    'Yards Progressed',
-                    'Pass Completion %',
-                    'Successful Dribbles',
-                    'Dribble Success %',
-                    'Turnovers',
-                    'Successful Pressures',
-                ],
-                "CM": [
-                    'xA',
-                    'OP Shot-Creating Actions',
-                    'Passes into Final 1/3',
-                    'Yards Progressed',
-                    'Pass Completion %',
-                    'Successful Dribbles',
-                    'Dribble Success %',
-                    'Turnovers',
-                    'Successful Pressures',
-                    'Interceptions',
-                    'Successful Tackles',
-                    'Tackle/Dribbled Past %'
-                ],
-                "FB": [
-                    'xA',
-                    'Passes into Final 1/3',
-                    'Yards Progressed',
-                    'Pass Completion %',
-                    'Successful Dribbles',
-                    'Dribble Success %',
-                    'Turnovers',
-                    'Successful Pressures',
-                    'Interceptions',
-                    'Successful Tackles',
-                    'Tackle/Dribbled Past %',
-                    'Aerial Win %'
-                ],
-                "CB": [
-                    'Passes into Final 1/3',
-                    'Yards Progressed',
-                    'Pass Completion %',
-                    'Long Pass Completion %',
-                    'Successful Pressures',
-                    'Interceptions',
-                    'Successful Tackles',
-                    'Tackle/Dribbled Past %',
-                    'Fouls Committed',
-                    'Aerials Won',
-                    'Aerial Win %',
-                    'Clearances'
-                ],
-                "GK": [
-                    "GSAA %",
-                    "Cross Stopping %",
-                    "Launched Pass Completion %"
-                ],
-                "N/A": [
-                    "-",
-                    "-",
-                    "-",
-                    "-",
-                    "-",
-                    "-",
-                    "-",
-                    "-",
-                    "-",
-                    "-",
-                    "-",
-                    "-"
-                ]
-            };
-        }
-
-        this.statTypes = {
-            offensiveVariable: [
-                'Touches in Box',
-                'xA',
-                'Passes into Box',
-                'Successful Dribbles',
-                'Turnovers',
-                'OP Shot-Creating Actions',
-                'Passes into Final 1/3',
-                'Yards Progressed',
-                'Yards Prog-ressed'
-            ],
-            defensiveVariable: [
-                'Interceptions',
-                'Inter-ceptions',
-                'Successful Tackles',
-                'Succ. Tackles',
-                'Fouls Committed',
-                'Clearances'
-            ],
-            constant: [
-                'Non-Penalty Goals',
-                'Non-Penalty xG',
-                'Successful Pressures',
-                'Aerials Won'
-            ]
-        };
-
         this.competitionDict = {
             "Premier League": "ENG",
             "La Liga": "ESP",
@@ -337,7 +124,7 @@ class Slice extends Component {
         if (this.isForComparison) {
 
             if (this.isMobile){
-                tooltipPositioner = (labelWidth, labelHeight, point) => {
+                tooltipPositioner = (labelWidth, labelHeight) => {
                     return {x: 6, y: document.body.scrollHeight - labelHeight - 23};
                 }
             }
@@ -646,33 +433,6 @@ class Slice extends Component {
     }
 
 
-    // splitText(text, colors) {
-    //
-    //     let chunks = [];
-    //
-    //     let textLength = text.length;
-    //     let numColors = colors.length;
-    //
-    //     if (textLength % numColors === 0) {
-    //         let chunkSize = Math.floor(textLength / numColors);
-    //         for (let i=0; i<textLength; i+=chunkSize){
-    //             chunks.push(text.slice(i, i+chunkSize));
-    //         }
-    //     }
-    //
-    //     else {
-    //         let chunkSize = Math.ceil((textLength) / numColors--);
-    //         for (let i=0; i<textLength; i+=chunkSize) {
-    //             chunkSize = Math.ceil((textLength - i) / numColors--);
-    //             chunks.push(text.slice(i, i+chunkSize));
-    //         }
-    //     }
-    //
-    //     return chunks;
-    //
-    // }
-
-
     /**
      * Function to generate a string representing the list of selected competitions
      * @param (Object) allCompetitions - object containing arrays of all competitions on per-season basis
@@ -904,7 +664,7 @@ class Slice extends Component {
 
         //calculate the start angle based on the number of wedges
         //the goal is to have the first wedge pointing to 0 degrees
-        chartOptions.pane.startAngle = -((360/this.categories[this.props.template].length)/2);
+        chartOptions.pane.startAngle = -((360/this.props.statsKeys.length)/2);
 
         let chart = chartOptions.chart;
         //set animation (on update) to true or false
@@ -918,32 +678,38 @@ class Slice extends Component {
             chart.marginBottom = (this.props.creditsPosition === "right" && !this.props.isMobile) ? 30 : 60;
         }
 
-        let padjOffensive = this.props.padjTypes['offensive'];
-        let padjDefensive = this.props.padjTypes['defensive'];
+        let categories = [];
 
-        let offensiveSuffix = padjOffensive ? " per 100 touches" : " per 90";
-        let defensiveSuffix = padjDefensive ? " per 90 (pAdj)" : " per 90";
+        if (template !== null && template !== "N/A"){
 
-        let categories = JSON.parse(JSON.stringify(this.categories[this.props.template]));
+            let statsKeys = this.props.statsKeys;
+            let selectedStats = this.statsByPosition[template].filter(x => statsKeys.includes(x));
 
-        for (let i=0; i<categories.length; i++){
+            if (this.isMobile){
+                for (let i=0; i<selectedStats.length; i++) {
 
-            let stat = categories[i];
+                    let stat = selectedStats[i];
+                    categories[i] = `${this.statsReference[stat]['mobileLabel']}  <span style="font-size: 0.8em">${this.statsReference[stat]['suffix']}</span>`;
 
-            if (this.statTypes['offensiveVariable'].includes(stat)){
-                categories[i] += `<span style="font-size: 0.8em">${offensiveSuffix}</span>`;
+                }
             }
-            else if (this.statTypes['defensiveVariable'].includes(stat)){
-                categories[i] += `<span style="font-size: 0.8em">${defensiveSuffix}</span>`;
+            else {
+                for (let i=0; i<selectedStats.length; i++) {
+
+                    let stat = selectedStats[i];
+                    categories[i] = `${this.statsReference[stat]['label']}  <span style="font-size: 0.8em">${this.statsReference[stat]['suffix']}</span>`;
+
+                }
             }
-            else if (this.statTypes['constant'].includes(stat)){
-                categories[i] += `<span style="font-size: 0.8em"> per 90</span>`;
-            }
+
+        }
+        else {
+
+            categories = Array(12).fill("-");
 
         }
 
         let xAxis = chartOptions.xAxis;
-
 
         //set x-axis labels
         xAxis.categories = categories;

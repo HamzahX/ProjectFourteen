@@ -83,6 +83,7 @@ class Stats extends Component {
             renderForExport: false,
             percentileArrays: this.props.percentileArrays,
             statsByPosition: {},
+            statsReference: {},
             code: this.props.match.params.code,
             name: '',
             url: '',
@@ -239,6 +240,7 @@ class Stats extends Component {
             this.setState({
                 isLoading: false,
                 statsByPosition: response.statsByPosition,
+                statsReference: response.statsReference,
                 name: playerData.name,
                 url: "https://www.fbref.com" + playerData.fbrefURL,
                 age: playerData.age,
@@ -286,6 +288,7 @@ class Stats extends Component {
             showExportLoaderOverlay,
             renderForExport,
             statsByPosition,
+            statsReference,
             code,
             url,
             name,
@@ -338,13 +341,20 @@ class Stats extends Component {
             let filteredStats = {};
             let series = [];
 
+            let statsKeys;
+
             if (template !== null && template !== "N/A") {
+
                 filteredStats = this.filterStats(stats);
+                let calculatedStats = this.calculateStats(filteredStats);
+
                 if (Object.keys(filteredStats).length !== 0){
-                    let calculatedStats = this.calculateStats(filteredStats);
                     let chartInput = this.constructChartInput(statsByPosition, calculatedStats.statsPer90, calculatedStats.percentiles);
                     series.push(chartInput);
                 }
+
+                statsKeys = calculatedStats.statsKeys;
+
             }
 
             let exportSlice = null;
@@ -368,7 +378,9 @@ class Stats extends Component {
                     selectedCompetitions={selectedCompetitions}
                     age={age}
                     minutes={filteredStats['minutes']}
-                    padjTypes={pAdjTypes}
+                    statsKeys={statsKeys}
+                    statsByPosition={statsByPosition}
+                    statsReference={statsReference}
                     series={series}
                 />
             }
@@ -430,7 +442,9 @@ class Stats extends Component {
                             selectedCompetitions={selectedCompetitions}
                             age={age}
                             minutes={filteredStats['minutes']}
-                            padjTypes={pAdjTypes}
+                            statsKeys={statsKeys}
+                            statsByPosition={statsByPosition}
+                            statsReference={statsReference}
                             series={series}
                             toggleGlossaryOverlay={this.toggleGlossaryOverlay}
                         />

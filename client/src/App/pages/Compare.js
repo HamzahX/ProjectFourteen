@@ -92,6 +92,7 @@ class Compare extends Component {
             renderForExport: false,
             percentileArrays: this.props.percentileArrays,
             statsByPosition: {},
+            statsReference: {},
             codes: codes,
             names: {},
             urls: {},
@@ -284,7 +285,8 @@ class Compare extends Component {
                 ages: JSON.parse(JSON.stringify(ages)),
                 clubs: JSON.parse(JSON.stringify(clubs)),
                 percentileEntries: JSON.parse(JSON.stringify(percentileEntries)),
-                statsByPosition: JSON.parse(JSON.stringify(response.statsByPosition)),
+                statsByPosition: response.statsByPosition,
+                statsReference: response.statsReference,
                 stats: JSON.parse(JSON.stringify(stats)),
                 isGK: template === "GK",
                 isOutfieldGK: JSON.parse(JSON.stringify(isOutfieldGK)),
@@ -326,6 +328,7 @@ class Compare extends Component {
             showExportLoaderOverlay,
             renderForExport,
             statsByPosition,
+            statsReference,
             codes,
             urls,
             names,
@@ -374,13 +377,17 @@ class Compare extends Component {
             let filteredStats = {};
             let series = [];
 
+            let statsKeys;
+
             for (let i=0; i<codes.length; i++){
 
                 let code = codes[i];
+
                 filteredStats[code] = this.filterStats(stats[code], code);
+                let calculatedStats = this.calculateStats(filteredStats[code], code);
 
                 if (template !== null && template !== "N/A"){
-                    let calculatedStats = this.calculateStats(filteredStats[code], code);
+
                     let chartInput = this.constructChartInput(
                         statsByPosition,
                         calculatedStats.statsPer90,
@@ -391,7 +398,9 @@ class Compare extends Component {
                         true,
                         i
                     );
+
                     series.push(chartInput);
+                    statsKeys = calculatedStats.statsKeys;
                 }
 
             }
@@ -431,7 +440,9 @@ class Compare extends Component {
                     minutes={
                         [filteredStats[code1]['minutes'], filteredStats[code2]['minutes']]
                     }
-                    padjTypes={pAdjTypes}
+                    statsKeys={statsKeys}
+                    statsByPosition={statsByPosition}
+                    statsReference={statsReference}
                     series={series}
                 />
             }
@@ -508,7 +519,9 @@ class Compare extends Component {
                             minutes={
                                 [filteredStats[code1]['minutes'], filteredStats[code2]['minutes']]
                             }
-                            padjTypes={pAdjTypes}
+                            statsKeys={statsKeys}
+                            statsByPosition={statsByPosition}
+                            statsReference={statsReference}
                             series={series}
                             toggleGlossaryOverlay={this.toggleGlossaryOverlay}
                         />
