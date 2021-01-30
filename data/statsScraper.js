@@ -567,7 +567,7 @@ let retrieveJSON = async (page, tableType, unhideTable = false) => {
             await page.waitForSelector(unhideTableButtonSelector);
             await page.evaluate((unhideTableButtonSelector) => document.querySelector(unhideTableButtonSelector).click(), unhideTableButtonSelector);
 
-            let tableSelector = `.table_outer_container`;
+            let tableSelector = `.table_container`;
             await page.waitForSelector(tableSelector);
 
             await page.waitForSelector(unhideTableButtonSelector);
@@ -627,10 +627,10 @@ let retrieveJSON = async (page, tableType, unhideTable = false) => {
         let numPlayerCodes = unhideTable ? playerCodes.length / 2 : playerCodes.length;
 
         if (tableType === "standard" || tableType === "keeper"){
-            for (let i=0; i<numPlayerCodes; i++){
-                //note that we increment the key by 1 because the fbref CSV row numbers start at 1, not 0
-                json[(i+1).toString(10)]["code"] = playerCodes[i];
-                json[(i+1).toString(10)]["url"] = playerURLs[i];
+            //note that we start at 1 because the fbref CSV row numbers start at 1, not 0
+            for (let i=1; i<numPlayerCodes+1; i++){
+                json[(i).toString(10)]["code"] = playerCodes[i-1];
+                json[(i).toString(10)]["url"] = playerURLs[i-1];
             }
         }
 
