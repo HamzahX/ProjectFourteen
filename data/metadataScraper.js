@@ -560,6 +560,11 @@ let processPlayerPosition = (positionString, code) => {
 
     let positions = [];
 
+    //hard-code false-9 type roaming forwards. Think Messi and Ilicic
+    if (code === "11119" || code === "43194"){
+        return ["AM", "FW"];
+    }
+
     if (FWPlayers.includes(code)){
         positions.push("FW");
     }
@@ -611,7 +616,10 @@ let processPlayerPosition = (positionString, code) => {
             }
 
             if (Math.abs(APPS_PER_POSITION[SEASON][code][position] - max) <= 2){
-                positions.push(position);
+                if (Math.abs(APPS_PER_POSITION[SEASON][code][position] - max) >= 0)
+                    positions.unshift(position);
+                else
+                    positions.push(position);
             }
             else if (APPS_PER_POSITION[SEASON][code][position] > max){
                 positions = [position];
