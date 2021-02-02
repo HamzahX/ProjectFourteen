@@ -3,6 +3,9 @@
 		"label": "Age",
 		"mobileLabel": "Age",
 		"suffix": "(current)",
+		"types": [
+			"metadata"
+		],
 		"isReversed": false,
 		"displayOrder": 0,
 		"precision": 0,
@@ -12,42 +15,19 @@
 			"max": 43,
 			"minName": "Youssoufa Moukoko",
 			"maxName": "Gianluigi Buffon"
-		},
-		"types": [
-			"metadata"
-		]
+		}
 	},
 	"minutes": {
 		"label": "Minutes",
 		"mobileLabel": "Minutes",
 		"suffix": "",
+		"types": [
+			"aggregate"
+		],
 		"isReversed": false,
 		"displayOrder": 1,
 		"precision": 0,
 		"step_agg": 100,
-		"ranges": {
-			"18-19": {
-				"min": 0,
-				"max": 4600,
-				"minName": "Jermain Defoe",
-				"maxName": "Alisson"
-			},
-			"19-20": {
-				"min": 0,
-				"max": 4450,
-				"minName": "Martin Harnik",
-				"maxName": "Conor Coady"
-			},
-			"20-21": {
-				"min": 0,
-				"max": 1200,
-				"minName": "Robert Snodgrass",
-				"maxName": "Walter Benítez"
-			}
-		},
-		"types": [
-			"aggregate"
-		],
 		"ranges_agg": {
 			"18-19": {
 				"min": 0,
@@ -73,6 +53,10 @@
 		"label": "Non-Penalty Goals",
 		"mobileLabel": "Non-Penalty Goals",
 		"suffix": "per 90",
+		"types": [
+			"aggregate",
+			"average"
+		],
 		"isReversed": false,
 		"displayOrder": 2,
 		"precision": 2,
@@ -98,10 +82,6 @@
 				"maxName": "Luis Muriel"
 			}
 		},
-		"types": [
-			"aggregate",
-			"average"
-		],
 		"ranges_agg": {
 			"18-19": {
 				"min": 0,
@@ -127,6 +107,10 @@
 		"label": "Non-Penalty xG",
 		"mobileLabel": "Non-Penalty xG",
 		"suffix": "per 90",
+		"types": [
+			"aggregate",
+			"average"
+		],
 		"isReversed": false,
 		"displayOrder": 3,
 		"precision": 2,
@@ -152,10 +136,6 @@
 				"maxName": "Kylian Mbappé"
 			}
 		},
-		"types": [
-			"aggregate",
-			"average"
-		],
 		"ranges_agg": {
 			"18-19": {
 				"min": 0,
@@ -181,13 +161,13 @@
 		"label": "Shots",
 		"mobileLabel": "Shots",
 		"suffix": "",
+		"types": [
+			"aggregate"
+		],
 		"isReversed": false,
 		"displayOrder": 4,
 		"precision": 0,
 		"step_agg": 10,
-		"types": [
-			"aggregate"
-		],
 		"ranges_agg": {
 			"18-19": {
 				"min": 0,
@@ -213,6 +193,9 @@
 		"label": "Non-Penalty xG/Shot",
 		"mobileLabel": "Non-Penalty xG/Shot",
 		"suffix": "",
+		"types": [
+			"average"
+		],
 		"isReversed": false,
 		"displayOrder": 5,
 		"precision": 3,
@@ -236,22 +219,19 @@
 				"minName": "Javier Ontiveros",
 				"maxName": "Taiwo Awoniyi"
 			}
-		},
-		"types": [
-			"average"
-		]
+		}
 	},
 	"attAerials": {
 		"label": "Aerials Contested",
 		"mobileLabel": "Aerials Contested",
 		"suffix": "",
+		"types": [
+			"aggregate"
+		],
 		"isReversed": false,
 		"displayOrder": 6,
 		"precision": 0,
 		"step_agg": 10,
-		"types": [
-			"aggregate"
-		],
 		"ranges_agg": {
 			"18-19": {
 				"min": 0,
@@ -277,6 +257,10 @@
 		"label": "Aerials Won",
 		"mobileLabel": "Aerials Won",
 		"suffix": "per 90",
+		"types": [
+			"aggregate",
+			"average"
+		],
 		"isReversed": false,
 		"displayOrder": 7,
 		"precision": 2,
@@ -302,10 +286,6 @@
 				"maxName": "Oliver McBurnie"
 			}
 		},
-		"types": [
-			"aggregate",
-			"average"
-		],
 		"ranges_agg": {
 			"18-19": {
 				"min": 0,
@@ -331,6 +311,9 @@
 		"label": "Aerial Win %",
 		"mobileLabel": "Aerial Win %",
 		"suffix": "",
+		"types": [
+			"average"
+		],
 		"isReversed": false,
 		"displayOrder": 8,
 		"precision": 1,
@@ -354,20 +337,19 @@
 				"minName": "Josip Ilicic",
 				"maxName": "Bruno Alves"
 			}
-		},
-		"types": [
-			"average"
-		]
+		}
 	},
 	"boxTouches": {
 		"label": "Touches in Box",
 		"mobileLabel": "Touches in Box",
 		"suffix": "per 90",
+		"types": [
+			"average"
+		],
 		"isReversed": false,
 		"displayOrder": 9,
 		"precision": 2,
 		"step": 0.5,
-		"step_agg": 10,
 		"ranges": {
 			"18-19": {
 				"min": 0,
@@ -387,35 +369,15 @@
 				"minName": "Pedro López",
 				"maxName": "Kylian Mbappé"
 			}
-		},
-		"types": [
-			"average"
-		],
-		"ranges_agg": {
-			"18-19": {
-				"min": 0,
-				"max": 440,
-				"minName": "Daniele Bonera",
-				"maxName": "Mohamed Salah"
-			},
-			"19-20": {
-				"min": 0,
-				"max": 400,
-				"minName": "Souleymane Camara",
-				"maxName": "Mohamed Salah"
-			},
-			"20-21": {
-				"min": 0,
-				"max": 200,
-				"minName": "Christian Maggio",
-				"maxName": "Kylian Mbappé"
-			}
 		}
 	},
 	"padjBoxTouches": {
 		"label": "Touches in Box",
 		"mobileLabel": "Touches in Box",
 		"suffix": "per 100 touches",
+		"types": [
+			"average"
+		],
 		"isReversed": false,
 		"displayOrder": 10,
 		"precision": 2,
@@ -439,15 +401,16 @@
 				"minName": "Pedro López",
 				"maxName": "Andrea Petagna"
 			}
-		},
-		"types": [
-			"average"
-		]
+		}
 	},
 	"xa": {
 		"label": "xA",
 		"mobileLabel": "xA",
 		"suffix": "per 90",
+		"types": [
+			"aggregate",
+			"average"
+		],
 		"isReversed": false,
 		"displayOrder": 11,
 		"precision": 2,
@@ -473,10 +436,6 @@
 				"maxName": "Pablo Sarabia"
 			}
 		},
-		"types": [
-			"aggregate",
-			"average"
-		],
 		"ranges_agg": {
 			"18-19": {
 				"min": 0,
@@ -502,6 +461,9 @@
 		"label": "xA",
 		"mobileLabel": "xA",
 		"suffix": "per 100 touches",
+		"types": [
+			"average"
+		],
 		"isReversed": false,
 		"displayOrder": 12,
 		"precision": 2,
@@ -525,20 +487,19 @@
 				"minName": "Dante",
 				"maxName": "Kelechi Iheanacho"
 			}
-		},
-		"types": [
-			"average"
-		]
+		}
 	},
 	"sca": {
 		"label": "OP Shot-Creating Actions",
 		"mobileLabel": "OP Shot-Creating Actions",
 		"suffix": "per 90",
+		"types": [
+			"average"
+		],
 		"isReversed": false,
 		"displayOrder": 13,
 		"precision": 2,
 		"step": 0.2,
-		"step_agg": 10,
 		"ranges": {
 			"18-19": {
 				"min": 0,
@@ -558,35 +519,15 @@
 				"minName": "Cristián Zapata",
 				"maxName": "Lionel Messi"
 			}
-		},
-		"types": [
-			"average"
-		],
-		"ranges_agg": {
-			"18-19": {
-				"min": 0,
-				"max": 280,
-				"minName": "Daniele Bonera",
-				"maxName": "Lionel Messi"
-			},
-			"19-20": {
-				"min": 0,
-				"max": 240,
-				"minName": "Claudio Pizarro",
-				"maxName": "Lionel Messi"
-			},
-			"20-21": {
-				"min": 0,
-				"max": 160,
-				"minName": "Christian Maggio",
-				"maxName": "Lionel Messi"
-			}
 		}
 	},
 	"padjSCA": {
 		"label": "OP Shot-Creating Actions",
 		"mobileLabel": "OP Shot-Creating Actions",
 		"suffix": "per 100 touches",
+		"types": [
+			"average"
+		],
 		"isReversed": false,
 		"displayOrder": 14,
 		"precision": 2,
@@ -610,20 +551,19 @@
 				"minName": "Christian Fuchs",
 				"maxName": "Ishak Belfodil"
 			}
-		},
-		"types": [
-			"average"
-		]
+		}
 	},
 	"ppa": {
 		"label": "Passes into Box",
 		"mobileLabel": "Passes into Box",
 		"suffix": "per 90",
+		"types": [
+			"average"
+		],
 		"isReversed": false,
 		"displayOrder": 15,
 		"precision": 2,
 		"step": 0.2,
-		"step_agg": 10,
 		"ranges": {
 			"18-19": {
 				"min": 0,
@@ -643,35 +583,15 @@
 				"minName": "Hilton",
 				"maxName": "Lionel Messi"
 			}
-		},
-		"types": [
-			"average"
-		],
-		"ranges_agg": {
-			"18-19": {
-				"min": 0,
-				"max": 190,
-				"minName": "Claudio Pizarro",
-				"maxName": "Lionel Messi"
-			},
-			"19-20": {
-				"min": 0,
-				"max": 160,
-				"minName": "Claudio Pizarro",
-				"maxName": "Lionel Messi"
-			},
-			"20-21": {
-				"min": 0,
-				"max": 100,
-				"minName": "Christian Maggio",
-				"maxName": "Lionel Messi"
-			}
 		}
 	},
 	"padjPPA": {
 		"label": "Passes into Box",
 		"mobileLabel": "Passes into Box",
 		"suffix": "per 100 touches",
+		"types": [
+			"average"
+		],
 		"isReversed": false,
 		"displayOrder": 16,
 		"precision": 2,
@@ -695,20 +615,19 @@
 				"minName": "Sergio Ramos",
 				"maxName": "David Silva"
 			}
-		},
-		"types": [
-			"average"
-		]
+		}
 	},
 	"pft": {
 		"label": "Passes into Final 1/3",
 		"mobileLabel": "Passes into Final 1/3",
 		"suffix": "per 90",
+		"types": [
+			"average"
+		],
 		"isReversed": false,
 		"displayOrder": 17,
 		"precision": 2,
 		"step": 0.5,
-		"step_agg": 20,
 		"ranges": {
 			"18-19": {
 				"min": 0,
@@ -728,35 +647,15 @@
 				"minName": "Jota",
 				"maxName": "Marco Verratti"
 			}
-		},
-		"types": [
-			"average"
-		],
-		"ranges_agg": {
-			"18-19": {
-				"min": 0,
-				"max": 440,
-				"minName": "Daniele Bonera",
-				"maxName": "Jorginho"
-			},
-			"19-20": {
-				"min": 0,
-				"max": 360,
-				"minName": "Claudio Pizarro",
-				"maxName": "David Alaba"
-			},
-			"20-21": {
-				"min": 0,
-				"max": 240,
-				"minName": "Christian Maggio",
-				"maxName": "Toni Kroos"
-			}
 		}
 	},
 	"padjPFT": {
 		"label": "Passes into Final 1/3",
 		"mobileLabel": "Passes into Final 1/3",
 		"suffix": "per 100 touches",
+		"types": [
+			"average"
+		],
 		"isReversed": false,
 		"displayOrder": 18,
 		"precision": 2,
@@ -780,15 +679,15 @@
 				"minName": "Jota",
 				"maxName": "Fernandinho"
 			}
-		},
-		"types": [
-			"average"
-		]
+		}
 	},
 	"progDistance": {
 		"label": "Yards Progressed",
 		"mobileLabel": "Yards Progressed",
 		"suffix": "per 90",
+		"types": [
+			"average"
+		],
 		"isReversed": false,
 		"displayOrder": 19,
 		"precision": 0,
@@ -812,29 +711,15 @@
 				"minName": "Jota",
 				"maxName": "Edmond Tapsoba"
 			}
-		},
-		"types": [
-			"average"
-		],
-		"ranges_agg": {
-			"18-19": {
-				"min": null,
-				"max": null
-			},
-			"19-20": {
-				"min": null,
-				"max": null
-			},
-			"20-21": {
-				"min": null,
-				"max": null
-			}
 		}
 	},
 	"padjProgDistance": {
 		"label": "Yards Progressed",
 		"mobileLabel": "Yards Progressed",
 		"suffix": "per 100 touches",
+		"types": [
+			"average"
+		],
 		"isReversed": false,
 		"displayOrder": 20,
 		"precision": 0,
@@ -858,22 +743,19 @@
 				"minName": "Jota",
 				"maxName": "Kevin Vogt"
 			}
-		},
-		"types": [
-			"average"
-		]
+		}
 	},
 	"attPasses": {
 		"label": "Attempted Passes",
 		"mobileLabel": "Attempted Passes",
 		"suffix": "",
+		"types": [
+			"aggregate"
+		],
 		"isReversed": false,
 		"displayOrder": 21,
 		"precision": 0,
 		"step_agg": 100,
-		"types": [
-			"aggregate"
-		],
 		"ranges_agg": {
 			"18-19": {
 				"min": 0,
@@ -899,13 +781,13 @@
 		"label": "Successful Passes",
 		"mobileLabel": "Successful Passes",
 		"suffix": "",
+		"types": [
+			"aggregate"
+		],
 		"isReversed": false,
 		"displayOrder": 22,
 		"precision": 0,
 		"step_agg": 100,
-		"types": [
-			"aggregate"
-		],
 		"ranges_agg": {
 			"18-19": {
 				"min": 0,
@@ -931,6 +813,9 @@
 		"label": "Pass Completion %",
 		"mobileLabel": "Pass Comp. %",
 		"suffix": "",
+		"types": [
+			"average"
+		],
 		"isReversed": false,
 		"displayOrder": 23,
 		"precision": 1,
@@ -954,22 +839,19 @@
 				"minName": "Deyverson",
 				"maxName": "Nikola Maksimovic"
 			}
-		},
-		"types": [
-			"average"
-		]
+		}
 	},
 	"attLongPasses": {
 		"label": "Attempted Long Passes",
 		"mobileLabel": "Attempted Long Passes",
 		"suffix": "",
+		"types": [
+			"aggregate"
+		],
 		"isReversed": false,
 		"displayOrder": 24,
 		"precision": 0,
 		"step_agg": 50,
-		"types": [
-			"aggregate"
-		],
 		"ranges_agg": {
 			"18-19": {
 				"min": 0,
@@ -995,13 +877,13 @@
 		"label": "Sucessful Long Passes",
 		"mobileLabel": "Sucessful Long Passes",
 		"suffix": "",
+		"types": [
+			"aggregate"
+		],
 		"isReversed": false,
 		"displayOrder": 25,
 		"precision": 0,
 		"step_agg": 50,
-		"types": [
-			"aggregate"
-		],
 		"ranges_agg": {
 			"18-19": {
 				"min": 0,
@@ -1027,6 +909,9 @@
 		"label": "Long Pass Completion %",
 		"mobileLabel": "Long Pass Comp. %",
 		"suffix": "",
+		"types": [
+			"average"
+		],
 		"isReversed": false,
 		"displayOrder": 26,
 		"precision": 1,
@@ -1050,23 +935,19 @@
 				"minName": "Portu",
 				"maxName": "M'Bala Nzola"
 			}
-		},
-		"types": [
-			"average"
-		]
+		}
 	},
 	"attDribbles": {
 		"label": "Attempted Dribbles",
 		"mobileLabel": "Attempted Dribbles",
 		"suffix": "",
-		"isReversed": false,
-		"displayOrder": 27,
-		"precision": 0,
-		"step": 1,
-		"step_agg": 20,
 		"types": [
 			"aggregate"
 		],
+		"isReversed": false,
+		"displayOrder": 27,
+		"precision": 0,
+		"step_agg": 20,
 		"ranges_agg": {
 			"18-19": {
 				"min": 0,
@@ -1092,6 +973,10 @@
 		"label": "Successful Dribbles",
 		"mobileLabel": "Succ. Dribbles",
 		"suffix": "per 90",
+		"types": [
+			"aggregate",
+			"average"
+		],
 		"isReversed": false,
 		"displayOrder": 28,
 		"precision": 2,
@@ -1117,10 +1002,6 @@
 				"maxName": "Neymar"
 			}
 		},
-		"types": [
-			"aggregate",
-			"average"
-		],
 		"ranges_agg": {
 			"18-19": {
 				"min": 0,
@@ -1146,6 +1027,9 @@
 		"label": "Successful Dribbles",
 		"mobileLabel": "Succ. Dribbles",
 		"suffix": "per 100 touches",
+		"types": [
+			"average"
+		],
 		"isReversed": false,
 		"displayOrder": 29,
 		"precision": 2,
@@ -1169,15 +1053,15 @@
 				"minName": "Dante",
 				"maxName": "Adama Traoré"
 			}
-		},
-		"types": [
-			"average"
-		]
+		}
 	},
 	"dribbleSuccRate": {
 		"label": "Dribble Success %",
 		"mobileLabel": "Dribble Succ. %",
 		"suffix": "",
+		"types": [
+			"average"
+		],
 		"isReversed": false,
 		"displayOrder": 30,
 		"precision": 1,
@@ -1201,15 +1085,15 @@
 				"minName": "Lois Diony",
 				"maxName": "Danilo"
 			}
-		},
-		"types": [
-			"average"
-		]
+		}
 	},
 	"turnovers": {
 		"label": "Turnovers",
 		"mobileLabel": "Turnovers",
 		"suffix": "per 90",
+		"types": [
+			"average"
+		],
 		"isReversed": true,
 		"displayOrder": 31,
 		"precision": 2,
@@ -1233,15 +1117,15 @@
 				"minName": "Dante",
 				"maxName": "Opa Nguette"
 			}
-		},
-		"types": [
-			"average"
-		]
+		}
 	},
 	"padjTurnovers": {
 		"label": "Turnovers",
 		"mobileLabel": "Turnovers",
 		"suffix": "per 100 touches",
+		"types": [
+			"average"
+		],
 		"isReversed": true,
 		"displayOrder": 32,
 		"precision": 2,
@@ -1265,20 +1149,19 @@
 				"minName": "Dante",
 				"maxName": "Taiwo Awoniyi"
 			}
-		},
-		"types": [
-			"average"
-		]
+		}
 	},
 	"succPressures": {
 		"label": "Successful Pressures",
 		"mobileLabel": "Succ. Pressures",
 		"suffix": "per 90",
+		"types": [
+			"average"
+		],
 		"isReversed": false,
 		"displayOrder": 33,
 		"precision": 2,
 		"step": 0.5,
-		"step_agg": 20,
 		"ranges": {
 			"18-19": {
 				"min": 0.5,
@@ -1298,40 +1181,19 @@
 				"minName": "Jota",
 				"maxName": "Jean-Daniel Akpa Akpro"
 			}
-		},
-		"types": [
-			"average"
-		],
-		"ranges_agg": {
-			"18-19": {
-				"min": 0,
-				"max": 400,
-				"minName": "Daniele Bonera",
-				"maxName": "Allan"
-			},
-			"19-20": {
-				"min": 0,
-				"max": 380,
-				"minName": "Claudio Pizarro",
-				"maxName": "Konrad Laimer"
-			},
-			"20-21": {
-				"min": 0,
-				"max": 180,
-				"minName": "Christian Maggio",
-				"maxName": "Valentin Rongier"
-			}
 		}
 	},
 	"padjSuccPressures": {
 		"label": "Successful Pressures",
 		"mobileLabel": "Succ. Pressures",
 		"suffix": "per 90 (pAdj)",
+		"types": [
+			"average"
+		],
 		"isReversed": false,
 		"displayOrder": 34,
 		"precision": 2,
 		"step": 1,
-		"step_agg": 20,
 		"ranges": {
 			"18-19": {
 				"min": 0,
@@ -1351,28 +1213,69 @@
 				"minName": "Jota",
 				"maxName": "Idrissa Gueye"
 			}
-		},
+		}
+	},
+	"padjSuccPressures_att": {
+		"label": "Successful Pressures (Att.)",
+		"mobileLabel": "Succ. Pressures (Att.)",
+		"suffix": "per 90 (pAdj)",
 		"types": [
 			"average"
 		],
-		"ranges_agg": {
+		"isReversed": false,
+		"displayOrder": 35,
+		"precision": 2,
+		"step": 1,
+		"ranges": {
 			"18-19": {
 				"min": 0,
-				"max": 560,
-				"minName": "Daniele Bonera",
-				"maxName": "Allan"
+				"max": 15,
+				"minName": "Scott Dann",
+				"maxName": "Arturo Vidal"
 			},
 			"19-20": {
 				"min": 0,
-				"max": 480,
-				"minName": "Claudio Pizarro",
-				"maxName": "Roberto Firmino"
+				"max": 14,
+				"minName": "Mateo Pavlovic",
+				"maxName": "Arturo Vidal"
 			},
 			"20-21": {
 				"min": 0,
-				"max": 220,
-				"minName": "Christian Maggio",
-				"maxName": "Mikel Merino"
+				"max": 12,
+				"minName": "Jota",
+				"maxName": "Idrissa Gueye"
+			}
+		}
+	},
+	"padjSuccPressures_def": {
+		"label": "Successful Pressures (Def.)",
+		"mobileLabel": "Succ. Pressures (Def.)",
+		"suffix": "per 90 (pAdj)",
+		"types": [
+			"average"
+		],
+		"isReversed": false,
+		"displayOrder": 36,
+		"precision": 2,
+		"step": 1,
+		"ranges": {
+			"18-19": {
+				"min": 0,
+				"max": 15,
+				"minName": "Scott Dann",
+				"maxName": "Arturo Vidal"
+			},
+			"19-20": {
+				"min": 0,
+				"max": 15,
+				"minName": "Scott Dann",
+				"maxName": "Thomas Müller"
+			},
+			"20-21": {
+				"min": 0,
+				"max": 13,
+				"minName": "Jota",
+				"maxName": "Leroy Sané"
 			}
 		}
 	},
@@ -1380,11 +1283,13 @@
 		"label": "Interceptions",
 		"mobileLabel": "Interceptions",
 		"suffix": "per 90",
+		"types": [
+			"average"
+		],
 		"isReversed": false,
-		"displayOrder": 35,
+		"displayOrder": 37,
 		"precision": 2,
 		"step": 0.2,
-		"step_agg": 5,
 		"ranges": {
 			"18-19": {
 				"min": 0,
@@ -1404,40 +1309,19 @@
 				"minName": "Cristiano Ronaldo",
 				"maxName": "Cristian Romero"
 			}
-		},
-		"types": [
-			"average"
-		],
-		"ranges_agg": {
-			"18-19": {
-				"min": 0,
-				"max": 80,
-				"minName": "Claudio Pizarro",
-				"maxName": "Aaron Wan-Bissaka"
-			},
-			"19-20": {
-				"min": 0,
-				"max": 80,
-				"minName": "Claudio Pizarro",
-				"maxName": "Sven Bender"
-			},
-			"20-21": {
-				"min": 0,
-				"max": 50,
-				"minName": "Christian Maggio",
-				"maxName": "Cristian Romero"
-			}
 		}
 	},
 	"padjInterceptions": {
 		"label": "Interceptions",
 		"mobileLabel": "Interceptions",
 		"suffix": "per 90 (pAdj)",
+		"types": [
+			"average"
+		],
 		"isReversed": false,
-		"displayOrder": 36,
+		"displayOrder": 38,
 		"precision": 2,
 		"step": 0.2,
-		"step_agg": 5,
 		"ranges": {
 			"18-19": {
 				"min": 0,
@@ -1457,28 +1341,37 @@
 				"minName": "Cristiano Ronaldo",
 				"maxName": "Emerson"
 			}
-		},
+		}
+	},
+	"padjInterceptions_def": {
+		"label": "Interceptions (Def.)",
+		"mobileLabel": "Interceptions (Def.)",
+		"suffix": "per 90 (pAdj)",
 		"types": [
 			"average"
 		],
-		"ranges_agg": {
+		"isReversed": false,
+		"displayOrder": 39,
+		"precision": 2,
+		"step": 0.2,
+		"ranges": {
 			"18-19": {
 				"min": 0,
-				"max": 100,
+				"max": 3.4,
 				"minName": "Claudio Pizarro",
-				"maxName": "Aaron Wan-Bissaka"
+				"maxName": "Enock Kwateng"
 			},
 			"19-20": {
 				"min": 0,
-				"max": 120,
-				"minName": "Claudio Pizarro",
-				"maxName": "Sven Bender"
+				"max": 3.2,
+				"minName": "Zlatan Ibrahimovic",
+				"maxName": "Thomas Delaney"
 			},
 			"20-21": {
 				"min": 0,
-				"max": 60,
-				"minName": "Christian Maggio",
-				"maxName": "N'Golo Kanté"
+				"max": 4,
+				"minName": "Cristiano Ronaldo",
+				"maxName": "Jonathan Tah"
 			}
 		}
 	},
@@ -1486,11 +1379,13 @@
 		"label": "Successful Tackles",
 		"mobileLabel": "Succ. Tackles",
 		"suffix": "per 90",
+		"types": [
+			"average"
+		],
 		"isReversed": false,
-		"displayOrder": 37,
+		"displayOrder": 40,
 		"precision": 2,
 		"step": 0.5,
-		"step_agg": 5,
 		"ranges": {
 			"18-19": {
 				"min": 0,
@@ -1510,40 +1405,19 @@
 				"minName": "Cristiano Ronaldo",
 				"maxName": "Laurent Abergel"
 			}
-		},
-		"types": [
-			"average"
-		],
-		"ranges_agg": {
-			"18-19": {
-				"min": 0,
-				"max": 185,
-				"minName": "Souleymane Camara",
-				"maxName": "Allan"
-			},
-			"19-20": {
-				"min": 0,
-				"max": 155,
-				"minName": "Claudio Pizarro",
-				"maxName": "Aaron Wan-Bissaka"
-			},
-			"20-21": {
-				"min": 0,
-				"max": 95,
-				"minName": "Zlatan Ibrahimovic",
-				"maxName": "Valentin Rongier"
-			}
 		}
 	},
 	"padjSuccTackles": {
 		"label": "Successful Tackles",
 		"mobileLabel": "Succ. Tackles",
 		"suffix": "per 90 (pAdj)",
+		"types": [
+			"average"
+		],
 		"isReversed": false,
-		"displayOrder": 38,
+		"displayOrder": 41,
 		"precision": 2,
 		"step": 0.5,
-		"step_agg": 5,
 		"ranges": {
 			"18-19": {
 				"min": 0,
@@ -1563,28 +1437,37 @@
 				"minName": "Cristiano Ronaldo",
 				"maxName": "Idrissa Gueye"
 			}
-		},
+		}
+	},
+	"padjSuccTackles_def": {
+		"label": "Successful Tackles (Def.)",
+		"mobileLabel": "Succ. Tackles (Def.)",
+		"suffix": "per 90 (pAdj)",
 		"types": [
 			"average"
 		],
-		"ranges_agg": {
+		"isReversed": false,
+		"displayOrder": 42,
+		"precision": 2,
+		"step": 0.5,
+		"ranges": {
 			"18-19": {
 				"min": 0,
-				"max": 260,
-				"minName": "Souleymane Camara",
-				"maxName": "Allan"
+				"max": 6.5,
+				"minName": "Sergio Pellissier",
+				"maxName": "Arturo Vidal"
 			},
 			"19-20": {
 				"min": 0,
-				"max": 205,
-				"minName": "Claudio Pizarro",
-				"maxName": "Aaron Wan-Bissaka"
+				"max": 7,
+				"minName": "Zlatan Ibrahimovic",
+				"maxName": "Paulo Otávio"
 			},
 			"20-21": {
 				"min": 0,
-				"max": 115,
-				"minName": "Christian Maggio",
-				"maxName": "Laurent Abergel"
+				"max": 7,
+				"minName": "Cristiano Ronaldo",
+				"maxName": "Idrissa Gueye"
 			}
 		}
 	},
@@ -1592,13 +1475,13 @@
 		"label": "Attempted Tackles vs Dribblers",
 		"mobileLabel": "Attempted Tackles vs Dribblers",
 		"suffix": "",
-		"isReversed": false,
-		"displayOrder": 39,
-		"precision": 0,
-		"step_agg": 10,
 		"types": [
 			"aggregate"
 		],
+		"isReversed": false,
+		"displayOrder": 43,
+		"precision": 0,
+		"step_agg": 10,
 		"ranges_agg": {
 			"18-19": {
 				"min": 0,
@@ -1624,13 +1507,13 @@
 		"label": "Successful Tackles vs Dribblers",
 		"mobileLabel": "Successful Tackles vs Dribblers",
 		"suffix": "",
-		"isReversed": false,
-		"displayOrder": 40,
-		"precision": 0,
-		"step_agg": 5,
 		"types": [
 			"aggregate"
 		],
+		"isReversed": false,
+		"displayOrder": 44,
+		"precision": 0,
+		"step_agg": 5,
 		"ranges_agg": {
 			"18-19": {
 				"min": 0,
@@ -1656,8 +1539,11 @@
 		"label": "Tackle/Dribbled Past %",
 		"mobileLabel": "Tackle/ Dribbled Past %",
 		"suffix": "",
+		"types": [
+			"average"
+		],
 		"isReversed": false,
-		"displayOrder": 41,
+		"displayOrder": 45,
 		"precision": 1,
 		"step": 5,
 		"ranges": {
@@ -1679,20 +1565,19 @@
 				"minName": "Burak Yilmaz",
 				"maxName": "Junior Sambia"
 			}
-		},
-		"types": [
-			"average"
-		]
+		}
 	},
 	"fouls": {
 		"label": "Fouls Committed",
 		"mobileLabel": "Fouls Committed",
 		"suffix": "per 90",
+		"types": [
+			"average"
+		],
 		"isReversed": true,
-		"displayOrder": 42,
+		"displayOrder": 46,
 		"precision": 2,
 		"step": 0.2,
-		"step_agg": 5,
 		"ranges": {
 			"18-19": {
 				"min": 0,
@@ -1712,40 +1597,19 @@
 				"minName": "Cristián Zapata",
 				"maxName": "Yan Eteki"
 			}
-		},
-		"types": [
-			"average"
-		],
-		"ranges_agg": {
-			"18-19": {
-				"min": 0,
-				"max": 100,
-				"minName": "Souleymane Camara",
-				"maxName": "Raúl García"
-			},
-			"19-20": {
-				"min": 0,
-				"max": 100,
-				"minName": "Claudio Pizarro",
-				"maxName": "Casemiro"
-			},
-			"20-21": {
-				"min": 0,
-				"max": 75,
-				"minName": "Christian Maggio",
-				"maxName": "Mikel Merino"
-			}
 		}
 	},
 	"padjFouls": {
 		"label": "Fouls Committed",
 		"mobileLabel": "Fouls Committed",
 		"suffix": "per 90 (pAdj)",
+		"types": [
+			"average"
+		],
 		"isReversed": true,
-		"displayOrder": 43,
+		"displayOrder": 47,
 		"precision": 2,
 		"step": 0.2,
-		"step_agg": 5,
 		"ranges": {
 			"18-19": {
 				"min": 0,
@@ -1765,27 +1629,36 @@
 				"minName": "Cristián Zapata",
 				"maxName": "Mikel Merino"
 			}
-		},
+		}
+	},
+	"padjFouls_def": {
+		"label": "Fouls Committed (Def.)",
+		"mobileLabel": "Fouls Committed (Def.)",
+		"suffix": "per 90 (pAdj)",
 		"types": [
 			"average"
 		],
-		"ranges_agg": {
+		"isReversed": true,
+		"displayOrder": 48,
+		"precision": 2,
+		"step": 0.2,
+		"ranges": {
 			"18-19": {
 				"min": 0,
-				"max": 120,
-				"minName": "Souleymane Camara",
-				"maxName": "Arturo Vidal"
+				"max": 5,
+				"minName": "Andrea Raggi",
+				"maxName": "Anthony Lozano"
 			},
 			"19-20": {
 				"min": 0,
-				"max": 140,
-				"minName": "Claudio Pizarro",
-				"maxName": "Casemiro"
+				"max": 5,
+				"minName": "Matej Vydra",
+				"maxName": "Junior Firpo"
 			},
 			"20-21": {
 				"min": 0,
-				"max": 115,
-				"minName": "Christian Maggio",
+				"max": 5.2,
+				"minName": "Cristián Zapata",
 				"maxName": "Mikel Merino"
 			}
 		}
@@ -1794,11 +1667,13 @@
 		"label": "Clearances",
 		"mobileLabel": "Clearances",
 		"suffix": "per 90",
+		"types": [
+			"average"
+		],
 		"isReversed": false,
-		"displayOrder": 44,
+		"displayOrder": 49,
 		"precision": 2,
 		"step": 0.5,
-		"step_agg": 10,
 		"ranges": {
 			"18-19": {
 				"min": 0,
@@ -1818,40 +1693,51 @@
 				"minName": "Joaquín",
 				"maxName": "Kiki Kouyate"
 			}
-		},
-		"types": [
-			"average"
-		],
-		"ranges_agg": {
-			"18-19": {
-				"min": 0,
-				"max": 310,
-				"minName": "Claudio Pizarro",
-				"maxName": "Shane Duffy"
-			},
-			"19-20": {
-				"min": 0,
-				"max": 330,
-				"minName": "Claudio Pizarro",
-				"maxName": "Virgil van Dijk"
-			},
-			"20-21": {
-				"min": 0,
-				"max": 160,
-				"minName": "Christian Maggio",
-				"maxName": "Germán Sánchez"
-			}
 		}
 	},
 	"padjClearances": {
 		"label": "Clearances",
 		"mobileLabel": "Clearances",
 		"suffix": "per 90 (pAdj)",
+		"types": [
+			"average"
+		],
 		"isReversed": false,
-		"displayOrder": 45,
+		"displayOrder": 50,
 		"precision": 2,
 		"step": 0.5,
-		"step_agg": 10,
+		"ranges": {
+			"18-19": {
+				"min": 0,
+				"max": 11,
+				"minName": "Arjen Robben",
+				"maxName": "Martín Mantovani"
+			},
+			"19-20": {
+				"min": 0,
+				"max": 15,
+				"minName": "Santi Cazorla",
+				"maxName": "Joel Matip"
+			},
+			"20-21": {
+				"min": 0,
+				"max": 10.5,
+				"minName": "Joaquín",
+				"maxName": "Paulo Oliveira"
+			}
+		}
+	},
+	"padjClearances_def": {
+		"label": "Clearances (Def.)",
+		"mobileLabel": "Clearances (Def.)",
+		"suffix": "per 90 (pAdj)",
+		"types": [
+			"average"
+		],
+		"isReversed": false,
+		"displayOrder": 51,
+		"precision": 2,
+		"step": 0.5,
 		"ranges": {
 			"18-19": {
 				"min": 0,
@@ -1871,43 +1757,19 @@
 				"minName": "Joaquín",
 				"maxName": "Xabier Etxeita"
 			}
-		},
-		"types": [
-			"average"
-		],
-		"ranges_agg": {
-			"18-19": {
-				"min": 0,
-				"max": 480,
-				"minName": "Claudio Pizarro",
-				"maxName": "Virgil van Dijk"
-			},
-			"19-20": {
-				"min": 0,
-				"max": 550,
-				"minName": "Claudio Pizarro",
-				"maxName": "Virgil van Dijk"
-			},
-			"20-21": {
-				"min": 0,
-				"max": 200,
-				"minName": "Christian Maggio",
-				"maxName": "Germán Sánchez"
-			}
 		}
 	},
 	"goalsAgainst": {
 		"label": "Goals Conceded",
 		"mobileLabel": "Goals Conceded",
 		"suffix": "",
-		"isReversed": false,
-		"displayOrder": 46,
-		"precision": 0,
-		"step": 1,
-		"step_agg": 5,
 		"types": [
 			"aggregate"
 		],
+		"isReversed": false,
+		"displayOrder": 52,
+		"precision": 0,
+		"step_agg": 5,
 		"ranges_agg": {
 			"18-19": {
 				"min": 0,
@@ -1933,14 +1795,13 @@
 		"label": "Post-Shot xG Faced",
 		"mobileLabel": "Post-Shot xG Faced",
 		"suffix": "",
-		"isReversed": false,
-		"displayOrder": 47,
-		"precision": 0,
-		"step": 1,
-		"step_agg": 5,
 		"types": [
 			"aggregate"
 		],
+		"isReversed": false,
+		"displayOrder": 53,
+		"precision": 0,
+		"step_agg": 5,
 		"ranges_agg": {
 			"18-19": {
 				"min": 0,
@@ -1966,14 +1827,13 @@
 		"label": "Shots on Target Faced",
 		"mobileLabel": "Shots on Target Faced",
 		"suffix": "",
-		"isReversed": false,
-		"displayOrder": 48,
-		"precision": 0,
-		"step": 1,
-		"step_agg": 10,
 		"types": [
 			"aggregate"
 		],
+		"isReversed": false,
+		"displayOrder": 54,
+		"precision": 0,
+		"step_agg": 10,
 		"ranges_agg": {
 			"18-19": {
 				"min": 0,
@@ -1999,8 +1859,11 @@
 		"label": "GSAA %",
 		"mobileLabel": "GSAA %",
 		"suffix": "",
+		"types": [
+			"average"
+		],
 		"isReversed": false,
-		"displayOrder": 49,
+		"displayOrder": 55,
 		"precision": 2,
 		"step": 2.5,
 		"ranges": {
@@ -2022,23 +1885,19 @@
 				"minName": "Salvatore Sirigu",
 				"maxName": "Keylor Navas"
 			}
-		},
-		"types": [
-			"average"
-		]
+		}
 	},
 	"attCrosses": {
 		"label": "Crosses Faced",
 		"mobileLabel": "Crosses Faced",
 		"suffix": "",
-		"isReversed": false,
-		"displayOrder": 50,
-		"precision": 0,
-		"step": 1,
-		"step_agg": 20,
 		"types": [
 			"aggregate"
 		],
+		"isReversed": false,
+		"displayOrder": 56,
+		"precision": 0,
+		"step_agg": 20,
 		"ranges_agg": {
 			"18-19": {
 				"min": 0,
@@ -2064,14 +1923,13 @@
 		"label": "Crosses Stopped",
 		"mobileLabel": "Crosses Stopped",
 		"suffix": "",
-		"isReversed": false,
-		"displayOrder": 51,
-		"precision": 0,
-		"step": 1,
-		"step_agg": 5,
 		"types": [
 			"aggregate"
 		],
+		"isReversed": false,
+		"displayOrder": 57,
+		"precision": 0,
+		"step_agg": 5,
 		"ranges_agg": {
 			"18-19": {
 				"min": 0,
@@ -2097,8 +1955,11 @@
 		"label": "Cross Stopping %",
 		"mobileLabel": "Cross Stopping %",
 		"suffix": "",
+		"types": [
+			"average"
+		],
 		"isReversed": false,
-		"displayOrder": 52,
+		"displayOrder": 58,
 		"precision": 2,
 		"step": 2.5,
 		"ranges": {
@@ -2120,23 +1981,19 @@
 				"minName": "Manuel Neuer",
 				"maxName": "Lukasz Skorupski"
 			}
-		},
-		"types": [
-			"average"
-		]
+		}
 	},
 	"attLaunchedPasses": {
 		"label": "Attempted Launched Passes",
 		"mobileLabel": "Attempted Launched Passes",
 		"suffix": "",
-		"isReversed": false,
-		"displayOrder": 53,
-		"precision": 0,
-		"step": 1,
-		"step_agg": 50,
 		"types": [
 			"aggregate"
 		],
+		"isReversed": false,
+		"displayOrder": 59,
+		"precision": 0,
+		"step_agg": 50,
 		"ranges_agg": {
 			"18-19": {
 				"min": 0,
@@ -2162,14 +2019,13 @@
 		"label": "Successful Launched Passes",
 		"mobileLabel": "Successful Launched Passes",
 		"suffix": "",
-		"isReversed": false,
-		"displayOrder": 54,
-		"precision": 0,
-		"step": 1,
-		"step_agg": 20,
 		"types": [
 			"aggregate"
 		],
+		"isReversed": false,
+		"displayOrder": 60,
+		"precision": 0,
+		"step_agg": 20,
 		"ranges_agg": {
 			"18-19": {
 				"min": 0,
@@ -2195,8 +2051,11 @@
 		"label": "Launched Pass Completion %",
 		"mobileLabel": "Launched Pass Completion %",
 		"suffix": "",
+		"types": [
+			"average"
+		],
 		"isReversed": false,
-		"displayOrder": 55,
+		"displayOrder": 61,
 		"precision": 1,
 		"step": 5,
 		"ranges": {
@@ -2218,9 +2077,6 @@
 				"minName": "Alex McCarthy",
 				"maxName": "Marc-André ter Stegen"
 			}
-		},
-		"types": [
-			"average"
-		]
+		}
 	}
 }

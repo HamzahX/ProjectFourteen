@@ -184,7 +184,6 @@ export function calculateStats(filteredStats, playerCode = undefined){
             statsPer90["succAerials"] = filteredStats["succAerials"] / minutesOverNinety;
             statsPer90["aerialSuccRate"] = (filteredStats["succAerials"] / filteredStats["attAerials"]) * 100;
             statsPer90["dribbleSuccRate"] = (filteredStats["succDribbles"] / filteredStats["attDribbles"]) * 100;
-            statsPer90["succPressures"] = filteredStats["succPressures"] / minutesOverNinety;
 
             if (padjTypes['offensive']){
                 statsPer90["padjBoxTouches"] = filteredStats["boxTouches"] / touchesOverHundred;
@@ -201,6 +200,13 @@ export function calculateStats(filteredStats, playerCode = undefined){
                 statsPer90["turnovers"] = (filteredStats["timesDispossessed"] + filteredStats["miscontrols"]) / minutesOverNinety;
             }
 
+            if (padjTypes['defensive']){
+                statsPer90["padjSuccPressures_att"] = filteredStats["padjSuccPressures_att"] / minutesOverNinety;
+            }
+            else {
+                statsPer90["succPressures"] = filteredStats["succPressures"] / minutesOverNinety;
+            }
+
             break;
 
         case "AM":
@@ -210,7 +216,6 @@ export function calculateStats(filteredStats, playerCode = undefined){
             statsPer90["npxgPerShot"] = filteredStats["npxg"] / filteredStats["shots"];
             statsPer90["passSuccRate"] = (filteredStats["succPasses"] / filteredStats["attPasses"]) * 100;
             statsPer90["dribbleSuccRate"] = (filteredStats["succDribbles"] / filteredStats["attDribbles"]) * 100;
-            statsPer90["succPressures"] = filteredStats["succPressures"] / minutesOverNinety;
 
             if (padjTypes['offensive']){
                 statsPer90["padjXA"] = filteredStats["xa"] / touchesOverHundred;
@@ -229,6 +234,13 @@ export function calculateStats(filteredStats, playerCode = undefined){
                 statsPer90["turnovers"] = (filteredStats["timesDispossessed"] + filteredStats["miscontrols"]) / minutesOverNinety;
             }
 
+            if (padjTypes['defensive']){
+                statsPer90["padjSuccPressures"] = filteredStats["padjSuccPressures"] / minutesOverNinety;
+            }
+            else {
+                statsPer90["succPressures"] = filteredStats["succPressures"] / minutesOverNinety;
+            }
+
             break;
 
         case "CM":
@@ -236,7 +248,6 @@ export function calculateStats(filteredStats, playerCode = undefined){
             statsPer90["passSuccRate"] = (filteredStats["succPasses"] / filteredStats["attPasses"]) * 100;
             statsPer90["dribbleSuccRate"] = (filteredStats["succDribbles"] / filteredStats["attDribbles"]) * 100;
             statsPer90["dribbleTackleRate"] = (filteredStats["succDribbleTackles"] / filteredStats["attDribbleTackles"]) * 100;
-            statsPer90["succPressures"] = filteredStats["succPressures"] / minutesOverNinety;
 
             if (padjTypes['offensive']){
                 statsPer90["padjXA"] = filteredStats["xa"] / touchesOverHundred;
@@ -256,10 +267,12 @@ export function calculateStats(filteredStats, playerCode = undefined){
             }
 
             if (padjTypes['defensive']){
+                statsPer90["padjSuccPressures"] = filteredStats["padjSuccPressures"] / minutesOverNinety;
                 statsPer90["padjInterceptions"] = filteredStats["padjInterceptions"] / minutesOverNinety;
                 statsPer90["padjSuccTackles"] = filteredStats["padjSuccTackles"] / minutesOverNinety;
             }
             else {
+                statsPer90["succPressures"] = filteredStats["succPressures"] / minutesOverNinety;
                 statsPer90["interceptions"] = filteredStats["interceptions"] / minutesOverNinety;
                 statsPer90["succTackles"] = filteredStats["succTackles"] / minutesOverNinety;
             }
@@ -271,7 +284,6 @@ export function calculateStats(filteredStats, playerCode = undefined){
             statsPer90["passSuccRate"] = (filteredStats["succPasses"] / filteredStats["attPasses"]) * 100;
             statsPer90["dribbleSuccRate"] = (filteredStats["succDribbles"] / filteredStats["attDribbles"]) * 100;
             statsPer90["dribbleTackleRate"] = (filteredStats["succDribbleTackles"] / filteredStats["attDribbleTackles"]) * 100;
-            statsPer90["succPressures"] = filteredStats["succPressures"] / minutesOverNinety;
             statsPer90["aerialSuccRate"] = (filteredStats["succAerials"] / filteredStats["attAerials"]) * 100;
 
             if (padjTypes['offensive']){
@@ -290,10 +302,12 @@ export function calculateStats(filteredStats, playerCode = undefined){
             }
 
             if (padjTypes['defensive']){
+                statsPer90["padjSuccPressures"] = filteredStats["padjSuccPressures"] / minutesOverNinety;
                 statsPer90["padjInterceptions"] = filteredStats["padjInterceptions"] / minutesOverNinety;
                 statsPer90["padjSuccTackles"] = filteredStats["padjSuccTackles"] / minutesOverNinety;
             }
             else {
+                statsPer90["succPressures"] = filteredStats["succPressures"] / minutesOverNinety;
                 statsPer90["interceptions"] = filteredStats["interceptions"] / minutesOverNinety;
                 statsPer90["succTackles"] = filteredStats["succTackles"] / minutesOverNinety;
             }
@@ -307,7 +321,6 @@ export function calculateStats(filteredStats, playerCode = undefined){
             statsPer90["dribbleTackleRate"] = (filteredStats["succDribbleTackles"] / filteredStats["attDribbleTackles"]) * 100;
             statsPer90["succAerials"] = filteredStats["succAerials"] / minutesOverNinety;
             statsPer90["aerialSuccRate"] = (filteredStats["succAerials"] / filteredStats["attAerials"]) * 100;
-            statsPer90["succPressures"] = filteredStats["succPressures"] / minutesOverNinety;
 
             if (padjTypes['offensive']){
                 statsPer90["padjPFT"] = filteredStats["pft"] / touchesOverHundred;
@@ -319,12 +332,14 @@ export function calculateStats(filteredStats, playerCode = undefined){
             }
 
             if (padjTypes['defensive']){
-                statsPer90["padjInterceptions"] = filteredStats["padjInterceptions"] / minutesOverNinety;
-                statsPer90["padjSuccTackles"] = filteredStats["padjSuccTackles"] / minutesOverNinety;
-                statsPer90["padjFouls"] = filteredStats["padjFouls"] / minutesOverNinety;
-                statsPer90["padjClearances"] = filteredStats["padjClearances"] / minutesOverNinety;
+                statsPer90["padjSuccPressures_def"] = filteredStats["padjSuccPressures_def"] / minutesOverNinety;
+                statsPer90["padjInterceptions_def"] = filteredStats["padjInterceptions_def"] / minutesOverNinety;
+                statsPer90["padjSuccTackles_def"] = filteredStats["padjSuccTackles_def"] / minutesOverNinety;
+                statsPer90["padjFouls_def"] = filteredStats["padjFouls_def"] / minutesOverNinety;
+                statsPer90["padjClearances_def"] = filteredStats["padjClearances_def"] / minutesOverNinety;
             }
             else {
+                statsPer90["succPressures"] = filteredStats["succPressures"] / minutesOverNinety;
                 statsPer90["interceptions"] = filteredStats["interceptions"] / minutesOverNinety;
                 statsPer90["succTackles"] = filteredStats["succTackles"] / minutesOverNinety;
                 statsPer90["fouls"] = filteredStats["fouls"] / minutesOverNinety;
@@ -369,9 +384,10 @@ export function calculateStats(filteredStats, playerCode = undefined){
                 statsPer90[stat] = 0;
                 percentiles[stat] = 0;
             }
-            //reverse percentile ranks for "less is better" stats
-            if (stat === "padjFouls" ||
-                stat === "fouls" ||
+            //reverse percentile ranks for "less is better" stats. TODO: Determine reversed stats using ALL_STATS reference data
+            if (stat === "fouls" ||
+                stat === "padjFouls" ||
+                stat === "padjFouls_def" ||
                 stat === "turnovers" ||
                 stat === "padjTurnovers"
             ) {

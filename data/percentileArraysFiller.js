@@ -2,6 +2,8 @@
 const path = require('path');
 const fs = require('fs');
 
+const utilities = require('../server/utilities.js');
+
 const mean = require('mathjs').mean;
 const std = require('mathjs').std;
 
@@ -35,15 +37,18 @@ var FB_CODES;
 var CB_CODES;
 var GK_CODES;
 
-var FW_PERCENTILE_DATA;
-var AM_PERCENTILE_DATA;
-var CM_PERCENTILE_DATA;
-var FB_PERCENTILE_DATA;
-var CB_PERCENTILE_DATA;
-var GK_PERCENTILE_DATA;
+var STATS_BY_POSITION;
+
+var PERCENTILE_DATA = {
+    "FW": {},
+    "AM": {},
+    "CM": {},
+    "FB": {},
+    "CB": {},
+    "GK": {},
+};
 
 var Z_SCORE_INFO;
-
 
 let setup = async () => {
 
@@ -56,123 +61,132 @@ let setup = async () => {
     CB_CODES = JSON.parse(fs.readFileSync(path.join(__dirname, `positionData/${SEASON}/CBPercentilePlayers.json`)))["codes"];
     GK_CODES = JSON.parse(fs.readFileSync(path.join(__dirname, `positionData/${SEASON}/GKPercentilePlayers.json`)))["codes"];
 
-    FW_PERCENTILE_DATA = {
-        npg: [],
-        npxg: [],
-        npxgPerShot: [],
-        succAerials: [],
-        aerialSuccRate: [],
-        boxTouches: [],
-        padjBoxTouches: [],
-        xa: [],
-        padjXA: [],
-        ppa: [],
-        padjPPA: [],
-        succDribbles: [],
-        padjSuccDribbles: [],
-        dribbleSuccRate: [],
-        turnovers: [],
-        padjTurnovers: [],
-        succPressures: [],
-        padjSuccPressures: []
-    };
+    STATS_BY_POSITION = JSON.parse(fs.readFileSync(path.join(__dirname, '/referenceData/statsByPosition.json')));
 
-    AM_PERCENTILE_DATA = {
-        npg: [],
-        npxg: [],
-        npxgPerShot: [],
-        xa: [],
-        padjXA: [],
-        sca: [],
-        padjSCA: [],
-        ppa: [],
-        padjPPA: [],
-        progDistance: [],
-        padjProgDistance: [],
-        passSuccRate: [],
-        succDribbles: [],
-        padjSuccDribbles: [],
-        dribbleSuccRate: [],
-        turnovers: [],
-        padjTurnovers: [],
-        succPressures: [],
-        padjSuccPressures: []
-    };
+    for (let position in STATS_BY_POSITION){
+        for (let i=0; i<STATS_BY_POSITION[position].length; i++){
+            let stat = STATS_BY_POSITION[position][i];
+            PERCENTILE_DATA[position][stat] = [];
+        }
+    }
 
-    CM_PERCENTILE_DATA = {
-        xa: [],
-        padjXA: [],
-        sca:[],
-        padjSCA: [],
-        pft: [],
-        padjPFT: [],
-        progDistance: [],
-        padjProgDistance: [],
-        passSuccRate: [],
-        succDribbles: [],
-        padjSuccDribbles: [],
-        dribbleSuccRate: [],
-        turnovers: [],
-        padjTurnovers: [],
-        succPressures: [],
-        padjSuccPressures: [],
-        interceptions: [],
-        padjInterceptions: [],
-        succTackles: [],
-        padjSuccTackles: [],
-        dribbleTackleRate: []
-    };
-
-    FB_PERCENTILE_DATA = {
-        xa: [],
-        padjXA: [],
-        pft: [],
-        padjPFT: [],
-        progDistance: [],
-        padjProgDistance: [],
-        passSuccRate: [],
-        succDribbles: [],
-        padjSuccDribbles: [],
-        dribbleSuccRate: [],
-        turnovers: [],
-        padjTurnovers: [],
-        succPressures: [],
-        padjSuccPressures: [],
-        interceptions: [],
-        padjInterceptions: [],
-        succTackles: [],
-        padjSuccTackles: [],
-        dribbleTackleRate: [],
-        aerialSuccRate: []
-    };
-
-    CB_PERCENTILE_DATA = {
-        pft: [],
-        padjPFT: [],
-        progDistance: [],
-        padjProgDistance: [],
-        passSuccRate: [],
-        longPassSuccRate: [],
-        succPressures: [],
-        padjSuccPressures: [],
-        interceptions: [],
-        padjInterceptions: [],
-        succTackles: [],
-        padjSuccTackles: [],
-        dribbleTackleRate: [],
-        fouls: [],
-        padjFouls: [],
-        succAerials: [],
-        aerialSuccRate: [],
-        clearances: [],
-        padjClearances: []
-    };
-
-    GK_PERCENTILE_DATA = {
-        gsaa: [],
-        crossStopRate: [],
-        launchedPassSuccRate: []
-    };
+    // FW_PERCENTILE_DATA = {
+    //     npg: [],
+    //     npxg: [],
+    //     npxgPerShot: [],
+    //     succAerials: [],
+    //     aerialSuccRate: [],
+    //     boxTouches: [],
+    //     padjBoxTouches: [],
+    //     xa: [],
+    //     padjXA: [],
+    //     ppa: [],
+    //     padjPPA: [],
+    //     succDribbles: [],
+    //     padjSuccDribbles: [],
+    //     dribbleSuccRate: [],
+    //     turnovers: [],
+    //     padjTurnovers: [],
+    //     succPressures: [],
+    //     padjSuccPressures: []
+    // };
+    //
+    // AM_PERCENTILE_DATA = {
+    //     npg: [],
+    //     npxg: [],
+    //     npxgPerShot: [],
+    //     xa: [],
+    //     padjXA: [],
+    //     sca: [],
+    //     padjSCA: [],
+    //     ppa: [],
+    //     padjPPA: [],
+    //     progDistance: [],
+    //     padjProgDistance: [],
+    //     passSuccRate: [],
+    //     succDribbles: [],
+    //     padjSuccDribbles: [],
+    //     dribbleSuccRate: [],
+    //     turnovers: [],
+    //     padjTurnovers: [],
+    //     succPressures: [],
+    //     padjSuccPressures: []
+    // };
+    //
+    // CM_PERCENTILE_DATA = {
+    //     xa: [],
+    //     padjXA: [],
+    //     sca:[],
+    //     padjSCA: [],
+    //     pft: [],
+    //     padjPFT: [],
+    //     progDistance: [],
+    //     padjProgDistance: [],
+    //     passSuccRate: [],
+    //     succDribbles: [],
+    //     padjSuccDribbles: [],
+    //     dribbleSuccRate: [],
+    //     turnovers: [],
+    //     padjTurnovers: [],
+    //     succPressures: [],
+    //     padjSuccPressures: [],
+    //     interceptions: [],
+    //     padjInterceptions: [],
+    //     succTackles: [],
+    //     padjSuccTackles: [],
+    //     dribbleTackleRate: []
+    // };
+    //
+    // FB_PERCENTILE_DATA = {
+    //     xa: [],
+    //     padjXA: [],
+    //     pft: [],
+    //     padjPFT: [],
+    //     progDistance: [],
+    //     padjProgDistance: [],
+    //     passSuccRate: [],
+    //     succDribbles: [],
+    //     padjSuccDribbles: [],
+    //     dribbleSuccRate: [],
+    //     turnovers: [],
+    //     padjTurnovers: [],
+    //     succPressures: [],
+    //     padjSuccPressures: [],
+    //     interceptions: [],
+    //     padjInterceptions: [],
+    //     succTackles: [],
+    //     padjSuccTackles: [],
+    //     dribbleTackleRate: [],
+    //     aerialSuccRate: []
+    // };
+    //
+    // CB_PERCENTILE_DATA = {
+    //     pft: [],
+    //     padjPFT: [],
+    //     progDistance: [],
+    //     padjProgDistance: [],
+    //     passSuccRate: [],
+    //     longPassSuccRate: [],
+    //     succPressures: [],
+    //     padjSuccPressures: [],
+    //     interceptions: [],
+    //     padjInterceptions: [],
+    //     succTackles: [],
+    //     padjSuccTackles: [],
+    //     dribbleTackleRate: [],
+    //     fouls: [],
+    //     padjFouls: [],
+    //     succAerials: [],
+    //     aerialSuccRate: [],
+    //     clearances: [],
+    //     padjClearances: []
+    // };
+    //
+    // GK_PERCENTILE_DATA = {
+    //     gsaa: [],
+    //     crossStopRate: [],
+    //     launchedPassSuccRate: []
+    // };
 
     Z_SCORE_INFO = {
         "FW": {},
@@ -192,38 +206,21 @@ let calculateFWStats = async () => {
 
         let code = FW_CODES[i];
         let aggregatedStats = aggregateStats(PROCESSED[code]["stats"][SEASON]);
-        let minutes = aggregatedStats["minutes"];
-        let touches = aggregatedStats["touches"];
 
-        addToArray(FW_PERCENTILE_DATA["npg"], (aggregatedStats["npg"] / (minutes/90)));
-        addToArray(FW_PERCENTILE_DATA["npxg"], (aggregatedStats["npxg"] / (minutes/90)));
-        addToArray(FW_PERCENTILE_DATA["npxgPerShot"], (aggregatedStats["npxg"] / aggregatedStats["shots"]));
-        addToArray(FW_PERCENTILE_DATA["succAerials"], (aggregatedStats["succAerials"] / (minutes/90)));
-        addToArray(FW_PERCENTILE_DATA["aerialSuccRate"], ((aggregatedStats["succAerials"] / aggregatedStats["attAerials"]) * 100));
+        let averageStats = utilities.getStatAverages(aggregatedStats, false);
 
-        addToArray(FW_PERCENTILE_DATA["boxTouches"], (aggregatedStats["boxTouches"] / (minutes/90)));
-        addToArray(FW_PERCENTILE_DATA["padjBoxTouches"], (aggregatedStats["boxTouches"] / (touches/100)));
+        for (let i=0; i<STATS_BY_POSITION["FW"].length; i++){
 
-        addToArray(FW_PERCENTILE_DATA["xa"], (aggregatedStats["xa"] / (minutes/90)));
-        addToArray(FW_PERCENTILE_DATA["padjXA"], (aggregatedStats["xa"] / (touches/100)));
+            let stat = STATS_BY_POSITION["FW"][i];
+            addToArray(PERCENTILE_DATA["FW"][stat], averageStats[stat]);
 
-        addToArray(FW_PERCENTILE_DATA["ppa"], (aggregatedStats["ppa"] / (minutes/90)));
-        addToArray(FW_PERCENTILE_DATA["padjPPA"], (aggregatedStats["ppa"] / (touches/100)));
+        }
 
-        addToArray(FW_PERCENTILE_DATA["succDribbles"], (aggregatedStats["succDribbles"] / (minutes/90)));
-        addToArray(FW_PERCENTILE_DATA["padjSuccDribbles"], (aggregatedStats["succDribbles"] / (touches/100)));
-        addToArray(FW_PERCENTILE_DATA["dribbleSuccRate"], ((aggregatedStats["succDribbles"] / aggregatedStats["attDribbles"]) * 100));
-
-        addToArray(FW_PERCENTILE_DATA["turnovers"], ((aggregatedStats["timesDispossessed"] + aggregatedStats["miscontrols"]) / (minutes/90)));
-        addToArray(FW_PERCENTILE_DATA["padjTurnovers"], ((aggregatedStats["timesDispossessed"] + aggregatedStats["miscontrols"]) / (touches/100)));
-
-        addToArray(FW_PERCENTILE_DATA["succPressures"], (aggregatedStats["succPressures"] / (minutes/90)));
-        addToArray(FW_PERCENTILE_DATA["padjSuccPressures"], (aggregatedStats["padjSuccPressures"] / (minutes/90)));
     }
 
-    populateZScoreInfo("FW", FW_PERCENTILE_DATA);
+    populateZScoreInfo("FW", PERCENTILE_DATA["FW"]);
 
-    await saveData(FW_PERCENTILE_DATA, "FW");
+    await saveData(PERCENTILE_DATA["FW"], "FW");
 
 };
 
@@ -234,42 +231,21 @@ let calculateAMStats = async () => {
 
         let code = AM_CODES[i];
         let aggregatedStats = aggregateStats(PROCESSED[code]["stats"][SEASON]);
-        let minutes = aggregatedStats["minutes"];
-        let touches = aggregatedStats["touches"];
 
-        addToArray(AM_PERCENTILE_DATA["npg"], (aggregatedStats["npg"] / (minutes/90)));
-        addToArray(AM_PERCENTILE_DATA["npxg"], (aggregatedStats["npxg"] / (minutes/90)));
-        addToArray(AM_PERCENTILE_DATA["npxgPerShot"], (aggregatedStats["npxg"] / aggregatedStats["shots"]));
+        let averageStats = utilities.getStatAverages(aggregatedStats, false);
 
-        addToArray(AM_PERCENTILE_DATA["xa"], (aggregatedStats["xa"] / (minutes/90)));
-        addToArray(AM_PERCENTILE_DATA["padjXA"], (aggregatedStats["xa"] / (touches/100)));
+        for (let i=0; i<STATS_BY_POSITION["AM"].length; i++){
 
-        addToArray(AM_PERCENTILE_DATA["sca"], (aggregatedStats["sca"] / (minutes/90)));
-        addToArray(AM_PERCENTILE_DATA["padjSCA"], (aggregatedStats["sca"] / (touches/100)));
+            let stat = STATS_BY_POSITION["AM"][i];
+            addToArray(PERCENTILE_DATA["AM"][stat], averageStats[stat]);
 
-        addToArray(AM_PERCENTILE_DATA["ppa"], (aggregatedStats["ppa"] / (minutes/90)));
-        addToArray(AM_PERCENTILE_DATA["padjPPA"], (aggregatedStats["ppa"] / (touches/100)));
-
-        addToArray(AM_PERCENTILE_DATA["progDistance"], (aggregatedStats["progDistance"] / (minutes/90)));
-        addToArray(AM_PERCENTILE_DATA["padjProgDistance"], (aggregatedStats["progDistance"] / (touches/100)));
-
-        addToArray(AM_PERCENTILE_DATA["passSuccRate"], ((aggregatedStats["succPasses"] / aggregatedStats["attPasses"]) * 100));
-
-        addToArray(AM_PERCENTILE_DATA["succDribbles"], (aggregatedStats["succDribbles"] / (minutes/90)));
-        addToArray(AM_PERCENTILE_DATA["padjSuccDribbles"], (aggregatedStats["succDribbles"] / (touches/100)));
-        addToArray(AM_PERCENTILE_DATA["dribbleSuccRate"], ((aggregatedStats["succDribbles"] / aggregatedStats["attDribbles"]) * 100));
-
-        addToArray(AM_PERCENTILE_DATA["turnovers"], ((aggregatedStats["timesDispossessed"] + aggregatedStats["miscontrols"]) / (minutes/90)));
-        addToArray(AM_PERCENTILE_DATA["padjTurnovers"], ((aggregatedStats["timesDispossessed"] + aggregatedStats["miscontrols"]) / (touches/100)));
-
-        addToArray(AM_PERCENTILE_DATA["succPressures"], (aggregatedStats["succPressures"] / (minutes/90)));
-        addToArray(AM_PERCENTILE_DATA["padjSuccPressures"], (aggregatedStats["padjSuccPressures"] / (minutes/90)));
+        }
 
     }
 
-    populateZScoreInfo("AM", AM_PERCENTILE_DATA);
+    populateZScoreInfo("AM", PERCENTILE_DATA["AM"]);
 
-    await saveData(AM_PERCENTILE_DATA, "AM");
+    await saveData(PERCENTILE_DATA["AM"], "AM");
 
 };
 
@@ -280,45 +256,21 @@ let calculateCMStats = async () => {
 
         let code = CM_CODES[i];
         let aggregatedStats = aggregateStats(PROCESSED[code]["stats"][SEASON]);
-        let minutes = aggregatedStats["minutes"];
-        let touches = aggregatedStats["touches"];
 
-        addToArray(CM_PERCENTILE_DATA["xa"], (aggregatedStats["xa"] / (minutes/90)));
-        addToArray(CM_PERCENTILE_DATA["padjXA"], (aggregatedStats["xa"] / (touches/100)));
+        let averageStats = utilities.getStatAverages(aggregatedStats, false);
 
-        addToArray(CM_PERCENTILE_DATA["sca"], (aggregatedStats["sca"] / (minutes/90)));
-        addToArray(CM_PERCENTILE_DATA["padjSCA"], (aggregatedStats["sca"] / (touches/100)));
+        for (let i=0; i<STATS_BY_POSITION["CM"].length; i++){
 
-        addToArray(CM_PERCENTILE_DATA["pft"], (aggregatedStats["pft"] / (minutes/90)));
-        addToArray(CM_PERCENTILE_DATA["padjPFT"], (aggregatedStats["pft"] / (touches/100)));
+            let stat = STATS_BY_POSITION["CM"][i];
+            addToArray(PERCENTILE_DATA["CM"][stat], averageStats[stat]);
 
-        addToArray(CM_PERCENTILE_DATA["progDistance"], (aggregatedStats["progDistance"] / (minutes/90)));
-        addToArray(CM_PERCENTILE_DATA["padjProgDistance"], (aggregatedStats["progDistance"] / (touches/100)));
-
-        addToArray(CM_PERCENTILE_DATA["passSuccRate"], ((aggregatedStats["succPasses"] / aggregatedStats["attPasses"]) * 100));
-
-        addToArray(CM_PERCENTILE_DATA["succDribbles"], (aggregatedStats["succDribbles"] / (minutes/90)));
-        addToArray(CM_PERCENTILE_DATA["padjSuccDribbles"], (aggregatedStats["succDribbles"] / (touches/100)));
-        addToArray(CM_PERCENTILE_DATA["dribbleSuccRate"], ((aggregatedStats["succDribbles"] / aggregatedStats["attDribbles"]) * 100));
-
-        addToArray(CM_PERCENTILE_DATA["turnovers"], ((aggregatedStats["timesDispossessed"] + aggregatedStats["miscontrols"]) / (minutes/90)));
-        addToArray(CM_PERCENTILE_DATA["padjTurnovers"], ((aggregatedStats["timesDispossessed"] + aggregatedStats["miscontrols"]) / (touches/100)));
-
-        addToArray(CM_PERCENTILE_DATA["succPressures"], (aggregatedStats["succPressures"] / (minutes/90)));
-        addToArray(CM_PERCENTILE_DATA["padjSuccPressures"], (aggregatedStats["padjSuccPressures"] / (minutes/90)));
-
-        addToArray(CM_PERCENTILE_DATA["interceptions"], (aggregatedStats["interceptions"] / (minutes/90)));
-        addToArray(CM_PERCENTILE_DATA["padjInterceptions"], (aggregatedStats["padjInterceptions"] / (minutes/90)));
-
-        addToArray(CM_PERCENTILE_DATA["succTackles"], (aggregatedStats["succTackles"] / (minutes/90)));
-        addToArray(CM_PERCENTILE_DATA["padjSuccTackles"], (aggregatedStats["padjSuccTackles"] / (minutes/90)));
-        addToArray(CM_PERCENTILE_DATA["dribbleTackleRate"], ((aggregatedStats["succDribbleTackles"] / aggregatedStats["attDribbleTackles"]) * 100));
+        }
 
     }
 
-    populateZScoreInfo("CM", CM_PERCENTILE_DATA);
+    populateZScoreInfo("CM", PERCENTILE_DATA["CM"]);
 
-    await saveData(CM_PERCENTILE_DATA, "CM");
+    await saveData(PERCENTILE_DATA["CM"], "CM");
 
 };
 
@@ -333,44 +285,21 @@ let calculateFBStats = async () => {
         }
 
         let aggregatedStats = aggregateStats(PROCESSED[code]["stats"][SEASON]);
-        let minutes = aggregatedStats["minutes"];
-        let touches = aggregatedStats["touches"];
 
-        addToArray(FB_PERCENTILE_DATA["xa"], (aggregatedStats["xa"] / (minutes/90)));
-        addToArray(FB_PERCENTILE_DATA["padjXA"], (aggregatedStats["xa"] / (touches/100)));
+        let averageStats = utilities.getStatAverages(aggregatedStats, false);
 
-        addToArray(FB_PERCENTILE_DATA["pft"], (aggregatedStats["pft"] / (minutes/90)));
-        addToArray(FB_PERCENTILE_DATA["padjPFT"], (aggregatedStats["pft"] / (touches/100)));
+        for (let i=0; i<STATS_BY_POSITION["FB"].length; i++){
 
-        addToArray(FB_PERCENTILE_DATA["progDistance"], (aggregatedStats["progDistance"] / (minutes/90)));
-        addToArray(FB_PERCENTILE_DATA["padjProgDistance"], (aggregatedStats["progDistance"] / (touches/100)));
+            let stat = STATS_BY_POSITION["FB"][i];
+            addToArray(PERCENTILE_DATA["FB"][stat], averageStats[stat]);
 
-        addToArray(FB_PERCENTILE_DATA["passSuccRate"], ((aggregatedStats["succPasses"] / aggregatedStats["attPasses"]) * 100));
-
-        addToArray(FB_PERCENTILE_DATA["succDribbles"], (aggregatedStats["succDribbles"] / (minutes/90)));
-        addToArray(FB_PERCENTILE_DATA["padjSuccDribbles"], (aggregatedStats["succDribbles"] / (touches/100)));
-        addToArray(FB_PERCENTILE_DATA["dribbleSuccRate"], ((aggregatedStats["succDribbles"] / aggregatedStats["attDribbles"]) * 100));
-
-        addToArray(FB_PERCENTILE_DATA["turnovers"], ((aggregatedStats["timesDispossessed"] + aggregatedStats["miscontrols"]) / (minutes/90)));
-        addToArray(FB_PERCENTILE_DATA["padjTurnovers"], ((aggregatedStats["timesDispossessed"] + aggregatedStats["miscontrols"]) / (touches/100)));
-
-        addToArray(FB_PERCENTILE_DATA["succPressures"], (aggregatedStats["succPressures"] / (minutes/90)));
-        addToArray(FB_PERCENTILE_DATA["padjSuccPressures"], (aggregatedStats["padjSuccPressures"] / (minutes/90)));
-
-        addToArray(FB_PERCENTILE_DATA["interceptions"], (aggregatedStats["interceptions"] / (minutes/90)));
-        addToArray(FB_PERCENTILE_DATA["padjInterceptions"], (aggregatedStats["padjInterceptions"] / (minutes/90)));
-
-        addToArray(FB_PERCENTILE_DATA["succTackles"], (aggregatedStats["succTackles"] / (minutes/90)));
-        addToArray(FB_PERCENTILE_DATA["padjSuccTackles"], (aggregatedStats["padjSuccTackles"] / (minutes/90)));
-        addToArray(FB_PERCENTILE_DATA["dribbleTackleRate"], ((aggregatedStats["succDribbleTackles"] / aggregatedStats["attDribbleTackles"]) * 100));
-
-        addToArray(FB_PERCENTILE_DATA["aerialSuccRate"], ((aggregatedStats["succAerials"] / aggregatedStats["attAerials"]) * 100));
+        }
 
     }
 
-    populateZScoreInfo("FB", FB_PERCENTILE_DATA);
+    populateZScoreInfo("FB", PERCENTILE_DATA["FB"]);
 
-    await saveData(FB_PERCENTILE_DATA, "FB");
+    await saveData(PERCENTILE_DATA["FB"], "FB");
 
 };
 
@@ -381,43 +310,21 @@ let calculateCBStats = async () => {
 
         let code = CB_CODES[i];
         let aggregatedStats = aggregateStats(PROCESSED[code]["stats"][SEASON]);
-        let minutes = aggregatedStats["minutes"];
-        let touches = aggregatedStats["touches"];
 
-        addToArray(CB_PERCENTILE_DATA["pft"], (aggregatedStats["pft"] / (minutes/90)));
-        addToArray(CB_PERCENTILE_DATA["padjPFT"], (aggregatedStats["pft"] / (touches/100)));
+        let averageStats = utilities.getStatAverages(aggregatedStats, false);
 
-        addToArray(CB_PERCENTILE_DATA["progDistance"], (aggregatedStats["progDistance"] / (minutes/90)));
-        addToArray(CB_PERCENTILE_DATA["padjProgDistance"], (aggregatedStats["progDistance"] / (touches/100)));
+        for (let i=0; i<STATS_BY_POSITION["CB"].length; i++){
 
-        addToArray(CB_PERCENTILE_DATA["passSuccRate"], ((aggregatedStats["succPasses"] / aggregatedStats["attPasses"]) * 100));
+            let stat = STATS_BY_POSITION["CB"][i];
+            addToArray(PERCENTILE_DATA["CB"][stat], averageStats[stat]);
 
-        addToArray(CB_PERCENTILE_DATA["longPassSuccRate"], ((aggregatedStats["succLongPasses"] / aggregatedStats["attLongPasses"]) * 100));
-
-        addToArray(CB_PERCENTILE_DATA["succPressures"], (aggregatedStats["succPressures"] / (minutes/90)));
-        addToArray(CB_PERCENTILE_DATA["padjSuccPressures"], (aggregatedStats["padjSuccPressures"] / (minutes/90)));
-
-        addToArray(CB_PERCENTILE_DATA["interceptions"], (aggregatedStats["interceptions"] / (minutes/90)));
-        addToArray(CB_PERCENTILE_DATA["padjInterceptions"], (aggregatedStats["padjInterceptions"] / (minutes/90)));
-
-        addToArray(CB_PERCENTILE_DATA["succTackles"], (aggregatedStats["succTackles"] / (minutes/90)));
-        addToArray(CB_PERCENTILE_DATA["padjSuccTackles"], (aggregatedStats["padjSuccTackles"] / (minutes/90)));
-        addToArray(CB_PERCENTILE_DATA["dribbleTackleRate"], ((aggregatedStats["succDribbleTackles"] / aggregatedStats["attDribbleTackles"]) * 100));
-
-        addToArray(CB_PERCENTILE_DATA["fouls"], (aggregatedStats["fouls"] / (minutes/90)));
-        addToArray(CB_PERCENTILE_DATA["padjFouls"], (aggregatedStats["padjFouls"] / (minutes/90)));
-
-        addToArray(CB_PERCENTILE_DATA["succAerials"], (aggregatedStats["succAerials"] / (minutes/90)));
-        addToArray(CB_PERCENTILE_DATA["aerialSuccRate"], ((aggregatedStats["succAerials"] / aggregatedStats["attAerials"]) * 100));
-
-        addToArray(CB_PERCENTILE_DATA["clearances"], (aggregatedStats["clearances"] / (minutes/90)));
-        addToArray(CB_PERCENTILE_DATA["padjClearances"], (aggregatedStats["padjClearances"] / (minutes/90)));
+        }
 
     }
 
-    populateZScoreInfo("CB", CB_PERCENTILE_DATA);
+    populateZScoreInfo("CB", PERCENTILE_DATA["CB"]);
 
-    await saveData(CB_PERCENTILE_DATA, "CB");
+    await saveData(PERCENTILE_DATA["CB"], "CB");
 
 };
 
@@ -429,21 +336,28 @@ let calculateGKStats = async () => {
         let code = GK_CODES[i];
         let aggregatedStats = aggregateStats(PROCESSED[code]["stats"][SEASON]);
 
-        addToArray(GK_PERCENTILE_DATA["gsaa"], (((aggregatedStats["psxg"]-aggregatedStats["goalsAgainst"])/aggregatedStats["sota"]) * 100));
-        addToArray(GK_PERCENTILE_DATA["crossStopRate"], ((aggregatedStats["stoppedCrosses"] / aggregatedStats["attCrosses"]) * 100));
-        addToArray(GK_PERCENTILE_DATA["launchedPassSuccRate"], ((aggregatedStats["succLaunchedPasses"] / aggregatedStats["attLaunchedPasses"]) * 100));
+        let averageStats = utilities.getStatAverages(aggregatedStats, true);
+
+        for (let i=0; i<STATS_BY_POSITION["GK"].length; i++){
+
+            let stat = STATS_BY_POSITION["GK"][i];
+            addToArray(PERCENTILE_DATA["GK"][stat], averageStats[stat]);
+
+        }
 
     }
 
-    populateZScoreInfo("GK", GK_PERCENTILE_DATA);
+    populateZScoreInfo("GK", PERCENTILE_DATA["GK"]);
 
-    await saveData(GK_PERCENTILE_DATA, "GK");
+    await saveData(PERCENTILE_DATA["GK"], "GK");
 
 };
 
 
 let aggregateStats = (stats) => {
+
     let aggregatedStats = {};
+
     for (let competition in stats){
         for (let stat in stats[competition]){
             if (!(stat in aggregatedStats)){
@@ -454,7 +368,9 @@ let aggregateStats = (stats) => {
             }
         }
     }
+
     return aggregatedStats;
+
 };
 
 

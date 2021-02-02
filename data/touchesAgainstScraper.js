@@ -217,13 +217,29 @@ let retrieveJSON = async (page, competitionName) => {
 
             touchesAgainstStats[teamName] = {};
 
-            touchesAgainstStats[teamName]["matchesPlayed"] = parseInt(tds_90s[i].innerHTML);
-            touchesAgainstStats[teamName]["defPenArea"] = parseInt(tds_def_pen_area[i].innerHTML);
-            touchesAgainstStats[teamName]["def3rd"] = parseInt(tds_def_3rd[i].innerHTML);
-            touchesAgainstStats[teamName]["mid3rd"] = parseInt(tds_mid_3rd[i].innerHTML);
-            touchesAgainstStats[teamName]["att3rd"] = parseInt(tds_att_3rd[i].innerHTML);
-            touchesAgainstStats[teamName]["attPenArea"] = parseInt(tds_att_pen_area[i].innerHTML);
-            touchesAgainstStats[teamName]["live"] = parseInt(tds_live[i].innerHTML);
+            let matchesPlayed = parseInt(tds_90s[i].innerHTML);
+
+            touchesAgainstStats[teamName]["matchesPlayed"] = matchesPlayed;
+
+            touchesAgainstStats[teamName]["defPenArea_total"] = parseInt(tds_def_pen_area[i].innerHTML);
+            touchesAgainstStats[teamName]["def3rd_total"] = parseInt(tds_def_3rd[i].innerHTML);
+            touchesAgainstStats[teamName]["mid3rd_total"] = parseInt(tds_mid_3rd[i].innerHTML);
+            touchesAgainstStats[teamName]["att3rd_total"] = parseInt(tds_att_3rd[i].innerHTML);
+            touchesAgainstStats[teamName]["attPenArea_total"] = parseInt(tds_att_pen_area[i].innerHTML);
+            touchesAgainstStats[teamName]["live_total"] = parseInt(tds_live[i].innerHTML);
+
+            touchesAgainstStats[teamName]["def2/3ds_total"] = touchesAgainstStats[teamName]["def3rd_total"] + touchesAgainstStats[teamName]["mid3rd_total"];
+            touchesAgainstStats[teamName]["att2/3ds_total"] = touchesAgainstStats[teamName]["mid3rd_total"] + touchesAgainstStats[teamName]["att3rd_total"];
+
+            touchesAgainstStats[teamName]["defPenArea_per90"] = parseInt(tds_def_pen_area[i].innerHTML) / matchesPlayed;
+            touchesAgainstStats[teamName]["def3rd_per90"] = parseInt(tds_def_3rd[i].innerHTML) / matchesPlayed;
+            touchesAgainstStats[teamName]["mid3rd_per90"] = parseInt(tds_mid_3rd[i].innerHTML) / matchesPlayed;
+            touchesAgainstStats[teamName]["att3rd_per90"] = parseInt(tds_att_3rd[i].innerHTML) / matchesPlayed;
+            touchesAgainstStats[teamName]["attPenArea_per90"] = parseInt(tds_att_pen_area[i].innerHTML) / matchesPlayed;
+            touchesAgainstStats[teamName]["live_per90"] = parseInt(tds_live[i].innerHTML) / matchesPlayed;
+
+            touchesAgainstStats[teamName]["def2/3ds_per90"] = touchesAgainstStats[teamName]["def3rd_per90"] + touchesAgainstStats[teamName]["mid3rd_per90"];
+            touchesAgainstStats[teamName]["att2/3ds_per90"] = touchesAgainstStats[teamName]["mid3rd_per90"] + touchesAgainstStats[teamName]["att3rd_per90"];
 
         }
 

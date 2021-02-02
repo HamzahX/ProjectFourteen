@@ -17,7 +17,7 @@
         "turnovers",
         "padjTurnovers",
         "succPressures",
-        "padjSuccPressures"
+        "padjSuccPressures_att"
     ],
     "AM": [
         "npg",
@@ -91,18 +91,18 @@
         "passSuccRate",
         "longPassSuccRate",
         "succPressures",
-        "padjSuccPressures",
+        "padjSuccPressures_def",
         "interceptions",
-        "padjInterceptions",
+        "padjInterceptions_def",
         "succTackles",
-        "padjSuccTackles",
+        "padjSuccTackles_def",
         "dribbleTackleRate",
         "fouls",
-        "padjFouls",
+        "padjFouls_def",
         "succAerials",
         "aerialSuccRate",
         "clearances",
-        "padjClearances"
+        "padjClearances_def"
     ],
     "GK": [
         "gsaa",

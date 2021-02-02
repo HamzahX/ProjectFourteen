@@ -76,6 +76,27 @@ function calculateAverageStats(aggregatedStats, positions, outfieldGKStats, STAT
 
     if (positions.includes("GK") && outfieldGKStats === null)
     {
+        averageStats = getStatAverages(aggregatedStats, true);
+    }
+    else {
+        averageStats = getStatAverages(aggregatedStats, false);
+    }
+
+    for (let stat in averageStats){
+        let precision = STATS_REFERENCE[stat]["precision"];
+        averageStats[stat] = truncateNum(averageStats[stat], precision);
+    }
+
+    return averageStats;
+
+}
+
+function getStatAverages(aggregatedStats, isGoalkeeper) {
+
+    let averageStats = {};
+
+    if (isGoalkeeper)
+    {
         averageStats["gsaa"] = returnFinite(((aggregatedStats["psxg"] - aggregatedStats["goalsAgainst"]) / aggregatedStats["sota"]) * 100);
         averageStats["crossStopRate"] = returnFinite((aggregatedStats["stoppedCrosses"] / aggregatedStats["attCrosses"]) * 100);
         averageStats["launchedPassSuccRate"] = returnFinite((aggregatedStats["succLaunchedPasses"] / aggregatedStats["attLaunchedPasses"]) * 100);
@@ -110,6 +131,8 @@ function calculateAverageStats(aggregatedStats, positions, outfieldGKStats, STAT
 
         averageStats["succPressures"] = returnFinite(aggregatedStats["succPressures"] / minutesOverNinety);
         averageStats["padjSuccPressures"] = returnFinite(aggregatedStats["padjSuccPressures"] / minutesOverNinety);
+        averageStats["padjSuccPressures_att"] = returnFinite(aggregatedStats["padjSuccPressures_att"] / minutesOverNinety);
+        averageStats["padjSuccPressures_def"] = returnFinite(aggregatedStats["padjSuccPressures_def"] / minutesOverNinety);
 
         averageStats["sca"] = returnFinite(aggregatedStats["sca"] / minutesOverNinety);
         averageStats["padjSCA"] = returnFinite(aggregatedStats["sca"] / touchesOverHundred);
@@ -124,24 +147,24 @@ function calculateAverageStats(aggregatedStats, positions, outfieldGKStats, STAT
 
         averageStats["interceptions"] = returnFinite(aggregatedStats["interceptions"] / minutesOverNinety);
         averageStats["padjInterceptions"] = returnFinite(aggregatedStats["padjInterceptions"] / minutesOverNinety);
+        averageStats["padjInterceptions_def"] = returnFinite(aggregatedStats["padjInterceptions_def"] / minutesOverNinety);
 
         averageStats["succTackles"] = returnFinite(aggregatedStats["succTackles"] / minutesOverNinety);
         averageStats["padjSuccTackles"] = returnFinite(aggregatedStats["padjSuccTackles"] / minutesOverNinety);
+        averageStats["padjSuccTackles_def"] = returnFinite(aggregatedStats["padjSuccTackles_def"] / minutesOverNinety);
+
         averageStats["dribbleTackleRate"] = returnFinite((aggregatedStats["succDribbleTackles"] / aggregatedStats["attDribbleTackles"]) * 100);
 
         averageStats["longPassSuccRate"] = returnFinite((aggregatedStats["succLongPasses"] / aggregatedStats["attLongPasses"]) * 100);
 
         averageStats["fouls"] = returnFinite(aggregatedStats["fouls"] / minutesOverNinety);
         averageStats["padjFouls"] = returnFinite(aggregatedStats["padjFouls"] / minutesOverNinety);
+        averageStats["padjFouls_def"] = returnFinite(aggregatedStats["padjFouls_def"] / minutesOverNinety);
 
         averageStats["clearances"] = returnFinite(aggregatedStats["clearances"] / minutesOverNinety);
         averageStats["padjClearances"] = returnFinite(aggregatedStats["padjClearances"] / minutesOverNinety);
+        averageStats["padjClearances_def"] = returnFinite(aggregatedStats["padjClearances_def"] / minutesOverNinety);
 
-    }
-
-    for (let stat in averageStats){
-        let precision = STATS_REFERENCE[stat]["precision"];
-        averageStats[stat] = truncateNum(averageStats[stat], precision);
     }
 
     return averageStats;
@@ -218,5 +241,6 @@ let truncateNum = (value, precision) => {
 module.exports = {
     aggregateStats,
     calculateAverageStats,
+    getStatAverages,
     calculatePercentileRanks
 };

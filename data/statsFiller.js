@@ -3,6 +3,8 @@ const path = require('path');
 const fs = require('fs');
 const countryCodes = require('./countryCodes.js');
 
+const mean = require('mathjs').mean;
+
 const scriptName = path.basename(__filename);
 const supportedSeasons = ["18-19", "19-20", "20-21"];
 
@@ -57,6 +59,12 @@ var POSSESSION_DATA; //team average possession data
 var TOUCHES_AGAINST_DATA;
 var POSITION_DATA = []; //player position arrays
 
+var AVERAGE_TOUCHES_AGAINST = {};
+var TOUCHES_AGAINST_BELOW_AVERAGE = {};
+
+var MEAN_POSSESSION_DIST_FROM_AVERAGE;
+var MEAN_TOUCHES_AGAINST_DISTANCES_FROM_AVERAGE = {};
+var ADJUSTMENT_COEFFICIENTS = {};
 
 let setup = async () => {
 
@@ -96,7 +104,76 @@ let setup = async () => {
         FBREF_TO_WHOSCORED_TEAMS = JSON.parse(fs.readFileSync(path.join(__dirname, '/teamMappingData/fbrefToWhoscored.json')));
 
         POSSESSION_DATA = JSON.parse(fs.readFileSync(path.join(__dirname, `possessionData/${SEASON}.json`)));
+
+        let possessionDistancesFromAverage = [];
+
+        for (let competition in POSSESSION_DATA){
+            for (let team in POSSESSION_DATA[competition]){
+                possessionDistancesFromAverage.push(Math.abs(POSSESSION_DATA[competition][team] - 50))
+            }
+        }
+
+        MEAN_POSSESSION_DIST_FROM_AVERAGE = mean(possessionDistancesFromAverage);
+
+        //console.log(MEAN_POSSESSION_DIST_FROM_AVERAGE);
+
         TOUCHES_AGAINST_DATA = JSON.parse(fs.readFileSync(path.join(__dirname, `touchesAgainstData/${SEASON}.json`)));
+
+        let firstCompetition = Object.keys(TOUCHES_AGAINST_DATA)[0];
+        let firstTeam = Object.keys(TOUCHES_AGAINST_DATA[firstCompetition])[0];
+        let touchTypes = Object.keys(TOUCHES_AGAINST_DATA[firstCompetition][firstTeam]);
+
+        for (let i=0; i<touchTypes.length; i++){
+
+            let touchType = touchTypes[i];
+
+            let allValues = [];
+
+            for (let competition in TOUCHES_AGAINST_DATA){
+                for (let team in TOUCHES_AGAINST_DATA[competition]){
+                    allValues.push(TOUCHES_AGAINST_DATA[competition][team][touchType]);
+                }
+            }
+
+            AVERAGE_TOUCHES_AGAINST[touchType] = mean(allValues);
+
+        }
+
+        //console.log(AVERAGE_TOUCHES_AGAINST);
+
+        for (let i=0; i<touchTypes.length; i++){
+
+            let touchType = touchTypes[i];
+
+            let touchesAgainstDistancesFromAverage = [];
+
+            for (let competition in TOUCHES_AGAINST_DATA){
+
+                if (TOUCHES_AGAINST_BELOW_AVERAGE[competition] === undefined)
+                    TOUCHES_AGAINST_BELOW_AVERAGE[competition] = {};
+
+                for (let team in TOUCHES_AGAINST_DATA[competition]){
+
+                    if (TOUCHES_AGAINST_BELOW_AVERAGE[competition][team] === undefined)
+                        TOUCHES_AGAINST_BELOW_AVERAGE[competition][team] = {};
+
+                    let touchesAgainstBelowAverage = AVERAGE_TOUCHES_AGAINST[touchType] - TOUCHES_AGAINST_DATA[competition][team][touchType];
+
+                    TOUCHES_AGAINST_BELOW_AVERAGE[competition][team][touchType] = touchesAgainstBelowAverage;
+
+                    touchesAgainstDistancesFromAverage.push(Math.abs(touchesAgainstBelowAverage));
+
+                }
+            }
+
+            MEAN_TOUCHES_AGAINST_DISTANCES_FROM_AVERAGE[touchType] = mean(touchesAgainstDistancesFromAverage);
+            ADJUSTMENT_COEFFICIENTS[touchType] = MEAN_POSSESSION_DIST_FROM_AVERAGE / MEAN_TOUCHES_AGAINST_DISTANCES_FROM_AVERAGE[touchType];
+
+        }
+
+        //console.log(TOUCHES_AGAINST_BELOW_AVERAGE);
+        //console.log(MEAN_TOUCHES_AGAINST_DISTANCES_FROM_AVERAGE);
+        //console.log(ADJUSTMENT_COEFFICIENTS);
 
         resolve();
 
@@ -329,6 +406,12 @@ let processEntry = (aPlayer, competitionData, competitionName, isGoalkeeper) => 
 
     let possession = POSSESSION_DATA[competitionName][whoscoredClubName];
 
+    let liveTouchesAgainstPer90BelowAverage = TOUCHES_AGAINST_BELOW_AVERAGE[competitionName][whoscoredClubName]["live_per90"];
+
+    let att2ThirdsTouchesAgainstPer90BelowAverage = TOUCHES_AGAINST_BELOW_AVERAGE[competitionName][whoscoredClubName]["att2/3ds_per90"];
+    let def2ThirdsTouchesAgainstPer90BelowAverage = TOUCHES_AGAINST_BELOW_AVERAGE[competitionName][whoscoredClubName]["def2/3ds_per90"];
+    let attPenAreaTouchesAgainstPer90BelowAverage = TOUCHES_AGAINST_BELOW_AVERAGE[competitionName][whoscoredClubName]["attPenArea_per90"];
+
     //retrieve required stats from the fbref data (exported CSVs converted to JSON)
     let stats;
     if (isGoalkeeper){
@@ -344,7 +427,9 @@ let processEntry = (aPlayer, competitionData, competitionName, isGoalkeeper) => 
         }
     }
     else {
+
         stats = {
+
             minutes: entry["standard_Min"],
             touches: entry["possession_Touches"],
             npg: entry["standard_Gls"] - entry["standard_PK"],
@@ -366,26 +451,47 @@ let processEntry = (aPlayer, competitionData, competitionName, isGoalkeeper) => 
             pft: entry["passing_1/3"],
             succLongPasses: entry["passing_Cmp__3"],
             attLongPasses: entry["passing_Att__3"],
+
             succPressures: entry["defense_Succ"],
-            padjSuccPressures: adjustForPossessionDefensive_1(entry["defense_Succ"], possession),
+            padjSuccPressures: adjustForPossessionDefensive_2(entry["defense_Succ"], liveTouchesAgainstPer90BelowAverage, "live_per90"),
+            padjSuccPressures_def: adjustForPossessionDefensive_2(entry["defense_Succ"], att2ThirdsTouchesAgainstPer90BelowAverage, "att2/3ds_per90"),
+            padjSuccPressures_att: adjustForPossessionDefensive_2(entry["defense_Succ"], def2ThirdsTouchesAgainstPer90BelowAverage, "def2/3ds_per90"),
+
             interceptions: entry["defense_Int"],
-            padjInterceptions: adjustForPossessionDefensive_1(entry["defense_Int"], possession),
+            padjInterceptions: adjustForPossessionDefensive_2(entry["defense_Int"], liveTouchesAgainstPer90BelowAverage, "live_per90"),
+            padjInterceptions_def: adjustForPossessionDefensive_2(entry["defense_Int"], att2ThirdsTouchesAgainstPer90BelowAverage, "att2/3ds_per90"),
+            padjInterceptions_att: adjustForPossessionDefensive_2(entry["defense_Int"], def2ThirdsTouchesAgainstPer90BelowAverage, "def2/3ds_per90"),
+
             succTackles: entry["defense_Tkl"],
-            padjSuccTackles: adjustForPossessionDefensive_1(entry["defense_Tkl"], possession),
+            padjSuccTackles: adjustForPossessionDefensive_2(entry["defense_Tkl"], liveTouchesAgainstPer90BelowAverage, "live_per90"),
+            padjSuccTackles_def: adjustForPossessionDefensive_2(entry["defense_Tkl"], att2ThirdsTouchesAgainstPer90BelowAverage, "att2/3ds_per90"),
+            padjSuccTackles_att: adjustForPossessionDefensive_2(entry["defense_Tkl"], def2ThirdsTouchesAgainstPer90BelowAverage, "def2/3ds_per90"),
+
             tacklesWon: entry["defense_TklW"],
-            padjTacklesWon: adjustForPossessionDefensive_1(entry["defense_TklW"], possession),
+            padjTacklesWon: adjustForPossessionDefensive_2(entry["defense_TklW"], liveTouchesAgainstPer90BelowAverage, "live_per90"),
+            padjTacklesWon_def: adjustForPossessionDefensive_2(entry["defense_TklW"], att2ThirdsTouchesAgainstPer90BelowAverage, "att2/3ds_per90"),
+            padjTacklesWon_att: adjustForPossessionDefensive_2(entry["defense_TklW"], def2ThirdsTouchesAgainstPer90BelowAverage, "def2/3ds_per90"),
+
             succDribbleTackles: entry["defense_Tkl__1"],
             attDribbleTackles: entry["defense_Att"],
+
             fouls: entry["misc_Fls"],
-            padjFouls: adjustForPossessionDefensive_1(entry["misc_Fls"], possession),
+            padjFouls: adjustForPossessionDefensive_2(entry["misc_Fls"], liveTouchesAgainstPer90BelowAverage, "live_per90"),
+            padjFouls_def: adjustForPossessionDefensive_2(entry["misc_Fls"], att2ThirdsTouchesAgainstPer90BelowAverage, "att2/3ds_per90"),
+            padjFouls_att: adjustForPossessionDefensive_2(entry["misc_Fls"], def2ThirdsTouchesAgainstPer90BelowAverage, "def2/3ds_per90"),
+
             clearances: entry["defense_Clr"],
-            padjClearances: adjustForPossessionDefensive_1(entry["defense_Clr"], possession)
+            padjClearances: adjustForPossessionDefensive_2(entry["defense_Clr"], liveTouchesAgainstPer90BelowAverage, "live_per90"),
+            padjClearances_def: adjustForPossessionDefensive_2(entry["defense_Clr"], attPenAreaTouchesAgainstPer90BelowAverage, "attPenArea_per90"),
+
         };
+
         for (let stat in stats){
             if (typeof stats[stat] === "string"){
                 stats[stat] = 0;
             }
         }
+
     }
 
     //populate the player stats
@@ -417,9 +523,10 @@ let adjustForPossessionDefensive_1 = (value, possession) => {
 };
 
 
-let adjustForPossessionDefensive_2 = (value, touchData, minutes) => {
+let adjustForPossessionDefensive_2 = (value, touchesAgainstBelowAverage, touchType) => {
 
-
+    //StatsBomb sigmoid function adapted from: https://statsbomb.com/2014/06/introducing-possession-adjusted-player-stats/
+    return (value * 2) / (1 + Math.exp(-0.1 * (ADJUSTMENT_COEFFICIENTS[touchType] * touchesAgainstBelowAverage)));
 
 };
 
