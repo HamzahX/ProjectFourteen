@@ -68,9 +68,9 @@
 			"mean": 4.310980921656987,
 			"stdDev": 1.1896974999377996
 		},
-		"padjSuccPressures": {
-			"mean": 4.41796131469427,
-			"stdDev": 1.5140646421069994
+		"padjSuccPressures_att": {
+			"mean": 4.443377027473621,
+			"stdDev": 1.4741724441596895
 		}
 	},
 	"AM": {
@@ -348,25 +348,25 @@
 			"mean": 2.8047624573056544,
 			"stdDev": 0.8192021486542759
 		},
-		"padjSuccPressures": {
-			"mean": 2.9094773639607867,
-			"stdDev": 1.0820202006608426
+		"padjSuccPressures_def": {
+			"mean": 2.908916109852443,
+			"stdDev": 1.0787945549017548
 		},
 		"interceptions": {
 			"mean": 1.0961809551216923,
 			"stdDev": 0.400261833368384
 		},
-		"padjInterceptions": {
-			"mean": 1.1252697157908251,
-			"stdDev": 0.44284245601845723
+		"padjInterceptions_def": {
+			"mean": 1.1258268322198708,
+			"stdDev": 0.4435891239078932
 		},
 		"succTackles": {
 			"mean": 1.6407833338891844,
 			"stdDev": 0.5590248168602121
 		},
-		"padjSuccTackles": {
-			"mean": 1.7065244993596578,
-			"stdDev": 0.7164390336374675
+		"padjSuccTackles_def": {
+			"mean": 1.705544148609793,
+			"stdDev": 0.7116137897319362
 		},
 		"dribbleTackleRate": {
 			"mean": 47.062283967081136,
@@ -376,9 +376,9 @@
 			"mean": 0.9819761747835154,
 			"stdDev": 0.3609997826720648
 		},
-		"padjFouls": {
-			"mean": 1.032172312388002,
-			"stdDev": 0.47726414853144394
+		"padjFouls_def": {
+			"mean": 1.02868523505698,
+			"stdDev": 0.4637180715507711
 		},
 		"succAerials": {
 			"mean": 1.966303459359094,
@@ -392,7 +392,7 @@
 			"mean": 5.25138508330219,
 			"stdDev": 1.3221498390521924
 		},
-		"padjClearances": {
+		"padjClearances_def": {
 			"mean": 5.169475956370782,
 			"stdDev": 1.6258592499640636
 		}

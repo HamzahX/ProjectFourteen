@@ -8,12 +8,16 @@
 			"att3rd_total": 6266,
 			"attPenArea_total": 1030,
 			"live_total": 19812,
+			"def2/3ds_total": 16601,
+			"att2/3ds_total": 16409,
 			"defPenArea_per90": 61.94736842105263,
 			"def3rd_per90": 169.94736842105263,
 			"mid3rd_per90": 266.92105263157896,
 			"att3rd_per90": 164.89473684210526,
 			"attPenArea_per90": 27.105263157894736,
-			"live_per90": 521.3684210526316
+			"live_per90": 521.3684210526316,
+			"def2/3ds_per90": 436.86842105263156,
+			"att2/3ds_per90": 431.8157894736842
 		},
 		"Aston Villa": {
 			"matchesPlayed": 38,
@@ -23,12 +27,16 @@
 			"att3rd_total": 7392,
 			"attPenArea_total": 1221,
 			"live_total": 22265,
+			"def2/3ds_total": 18108,
+			"att2/3ds_total": 18472,
 			"defPenArea_per90": 62.578947368421055,
 			"def3rd_per90": 184.94736842105263,
 			"mid3rd_per90": 291.57894736842104,
 			"att3rd_per90": 194.52631578947367,
 			"attPenArea_per90": 32.13157894736842,
-			"live_per90": 585.921052631579
+			"live_per90": 585.921052631579,
+			"def2/3ds_per90": 476.52631578947364,
+			"att2/3ds_per90": 486.1052631578947
 		},
 		"Bournemouth": {
 			"matchesPlayed": 38,
@@ -38,12 +46,16 @@
 			"att3rd_total": 6933,
 			"attPenArea_total": 1072,
 			"live_total": 23483,
+			"def2/3ds_total": 19811,
+			"att2/3ds_total": 18942,
 			"defPenArea_per90": 62.28947368421053,
 			"def3rd_per90": 205.31578947368422,
 			"mid3rd_per90": 316.0263157894737,
 			"att3rd_per90": 182.44736842105263,
 			"attPenArea_per90": 28.210526315789473,
-			"live_per90": 617.9736842105264
+			"live_per90": 617.9736842105264,
+			"def2/3ds_per90": 521.3421052631579,
+			"att2/3ds_per90": 498.47368421052636
 		},
 		"Brighton": {
 			"matchesPlayed": 38,
@@ -53,12 +65,16 @@
 			"att3rd_total": 6036,
 			"attPenArea_total": 972,
 			"live_total": 20747,
+			"def2/3ds_total": 17901,
+			"att2/3ds_total": 16255,
 			"defPenArea_per90": 63.78947368421053,
 			"def3rd_per90": 202.1578947368421,
 			"mid3rd_per90": 268.92105263157896,
 			"att3rd_per90": 158.8421052631579,
 			"attPenArea_per90": 25.57894736842105,
-			"live_per90": 545.9736842105264
+			"live_per90": 545.9736842105264,
+			"def2/3ds_per90": 471.07894736842104,
+			"att2/3ds_per90": 427.7631578947369
 		},
 		"Burnley": {
 			"matchesPlayed": 38,
@@ -68,12 +84,16 @@
 			"att3rd_total": 6675,
 			"attPenArea_total": 1006,
 			"live_total": 22508,
+			"def2/3ds_total": 19327,
+			"att2/3ds_total": 17590,
 			"defPenArea_per90": 67.15789473684211,
 			"def3rd_per90": 221.3684210526316,
 			"mid3rd_per90": 287.2368421052632,
 			"att3rd_per90": 175.6578947368421,
 			"attPenArea_per90": 26.473684210526315,
-			"live_per90": 592.3157894736842
+			"live_per90": 592.3157894736842,
+			"def2/3ds_per90": 508.6052631578948,
+			"att2/3ds_per90": 462.8947368421053
 		},
 		"Chelsea": {
 			"matchesPlayed": 38,
@@ -83,12 +103,16 @@
 			"att3rd_total": 4687,
 			"attPenArea_total": 644,
 			"live_total": 19186,
+			"def2/3ds_total": 17289,
+			"att2/3ds_total": 14404,
 			"defPenArea_per90": 74.55263157894737,
 			"def3rd_per90": 199.26315789473685,
 			"mid3rd_per90": 255.71052631578948,
 			"att3rd_per90": 123.34210526315789,
 			"attPenArea_per90": 16.94736842105263,
-			"live_per90": 504.89473684210526
+			"live_per90": 504.89473684210526,
+			"def2/3ds_per90": 454.97368421052636,
+			"att2/3ds_per90": 379.0526315789474
 		},
 		"Crystal Palace": {
 			"matchesPlayed": 38,
@@ -98,12 +122,16 @@
 			"att3rd_total": 6903,
 			"attPenArea_total": 984,
 			"live_total": 22680,
+			"def2/3ds_total": 19121,
+			"att2/3ds_total": 18948,
 			"defPenArea_per90": 59.10526315789474,
 			"def3rd_per90": 186.21052631578948,
 			"mid3rd_per90": 316.9736842105263,
 			"att3rd_per90": 181.6578947368421,
 			"attPenArea_per90": 25.894736842105264,
-			"live_per90": 596.8421052631579
+			"live_per90": 596.8421052631579,
+			"def2/3ds_per90": 503.1842105263158,
+			"att2/3ds_per90": 498.63157894736844
 		},
 		"Everton": {
 			"matchesPlayed": 38,
@@ -113,12 +141,16 @@
 			"att3rd_total": 5620,
 			"attPenArea_total": 853,
 			"live_total": 20909,
+			"def2/3ds_total": 18593,
+			"att2/3ds_total": 16451,
 			"defPenArea_per90": 65.89473684210526,
 			"def3rd_per90": 204.26315789473685,
 			"mid3rd_per90": 285.0263157894737,
 			"att3rd_per90": 147.89473684210526,
 			"attPenArea_per90": 22.44736842105263,
-			"live_per90": 550.2368421052631
+			"live_per90": 550.2368421052631,
+			"def2/3ds_per90": 489.2894736842105,
+			"att2/3ds_per90": 432.92105263157896
 		},
 		"Leicester": {
 			"matchesPlayed": 38,
@@ -128,12 +160,16 @@
 			"att3rd_total": 5504,
 			"attPenArea_total": 754,
 			"live_total": 18713,
+			"def2/3ds_total": 16376,
+			"att2/3ds_total": 15109,
 			"defPenArea_per90": 63.973684210526315,
 			"def3rd_per90": 178.18421052631578,
 			"mid3rd_per90": 252.76315789473685,
 			"att3rd_per90": 144.8421052631579,
 			"attPenArea_per90": 19.842105263157894,
-			"live_per90": 492.44736842105266
+			"live_per90": 492.44736842105266,
+			"def2/3ds_per90": 430.9473684210526,
+			"att2/3ds_per90": 397.60526315789474
 		},
 		"Liverpool": {
 			"matchesPlayed": 38,
@@ -143,12 +179,16 @@
 			"att3rd_total": 4042,
 			"attPenArea_total": 615,
 			"live_total": 17738,
+			"def2/3ds_total": 16409,
+			"att2/3ds_total": 11890,
 			"defPenArea_per90": 86.21052631578948,
 			"def3rd_per90": 225.28947368421052,
 			"mid3rd_per90": 206.52631578947367,
 			"att3rd_per90": 106.36842105263158,
 			"attPenArea_per90": 16.18421052631579,
-			"live_per90": 466.7894736842105
+			"live_per90": 466.7894736842105,
+			"def2/3ds_per90": 431.81578947368416,
+			"att2/3ds_per90": 312.89473684210526
 		},
 		"Manchester City": {
 			"matchesPlayed": 38,
@@ -158,12 +198,16 @@
 			"att3rd_total": 3424,
 			"attPenArea_total": 552,
 			"live_total": 16744,
+			"def2/3ds_total": 15821,
+			"att2/3ds_total": 10964,
 			"defPenArea_per90": 91.97368421052632,
 			"def3rd_per90": 217.92105263157896,
 			"mid3rd_per90": 198.42105263157896,
 			"att3rd_per90": 90.10526315789474,
 			"attPenArea_per90": 14.526315789473685,
-			"live_per90": 440.63157894736844
+			"live_per90": 440.63157894736844,
+			"def2/3ds_per90": 416.3421052631579,
+			"att2/3ds_per90": 288.5263157894737
 		},
 		"Manchester United": {
 			"matchesPlayed": 38,
@@ -173,12 +217,16 @@
 			"att3rd_total": 5451,
 			"attPenArea_total": 773,
 			"live_total": 19519,
+			"def2/3ds_total": 17044,
+			"att2/3ds_total": 15257,
 			"defPenArea_per90": 67.94736842105263,
 			"def3rd_per90": 190.47368421052633,
 			"mid3rd_per90": 258.05263157894734,
 			"att3rd_per90": 143.44736842105263,
 			"attPenArea_per90": 20.342105263157894,
-			"live_per90": 513.6578947368421
+			"live_per90": 513.6578947368421,
+			"def2/3ds_per90": 448.52631578947364,
+			"att2/3ds_per90": 401.5
 		},
 		"Newcastle United": {
 			"matchesPlayed": 38,
@@ -188,12 +236,16 @@
 			"att3rd_total": 8463,
 			"attPenArea_total": 1114,
 			"live_total": 25536,
+			"def2/3ds_total": 20614,
+			"att2/3ds_total": 22056,
 			"defPenArea_per90": 52.473684210526315,
 			"def3rd_per90": 184.76315789473685,
 			"mid3rd_per90": 357.7105263157895,
 			"att3rd_per90": 222.71052631578948,
 			"attPenArea_per90": 29.31578947368421,
-			"live_per90": 672
+			"live_per90": 672,
+			"def2/3ds_per90": 542.4736842105264,
+			"att2/3ds_per90": 580.421052631579
 		},
 		"Norwich": {
 			"matchesPlayed": 38,
@@ -203,12 +255,16 @@
 			"att3rd_total": 7761,
 			"attPenArea_total": 1263,
 			"live_total": 21754,
+			"def2/3ds_total": 17177,
+			"att2/3ds_total": 18770,
 			"defPenArea_per90": 51.26315789473684,
 			"def3rd_per90": 162.31578947368422,
 			"mid3rd_per90": 289.7105263157895,
 			"att3rd_per90": 204.23684210526315,
 			"attPenArea_per90": 33.23684210526316,
-			"live_per90": 572.4736842105264
+			"live_per90": 572.4736842105264,
+			"def2/3ds_per90": 452.0263157894737,
+			"att2/3ds_per90": 493.9473684210526
 		},
 		"Sheffield United": {
 			"matchesPlayed": 38,
@@ -218,12 +274,16 @@
 			"att3rd_total": 6390,
 			"attPenArea_total": 857,
 			"live_total": 24404,
+			"def2/3ds_total": 21606,
+			"att2/3ds_total": 18772,
 			"defPenArea_per90": 69.76315789473684,
 			"def3rd_per90": 242.73684210526315,
 			"mid3rd_per90": 325.8421052631579,
 			"att3rd_per90": 168.1578947368421,
 			"attPenArea_per90": 22.55263157894737,
-			"live_per90": 642.2105263157895
+			"live_per90": 642.2105263157895,
+			"def2/3ds_per90": 568.578947368421,
+			"att2/3ds_per90": 494
 		},
 		"Southampton": {
 			"matchesPlayed": 38,
@@ -233,12 +293,16 @@
 			"att3rd_total": 5977,
 			"attPenArea_total": 953,
 			"live_total": 20670,
+			"def2/3ds_total": 17891,
+			"att2/3ds_total": 15934,
 			"defPenArea_per90": 67.21052631578948,
 			"def3rd_per90": 208.78947368421052,
 			"mid3rd_per90": 262.0263157894737,
 			"att3rd_per90": 157.28947368421052,
 			"attPenArea_per90": 25.07894736842105,
-			"live_per90": 543.9473684210526
+			"live_per90": 543.9473684210526,
+			"def2/3ds_per90": 470.8157894736842,
+			"att2/3ds_per90": 419.3157894736842
 		},
 		"Tottenham": {
 			"matchesPlayed": 38,
@@ -248,12 +312,16 @@
 			"att3rd_total": 6388,
 			"attPenArea_total": 982,
 			"live_total": 21383,
+			"def2/3ds_total": 18116,
+			"att2/3ds_total": 17440,
 			"defPenArea_per90": 60.94736842105263,
 			"def3rd_per90": 185.89473684210526,
 			"mid3rd_per90": 290.8421052631579,
 			"att3rd_per90": 168.10526315789474,
 			"attPenArea_per90": 25.842105263157894,
-			"live_per90": 562.7105263157895
+			"live_per90": 562.7105263157895,
+			"def2/3ds_per90": 476.7368421052632,
+			"att2/3ds_per90": 458.94736842105266
 		},
 		"Watford": {
 			"matchesPlayed": 38,
@@ -263,12 +331,16 @@
 			"att3rd_total": 6505,
 			"attPenArea_total": 897,
 			"live_total": 23753,
+			"def2/3ds_total": 20661,
+			"att2/3ds_total": 19082,
 			"defPenArea_per90": 65.47368421052632,
 			"def3rd_per90": 212.73684210526315,
 			"mid3rd_per90": 330.9736842105263,
 			"att3rd_per90": 171.18421052631578,
 			"attPenArea_per90": 23.605263157894736,
-			"live_per90": 625.078947368421
+			"live_per90": 625.078947368421,
+			"def2/3ds_per90": 543.7105263157895,
+			"att2/3ds_per90": 502.1578947368421
 		},
 		"West Ham": {
 			"matchesPlayed": 38,
@@ -278,12 +350,16 @@
 			"att3rd_total": 6772,
 			"attPenArea_total": 1064,
 			"live_total": 23821,
+			"def2/3ds_total": 20438,
+			"att2/3ds_total": 19441,
 			"defPenArea_per90": 62.31578947368421,
 			"def3rd_per90": 204.44736842105263,
 			"mid3rd_per90": 333.39473684210526,
 			"att3rd_per90": 178.21052631578948,
 			"attPenArea_per90": 28,
-			"live_per90": 626.8684210526316
+			"live_per90": 626.8684210526316,
+			"def2/3ds_per90": 537.8421052631579,
+			"att2/3ds_per90": 511.60526315789474
 		},
 		"Wolverhampton Wanderers": {
 			"matchesPlayed": 38,
@@ -293,12 +369,16 @@
 			"att3rd_total": 6007,
 			"attPenArea_total": 775,
 			"live_total": 22198,
+			"def2/3ds_total": 19445,
+			"att2/3ds_total": 18400,
 			"defPenArea_per90": 61.36842105263158,
 			"def3rd_per90": 185.57894736842104,
 			"mid3rd_per90": 326.13157894736844,
 			"att3rd_per90": 158.07894736842104,
 			"attPenArea_per90": 20.394736842105264,
-			"live_per90": 584.1578947368421
+			"live_per90": 584.1578947368421,
+			"def2/3ds_per90": 511.7105263157895,
+			"att2/3ds_per90": 484.2105263157895
 		}
 	},
 	"La Liga": {
@@ -310,12 +390,16 @@
 			"att3rd_total": 5714,
 			"attPenArea_total": 819,
 			"live_total": 22094,
+			"def2/3ds_total": 19748,
+			"att2/3ds_total": 18340,
 			"defPenArea_per90": 52.6578947368421,
 			"def3rd_per90": 187.42105263157896,
 			"mid3rd_per90": 332.2631578947368,
 			"att3rd_per90": 150.3684210526316,
 			"attPenArea_per90": 21.55263157894737,
-			"live_per90": 581.421052631579
+			"live_per90": 581.421052631579,
+			"def2/3ds_per90": 519.6842105263158,
+			"att2/3ds_per90": 482.63157894736844
 		},
 		"Athletic Bilbao": {
 			"matchesPlayed": 38,
@@ -325,12 +409,16 @@
 			"att3rd_total": 5489,
 			"attPenArea_total": 716,
 			"live_total": 20066,
+			"def2/3ds_total": 17815,
+			"att2/3ds_total": 16119,
 			"defPenArea_per90": 62.86842105263158,
 			"def3rd_per90": 189.07894736842104,
 			"mid3rd_per90": 279.7368421052632,
 			"att3rd_per90": 144.44736842105263,
 			"attPenArea_per90": 18.842105263157894,
-			"live_per90": 528.0526315789474
+			"live_per90": 528.0526315789474,
+			"def2/3ds_per90": 468.8157894736842,
+			"att2/3ds_per90": 424.18421052631584
 		},
 		"Atletico Madrid": {
 			"matchesPlayed": 38,
@@ -340,12 +428,16 @@
 			"att3rd_total": 5716,
 			"attPenArea_total": 660,
 			"live_total": 21366,
+			"def2/3ds_total": 18933,
+			"att2/3ds_total": 17475,
 			"defPenArea_per90": 64.8157894736842,
 			"def3rd_per90": 188.78947368421052,
 			"mid3rd_per90": 309.44736842105266,
 			"att3rd_per90": 150.42105263157896,
 			"attPenArea_per90": 17.36842105263158,
-			"live_per90": 562.2631578947369
+			"live_per90": 562.2631578947369,
+			"def2/3ds_per90": 498.2368421052632,
+			"att2/3ds_per90": 459.8684210526316
 		},
 		"Barcelona": {
 			"matchesPlayed": 38,
@@ -355,12 +447,16 @@
 			"att3rd_total": 4314,
 			"attPenArea_total": 662,
 			"live_total": 16648,
+			"def2/3ds_total": 14908,
+			"att2/3ds_total": 12620,
 			"defPenArea_per90": 61.921052631578945,
 			"def3rd_per90": 173.73684210526315,
 			"mid3rd_per90": 218.57894736842104,
 			"att3rd_per90": 113.52631578947368,
 			"attPenArea_per90": 17.42105263157895,
-			"live_per90": 438.10526315789474
+			"live_per90": 438.10526315789474,
+			"def2/3ds_per90": 392.31578947368416,
+			"att2/3ds_per90": 332.10526315789474
 		},
 		"Real Betis": {
 			"matchesPlayed": 38,
@@ -370,12 +466,16 @@
 			"att3rd_total": 5003,
 			"attPenArea_total": 885,
 			"live_total": 17500,
+			"def2/3ds_total": 15422,
+			"att2/3ds_total": 14119,
 			"defPenArea_per90": 60.76315789473684,
 			"def3rd_per90": 165.94736842105263,
 			"mid3rd_per90": 239.89473684210526,
 			"att3rd_per90": 131.6578947368421,
 			"attPenArea_per90": 23.289473684210527,
-			"live_per90": 460.5263157894737
+			"live_per90": 460.5263157894737,
+			"def2/3ds_per90": 405.8421052631579,
+			"att2/3ds_per90": 371.5526315789474
 		},
 		"Celta Vigo": {
 			"matchesPlayed": 38,
@@ -385,12 +485,16 @@
 			"att3rd_total": 6270,
 			"attPenArea_total": 829,
 			"live_total": 19826,
+			"def2/3ds_total": 16677,
+			"att2/3ds_total": 16875,
 			"defPenArea_per90": 53.78947368421053,
 			"def3rd_per90": 159.78947368421052,
 			"mid3rd_per90": 279.07894736842104,
 			"att3rd_per90": 165,
 			"attPenArea_per90": 21.81578947368421,
-			"live_per90": 521.7368421052631
+			"live_per90": 521.7368421052631,
+			"def2/3ds_per90": 438.86842105263156,
+			"att2/3ds_per90": 444.07894736842104
 		},
 		"Eibar": {
 			"matchesPlayed": 38,
@@ -400,12 +504,16 @@
 			"att3rd_total": 4557,
 			"attPenArea_total": 731,
 			"live_total": 20303,
+			"def2/3ds_total": 19019,
+			"att2/3ds_total": 14339,
 			"defPenArea_per90": 78.57894736842105,
 			"def3rd_per90": 243.07894736842104,
 			"mid3rd_per90": 257.42105263157896,
 			"att3rd_per90": 119.92105263157895,
 			"attPenArea_per90": 19.236842105263158,
-			"live_per90": 534.2894736842105
+			"live_per90": 534.2894736842105,
+			"def2/3ds_per90": 500.5,
+			"att2/3ds_per90": 377.3421052631579
 		},
 		"Espanyol": {
 			"matchesPlayed": 38,
@@ -415,12 +523,16 @@
 			"att3rd_total": 5716,
 			"attPenArea_total": 769,
 			"live_total": 20528,
+			"def2/3ds_total": 18110,
+			"att2/3ds_total": 17072,
 			"defPenArea_per90": 61.71052631578947,
 			"def3rd_per90": 177.73684210526315,
 			"mid3rd_per90": 298.8421052631579,
 			"att3rd_per90": 150.42105263157896,
 			"attPenArea_per90": 20.236842105263158,
-			"live_per90": 540.2105263157895
+			"live_per90": 540.2105263157895,
+			"def2/3ds_per90": 476.57894736842104,
+			"att2/3ds_per90": 449.2631578947369
 		},
 		"Getafe": {
 			"matchesPlayed": 38,
@@ -430,12 +542,16 @@
 			"att3rd_total": 3974,
 			"attPenArea_total": 528,
 			"live_total": 19138,
+			"def2/3ds_total": 18396,
+			"att2/3ds_total": 14315,
 			"defPenArea_per90": 63.18421052631579,
 			"def3rd_per90": 211.97368421052633,
 			"mid3rd_per90": 272.13157894736844,
 			"att3rd_per90": 104.57894736842105,
 			"attPenArea_per90": 13.894736842105264,
-			"live_per90": 503.63157894736844
+			"live_per90": 503.63157894736844,
+			"def2/3ds_per90": 484.1052631578948,
+			"att2/3ds_per90": 376.7105263157895
 		},
 		"Granada": {
 			"matchesPlayed": 38,
@@ -445,12 +561,16 @@
 			"att3rd_total": 5534,
 			"attPenArea_total": 765,
 			"live_total": 20629,
+			"def2/3ds_total": 18470,
+			"att2/3ds_total": 16832,
 			"defPenArea_per90": 55.28947368421053,
 			"def3rd_per90": 188.73684210526315,
 			"mid3rd_per90": 297.3157894736842,
 			"att3rd_per90": 145.6315789473684,
 			"attPenArea_per90": 20.13157894736842,
-			"live_per90": 542.8684210526316
+			"live_per90": 542.8684210526316,
+			"def2/3ds_per90": 486.0526315789474,
+			"att2/3ds_per90": 442.9473684210526
 		},
 		"Leganes": {
 			"matchesPlayed": 38,
@@ -460,12 +580,16 @@
 			"att3rd_total": 5260,
 			"attPenArea_total": 668,
 			"live_total": 21706,
+			"def2/3ds_total": 19876,
+			"att2/3ds_total": 17675,
 			"defPenArea_per90": 62.13157894736842,
 			"def3rd_per90": 196.3421052631579,
 			"mid3rd_per90": 326.7105263157895,
 			"att3rd_per90": 138.42105263157896,
 			"attPenArea_per90": 17.57894736842105,
-			"live_per90": 571.2105263157895
+			"live_per90": 571.2105263157895,
+			"def2/3ds_per90": 523.0526315789474,
+			"att2/3ds_per90": 465.13157894736844
 		},
 		"Levante": {
 			"matchesPlayed": 38,
@@ -475,12 +599,16 @@
 			"att3rd_total": 6225,
 			"attPenArea_total": 1070,
 			"live_total": 19958,
+			"def2/3ds_total": 16942,
+			"att2/3ds_total": 16562,
 			"defPenArea_per90": 59.5,
 			"def3rd_per90": 173.81578947368422,
 			"mid3rd_per90": 272.0263157894737,
 			"att3rd_per90": 163.81578947368422,
 			"attPenArea_per90": 28.157894736842106,
-			"live_per90": 525.2105263157895
+			"live_per90": 525.2105263157895,
+			"def2/3ds_per90": 445.8421052631579,
+			"att2/3ds_per90": 435.8421052631579
 		},
 		"Mallorca": {
 			"matchesPlayed": 38,
@@ -490,12 +618,16 @@
 			"att3rd_total": 6268,
 			"attPenArea_total": 1039,
 			"live_total": 21848,
+			"def2/3ds_total": 18723,
+			"att2/3ds_total": 18046,
 			"defPenArea_per90": 58.60526315789474,
 			"def3rd_per90": 182.76315789473685,
 			"mid3rd_per90": 309.94736842105266,
 			"att3rd_per90": 164.94736842105263,
 			"attPenArea_per90": 27.342105263157894,
-			"live_per90": 574.9473684210526
+			"live_per90": 574.9473684210526,
+			"def2/3ds_per90": 492.7105263157895,
+			"att2/3ds_per90": 474.8947368421053
 		},
 		"Osasuna": {
 			"matchesPlayed": 38,
@@ -505,12 +637,16 @@
 			"att3rd_total": 5166,
 			"attPenArea_total": 766,
 			"live_total": 20188,
+			"def2/3ds_total": 18380,
+			"att2/3ds_total": 16216,
 			"defPenArea_per90": 62.86842105263158,
 			"def3rd_per90": 192.89473684210526,
 			"mid3rd_per90": 290.7894736842105,
 			"att3rd_per90": 135.94736842105263,
 			"attPenArea_per90": 20.157894736842106,
-			"live_per90": 531.2631578947369
+			"live_per90": 531.2631578947369,
+			"def2/3ds_per90": 483.6842105263158,
+			"att2/3ds_per90": 426.7368421052631
 		},
 		"Real Madrid": {
 			"matchesPlayed": 38,
@@ -520,12 +656,16 @@
 			"att3rd_total": 4652,
 			"attPenArea_total": 591,
 			"live_total": 18899,
+			"def2/3ds_total": 17287,
+			"att2/3ds_total": 14719,
 			"defPenArea_per90": 73.86842105263158,
 			"def3rd_per90": 190,
 			"mid3rd_per90": 264.92105263157896,
 			"att3rd_per90": 122.42105263157895,
 			"attPenArea_per90": 15.552631578947368,
-			"live_per90": 497.3421052631579
+			"live_per90": 497.3421052631579,
+			"def2/3ds_per90": 454.92105263157896,
+			"att2/3ds_per90": 387.3421052631579
 		},
 		"Real Sociedad": {
 			"matchesPlayed": 38,
@@ -535,12 +675,16 @@
 			"att3rd_total": 4884,
 			"attPenArea_total": 740,
 			"live_total": 18132,
+			"def2/3ds_total": 16210,
+			"att2/3ds_total": 14429,
 			"defPenArea_per90": 62.8421052631579,
 			"def3rd_per90": 175.39473684210526,
 			"mid3rd_per90": 251.18421052631578,
 			"att3rd_per90": 128.52631578947367,
 			"attPenArea_per90": 19.473684210526315,
-			"live_per90": 477.1578947368421
+			"live_per90": 477.1578947368421,
+			"def2/3ds_per90": 426.57894736842104,
+			"att2/3ds_per90": 379.7105263157895
 		},
 		"Sevilla": {
 			"matchesPlayed": 38,
@@ -550,12 +694,16 @@
 			"att3rd_total": 4886,
 			"attPenArea_total": 597,
 			"live_total": 18233,
+			"def2/3ds_total": 16360,
+			"att2/3ds_total": 14560,
 			"defPenArea_per90": 67.1842105263158,
 			"def3rd_per90": 175.94736842105263,
 			"mid3rd_per90": 254.57894736842104,
 			"att3rd_per90": 128.57894736842104,
 			"attPenArea_per90": 15.710526315789474,
-			"live_per90": 479.8157894736842
+			"live_per90": 479.8157894736842,
+			"def2/3ds_per90": 430.52631578947364,
+			"att2/3ds_per90": 383.1578947368421
 		},
 		"Valencia": {
 			"matchesPlayed": 38,
@@ -565,12 +713,16 @@
 			"att3rd_total": 6815,
 			"attPenArea_total": 988,
 			"live_total": 21468,
+			"def2/3ds_total": 17821,
+			"att2/3ds_total": 18359,
 			"defPenArea_per90": 54.60526315789474,
 			"def3rd_per90": 165.18421052631578,
 			"mid3rd_per90": 303.7894736842105,
 			"att3rd_per90": 179.3421052631579,
 			"attPenArea_per90": 26,
-			"live_per90": 564.9473684210526
+			"live_per90": 564.9473684210526,
+			"def2/3ds_per90": 468.9736842105263,
+			"att2/3ds_per90": 483.13157894736844
 		},
 		"Real Valladolid": {
 			"matchesPlayed": 38,
@@ -580,12 +732,16 @@
 			"att3rd_total": 6419,
 			"attPenArea_total": 875,
 			"live_total": 21816,
+			"def2/3ds_total": 18795,
+			"att2/3ds_total": 18973,
 			"defPenArea_per90": 51.86842105263158,
 			"def3rd_per90": 164.23684210526315,
 			"mid3rd_per90": 330.36842105263156,
 			"att3rd_per90": 168.92105263157896,
 			"attPenArea_per90": 23.026315789473685,
-			"live_per90": 574.1052631578947
+			"live_per90": 574.1052631578947,
+			"def2/3ds_per90": 494.6052631578947,
+			"att2/3ds_per90": 499.2894736842105
 		},
 		"Villarreal": {
 			"matchesPlayed": 38,
@@ -595,12 +751,16 @@
 			"att3rd_total": 5765,
 			"attPenArea_total": 900,
 			"live_total": 20043,
+			"def2/3ds_total": 17494,
+			"att2/3ds_total": 16794,
 			"defPenArea_per90": 58.94736842105263,
 			"def3rd_per90": 170.1315789473684,
 			"mid3rd_per90": 290.2368421052632,
 			"att3rd_per90": 151.71052631578948,
 			"attPenArea_per90": 23.68421052631579,
-			"live_per90": 527.4473684210526
+			"live_per90": 527.4473684210526,
+			"def2/3ds_per90": 460.36842105263156,
+			"att2/3ds_per90": 441.94736842105266
 		}
 	},
 	"Serie A": {
@@ -612,12 +772,16 @@
 			"att3rd_total": 4334,
 			"attPenArea_total": 582,
 			"live_total": 19010,
+			"def2/3ds_total": 17842,
+			"att2/3ds_total": 14290,
 			"defPenArea_per90": 78.89473684210526,
 			"def3rd_per90": 207.52631578947367,
 			"mid3rd_per90": 262,
 			"att3rd_per90": 114.05263157894737,
 			"attPenArea_per90": 15.31578947368421,
-			"live_per90": 500.2631578947368
+			"live_per90": 500.2631578947368,
+			"def2/3ds_per90": 469.52631578947364,
+			"att2/3ds_per90": 376.0526315789474
 		},
 		"Bologna": {
 			"matchesPlayed": 38,
@@ -627,12 +791,16 @@
 			"att3rd_total": 5653,
 			"attPenArea_total": 935,
 			"live_total": 19308,
+			"def2/3ds_total": 17020,
+			"att2/3ds_total": 15531,
 			"defPenArea_per90": 68.44736842105263,
 			"def3rd_per90": 187.94736842105263,
 			"mid3rd_per90": 259.94736842105266,
 			"att3rd_per90": 148.76315789473685,
 			"attPenArea_per90": 24.605263157894736,
-			"live_per90": 508.10526315789474
+			"live_per90": 508.10526315789474,
+			"def2/3ds_per90": 447.8947368421053,
+			"att2/3ds_per90": 408.7105263157895
 		},
 		"Brescia": {
 			"matchesPlayed": 38,
@@ -642,12 +810,16 @@
 			"att3rd_total": 7543,
 			"attPenArea_total": 1271,
 			"live_total": 24160,
+			"def2/3ds_total": 20209,
+			"att2/3ds_total": 20141,
 			"defPenArea_per90": 59.94736842105263,
 			"def3rd_per90": 200.28947368421052,
 			"mid3rd_per90": 331.5263157894737,
 			"att3rd_per90": 198.5,
 			"attPenArea_per90": 33.44736842105263,
-			"live_per90": 635.7894736842105
+			"live_per90": 635.7894736842105,
+			"def2/3ds_per90": 531.8157894736842,
+			"att2/3ds_per90": 530.0263157894738
 		},
 		"Cagliari": {
 			"matchesPlayed": 38,
@@ -657,12 +829,16 @@
 			"att3rd_total": 7080,
 			"attPenArea_total": 1135,
 			"live_total": 22622,
+			"def2/3ds_total": 19150,
+			"att2/3ds_total": 18929,
 			"defPenArea_per90": 62.78947368421053,
 			"def3rd_per90": 192.1315789473684,
 			"mid3rd_per90": 311.8157894736842,
 			"att3rd_per90": 186.31578947368422,
 			"attPenArea_per90": 29.86842105263158,
-			"live_per90": 595.3157894736842
+			"live_per90": 595.3157894736842,
+			"def2/3ds_per90": 503.9473684210526,
+			"att2/3ds_per90": 498.13157894736844
 		},
 		"Fiorentina": {
 			"matchesPlayed": 38,
@@ -672,12 +848,16 @@
 			"att3rd_total": 5842,
 			"attPenArea_total": 741,
 			"live_total": 21344,
+			"def2/3ds_total": 18996,
+			"att2/3ds_total": 17279,
 			"defPenArea_per90": 70.26315789473684,
 			"def3rd_per90": 198.92105263157896,
 			"mid3rd_per90": 300.9736842105263,
 			"att3rd_per90": 153.73684210526315,
 			"attPenArea_per90": 19.5,
-			"live_per90": 561.6842105263158
+			"live_per90": 561.6842105263158,
+			"def2/3ds_per90": 499.89473684210526,
+			"att2/3ds_per90": 454.7105263157895
 		},
 		"Genoa": {
 			"matchesPlayed": 38,
@@ -687,12 +867,16 @@
 			"att3rd_total": 6683,
 			"attPenArea_total": 1053,
 			"live_total": 21265,
+			"def2/3ds_total": 17891,
+			"att2/3ds_total": 17567,
 			"defPenArea_per90": 60.973684210526315,
 			"def3rd_per90": 184.39473684210526,
 			"mid3rd_per90": 286.42105263157896,
 			"att3rd_per90": 175.8684210526316,
 			"attPenArea_per90": 27.710526315789473,
-			"live_per90": 559.6052631578947
+			"live_per90": 559.6052631578947,
+			"def2/3ds_per90": 470.8157894736842,
+			"att2/3ds_per90": 462.2894736842105
 		},
 		"Verona": {
 			"matchesPlayed": 38,
@@ -702,12 +886,16 @@
 			"att3rd_total": 6184,
 			"attPenArea_total": 988,
 			"live_total": 20199,
+			"def2/3ds_total": 17321,
+			"att2/3ds_total": 16525,
 			"defPenArea_per90": 66.21052631578948,
 			"def3rd_per90": 183.68421052631578,
 			"mid3rd_per90": 272.13157894736844,
 			"att3rd_per90": 162.73684210526315,
 			"attPenArea_per90": 26,
-			"live_per90": 531.5526315789474
+			"live_per90": 531.5526315789474,
+			"def2/3ds_per90": 455.8157894736842,
+			"att2/3ds_per90": 434.86842105263156
 		},
 		"Inter": {
 			"matchesPlayed": 38,
@@ -717,12 +905,16 @@
 			"att3rd_total": 5852,
 			"attPenArea_total": 741,
 			"live_total": 20440,
+			"def2/3ds_total": 17833,
+			"att2/3ds_total": 15990,
 			"defPenArea_per90": 74.52631578947368,
 			"def3rd_per90": 202.5,
 			"mid3rd_per90": 266.7894736842105,
 			"att3rd_per90": 154,
 			"attPenArea_per90": 19.5,
-			"live_per90": 537.8947368421053
+			"live_per90": 537.8947368421053,
+			"def2/3ds_per90": 469.2894736842105,
+			"att2/3ds_per90": 420.7894736842105
 		},
 		"Juventus": {
 			"matchesPlayed": 38,
@@ -732,12 +924,16 @@
 			"att3rd_total": 4999,
 			"attPenArea_total": 697,
 			"live_total": 19295,
+			"def2/3ds_total": 17379,
+			"att2/3ds_total": 14420,
 			"defPenArea_per90": 74.52631578947368,
 			"def3rd_per90": 209.42105263157896,
 			"mid3rd_per90": 247.92105263157896,
 			"att3rd_per90": 131.55263157894737,
 			"attPenArea_per90": 18.342105263157894,
-			"live_per90": 507.7631578947368
+			"live_per90": 507.7631578947368,
+			"def2/3ds_per90": 457.3421052631579,
+			"att2/3ds_per90": 379.47368421052636
 		},
 		"Lazio": {
 			"matchesPlayed": 38,
@@ -747,12 +943,16 @@
 			"att3rd_total": 6187,
 			"attPenArea_total": 793,
 			"live_total": 21748,
+			"def2/3ds_total": 18939,
+			"att2/3ds_total": 17607,
 			"defPenArea_per90": 68.47368421052632,
 			"def3rd_per90": 197.8684210526316,
 			"mid3rd_per90": 300.5263157894737,
 			"att3rd_per90": 162.81578947368422,
 			"attPenArea_per90": 20.86842105263158,
-			"live_per90": 572.3157894736842
+			"live_per90": 572.3157894736842,
+			"def2/3ds_per90": 498.3947368421053,
+			"att2/3ds_per90": 463.3421052631579
 		},
 		"Lecce": {
 			"matchesPlayed": 38,
@@ -762,12 +962,16 @@
 			"att3rd_total": 7632,
 			"attPenArea_total": 1205,
 			"live_total": 23622,
+			"def2/3ds_total": 19561,
+			"att2/3ds_total": 20328,
 			"defPenArea_per90": 60.89473684210526,
 			"def3rd_per90": 180.6578947368421,
 			"mid3rd_per90": 334.10526315789474,
 			"att3rd_per90": 200.8421052631579,
 			"attPenArea_per90": 31.710526315789473,
-			"live_per90": 621.6315789473684
+			"live_per90": 621.6315789473684,
+			"def2/3ds_per90": 514.7631578947369,
+			"att2/3ds_per90": 534.9473684210526
 		},
 		"AC Milan": {
 			"matchesPlayed": 38,
@@ -777,12 +981,16 @@
 			"att3rd_total": 5222,
 			"attPenArea_total": 721,
 			"live_total": 19567,
+			"def2/3ds_total": 17527,
+			"att2/3ds_total": 15188,
 			"defPenArea_per90": 74.34210526315789,
 			"def3rd_per90": 198.97368421052633,
 			"mid3rd_per90": 262.2631578947368,
 			"att3rd_per90": 137.42105263157896,
 			"attPenArea_per90": 18.973684210526315,
-			"live_per90": 514.921052631579
+			"live_per90": 514.921052631579,
+			"def2/3ds_per90": 461.2368421052631,
+			"att2/3ds_per90": 399.6842105263158
 		},
 		"Napoli": {
 			"matchesPlayed": 38,
@@ -792,12 +1000,16 @@
 			"att3rd_total": 4498,
 			"attPenArea_total": 643,
 			"live_total": 19356,
+			"def2/3ds_total": 17804,
+			"att2/3ds_total": 14006,
 			"defPenArea_per90": 78.3157894736842,
 			"def3rd_per90": 218.31578947368422,
 			"mid3rd_per90": 250.21052631578948,
 			"att3rd_per90": 118.36842105263158,
 			"attPenArea_per90": 16.92105263157895,
-			"live_per90": 509.36842105263156
+			"live_per90": 509.36842105263156,
+			"def2/3ds_per90": 468.5263157894737,
+			"att2/3ds_per90": 368.57894736842104
 		},
 		"Parma Calcio 1913": {
 			"matchesPlayed": 38,
@@ -807,12 +1019,16 @@
 			"att3rd_total": 7570,
 			"attPenArea_total": 1107,
 			"live_total": 22970,
+			"def2/3ds_total": 19108,
+			"att2/3ds_total": 19965,
 			"defPenArea_per90": 60.578947368421055,
 			"def3rd_per90": 176.6578947368421,
 			"mid3rd_per90": 326.1842105263158,
 			"att3rd_per90": 199.21052631578948,
 			"attPenArea_per90": 29.13157894736842,
-			"live_per90": 604.4736842105264
+			"live_per90": 604.4736842105264,
+			"def2/3ds_per90": 502.8421052631579,
+			"att2/3ds_per90": 525.3947368421052
 		},
 		"Roma": {
 			"matchesPlayed": 38,
@@ -822,12 +1038,16 @@
 			"att3rd_total": 4711,
 			"attPenArea_total": 731,
 			"live_total": 19810,
+			"def2/3ds_total": 18237,
+			"att2/3ds_total": 14479,
 			"defPenArea_per90": 80.76315789473684,
 			"def3rd_per90": 222.8684210526316,
 			"mid3rd_per90": 257.05263157894734,
 			"att3rd_per90": 123.97368421052632,
 			"attPenArea_per90": 19.236842105263158,
-			"live_per90": 521.3157894736842
+			"live_per90": 521.3157894736842,
+			"def2/3ds_per90": 479.92105263157896,
+			"att2/3ds_per90": 381.02631578947364
 		},
 		"Sampdoria": {
 			"matchesPlayed": 38,
@@ -837,12 +1057,16 @@
 			"att3rd_total": 6290,
 			"attPenArea_total": 897,
 			"live_total": 23873,
+			"def2/3ds_total": 21151,
+			"att2/3ds_total": 18856,
 			"defPenArea_per90": 71.42105263157895,
 			"def3rd_per90": 225.92105263157896,
 			"mid3rd_per90": 330.6842105263158,
 			"att3rd_per90": 165.52631578947367,
 			"attPenArea_per90": 23.605263157894736,
-			"live_per90": 628.2368421052631
+			"live_per90": 628.2368421052631,
+			"def2/3ds_per90": 556.6052631578948,
+			"att2/3ds_per90": 496.2105263157895
 		},
 		"Sassuolo": {
 			"matchesPlayed": 38,
@@ -852,12 +1076,16 @@
 			"att3rd_total": 5427,
 			"attPenArea_total": 984,
 			"live_total": 18613,
+			"def2/3ds_total": 16353,
+			"att2/3ds_total": 14513,
 			"defPenArea_per90": 65.10526315789474,
 			"def3rd_per90": 191.23684210526315,
 			"mid3rd_per90": 239.10526315789474,
 			"att3rd_per90": 142.81578947368422,
 			"attPenArea_per90": 25.894736842105264,
-			"live_per90": 489.8157894736842
+			"live_per90": 489.8157894736842,
+			"def2/3ds_per90": 430.3421052631579,
+			"att2/3ds_per90": 381.92105263157896
 		},
 		"SPAL 2013": {
 			"matchesPlayed": 38,
@@ -867,12 +1095,16 @@
 			"att3rd_total": 6493,
 			"attPenArea_total": 1040,
 			"live_total": 21610,
+			"def2/3ds_total": 18583,
+			"att2/3ds_total": 17916,
 			"defPenArea_per90": 63.89473684210526,
 			"def3rd_per90": 188.42105263157896,
 			"mid3rd_per90": 300.60526315789474,
 			"att3rd_per90": 170.8684210526316,
 			"attPenArea_per90": 27.36842105263158,
-			"live_per90": 568.6842105263158
+			"live_per90": 568.6842105263158,
+			"def2/3ds_per90": 489.0263157894737,
+			"att2/3ds_per90": 471.47368421052636
 		},
 		"Torino": {
 			"matchesPlayed": 38,
@@ -882,12 +1114,16 @@
 			"att3rd_total": 6704,
 			"attPenArea_total": 1003,
 			"live_total": 20619,
+			"def2/3ds_total": 17467,
+			"att2/3ds_total": 17121,
 			"defPenArea_per90": 63.63157894736842,
 			"def3rd_per90": 185.52631578947367,
 			"mid3rd_per90": 274.13157894736844,
 			"att3rd_per90": 176.42105263157896,
 			"attPenArea_per90": 26.394736842105264,
-			"live_per90": 542.6052631578947
+			"live_per90": 542.6052631578947,
+			"def2/3ds_per90": 459.6578947368421,
+			"att2/3ds_per90": 450.5526315789474
 		},
 		"Udinese": {
 			"matchesPlayed": 38,
@@ -897,12 +1133,16 @@
 			"att3rd_total": 7059,
 			"attPenArea_total": 997,
 			"live_total": 23645,
+			"def2/3ds_total": 20173,
+			"att2/3ds_total": 20461,
 			"defPenArea_per90": 59.8421052631579,
 			"def3rd_per90": 178.18421052631578,
 			"mid3rd_per90": 352.6842105263158,
 			"att3rd_per90": 185.76315789473685,
 			"attPenArea_per90": 26.236842105263158,
-			"live_per90": 622.2368421052631
+			"live_per90": 622.2368421052631,
+			"def2/3ds_per90": 530.8684210526316,
+			"att2/3ds_per90": 538.4473684210526
 		}
 	},
 	"Bundesliga": {
@@ -914,12 +1154,16 @@
 			"att3rd_total": 5627,
 			"attPenArea_total": 879,
 			"live_total": 22202,
+			"def2/3ds_total": 19838,
+			"att2/3ds_total": 17422,
 			"defPenArea_per90": 66.94117647058823,
 			"def3rd_per90": 236.55882352941177,
 			"mid3rd_per90": 346.9117647058824,
 			"att3rd_per90": 165.5,
 			"attPenArea_per90": 25.852941176470587,
-			"live_per90": 653
+			"live_per90": 653,
+			"def2/3ds_per90": 583.4705882352941,
+			"att2/3ds_per90": 512.4117647058824
 		},
 		"Bayern Munich": {
 			"matchesPlayed": 34,
@@ -929,12 +1173,16 @@
 			"att3rd_total": 3088,
 			"attPenArea_total": 508,
 			"live_total": 15710,
+			"def2/3ds_total": 15165,
+			"att2/3ds_total": 10268,
 			"defPenArea_per90": 96.76470588235294,
 			"def3rd_per90": 234.85294117647058,
 			"mid3rd_per90": 211.1764705882353,
 			"att3rd_per90": 90.82352941176471,
 			"attPenArea_per90": 14.941176470588236,
-			"live_per90": 462.05882352941177
+			"live_per90": 462.05882352941177,
+			"def2/3ds_per90": 446.02941176470586,
+			"att2/3ds_per90": 302
 		},
 		"Borussia Dortmund": {
 			"matchesPlayed": 34,
@@ -944,12 +1192,16 @@
 			"att3rd_total": 4175,
 			"attPenArea_total": 583,
 			"live_total": 18087,
+			"def2/3ds_total": 16641,
+			"att2/3ds_total": 13751,
 			"defPenArea_per90": 67.82352941176471,
 			"def3rd_per90": 207.7941176470588,
 			"mid3rd_per90": 281.6470588235294,
 			"att3rd_per90": 122.79411764705883,
 			"attPenArea_per90": 17.147058823529413,
-			"live_per90": 531.9705882352941
+			"live_per90": 531.9705882352941,
+			"def2/3ds_per90": 489.4411764705882,
+			"att2/3ds_per90": 404.44117647058823
 		},
 		"Fortuna Duesseldorf": {
 			"matchesPlayed": 34,
@@ -959,12 +1211,16 @@
 			"att3rd_total": 4865,
 			"attPenArea_total": 787,
 			"live_total": 20544,
+			"def2/3ds_total": 18817,
+			"att2/3ds_total": 15933,
 			"defPenArea_per90": 66.23529411764706,
 			"def3rd_per90": 227.91176470588235,
 			"mid3rd_per90": 325.52941176470586,
 			"att3rd_per90": 143.08823529411765,
 			"attPenArea_per90": 23.147058823529413,
-			"live_per90": 604.2352941176471
+			"live_per90": 604.2352941176471,
+			"def2/3ds_per90": 553.4411764705882,
+			"att2/3ds_per90": 468.61764705882354
 		},
 		"Eintracht Frankfurt": {
 			"matchesPlayed": 34,
@@ -974,12 +1230,16 @@
 			"att3rd_total": 4549,
 			"attPenArea_total": 692,
 			"live_total": 18879,
+			"def2/3ds_total": 17362,
+			"att2/3ds_total": 14147,
 			"defPenArea_per90": 78.17647058823529,
 			"def3rd_per90": 228.35294117647058,
 			"mid3rd_per90": 282.29411764705884,
 			"att3rd_per90": 133.7941176470588,
 			"attPenArea_per90": 20.352941176470587,
-			"live_per90": 555.2647058823529
+			"live_per90": 555.2647058823529,
+			"def2/3ds_per90": 510.6470588235294,
+			"att2/3ds_per90": 416.0882352941177
 		},
 		"Freiburg": {
 			"matchesPlayed": 34,
@@ -989,12 +1249,16 @@
 			"att3rd_total": 5827,
 			"attPenArea_total": 935,
 			"live_total": 19765,
+			"def2/3ds_total": 16975,
+			"att2/3ds_total": 15922,
 			"defPenArea_per90": 66.05882352941177,
 			"def3rd_per90": 202.35294117647058,
 			"mid3rd_per90": 296.9117647058824,
 			"att3rd_per90": 171.38235294117646,
 			"attPenArea_per90": 27.5,
-			"live_per90": 581.3235294117648
+			"live_per90": 581.3235294117648,
+			"def2/3ds_per90": 499.2647058823529,
+			"att2/3ds_per90": 468.29411764705884
 		},
 		"Hertha Berlin": {
 			"matchesPlayed": 34,
@@ -1004,12 +1268,16 @@
 			"att3rd_total": 5785,
 			"attPenArea_total": 890,
 			"live_total": 20593,
+			"def2/3ds_total": 18118,
+			"att2/3ds_total": 16783,
 			"defPenArea_per90": 56.3235294117647,
 			"def3rd_per90": 209.41176470588235,
 			"mid3rd_per90": 323.47058823529414,
 			"att3rd_per90": 170.14705882352942,
 			"attPenArea_per90": 26.176470588235293,
-			"live_per90": 605.6764705882352
+			"live_per90": 605.6764705882352,
+			"def2/3ds_per90": 532.8823529411765,
+			"att2/3ds_per90": 493.61764705882354
 		},
 		"Hoffenheim": {
 			"matchesPlayed": 34,
@@ -1019,12 +1287,16 @@
 			"att3rd_total": 5778,
 			"attPenArea_total": 938,
 			"live_total": 19249,
+			"def2/3ds_total": 16515,
+			"att2/3ds_total": 15835,
 			"defPenArea_per90": 61.23529411764706,
 			"def3rd_per90": 189.94117647058823,
 			"mid3rd_per90": 295.79411764705884,
 			"att3rd_per90": 169.94117647058823,
 			"attPenArea_per90": 27.58823529411765,
-			"live_per90": 566.1470588235294
+			"live_per90": 566.1470588235294,
+			"def2/3ds_per90": 485.7352941176471,
+			"att2/3ds_per90": 465.7352941176471
 		},
 		"FC Koln": {
 			"matchesPlayed": 34,
@@ -1034,12 +1306,16 @@
 			"att3rd_total": 5341,
 			"attPenArea_total": 793,
 			"live_total": 19724,
+			"def2/3ds_total": 17677,
+			"att2/3ds_total": 15373,
 			"defPenArea_per90": 68.47058823529412,
 			"def3rd_per90": 224.85294117647058,
 			"mid3rd_per90": 295.05882352941177,
 			"att3rd_per90": 157.08823529411765,
 			"attPenArea_per90": 23.323529411764707,
-			"live_per90": 580.1176470588235
+			"live_per90": 580.1176470588235,
+			"def2/3ds_per90": 519.9117647058823,
+			"att2/3ds_per90": 452.1470588235294
 		},
 		"Bayer Leverkusen": {
 			"matchesPlayed": 34,
@@ -1049,12 +1325,16 @@
 			"att3rd_total": 3778,
 			"attPenArea_total": 655,
 			"live_total": 15935,
+			"def2/3ds_total": 14748,
+			"att2/3ds_total": 11834,
 			"defPenArea_per90": 71.47058823529412,
 			"def3rd_per90": 196.8235294117647,
 			"mid3rd_per90": 236.94117647058823,
 			"att3rd_per90": 111.11764705882354,
 			"attPenArea_per90": 19.264705882352942,
-			"live_per90": 468.6764705882353
+			"live_per90": 468.6764705882353,
+			"def2/3ds_per90": 433.7647058823529,
+			"att2/3ds_per90": 348.05882352941177
 		},
 		"Borussia M'Gladbach": {
 			"matchesPlayed": 34,
@@ -1064,12 +1344,16 @@
 			"att3rd_total": 4665,
 			"attPenArea_total": 764,
 			"live_total": 18864,
+			"def2/3ds_total": 16941,
+			"att2/3ds_total": 14147,
 			"defPenArea_per90": 75.88235294117646,
 			"def3rd_per90": 219.38235294117646,
 			"mid3rd_per90": 278.88235294117646,
 			"att3rd_per90": 137.2058823529412,
 			"attPenArea_per90": 22.470588235294116,
-			"live_per90": 554.8235294117648
+			"live_per90": 554.8235294117648,
+			"def2/3ds_per90": 498.2647058823529,
+			"att2/3ds_per90": 416.0882352941177
 		},
 		"Mainz 05": {
 			"matchesPlayed": 34,
@@ -1079,12 +1363,16 @@
 			"att3rd_total": 5579,
 			"attPenArea_total": 863,
 			"live_total": 21230,
+			"def2/3ds_total": 18865,
+			"att2/3ds_total": 16763,
 			"defPenArea_per90": 72.05882352941177,
 			"def3rd_per90": 225.91176470588235,
 			"mid3rd_per90": 328.94117647058823,
 			"att3rd_per90": 164.08823529411765,
 			"attPenArea_per90": 25.38235294117647,
-			"live_per90": 624.4117647058823
+			"live_per90": 624.4117647058823,
+			"def2/3ds_per90": 554.8529411764706,
+			"att2/3ds_per90": 493.02941176470586
 		},
 		"Paderborn": {
 			"matchesPlayed": 34,
@@ -1094,12 +1382,16 @@
 			"att3rd_total": 5703,
 			"attPenArea_total": 1022,
 			"live_total": 20796,
+			"def2/3ds_total": 18242,
+			"att2/3ds_total": 15618,
 			"defPenArea_per90": 72.8529411764706,
 			"def3rd_per90": 244.91176470588235,
 			"mid3rd_per90": 291.61764705882354,
 			"att3rd_per90": 167.73529411764707,
 			"attPenArea_per90": 30.058823529411764,
-			"live_per90": 611.6470588235294
+			"live_per90": 611.6470588235294,
+			"def2/3ds_per90": 536.5294117647059,
+			"att2/3ds_per90": 459.3529411764706
 		},
 		"RB Leipzig": {
 			"matchesPlayed": 34,
@@ -1109,12 +1401,16 @@
 			"att3rd_total": 4239,
 			"attPenArea_total": 583,
 			"live_total": 18934,
+			"def2/3ds_total": 17698,
+			"att2/3ds_total": 13986,
 			"defPenArea_per90": 77.58823529411765,
 			"def3rd_per90": 233.85294117647058,
 			"mid3rd_per90": 286.6764705882353,
 			"att3rd_per90": 124.67647058823529,
 			"attPenArea_per90": 17.147058823529413,
-			"live_per90": 556.8823529411765
+			"live_per90": 556.8823529411765,
+			"def2/3ds_per90": 520.5294117647059,
+			"att2/3ds_per90": 411.3529411764706
 		},
 		"Schalke 04": {
 			"matchesPlayed": 34,
@@ -1124,12 +1420,16 @@
 			"att3rd_total": 4983,
 			"attPenArea_total": 776,
 			"live_total": 19098,
+			"def2/3ds_total": 17203,
+			"att2/3ds_total": 14959,
 			"defPenArea_per90": 65.23529411764706,
 			"def3rd_per90": 212.55882352941177,
 			"mid3rd_per90": 293.4117647058824,
 			"att3rd_per90": 146.55882352941177,
 			"attPenArea_per90": 22.823529411764707,
-			"live_per90": 561.7058823529412
+			"live_per90": 561.7058823529412,
+			"def2/3ds_per90": 505.97058823529414,
+			"att2/3ds_per90": 439.97058823529414
 		},
 		"Union Berlin": {
 			"matchesPlayed": 34,
@@ -1139,12 +1439,16 @@
 			"att3rd_total": 5370,
 			"attPenArea_total": 812,
 			"live_total": 21393,
+			"def2/3ds_total": 19526,
+			"att2/3ds_total": 16643,
 			"defPenArea_per90": 66.20588235294117,
 			"def3rd_per90": 242.73529411764707,
 			"mid3rd_per90": 331.55882352941177,
 			"att3rd_per90": 157.94117647058823,
 			"attPenArea_per90": 23.88235294117647,
-			"live_per90": 629.2058823529412
+			"live_per90": 629.2058823529412,
+			"def2/3ds_per90": 574.2941176470588,
+			"att2/3ds_per90": 489.5
 		},
 		"Werder Bremen": {
 			"matchesPlayed": 34,
@@ -1154,12 +1458,16 @@
 			"att3rd_total": 5879,
 			"attPenArea_total": 835,
 			"live_total": 20402,
+			"def2/3ds_total": 17663,
+			"att2/3ds_total": 16688,
 			"defPenArea_per90": 63.205882352941174,
 			"def3rd_per90": 201.58823529411765,
 			"mid3rd_per90": 317.9117647058824,
 			"att3rd_per90": 172.91176470588235,
 			"attPenArea_per90": 24.558823529411764,
-			"live_per90": 600.0588235294117
+			"live_per90": 600.0588235294117,
+			"def2/3ds_per90": 519.5,
+			"att2/3ds_per90": 490.82352941176475
 		},
 		"Wolfsburg": {
 			"matchesPlayed": 34,
@@ -1169,12 +1477,16 @@
 			"att3rd_total": 4580,
 			"attPenArea_total": 716,
 			"live_total": 19130,
+			"def2/3ds_total": 17642,
+			"att2/3ds_total": 14557,
 			"defPenArea_per90": 73.52941176470588,
 			"def3rd_per90": 225.44117647058823,
 			"mid3rd_per90": 293.44117647058823,
 			"att3rd_per90": 134.7058823529412,
 			"attPenArea_per90": 21.058823529411764,
-			"live_per90": 562.6470588235294
+			"live_per90": 562.6470588235294,
+			"def2/3ds_per90": 518.8823529411765,
+			"att2/3ds_per90": 428.1470588235294
 		}
 	},
 	"Ligue 1": {
@@ -1186,12 +1498,16 @@
 			"att3rd_total": 4485,
 			"attPenArea_total": 613,
 			"live_total": 17307,
+			"def2/3ds_total": 15436,
+			"att2/3ds_total": 14136,
 			"defPenArea_per90": 58.32142857142857,
 			"def3rd_per90": 206.60714285714286,
 			"mid3rd_per90": 344.67857142857144,
 			"att3rd_per90": 160.17857142857142,
 			"attPenArea_per90": 21.892857142857142,
-			"live_per90": 618.1071428571429
+			"live_per90": 618.1071428571429,
+			"def2/3ds_per90": 551.2857142857143,
+			"att2/3ds_per90": 504.8571428571429
 		},
 		"Angers": {
 			"matchesPlayed": 28,
@@ -1201,12 +1517,16 @@
 			"att3rd_total": 4098,
 			"attPenArea_total": 457,
 			"live_total": 18289,
+			"def2/3ds_total": 16791,
+			"att2/3ds_total": 14836,
 			"defPenArea_per90": 59.67857142857143,
 			"def3rd_per90": 216.17857142857142,
 			"mid3rd_per90": 383.5,
 			"att3rd_per90": 146.35714285714286,
 			"attPenArea_per90": 16.321428571428573,
-			"live_per90": 653.1785714285714
+			"live_per90": 653.1785714285714,
+			"def2/3ds_per90": 599.6785714285714,
+			"att2/3ds_per90": 529.8571428571429
 		},
 		"Bordeaux": {
 			"matchesPlayed": 28,
@@ -1216,12 +1536,16 @@
 			"att3rd_total": 4027,
 			"attPenArea_total": 640,
 			"live_total": 14815,
+			"def2/3ds_total": 13169,
+			"att2/3ds_total": 12188,
 			"defPenArea_per90": 57.964285714285715,
 			"def3rd_per90": 178.85714285714286,
 			"mid3rd_per90": 291.4642857142857,
 			"att3rd_per90": 143.82142857142858,
 			"attPenArea_per90": 22.857142857142858,
-			"live_per90": 529.1071428571429
+			"live_per90": 529.1071428571429,
+			"def2/3ds_per90": 470.32142857142856,
+			"att2/3ds_per90": 435.28571428571433
 		},
 		"Brest": {
 			"matchesPlayed": 28,
@@ -1231,12 +1555,16 @@
 			"att3rd_total": 4395,
 			"attPenArea_total": 697,
 			"live_total": 16361,
+			"def2/3ds_total": 14498,
+			"att2/3ds_total": 13212,
 			"defPenArea_per90": 61.42857142857143,
 			"def3rd_per90": 202.89285714285714,
 			"mid3rd_per90": 314.89285714285717,
 			"att3rd_per90": 156.96428571428572,
 			"attPenArea_per90": 24.892857142857142,
-			"live_per90": 584.3214285714286
+			"live_per90": 584.3214285714286,
+			"def2/3ds_per90": 517.7857142857143,
+			"att2/3ds_per90": 471.8571428571429
 		},
 		"Dijon": {
 			"matchesPlayed": 28,
@@ -1246,12 +1574,16 @@
 			"att3rd_total": 4440,
 			"attPenArea_total": 640,
 			"live_total": 17035,
+			"def2/3ds_total": 15283,
+			"att2/3ds_total": 13955,
 			"defPenArea_per90": 59.67857142857143,
 			"def3rd_per90": 206,
 			"mid3rd_per90": 339.82142857142856,
 			"att3rd_per90": 158.57142857142858,
 			"attPenArea_per90": 22.857142857142858,
-			"live_per90": 608.3928571428571
+			"live_per90": 608.3928571428571,
+			"def2/3ds_per90": 545.8214285714286,
+			"att2/3ds_per90": 498.3928571428571
 		},
 		"Lille": {
 			"matchesPlayed": 28,
@@ -1261,12 +1593,16 @@
 			"att3rd_total": 3179,
 			"attPenArea_total": 479,
 			"live_total": 14582,
+			"def2/3ds_total": 13789,
+			"att2/3ds_total": 10813,
 			"defPenArea_per90": 66.10714285714286,
 			"def3rd_per90": 219.82142857142858,
 			"mid3rd_per90": 272.64285714285717,
 			"att3rd_per90": 113.53571428571429,
 			"attPenArea_per90": 17.107142857142858,
-			"live_per90": 520.7857142857143
+			"live_per90": 520.7857142857143,
+			"def2/3ds_per90": 492.4642857142858,
+			"att2/3ds_per90": 386.17857142857144
 		},
 		"Lyon": {
 			"matchesPlayed": 28,
@@ -1276,12 +1612,16 @@
 			"att3rd_total": 3852,
 			"attPenArea_total": 494,
 			"live_total": 14497,
+			"def2/3ds_total": 13013,
+			"att2/3ds_total": 11421,
 			"defPenArea_per90": 63.57142857142857,
 			"def3rd_per90": 194.42857142857142,
 			"mid3rd_per90": 270.32142857142856,
 			"att3rd_per90": 137.57142857142858,
 			"attPenArea_per90": 17.642857142857142,
-			"live_per90": 517.75
+			"live_per90": 517.75,
+			"def2/3ds_per90": 464.75,
+			"att2/3ds_per90": 407.8928571428571
 		},
 		"Marseille": {
 			"matchesPlayed": 28,
@@ -1291,12 +1631,16 @@
 			"att3rd_total": 3264,
 			"attPenArea_total": 447,
 			"live_total": 14615,
+			"def2/3ds_total": 13812,
+			"att2/3ds_total": 11165,
 			"defPenArea_per90": 63.035714285714285,
 			"def3rd_per90": 211.10714285714286,
 			"mid3rd_per90": 282.17857142857144,
 			"att3rd_per90": 116.57142857142857,
 			"attPenArea_per90": 15.964285714285714,
-			"live_per90": 521.9642857142857
+			"live_per90": 521.9642857142857,
+			"def2/3ds_per90": 493.28571428571433,
+			"att2/3ds_per90": 398.75
 		},
 		"Metz": {
 			"matchesPlayed": 28,
@@ -1306,12 +1650,16 @@
 			"att3rd_total": 4588,
 			"attPenArea_total": 632,
 			"live_total": 17020,
+			"def2/3ds_total": 15185,
+			"att2/3ds_total": 14083,
 			"defPenArea_per90": 53.107142857142854,
 			"def3rd_per90": 203.21428571428572,
 			"mid3rd_per90": 339.10714285714283,
 			"att3rd_per90": 163.85714285714286,
 			"attPenArea_per90": 22.571428571428573,
-			"live_per90": 607.8571428571429
+			"live_per90": 607.8571428571429,
+			"def2/3ds_per90": 542.3214285714286,
+			"att2/3ds_per90": 502.96428571428567
 		},
 		"Monaco": {
 			"matchesPlayed": 28,
@@ -1321,12 +1669,16 @@
 			"att3rd_total": 3990,
 			"attPenArea_total": 599,
 			"live_total": 16002,
+			"def2/3ds_total": 14492,
+			"att2/3ds_total": 12556,
 			"defPenArea_per90": 67.10714285714286,
 			"def3rd_per90": 211.64285714285714,
 			"mid3rd_per90": 305.92857142857144,
 			"att3rd_per90": 142.5,
 			"attPenArea_per90": 21.392857142857142,
-			"live_per90": 571.5
+			"live_per90": 571.5,
+			"def2/3ds_per90": 517.5714285714286,
+			"att2/3ds_per90": 448.42857142857144
 		},
 		"Montpellier": {
 			"matchesPlayed": 28,
@@ -1336,12 +1688,16 @@
 			"att3rd_total": 4163,
 			"attPenArea_total": 560,
 			"live_total": 15916,
+			"def2/3ds_total": 14495,
+			"att2/3ds_total": 12851,
 			"defPenArea_per90": 62.214285714285715,
 			"def3rd_per90": 207.39285714285714,
 			"mid3rd_per90": 310.2857142857143,
 			"att3rd_per90": 148.67857142857142,
 			"attPenArea_per90": 20,
-			"live_per90": 568.4285714285714
+			"live_per90": 568.4285714285714,
+			"def2/3ds_per90": 517.6785714285714,
+			"att2/3ds_per90": 458.96428571428567
 		},
 		"Nantes": {
 			"matchesPlayed": 28,
@@ -1351,12 +1707,16 @@
 			"att3rd_total": 3736,
 			"attPenArea_total": 492,
 			"live_total": 16700,
+			"def2/3ds_total": 15500,
+			"att2/3ds_total": 12871,
 			"defPenArea_per90": 63.285714285714285,
 			"def3rd_per90": 227.32142857142858,
 			"mid3rd_per90": 326.25,
 			"att3rd_per90": 133.42857142857142,
 			"attPenArea_per90": 17.571428571428573,
-			"live_per90": 596.4285714285714
+			"live_per90": 596.4285714285714,
+			"def2/3ds_per90": 553.5714285714286,
+			"att2/3ds_per90": 459.67857142857144
 		},
 		"Nice": {
 			"matchesPlayed": 28,
@@ -1366,12 +1726,16 @@
 			"att3rd_total": 4337,
 			"attPenArea_total": 670,
 			"live_total": 14765,
+			"def2/3ds_total": 12760,
+			"att2/3ds_total": 11485,
 			"defPenArea_per90": 64.35714285714286,
 			"def3rd_per90": 200.42857142857142,
 			"mid3rd_per90": 255.28571428571428,
 			"att3rd_per90": 154.89285714285714,
 			"attPenArea_per90": 23.928571428571427,
-			"live_per90": 527.3214285714286
+			"live_per90": 527.3214285714286,
+			"def2/3ds_per90": 455.71428571428567,
+			"att2/3ds_per90": 410.17857142857144
 		},
 		"Nimes": {
 			"matchesPlayed": 28,
@@ -1381,12 +1745,16 @@
 			"att3rd_total": 3928,
 			"attPenArea_total": 551,
 			"live_total": 16002,
+			"def2/3ds_total": 14673,
+			"att2/3ds_total": 12702,
 			"defPenArea_per90": 63.107142857142854,
 			"def3rd_per90": 210.67857142857142,
 			"mid3rd_per90": 313.35714285714283,
 			"att3rd_per90": 140.28571428571428,
 			"attPenArea_per90": 19.678571428571427,
-			"live_per90": 571.5
+			"live_per90": 571.5,
+			"def2/3ds_per90": 524.0357142857142,
+			"att2/3ds_per90": 453.6428571428571
 		},
 		"Paris Saint-Germain": {
 			"matchesPlayed": 27,
@@ -1396,12 +1764,16 @@
 			"att3rd_total": 2903,
 			"attPenArea_total": 437,
 			"live_total": 12041,
+			"def2/3ds_total": 11182,
+			"att2/3ds_total": 8818,
 			"defPenArea_per90": 71.37037037037037,
 			"def3rd_per90": 195.07407407407408,
 			"mid3rd_per90": 219.07407407407408,
 			"att3rd_per90": 107.51851851851852,
 			"attPenArea_per90": 16.185185185185187,
-			"live_per90": 445.962962962963
+			"live_per90": 445.962962962963,
+			"def2/3ds_per90": 414.14814814814815,
+			"att2/3ds_per90": 326.5925925925926
 		},
 		"Reims": {
 			"matchesPlayed": 28,
@@ -1411,12 +1783,16 @@
 			"att3rd_total": 3954,
 			"attPenArea_total": 513,
 			"live_total": 15654,
+			"def2/3ds_total": 14333,
+			"att2/3ds_total": 12604,
 			"defPenArea_per90": 61.357142857142854,
 			"def3rd_per90": 202.96428571428572,
 			"mid3rd_per90": 308.92857142857144,
 			"att3rd_per90": 141.21428571428572,
 			"attPenArea_per90": 18.321428571428573,
-			"live_per90": 559.0714285714286
+			"live_per90": 559.0714285714286,
+			"def2/3ds_per90": 511.89285714285717,
+			"att2/3ds_per90": 450.14285714285717
 		},
 		"Rennes": {
 			"matchesPlayed": 28,
@@ -1426,12 +1802,16 @@
 			"att3rd_total": 4040,
 			"attPenArea_total": 551,
 			"live_total": 15201,
+			"def2/3ds_total": 13633,
+			"att2/3ds_total": 12349,
 			"defPenArea_per90": 57.67857142857143,
 			"def3rd_per90": 190.14285714285714,
 			"mid3rd_per90": 296.75,
 			"att3rd_per90": 144.28571428571428,
 			"attPenArea_per90": 19.678571428571427,
-			"live_per90": 542.8928571428571
+			"live_per90": 542.8928571428571,
+			"def2/3ds_per90": 486.8928571428571,
+			"att2/3ds_per90": 441.0357142857143
 		},
 		"Saint-Etienne": {
 			"matchesPlayed": 28,
@@ -1441,12 +1821,16 @@
 			"att3rd_total": 3691,
 			"attPenArea_total": 523,
 			"live_total": 16120,
+			"def2/3ds_total": 14959,
+			"att2/3ds_total": 12969,
 			"defPenArea_per90": 62.25,
 			"def3rd_per90": 202.89285714285714,
 			"mid3rd_per90": 331.35714285714283,
 			"att3rd_per90": 131.82142857142858,
 			"attPenArea_per90": 18.678571428571427,
-			"live_per90": 575.7142857142857
+			"live_per90": 575.7142857142857,
+			"def2/3ds_per90": 534.25,
+			"att2/3ds_per90": 463.17857142857144
 		},
 		"Strasbourg": {
 			"matchesPlayed": 27,
@@ -1456,12 +1840,16 @@
 			"att3rd_total": 3728,
 			"attPenArea_total": 460,
 			"live_total": 14806,
+			"def2/3ds_total": 13516,
+			"att2/3ds_total": 12077,
 			"defPenArea_per90": 58.03703703703704,
 			"def3rd_per90": 191.37037037037038,
 			"mid3rd_per90": 309.22222222222223,
 			"att3rd_per90": 138.07407407407408,
 			"attPenArea_per90": 17.037037037037038,
-			"live_per90": 548.3703703703703
+			"live_per90": 548.3703703703703,
+			"def2/3ds_per90": 500.5925925925926,
+			"att2/3ds_per90": 447.2962962962963
 		},
 		"Toulouse": {
 			"matchesPlayed": 28,
@@ -1471,12 +1859,16 @@
 			"att3rd_total": 4793,
 			"attPenArea_total": 692,
 			"live_total": 17666,
+			"def2/3ds_total": 15491,
+			"att2/3ds_total": 14581,
 			"defPenArea_per90": 58.285714285714285,
 			"def3rd_per90": 203.67857142857142,
 			"mid3rd_per90": 349.57142857142856,
 			"att3rd_per90": 171.17857142857142,
 			"attPenArea_per90": 24.714285714285715,
-			"live_per90": 630.9285714285714
+			"live_per90": 630.9285714285714,
+			"def2/3ds_per90": 553.25,
+			"att2/3ds_per90": 520.75
 		}
 	},
 	"Champions League": {
@@ -1488,12 +1880,16 @@
 			"att3rd_total": 833,
 			"attPenArea_total": 145,
 			"live_total": 3200,
+			"def2/3ds_total": 2868,
+			"att2/3ds_total": 2481,
 			"defPenArea_per90": 72.66666666666667,
 			"def3rd_per90": 203.33333333333334,
 			"mid3rd_per90": 274.6666666666667,
 			"att3rd_per90": 138.83333333333334,
 			"attPenArea_per90": 24.166666666666668,
-			"live_per90": 533.3333333333334
+			"live_per90": 533.3333333333334,
+			"def2/3ds_per90": 478,
+			"att2/3ds_per90": 413.5
 		},
 		"Atalanta": {
 			"matchesPlayed": 9,
@@ -1503,12 +1899,16 @@
 			"att3rd_total": 1368,
 			"attPenArea_total": 212,
 			"live_total": 5187,
+			"def2/3ds_total": 4646,
+			"att2/3ds_total": 4244,
 			"defPenArea_per90": 67.11111111111111,
 			"def3rd_per90": 196.66666666666666,
 			"mid3rd_per90": 319.55555555555554,
 			"att3rd_per90": 152,
 			"attPenArea_per90": 23.555555555555557,
-			"live_per90": 576.3333333333334
+			"live_per90": 576.3333333333334,
+			"def2/3ds_per90": 516.2222222222222,
+			"att2/3ds_per90": 471.55555555555554
 		},
 		"Atletico Madrid": {
 			"matchesPlayed": 9,
@@ -1518,12 +1918,16 @@
 			"att3rd_total": 1751,
 			"attPenArea_total": 216,
 			"live_total": 6291,
+			"def2/3ds_total": 5351,
+			"att2/3ds_total": 5078,
 			"defPenArea_per90": 72.11111111111111,
 			"def3rd_per90": 224.88888888888889,
 			"mid3rd_per90": 369.6666666666667,
 			"att3rd_per90": 194.55555555555554,
 			"attPenArea_per90": 24,
-			"live_per90": 699
+			"live_per90": 699,
+			"def2/3ds_per90": 594.5555555555555,
+			"att2/3ds_per90": 564.2222222222222
 		},
 		"Barcelona": {
 			"matchesPlayed": 9,
@@ -1533,12 +1937,16 @@
 			"att3rd_total": 1471,
 			"attPenArea_total": 247,
 			"live_total": 5180,
+			"def2/3ds_total": 4413,
+			"att2/3ds_total": 3933,
 			"defPenArea_per90": 70.44444444444444,
 			"def3rd_per90": 216.77777777777777,
 			"mid3rd_per90": 273.55555555555554,
 			"att3rd_per90": 163.44444444444446,
 			"attPenArea_per90": 27.444444444444443,
-			"live_per90": 575.5555555555555
+			"live_per90": 575.5555555555555,
+			"def2/3ds_per90": 490.3333333333333,
+			"att2/3ds_per90": 437
 		},
 		"Bayern Munich": {
 			"matchesPlayed": 11,
@@ -1548,12 +1956,16 @@
 			"att3rd_total": 919,
 			"attPenArea_total": 149,
 			"live_total": 5037,
+			"def2/3ds_total": 4937,
+			"att2/3ds_total": 3339,
 			"defPenArea_per90": 92.72727272727273,
 			"def3rd_per90": 228.8181818181818,
 			"mid3rd_per90": 220,
 			"att3rd_per90": 83.54545454545455,
 			"attPenArea_per90": 13.545454545454545,
-			"live_per90": 457.90909090909093
+			"live_per90": 457.90909090909093,
+			"def2/3ds_per90": 448.8181818181818,
+			"att2/3ds_per90": 303.54545454545456
 		},
 		"Benfica": {
 			"matchesPlayed": 6,
@@ -1563,12 +1975,16 @@
 			"att3rd_total": 1046,
 			"attPenArea_total": 166,
 			"live_total": 3810,
+			"def2/3ds_total": 3300,
+			"att2/3ds_total": 3089,
 			"defPenArea_per90": 64,
 			"def3rd_per90": 209.5,
 			"mid3rd_per90": 340.5,
 			"att3rd_per90": 174.33333333333334,
 			"attPenArea_per90": 27.666666666666668,
-			"live_per90": 635
+			"live_per90": 635,
+			"def2/3ds_per90": 550,
+			"att2/3ds_per90": 514.8333333333334
 		},
 		"Chelsea": {
 			"matchesPlayed": 8,
@@ -1578,12 +1994,16 @@
 			"att3rd_total": 1098,
 			"attPenArea_total": 160,
 			"live_total": 4572,
+			"def2/3ds_total": 4135,
+			"att2/3ds_total": 3391,
 			"defPenArea_per90": 81.5,
 			"def3rd_per90": 230.25,
 			"mid3rd_per90": 286.625,
 			"att3rd_per90": 137.25,
 			"attPenArea_per90": 20,
-			"live_per90": 571.5
+			"live_per90": 571.5,
+			"def2/3ds_per90": 516.875,
+			"att2/3ds_per90": 423.875
 		},
 		"Club Brugge": {
 			"matchesPlayed": 6,
@@ -1593,12 +2013,16 @@
 			"att3rd_total": 1093,
 			"attPenArea_total": 150,
 			"live_total": 4045,
+			"def2/3ds_total": 3568,
+			"att2/3ds_total": 3265,
 			"defPenArea_per90": 67.5,
 			"def3rd_per90": 232.66666666666666,
 			"mid3rd_per90": 362,
 			"att3rd_per90": 182.16666666666666,
 			"attPenArea_per90": 25,
-			"live_per90": 674.1666666666666
+			"live_per90": 674.1666666666666,
+			"def2/3ds_per90": 594.6666666666666,
+			"att2/3ds_per90": 544.1666666666666
 		},
 		"Dinamo Zagreb": {
 			"matchesPlayed": 6,
@@ -1608,12 +2032,16 @@
 			"att3rd_total": 1585,
 			"attPenArea_total": 243,
 			"live_total": 4494,
+			"def2/3ds_total": 3520,
+			"att2/3ds_total": 4060,
 			"defPenArea_per90": 48.833333333333336,
 			"def3rd_per90": 174.16666666666666,
 			"mid3rd_per90": 412.5,
 			"att3rd_per90": 264.1666666666667,
 			"attPenArea_per90": 40.5,
-			"live_per90": 749
+			"live_per90": 749,
+			"def2/3ds_per90": 586.6666666666666,
+			"att2/3ds_per90": 676.6666666666667
 		},
 		"Borussia Dortmund": {
 			"matchesPlayed": 8,
@@ -1623,12 +2051,16 @@
 			"att3rd_total": 1314,
 			"attPenArea_total": 169,
 			"live_total": 5197,
+			"def2/3ds_total": 4534,
+			"att2/3ds_total": 4124,
 			"defPenArea_per90": 71.625,
 			"def3rd_per90": 215.5,
 			"mid3rd_per90": 351.25,
 			"att3rd_per90": 164.25,
 			"attPenArea_per90": 21.125,
-			"live_per90": 649.625
+			"live_per90": 649.625,
+			"def2/3ds_per90": 566.75,
+			"att2/3ds_per90": 515.5
 		},
 		"Galatasaray": {
 			"matchesPlayed": 6,
@@ -1638,12 +2070,16 @@
 			"att3rd_total": 1189,
 			"attPenArea_total": 199,
 			"live_total": 3849,
+			"def2/3ds_total": 3194,
+			"att2/3ds_total": 3209,
 			"defPenArea_per90": 55,
 			"def3rd_per90": 195.66666666666666,
 			"mid3rd_per90": 336.6666666666667,
 			"att3rd_per90": 198.16666666666666,
 			"attPenArea_per90": 33.166666666666664,
-			"live_per90": 641.5
+			"live_per90": 641.5,
+			"def2/3ds_per90": 532.3333333333334,
+			"att2/3ds_per90": 534.8333333333334
 		},
 		"Genk": {
 			"matchesPlayed": 6,
@@ -1653,12 +2089,16 @@
 			"att3rd_total": 1298,
 			"attPenArea_total": 215,
 			"live_total": 4239,
+			"def2/3ds_total": 3499,
+			"att2/3ds_total": 3600,
 			"defPenArea_per90": 61.166666666666664,
 			"def3rd_per90": 199.5,
 			"mid3rd_per90": 383.6666666666667,
 			"att3rd_per90": 216.33333333333334,
 			"attPenArea_per90": 35.833333333333336,
-			"live_per90": 706.5
+			"live_per90": 706.5,
+			"def2/3ds_per90": 583.1666666666667,
+			"att2/3ds_per90": 600
 		},
 		"Inter": {
 			"matchesPlayed": 6,
@@ -1668,12 +2108,16 @@
 			"att3rd_total": 1472,
 			"attPenArea_total": 172,
 			"live_total": 4377,
+			"def2/3ds_total": 3470,
+			"att2/3ds_total": 3718,
 			"defPenArea_per90": 63.666666666666664,
 			"def3rd_per90": 204,
 			"mid3rd_per90": 374.3333333333333,
 			"att3rd_per90": 245.33333333333334,
 			"attPenArea_per90": 28.666666666666668,
-			"live_per90": 729.5
+			"live_per90": 729.5,
+			"def2/3ds_per90": 578.3333333333333,
+			"att2/3ds_per90": 619.6666666666666
 		},
 		"Juventus": {
 			"matchesPlayed": 8,
@@ -1683,12 +2127,16 @@
 			"att3rd_total": 1248,
 			"attPenArea_total": 156,
 			"live_total": 4240,
+			"def2/3ds_total": 3614,
+			"att2/3ds_total": 3314,
 			"defPenArea_per90": 70,
 			"def3rd_per90": 193.5,
 			"mid3rd_per90": 258.25,
 			"att3rd_per90": 156,
 			"attPenArea_per90": 19.5,
-			"live_per90": 530
+			"live_per90": 530,
+			"def2/3ds_per90": 451.75,
+			"att2/3ds_per90": 414.25
 		},
 		"Bayer Leverkusen": {
 			"matchesPlayed": 6,
@@ -1698,12 +2146,16 @@
 			"att3rd_total": 747,
 			"attPenArea_total": 104,
 			"live_total": 3335,
+			"def2/3ds_total": 3070,
+			"att2/3ds_total": 2601,
 			"defPenArea_per90": 71.66666666666667,
 			"def3rd_per90": 202.66666666666666,
 			"mid3rd_per90": 309,
 			"att3rd_per90": 124.5,
 			"attPenArea_per90": 17.333333333333332,
-			"live_per90": 555.8333333333334
+			"live_per90": 555.8333333333334,
+			"def2/3ds_per90": 511.66666666666663,
+			"att2/3ds_per90": 433.5
 		},
 		"Lille": {
 			"matchesPlayed": 6,
@@ -1713,12 +2165,16 @@
 			"att3rd_total": 1052,
 			"attPenArea_total": 156,
 			"live_total": 3963,
+			"def2/3ds_total": 3505,
+			"att2/3ds_total": 3172,
 			"defPenArea_per90": 69.66666666666667,
 			"def3rd_per90": 230.83333333333334,
 			"mid3rd_per90": 353.3333333333333,
 			"att3rd_per90": 175.33333333333334,
 			"attPenArea_per90": 26,
-			"live_per90": 660.5
+			"live_per90": 660.5,
+			"def2/3ds_per90": 584.1666666666666,
+			"att2/3ds_per90": 528.6666666666666
 		},
 		"Liverpool": {
 			"matchesPlayed": 8,
@@ -1728,12 +2184,16 @@
 			"att3rd_total": 773,
 			"attPenArea_total": 106,
 			"live_total": 3780,
+			"def2/3ds_total": 3623,
+			"att2/3ds_total": 2536,
 			"defPenArea_per90": 88.375,
 			"def3rd_per90": 232.5,
 			"mid3rd_per90": 220.375,
 			"att3rd_per90": 96.625,
 			"attPenArea_per90": 13.25,
-			"live_per90": 472.5
+			"live_per90": 472.5,
+			"def2/3ds_per90": 452.875,
+			"att2/3ds_per90": 317
 		},
 		"Lokomotiv Moscow": {
 			"matchesPlayed": 6,
@@ -1743,12 +2203,16 @@
 			"att3rd_total": 1576,
 			"attPenArea_total": 190,
 			"live_total": 4770,
+			"def2/3ds_total": 3851,
+			"att2/3ds_total": 4409,
 			"defPenArea_per90": 46,
 			"def3rd_per90": 169.66666666666666,
 			"mid3rd_per90": 472.1666666666667,
 			"att3rd_per90": 262.6666666666667,
 			"attPenArea_per90": 31.666666666666668,
-			"live_per90": 795
+			"live_per90": 795,
+			"def2/3ds_per90": 641.8333333333334,
+			"att2/3ds_per90": 734.8333333333334
 		},
 		"Lyon": {
 			"matchesPlayed": 10,
@@ -1758,12 +2222,16 @@
 			"att3rd_total": 1773,
 			"attPenArea_total": 234,
 			"live_total": 6407,
+			"def2/3ds_total": 5546,
+			"att2/3ds_total": 5315,
 			"defPenArea_per90": 62.8,
 			"def3rd_per90": 200.4,
 			"mid3rd_per90": 354.2,
 			"att3rd_per90": 177.3,
 			"attPenArea_per90": 23.4,
-			"live_per90": 640.7
+			"live_per90": 640.7,
+			"def2/3ds_per90": 554.6,
+			"att2/3ds_per90": 531.5
 		},
 		"Manchester City": {
 			"matchesPlayed": 9,
@@ -1773,12 +2241,16 @@
 			"att3rd_total": 903,
 			"attPenArea_total": 111,
 			"live_total": 4445,
+			"def2/3ds_total": 4223,
+			"att2/3ds_total": 3081,
 			"defPenArea_per90": 86.33333333333333,
 			"def3rd_per90": 227.22222222222223,
 			"mid3rd_per90": 242,
 			"att3rd_per90": 100.33333333333333,
 			"attPenArea_per90": 12.333333333333334,
-			"live_per90": 493.8888888888889
+			"live_per90": 493.8888888888889,
+			"def2/3ds_per90": 469.22222222222223,
+			"att2/3ds_per90": 342.3333333333333
 		},
 		"Napoli": {
 			"matchesPlayed": 8,
@@ -1788,12 +2260,16 @@
 			"att3rd_total": 1727,
 			"attPenArea_total": 212,
 			"live_total": 5256,
+			"def2/3ds_total": 4254,
+			"att2/3ds_total": 4564,
 			"defPenArea_per90": 64.375,
 			"def3rd_per90": 177.125,
 			"mid3rd_per90": 354.625,
 			"att3rd_per90": 215.875,
 			"attPenArea_per90": 26.5,
-			"live_per90": 657
+			"live_per90": 657,
+			"def2/3ds_per90": 531.75,
+			"att2/3ds_per90": 570.5
 		},
 		"Olympiacos": {
 			"matchesPlayed": 6,
@@ -1803,12 +2279,16 @@
 			"att3rd_total": 1091,
 			"attPenArea_total": 174,
 			"live_total": 3664,
+			"def2/3ds_total": 3123,
+			"att2/3ds_total": 3151,
 			"defPenArea_per90": 54.666666666666664,
 			"def3rd_per90": 177.16666666666666,
 			"mid3rd_per90": 343.3333333333333,
 			"att3rd_per90": 181.83333333333334,
 			"attPenArea_per90": 29,
-			"live_per90": 610.6666666666666
+			"live_per90": 610.6666666666666,
+			"def2/3ds_per90": 520.5,
+			"att2/3ds_per90": 525.1666666666666
 		},
 		"Paris Saint-Germain": {
 			"matchesPlayed": 11,
@@ -1818,12 +2298,16 @@
 			"att3rd_total": 2042,
 			"attPenArea_total": 238,
 			"live_total": 6471,
+			"def2/3ds_total": 5347,
+			"att2/3ds_total": 5235,
 			"defPenArea_per90": 63.54545454545455,
 			"def3rd_per90": 195.8181818181818,
 			"mid3rd_per90": 290.27272727272725,
 			"att3rd_per90": 185.63636363636363,
 			"attPenArea_per90": 21.636363636363637,
-			"live_per90": 588.2727272727273
+			"live_per90": 588.2727272727273,
+			"def2/3ds_per90": 486.09090909090907,
+			"att2/3ds_per90": 475.9090909090909
 		},
 		"RB Leipzig": {
 			"matchesPlayed": 10,
@@ -1833,12 +2317,16 @@
 			"att3rd_total": 1233,
 			"attPenArea_total": 182,
 			"live_total": 5613,
+			"def2/3ds_total": 5251,
+			"att2/3ds_total": 4160,
 			"defPenArea_per90": 77,
 			"def3rd_per90": 232.4,
 			"mid3rd_per90": 292.7,
 			"att3rd_per90": 123.3,
 			"attPenArea_per90": 18.2,
-			"live_per90": 561.3
+			"live_per90": 561.3,
+			"def2/3ds_per90": 525.1,
+			"att2/3ds_per90": 416
 		},
 		"Salzburg": {
 			"matchesPlayed": 6,
@@ -1848,12 +2336,16 @@
 			"att3rd_total": 997,
 			"attPenArea_total": 165,
 			"live_total": 3839,
+			"def2/3ds_total": 3433,
+			"att2/3ds_total": 2943,
 			"defPenArea_per90": 78.66666666666667,
 			"def3rd_per90": 247.83333333333334,
 			"mid3rd_per90": 324.3333333333333,
 			"att3rd_per90": 166.16666666666666,
 			"attPenArea_per90": 27.5,
-			"live_per90": 639.8333333333334
+			"live_per90": 639.8333333333334,
+			"def2/3ds_per90": 572.1666666666666,
+			"att2/3ds_per90": 490.5
 		},
 		"Real Madrid": {
 			"matchesPlayed": 8,
@@ -1863,12 +2355,16 @@
 			"att3rd_total": 1273,
 			"attPenArea_total": 163,
 			"live_total": 4884,
+			"def2/3ds_total": 4238,
+			"att2/3ds_total": 3815,
 			"defPenArea_per90": 77.25,
 			"def3rd_per90": 212,
 			"mid3rd_per90": 317.75,
 			"att3rd_per90": 159.125,
 			"attPenArea_per90": 20.375,
-			"live_per90": 610.5
+			"live_per90": 610.5,
+			"def2/3ds_per90": 529.75,
+			"att2/3ds_per90": 476.875
 		},
 		"FK Crvena Zvezda": {
 			"matchesPlayed": 6,
@@ -1878,12 +2374,16 @@
 			"att3rd_total": 1385,
 			"attPenArea_total": 249,
 			"live_total": 4265,
+			"def2/3ds_total": 3451,
+			"att2/3ds_total": 3792,
 			"defPenArea_per90": 50.333333333333336,
 			"def3rd_per90": 174,
 			"mid3rd_per90": 401.1666666666667,
 			"att3rd_per90": 230.83333333333334,
 			"attPenArea_per90": 41.5,
-			"live_per90": 710.8333333333334
+			"live_per90": 710.8333333333334,
+			"def2/3ds_per90": 575.1666666666667,
+			"att2/3ds_per90": 632
 		},
 		"Shakhtar Donetsk": {
 			"matchesPlayed": 6,
@@ -1893,12 +2393,16 @@
 			"att3rd_total": 1204,
 			"attPenArea_total": 172,
 			"live_total": 3661,
+			"def2/3ds_total": 2929,
+			"att2/3ds_total": 3245,
 			"defPenArea_per90": 45.833333333333336,
 			"def3rd_per90": 148,
 			"mid3rd_per90": 340.1666666666667,
 			"att3rd_per90": 200.66666666666666,
 			"attPenArea_per90": 28.666666666666668,
-			"live_per90": 610.1666666666666
+			"live_per90": 610.1666666666666,
+			"def2/3ds_per90": 488.1666666666667,
+			"att2/3ds_per90": 540.8333333333334
 		},
 		"Slavia Prague": {
 			"matchesPlayed": 6,
@@ -1908,12 +2412,16 @@
 			"att3rd_total": 751,
 			"attPenArea_total": 148,
 			"live_total": 3667,
+			"def2/3ds_total": 3462,
+			"att2/3ds_total": 2706,
 			"defPenArea_per90": 81.16666666666667,
 			"def3rd_per90": 251.16666666666666,
 			"mid3rd_per90": 325.8333333333333,
 			"att3rd_per90": 125.16666666666667,
 			"attPenArea_per90": 24.666666666666668,
-			"live_per90": 611.1666666666666
+			"live_per90": 611.1666666666666,
+			"def2/3ds_per90": 577,
+			"att2/3ds_per90": 451
 		},
 		"Tottenham": {
 			"matchesPlayed": 8,
@@ -1923,12 +2431,16 @@
 			"att3rd_total": 1157,
 			"attPenArea_total": 197,
 			"live_total": 4856,
+			"def2/3ds_total": 4350,
+			"att2/3ds_total": 3696,
 			"defPenArea_per90": 70.625,
 			"def3rd_per90": 226.375,
 			"mid3rd_per90": 317.375,
 			"att3rd_per90": 144.625,
 			"attPenArea_per90": 24.625,
-			"live_per90": 607
+			"live_per90": 607,
+			"def2/3ds_per90": 543.75,
+			"att2/3ds_per90": 462
 		},
 		"Valencia": {
 			"matchesPlayed": 8,
@@ -1938,12 +2450,16 @@
 			"att3rd_total": 1578,
 			"attPenArea_total": 294,
 			"live_total": 4577,
+			"def2/3ds_total": 3697,
+			"att2/3ds_total": 3921,
 			"defPenArea_per90": 54.125,
 			"def3rd_per90": 169.25,
 			"mid3rd_per90": 292.875,
 			"att3rd_per90": 197.25,
 			"attPenArea_per90": 36.75,
-			"live_per90": 572.125
+			"live_per90": 572.125,
+			"def2/3ds_per90": 462.125,
+			"att2/3ds_per90": 490.125
 		},
 		"Zenit St' Petersburg": {
 			"matchesPlayed": 6,
@@ -1953,12 +2469,16 @@
 			"att3rd_total": 1590,
 			"attPenArea_total": 144,
 			"live_total": 4358,
+			"def2/3ds_total": 3416,
+			"att2/3ds_total": 3864,
 			"defPenArea_per90": 55.166666666666664,
 			"def3rd_per90": 190.33333333333334,
 			"mid3rd_per90": 379,
 			"att3rd_per90": 265,
 			"attPenArea_per90": 24,
-			"live_per90": 726.3333333333334
+			"live_per90": 726.3333333333334,
+			"def2/3ds_per90": 569.3333333333334,
+			"att2/3ds_per90": 644
 		}
 	},
 	"Europa League": {
@@ -1970,12 +2490,16 @@
 			"att3rd_total": 260,
 			"attPenArea_total": 35,
 			"live_total": 709,
+			"def2/3ds_total": 602,
+			"att2/3ds_total": 572,
 			"defPenArea_per90": 51,
 			"def3rd_per90": 145,
 			"mid3rd_per90": 156,
 			"att3rd_per90": 130,
 			"attPenArea_per90": 17.5,
-			"live_per90": 354.5
+			"live_per90": 354.5,
+			"def2/3ds_per90": 301,
+			"att2/3ds_per90": 286
 		},
 		"APOEL Nicosia": {
 			"matchesPlayed": 8,
@@ -1985,12 +2509,16 @@
 			"att3rd_total": 1254,
 			"attPenArea_total": 177,
 			"live_total": 5479,
+			"def2/3ds_total": 5037,
+			"att2/3ds_total": 4592,
 			"defPenArea_per90": 53.875,
 			"def3rd_per90": 212.375,
 			"mid3rd_per90": 417.25,
 			"att3rd_per90": 156.75,
 			"attPenArea_per90": 22.125,
-			"live_per90": 684.875
+			"live_per90": 684.875,
+			"def2/3ds_per90": 629.625,
+			"att2/3ds_per90": 574
 		},
 		"Arsenal": {
 			"matchesPlayed": 8,
@@ -2000,12 +2528,16 @@
 			"att3rd_total": 1117,
 			"attPenArea_total": 151,
 			"live_total": 3955,
+			"def2/3ds_total": 3544,
+			"att2/3ds_total": 3091,
 			"defPenArea_per90": 74.125,
 			"def3rd_per90": 196.25,
 			"mid3rd_per90": 246.75,
 			"att3rd_per90": 139.625,
 			"attPenArea_per90": 18.875,
-			"live_per90": 494.375
+			"live_per90": 494.375,
+			"def2/3ds_per90": 443,
+			"att2/3ds_per90": 386.375
 		},
 		"FC Astana": {
 			"matchesPlayed": 6,
@@ -2015,12 +2547,16 @@
 			"att3rd_total": 1460,
 			"attPenArea_total": 211,
 			"live_total": 4487,
+			"def2/3ds_total": 3636,
+			"att2/3ds_total": 3956,
 			"defPenArea_per90": 49.333333333333336,
 			"def3rd_per90": 190,
 			"mid3rd_per90": 416,
 			"att3rd_per90": 243.33333333333334,
 			"attPenArea_per90": 35.166666666666664,
-			"live_per90": 747.8333333333334
+			"live_per90": 747.8333333333334,
+			"def2/3ds_per90": 606,
+			"att2/3ds_per90": 659.3333333333334
 		},
 		"AZ Alkmaar": {
 			"matchesPlayed": 8,
@@ -2030,12 +2566,16 @@
 			"att3rd_total": 1101,
 			"attPenArea_total": 156,
 			"live_total": 4017,
+			"def2/3ds_total": 3568,
+			"att2/3ds_total": 3232,
 			"defPenArea_per90": 68.75,
 			"def3rd_per90": 179.625,
 			"mid3rd_per90": 266.375,
 			"att3rd_per90": 137.625,
 			"attPenArea_per90": 19.5,
-			"live_per90": 502.125
+			"live_per90": 502.125,
+			"def2/3ds_per90": 446,
+			"att2/3ds_per90": 404
 		},
 		"Istanbul Basaksehir": {
 			"matchesPlayed": 10,
@@ -2045,12 +2585,16 @@
 			"att3rd_total": 1646,
 			"attPenArea_total": 244,
 			"live_total": 5858,
+			"def2/3ds_total": 5205,
+			"att2/3ds_total": 4856,
 			"defPenArea_per90": 61.8,
 			"def3rd_per90": 199.5,
 			"mid3rd_per90": 321,
 			"att3rd_per90": 164.6,
 			"attPenArea_per90": 24.4,
-			"live_per90": 585.8
+			"live_per90": 585.8,
+			"def2/3ds_per90": 520.5,
+			"att2/3ds_per90": 485.6
 		},
 		"FC Basel 1893": {
 			"matchesPlayed": 11,
@@ -2060,12 +2604,16 @@
 			"att3rd_total": 1752,
 			"attPenArea_total": 240,
 			"live_total": 6268,
+			"def2/3ds_total": 5483,
+			"att2/3ds_total": 5299,
 			"defPenArea_per90": 59,
 			"def3rd_per90": 176,
 			"mid3rd_per90": 322.45454545454544,
 			"att3rd_per90": 159.27272727272728,
 			"attPenArea_per90": 21.818181818181817,
-			"live_per90": 569.8181818181819
+			"live_per90": 569.8181818181819,
+			"def2/3ds_per90": 498.45454545454544,
+			"att2/3ds_per90": 481.72727272727275
 		},
 		"Benfica": {
 			"matchesPlayed": 2,
@@ -2075,12 +2623,16 @@
 			"att3rd_total": 296,
 			"attPenArea_total": 46,
 			"live_total": 1382,
+			"def2/3ds_total": 1273,
+			"att2/3ds_total": 1077,
 			"defPenArea_per90": 70.5,
 			"def3rd_per90": 246,
 			"mid3rd_per90": 390.5,
 			"att3rd_per90": 148,
 			"attPenArea_per90": 23,
-			"live_per90": 691
+			"live_per90": 691,
+			"def2/3ds_per90": 636.5,
+			"att2/3ds_per90": 538.5
 		},
 		"Besiktas": {
 			"matchesPlayed": 6,
@@ -2090,12 +2642,16 @@
 			"att3rd_total": 731,
 			"attPenArea_total": 112,
 			"live_total": 3048,
+			"def2/3ds_total": 2769,
+			"att2/3ds_total": 2364,
 			"defPenArea_per90": 60.166666666666664,
 			"def3rd_per90": 189.33333333333334,
 			"mid3rd_per90": 272.1666666666667,
 			"att3rd_per90": 121.83333333333333,
 			"attPenArea_per90": 18.666666666666668,
-			"live_per90": 508
+			"live_per90": 508,
+			"def2/3ds_per90": 461.5,
+			"att2/3ds_per90": 394
 		},
 		"Braga": {
 			"matchesPlayed": 8,
@@ -2105,12 +2661,16 @@
 			"att3rd_total": 994,
 			"attPenArea_total": 127,
 			"live_total": 4216,
+			"def2/3ds_total": 3892,
+			"att2/3ds_total": 3327,
 			"defPenArea_per90": 62.875,
 			"def3rd_per90": 194.875,
 			"mid3rd_per90": 291.625,
 			"att3rd_per90": 124.25,
 			"attPenArea_per90": 15.875,
-			"live_per90": 527
+			"live_per90": 527,
+			"def2/3ds_per90": 486.5,
+			"att2/3ds_per90": 415.875
 		},
 		"Celtic": {
 			"matchesPlayed": 8,
@@ -2120,12 +2680,16 @@
 			"att3rd_total": 1045,
 			"attPenArea_total": 163,
 			"live_total": 4205,
+			"def2/3ds_total": 3847,
+			"att2/3ds_total": 3309,
 			"defPenArea_per90": 64,
 			"def3rd_per90": 197.875,
 			"mid3rd_per90": 283,
 			"att3rd_per90": 130.625,
 			"attPenArea_per90": 20.375,
-			"live_per90": 525.625
+			"live_per90": 525.625,
+			"def2/3ds_per90": 480.875,
+			"att2/3ds_per90": 413.625
 		},
 		"CFR Cluj": {
 			"matchesPlayed": 8,
@@ -2135,12 +2699,16 @@
 			"att3rd_total": 1429,
 			"attPenArea_total": 207,
 			"live_total": 5077,
+			"def2/3ds_total": 4448,
+			"att2/3ds_total": 4213,
 			"defPenArea_per90": 66.625,
 			"def3rd_per90": 208,
 			"mid3rd_per90": 348,
 			"att3rd_per90": 178.625,
 			"attPenArea_per90": 25.875,
-			"live_per90": 634.625
+			"live_per90": 634.625,
+			"def2/3ds_per90": 556,
+			"att2/3ds_per90": 526.625
 		},
 		"Club Brugge": {
 			"matchesPlayed": 2,
@@ -2150,12 +2718,16 @@
 			"att3rd_total": 525,
 			"attPenArea_total": 74,
 			"live_total": 1538,
+			"def2/3ds_total": 1227,
+			"att2/3ds_total": 1373,
 			"defPenArea_per90": 55.5,
 			"def3rd_per90": 189.5,
 			"mid3rd_per90": 424,
 			"att3rd_per90": 262.5,
 			"attPenArea_per90": 37,
-			"live_per90": 769
+			"live_per90": 769,
+			"def2/3ds_per90": 613.5,
+			"att2/3ds_per90": 686.5
 		},
 		"CSKA Moscow": {
 			"matchesPlayed": 6,
@@ -2165,12 +2737,16 @@
 			"att3rd_total": 746,
 			"attPenArea_total": 123,
 			"live_total": 3303,
+			"def2/3ds_total": 3100,
+			"att2/3ds_total": 2437,
 			"defPenArea_per90": 80.16666666666667,
 			"def3rd_per90": 234.83333333333334,
 			"mid3rd_per90": 281.8333333333333,
 			"att3rd_per90": 124.33333333333333,
 			"attPenArea_per90": 20.5,
-			"live_per90": 550.5
+			"live_per90": 550.5,
+			"def2/3ds_per90": 516.6666666666666,
+			"att2/3ds_per90": 406.16666666666663
 		},
 		"Dynamo Kyiv": {
 			"matchesPlayed": 6,
@@ -2180,12 +2756,16 @@
 			"att3rd_total": 580,
 			"attPenArea_total": 101,
 			"live_total": 2490,
+			"def2/3ds_total": 2376,
+			"att2/3ds_total": 1825,
 			"defPenArea_per90": 76.33333333333333,
 			"def3rd_per90": 188.5,
 			"mid3rd_per90": 207.5,
 			"att3rd_per90": 96.66666666666667,
 			"attPenArea_per90": 16.833333333333332,
-			"live_per90": 415
+			"live_per90": 415,
+			"def2/3ds_per90": 396,
+			"att2/3ds_per90": 304.1666666666667
 		},
 		"Eintracht Frankfurt": {
 			"matchesPlayed": 10,
@@ -2195,12 +2775,16 @@
 			"att3rd_total": 1297,
 			"attPenArea_total": 246,
 			"live_total": 5012,
+			"def2/3ds_total": 4624,
+			"att2/3ds_total": 3951,
 			"defPenArea_per90": 68,
 			"def3rd_per90": 197,
 			"mid3rd_per90": 265.4,
 			"att3rd_per90": 129.7,
 			"attPenArea_per90": 24.6,
-			"live_per90": 501.2
+			"live_per90": 501.2,
+			"def2/3ds_per90": 462.4,
+			"att2/3ds_per90": 395.09999999999997
 		},
 		"Espanyol": {
 			"matchesPlayed": 8,
@@ -2210,12 +2794,16 @@
 			"att3rd_total": 904,
 			"attPenArea_total": 127,
 			"live_total": 3799,
+			"def2/3ds_total": 3598,
+			"att2/3ds_total": 2901,
 			"defPenArea_per90": 72.125,
 			"def3rd_per90": 200.125,
 			"mid3rd_per90": 249.625,
 			"att3rd_per90": 113,
 			"attPenArea_per90": 15.875,
-			"live_per90": 474.875
+			"live_per90": 474.875,
+			"def2/3ds_per90": 449.75,
+			"att2/3ds_per90": 362.625
 		},
 		"F91 Dudelange": {
 			"matchesPlayed": 6,
@@ -2225,12 +2813,16 @@
 			"att3rd_total": 1185,
 			"attPenArea_total": 173,
 			"live_total": 4367,
+			"def2/3ds_total": 3785,
+			"att2/3ds_total": 3928,
 			"defPenArea_per90": 45.166666666666664,
 			"def3rd_per90": 173.66666666666666,
 			"mid3rd_per90": 457.1666666666667,
 			"att3rd_per90": 197.5,
 			"attPenArea_per90": 28.833333333333332,
-			"live_per90": 727.8333333333334
+			"live_per90": 727.8333333333334,
+			"def2/3ds_per90": 630.8333333333334,
+			"att2/3ds_per90": 654.6666666666667
 		},
 		"FC Copenhagen": {
 			"matchesPlayed": 11,
@@ -2240,12 +2832,16 @@
 			"att3rd_total": 1712,
 			"attPenArea_total": 251,
 			"live_total": 6482,
+			"def2/3ds_total": 5822,
+			"att2/3ds_total": 5210,
 			"defPenArea_per90": 53.72727272727273,
 			"def3rd_per90": 211.27272727272728,
 			"mid3rd_per90": 318,
 			"att3rd_per90": 155.63636363636363,
 			"attPenArea_per90": 22.818181818181817,
-			"live_per90": 589.2727272727273
+			"live_per90": 589.2727272727273,
+			"def2/3ds_per90": 529.2727272727273,
+			"att2/3ds_per90": 473.6363636363636
 		},
 		"FC Olexandriya": {
 			"matchesPlayed": 6,
@@ -2255,12 +2851,16 @@
 			"att3rd_total": 898,
 			"attPenArea_total": 138,
 			"live_total": 3632,
+			"def2/3ds_total": 3306,
+			"att2/3ds_total": 2961,
 			"defPenArea_per90": 64.5,
 			"def3rd_per90": 207.16666666666666,
 			"mid3rd_per90": 343.8333333333333,
 			"att3rd_per90": 149.66666666666666,
 			"attPenArea_per90": 23,
-			"live_per90": 605.3333333333334
+			"live_per90": 605.3333333333334,
+			"def2/3ds_per90": 551,
+			"att2/3ds_per90": 493.5
 		},
 		"Ferencvaros": {
 			"matchesPlayed": 6,
@@ -2270,12 +2870,16 @@
 			"att3rd_total": 1062,
 			"attPenArea_total": 148,
 			"live_total": 3470,
+			"def2/3ds_total": 2925,
+			"att2/3ds_total": 2958,
 			"defPenArea_per90": 51.166666666666664,
 			"def3rd_per90": 171.5,
 			"mid3rd_per90": 316,
 			"att3rd_per90": 177,
 			"attPenArea_per90": 24.666666666666668,
-			"live_per90": 578.3333333333334
+			"live_per90": 578.3333333333334,
+			"def2/3ds_per90": 487.5,
+			"att2/3ds_per90": 493
 		},
 		"Feyenoord": {
 			"matchesPlayed": 6,
@@ -2285,12 +2889,16 @@
 			"att3rd_total": 888,
 			"attPenArea_total": 148,
 			"live_total": 3314,
+			"def2/3ds_total": 2977,
+			"att2/3ds_total": 2737,
 			"defPenArea_per90": 62.333333333333336,
 			"def3rd_per90": 188,
 			"mid3rd_per90": 308.1666666666667,
 			"att3rd_per90": 148,
 			"attPenArea_per90": 24.666666666666668,
-			"live_per90": 552.3333333333334
+			"live_per90": 552.3333333333334,
+			"def2/3ds_per90": 496.1666666666667,
+			"att2/3ds_per90": 456.1666666666667
 		},
 		"Gent": {
 			"matchesPlayed": 8,
@@ -2300,12 +2908,16 @@
 			"att3rd_total": 1162,
 			"attPenArea_total": 184,
 			"live_total": 4303,
+			"def2/3ds_total": 3843,
+			"att2/3ds_total": 3424,
 			"defPenArea_per90": 64.125,
 			"def3rd_per90": 197.625,
 			"mid3rd_per90": 282.75,
 			"att3rd_per90": 145.25,
 			"attPenArea_per90": 23,
-			"live_per90": 537.875
+			"live_per90": 537.875,
+			"def2/3ds_per90": 480.375,
+			"att2/3ds_per90": 428
 		},
 		"Getafe": {
 			"matchesPlayed": 9,
@@ -2315,12 +2927,16 @@
 			"att3rd_total": 958,
 			"attPenArea_total": 124,
 			"live_total": 4706,
+			"def2/3ds_total": 4603,
+			"att2/3ds_total": 3429,
 			"defPenArea_per90": 74.55555555555556,
 			"def3rd_per90": 236.88888888888889,
 			"mid3rd_per90": 274.55555555555554,
 			"att3rd_per90": 106.44444444444444,
 			"attPenArea_per90": 13.777777777777779,
-			"live_per90": 522.8888888888889
+			"live_per90": 522.8888888888889,
+			"def2/3ds_per90": 511.44444444444446,
+			"att2/3ds_per90": 381
 		},
 		"Inter": {
 			"matchesPlayed": 6,
@@ -2330,12 +2946,16 @@
 			"att3rd_total": 955,
 			"attPenArea_total": 104,
 			"live_total": 3548,
+			"def2/3ds_total": 3134,
+			"att2/3ds_total": 2806,
 			"defPenArea_per90": 68.83333333333333,
 			"def3rd_per90": 213.83333333333334,
 			"mid3rd_per90": 308.5,
 			"att3rd_per90": 159.16666666666666,
 			"attPenArea_per90": 17.333333333333332,
-			"live_per90": 591.3333333333334
+			"live_per90": 591.3333333333334,
+			"def2/3ds_per90": 522.3333333333334,
+			"att2/3ds_per90": 467.66666666666663
 		},
 		"FC Krasnodar": {
 			"matchesPlayed": 6,
@@ -2345,12 +2965,16 @@
 			"att3rd_total": 925,
 			"attPenArea_total": 145,
 			"live_total": 3033,
+			"def2/3ds_total": 2656,
+			"att2/3ds_total": 2560,
 			"defPenArea_per90": 59.333333333333336,
 			"def3rd_per90": 170.16666666666666,
 			"mid3rd_per90": 272.5,
 			"att3rd_per90": 154.16666666666666,
 			"attPenArea_per90": 24.166666666666668,
-			"live_per90": 505.5
+			"live_per90": 505.5,
+			"def2/3ds_per90": 442.66666666666663,
+			"att2/3ds_per90": 426.66666666666663
 		},
 		"LASK": {
 			"matchesPlayed": 10,
@@ -2360,12 +2984,16 @@
 			"att3rd_total": 1214,
 			"attPenArea_total": 199,
 			"live_total": 5896,
+			"def2/3ds_total": 5675,
+			"att2/3ds_total": 4245,
 			"defPenArea_per90": 91.3,
 			"def3rd_per90": 264.4,
 			"mid3rd_per90": 303.1,
 			"att3rd_per90": 121.4,
 			"attPenArea_per90": 19.9,
-			"live_per90": 589.6
+			"live_per90": 589.6,
+			"def2/3ds_per90": 567.5,
+			"att2/3ds_per90": 424.5
 		},
 		"Lazio": {
 			"matchesPlayed": 6,
@@ -2375,12 +3003,16 @@
 			"att3rd_total": 924,
 			"attPenArea_total": 127,
 			"live_total": 3071,
+			"def2/3ds_total": 2679,
+			"att2/3ds_total": 2550,
 			"defPenArea_per90": 60.166666666666664,
 			"def3rd_per90": 175.5,
 			"mid3rd_per90": 271,
 			"att3rd_per90": 154,
 			"attPenArea_per90": 21.166666666666668,
-			"live_per90": 511.8333333333333
+			"live_per90": 511.8333333333333,
+			"def2/3ds_per90": 446.5,
+			"att2/3ds_per90": 425
 		},
 		"Bayer Leverkusen": {
 			"matchesPlayed": 5,
@@ -2390,12 +3022,16 @@
 			"att3rd_total": 631,
 			"attPenArea_total": 110,
 			"live_total": 2380,
+			"def2/3ds_total": 2164,
+			"att2/3ds_total": 1915,
 			"defPenArea_per90": 64.8,
 			"def3rd_per90": 176,
 			"mid3rd_per90": 256.8,
 			"att3rd_per90": 126.2,
 			"attPenArea_per90": 22,
-			"live_per90": 476
+			"live_per90": 476,
+			"def2/3ds_per90": 432.8,
+			"att2/3ds_per90": 383
 		},
 		"Ludogorets Razgrad": {
 			"matchesPlayed": 8,
@@ -2405,12 +3041,16 @@
 			"att3rd_total": 1666,
 			"attPenArea_total": 270,
 			"live_total": 4759,
+			"def2/3ds_total": 3781,
+			"att2/3ds_total": 4162,
 			"defPenArea_per90": 50.5,
 			"def3rd_per90": 160.625,
 			"mid3rd_per90": 312,
 			"att3rd_per90": 208.25,
 			"attPenArea_per90": 33.75,
-			"live_per90": 594.875
+			"live_per90": 594.875,
+			"def2/3ds_per90": 472.625,
+			"att2/3ds_per90": 520.25
 		},
 		"FC Lugano": {
 			"matchesPlayed": 6,
@@ -2420,12 +3060,16 @@
 			"att3rd_total": 1214,
 			"attPenArea_total": 170,
 			"live_total": 3738,
+			"def2/3ds_total": 3115,
+			"att2/3ds_total": 3321,
 			"defPenArea_per90": 57.833333333333336,
 			"def3rd_per90": 168,
 			"mid3rd_per90": 351.1666666666667,
 			"att3rd_per90": 202.33333333333334,
 			"attPenArea_per90": 28.333333333333332,
-			"live_per90": 623
+			"live_per90": 623,
+			"def2/3ds_per90": 519.1666666666667,
+			"att2/3ds_per90": 553.5
 		},
 		"Borussia M'Gladbach": {
 			"matchesPlayed": 6,
@@ -2435,12 +3079,16 @@
 			"att3rd_total": 701,
 			"attPenArea_total": 109,
 			"live_total": 2827,
+			"def2/3ds_total": 2610,
+			"att2/3ds_total": 2039,
 			"defPenArea_per90": 85.83333333333333,
 			"def3rd_per90": 212,
 			"mid3rd_per90": 223,
 			"att3rd_per90": 116.83333333333333,
 			"attPenArea_per90": 18.166666666666668,
-			"live_per90": 471.1666666666667
+			"live_per90": 471.1666666666667,
+			"def2/3ds_per90": 435,
+			"att2/3ds_per90": 339.8333333333333
 		},
 		"Malmoe FF": {
 			"matchesPlayed": 8,
@@ -2450,12 +3098,16 @@
 			"att3rd_total": 1002,
 			"attPenArea_total": 154,
 			"live_total": 4424,
+			"def2/3ds_total": 4158,
+			"att2/3ds_total": 3647,
 			"defPenArea_per90": 49.375,
 			"def3rd_per90": 189.125,
 			"mid3rd_per90": 330.625,
 			"att3rd_per90": 125.25,
 			"attPenArea_per90": 19.25,
-			"live_per90": 553
+			"live_per90": 553,
+			"def2/3ds_per90": 519.75,
+			"att2/3ds_per90": 455.875
 		},
 		"Manchester United": {
 			"matchesPlayed": 12,
@@ -2465,12 +3117,16 @@
 			"att3rd_total": 1606,
 			"attPenArea_total": 216,
 			"live_total": 6309,
+			"def2/3ds_total": 5688,
+			"att2/3ds_total": 4765,
 			"defPenArea_per90": 74.25,
 			"def3rd_per90": 210.75,
 			"mid3rd_per90": 263.25,
 			"att3rd_per90": 133.83333333333334,
 			"attPenArea_per90": 18,
-			"live_per90": 525.75
+			"live_per90": 525.75,
+			"def2/3ds_per90": 474,
+			"att2/3ds_per90": 397.08333333333337
 		},
 		"Olympiacos": {
 			"matchesPlayed": 4,
@@ -2480,12 +3136,16 @@
 			"att3rd_total": 832,
 			"attPenArea_total": 121,
 			"live_total": 2480,
+			"def2/3ds_total": 2055,
+			"att2/3ds_total": 2229,
 			"defPenArea_per90": 54.25,
 			"def3rd_per90": 164.5,
 			"mid3rd_per90": 349.25,
 			"att3rd_per90": 208,
 			"attPenArea_per90": 30.25,
-			"live_per90": 620
+			"live_per90": 620,
+			"def2/3ds_per90": 513.75,
+			"att2/3ds_per90": 557.25
 		},
 		"Partizan Belgrade": {
 			"matchesPlayed": 6,
@@ -2495,12 +3155,16 @@
 			"att3rd_total": 803,
 			"attPenArea_total": 95,
 			"live_total": 3789,
+			"def2/3ds_total": 3581,
+			"att2/3ds_total": 3043,
 			"defPenArea_per90": 62.333333333333336,
 			"def3rd_per90": 223.5,
 			"mid3rd_per90": 373.3333333333333,
 			"att3rd_per90": 133.83333333333334,
 			"attPenArea_per90": 15.833333333333334,
-			"live_per90": 631.5
+			"live_per90": 631.5,
+			"def2/3ds_per90": 596.8333333333333,
+			"att2/3ds_per90": 507.16666666666663
 		},
 		"FC Porto": {
 			"matchesPlayed": 8,
@@ -2510,12 +3174,16 @@
 			"att3rd_total": 1003,
 			"attPenArea_total": 149,
 			"live_total": 4626,
+			"def2/3ds_total": 4298,
+			"att2/3ds_total": 3470,
 			"defPenArea_per90": 72.875,
 			"def3rd_per90": 228.875,
 			"mid3rd_per90": 308.375,
 			"att3rd_per90": 125.375,
 			"attPenArea_per90": 18.625,
-			"live_per90": 578.25
+			"live_per90": 578.25,
+			"def2/3ds_per90": 537.25,
+			"att2/3ds_per90": 433.75
 		},
 		"PSV Eindhoven": {
 			"matchesPlayed": 6,
@@ -2525,12 +3193,16 @@
 			"att3rd_total": 994,
 			"attPenArea_total": 140,
 			"live_total": 3327,
+			"def2/3ds_total": 2857,
+			"att2/3ds_total": 2782,
 			"defPenArea_per90": 62.333333333333336,
 			"def3rd_per90": 178.16666666666666,
 			"mid3rd_per90": 298,
 			"att3rd_per90": 165.66666666666666,
 			"attPenArea_per90": 23.333333333333332,
-			"live_per90": 554.5
+			"live_per90": 554.5,
+			"def2/3ds_per90": 476.16666666666663,
+			"att2/3ds_per90": 463.66666666666663
 		},
 		"Qarabag FK": {
 			"matchesPlayed": 6,
@@ -2540,12 +3212,16 @@
 			"att3rd_total": 993,
 			"attPenArea_total": 121,
 			"live_total": 3606,
+			"def2/3ds_total": 3148,
+			"att2/3ds_total": 3176,
 			"defPenArea_per90": 51.166666666666664,
 			"def3rd_per90": 160.83333333333334,
 			"mid3rd_per90": 363.8333333333333,
 			"att3rd_per90": 165.5,
 			"attPenArea_per90": 20.166666666666668,
-			"live_per90": 601
+			"live_per90": 601,
+			"def2/3ds_per90": 524.6666666666666,
+			"att2/3ds_per90": 529.3333333333333
 		},
 		"Rangers": {
 			"matchesPlayed": 10,
@@ -2555,12 +3231,16 @@
 			"att3rd_total": 1492,
 			"attPenArea_total": 191,
 			"live_total": 6586,
+			"def2/3ds_total": 6082,
+			"att2/3ds_total": 5232,
 			"defPenArea_per90": 63.5,
 			"def3rd_per90": 234.2,
 			"mid3rd_per90": 374,
 			"att3rd_per90": 149.2,
 			"attPenArea_per90": 19.1,
-			"live_per90": 658.6
+			"live_per90": 658.6,
+			"def2/3ds_per90": 608.2,
+			"att2/3ds_per90": 523.2
 		},
 		"Salzburg": {
 			"matchesPlayed": 2,
@@ -2570,12 +3250,16 @@
 			"att3rd_total": 289,
 			"attPenArea_total": 46,
 			"live_total": 1005,
+			"def2/3ds_total": 883,
+			"att2/3ds_total": 800,
 			"defPenArea_per90": 73,
 			"def3rd_per90": 186,
 			"mid3rd_per90": 255.5,
 			"att3rd_per90": 144.5,
 			"attPenArea_per90": 23,
-			"live_per90": 502.5
+			"live_per90": 502.5,
+			"def2/3ds_per90": 441.5,
+			"att2/3ds_per90": 400
 		},
 		"Rennes": {
 			"matchesPlayed": 6,
@@ -2585,12 +3269,16 @@
 			"att3rd_total": 814,
 			"attPenArea_total": 101,
 			"live_total": 3157,
+			"def2/3ds_total": 2883,
+			"att2/3ds_total": 2529,
 			"defPenArea_per90": 66.33333333333333,
 			"def3rd_per90": 194.66666666666666,
 			"mid3rd_per90": 285.8333333333333,
 			"att3rd_per90": 135.66666666666666,
 			"attPenArea_per90": 16.833333333333332,
-			"live_per90": 526.1666666666666
+			"live_per90": 526.1666666666666,
+			"def2/3ds_per90": 480.5,
+			"att2/3ds_per90": 421.5
 		},
 		"Roma": {
 			"matchesPlayed": 9,
@@ -2600,12 +3288,16 @@
 			"att3rd_total": 1279,
 			"attPenArea_total": 195,
 			"live_total": 5063,
+			"def2/3ds_total": 4531,
+			"att2/3ds_total": 3831,
 			"defPenArea_per90": 75.22222222222223,
 			"def3rd_per90": 219.88888888888889,
 			"mid3rd_per90": 283.55555555555554,
 			"att3rd_per90": 142.11111111111111,
 			"attPenArea_per90": 21.666666666666668,
-			"live_per90": 562.5555555555555
+			"live_per90": 562.5555555555555,
+			"def2/3ds_per90": 503.44444444444446,
+			"att2/3ds_per90": 425.66666666666663
 		},
 		"Rosenborg": {
 			"matchesPlayed": 6,
@@ -2615,12 +3307,16 @@
 			"att3rd_total": 904,
 			"attPenArea_total": 163,
 			"live_total": 3504,
+			"def2/3ds_total": 3117,
+			"att2/3ds_total": 2788,
 			"defPenArea_per90": 65.83333333333333,
 			"def3rd_per90": 205.5,
 			"mid3rd_per90": 314,
 			"att3rd_per90": 150.66666666666666,
 			"attPenArea_per90": 27.166666666666668,
-			"live_per90": 584
+			"live_per90": 584,
+			"def2/3ds_per90": 519.5,
+			"att2/3ds_per90": 464.66666666666663
 		},
 		"Saint-Etienne": {
 			"matchesPlayed": 6,
@@ -2630,12 +3326,16 @@
 			"att3rd_total": 676,
 			"attPenArea_total": 96,
 			"live_total": 2960,
+			"def2/3ds_total": 2813,
+			"att2/3ds_total": 2318,
 			"defPenArea_per90": 61,
 			"def3rd_per90": 195.16666666666666,
 			"mid3rd_per90": 273.6666666666667,
 			"att3rd_per90": 112.66666666666667,
 			"attPenArea_per90": 16,
-			"live_per90": 493.3333333333333
+			"live_per90": 493.3333333333333,
+			"def2/3ds_per90": 468.83333333333337,
+			"att2/3ds_per90": 386.33333333333337
 		},
 		"Sevilla": {
 			"matchesPlayed": 12,
@@ -2645,12 +3345,16 @@
 			"att3rd_total": 1108,
 			"attPenArea_total": 208,
 			"live_total": 4772,
+			"def2/3ds_total": 4543,
+			"att2/3ds_total": 3395,
 			"defPenArea_per90": 72.5,
 			"def3rd_per90": 188,
 			"mid3rd_per90": 190.58333333333334,
 			"att3rd_per90": 92.33333333333333,
 			"attPenArea_per90": 17.333333333333332,
-			"live_per90": 397.6666666666667
+			"live_per90": 397.6666666666667,
+			"def2/3ds_per90": 378.58333333333337,
+			"att2/3ds_per90": 282.9166666666667
 		},
 		"Shakhtar Donetsk": {
 			"matchesPlayed": 6,
@@ -2660,12 +3364,16 @@
 			"att3rd_total": 849,
 			"attPenArea_total": 115,
 			"live_total": 3198,
+			"def2/3ds_total": 2815,
+			"att2/3ds_total": 2646,
 			"defPenArea_per90": 52.833333333333336,
 			"def3rd_per90": 169.66666666666666,
 			"mid3rd_per90": 299.5,
 			"att3rd_per90": 141.5,
 			"attPenArea_per90": 19.166666666666668,
-			"live_per90": 533
+			"live_per90": 533,
+			"def2/3ds_per90": 469.16666666666663,
+			"att2/3ds_per90": 441
 		},
 		"Slovan Bratislava": {
 			"matchesPlayed": 6,
@@ -2675,12 +3383,16 @@
 			"att3rd_total": 1168,
 			"attPenArea_total": 176,
 			"live_total": 4167,
+			"def2/3ds_total": 3584,
+			"att2/3ds_total": 3652,
 			"defPenArea_per90": 52.333333333333336,
 			"def3rd_per90": 183.33333333333334,
 			"mid3rd_per90": 414,
 			"att3rd_per90": 194.66666666666666,
 			"attPenArea_per90": 29.333333333333332,
-			"live_per90": 694.5
+			"live_per90": 694.5,
+			"def2/3ds_per90": 597.3333333333334,
+			"att2/3ds_per90": 608.6666666666666
 		},
 		"Sporting CP": {
 			"matchesPlayed": 8,
@@ -2690,12 +3402,16 @@
 			"att3rd_total": 1595,
 			"attPenArea_total": 210,
 			"live_total": 4604,
+			"def2/3ds_total": 3796,
+			"att2/3ds_total": 4094,
 			"defPenArea_per90": 55.5,
 			"def3rd_per90": 162.125,
 			"mid3rd_per90": 312.375,
 			"att3rd_per90": 199.375,
 			"attPenArea_per90": 26.25,
-			"live_per90": 575.5
+			"live_per90": 575.5,
+			"def2/3ds_per90": 474.5,
+			"att2/3ds_per90": 511.75
 		},
 		"Standard Liege": {
 			"matchesPlayed": 6,
@@ -2705,12 +3421,16 @@
 			"att3rd_total": 1004,
 			"attPenArea_total": 174,
 			"live_total": 3604,
+			"def2/3ds_total": 3187,
+			"att2/3ds_total": 3052,
 			"defPenArea_per90": 61.166666666666664,
 			"def3rd_per90": 189.83333333333334,
 			"mid3rd_per90": 341.3333333333333,
 			"att3rd_per90": 167.33333333333334,
 			"attPenArea_per90": 29,
-			"live_per90": 600.6666666666666
+			"live_per90": 600.6666666666666,
+			"def2/3ds_per90": 531.1666666666666,
+			"att2/3ds_per90": 508.66666666666663
 		},
 		"Trabzonspor": {
 			"matchesPlayed": 6,
@@ -2720,12 +3440,16 @@
 			"att3rd_total": 860,
 			"attPenArea_total": 107,
 			"live_total": 3195,
+			"def2/3ds_total": 2914,
+			"att2/3ds_total": 2611,
 			"defPenArea_per90": 60.666666666666664,
 			"def3rd_per90": 193.83333333333334,
 			"mid3rd_per90": 291.8333333333333,
 			"att3rd_per90": 143.33333333333334,
 			"attPenArea_per90": 17.833333333333332,
-			"live_per90": 532.5
+			"live_per90": 532.5,
+			"def2/3ds_per90": 485.66666666666663,
+			"att2/3ds_per90": 435.16666666666663
 		},
 		"Vitoria de Guimaraes": {
 			"matchesPlayed": 6,
@@ -2735,12 +3459,16 @@
 			"att3rd_total": 817,
 			"attPenArea_total": 108,
 			"live_total": 3555,
+			"def2/3ds_total": 3344,
+			"att2/3ds_total": 2814,
 			"defPenArea_per90": 71.5,
 			"def3rd_per90": 224.5,
 			"mid3rd_per90": 332.8333333333333,
 			"att3rd_per90": 136.16666666666666,
 			"attPenArea_per90": 18,
-			"live_per90": 592.5
+			"live_per90": 592.5,
+			"def2/3ds_per90": 557.3333333333333,
+			"att2/3ds_per90": 469
 		},
 		"Wolfsberger AC": {
 			"matchesPlayed": 6,
@@ -2750,27 +3478,35 @@
 			"att3rd_total": 954,
 			"attPenArea_total": 179,
 			"live_total": 3684,
+			"def2/3ds_total": 3377,
+			"att2/3ds_total": 2769,
 			"defPenArea_per90": 80.83333333333333,
 			"def3rd_per90": 260.3333333333333,
 			"mid3rd_per90": 302.5,
 			"att3rd_per90": 159,
 			"attPenArea_per90": 29.833333333333332,
-			"live_per90": 614
+			"live_per90": 614,
+			"def2/3ds_per90": 562.8333333333333,
+			"att2/3ds_per90": 461.5
 		},
 		"Wolfsburg": {
 			"matchesPlayed": 10,
 			"defPenArea_total": 674,
-			"def3rd_total": 1998,
+			"def3rd_total": 1997,
 			"mid3rd_total": 3046,
 			"att3rd_total": 1219,
 			"attPenArea_total": 154,
-			"live_total": 5411,
+			"live_total": 5410,
+			"def2/3ds_total": 5043,
+			"att2/3ds_total": 4265,
 			"defPenArea_per90": 67.4,
-			"def3rd_per90": 199.8,
+			"def3rd_per90": 199.7,
 			"mid3rd_per90": 304.6,
 			"att3rd_per90": 121.9,
 			"attPenArea_per90": 15.4,
-			"live_per90": 541.1
+			"live_per90": 541,
+			"def2/3ds_per90": 504.3,
+			"att2/3ds_per90": 426.5
 		},
 		"Wolverhampton Wanderers": {
 			"matchesPlayed": 11,
@@ -2780,12 +3516,16 @@
 			"att3rd_total": 1550,
 			"attPenArea_total": 155,
 			"live_total": 6466,
+			"def2/3ds_total": 5861,
+			"att2/3ds_total": 5409,
 			"defPenArea_per90": 56.72727272727273,
 			"def3rd_per90": 182,
 			"mid3rd_per90": 350.8181818181818,
 			"att3rd_per90": 140.9090909090909,
 			"attPenArea_per90": 14.090909090909092,
-			"live_per90": 587.8181818181819
+			"live_per90": 587.8181818181819,
+			"def2/3ds_per90": 532.8181818181818,
+			"att2/3ds_per90": 491.72727272727275
 		},
 		"BSC Young Boys": {
 			"matchesPlayed": 6,
@@ -2795,12 +3535,16 @@
 			"att3rd_total": 954,
 			"attPenArea_total": 153,
 			"live_total": 3372,
+			"def2/3ds_total": 3013,
+			"att2/3ds_total": 2829,
 			"defPenArea_per90": 53.666666666666664,
 			"def3rd_per90": 189.66666666666666,
 			"mid3rd_per90": 312.5,
 			"att3rd_per90": 159,
 			"attPenArea_per90": 25.5,
-			"live_per90": 562
+			"live_per90": 562,
+			"def2/3ds_per90": 502.16666666666663,
+			"att2/3ds_per90": 471.5
 		}
 	}
 }
