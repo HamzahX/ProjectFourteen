@@ -38,29 +38,50 @@ export function getAllEntriesFromObject(object){
 
     let allInfo = [];
 
-    for (let season in object){
+    let seasons = Object.keys(object);
 
-        for (let i=0; i<object[season].length; i++){
+    for (let i=seasons.length-1; i>=0; i--){
 
-            let value = object[season][i];
+        let season = seasons[i];
+
+        for (let j=0; j<object[season].length; j++){
+
+            let value = object[season][j];
 
             if (value === "N/A")
                 value = "-";
 
-            if (allInfo.includes(value))
-                allInfo = allInfo.filter(item => item !== value);
-
-            allInfo.unshift(value)
+            allInfo.push(value)
 
         }
 
     }
 
+    // for (let season in object){
+    //
+    //     for (let i=0; i<object[season].length; i++){
+    //
+    //         let value = object[season][i];
+    //
+    //         if (value === "N/A")
+    //             value = "-";
+    //
+    //         if (allInfo.includes(value))
+    //             allInfo = allInfo.filter(item => item !== value);
+    //
+    //         allInfo.unshift(value)
+    //
+    //     }
+    //
+    // }
+
     if (allInfo.length > 1){
         allInfo = allInfo.filter(item => item !== "-");
     }
 
-    return allInfo;
+    return [...new Set(allInfo)];
+
+    //return allInfo;
 
 
 }

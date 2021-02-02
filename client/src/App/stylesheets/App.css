@@ -1028,7 +1028,11 @@ button:hover {
 
         }
 
-            #glossary-overlay #glossary-section-container {
+        #explanation-overlay {
+
+        }
+
+            #glossary-overlay #glossary-section-container, #explanation-overlay #glossary-section-container {
                 padding: 0 4% 4%;
             }
 
