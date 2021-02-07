@@ -687,18 +687,16 @@ class Slice extends Component {
 
             if (this.isMobile){
                 for (let i=0; i<selectedStats.length; i++) {
-
                     let stat = selectedStats[i];
-                    categories[i] = `${this.statsReference[stat]['mobileLabel']}  <span style="font-size: 0.8em">${this.statsReference[stat]['suffix']}</span>`;
-
+                    let label = this.statsReference[stat]['mobileLabel'].replace(" (Att.)", "").replace(" (Def.)", "");
+                    categories[i] = `${label}  <span style="font-size: 0.8em">${this.statsReference[stat]['suffix']}</span>`;
                 }
             }
             else {
                 for (let i=0; i<selectedStats.length; i++) {
-
                     let stat = selectedStats[i];
-                    categories[i] = `${this.statsReference[stat]['label']}  <span style="font-size: 0.8em">${this.statsReference[stat]['suffix']}</span>`;
-
+                    let label = this.statsReference[stat]['label'].replace(" (Att.)", "").replace(" (Def.)", "");
+                    categories[i] = `${label}  <span style="font-size: 0.8em">${this.statsReference[stat]['suffix']}</span>`;
                 }
             }
 

@@ -866,6 +866,10 @@ button:hover {
                 grid-row-gap: 1.6vh;
             }
 
+                #player-search-results a:hover {
+                    opacity: 0.9;
+                }
+
             #player-search-results-table {
                 flex-grow: 1;
                 display: flex;
