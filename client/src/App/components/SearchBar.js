@@ -366,7 +366,7 @@ class SearchBar extends Component {
                     clubs={current.clubs}
                     nationalities={current.nationalities}
                     countryCodes={current.countryCodes}
-                    positions={current.positions}
+                    positions={current.displayPositions}
                     key={i}
                 />
             );

@@ -110,7 +110,7 @@ class AdvancedSearch extends Component {
         },
         {
             name: 'Position(s)',
-            selector: 'positions',
+            selector: 'displayPositions',
             sortable: true,
             ignoreRowClick: true
         }
@@ -670,7 +670,7 @@ class AdvancedSearch extends Component {
                         clubs={current.clubs}
                         nationalities={current.nationalities}
                         countryCodes={current.countryCodes}
-                        positions={current.positions}
+                        positions={current.displayPositions}
                         key={i}
                     />
                 );
