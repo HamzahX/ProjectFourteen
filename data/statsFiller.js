@@ -115,8 +115,6 @@ let setup = async () => {
 
         MEAN_POSSESSION_DIST_FROM_AVERAGE = mean(possessionDistancesFromAverage);
 
-        //console.log(MEAN_POSSESSION_DIST_FROM_AVERAGE);
-
         TOUCHES_AGAINST_DATA = JSON.parse(fs.readFileSync(path.join(__dirname, `touchesAgainstData/${SEASON}.json`)));
 
         let firstCompetition = Object.keys(TOUCHES_AGAINST_DATA)[0];
@@ -131,15 +129,19 @@ let setup = async () => {
 
             for (let competition in TOUCHES_AGAINST_DATA){
                 for (let team in TOUCHES_AGAINST_DATA[competition]){
+
                     allValues.push(TOUCHES_AGAINST_DATA[competition][team][touchType]);
+
+                    if (TOUCHES_AGAINST_DATA[competition][team][touchType] === null){
+                        console.log(competition, team);
+                    }
+
                 }
             }
 
             AVERAGE_TOUCHES_AGAINST[touchType] = mean(allValues);
 
         }
-
-        //console.log(AVERAGE_TOUCHES_AGAINST);
 
         for (let i=0; i<touchTypes.length; i++){
 
@@ -384,6 +386,7 @@ let processEntry = (aPlayer, competitionData, competitionName, isGoalkeeper) => 
         PROCESSED[whoscoredCode]["leagues"] = metadata["leagues"];
         PROCESSED[whoscoredCode]["clubs"] = metadata["clubs"];
         PROCESSED[whoscoredCode]["positions"] = metadata["positions"];
+        PROCESSED[whoscoredCode]["displayPositions"] = metadata["displayPositions"];
         PROCESSED[whoscoredCode]["percentileEntries"] = {};
         PROCESSED[whoscoredCode]["stats"] = {};
 

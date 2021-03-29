@@ -175,22 +175,22 @@ let saveJSONs = async () => {
 
 let retrieveJSON = async (page, competitionName) => {
 
-    await page.waitForSelector('#stats_possession_squads');
+    await page.waitForSelector('#stats_squads_possession_against');
 
     return await page.evaluate(async (competitionName, FBREF_TO_WHOSCORED_TEAMS) => {
 
         let touchesAgainstStats = {};
 
-        const ths = Array.from(document.querySelectorAll('#stats_possession_squads tbody .side-against [data-stat="squad"]')); //get all th elements in the table (team names)
+        const ths = Array.from(document.querySelectorAll('#stats_squads_possession_against tbody [data-stat="squad"]')); //get all th elements in the table (team names)
 
         //get touches against tds
-        const tds_90s = Array.from(document.querySelectorAll('#stats_possession_squads tbody .side-against [data-stat="minutes_90s"]'));
-        const tds_def_pen_area = Array.from(document.querySelectorAll('#stats_possession_squads tbody .side-against [data-stat="touches_def_pen_area"]'));
-        const tds_def_3rd = Array.from(document.querySelectorAll('#stats_possession_squads tbody .side-against [data-stat="touches_def_3rd"]'));
-        const tds_mid_3rd = Array.from(document.querySelectorAll('#stats_possession_squads tbody .side-against [data-stat="touches_mid_3rd"]'));
-        const tds_att_3rd = Array.from(document.querySelectorAll('#stats_possession_squads tbody .side-against [data-stat="touches_att_3rd"]'));
-        const tds_att_pen_area = Array.from(document.querySelectorAll('#stats_possession_squads tbody .side-against [data-stat="touches_att_pen_area"]'));
-        const tds_live = Array.from(document.querySelectorAll('#stats_possession_squads tbody .side-against [data-stat="touches_live_ball"]'));
+        const tds_90s = Array.from(document.querySelectorAll('#stats_squads_possession_against tbody [data-stat="minutes_90s"]'));
+        const tds_def_pen_area = Array.from(document.querySelectorAll('#stats_squads_possession_against tbody [data-stat="touches_def_pen_area"]'));
+        const tds_def_3rd = Array.from(document.querySelectorAll('#stats_squads_possession_against tbody [data-stat="touches_def_3rd"]'));
+        const tds_mid_3rd = Array.from(document.querySelectorAll('#stats_squads_possession_against tbody [data-stat="touches_mid_3rd"]'));
+        const tds_att_3rd = Array.from(document.querySelectorAll('#stats_squads_possession_against tbody [data-stat="touches_att_3rd"]'));
+        const tds_att_pen_area = Array.from(document.querySelectorAll('#stats_squads_possession_against tbody [data-stat="touches_att_pen_area"]'));
+        const tds_live = Array.from(document.querySelectorAll('#stats_squads_possession_against tbody [data-stat="touches_live_ball"]'));
 
         for (let i=0; i<ths.length; i++){
 

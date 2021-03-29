@@ -175,13 +175,13 @@ let saveJSONs = async () => {
 
 let retrieveJSON = async (page, competitionName) => {
 
-    await page.waitForSelector('#stats_standard_squads');
+    await page.waitForSelector('#stats_squads_standard_for');
 
     return await page.evaluate(async (competitionName, FBREF_TO_WHOSCORED_TEAMS) => {
 
         let possessionStats = {};
-        const tds = Array.from(document.querySelectorAll('#stats_standard_squads tbody tr [data-stat="possession"]')); //get all td elements in the table
-        const ths = Array.from(document.querySelectorAll('#stats_standard_squads tbody tr [data-stat="squad"]')); //get all th elements in the table (team names)
+        const tds = Array.from(document.querySelectorAll('#stats_squads_standard_for tbody tr [data-stat="possession"]')); //get all td elements in the table
+        const ths = Array.from(document.querySelectorAll('#stats_squads_standard_for tbody tr [data-stat="squad"]')); //get all th elements in the table (team names)
         for (let i=0; i<tds.length; i++){
             let teamNameHTML;
             if (competitionName !== "Champions League" && competitionName !== "Europa League"){
