@@ -92,10 +92,32 @@ let APPS_PER_POSITION = {
     "20-21": {},
 };
 
+let APPS_PER_PERCENTILE_POSITION = {
+    "18-19": {},
+    "19-20": {},
+    "20-21": {},
+};
+
 for (let i=0; i<supportedSeasons.length; i++){
 
     let season = supportedSeasons[i];
+
     APPS_PER_POSITION[season] = JSON.parse(fs.readFileSync(path.join(__dirname, `/positionData/${season}/appsPerPosition.json`)));
+
+    for (let player in APPS_PER_POSITION[season]){
+
+        let playerAppsPerPosition = APPS_PER_POSITION[season][player];
+
+        APPS_PER_PERCENTILE_POSITION[season][player] = {
+            "FW": playerAppsPerPosition["FW"],
+            "AM": (playerAppsPerPosition["AM"] || 0) + (playerAppsPerPosition["W"] || 0) + (playerAppsPerPosition["WM"] || 0),
+            "CM": (playerAppsPerPosition["CM"] || 0) + (playerAppsPerPosition["DM"] || 0),
+            "FB": playerAppsPerPosition["FB"],
+            "CB": playerAppsPerPosition["CB"],
+            "GK": playerAppsPerPosition["GK"],
+        }
+
+    }
 
 }
 
@@ -355,6 +377,7 @@ let scrapeMetadata = async (page) => {
             data[aPlayer]['age'] = parseInt(playerAge, 10);
             data[aPlayer]['countryCode'] = playerCountryCode;
             data[aPlayer]['position'] = playerPositionString;
+            data[aPlayer]['displayPositions'] = {};
             data[aPlayer]['club'] = playerClub;
             data[aPlayer][SEASON]  = {};
             data[aPlayer][SEASON][aCompetition] = {};
@@ -461,9 +484,12 @@ let processRawData = async () => {
 
                         if (PROCESSED_METADATA[processedPlayer]['positions'] === undefined){
                             PROCESSED_METADATA[processedPlayer]['positions'] = {};
+                            PROCESSED_METADATA[processedPlayer]['displayPositions'] = {};
                         }
                         if (i < rawMetadata.length-2){ //if the entry is not for CL/EL
-                            PROCESSED_METADATA[processedPlayer]["positions"][SEASON] = processPlayerPosition(rawMetadata[i][player][entry], processedPlayer);
+                            let playerPositions = processPlayerPosition(rawMetadata[i][player][entry], processedPlayer);
+                            PROCESSED_METADATA[processedPlayer]["positions"][SEASON] = playerPositions;
+                            PROCESSED_METADATA[processedPlayer]["displayPositions"][SEASON] = processPlayerDisplayPosition(rawMetadata[i][player][entry], processedPlayer, playerPositions);
                         }
                     }
                     if (entry === "club"){
@@ -603,26 +629,125 @@ let processPlayerPosition = (positionString, code) => {
 
     }
 
+    if (APPS_PER_PERCENTILE_POSITION[SEASON][code] !== undefined){
+        positions = getPositionsFromAppsPerPositionCounter(3, code, latestKnownPosition);
+    }
+
+    // if (code === "124688")
+    //     console.log(positions);
+
+    if (positions.length === 0){
+
+        positions = getPositionsFromAppsPerPositionCounter(0, code, latestKnownPosition);
+
+        if (positions.length === 0) {
+
+            if (latestKnownPosition !== null){
+                positions.push(latestKnownPosition);
+            }
+            else {
+                positions.push(getPositionFromPositionString(positionString));
+            }
+
+        }
+    }
+
+    // if (code === "124688")
+    //     console.log(positions);
+
+    return [...new Set(positions)];
+
+};
+
+
+let getPositionsFromAppsPerPositionCounter = (minAppsToRegister, code, latestKnownPosition) => {
+
+    let positions = [];
+    let max = 0;
+
+    //set their position(s) to the position they've made the most starts in for the current season
+    for (let position in APPS_PER_PERCENTILE_POSITION[SEASON][code]){
+
+        if (APPS_PER_PERCENTILE_POSITION[SEASON][code][position] === 0)
+            continue;
+
+        //minimum of 3 to register
+        if (APPS_PER_PERCENTILE_POSITION[SEASON][code][position] < minAppsToRegister && latestKnownPosition !== null){
+            continue;
+        }
+
+        if (Math.abs(APPS_PER_PERCENTILE_POSITION[SEASON][code][position] - max) <= 2){
+            if (Math.abs(APPS_PER_PERCENTILE_POSITION[SEASON][code][position] - max) >= 0)
+                positions.unshift(position);
+            else
+                positions.push(position);
+        }
+        else if (APPS_PER_PERCENTILE_POSITION[SEASON][code][position] > max){
+            positions = [position];
+        }
+
+        if (APPS_PER_PERCENTILE_POSITION[SEASON][code][position] > max){
+            max = APPS_PER_PERCENTILE_POSITION[SEASON][code][position];
+        }
+
+    }
+
+    return positions;
+
+};
+
+
+let processPlayerDisplayPosition = (positionString, code, playerPositions) => {
+
+    let displayPositions = [];
+
+    //hard-code false-9 type roaming forwards. Think Messi and Ilicic
+    if (code === "11119" || code === "43194"){
+        return ["AM", "FW"];
+    }
+
+    if (positionString === "GK" || positionString === "Goalkeeper"){
+        displayPositions.push("GK");
+    }
+
+    // if (code === "124688")
+    //     console.log(playerPositions);
+
+    let latestKnownDisplayPosition = null;
+
+    for (let season in PROCESSED_METADATA[code]["displayPositions"]){
+
+        if (PROCESSED_METADATA[code]["displayPositions"][season][0] !== undefined && PROCESSED_METADATA[code]["displayPositions"][season][0] !== "N/A"){
+            latestKnownDisplayPosition = PROCESSED_METADATA[code]["displayPositions"][season][0];
+        }
+
+        if (season === SEASON){
+            break;
+        }
+
+    }
+
     if (APPS_PER_POSITION[SEASON][code] !== undefined){
 
         let max = 0;
 
+        // if (code === "124688")
+        //     console.log(APPS_PER_POSITION[SEASON][code]);
+
         //set their position(s) to the position they've made the most starts in for the current season
         for (let position in APPS_PER_POSITION[SEASON][code]){
 
-            //minimum of 3 to register
-            if (APPS_PER_POSITION[SEASON][code][position] < 3 && latestKnownPosition !== null){
+            if (APPS_PER_POSITION[SEASON][code][position] === 0)
                 continue;
-            }
 
             if (Math.abs(APPS_PER_POSITION[SEASON][code][position] - max) <= 2){
                 if (Math.abs(APPS_PER_POSITION[SEASON][code][position] - max) >= 0)
-                    positions.unshift(position);
+                    displayPositions.unshift(position);
                 else
-                    positions.push(position);
+                    displayPositions.push(position);
             }
             else if (APPS_PER_POSITION[SEASON][code][position] > max){
-                positions = [position];
+                displayPositions = [position];
             }
 
             if (APPS_PER_POSITION[SEASON][code][position] > max){
@@ -633,37 +758,70 @@ let processPlayerPosition = (positionString, code) => {
 
     }
 
-    if (positions.length === 0){
+    // if (code === "124688")
+    //     console.log(displayPositions);
+    //
+    // if (code === "124688")
+    //     console.log(latestKnownPosition);
 
-        if (latestKnownPosition === null){
+    if (displayPositions.length === 0){
 
-            if (positionString.startsWith("Forward") || positionString.startsWith("FW"))
-                positions.push("FW");
-
-            else if (positionString.startsWith("AM") || positionString.startsWith("M(L") || positionString.startsWith("M(R") || (positionString.startsWith("M(C") && positionString.includes("FW")))
-                positions.push("AM");
-
-            else if (positionString.startsWith("Midfielder") || positionString.startsWith("M(C") || positionString.startsWith("DMC"))
-                positions.push("CM");
-
-            else if (positionString.startsWith("D(R") || positionString.startsWith("D(L"))
-                positions.push("FB");
-
-            else if (positionString.startsWith("Defender") || positionString.startsWith("D(C"))
-                positions.push("CB");
-
-            else{
-                console.log("Unhandled position string: " + positionString);
-                positions.push("N/A");
-            }
-
+        if (latestKnownDisplayPosition === null){
+            displayPositions.push(getPositionFromPositionString(positionString));
         }
         else {
-            positions.push(latestKnownPosition)
+            displayPositions.push(latestKnownDisplayPosition)
         }
     }
 
-    return [...new Set(positions)];
+    // if (code === "124688")
+    //     console.log(displayPositions);
+
+    if (!playerPositions.includes("FW")){
+        displayPositions = displayPositions.filter(x => x !== "FW");
+    }
+    if (!playerPositions.includes("AM")){
+        displayPositions = displayPositions.filter(x => x !== "AM" && x !== "W");
+    }
+    if (!playerPositions.includes("CM")){
+        displayPositions = displayPositions.filter(x => x !== "CM" && x !== "DM");
+    }
+    if (!playerPositions.includes("FB")){
+        displayPositions = displayPositions.filter(x => x !== "FB");
+    }
+    if (!playerPositions.includes("CB")){
+        displayPositions = displayPositions.filter(x => x !== "CB");
+    }
+    if (!playerPositions.includes("GK")){
+        displayPositions = displayPositions.filter(x => x !== "GK");
+    }
+
+    return [...new Set(displayPositions)];
+
+};
+
+
+let getPositionFromPositionString = (positionString) => {
+
+    if (positionString.startsWith("Forward") || positionString.startsWith("FW"))
+        return "FW";
+
+    else if (positionString.startsWith("AM") || positionString.startsWith("M(L") || positionString.startsWith("M(R") || (positionString.startsWith("M(C") && positionString.includes("FW")))
+        return "AM";
+
+    else if (positionString.startsWith("Midfielder") || positionString.startsWith("M(C") || positionString.startsWith("DMC"))
+        return "CM";
+
+    else if (positionString.startsWith("D(R") || positionString.startsWith("D(L"))
+        return "FB";
+
+    else if (positionString.startsWith("Defender") || positionString.startsWith("D(C"))
+        return "CB";
+
+    else{
+        console.log("Unhandled position string: " + positionString);
+        return "N/A";
+    }
 
 };
 

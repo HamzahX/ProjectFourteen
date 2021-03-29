@@ -977,6 +977,7 @@ let buildPlayerSearchResult = (doc) => {
         leagues: doc.leagues,
         clubs: doc.clubs,
         positions: doc.positions,
+        displayPositions: doc.displayPositions,
         lastUpdated: doc.lastUpdated
     };
 

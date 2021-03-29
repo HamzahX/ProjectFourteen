@@ -51,7 +51,16 @@ else {
         "https://www.whoscored.com/Statistics"
     ]
 }
+
 let APPEARANCES_PER_POSITION_COUNTER = {};
+let PERCENTILE_PLAYERS = {
+    "FW": {names:[], codes:[]},
+    "AM": {names:[], codes:[]},
+    "CM": {names:[], codes:[]},
+    "FB": {names:[], codes:[]},
+    "CB": {names:[], codes:[]},
+    "GK": {names:[], codes:[]}
+};
 
 
 let setup = async () => {
@@ -95,6 +104,8 @@ let pageSetup = async (page, isFirstIteration, position) => {
 
         if (isFirstIteration) {
 
+            await page.reload({ waitUntil: ["networkidle2"] });
+
             // navigate to 'detailed' tab
             let selector;
             //whoscored data for previous seasons is stored separately (by competition)
@@ -111,97 +122,136 @@ let pageSetup = async (page, isFirstIteration, position) => {
             await page.evaluate((selector) => document.querySelector(selector).click(), selector);
             await page.waitForSelector('#statistics-table-detailed');
 
-            //set minimum apps to 10
-            // await page.select('#appearancesComparisonType', '2');
-            // await page.focus('#appearances');
-            // await page.keyboard.press('Backspace');
-            // await page.keyboard.press('Backspace');
-            // await page.keyboard.type(SEASON === "20-21" ? '3' : '9');
+            await page.waitFor(5000);
 
             // select 'total' from 'accumulation' drop-down
             await page.select('#statsAccumulationType', '2');
             await page.waitForFunction('document.querySelector("#statistics-table-detailed-loading").style.display == "none"');
 
             //press 'toggle all positions'
-            if (position === "FW"){
-                selector = '#toggle-all-positions';
-                await page.evaluate((selector) => document.querySelector(selector).click(), selector);
-            }
+            // if (position === "FW"){
+            //     selector = '#toggle-all-positions';
+            //     await page.evaluate((selector) => document.querySelector(selector).click(), selector);
+            // }
+
+            selector = '#toggle-all-positions';
+            await page.evaluate((selector) => document.querySelector(selector).click(), selector);
 
             switch (position){
+
                 case "FW":
+
                     //select the forward position
                     selector = '#pitch > tbody > tr:nth-child(1) > td > label';
                     await page.evaluate((selector) => document.querySelector(selector).click(), selector);
+
                     break;
-                case "AM":
+
+                case "W":
+
                     //unselect the forward position
-                    selector = '#pitch > tbody > tr:nth-child(1) > td > label';
-                    await page.evaluate((selector) => document.querySelector(selector).click(), selector);
+                    // selector = '#pitch > tbody > tr:nth-child(1) > td > label';
+                    // await page.evaluate((selector) => document.querySelector(selector).click(), selector);
 
-                    //select the attacking midfield positions
+                    //select the winger positions
                     selector = '#pitch > tbody > tr:nth-child(2) > td:nth-child(1) > label > input';
-                    await page.evaluate((selector) => document.querySelector(selector).click(), selector);
-                    selector = '#pitch > tbody > tr:nth-child(2) > td:nth-child(2) > label';
                     await page.evaluate((selector) => document.querySelector(selector).click(), selector);
                     selector = '#pitch > tbody > tr:nth-child(2) > td:nth-child(3) > label';
                     await page.evaluate((selector) => document.querySelector(selector).click(), selector);
+
+                    break;
+
+                case "AM":
+
+                    //unselect the winger positions
+                    // selector = '#pitch > tbody > tr:nth-child(2) > td:nth-child(1) > label > input';
+                    // await page.evaluate((selector) => document.querySelector(selector).click(), selector);
+                    // selector = '#pitch > tbody > tr:nth-child(2) > td:nth-child(3) > label';
+                    // await page.evaluate((selector) => document.querySelector(selector).click(), selector);
+                    // selector = '#pitch > tbody > tr:nth-child(3) > td:nth-child(1) > label > input';
+                    // await page.evaluate((selector) => document.querySelector(selector).click(), selector);
+                    // selector = '#pitch > tbody > tr:nth-child(3) > td:nth-child(3) > label > input';
+                    // await page.evaluate((selector) => document.querySelector(selector).click(), selector);
+
+
+                    //select the attacking midfield position
+                    selector = '#pitch > tbody > tr:nth-child(2) > td:nth-child(2) > label';
+                    await page.evaluate((selector) => document.querySelector(selector).click(), selector);
+
+                    break;
+
+                case "WM":
+
+                    //select the wide midfielder positions
                     selector = '#pitch > tbody > tr:nth-child(3) > td:nth-child(1) > label > input';
                     await page.evaluate((selector) => document.querySelector(selector).click(), selector);
                     selector = '#pitch > tbody > tr:nth-child(3) > td:nth-child(3) > label > input';
                     await page.evaluate((selector) => document.querySelector(selector).click(), selector);
+
                     break;
+
                 case "CM":
-                    //unselect the attacking midfield positions
-                    selector = '#pitch > tbody > tr:nth-child(2) > td:nth-child(1) > label > input';
-                    await page.evaluate((selector) => document.querySelector(selector).click(), selector);
-                    selector = '#pitch > tbody > tr:nth-child(2) > td:nth-child(2) > label';
-                    await page.evaluate((selector) => document.querySelector(selector).click(), selector);
-                    selector = '#pitch > tbody > tr:nth-child(2) > td:nth-child(3) > label';
-                    await page.evaluate((selector) => document.querySelector(selector).click(), selector);
-                    selector = '#pitch > tbody > tr:nth-child(3) > td:nth-child(1) > label > input';
-                    await page.evaluate((selector) => document.querySelector(selector).click(), selector);
-                    selector = '#pitch > tbody > tr:nth-child(3) > td:nth-child(3) > label > input';
+
+                    //unselect the attacking midfield position
+                    // selector = '#pitch > tbody > tr:nth-child(2) > td:nth-child(2) > label';
+                    // await page.evaluate((selector) => document.querySelector(selector).click(), selector);
+
+                    //select the central midfield position
+                    selector = '#pitch > tbody > tr:nth-child(3) > td:nth-child(2) > label > input';
                     await page.evaluate((selector) => document.querySelector(selector).click(), selector);
 
-                    //select the central midfield positions
-                    selector = '#pitch > tbody > tr:nth-child(3) > td:nth-child(2) > label > input';
-                    await page.evaluate((selector) => document.querySelector(selector).click(), selector);
-                    selector = '#pitch > tbody > tr:nth-child(4) > td:nth-child(1) > label > input';
-                    await page.evaluate((selector) => document.querySelector(selector).click(), selector);
                     break;
-                case "FB":
-                    //unselect the central midfield positions
-                    selector = '#pitch > tbody > tr:nth-child(3) > td:nth-child(2) > label > input';
-                    await page.evaluate((selector) => document.querySelector(selector).click(), selector);
+
+                case "DM":
+
+                    //unselect the central midfield position
+                    // selector = '#pitch > tbody > tr:nth-child(3) > td:nth-child(2) > label > input';
+                    // await page.evaluate((selector) => document.querySelector(selector).click(), selector);
+
+                    //select the defensive midfield position
                     selector = '#pitch > tbody > tr:nth-child(4) > td:nth-child(1) > label > input';
                     await page.evaluate((selector) => document.querySelector(selector).click(), selector);
+
+                    break;
+
+                case "FB":
+
+                    //unselect the defensive midfield position
+                    // selector = '#pitch > tbody > tr:nth-child(4) > td:nth-child(1) > label > input';
+                    // await page.evaluate((selector) => document.querySelector(selector).click(), selector);
 
                     //select the full-back positions
                     selector = '#pitch > tbody > tr:nth-child(5) > td:nth-child(1) > label > input';
                     await page.evaluate((selector) => document.querySelector(selector).click(), selector);
                     selector = '#pitch > tbody > tr:nth-child(5) > td:nth-child(3) > label > input';
                     await page.evaluate((selector) => document.querySelector(selector).click(), selector);
+
                     break;
+
                 case "CB":
+
                     //unselect the full-back positions
-                    selector = '#pitch > tbody > tr:nth-child(5) > td:nth-child(1) > label > input';
-                    await page.evaluate((selector) => document.querySelector(selector).click(), selector);
-                    selector = '#pitch > tbody > tr:nth-child(5) > td:nth-child(3) > label > input';
-                    await page.evaluate((selector) => document.querySelector(selector).click(), selector);
+                    // selector = '#pitch > tbody > tr:nth-child(5) > td:nth-child(1) > label > input';
+                    // await page.evaluate((selector) => document.querySelector(selector).click(), selector);
+                    // selector = '#pitch > tbody > tr:nth-child(5) > td:nth-child(3) > label > input';
+                    // await page.evaluate((selector) => document.querySelector(selector).click(), selector);
 
                     //select the center-back position
                     selector = '#pitch > tbody > tr:nth-child(5) > td:nth-child(2) > label > input';
                     await page.evaluate((selector) => document.querySelector(selector).click(), selector);
+
                     break;
+
                 case "GK":
+
                     //unselect the center-back position
-                    selector = '#pitch > tbody > tr:nth-child(5) > td:nth-child(2) > label > input';
-                    await page.evaluate((selector) => document.querySelector(selector).click(), selector);
+                    // selector = '#pitch > tbody > tr:nth-child(5) > td:nth-child(2) > label > input';
+                    // await page.evaluate((selector) => document.querySelector(selector).click(), selector);
 
                     //select the GK position
                     selector = selector = '#pitch > tbody > tr:nth-child(6) > td:nth-child(1) > label > input';
                     await page.evaluate((selector) => document.querySelector(selector).click(), selector);
+
             }
 
             //press search button
@@ -225,31 +275,27 @@ let pageSetup = async (page, isFirstIteration, position) => {
 };
 
 
-let getPlayers = async(position) => {
+let getPlayersByPosition = async(position) => {
 
     console.log(`Getting ${position}s`);
 
     return new Promise((resolve, reject) => {
-        let rawData = {names:[], codes:[]};
+
         pageSetup(page, true, position)
-            .then(() =>
-                getNamesAndCodes(page, position)
-            )
-            .then( async (namesAndCodes) => {
-                rawData['names'] = rawData['names'].concat(namesAndCodes[0]);
-                rawData['codes'] = rawData['codes'].concat(namesAndCodes[1]);
-                await saveData(rawData, position);
-                resolve()
+            .then(async () => {
+                await getCodesByPosition(page, position);
+                resolve();
             })
             .catch(async (anError) => {
                 console.log(anError);
             });
+
     });
 
 };
 
 
-let getNamesAndCodes = async (page, position) => {
+let getCodesByPosition = async (page, position) => {
 
     let firstIteration = true;
     let namesAndCodes = [];
@@ -317,10 +363,10 @@ let scrapeNamesAndCodes = async (page, position) => {
             let code = url.substring(0, url.indexOf("/"));
             let numApps = parseInt(appsCell.innerText);
 
-            if (numApps >= 10 || (SEASON === "20-21" && numApps >= 7)){
-                playerNames.push(name);
-                playerCodes.push(code);
-            }
+            // if (numApps >= 10){
+            //     playerNames.push(name);
+            //     playerCodes.push(code);
+            // }
 
             if (APPEARANCES_PER_POSITION_COUNTER[code] === undefined) {
                 APPEARANCES_PER_POSITION_COUNTER[code] = {};
@@ -377,6 +423,42 @@ function logResults(namesAndCodes){
 }
 
 
+async function populatePercentilePlayers(){
+
+    for (let player in APPEARANCES_PER_POSITION_COUNTER){
+
+        if (APPEARANCES_PER_POSITION_COUNTER[player]["FW"] >= 10){
+            PERCENTILE_PLAYERS["FW"].codes.push(player);
+        }
+
+        if ((APPEARANCES_PER_POSITION_COUNTER[player]["AM"] || 0) +
+            (APPEARANCES_PER_POSITION_COUNTER[player]["W"] || 0) +
+            (APPEARANCES_PER_POSITION_COUNTER[player]["WM"] || 0) >= 10
+        ){
+            PERCENTILE_PLAYERS["AM"].codes.push(player);
+        }
+
+        if ((APPEARANCES_PER_POSITION_COUNTER[player]["CM"] || 0) + (APPEARANCES_PER_POSITION_COUNTER[player]["DM"] || 0) >= 10){
+            PERCENTILE_PLAYERS["CM"].codes.push(player);
+        }
+
+        if (APPEARANCES_PER_POSITION_COUNTER[player]["FB"] >= 10){
+            PERCENTILE_PLAYERS["FB"].codes.push(player);
+        }
+
+        if (APPEARANCES_PER_POSITION_COUNTER[player]["CB"] >= 10){
+            PERCENTILE_PLAYERS["CB"].codes.push(player);
+        }
+
+        if (APPEARANCES_PER_POSITION_COUNTER[player]["GK"] >= 10){
+            PERCENTILE_PLAYERS["GK"].codes.push(player);
+        }
+
+    }
+
+}
+
+
 let saveData =  async (rawData, position) => {
 
     let filePath;
@@ -430,22 +512,31 @@ setup()
                     await new Promise(function (resolve, reject) {
                         page.goto(URLs[i], {waitUntil: 'networkidle2'})
                             .then(async () => {
-                                await getPlayers("FW")
+                                await getPlayersByPosition("FW")
                             })
                             .then(async () => {
-                                await getPlayers("AM")
+                                await getPlayersByPosition("W")
                             })
                             .then(async () => {
-                                await getPlayers("CM")
+                                await getPlayersByPosition("AM")
                             })
                             .then(async () => {
-                                await getPlayers("FB")
+                                await getPlayersByPosition("WM")
                             })
                             .then(async () => {
-                                await getPlayers("CB")
+                                await getPlayersByPosition("CM")
                             })
                             .then(async () => {
-                                await getPlayers("GK");
+                                await getPlayersByPosition("DM")
+                            })
+                            .then(async () => {
+                                await getPlayersByPosition("FB")
+                            })
+                            .then(async () => {
+                                await getPlayersByPosition("CB")
+                            })
+                            .then(async () => {
+                                await getPlayersByPosition("GK");
                                 resolve()
                             })
                     });
@@ -453,6 +544,27 @@ setup()
                 resolve();
             })();
         })
+    })
+    .then(async () => {
+        await populatePercentilePlayers()
+    })
+    .then(async () => {
+        await saveData(PERCENTILE_PLAYERS["FW"], "FW")
+    })
+    .then(async () => {
+        await saveData(PERCENTILE_PLAYERS["AM"], "AM")
+    })
+    .then(async () => {
+        await saveData(PERCENTILE_PLAYERS["CM"], "CM")
+    })
+    .then(async () => {
+        await saveData(PERCENTILE_PLAYERS["FB"], "FB")
+    })
+    .then(async () => {
+        await saveData(PERCENTILE_PLAYERS["CB"], "CB")
+    })
+    .then(async () => {
+        await saveData(PERCENTILE_PLAYERS["GK"], "GK")
     })
     .then(() => {
         return new Promise(async function (resolve, reject) {

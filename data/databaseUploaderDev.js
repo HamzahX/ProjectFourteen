@@ -359,6 +359,7 @@ let uploadPlayers = async () => {
             leagues: playerInfo["leagues"],
             clubs: playerInfo["clubs"],
             positions: playerInfo["positions"],
+            displayPositions: playerInfo["displayPositions"],
             percentileEntries: playerInfo["percentileEntries"],
             stats: playerInfo["stats"],
             outfieldGKStats: playerInfo["outfieldGKStats"],
