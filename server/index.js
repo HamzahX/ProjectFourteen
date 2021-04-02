@@ -971,6 +971,7 @@ let buildPlayerSearchResult = (doc) => {
     return {
         code: doc.code,
         name: doc.name,
+        simplifiedName: doc.simplifiedName,
         age: doc.age,
         nationalities: doc.nationalities,
         countryCodes: doc.countryCodes,

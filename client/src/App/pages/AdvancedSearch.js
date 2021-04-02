@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import { Link } from 'react-router-dom';
 import withRouter from "react-router-dom/es/withRouter";
 import {
     withQueryParams,
@@ -62,25 +63,15 @@ class AdvancedSearch extends Component {
             },
             minWidth: '250px',
             sortable: true,
-            sortFunction: (rowA, rowB) =>
-                (rowA.name.normalize("NFD")
-                    .replace(/[\u0300-\u036f]/g, "")
-                    .replace("Ø", "O")
-                    .replace("ø", "o"))
-                    .localeCompare((rowB.name.normalize("NFD")
-                        .replace(/[\u0300-\u036f]/g, "")
-                        .replace("Ø", "O")
-                        .replace("ø", "o")))
-            ,
+            sortFunction: (rowA, rowB) => (rowA.simplifiedName.localeCompare(rowB.simplifiedName)),
             ignoreRowClick: true,
             cell: row => {
                 return (
-                    <a
-                        className="table-link"
-                        href={'/stats/' + row.code}
-                    >
-                        {row.name}
-                    </a>
+                    <Link to={`/stats/${row.code}`}>
+                        <div tabIndex="0" className="table-link">
+                            {row.name}
+                        </div>
+                    </Link>
                 );
             }
         },
