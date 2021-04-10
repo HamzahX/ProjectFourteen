@@ -55,6 +55,14 @@ function aggregateStats(stats, selectedLeagues, selectedClubs, clubsList, includ
 
     }
 
+    if (aggregatedStats["npg"] !== undefined && aggregatedStats["xa"] !== undefined){
+        aggregatedStats["npg+xa"] = aggregatedStats["npg"] + aggregatedStats["xa"];
+    }
+
+    if (aggregatedStats["npxg"] !== undefined && aggregatedStats["xa"] !== undefined){
+        aggregatedStats["npxg+xa"] = aggregatedStats["npxg"] + aggregatedStats["xa"];
+    }
+
     let leagues = [
         ...new Set(
             competitions
@@ -80,11 +88,6 @@ function calculateAverageStats(aggregatedStats, positions, outfieldGKStats, STAT
     }
     else {
         averageStats = getStatAverages(aggregatedStats, false);
-    }
-
-    for (let stat in averageStats){
-        let precision = STATS_REFERENCE[stat]["precision"];
-        averageStats[stat] = truncateNum(averageStats[stat], precision);
     }
 
     return averageStats;
@@ -164,6 +167,9 @@ function getStatAverages(aggregatedStats, isGoalkeeper) {
         averageStats["clearances"] = returnFinite(aggregatedStats["clearances"] / minutesOverNinety);
         averageStats["padjClearances"] = returnFinite(aggregatedStats["padjClearances"] / minutesOverNinety);
         averageStats["padjClearances_def"] = returnFinite(aggregatedStats["padjClearances_def"] / minutesOverNinety);
+
+        averageStats["npg+xa"] = returnFinite(aggregatedStats["npg+xa"] / minutesOverNinety);
+        averageStats["npxg+xa"] = returnFinite(aggregatedStats["npxg+xa"] / minutesOverNinety);
 
     }
 
