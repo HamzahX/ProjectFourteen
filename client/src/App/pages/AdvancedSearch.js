@@ -532,26 +532,34 @@ class AdvancedSearch extends Component {
             for (let stat in parameters.aggregateStats){
 
                 let statData = this._referenceData.statsReferenceData[stat];
+                let precision = 0;
+
+                if (stat === "npxg+xa" || stat === "npg+xa"){
+                    precision = 1;
+                }
 
                 tableColumns.push({
                     name: `${statData.label}`,
                     selector: `aggregate_${stat}`,
                     sortable: true,
                     ignoreRowClick: true,
-                    format: row => parseFloat(row[`aggregate_${stat}`])
+                    format: row => parseFloat(row[`aggregate_${stat}`]),
+                    cell: row => { return parseFloat(Math.round(row[`aggregate_${stat}`] * (10**precision)) / (10**precision)).toFixed(precision) }
                 })
             }
 
             for (let stat in parameters.averageStats){
 
                 let statData = this._referenceData.statsReferenceData[stat];
+                let precision = statData.precision;
 
                 tableColumns.push({
                     name: `${statData.label} ${statData.suffix}`,
                     selector: `raw_${stat}`,
                     sortable: true,
                     ignoreRowClick: true,
-                    format: row => parseFloat(row[`raw_${stat}`])
+                    format: row => parseFloat(row[`raw_${stat}`]),
+                    cell: row => { return parseFloat(Math.round(row[`raw_${stat}`] * (10**precision)) / (10**precision)).toFixed(precision) }
                 })
             }
 
@@ -684,6 +692,10 @@ class AdvancedSearch extends Component {
                 let row = {};
 
                 for (let key in current){
+
+                    if (current[key] === null){
+                        alert(current.code);
+                    }
 
                     if (Array.isArray(current[key])){
                         row[key] = current[key].join(", ");
