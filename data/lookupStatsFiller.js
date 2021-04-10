@@ -320,6 +320,7 @@ let temp_percentile = (player, position, averageStats) => {
 };
 
 
+//TODO: refactor to use aggregateStats function in utilities.js
 let aggregateStats = (stats, includeEuropeanCompetitions = true) => {
 
     let aggregatedStats = {};
@@ -339,6 +340,12 @@ let aggregateStats = (stats, includeEuropeanCompetitions = true) => {
         }
 
     }
+
+    aggregatedStats["npxg"] = truncateNum(aggregatedStats["npxg"], 1);
+    aggregatedStats["xa"] = truncateNum(aggregatedStats["xa"], 1);
+
+    aggregatedStats["npg+xa"] = truncateNum(aggregatedStats["npg"] + aggregatedStats["xa"], 1);
+    aggregatedStats["npxg+xa"] = truncateNum(aggregatedStats["npxg"] + aggregatedStats["xa"], 1);
 
     return aggregatedStats;
 
