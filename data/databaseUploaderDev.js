@@ -75,7 +75,9 @@ var TOP_5_LEAGUE_TEAMS = {
     "fr": []
 };
 
-var TIMESTAMP = new Date();
+var TIMESTAMP = fs.statSync(path.join(__dirname, '/fbrefData/20-21/europaLeague_gk.json')).mtime;
+
+console.log(TIMESTAMP);
 
 let setup = async () => {
 
