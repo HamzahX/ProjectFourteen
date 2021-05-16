@@ -842,6 +842,8 @@ let advancedSearch = async (parameters) => {
 
                     }
 
+                    playerSearchResult.includeEuropeanCompetitions = parameters.includeEuropeanCompetitions;
+
                     searchResults.push(playerSearchResult);
 
                 }

@@ -830,10 +830,6 @@ class AdvancedSearch extends Component {
             parameters: parameters
         }, 'replaceIn');
 
-        if (key === "season" && this._firstSearchMade && this.state.searchResults.length > 0){
-            this.getSearchResults();
-        }
-
     };
 
 
@@ -850,10 +846,6 @@ class AdvancedSearch extends Component {
         this.props.setQuery({
             parameters: parameters
         }, 'replaceIn');
-
-        if (this._firstSearchMade && this.state.searchResults.length > 0){
-            this.getSearchResults();
-        }
 
     };
 
@@ -1568,7 +1560,7 @@ class AdvancedSearch extends Component {
                             {
                                 searchResults.length > 0 ?
                                 <p style={{marginLeft: '0px', lineHeight: '1.3'}}>
-                                    Season: {parameters.season.replace("-", "/")} | {parameters.includeEuropeanCompetitions ? 'League + CL/EL Stats' : 'League Stats Only'}
+                                    Season: {parameters.season.replace("-", "/")} | {searchResults[0].includeEuropeanCompetitions ? 'League + CL/EL Stats' : 'League Stats Only'}
                                     <br/>
                                     Data Sources: FBref.com & StatsBomb | Last Updated: {dateFormat(searchResults[0].lastUpdated, "dd/mm/yyyy, h:MM TT", true)} UTC
                                 </p> :
