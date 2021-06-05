@@ -44,7 +44,7 @@
 		},
 		"14260|Manchester City": {
 			"name": "Sergio Agüero",
-			"age": 32,
+			"age": 33,
 			"countryCode": "ar",
 			"position": "AM(CL),FW",
 			"displayPositions": {},
@@ -366,7 +366,7 @@
 		},
 		"73078|Arsenal": {
 			"name": "Alexandre Lacazette",
-			"age": 29,
+			"age": 30,
 			"countryCode": "fr",
 			"position": "M(LR),FW",
 			"displayPositions": {},
@@ -786,7 +786,7 @@
 		},
 		"6775|Arsenal": {
 			"name": "Petr Cech",
-			"age": 38,
+			"age": 39,
 			"countryCode": "cz",
 			"position": "GK",
 			"displayPositions": {},
@@ -800,8 +800,8 @@
 		},
 		"122117|Manchester City": {
 			"name": "Aymeric Laporte",
-			"age": 26,
-			"countryCode": "fr",
+			"age": 27,
+			"countryCode": "es",
 			"position": "D(CL)",
 			"displayPositions": {},
 			"club": "Manchester City",
@@ -1122,7 +1122,7 @@
 		},
 		"69778|Manchester City": {
 			"name": "Kyle Walker",
-			"age": 30,
+			"age": 31,
 			"countryCode": "gb-eng",
 			"position": "D(CR),M(R)",
 			"displayPositions": {},
@@ -1248,7 +1248,7 @@
 		},
 		"80758|Newcastle United": {
 			"name": "Florian Lejeune",
-			"age": 29,
+			"age": 30,
 			"countryCode": "fr",
 			"position": "D(C)",
 			"displayPositions": {},
@@ -1486,7 +1486,7 @@
 		},
 		"302588|Brighton": {
 			"name": "Bernardo",
-			"age": 25,
+			"age": 26,
 			"countryCode": "br",
 			"position": "D(LR),M(L)",
 			"displayPositions": {},
@@ -1584,7 +1584,7 @@
 		},
 		"317804|Everton": {
 			"name": "Richarlison",
-			"age": 23,
+			"age": 24,
 			"countryCode": "br",
 			"position": "AM(CLR),FW",
 			"displayPositions": {},
@@ -1766,7 +1766,7 @@
 		},
 		"101374|Manchester City": {
 			"name": "John Stones",
-			"age": 26,
+			"age": 27,
 			"countryCode": "gb-eng",
 			"position": "D(CR)",
 			"displayPositions": {},
@@ -1962,7 +1962,7 @@
 		},
 		"78498|Manchester United": {
 			"name": "Romelu Lukaku",
-			"age": 27,
+			"age": 28,
 			"countryCode": "be",
 			"position": "AM(R),FW",
 			"displayPositions": {},
@@ -2380,20 +2380,6 @@
 				}
 			}
 		},
-		"141172|Southampton": {
-			"name": "Wesley Hoedt",
-			"age": 27,
-			"countryCode": "nl",
-			"position": "D(C)",
-			"displayPositions": {},
-			"club": "Southampton",
-			"18-19": {
-				"Premier League | Southampton": {
-					"whoscoredApps": 13,
-					"whoscoredMins": 1170
-				}
-			}
-		},
 		"83554|West Ham": {
 			"name": "Ryan Fredericks",
 			"age": 28,
@@ -2419,6 +2405,20 @@
 				"Premier League | Manchester United": {
 					"whoscoredApps": 28,
 					"whoscoredMins": 2441
+				}
+			}
+		},
+		"141172|Southampton": {
+			"name": "Wesley Hoedt",
+			"age": 27,
+			"countryCode": "nl",
+			"position": "D(C)",
+			"displayPositions": {},
+			"club": "Southampton",
+			"18-19": {
+				"Premier League | Southampton": {
+					"whoscoredApps": 13,
+					"whoscoredMins": 1170
 				}
 			}
 		},
@@ -2466,7 +2466,7 @@
 		},
 		"136451|Liverpool": {
 			"name": "Joe Gomez",
-			"age": 23,
+			"age": 24,
 			"countryCode": "gb-eng",
 			"position": "D(CLR)",
 			"displayPositions": {},
@@ -2606,7 +2606,7 @@
 		},
 		"23547|West Ham": {
 			"name": "Angelo Ogbonna",
-			"age": 32,
+			"age": 33,
 			"countryCode": "it",
 			"position": "D(C)",
 			"displayPositions": {},
@@ -2776,7 +2776,7 @@
 			"name": "Manuel Lanzini",
 			"age": 28,
 			"countryCode": "ar",
-			"position": "AM(CLR)",
+			"position": "M(CLR)",
 			"displayPositions": {},
 			"club": "West Ham",
 			"18-19": {
@@ -2802,7 +2802,7 @@
 		},
 		"140957|Cardiff": {
 			"name": "Víctor Camarasa",
-			"age": 26,
+			"age": 27,
 			"countryCode": "es",
 			"position": "M(CR)",
 			"displayPositions": {},
@@ -3460,7 +3460,7 @@
 		},
 		"8247|West Ham": {
 			"name": "Mark Noble",
-			"age": 33,
+			"age": 34,
 			"countryCode": "gb-eng",
 			"position": "M(C)",
 			"displayPositions": {},
@@ -3628,7 +3628,7 @@
 		},
 		"68335|Fulham": {
 			"name": "Denis Odoi",
-			"age": 32,
+			"age": 33,
 			"countryCode": "be",
 			"position": "D(CLR)",
 			"displayPositions": {},
@@ -3641,7 +3641,7 @@
 			}
 		},
 		"46092|Newcastle United": {
-			"name": "Martin Dubravka",
+			"name": "Martin Dúbravka",
 			"age": 32,
 			"countryCode": "sk",
 			"position": "GK",
@@ -3922,7 +3922,7 @@
 		},
 		"35003|West Ham": {
 			"name": "Chicharito",
-			"age": 32,
+			"age": 33,
 			"countryCode": "mx",
 			"position": "FW",
 			"displayPositions": {},
@@ -4258,7 +4258,7 @@
 		},
 		"21683|Liverpool": {
 			"name": "Adam Lallana",
-			"age": 32,
+			"age": 33,
 			"countryCode": "gb-eng",
 			"position": "AM(CLR)",
 			"displayPositions": {},
@@ -4328,7 +4328,7 @@
 		},
 		"331254|Manchester City": {
 			"name": "Phil Foden",
-			"age": 20,
+			"age": 21,
 			"countryCode": "gb-eng",
 			"position": "AM(CLR)",
 			"displayPositions": {},
@@ -4748,7 +4748,7 @@
 		},
 		"135768|Fulham": {
 			"name": "Marcus Bettinelli",
-			"age": 28,
+			"age": 29,
 			"countryCode": "gb-eng",
 			"position": "GK",
 			"displayPositions": {},
@@ -4930,7 +4930,7 @@
 		},
 		"95423|Leicester": {
 			"name": "Rachid Ghezzal",
-			"age": 28,
+			"age": 29,
 			"countryCode": "dz",
 			"position": "AM(CLR)",
 			"displayPositions": {},
@@ -4958,7 +4958,7 @@
 		},
 		"322611|Fulham": {
 			"name": "Ryan Sessegnon",
-			"age": 20,
+			"age": 21,
 			"countryCode": "gb-eng",
 			"position": "D(L),M(LR)",
 			"displayPositions": {},
@@ -5490,7 +5490,7 @@
 		},
 		"115165|Huddersfield": {
 			"name": "Erik Durm",
-			"age": 28,
+			"age": 29,
 			"countryCode": "de",
 			"position": "D(LR),M(LR)",
 			"displayPositions": {},
@@ -5588,7 +5588,7 @@
 		},
 		"42947|Huddersfield": {
 			"name": "Rajiv van La Parra",
-			"age": 29,
+			"age": 30,
 			"countryCode": "nl",
 			"position": "AM(LR),FW",
 			"displayPositions": {},
@@ -5602,7 +5602,7 @@
 		},
 		"317998|Leicester": {
 			"name": "Çaglar Söyüncü",
-			"age": 24,
+			"age": 25,
 			"countryCode": "tr",
 			"position": "D(C)",
 			"displayPositions": {},
@@ -5728,7 +5728,7 @@
 		},
 		"345845|Arsenal": {
 			"name": "Eddie Nketiah",
-			"age": 21,
+			"age": 22,
 			"countryCode": "gb-eng",
 			"position": "FW",
 			"displayPositions": {},
@@ -6498,7 +6498,7 @@
 		},
 		"368310|Wolverhampton Wanderers": {
 			"name": "Maximilian Kilman",
-			"age": 23,
+			"age": 24,
 			"countryCode": "gb-eng",
 			"position": "D(C)",
 			"displayPositions": {},
@@ -6710,7 +6710,7 @@
 		},
 		"299513|Barcelona": {
 			"name": "Ousmane Dembélé",
-			"age": 23,
+			"age": 24,
 			"countryCode": "fr",
 			"position": "AM(CLR),FW",
 			"displayPositions": {},
@@ -6723,7 +6723,7 @@
 			}
 		},
 		"303139|Atletico Madrid": {
-			"name": "Rodrigo",
+			"name": "Rodri",
 			"age": 24,
 			"countryCode": "es",
 			"position": "DMC",
@@ -6836,7 +6836,7 @@
 		},
 		"94868|Sevilla": {
 			"name": "Pablo Sarabia",
-			"age": 28,
+			"age": 29,
 			"countryCode": "es",
 			"position": "D(L),M(CLR),FW",
 			"displayPositions": {},
@@ -6892,7 +6892,7 @@
 		},
 		"91214|Levante": {
 			"name": "José Campaña",
-			"age": 27,
+			"age": 28,
 			"countryCode": "es",
 			"position": "M(CLR)",
 			"displayPositions": {},
@@ -7328,7 +7328,7 @@
 			"name": "Brais Méndez",
 			"age": 24,
 			"countryCode": "es",
-			"position": "AM(CR)",
+			"position": "AM(CR),FW",
 			"displayPositions": {},
 			"club": "Celta Vigo",
 			"18-19": {
@@ -7340,7 +7340,7 @@
 		},
 		"69738|Valencia": {
 			"name": "Francis Coquelin",
-			"age": 29,
+			"age": 30,
 			"countryCode": "fr",
 			"position": "M(CLR)",
 			"displayPositions": {},
@@ -7368,7 +7368,7 @@
 		},
 		"119817|Valencia": {
 			"name": "José Gayà",
-			"age": 25,
+			"age": 26,
 			"countryCode": "es",
 			"position": "D(L),M(L)",
 			"displayPositions": {},
@@ -7479,7 +7479,7 @@
 			}
 		},
 		"344119|Celta Vigo": {
-			"name": "Maxi Gómez",
+			"name": "Maximiliano Gómez",
 			"age": 24,
 			"countryCode": "uy",
 			"position": "FW",
@@ -7732,7 +7732,7 @@
 		},
 		"323547|Leganes": {
 			"name": "Youssef En-Nesyri",
-			"age": 23,
+			"age": 24,
 			"countryCode": "ma",
 			"position": "FW",
 			"displayPositions": {},
@@ -7746,7 +7746,7 @@
 		},
 		"125379|Leganes": {
 			"name": "Guido Carrillo",
-			"age": 29,
+			"age": 30,
 			"countryCode": "ar",
 			"position": "FW",
 			"displayPositions": {},
@@ -7816,7 +7816,7 @@
 		},
 		"109565|Valencia": {
 			"name": "Jeison Murillo",
-			"age": 28,
+			"age": 29,
 			"countryCode": "co",
 			"position": "D(C)",
 			"displayPositions": {},
@@ -7830,7 +7830,7 @@
 		},
 		"140767|SD Huesca": {
 			"name": "Jorge Miramón",
-			"age": 31,
+			"age": 32,
 			"countryCode": "es",
 			"position": "D(R),M(R)",
 			"displayPositions": {},
@@ -7914,7 +7914,7 @@
 		},
 		"25008|Barcelona": {
 			"name": "Arturo Vidal",
-			"age": 33,
+			"age": 34,
 			"countryCode": "cl",
 			"position": "M(CR)",
 			"displayPositions": {},
@@ -8236,7 +8236,7 @@
 		},
 		"106885|Athletic Bilbao": {
 			"name": "Íñigo Martínez",
-			"age": 29,
+			"age": 30,
 			"countryCode": "es",
 			"position": "D(C)",
 			"displayPositions": {},
@@ -8474,7 +8474,7 @@
 		},
 		"20241|Real Madrid": {
 			"name": "Marcelo",
-			"age": 32,
+			"age": 33,
 			"countryCode": "br",
 			"position": "D(L),M(L)",
 			"displayPositions": {},
@@ -8614,7 +8614,7 @@
 		},
 		"323135|Real Valladolid": {
 			"name": "Sergi Guardiola",
-			"age": 29,
+			"age": 30,
 			"countryCode": "es",
 			"position": "FW",
 			"displayPositions": {},
@@ -8698,7 +8698,7 @@
 		},
 		"363665|Villarreal": {
 			"name": "Samuel Chukwueze",
-			"age": 21,
+			"age": 22,
 			"countryCode": "ng",
 			"position": "AM(CR)",
 			"displayPositions": {},
@@ -9132,7 +9132,7 @@
 		},
 		"95915|Deportivo Alaves": {
 			"name": "Fernando Pacheco",
-			"age": 28,
+			"age": 29,
 			"countryCode": "es",
 			"position": "GK",
 			"displayPositions": {},
@@ -9146,7 +9146,7 @@
 		},
 		"27254|Valencia": {
 			"name": "Daniel Wass",
-			"age": 31,
+			"age": 32,
 			"countryCode": "dk",
 			"position": "D(LR),M(CLR)",
 			"displayPositions": {},
@@ -9286,7 +9286,7 @@
 		},
 		"75499|Real Sociedad": {
 			"name": "Raúl Navas",
-			"age": 32,
+			"age": 33,
 			"countryCode": "es",
 			"position": "D(C)",
 			"displayPositions": {},
@@ -9412,7 +9412,7 @@
 		},
 		"73798|Real Madrid": {
 			"name": "Thibaut Courtois",
-			"age": 28,
+			"age": 29,
 			"countryCode": "be",
 			"position": "GK",
 			"displayPositions": {},
@@ -9552,7 +9552,7 @@
 		},
 		"91438|Eibar": {
 			"name": "Anaitz Arbilla",
-			"age": 33,
+			"age": 34,
 			"countryCode": "es",
 			"position": "D(CLR)",
 			"displayPositions": {},
@@ -9722,7 +9722,7 @@
 			"name": "Nélson Semedo",
 			"age": 27,
 			"countryCode": "pt",
-			"position": "D(R),M(R)",
+			"position": "D(LR),M(R)",
 			"displayPositions": {},
 			"club": "Barcelona",
 			"18-19": {
@@ -9846,7 +9846,7 @@
 		},
 		"127392|Athletic Bilbao": {
 			"name": "Dani García",
-			"age": 30,
+			"age": 31,
 			"countryCode": "es",
 			"position": "DMC",
 			"displayPositions": {},
@@ -10112,7 +10112,7 @@
 		},
 		"294192|Getafe": {
 			"name": "Bruno González",
-			"age": 30,
+			"age": 31,
 			"countryCode": "es",
 			"position": "D(C)",
 			"displayPositions": {},
@@ -10126,7 +10126,7 @@
 		},
 		"91434|Leganes": {
 			"name": "Allan-Roméo Nyom",
-			"age": 32,
+			"age": 33,
 			"countryCode": "cm",
 			"position": "D(LR),M(R)",
 			"displayPositions": {},
@@ -10140,7 +10140,7 @@
 		},
 		"11188|Leganes": {
 			"name": "Iván Cuéllar",
-			"age": 36,
+			"age": 37,
 			"countryCode": "es",
 			"position": "GK",
 			"displayPositions": {},
@@ -10266,7 +10266,7 @@
 		},
 		"363966|Espanyol": {
 			"name": "Adrià Pedrosa",
-			"age": 22,
+			"age": 23,
 			"countryCode": "es",
 			"position": "D(L),M(L)",
 			"displayPositions": {},
@@ -10434,7 +10434,7 @@
 		},
 		"106895|Girona": {
 			"name": "Portu",
-			"age": 28,
+			"age": 29,
 			"countryCode": "es",
 			"position": "AM(CLR),FW",
 			"displayPositions": {},
@@ -10504,7 +10504,7 @@
 		},
 		"365371|Real Valladolid": {
 			"name": "Joaquín Fernández",
-			"age": 24,
+			"age": 25,
 			"countryCode": "es",
 			"position": "D(C),DMC",
 			"displayPositions": {},
@@ -10686,7 +10686,7 @@
 		},
 		"134695|Real Valladolid": {
 			"name": "Enes Ünal",
-			"age": 23,
+			"age": 24,
 			"countryCode": "tr",
 			"position": "FW",
 			"displayPositions": {},
@@ -10728,7 +10728,7 @@
 		},
 		"337883|Girona": {
 			"name": "Douglas Luiz",
-			"age": 22,
+			"age": 23,
 			"countryCode": "br",
 			"position": "M(C)",
 			"displayPositions": {},
@@ -10854,7 +10854,7 @@
 		},
 		"125375|Real Sociedad": {
 			"name": "Gerónimo Rulli",
-			"age": 28,
+			"age": 29,
 			"countryCode": "ar",
 			"position": "GK",
 			"displayPositions": {},
@@ -10938,7 +10938,7 @@
 		},
 		"333111|Deportivo Alaves": {
 			"name": "Martín Aguirregabiria",
-			"age": 24,
+			"age": 25,
 			"countryCode": "es",
 			"position": "D(LR),M(R)",
 			"displayPositions": {},
@@ -11206,7 +11206,7 @@
 			"name": "Federico Valverde",
 			"age": 22,
 			"countryCode": "uy",
-			"position": "M(CL)",
+			"position": "M(CLR)",
 			"displayPositions": {},
 			"club": "Real Madrid",
 			"18-19": {
@@ -11246,7 +11246,7 @@
 		},
 		"38820|Deportivo Alaves": {
 			"name": "Takashi Inui",
-			"age": 32,
+			"age": 33,
 			"countryCode": "jp",
 			"position": "AM(CLR)",
 			"displayPositions": {},
@@ -11414,7 +11414,7 @@
 		},
 		"89851|Espanyol": {
 			"name": "Óscar Duarte",
-			"age": 31,
+			"age": 32,
 			"countryCode": "cr",
 			"position": "D(C),DMC",
 			"displayPositions": {},
@@ -11568,7 +11568,7 @@
 		},
 		"83080|Real Sociedad": {
 			"name": "Juanmi",
-			"age": 27,
+			"age": 28,
 			"countryCode": "es",
 			"position": "AM(CLR),FW",
 			"displayPositions": {},
@@ -11582,7 +11582,7 @@
 		},
 		"323250|Deportivo Alaves": {
 			"name": "Rubén Sobrino",
-			"age": 28,
+			"age": 29,
 			"countryCode": "es",
 			"position": "AM(R),FW",
 			"displayPositions": {},
@@ -11736,7 +11736,7 @@
 		},
 		"109565|Barcelona": {
 			"name": "Jeison Murillo",
-			"age": 28,
+			"age": 29,
 			"countryCode": "co",
 			"position": "D(C)",
 			"displayPositions": {},
@@ -11960,7 +11960,7 @@
 		},
 		"79051|Athletic Bilbao": {
 			"name": "Mikel San José",
-			"age": 31,
+			"age": 32,
 			"countryCode": "es",
 			"position": "D(C),DMC",
 			"displayPositions": {},
@@ -12030,7 +12030,7 @@
 		},
 		"19453|Valencia": {
 			"name": "Kevin Gameiro",
-			"age": 33,
+			"age": 34,
 			"countryCode": "fr",
 			"position": "FW",
 			"displayPositions": {},
@@ -12228,7 +12228,7 @@
 			"name": "Bryan Gil",
 			"age": 20,
 			"countryCode": "es",
-			"position": "AM(L)",
+			"position": "AM(LR)",
 			"displayPositions": {},
 			"club": "Sevilla",
 			"18-19": {
@@ -12282,7 +12282,7 @@
 		},
 		"2247|Villarreal": {
 			"name": "Daniele Bonera",
-			"age": 39,
+			"age": 40,
 			"countryCode": "it",
 			"position": "D(CR)",
 			"displayPositions": {},
@@ -12424,7 +12424,7 @@
 			"name": "Gaël Kakuta",
 			"age": 29,
 			"countryCode": "cd",
-			"position": "M(CLR)",
+			"position": "M(CLR),FW",
 			"displayPositions": {},
 			"club": "Rayo Vallecano",
 			"18-19": {
@@ -12436,7 +12436,7 @@
 		},
 		"296576|Atletico Madrid": {
 			"name": "Gelson Martins",
-			"age": 25,
+			"age": 26,
 			"countryCode": "pt",
 			"position": "M(LR)",
 			"displayPositions": {},
@@ -12450,7 +12450,7 @@
 		},
 		"38820|Real Betis": {
 			"name": "Takashi Inui",
-			"age": 32,
+			"age": 33,
 			"countryCode": "jp",
 			"position": "AM(CLR)",
 			"displayPositions": {},
@@ -12506,7 +12506,7 @@
 		},
 		"101198|Getafe": {
 			"name": "Gaku Shibasaki",
-			"age": 28,
+			"age": 29,
 			"countryCode": "jp",
 			"position": "M(C),FW",
 			"displayPositions": {},
@@ -12562,7 +12562,7 @@
 		},
 		"323250|Valencia": {
 			"name": "Rubén Sobrino",
-			"age": 28,
+			"age": 29,
 			"countryCode": "es",
 			"position": "AM(R),FW",
 			"displayPositions": {},
@@ -12618,7 +12618,7 @@
 		},
 		"108100|Eibar": {
 			"name": "Pedro Bigas",
-			"age": 30,
+			"age": 31,
 			"countryCode": "es",
 			"position": "D(CL)",
 			"displayPositions": {},
@@ -12632,7 +12632,7 @@
 		},
 		"243572|Levante": {
 			"name": "Emmanuel Boateng",
-			"age": 24,
+			"age": 25,
 			"countryCode": "gh",
 			"position": "AM(R),FW",
 			"displayPositions": {},
@@ -13040,7 +13040,7 @@
 			"name": "Andrew Hjulsager",
 			"age": 26,
 			"countryCode": "dk",
-			"position": "AM(C)",
+			"position": "AM(CR)",
 			"displayPositions": {},
 			"club": "Celta Vigo",
 			"18-19": {
@@ -13290,7 +13290,7 @@
 		},
 		"362423|Espanyol": {
 			"name": "Javier Puado",
-			"age": 22,
+			"age": 23,
 			"countryCode": "es",
 			"position": "Forward",
 			"displayPositions": {},
@@ -13318,7 +13318,7 @@
 		},
 		"362422|Espanyol": {
 			"name": "Álex López",
-			"age": 23,
+			"age": 24,
 			"countryCode": "es",
 			"position": "Midfielder",
 			"displayPositions": {},
@@ -13474,7 +13474,7 @@
 			"name": "Lee Kang-In",
 			"age": 20,
 			"countryCode": "kr",
-			"position": "FW",
+			"position": "AM(C),FW",
 			"displayPositions": {},
 			"club": "Valencia",
 			"18-19": {
@@ -13528,7 +13528,7 @@
 		},
 		"112717|Deportivo Alaves": {
 			"name": "Patrick Twumasi",
-			"age": 26,
+			"age": 27,
 			"countryCode": "gh",
 			"position": "AM(CLR),FW",
 			"displayPositions": {},
@@ -13626,7 +13626,7 @@
 		},
 		"323135|Getafe": {
 			"name": "Sergi Guardiola",
-			"age": 29,
+			"age": 30,
 			"countryCode": "es",
 			"position": "FW",
 			"displayPositions": {},
@@ -13754,7 +13754,7 @@
 		},
 		"125547|Udinese": {
 			"name": "Rodrigo de Paul",
-			"age": 26,
+			"age": 27,
 			"countryCode": "ar",
 			"position": "AM(CLR),FW",
 			"displayPositions": {},
@@ -13768,7 +13768,7 @@
 		},
 		"24088|Juventus": {
 			"name": "Mario Mandzukic",
-			"age": 34,
+			"age": 35,
 			"countryCode": "hr",
 			"position": "M(L),FW",
 			"displayPositions": {},
@@ -13894,7 +13894,7 @@
 		},
 		"128967|Juventus": {
 			"name": "João Cancelo",
-			"age": 26,
+			"age": 27,
 			"countryCode": "pt",
 			"position": "D(LR),M(R)",
 			"displayPositions": {},
@@ -13950,7 +13950,7 @@
 		},
 		"83390|Napoli": {
 			"name": "Lorenzo Insigne",
-			"age": 29,
+			"age": 30,
 			"countryCode": "it",
 			"position": "AM(CL),FW",
 			"displayPositions": {},
@@ -14538,7 +14538,7 @@
 		},
 		"106413|Sampdoria": {
 			"name": "Dennis Praet",
-			"age": 26,
+			"age": 27,
 			"countryCode": "be",
 			"position": "AM(CR)",
 			"displayPositions": {},
@@ -14566,7 +14566,7 @@
 		},
 		"118169|Napoli": {
 			"name": "Piotr Zielinski",
-			"age": 26,
+			"age": 27,
 			"countryCode": "pl",
 			"position": "M(CL)",
 			"displayPositions": {},
@@ -14678,7 +14678,7 @@
 		},
 		"67279|Empoli": {
 			"name": "Diego Farias",
-			"age": 30,
+			"age": 31,
 			"countryCode": "br",
 			"position": "AM(CLR),FW",
 			"displayPositions": {},
@@ -14930,7 +14930,7 @@
 		},
 		"40099|Bologna": {
 			"name": "Federico Santander",
-			"age": 29,
+			"age": 30,
 			"countryCode": "py",
 			"position": "FW",
 			"displayPositions": {},
@@ -15142,7 +15142,7 @@
 			"name": "Mattia De Sciglio",
 			"age": 28,
 			"countryCode": "it",
-			"position": "D(LR),M(LR)",
+			"position": "D(CLR),M(LR)",
 			"displayPositions": {},
 			"club": "Juventus",
 			"18-19": {
@@ -15210,7 +15210,7 @@
 		},
 		"17740|Parma Calcio 1913": {
 			"name": "Gervinho",
-			"age": 33,
+			"age": 34,
 			"countryCode": "ci",
 			"position": "M(LR),FW",
 			"displayPositions": {},
@@ -15308,7 +15308,7 @@
 		},
 		"111227|Fiorentina": {
 			"name": "Vitor Hugo",
-			"age": 29,
+			"age": 30,
 			"countryCode": "br",
 			"position": "D(C)",
 			"displayPositions": {},
@@ -15378,7 +15378,7 @@
 		},
 		"70319|Parma Calcio 1913": {
 			"name": "Luigi Sepe",
-			"age": 29,
+			"age": 30,
 			"countryCode": "it",
 			"position": "GK",
 			"displayPositions": {},
@@ -15392,7 +15392,7 @@
 		},
 		"44868|Juventus": {
 			"name": "Juan Cuadrado",
-			"age": 32,
+			"age": 33,
 			"countryCode": "co",
 			"position": "D(R),M(CLR),FW",
 			"displayPositions": {},
@@ -15420,7 +15420,7 @@
 		},
 		"103242|Empoli": {
 			"name": "Marko Pajac",
-			"age": 27,
+			"age": 28,
 			"countryCode": "hr",
 			"position": "M(L)",
 			"displayPositions": {},
@@ -15492,7 +15492,7 @@
 			"name": "Roberto Soriano",
 			"age": 30,
 			"countryCode": "it",
-			"position": "AM(CL)",
+			"position": "AM(CLR)",
 			"displayPositions": {},
 			"club": "Bologna",
 			"18-19": {
@@ -15602,7 +15602,7 @@
 		},
 		"77350|Lazio": {
 			"name": "Rômulo",
-			"age": 33,
+			"age": 34,
 			"countryCode": "it",
 			"position": "D(R),M(CR)",
 			"displayPositions": {},
@@ -15616,7 +15616,7 @@
 		},
 		"231135|Sampdoria": {
 			"name": "Joachim Andersen",
-			"age": 24,
+			"age": 25,
 			"countryCode": "dk",
 			"position": "D(C)",
 			"displayPositions": {},
@@ -15714,7 +15714,7 @@
 		},
 		"18727|Bologna": {
 			"name": "Danilo",
-			"age": 36,
+			"age": 37,
 			"countryCode": "br",
 			"position": "D(C)",
 			"displayPositions": {},
@@ -15938,7 +15938,7 @@
 		},
 		"13348|SPAL 2013": {
 			"name": "Simone Missiroli",
-			"age": 34,
+			"age": 35,
 			"countryCode": "it",
 			"position": "M(C)",
 			"displayPositions": {},
@@ -15994,7 +15994,7 @@
 		},
 		"281433|SPAL 2013": {
 			"name": "Kevin Bonifazi",
-			"age": 24,
+			"age": 25,
 			"countryCode": "it",
 			"position": "D(C)",
 			"displayPositions": {},
@@ -16148,7 +16148,7 @@
 		},
 		"77350|Genoa": {
 			"name": "Rômulo",
-			"age": 33,
+			"age": 34,
 			"countryCode": "it",
 			"position": "D(R),M(CR)",
 			"displayPositions": {},
@@ -16302,7 +16302,7 @@
 		},
 		"145352|Sassuolo": {
 			"name": "Gian Marco Ferrari",
-			"age": 28,
+			"age": 29,
 			"countryCode": "it",
 			"position": "D(C)",
 			"displayPositions": {},
@@ -16428,7 +16428,7 @@
 		},
 		"95504|Frosinone": {
 			"name": "Marco Sportiello",
-			"age": 28,
+			"age": 29,
 			"countryCode": "it",
 			"position": "GK",
 			"displayPositions": {},
@@ -16554,7 +16554,7 @@
 		},
 		"19580|Torino": {
 			"name": "Lorenzo De Silvestri",
-			"age": 32,
+			"age": 33,
 			"countryCode": "it",
 			"position": "D(R),M(R)",
 			"displayPositions": {},
@@ -16708,7 +16708,7 @@
 		},
 		"106931|Napoli": {
 			"name": "Mário Rui",
-			"age": 29,
+			"age": 30,
 			"countryCode": "pt",
 			"position": "D(L),M(L)",
 			"displayPositions": {},
@@ -16722,7 +16722,7 @@
 		},
 		"242791|Fiorentina": {
 			"name": "Gerson",
-			"age": 23,
+			"age": 24,
 			"countryCode": "br",
 			"position": "M(CLR)",
 			"displayPositions": {},
@@ -16876,7 +16876,7 @@
 		},
 		"67432|Chievo": {
 			"name": "Joel Obi",
-			"age": 29,
+			"age": 30,
 			"countryCode": "ng",
 			"position": "M(CR)",
 			"displayPositions": {},
@@ -16932,7 +16932,7 @@
 		},
 		"97203|Fiorentina": {
 			"name": "Federico Ceccherini",
-			"age": 28,
+			"age": 29,
 			"countryCode": "it",
 			"position": "D(C)",
 			"displayPositions": {},
@@ -17226,7 +17226,7 @@
 		},
 		"296723|Genoa": {
 			"name": "Ionut Radu",
-			"age": 23,
+			"age": 24,
 			"countryCode": "ro",
 			"position": "GK",
 			"displayPositions": {},
@@ -17340,7 +17340,7 @@
 			"name": "Edoardo Goldaniga",
 			"age": 27,
 			"countryCode": "it",
-			"position": "D(C)",
+			"position": "D(CR)",
 			"displayPositions": {},
 			"club": "Frosinone",
 			"18-19": {
@@ -17366,7 +17366,7 @@
 		},
 		"123468|SPAL 2013": {
 			"name": "Filippo Costa",
-			"age": 25,
+			"age": 26,
 			"countryCode": "it",
 			"position": "M(L)",
 			"displayPositions": {},
@@ -17520,7 +17520,7 @@
 		},
 		"319922|Empoli": {
 			"name": "Jacob Rasmussen",
-			"age": 23,
+			"age": 24,
 			"countryCode": "dk",
 			"position": "D(C),DMC",
 			"displayPositions": {},
@@ -17548,7 +17548,7 @@
 		},
 		"256971|Udinese": {
 			"name": "Hidde ter Avest",
-			"age": 23,
+			"age": 24,
 			"countryCode": "nl",
 			"position": "D(R),M(R)",
 			"displayPositions": {},
@@ -17646,7 +17646,7 @@
 		},
 		"28001|SPAL 2013": {
 			"name": "Pasquale Schiattarella",
-			"age": 33,
+			"age": 34,
 			"countryCode": "it",
 			"position": "DMC,M(R)",
 			"displayPositions": {},
@@ -17786,7 +17786,7 @@
 		},
 		"338073|Chievo": {
 			"name": "Mehdi Léris",
-			"age": 22,
+			"age": 23,
 			"countryCode": "fr",
 			"position": "M(CR)",
 			"displayPositions": {},
@@ -17814,7 +17814,7 @@
 		},
 		"317544|Frosinone": {
 			"name": "Andrea Pinamonti",
-			"age": 21,
+			"age": 22,
 			"countryCode": "it",
 			"position": "FW",
 			"displayPositions": {},
@@ -17898,7 +17898,7 @@
 		},
 		"31302|Chievo": {
 			"name": "Luca Rossettini",
-			"age": 35,
+			"age": 36,
 			"countryCode": "it",
 			"position": "D(CR)",
 			"displayPositions": {},
@@ -18122,7 +18122,7 @@
 		},
 		"140116|AC Milan": {
 			"name": "José Mauri",
-			"age": 24,
+			"age": 25,
 			"countryCode": "ar",
 			"position": "DMC",
 			"displayPositions": {},
@@ -18276,7 +18276,7 @@
 		},
 		"143991|Cagliari": {
 			"name": "Filippo Romagna",
-			"age": 23,
+			"age": 24,
 			"countryCode": "it",
 			"position": "D(C)",
 			"displayPositions": {},
@@ -18710,7 +18710,7 @@
 		},
 		"22182|Genoa": {
 			"name": "Miguel Veloso",
-			"age": 34,
+			"age": 35,
 			"countryCode": "pt",
 			"position": "M(C)",
 			"displayPositions": {},
@@ -18894,7 +18894,7 @@
 			"name": "Roberto Soriano",
 			"age": 30,
 			"countryCode": "it",
-			"position": "AM(CL)",
+			"position": "AM(CLR)",
 			"displayPositions": {},
 			"club": "Torino",
 			"18-19": {
@@ -19032,7 +19032,7 @@
 		},
 		"79442|Chievo": {
 			"name": "Ezequiel Schelotto",
-			"age": 31,
+			"age": 32,
 			"countryCode": "it",
 			"position": "D(R),M(LR)",
 			"displayPositions": {},
@@ -19062,7 +19062,7 @@
 			"name": "Marko Pjaca",
 			"age": 26,
 			"countryCode": "hr",
-			"position": "AM(L),FW",
+			"position": "AM(CL),FW",
 			"displayPositions": {},
 			"club": "Fiorentina",
 			"18-19": {
@@ -19088,7 +19088,7 @@
 		},
 		"123923|Udinese": {
 			"name": "Simone Scuffet",
-			"age": 24,
+			"age": 25,
 			"countryCode": "it",
 			"position": "GK",
 			"displayPositions": {},
@@ -19368,7 +19368,7 @@
 		},
 		"297001|Genoa": {
 			"name": "Andrea Favilli",
-			"age": 23,
+			"age": 24,
 			"countryCode": "it",
 			"position": "FW",
 			"displayPositions": {},
@@ -19454,7 +19454,7 @@
 			"name": "Francesco Cassata",
 			"age": 23,
 			"countryCode": "it",
-			"position": "M(C)",
+			"position": "M(CL)",
 			"displayPositions": {},
 			"club": "Frosinone",
 			"18-19": {
@@ -19480,7 +19480,7 @@
 		},
 		"108511|Chievo": {
 			"name": "Mariusz Stepinski",
-			"age": 25,
+			"age": 26,
 			"countryCode": "pl",
 			"position": "FW",
 			"displayPositions": {},
@@ -19508,7 +19508,7 @@
 		},
 		"67279|Cagliari": {
 			"name": "Diego Farias",
-			"age": 30,
+			"age": 31,
 			"countryCode": "br",
 			"position": "AM(CLR),FW",
 			"displayPositions": {},
@@ -19564,7 +19564,7 @@
 		},
 		"103242|Cagliari": {
 			"name": "Marko Pajac",
-			"age": 27,
+			"age": 28,
 			"countryCode": "hr",
 			"position": "M(L)",
 			"displayPositions": {},
@@ -19746,7 +19746,7 @@
 		},
 		"6075|Juventus": {
 			"name": "Andrea Barzagli",
-			"age": 39,
+			"age": 40,
 			"countryCode": "it",
 			"position": "D(CR)",
 			"displayPositions": {},
@@ -19942,7 +19942,7 @@
 		},
 		"140505|Frosinone": {
 			"name": "Rai Vloet",
-			"age": 25,
+			"age": 26,
 			"countryCode": "nl",
 			"position": "AM(C),FW",
 			"displayPositions": {},
@@ -20292,7 +20292,7 @@
 		},
 		"87537|Udinese": {
 			"name": "Lukasz Teodorczyk",
-			"age": 29,
+			"age": 30,
 			"countryCode": "pl",
 			"position": "FW",
 			"displayPositions": {},
@@ -20348,7 +20348,7 @@
 		},
 		"362550|Empoli": {
 			"name": "Samuel Mráz",
-			"age": 23,
+			"age": 24,
 			"countryCode": "sk",
 			"position": "Forward",
 			"displayPositions": {},
@@ -20432,7 +20432,7 @@
 		},
 		"14127|Cagliari": {
 			"name": "Daniele Dessena",
-			"age": 33,
+			"age": 34,
 			"countryCode": "it",
 			"position": "D(R),M(C)",
 			"displayPositions": {},
@@ -20656,7 +20656,7 @@
 		},
 		"355391|Fiorentina": {
 			"name": "Riccardo Sottil",
-			"age": 21,
+			"age": 22,
 			"countryCode": "it",
 			"position": "AM(LR)",
 			"displayPositions": {},
@@ -20796,7 +20796,7 @@
 		},
 		"74141|SPAL 2013": {
 			"name": "Everton Luiz",
-			"age": 32,
+			"age": 33,
 			"countryCode": "br",
 			"position": "DMC",
 			"displayPositions": {},
@@ -20880,7 +20880,7 @@
 		},
 		"318750|Juventus": {
 			"name": "Stephy Mavididi",
-			"age": 22,
+			"age": 23,
 			"countryCode": "gb-eng",
 			"position": "AM(LR),FW",
 			"displayPositions": {},
@@ -21050,7 +21050,7 @@
 		},
 		"11090|Borussia Dortmund": {
 			"name": "Lukasz Piszczek",
-			"age": 35,
+			"age": 36,
 			"countryCode": "pl",
 			"position": "D(CR),M(R)",
 			"displayPositions": {},
@@ -21064,7 +21064,7 @@
 		},
 		"41330|Borussia Dortmund": {
 			"name": "Marco Reus",
-			"age": 31,
+			"age": 32,
 			"countryCode": "de",
 			"position": "M(CLR),FW",
 			"displayPositions": {},
@@ -21330,7 +21330,7 @@
 		},
 		"345957|RB Leipzig": {
 			"name": "Ibrahima Konaté",
-			"age": 21,
+			"age": 22,
 			"countryCode": "fr",
 			"position": "D(C)",
 			"displayPositions": {},
@@ -21442,7 +21442,7 @@
 		},
 		"353412|Borussia M'Gladbach": {
 			"name": "Louis Jordan Beyer",
-			"age": 20,
+			"age": 21,
 			"countryCode": "de",
 			"position": "D(CR)",
 			"displayPositions": {},
@@ -21456,7 +21456,7 @@
 		},
 		"108919|Wolfsburg": {
 			"name": "Maximilian Arnold",
-			"age": 26,
+			"age": 27,
 			"countryCode": "de",
 			"position": "M(CR)",
 			"displayPositions": {},
@@ -21722,7 +21722,7 @@
 		},
 		"143600|RB Leipzig": {
 			"name": "Lukas Klostermann",
-			"age": 24,
+			"age": 25,
 			"countryCode": "de",
 			"position": "D(CLR),M(R)",
 			"displayPositions": {},
@@ -21750,7 +21750,7 @@
 		},
 		"80382|Borussia Dortmund": {
 			"name": "Mario Götze",
-			"age": 28,
+			"age": 29,
 			"countryCode": "de",
 			"position": "M(CLR),FW",
 			"displayPositions": {},
@@ -22128,7 +22128,7 @@
 		},
 		"342548|Borussia Dortmund": {
 			"name": "Dan-Axel Zagadou",
-			"age": 21,
+			"age": 22,
 			"countryCode": "fr",
 			"position": "D(CL)",
 			"displayPositions": {},
@@ -22590,7 +22590,7 @@
 		},
 		"100591|Wolfsburg": {
 			"name": "Robin Knoche",
-			"age": 28,
+			"age": 29,
 			"countryCode": "de",
 			"position": "D(C)",
 			"displayPositions": {},
@@ -22772,7 +22772,7 @@
 		},
 		"333741|Hoffenheim": {
 			"name": "Stefan Posch",
-			"age": 23,
+			"age": 24,
 			"countryCode": "at",
 			"position": "D(CR)",
 			"displayPositions": {},
@@ -22982,7 +22982,7 @@
 		},
 		"96084|Augsburg": {
 			"name": "Dong-Won Ji",
-			"age": 29,
+			"age": 30,
 			"countryCode": "kr",
 			"position": "AM(CLR),FW",
 			"displayPositions": {},
@@ -23066,7 +23066,7 @@
 		},
 		"148484|Freiburg": {
 			"name": "Gian-Luca Waldschmidt",
-			"age": 24,
+			"age": 25,
 			"countryCode": "de",
 			"position": "AM(CR),FW",
 			"displayPositions": {},
@@ -23248,7 +23248,7 @@
 		},
 		"77440|Hoffenheim": {
 			"name": "Oliver Baumann",
-			"age": 30,
+			"age": 31,
 			"countryCode": "de",
 			"position": "GK",
 			"displayPositions": {},
@@ -23374,7 +23374,7 @@
 		},
 		"248010|RB Leipzig": {
 			"name": "Konrad Laimer",
-			"age": 23,
+			"age": 24,
 			"countryCode": "at",
 			"position": "D(R),M(CR)",
 			"displayPositions": {},
@@ -23458,7 +23458,7 @@
 		},
 		"6220|Fortuna Duesseldorf": {
 			"name": "Michael Rensing",
-			"age": 36,
+			"age": 37,
 			"countryCode": "de",
 			"position": "GK",
 			"displayPositions": {},
@@ -23612,7 +23612,7 @@
 		},
 		"238698|Hannover 96": {
 			"name": "Genki Haraguchi",
-			"age": 29,
+			"age": 30,
 			"countryCode": "jp",
 			"position": "M(CLR)",
 			"displayPositions": {},
@@ -23682,7 +23682,7 @@
 		},
 		"110184|Borussia M'Gladbach": {
 			"name": "Tobias Strobl",
-			"age": 30,
+			"age": 31,
 			"countryCode": "de",
 			"position": "D(CR),DMC",
 			"displayPositions": {},
@@ -23892,7 +23892,7 @@
 		},
 		"97743|Freiburg": {
 			"name": "Alexander Schwolow",
-			"age": 28,
+			"age": 29,
 			"countryCode": "de",
 			"position": "GK",
 			"displayPositions": {},
@@ -23920,7 +23920,7 @@
 		},
 		"71547|Werder Bremen": {
 			"name": "Yuya Osako",
-			"age": 30,
+			"age": 31,
 			"countryCode": "jp",
 			"position": "AM(CLR),FW",
 			"displayPositions": {},
@@ -24116,7 +24116,7 @@
 		},
 		"243889|Freiburg": {
 			"name": "Roland Sallai",
-			"age": 23,
+			"age": 24,
 			"countryCode": "hu",
 			"position": "AM(CLR),FW",
 			"displayPositions": {},
@@ -24270,7 +24270,7 @@
 		},
 		"5763|Augsburg": {
 			"name": "Daniel Baier",
-			"age": 36,
+			"age": 37,
 			"countryCode": "de",
 			"position": "M(C)",
 			"displayPositions": {},
@@ -24438,7 +24438,7 @@
 		},
 		"41262|Hannover 96": {
 			"name": "Felipe",
-			"age": 33,
+			"age": 34,
 			"countryCode": "br",
 			"position": "D(C)",
 			"displayPositions": {},
@@ -24606,7 +24606,7 @@
 		},
 		"94824|Fortuna Duesseldorf": {
 			"name": "Alfredo Morales",
-			"age": 30,
+			"age": 31,
 			"countryCode": "us",
 			"position": "M(C)",
 			"displayPositions": {},
@@ -24874,7 +24874,7 @@
 			"name": "Linton Maina",
 			"age": 21,
 			"countryCode": "de",
-			"position": "AM(CLR),FW",
+			"position": "M(CLR),FW",
 			"displayPositions": {},
 			"club": "Hannover 96",
 			"18-19": {
@@ -24998,7 +24998,7 @@
 		},
 		"110183|Hannover 96": {
 			"name": "Oliver Sorg",
-			"age": 30,
+			"age": 31,
 			"countryCode": "de",
 			"position": "D(CLR),DMC,M(R)",
 			"displayPositions": {},
@@ -25250,7 +25250,7 @@
 		},
 		"312666|Borussia Dortmund": {
 			"name": "Marius Wolf",
-			"age": 25,
+			"age": 26,
 			"countryCode": "de",
 			"position": "D(R),M(CLR)",
 			"displayPositions": {},
@@ -25404,7 +25404,7 @@
 		},
 		"37940|RB Leipzig": {
 			"name": "Stefan Ilsanker",
-			"age": 31,
+			"age": 32,
 			"countryCode": "at",
 			"position": "D(CR),DMC",
 			"displayPositions": {},
@@ -25418,7 +25418,7 @@
 		},
 		"292121|Hertha Berlin": {
 			"name": "Lukas Klünter",
-			"age": 24,
+			"age": 25,
 			"countryCode": "de",
 			"position": "D(CR),M(R)",
 			"displayPositions": {},
@@ -25572,7 +25572,7 @@
 		},
 		"279355|Werder Bremen": {
 			"name": "Johannes Eggestein",
-			"age": 22,
+			"age": 23,
 			"countryCode": "de",
 			"position": "AM(R),FW",
 			"displayPositions": {},
@@ -25922,7 +25922,7 @@
 		},
 		"362758|RB Leipzig": {
 			"name": "Matheus Cunha",
-			"age": 21,
+			"age": 22,
 			"countryCode": "br",
 			"position": "AM(CL),FW",
 			"displayPositions": {},
@@ -26384,7 +26384,7 @@
 		},
 		"329618|Fortuna Duesseldorf": {
 			"name": "Aymen Barkok",
-			"age": 22,
+			"age": 23,
 			"countryCode": "de",
 			"position": "AM(CR)",
 			"displayPositions": {},
@@ -26442,7 +26442,7 @@
 			"name": "Josip Elez",
 			"age": 27,
 			"countryCode": "hr",
-			"position": "D(C)",
+			"position": "D(C),DMC",
 			"displayPositions": {},
 			"club": "Hannover 96",
 			"18-19": {
@@ -26608,7 +26608,7 @@
 		},
 		"365102|Nuernberg": {
 			"name": "Simon Rhein",
-			"age": 22,
+			"age": 23,
 			"countryCode": "de",
 			"position": "M(C)",
 			"displayPositions": {},
@@ -26776,7 +26776,7 @@
 		},
 		"36383|Augsburg": {
 			"name": "Fabian Giefer",
-			"age": 30,
+			"age": 31,
 			"countryCode": "de",
 			"position": "GK",
 			"displayPositions": {},
@@ -26932,7 +26932,7 @@
 		},
 		"239872|Lille": {
 			"name": "Nicolas Pépé",
-			"age": 25,
+			"age": 26,
 			"countryCode": "ci",
 			"position": "AM(LR),FW",
 			"displayPositions": {},
@@ -26960,7 +26960,7 @@
 		},
 		"361816|Nice": {
 			"name": "Youcef Atal",
-			"age": 24,
+			"age": 25,
 			"countryCode": "dz",
 			"position": "D(R),M(R)",
 			"displayPositions": {},
@@ -27114,7 +27114,7 @@
 		},
 		"27761|Lyon": {
 			"name": "Marcelo",
-			"age": 33,
+			"age": 34,
 			"countryCode": "br",
 			"position": "D(C)",
 			"displayPositions": {},
@@ -27128,7 +27128,7 @@
 		},
 		"101949|Paris Saint-Germain": {
 			"name": "Marquinhos",
-			"age": 26,
+			"age": 27,
 			"countryCode": "br",
 			"position": "D(CR),DMC",
 			"displayPositions": {},
@@ -27408,7 +27408,7 @@
 		},
 		"244780|Bordeaux": {
 			"name": "Vukasin Jovanovic",
-			"age": 24,
+			"age": 25,
 			"countryCode": "rs",
 			"position": "D(C)",
 			"displayPositions": {},
@@ -27716,7 +27716,7 @@
 		},
 		"238903|Montpellier": {
 			"name": "Ellyes Skhiri",
-			"age": 25,
+			"age": 26,
 			"countryCode": "tn",
 			"position": "DMC",
 			"displayPositions": {},
@@ -27996,7 +27996,7 @@
 		},
 		"296576|Monaco": {
 			"name": "Gelson Martins",
-			"age": 25,
+			"age": 26,
 			"countryCode": "pt",
 			"position": "M(LR)",
 			"displayPositions": {},
@@ -28040,7 +28040,7 @@
 			"name": "Kenny Tete",
 			"age": 25,
 			"countryCode": "nl",
-			"position": "D(R),M(R)",
+			"position": "D(CR),M(R)",
 			"displayPositions": {},
 			"club": "Lyon",
 			"18-19": {
@@ -28374,7 +28374,7 @@
 		},
 		"34176|Rennes": {
 			"name": "Damien Da Silva",
-			"age": 32,
+			"age": 33,
 			"countryCode": "fr",
 			"position": "D(C)",
 			"displayPositions": {},
@@ -28542,7 +28542,7 @@
 		},
 		"301243|Nice": {
 			"name": "Pierre Lees-Melou",
-			"age": 27,
+			"age": 28,
 			"countryCode": "fr",
 			"position": "M(CLR)",
 			"displayPositions": {},
@@ -29508,7 +29508,7 @@
 		},
 		"259809|Nimes": {
 			"name": "Sada Thioub",
-			"age": 25,
+			"age": 26,
 			"countryCode": "sn",
 			"position": "AM(LR)",
 			"displayPositions": {},
@@ -30012,7 +30012,7 @@
 		},
 		"27756|Caen": {
 			"name": "Paul Baysse",
-			"age": 32,
+			"age": 33,
 			"countryCode": "fr",
 			"position": "D(CR)",
 			"displayPositions": {},
@@ -30418,7 +30418,7 @@
 		},
 		"244560|Monaco": {
 			"name": "Aleksandr Golovin",
-			"age": 24,
+			"age": 25,
 			"countryCode": "ru",
 			"position": "M(CLR)",
 			"displayPositions": {},
@@ -30515,7 +30515,7 @@
 			}
 		},
 		"366875|Toulouse": {
-			"name": "Bafode Diakite",
+			"name": "Bafodé Diakité",
 			"age": 20,
 			"countryCode": "fr",
 			"position": "D(CR)",
@@ -30628,7 +30628,7 @@
 		},
 		"69995|Reims": {
 			"name": "Thomas Fontaine",
-			"age": 29,
+			"age": 30,
 			"countryCode": "mg",
 			"position": "D(C)",
 			"displayPositions": {},
@@ -30642,7 +30642,7 @@
 		},
 		"73948|Nantes": {
 			"name": "Rene Krhin",
-			"age": 30,
+			"age": 31,
 			"countryCode": "si",
 			"position": "DMC",
 			"displayPositions": {},
@@ -30740,7 +30740,7 @@
 		},
 		"86684|Saint-Etienne": {
 			"name": "Gabriel Silva",
-			"age": 29,
+			"age": 30,
 			"countryCode": "br",
 			"position": "D(LR),M(L)",
 			"displayPositions": {},
@@ -30796,7 +30796,7 @@
 		},
 		"298542|Caen": {
 			"name": "Casimir Ninga",
-			"age": 27,
+			"age": 28,
 			"countryCode": "td",
 			"position": "AM(LR),FW",
 			"displayPositions": {},
@@ -30810,7 +30810,7 @@
 		},
 		"84041|Strasbourg": {
 			"name": "Stefan Mitrovic",
-			"age": 30,
+			"age": 31,
 			"countryCode": "rs",
 			"position": "D(C)",
 			"displayPositions": {},
@@ -30880,7 +30880,7 @@
 		},
 		"334654|Amiens": {
 			"name": "Juan Ferney Otero",
-			"age": 25,
+			"age": 26,
 			"countryCode": "co",
 			"position": "AM(R),FW",
 			"displayPositions": {},
@@ -30908,7 +30908,7 @@
 		},
 		"101904|Angers": {
 			"name": "Stéphane Bahoken",
-			"age": 28,
+			"age": 29,
 			"countryCode": "cm",
 			"position": "FW",
 			"displayPositions": {},
@@ -30936,7 +30936,7 @@
 		},
 		"108388|Guingamp": {
 			"name": "Marc-Aurèle Caillard",
-			"age": 26,
+			"age": 27,
 			"countryCode": "fr",
 			"position": "GK",
 			"displayPositions": {},
@@ -31006,7 +31006,7 @@
 		},
 		"141755|Bordeaux": {
 			"name": "Igor Lewczuk",
-			"age": 35,
+			"age": 36,
 			"countryCode": "pl",
 			"position": "D(C)",
 			"displayPositions": {},
@@ -31314,7 +31314,7 @@
 		},
 		"58722|Nimes": {
 			"name": "Moustapha Diallo",
-			"age": 34,
+			"age": 35,
 			"countryCode": "sn",
 			"position": "M(C)",
 			"displayPositions": {},
@@ -31341,7 +31341,7 @@
 			}
 		},
 		"129819|Dijon": {
-			"name": "Wesley Said",
+			"name": "Wesley Saïd",
 			"age": 26,
 			"countryCode": "fr",
 			"position": "AM(CLR),FW",
@@ -31356,7 +31356,7 @@
 		},
 		"27756|Bordeaux": {
 			"name": "Paul Baysse",
-			"age": 32,
+			"age": 33,
 			"countryCode": "fr",
 			"position": "D(CR)",
 			"displayPositions": {},
@@ -31804,7 +31804,7 @@
 		},
 		"328074|Toulouse": {
 			"name": "Clement Michelin",
-			"age": 23,
+			"age": 24,
 			"countryCode": "fr",
 			"position": "D(R),M(R)",
 			"displayPositions": {},
@@ -32028,7 +32028,7 @@
 		},
 		"18539|Toulouse": {
 			"name": "Stéphane Mbia",
-			"age": 34,
+			"age": 35,
 			"countryCode": "cm",
 			"position": "D(C),M(C)",
 			"displayPositions": {},
@@ -32042,7 +32042,7 @@
 		},
 		"109941|Rennes": {
 			"name": "Mehdi Zeffane",
-			"age": 28,
+			"age": 29,
 			"countryCode": "dz",
 			"position": "D(LR),M(R)",
 			"displayPositions": {},
@@ -32154,7 +32154,7 @@
 		},
 		"317743|Lille": {
 			"name": "Luiz Araújo",
-			"age": 24,
+			"age": 25,
 			"countryCode": "br",
 			"position": "AM(LR)",
 			"displayPositions": {},
@@ -32378,7 +32378,7 @@
 		},
 		"236520|Nice": {
 			"name": "Mickael Le Bihan",
-			"age": 30,
+			"age": 31,
 			"countryCode": "fr",
 			"position": "FW",
 			"displayPositions": {},
@@ -32728,7 +32728,7 @@
 		},
 		"34011|Rennes": {
 			"name": "Ludovic Baal",
-			"age": 34,
+			"age": 35,
 			"countryCode": "fr",
 			"position": "D(L),M(L)",
 			"displayPositions": {},
@@ -33078,7 +33078,7 @@
 		},
 		"296841|Reims": {
 			"name": "Aly Ndom",
-			"age": 24,
+			"age": 25,
 			"countryCode": "fr",
 			"position": "M(C)",
 			"displayPositions": {},
@@ -33416,7 +33416,7 @@
 			"name": "Farid El Melali",
 			"age": 24,
 			"countryCode": "dz",
-			"position": "M(R)",
+			"position": "AM(R)",
 			"displayPositions": {},
 			"club": "Angers",
 			"18-19": {
@@ -33511,8 +33511,8 @@
 			}
 		},
 		"369570|Toulouse": {
-			"name": "Kouadio Kone",
-			"age": 19,
+			"name": "Kouadio Koné",
+			"age": 20,
 			"countryCode": "fr",
 			"position": "M(C)",
 			"displayPositions": {},
@@ -33680,7 +33680,7 @@
 		},
 		"296841|Caen": {
 			"name": "Aly Ndom",
-			"age": 24,
+			"age": 25,
 			"countryCode": "fr",
 			"position": "M(C)",
 			"displayPositions": {},
@@ -34088,7 +34088,7 @@
 		},
 		"14260|Manchester City": {
 			"name": "Sergio Agüero",
-			"age": 32,
+			"age": 33,
 			"countryCode": "ar",
 			"position": "AM(CL),FW",
 			"displayPositions": {},
@@ -34172,7 +34172,7 @@
 		},
 		"41330|Borussia Dortmund": {
 			"name": "Marco Reus",
-			"age": 31,
+			"age": 32,
 			"countryCode": "de",
 			"position": "M(CLR),FW",
 			"displayPositions": {},
@@ -34409,7 +34409,7 @@
 			}
 		},
 		"90310|FC Porto": {
-			"name": "Corona",
+			"name": "Jesús Corona",
 			"age": 28,
 			"countryCode": "mx",
 			"position": "D(R),M(CLR),FW",
@@ -34690,7 +34690,7 @@
 		},
 		"128967|Juventus": {
 			"name": "João Cancelo",
-			"age": 26,
+			"age": 27,
 			"countryCode": "pt",
 			"position": "D(LR),M(R)",
 			"displayPositions": {},
@@ -34984,7 +34984,7 @@
 		},
 		"102173|FC Porto": {
 			"name": "Felipe",
-			"age": 31,
+			"age": 32,
 			"countryCode": "br",
 			"position": "D(C)",
 			"displayPositions": {},
@@ -35474,7 +35474,7 @@
 		},
 		"22300|Ajax": {
 			"name": "Lasse Schöne",
-			"age": 34,
+			"age": 35,
 			"countryCode": "dk",
 			"position": "M(CLR)",
 			"displayPositions": {},
@@ -35488,7 +35488,7 @@
 		},
 		"299513|Barcelona": {
 			"name": "Ousmane Dembélé",
-			"age": 23,
+			"age": 24,
 			"countryCode": "fr",
 			"position": "AM(CLR),FW",
 			"displayPositions": {},
@@ -35558,7 +35558,7 @@
 		},
 		"44868|Juventus": {
 			"name": "Juan Cuadrado",
-			"age": 32,
+			"age": 33,
 			"countryCode": "co",
 			"position": "D(R),M(CLR),FW",
 			"displayPositions": {},
@@ -35628,7 +35628,7 @@
 		},
 		"279423|Ajax": {
 			"name": "Frenkie de Jong",
-			"age": 23,
+			"age": 24,
 			"countryCode": "nl",
 			"position": "D(C),DMC",
 			"displayPositions": {},
@@ -35642,7 +35642,7 @@
 		},
 		"11090|Borussia Dortmund": {
 			"name": "Lukasz Piszczek",
-			"age": 35,
+			"age": 36,
 			"countryCode": "pl",
 			"position": "D(CR),M(R)",
 			"displayPositions": {},
@@ -35838,7 +35838,7 @@
 		},
 		"20241|Real Madrid": {
 			"name": "Marcelo",
-			"age": 32,
+			"age": 33,
 			"countryCode": "br",
 			"position": "D(L),M(L)",
 			"displayPositions": {},
@@ -35978,7 +35978,7 @@
 		},
 		"342548|Borussia Dortmund": {
 			"name": "Dan-Axel Zagadou",
-			"age": 21,
+			"age": 22,
 			"countryCode": "fr",
 			"position": "D(CL)",
 			"displayPositions": {},
@@ -36006,7 +36006,7 @@
 		},
 		"244560|Monaco": {
 			"name": "Aleksandr Golovin",
-			"age": 24,
+			"age": 25,
 			"countryCode": "ru",
 			"position": "M(CLR)",
 			"displayPositions": {},
@@ -36496,8 +36496,8 @@
 		},
 		"122117|Manchester City": {
 			"name": "Aymeric Laporte",
-			"age": 26,
-			"countryCode": "fr",
+			"age": 27,
+			"countryCode": "es",
 			"position": "D(CL)",
 			"displayPositions": {},
 			"club": "Manchester City",
@@ -36594,7 +36594,7 @@
 		},
 		"83390|Napoli": {
 			"name": "Lorenzo Insigne",
-			"age": 29,
+			"age": 30,
 			"countryCode": "it",
 			"position": "AM(CL),FW",
 			"displayPositions": {},
@@ -36678,7 +36678,7 @@
 		},
 		"33830|Club Bruges": {
 			"name": "Ruud Vormer",
-			"age": 32,
+			"age": 33,
 			"countryCode": "nl",
 			"position": "DMC",
 			"displayPositions": {},
@@ -36804,7 +36804,7 @@
 		},
 		"24088|Juventus": {
 			"name": "Mario Mandzukic",
-			"age": 34,
+			"age": 35,
 			"countryCode": "hr",
 			"position": "M(L),FW",
 			"displayPositions": {},
@@ -36862,7 +36862,7 @@
 			"name": "Kenny Tete",
 			"age": 25,
 			"countryCode": "nl",
-			"position": "D(R),M(R)",
+			"position": "D(CR),M(R)",
 			"displayPositions": {},
 			"club": "Lyon",
 			"18-19": {
@@ -36902,7 +36902,7 @@
 		},
 		"69738|Valencia": {
 			"name": "Francis Coquelin",
-			"age": 29,
+			"age": 30,
 			"countryCode": "fr",
 			"position": "M(CLR)",
 			"displayPositions": {},
@@ -36944,7 +36944,7 @@
 		},
 		"27761|Lyon": {
 			"name": "Marcelo",
-			"age": 33,
+			"age": 34,
 			"countryCode": "br",
 			"position": "D(C)",
 			"displayPositions": {},
@@ -36972,7 +36972,7 @@
 		},
 		"101374|Manchester City": {
 			"name": "John Stones",
-			"age": 26,
+			"age": 27,
 			"countryCode": "gb-eng",
 			"position": "D(CR)",
 			"displayPositions": {},
@@ -37153,7 +37153,7 @@
 			}
 		},
 		"303139|Atletico Madrid": {
-			"name": "Rodrigo",
+			"name": "Rodri",
 			"age": 24,
 			"countryCode": "es",
 			"position": "DMC",
@@ -37436,7 +37436,7 @@
 			"name": "Vladislav Ignatjev",
 			"age": 34,
 			"countryCode": "ru",
-			"position": "D(LR),M(LR)",
+			"position": "D(LR),M(CLR)",
 			"displayPositions": {},
 			"club": "Lokomotiv Moscow",
 			"18-19": {
@@ -37448,7 +37448,7 @@
 		},
 		"101949|Paris Saint-Germain": {
 			"name": "Marquinhos",
-			"age": 26,
+			"age": 27,
 			"countryCode": "br",
 			"position": "D(CR),DMC",
 			"displayPositions": {},
@@ -37532,7 +37532,7 @@
 		},
 		"73798|Real Madrid": {
 			"name": "Thibaut Courtois",
-			"age": 28,
+			"age": 29,
 			"countryCode": "be",
 			"position": "GK",
 			"displayPositions": {},
@@ -37546,7 +37546,7 @@
 		},
 		"104274|Viktoria Plzen": {
 			"name": "Jan Kopic",
-			"age": 30,
+			"age": 31,
 			"countryCode": "cz",
 			"position": "AM(LR)",
 			"displayPositions": {},
@@ -37615,7 +37615,7 @@
 			}
 		},
 		"40763|Shakhtar Donetsk": {
-			"name": "Marlos",
+			"name": "Marlos Romero Bonfim",
 			"age": 32,
 			"countryCode": "ua",
 			"position": "AM(CR)",
@@ -37700,7 +37700,7 @@
 		},
 		"312666|Borussia Dortmund": {
 			"name": "Marius Wolf",
-			"age": 25,
+			"age": 26,
 			"countryCode": "de",
 			"position": "D(R),M(CLR)",
 			"displayPositions": {},
@@ -37784,7 +37784,7 @@
 		},
 		"331254|Manchester City": {
 			"name": "Phil Foden",
-			"age": 20,
+			"age": 21,
 			"countryCode": "gb-eng",
 			"position": "AM(CLR)",
 			"displayPositions": {},
@@ -37868,7 +37868,7 @@
 		},
 		"27254|Valencia": {
 			"name": "Daniel Wass",
-			"age": 31,
+			"age": 32,
 			"countryCode": "dk",
 			"position": "D(LR),M(CLR)",
 			"displayPositions": {},
@@ -38176,7 +38176,7 @@
 		},
 		"128566|Benfica": {
 			"name": "Germán Conti",
-			"age": 26,
+			"age": 27,
 			"countryCode": "ar",
 			"position": "D(C)",
 			"displayPositions": {},
@@ -38260,7 +38260,7 @@
 		},
 		"106931|Napoli": {
 			"name": "Mário Rui",
-			"age": 29,
+			"age": 30,
 			"countryCode": "pt",
 			"position": "D(L),M(L)",
 			"displayPositions": {},
@@ -38484,7 +38484,7 @@
 		},
 		"77440|Hoffenheim": {
 			"name": "Oliver Baumann",
-			"age": 30,
+			"age": 31,
 			"countryCode": "de",
 			"position": "GK",
 			"displayPositions": {},
@@ -38512,7 +38512,7 @@
 		},
 		"80382|Borussia Dortmund": {
 			"name": "Mario Götze",
-			"age": 28,
+			"age": 29,
 			"countryCode": "de",
 			"position": "M(CLR),FW",
 			"displayPositions": {},
@@ -38750,7 +38750,7 @@
 		},
 		"78498|Manchester United": {
 			"name": "Romelu Lukaku",
-			"age": 27,
+			"age": 28,
 			"countryCode": "be",
 			"position": "AM(R),FW",
 			"displayPositions": {},
@@ -38820,7 +38820,7 @@
 		},
 		"119817|Valencia": {
 			"name": "José Gayà",
-			"age": 25,
+			"age": 26,
 			"countryCode": "es",
 			"position": "D(L),M(L)",
 			"displayPositions": {},
@@ -39114,7 +39114,7 @@
 		},
 		"135127|Benfica": {
 			"name": "Rafa",
-			"age": 27,
+			"age": 28,
 			"countryCode": "pt",
 			"position": "AM(CLR),FW",
 			"displayPositions": {},
@@ -39198,7 +39198,7 @@
 		},
 		"109565|Valencia": {
 			"name": "Jeison Murillo",
-			"age": 28,
+			"age": 29,
 			"countryCode": "co",
 			"position": "D(C)",
 			"displayPositions": {},
@@ -39212,7 +39212,7 @@
 		},
 		"337660|CSKA Moscow": {
 			"name": "Arnór Sigurdsson",
-			"age": 21,
+			"age": 22,
 			"countryCode": "is",
 			"position": "AM(CLR),FW",
 			"displayPositions": {},
@@ -39396,7 +39396,7 @@
 			"name": "Nélson Semedo",
 			"age": 27,
 			"countryCode": "pt",
-			"position": "D(R),M(R)",
+			"position": "D(LR),M(R)",
 			"displayPositions": {},
 			"club": "Barcelona",
 			"18-19": {
@@ -39590,7 +39590,7 @@
 		},
 		"25008|Barcelona": {
 			"name": "Arturo Vidal",
-			"age": 33,
+			"age": 34,
 			"countryCode": "cl",
 			"position": "M(CR)",
 			"displayPositions": {},
@@ -39856,7 +39856,7 @@
 		},
 		"2776|FC Porto": {
 			"name": "Iker Casillas",
-			"age": 39,
+			"age": 40,
 			"countryCode": "es",
 			"position": "GK",
 			"displayPositions": {},
@@ -39898,7 +39898,7 @@
 		},
 		"69778|Manchester City": {
 			"name": "Kyle Walker",
-			"age": 30,
+			"age": 31,
 			"countryCode": "gb-eng",
 			"position": "D(CR),M(R)",
 			"displayPositions": {},
@@ -39940,7 +39940,7 @@
 		},
 		"135954|AEK Athens": {
 			"name": "Vasilios Barkas",
-			"age": 26,
+			"age": 27,
 			"countryCode": "gr",
 			"position": "GK",
 			"displayPositions": {},
@@ -40124,7 +40124,7 @@
 			"name": "Mattia De Sciglio",
 			"age": 28,
 			"countryCode": "it",
-			"position": "D(LR),M(LR)",
+			"position": "D(CLR),M(LR)",
 			"displayPositions": {},
 			"club": "Juventus",
 			"18-19": {
@@ -40192,7 +40192,7 @@
 		},
 		"367742|Club Bruges": {
 			"name": "Cyril Ngonge",
-			"age": 20,
+			"age": 21,
 			"countryCode": "be",
 			"position": "AM(R)",
 			"displayPositions": {},
@@ -40292,7 +40292,7 @@
 			"name": "Federico Valverde",
 			"age": 22,
 			"countryCode": "uy",
-			"position": "M(CL)",
+			"position": "M(CLR)",
 			"displayPositions": {},
 			"club": "Real Madrid",
 			"18-19": {
@@ -40318,7 +40318,7 @@
 		},
 		"70614|FC Porto": {
 			"name": "Sérgio Oliveira",
-			"age": 28,
+			"age": 29,
 			"countryCode": "pt",
 			"position": "DMC",
 			"displayPositions": {},
@@ -40332,7 +40332,7 @@
 		},
 		"124454|Lokomotiv Moscow": {
 			"name": "Brian Idowu",
-			"age": 28,
+			"age": 29,
 			"countryCode": "ng",
 			"position": "D(CLR),M(LR)",
 			"displayPositions": {},
@@ -40570,7 +40570,7 @@
 		},
 		"313171|Benfica": {
 			"name": "Rúben Dias",
-			"age": 23,
+			"age": 24,
 			"countryCode": "pt",
 			"position": "D(C)",
 			"displayPositions": {},
@@ -40682,7 +40682,7 @@
 		},
 		"136451|Liverpool": {
 			"name": "Joe Gomez",
-			"age": 23,
+			"age": 24,
 			"countryCode": "gb-eng",
 			"position": "D(CLR)",
 			"displayPositions": {},
@@ -40794,7 +40794,7 @@
 		},
 		"303910|Benfica": {
 			"name": "Franco Cervi",
-			"age": 26,
+			"age": 27,
 			"countryCode": "ar",
 			"position": "AM(CL)",
 			"displayPositions": {},
@@ -40976,7 +40976,7 @@
 		},
 		"361838|PSV Eindhoven": {
 			"name": "Michal Sadilek",
-			"age": 21,
+			"age": 22,
 			"countryCode": "cz",
 			"position": "D(L),DMC",
 			"displayPositions": {},
@@ -41088,7 +41088,7 @@
 		},
 		"6075|Juventus": {
 			"name": "Andrea Barzagli",
-			"age": 39,
+			"age": 40,
 			"countryCode": "it",
 			"position": "D(CR)",
 			"displayPositions": {},
@@ -41326,7 +41326,7 @@
 		},
 		"118169|Napoli": {
 			"name": "Piotr Zielinski",
-			"age": 26,
+			"age": 27,
 			"countryCode": "pl",
 			"position": "M(CL)",
 			"displayPositions": {},
@@ -41340,7 +41340,7 @@
 		},
 		"7245|Lokomotiv Moscow": {
 			"name": "Igor Denisov",
-			"age": 36,
+			"age": 37,
 			"countryCode": "ru",
 			"position": "DMC",
 			"displayPositions": {},
@@ -41410,7 +41410,7 @@
 		},
 		"26569|Viktoria Plzen": {
 			"name": "Tomas Horava",
-			"age": 32,
+			"age": 33,
 			"countryCode": "cz",
 			"position": "M(C)",
 			"displayPositions": {},
@@ -41466,7 +41466,7 @@
 		},
 		"122116|AEK Athens": {
 			"name": "Erik Morán",
-			"age": 29,
+			"age": 30,
 			"countryCode": "es",
 			"position": "DMC",
 			"displayPositions": {},
@@ -41760,7 +41760,7 @@
 		},
 		"74571|Shakhtar Donetsk": {
 			"name": "Alan Patrick",
-			"age": 29,
+			"age": 30,
 			"countryCode": "br",
 			"position": "M(CLR)",
 			"displayPositions": {},
@@ -41802,7 +41802,7 @@
 		},
 		"296542|Club Bruges": {
 			"name": "Dion Cools",
-			"age": 24,
+			"age": 25,
 			"countryCode": "be",
 			"position": "D(R)",
 			"displayPositions": {},
@@ -41872,7 +41872,7 @@
 		},
 		"334464|CSKA Moscow": {
 			"name": "Timur Zhamaletdinov",
-			"age": 23,
+			"age": 24,
 			"countryCode": "ru",
 			"position": "FW",
 			"displayPositions": {},
@@ -42320,7 +42320,7 @@
 		},
 		"21683|Liverpool": {
 			"name": "Adam Lallana",
-			"age": 32,
+			"age": 33,
 			"countryCode": "gb-eng",
 			"position": "AM(CLR)",
 			"displayPositions": {},
@@ -42446,7 +42446,7 @@
 		},
 		"296576|Atletico Madrid": {
 			"name": "Gelson Martins",
-			"age": 25,
+			"age": 26,
 			"countryCode": "pt",
 			"position": "M(LR)",
 			"displayPositions": {},
@@ -42460,7 +42460,7 @@
 		},
 		"76522|BSC Young Boys": {
 			"name": "Thorsten Schick",
-			"age": 30,
+			"age": 31,
 			"countryCode": "at",
 			"position": "AM(R)",
 			"displayPositions": {},
@@ -42504,7 +42504,7 @@
 			"name": "Jurgen Ekkelenkamp",
 			"age": 21,
 			"countryCode": "nl",
-			"position": "Midfielder",
+			"position": "M(C)",
 			"displayPositions": {},
 			"club": "Ajax",
 			"18-19": {
@@ -42796,7 +42796,7 @@
 		},
 		"19453|Valencia": {
 			"name": "Kevin Gameiro",
-			"age": 33,
+			"age": 34,
 			"countryCode": "fr",
 			"position": "FW",
 			"displayPositions": {},
@@ -42936,7 +42936,7 @@
 		},
 		"36271|Viktoria Plzen": {
 			"name": "Jakub Reznícek",
-			"age": 32,
+			"age": 33,
 			"countryCode": "cz",
 			"position": "Forward",
 			"displayPositions": {},
@@ -43006,7 +43006,7 @@
 		},
 		"39128|Lokomotiv Moscow": {
 			"name": "Boris Rotenberg",
-			"age": 34,
+			"age": 35,
 			"countryCode": "fi",
 			"position": "D(R)",
 			"displayPositions": {},
@@ -43286,7 +43286,7 @@
 		},
 		"327696|Shakhtar Donetsk": {
 			"name": "Olarenwaju Kayode",
-			"age": 27,
+			"age": 28,
 			"countryCode": "ng",
 			"position": "FW",
 			"displayPositions": {},
@@ -43580,7 +43580,7 @@
 		},
 		"333741|Hoffenheim": {
 			"name": "Stefan Posch",
-			"age": 23,
+			"age": 24,
 			"countryCode": "at",
 			"position": "D(CR)",
 			"displayPositions": {},
@@ -43848,7 +43848,7 @@
 		},
 		"107636|Salzburg": {
 			"name": "Munas Dabbur",
-			"age": 28,
+			"age": 29,
 			"countryCode": "il",
 			"position": "AM(C),FW",
 			"displayPositions": {},
@@ -44058,7 +44058,7 @@
 		},
 		"345845|Arsenal": {
 			"name": "Eddie Nketiah",
-			"age": 21,
+			"age": 22,
 			"countryCode": "gb-eng",
 			"position": "FW",
 			"displayPositions": {},
@@ -44086,7 +44086,7 @@
 		},
 		"247667|BATE Borisov": {
 			"name": "Nemanja Milunovic",
-			"age": 31,
+			"age": 32,
 			"countryCode": "rs",
 			"position": "D(C)",
 			"displayPositions": {},
@@ -44198,7 +44198,7 @@
 		},
 		"248010|RB Leipzig": {
 			"name": "Konrad Laimer",
-			"age": 23,
+			"age": 24,
 			"countryCode": "at",
 			"position": "D(R),M(CR)",
 			"displayPositions": {},
@@ -44408,7 +44408,7 @@
 		},
 		"283280|Jablonec": {
 			"name": "Michal Travnik",
-			"age": 26,
+			"age": 27,
 			"countryCode": "cz",
 			"position": "M(C)",
 			"displayPositions": {},
@@ -44632,7 +44632,7 @@
 		},
 		"312870|Fehervar FC": {
 			"name": "Stopira",
-			"age": 32,
+			"age": 33,
 			"countryCode": "cv",
 			"position": "D(L)",
 			"displayPositions": {},
@@ -44674,7 +44674,7 @@
 		},
 		"362758|RB Leipzig": {
 			"name": "Matheus Cunha",
-			"age": 21,
+			"age": 22,
 			"countryCode": "br",
 			"position": "AM(CL),FW",
 			"displayPositions": {},
@@ -44716,7 +44716,7 @@
 		},
 		"65350|Standard Liege": {
 			"name": "Milos Kosanovic",
-			"age": 30,
+			"age": 31,
 			"countryCode": "rs",
 			"position": "D(C)",
 			"displayPositions": {},
@@ -44786,7 +44786,7 @@
 		},
 		"345516|Dynamo Kyiv": {
 			"name": "Vitalii Mykolenko",
-			"age": 21,
+			"age": 22,
 			"countryCode": "ua",
 			"position": "D(CL)",
 			"displayPositions": {},
@@ -44954,7 +44954,7 @@
 		},
 		"253417|Standard Liege": {
 			"name": "Konstantinos Laifis",
-			"age": 27,
+			"age": 28,
 			"countryCode": "cy",
 			"position": "D(C)",
 			"displayPositions": {},
@@ -45093,7 +45093,7 @@
 			}
 		},
 		"123947|Olympiacos": {
-			"name": "Ahmed Hassan Mahgoub",
+			"name": "Koka",
 			"age": 28,
 			"countryCode": "eg",
 			"position": "FW",
@@ -45136,7 +45136,7 @@
 		},
 		"345957|RB Leipzig": {
 			"name": "Ibrahima Konaté",
-			"age": 21,
+			"age": 22,
 			"countryCode": "fr",
 			"position": "D(C)",
 			"displayPositions": {},
@@ -45304,7 +45304,7 @@
 		},
 		"280754|Besiktas": {
 			"name": "Dorukhan Tokoz",
-			"age": 24,
+			"age": 25,
 			"countryCode": "tr",
 			"position": "DMC",
 			"displayPositions": {},
@@ -45318,7 +45318,7 @@
 		},
 		"367179|FC Zuerich": {
 			"name": "Hakim Guenouche",
-			"age": 20,
+			"age": 21,
 			"countryCode": "fr",
 			"position": "Defender",
 			"displayPositions": {},
@@ -45360,7 +45360,7 @@
 		},
 		"363652|Genk": {
 			"name": "Joakim Maehle",
-			"age": 23,
+			"age": 24,
 			"countryCode": "dk",
 			"position": "D(R),M(R)",
 			"displayPositions": {},
@@ -45668,7 +45668,7 @@
 		},
 		"27254|Valencia": {
 			"name": "Daniel Wass",
-			"age": 31,
+			"age": 32,
 			"countryCode": "dk",
 			"position": "D(LR),M(CLR)",
 			"displayPositions": {},
@@ -45878,7 +45878,7 @@
 		},
 		"120102|FC Zuerich": {
 			"name": "Benjamin Kololli",
-			"age": 28,
+			"age": 29,
 			"countryCode": "xk",
 			"position": "D(L),M(L)",
 			"displayPositions": {},
@@ -46241,7 +46241,7 @@
 			}
 		},
 		"40763|Shakhtar Donetsk": {
-			"name": "Marlos",
+			"name": "Marlos Romero Bonfim",
 			"age": 32,
 			"countryCode": "ua",
 			"position": "AM(CR)",
@@ -46648,7 +46648,7 @@
 		},
 		"73078|Arsenal": {
 			"name": "Alexandre Lacazette",
-			"age": 29,
+			"age": 30,
 			"countryCode": "fr",
 			"position": "M(LR),FW",
 			"displayPositions": {},
@@ -46802,7 +46802,7 @@
 		},
 		"70953|Zenit St' Petersburg": {
 			"name": "Luís Neto",
-			"age": 32,
+			"age": 33,
 			"countryCode": "pt",
 			"position": "D(C)",
 			"displayPositions": {},
@@ -46844,7 +46844,7 @@
 		},
 		"313171|Benfica": {
 			"name": "Rúben Dias",
-			"age": 23,
+			"age": 24,
 			"countryCode": "pt",
 			"position": "D(C)",
 			"displayPositions": {},
@@ -47124,7 +47124,7 @@
 		},
 		"38512|Dinamo Zagreb": {
 			"name": "Arijan Ademi",
-			"age": 29,
+			"age": 30,
 			"countryCode": "mk",
 			"position": "DMC",
 			"displayPositions": {},
@@ -47152,7 +47152,7 @@
 		},
 		"363665|Villarreal": {
 			"name": "Samuel Chukwueze",
-			"age": 21,
+			"age": 22,
 			"countryCode": "ng",
 			"position": "AM(CR)",
 			"displayPositions": {},
@@ -47418,7 +47418,7 @@
 		},
 		"363718|Anderlecht": {
 			"name": "Edo Kayembe",
-			"age": 22,
+			"age": 23,
 			"countryCode": "cg",
 			"position": "DMC",
 			"displayPositions": {},
@@ -47558,7 +47558,7 @@
 		},
 		"20549|Akhisarspor": {
 			"name": "Hélder Barbosa",
-			"age": 33,
+			"age": 34,
 			"countryCode": "pt",
 			"position": "AM(LR)",
 			"displayPositions": {},
@@ -47586,7 +47586,7 @@
 		},
 		"106931|Napoli": {
 			"name": "Mário Rui",
-			"age": 29,
+			"age": 30,
 			"countryCode": "pt",
 			"position": "D(L),M(L)",
 			"displayPositions": {},
@@ -47628,7 +47628,7 @@
 		},
 		"34323|Sporting CP": {
 			"name": "Bas Dost",
-			"age": 31,
+			"age": 32,
 			"countryCode": "nl",
 			"position": "FW",
 			"displayPositions": {},
@@ -47641,7 +47641,7 @@
 			}
 		},
 		"33878|Fenerbahce": {
-			"name": "Isla",
+			"name": "Mauricio Isla",
 			"age": 32,
 			"countryCode": "cl",
 			"position": "D(R),M(CR)",
@@ -47740,7 +47740,7 @@
 		},
 		"118169|Napoli": {
 			"name": "Piotr Zielinski",
-			"age": 26,
+			"age": 27,
 			"countryCode": "pl",
 			"position": "M(CL)",
 			"displayPositions": {},
@@ -47936,7 +47936,7 @@
 		},
 		"140116|AC Milan": {
 			"name": "José Mauri",
-			"age": 24,
+			"age": 25,
 			"countryCode": "ar",
 			"position": "DMC",
 			"displayPositions": {},
@@ -48104,7 +48104,7 @@
 		},
 		"296450|BATE Borisov": {
 			"name": "Aleksey Rios",
-			"age": 33,
+			"age": 34,
 			"countryCode": "by",
 			"position": "D(R)",
 			"displayPositions": {},
@@ -48160,7 +48160,7 @@
 		},
 		"331051|Fenerbahce": {
 			"name": "Yigithan Guveli",
-			"age": 22,
+			"age": 23,
 			"countryCode": "tr",
 			"position": "Defender",
 			"displayPositions": {},
@@ -48764,7 +48764,7 @@
 			"name": "Natanael Pimienta",
 			"age": 30,
 			"countryCode": "br",
-			"position": "D(L)",
+			"position": "D(L),M(L)",
 			"displayPositions": {},
 			"club": "Ludogorets Razgrad",
 			"18-19": {
@@ -48918,7 +48918,7 @@
 			"name": "Takumi Minamino",
 			"age": 26,
 			"countryCode": "jp",
-			"position": "AM(CL),FW",
+			"position": "AM(CLR),FW",
 			"displayPositions": {},
 			"club": "Salzburg",
 			"18-19": {
@@ -49098,7 +49098,7 @@
 		},
 		"323250|Valencia": {
 			"name": "Rubén Sobrino",
-			"age": 28,
+			"age": 29,
 			"countryCode": "es",
 			"position": "AM(R),FW",
 			"displayPositions": {},
@@ -49111,8 +49111,8 @@
 			}
 		},
 		"327681|Genk": {
-			"name": "Sebastian Dewaest",
-			"age": 29,
+			"name": "Sébastien Dewaest",
+			"age": 30,
 			"countryCode": "be",
 			"position": "D(C)",
 			"displayPositions": {},
@@ -49392,7 +49392,7 @@
 		},
 		"244780|Bordeaux": {
 			"name": "Vukasin Jovanovic",
-			"age": 24,
+			"age": 25,
 			"countryCode": "rs",
 			"position": "D(C)",
 			"displayPositions": {},
@@ -49476,7 +49476,7 @@
 		},
 		"39845|BATE Borisov": {
 			"name": "Stanislav Dragun",
-			"age": 32,
+			"age": 33,
 			"countryCode": "by",
 			"position": "M(C)",
 			"displayPositions": {},
@@ -49840,7 +49840,7 @@
 		},
 		"130446|Zenit St' Petersburg": {
 			"name": "Matías Kranevitter",
-			"age": 27,
+			"age": 28,
 			"countryCode": "ar",
 			"position": "DMC",
 			"displayPositions": {},
@@ -49909,7 +49909,7 @@
 			}
 		},
 		"21999|AEK Larnaca": {
-			"name": "Ivan Trickovski",
+			"name": "Ivan Trichkovski",
 			"age": 34,
 			"countryCode": "mk",
 			"position": "AM(L)",
@@ -49994,7 +49994,7 @@
 		},
 		"34011|Rennes": {
 			"name": "Ludovic Baal",
-			"age": 34,
+			"age": 35,
 			"countryCode": "fr",
 			"position": "D(L),M(L)",
 			"displayPositions": {},
@@ -50066,7 +50066,7 @@
 			"name": "Ján Gregus",
 			"age": 30,
 			"countryCode": "sk",
-			"position": "DMC",
+			"position": "M(C)",
 			"displayPositions": {},
 			"club": "FC Copenhagen",
 			"18-19": {
@@ -50232,7 +50232,7 @@
 		},
 		"363707|Spartak Trnava": {
 			"name": "Boris Godal",
-			"age": 33,
+			"age": 34,
 			"countryCode": "sk",
 			"position": "D(C)",
 			"displayPositions": {},
@@ -50358,7 +50358,7 @@
 		},
 		"132223|Dynamo Kyiv": {
 			"name": "Georgi Bushchan",
-			"age": 26,
+			"age": 27,
 			"countryCode": "ua",
 			"position": "GK",
 			"displayPositions": {},
@@ -50442,7 +50442,7 @@
 		},
 		"19453|Valencia": {
 			"name": "Kevin Gameiro",
-			"age": 33,
+			"age": 34,
 			"countryCode": "fr",
 			"position": "FW",
 			"displayPositions": {},
@@ -50694,7 +50694,7 @@
 		},
 		"301455|Olympiacos": {
 			"name": "Konstantinos Tsimikas",
-			"age": 24,
+			"age": 25,
 			"countryCode": "gr",
 			"position": "D(L)",
 			"displayPositions": {},
@@ -50960,7 +50960,7 @@
 		},
 		"34176|Rennes": {
 			"name": "Damien Da Silva",
-			"age": 32,
+			"age": 33,
 			"countryCode": "fr",
 			"position": "D(C)",
 			"displayPositions": {},
@@ -51002,7 +51002,7 @@
 		},
 		"83390|Napoli": {
 			"name": "Lorenzo Insigne",
-			"age": 29,
+			"age": 30,
 			"countryCode": "it",
 			"position": "AM(CL),FW",
 			"displayPositions": {},
@@ -51030,7 +51030,7 @@
 		},
 		"109941|Rennes": {
 			"name": "Mehdi Zeffane",
-			"age": 28,
+			"age": 29,
 			"countryCode": "dz",
 			"position": "D(LR),M(R)",
 			"displayPositions": {},
@@ -51128,7 +51128,7 @@
 		},
 		"239013|Standard Liege": {
 			"name": "Razvan Marin",
-			"age": 24,
+			"age": 25,
 			"countryCode": "ro",
 			"position": "DMC",
 			"displayPositions": {},
@@ -51450,7 +51450,7 @@
 		},
 		"244589|AEK Larnaca": {
 			"name": "Hector Hevel",
-			"age": 24,
+			"age": 25,
 			"countryCode": "nl",
 			"position": "M(C)",
 			"displayPositions": {},
@@ -51464,7 +51464,7 @@
 		},
 		"346184|BATE Borisov": {
 			"name": "Nemanja Milic",
-			"age": 30,
+			"age": 31,
 			"countryCode": "rs",
 			"position": "Forward",
 			"displayPositions": {},
@@ -51478,7 +51478,7 @@
 		},
 		"40718|Ludogorets Razgrad": {
 			"name": "Renan",
-			"age": 31,
+			"age": 32,
 			"countryCode": "br",
 			"position": "GK",
 			"displayPositions": {},
@@ -51492,7 +51492,7 @@
 		},
 		"6775|Arsenal": {
 			"name": "Petr Cech",
-			"age": 38,
+			"age": 39,
 			"countryCode": "cz",
 			"position": "GK",
 			"displayPositions": {},
@@ -51534,7 +51534,7 @@
 		},
 		"24640|Sarpsborg 08": {
 			"name": "Matti Lund Nielsen",
-			"age": 32,
+			"age": 33,
 			"countryCode": "dk",
 			"position": "DMC,M(R)",
 			"displayPositions": {},
@@ -51898,7 +51898,7 @@
 		},
 		"74571|Shakhtar Donetsk": {
 			"name": "Alan Patrick",
-			"age": 29,
+			"age": 30,
 			"countryCode": "br",
 			"position": "M(CLR)",
 			"displayPositions": {},
@@ -51954,7 +51954,7 @@
 		},
 		"103533|FC Zuerich": {
 			"name": "Yanick Brecher",
-			"age": 27,
+			"age": 28,
 			"countryCode": "ch",
 			"position": "GK",
 			"displayPositions": {},
@@ -51996,7 +51996,7 @@
 		},
 		"369861|Slavia Prague": {
 			"name": "Alex Kral",
-			"age": 22,
+			"age": 23,
 			"countryCode": "cz",
 			"position": "DMC",
 			"displayPositions": {},
@@ -52080,7 +52080,7 @@
 		},
 		"86501|Sporting CP": {
 			"name": "Abdoulaye Diaby",
-			"age": 29,
+			"age": 30,
 			"countryCode": "ml",
 			"position": "AM(CLR),FW",
 			"displayPositions": {},
@@ -52318,7 +52318,7 @@
 		},
 		"14053|Olympiacos": {
 			"name": "Yaya Touré",
-			"age": 37,
+			"age": 38,
 			"countryCode": "ci",
 			"position": "M(C)",
 			"displayPositions": {},
@@ -52346,7 +52346,7 @@
 		},
 		"94868|Sevilla": {
 			"name": "Pablo Sarabia",
-			"age": 28,
+			"age": 29,
 			"countryCode": "es",
 			"position": "D(L),M(CLR),FW",
 			"displayPositions": {},
@@ -52514,7 +52514,7 @@
 		},
 		"141755|Bordeaux": {
 			"name": "Igor Lewczuk",
-			"age": 35,
+			"age": 36,
 			"countryCode": "pl",
 			"position": "D(C)",
 			"displayPositions": {},
@@ -52542,7 +52542,7 @@
 		},
 		"69738|Valencia": {
 			"name": "Francis Coquelin",
-			"age": 29,
+			"age": 30,
 			"countryCode": "fr",
 			"position": "M(CLR)",
 			"displayPositions": {},
@@ -52724,7 +52724,7 @@
 		},
 		"87742|Vorskla": {
 			"name": "Vyacheslav Sharpar",
-			"age": 33,
+			"age": 34,
 			"countryCode": "ua",
 			"position": "M(C)",
 			"displayPositions": {},
@@ -52934,7 +52934,7 @@
 		},
 		"117770|Anderlecht": {
 			"name": "Yevhenii Makarenko",
-			"age": 29,
+			"age": 30,
 			"countryCode": "ua",
 			"position": "D(L),DMC",
 			"displayPositions": {},
@@ -53004,7 +53004,7 @@
 		},
 		"303910|Benfica": {
 			"name": "Franco Cervi",
-			"age": 26,
+			"age": 27,
 			"countryCode": "ar",
 			"position": "AM(CL)",
 			"displayPositions": {},
@@ -53032,7 +53032,7 @@
 		},
 		"33830|Club Bruges": {
 			"name": "Ruud Vormer",
-			"age": 32,
+			"age": 33,
 			"countryCode": "nl",
 			"position": "DMC",
 			"displayPositions": {},
@@ -53256,7 +53256,7 @@
 		},
 		"49995|FC Astana": {
 			"name": "Nenad Eric",
-			"age": 38,
+			"age": 39,
 			"countryCode": "kz",
 			"position": "GK",
 			"displayPositions": {},
@@ -53339,7 +53339,7 @@
 			}
 		},
 		"140487|Apollon Limassol": {
-			"name": "Chambos Kyriakou",
+			"name": "Charalambos Kyriakou",
 			"age": 26,
 			"countryCode": "cy",
 			"position": "D(C),DMC",
@@ -53508,7 +53508,7 @@
 		},
 		"143600|RB Leipzig": {
 			"name": "Lukas Klostermann",
-			"age": 24,
+			"age": 25,
 			"countryCode": "de",
 			"position": "D(CLR),M(R)",
 			"displayPositions": {},
@@ -53578,7 +53578,7 @@
 		},
 		"29871|Ludogorets Razgrad": {
 			"name": "Svetoslav Dyakov",
-			"age": 36,
+			"age": 37,
 			"countryCode": "bg",
 			"position": "DMC",
 			"displayPositions": {},
@@ -53620,7 +53620,7 @@
 		},
 		"320702|Malmoe FF": {
 			"name": "Marcus Antonsson",
-			"age": 29,
+			"age": 30,
 			"countryCode": "se",
 			"position": "FW",
 			"displayPositions": {},
@@ -53634,7 +53634,7 @@
 		},
 		"135127|Benfica": {
 			"name": "Rafa",
-			"age": 27,
+			"age": 28,
 			"countryCode": "pt",
 			"position": "AM(CLR),FW",
 			"displayPositions": {},
@@ -53675,7 +53675,7 @@
 			}
 		},
 		"90987|Zenit St' Petersburg": {
-			"name": "Robert Mak",
+			"name": "Róbert Mak",
 			"age": 30,
 			"countryCode": "sk",
 			"position": "M(LR),FW",
@@ -54336,7 +54336,7 @@
 			"name": "Filip Krovinovic",
 			"age": 25,
 			"countryCode": "hr",
-			"position": "M(C)",
+			"position": "M(CL)",
 			"displayPositions": {},
 			"club": "Benfica",
 			"18-19": {
@@ -54376,7 +54376,7 @@
 		},
 		"2247|Villarreal": {
 			"name": "Daniele Bonera",
-			"age": 39,
+			"age": 40,
 			"countryCode": "it",
 			"position": "D(CR)",
 			"displayPositions": {},
@@ -54418,7 +54418,7 @@
 		},
 		"66238|Celtic": {
 			"name": "Emilio Izaguirre",
-			"age": 34,
+			"age": 35,
 			"countryCode": "hn",
 			"position": "D(L)",
 			"displayPositions": {},
@@ -54656,7 +54656,7 @@
 		},
 		"283276|Jablonec": {
 			"name": "Matej Hanousek",
-			"age": 27,
+			"age": 28,
 			"countryCode": "cz",
 			"position": "D(L)",
 			"displayPositions": {},
@@ -54726,7 +54726,7 @@
 		},
 		"71849|Anderlecht": {
 			"name": "Ivan Santini",
-			"age": 31,
+			"age": 32,
 			"countryCode": "hr",
 			"position": "FW",
 			"displayPositions": {},
@@ -54838,7 +54838,7 @@
 		},
 		"239064|Dynamo Kyiv": {
 			"name": "Sidcley",
-			"age": 27,
+			"age": 28,
 			"countryCode": "br",
 			"position": "D(L),M(L)",
 			"displayPositions": {},
@@ -55400,7 +55400,7 @@
 			"name": "Lee Kang-In",
 			"age": 20,
 			"countryCode": "kr",
-			"position": "FW",
+			"position": "AM(C),FW",
 			"displayPositions": {},
 			"club": "Valencia",
 			"18-19": {
@@ -55468,7 +55468,7 @@
 		},
 		"244746|BATE Borisov": {
 			"name": "Evgeni Yablonski",
-			"age": 25,
+			"age": 26,
 			"countryCode": "by",
 			"position": "DMC",
 			"displayPositions": {},
@@ -55580,7 +55580,7 @@
 		},
 		"293985|Rennes": {
 			"name": "Denis Poha",
-			"age": 23,
+			"age": 24,
 			"countryCode": "fr",
 			"position": "DMC",
 			"displayPositions": {},
@@ -55622,7 +55622,7 @@
 		},
 		"70133|PAOK Thessaloniki FC": {
 			"name": "José Cañas",
-			"age": 33,
+			"age": 34,
 			"countryCode": "es",
 			"position": "DMC",
 			"displayPositions": {},
@@ -56140,7 +56140,7 @@
 		},
 		"70917|AEK Larnaca": {
 			"name": "Joan Tomás",
-			"age": 35,
+			"age": 36,
 			"countryCode": "es",
 			"position": "Midfielder",
 			"displayPositions": {},
@@ -56210,7 +56210,7 @@
 		},
 		"119817|Valencia": {
 			"name": "José Gayà",
-			"age": 25,
+			"age": 26,
 			"countryCode": "es",
 			"position": "D(L),M(L)",
 			"displayPositions": {},
@@ -56448,7 +56448,7 @@
 		},
 		"107894|FC Copenhagen": {
 			"name": "Nicolaj Thomsen",
-			"age": 27,
+			"age": 28,
 			"countryCode": "dk",
 			"position": "AM(CLR)",
 			"displayPositions": {},
@@ -56504,7 +56504,7 @@
 		},
 		"130123|FC Copenhagen": {
 			"name": "Robert Skov",
-			"age": 24,
+			"age": 25,
 			"countryCode": "dk",
 			"position": "D(L),M(LR)",
 			"displayPositions": {},
@@ -56560,7 +56560,7 @@
 		},
 		"345030|Dynamo Kyiv": {
 			"name": "Volodymyr Shepelev",
-			"age": 23,
+			"age": 24,
 			"countryCode": "ua",
 			"position": "DMC",
 			"displayPositions": {},
@@ -56672,7 +56672,7 @@
 		},
 		"363730|Slavia Prague": {
 			"name": "Jan Matousek",
-			"age": 22,
+			"age": 23,
 			"countryCode": "cz",
 			"position": "Midfielder",
 			"displayPositions": {},
@@ -56994,7 +56994,7 @@
 		},
 		"21942|Apollon Limassol": {
 			"name": "André Schembri",
-			"age": 34,
+			"age": 35,
 			"countryCode": "mt",
 			"position": "AM(L),FW",
 			"displayPositions": {},
@@ -57064,7 +57064,7 @@
 		},
 		"38820|Real Betis": {
 			"name": "Takashi Inui",
-			"age": 32,
+			"age": 33,
 			"countryCode": "jp",
 			"position": "AM(CLR)",
 			"displayPositions": {},
@@ -57162,7 +57162,7 @@
 		},
 		"243951|Vorskla": {
 			"name": "Nicolas Careca",
-			"age": 23,
+			"age": 24,
 			"countryCode": "br",
 			"position": "Forward",
 			"displayPositions": {},
@@ -57176,7 +57176,7 @@
 		},
 		"37940|RB Leipzig": {
 			"name": "Stefan Ilsanker",
-			"age": 31,
+			"age": 32,
 			"countryCode": "at",
 			"position": "D(CR),DMC",
 			"displayPositions": {},
@@ -57232,7 +57232,7 @@
 		},
 		"26569|Viktoria Plzen": {
 			"name": "Tomas Horava",
-			"age": 32,
+			"age": 33,
 			"countryCode": "cz",
 			"position": "M(C)",
 			"displayPositions": {},
@@ -57344,7 +57344,7 @@
 		},
 		"363697|AEK Larnaca": {
 			"name": "Tete",
-			"age": 35,
+			"age": 36,
 			"countryCode": "",
 			"position": "Forward",
 			"displayPositions": {},
@@ -57960,7 +57960,7 @@
 		},
 		"91201|Fehervar FC": {
 			"name": "Marko Scepovic",
-			"age": 29,
+			"age": 30,
 			"countryCode": "rs",
 			"position": "FW",
 			"displayPositions": {},
@@ -58002,7 +58002,7 @@
 		},
 		"363658|PAOK Thessaloniki FC": {
 			"name": "Dimitris Limnios",
-			"age": 22,
+			"age": 23,
 			"countryCode": "",
 			"position": "AM(R)",
 			"displayPositions": {},
@@ -58324,7 +58324,7 @@
 		},
 		"92572|Rosenborg": {
 			"name": "Yann-Erik de Lanlay",
-			"age": 28,
+			"age": 29,
 			"countryCode": "no",
 			"position": "AM(LR)",
 			"displayPositions": {},
@@ -58438,7 +58438,7 @@
 			"name": "Júnior Brandão",
 			"age": 25,
 			"countryCode": "",
-			"position": "Forward",
+			"position": "FW",
 			"displayPositions": {},
 			"club": "Ludogorets Razgrad",
 			"18-19": {
@@ -58576,7 +58576,7 @@
 		},
 		"247840|BATE Borisov": {
 			"name": "Hervaine Moukam",
-			"age": 26,
+			"age": 27,
 			"countryCode": "fr",
 			"position": "Midfielder",
 			"displayPositions": {},
@@ -58674,7 +58674,7 @@
 		},
 		"296542|Club Bruges": {
 			"name": "Dion Cools",
-			"age": 24,
+			"age": 25,
 			"countryCode": "be",
 			"position": "D(R)",
 			"displayPositions": {},
@@ -58842,7 +58842,7 @@
 		},
 		"43803|Standard Liege": {
 			"name": "Orlando Sá",
-			"age": 32,
+			"age": 33,
 			"countryCode": "pt",
 			"position": "FW",
 			"displayPositions": {},
@@ -59250,7 +59250,7 @@
 			"name": "Gökhan Töre",
 			"age": 29,
 			"countryCode": "tr",
-			"position": "M(LR)",
+			"position": "M(LR),FW",
 			"displayPositions": {},
 			"club": "Besiktas",
 			"18-19": {
@@ -59262,7 +59262,7 @@
 		},
 		"333678|Ludogorets Razgrad": {
 			"name": "João Paulo",
-			"age": 32,
+			"age": 33,
 			"countryCode": "br",
 			"position": "Forward",
 			"displayPositions": {},
@@ -59290,7 +59290,7 @@
 		},
 		"77350|Lazio": {
 			"name": "Rômulo",
-			"age": 33,
+			"age": 34,
 			"countryCode": "it",
 			"position": "D(R),M(CR)",
 			"displayPositions": {},
@@ -59345,7 +59345,7 @@
 			}
 		},
 		"134907|Slavia Prague": {
-			"name": "Alexandru Mihail Baluta",
+			"name": "Alexandru Baluta",
 			"age": 27,
 			"countryCode": "ro",
 			"position": "Midfielder",
@@ -59430,7 +59430,7 @@
 		},
 		"76871|Qarabag FK": {
 			"name": "Innocent Emeghara",
-			"age": 31,
+			"age": 32,
 			"countryCode": "ch",
 			"position": "FW",
 			"displayPositions": {},
@@ -59514,7 +59514,7 @@
 		},
 		"79282|BATE Borisov": {
 			"name": "Slobodan Simovic",
-			"age": 31,
+			"age": 32,
 			"countryCode": "rs",
 			"position": "DMC",
 			"displayPositions": {},
@@ -59528,7 +59528,7 @@
 		},
 		"346196|FC Copenhagen": {
 			"name": "Carlo Holse",
-			"age": 21,
+			"age": 22,
 			"countryCode": "dk",
 			"position": "Forward",
 			"displayPositions": {},
@@ -59542,7 +59542,7 @@
 		},
 		"363720|F91 Dudelange": {
 			"name": "Leon Jensen",
-			"age": 23,
+			"age": 24,
 			"countryCode": "de",
 			"position": "Midfielder",
 			"displayPositions": {},
@@ -59570,7 +59570,7 @@
 		},
 		"363675|Jablonec": {
 			"name": "Tomas Brecka",
-			"age": 26,
+			"age": 27,
 			"countryCode": "cz",
 			"position": "D(C)",
 			"displayPositions": {},
@@ -59696,7 +59696,7 @@
 		},
 		"225506|Salzburg": {
 			"name": "Smail Prevljak",
-			"age": 25,
+			"age": 26,
 			"countryCode": "ba",
 			"position": "FW",
 			"displayPositions": {},
@@ -59948,7 +59948,7 @@
 		},
 		"303685|Ludogorets Razgrad": {
 			"name": "Jorge Broun",
-			"age": 34,
+			"age": 35,
 			"countryCode": "ar",
 			"position": "GK",
 			"displayPositions": {},
@@ -59992,7 +59992,7 @@
 			"name": "Yari Verschaeren",
 			"age": 19,
 			"countryCode": "be",
-			"position": "AM(C)",
+			"position": "AM(CR)",
 			"displayPositions": {},
 			"club": "Anderlecht",
 			"18-19": {
@@ -60536,7 +60536,7 @@
 		},
 		"18286|Lazio": {
 			"name": "Silvio Proto",
-			"age": 37,
+			"age": 38,
 			"countryCode": "be",
 			"position": "GK",
 			"displayPositions": {},
@@ -60718,7 +60718,7 @@
 		},
 		"246375|Rosenborg": {
 			"name": "Alex Gersbach",
-			"age": 23,
+			"age": 24,
 			"countryCode": "au",
 			"position": "D(L)",
 			"displayPositions": {},
@@ -60816,7 +60816,7 @@
 		},
 		"327696|Shakhtar Donetsk": {
 			"name": "Olarenwaju Kayode",
-			"age": 27,
+			"age": 28,
 			"countryCode": "ng",
 			"position": "FW",
 			"displayPositions": {},

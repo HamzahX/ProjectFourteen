@@ -201,7 +201,7 @@ let processEntry = (aPlayer, competitionData, competitionName, isGoalkeeper) => 
         apps = playerInfo['standard_MP'];
         mins = playerInfo['standard_Min'];
         club = playerInfo['standard_Squad'];
-        age = parseInt(playerInfo['standard_Age'].split("-")[0]);
+        age = parseInt(playerInfo['standard_Age']);
         nationality = playerInfo['standard_Nation'].split(" ")[0];
     }
     else {
@@ -209,7 +209,7 @@ let processEntry = (aPlayer, competitionData, competitionName, isGoalkeeper) => 
         apps = playerInfo['keeper_MP'];
         mins = playerInfo['keeper_Min'];
         club = playerInfo['keeper_Squad'];
-        age = parseInt(playerInfo['keeper_Age'].split("-")[0]);
+        age = parseInt(playerInfo['keeper_Age']);
         nationality = playerInfo['keeper_Nation'].split(" ")[0];
     }
     if (apps < 4 && competitionName !== "Champions League" && competitionName !== "Europa League"){

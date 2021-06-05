@@ -43,7 +43,7 @@
 			},
 			"20-21": {
 				"min": 0,
-				"max": 4200,
+				"max": 4500,
 				"minName": "Wes Morgan",
 				"maxName": "Thibaut Courtois"
 			}
@@ -97,7 +97,7 @@
 			},
 			"20-21": {
 				"min": 0,
-				"max": 33,
+				"max": 36,
 				"minName": "Christian Maggio",
 				"maxName": "Robert Lewandowski"
 			}
@@ -131,7 +131,7 @@
 			},
 			"20-21": {
 				"min": 0,
-				"max": 0.85,
+				"max": 0.9,
 				"minName": "James Milner",
 				"maxName": "Robert Lewandowski"
 			}
@@ -151,9 +151,9 @@
 			},
 			"20-21": {
 				"min": 0,
-				"max": 26,
+				"max": 29,
 				"minName": "Christian Maggio",
-				"maxName": "Erling Haaland"
+				"maxName": "Robert Lewandowski"
 			}
 		}
 	},
@@ -183,7 +183,7 @@
 			},
 			"20-21": {
 				"min": 0,
-				"max": 210,
+				"max": 230,
 				"minName": "Christian Maggio",
 				"maxName": "Lionel Messi"
 			}
@@ -247,9 +247,9 @@
 			},
 			"20-21": {
 				"min": 0,
-				"max": 370,
+				"max": 430,
 				"minName": "Wes Morgan",
-				"maxName": "Joselu"
+				"maxName": "Fabian Klos"
 			}
 		}
 	},
@@ -301,7 +301,7 @@
 			},
 			"20-21": {
 				"min": 0,
-				"max": 240,
+				"max": 260,
 				"minName": "Christian Maggio",
 				"maxName": "Joselu"
 			}
@@ -399,7 +399,7 @@
 				"min": 0,
 				"max": 28,
 				"minName": "Mark Noble",
-				"maxName": "Andrea Petagna"
+				"maxName": "Mauro Icardi"
 			}
 		}
 	},
@@ -431,9 +431,9 @@
 			},
 			"20-21": {
 				"min": 0,
-				"max": 0.5,
+				"max": 0.52,
 				"minName": "Hilton",
-				"maxName": "Ruslan Malinovskiy"
+				"maxName": "Ángel Di María"
 			}
 		},
 		"ranges_agg": {
@@ -451,7 +451,7 @@
 			},
 			"20-21": {
 				"min": 0,
-				"max": 13,
+				"max": 14,
 				"minName": "Christian Maggio",
 				"maxName": "Lionel Messi"
 			}
@@ -483,7 +483,7 @@
 			},
 			"20-21": {
 				"min": 0,
-				"max": 1.2,
+				"max": 1.15,
 				"minName": "Dante",
 				"maxName": "Mauro Icardi"
 			}
@@ -515,8 +515,8 @@
 			},
 			"20-21": {
 				"min": 0,
-				"max": 7.2,
-				"minName": "Cristián Zapata",
+				"max": 7.4,
+				"minName": "Branislav Ivanovic",
 				"maxName": "Neymar"
 			}
 		}
@@ -547,9 +547,9 @@
 			},
 			"20-21": {
 				"min": 0,
-				"max": 11.5,
+				"max": 13,
 				"minName": "Christian Fuchs",
-				"maxName": "Danny Welbeck"
+				"maxName": "Victor Osimhen"
 			}
 		}
 	},
@@ -612,7 +612,7 @@
 			"20-21": {
 				"min": 0,
 				"max": 6.4,
-				"minName": "Hilton",
+				"minName": "Sergio Ramos",
 				"maxName": "Jony"
 			}
 		}
@@ -643,9 +643,9 @@
 			},
 			"20-21": {
 				"min": 0,
-				"max": 12.5,
+				"max": 12,
 				"minName": "Billy Sharp",
-				"maxName": "Léo Sena"
+				"maxName": "Toni Kroos"
 			}
 		}
 	},
@@ -676,7 +676,7 @@
 			"20-21": {
 				"min": 0,
 				"max": 16,
-				"minName": "Adolfo Gaich",
+				"minName": "Jota",
 				"maxName": "Léo Sena"
 			}
 		}
@@ -709,7 +709,7 @@
 				"min": 0,
 				"max": 850,
 				"minName": "Billy Sharp",
-				"maxName": "Thiago Silva"
+				"maxName": "Kevin Vogt"
 			}
 		}
 	},
@@ -740,7 +740,7 @@
 			"20-21": {
 				"min": 0,
 				"max": 1000,
-				"minName": "Salvador Ferrer",
+				"minName": "Jota",
 				"maxName": "Kevin Vogt"
 			}
 		}
@@ -771,8 +771,8 @@
 			},
 			"20-21": {
 				"min": 0,
-				"max": 3500,
-				"minName": "Klaas Jan Huntelaar",
+				"max": 3900,
+				"minName": "Wes Morgan",
 				"maxName": "Andrew Robertson"
 			}
 		}
@@ -803,8 +803,8 @@
 			},
 			"20-21": {
 				"min": 0,
-				"max": 3100,
-				"minName": "Klaas Jan Huntelaar",
+				"max": 3400,
+				"minName": "Wes Morgan",
 				"maxName": "Rúben Dias"
 			}
 		}
@@ -834,10 +834,10 @@
 				"maxName": "Thiago Silva"
 			},
 			"20-21": {
-				"min": 45,
+				"min": 50,
 				"max": 100,
-				"minName": "Deyverson",
-				"maxName": "Samuel Umtiti"
+				"minName": "Ádám Szalai",
+				"maxName": "Andrea Ranocchia"
 			}
 		}
 	},
@@ -867,9 +867,9 @@
 			},
 			"20-21": {
 				"min": 0,
-				"max": 900,
+				"max": 1000,
 				"minName": "Christian Maggio",
-				"maxName": "Mats Hummels"
+				"maxName": "Trent Alexander-Arnold"
 			}
 		}
 	},
@@ -899,7 +899,7 @@
 			},
 			"20-21": {
 				"min": 0,
-				"max": 700,
+				"max": 750,
 				"minName": "Christian Maggio",
 				"maxName": "Mats Hummels"
 			}
@@ -963,7 +963,7 @@
 			},
 			"20-21": {
 				"min": 0,
-				"max": 260,
+				"max": 300,
 				"minName": "Christian Maggio",
 				"maxName": "Lionel Messi"
 			}
@@ -997,7 +997,7 @@
 			},
 			"20-21": {
 				"min": 0,
-				"max": 6.4,
+				"max": 6.2,
 				"minName": "Dante",
 				"maxName": "Neymar"
 			}
@@ -1017,7 +1017,7 @@
 			},
 			"20-21": {
 				"min": 0,
-				"max": 170,
+				"max": 180,
 				"minName": "Christian Maggio",
 				"maxName": "Lionel Messi"
 			}
@@ -1082,7 +1082,7 @@
 			"20-21": {
 				"min": 20,
 				"max": 100,
-				"minName": "Kenny Tete",
+				"minName": "Emile Smith Rowe",
 				"maxName": "Diego Godín"
 			}
 		}
@@ -1115,7 +1115,7 @@
 				"min": 0,
 				"max": 8.5,
 				"minName": "Dante",
-				"maxName": "Opa Nguette"
+				"maxName": "Neymar"
 			}
 		}
 	},
@@ -1145,9 +1145,9 @@
 			},
 			"20-21": {
 				"min": 0,
-				"max": 23,
+				"max": 22,
 				"minName": "Dante",
-				"maxName": "Roberto Piccoli"
+				"maxName": "Opa Nguette"
 			}
 		}
 	},
@@ -1178,7 +1178,7 @@
 			"20-21": {
 				"min": 0,
 				"max": 9.5,
-				"minName": "Salvador Ferrer",
+				"minName": "Jota",
 				"maxName": "Sven Schipplock"
 			}
 		}
@@ -1209,7 +1209,7 @@
 			},
 			"20-21": {
 				"min": 0,
-				"max": 14,
+				"max": 13,
 				"minName": "Gary Cahill",
 				"maxName": "Romain Del Castillo"
 			}
@@ -1241,9 +1241,9 @@
 			},
 			"20-21": {
 				"min": 0,
-				"max": 13,
-				"minName": "Gary Cahill",
-				"maxName": "Romain Del Castillo"
+				"max": 12,
+				"minName": "Scott Dann",
+				"maxName": "Morgan Sanson"
 			}
 		}
 	},
@@ -1306,7 +1306,7 @@
 			"20-21": {
 				"min": 0,
 				"max": 3.4,
-				"minName": "Goran Pandev",
+				"minName": "Dante",
 				"maxName": "Milan Badelj"
 			}
 		}
@@ -1337,9 +1337,9 @@
 			},
 			"20-21": {
 				"min": 0,
-				"max": 3.8,
-				"minName": "Goran Pandev",
-				"maxName": "N'Golo Kanté"
+				"max": 4.4,
+				"minName": "Fabio Quagliarella",
+				"maxName": "Diego Llorente"
 			}
 		}
 	},
@@ -1370,7 +1370,7 @@
 			"20-21": {
 				"min": 0,
 				"max": 4,
-				"minName": "Goran Pandev",
+				"minName": "Kevin Gameiro",
 				"maxName": "Leon Goretzka"
 			}
 		}
@@ -1465,8 +1465,8 @@
 			},
 			"20-21": {
 				"min": 0,
-				"max": 7,
-				"minName": "Cristiano Ronaldo",
+				"max": 6.5,
+				"minName": "Zlatan Ibrahimovic",
 				"maxName": "Exequiel Palacios"
 			}
 		}
@@ -1497,7 +1497,7 @@
 			},
 			"20-21": {
 				"min": 0,
-				"max": 160,
+				"max": 180,
 				"minName": "Christian Maggio",
 				"maxName": "Laurent Abergel"
 			}
@@ -1529,7 +1529,7 @@
 			},
 			"20-21": {
 				"min": 0,
-				"max": 60,
+				"max": 65,
 				"minName": "Christian Maggio",
 				"maxName": "Pierre-Emile Højbjerg"
 			}
@@ -1561,9 +1561,9 @@
 			},
 			"20-21": {
 				"min": 0,
-				"max": 80,
+				"max": 85,
 				"minName": "Fabio Quagliarella",
-				"maxName": "Jordan Amavi"
+				"maxName": "Ronald Araujo"
 			}
 		}
 	},
@@ -1593,7 +1593,7 @@
 			},
 			"20-21": {
 				"min": 0,
-				"max": 4.4,
+				"max": 4.6,
 				"minName": "Andrej Kramaric",
 				"maxName": "Sven Schipplock"
 			}
@@ -1626,7 +1626,7 @@
 			"20-21": {
 				"min": 0,
 				"max": 5,
-				"minName": "Scott Dann",
+				"minName": "Max Kruse",
 				"maxName": "Mikel Merino"
 			}
 		}
@@ -1658,7 +1658,7 @@
 			"20-21": {
 				"min": 0,
 				"max": 4.8,
-				"minName": "Scott Dann",
+				"minName": "Nathaniel Clyne",
 				"maxName": "Mikel Merino"
 			}
 		}
@@ -1690,7 +1690,7 @@
 			"20-21": {
 				"min": 0,
 				"max": 10.5,
-				"minName": "Joaquín",
+				"minName": "Goran Pandev",
 				"maxName": "Pape Abou Cissé"
 			}
 		}
@@ -1721,9 +1721,9 @@
 			},
 			"20-21": {
 				"min": 0,
-				"max": 12,
+				"max": 13.5,
 				"minName": "Goran Pandev",
-				"maxName": "Jawad El Yamiq"
+				"maxName": "Rhys Williams"
 			}
 		}
 	},
@@ -1753,7 +1753,7 @@
 			},
 			"20-21": {
 				"min": 0,
-				"max": 14,
+				"max": 14.5,
 				"minName": "Goran Pandev",
 				"maxName": "Sofian Chakla"
 			}
@@ -1785,8 +1785,8 @@
 			},
 			"20-21": {
 				"min": 0,
-				"max": 85,
-				"minName": "Gianluigi Buffon",
+				"max": 90,
+				"minName": "Daniele Padelli",
 				"maxName": "Alex Cordaz"
 			}
 		}
@@ -1817,9 +1817,9 @@
 			},
 			"20-21": {
 				"min": 0,
-				"max": 75,
-				"minName": "Gianluigi Buffon",
-				"maxName": "Alex Cordaz"
+				"max": 80,
+				"minName": "Rubén Martínez",
+				"maxName": "Sam Johnstone"
 			}
 		}
 	},
@@ -1849,7 +1849,7 @@
 			},
 			"20-21": {
 				"min": 0,
-				"max": 200,
+				"max": 230,
 				"minName": "Rubén Martínez",
 				"maxName": "Sam Johnstone"
 			}
@@ -1880,9 +1880,9 @@
 				"maxName": "Jessy Moulin"
 			},
 			"20-21": {
-				"min": -12.5,
+				"min": -15,
 				"max": 10,
-				"minName": "Salvatore Sirigu",
+				"minName": "Saturnin Allagbe",
 				"maxName": "David Ospina"
 			}
 		}
@@ -1913,9 +1913,9 @@
 			},
 			"20-21": {
 				"min": 0,
-				"max": 400,
+				"max": 440,
 				"minName": "Rubén Martínez",
-				"maxName": "Steve Mandanda"
+				"maxName": "Sergio Asenjo"
 			}
 		}
 	},
@@ -1978,7 +1978,7 @@
 			"20-21": {
 				"min": 0,
 				"max": 15,
-				"minName": "Manuel Neuer",
+				"minName": "Gianluigi Buffon",
 				"maxName": "Nick Pope"
 			}
 		}
@@ -2009,9 +2009,9 @@
 			},
 			"20-21": {
 				"min": 0,
-				"max": 1000,
-				"minName": "Yohann Pelé",
-				"maxName": "Rui Silva"
+				"max": 1050,
+				"minName": "Daniele Padelli",
+				"maxName": "Stefan Ortega Moreno"
 			}
 		}
 	},
@@ -2041,8 +2041,8 @@
 			},
 			"20-21": {
 				"min": 0,
-				"max": 460,
-				"minName": "Yohann Pelé",
+				"max": 500,
+				"minName": "Daniele Padelli",
 				"maxName": "Stefan Ortega Moreno"
 			}
 		}
@@ -2074,7 +2074,7 @@
 			"20-21": {
 				"min": 25,
 				"max": 65,
-				"minName": "Alex McCarthy",
+				"minName": "Fraser Forster",
 				"maxName": "Manuel Neuer"
 			}
 		}
@@ -2107,7 +2107,7 @@
 			},
 			"20-21": {
 				"min": 0,
-				"max": 1.45,
+				"max": 1.55,
 				"minName": "Hilton",
 				"maxName": "Luis Muriel"
 			}
@@ -2127,7 +2127,7 @@
 			},
 			"20-21": {
 				"min": 0,
-				"max": 39,
+				"max": 42,
 				"minName": "Christian Maggio",
 				"maxName": "Lionel Messi"
 			}
@@ -2161,7 +2161,7 @@
 			},
 			"20-21": {
 				"min": 0,
-				"max": 1.1,
+				"max": 1.2,
 				"minName": "Mark Noble",
 				"maxName": "Luis Muriel"
 			}
@@ -2181,7 +2181,7 @@
 			},
 			"20-21": {
 				"min": 0,
-				"max": 33,
+				"max": 36,
 				"minName": "Christian Maggio",
 				"maxName": "Lionel Messi"
 			}
