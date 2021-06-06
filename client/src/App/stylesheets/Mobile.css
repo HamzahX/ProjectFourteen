@@ -30,6 +30,7 @@ h3 {
 
 #navbar-container {
     text-align: unset;
+    min-height: 104px;
     height: 104px;
     max-height: calc(104px*5);
 }
@@ -86,6 +87,7 @@ h3 {
 
     #home #searchbar-container1 {
         min-width: 75%;
+        min-height: 104px;
         height: 104px;
         max-width: unset;
     }
@@ -173,6 +175,7 @@ h3 {
 }
 
     #searchbar-container2, #searchbar-container3 {
+        min-height: 104px;
         height: 104px;
     }
 
