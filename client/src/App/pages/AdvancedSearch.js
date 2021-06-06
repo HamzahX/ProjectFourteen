@@ -534,7 +534,7 @@ class AdvancedSearch extends Component {
                 let statData = this._referenceData.statsReferenceData[stat];
                 let precision = 0;
 
-                if (stat === "npxg+xa" || stat === "npg+xa"){
+                if (stat === "npxg" || stat === "xa" || stat === "npxg+xa" || stat === "npg+xa" ){
                     precision = 1;
                 }
 
@@ -569,12 +569,12 @@ class AdvancedSearch extends Component {
                     let statData = this._referenceData.statsReferenceData[stat];
 
                     tableColumns.push({
-                        name: `${statData.label} ${statData.suffix} (Percentile Rank)`,
+                        name: `${statData.label} ${statData.suffix}`,
                         selector: `percentile_${stat}`,
                         sortable: true,
                         ignoreRowClick: true,
                         sortFunction: (rowA, rowB) => { return parseFloat(rowA[`percentile_${stat}`]) - parseFloat(rowB[`percentile_${stat}`]) },
-                        format: row => this.ordinalSuffix(row[`percentile_${stat}`]) + " percentile"
+                        cell: row => { return <span class={this.getPercentileDisplayClassNames(row[`percentile_${stat}`])}>{row[`percentile_${stat}`]}</span>}
                     })
                 }
             }
@@ -602,6 +602,26 @@ class AdvancedSearch extends Component {
 
     };
 
+    getPercentileDisplayClassNames = (value) => {
+
+        let classNames = "";
+
+        if (value < 25){
+            classNames = "percentile-card red";
+        }
+        else if (value < 50){
+            classNames = "percentile-card orange";
+        }
+        else if (value < 75){
+            classNames = "percentile-card yellow";
+        }
+        else {
+            classNames = "percentile-card green";
+        }
+
+        return classNames;
+
+    };
 
     toggleExplanationOverlay = () => {
 

@@ -941,6 +941,32 @@ button:hover {
                     color: #373737;
                 }
 
+
+            .rdt_TableCell .percentile-card {
+                font-weight: bold;
+                width: 23px;
+                height: 23px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .rdt_TableCell .red {
+                background-color: rgba(255, 0, 0, 0.51);
+            }
+
+            .rdt_TableCell .orange {
+                background-color: rgba(255, 165, 0, 0.5);
+            }
+
+            .rdt_TableCell .yellow {
+                background-color: rgba(255, 255, 0, 0.5);
+            }
+
+            .rdt_TableCell .green {
+                background-color: rgba(124, 252, 0, 0.5);
+            }
+
     #stats-screen, #compare-screen {
         display: flex;
         display: -webkit-flex;
