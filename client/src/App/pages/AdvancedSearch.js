@@ -197,7 +197,7 @@ class AdvancedSearch extends Component {
             showSearchLoaderOverlay: false,
             showExplanationOverlay: false,
 
-            displayType: this.isMobile ? "cards" : displayTypeCookie || "cards",
+            displayType: this.isMobile ? "cards" : displayTypeCookie || "table",
 
             filterOptions: {
                 seasons: seasonOptions,

@@ -362,7 +362,8 @@ class Home extends Component {
                                 </li>
                                 <li>
                                     <span style={{color: '#7db9f0', fontWeight: 'bold'}}>pAdj</span>&nbsp;
-                                    Possession Adjusted (using the StatsBomb sigmoid function).**
+                                    Possession Adjusted (using number of touches conceded in different thirds of the pitch). Adapted from
+                                    the StatsBomb sigmoid function.**
                                 </li>
                                 <li>
                                     <span style={{color: '#7db9f0', fontWeight: 'bold'}}>Successful Pressure</span>&nbsp;
@@ -460,17 +461,11 @@ class Home extends Component {
                                         a player completes an action for every 100 touches of the ball they have.
                                     </p>
                                     <p>
-                                        Defensive stats are adjusted for possession using the StatsBomb sigmoid function,
+                                        Defensive stats are adjusted for possession using a modfied version of the StatsBomb sigmoid function,
                                         which you can read more about <a href="https://statsbomb.com/2014/06/introducing-possession-adjusted-player-stats/"
                                                                     target="_blank" rel="noopener noreferrer">here</a>.
-                                        Each player's stats for a particular competition are adjusted based on their team's
-                                        average possession during said competition.
-                                    </p>
-                                    <p>
-                                        Ideally, a player's stats should be adjusted based on the possession
-                                        stats from only the games they played in. However, I don't have access to that
-                                        data and so I used the next best thing; which is the team's average possession
-                                        across all games in the competition.
+                                        Each player's stats for a particular competition are adjusted based on the number of touches
+                                        their team conceded in different thirds of the pitch during said competition.
                                     </p>
                                 </div>
                                 <div className="faq-item">

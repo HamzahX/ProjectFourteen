@@ -129,7 +129,8 @@ class GlossaryOverlay extends Component {
                             </li>
                             <li>
                                 <span style={{color: '#7db9f0', fontWeight: 'bold'}}>pAdj</span>&nbsp;
-                                Possession Adjusted (using the StatsBomb sigmoid function).**
+                                Possession Adjusted (using number of touches conceded in different thirds of the pitch). Adapted from
+                                the StatsBomb sigmoid function.**
                             </li>
                             <li>
                                 <span style={{color: '#7db9f0', fontWeight: 'bold'}}>Successful Pressure</span>&nbsp;

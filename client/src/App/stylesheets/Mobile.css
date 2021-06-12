@@ -480,6 +480,11 @@ h3 {
                 padding-left: 16px;
             }
 
+            /*axis-lines (in-between inner and outer)*/
+            .highcharts-container  svg .highcharts-yaxis-grid path:not(:nth-child(2)):not(:nth-child(6)):not(:nth-child(7)) {
+                opacity: 0.4 !important;
+            }
+
         #chart .chart-title {
             font-size: 0.9em;
         }
