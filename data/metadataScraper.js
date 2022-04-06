@@ -5,7 +5,7 @@ const fs = require('fs');
 const countryCodes = require('./countryCodes.js');
 
 const scriptName = path.basename(__filename);
-const supportedSeasons = ["18-19", "19-20", "20-21"];
+const supportedSeasons = ["18-19", "19-20", "20-21", "21-22"];
 const booleans = ["true", "false"];
 
 var SEASON;
@@ -60,8 +60,19 @@ else if (SEASON === "20-21"){
         "https://www.whoscored.com/Regions/108/Tournaments/5/Seasons/8330/Stages/18873/PlayerStatistics/Italy-Serie-A-2020-2021",
         "https://www.whoscored.com/Regions/81/Tournaments/3/Seasons/8279/Stages/18762/PlayerStatistics/Germany-Bundesliga-2020-2021",
         "https://www.whoscored.com/Regions/74/Tournaments/22/Seasons/8185/Stages/18594/PlayerStatistics/France-Ligue-1-2020-2021",
-        "https://www.whoscored.com/Regions/250/Tournaments/12/Seasons/8177/Stages/19009/PlayerStatistics/Europe-Champions-League-2020-2021",
-        "https://www.whoscored.com/Regions/250/Tournaments/30/Seasons/8178/Stages/19010/PlayerStatistics/Europe-Europa-League-2020-2021"
+        "https://www.whoscored.com/Regions/250/Tournaments/12/Seasons/8177/Stages/19130/PlayerStatistics/Europe-Champions-League-2020-2021",
+        "https://www.whoscored.com/Regions/250/Tournaments/30/Seasons/8178/Stages/19164/PlayerStatistics/Europe-Europa-League-2020-2021"
+    ];
+}
+else if (SEASON === "21-22"){
+    URLs = [
+        "https://www.whoscored.com/Regions/252/Tournaments/2/Seasons/8618/Stages/19793/PlayerStatistics/England-Premier-League-2021-2022",
+        "https://www.whoscored.com/Regions/206/Tournaments/4/Seasons/8681/Stages/19895/PlayerStatistics/Spain-LaLiga-2021-2022",
+        "https://www.whoscored.com/Regions/108/Tournaments/5/Seasons/8735/Stages/19982/PlayerStatistics/Italy-Serie-A-2021-2022",
+        "https://www.whoscored.com/Regions/81/Tournaments/3/Seasons/8667/Stages/19862/PlayerStatistics/Germany-Bundesliga-2021-2022",
+        "https://www.whoscored.com/Regions/74/Tournaments/22/Seasons/8671/Stages/19866/PlayerStatistics/France-Ligue-1-2021-2022",
+        "https://www.whoscored.com/Regions/250/Tournaments/12/Seasons/8623/Stages/20265/PlayerStatistics/Europe-Champions-League-2021-2022",
+        "https://www.whoscored.com/Regions/250/Tournaments/30/Seasons/8741/Stages/20266/PlayerStatistics/Europe-Europa-League-2021-2022"
     ];
 }
 
@@ -86,23 +97,15 @@ let FBPlayers = JSON.parse(fs.readFileSync(path.join(__dirname, `/positionData/$
 let CBPlayers = JSON.parse(fs.readFileSync(path.join(__dirname, `/positionData/${SEASON}/CBPercentilePlayers.json`)))['codes'];
 let GKPlayers = JSON.parse(fs.readFileSync(path.join(__dirname, `/positionData/${SEASON}/GKPercentilePlayers.json`)))['codes'];
 
-let APPS_PER_POSITION = {
-    "18-19": {},
-    "19-20": {},
-    "20-21": {},
-};
-
-let APPS_PER_PERCENTILE_POSITION = {
-    "18-19": {},
-    "19-20": {},
-    "20-21": {},
-};
+let APPS_PER_POSITION = {};
+let APPS_PER_PERCENTILE_POSITION = {};
 
 for (let i=0; i<supportedSeasons.length; i++){
 
     let season = supportedSeasons[i];
 
     APPS_PER_POSITION[season] = JSON.parse(fs.readFileSync(path.join(__dirname, `/positionData/${season}/appsPerPosition.json`)));
+    APPS_PER_PERCENTILE_POSITION[season] = {};
 
     for (let player in APPS_PER_POSITION[season]){
 
