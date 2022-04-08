@@ -4,7 +4,7 @@ const path = require('path');
 const fs = require('fs');
 
 const scriptName = path.basename(__filename);
-const supportedSeasons = ["18-19", "19-20", "20-21"];
+const supportedSeasons = ["18-19", "19-20", "20-21", "21-22"];
 
 var SEASON;
 //parse command line arguments to get the season
@@ -47,6 +47,17 @@ else if (SEASON === "19-20"){
         "https://fbref.com/en/comps/13/3243/2019-2020-Ligue-1-Stats",
         "https://fbref.com/en/comps/8/2900/stats/2019-2020-Champions-League-Stats",
         "https://fbref.com/en/comps/19/2901/stats/2019-2020-Europa-League-Stats"
+    ];
+}
+else if (SEASON === "20-21"){
+    URLs = [
+        "https://fbref.com/en/comps/9/10728/2020-2021-Premier-League-Stats",
+        "https://fbref.com/en/comps/12/10731/2020-2021-La-Liga-Stats",
+        "https://fbref.com/en/comps/11/10730/2020-2021-Serie-A-Stats",
+        "https://fbref.com/en/comps/20/10737/2020-2021-Bundesliga-Stats",
+        "https://fbref.com/en/comps/13/10732/2020-2021-Ligue-1-Stats",
+        "https://fbref.com/en/comps/8/10096/stats/2020-2021-Champions-League-Stats",
+        "https://fbref.com/en/comps/19/10097/stats/2020-2021-Europa-League-Stats"
     ];
 }
 else {
@@ -193,6 +204,7 @@ let retrieveJSON = async (page, competitionName) => {
             }
             let teamName = teamNameHTML.substring(teamNameHTML.indexOf('">')+2, teamNameHTML.indexOf('</a>'));
             if (FBREF_TO_WHOSCORED_TEAMS[teamName] === undefined){
+                console.log(`Undefined team mapping: ${teamName}`);
                 continue;
             }
             teamName = FBREF_TO_WHOSCORED_TEAMS[teamName]["whoscored"];
