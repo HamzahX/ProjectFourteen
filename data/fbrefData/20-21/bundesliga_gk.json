@@ -1,6 +1,6 @@
 {
 	"1": {
-		"keeper_Player": "Oliver Baumann\\Oliver-Baumann",
+		"keeper_Player": "Oliver Baumann\\47064058",
 		"keeper_Nation": "de GER",
 		"keeper_Pos": "GK",
 		"keeper_Squad": "Hoffenheim",
@@ -28,7 +28,7 @@
 		"keeper_Matches": "Matches",
 		"code": "47064058",
 		"url": "/en/players/47064058/Oliver-Baumann",
-		"keeper_adv_Player": "Oliver Baumann\\Oliver-Baumann",
+		"keeper_adv_Player": "Oliver Baumann\\47064058",
 		"keeper_adv_Nation": "de GER",
 		"keeper_adv_Pos": "GK",
 		"keeper_adv_Squad": "Hoffenheim",
@@ -63,7 +63,7 @@
 		"keeper_adv_Matches": "Matches"
 	},
 	"2": {
-		"keeper_Player": "Elias Bördner\\Elias-Bordner",
+		"keeper_Player": "Elias Bördner\\8758ddf4",
 		"keeper_Nation": "de GER",
 		"keeper_Pos": "GK",
 		"keeper_Squad": "Eint Frankfurt",
@@ -91,7 +91,7 @@
 		"keeper_Matches": "Matches",
 		"code": "8758ddf4",
 		"url": "/en/players/8758ddf4/Elias-Bordner",
-		"keeper_adv_Player": "Elias Bördner\\Elias-Bordner",
+		"keeper_adv_Player": "Elias Bördner\\8758ddf4",
 		"keeper_adv_Nation": "de GER",
 		"keeper_adv_Pos": "GK",
 		"keeper_adv_Squad": "Eint Frankfurt",
@@ -126,7 +126,7 @@
 		"keeper_adv_Matches": "Matches"
 	},
 	"3": {
-		"keeper_Player": "Fabian Bredlow\\Fabian-Bredlow",
+		"keeper_Player": "Fabian Bredlow\\d28339cb",
 		"keeper_Nation": "de GER",
 		"keeper_Pos": "GK",
 		"keeper_Squad": "Stuttgart",
@@ -154,7 +154,7 @@
 		"keeper_Matches": "Matches",
 		"code": "d28339cb",
 		"url": "/en/players/d28339cb/Fabian-Bredlow",
-		"keeper_adv_Player": "Fabian Bredlow\\Fabian-Bredlow",
+		"keeper_adv_Player": "Fabian Bredlow\\d28339cb",
 		"keeper_adv_Nation": "de GER",
 		"keeper_adv_Pos": "GK",
 		"keeper_adv_Squad": "Stuttgart",
@@ -189,7 +189,7 @@
 		"keeper_adv_Matches": "Matches"
 	},
 	"4": {
-		"keeper_Player": "Roman Bürki\\Roman-Burki",
+		"keeper_Player": "Roman Bürki\\9d12e142",
 		"keeper_Nation": "ch SUI",
 		"keeper_Pos": "GK",
 		"keeper_Squad": "Dortmund",
@@ -217,7 +217,7 @@
 		"keeper_Matches": "Matches",
 		"code": "9d12e142",
 		"url": "/en/players/9d12e142/Roman-Burki",
-		"keeper_adv_Player": "Roman Bürki\\Roman-Burki",
+		"keeper_adv_Player": "Roman Bürki\\9d12e142",
 		"keeper_adv_Nation": "ch SUI",
 		"keeper_adv_Pos": "GK",
 		"keeper_adv_Squad": "Dortmund",
@@ -252,7 +252,7 @@
 		"keeper_adv_Matches": "Matches"
 	},
 	"5": {
-		"keeper_Player": "Koen Casteels\\Koen-Casteels",
+		"keeper_Player": "Koen Casteels\\db401046",
 		"keeper_Nation": "be BEL",
 		"keeper_Pos": "GK",
 		"keeper_Squad": "Wolfsburg",
@@ -280,7 +280,7 @@
 		"keeper_Matches": "Matches",
 		"code": "db401046",
 		"url": "/en/players/db401046/Koen-Casteels",
-		"keeper_adv_Player": "Koen Casteels\\Koen-Casteels",
+		"keeper_adv_Player": "Koen Casteels\\db401046",
 		"keeper_adv_Nation": "be BEL",
 		"keeper_adv_Pos": "GK",
 		"keeper_adv_Squad": "Wolfsburg",
@@ -299,8 +299,8 @@
 		"keeper_adv_Cmp": 236,
 		"keeper_adv_Att": 535,
 		"keeper_adv_Cmp%": 44.1,
-		"keeper_adv_Att__1": 1044,
-		"keeper_adv_Thr": 156,
+		"keeper_adv_Att__1": 1045,
+		"keeper_adv_Thr": 157,
 		"keeper_adv_Launch%": 38.3,
 		"keeper_adv_AvgLen": 36.4,
 		"keeper_adv_Att__2": 203,
@@ -315,7 +315,7 @@
 		"keeper_adv_Matches": "Matches"
 	},
 	"6": {
-		"keeper_Player": "Finn Dahmen\\Finn-Dahmen",
+		"keeper_Player": "Finn Dahmen\\dee3013b",
 		"keeper_Nation": "de GER",
 		"keeper_Pos": "GK",
 		"keeper_Squad": "Mainz 05",
@@ -343,7 +343,7 @@
 		"keeper_Matches": "Matches",
 		"code": "dee3013b",
 		"url": "/en/players/dee3013b/Finn-Dahmen",
-		"keeper_adv_Player": "Finn Dahmen\\Finn-Dahmen",
+		"keeper_adv_Player": "Finn Dahmen\\dee3013b",
 		"keeper_adv_Nation": "de GER",
 		"keeper_adv_Pos": "GK",
 		"keeper_adv_Squad": "Mainz 05",
@@ -378,7 +378,7 @@
 		"keeper_adv_Matches": "Matches"
 	},
 	"7": {
-		"keeper_Player": "Ralf Fährmann\\Ralf-Fahrmann",
+		"keeper_Player": "Ralf Fährmann\\1e43fad8",
 		"keeper_Nation": "de GER",
 		"keeper_Pos": "GK",
 		"keeper_Squad": "Schalke 04",
@@ -406,7 +406,7 @@
 		"keeper_Matches": "Matches",
 		"code": "1e43fad8",
 		"url": "/en/players/1e43fad8/Ralf-Fahrmann",
-		"keeper_adv_Player": "Ralf Fährmann\\Ralf-Fahrmann",
+		"keeper_adv_Player": "Ralf Fährmann\\1e43fad8",
 		"keeper_adv_Nation": "de GER",
 		"keeper_adv_Pos": "GK",
 		"keeper_adv_Squad": "Schalke 04",
@@ -441,7 +441,7 @@
 		"keeper_adv_Matches": "Matches"
 	},
 	"8": {
-		"keeper_Player": "Mark Flekken\\Mark-Flekken",
+		"keeper_Player": "Mark Flekken\\a92ab7be",
 		"keeper_Nation": "nl NED",
 		"keeper_Pos": "GK",
 		"keeper_Squad": "Freiburg",
@@ -469,7 +469,7 @@
 		"keeper_Matches": "Matches",
 		"code": "a92ab7be",
 		"url": "/en/players/a92ab7be/Mark-Flekken",
-		"keeper_adv_Player": "Mark Flekken\\Mark-Flekken",
+		"keeper_adv_Player": "Mark Flekken\\a92ab7be",
 		"keeper_adv_Nation": "nl NED",
 		"keeper_adv_Pos": "GK",
 		"keeper_adv_Squad": "Freiburg",
@@ -504,7 +504,7 @@
 		"keeper_adv_Matches": "Matches"
 	},
 	"9": {
-		"keeper_Player": "Rafał Gikiewicz\\Rafal-Gikiewicz",
+		"keeper_Player": "Rafał Gikiewicz\\17376543",
 		"keeper_Nation": "pl POL",
 		"keeper_Pos": "GK",
 		"keeper_Squad": "Augsburg",
@@ -532,7 +532,7 @@
 		"keeper_Matches": "Matches",
 		"code": "17376543",
 		"url": "/en/players/17376543/Rafal-Gikiewicz",
-		"keeper_adv_Player": "Rafał Gikiewicz\\Rafal-Gikiewicz",
+		"keeper_adv_Player": "Rafał Gikiewicz\\17376543",
 		"keeper_adv_Nation": "pl POL",
 		"keeper_adv_Pos": "GK",
 		"keeper_adv_Squad": "Augsburg",
@@ -567,7 +567,7 @@
 		"keeper_adv_Matches": "Matches"
 	},
 	"10": {
-		"keeper_Player": "Lennart Grill\\Lennart-Grill",
+		"keeper_Player": "Lennart Grill\\37998008",
 		"keeper_Nation": "de GER",
 		"keeper_Pos": "GK",
 		"keeper_Squad": "Leverkusen",
@@ -595,7 +595,7 @@
 		"keeper_Matches": "Matches",
 		"code": "37998008",
 		"url": "/en/players/37998008/Lennart-Grill",
-		"keeper_adv_Player": "Lennart Grill\\Lennart-Grill",
+		"keeper_adv_Player": "Lennart Grill\\37998008",
 		"keeper_adv_Nation": "de GER",
 		"keeper_adv_Pos": "GK",
 		"keeper_adv_Squad": "Leverkusen",
@@ -630,7 +630,7 @@
 		"keeper_adv_Matches": "Matches"
 	},
 	"11": {
-		"keeper_Player": "Péter Gulácsi\\Peter-Gulacsi",
+		"keeper_Player": "Péter Gulácsi\\bcb2ccd8",
 		"keeper_Nation": "hu HUN",
 		"keeper_Pos": "GK",
 		"keeper_Squad": "RB Leipzig",
@@ -658,7 +658,7 @@
 		"keeper_Matches": "Matches",
 		"code": "bcb2ccd8",
 		"url": "/en/players/bcb2ccd8/Peter-Gulacsi",
-		"keeper_adv_Player": "Péter Gulácsi\\Peter-Gulacsi",
+		"keeper_adv_Player": "Péter Gulácsi\\bcb2ccd8",
 		"keeper_adv_Nation": "hu HUN",
 		"keeper_adv_Pos": "GK",
 		"keeper_adv_Squad": "RB Leipzig",
@@ -693,7 +693,7 @@
 		"keeper_adv_Matches": "Matches"
 	},
 	"12": {
-		"keeper_Player": "Marwin Hitz\\Marwin-Hitz",
+		"keeper_Player": "Marwin Hitz\\2e7ff968",
 		"keeper_Nation": "ch SUI",
 		"keeper_Pos": "GK",
 		"keeper_Squad": "Dortmund",
@@ -721,7 +721,7 @@
 		"keeper_Matches": "Matches",
 		"code": "2e7ff968",
 		"url": "/en/players/2e7ff968/Marwin-Hitz",
-		"keeper_adv_Player": "Marwin Hitz\\Marwin-Hitz",
+		"keeper_adv_Player": "Marwin Hitz\\2e7ff968",
 		"keeper_adv_Nation": "ch SUI",
 		"keeper_adv_Pos": "GK",
 		"keeper_adv_Squad": "Dortmund",
@@ -756,7 +756,7 @@
 		"keeper_adv_Matches": "Matches"
 	},
 	"13": {
-		"keeper_Player": "Timo Horn\\Timo-Horn",
+		"keeper_Player": "Timo Horn\\3cd9e95a",
 		"keeper_Nation": "de GER",
 		"keeper_Pos": "GK",
 		"keeper_Squad": "Köln",
@@ -768,9 +768,9 @@
 		"keeper_90s": 33.4,
 		"keeper_GA": 59,
 		"keeper_GA90": 1.76,
-		"keeper_SoTA": 149,
-		"keeper_Saves": 97,
-		"keeper_Save%": 65.1,
+		"keeper_SoTA": 150,
+		"keeper_Saves": 98,
+		"keeper_Save%": 65.3,
 		"keeper_W": 8,
 		"keeper_D": 9,
 		"keeper_L": 17,
@@ -784,7 +784,7 @@
 		"keeper_Matches": "Matches",
 		"code": "3cd9e95a",
 		"url": "/en/players/3cd9e95a/Timo-Horn",
-		"keeper_adv_Player": "Timo Horn\\Timo-Horn",
+		"keeper_adv_Player": "Timo Horn\\3cd9e95a",
 		"keeper_adv_Nation": "de GER",
 		"keeper_adv_Pos": "GK",
 		"keeper_adv_Squad": "Köln",
@@ -796,10 +796,10 @@
 		"keeper_adv_FK": 1,
 		"keeper_adv_CK": 6,
 		"keeper_adv_OG": 0,
-		"keeper_adv_PSxG": 52.4,
+		"keeper_adv_PSxG": 52.6,
 		"keeper_adv_PSxG/SoT": 0.3,
-		"keeper_adv_PSxG+/-": -6.6,
-		"keeper_adv_/90": -0.2,
+		"keeper_adv_PSxG+/-": -6.4,
+		"keeper_adv_/90": -0.19,
 		"keeper_adv_Cmp": 272,
 		"keeper_adv_Att": 601,
 		"keeper_adv_Cmp%": 45.3,
@@ -819,7 +819,7 @@
 		"keeper_adv_Matches": "Matches"
 	},
 	"14": {
-		"keeper_Player": "Lukáš Hrádecký\\Lukas-Hradecky",
+		"keeper_Player": "Lukáš Hrádecký\\ad3389d5",
 		"keeper_Nation": "fi FIN",
 		"keeper_Pos": "GK",
 		"keeper_Squad": "Leverkusen",
@@ -847,7 +847,7 @@
 		"keeper_Matches": "Matches",
 		"code": "ad3389d5",
 		"url": "/en/players/ad3389d5/Lukas-Hradecky",
-		"keeper_adv_Player": "Lukáš Hrádecký\\Lukas-Hradecky",
+		"keeper_adv_Player": "Lukáš Hrádecký\\ad3389d5",
 		"keeper_adv_Nation": "fi FIN",
 		"keeper_adv_Pos": "GK",
 		"keeper_adv_Squad": "Leverkusen",
@@ -873,16 +873,16 @@
 		"keeper_adv_Att__2": 176,
 		"keeper_adv_Launch%__1": 38.1,
 		"keeper_adv_AvgLen__1": 34.2,
-		"keeper_adv_Opp": 209,
+		"keeper_adv_Opp": 208,
 		"keeper_adv_Stp": 21,
-		"keeper_adv_Stp%": 10,
+		"keeper_adv_Stp%": 10.1,
 		"keeper_adv_#OPA": 31,
 		"keeper_adv_#OPA/90": 1.09,
 		"keeper_adv_AvgDist": 16.2,
 		"keeper_adv_Matches": "Matches"
 	},
 	"15": {
-		"keeper_Player": "Rune Jarstein\\Rune-Jarstein",
+		"keeper_Player": "Rune Jarstein\\27d2618c",
 		"keeper_Nation": "no NOR",
 		"keeper_Pos": "GK",
 		"keeper_Squad": "Hertha BSC",
@@ -910,7 +910,7 @@
 		"keeper_Matches": "Matches",
 		"code": "27d2618c",
 		"url": "/en/players/27d2618c/Rune-Jarstein",
-		"keeper_adv_Player": "Rune Jarstein\\Rune-Jarstein",
+		"keeper_adv_Player": "Rune Jarstein\\27d2618c",
 		"keeper_adv_Nation": "no NOR",
 		"keeper_adv_Pos": "GK",
 		"keeper_adv_Squad": "Hertha BSC",
@@ -945,7 +945,7 @@
 		"keeper_adv_Matches": "Matches"
 	},
 	"16": {
-		"keeper_Player": "Loris Karius\\Loris-Karius",
+		"keeper_Player": "Loris Karius\\32e7ce92",
 		"keeper_Nation": "de GER",
 		"keeper_Pos": "GK",
 		"keeper_Squad": "Union Berlin",
@@ -973,7 +973,7 @@
 		"keeper_Matches": "Matches",
 		"code": "32e7ce92",
 		"url": "/en/players/32e7ce92/Loris-Karius",
-		"keeper_adv_Player": "Loris Karius\\Loris-Karius",
+		"keeper_adv_Player": "Loris Karius\\32e7ce92",
 		"keeper_adv_Nation": "de GER",
 		"keeper_adv_Pos": "GK",
 		"keeper_adv_Squad": "Union Berlin",
@@ -1008,7 +1008,7 @@
 		"keeper_adv_Matches": "Matches"
 	},
 	"17": {
-		"keeper_Player": "Gregor Kobel\\Gregor-Kobel",
+		"keeper_Player": "Gregor Kobel\\cd59b9df",
 		"keeper_Nation": "ch SUI",
 		"keeper_Pos": "GK",
 		"keeper_Squad": "Stuttgart",
@@ -1036,7 +1036,7 @@
 		"keeper_Matches": "Matches",
 		"code": "cd59b9df",
 		"url": "/en/players/cd59b9df/Gregor-Kobel",
-		"keeper_adv_Player": "Gregor Kobel\\Gregor-Kobel",
+		"keeper_adv_Player": "Gregor Kobel\\cd59b9df",
 		"keeper_adv_Nation": "ch SUI",
 		"keeper_adv_Pos": "GK",
 		"keeper_adv_Squad": "Stuttgart",
@@ -1058,7 +1058,7 @@
 		"keeper_adv_Att__1": 940,
 		"keeper_adv_Thr": 200,
 		"keeper_adv_Launch%": 29.5,
-		"keeper_adv_AvgLen": 30.2,
+		"keeper_adv_AvgLen": 30.1,
 		"keeper_adv_Att__2": 276,
 		"keeper_adv_Launch%__1": 21.7,
 		"keeper_adv_AvgLen__1": 25.3,
@@ -1071,7 +1071,7 @@
 		"keeper_adv_Matches": "Matches"
 	},
 	"18": {
-		"keeper_Player": "Michael Langer\\Michael-Langer",
+		"keeper_Player": "Michael Langer\\d20f088b",
 		"keeper_Nation": "at AUT",
 		"keeper_Pos": "GK",
 		"keeper_Squad": "Schalke 04",
@@ -1099,7 +1099,7 @@
 		"keeper_Matches": "Matches",
 		"code": "d20f088b",
 		"url": "/en/players/d20f088b/Michael-Langer",
-		"keeper_adv_Player": "Michael Langer\\Michael-Langer",
+		"keeper_adv_Player": "Michael Langer\\d20f088b",
 		"keeper_adv_Nation": "at AUT",
 		"keeper_adv_Pos": "GK",
 		"keeper_adv_Squad": "Schalke 04",
@@ -1134,7 +1134,7 @@
 		"keeper_adv_Matches": "Matches"
 	},
 	"19": {
-		"keeper_Player": "Niklas Lomb\\Niklas-Lomb",
+		"keeper_Player": "Niklas Lomb\\9321b8ed",
 		"keeper_Nation": "de GER",
 		"keeper_Pos": "GK",
 		"keeper_Squad": "Leverkusen",
@@ -1162,7 +1162,7 @@
 		"keeper_Matches": "Matches",
 		"code": "9321b8ed",
 		"url": "/en/players/9321b8ed/Niklas-Lomb",
-		"keeper_adv_Player": "Niklas Lomb\\Niklas-Lomb",
+		"keeper_adv_Player": "Niklas Lomb\\9321b8ed",
 		"keeper_adv_Nation": "de GER",
 		"keeper_adv_Pos": "GK",
 		"keeper_adv_Squad": "Leverkusen",
@@ -1197,7 +1197,7 @@
 		"keeper_adv_Matches": "Matches"
 	},
 	"20": {
-		"keeper_Player": "Andreas Luthe\\Andreas-Luthe",
+		"keeper_Player": "Andreas Luthe\\7fe12375",
 		"keeper_Nation": "de GER",
 		"keeper_Pos": "GK",
 		"keeper_Squad": "Union Berlin",
@@ -1225,7 +1225,7 @@
 		"keeper_Matches": "Matches",
 		"code": "7fe12375",
 		"url": "/en/players/7fe12375/Andreas-Luthe",
-		"keeper_adv_Player": "Andreas Luthe\\Andreas-Luthe",
+		"keeper_adv_Player": "Andreas Luthe\\7fe12375",
 		"keeper_adv_Nation": "de GER",
 		"keeper_adv_Pos": "GK",
 		"keeper_adv_Squad": "Union Berlin",
@@ -1260,7 +1260,7 @@
 		"keeper_adv_Matches": "Matches"
 	},
 	"21": {
-		"keeper_Player": "Josep Martinez\\Josep-Martinez",
+		"keeper_Player": "Josep Martinez\\11d8aff0",
 		"keeper_Nation": "es ESP",
 		"keeper_Pos": "GK",
 		"keeper_Squad": "RB Leipzig",
@@ -1288,7 +1288,7 @@
 		"keeper_Matches": "Matches",
 		"code": "11d8aff0",
 		"url": "/en/players/11d8aff0/Josep-Martinez",
-		"keeper_adv_Player": "Josep Martinez\\Josep-Martinez",
+		"keeper_adv_Player": "Josep Martinez\\11d8aff0",
 		"keeper_adv_Nation": "es ESP",
 		"keeper_adv_Pos": "GK",
 		"keeper_adv_Squad": "RB Leipzig",
@@ -1323,7 +1323,7 @@
 		"keeper_adv_Matches": "Matches"
 	},
 	"22": {
-		"keeper_Player": "Florian Müller\\Florian-Muller",
+		"keeper_Player": "Florian Müller\\cbac6ec9",
 		"keeper_Nation": "de GER",
 		"keeper_Pos": "GK",
 		"keeper_Squad": "Freiburg",
@@ -1351,7 +1351,7 @@
 		"keeper_Matches": "Matches",
 		"code": "cbac6ec9",
 		"url": "/en/players/cbac6ec9/Florian-Muller",
-		"keeper_adv_Player": "Florian Müller\\Florian-Muller",
+		"keeper_adv_Player": "Florian Müller\\cbac6ec9",
 		"keeper_adv_Nation": "de GER",
 		"keeper_adv_Pos": "GK",
 		"keeper_adv_Squad": "Freiburg",
@@ -1386,7 +1386,7 @@
 		"keeper_adv_Matches": "Matches"
 	},
 	"23": {
-		"keeper_Player": "Manuel Neuer\\Manuel-Neuer",
+		"keeper_Player": "Manuel Neuer\\8778c910",
 		"keeper_Nation": "de GER",
 		"keeper_Pos": "GK",
 		"keeper_Squad": "Bayern Munich",
@@ -1414,7 +1414,7 @@
 		"keeper_Matches": "Matches",
 		"code": "8778c910",
 		"url": "/en/players/8778c910/Manuel-Neuer",
-		"keeper_adv_Player": "Manuel Neuer\\Manuel-Neuer",
+		"keeper_adv_Player": "Manuel Neuer\\8778c910",
 		"keeper_adv_Nation": "de GER",
 		"keeper_adv_Pos": "GK",
 		"keeper_adv_Squad": "Bayern Munich",
@@ -1433,8 +1433,8 @@
 		"keeper_adv_Cmp": 239,
 		"keeper_adv_Att": 391,
 		"keeper_adv_Cmp%": 61.1,
-		"keeper_adv_Att__1": 1130,
-		"keeper_adv_Thr": 188,
+		"keeper_adv_Att__1": 1131,
+		"keeper_adv_Thr": 189,
 		"keeper_adv_Launch%": 30.9,
 		"keeper_adv_AvgLen": 32.1,
 		"keeper_adv_Att__2": 186,
@@ -1449,7 +1449,7 @@
 		"keeper_adv_Matches": "Matches"
 	},
 	"24": {
-		"keeper_Player": "Alexander Nübel\\Alexander-Nubel",
+		"keeper_Player": "Alexander Nübel\\afb0c500",
 		"keeper_Nation": "de GER",
 		"keeper_Pos": "GK",
 		"keeper_Squad": "Bayern Munich",
@@ -1477,7 +1477,7 @@
 		"keeper_Matches": "Matches",
 		"code": "afb0c500",
 		"url": "/en/players/afb0c500/Alexander-Nubel",
-		"keeper_adv_Player": "Alexander Nübel\\Alexander-Nubel",
+		"keeper_adv_Player": "Alexander Nübel\\afb0c500",
 		"keeper_adv_Nation": "de GER",
 		"keeper_adv_Pos": "GK",
 		"keeper_adv_Squad": "Bayern Munich",
@@ -1512,7 +1512,7 @@
 		"keeper_adv_Matches": "Matches"
 	},
 	"25": {
-		"keeper_Player": "Stefan Ortega\\Stefan-Ortega",
+		"keeper_Player": "Stefan Ortega\\c1242d4e",
 		"keeper_Nation": "de GER",
 		"keeper_Pos": "GK",
 		"keeper_Squad": "Arminia",
@@ -1540,7 +1540,7 @@
 		"keeper_Matches": "Matches",
 		"code": "c1242d4e",
 		"url": "/en/players/c1242d4e/Stefan-Ortega",
-		"keeper_adv_Player": "Stefan Ortega\\Stefan-Ortega",
+		"keeper_adv_Player": "Stefan Ortega\\c1242d4e",
 		"keeper_adv_Nation": "de GER",
 		"keeper_adv_Pos": "GK",
 		"keeper_adv_Squad": "Arminia",
@@ -1575,7 +1575,7 @@
 		"keeper_adv_Matches": "Matches"
 	},
 	"26": {
-		"keeper_Player": "Jiří Pavlenka\\Jiri-Pavlenka",
+		"keeper_Player": "Jiří Pavlenka\\0a1cb833",
 		"keeper_Nation": "cz CZE",
 		"keeper_Pos": "GK",
 		"keeper_Squad": "Werder Bremen",
@@ -1603,7 +1603,7 @@
 		"keeper_Matches": "Matches",
 		"code": "0a1cb833",
 		"url": "/en/players/0a1cb833/Jiri-Pavlenka",
-		"keeper_adv_Player": "Jiří Pavlenka\\Jiri-Pavlenka",
+		"keeper_adv_Player": "Jiří Pavlenka\\0a1cb833",
 		"keeper_adv_Nation": "cz CZE",
 		"keeper_adv_Pos": "GK",
 		"keeper_adv_Squad": "Werder Bremen",
@@ -1638,7 +1638,7 @@
 		"keeper_adv_Matches": "Matches"
 	},
 	"27": {
-		"keeper_Player": "Philipp Pentke\\Philipp-Pentke",
+		"keeper_Player": "Philipp Pentke\\c41f7379",
 		"keeper_Nation": "de GER",
 		"keeper_Pos": "GK",
 		"keeper_Squad": "Hoffenheim",
@@ -1666,7 +1666,7 @@
 		"keeper_Matches": "Matches",
 		"code": "c41f7379",
 		"url": "/en/players/c41f7379/Philipp-Pentke",
-		"keeper_adv_Player": "Philipp Pentke\\Philipp-Pentke",
+		"keeper_adv_Player": "Philipp Pentke\\c41f7379",
 		"keeper_adv_Nation": "de GER",
 		"keeper_adv_Pos": "GK",
 		"keeper_adv_Squad": "Hoffenheim",
@@ -1678,10 +1678,10 @@
 		"keeper_adv_FK": 1,
 		"keeper_adv_CK": 0,
 		"keeper_adv_OG": 0,
-		"keeper_adv_PSxG": 4.6,
-		"keeper_adv_PSxG/SoT": 0.35,
-		"keeper_adv_PSxG+/-": "+1.6",
-		"keeper_adv_/90": "+0.53",
+		"keeper_adv_PSxG": 5,
+		"keeper_adv_PSxG/SoT": 0.38,
+		"keeper_adv_PSxG+/-": "+2.0",
+		"keeper_adv_/90": "+0.66",
 		"keeper_adv_Cmp": 12,
 		"keeper_adv_Att": 25,
 		"keeper_adv_Cmp%": 48,
@@ -1701,7 +1701,7 @@
 		"keeper_adv_Matches": "Matches"
 	},
 	"28": {
-		"keeper_Player": "Pavao Pervan\\Pavao-Pervan",
+		"keeper_Player": "Pavao Pervan\\c89e8aae",
 		"keeper_Nation": "at AUT",
 		"keeper_Pos": "GK",
 		"keeper_Squad": "Wolfsburg",
@@ -1729,7 +1729,7 @@
 		"keeper_Matches": "Matches",
 		"code": "c89e8aae",
 		"url": "/en/players/c89e8aae/Pavao-Pervan",
-		"keeper_adv_Player": "Pavao Pervan\\Pavao-Pervan",
+		"keeper_adv_Player": "Pavao Pervan\\c89e8aae",
 		"keeper_adv_Nation": "at AUT",
 		"keeper_adv_Pos": "GK",
 		"keeper_adv_Squad": "Wolfsburg",
@@ -1764,7 +1764,7 @@
 		"keeper_adv_Matches": "Matches"
 	},
 	"29": {
-		"keeper_Player": "Frederik Rønnow\\Frederik-Ronnow",
+		"keeper_Player": "Frederik Rønnow\\a70b8345",
 		"keeper_Nation": "dk DEN",
 		"keeper_Pos": "GK",
 		"keeper_Squad": "Schalke 04",
@@ -1792,7 +1792,7 @@
 		"keeper_Matches": "Matches",
 		"code": "a70b8345",
 		"url": "/en/players/a70b8345/Frederik-Ronnow",
-		"keeper_adv_Player": "Frederik Rønnow\\Frederik-Ronnow",
+		"keeper_adv_Player": "Frederik Rønnow\\a70b8345",
 		"keeper_adv_Nation": "dk DEN",
 		"keeper_adv_Pos": "GK",
 		"keeper_adv_Squad": "Schalke 04",
@@ -1827,7 +1827,7 @@
 		"keeper_adv_Matches": "Matches"
 	},
 	"30": {
-		"keeper_Player": "Alexander Schwolow\\Alexander-Schwolow",
+		"keeper_Player": "Alexander Schwolow\\0d55d942",
 		"keeper_Nation": "de GER",
 		"keeper_Pos": "GK",
 		"keeper_Squad": "Hertha BSC",
@@ -1855,7 +1855,7 @@
 		"keeper_Matches": "Matches",
 		"code": "0d55d942",
 		"url": "/en/players/0d55d942/Alexander-Schwolow",
-		"keeper_adv_Player": "Alexander Schwolow\\Alexander-Schwolow",
+		"keeper_adv_Player": "Alexander Schwolow\\0d55d942",
 		"keeper_adv_Nation": "de GER",
 		"keeper_adv_Pos": "GK",
 		"keeper_adv_Squad": "Hertha BSC",
@@ -1881,16 +1881,16 @@
 		"keeper_adv_Att__2": 219,
 		"keeper_adv_Launch%__1": 56.6,
 		"keeper_adv_AvgLen__1": 46.3,
-		"keeper_adv_Opp": 227,
+		"keeper_adv_Opp": 228,
 		"keeper_adv_Stp": 14,
-		"keeper_adv_Stp%": 6.2,
+		"keeper_adv_Stp%": 6.1,
 		"keeper_adv_#OPA": 12,
 		"keeper_adv_#OPA/90": 0.46,
 		"keeper_adv_AvgDist": 13.7,
 		"keeper_adv_Matches": "Matches"
 	},
 	"31": {
-		"keeper_Player": "Tobias Sippel\\Tobias-Sippel",
+		"keeper_Player": "Tobias Sippel\\0d8a37c2",
 		"keeper_Nation": "de GER",
 		"keeper_Pos": "GK",
 		"keeper_Squad": "M'Gladbach",
@@ -1918,7 +1918,7 @@
 		"keeper_Matches": "Matches",
 		"code": "0d8a37c2",
 		"url": "/en/players/0d8a37c2/Tobias-Sippel",
-		"keeper_adv_Player": "Tobias Sippel\\Tobias-Sippel",
+		"keeper_adv_Player": "Tobias Sippel\\0d8a37c2",
 		"keeper_adv_Nation": "de GER",
 		"keeper_adv_Pos": "GK",
 		"keeper_adv_Squad": "M'Gladbach",
@@ -1953,7 +1953,7 @@
 		"keeper_adv_Matches": "Matches"
 	},
 	"32": {
-		"keeper_Player": "Yann Sommer\\Yann-Sommer",
+		"keeper_Player": "Yann Sommer\\420c18a1",
 		"keeper_Nation": "ch SUI",
 		"keeper_Pos": "GK",
 		"keeper_Squad": "M'Gladbach",
@@ -1981,7 +1981,7 @@
 		"keeper_Matches": "Matches",
 		"code": "420c18a1",
 		"url": "/en/players/420c18a1/Yann-Sommer",
-		"keeper_adv_Player": "Yann Sommer\\Yann-Sommer",
+		"keeper_adv_Player": "Yann Sommer\\420c18a1",
 		"keeper_adv_Nation": "ch SUI",
 		"keeper_adv_Pos": "GK",
 		"keeper_adv_Squad": "M'Gladbach",
@@ -1993,10 +1993,10 @@
 		"keeper_adv_FK": 0,
 		"keeper_adv_CK": 5,
 		"keeper_adv_OG": 0,
-		"keeper_adv_PSxG": 43.3,
+		"keeper_adv_PSxG": 43.1,
 		"keeper_adv_PSxG/SoT": 0.31,
-		"keeper_adv_PSxG+/-": -6.7,
-		"keeper_adv_/90": -0.22,
+		"keeper_adv_PSxG+/-": -6.9,
+		"keeper_adv_/90": -0.23,
 		"keeper_adv_Cmp": 180,
 		"keeper_adv_Att": 390,
 		"keeper_adv_Cmp%": 46.2,
@@ -2016,7 +2016,7 @@
 		"keeper_adv_Matches": "Matches"
 	},
 	"33": {
-		"keeper_Player": "Kevin Trapp\\Kevin-Trapp",
+		"keeper_Player": "Kevin Trapp\\ce17b5eb",
 		"keeper_Nation": "de GER",
 		"keeper_Pos": "GK",
 		"keeper_Squad": "Eint Frankfurt",
@@ -2044,7 +2044,7 @@
 		"keeper_Matches": "Matches",
 		"code": "ce17b5eb",
 		"url": "/en/players/ce17b5eb/Kevin-Trapp",
-		"keeper_adv_Player": "Kevin Trapp\\Kevin-Trapp",
+		"keeper_adv_Player": "Kevin Trapp\\ce17b5eb",
 		"keeper_adv_Nation": "de GER",
 		"keeper_adv_Pos": "GK",
 		"keeper_adv_Squad": "Eint Frankfurt",
@@ -2079,7 +2079,7 @@
 		"keeper_adv_Matches": "Matches"
 	},
 	"34": {
-		"keeper_Player": "Robin Zentner\\Robin-Zentner",
+		"keeper_Player": "Robin Zentner\\5c4bf6ba",
 		"keeper_Nation": "de GER",
 		"keeper_Pos": "GK",
 		"keeper_Squad": "Mainz 05",
@@ -2107,7 +2107,7 @@
 		"keeper_Matches": "Matches",
 		"code": "5c4bf6ba",
 		"url": "/en/players/5c4bf6ba/Robin-Zentner",
-		"keeper_adv_Player": "Robin Zentner\\Robin-Zentner",
+		"keeper_adv_Player": "Robin Zentner\\5c4bf6ba",
 		"keeper_adv_Nation": "de GER",
 		"keeper_adv_Pos": "GK",
 		"keeper_adv_Squad": "Mainz 05",
@@ -2142,7 +2142,7 @@
 		"keeper_adv_Matches": "Matches"
 	},
 	"35": {
-		"keeper_Player": "Ron-Robert Zieler\\Ron-Robert-Zieler",
+		"keeper_Player": "Ron-Robert Zieler\\a0606ae8",
 		"keeper_Nation": "de GER",
 		"keeper_Pos": "GK",
 		"keeper_Squad": "Köln",
@@ -2170,7 +2170,7 @@
 		"keeper_Matches": "Matches",
 		"code": "a0606ae8",
 		"url": "/en/players/a0606ae8/Ron-Robert-Zieler",
-		"keeper_adv_Player": "Ron-Robert Zieler\\Ron-Robert-Zieler",
+		"keeper_adv_Player": "Ron-Robert Zieler\\a0606ae8",
 		"keeper_adv_Nation": "de GER",
 		"keeper_adv_Pos": "GK",
 		"keeper_adv_Squad": "Köln",

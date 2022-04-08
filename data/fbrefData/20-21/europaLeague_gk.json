@@ -1,6 +1,6 @@
 {
 	"1": {
-		"keeper_Player": "Stanislav Agkatsev\\Stanislav-Agkatsev",
+		"keeper_Player": "Stanislav Agkatsev\\b3de00a7",
 		"keeper_Nation": "ru RUS",
 		"keeper_Pos": "GK",
 		"keeper_Squad": "ru Krasnodar",
@@ -28,7 +28,7 @@
 		"keeper_Matches": "Matches",
 		"code": "b3de00a7",
 		"url": "/en/players/b3de00a7/Stanislav-Agkatsev",
-		"keeper_adv_Player": "Stanislav Agkatsev\\Stanislav-Agkatsev",
+		"keeper_adv_Player": "Stanislav Agkatsev\\b3de00a7",
 		"keeper_adv_Nation": "ru RUS",
 		"keeper_adv_Pos": "GK",
 		"keeper_adv_Squad": "ru Krasnodar",
@@ -63,7 +63,7 @@
 		"keeper_adv_Matches": "Matches"
 	},
 	"2": {
-		"keeper_Player": "Igor Akinfeev\\Igor-Akinfeev",
+		"keeper_Player": "Igor Akinfeev\\42ec696a",
 		"keeper_Nation": "ru RUS",
 		"keeper_Pos": "GK",
 		"keeper_Squad": "ru CSKA Moscow",
@@ -91,7 +91,7 @@
 		"keeper_Matches": "Matches",
 		"code": "42ec696a",
 		"url": "/en/players/42ec696a/Igor-Akinfeev",
-		"keeper_adv_Player": "Igor Akinfeev\\Igor-Akinfeev",
+		"keeper_adv_Player": "Igor Akinfeev\\42ec696a",
 		"keeper_adv_Nation": "ru RUS",
 		"keeper_adv_Pos": "GK",
 		"keeper_adv_Squad": "ru CSKA Moscow",
@@ -126,7 +126,7 @@
 		"keeper_adv_Matches": "Matches"
 	},
 	"3": {
-		"keeper_Player": "Rúnar Alex Rúnarsson\\Runar-Alex-Runarsson",
+		"keeper_Player": "Rúnar Alex Rúnarsson\\8fa8f8d2",
 		"keeper_Nation": "is ISL",
 		"keeper_Pos": "GK",
 		"keeper_Squad": "eng Arsenal",
@@ -154,7 +154,7 @@
 		"keeper_Matches": "Matches",
 		"code": "8fa8f8d2",
 		"url": "/en/players/8fa8f8d2/Runar-Alex-Runarsson",
-		"keeper_adv_Player": "Rúnar Alex Rúnarsson\\Runar-Alex-Runarsson",
+		"keeper_adv_Player": "Rúnar Alex Rúnarsson\\8fa8f8d2",
 		"keeper_adv_Nation": "is ISL",
 		"keeper_adv_Pos": "GK",
 		"keeper_adv_Squad": "eng Arsenal",
@@ -189,7 +189,7 @@
 		"keeper_adv_Matches": "Matches"
 	},
 	"4": {
-		"keeper_Player": "Miguel Ángel Moyá\\Miguel-Angel-Moya",
+		"keeper_Player": "Miguel Ángel Moyá\\011d8c56",
 		"keeper_Nation": "es ESP",
 		"keeper_Pos": "GK",
 		"keeper_Squad": "es Real Sociedad",
@@ -217,7 +217,7 @@
 		"keeper_Matches": "Matches",
 		"code": "011d8c56",
 		"url": "/en/players/011d8c56/Miguel-Angel-Moya",
-		"keeper_adv_Player": "Miguel Ángel Moyá\\Miguel-Angel-Moya",
+		"keeper_adv_Player": "Miguel Ángel Moyá\\011d8c56",
 		"keeper_adv_Nation": "es ESP",
 		"keeper_adv_Pos": "GK",
 		"keeper_adv_Squad": "es Real Sociedad",
@@ -252,7 +252,7 @@
 		"keeper_adv_Matches": "Matches"
 	},
 	"5": {
-		"keeper_Player": "Sergio Asenjo\\Sergio-Asenjo",
+		"keeper_Player": "Sergio Asenjo\\9f0ea33f",
 		"keeper_Nation": "es ESP",
 		"keeper_Pos": "GK",
 		"keeper_Squad": "es Villarreal",
@@ -280,7 +280,7 @@
 		"keeper_Matches": "Matches",
 		"code": "9f0ea33f",
 		"url": "/en/players/9f0ea33f/Sergio-Asenjo",
-		"keeper_adv_Player": "Sergio Asenjo\\Sergio-Asenjo",
+		"keeper_adv_Player": "Sergio Asenjo\\9f0ea33f",
 		"keeper_adv_Nation": "es ESP",
 		"keeper_adv_Pos": "GK",
 		"keeper_adv_Squad": "es Villarreal",
@@ -315,7 +315,7 @@
 		"keeper_adv_Matches": "Matches"
 	},
 	"6": {
-		"keeper_Player": "Giorgos Athanasiadis\\Giorgos-Athanasiadis",
+		"keeper_Player": "Giorgos Athanasiadis\\55b93ae0",
 		"keeper_Nation": "gr GRE",
 		"keeper_Pos": "GK",
 		"keeper_Squad": "gr AEK Athens",
@@ -343,7 +343,7 @@
 		"keeper_Matches": "Matches",
 		"code": "55b93ae0",
 		"url": "/en/players/55b93ae0/Giorgos-Athanasiadis",
-		"keeper_adv_Player": "Giorgos Athanasiadis\\Giorgos-Athanasiadis",
+		"keeper_adv_Player": "Giorgos Athanasiadis\\55b93ae0",
 		"keeper_adv_Nation": "gr GRE",
 		"keeper_adv_Pos": "GK",
 		"keeper_adv_Squad": "gr AEK Athens",
@@ -378,10 +378,10 @@
 		"keeper_adv_Matches": "Matches"
 	},
 	"7": {
-		"keeper_Player": "Scott Bain\\Scott-Bain",
-		"keeper_Nation": "sco SCO",
+		"keeper_Player": "Scott Bain\\56901a62",
+		"keeper_Nation": "sct SCO",
 		"keeper_Pos": "GK",
-		"keeper_Squad": "sco Celtic",
+		"keeper_Squad": "sct Celtic",
 		"keeper_Age": 28,
 		"keeper_Born": 1991,
 		"keeper_MP": 3,
@@ -406,10 +406,10 @@
 		"keeper_Matches": "Matches",
 		"code": "56901a62",
 		"url": "/en/players/56901a62/Scott-Bain",
-		"keeper_adv_Player": "Scott Bain\\Scott-Bain",
-		"keeper_adv_Nation": "sco SCO",
+		"keeper_adv_Player": "Scott Bain\\56901a62",
+		"keeper_adv_Nation": "sct SCO",
 		"keeper_adv_Pos": "GK",
-		"keeper_adv_Squad": "sco Celtic",
+		"keeper_adv_Squad": "sct Celtic",
 		"keeper_adv_Age": 28,
 		"keeper_adv_Born": 1991,
 		"keeper_adv_90s": 3,
@@ -441,7 +441,7 @@
 		"keeper_adv_Matches": "Matches"
 	},
 	"8": {
-		"keeper_Player": "Cristian Bălgrădean\\Cristian-Balgradean",
+		"keeper_Player": "Cristian Bălgrădean\\60a6fe9c",
 		"keeper_Nation": "ro ROU",
 		"keeper_Pos": "GK",
 		"keeper_Squad": "ro CFR Cluj",
@@ -469,7 +469,7 @@
 		"keeper_Matches": "Matches",
 		"code": "60a6fe9c",
 		"url": "/en/players/60a6fe9c/Cristian-Balgradean",
-		"keeper_adv_Player": "Cristian Bălgrădean\\Cristian-Balgradean",
+		"keeper_adv_Player": "Cristian Bălgrădean\\60a6fe9c",
 		"keeper_adv_Nation": "ro ROU",
 		"keeper_adv_Pos": "GK",
 		"keeper_adv_Squad": "ro CFR Cluj",
@@ -504,7 +504,7 @@
 		"keeper_adv_Matches": "Matches"
 	},
 	"9": {
-		"keeper_Player": "David von Ballmoos\\David-von-Ballmoos",
+		"keeper_Player": "David von Ballmoos\\f7b10c66",
 		"keeper_Nation": "ch SUI",
 		"keeper_Pos": "GK",
 		"keeper_Squad": "ch Young Boys",
@@ -532,7 +532,7 @@
 		"keeper_Matches": "Matches",
 		"code": "f7b10c66",
 		"url": "/en/players/f7b10c66/David-von-Ballmoos",
-		"keeper_adv_Player": "David von Ballmoos\\David-von-Ballmoos",
+		"keeper_adv_Player": "David von Ballmoos\\f7b10c66",
 		"keeper_adv_Nation": "ch SUI",
 		"keeper_adv_Pos": "GK",
 		"keeper_adv_Squad": "ch Young Boys",
@@ -567,10 +567,10 @@
 		"keeper_adv_Matches": "Matches"
 	},
 	"10": {
-		"keeper_Player": "Vasilios Barkas\\Vasilios-Barkas",
+		"keeper_Player": "Vasilios Barkas\\c2e41cfb",
 		"keeper_Nation": "gr GRE",
 		"keeper_Pos": "GK",
-		"keeper_Squad": "sco Celtic",
+		"keeper_Squad": "sct Celtic",
 		"keeper_Age": 26,
 		"keeper_Born": 1994,
 		"keeper_MP": 2,
@@ -595,10 +595,10 @@
 		"keeper_Matches": "Matches",
 		"code": "c2e41cfb",
 		"url": "/en/players/c2e41cfb/Vasilios-Barkas",
-		"keeper_adv_Player": "Vasilios Barkas\\Vasilios-Barkas",
+		"keeper_adv_Player": "Vasilios Barkas\\c2e41cfb",
 		"keeper_adv_Nation": "gr GRE",
 		"keeper_adv_Pos": "GK",
-		"keeper_adv_Squad": "sco Celtic",
+		"keeper_adv_Squad": "sct Celtic",
 		"keeper_adv_Age": 26,
 		"keeper_adv_Born": 1994,
 		"keeper_adv_90s": 2,
@@ -630,7 +630,7 @@
 		"keeper_adv_Matches": "Matches"
 	},
 	"11": {
-		"keeper_Player": "Oliver Baumann\\Oliver-Baumann",
+		"keeper_Player": "Oliver Baumann\\47064058",
 		"keeper_Nation": "de GER",
 		"keeper_Pos": "GK",
 		"keeper_Squad": "de Hoffenheim",
@@ -658,7 +658,7 @@
 		"keeper_Matches": "Matches",
 		"code": "47064058",
 		"url": "/en/players/47064058/Oliver-Baumann",
-		"keeper_adv_Player": "Oliver Baumann\\Oliver-Baumann",
+		"keeper_adv_Player": "Oliver Baumann\\47064058",
 		"keeper_adv_Nation": "de GER",
 		"keeper_adv_Pos": "GK",
 		"keeper_adv_Squad": "de Hoffenheim",
@@ -693,7 +693,7 @@
 		"keeper_adv_Matches": "Matches"
 	},
 	"12": {
-		"keeper_Player": "Filip Bednarek\\Filip-Bednarek",
+		"keeper_Player": "Filip Bednarek\\93b95f72",
 		"keeper_Nation": "pl POL",
 		"keeper_Pos": "GK",
 		"keeper_Squad": "pl Lech Poznań",
@@ -721,7 +721,7 @@
 		"keeper_Matches": "Matches",
 		"code": "93b95f72",
 		"url": "/en/players/93b95f72/Filip-Bednarek",
-		"keeper_adv_Player": "Filip Bednarek\\Filip-Bednarek",
+		"keeper_adv_Player": "Filip Bednarek\\93b95f72",
 		"keeper_adv_Nation": "pl POL",
 		"keeper_adv_Pos": "GK",
 		"keeper_adv_Squad": "pl Lech Poznań",
@@ -740,9 +740,9 @@
 		"keeper_adv_Cmp": 26,
 		"keeper_adv_Att": 77,
 		"keeper_adv_Cmp%": 33.8,
-		"keeper_adv_Att__1": 183,
-		"keeper_adv_Thr": 28,
-		"keeper_adv_Launch%": 30.1,
+		"keeper_adv_Att__1": 184,
+		"keeper_adv_Thr": 29,
+		"keeper_adv_Launch%": 29.9,
 		"keeper_adv_AvgLen": 33.1,
 		"keeper_adv_Att__2": 55,
 		"keeper_adv_Launch%__1": 40,
@@ -752,11 +752,11 @@
 		"keeper_adv_Stp%": 5.4,
 		"keeper_adv_#OPA": 0,
 		"keeper_adv_#OPA/90": 0,
-		"keeper_adv_AvgDist": 10.3,
+		"keeper_adv_AvgDist": 10.6,
 		"keeper_adv_Matches": "Matches"
 	},
 	"13": {
-		"keeper_Player": "Alireza Beiranvand\\Alireza-Beiranvand",
+		"keeper_Player": "Alireza Beiranvand\\6ca0b04a",
 		"keeper_Nation": "ir IRN",
 		"keeper_Pos": "GK",
 		"keeper_Squad": "be Antwerp",
@@ -784,7 +784,7 @@
 		"keeper_Matches": "Matches",
 		"code": "6ca0b04a",
 		"url": "/en/players/6ca0b04a/Alireza-Beiranvand",
-		"keeper_adv_Player": "Alireza Beiranvand\\Alireza-Beiranvand",
+		"keeper_adv_Player": "Alireza Beiranvand\\6ca0b04a",
 		"keeper_adv_Nation": "ir IRN",
 		"keeper_adv_Pos": "GK",
 		"keeper_adv_Squad": "be Antwerp",
@@ -819,7 +819,7 @@
 		"keeper_adv_Matches": "Matches"
 	},
 	"14": {
-		"keeper_Player": "Walter Benítez\\Walter-Benitez",
+		"keeper_Player": "Walter Benítez\\8a2248b4",
 		"keeper_Nation": "ar ARG",
 		"keeper_Pos": "GK",
 		"keeper_Squad": "fr Nice",
@@ -847,7 +847,7 @@
 		"keeper_Matches": "Matches",
 		"code": "8a2248b4",
 		"url": "/en/players/8a2248b4/Walter-Benitez",
-		"keeper_adv_Player": "Walter Benítez\\Walter-Benitez",
+		"keeper_adv_Player": "Walter Benítez\\8a2248b4",
 		"keeper_adv_Nation": "ar ARG",
 		"keeper_adv_Pos": "GK",
 		"keeper_adv_Squad": "fr Nice",
@@ -882,7 +882,7 @@
 		"keeper_adv_Matches": "Matches"
 	},
 	"15": {
-		"keeper_Player": "Justin Bijlow\\Justin-Bijlow",
+		"keeper_Player": "Justin Bijlow\\53d93280",
 		"keeper_Nation": "nl NED",
 		"keeper_Pos": "GK",
 		"keeper_Squad": "nl Feyenoord",
@@ -910,7 +910,7 @@
 		"keeper_Matches": "Matches",
 		"code": "53d93280",
 		"url": "/en/players/53d93280/Justin-Bijlow",
-		"keeper_adv_Player": "Justin Bijlow\\Justin-Bijlow",
+		"keeper_adv_Player": "Justin Bijlow\\53d93280",
 		"keeper_adv_Nation": "nl NED",
 		"keeper_adv_Pos": "GK",
 		"keeper_adv_Squad": "nl Feyenoord",
@@ -945,7 +945,7 @@
 		"keeper_adv_Matches": "Matches"
 	},
 	"16": {
-		"keeper_Player": "Marco Bizot\\Marco-Bizot",
+		"keeper_Player": "Marco Bizot\\3d214e5f",
 		"keeper_Nation": "nl NED",
 		"keeper_Pos": "GK",
 		"keeper_Squad": "nl AZ Alkmaar",
@@ -973,7 +973,7 @@
 		"keeper_Matches": "Matches",
 		"code": "3d214e5f",
 		"url": "/en/players/3d214e5f/Marco-Bizot",
-		"keeper_adv_Player": "Marco Bizot\\Marco-Bizot",
+		"keeper_adv_Player": "Marco Bizot\\3d214e5f",
 		"keeper_adv_Nation": "nl NED",
 		"keeper_adv_Pos": "GK",
 		"keeper_adv_Squad": "nl AZ Alkmaar",
@@ -1008,7 +1008,7 @@
 		"keeper_adv_Matches": "Matches"
 	},
 	"17": {
-		"keeper_Player": "Arnaud Bodart\\Arnaud-Bodart",
+		"keeper_Player": "Arnaud Bodart\\79c536d7",
 		"keeper_Nation": "be BEL",
 		"keeper_Pos": "GK",
 		"keeper_Squad": "be Standard Liège",
@@ -1036,7 +1036,7 @@
 		"keeper_Matches": "Matches",
 		"code": "79c536d7",
 		"url": "/en/players/79c536d7/Arnaud-Bodart",
-		"keeper_adv_Player": "Arnaud Bodart\\Arnaud-Bodart",
+		"keeper_adv_Player": "Arnaud Bodart\\79c536d7",
 		"keeper_adv_Nation": "be BEL",
 		"keeper_adv_Pos": "GK",
 		"keeper_adv_Squad": "be Standard Liège",
@@ -1071,7 +1071,7 @@
 		"keeper_adv_Matches": "Matches"
 	},
 	"18": {
-		"keeper_Player": "Pietro Boer\\Pietro-Boer",
+		"keeper_Player": "Pietro Boer\\b4a98bb4",
 		"keeper_Nation": "it ITA",
 		"keeper_Pos": "GK",
 		"keeper_Squad": "it Roma",
@@ -1099,7 +1099,7 @@
 		"keeper_Matches": "Matches",
 		"code": "b4a98bb4",
 		"url": "/en/players/b4a98bb4/Pietro-Boer",
-		"keeper_adv_Player": "Pietro Boer\\Pietro-Boer",
+		"keeper_adv_Player": "Pietro Boer\\b4a98bb4",
 		"keeper_adv_Nation": "it ITA",
 		"keeper_adv_Pos": "GK",
 		"keeper_adv_Squad": "it Roma",
@@ -1134,7 +1134,7 @@
 		"keeper_adv_Matches": "Matches"
 	},
 	"19": {
-		"keeper_Player": "Sinan Bolat\\Sinan-Bolat",
+		"keeper_Player": "Sinan Bolat\\fe7d8182",
 		"keeper_Nation": "tr TUR",
 		"keeper_Pos": "GK",
 		"keeper_Squad": "be Gent",
@@ -1162,7 +1162,7 @@
 		"keeper_Matches": "Matches",
 		"code": "fe7d8182",
 		"url": "/en/players/fe7d8182/Sinan-Bolat",
-		"keeper_adv_Player": "Sinan Bolat\\Sinan-Bolat",
+		"keeper_adv_Player": "Sinan Bolat\\fe7d8182",
 		"keeper_adv_Nation": "tr TUR",
 		"keeper_adv_Pos": "GK",
 		"keeper_adv_Squad": "be Gent",
@@ -1197,7 +1197,7 @@
 		"keeper_adv_Matches": "Matches"
 	},
 	"20": {
-		"keeper_Player": "Milan Borjan\\Milan-Borjan",
+		"keeper_Player": "Milan Borjan\\5e8936be",
 		"keeper_Nation": "ca CAN",
 		"keeper_Pos": "GK",
 		"keeper_Squad": "rs Red Star",
@@ -1225,7 +1225,7 @@
 		"keeper_Matches": "Matches",
 		"code": "5e8936be",
 		"url": "/en/players/5e8936be/Milan-Borjan",
-		"keeper_adv_Player": "Milan Borjan\\Milan-Borjan",
+		"keeper_adv_Player": "Milan Borjan\\5e8936be",
 		"keeper_adv_Nation": "ca CAN",
 		"keeper_adv_Pos": "GK",
 		"keeper_adv_Squad": "rs Red Star",
@@ -1260,7 +1260,7 @@
 		"keeper_adv_Matches": "Matches"
 	},
 	"21": {
-		"keeper_Player": "Gustavo Busatto\\Gustavo-Busatto",
+		"keeper_Player": "Gustavo Busatto\\afff46e6",
 		"keeper_Nation": "br BRA",
 		"keeper_Pos": "GK",
 		"keeper_Squad": "bg CSKA Sofia",
@@ -1288,7 +1288,7 @@
 		"keeper_Matches": "Matches",
 		"code": "afff46e6",
 		"url": "/en/players/afff46e6/Gustavo-Busatto",
-		"keeper_adv_Player": "Gustavo Busatto\\Gustavo-Busatto",
+		"keeper_adv_Player": "Gustavo Busatto\\afff46e6",
 		"keeper_adv_Nation": "br BRA",
 		"keeper_adv_Pos": "GK",
 		"keeper_adv_Squad": "bg CSKA Sofia",
@@ -1323,7 +1323,7 @@
 		"keeper_adv_Matches": "Matches"
 	},
 	"22": {
-		"keeper_Player": "Heorhiy Bushchan\\Heorhiy-Bushchan",
+		"keeper_Player": "Heorhiy Bushchan\\eb2b33aa",
 		"keeper_Nation": "ua UKR",
 		"keeper_Pos": "GK",
 		"keeper_Squad": "ua Dynamo Kyiv",
@@ -1351,7 +1351,7 @@
 		"keeper_Matches": "Matches",
 		"code": "eb2b33aa",
 		"url": "/en/players/eb2b33aa/Heorhiy-Bushchan",
-		"keeper_adv_Player": "Heorhiy Bushchan\\Heorhiy-Bushchan",
+		"keeper_adv_Player": "Heorhiy Bushchan\\eb2b33aa",
 		"keeper_adv_Nation": "ua UKR",
 		"keeper_adv_Pos": "GK",
 		"keeper_adv_Squad": "ua Dynamo Kyiv",
@@ -1386,7 +1386,7 @@
 		"keeper_adv_Matches": "Matches"
 	},
 	"23": {
-		"keeper_Player": "Jean Butez\\Jean-Butez",
+		"keeper_Player": "Jean Butez\\7f40333d",
 		"keeper_Nation": "fr FRA",
 		"keeper_Pos": "GK",
 		"keeper_Squad": "be Antwerp",
@@ -1414,7 +1414,7 @@
 		"keeper_Matches": "Matches",
 		"code": "7f40333d",
 		"url": "/en/players/7f40333d/Jean-Butez",
-		"keeper_adv_Player": "Jean Butez\\Jean-Butez",
+		"keeper_adv_Player": "Jean Butez\\7f40333d",
 		"keeper_adv_Nation": "fr FRA",
 		"keeper_adv_Pos": "GK",
 		"keeper_adv_Squad": "be Antwerp",
@@ -1449,7 +1449,7 @@
 		"keeper_adv_Matches": "Matches"
 	},
 	"24": {
-		"keeper_Player": "Yoan Cardinale\\Yoan-Cardinale",
+		"keeper_Player": "Yoan Cardinale\\950ff24d",
 		"keeper_Nation": "fr FRA",
 		"keeper_Pos": "GK",
 		"keeper_Squad": "fr Nice",
@@ -1477,7 +1477,7 @@
 		"keeper_Matches": "Matches",
 		"code": "950ff24d",
 		"url": "/en/players/950ff24d/Yoan-Cardinale",
-		"keeper_adv_Player": "Yoan Cardinale\\Yoan-Cardinale",
+		"keeper_adv_Player": "Yoan Cardinale\\950ff24d",
 		"keeper_adv_Nation": "fr FRA",
 		"keeper_adv_Pos": "GK",
 		"keeper_adv_Squad": "fr Nice",
@@ -1512,7 +1512,7 @@
 		"keeper_adv_Matches": "Matches"
 	},
 	"25": {
-		"keeper_Player": "Colin Coosemans\\Colin-Coosemans",
+		"keeper_Player": "Colin Coosemans\\cd7dade5",
 		"keeper_Nation": "be BEL",
 		"keeper_Pos": "GK",
 		"keeper_Squad": "be Gent",
@@ -1540,7 +1540,7 @@
 		"keeper_Matches": "Matches",
 		"code": "cd7dade5",
 		"url": "/en/players/cd7dade5/Colin-Coosemans",
-		"keeper_adv_Player": "Colin Coosemans\\Colin-Coosemans",
+		"keeper_adv_Player": "Colin Coosemans\\cd7dade5",
 		"keeper_adv_Nation": "be BEL",
 		"keeper_adv_Pos": "GK",
 		"keeper_adv_Squad": "be Gent",
@@ -1575,7 +1575,7 @@
 		"keeper_adv_Matches": "Matches"
 	},
 	"26": {
-		"keeper_Player": "Daniel\\Daniel",
+		"keeper_Player": "Daniel\\f94e06da",
 		"keeper_Nation": "br BRA",
 		"keeper_Pos": "GK",
 		"keeper_Squad": "il Maccabi Tel Aviv",
@@ -1603,7 +1603,7 @@
 		"keeper_Matches": "Matches",
 		"code": "f94e06da",
 		"url": "/en/players/f94e06da/Daniel",
-		"keeper_adv_Player": "Daniel\\Daniel",
+		"keeper_adv_Player": "Daniel\\f94e06da",
 		"keeper_adv_Nation": "br BRA",
 		"keeper_adv_Pos": "GK",
 		"keeper_adv_Squad": "il Maccabi Tel Aviv",
@@ -1638,7 +1638,7 @@
 		"keeper_adv_Matches": "Matches"
 	},
 	"27": {
-		"keeper_Player": "Ortwin De Wolf\\Ortwin-De-Wolf",
+		"keeper_Player": "Ortwin De Wolf\\6ce46a59",
 		"keeper_Nation": "be BEL",
 		"keeper_Pos": "GK",
 		"keeper_Squad": "be Antwerp",
@@ -1666,7 +1666,7 @@
 		"keeper_Matches": "Matches",
 		"code": "6ce46a59",
 		"url": "/en/players/6ce46a59/Ortwin-De-Wolf",
-		"keeper_adv_Player": "Ortwin De Wolf\\Ortwin-De-Wolf",
+		"keeper_adv_Player": "Ortwin De Wolf\\6ce46a59",
 		"keeper_adv_Nation": "be BEL",
 		"keeper_adv_Pos": "GK",
 		"keeper_adv_Squad": "be Antwerp",
@@ -1701,7 +1701,7 @@
 		"keeper_adv_Matches": "Matches"
 	},
 	"28": {
-		"keeper_Player": "Gianluigi Donnarumma\\Gianluigi-Donnarumma",
+		"keeper_Player": "Gianluigi Donnarumma\\08f5afaa",
 		"keeper_Nation": "it ITA",
 		"keeper_Pos": "GK",
 		"keeper_Squad": "it Milan",
@@ -1729,7 +1729,7 @@
 		"keeper_Matches": "Matches",
 		"code": "08f5afaa",
 		"url": "/en/players/08f5afaa/Gianluigi-Donnarumma",
-		"keeper_adv_Player": "Gianluigi Donnarumma\\Gianluigi-Donnarumma",
+		"keeper_adv_Player": "Gianluigi Donnarumma\\08f5afaa",
 		"keeper_adv_Nation": "it ITA",
 		"keeper_adv_Pos": "GK",
 		"keeper_adv_Squad": "it Milan",
@@ -1764,7 +1764,7 @@
 		"keeper_adv_Matches": "Matches"
 	},
 	"29": {
-		"keeper_Player": "Aarón Escandell\\Aaron-Escandell",
+		"keeper_Player": "Aarón Escandell\\67669ce7",
 		"keeper_Nation": "es ESP",
 		"keeper_Pos": "GK",
 		"keeper_Squad": "es Granada",
@@ -1792,7 +1792,7 @@
 		"keeper_Matches": "Matches",
 		"code": "67669ce7",
 		"url": "/en/players/67669ce7/Aaron-Escandell",
-		"keeper_adv_Player": "Aarón Escandell\\Aaron-Escandell",
+		"keeper_adv_Player": "Aarón Escandell\\67669ce7",
 		"keeper_adv_Nation": "es ESP",
 		"keeper_adv_Pos": "GK",
 		"keeper_adv_Squad": "es Granada",
@@ -1827,7 +1827,7 @@
 		"keeper_adv_Matches": "Matches"
 	},
 	"30": {
-		"keeper_Player": "Fabiano\\Fabiano",
+		"keeper_Player": "Fabiano\\54bb5c3f",
 		"keeper_Nation": "br BRA",
 		"keeper_Pos": "GK",
 		"keeper_Squad": "cy AC Omonia",
@@ -1855,7 +1855,7 @@
 		"keeper_Matches": "Matches",
 		"code": "54bb5c3f",
 		"url": "/en/players/54bb5c3f/Fabiano",
-		"keeper_adv_Player": "Fabiano\\Fabiano",
+		"keeper_adv_Player": "Fabiano\\54bb5c3f",
 		"keeper_adv_Nation": "br BRA",
 		"keeper_adv_Pos": "GK",
 		"keeper_adv_Squad": "cy AC Omonia",
@@ -1890,7 +1890,7 @@
 		"keeper_adv_Matches": "Matches"
 	},
 	"31": {
-		"keeper_Player": "Guillaume Faivre\\Guillaume-Faivre",
+		"keeper_Player": "Guillaume Faivre\\11c7fa75",
 		"keeper_Nation": "ch SUI",
 		"keeper_Pos": "GK",
 		"keeper_Squad": "ch Young Boys",
@@ -1918,7 +1918,7 @@
 		"keeper_Matches": "Matches",
 		"code": "11c7fa75",
 		"url": "/en/players/11c7fa75/Guillaume-Faivre",
-		"keeper_adv_Player": "Guillaume Faivre\\Guillaume-Faivre",
+		"keeper_adv_Player": "Guillaume Faivre\\11c7fa75",
 		"keeper_adv_Nation": "ch SUI",
 		"keeper_adv_Pos": "GK",
 		"keeper_adv_Squad": "ch Young Boys",
@@ -1953,7 +1953,7 @@
 		"keeper_adv_Matches": "Matches"
 	},
 	"32": {
-		"keeper_Player": "Paul Gartler\\Paul-Gartler",
+		"keeper_Player": "Paul Gartler\\05bffdb1",
 		"keeper_Nation": "at AUT",
 		"keeper_Pos": "GK",
 		"keeper_Squad": "at Rapid Wien",
@@ -1981,7 +1981,7 @@
 		"keeper_Matches": "Matches",
 		"code": "05bffdb1",
 		"url": "/en/players/05bffdb1/Paul-Gartler",
-		"keeper_adv_Player": "Paul Gartler\\Paul-Gartler",
+		"keeper_adv_Player": "Paul Gartler\\05bffdb1",
 		"keeper_adv_Nation": "at AUT",
 		"keeper_adv_Pos": "GK",
 		"keeper_adv_Squad": "at Rapid Wien",
@@ -2016,7 +2016,7 @@
 		"keeper_adv_Matches": "Matches"
 	},
 	"33": {
-		"keeper_Player": "David de Gea\\David-de-Gea",
+		"keeper_Player": "David de Gea\\7ba6d84e",
 		"keeper_Nation": "es ESP",
 		"keeper_Pos": "GK",
 		"keeper_Squad": "eng Manchester Utd",
@@ -2044,7 +2044,7 @@
 		"keeper_Matches": "Matches",
 		"code": "7ba6d84e",
 		"url": "/en/players/7ba6d84e/David-de-Gea",
-		"keeper_adv_Player": "David de Gea\\David-de-Gea",
+		"keeper_adv_Player": "David de Gea\\7ba6d84e",
 		"keeper_adv_Nation": "es ESP",
 		"keeper_adv_Pos": "GK",
 		"keeper_adv_Squad": "eng Manchester Utd",
@@ -2056,10 +2056,10 @@
 		"keeper_adv_FK": 0,
 		"keeper_adv_CK": 0,
 		"keeper_adv_OG": 1,
-		"keeper_adv_PSxG": 8.2,
+		"keeper_adv_PSxG": 7.2,
 		"keeper_adv_PSxG/SoT": 0.32,
-		"keeper_adv_PSxG+/-": -7.8,
-		"keeper_adv_/90": -1.46,
+		"keeper_adv_PSxG+/-": "+2.2",
+		"keeper_adv_/90": "+0.41",
 		"keeper_adv_Cmp": 22,
 		"keeper_adv_Att": 47,
 		"keeper_adv_Cmp%": 46.8,
@@ -2079,7 +2079,7 @@
 		"keeper_adv_Matches": "Matches"
 	},
 	"34": {
-		"keeper_Player": "Yevgeni Gorodov\\Yevgeni-Gorodov",
+		"keeper_Player": "Yevgeni Gorodov\\8b3d765f",
 		"keeper_Nation": "ru RUS",
 		"keeper_Pos": "GK",
 		"keeper_Squad": "ru Krasnodar",
@@ -2107,7 +2107,7 @@
 		"keeper_Matches": "Matches",
 		"code": "8b3d765f",
 		"url": "/en/players/8b3d765f/Yevgeni-Gorodov",
-		"keeper_adv_Player": "Yevgeni Gorodov\\Yevgeni-Gorodov",
+		"keeper_adv_Player": "Yevgeni Gorodov\\8b3d765f",
 		"keeper_adv_Nation": "ru RUS",
 		"keeper_adv_Pos": "GK",
 		"keeper_adv_Squad": "ru Krasnodar",
@@ -2142,7 +2142,7 @@
 		"keeper_adv_Matches": "Matches"
 	},
 	"35": {
-		"keeper_Player": "Joe Hart\\Joe-Hart",
+		"keeper_Player": "Joe Hart\\cb4f24c6",
 		"keeper_Nation": "eng ENG",
 		"keeper_Pos": "GK",
 		"keeper_Squad": "eng Tottenham",
@@ -2170,7 +2170,7 @@
 		"keeper_Matches": "Matches",
 		"code": "cb4f24c6",
 		"url": "/en/players/cb4f24c6/Joe-Hart",
-		"keeper_adv_Player": "Joe Hart\\Joe-Hart",
+		"keeper_adv_Player": "Joe Hart\\cb4f24c6",
 		"keeper_adv_Nation": "eng ENG",
 		"keeper_adv_Pos": "GK",
 		"keeper_adv_Squad": "eng Tottenham",
@@ -2205,7 +2205,7 @@
 		"keeper_adv_Matches": "Matches"
 	},
 	"36": {
-		"keeper_Player": "Lukáš Hasalík\\Lukas-Hasalik",
+		"keeper_Player": "Lukáš Hasalík\\d1274b84",
 		"keeper_Nation": "cz CZE",
 		"keeper_Pos": "GK",
 		"keeper_Squad": "cz Slovan Liberec",
@@ -2233,7 +2233,7 @@
 		"keeper_Matches": "Matches",
 		"code": "d1274b84",
 		"url": "/en/players/d1274b84/Lukas-Hasalik",
-		"keeper_adv_Player": "Lukáš Hasalík\\Lukas-Hasalik",
+		"keeper_adv_Player": "Lukáš Hasalík\\d1274b84",
 		"keeper_adv_Nation": "cz CZE",
 		"keeper_adv_Pos": "GK",
 		"keeper_adv_Squad": "cz Slovan Liberec",
@@ -2268,10 +2268,10 @@
 		"keeper_adv_Matches": "Matches"
 	},
 	"37": {
-		"keeper_Player": "Conor Hazard\\Conor-Hazard",
+		"keeper_Player": "Conor Hazard\\10161491",
 		"keeper_Nation": "nir NIR",
 		"keeper_Pos": "GK",
-		"keeper_Squad": "sco Celtic",
+		"keeper_Squad": "sct Celtic",
 		"keeper_Age": 22,
 		"keeper_Born": 1998,
 		"keeper_MP": 1,
@@ -2296,10 +2296,10 @@
 		"keeper_Matches": "Matches",
 		"code": "10161491",
 		"url": "/en/players/10161491/Conor-Hazard",
-		"keeper_adv_Player": "Conor Hazard\\Conor-Hazard",
+		"keeper_adv_Player": "Conor Hazard\\10161491",
 		"keeper_adv_Nation": "nir NIR",
 		"keeper_adv_Pos": "GK",
-		"keeper_adv_Squad": "sco Celtic",
+		"keeper_adv_Squad": "sct Celtic",
 		"keeper_adv_Age": 22,
 		"keeper_adv_Born": 1998,
 		"keeper_adv_90s": 1,
@@ -2331,7 +2331,7 @@
 		"keeper_adv_Matches": "Matches"
 	},
 	"38": {
-		"keeper_Player": "Milan Heča\\Milan-Heca",
+		"keeper_Player": "Milan Heča\\8f1d4155",
 		"keeper_Nation": "cz CZE",
 		"keeper_Pos": "GK",
 		"keeper_Squad": "cz Sparta Prague",
@@ -2359,7 +2359,7 @@
 		"keeper_Matches": "Matches",
 		"code": "8f1d4155",
 		"url": "/en/players/8f1d4155/Milan-Heca",
-		"keeper_adv_Player": "Milan Heča\\Milan-Heca",
+		"keeper_adv_Player": "Milan Heča\\8f1d4155",
 		"keeper_adv_Nation": "cz CZE",
 		"keeper_adv_Pos": "GK",
 		"keeper_adv_Squad": "cz Sparta Prague",
@@ -2394,7 +2394,7 @@
 		"keeper_adv_Matches": "Matches"
 	},
 	"39": {
-		"keeper_Player": "Dean Henderson\\Dean-Henderson",
+		"keeper_Player": "Dean Henderson\\e5a76dfe",
 		"keeper_Nation": "eng ENG",
 		"keeper_Pos": "GK",
 		"keeper_Squad": "eng Manchester Utd",
@@ -2422,7 +2422,7 @@
 		"keeper_Matches": "Matches",
 		"code": "e5a76dfe",
 		"url": "/en/players/e5a76dfe/Dean-Henderson",
-		"keeper_adv_Player": "Dean Henderson\\Dean-Henderson",
+		"keeper_adv_Player": "Dean Henderson\\e5a76dfe",
 		"keeper_adv_Nation": "eng ENG",
 		"keeper_adv_Pos": "GK",
 		"keeper_adv_Squad": "eng Manchester Utd",
@@ -2457,7 +2457,7 @@
 		"keeper_adv_Matches": "Matches"
 	},
 	"40": {
-		"keeper_Player": "Lukáš Hrádecký\\Lukas-Hradecky",
+		"keeper_Player": "Lukáš Hrádecký\\ad3389d5",
 		"keeper_Nation": "fi FIN",
 		"keeper_Pos": "GK",
 		"keeper_Squad": "de Leverkusen",
@@ -2485,7 +2485,7 @@
 		"keeper_Matches": "Matches",
 		"code": "ad3389d5",
 		"url": "/en/players/ad3389d5/Lukas-Hradecky",
-		"keeper_adv_Player": "Lukáš Hrádecký\\Lukas-Hradecky",
+		"keeper_adv_Player": "Lukáš Hrádecký\\ad3389d5",
 		"keeper_adv_Nation": "fi FIN",
 		"keeper_adv_Pos": "GK",
 		"keeper_adv_Squad": "de Leverkusen",
@@ -2520,7 +2520,7 @@
 		"keeper_adv_Matches": "Matches"
 	},
 	"41": {
-		"keeper_Player": "Plamen Iliev\\Plamen-Iliev",
+		"keeper_Player": "Plamen Iliev\\55bd7d45",
 		"keeper_Nation": "bg BUL",
 		"keeper_Pos": "GK",
 		"keeper_Squad": "bg Ludogorets",
@@ -2548,7 +2548,7 @@
 		"keeper_Matches": "Matches",
 		"code": "55bd7d45",
 		"url": "/en/players/55bd7d45/Plamen-Iliev",
-		"keeper_adv_Player": "Plamen Iliev\\Plamen-Iliev",
+		"keeper_adv_Player": "Plamen Iliev\\55bd7d45",
 		"keeper_adv_Nation": "bg BUL",
 		"keeper_adv_Pos": "GK",
 		"keeper_adv_Squad": "bg Ludogorets",
@@ -2583,7 +2583,7 @@
 		"keeper_adv_Matches": "Matches"
 	},
 	"42": {
-		"keeper_Player": "Milan Knobloch\\Milan-Knobloch",
+		"keeper_Player": "Milan Knobloch\\c585302b",
 		"keeper_Nation": "cz CZE",
 		"keeper_Pos": "GK",
 		"keeper_Squad": "cz Slovan Liberec",
@@ -2611,7 +2611,7 @@
 		"keeper_Matches": "Matches",
 		"code": "c585302b",
 		"url": "/en/players/c585302b/Milan-Knobloch",
-		"keeper_adv_Player": "Milan Knobloch\\Milan-Knobloch",
+		"keeper_adv_Player": "Milan Knobloch\\c585302b",
 		"keeper_adv_Nation": "cz CZE",
 		"keeper_adv_Pos": "GK",
 		"keeper_adv_Squad": "cz Slovan Liberec",
@@ -2646,7 +2646,7 @@
 		"keeper_adv_Matches": "Matches"
 	},
 	"43": {
-		"keeper_Player": "Alexander Kofler\\Alexander-Kofler",
+		"keeper_Player": "Alexander Kofler\\f42e9f3f",
 		"keeper_Nation": "at AUT",
 		"keeper_Pos": "GK",
 		"keeper_Squad": "at Wolfsberger AC",
@@ -2674,7 +2674,7 @@
 		"keeper_Matches": "Matches",
 		"code": "f42e9f3f",
 		"url": "/en/players/f42e9f3f/Alexander-Kofler",
-		"keeper_adv_Player": "Alexander Kofler\\Alexander-Kofler",
+		"keeper_adv_Player": "Alexander Kofler\\f42e9f3f",
 		"keeper_adv_Nation": "at AUT",
 		"keeper_adv_Pos": "GK",
 		"keeper_adv_Squad": "at Wolfsberger AC",
@@ -2709,7 +2709,7 @@
 		"keeper_adv_Matches": "Matches"
 	},
 	"44": {
-		"keeper_Player": "Ondřej Kolář\\Ondrej-Kolar",
+		"keeper_Player": "Ondřej Kolář\\179d2851",
 		"keeper_Nation": "cz CZE",
 		"keeper_Pos": "GK",
 		"keeper_Squad": "cz Slavia Prague",
@@ -2737,7 +2737,7 @@
 		"keeper_Matches": "Matches",
 		"code": "179d2851",
 		"url": "/en/players/179d2851/Ondrej-Kolar",
-		"keeper_adv_Player": "Ondřej Kolář\\Ondrej-Kolar",
+		"keeper_adv_Player": "Ondřej Kolář\\179d2851",
 		"keeper_adv_Nation": "cz CZE",
 		"keeper_adv_Pos": "GK",
 		"keeper_adv_Squad": "cz Slavia Prague",
@@ -2772,7 +2772,7 @@
 		"keeper_adv_Matches": "Matches"
 	},
 	"45": {
-		"keeper_Player": "Manuel Kuttin\\Manuel-Kuttin",
+		"keeper_Player": "Manuel Kuttin\\4c6711e2",
 		"keeper_Nation": "at AUT",
 		"keeper_Pos": "GK",
 		"keeper_Squad": "at Wolfsberger AC",
@@ -2800,7 +2800,7 @@
 		"keeper_Matches": "Matches",
 		"code": "4c6711e2",
 		"url": "/en/players/4c6711e2/Manuel-Kuttin",
-		"keeper_adv_Player": "Manuel Kuttin\\Manuel-Kuttin",
+		"keeper_adv_Player": "Manuel Kuttin\\4c6711e2",
 		"keeper_adv_Nation": "at AUT",
 		"keeper_adv_Pos": "GK",
 		"keeper_adv_Squad": "at Wolfsberger AC",
@@ -2835,7 +2835,7 @@
 		"keeper_adv_Matches": "Matches"
 	},
 	"46": {
-		"keeper_Player": "Helton Leite\\Helton-Leite",
+		"keeper_Player": "Helton Leite\\e8918589",
 		"keeper_Nation": "br BRA",
 		"keeper_Pos": "GK",
 		"keeper_Squad": "pt Benfica",
@@ -2863,7 +2863,7 @@
 		"keeper_Matches": "Matches",
 		"code": "e8918589",
 		"url": "/en/players/e8918589/Helton-Leite",
-		"keeper_adv_Player": "Helton Leite\\Helton-Leite",
+		"keeper_adv_Player": "Helton Leite\\e8918589",
 		"keeper_adv_Nation": "br BRA",
 		"keeper_adv_Pos": "GK",
 		"keeper_adv_Squad": "pt Benfica",
@@ -2898,7 +2898,7 @@
 		"keeper_adv_Matches": "Matches"
 	},
 	"47": {
-		"keeper_Player": "Bernd Leno\\Bernd-Leno",
+		"keeper_Player": "Bernd Leno\\2628fd2b",
 		"keeper_Nation": "de GER",
 		"keeper_Pos": "GK",
 		"keeper_Squad": "eng Arsenal",
@@ -2926,7 +2926,7 @@
 		"keeper_Matches": "Matches",
 		"code": "2628fd2b",
 		"url": "/en/players/2628fd2b/Bernd-Leno",
-		"keeper_adv_Player": "Bernd Leno\\Bernd-Leno",
+		"keeper_adv_Player": "Bernd Leno\\2628fd2b",
 		"keeper_adv_Nation": "de GER",
 		"keeper_adv_Pos": "GK",
 		"keeper_adv_Squad": "eng Arsenal",
@@ -2961,7 +2961,7 @@
 		"keeper_adv_Matches": "Matches"
 	},
 	"48": {
-		"keeper_Player": "Ohad Levita\\Ohad-Levita",
+		"keeper_Player": "Ohad Levita\\47c7a40c",
 		"keeper_Nation": "il ISR",
 		"keeper_Pos": "GK",
 		"keeper_Squad": "il Be'er Sheva",
@@ -2989,7 +2989,7 @@
 		"keeper_Matches": "Matches",
 		"code": "47c7a40c",
 		"url": "/en/players/47c7a40c/Ohad-Levita",
-		"keeper_adv_Player": "Ohad Levita\\Ohad-Levita",
+		"keeper_adv_Player": "Ohad Levita\\47c7a40c",
 		"keeper_adv_Nation": "il ISR",
 		"keeper_adv_Pos": "GK",
 		"keeper_adv_Squad": "il Be'er Sheva",
@@ -3024,7 +3024,7 @@
 		"keeper_adv_Matches": "Matches"
 	},
 	"49": {
-		"keeper_Player": "Andreas Linde\\Andreas-Linde",
+		"keeper_Player": "Andreas Linde\\4d6a842d",
 		"keeper_Nation": "se SWE",
 		"keeper_Pos": "GK",
 		"keeper_Squad": "no Molde",
@@ -3052,7 +3052,7 @@
 		"keeper_Matches": "Matches",
 		"code": "4d6a842d",
 		"url": "/en/players/4d6a842d/Andreas-Linde",
-		"keeper_adv_Player": "Andreas Linde\\Andreas-Linde",
+		"keeper_adv_Player": "Andreas Linde\\4d6a842d",
 		"keeper_adv_Nation": "se SWE",
 		"keeper_adv_Pos": "GK",
 		"keeper_adv_Squad": "no Molde",
@@ -3087,7 +3087,7 @@
 		"keeper_adv_Matches": "Matches"
 	},
 	"50": {
-		"keeper_Player": "Dominik Livaković\\Dominik-Livakovic",
+		"keeper_Player": "Dominik Livaković\\58f077c0",
 		"keeper_Nation": "hr CRO",
 		"keeper_Pos": "GK",
 		"keeper_Squad": "hr Dinamo Zagreb",
@@ -3115,7 +3115,7 @@
 		"keeper_Matches": "Matches",
 		"code": "58f077c0",
 		"url": "/en/players/58f077c0/Dominik-Livakovic",
-		"keeper_adv_Player": "Dominik Livaković\\Dominik-Livakovic",
+		"keeper_adv_Player": "Dominik Livaković\\58f077c0",
 		"keeper_adv_Nation": "hr CRO",
 		"keeper_adv_Pos": "GK",
 		"keeper_adv_Squad": "hr Dinamo Zagreb",
@@ -3150,7 +3150,7 @@
 		"keeper_adv_Matches": "Matches"
 	},
 	"51": {
-		"keeper_Player": "Hugo Lloris\\Hugo-Lloris",
+		"keeper_Player": "Hugo Lloris\\8f62b6ee",
 		"keeper_Nation": "fr FRA",
 		"keeper_Pos": "GK",
 		"keeper_Squad": "eng Tottenham",
@@ -3178,7 +3178,7 @@
 		"keeper_Matches": "Matches",
 		"code": "8f62b6ee",
 		"url": "/en/players/8f62b6ee/Hugo-Lloris",
-		"keeper_adv_Player": "Hugo Lloris\\Hugo-Lloris",
+		"keeper_adv_Player": "Hugo Lloris\\8f62b6ee",
 		"keeper_adv_Nation": "fr FRA",
 		"keeper_adv_Pos": "GK",
 		"keeper_adv_Squad": "eng Tottenham",
@@ -3213,7 +3213,7 @@
 		"keeper_adv_Matches": "Matches"
 	},
 	"52": {
-		"keeper_Player": "Niklas Lomb\\Niklas-Lomb",
+		"keeper_Player": "Niklas Lomb\\9321b8ed",
 		"keeper_Nation": "de GER",
 		"keeper_Pos": "GK",
 		"keeper_Squad": "de Leverkusen",
@@ -3241,7 +3241,7 @@
 		"keeper_Matches": "Matches",
 		"code": "9321b8ed",
 		"url": "/en/players/9321b8ed/Niklas-Lomb",
-		"keeper_adv_Player": "Niklas Lomb\\Niklas-Lomb",
+		"keeper_adv_Player": "Niklas Lomb\\9321b8ed",
 		"keeper_adv_Nation": "de GER",
 		"keeper_adv_Pos": "GK",
 		"keeper_adv_Squad": "de Leverkusen",
@@ -3276,7 +3276,7 @@
 		"keeper_adv_Matches": "Matches"
 	},
 	"53": {
-		"keeper_Player": "Pau López\\Pau-Lopez",
+		"keeper_Player": "Pau López\\20b9f052",
 		"keeper_Nation": "es ESP",
 		"keeper_Pos": "GK",
 		"keeper_Squad": "it Roma",
@@ -3304,7 +3304,7 @@
 		"keeper_Matches": "Matches",
 		"code": "20b9f052",
 		"url": "/en/players/20b9f052/Pau-Lopez",
-		"keeper_adv_Player": "Pau López\\Pau-Lopez",
+		"keeper_adv_Player": "Pau López\\20b9f052",
 		"keeper_adv_Nation": "es ESP",
 		"keeper_adv_Pos": "GK",
 		"keeper_adv_Squad": "it Roma",
@@ -3339,11 +3339,11 @@
 		"keeper_adv_Matches": "Matches"
 	},
 	"54": {
-		"keeper_Player": "Mike Maignan\\Mike-Maignan",
+		"keeper_Player": "Mike Maignan\\fcb38f57",
 		"keeper_Nation": "fr FRA",
 		"keeper_Pos": "GK",
 		"keeper_Squad": "fr Lille",
-		"keeper_Age": 24,
+		"keeper_Age": 25,
 		"keeper_Born": 1995,
 		"keeper_MP": 8,
 		"keeper_Starts": 8,
@@ -3367,11 +3367,11 @@
 		"keeper_Matches": "Matches",
 		"code": "fcb38f57",
 		"url": "/en/players/fcb38f57/Mike-Maignan",
-		"keeper_adv_Player": "Mike Maignan\\Mike-Maignan",
+		"keeper_adv_Player": "Mike Maignan\\fcb38f57",
 		"keeper_adv_Nation": "fr FRA",
 		"keeper_adv_Pos": "GK",
 		"keeper_adv_Squad": "fr Lille",
-		"keeper_adv_Age": 24,
+		"keeper_adv_Age": 25,
 		"keeper_adv_Born": 1995,
 		"keeper_adv_90s": 8,
 		"keeper_adv_GA": 12,
@@ -3402,7 +3402,7 @@
 		"keeper_adv_Matches": "Matches"
 	},
 	"55": {
-		"keeper_Player": "Nick Marsman\\Nick-Marsman",
+		"keeper_Player": "Nick Marsman\\f352799f",
 		"keeper_Nation": "nl NED",
 		"keeper_Pos": "GK",
 		"keeper_Squad": "nl Feyenoord",
@@ -3430,7 +3430,7 @@
 		"keeper_Matches": "Matches",
 		"code": "f352799f",
 		"url": "/en/players/f352799f/Nick-Marsman",
-		"keeper_adv_Player": "Nick Marsman\\Nick-Marsman",
+		"keeper_adv_Player": "Nick Marsman\\f352799f",
 		"keeper_adv_Nation": "nl NED",
 		"keeper_adv_Pos": "GK",
 		"keeper_adv_Squad": "nl Feyenoord",
@@ -3465,7 +3465,7 @@
 		"keeper_adv_Matches": "Matches"
 	},
 	"56": {
-		"keeper_Player": "Matheus\\Matheus",
+		"keeper_Player": "Matheus\\ef3909cd",
 		"keeper_Nation": "br BRA",
 		"keeper_Pos": "GK",
 		"keeper_Squad": "pt Braga",
@@ -3493,7 +3493,7 @@
 		"keeper_Matches": "Matches",
 		"code": "ef3909cd",
 		"url": "/en/players/ef3909cd/Matheus",
-		"keeper_adv_Player": "Matheus\\Matheus",
+		"keeper_adv_Player": "Matheus\\ef3909cd",
 		"keeper_adv_Nation": "br BRA",
 		"keeper_adv_Pos": "GK",
 		"keeper_adv_Squad": "pt Braga",
@@ -3528,7 +3528,7 @@
 		"keeper_adv_Matches": "Matches"
 	},
 	"57": {
-		"keeper_Player": "Aaron McCarey\\Aaron-McCarey",
+		"keeper_Player": "Aaron McCarey\\93db8be8",
 		"keeper_Nation": "ie IRL",
 		"keeper_Pos": "GK",
 		"keeper_Squad": "ie Dundalk",
@@ -3556,7 +3556,7 @@
 		"keeper_Matches": "Matches",
 		"code": "93db8be8",
 		"url": "/en/players/93db8be8/Aaron-McCarey",
-		"keeper_adv_Player": "Aaron McCarey\\Aaron-McCarey",
+		"keeper_adv_Player": "Aaron McCarey\\93db8be8",
 		"keeper_adv_Nation": "ie IRL",
 		"keeper_adv_Pos": "GK",
 		"keeper_adv_Squad": "ie Dundalk",
@@ -3591,10 +3591,10 @@
 		"keeper_adv_Matches": "Matches"
 	},
 	"58": {
-		"keeper_Player": "Allan McGregor\\Allan-McGregor",
-		"keeper_Nation": "sco SCO",
+		"keeper_Player": "Allan McGregor\\f3a97d02",
+		"keeper_Nation": "sct SCO",
 		"keeper_Pos": "GK",
-		"keeper_Squad": "sco Rangers",
+		"keeper_Squad": "sct Rangers",
 		"keeper_Age": 38,
 		"keeper_Born": 1982,
 		"keeper_MP": 9,
@@ -3619,10 +3619,10 @@
 		"keeper_Matches": "Matches",
 		"code": "f3a97d02",
 		"url": "/en/players/f3a97d02/Allan-McGregor",
-		"keeper_adv_Player": "Allan McGregor\\Allan-McGregor",
-		"keeper_adv_Nation": "sco SCO",
+		"keeper_adv_Player": "Allan McGregor\\f3a97d02",
+		"keeper_adv_Nation": "sct SCO",
 		"keeper_adv_Pos": "GK",
-		"keeper_adv_Squad": "sco Rangers",
+		"keeper_adv_Squad": "sct Rangers",
 		"keeper_adv_Age": 38,
 		"keeper_adv_Born": 1982,
 		"keeper_adv_90s": 9,
@@ -3654,10 +3654,10 @@
 		"keeper_adv_Matches": "Matches"
 	},
 	"59": {
-		"keeper_Player": "Jon McLaughlin\\Jon-McLaughlin",
-		"keeper_Nation": "sco SCO",
+		"keeper_Player": "Jon McLaughlin\\3b0108d6",
+		"keeper_Nation": "sct SCO",
 		"keeper_Pos": "GK",
-		"keeper_Squad": "sco Rangers",
+		"keeper_Squad": "sct Rangers",
 		"keeper_Age": 32,
 		"keeper_Born": 1987,
 		"keeper_MP": 1,
@@ -3682,10 +3682,10 @@
 		"keeper_Matches": "Matches",
 		"code": "3b0108d6",
 		"url": "/en/players/3b0108d6/Jon-McLaughlin",
-		"keeper_adv_Player": "Jon McLaughlin\\Jon-McLaughlin",
-		"keeper_adv_Nation": "sco SCO",
+		"keeper_adv_Player": "Jon McLaughlin\\3b0108d6",
+		"keeper_adv_Nation": "sct SCO",
 		"keeper_adv_Pos": "GK",
-		"keeper_adv_Squad": "sco Rangers",
+		"keeper_adv_Squad": "sct Rangers",
 		"keeper_adv_Age": 32,
 		"keeper_adv_Born": 1987,
 		"keeper_adv_90s": 1,
@@ -3717,7 +3717,7 @@
 		"keeper_adv_Matches": "Matches"
 	},
 	"60": {
-		"keeper_Player": "Alex Meret\\Alex-Meret",
+		"keeper_Player": "Alex Meret\\9413b19f",
 		"keeper_Nation": "it ITA",
 		"keeper_Pos": "GK",
 		"keeper_Squad": "it Napoli",
@@ -3745,7 +3745,7 @@
 		"keeper_Matches": "Matches",
 		"code": "9413b19f",
 		"url": "/en/players/9413b19f/Alex-Meret",
-		"keeper_adv_Player": "Alex Meret\\Alex-Meret",
+		"keeper_adv_Player": "Alex Meret\\9413b19f",
 		"keeper_adv_Nation": "it ITA",
 		"keeper_adv_Pos": "GK",
 		"keeper_adv_Squad": "it Napoli",
@@ -3780,7 +3780,7 @@
 		"keeper_adv_Matches": "Matches"
 	},
 	"61": {
-		"keeper_Player": "Simon Mignolet\\Simon-Mignolet",
+		"keeper_Player": "Simon Mignolet\\d436eb94",
 		"keeper_Nation": "be BEL",
 		"keeper_Pos": "GK",
 		"keeper_Squad": "be Club Brugge",
@@ -3808,7 +3808,7 @@
 		"keeper_Matches": "Matches",
 		"code": "d436eb94",
 		"url": "/en/players/d436eb94/Simon-Mignolet",
-		"keeper_adv_Player": "Simon Mignolet\\Simon-Mignolet",
+		"keeper_adv_Player": "Simon Mignolet\\d436eb94",
 		"keeper_adv_Nation": "be BEL",
 		"keeper_adv_Pos": "GK",
 		"keeper_adv_Squad": "be Club Brugge",
@@ -3843,7 +3843,7 @@
 		"keeper_adv_Matches": "Matches"
 	},
 	"62": {
-		"keeper_Player": "Antonio Mirante\\Antonio-Mirante",
+		"keeper_Player": "Antonio Mirante\\30223b33",
 		"keeper_Nation": "it ITA",
 		"keeper_Pos": "GK",
 		"keeper_Squad": "it Roma",
@@ -3871,7 +3871,7 @@
 		"keeper_Matches": "Matches",
 		"code": "30223b33",
 		"url": "/en/players/30223b33/Antonio-Mirante",
-		"keeper_adv_Player": "Antonio Mirante\\Antonio-Mirante",
+		"keeper_adv_Player": "Antonio Mirante\\30223b33",
 		"keeper_adv_Nation": "it ITA",
 		"keeper_adv_Pos": "GK",
 		"keeper_adv_Squad": "it Roma",
@@ -3906,7 +3906,7 @@
 		"keeper_adv_Matches": "Matches"
 	},
 	"63": {
-		"keeper_Player": "Yvon Mvogo\\Yvon-Mvogo",
+		"keeper_Player": "Yvon Mvogo\\dc29b608",
 		"keeper_Nation": "ch SUI",
 		"keeper_Pos": "GK",
 		"keeper_Squad": "nl PSV Eindhoven",
@@ -3934,7 +3934,7 @@
 		"keeper_Matches": "Matches",
 		"code": "dc29b608",
 		"url": "/en/players/dc29b608/Yvon-Mvogo",
-		"keeper_adv_Player": "Yvon Mvogo\\Yvon-Mvogo",
+		"keeper_adv_Player": "Yvon Mvogo\\dc29b608",
 		"keeper_adv_Nation": "ch SUI",
 		"keeper_adv_Pos": "GK",
 		"keeper_adv_Squad": "nl PSV Eindhoven",
@@ -3969,7 +3969,7 @@
 		"keeper_adv_Matches": "Matches"
 	},
 	"64": {
-		"keeper_Player": "Ivan Nevistić\\Ivan-Nevistic",
+		"keeper_Player": "Ivan Nevistić\\cd4959d1",
 		"keeper_Nation": "hr CRO",
 		"keeper_Pos": "GK",
 		"keeper_Squad": "hr Rijeka",
@@ -3997,7 +3997,7 @@
 		"keeper_Matches": "Matches",
 		"code": "cd4959d1",
 		"url": "/en/players/cd4959d1/Ivan-Nevistic",
-		"keeper_adv_Player": "Ivan Nevistić\\Ivan-Nevistic",
+		"keeper_adv_Player": "Ivan Nevistić\\cd4959d1",
 		"keeper_adv_Nation": "hr CRO",
 		"keeper_adv_Pos": "GK",
 		"keeper_adv_Squad": "hr Rijeka",
@@ -4032,7 +4032,7 @@
 		"keeper_adv_Matches": "Matches"
 	},
 	"65": {
-		"keeper_Player": "Filip Nguyen\\Filip-Nguyen",
+		"keeper_Player": "Filip Nguyen\\11f5df14",
 		"keeper_Nation": "cz CZE",
 		"keeper_Pos": "GK",
 		"keeper_Squad": "cz Slovan Liberec",
@@ -4060,7 +4060,7 @@
 		"keeper_Matches": "Matches",
 		"code": "11f5df14",
 		"url": "/en/players/11f5df14/Filip-Nguyen",
-		"keeper_adv_Player": "Filip Nguyen\\Filip-Nguyen",
+		"keeper_adv_Player": "Filip Nguyen\\11f5df14",
 		"keeper_adv_Nation": "cz CZE",
 		"keeper_adv_Pos": "GK",
 		"keeper_adv_Squad": "cz Slovan Liberec",
@@ -4095,7 +4095,7 @@
 		"keeper_adv_Matches": "Matches"
 	},
 	"66": {
-		"keeper_Player": "Florin Niță\\Florin-Nita",
+		"keeper_Player": "Florin Niță\\a9a3b55d",
 		"keeper_Nation": "ro ROU",
 		"keeper_Pos": "GK",
 		"keeper_Squad": "cz Sparta Prague",
@@ -4123,7 +4123,7 @@
 		"keeper_Matches": "Matches",
 		"code": "a9a3b55d",
 		"url": "/en/players/a9a3b55d/Florin-Nita",
-		"keeper_adv_Player": "Florin Niță\\Florin-Nita",
+		"keeper_adv_Player": "Florin Niță\\a9a3b55d",
 		"keeper_adv_Nation": "ro ROU",
 		"keeper_adv_Pos": "GK",
 		"keeper_adv_Squad": "cz Sparta Prague",
@@ -4158,7 +4158,7 @@
 		"keeper_adv_Matches": "Matches"
 	},
 	"67": {
-		"keeper_Player": "David Ospina\\David-Ospina",
+		"keeper_Player": "David Ospina\\82b1198a",
 		"keeper_Nation": "co COL",
 		"keeper_Pos": "GK",
 		"keeper_Squad": "it Napoli",
@@ -4186,7 +4186,7 @@
 		"keeper_Matches": "Matches",
 		"code": "82b1198a",
 		"url": "/en/players/82b1198a/David-Ospina",
-		"keeper_adv_Player": "David Ospina\\David-Ospina",
+		"keeper_adv_Player": "David Ospina\\82b1198a",
 		"keeper_adv_Nation": "co COL",
 		"keeper_adv_Pos": "GK",
 		"keeper_adv_Squad": "it Napoli",
@@ -4221,7 +4221,7 @@
 		"keeper_adv_Matches": "Matches"
 	},
 	"68": {
-		"keeper_Player": "Alexandros Paschalakis\\Alexandros-Paschalakis",
+		"keeper_Player": "Alexandros Paschalakis\\4c5039bd",
 		"keeper_Nation": "gr GRE",
 		"keeper_Pos": "GK",
 		"keeper_Squad": "gr PAOK",
@@ -4249,7 +4249,7 @@
 		"keeper_Matches": "Matches",
 		"code": "4c5039bd",
 		"url": "/en/players/4c5039bd/Alexandros-Paschalakis",
-		"keeper_adv_Player": "Alexandros Paschalakis\\Alexandros-Paschalakis",
+		"keeper_adv_Player": "Alexandros Paschalakis\\4c5039bd",
 		"keeper_adv_Nation": "gr GRE",
 		"keeper_adv_Pos": "GK",
 		"keeper_adv_Squad": "gr PAOK",
@@ -4284,7 +4284,7 @@
 		"keeper_adv_Matches": "Matches"
 	},
 	"69": {
-		"keeper_Player": "Philipp Pentke\\Philipp-Pentke",
+		"keeper_Player": "Philipp Pentke\\c41f7379",
 		"keeper_Nation": "de GER",
 		"keeper_Pos": "GK",
 		"keeper_Squad": "de Hoffenheim",
@@ -4312,7 +4312,7 @@
 		"keeper_Matches": "Matches",
 		"code": "c41f7379",
 		"url": "/en/players/c41f7379/Philipp-Pentke",
-		"keeper_adv_Player": "Philipp Pentke\\Philipp-Pentke",
+		"keeper_adv_Player": "Philipp Pentke\\c41f7379",
 		"keeper_adv_Nation": "de GER",
 		"keeper_adv_Pos": "GK",
 		"keeper_adv_Squad": "de Hoffenheim",
@@ -4347,7 +4347,7 @@
 		"keeper_adv_Matches": "Matches"
 	},
 	"70": {
-		"keeper_Player": "Raz Rahamim\\Raz-Rahamim",
+		"keeper_Player": "Raz Rahamim\\a469d983",
 		"keeper_Nation": "il ISR",
 		"keeper_Pos": "GK",
 		"keeper_Squad": "il Be'er Sheva",
@@ -4375,7 +4375,7 @@
 		"keeper_Matches": "Matches",
 		"code": "a469d983",
 		"url": "/en/players/a469d983/Raz-Rahamim",
-		"keeper_adv_Player": "Raz Rahamim\\Raz-Rahamim",
+		"keeper_adv_Player": "Raz Rahamim\\a469d983",
 		"keeper_adv_Nation": "il ISR",
 		"keeper_adv_Pos": "GK",
 		"keeper_adv_Squad": "il Be'er Sheva",
@@ -4410,7 +4410,7 @@
 		"keeper_adv_Matches": "Matches"
 	},
 	"71": {
-		"keeper_Player": "Álex Remiro\\Alex-Remiro",
+		"keeper_Player": "Álex Remiro\\374ee424",
 		"keeper_Nation": "es ESP",
 		"keeper_Pos": "GK",
 		"keeper_Squad": "es Real Sociedad",
@@ -4438,7 +4438,7 @@
 		"keeper_Matches": "Matches",
 		"code": "374ee424",
 		"url": "/en/players/374ee424/Alex-Remiro",
-		"keeper_adv_Player": "Álex Remiro\\Alex-Remiro",
+		"keeper_adv_Player": "Álex Remiro\\374ee424",
 		"keeper_adv_Nation": "es ESP",
 		"keeper_adv_Pos": "GK",
 		"keeper_adv_Squad": "es Real Sociedad",
@@ -4473,7 +4473,7 @@
 		"keeper_adv_Matches": "Matches"
 	},
 	"72": {
-		"keeper_Player": "Davy Roef\\Davy-Roef",
+		"keeper_Player": "Davy Roef\\6fe2aba3",
 		"keeper_Nation": "be BEL",
 		"keeper_Pos": "GK",
 		"keeper_Squad": "be Gent",
@@ -4501,7 +4501,7 @@
 		"keeper_Matches": "Matches",
 		"code": "6fe2aba3",
 		"url": "/en/players/6fe2aba3/Davy-Roef",
-		"keeper_adv_Player": "Davy Roef\\Davy-Roef",
+		"keeper_adv_Player": "Davy Roef\\6fe2aba3",
 		"keeper_adv_Nation": "be BEL",
 		"keeper_adv_Pos": "GK",
 		"keeper_adv_Squad": "be Gent",
@@ -4536,7 +4536,7 @@
 		"keeper_adv_Matches": "Matches"
 	},
 	"73": {
-		"keeper_Player": "Gary Rogers\\Gary-Rogers",
+		"keeper_Player": "Gary Rogers\\32f7976d",
 		"keeper_Nation": "ie IRL",
 		"keeper_Pos": "GK",
 		"keeper_Squad": "ie Dundalk",
@@ -4564,7 +4564,7 @@
 		"keeper_Matches": "Matches",
 		"code": "32f7976d",
 		"url": "/en/players/32f7976d/Gary-Rogers",
-		"keeper_adv_Player": "Gary Rogers\\Gary-Rogers",
+		"keeper_adv_Player": "Gary Rogers\\32f7976d",
 		"keeper_adv_Nation": "ie IRL",
 		"keeper_adv_Pos": "GK",
 		"keeper_adv_Squad": "ie Dundalk",
@@ -4599,7 +4599,7 @@
 		"keeper_adv_Matches": "Matches"
 	},
 	"74": {
-		"keeper_Player": "Gerónimo Rulli\\Geronimo-Rulli",
+		"keeper_Player": "Gerónimo Rulli\\625c144a",
 		"keeper_Nation": "ar ARG",
 		"keeper_Pos": "GK",
 		"keeper_Squad": "es Villarreal",
@@ -4627,7 +4627,7 @@
 		"keeper_Matches": "Matches",
 		"code": "625c144a",
 		"url": "/en/players/625c144a/Geronimo-Rulli",
-		"keeper_adv_Player": "Gerónimo Rulli\\Geronimo-Rulli",
+		"keeper_adv_Player": "Gerónimo Rulli\\625c144a",
 		"keeper_adv_Nation": "ar ARG",
 		"keeper_adv_Pos": "GK",
 		"keeper_adv_Squad": "es Villarreal",
@@ -4639,10 +4639,10 @@
 		"keeper_adv_FK": 1,
 		"keeper_adv_CK": 1,
 		"keeper_adv_OG": 0,
-		"keeper_adv_PSxG": 8.6,
+		"keeper_adv_PSxG": 7.6,
 		"keeper_adv_PSxG/SoT": 0.25,
-		"keeper_adv_PSxG+/-": -10.4,
-		"keeper_adv_/90": -0.78,
+		"keeper_adv_PSxG+/-": -1.4,
+		"keeper_adv_/90": -0.1,
 		"keeper_adv_Cmp": 86,
 		"keeper_adv_Att": 178,
 		"keeper_adv_Cmp%": 48.3,
@@ -4662,7 +4662,7 @@
 		"keeper_adv_Matches": "Matches"
 	},
 	"75": {
-		"keeper_Player": "José Sá\\Jose-Sa",
+		"keeper_Player": "José Sá\\903b6e8b",
 		"keeper_Nation": "pt POR",
 		"keeper_Pos": "GK",
 		"keeper_Squad": "gr Olympiacos",
@@ -4690,7 +4690,7 @@
 		"keeper_Matches": "Matches",
 		"code": "903b6e8b",
 		"url": "/en/players/903b6e8b/Jose-Sa",
-		"keeper_adv_Player": "José Sá\\Jose-Sa",
+		"keeper_adv_Player": "José Sá\\903b6e8b",
 		"keeper_adv_Nation": "pt POR",
 		"keeper_adv_Pos": "GK",
 		"keeper_adv_Squad": "gr Olympiacos",
@@ -4725,7 +4725,7 @@
 		"keeper_adv_Matches": "Matches"
 	},
 	"76": {
-		"keeper_Player": "Tiago Sá\\Tiago-Sa",
+		"keeper_Player": "Tiago Sá\\fd834d1d",
 		"keeper_Nation": "pt POR",
 		"keeper_Pos": "GK",
 		"keeper_Squad": "pt Braga",
@@ -4753,7 +4753,7 @@
 		"keeper_Matches": "Matches",
 		"code": "fd834d1d",
 		"url": "/en/players/fd834d1d/Tiago-Sa",
-		"keeper_adv_Player": "Tiago Sá\\Tiago-Sa",
+		"keeper_adv_Player": "Tiago Sá\\fd834d1d",
 		"keeper_adv_Nation": "pt POR",
 		"keeper_adv_Pos": "GK",
 		"keeper_adv_Squad": "pt Braga",
@@ -4788,7 +4788,7 @@
 		"keeper_adv_Matches": "Matches"
 	},
 	"77": {
-		"keeper_Player": "Məhəmmədəliyev Şahruddin Maqomedoviç\\Mhmmdliyev-Sahruddin-Maqomedovic",
+		"keeper_Player": "Məhəmmədəliyev Şahruddin Maqomedoviç\\595ccab1",
 		"keeper_Nation": "az AZE",
 		"keeper_Pos": "GK",
 		"keeper_Squad": "az Qarabağ Ağdam",
@@ -4816,7 +4816,7 @@
 		"keeper_Matches": "Matches",
 		"code": "595ccab1",
 		"url": "/en/players/595ccab1/Mhmmdliyev-Sahruddin-Maqomedovic",
-		"keeper_adv_Player": "Məhəmmədəliyev Şahruddin Maqomedoviç\\Mhmmdliyev-Sahruddin-Maqomedovic",
+		"keeper_adv_Player": "Məhəmmədəliyev Şahruddin Maqomedoviç\\595ccab1",
 		"keeper_adv_Nation": "az AZE",
 		"keeper_adv_Pos": "GK",
 		"keeper_adv_Squad": "az Qarabağ Ağdam",
@@ -4851,7 +4851,7 @@
 		"keeper_adv_Matches": "Matches"
 	},
 	"78": {
-		"keeper_Player": "Mamadou Samassa\\Mamadou-Samassa",
+		"keeper_Player": "Mamadou Samassa\\cfe852d8",
 		"keeper_Nation": "ml MLI",
 		"keeper_Pos": "GK",
 		"keeper_Squad": "tr Sivasspor",
@@ -4879,7 +4879,7 @@
 		"keeper_Matches": "Matches",
 		"code": "cfe852d8",
 		"url": "/en/players/cfe852d8/Mamadou-Samassa",
-		"keeper_adv_Player": "Mamadou Samassa\\Mamadou-Samassa",
+		"keeper_adv_Player": "Mamadou Samassa\\cfe852d8",
 		"keeper_adv_Nation": "ml MLI",
 		"keeper_adv_Pos": "GK",
 		"keeper_adv_Squad": "tr Sivasspor",
@@ -4914,7 +4914,7 @@
 		"keeper_adv_Matches": "Matches"
 	},
 	"79": {
-		"keeper_Player": "Grzegorz Sandomierski\\Grzegorz-Sandomierski",
+		"keeper_Player": "Grzegorz Sandomierski\\6a73afe7",
 		"keeper_Nation": "pl POL",
 		"keeper_Pos": "GK",
 		"keeper_Squad": "ro CFR Cluj",
@@ -4942,7 +4942,7 @@
 		"keeper_Matches": "Matches",
 		"code": "6a73afe7",
 		"url": "/en/players/6a73afe7/Grzegorz-Sandomierski",
-		"keeper_adv_Player": "Grzegorz Sandomierski\\Grzegorz-Sandomierski",
+		"keeper_adv_Player": "Grzegorz Sandomierski\\6a73afe7",
 		"keeper_adv_Nation": "pl POL",
 		"keeper_adv_Pos": "GK",
 		"keeper_adv_Squad": "ro CFR Cluj",
@@ -4977,7 +4977,7 @@
 		"keeper_adv_Matches": "Matches"
 	},
 	"80": {
-		"keeper_Player": "Kjell Scherpen\\Kjell-Scherpen",
+		"keeper_Player": "Kjell Scherpen\\f0e4c69e",
 		"keeper_Nation": "nl NED",
 		"keeper_Pos": "GK",
 		"keeper_Squad": "nl Ajax",
@@ -5005,7 +5005,7 @@
 		"keeper_Matches": "Matches",
 		"code": "f0e4c69e",
 		"url": "/en/players/f0e4c69e/Kjell-Scherpen",
-		"keeper_adv_Player": "Kjell Scherpen\\Kjell-Scherpen",
+		"keeper_adv_Player": "Kjell Scherpen\\f0e4c69e",
 		"keeper_adv_Nation": "nl NED",
 		"keeper_adv_Pos": "GK",
 		"keeper_adv_Squad": "nl Ajax",
@@ -5040,7 +5040,7 @@
 		"keeper_adv_Matches": "Matches"
 	},
 	"81": {
-		"keeper_Player": "Alexander Schlager\\Alexander-Schlager",
+		"keeper_Player": "Alexander Schlager\\6fe5c35b",
 		"keeper_Nation": "at AUT",
 		"keeper_Pos": "GK",
 		"keeper_Squad": "at LASK",
@@ -5068,7 +5068,7 @@
 		"keeper_Matches": "Matches",
 		"code": "6fe5c35b",
 		"url": "/en/players/6fe5c35b/Alexander-Schlager",
-		"keeper_adv_Player": "Alexander Schlager\\Alexander-Schlager",
+		"keeper_adv_Player": "Alexander Schlager\\6fe5c35b",
 		"keeper_adv_Nation": "at AUT",
 		"keeper_adv_Pos": "GK",
 		"keeper_adv_Squad": "at LASK",
@@ -5103,7 +5103,7 @@
 		"keeper_adv_Matches": "Matches"
 	},
 	"82": {
-		"keeper_Player": "Kasper Schmeichel\\Kasper-Schmeichel",
+		"keeper_Player": "Kasper Schmeichel\\53af52f3",
 		"keeper_Nation": "dk DEN",
 		"keeper_Pos": "GK",
 		"keeper_Squad": "eng Leicester City",
@@ -5131,7 +5131,7 @@
 		"keeper_Matches": "Matches",
 		"code": "53af52f3",
 		"url": "/en/players/53af52f3/Kasper-Schmeichel",
-		"keeper_adv_Player": "Kasper Schmeichel\\Kasper-Schmeichel",
+		"keeper_adv_Player": "Kasper Schmeichel\\53af52f3",
 		"keeper_adv_Nation": "dk DEN",
 		"keeper_adv_Pos": "GK",
 		"keeper_adv_Squad": "eng Leicester City",
@@ -5166,7 +5166,7 @@
 		"keeper_adv_Matches": "Matches"
 	},
 	"83": {
-		"keeper_Player": "Mykyta Shevchenko\\Mykyta-Shevchenko",
+		"keeper_Player": "Mykyta Shevchenko\\731bf16a",
 		"keeper_Nation": "ua UKR",
 		"keeper_Pos": "GK",
 		"keeper_Squad": "ua Zorya Luhansk",
@@ -5194,7 +5194,7 @@
 		"keeper_Matches": "Matches",
 		"code": "731bf16a",
 		"url": "/en/players/731bf16a/Mykyta-Shevchenko",
-		"keeper_adv_Player": "Mykyta Shevchenko\\Mykyta-Shevchenko",
+		"keeper_adv_Player": "Mykyta Shevchenko\\731bf16a",
 		"keeper_adv_Nation": "ua UKR",
 		"keeper_adv_Pos": "GK",
 		"keeper_adv_Squad": "ua Zorya Luhansk",
@@ -5229,7 +5229,7 @@
 		"keeper_adv_Matches": "Matches"
 	},
 	"84": {
-		"keeper_Player": "Rui Silva\\Rui-Silva",
+		"keeper_Player": "Rui Silva\\ea83bfa6",
 		"keeper_Nation": "pt POR",
 		"keeper_Pos": "GK",
 		"keeper_Squad": "es Granada",
@@ -5257,7 +5257,7 @@
 		"keeper_Matches": "Matches",
 		"code": "ea83bfa6",
 		"url": "/en/players/ea83bfa6/Rui-Silva",
-		"keeper_adv_Player": "Rui Silva\\Rui-Silva",
+		"keeper_adv_Player": "Rui Silva\\ea83bfa6",
 		"keeper_adv_Nation": "pt POR",
 		"keeper_adv_Pos": "GK",
 		"keeper_adv_Squad": "es Granada",
@@ -5292,7 +5292,7 @@
 		"keeper_adv_Matches": "Matches"
 	},
 	"85": {
-		"keeper_Player": "Cican Stankovic\\Cican-Stankovic",
+		"keeper_Player": "Cican Stankovic\\27d902c8",
 		"keeper_Nation": "at AUT",
 		"keeper_Pos": "GK",
 		"keeper_Squad": "at RB Salzburg",
@@ -5320,7 +5320,7 @@
 		"keeper_Matches": "Matches",
 		"code": "27d902c8",
 		"url": "/en/players/27d902c8/Cican-Stankovic",
-		"keeper_adv_Player": "Cican Stankovic\\Cican-Stankovic",
+		"keeper_adv_Player": "Cican Stankovic\\27d902c8",
 		"keeper_adv_Nation": "at AUT",
 		"keeper_adv_Pos": "GK",
 		"keeper_adv_Squad": "at RB Salzburg",
@@ -5355,7 +5355,7 @@
 		"keeper_adv_Matches": "Matches"
 	},
 	"86": {
-		"keeper_Player": "Maarten Stekelenburg\\Maarten-Stekelenburg",
+		"keeper_Player": "Maarten Stekelenburg\\fefce889",
 		"keeper_Nation": "nl NED",
 		"keeper_Pos": "GK",
 		"keeper_Squad": "nl Ajax",
@@ -5383,7 +5383,7 @@
 		"keeper_Matches": "Matches",
 		"code": "fefce889",
 		"url": "/en/players/fefce889/Maarten-Stekelenburg",
-		"keeper_adv_Player": "Maarten Stekelenburg\\Maarten-Stekelenburg",
+		"keeper_adv_Player": "Maarten Stekelenburg\\fefce889",
 		"keeper_adv_Nation": "nl NED",
 		"keeper_adv_Pos": "GK",
 		"keeper_adv_Squad": "nl Ajax",
@@ -5418,7 +5418,7 @@
 		"keeper_adv_Matches": "Matches"
 	},
 	"87": {
-		"keeper_Player": "Vladislav Stoyanov\\Vladislav-Stoyanov",
+		"keeper_Player": "Vladislav Stoyanov\\4a99131a",
 		"keeper_Nation": "bg BUL",
 		"keeper_Pos": "GK",
 		"keeper_Squad": "bg Ludogorets",
@@ -5446,7 +5446,7 @@
 		"keeper_Matches": "Matches",
 		"code": "4a99131a",
 		"url": "/en/players/4a99131a/Vladislav-Stoyanov",
-		"keeper_adv_Player": "Vladislav Stoyanov\\Vladislav-Stoyanov",
+		"keeper_adv_Player": "Vladislav Stoyanov\\4a99131a",
 		"keeper_adv_Nation": "bg BUL",
 		"keeper_adv_Pos": "GK",
 		"keeper_adv_Squad": "bg Ludogorets",
@@ -5481,7 +5481,7 @@
 		"keeper_adv_Matches": "Matches"
 	},
 	"88": {
-		"keeper_Player": "Richard Strebinger\\Richard-Strebinger",
+		"keeper_Player": "Richard Strebinger\\387750b7",
 		"keeper_Nation": "at AUT",
 		"keeper_Pos": "GK",
 		"keeper_Squad": "at Rapid Wien",
@@ -5509,7 +5509,7 @@
 		"keeper_Matches": "Matches",
 		"code": "387750b7",
 		"url": "/en/players/387750b7/Richard-Strebinger",
-		"keeper_adv_Player": "Richard Strebinger\\Richard-Strebinger",
+		"keeper_adv_Player": "Richard Strebinger\\387750b7",
 		"keeper_adv_Nation": "at AUT",
 		"keeper_adv_Pos": "GK",
 		"keeper_adv_Squad": "at Rapid Wien",
@@ -5544,7 +5544,7 @@
 		"keeper_adv_Matches": "Matches"
 	},
 	"89": {
-		"keeper_Player": "Ciprian Tătărușanu\\Ciprian-Tatarusanu",
+		"keeper_Player": "Ciprian Tătărușanu\\b056e3da",
 		"keeper_Nation": "ro ROU",
 		"keeper_Pos": "GK",
 		"keeper_Squad": "it Milan",
@@ -5572,7 +5572,7 @@
 		"keeper_Matches": "Matches",
 		"code": "b056e3da",
 		"url": "/en/players/b056e3da/Ciprian-Tatarusanu",
-		"keeper_adv_Player": "Ciprian Tătărușanu\\Ciprian-Tatarusanu",
+		"keeper_adv_Player": "Ciprian Tătărușanu\\b056e3da",
 		"keeper_adv_Nation": "ro ROU",
 		"keeper_adv_Pos": "GK",
 		"keeper_adv_Squad": "it Milan",
@@ -5607,7 +5607,7 @@
 		"keeper_adv_Matches": "Matches"
 	},
 	"90": {
-		"keeper_Player": "Anatolii Trubin\\Anatolii-Trubin",
+		"keeper_Player": "Anatolii Trubin\\41f0b196",
 		"keeper_Nation": "ua UKR",
 		"keeper_Pos": "GK",
 		"keeper_Squad": "ua Shakhtar",
@@ -5635,7 +5635,7 @@
 		"keeper_Matches": "Matches",
 		"code": "41f0b196",
 		"url": "/en/players/41f0b196/Anatolii-Trubin",
-		"keeper_adv_Player": "Anatolii Trubin\\Anatolii-Trubin",
+		"keeper_adv_Player": "Anatolii Trubin\\41f0b196",
 		"keeper_adv_Nation": "ua UKR",
 		"keeper_adv_Pos": "GK",
 		"keeper_adv_Squad": "ua Shakhtar",
@@ -5670,7 +5670,7 @@
 		"keeper_adv_Matches": "Matches"
 	},
 	"91": {
-		"keeper_Player": "Panagiotis Tsintotas\\Panagiotis-Tsintotas",
+		"keeper_Player": "Panagiotis Tsintotas\\705f5269",
 		"keeper_Nation": "gr GRE",
 		"keeper_Pos": "GK",
 		"keeper_Squad": "gr AEK Athens",
@@ -5698,7 +5698,7 @@
 		"keeper_Matches": "Matches",
 		"code": "705f5269",
 		"url": "/en/players/705f5269/Panagiotis-Tsintotas",
-		"keeper_adv_Player": "Panagiotis Tsintotas\\Panagiotis-Tsintotas",
+		"keeper_adv_Player": "Panagiotis Tsintotas\\705f5269",
 		"keeper_adv_Nation": "gr GRE",
 		"keeper_adv_Pos": "GK",
 		"keeper_adv_Squad": "gr AEK Athens",
@@ -5733,7 +5733,7 @@
 		"keeper_adv_Matches": "Matches"
 	},
 	"92": {
-		"keeper_Player": "Matyáš Vágner\\Matyas-Vagner",
+		"keeper_Player": "Matyáš Vágner\\913329c8",
 		"keeper_Nation": "cz CZE",
 		"keeper_Pos": "GK",
 		"keeper_Squad": "cz Slavia Prague",
@@ -5761,7 +5761,7 @@
 		"keeper_Matches": "Matches",
 		"code": "913329c8",
 		"url": "/en/players/913329c8/Matyas-Vagner",
-		"keeper_adv_Player": "Matyáš Vágner\\Matyas-Vagner",
+		"keeper_adv_Player": "Matyáš Vágner\\913329c8",
 		"keeper_adv_Nation": "cz CZE",
 		"keeper_adv_Pos": "GK",
 		"keeper_adv_Squad": "cz Slavia Prague",
@@ -5796,7 +5796,7 @@
 		"keeper_adv_Matches": "Matches"
 	},
 	"93": {
-		"keeper_Player": "Nikola Vasilj\\Nikola-Vasilj",
+		"keeper_Player": "Nikola Vasilj\\f038585f",
 		"keeper_Nation": "ba BIH",
 		"keeper_Pos": "GK",
 		"keeper_Squad": "ua Zorya Luhansk",
@@ -5824,7 +5824,7 @@
 		"keeper_Matches": "Matches",
 		"code": "f038585f",
 		"url": "/en/players/f038585f/Nikola-Vasilj",
-		"keeper_adv_Player": "Nikola Vasilj\\Nikola-Vasilj",
+		"keeper_adv_Player": "Nikola Vasilj\\f038585f",
 		"keeper_adv_Nation": "ba BIH",
 		"keeper_adv_Pos": "GK",
 		"keeper_adv_Squad": "ua Zorya Luhansk",
@@ -5859,7 +5859,7 @@
 		"keeper_adv_Matches": "Matches"
 	},
 	"94": {
-		"keeper_Player": "Odisseas Vlachodimos\\Odisseas-Vlachodimos",
+		"keeper_Player": "Odisseas Vlachodimos\\03df04ff",
 		"keeper_Nation": "gr GRE",
 		"keeper_Pos": "GK",
 		"keeper_Squad": "pt Benfica",
@@ -5887,7 +5887,7 @@
 		"keeper_Matches": "Matches",
 		"code": "03df04ff",
 		"url": "/en/players/03df04ff/Odisseas-Vlachodimos",
-		"keeper_adv_Player": "Odisseas Vlachodimos\\Odisseas-Vlachodimos",
+		"keeper_adv_Player": "Odisseas Vlachodimos\\03df04ff",
 		"keeper_adv_Nation": "gr GRE",
 		"keeper_adv_Pos": "GK",
 		"keeper_adv_Squad": "pt Benfica",
@@ -5922,8 +5922,8 @@
 		"keeper_adv_Matches": "Matches"
 	},
 	"95": {
-		"keeper_Player": "Danny Ward\\Danny-Ward",
-		"keeper_Nation": "wal WAL",
+		"keeper_Player": "Danny Ward\\d3ce0e89",
+		"keeper_Nation": "wls WAL",
 		"keeper_Pos": "GK",
 		"keeper_Squad": "eng Leicester City",
 		"keeper_Age": 27,
@@ -5950,8 +5950,8 @@
 		"keeper_Matches": "Matches",
 		"code": "d3ce0e89",
 		"url": "/en/players/d3ce0e89/Danny-Ward",
-		"keeper_adv_Player": "Danny Ward\\Danny-Ward",
-		"keeper_adv_Nation": "wal WAL",
+		"keeper_adv_Player": "Danny Ward\\d3ce0e89",
+		"keeper_adv_Nation": "wls WAL",
 		"keeper_adv_Pos": "GK",
 		"keeper_adv_Squad": "eng Leicester City",
 		"keeper_adv_Age": 27,
@@ -5985,7 +5985,7 @@
 		"keeper_adv_Matches": "Matches"
 	},
 	"96": {
-		"keeper_Player": "Alfie Whiteman\\Alfie-Whiteman",
+		"keeper_Player": "Alfie Whiteman\\3f2587ee",
 		"keeper_Nation": "eng ENG",
 		"keeper_Pos": "GK",
 		"keeper_Squad": "eng Tottenham",
@@ -6013,7 +6013,7 @@
 		"keeper_Matches": "Matches",
 		"code": "3f2587ee",
 		"url": "/en/players/3f2587ee/Alfie-Whiteman",
-		"keeper_adv_Player": "Alfie Whiteman\\Alfie-Whiteman",
+		"keeper_adv_Player": "Alfie Whiteman\\3f2587ee",
 		"keeper_adv_Nation": "eng ENG",
 		"keeper_adv_Pos": "GK",
 		"keeper_adv_Squad": "eng Tottenham",
@@ -6048,7 +6048,7 @@
 		"keeper_adv_Matches": "Matches"
 	},
 	"97": {
-		"keeper_Player": "Danijel Zagorac\\Danijel-Zagorac",
+		"keeper_Player": "Danijel Zagorac\\864c362f",
 		"keeper_Nation": "hr CRO",
 		"keeper_Pos": "GK",
 		"keeper_Squad": "hr Dinamo Zagreb",
@@ -6076,7 +6076,7 @@
 		"keeper_Matches": "Matches",
 		"code": "864c362f",
 		"url": "/en/players/864c362f/Danijel-Zagorac",
-		"keeper_adv_Player": "Danijel Zagorac\\Danijel-Zagorac",
+		"keeper_adv_Player": "Danijel Zagorac\\864c362f",
 		"keeper_adv_Nation": "hr CRO",
 		"keeper_adv_Pos": "GK",
 		"keeper_adv_Squad": "hr Dinamo Zagreb",
@@ -6111,7 +6111,7 @@
 		"keeper_adv_Matches": "Matches"
 	},
 	"98": {
-		"keeper_Player": "Živko Živković\\Zivko-Zivkovic",
+		"keeper_Player": "Živko Živković\\c7b13c29",
 		"keeper_Nation": "rs SRB",
 		"keeper_Pos": "GK",
 		"keeper_Squad": "gr PAOK",
@@ -6139,7 +6139,7 @@
 		"keeper_Matches": "Matches",
 		"code": "c7b13c29",
 		"url": "/en/players/c7b13c29/Zivko-Zivkovic",
-		"keeper_adv_Player": "Živko Živković\\Zivko-Zivkovic",
+		"keeper_adv_Player": "Živko Živković\\c7b13c29",
 		"keeper_adv_Nation": "rs SRB",
 		"keeper_adv_Pos": "GK",
 		"keeper_adv_Squad": "gr PAOK",
