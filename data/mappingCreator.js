@@ -1,4 +1,4 @@
-const SEASON = "20-21";
+const SEASON = "21-22";
 
 //initialize helpers
 const path = require('path');
@@ -201,7 +201,7 @@ let processEntry = (aPlayer, competitionData, competitionName, isGoalkeeper) => 
         apps = playerInfo['standard_MP'];
         mins = playerInfo['standard_Min'];
         club = playerInfo['standard_Squad'];
-        age = parseInt(playerInfo['standard_Age']);
+        age = parseInt(playerInfo['standard_Age'].substring(0, playerInfo['standard_Age'].indexOf('-')));
         nationality = playerInfo['standard_Nation'].split(" ")[0];
     }
     else {
@@ -209,7 +209,7 @@ let processEntry = (aPlayer, competitionData, competitionName, isGoalkeeper) => 
         apps = playerInfo['keeper_MP'];
         mins = playerInfo['keeper_Min'];
         club = playerInfo['keeper_Squad'];
-        age = parseInt(playerInfo['keeper_Age']);
+        age = parseInt(playerInfo['keeper_Age'].substring(0, playerInfo['keeper_Age'].indexOf('-')));
         nationality = playerInfo['keeper_Nation'].split(" ")[0];
     }
     if (apps < 4 && competitionName !== "Champions League" && competitionName !== "Europa League"){
