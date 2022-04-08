@@ -6,7 +6,7 @@ const csv2json = require('csvjson-csv2json');
 const merge = require('lodash.merge');
 
 const scriptName = path.basename(__filename);
-const supportedSeasons = ["18-19", "19-20", "20-21"];
+const supportedSeasons = ["18-19", "19-20", "20-21", "21-22"];
 
 var SEASON;
 //parse command line arguments to get the season
@@ -117,6 +117,20 @@ let scrapeEPLPages = async () => {
                 "https://fbref.com/en/comps/9/3232/keepersadv/2019-2020-Premier-League-Stats"
             ]
         }
+        else if (SEASON === "20-21"){
+            URLs = [
+                "https://fbref.com/en/comps/9/10728/stats/2020-2021-Premier-League-Stats",
+                "https://fbref.com/en/comps/9/10728/shooting/2020-2021-Premier-League-Stats",
+                "https://fbref.com/en/comps/9/10728/passing/2020-2021-Premier-League-Stats",
+                "https://fbref.com/en/comps/9/10728/passing_types/2020-2021-Premier-League-Stats",
+                "https://fbref.com/en/comps/9/10728/gca/2020-2021-Premier-League-Stats",
+                "https://fbref.com/en/comps/9/10728/defense/2020-2021-Premier-League-Stats",
+                "https://fbref.com/en/comps/9/10728/possession/2020-2021-Premier-League-Stats",
+                "https://fbref.com/en/comps/9/10728/misc/2020-2021-Premier-League-Stats",
+                "https://fbref.com/en/comps/9/10728/keepers/2020-2021-Premier-League-Stats",
+                "https://fbref.com/en/comps/9/10728/keepersadv/2020-2021-Premier-League-Stats"
+            ]
+        }
         else {
             URLs = [
                 "https://fbref.com/en/comps/9/stats/Premier-League-Stats",
@@ -170,6 +184,20 @@ let scrapeLaLigaPages = async () => {
                 "https://fbref.com/en/comps/12/3239/misc/2019-2020-La-Liga-Stats",
                 "https://fbref.com/en/comps/12/3239/keepers/2019-2020-La-Liga-Stats",
                 "https://fbref.com/en/comps/12/3239/keepersadv/2019-2020-La-Liga-Stats"
+            ]
+        }
+        else if (SEASON === "20-21"){
+            URLs = [
+                "https://fbref.com/en/comps/12/10731/stats/2020-2021-La-Liga-Stats",
+                "https://fbref.com/en/comps/12/10731/shooting/2020-2021-La-Liga-Stats",
+                "https://fbref.com/en/comps/12/10731/passing/2020-2021-La-Liga-Stats",
+                "https://fbref.com/en/comps/12/10731/passing_types/2020-2021-La-Liga-Stats",
+                "https://fbref.com/en/comps/12/10731/gca/2020-2021-La-Liga-Stats",
+                "https://fbref.com/en/comps/12/10731/defense/2020-2021-La-Liga-Stats",
+                "https://fbref.com/en/comps/12/10731/possession/2020-2021-La-Liga-Stats",
+                "https://fbref.com/en/comps/12/10731/misc/2020-2021-La-Liga-Stats",
+                "https://fbref.com/en/comps/12/10731/keepers/2020-2021-La-Liga-Stats",
+                "https://fbref.com/en/comps/12/10731/keepersadv/2020-2021-La-Liga-Stats"
             ]
         }
         else {
@@ -227,6 +255,20 @@ let scrapeSerieAPages = async () => {
                 "https://fbref.com/en/comps/11/3260/keepersadv/2019-2020-Serie-A-Stats"
             ]
         }
+        else if (SEASON === "20-21"){
+            URLs = [
+                "https://fbref.com/en/comps/11/10730/stats/2020-2021-Serie-A-Stats",
+                "https://fbref.com/en/comps/11/10730/shooting/2020-2021-Serie-A-Stats",
+                "https://fbref.com/en/comps/11/10730/passing/2020-2021-Serie-A-Stats",
+                "https://fbref.com/en/comps/11/10730/passing_types/2020-2021-Serie-A-Stats",
+                "https://fbref.com/en/comps/11/10730/gca/2020-2021-Serie-A-Stats",
+                "https://fbref.com/en/comps/11/10730/defense/2020-2021-Serie-A-Stats",
+                "https://fbref.com/en/comps/11/10730/possession/2020-2021-Serie-A-Stats",
+                "https://fbref.com/en/comps/11/10730/misc/2020-2021-Serie-A-Stats",
+                "https://fbref.com/en/comps/11/10730/keepers/2020-2021-Serie-A-Stats",
+                "https://fbref.com/en/comps/11/10730/keepersadv/2020-2021-Serie-A-Stats"
+            ]
+        }
         else {
             URLs = [
                 "https://fbref.com/en/comps/11/stats/Serie-A-Stats",
@@ -270,16 +312,30 @@ let scrapeBundesligaPages = async () => {
         }
         else if (SEASON === "19-20"){
             URLs = [
-                "https://fbref.com/en/comps/20/3248/stats/2018-2019-Bundesliga-Stats",
-                "https://fbref.com/en/comps/20/3248/shooting/2018-2019-Bundesliga-Stats",
-                "https://fbref.com/en/comps/20/3248/passing/2018-2019-Bundesliga-Stats",
-                "https://fbref.com/en/comps/20/3248/passing_types/2018-2019-Bundesliga-Stats",
-                "https://fbref.com/en/comps/20/3248/gca/2018-2019-Bundesliga-Stats",
-                "https://fbref.com/en/comps/20/3248/defense/2018-2019-Bundesliga-Stats",
-                "https://fbref.com/en/comps/20/3248/possession/2018-2019-Bundesliga-Stats",
-                "https://fbref.com/en/comps/20/3248/misc/2018-2019-Bundesliga-Stats",
-                "https://fbref.com/en/comps/20/3248/keepers/2018-2019-Bundesliga-Stats",
-                "https://fbref.com/en/comps/20/3248/keepersadv/2018-2019-Bundesliga-Stats"
+                "https://fbref.com/en/comps/20/3248/stats/2019-2020-Bundesliga-Stats",
+                "https://fbref.com/en/comps/20/3248/shooting/2019-2020-Bundesliga-Stats",
+                "https://fbref.com/en/comps/20/3248/passing/2019-2020-Bundesliga-Stats",
+                "https://fbref.com/en/comps/20/3248/passing_types/2019-2020-Bundesliga-Stats",
+                "https://fbref.com/en/comps/20/3248/gca/2019-2020-Bundesliga-Stats",
+                "https://fbref.com/en/comps/20/3248/defense/2019-2020-Bundesliga-Stats",
+                "https://fbref.com/en/comps/20/3248/possession/2019-2020-Bundesliga-Stats",
+                "https://fbref.com/en/comps/20/3248/misc/2019-2020-Bundesliga-Stats",
+                "https://fbref.com/en/comps/20/3248/keepers/2019-2020-Bundesliga-Stats",
+                "https://fbref.com/en/comps/20/3248/keepersadv/2019-2020-Bundesliga-Stats"
+            ]
+        }
+        else if (SEASON === "20-21"){
+            URLs = [
+                "https://fbref.com/en/comps/20/10737/stats/2020-2021-Bundesliga-Stats",
+                "https://fbref.com/en/comps/20/10737/shooting/2020-2021-Bundesliga-Stats",
+                "https://fbref.com/en/comps/20/10737/passing/2020-2021-Bundesliga-Stats",
+                "https://fbref.com/en/comps/20/10737/passing_types/2020-2021-Bundesliga-Stats",
+                "https://fbref.com/en/comps/20/10737/gca/2020-2021-Bundesliga-Stats",
+                "https://fbref.com/en/comps/20/10737/defense/2020-2021-Bundesliga-Stats",
+                "https://fbref.com/en/comps/20/10737/possession/2020-2021-Bundesliga-Stats",
+                "https://fbref.com/en/comps/20/10737/misc/2020-2021-Bundesliga-Stats",
+                "https://fbref.com/en/comps/20/10737/keepers/2020-2021-Bundesliga-Stats",
+                "https://fbref.com/en/comps/20/10737/keepersadv/2020-2021-Bundesliga-Stats"
             ]
         }
         else {
@@ -337,6 +393,20 @@ let scrapeLigue1Pages = async () => {
                 "https://fbref.com/en/comps/13/3243/keepersadv/2019-2020-Ligue-1-Stats"
             ]
         }
+        else if (SEASON === "20-21"){
+            URLs = [
+                "https://fbref.com/en/comps/13/10732/stats/2020-2021-Ligue-1-Stats",
+                "https://fbref.com/en/comps/13/10732/shooting/2020-2021-Ligue-1-Stats",
+                "https://fbref.com/en/comps/13/10732/passing/2020-2021-Ligue-1-Stats",
+                "https://fbref.com/en/comps/13/10732/passing_types/2020-2021-Ligue-1-Stats",
+                "https://fbref.com/en/comps/13/10732/gca/2020-2021-Ligue-1-Stats",
+                "https://fbref.com/en/comps/13/10732/defense/2020-2021-Ligue-1-Stats",
+                "https://fbref.com/en/comps/13/10732/possession/2020-2021-Ligue-1-Stats",
+                "https://fbref.com/en/comps/13/10732/misc/2020-2021-Ligue-1-Stats",
+                "https://fbref.com/en/comps/13/10732/keepers/2020-2021-Ligue-1-Stats",
+                "https://fbref.com/en/comps/13/10732/keepersadv/2020-2021-Ligue-1-Stats"
+            ]
+        }
         else {
             URLs = [
                 "https://fbref.com/en/comps/13/stats/Ligue-1-Stats",
@@ -392,6 +462,20 @@ let scrapeChampionsLeaguePages = async () => {
                 "https://fbref.com/en/comps/8/2900/keepersadv/2019-2020-Champions-League-Stats"
             ]
         }
+        else if (SEASON === "20-21"){
+            URLs = [
+                "https://fbref.com/en/comps/8/10096/stats/2020-2021-Champions-League-Stats",
+                "https://fbref.com/en/comps/8/10096/shooting/2020-2021-Champions-League-Stats",
+                "https://fbref.com/en/comps/8/10096/passing/2020-2021-Champions-League-Stats",
+                "https://fbref.com/en/comps/8/10096/passing_types/2020-2021-Champions-League-Stats",
+                "https://fbref.com/en/comps/8/10096/gca/2020-2021-Champions-League-Stats",
+                "https://fbref.com/en/comps/8/10096/defense/2020-2021-Champions-League-Stats",
+                "https://fbref.com/en/comps/8/10096/possession/2020-2021-Champions-League-Stats",
+                "https://fbref.com/en/comps/8/10096/misc/2020-2021-Champions-League-Stats",
+                "https://fbref.com/en/comps/8/10096/keepers/2020-2021-Champions-League-Stats",
+                "https://fbref.com/en/comps/8/10096/keepersadv/2020-2021-Champions-League-Stats"
+            ]
+        }
         else {
             URLs = [
                 "https://fbref.com/en/comps/8/stats/Champions-League-Stats",
@@ -445,6 +529,20 @@ let scrapeEuropaLeaguePages = async () => {
                 "https://fbref.com/en/comps/19/2901/misc/2019-2020-Europa-League-Stats",
                 "https://fbref.com/en/comps/19/2901/keepers/2019-2020-Europa-League-Stats",
                 "https://fbref.com/en/comps/19/2901/keepersadv/2019-2020-Europa-League-Stats"
+            ]
+        }
+        else if (SEASON === "20-21"){
+            URLs = [
+                "https://fbref.com/en/comps/19/10097/stats/2020-2021-Europa-League-Stats",
+                "https://fbref.com/en/comps/19/10097/shooting/2020-2021-Europa-League-Stats",
+                "https://fbref.com/en/comps/19/10097/passing/2020-2021-Europa-League-Stats",
+                "https://fbref.com/en/comps/19/10097/passing_types/2020-2021-Europa-League-Stats",
+                "https://fbref.com/en/comps/19/10097/gca/2020-2021-Europa-League-Stats",
+                "https://fbref.com/en/comps/19/10097/defense/2020-2021-Europa-League-Stats",
+                "https://fbref.com/en/comps/19/10097/possession/2020-2021-Europa-League-Stats",
+                "https://fbref.com/en/comps/19/10097/misc/2020-2021-Europa-League-Stats",
+                "https://fbref.com/en/comps/19/10097/keepers/2020-2021-Europa-League-Stats",
+                "https://fbref.com/en/comps/19/10097/keepersadv/2020-2021-Europa-League-Stats"
             ]
         }
         else {
@@ -574,7 +672,8 @@ let retrieveJSON = async (page, tableType, unhideTable = false) => {
             await page.evaluate((unhideTableButtonSelector) => document.querySelector(unhideTableButtonSelector).click(), unhideTableButtonSelector);
         }
 
-        let convertToCsvButtonSelector = `#all_stats_${tableType} > div.section_heading > div > ul > li.hasmore > div > ul > li:nth-child(4) > button`; //convert to csv button selector;
+        //let convertToCsvButtonSelector = `#all_stats_${tableType} > div.section_heading > div > ul > li.hasmore > div > ul > li:nth-child(4) > button`; //convert to csv button selector;
+        let convertToCsvButtonSelector = `#stats_${tableType}_sh > div > ul > li.hasmore > div > ul > li:nth-child(4) > button`
         let csvSelector = `#csv_stats_${tableType}`;
 
         await page.waitForSelector(`#stats_${tableType}`);
