@@ -132,7 +132,8 @@ class AdvancedSearch extends Component {
         let seasons = {
             "18-19": "18/19",
             "19-20": "19/20",
-            "20-21": "20/21"
+            "20-21": "20/21",
+            "21-22": "21/22"
         };
         let seasonOptions = [];
 
@@ -212,7 +213,7 @@ class AdvancedSearch extends Component {
             },
 
             parameters: {
-                season: "20-21",
+                season: "21-22",
                 includeEuropeanCompetitions: true,
                 ages: {},
                 nationalities: [],
