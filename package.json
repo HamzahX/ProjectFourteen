@@ -20,6 +20,9 @@
   },
   "scripts": {
     "start": "node server/index.js",
+    "heroku-postbuild": "npm run install-client && npm run build",
+    "build": "cd client && npm run build",
+    "install-client": "cd client && npm install",
     "test": "jest"
   },
   "devDependencies": {
