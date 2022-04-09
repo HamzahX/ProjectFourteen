@@ -334,7 +334,7 @@ let processMatch = (match, competitionName, whoscoredClub, apps, mins, fbrefCode
         if (
             entry === `${competitionName} | ${whoscoredClub}`
             && match[SEASON][entry]["whoscoredApps"] === apps
-            && match['nationality'] === nationality
+            && (match['nationality'] === nationality || Math.abs(match[SEASON][entry]["whoscoredMins"] - mins) <= 5)
         ){
             if (FBREF_TO_WHOSCORED_PLAYERS[fbrefCode] === undefined){
                 FBREF_TO_WHOSCORED_PLAYERS_NEW[fbrefCode] = match["code"];
