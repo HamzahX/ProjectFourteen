@@ -19,7 +19,7 @@
 		"Tottenham": 52,
 		"Watford": 40.4,
 		"West Ham": 47.7,
-		"Wolverhampton Wanderers": 49.5
+		"Wolverhampton Wanderers": 49.8
 	},
 	"La Liga": {
 		"Deportivo Alaves": 41.9,
@@ -32,14 +32,14 @@
 		"Elche": 47.8,
 		"Espanyol": 46,
 		"Getafe": 42.8,
-		"Granada": 45.8,
+		"Granada": 45.2,
 		"Levante": 46.6,
 		"Mallorca": 46.4,
 		"Osasuna": 44.9,
 		"Rayo Vallecano": 49.6,
 		"Real Madrid": 60.4,
 		"Real Sociedad": 54.3,
-		"Sevilla": 60.1,
+		"Sevilla": 60.5,
 		"Valencia": 43.4,
 		"Villarreal": 58.2
 	},
@@ -81,7 +81,7 @@
 		"Borussia M'Gladbach": 55.2,
 		"Mainz 05": 46.2,
 		"RB Leipzig": 56.8,
-		"VfB Stuttgart": 52,
+		"VfB Stuttgart": 51.6,
 		"Union Berlin": 43.4,
 		"Wolfsburg": 51.8
 	},
@@ -103,7 +103,7 @@
 		"Paris Saint-Germain": 63.7,
 		"Reims": 42.5,
 		"Rennes": 55.4,
-		"Saint-Etienne": 50,
+		"Saint-Etienne": 50.2,
 		"Strasbourg": 49.7,
 		"Troyes": 44.8
 	},
