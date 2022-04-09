@@ -46,6 +46,14 @@ var PERCENTILE_ARRAYS = {
         'CB': {},
         'GK': {}
     },
+    "21-22": {
+        'FW': {},
+        'AM': {},
+        'CM': {},
+        'FB': {},
+        'CB': {},
+        'GK': {}
+    },
     "combined": {
         'FW': {},
         'AM': {},
