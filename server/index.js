@@ -44,6 +44,8 @@ var PERCENTILE_ARRAYS = {
     },
     "20-21": {
     },
+    "21-22": {
+    },
     "combined": {
     },
     "lastUpdated": null
@@ -606,8 +608,8 @@ let search = async (aQuery, theType, isLive) => {
         //search for players by club
         else if (theType === "playersByClub"){
 
-            //find all players whose array of clubs for the 19/20 season includes the query
-            PLAYERS_COLLECTION.find({"clubs.20-21": aQuery}).toArray(function(err, docs) {
+            //find all players whose array of clubs for the 21/22 season included in the query
+            PLAYERS_COLLECTION.find({"clubs.21-22": aQuery}).toArray(function(err, docs) {
                 if (err){
                     reject();
                 }

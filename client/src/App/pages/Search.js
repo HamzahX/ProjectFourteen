@@ -234,7 +234,7 @@ class Search extends Component {
         //build search page otherwise
         else {
 
-            let season = searchByClub ? "20-21" : null;
+            let season = searchByClub ? "21-22" : null;
 
             //construct the player cards
             let playerCards = [];
@@ -278,7 +278,7 @@ class Search extends Component {
                 searchText = <h3>Search results for <br/>"{this.state.query}"</h3>;
             }
             else {
-                searchText = <h3>Search results for <br/>"player.club[20-21] = {this.state.query}"</h3>;
+                searchText = <h3>Search results for <br/>"player.club[21-22] = {this.state.query}"</h3>;
             }
 
             //return JSX code for the search page

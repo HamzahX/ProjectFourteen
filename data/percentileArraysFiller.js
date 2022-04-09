@@ -8,7 +8,7 @@ const mean = require('mathjs').mean;
 const std = require('mathjs').std;
 
 const scriptName = path.basename(__filename);
-const supportedSeasons = ["18-19", "19-20", "20-21"];
+const supportedSeasons = ["18-19", "19-20", "20-21", "21-22"];
 
 var SEASON;
 //parse command line arguments to get the season

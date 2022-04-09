@@ -5,7 +5,7 @@ const fs = require('fs');
 const utilities = require('../server/utilities.js');
 
 const scriptName = path.basename(__filename);
-const supportedSeasons = ["18-19", "19-20", "20-21"];
+const supportedSeasons = ["18-19", "19-20", "20-21", "21-22"];
 
 var SEASON;
 //parse command line arguments to get the season
