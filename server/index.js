@@ -214,13 +214,6 @@ app.use(boolParser());
 app.use(express.static(path.join(__dirname, '../client/build')));
 
 
-app.get('/', (req, res) => {
-
-    res.sendFile(path.join(__dirname+'/../client/build/index.html'));
-
-});
-
-
 /**
  * Sends the percentile arrays to the client upon request
  * @param {express.Request} req
@@ -433,6 +426,13 @@ app.get('/api/comparisonStats', (req, res) => {
                 res.json([]);
             }, 100)
         });
+
+});
+
+
+app.get('*', (req, res) => {
+
+    res.sendFile(path.join(__dirname+'/../client/build/index.html'));
 
 });
 

@@ -63,7 +63,6 @@ class Home extends Component {
         })
         .then(res => res.json())
         .then(databaseSize => {
-            console.log(databaseSize);
             //only set state if the component is mounter
             if (this._isMounted){
                 this.setState({databaseSize: databaseSize.value, isLoading: false});
