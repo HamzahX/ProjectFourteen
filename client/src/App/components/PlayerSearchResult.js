@@ -87,6 +87,7 @@ class PlayerSearchResult extends Component {
 
             flagsDisplay.push(
                 <Flag
+                    key={i}
                     basePath={"/flags"}
                     country={countryCode}
                     format="png"
