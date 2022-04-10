@@ -147,15 +147,11 @@ class Stats extends Component {
         const code = this.state.code;
 
         //fetch stats
-        fetch('/api/stats', {
-            method: 'post',
+        fetch(`/api/stats?code=${code}&percentilesTimestamp=${this.state.percentileArrays['lastUpdated']}`, {
+            method: 'get',
             headers: {
                 "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-                "code": code,
-                "percentilesTimestamp": this.state.percentileArrays['lastUpdated']
-            })
+            }
         })
         .then(res => {
             if (res.ok) {

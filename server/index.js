@@ -4,6 +4,7 @@ const app = express();
 const secure = require('express-force-https');
 const path = require('path');
 const bodyParser = require('body-parser');
+const boolParser = require('express-query-boolean');
 const port = process.env.PORT || 5000;
 
 //utilities
@@ -209,10 +210,11 @@ let getStatsByPosition = async () => {
 app.use(secure);
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
+app.use(boolParser());
 app.use(express.static(path.join(__dirname, '../client/build')));
 
 
-app.get('*', (req, res) => {
+app.get('/', (req, res) => {
 
     res.sendFile(path.join(__dirname+'/../client/build/index.html'));
 
@@ -224,14 +226,14 @@ app.get('*', (req, res) => {
  * @param {express.Request} req
  * @param {express.Response} res
  */
-app.post('/api/percentiles', (req, res) => {
+app.get('/api/percentiles', (req, res) => {
 
     //compare the last time the client and server's percentile arrays were updated
     //update client percentile arrays if they are out of date
-    let clientLastUpdate = new Date(req.body.percentilesTimestamp).getTime();
+    let clientLastUpdate = new Date(req.query.percentilesTimestamp).getTime();
     let serverLastUpdate = PERCENTILE_ARRAYS['lastUpdated'].getTime();
 
-    if (req.body.percentilesTimestamp === undefined || clientLastUpdate === serverLastUpdate){
+    if (req.query.percentilesTimestamp === undefined || clientLastUpdate === serverLastUpdate){
         res.json(null);
     }
     else {
@@ -247,7 +249,7 @@ app.post('/api/percentiles', (req, res) => {
  * @param {express.Request} req
  * @param {express.Response} res
  */
-app.post('/api/databaseSize', (req, res) => {
+app.get('/api/databaseSize', (req, res) => {
 
     getDatabaseSize().then(
         (databaseSize) => {
@@ -266,7 +268,7 @@ app.post('/api/databaseSize', (req, res) => {
  * @param {express.Request} req
  * @param {express.Response} res
  */
-app.post('/api/referenceData', (req, res) => {
+app.get('/api/referenceData', (req, res) => {
 
     getReferenceData().then(
         (referenceData) => {
@@ -282,15 +284,15 @@ app.post('/api/referenceData', (req, res) => {
 
 /**
  * Retrieves search results and sends to client upon request
- * @param {express.Request & {body.query: string, body.type: string}} req
+ * @param {express.Request} req
  * @param {express.Response} res - Custom object containing the search results
  */
-app.post('/api/search', (req, res) => {
+app.get('/api/search', (req, res) => {
 
     //retrieve the search query and the search type
-    let query = req.body.query;
-    let type = req.body.type;
-    let isLive = req.body.isLive;
+    let query = req.query.query;
+    let type = req.query.type;
+    let isLive = req.query.isLive;
 
     //search and respond
     search(query, type, isLive).then(
@@ -316,7 +318,7 @@ app.post('/api/search', (req, res) => {
 
 /**
  * Retrieves advanced search results and sends to client upon request
- * @param {express.Request & {body.parameters: object}} req
+ * @param {express.Request} req
  * @param {express.Response} res - Custom object containing the search results
  */
 app.post('/api/advancedSearch', (req, res) => {
@@ -343,22 +345,22 @@ app.post('/api/advancedSearch', (req, res) => {
 
 /**
  * Retrieves player stats and metadata and sends to client upon request
- * @param {express.Request & {body.code : string}} req
+ * @param {express.Request} req
  * @param {express.Response} res - Custom object containing the stats and metadata
  */
-app.post('/api/stats', (req, res) => {
+app.get('/api/stats', (req, res) => {
 
     //retrieve the player code
-    let code = req.body.code;
+    let code = req.query.code;
 
     //retrieve stats and respond
     getStats(code).then(
         (data) => {
             //compare the last time the client and server's percentile arrays were updated
             //update client percentile arrays if they are out of date
-            let clientLastUpdate = new Date(req.body.percentilesTimestamp).getTime();
+            let clientLastUpdate = new Date(req.query.percentilesTimestamp).getTime();
             let serverLastUpdate = PERCENTILE_ARRAYS['lastUpdated'].getTime();
-            if (req.body.percentilesTimestamp === undefined || clientLastUpdate === serverLastUpdate){
+            if (req.query.percentilesTimestamp === undefined || clientLastUpdate === serverLastUpdate){
                 setTimeout(function(){
                     res.json({
                         data: data,
@@ -390,22 +392,22 @@ app.post('/api/stats', (req, res) => {
 
 /**
  * Retrieves player stats and metadata and sends to client upon request
- * @param {express.Request & {body.query : string, body.type : string}} req
+ * @param {express.Request} req
  * @param {express.Response} res - Custom object containing the stats and metadata
  */
-app.post('/api/comparisonStats', (req, res) => {
+app.get('/api/comparisonStats', (req, res) => {
 
     //retrieve the player code
-    let codes = req.body.codes;
+    let codes = [req.query.code1, req.query.code2]
 
     //retrieve stats and respond
     getComparisonStats(codes).then(
         (data) => {
             //compare the last time the client and server's percentile arrays were updated
             //update client percentile arrays if they are out of date
-            let clientLastUpdate = new Date(req.body.percentilesTimestamp).getTime();
+            let clientLastUpdate = new Date(req.query.percentilesTimestamp).getTime();
             let serverLastUpdate = PERCENTILE_ARRAYS['lastUpdated'].getTime();
-            if (req.body.percentilesTimestamp === undefined || clientLastUpdate === serverLastUpdate){
+            if (req.query.percentilesTimestamp === undefined || clientLastUpdate === serverLastUpdate){
                 setTimeout(function(){
                     res.json({
                         data: data,
@@ -533,7 +535,7 @@ let search = async (aQuery, theType, isLive) => {
         if (theType === "playersAndClubs"){
 
             //clean the query to remove regex special characters
-            aQuery = aQuery.replace(/[|&;$%@"<>()+,\\/\[\]]/g, "");
+            aQuery = aQuery.replace(/[|&;$%@"<>()+,\\/\[\]]/g, "").trim();
 
             //re-construct the query without diacritics
             let simplifiedQuery = aQuery

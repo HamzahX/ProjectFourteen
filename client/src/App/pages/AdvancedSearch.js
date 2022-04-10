@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import { Link } from 'react-router-dom';
-import withRouter from "react-router-dom/es/withRouter";
+import { withRouter } from "react-router-dom"
 import {
     withQueryParams,
     JsonParam,
@@ -262,10 +262,10 @@ class AdvancedSearch extends Component {
 
         //retrieve search results
         fetch('/api/referenceData', {
-            method: 'post',
+            method: 'get',
             headers: {
                 "Content-Type": "application/json"
-            },
+            }
         })
         .then(res => {
             if (res.ok) {

@@ -163,15 +163,11 @@ class Compare extends Component {
         const codes = this.state.codes;
 
         //fetch stats
-        fetch('/api/comparisonStats', {
-            method: 'post',
+        fetch(`/api/comparisonStats?code1=${codes[0]}&code2=${codes[1]}&percentilesTimestamp=${this.state.percentileArrays['lastUpdated']}`, {
+            method: 'get',
             headers: {
                 "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-                "codes": codes,
-                "percentilesTimestamp": this.state.percentileArrays['lastUpdated']
-            })
+            }
         })
         .then(res => {
             if (res.ok) {

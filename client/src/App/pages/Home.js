@@ -56,14 +56,14 @@ class Home extends Component {
 
         //fetch sample players
         fetch('/api/databaseSize', {
-            method: 'post',
+            method: 'get',
             headers: {
                 "Content-Type": "application/json"
-            },
-            body: JSON.stringify({})
+            }
         })
         .then(res => res.json())
         .then(databaseSize => {
+            console.log(databaseSize);
             //only set state if the component is mounter
             if (this._isMounted){
                 this.setState({databaseSize: databaseSize.value, isLoading: false});
