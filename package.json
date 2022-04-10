@@ -22,7 +22,7 @@
   },
   "scripts": {
     "start": "node server/index.js",
-    "start-dev": "nodemon server/index.js",
+    "start-dev": "nodemon --watch server server/index.js",
     "heroku-postbuild": "npm run install-client && npm run build-client",
     "install-client": "cd client && npm cache verify && npm install",
     "build-client": "cd client && npm run build",
