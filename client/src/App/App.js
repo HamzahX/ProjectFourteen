@@ -69,14 +69,11 @@ class App extends Component {
     getPercentileArrays = () => {
 
         //retrieve percentile arrays and set isLoading to false
-        fetch('/api/percentiles', {
-            method: 'post',
+        fetch(`/api/percentiles?percentilesTimestamp=${this.state.percentileArrays['lastUpdated']}`, {
+            method: 'get',
             headers: {
                 "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-                "percentilesTimestamp": this.state.percentileArrays['lastUpdated']
-            })
+            }
         })
         .then(res => {
             return res.json()

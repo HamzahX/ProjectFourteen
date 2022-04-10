@@ -94,17 +94,12 @@ class SearchBar extends Component {
             //fetch search results
             //pass signal to the fetch request so it can be cancelled
             //this is done with live searches to cancel the previous request every time a new letter is typed
-            fetch('/api/search', {
+            fetch(`/api/search?query=${query}&type=playersAndClubs&isLive=true`, {
                 signal,
-                method: 'post',
+                method: 'get',
                 headers: {
                     "Content-Type": "application/json"
-                },
-                body: JSON.stringify({
-                    "query": query,
-                    "type": "playersAndClubs",
-                    "isLive": true
-                })
+                }
             })
                 .then(res => {
                     if (res.ok) {

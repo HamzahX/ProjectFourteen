@@ -79,15 +79,11 @@ class Search extends Component {
         let type = searchByClub === undefined ? "playersAndClubs" : "playersByClub";
 
         //retrieve search results
-        fetch('/api/search', {
-            method: 'post',
+        fetch(`/api/search?query=${this.state.query}&type=${type}&isLive=false`, {
+            method: 'get',
             headers: {
                 "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-                "query": this.state.query,
-                "type": type
-            })
+            }
         })
         .then(res => {
             if (res.ok) {

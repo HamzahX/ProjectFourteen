@@ -332,7 +332,6 @@ class Slice extends Component {
         //relevant github issue and further explanation: https://github.com/highcharts/highcharts/issues/3321
         Highcharts.wrap(Highcharts.Axis.prototype, 'render', function (proceed) {
 
-            console.log(this);
             proceed.call(this);
 
             let chart = this.chart;
