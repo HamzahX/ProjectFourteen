@@ -101,8 +101,11 @@ function getStatAverages(aggregatedStats, isGoalkeeper) {
     if (isGoalkeeper)
     {
         averageStats["gsaa"] = returnFinite(((aggregatedStats["psxg"] - aggregatedStats["goalsAgainst"]) / aggregatedStats["sota"]) * 100);
+
         averageStats["crossStopRate"] = returnFinite((aggregatedStats["stoppedCrosses"] / aggregatedStats["attCrosses"]) * 100);
+
         averageStats["launchedPassSuccRate"] = returnFinite((aggregatedStats["succLaunchedPasses"] / aggregatedStats["attLaunchedPasses"]) * 100);
+        averageStats["passSuccRateAboveExpected"] = returnFinite(((aggregatedStats["succPasses"] - aggregatedStats["expSuccPasses"]) / aggregatedStats["attPasses"]) * 100);
     }
     else {
 
@@ -119,18 +122,28 @@ function getStatAverages(aggregatedStats, isGoalkeeper) {
         averageStats["boxTouches"] = returnFinite(aggregatedStats["boxTouches"] / minutesOverNinety);
         averageStats["padjBoxTouches"] = returnFinite(aggregatedStats["boxTouches"] / touchesOverHundred);
 
+        averageStats["ppr"] = returnFinite(aggregatedStats["ppr"] / minutesOverNinety);
+        averageStats["padjPPR"] = returnFinite(aggregatedStats["ppr"] / touchesOverHundred);
+
         averageStats["xa"] = returnFinite(aggregatedStats["xa"] / minutesOverNinety);
         averageStats["padjXA"] = returnFinite(aggregatedStats["xa"] / touchesOverHundred);
 
         averageStats["ppa"] = returnFinite(aggregatedStats["ppa"] / minutesOverNinety);
         averageStats["padjPPA"] = returnFinite(aggregatedStats["ppa"] / touchesOverHundred);
 
+        averageStats["cpa"] = returnFinite(aggregatedStats["cpa"] / minutesOverNinety);
+        averageStats["padjCPA"] = returnFinite(aggregatedStats["cpa"] / touchesOverHundred);
+
+        averageStats["epa"] = returnFinite((aggregatedStats["ppa"] + aggregatedStats["cpa"]) / minutesOverNinety);
+        averageStats["padjEPA"] = returnFinite((aggregatedStats["ppa"] + aggregatedStats["cpa"]) / touchesOverHundred);
+
         averageStats["succDribbles"] = returnFinite(aggregatedStats["succDribbles"] / minutesOverNinety);
         averageStats["padjSuccDribbles"] = returnFinite(aggregatedStats["succDribbles"] / touchesOverHundred);
         averageStats["dribbleSuccRate"] = returnFinite((aggregatedStats["succDribbles"] / aggregatedStats["attDribbles"]) * 100);
 
-        averageStats["turnovers"] = returnFinite((aggregatedStats["timesDispossessed"] + aggregatedStats["miscontrols"]) / minutesOverNinety);
-        averageStats["padjTurnovers"] = returnFinite((aggregatedStats["timesDispossessed"] + aggregatedStats["miscontrols"]) / touchesOverHundred);
+        averageStats["turnovers"] = returnFinite((aggregatedStats["timesDispossessed"] + aggregatedStats["miscontrols"] + aggregatedStats["failedDribbles"]) / minutesOverNinety);
+        averageStats["padjTurnovers"] = returnFinite((aggregatedStats["timesDispossessed"] + aggregatedStats["miscontrols"] + aggregatedStats["failedDribbles"]) / touchesOverHundred);
+        averageStats["turnoversAboveExpected"] = returnFinite((averageStats["turnovers"] - aggregatedStats["expTurnovers"]) / minutesOverNinety);
 
         averageStats["succPressures"] = returnFinite(aggregatedStats["succPressures"] / minutesOverNinety);
         averageStats["padjSuccPressures"] = returnFinite(aggregatedStats["padjSuccPressures"] / minutesOverNinety);
@@ -140,13 +153,32 @@ function getStatAverages(aggregatedStats, isGoalkeeper) {
         averageStats["sca"] = returnFinite(aggregatedStats["sca"] / minutesOverNinety);
         averageStats["padjSCA"] = returnFinite(aggregatedStats["sca"] / touchesOverHundred);
 
+        averageStats["progPasses"] = returnFinite(aggregatedStats["progPasses"] / minutesOverNinety);
+        averageStats["padjProgPasses"] = returnFinite(aggregatedStats["progPasses"] / touchesOverHundred);
+
+        averageStats["progCarries"] = returnFinite(aggregatedStats["progCarries"] / minutesOverNinety);
+        averageStats["padjProgCarries"] = returnFinite(aggregatedStats["progCarries"] / touchesOverHundred);
+
+        averageStats["progPassesDistance"] = returnFinite(aggregatedStats["progPassesDistance"] / minutesOverNinety);
+        averageStats["padjProgPassesDistance"] = returnFinite(aggregatedStats["progPassesDistance"] / touchesOverHundred);
+
+        averageStats["progCarriesDistance"] = returnFinite(aggregatedStats["progCarriesDistance"] / minutesOverNinety);
+        averageStats["padjProgCarriesDistance"] = returnFinite(aggregatedStats["progCarriesDistance"] / touchesOverHundred);
+
         averageStats["progDistance"] = returnFinite(aggregatedStats["progDistance"] / minutesOverNinety);
         averageStats["padjProgDistance"] = returnFinite(aggregatedStats["progDistance"] / touchesOverHundred);
 
         averageStats["passSuccRate"] = returnFinite((aggregatedStats["succPasses"] / aggregatedStats["attPasses"]) * 100);
+        averageStats["passSuccRateAboveExpected"] = returnFinite(((aggregatedStats["succPasses"] - aggregatedStats["expSuccPasses"]) / aggregatedStats["attPasses"]) * 100);
 
         averageStats["pft"] = returnFinite(aggregatedStats["pft"] / minutesOverNinety);
         averageStats["padjPFT"] = returnFinite(aggregatedStats["pft"] / touchesOverHundred);
+
+        averageStats["cft"] = returnFinite(aggregatedStats["cft"] / minutesOverNinety);
+        averageStats["padjCFT"] = returnFinite(aggregatedStats["cft"] / touchesOverHundred);
+
+        averageStats["eft"] = returnFinite((aggregatedStats["pft"] + aggregatedStats["cft"]) / minutesOverNinety);
+        averageStats["padjEFT"] = returnFinite((aggregatedStats["pft"] + aggregatedStats["cft"]) / touchesOverHundred);
 
         averageStats["interceptions"] = returnFinite(aggregatedStats["interceptions"] / minutesOverNinety);
         averageStats["padjInterceptions"] = returnFinite(aggregatedStats["padjInterceptions"] / minutesOverNinety);

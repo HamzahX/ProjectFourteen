@@ -17,6 +17,7 @@
     "lodash.mergewith": "^4.6.2",
     "lodash.sum": "^4.0.2",
     "mathjs": "^8.1.0",
+    "ml-regression-multivariate-linear": "^2.0.3",
     "mongodb": "^3.5.5",
     "puppeteer": "^2.1.1"
   },
