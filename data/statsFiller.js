@@ -256,7 +256,8 @@ let createMultipleRegressionModels = async () => {
                             playerData["possession_Def 3rd"],
                             playerData["possession_Mid 3rd"],
                             playerData["possession_Att 3rd"],
-                            playerData["possession_Att Pen"]
+                            playerData["possession_Att Pen"],
+                            playerData["possession_Prog"]
                         ]
                     );
 
@@ -578,7 +579,8 @@ let processEntry = (aPlayer, competitionKey, competitionName, isGoalkeeper) => {
             entry["possession_Def 3rd"],
             entry["possession_Mid 3rd"],
             entry["possession_Att 3rd"],
-            entry["possession_Att Pen"]
+            entry["possession_Att Pen"],
+            entry["possession_Prog"]
         ];
 
         let expectedTurnovers = entry["possession_Dis"] +

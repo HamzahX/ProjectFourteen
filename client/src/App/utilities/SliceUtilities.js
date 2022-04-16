@@ -391,8 +391,6 @@ export function calculateStats(filteredStats, playerCode = undefined){
 
     }
 
-    console.log(percentileArrays);
-
     //calculate percentile ranks
     if (template !== "N/A") {
         for (let stat in statsPer90) {
@@ -420,8 +418,6 @@ export function calculateStats(filteredStats, playerCode = undefined){
             percentiles[stat] = 0;
         }
     }
-
-    console.log(statsPer90);
 
     return {
         statsPer90: statsPer90,
