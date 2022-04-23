@@ -15,8 +15,7 @@
         "padjEPA",
         "succDribbles",
         "padjSuccDribbles",
-        "turnovers",
-        "padjTurnovers",
+        "turnoversBelowExpected",
         "succPressures",
         "padjSuccPressures_att"
     ],
@@ -34,11 +33,10 @@
         "padjProgPasses",
         "progCarries",
         "padjProgCarries",
-        "passSuccRate",
+        "passSuccRateAboveExpected",
         "succDribbles",
         "padjSuccDribbles",
-        "turnovers",
-        "padjTurnovers",
+        "turnoversBelowExpected",
         "succPressures",
         "padjSuccPressures"
     ],
@@ -53,11 +51,10 @@
         "padjProgPasses",
         "progCarries",
         "padjProgCarries",
-        "passSuccRate",
+        "passSuccRateAboveExpected",
         "succDribbles",
         "padjSuccDribbles",
-        "turnovers",
-        "padjTurnovers",
+        "turnoversBelowExpected",
         "succPressures",
         "padjSuccPressures",
         "interceptions",
@@ -75,11 +72,10 @@
         "padjProgPasses",
         "progCarries",
         "padjProgCarries",
-        "passSuccRate",
+        "passSuccRateAboveExpected",
         "succDribbles",
         "padjSuccDribbles",
-        "turnovers",
-        "padjTurnovers",
+        "turnoversBelowExpected",
         "succPressures",
         "padjSuccPressures",
         "interceptions",
@@ -96,7 +92,7 @@
         "padjProgPasses",
         "progCarries",
         "padjProgCarries",
-        "passSuccRate",
+        "passSuccRateAboveExpected",
         "longPassSuccRate",
         "succPressures",
         "padjSuccPressures_def",
@@ -113,6 +109,6 @@
     "GK": [
         "gsaa",
         "crossStopRate",
-        "launchedPassSuccRate"
+        "gkPassSuccRateAboveExpected"
     ]
 }

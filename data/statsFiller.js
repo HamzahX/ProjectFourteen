@@ -5,6 +5,7 @@ const countryCodes = require('./countryCodes.js');
 
 const mean = require('mathjs').mean;
 const mlr = require('ml-regression-multivariate-linear');
+const {intersect} = require("mathjs");
 
 const scriptName = path.basename(__filename);
 const supportedSeasons = ["18-19", "19-20", "20-21", "21-22"];
@@ -188,107 +189,115 @@ let createMultipleRegressionModels = async () => {
     let gk_pass_completion_inputs = [];
     let gk_pass_completion_outputs = [];
 
-    for (let i = 0; i<supportedSeasons.length; i++)
-    {
+    let outfieldData = {};
 
-        let season = supportedSeasons[i];
+    outfieldData["EPL"] = JSON.parse(fs.readFileSync(path.join(__dirname, `fbrefData/${SEASON}/premierLeague.json`)));
+    outfieldData["LA_LIGA"] = JSON.parse(fs.readFileSync(path.join(__dirname, `fbrefData/${SEASON}/laLiga.json`)));
+    outfieldData["SERIE_A"] = JSON.parse(fs.readFileSync(path.join(__dirname, `fbrefData/${SEASON}/serieA.json`)));
+    outfieldData["BUNDESLIGA"] = JSON.parse(fs.readFileSync(path.join(__dirname, `fbrefData/${SEASON}/bundesliga.json`)));
+    outfieldData["LIGUE_1"] = JSON.parse(fs.readFileSync(path.join(__dirname, `fbrefData/${SEASON}/ligue1.json`)));
+    outfieldData["CHAMPIONS_LEAGUE"] = JSON.parse(fs.readFileSync(path.join(__dirname, `fbrefData/${SEASON}/championsLeague.json`)));
+    outfieldData["EUROPA_LEAGUE"] = JSON.parse(fs.readFileSync(path.join(__dirname, `fbrefData/${SEASON}/europaLeague.json`)));
 
-        let outfieldData = {};
+    let gkData = {};
 
-        outfieldData["EPL"] = JSON.parse(fs.readFileSync(path.join(__dirname, `fbrefData/${season}/premierLeague.json`)));
-        outfieldData["LA_LIGA"] = JSON.parse(fs.readFileSync(path.join(__dirname, `fbrefData/${season}/laLiga.json`)));
-        outfieldData["SERIE_A"] = JSON.parse(fs.readFileSync(path.join(__dirname, `fbrefData/${season}/serieA.json`)));
-        outfieldData["BUNDESLIGA"] = JSON.parse(fs.readFileSync(path.join(__dirname, `fbrefData/${season}/bundesliga.json`)));
-        outfieldData["LIGUE_1"] = JSON.parse(fs.readFileSync(path.join(__dirname, `fbrefData/${season}/ligue1.json`)));
-        outfieldData["CHAMPIONS_LEAGUE"] = JSON.parse(fs.readFileSync(path.join(__dirname, `fbrefData/${season}/championsLeague.json`)));
-        outfieldData["EUROPA_LEAGUE"] = JSON.parse(fs.readFileSync(path.join(__dirname, `fbrefData/${season}/europaLeague.json`)));
+    gkData["EPL"] = JSON.parse(fs.readFileSync(path.join(__dirname, `fbrefData/${SEASON}/premierLeague_gk.json`)));
+    gkData["LA_LIGA"] = JSON.parse(fs.readFileSync(path.join(__dirname, `fbrefData/${SEASON}/laLiga_gk.json`)));
+    gkData["SERIE_A"] = JSON.parse(fs.readFileSync(path.join(__dirname, `fbrefData/${SEASON}/serieA_gk.json`)));
+    gkData["BUNDESLIGA"] = JSON.parse(fs.readFileSync(path.join(__dirname, `fbrefData/${SEASON}/bundesliga_gk.json`)));
+    gkData["LIGUE_1"] = JSON.parse(fs.readFileSync(path.join(__dirname, `fbrefData/${SEASON}/ligue1_gk.json`)));
+    gkData["CHAMPIONS_LEAGUE"] = JSON.parse(fs.readFileSync(path.join(__dirname, `fbrefData/${SEASON}/championsLeague_gk.json`)));
+    gkData["EUROPA_LEAGUE"] = JSON.parse(fs.readFileSync(path.join(__dirname, `fbrefData/${SEASON}/europaLeague_gk.json`)));
 
-        let gkData = {};
+    for (let competition in outfieldData) {
 
-        gkData["EPL"] = JSON.parse(fs.readFileSync(path.join(__dirname, `fbrefData/${season}/premierLeague_gk.json`)));
-        gkData["LA_LIGA"] = JSON.parse(fs.readFileSync(path.join(__dirname, `fbrefData/${season}/laLiga_gk.json`)));
-        gkData["SERIE_A"] = JSON.parse(fs.readFileSync(path.join(__dirname, `fbrefData/${season}/serieA_gk.json`)));
-        gkData["BUNDESLIGA"] = JSON.parse(fs.readFileSync(path.join(__dirname, `fbrefData/${season}/bundesliga_gk.json`)));
-        gkData["LIGUE_1"] = JSON.parse(fs.readFileSync(path.join(__dirname, `fbrefData/${season}/ligue1_gk.json`)));
-        gkData["CHAMPIONS_LEAGUE"] = JSON.parse(fs.readFileSync(path.join(__dirname, `fbrefData/${season}/championsLeague_gk.json`)));
-        gkData["EUROPA_LEAGUE"] = JSON.parse(fs.readFileSync(path.join(__dirname, `fbrefData/${season}/europaLeague_gk.json`)));
+        gkData[competition] = Object.keys(gkData[competition]).map((key) => gkData[competition][key]);
 
-        for (let competition in outfieldData){
+        for (let player in outfieldData[competition]) {
 
-            gkData[competition] = Object.keys(gkData[competition]).map((key) => gkData[competition][key]);
+            let playerData = outfieldData[competition][player];
 
-            for (let player in outfieldData[competition]){
+            if (playerData["standard_Min"] < 900)
+                continue;
 
-                let playerData = outfieldData[competition][player];
+            if (playerData["standard_Pos"] === "GK") {
 
-                if (playerData["standard_Min"] < 900)
+                let gkPlayerData = gkData[competition].filter(p => p["code"] === playerData["code"])[0];
+
+                if (gkPlayerData === undefined || gkPlayerData === null)
                     continue;
 
-                if (playerData["standard_Pos"] === "GK"){
+                gk_pass_completion_inputs.push(
+                    [
+                        playerData["passing_Att"],
+                        gkPlayerData["keeper_adv_Att__1"],
+                        gkPlayerData["keeper_adv_Att__2"],
+                        gkPlayerData["keeper_adv_AvgLen"],
+                        gkPlayerData["keeper_adv_AvgLen__1"],
+                        playerData["passing_types_Press"]
+                    ]
+                );
 
-                    let gkPlayerData = gkData[competition].filter(p => p["code"] === playerData["code"])[0];
+                gk_pass_completion_outputs.push(
+                    [
+                        playerData["passing_Cmp"]
+                    ]
+                );
 
-                    if (gkPlayerData === undefined || gkPlayerData === null)
-                        continue;
+            }
+            else {
+                turnover_inputs.push(
+                    [
+                        playerData["possession_Att"],
+                        playerData["possession_Def 3rd"],
+                        playerData["possession_Mid 3rd"],
+                        playerData["possession_Att 3rd"],
+                        playerData["possession_Att Pen"],
+                        playerData["possession_Prog"]
+                    ]
+                );
 
-                    gk_pass_completion_inputs.push(
-                        [
-                            playerData["passing_Att"],
-                            gkPlayerData["keeper_adv_Att__1"],
-                            gkPlayerData["keeper_adv_Att__2"],
-                            gkPlayerData["keeper_adv_AvgLen"],
-                            gkPlayerData["keeper_adv_AvgLen__1"],
-                            playerData["passing_types_Press"]
-                        ]
-                    );
+                turnover_outputs.push(
+                    [
+                        playerData["possession_Dis"] +
+                        playerData["possession_Mis"] +
+                        playerData["possession_Att"] -
+                        playerData["possession_Succ"]
+                    ]
+                );
 
-                    gk_pass_completion_outputs.push(
-                        [
-                            playerData["passing_Cmp"]
-                        ]
-                    );
+                if (playerData["passing_Att"] < 1000)
+                    continue;
 
-                }
-                else {
-                    turnover_inputs.push(
-                        [
-                            playerData["possession_Att"],
-                            playerData["possession_Def 3rd"],
-                            playerData["possession_Mid 3rd"],
-                            playerData["possession_Att 3rd"],
-                            playerData["possession_Att Pen"],
-                            playerData["possession_Prog"]
-                        ]
-                    );
+                pass_completion_inputs.push(
+                    [
+                        playerData["passing_Att"],
+                        playerData["passing_Att__1"],
+                        playerData["passing_Att__2"],
+                        playerData["passing_Att__3"],
+                        playerData["passing_1/3"],
+                        playerData["passing_KP"],
+                        playerData["passing_Prog"],
+                        playerData["passing_types_Live"],
+                        playerData["passing_types_FK"],
+                        playerData["passing_types_Press"],
+                        playerData["passing_types_Sw"],
+                        playerData["passing_types_Crs"],
+                        playerData["passing_types_CK"],
+                        playerData["passing_types_Ground"],
+                        playerData["passing_types_Low"],
+                        playerData["passing_types_High"],
+                        playerData["passing_types_Head"],
+                        playerData["passing_types_TI"],
+                        playerData["passing_types_Other"]
+                    ]
+                );
 
-                    turnover_outputs.push(
-                        [
-                            playerData["possession_Dis"] +
-                            playerData["possession_Mis"] +
-                            playerData["possession_Att"] -
-                            playerData["possession_Succ"]
-                        ]
-                    );
-
-                    pass_completion_inputs.push(
-                        [
-                            playerData["passing_Att"],
-                            playerData["passing_Att__1"],
-                            playerData["passing_Att__2"],
-                            playerData["passing_Att__3"],
-                            playerData["passing_Prog"],
-                            playerData["passing_KP"],
-                            playerData["passing_types_Press"]
-                        ]
-                    );
-
-                    pass_completion_outputs.push(
-                        [
-                            playerData["passing_Cmp"]
-                        ]
-                    );
-                }
-
+                pass_completion_outputs.push(
+                    [
+                        playerData["passing_Cmp"]
+                    ]
+                );
             }
 
         }
@@ -566,8 +575,8 @@ let processEntry = (aPlayer, competitionKey, competitionName, isGoalkeeper) => {
             attCrosses: entry["keeper_adv_Opp"],
             succLaunchedPasses: entry["keeper_adv_Cmp"],
             attLaunchedPasses: entry["keeper_adv_Att"],
-            completedPasses: outfieldDataForPlayer["passing_Cmp"],
-            expCompletedPasses: expectedCompletedPasses,
+            succPasses: outfieldDataForPlayer["passing_Cmp"],
+            expSuccPasses: expectedCompletedPasses,
             attPasses: outfieldDataForPlayer["passing_Att"]
         }
 
@@ -599,9 +608,21 @@ let processEntry = (aPlayer, competitionKey, competitionName, isGoalkeeper) => {
             entry["passing_Att__1"],
             entry["passing_Att__2"],
             entry["passing_Att__3"],
-            entry["passing_Prog"],
+            entry["passing_1/3"],
             entry["passing_KP"],
-            entry["passing_types_Press"]
+            entry["passing_Prog"],
+            entry["passing_types_Live"],
+            entry["passing_types_FK"],
+            entry["passing_types_Press"],
+            entry["passing_types_Sw"],
+            entry["passing_types_Crs"],
+            entry["passing_types_CK"],
+            entry["passing_types_Ground"],
+            entry["passing_types_Low"],
+            entry["passing_types_High"],
+            entry["passing_types_Head"],
+            entry["passing_types_TI"],
+            entry["passing_types_Other"]
         ];
 
         let expectedCompletedPasses = entry["passing_Cmp"];

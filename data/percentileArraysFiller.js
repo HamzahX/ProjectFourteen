@@ -6,6 +6,7 @@ const utilities = require('../server/utilities.js');
 
 const mean = require('mathjs').mean;
 const std = require('mathjs').std;
+const median = require('mathjs').median;
 
 const scriptName = path.basename(__filename);
 const supportedSeasons = ["18-19", "19-20", "20-21", "21-22"];
@@ -278,6 +279,7 @@ let populateZScoreInfo = (position, statDict) => {
 
         Z_SCORE_INFO[position][stat]["mean"] = mean(statDict[stat]);
         Z_SCORE_INFO[position][stat]["stdDev"] = std(statDict[stat]);
+        Z_SCORE_INFO[position][stat]["median"] = median(statDict[stat]);
 
     }
 

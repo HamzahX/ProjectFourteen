@@ -206,7 +206,16 @@ let temp_average = (player, aggregatedStats) => {
         let potentialMin = truncateNum(Math.floor(averageStats[stat]/step) * step, precision);
         let potentialMax = truncateNum(Math.ceil(averageStats[stat]/step) * step, precision);
 
-        if ((stat === "gsaa" || averageStats[stat] >= 0) && potentialMin < ALL_STATS[stat]["ranges"][SEASON]["min"]){
+        if (
+            (
+                stat === "gsaa" ||
+                stat === "passSuccRateAboveExpected" ||
+                stat === "gkPassSuccRateAboveExpected" ||
+                stat === "turnoversBelowExpected" ||
+                averageStats[stat] >= 0
+            )
+            && potentialMin < ALL_STATS[stat]["ranges"][SEASON]["min"])
+        {
             ALL_STATS[stat]["ranges"][SEASON]["min"] = potentialMin;
             ALL_STATS[stat]["ranges"][SEASON]["minName"] = PROCESSED[player]["name"];
         }

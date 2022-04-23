@@ -183,7 +183,7 @@ export function calculateStats(filteredStats, playerCode = undefined){
             statsPer90["npxgPerShot"] = filteredStats["npxg"] / filteredStats["shots"];
             statsPer90["succAerials"] = filteredStats["succAerials"] / minutesOverNinety;
             statsPer90["aerialSuccRate"] = (filteredStats["succAerials"] / filteredStats["attAerials"]) * 100;
-            //statsPer90["dribbleSuccRate"] = (filteredStats["succDribbles"] / filteredStats["attDribbles"]) * 100;
+            statsPer90["turnoversBelowExpected"] = (filteredStats["expTurnovers"] - (filteredStats["timesDispossessed"] + filteredStats["miscontrols"] + filteredStats["failedDribbles"])) / minutesOverNinety;
 
             if (padjTypes['offensive']){
                 statsPer90["padjBoxTouches"] = filteredStats["boxTouches"] / touchesOverHundred;
@@ -191,7 +191,6 @@ export function calculateStats(filteredStats, playerCode = undefined){
                 statsPer90["padjXA"] = filteredStats["xa"] / touchesOverHundred;
                 statsPer90["padjEPA"] = (filteredStats["ppa"] + filteredStats["cpa"]) / touchesOverHundred;
                 statsPer90["padjSuccDribbles"] = filteredStats["succDribbles"] / touchesOverHundred;
-                statsPer90["padjTurnovers"] = (filteredStats["timesDispossessed"] + filteredStats["miscontrols"] + filteredStats["failedDribbles"]) / touchesOverHundred;
             }
             else {
                 statsPer90["boxTouches"] = filteredStats["boxTouches"] / minutesOverNinety;
@@ -199,7 +198,6 @@ export function calculateStats(filteredStats, playerCode = undefined){
                 statsPer90["xa"] = filteredStats["xa"] / minutesOverNinety;
                 statsPer90["epa"] = (filteredStats["ppa"] + filteredStats["cpa"]) / minutesOverNinety;
                 statsPer90["succDribbles"] = filteredStats["succDribbles"] / minutesOverNinety;
-                statsPer90["turnovers"] = (filteredStats["timesDispossessed"] + filteredStats["miscontrols"] + filteredStats["failedDribbles"]) / minutesOverNinety;
             }
 
             if (padjTypes['defensive']){
@@ -216,28 +214,24 @@ export function calculateStats(filteredStats, playerCode = undefined){
             statsPer90["npg"] = filteredStats["npg"] / minutesOverNinety;
             statsPer90["npxg"] = filteredStats["npxg"] / minutesOverNinety;
             statsPer90["npxgPerShot"] = filteredStats["npxg"] / filteredStats["shots"];
-            statsPer90["passSuccRate"] = (filteredStats["succPasses"] / filteredStats["attPasses"]) * 100;
-            //statsPer90["dribbleSuccRate"] = (filteredStats["succDribbles"] / filteredStats["attDribbles"]) * 100;
+            statsPer90["turnoversBelowExpected"] = (filteredStats["expTurnovers"] - (filteredStats["timesDispossessed"] + filteredStats["miscontrols"] + filteredStats["failedDribbles"])) / minutesOverNinety;
+            statsPer90["passSuccRateAboveExpected"] = ((filteredStats["succPasses"] - filteredStats["expSuccPasses"]) / filteredStats["attPasses"]) * 100
 
             if (padjTypes['offensive']){
                 statsPer90["padjXA"] = filteredStats["xa"] / touchesOverHundred;
                 statsPer90["padjSCA"] = filteredStats["sca"] / touchesOverHundred;
                 statsPer90["padjEPA"] = (filteredStats["ppa"] + filteredStats["cpa"]) / touchesOverHundred;
-                //statsPer90["padjProgDistance"] = filteredStats["progDistance"] / touchesOverHundred;
                 statsPer90["padjProgPasses"] = filteredStats["progPasses"] / touchesOverHundred;
                 statsPer90["padjProgCarries"] = filteredStats["progCarries"] / touchesOverHundred;
                 statsPer90["padjSuccDribbles"] = filteredStats["succDribbles"] / touchesOverHundred;
-                statsPer90["padjTurnovers"] = (filteredStats["timesDispossessed"] + filteredStats["miscontrols"] + filteredStats["failedDribbles"]) / touchesOverHundred;
             }
             else {
                 statsPer90["xa"] = filteredStats["xa"] / minutesOverNinety;
                 statsPer90["sca"] = filteredStats["sca"] / minutesOverNinety;
                 statsPer90["epa"] = (filteredStats["ppa"] + filteredStats["cpa"]) / minutesOverNinety;
-                //statsPer90["progDistance"] = filteredStats["progDistance"] / minutesOverNinety;
                 statsPer90["progPasses"] = filteredStats["progPasses"] / minutesOverNinety;
                 statsPer90["progCarries"] = filteredStats["progCarries"] / minutesOverNinety;
                 statsPer90["succDribbles"] = filteredStats["succDribbles"] / minutesOverNinety;
-                statsPer90["turnovers"] = (filteredStats["timesDispossessed"] + filteredStats["miscontrols"] + filteredStats["failedDribbles"]) / minutesOverNinety;
             }
 
             if (padjTypes['defensive']){
@@ -251,29 +245,25 @@ export function calculateStats(filteredStats, playerCode = undefined){
 
         case "CM":
 
-            statsPer90["passSuccRate"] = (filteredStats["succPasses"] / filteredStats["attPasses"]) * 100;
-            //statsPer90["dribbleSuccRate"] = (filteredStats["succDribbles"] / filteredStats["attDribbles"]) * 100;
+            statsPer90["passSuccRateAboveExpected"] = ((filteredStats["succPasses"] - filteredStats["expSuccPasses"]) / filteredStats["attPasses"]) * 100
             statsPer90["dribbleTackleRate"] = (filteredStats["succDribbleTackles"] / filteredStats["attDribbleTackles"]) * 100;
+            statsPer90["turnoversBelowExpected"] = (filteredStats["expTurnovers"] - (filteredStats["timesDispossessed"] + filteredStats["miscontrols"] + filteredStats["failedDribbles"])) / minutesOverNinety;
 
             if (padjTypes['offensive']){
                 statsPer90["padjXA"] = filteredStats["xa"] / touchesOverHundred;
                 statsPer90["padjSCA"] = filteredStats["sca"] / touchesOverHundred;
                 statsPer90["padjEFT"] = (filteredStats["pft"] + filteredStats["cft"]) / touchesOverHundred;
-                //statsPer90["padjProgDistance"] = filteredStats["progDistance"] / touchesOverHundred;
                 statsPer90["padjProgPasses"] = filteredStats["progPasses"] / touchesOverHundred;
                 statsPer90["padjProgCarries"] = filteredStats["progCarries"] / touchesOverHundred;
                 statsPer90["padjSuccDribbles"] = filteredStats["succDribbles"] / touchesOverHundred;
-                statsPer90["padjTurnovers"] = (filteredStats["timesDispossessed"] + filteredStats["miscontrols"] + filteredStats["failedDribbles"]) / touchesOverHundred;
             }
             else {
                 statsPer90["xa"] = filteredStats["xa"] / minutesOverNinety;
                 statsPer90["sca"] = filteredStats["sca"] / minutesOverNinety;
                 statsPer90["eft"] = (filteredStats["pft"] + filteredStats["cft"]) / minutesOverNinety;
-                //statsPer90["progDistance"] = filteredStats["progDistance"] / minutesOverNinety;
                 statsPer90["progPasses"] = filteredStats["progPasses"] / minutesOverNinety;
                 statsPer90["progCarries"] = filteredStats["progCarries"] / minutesOverNinety;
                 statsPer90["succDribbles"] = filteredStats["succDribbles"] / minutesOverNinety;
-                statsPer90["turnovers"] = (filteredStats["timesDispossessed"] + filteredStats["miscontrols"] + filteredStats["failedDribbles"]) / minutesOverNinety;
             }
 
             if (padjTypes['defensive']){
@@ -291,28 +281,24 @@ export function calculateStats(filteredStats, playerCode = undefined){
 
         case "FB":
 
-            statsPer90["passSuccRate"] = (filteredStats["succPasses"] / filteredStats["attPasses"]) * 100;
-            //statsPer90["dribbleSuccRate"] = (filteredStats["succDribbles"] / filteredStats["attDribbles"]) * 100;
+            statsPer90["passSuccRateAboveExpected"] = ((filteredStats["succPasses"] - filteredStats["expSuccPasses"]) / filteredStats["attPasses"]) * 100
             statsPer90["dribbleTackleRate"] = (filteredStats["succDribbleTackles"] / filteredStats["attDribbleTackles"]) * 100;
             statsPer90["aerialSuccRate"] = (filteredStats["succAerials"] / filteredStats["attAerials"]) * 100;
+            statsPer90["turnoversBelowExpected"] = (filteredStats["expTurnovers"] - (filteredStats["timesDispossessed"] + filteredStats["miscontrols"] + filteredStats["failedDribbles"])) / minutesOverNinety;
 
             if (padjTypes['offensive']){
                 statsPer90["padjXA"] = filteredStats["xa"] / touchesOverHundred;
                 statsPer90["padjEFT"] = (filteredStats["pft"] + filteredStats["cft"]) / touchesOverHundred;
-                //statsPer90["padjProgDistance"] = filteredStats["progDistance"] / touchesOverHundred;
                 statsPer90["padjProgPasses"] = filteredStats["progPasses"] / touchesOverHundred;
                 statsPer90["padjProgCarries"] = filteredStats["progCarries"] / touchesOverHundred;
                 statsPer90["padjSuccDribbles"] = filteredStats["succDribbles"] / touchesOverHundred;
-                statsPer90["padjTurnovers"] = (filteredStats["timesDispossessed"] + filteredStats["miscontrols"] + filteredStats["failedDribbles"]) / touchesOverHundred;
             }
             else {
                 statsPer90["xa"] = filteredStats["xa"] / minutesOverNinety;
                 statsPer90["eft"] = (filteredStats["pft"] + filteredStats["cft"]) / minutesOverNinety;
-                //statsPer90["progDistance"] = filteredStats["progDistance"] / minutesOverNinety;
                 statsPer90["progPasses"] = filteredStats["progPasses"] / minutesOverNinety;
                 statsPer90["progCarries"] = filteredStats["progCarries"] / minutesOverNinety;
                 statsPer90["succDribbles"] = filteredStats["succDribbles"] / minutesOverNinety;
-                statsPer90["turnovers"] = (filteredStats["timesDispossessed"] + filteredStats["miscontrols"] + filteredStats["failedDribbles"]) / minutesOverNinety;
             }
 
             if (padjTypes['defensive']){
@@ -330,7 +316,7 @@ export function calculateStats(filteredStats, playerCode = undefined){
 
         case "CB":
 
-            statsPer90["passSuccRate"] = (filteredStats["succPasses"] / filteredStats["attPasses"]) * 100;
+            statsPer90["passSuccRateAboveExpected"] = ((filteredStats["succPasses"] - filteredStats["expSuccPasses"]) / filteredStats["attPasses"]) * 100
             statsPer90["longPassSuccRate"] = (filteredStats["succLongPasses"] / filteredStats["attLongPasses"]) * 100;
             statsPer90["dribbleTackleRate"] = (filteredStats["succDribbleTackles"] / filteredStats["attDribbleTackles"]) * 100;
             statsPer90["succAerials"] = filteredStats["succAerials"] / minutesOverNinety;
@@ -338,13 +324,11 @@ export function calculateStats(filteredStats, playerCode = undefined){
 
             if (padjTypes['offensive']){
                 statsPer90["padjEFT"] = (filteredStats["pft"] + filteredStats["cft"]) / touchesOverHundred;
-                //statsPer90["padjProgDistance"] = filteredStats["progDistance"] / touchesOverHundred;
                 statsPer90["padjProgPasses"] = filteredStats["progPasses"] / touchesOverHundred;
                 statsPer90["padjProgCarries"] = filteredStats["progCarries"] / touchesOverHundred;
             }
             else {
                 statsPer90["eft"] = (filteredStats["pft"] + filteredStats["cft"]) / minutesOverNinety;
-                //statsPer90["progDistance"] = filteredStats["progDistance"] / minutesOverNinety;
                 statsPer90["progPasses"] = filteredStats["progPasses"] / minutesOverNinety;
                 statsPer90["progCarries"] = filteredStats["progCarries"] / minutesOverNinety;
             }
@@ -354,14 +338,12 @@ export function calculateStats(filteredStats, playerCode = undefined){
                 statsPer90["padjInterceptions_def"] = filteredStats["padjInterceptions_def"] / minutesOverNinety;
                 statsPer90["padjSuccTackles_def"] = filteredStats["padjSuccTackles_def"] / minutesOverNinety;
                 statsPer90["padjFouls_def"] = filteredStats["padjFouls_def"] / minutesOverNinety;
-                //statsPer90["padjClearances_def"] = filteredStats["padjClearances_def"] / minutesOverNinety;
             }
             else {
                 statsPer90["succPressures"] = filteredStats["succPressures"] / minutesOverNinety;
                 statsPer90["interceptions"] = filteredStats["interceptions"] / minutesOverNinety;
                 statsPer90["succTackles"] = filteredStats["succTackles"] / minutesOverNinety;
                 statsPer90["fouls"] = filteredStats["fouls"] / minutesOverNinety;
-                //statsPer90["clearances"] = filteredStats["clearances"] / minutesOverNinety;
             }
 
             break;
@@ -370,7 +352,7 @@ export function calculateStats(filteredStats, playerCode = undefined){
 
             statsPer90["gsaa"] = ((filteredStats["psxg"] - filteredStats["goalsAgainst"]) / filteredStats["sota"]) * 100;
             statsPer90["crossStopRate"] = (filteredStats["stoppedCrosses"] / filteredStats["attCrosses"]) * 100;
-            statsPer90["launchedPassSuccRate"] = (filteredStats["succLaunchedPasses"] / filteredStats["attLaunchedPasses"]) * 100;
+            statsPer90["gkPassSuccRateAboveExpected"] = ((filteredStats["succPasses"] - filteredStats["expSuccPasses"]) / filteredStats["attPasses"]) * 100
 
             break;
 

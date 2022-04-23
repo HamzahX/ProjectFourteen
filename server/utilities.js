@@ -105,7 +105,7 @@ function getStatAverages(aggregatedStats, isGoalkeeper) {
         averageStats["crossStopRate"] = returnFinite((aggregatedStats["stoppedCrosses"] / aggregatedStats["attCrosses"]) * 100);
 
         averageStats["launchedPassSuccRate"] = returnFinite((aggregatedStats["succLaunchedPasses"] / aggregatedStats["attLaunchedPasses"]) * 100);
-        averageStats["passSuccRateAboveExpected"] = returnFinite(((aggregatedStats["succPasses"] - aggregatedStats["expSuccPasses"]) / aggregatedStats["attPasses"]) * 100);
+        averageStats["gkPassSuccRateAboveExpected"] = returnFinite(((aggregatedStats["succPasses"] - aggregatedStats["expSuccPasses"]) / aggregatedStats["attPasses"]) * 100);
     }
     else {
 
@@ -143,7 +143,7 @@ function getStatAverages(aggregatedStats, isGoalkeeper) {
 
         averageStats["turnovers"] = returnFinite((aggregatedStats["timesDispossessed"] + aggregatedStats["miscontrols"] + aggregatedStats["failedDribbles"]) / minutesOverNinety);
         averageStats["padjTurnovers"] = returnFinite((aggregatedStats["timesDispossessed"] + aggregatedStats["miscontrols"] + aggregatedStats["failedDribbles"]) / touchesOverHundred);
-        averageStats["turnoversBelowExpected"] = returnFinite((aggregatedStats["expTurnovers"] - averageStats["turnovers"]) / minutesOverNinety);
+        averageStats["turnoversBelowExpected"] = returnFinite((aggregatedStats["expTurnovers"] - (aggregatedStats["timesDispossessed"] + aggregatedStats["miscontrols"] + aggregatedStats["failedDribbles"])) / minutesOverNinety);
 
         averageStats["succPressures"] = returnFinite(aggregatedStats["succPressures"] / minutesOverNinety);
         averageStats["padjSuccPressures"] = returnFinite(aggregatedStats["padjSuccPressures"] / minutesOverNinety);

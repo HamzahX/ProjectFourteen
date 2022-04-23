@@ -1819,6 +1819,44 @@
 			}
 		}
 	},
+	"passSuccRateAboveExpected": {
+		"label": "Pass Completion %",
+		"mobileLabel": "Pass Comp. %",
+		"suffix": "above expected",
+		"types": [
+			"average"
+		],
+		"isReversed": false,
+		"displayOrder": 43,
+		"precision": 2,
+		"step": 2,
+		"ranges": {
+			"18-19": {
+				"min": -14,
+				"max": 36,
+				"minName": "Remi Oudin",
+				"maxName": "Jordan Siebatcheu"
+			},
+			"19-20": {
+				"min": -10,
+				"max": 30,
+				"minName": "Carlos Fernández",
+				"maxName": "Alberto Paloschi"
+			},
+			"20-21": {
+				"min": -10,
+				"max": 24,
+				"minName": "Mathieu Cafaro",
+				"maxName": "Klaas Jan Huntelaar"
+			},
+			"21-22": {
+				"min": -12,
+				"max": 30,
+				"minName": "Ivan Toney",
+				"maxName": "Matheus Cunha"
+			}
+		}
+	},
 	"attLongPasses": {
 		"label": "Attempted Long Passes",
 		"mobileLabel": "Attempted Long Passes",
@@ -2186,6 +2224,44 @@
 				"max": 30,
 				"minName": "Dante",
 				"maxName": "Jamie Leweling"
+			}
+		}
+	},
+	"turnoversBelowExpected": {
+		"label": "Turnovers",
+		"mobileLabel": "Turnovers",
+		"suffix": "below expected",
+		"types": [
+			"average"
+		],
+		"isReversed": false,
+		"displayOrder": 52,
+		"precision": 2,
+		"step": 0.5,
+		"ranges": {
+			"18-19": {
+				"min": -4,
+				"max": 6,
+				"minName": "Oumar Niasse",
+				"maxName": "Marko Rog"
+			},
+			"19-20": {
+				"min": -4,
+				"max": 7.5,
+				"minName": "Nicolas de Préville",
+				"maxName": "Rony Lopes"
+			},
+			"20-21": {
+				"min": -4,
+				"max": 5,
+				"minName": "Cucho Hernández",
+				"maxName": "Donny van de Beek"
+			},
+			"21-22": {
+				"min": -5,
+				"max": 7,
+				"minName": "Gerson Rodrigues",
+				"maxName": "Ansgar Knauff"
 			}
 		}
 	},
@@ -3288,6 +3364,44 @@
 				"max": 65,
 				"minName": "Alex McCarthy",
 				"maxName": "Marc-André ter Stegen"
+			}
+		}
+	},
+	"gkPassSuccRateAboveExpected": {
+		"label": "Pass Completion %",
+		"mobileLabel": "Pass Comp. %",
+		"suffix": "above expected",
+		"types": [
+			"average"
+		],
+		"isReversed": false,
+		"displayOrder": 81,
+		"precision": 2,
+		"step": 2,
+		"ranges": {
+			"18-19": {
+				"min": -114,
+				"max": 56,
+				"minName": "Pietro Terracciano",
+				"maxName": "Danijel Subasic"
+			},
+			"19-20": {
+				"min": -184,
+				"max": 54,
+				"minName": "Alphonse Areola",
+				"maxName": "Roberto Jiménez"
+			},
+			"20-21": {
+				"min": -88,
+				"max": 56,
+				"minName": "Kepa Arrizabalaga",
+				"maxName": "Paulo Gazzaniga"
+			},
+			"21-22": {
+				"min": -68,
+				"max": 44,
+				"minName": "Alex Meret",
+				"maxName": "Alphonse Areola"
 			}
 		}
 	}
