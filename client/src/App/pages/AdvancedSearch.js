@@ -16,7 +16,7 @@ import isEqual from 'lodash.isequal';
 import SearchBar from "../components/SearchBar";
 import LoadingSpinner from "../components/LoadingSpinner";
 import LoaderOverlay from "../components/LoaderOverlay";
-import ExplanationOverlay from "../components/ExplanationOverlay";
+import ExplanationOverlay from "../components/AdvancedSearchExplanationOverlay";
 import PlayerSearchResult from "../components/PlayerSearchResult";
 
 //import pre-made components

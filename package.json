@@ -3,7 +3,7 @@
   "version": "2.1.2",
   "dependencies": {
     "body-parser": "^1.20.0",
-    "create-react-app": "^3.4.1",
+    "create-react-app": "^1.2.1",
     "csvjson-csv2json": "^5.0.6",
     "dateformat": "^3.0.3",
     "dom-to-image": "^2.6.0",
@@ -17,6 +17,7 @@
     "lodash.mergewith": "^4.6.2",
     "lodash.sum": "^4.0.2",
     "mathjs": "^8.1.0",
+    "ml-regression-multivariate-linear": "^2.0.3",
     "mongodb": "^3.5.5",
     "puppeteer": "^2.1.1"
   },

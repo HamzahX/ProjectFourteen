@@ -206,7 +206,16 @@ let temp_average = (player, aggregatedStats) => {
         let potentialMin = truncateNum(Math.floor(averageStats[stat]/step) * step, precision);
         let potentialMax = truncateNum(Math.ceil(averageStats[stat]/step) * step, precision);
 
-        if ((stat === "gsaa" || averageStats[stat] >= 0) && potentialMin < ALL_STATS[stat]["ranges"][SEASON]["min"]){
+        if (
+            (
+                stat === "gsaa" ||
+                stat === "passSuccRateAboveExpected" ||
+                stat === "gkPassSuccRateAboveExpected" ||
+                stat === "turnoversBelowExpected" ||
+                averageStats[stat] >= 0
+            )
+            && potentialMin < ALL_STATS[stat]["ranges"][SEASON]["min"])
+        {
             ALL_STATS[stat]["ranges"][SEASON]["min"] = potentialMin;
             ALL_STATS[stat]["ranges"][SEASON]["minName"] = PROCESSED[player]["name"];
         }
@@ -433,45 +442,3 @@ setup()
         console.log(anError);
         process.exit(-1);
     });
-
-// let results = {};
-//
-// for (let position in PERCENTILE_ARRAYS){
-//
-//     results[position] = {};
-//
-//     for (let stat in PERCENTILE_ARRAYS[position]){
-//
-//         results[position][stat] = {};
-//
-//         results[position][stat]['25'] = percentile(PERCENTILE_ARRAYS[position][stat], 0.25);
-//         results[position][stat]['50'] = percentile(PERCENTILE_ARRAYS[position][stat], 0.5);
-//         results[position][stat]['75'] = percentile(PERCENTILE_ARRAYS[position][stat], 0.75);
-//
-//     }
-//
-// }
-//
-// console.log(results);
-//
-// fs.writeFile(path.join(__dirname, `referenceData/test.json`), JSON.stringify(results, null, '\t'), async function(err) {
-//     if (err) {
-//         console.log(err);
-//     }
-// });
-//
-//
-// function percentile(arr, p) {
-//     if (arr.length === 0) return 0;
-//     if (typeof p !== 'number') throw new TypeError('p must be a number');
-//     if (p <= 0) return arr[0];
-//     if (p >= 1) return arr[arr.length - 1];
-//
-//     var index = (arr.length - 1) * p,
-//         lower = Math.floor(index),
-//         upper = lower + 1,
-//         weight = index % 1;
-//
-//     if (upper >= arr.length) return arr[lower];
-//     return arr[lower] * (1 - weight) + arr[upper] * weight;
-// }

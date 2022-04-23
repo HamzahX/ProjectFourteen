@@ -55,2426 +55,6 @@
 			}
 		}
 	},
-	"npg": {
-		"label": "Non-Penalty Goals",
-		"mobileLabel": "Non-Penalty Goals",
-		"suffix": "per 90",
-		"types": [
-			"aggregate",
-			"average"
-		],
-		"isReversed": false,
-		"displayOrder": 2,
-		"precision": 2,
-		"step": 0.05,
-		"step_agg": 1,
-		"ranges": {
-			"18-19": {
-				"min": 0,
-				"max": 1.3,
-				"minName": "Emiliano Moretti",
-				"maxName": "Paco Alcácer"
-			},
-			"19-20": {
-				"min": 0,
-				"max": 1.2,
-				"minName": "Rafael",
-				"maxName": "Erling Haaland"
-			},
-			"20-21": {
-				"min": 0,
-				"max": 1.25,
-				"minName": "James Milner",
-				"maxName": "Robert Lewandowski"
-			},
-			"21-22": {
-				"min": 0,
-				"max": 1.1,
-				"minName": "Joaquín",
-				"maxName": "Patrik Schick"
-			}
-		},
-		"ranges_agg": {
-			"18-19": {
-				"min": 0,
-				"max": 43,
-				"minName": "Daniele Bonera",
-				"maxName": "Lionel Messi"
-			},
-			"19-20": {
-				"min": 0,
-				"max": 42,
-				"minName": "Claudio Pizarro",
-				"maxName": "Robert Lewandowski"
-			},
-			"20-21": {
-				"min": 0,
-				"max": 36,
-				"minName": "Christian Maggio",
-				"maxName": "Robert Lewandowski"
-			},
-			"21-22": {
-				"min": 0,
-				"max": 36,
-				"minName": "Joaquín",
-				"maxName": "Robert Lewandowski"
-			}
-		}
-	},
-	"npxg": {
-		"label": "Non-Penalty xG",
-		"mobileLabel": "Non-Penalty xG",
-		"suffix": "per 90",
-		"types": [
-			"aggregate",
-			"average"
-		],
-		"isReversed": false,
-		"displayOrder": 3,
-		"precision": 2,
-		"step": 0.05,
-		"step_agg": 1,
-		"ranges": {
-			"18-19": {
-				"min": 0,
-				"max": 1,
-				"minName": "Emiliano Moretti",
-				"maxName": "Kylian Mbappé"
-			},
-			"19-20": {
-				"min": 0,
-				"max": 1.05,
-				"minName": "Rafael",
-				"maxName": "Edinson Cavani"
-			},
-			"20-21": {
-				"min": 0,
-				"max": 0.9,
-				"minName": "James Milner",
-				"maxName": "Robert Lewandowski"
-			},
-			"21-22": {
-				"min": 0,
-				"max": 0.95,
-				"minName": "James Milner",
-				"maxName": "Robert Lewandowski"
-			}
-		},
-		"ranges_agg": {
-			"18-19": {
-				"min": 0,
-				"max": 31,
-				"minName": "Daniele Bonera",
-				"maxName": "Kylian Mbappé"
-			},
-			"19-20": {
-				"min": 0,
-				"max": 34,
-				"minName": "Claudio Pizarro",
-				"maxName": "Robert Lewandowski"
-			},
-			"20-21": {
-				"min": 0,
-				"max": 29,
-				"minName": "Christian Maggio",
-				"maxName": "Robert Lewandowski"
-			},
-			"21-22": {
-				"min": 0,
-				"max": 31,
-				"minName": "James Milner",
-				"maxName": "Robert Lewandowski"
-			}
-		}
-	},
-	"shots": {
-		"label": "Shots",
-		"mobileLabel": "Shots",
-		"suffix": "",
-		"types": [
-			"aggregate"
-		],
-		"isReversed": false,
-		"displayOrder": 4,
-		"precision": 0,
-		"step_agg": 10,
-		"ranges_agg": {
-			"18-19": {
-				"min": 0,
-				"max": 230,
-				"minName": "Daniele Bonera",
-				"maxName": "Lionel Messi"
-			},
-			"19-20": {
-				"min": 0,
-				"max": 240,
-				"minName": "Claudio Pizarro",
-				"maxName": "Cristiano Ronaldo"
-			},
-			"20-21": {
-				"min": 0,
-				"max": 230,
-				"minName": "Christian Maggio",
-				"maxName": "Lionel Messi"
-			},
-			"21-22": {
-				"min": 0,
-				"max": 160,
-				"minName": "James Milner",
-				"maxName": "Robert Lewandowski"
-			}
-		}
-	},
-	"npxgPerShot": {
-		"label": "Non-Penalty xG/Shot",
-		"mobileLabel": "Non-Penalty xG/Shot",
-		"suffix": "",
-		"types": [
-			"average"
-		],
-		"isReversed": false,
-		"displayOrder": 5,
-		"precision": 3,
-		"step": 0.01,
-		"ranges": {
-			"18-19": {
-				"min": 0.01,
-				"max": 0.28,
-				"minName": "Ivan Radovanovic",
-				"maxName": "Edinson Cavani"
-			},
-			"19-20": {
-				"min": 0.02,
-				"max": 0.29,
-				"minName": "Marcelo",
-				"maxName": "Mauro Icardi"
-			},
-			"20-21": {
-				"min": 0.02,
-				"max": 0.27,
-				"minName": "Faitout Maouassa",
-				"maxName": "Carlos Vinícius"
-			},
-			"21-22": {
-				"min": 0.02,
-				"max": 0.28,
-				"minName": "Bebé",
-				"maxName": "Frenkie de Jong"
-			}
-		}
-	},
-	"attAerials": {
-		"label": "Aerials Contested",
-		"mobileLabel": "Aerials Contested",
-		"suffix": "",
-		"types": [
-			"aggregate"
-		],
-		"isReversed": false,
-		"displayOrder": 6,
-		"precision": 0,
-		"step_agg": 10,
-		"ranges_agg": {
-			"18-19": {
-				"min": 0,
-				"max": 470,
-				"minName": "Daniele Bonera",
-				"maxName": "Aleksandar Mitrovic"
-			},
-			"19-20": {
-				"min": 0,
-				"max": 470,
-				"minName": "Salomon Kalou",
-				"maxName": "Troy Deeney"
-			},
-			"20-21": {
-				"min": 0,
-				"max": 430,
-				"minName": "Wes Morgan",
-				"maxName": "Fabian Klos"
-			},
-			"21-22": {
-				"min": 0,
-				"max": 450,
-				"minName": "Dani Alves",
-				"maxName": "Chris Wood"
-			}
-		}
-	},
-	"succAerials": {
-		"label": "Aerials Won",
-		"mobileLabel": "Aerials Won",
-		"suffix": "per 90",
-		"types": [
-			"aggregate",
-			"average"
-		],
-		"isReversed": false,
-		"displayOrder": 7,
-		"precision": 2,
-		"step": 0.5,
-		"step_agg": 10,
-		"ranges": {
-			"18-19": {
-				"min": 0,
-				"max": 12,
-				"minName": "Joaquín",
-				"maxName": "Sam Vokes"
-			},
-			"19-20": {
-				"min": 0,
-				"max": 11.5,
-				"minName": "Santi Cazorla",
-				"maxName": "Andy Carroll"
-			},
-			"20-21": {
-				"min": 0,
-				"max": 11,
-				"minName": "Ashley Young",
-				"maxName": "Christian Benteke"
-			},
-			"21-22": {
-				"min": 0,
-				"max": 11.5,
-				"minName": "Franck Ribéry",
-				"maxName": "Milan Djuric"
-			}
-		},
-		"ranges_agg": {
-			"18-19": {
-				"min": 0,
-				"max": 230,
-				"minName": "Daniele Bonera",
-				"maxName": "Sean Morrison"
-			},
-			"19-20": {
-				"min": 0,
-				"max": 270,
-				"minName": "Claudio Pizarro",
-				"maxName": "Joselu"
-			},
-			"20-21": {
-				"min": 0,
-				"max": 270,
-				"minName": "Christian Maggio",
-				"maxName": "Joselu"
-			},
-			"21-22": {
-				"min": 0,
-				"max": 270,
-				"minName": "Joaquín",
-				"maxName": "Joselu"
-			}
-		}
-	},
-	"aerialSuccRate": {
-		"label": "Aerial Win %",
-		"mobileLabel": "Aerial Win %",
-		"suffix": "",
-		"types": [
-			"average"
-		],
-		"isReversed": false,
-		"displayOrder": 8,
-		"precision": 1,
-		"step": 5,
-		"ranges": {
-			"18-19": {
-				"min": 0,
-				"max": 95,
-				"minName": "Jadon Sancho",
-				"maxName": "Jan Morávek"
-			},
-			"19-20": {
-				"min": 0,
-				"max": 95,
-				"minName": "Yusuf Yazici",
-				"maxName": "Joel Matip"
-			},
-			"20-21": {
-				"min": 0,
-				"max": 90,
-				"minName": "Dries Mertens",
-				"maxName": "Bruno Alves"
-			},
-			"21-22": {
-				"min": 0,
-				"max": 90,
-				"minName": "Gerard Deulofeu",
-				"maxName": "John Stones"
-			}
-		}
-	},
-	"boxTouches": {
-		"label": "Touches in Box",
-		"mobileLabel": "Touches in Box",
-		"suffix": "per 90",
-		"types": [
-			"average"
-		],
-		"isReversed": false,
-		"displayOrder": 9,
-		"precision": 2,
-		"step": 0.5,
-		"ranges": {
-			"18-19": {
-				"min": 0,
-				"max": 11.5,
-				"minName": "Emiliano Moretti",
-				"maxName": "Vinícius Júnior"
-			},
-			"19-20": {
-				"min": 0,
-				"max": 12.5,
-				"minName": "Daniel Baier",
-				"maxName": "Kylian Mbappé"
-			},
-			"20-21": {
-				"min": 0,
-				"max": 10.5,
-				"minName": "Mark Noble",
-				"maxName": "Duván Zapata"
-			},
-			"21-22": {
-				"min": 0,
-				"max": 11,
-				"minName": "Raúl Albiol",
-				"maxName": "Duván Zapata"
-			}
-		}
-	},
-	"padjBoxTouches": {
-		"label": "Touches in Box",
-		"mobileLabel": "Touches in Box",
-		"suffix": "per 100 touches",
-		"types": [
-			"average"
-		],
-		"isReversed": false,
-		"displayOrder": 10,
-		"precision": 2,
-		"step": 1,
-		"ranges": {
-			"18-19": {
-				"min": 0,
-				"max": 27,
-				"minName": "Emiliano Moretti",
-				"maxName": "Mauro Icardi"
-			},
-			"19-20": {
-				"min": 0,
-				"max": 29,
-				"minName": "Daniel Baier",
-				"maxName": "Mauro Icardi"
-			},
-			"20-21": {
-				"min": 0,
-				"max": 28,
-				"minName": "Mark Noble",
-				"maxName": "Mauro Icardi"
-			},
-			"21-22": {
-				"min": 0,
-				"max": 27,
-				"minName": "Giorgio Chiellini",
-				"maxName": "Mauro Icardi"
-			}
-		}
-	},
-	"xa": {
-		"label": "xA",
-		"mobileLabel": "xA",
-		"suffix": "per 90",
-		"types": [
-			"aggregate",
-			"average"
-		],
-		"isReversed": false,
-		"displayOrder": 11,
-		"precision": 2,
-		"step": 0.02,
-		"step_agg": 1,
-		"ranges": {
-			"18-19": {
-				"min": 0,
-				"max": 0.46,
-				"minName": "Emiliano Moretti",
-				"maxName": "Lionel Messi"
-			},
-			"19-20": {
-				"min": 0,
-				"max": 0.64,
-				"minName": "Dante",
-				"maxName": "Ángel Di María"
-			},
-			"20-21": {
-				"min": 0,
-				"max": 0.52,
-				"minName": "Hilton",
-				"maxName": "Ángel Di María"
-			},
-			"21-22": {
-				"min": 0,
-				"max": 0.64,
-				"minName": "Dante",
-				"maxName": "Ousmane Dembélé"
-			}
-		},
-		"ranges_agg": {
-			"18-19": {
-				"min": 0,
-				"max": 18,
-				"minName": "Claudio Pizarro",
-				"maxName": "Lionel Messi"
-			},
-			"19-20": {
-				"min": 0,
-				"max": 21,
-				"minName": "Claudio Pizarro",
-				"maxName": "Kevin De Bruyne"
-			},
-			"20-21": {
-				"min": 0,
-				"max": 17,
-				"minName": "Christian Maggio",
-				"maxName": "Bruno Fernandes"
-			},
-			"21-22": {
-				"min": 0,
-				"max": 13,
-				"minName": "Aaron Lennon",
-				"maxName": "Thomas Müller"
-			}
-		}
-	},
-	"padjXA": {
-		"label": "xA",
-		"mobileLabel": "xA",
-		"suffix": "per 100 touches",
-		"types": [
-			"average"
-		],
-		"isReversed": false,
-		"displayOrder": 12,
-		"precision": 2,
-		"step": 0.05,
-		"ranges": {
-			"18-19": {
-				"min": 0,
-				"max": 0.75,
-				"minName": "Emiliano Moretti",
-				"maxName": "Robert Lewandowski"
-			},
-			"19-20": {
-				"min": 0,
-				"max": 1,
-				"minName": "Daniel Baier",
-				"maxName": "Kylian Mbappé"
-			},
-			"20-21": {
-				"min": 0,
-				"max": 1.15,
-				"minName": "Dante",
-				"maxName": "Mauro Icardi"
-			},
-			"21-22": {
-				"min": 0,
-				"max": 1,
-				"minName": "Dante",
-				"maxName": "Ante Rebic"
-			}
-		}
-	},
-	"sca": {
-		"label": "OP Shot-Creating Actions",
-		"mobileLabel": "OP Shot-Creating Actions",
-		"suffix": "per 90",
-		"types": [
-			"average"
-		],
-		"isReversed": false,
-		"displayOrder": 13,
-		"precision": 2,
-		"step": 0.2,
-		"ranges": {
-			"18-19": {
-				"min": 0,
-				"max": 7,
-				"minName": "Thomas Vermaelen",
-				"maxName": "Lionel Messi"
-			},
-			"19-20": {
-				"min": 0,
-				"max": 6.8,
-				"minName": "Adama Soumaoro",
-				"maxName": "Josip Ilicic"
-			},
-			"20-21": {
-				"min": 0,
-				"max": 7.4,
-				"minName": "Branislav Ivanovic",
-				"maxName": "Neymar"
-			},
-			"21-22": {
-				"min": 0,
-				"max": 6.2,
-				"minName": "Juan Cala",
-				"maxName": "Lionel Messi"
-			}
-		}
-	},
-	"padjSCA": {
-		"label": "OP Shot-Creating Actions",
-		"mobileLabel": "OP Shot-Creating Actions",
-		"suffix": "per 100 touches",
-		"types": [
-			"average"
-		],
-		"isReversed": false,
-		"displayOrder": 14,
-		"precision": 2,
-		"step": 0.5,
-		"ranges": {
-			"18-19": {
-				"min": 0,
-				"max": 10.5,
-				"minName": "Thomas Vermaelen",
-				"maxName": "Robert Lewandowski"
-			},
-			"19-20": {
-				"min": 0,
-				"max": 11.5,
-				"minName": "Ragnar Klavan",
-				"maxName": "Edinson Cavani"
-			},
-			"20-21": {
-				"min": 0,
-				"max": 13,
-				"minName": "Christian Fuchs",
-				"maxName": "Victor Osimhen"
-			},
-			"21-22": {
-				"min": 0,
-				"max": 12.5,
-				"minName": "Raúl Albiol",
-				"maxName": "Ante Rebic"
-			}
-		}
-	},
-	"ppa": {
-		"label": "Passes into Box",
-		"mobileLabel": "Passes into Box",
-		"suffix": "per 90",
-		"types": [
-			"average"
-		],
-		"isReversed": false,
-		"displayOrder": 15,
-		"precision": 2,
-		"step": 0.2,
-		"ranges": {
-			"18-19": {
-				"min": 0,
-				"max": 4.8,
-				"minName": "Emiliano Moretti",
-				"maxName": "Lionel Messi"
-			},
-			"19-20": {
-				"min": 0,
-				"max": 5,
-				"minName": "Dante",
-				"maxName": "Neymar"
-			},
-			"20-21": {
-				"min": 0,
-				"max": 4.6,
-				"minName": "Hilton",
-				"maxName": "Lionel Messi"
-			},
-			"21-22": {
-				"min": 0,
-				"max": 4,
-				"minName": "Dante",
-				"maxName": "Lionel Messi"
-			}
-		}
-	},
-	"padjPPA": {
-		"label": "Passes into Box",
-		"mobileLabel": "Passes into Box",
-		"suffix": "per 100 touches",
-		"types": [
-			"average"
-		],
-		"isReversed": false,
-		"displayOrder": 16,
-		"precision": 2,
-		"step": 0.2,
-		"ranges": {
-			"18-19": {
-				"min": 0,
-				"max": 6,
-				"minName": "Dante",
-				"maxName": "Lionel Messi"
-			},
-			"19-20": {
-				"min": 0,
-				"max": 6,
-				"minName": "Adama Soumaoro",
-				"maxName": "Francisco Portillo"
-			},
-			"20-21": {
-				"min": 0,
-				"max": 6.4,
-				"minName": "Sergio Ramos",
-				"maxName": "Jony"
-			},
-			"21-22": {
-				"min": 0,
-				"max": 6.2,
-				"minName": "Dante",
-				"maxName": "Ante Rebic"
-			}
-		}
-	},
-	"pft": {
-		"label": "Passes into Final 1/3",
-		"mobileLabel": "Passes into Final 1/3",
-		"suffix": "per 90",
-		"types": [
-			"average"
-		],
-		"isReversed": false,
-		"displayOrder": 17,
-		"precision": 2,
-		"step": 0.5,
-		"ranges": {
-			"18-19": {
-				"min": 0,
-				"max": 11.5,
-				"minName": "Bostjan Cesar",
-				"maxName": "Marco Verratti"
-			},
-			"19-20": {
-				"min": 0,
-				"max": 11,
-				"minName": "Teemu Pukki",
-				"maxName": "David Alaba"
-			},
-			"20-21": {
-				"min": 0,
-				"max": 12,
-				"minName": "Billy Sharp",
-				"maxName": "Toni Kroos"
-			},
-			"21-22": {
-				"min": 0,
-				"max": 11.5,
-				"minName": "Edinson Cavani",
-				"maxName": "Toni Kroos"
-			}
-		}
-	},
-	"padjPFT": {
-		"label": "Passes into Final 1/3",
-		"mobileLabel": "Passes into Final 1/3",
-		"suffix": "per 100 touches",
-		"types": [
-			"average"
-		],
-		"isReversed": false,
-		"displayOrder": 18,
-		"precision": 2,
-		"step": 0.5,
-		"ranges": {
-			"18-19": {
-				"min": 0,
-				"max": 11.5,
-				"minName": "Sergio León",
-				"maxName": "Daniele De Rossi"
-			},
-			"19-20": {
-				"min": 0,
-				"max": 11.5,
-				"minName": "Samuel Di Carmine",
-				"maxName": "David Alaba"
-			},
-			"20-21": {
-				"min": 0.5,
-				"max": 16,
-				"minName": "Juanmi",
-				"maxName": "Léo Sena"
-			},
-			"21-22": {
-				"min": 0,
-				"max": 12,
-				"minName": "Mitchell van Bergen",
-				"maxName": "Corentin Tolisso"
-			}
-		}
-	},
-	"progDistance": {
-		"label": "Yards Progressed",
-		"mobileLabel": "Yards Progressed",
-		"suffix": "per 90",
-		"types": [
-			"average"
-		],
-		"isReversed": false,
-		"displayOrder": 19,
-		"precision": 0,
-		"step": 50,
-		"ranges": {
-			"18-19": {
-				"min": 0,
-				"max": 900,
-				"minName": "Daniel Ciofani",
-				"maxName": "Aymeric Laporte"
-			},
-			"19-20": {
-				"min": 0,
-				"max": 900,
-				"minName": "Jimmy Briand",
-				"maxName": "Aymeric Laporte"
-			},
-			"20-21": {
-				"min": 0,
-				"max": 850,
-				"minName": "Billy Sharp",
-				"maxName": "Kevin Vogt"
-			},
-			"21-22": {
-				"min": 0,
-				"max": 900,
-				"minName": "Radamel Falcao",
-				"maxName": "Aymeric Laporte"
-			}
-		}
-	},
-	"padjProgDistance": {
-		"label": "Yards Progressed",
-		"mobileLabel": "Yards Progressed",
-		"suffix": "per 100 touches",
-		"types": [
-			"average"
-		],
-		"isReversed": false,
-		"displayOrder": 20,
-		"precision": 0,
-		"step": 50,
-		"ranges": {
-			"18-19": {
-				"min": 50,
-				"max": 1000,
-				"minName": "Olivier Giroud",
-				"maxName": "Niklas Moisander"
-			},
-			"19-20": {
-				"min": 100,
-				"max": 950,
-				"minName": "Olivier Giroud",
-				"maxName": "Leonardo Bonucci"
-			},
-			"20-21": {
-				"min": 100,
-				"max": 1000,
-				"minName": "Fernando Llorente",
-				"maxName": "Kevin Vogt"
-			},
-			"21-22": {
-				"min": 100,
-				"max": 950,
-				"minName": "Edinson Cavani",
-				"maxName": "Stefan Strandberg"
-			}
-		}
-	},
-	"attPasses": {
-		"label": "Attempted Passes",
-		"mobileLabel": "Attempted Passes",
-		"suffix": "",
-		"types": [
-			"aggregate"
-		],
-		"isReversed": false,
-		"displayOrder": 21,
-		"precision": 0,
-		"step_agg": 100,
-		"ranges_agg": {
-			"18-19": {
-				"min": 0,
-				"max": 3900,
-				"minName": "Daniele Bonera",
-				"maxName": "Aymeric Laporte"
-			},
-			"19-20": {
-				"min": 0,
-				"max": 3900,
-				"minName": "Claudio Pizarro",
-				"maxName": "Trent Alexander-Arnold"
-			},
-			"20-21": {
-				"min": 0,
-				"max": 3900,
-				"minName": "Wes Morgan",
-				"maxName": "Andrew Robertson"
-			},
-			"21-22": {
-				"min": 0,
-				"max": 3200,
-				"minName": "Jimmy Briand",
-				"maxName": "João Cancelo"
-			}
-		}
-	},
-	"succPasses": {
-		"label": "Successful Passes",
-		"mobileLabel": "Successful Passes",
-		"suffix": "",
-		"types": [
-			"aggregate"
-		],
-		"isReversed": false,
-		"displayOrder": 22,
-		"precision": 0,
-		"step_agg": 100,
-		"ranges_agg": {
-			"18-19": {
-				"min": 0,
-				"max": 3600,
-				"minName": "Daniele Bonera",
-				"maxName": "Aymeric Laporte"
-			},
-			"19-20": {
-				"min": 0,
-				"max": 3500,
-				"minName": "Claudio Pizarro",
-				"maxName": "Virgil van Dijk"
-			},
-			"20-21": {
-				"min": 0,
-				"max": 3400,
-				"minName": "Wes Morgan",
-				"maxName": "Rúben Dias"
-			},
-			"21-22": {
-				"min": 0,
-				"max": 2900,
-				"minName": "Jimmy Briand",
-				"maxName": "William Saliba"
-			}
-		}
-	},
-	"passSuccRate": {
-		"label": "Pass Completion %",
-		"mobileLabel": "Pass Comp. %",
-		"suffix": "",
-		"types": [
-			"average"
-		],
-		"isReversed": false,
-		"displayOrder": 23,
-		"precision": 1,
-		"step": 5,
-		"ranges": {
-			"18-19": {
-				"min": 45,
-				"max": 100,
-				"minName": "Suk Hyun-Jun",
-				"maxName": "Javi García"
-			},
-			"19-20": {
-				"min": 50,
-				"max": 100,
-				"minName": "Joselu",
-				"maxName": "Thiago Silva"
-			},
-			"20-21": {
-				"min": 50,
-				"max": 100,
-				"minName": "Ádám Szalai",
-				"maxName": "Andrea Ranocchia"
-			},
-			"21-22": {
-				"min": 50,
-				"max": 100,
-				"minName": "Fabian Klos",
-				"maxName": "Leandro Paredes"
-			}
-		}
-	},
-	"attLongPasses": {
-		"label": "Attempted Long Passes",
-		"mobileLabel": "Attempted Long Passes",
-		"suffix": "",
-		"types": [
-			"aggregate"
-		],
-		"isReversed": false,
-		"displayOrder": 24,
-		"precision": 0,
-		"step_agg": 50,
-		"ranges_agg": {
-			"18-19": {
-				"min": 0,
-				"max": 950,
-				"minName": "Claudio Pizarro",
-				"maxName": "Toby Alderweireld"
-			},
-			"19-20": {
-				"min": 0,
-				"max": 1150,
-				"minName": "Claudio Pizarro",
-				"maxName": "Trent Alexander-Arnold"
-			},
-			"20-21": {
-				"min": 0,
-				"max": 1000,
-				"minName": "Christian Maggio",
-				"maxName": "Trent Alexander-Arnold"
-			},
-			"21-22": {
-				"min": 0,
-				"max": 800,
-				"minName": "Zlatan Ibrahimovic",
-				"maxName": "Trent Alexander-Arnold"
-			}
-		}
-	},
-	"succLongPasses": {
-		"label": "Successful Long Passes",
-		"mobileLabel": "Successful Long Passes",
-		"suffix": "",
-		"types": [
-			"aggregate"
-		],
-		"isReversed": false,
-		"displayOrder": 25,
-		"precision": 0,
-		"step_agg": 50,
-		"ranges_agg": {
-			"18-19": {
-				"min": 0,
-				"max": 750,
-				"minName": "Claudio Pizarro",
-				"maxName": "Virgil van Dijk"
-			},
-			"19-20": {
-				"min": 0,
-				"max": 800,
-				"minName": "Claudio Pizarro",
-				"maxName": "Virgil van Dijk"
-			},
-			"20-21": {
-				"min": 0,
-				"max": 750,
-				"minName": "Christian Maggio",
-				"maxName": "Mats Hummels"
-			},
-			"21-22": {
-				"min": 0,
-				"max": 500,
-				"minName": "Zlatan Ibrahimovic",
-				"maxName": "Toni Kroos"
-			}
-		}
-	},
-	"longPassSuccRate": {
-		"label": "Long Pass Completion %",
-		"mobileLabel": "Long Pass Comp. %",
-		"suffix": "",
-		"types": [
-			"average"
-		],
-		"isReversed": false,
-		"displayOrder": 26,
-		"precision": 1,
-		"step": 5,
-		"ranges": {
-			"18-19": {
-				"min": 20,
-				"max": 95,
-				"minName": "Samuel Grandsir",
-				"maxName": "Vincent Kompany"
-			},
-			"19-20": {
-				"min": 15,
-				"max": 100,
-				"minName": "Luis Rioja",
-				"maxName": "John Stones"
-			},
-			"20-21": {
-				"min": 20,
-				"max": 100,
-				"minName": "Iván Alejo",
-				"maxName": "M'Bala Nzola"
-			},
-			"21-22": {
-				"min": 20,
-				"max": 95,
-				"minName": "Marc Albrighton",
-				"maxName": "Danilo Pereira"
-			}
-		}
-	},
-	"attDribbles": {
-		"label": "Attempted Dribbles",
-		"mobileLabel": "Attempted Dribbles",
-		"suffix": "",
-		"types": [
-			"aggregate"
-		],
-		"isReversed": false,
-		"displayOrder": 27,
-		"precision": 0,
-		"step_agg": 20,
-		"ranges_agg": {
-			"18-19": {
-				"min": 0,
-				"max": 320,
-				"minName": "Claudio Pizarro",
-				"maxName": "Lionel Messi"
-			},
-			"19-20": {
-				"min": 0,
-				"max": 360,
-				"minName": "Claudio Pizarro",
-				"maxName": "Lionel Messi"
-			},
-			"20-21": {
-				"min": 0,
-				"max": 300,
-				"minName": "Christian Maggio",
-				"maxName": "Lionel Messi"
-			},
-			"21-22": {
-				"min": 0,
-				"max": 260,
-				"minName": "Zlatan Ibrahimovic",
-				"maxName": "Vinícius Júnior"
-			}
-		}
-	},
-	"succDribbles": {
-		"label": "Successful Dribbles",
-		"mobileLabel": "Succ. Dribbles",
-		"suffix": "per 90",
-		"types": [
-			"aggregate",
-			"average"
-		],
-		"isReversed": false,
-		"displayOrder": 28,
-		"precision": 2,
-		"step": 0.2,
-		"step_agg": 10,
-		"ranges": {
-			"18-19": {
-				"min": 0,
-				"max": 7.4,
-				"minName": "Emiliano Moretti",
-				"maxName": "Sofiane Boufal"
-			},
-			"19-20": {
-				"min": 0,
-				"max": 6.4,
-				"minName": "Hilton",
-				"maxName": "Sofiane Boufal"
-			},
-			"20-21": {
-				"min": 0,
-				"max": 6.2,
-				"minName": "Dante",
-				"maxName": "Neymar"
-			},
-			"21-22": {
-				"min": 0,
-				"max": 5,
-				"minName": "Zlatan Ibrahimovic",
-				"maxName": "Adama Traoré"
-			}
-		},
-		"ranges_agg": {
-			"18-19": {
-				"min": 0,
-				"max": 200,
-				"minName": "Claudio Pizarro",
-				"maxName": "Lionel Messi"
-			},
-			"19-20": {
-				"min": 0,
-				"max": 250,
-				"minName": "Claudio Pizarro",
-				"maxName": "Lionel Messi"
-			},
-			"20-21": {
-				"min": 0,
-				"max": 190,
-				"minName": "Christian Maggio",
-				"maxName": "Lionel Messi"
-			},
-			"21-22": {
-				"min": 0,
-				"max": 130,
-				"minName": "Zlatan Ibrahimovic",
-				"maxName": "Vinícius Júnior"
-			}
-		}
-	},
-	"padjSuccDribbles": {
-		"label": "Successful Dribbles",
-		"mobileLabel": "Succ. Dribbles",
-		"suffix": "per 100 touches",
-		"types": [
-			"average"
-		],
-		"isReversed": false,
-		"displayOrder": 29,
-		"precision": 2,
-		"step": 0.5,
-		"ranges": {
-			"18-19": {
-				"min": 0,
-				"max": 13,
-				"minName": "Emiliano Moretti",
-				"maxName": "Sofiane Boufal"
-			},
-			"19-20": {
-				"min": 0,
-				"max": 13,
-				"minName": "Hilton",
-				"maxName": "Allan Saint-Maximin"
-			},
-			"20-21": {
-				"min": 0,
-				"max": 12.5,
-				"minName": "Dante",
-				"maxName": "Allan Saint-Maximin"
-			},
-			"21-22": {
-				"min": 0,
-				"max": 11.5,
-				"minName": "Zlatan Ibrahimovic",
-				"maxName": "Allan Saint-Maximin"
-			}
-		}
-	},
-	"dribbleSuccRate": {
-		"label": "Dribble Success %",
-		"mobileLabel": "Dribble Succ. %",
-		"suffix": "",
-		"types": [
-			"average"
-		],
-		"isReversed": false,
-		"displayOrder": 30,
-		"precision": 1,
-		"step": 5,
-		"ranges": {
-			"18-19": {
-				"min": 15,
-				"max": 100,
-				"minName": "Valère Germain",
-				"maxName": "Pirmin Schwegler"
-			},
-			"19-20": {
-				"min": 15,
-				"max": 100,
-				"minName": "Joan Sastre",
-				"maxName": "Dante"
-			},
-			"20-21": {
-				"min": 20,
-				"max": 100,
-				"minName": "Emile Smith Rowe",
-				"maxName": "Diego Godín"
-			},
-			"21-22": {
-				"min": 10,
-				"max": 100,
-				"minName": "Mads Roerslev",
-				"maxName": "Yoane Wissa"
-			}
-		}
-	},
-	"turnovers": {
-		"label": "Turnovers",
-		"mobileLabel": "Turnovers",
-		"suffix": "per 90",
-		"types": [
-			"average"
-		],
-		"isReversed": true,
-		"displayOrder": 31,
-		"precision": 2,
-		"step": 0.5,
-		"ranges": {
-			"18-19": {
-				"min": 0,
-				"max": 11,
-				"minName": "Emiliano Moretti",
-				"maxName": "Oumar Niasse"
-			},
-			"19-20": {
-				"min": 0,
-				"max": 9,
-				"minName": "Hilton",
-				"maxName": "Neymar"
-			},
-			"20-21": {
-				"min": 0,
-				"max": 8.5,
-				"minName": "Dante",
-				"maxName": "Neymar"
-			},
-			"21-22": {
-				"min": 0,
-				"max": 10.5,
-				"minName": "Dante",
-				"maxName": "Lucas Boyé"
-			}
-		}
-	},
-	"padjTurnovers": {
-		"label": "Turnovers",
-		"mobileLabel": "Turnovers",
-		"suffix": "per 100 touches",
-		"types": [
-			"average"
-		],
-		"isReversed": true,
-		"displayOrder": 32,
-		"precision": 2,
-		"step": 1,
-		"ranges": {
-			"18-19": {
-				"min": 0,
-				"max": 30,
-				"minName": "Emiliano Moretti",
-				"maxName": "Oumar Niasse"
-			},
-			"19-20": {
-				"min": 0,
-				"max": 23,
-				"minName": "Dante",
-				"maxName": "Víctor Campuzano"
-			},
-			"20-21": {
-				"min": 0,
-				"max": 22,
-				"minName": "Dante",
-				"maxName": "Opa Nguette"
-			},
-			"21-22": {
-				"min": 0,
-				"max": 25,
-				"minName": "Dante",
-				"maxName": "Callum Wilson"
-			}
-		}
-	},
-	"succPressures": {
-		"label": "Successful Pressures",
-		"mobileLabel": "Succ. Pressures",
-		"suffix": "per 90",
-		"types": [
-			"average"
-		],
-		"isReversed": false,
-		"displayOrder": 33,
-		"precision": 2,
-		"step": 0.5,
-		"ranges": {
-			"18-19": {
-				"min": 0.5,
-				"max": 11.5,
-				"minName": "Scott Dann",
-				"maxName": "Sebastian Rode"
-			},
-			"19-20": {
-				"min": 1,
-				"max": 12,
-				"minName": "Gary Cahill",
-				"maxName": "Konrad Laimer"
-			},
-			"20-21": {
-				"min": 1,
-				"max": 9.5,
-				"minName": "Gary Cahill",
-				"maxName": "Sven Schipplock"
-			},
-			"21-22": {
-				"min": 1,
-				"max": 11.5,
-				"minName": "Shane Duffy",
-				"maxName": "Konrad Laimer"
-			}
-		}
-	},
-	"padjSuccPressures": {
-		"label": "Successful Pressures",
-		"mobileLabel": "Succ. Pressures",
-		"suffix": "per 90 (pAdj)",
-		"types": [
-			"average"
-		],
-		"isReversed": false,
-		"displayOrder": 34,
-		"precision": 2,
-		"step": 1,
-		"ranges": {
-			"18-19": {
-				"min": 0,
-				"max": 15,
-				"minName": "Scott Dann",
-				"maxName": "Arturo Vidal"
-			},
-			"19-20": {
-				"min": 0,
-				"max": 14,
-				"minName": "Scott Dann",
-				"maxName": "Arturo Vidal"
-			},
-			"20-21": {
-				"min": 0,
-				"max": 13,
-				"minName": "Gary Cahill",
-				"maxName": "Romain Del Castillo"
-			},
-			"21-22": {
-				"min": 0,
-				"max": 14,
-				"minName": "Dedryck Boyata",
-				"maxName": "Konrad Laimer"
-			}
-		}
-	},
-	"padjSuccPressures_att": {
-		"label": "Successful Pressures (Att.)",
-		"mobileLabel": "Succ. Pressures (Att.)",
-		"suffix": "per 90 (pAdj)",
-		"types": [
-			"average"
-		],
-		"isReversed": false,
-		"displayOrder": 35,
-		"precision": 2,
-		"step": 1,
-		"ranges": {
-			"18-19": {
-				"min": 0,
-				"max": 15,
-				"minName": "Scott Dann",
-				"maxName": "Arturo Vidal"
-			},
-			"19-20": {
-				"min": 0,
-				"max": 14,
-				"minName": "Mateo Pavlovic",
-				"maxName": "Arturo Vidal"
-			},
-			"20-21": {
-				"min": 0,
-				"max": 12,
-				"minName": "Scott Dann",
-				"maxName": "Morgan Sanson"
-			},
-			"21-22": {
-				"min": 0,
-				"max": 15,
-				"minName": "Dedryck Boyata",
-				"maxName": "Kalvin Phillips"
-			}
-		}
-	},
-	"padjSuccPressures_def": {
-		"label": "Successful Pressures (Def.)",
-		"mobileLabel": "Succ. Pressures (Def.)",
-		"suffix": "per 90 (pAdj)",
-		"types": [
-			"average"
-		],
-		"isReversed": false,
-		"displayOrder": 36,
-		"precision": 2,
-		"step": 1,
-		"ranges": {
-			"18-19": {
-				"min": 0,
-				"max": 15,
-				"minName": "Scott Dann",
-				"maxName": "Arturo Vidal"
-			},
-			"19-20": {
-				"min": 0,
-				"max": 15,
-				"minName": "Scott Dann",
-				"maxName": "Thomas Müller"
-			},
-			"20-21": {
-				"min": 0,
-				"max": 13,
-				"minName": "Gary Cahill",
-				"maxName": "Romain Del Castillo"
-			},
-			"21-22": {
-				"min": 0,
-				"max": 15,
-				"minName": "Dedryck Boyata",
-				"maxName": "Konrad Laimer"
-			}
-		}
-	},
-	"interceptions": {
-		"label": "Interceptions",
-		"mobileLabel": "Interceptions",
-		"suffix": "per 90",
-		"types": [
-			"average"
-		],
-		"isReversed": false,
-		"displayOrder": 37,
-		"precision": 2,
-		"step": 0.2,
-		"ranges": {
-			"18-19": {
-				"min": 0,
-				"max": 4.2,
-				"minName": "Claudio Pizarro",
-				"maxName": "Sol Bamba"
-			},
-			"19-20": {
-				"min": 0,
-				"max": 2.6,
-				"minName": "Zlatan Ibrahimovic",
-				"maxName": "Thomas Delaney"
-			},
-			"20-21": {
-				"min": 0,
-				"max": 3.6,
-				"minName": "Dante",
-				"maxName": "Milan Badelj"
-			},
-			"21-22": {
-				"min": 0,
-				"max": 4.6,
-				"minName": "Cristiano Ronaldo",
-				"maxName": "Exequiel Palacios"
-			}
-		}
-	},
-	"padjInterceptions": {
-		"label": "Interceptions",
-		"mobileLabel": "Interceptions",
-		"suffix": "per 90 (pAdj)",
-		"types": [
-			"average"
-		],
-		"isReversed": false,
-		"displayOrder": 38,
-		"precision": 2,
-		"step": 0.2,
-		"ranges": {
-			"18-19": {
-				"min": 0,
-				"max": 3.6,
-				"minName": "Claudio Pizarro",
-				"maxName": "Danilo"
-			},
-			"19-20": {
-				"min": 0,
-				"max": 3,
-				"minName": "Zlatan Ibrahimovic",
-				"maxName": "Thomas Delaney"
-			},
-			"20-21": {
-				"min": 0,
-				"max": 4.4,
-				"minName": "Fabio Quagliarella",
-				"maxName": "Diego Llorente"
-			},
-			"21-22": {
-				"min": 0,
-				"max": 5.8,
-				"minName": "Radamel Falcao",
-				"maxName": "Timo Hübers"
-			}
-		}
-	},
-	"padjInterceptions_def": {
-		"label": "Interceptions (Def.)",
-		"mobileLabel": "Interceptions (Def.)",
-		"suffix": "per 90 (pAdj)",
-		"types": [
-			"average"
-		],
-		"isReversed": false,
-		"displayOrder": 39,
-		"precision": 2,
-		"step": 0.2,
-		"ranges": {
-			"18-19": {
-				"min": 0,
-				"max": 3.6,
-				"minName": "Claudio Pizarro",
-				"maxName": "Danilo"
-			},
-			"19-20": {
-				"min": 0,
-				"max": 3.2,
-				"minName": "Zlatan Ibrahimovic",
-				"maxName": "Thomas Delaney"
-			},
-			"20-21": {
-				"min": 0,
-				"max": 4,
-				"minName": "Kevin Gameiro",
-				"maxName": "Leon Goretzka"
-			},
-			"21-22": {
-				"min": 0,
-				"max": 6,
-				"minName": "Cristiano Ronaldo",
-				"maxName": "Timo Hübers"
-			}
-		}
-	},
-	"succTackles": {
-		"label": "Successful Tackles",
-		"mobileLabel": "Succ. Tackles",
-		"suffix": "per 90",
-		"types": [
-			"average"
-		],
-		"isReversed": false,
-		"displayOrder": 40,
-		"precision": 2,
-		"step": 0.5,
-		"ranges": {
-			"18-19": {
-				"min": 0,
-				"max": 5.5,
-				"minName": "Sergio Pellissier",
-				"maxName": "Idrissa Gueye"
-			},
-			"19-20": {
-				"min": 0,
-				"max": 6,
-				"minName": "Zlatan Ibrahimovic",
-				"maxName": "Paulo Otávio"
-			},
-			"20-21": {
-				"min": 0,
-				"max": 5,
-				"minName": "Zlatan Ibrahimovic",
-				"maxName": "Laurent Abergel"
-			},
-			"21-22": {
-				"min": 0,
-				"max": 5,
-				"minName": "Zlatan Ibrahimovic",
-				"maxName": "Arturo Vidal"
-			}
-		}
-	},
-	"padjSuccTackles": {
-		"label": "Successful Tackles",
-		"mobileLabel": "Succ. Tackles",
-		"suffix": "per 90 (pAdj)",
-		"types": [
-			"average"
-		],
-		"isReversed": false,
-		"displayOrder": 41,
-		"precision": 2,
-		"step": 0.5,
-		"ranges": {
-			"18-19": {
-				"min": 0,
-				"max": 6.5,
-				"minName": "Sergio Pellissier",
-				"maxName": "Arturo Vidal"
-			},
-			"19-20": {
-				"min": 0,
-				"max": 6.5,
-				"minName": "Zlatan Ibrahimovic",
-				"maxName": "Idrissa Gueye"
-			},
-			"20-21": {
-				"min": 0,
-				"max": 6.5,
-				"minName": "Cristiano Ronaldo",
-				"maxName": "Valentin Rongier"
-			},
-			"21-22": {
-				"min": 0,
-				"max": 6.5,
-				"minName": "Zlatan Ibrahimovic",
-				"maxName": "Arturo Vidal"
-			}
-		}
-	},
-	"padjSuccTackles_def": {
-		"label": "Successful Tackles (Def.)",
-		"mobileLabel": "Succ. Tackles (Def.)",
-		"suffix": "per 90 (pAdj)",
-		"types": [
-			"average"
-		],
-		"isReversed": false,
-		"displayOrder": 42,
-		"precision": 2,
-		"step": 0.5,
-		"ranges": {
-			"18-19": {
-				"min": 0,
-				"max": 6.5,
-				"minName": "Sergio Pellissier",
-				"maxName": "Arturo Vidal"
-			},
-			"19-20": {
-				"min": 0,
-				"max": 7,
-				"minName": "Zlatan Ibrahimovic",
-				"maxName": "Paulo Otávio"
-			},
-			"20-21": {
-				"min": 0,
-				"max": 6.5,
-				"minName": "Zlatan Ibrahimovic",
-				"maxName": "Exequiel Palacios"
-			},
-			"21-22": {
-				"min": 0,
-				"max": 6.5,
-				"minName": "Zlatan Ibrahimovic",
-				"maxName": "James Milner"
-			}
-		}
-	},
-	"attDribbleTackles": {
-		"label": "Attempted Tackles vs Dribblers",
-		"mobileLabel": "Attempted Tackles vs Dribblers",
-		"suffix": "",
-		"types": [
-			"aggregate"
-		],
-		"isReversed": false,
-		"displayOrder": 43,
-		"precision": 0,
-		"step_agg": 10,
-		"ranges_agg": {
-			"18-19": {
-				"min": 0,
-				"max": 180,
-				"minName": "Claudio Pizarro",
-				"maxName": "Allan"
-			},
-			"19-20": {
-				"min": 0,
-				"max": 170,
-				"minName": "Claudio Pizarro",
-				"maxName": "João Moutinho"
-			},
-			"20-21": {
-				"min": 0,
-				"max": 180,
-				"minName": "Christian Maggio",
-				"maxName": "Laurent Abergel"
-			},
-			"21-22": {
-				"min": 0,
-				"max": 130,
-				"minName": "Zlatan Ibrahimovic",
-				"maxName": "Laurent Abergel"
-			}
-		}
-	},
-	"succDribbleTackles": {
-		"label": "Successful Tackles vs Dribblers",
-		"mobileLabel": "Successful Tackles vs Dribblers",
-		"suffix": "",
-		"types": [
-			"aggregate"
-		],
-		"isReversed": false,
-		"displayOrder": 44,
-		"precision": 0,
-		"step_agg": 5,
-		"ranges_agg": {
-			"18-19": {
-				"min": 0,
-				"max": 60,
-				"minName": "Claudio Pizarro",
-				"maxName": "Allan"
-			},
-			"19-20": {
-				"min": 0,
-				"max": 60,
-				"minName": "Claudio Pizarro",
-				"maxName": "Ricardo Pereira"
-			},
-			"20-21": {
-				"min": 0,
-				"max": 65,
-				"minName": "Christian Maggio",
-				"maxName": "Pierre-Emile Højbjerg"
-			},
-			"21-22": {
-				"min": 0,
-				"max": 55,
-				"minName": "Zlatan Ibrahimovic",
-				"maxName": "Reinildo"
-			}
-		}
-	},
-	"dribbleTackleRate": {
-		"label": "Tackle/Dribbled Past %",
-		"mobileLabel": "Tackle/ Dribbled Past %",
-		"suffix": "",
-		"types": [
-			"average"
-		],
-		"isReversed": false,
-		"displayOrder": 45,
-		"precision": 1,
-		"step": 5,
-		"ranges": {
-			"18-19": {
-				"min": 0,
-				"max": 90,
-				"minName": "Vedad Ibisevic",
-				"maxName": "Virgil van Dijk"
-			},
-			"19-20": {
-				"min": 0,
-				"max": 100,
-				"minName": "Goran Pandev",
-				"maxName": "Federico Peluso"
-			},
-			"20-21": {
-				"min": 0,
-				"max": 85,
-				"minName": "Fabio Quagliarella",
-				"maxName": "Ronald Araújo"
-			},
-			"21-22": {
-				"min": 0,
-				"max": 95,
-				"minName": "Burak Yilmaz",
-				"maxName": "Virgil van Dijk"
-			}
-		}
-	},
-	"fouls": {
-		"label": "Fouls Committed",
-		"mobileLabel": "Fouls Committed",
-		"suffix": "per 90",
-		"types": [
-			"average"
-		],
-		"isReversed": true,
-		"displayOrder": 46,
-		"precision": 2,
-		"step": 0.2,
-		"ranges": {
-			"18-19": {
-				"min": 0,
-				"max": 5.4,
-				"minName": "Andrea Raggi",
-				"maxName": "Anthony Lozano"
-			},
-			"19-20": {
-				"min": 0,
-				"max": 4,
-				"minName": "Mamadou Sakho",
-				"maxName": "Andrea Favilli"
-			},
-			"20-21": {
-				"min": 0,
-				"max": 5,
-				"minName": "Juan Mata",
-				"maxName": "Sven Schipplock"
-			},
-			"21-22": {
-				"min": 0,
-				"max": 4.2,
-				"minName": "Jesús Navas",
-				"maxName": "Fede San Emeterio"
-			}
-		}
-	},
-	"padjFouls": {
-		"label": "Fouls Committed",
-		"mobileLabel": "Fouls Committed",
-		"suffix": "per 90 (pAdj)",
-		"types": [
-			"average"
-		],
-		"isReversed": true,
-		"displayOrder": 47,
-		"precision": 2,
-		"step": 0.2,
-		"ranges": {
-			"18-19": {
-				"min": 0,
-				"max": 5.6,
-				"minName": "Andrea Raggi",
-				"maxName": "Anthony Lozano"
-			},
-			"19-20": {
-				"min": 0,
-				"max": 5.2,
-				"minName": "Mamadou Sakho",
-				"maxName": "Junior Firpo"
-			},
-			"20-21": {
-				"min": 0,
-				"max": 5,
-				"minName": "Juan Mata",
-				"maxName": "Mikel Merino"
-			},
-			"21-22": {
-				"min": 0,
-				"max": 5.6,
-				"minName": "Daniele Verde",
-				"maxName": "Karol Linetty"
-			}
-		}
-	},
-	"padjFouls_def": {
-		"label": "Fouls Committed (Def.)",
-		"mobileLabel": "Fouls Committed (Def.)",
-		"suffix": "per 90 (pAdj)",
-		"types": [
-			"average"
-		],
-		"isReversed": true,
-		"displayOrder": 48,
-		"precision": 2,
-		"step": 0.2,
-		"ranges": {
-			"18-19": {
-				"min": 0,
-				"max": 5.2,
-				"minName": "Andrea Raggi",
-				"maxName": "Anthony Lozano"
-			},
-			"19-20": {
-				"min": 0,
-				"max": 5,
-				"minName": "Mamadou Sakho",
-				"maxName": "Junior Firpo"
-			},
-			"20-21": {
-				"min": 0,
-				"max": 4.8,
-				"minName": "Juan Mata",
-				"maxName": "Fernandinho"
-			},
-			"21-22": {
-				"min": 0,
-				"max": 5.8,
-				"minName": "Daniele Verde",
-				"maxName": "Youssef Maleh"
-			}
-		}
-	},
-	"clearances": {
-		"label": "Clearances",
-		"mobileLabel": "Clearances",
-		"suffix": "per 90",
-		"types": [
-			"average"
-		],
-		"isReversed": false,
-		"displayOrder": 49,
-		"precision": 2,
-		"step": 0.5,
-		"ranges": {
-			"18-19": {
-				"min": 0,
-				"max": 10.5,
-				"minName": "Arjen Robben",
-				"maxName": "Martín Mantovani"
-			},
-			"19-20": {
-				"min": 0,
-				"max": 10,
-				"minName": "Santi Cazorla",
-				"maxName": "Xabier Etxeita"
-			},
-			"20-21": {
-				"min": 0,
-				"max": 10.5,
-				"minName": "Goran Pandev",
-				"maxName": "Pape Abou Cissé"
-			},
-			"21-22": {
-				"min": 0,
-				"max": 8.5,
-				"minName": "Goran Pandev",
-				"maxName": "Boubakar Kouyaté"
-			}
-		}
-	},
-	"padjClearances": {
-		"label": "Clearances",
-		"mobileLabel": "Clearances",
-		"suffix": "per 90 (pAdj)",
-		"types": [
-			"average"
-		],
-		"isReversed": false,
-		"displayOrder": 50,
-		"precision": 2,
-		"step": 0.5,
-		"ranges": {
-			"18-19": {
-				"min": 0,
-				"max": 11,
-				"minName": "Arjen Robben",
-				"maxName": "Martín Mantovani"
-			},
-			"19-20": {
-				"min": 0,
-				"max": 15,
-				"minName": "Santi Cazorla",
-				"maxName": "Joel Matip"
-			},
-			"20-21": {
-				"min": 0,
-				"max": 13.5,
-				"minName": "Goran Pandev",
-				"maxName": "Rhys Williams"
-			},
-			"21-22": {
-				"min": 0,
-				"max": 9.5,
-				"minName": "Aaron Lennon",
-				"maxName": "Bremer"
-			}
-		}
-	},
-	"padjClearances_def": {
-		"label": "Clearances (Def.)",
-		"mobileLabel": "Clearances (Def.)",
-		"suffix": "per 90 (pAdj)",
-		"types": [
-			"average"
-		],
-		"isReversed": false,
-		"displayOrder": 51,
-		"precision": 2,
-		"step": 0.5,
-		"ranges": {
-			"18-19": {
-				"min": 0,
-				"max": 12,
-				"minName": "Arjen Robben",
-				"maxName": "Willi Orban"
-			},
-			"19-20": {
-				"min": 0,
-				"max": 15.5,
-				"minName": "Santi Cazorla",
-				"maxName": "Xabier Etxeita"
-			},
-			"20-21": {
-				"min": 0,
-				"max": 14.5,
-				"minName": "Goran Pandev",
-				"maxName": "Soufiane Chakla"
-			},
-			"21-22": {
-				"min": 0,
-				"max": 8.5,
-				"minName": "Aaron Lennon",
-				"maxName": "Bremer"
-			}
-		}
-	},
-	"goalsAgainst": {
-		"label": "Goals Conceded",
-		"mobileLabel": "Goals Conceded",
-		"suffix": "",
-		"types": [
-			"aggregate"
-		],
-		"isReversed": false,
-		"displayOrder": 52,
-		"precision": 0,
-		"step_agg": 5,
-		"ranges_agg": {
-			"18-19": {
-				"min": 0,
-				"max": 70,
-				"minName": "Fraser Forster",
-				"maxName": "Michael Esser"
-			},
-			"19-20": {
-				"min": 0,
-				"max": 75,
-				"minName": "Daniele Padelli",
-				"maxName": "Gabriel Vasconcellos"
-			},
-			"20-21": {
-				"min": 0,
-				"max": 90,
-				"minName": "Daniele Padelli",
-				"maxName": "Alex Cordaz"
-			},
-			"21-22": {
-				"min": 0,
-				"max": 70,
-				"minName": "Asmir Begovic",
-				"maxName": "Illan Meslier"
-			}
-		}
-	},
-	"psxg": {
-		"label": "Post-Shot xG Faced",
-		"mobileLabel": "Post-Shot xG Faced",
-		"suffix": "",
-		"types": [
-			"aggregate"
-		],
-		"isReversed": false,
-		"displayOrder": 53,
-		"precision": 0,
-		"step_agg": 5,
-		"ranges_agg": {
-			"18-19": {
-				"min": 0,
-				"max": 75,
-				"minName": "Pepe Reina",
-				"maxName": "Neil Etheridge"
-			},
-			"19-20": {
-				"min": 0,
-				"max": 85,
-				"minName": "Daniele Padelli",
-				"maxName": "Gabriel Vasconcellos"
-			},
-			"20-21": {
-				"min": 0,
-				"max": 80,
-				"minName": "Rubén Martínez",
-				"maxName": "Sam Johnstone"
-			},
-			"21-22": {
-				"min": 0,
-				"max": 60,
-				"minName": "Wayne Hennessey",
-				"maxName": "Yann Sommer"
-			}
-		}
-	},
-	"sota": {
-		"label": "Shots on Target Faced",
-		"mobileLabel": "Shots on Target Faced",
-		"suffix": "",
-		"types": [
-			"aggregate"
-		],
-		"isReversed": false,
-		"displayOrder": 54,
-		"precision": 0,
-		"step_agg": 10,
-		"ranges_agg": {
-			"18-19": {
-				"min": 0,
-				"max": 210,
-				"minName": "Fraser Forster",
-				"maxName": "Kevin Trapp"
-			},
-			"19-20": {
-				"min": 0,
-				"max": 220,
-				"minName": "Daniele Padelli",
-				"maxName": "Gabriel Vasconcellos"
-			},
-			"20-21": {
-				"min": 0,
-				"max": 230,
-				"minName": "Rubén Martínez",
-				"maxName": "Sam Johnstone"
-			},
-			"21-22": {
-				"min": 0,
-				"max": 180,
-				"minName": "Asmir Begovic",
-				"maxName": "Lukás Hrádecky"
-			}
-		}
-	},
-	"gsaa": {
-		"label": "GSAA %",
-		"mobileLabel": "GSAA %",
-		"suffix": "",
-		"types": [
-			"average"
-		],
-		"isReversed": false,
-		"displayOrder": 55,
-		"precision": 2,
-		"step": 2.5,
-		"ranges": {
-			"18-19": {
-				"min": -17.5,
-				"max": 12.5,
-				"minName": "Karl-Johan Johnsson",
-				"maxName": "Antonio Mirante"
-			},
-			"19-20": {
-				"min": -15,
-				"max": 12.5,
-				"minName": "Angus Gunn",
-				"maxName": "Jessy Moulin"
-			},
-			"20-21": {
-				"min": -12.5,
-				"max": 10,
-				"minName": "Salvatore Sirigu",
-				"maxName": "David Ospina"
-			},
-			"21-22": {
-				"min": -15,
-				"max": 10,
-				"minName": "Arthur Desmas",
-				"maxName": "Alphonse Areola"
-			}
-		}
-	},
-	"attCrosses": {
-		"label": "Crosses Faced",
-		"mobileLabel": "Crosses Faced",
-		"suffix": "",
-		"types": [
-			"aggregate"
-		],
-		"isReversed": false,
-		"displayOrder": 56,
-		"precision": 0,
-		"step_agg": 20,
-		"ranges_agg": {
-			"18-19": {
-				"min": 0,
-				"max": 580,
-				"minName": "Fraser Forster",
-				"maxName": "Luigi Sepe"
-			},
-			"19-20": {
-				"min": 0,
-				"max": 460,
-				"minName": "Yohann Pelé",
-				"maxName": "Rui Patrício"
-			},
-			"20-21": {
-				"min": 0,
-				"max": 440,
-				"minName": "Rubén Martínez",
-				"maxName": "Sergio Asenjo"
-			},
-			"21-22": {
-				"min": 0,
-				"max": 340,
-				"minName": "Asmir Begovic",
-				"maxName": "Wojciech Szczesny"
-			}
-		}
-	},
-	"stoppedCrosses": {
-		"label": "Crosses Stopped",
-		"mobileLabel": "Crosses Stopped",
-		"suffix": "",
-		"types": [
-			"aggregate"
-		],
-		"isReversed": false,
-		"displayOrder": 57,
-		"precision": 0,
-		"step_agg": 5,
-		"ranges_agg": {
-			"18-19": {
-				"min": 0,
-				"max": 45,
-				"minName": "Pepe Reina",
-				"maxName": "Jan Oblak"
-			},
-			"19-20": {
-				"min": 0,
-				"max": 55,
-				"minName": "Gianluigi Buffon",
-				"maxName": "Nick Pope"
-			},
-			"20-21": {
-				"min": 0,
-				"max": 45,
-				"minName": "Gianluigi Buffon",
-				"maxName": "Sergio Asenjo"
-			},
-			"21-22": {
-				"min": 0,
-				"max": 35,
-				"minName": "Daniele Padelli",
-				"maxName": "Diego López"
-			}
-		}
-	},
-	"crossStopRate": {
-		"label": "Cross Stopping %",
-		"mobileLabel": "Cross Stopping %",
-		"suffix": "",
-		"types": [
-			"average"
-		],
-		"isReversed": false,
-		"displayOrder": 58,
-		"precision": 2,
-		"step": 2.5,
-		"ranges": {
-			"18-19": {
-				"min": 0,
-				"max": 17.5,
-				"minName": "Sven Ulreich",
-				"maxName": "Bobby Allain"
-			},
-			"19-20": {
-				"min": 0,
-				"max": 15,
-				"minName": "Gianluigi Buffon",
-				"maxName": "Miguel Ángel Moyá"
-			},
-			"20-21": {
-				"min": 0,
-				"max": 15,
-				"minName": "Gianluigi Buffon",
-				"maxName": "Nick Pope"
-			},
-			"21-22": {
-				"min": 0,
-				"max": 17.5,
-				"minName": "Claudio Bravo",
-				"maxName": "Alexandre Oukidja"
-			}
-		}
-	},
-	"attLaunchedPasses": {
-		"label": "Attempted Launched Passes",
-		"mobileLabel": "Attempted Launched Passes",
-		"suffix": "",
-		"types": [
-			"aggregate"
-		],
-		"isReversed": false,
-		"displayOrder": 59,
-		"precision": 0,
-		"step_agg": 50,
-		"ranges_agg": {
-			"18-19": {
-				"min": 0,
-				"max": 1150,
-				"minName": "Fraser Forster",
-				"maxName": "Neil Etheridge"
-			},
-			"19-20": {
-				"min": 0,
-				"max": 1100,
-				"minName": "Gianluigi Buffon",
-				"maxName": "David Soria"
-			},
-			"20-21": {
-				"min": 0,
-				"max": 1050,
-				"minName": "Daniele Padelli",
-				"maxName": "Stefan Ortega Moreno"
-			},
-			"21-22": {
-				"min": 0,
-				"max": 1000,
-				"minName": "Daniele Padelli",
-				"maxName": "Manuel Riemann"
-			}
-		}
-	},
-	"succLaunchedPasses": {
-		"label": "Successful Launched Passes",
-		"mobileLabel": "Successful Launched Passes",
-		"suffix": "",
-		"types": [
-			"aggregate"
-		],
-		"isReversed": false,
-		"displayOrder": 60,
-		"precision": 0,
-		"step_agg": 20,
-		"ranges_agg": {
-			"18-19": {
-				"min": 0,
-				"max": 500,
-				"minName": "Fraser Forster",
-				"maxName": "Kevin Trapp"
-			},
-			"19-20": {
-				"min": 0,
-				"max": 420,
-				"minName": "Daniele Padelli",
-				"maxName": "Rafal Gikiewicz"
-			},
-			"20-21": {
-				"min": 0,
-				"max": 500,
-				"minName": "Daniele Padelli",
-				"maxName": "Stefan Ortega Moreno"
-			},
-			"21-22": {
-				"min": 0,
-				"max": 480,
-				"minName": "Daniele Padelli",
-				"maxName": "Manuel Riemann"
-			}
-		}
-	},
-	"launchedPassSuccRate": {
-		"label": "Launched Pass Completion %",
-		"mobileLabel": "Launched Pass Completion %",
-		"suffix": "",
-		"types": [
-			"average"
-		],
-		"isReversed": false,
-		"displayOrder": 61,
-		"precision": 1,
-		"step": 5,
-		"ranges": {
-			"18-19": {
-				"min": 25,
-				"max": 60,
-				"minName": "Alex Meret",
-				"maxName": "Gianluigi Buffon"
-			},
-			"19-20": {
-				"min": 20,
-				"max": 65,
-				"minName": "Angus Gunn",
-				"maxName": "Manuel Neuer"
-			},
-			"20-21": {
-				"min": 25,
-				"max": 65,
-				"minName": "Fraser Forster",
-				"maxName": "Manuel Neuer"
-			},
-			"21-22": {
-				"min": 25,
-				"max": 65,
-				"minName": "Alex McCarthy",
-				"maxName": "Marc-André ter Stegen"
-			}
-		}
-	},
 	"npg+xa": {
 		"label": "Non-Penalty Goals + xA",
 		"mobileLabel": "Non-Penalty Goals + xA",
@@ -2484,7 +64,7 @@
 			"average"
 		],
 		"isReversed": false,
-		"displayOrder": 61,
+		"displayOrder": 2,
 		"precision": 2,
 		"step": 0.05,
 		"step_agg": 1,
@@ -2550,7 +130,7 @@
 			"average"
 		],
 		"isReversed": false,
-		"displayOrder": 62,
+		"displayOrder": 3,
 		"precision": 2,
 		"step": 0.05,
 		"step_agg": 1,
@@ -2604,6 +184,3224 @@
 				"max": 38,
 				"minName": "Cesc Fàbregas",
 				"maxName": "Robert Lewandowski"
+			}
+		}
+	},
+	"npg": {
+		"label": "Non-Penalty Goals",
+		"mobileLabel": "Non-Penalty Goals",
+		"suffix": "per 90",
+		"types": [
+			"aggregate",
+			"average"
+		],
+		"isReversed": false,
+		"displayOrder": 4,
+		"precision": 2,
+		"step": 0.05,
+		"step_agg": 1,
+		"ranges": {
+			"18-19": {
+				"min": 0,
+				"max": 1.3,
+				"minName": "Emiliano Moretti",
+				"maxName": "Paco Alcácer"
+			},
+			"19-20": {
+				"min": 0,
+				"max": 1.2,
+				"minName": "Rafael",
+				"maxName": "Erling Haaland"
+			},
+			"20-21": {
+				"min": 0,
+				"max": 1.25,
+				"minName": "James Milner",
+				"maxName": "Robert Lewandowski"
+			},
+			"21-22": {
+				"min": 0,
+				"max": 1.1,
+				"minName": "Joaquín",
+				"maxName": "Patrik Schick"
+			}
+		},
+		"ranges_agg": {
+			"18-19": {
+				"min": 0,
+				"max": 43,
+				"minName": "Daniele Bonera",
+				"maxName": "Lionel Messi"
+			},
+			"19-20": {
+				"min": 0,
+				"max": 42,
+				"minName": "Claudio Pizarro",
+				"maxName": "Robert Lewandowski"
+			},
+			"20-21": {
+				"min": 0,
+				"max": 36,
+				"minName": "Christian Maggio",
+				"maxName": "Robert Lewandowski"
+			},
+			"21-22": {
+				"min": 0,
+				"max": 36,
+				"minName": "Joaquín",
+				"maxName": "Robert Lewandowski"
+			}
+		}
+	},
+	"npxg": {
+		"label": "Non-Penalty xG",
+		"mobileLabel": "Non-Penalty xG",
+		"suffix": "per 90",
+		"types": [
+			"aggregate",
+			"average"
+		],
+		"isReversed": false,
+		"displayOrder": 5,
+		"precision": 2,
+		"step": 0.05,
+		"step_agg": 1,
+		"ranges": {
+			"18-19": {
+				"min": 0,
+				"max": 1,
+				"minName": "Emiliano Moretti",
+				"maxName": "Kylian Mbappé"
+			},
+			"19-20": {
+				"min": 0,
+				"max": 1.05,
+				"minName": "Rafael",
+				"maxName": "Edinson Cavani"
+			},
+			"20-21": {
+				"min": 0,
+				"max": 0.9,
+				"minName": "James Milner",
+				"maxName": "Robert Lewandowski"
+			},
+			"21-22": {
+				"min": 0,
+				"max": 0.95,
+				"minName": "James Milner",
+				"maxName": "Robert Lewandowski"
+			}
+		},
+		"ranges_agg": {
+			"18-19": {
+				"min": 0,
+				"max": 31,
+				"minName": "Daniele Bonera",
+				"maxName": "Kylian Mbappé"
+			},
+			"19-20": {
+				"min": 0,
+				"max": 34,
+				"minName": "Claudio Pizarro",
+				"maxName": "Robert Lewandowski"
+			},
+			"20-21": {
+				"min": 0,
+				"max": 29,
+				"minName": "Christian Maggio",
+				"maxName": "Robert Lewandowski"
+			},
+			"21-22": {
+				"min": 0,
+				"max": 31,
+				"minName": "James Milner",
+				"maxName": "Robert Lewandowski"
+			}
+		}
+	},
+	"shots": {
+		"label": "Shots",
+		"mobileLabel": "Shots",
+		"suffix": "",
+		"types": [
+			"aggregate"
+		],
+		"isReversed": false,
+		"displayOrder": 6,
+		"precision": 0,
+		"step_agg": 10,
+		"ranges_agg": {
+			"18-19": {
+				"min": 0,
+				"max": 230,
+				"minName": "Daniele Bonera",
+				"maxName": "Lionel Messi"
+			},
+			"19-20": {
+				"min": 0,
+				"max": 240,
+				"minName": "Claudio Pizarro",
+				"maxName": "Cristiano Ronaldo"
+			},
+			"20-21": {
+				"min": 0,
+				"max": 230,
+				"minName": "Christian Maggio",
+				"maxName": "Lionel Messi"
+			},
+			"21-22": {
+				"min": 0,
+				"max": 160,
+				"minName": "James Milner",
+				"maxName": "Robert Lewandowski"
+			}
+		}
+	},
+	"npxgPerShot": {
+		"label": "Non-Penalty xG/Shot",
+		"mobileLabel": "Non-Penalty xG/Shot",
+		"suffix": "",
+		"types": [
+			"average"
+		],
+		"isReversed": false,
+		"displayOrder": 7,
+		"precision": 3,
+		"step": 0.01,
+		"ranges": {
+			"18-19": {
+				"min": 0.01,
+				"max": 0.28,
+				"minName": "Ivan Radovanovic",
+				"maxName": "Edinson Cavani"
+			},
+			"19-20": {
+				"min": 0.02,
+				"max": 0.29,
+				"minName": "Marcelo",
+				"maxName": "Mauro Icardi"
+			},
+			"20-21": {
+				"min": 0.02,
+				"max": 0.27,
+				"minName": "Faitout Maouassa",
+				"maxName": "Carlos Vinícius"
+			},
+			"21-22": {
+				"min": 0.02,
+				"max": 0.28,
+				"minName": "Bebé",
+				"maxName": "Frenkie de Jong"
+			}
+		}
+	},
+	"attAerials": {
+		"label": "Aerials Contested",
+		"mobileLabel": "Aerials Contested",
+		"suffix": "",
+		"types": [
+			"aggregate"
+		],
+		"isReversed": false,
+		"displayOrder": 8,
+		"precision": 0,
+		"step_agg": 10,
+		"ranges_agg": {
+			"18-19": {
+				"min": 0,
+				"max": 470,
+				"minName": "Daniele Bonera",
+				"maxName": "Aleksandar Mitrovic"
+			},
+			"19-20": {
+				"min": 0,
+				"max": 470,
+				"minName": "Salomon Kalou",
+				"maxName": "Troy Deeney"
+			},
+			"20-21": {
+				"min": 0,
+				"max": 430,
+				"minName": "Wes Morgan",
+				"maxName": "Fabian Klos"
+			},
+			"21-22": {
+				"min": 0,
+				"max": 450,
+				"minName": "Dani Alves",
+				"maxName": "Chris Wood"
+			}
+		}
+	},
+	"succAerials": {
+		"label": "Aerials Won",
+		"mobileLabel": "Aerials Won",
+		"suffix": "per 90",
+		"types": [
+			"aggregate",
+			"average"
+		],
+		"isReversed": false,
+		"displayOrder": 9,
+		"precision": 2,
+		"step": 0.5,
+		"step_agg": 10,
+		"ranges": {
+			"18-19": {
+				"min": 0,
+				"max": 12,
+				"minName": "Joaquín",
+				"maxName": "Sam Vokes"
+			},
+			"19-20": {
+				"min": 0,
+				"max": 11.5,
+				"minName": "Santi Cazorla",
+				"maxName": "Andy Carroll"
+			},
+			"20-21": {
+				"min": 0,
+				"max": 11,
+				"minName": "Ashley Young",
+				"maxName": "Christian Benteke"
+			},
+			"21-22": {
+				"min": 0,
+				"max": 11.5,
+				"minName": "Franck Ribéry",
+				"maxName": "Milan Djuric"
+			}
+		},
+		"ranges_agg": {
+			"18-19": {
+				"min": 0,
+				"max": 230,
+				"minName": "Daniele Bonera",
+				"maxName": "Sean Morrison"
+			},
+			"19-20": {
+				"min": 0,
+				"max": 270,
+				"minName": "Claudio Pizarro",
+				"maxName": "Joselu"
+			},
+			"20-21": {
+				"min": 0,
+				"max": 270,
+				"minName": "Christian Maggio",
+				"maxName": "Joselu"
+			},
+			"21-22": {
+				"min": 0,
+				"max": 270,
+				"minName": "Joaquín",
+				"maxName": "Joselu"
+			}
+		}
+	},
+	"aerialSuccRate": {
+		"label": "Aerial Win %",
+		"mobileLabel": "Aerial Win %",
+		"suffix": "",
+		"types": [
+			"average"
+		],
+		"isReversed": false,
+		"displayOrder": 10,
+		"precision": 1,
+		"step": 5,
+		"ranges": {
+			"18-19": {
+				"min": 0,
+				"max": 95,
+				"minName": "Jadon Sancho",
+				"maxName": "Jan Morávek"
+			},
+			"19-20": {
+				"min": 0,
+				"max": 95,
+				"minName": "Yusuf Yazici",
+				"maxName": "Joel Matip"
+			},
+			"20-21": {
+				"min": 0,
+				"max": 90,
+				"minName": "Dries Mertens",
+				"maxName": "Bruno Alves"
+			},
+			"21-22": {
+				"min": 0,
+				"max": 90,
+				"minName": "Gerard Deulofeu",
+				"maxName": "John Stones"
+			}
+		}
+	},
+	"boxTouches": {
+		"label": "Touches in Box",
+		"mobileLabel": "Touches in Box",
+		"suffix": "per 90",
+		"types": [
+			"average"
+		],
+		"isReversed": false,
+		"displayOrder": 11,
+		"precision": 2,
+		"step": 0.5,
+		"ranges": {
+			"18-19": {
+				"min": 0,
+				"max": 11.5,
+				"minName": "Emiliano Moretti",
+				"maxName": "Vinícius Júnior"
+			},
+			"19-20": {
+				"min": 0,
+				"max": 12.5,
+				"minName": "Daniel Baier",
+				"maxName": "Kylian Mbappé"
+			},
+			"20-21": {
+				"min": 0,
+				"max": 10.5,
+				"minName": "Mark Noble",
+				"maxName": "Duván Zapata"
+			},
+			"21-22": {
+				"min": 0,
+				"max": 11,
+				"minName": "Raúl Albiol",
+				"maxName": "Duván Zapata"
+			}
+		}
+	},
+	"padjBoxTouches": {
+		"label": "Touches in Box",
+		"mobileLabel": "Touches in Box",
+		"suffix": "per 100 touches",
+		"types": [
+			"average"
+		],
+		"isReversed": false,
+		"displayOrder": 12,
+		"precision": 2,
+		"step": 1,
+		"ranges": {
+			"18-19": {
+				"min": 0,
+				"max": 27,
+				"minName": "Emiliano Moretti",
+				"maxName": "Mauro Icardi"
+			},
+			"19-20": {
+				"min": 0,
+				"max": 29,
+				"minName": "Daniel Baier",
+				"maxName": "Mauro Icardi"
+			},
+			"20-21": {
+				"min": 0,
+				"max": 28,
+				"minName": "Mark Noble",
+				"maxName": "Mauro Icardi"
+			},
+			"21-22": {
+				"min": 0,
+				"max": 27,
+				"minName": "Giorgio Chiellini",
+				"maxName": "Mauro Icardi"
+			}
+		}
+	},
+	"xa": {
+		"label": "xA",
+		"mobileLabel": "xA",
+		"suffix": "per 90",
+		"types": [
+			"aggregate",
+			"average"
+		],
+		"isReversed": false,
+		"displayOrder": 13,
+		"precision": 2,
+		"step": 0.02,
+		"step_agg": 1,
+		"ranges": {
+			"18-19": {
+				"min": 0,
+				"max": 0.46,
+				"minName": "Emiliano Moretti",
+				"maxName": "Lionel Messi"
+			},
+			"19-20": {
+				"min": 0,
+				"max": 0.64,
+				"minName": "Dante",
+				"maxName": "Ángel Di María"
+			},
+			"20-21": {
+				"min": 0,
+				"max": 0.52,
+				"minName": "Hilton",
+				"maxName": "Ángel Di María"
+			},
+			"21-22": {
+				"min": 0,
+				"max": 0.64,
+				"minName": "Dante",
+				"maxName": "Ousmane Dembélé"
+			}
+		},
+		"ranges_agg": {
+			"18-19": {
+				"min": 0,
+				"max": 18,
+				"minName": "Claudio Pizarro",
+				"maxName": "Lionel Messi"
+			},
+			"19-20": {
+				"min": 0,
+				"max": 21,
+				"minName": "Claudio Pizarro",
+				"maxName": "Kevin De Bruyne"
+			},
+			"20-21": {
+				"min": 0,
+				"max": 17,
+				"minName": "Christian Maggio",
+				"maxName": "Bruno Fernandes"
+			},
+			"21-22": {
+				"min": 0,
+				"max": 13,
+				"minName": "Aaron Lennon",
+				"maxName": "Thomas Müller"
+			}
+		}
+	},
+	"padjXA": {
+		"label": "xA",
+		"mobileLabel": "xA",
+		"suffix": "per 100 touches",
+		"types": [
+			"average"
+		],
+		"isReversed": false,
+		"displayOrder": 14,
+		"precision": 2,
+		"step": 0.05,
+		"ranges": {
+			"18-19": {
+				"min": 0,
+				"max": 0.75,
+				"minName": "Emiliano Moretti",
+				"maxName": "Robert Lewandowski"
+			},
+			"19-20": {
+				"min": 0,
+				"max": 1,
+				"minName": "Daniel Baier",
+				"maxName": "Kylian Mbappé"
+			},
+			"20-21": {
+				"min": 0,
+				"max": 1.15,
+				"minName": "Dante",
+				"maxName": "Mauro Icardi"
+			},
+			"21-22": {
+				"min": 0,
+				"max": 1,
+				"minName": "Dante",
+				"maxName": "Ante Rebic"
+			}
+		}
+	},
+	"ppr": {
+		"label": "Progressive Receptions",
+		"mobileLabel": "Progressive Receptions",
+		"suffix": "per 90",
+		"types": [
+			"average"
+		],
+		"isReversed": false,
+		"displayOrder": 15,
+		"precision": 2,
+		"step": 0.5,
+		"ranges": {
+			"18-19": {
+				"min": 0,
+				"max": 18,
+				"minName": "Emiliano Moretti",
+				"maxName": "Musa Barrow"
+			},
+			"19-20": {
+				"min": 0,
+				"max": 17,
+				"minName": "Alexander Tettey",
+				"maxName": "Duván Zapata"
+			},
+			"20-21": {
+				"min": 0,
+				"max": 15.5,
+				"minName": "Dante",
+				"maxName": "Duván Zapata"
+			},
+			"21-22": {
+				"min": 0,
+				"max": 14,
+				"minName": "Dante",
+				"maxName": "Luis Muriel"
+			}
+		}
+	},
+	"padjPPR": {
+		"label": "Progressive Receptions",
+		"mobileLabel": "Progressive Receptions",
+		"suffix": "per 100 touches",
+		"types": [
+			"average"
+		],
+		"isReversed": false,
+		"displayOrder": 16,
+		"precision": 2,
+		"step": 1,
+		"ranges": {
+			"18-19": {
+				"min": 0,
+				"max": 41,
+				"minName": "Emiliano Moretti",
+				"maxName": "Sergio Pellissier"
+			},
+			"19-20": {
+				"min": 0,
+				"max": 41,
+				"minName": "Dante",
+				"maxName": "Lois Diony"
+			},
+			"20-21": {
+				"min": 0,
+				"max": 34,
+				"minName": "Dante",
+				"maxName": "Romelu Lukaku"
+			},
+			"21-22": {
+				"min": 0,
+				"max": 35,
+				"minName": "Dante",
+				"maxName": "Iñaki Williams"
+			}
+		}
+	},
+	"sca": {
+		"label": "OP Shot-Creating Actions",
+		"mobileLabel": "OP Shot-Creating Actions",
+		"suffix": "per 90",
+		"types": [
+			"average"
+		],
+		"isReversed": false,
+		"displayOrder": 17,
+		"precision": 2,
+		"step": 0.2,
+		"ranges": {
+			"18-19": {
+				"min": 0,
+				"max": 7,
+				"minName": "Thomas Vermaelen",
+				"maxName": "Lionel Messi"
+			},
+			"19-20": {
+				"min": 0,
+				"max": 6.8,
+				"minName": "Adama Soumaoro",
+				"maxName": "Josip Ilicic"
+			},
+			"20-21": {
+				"min": 0,
+				"max": 7.4,
+				"minName": "Branislav Ivanovic",
+				"maxName": "Neymar"
+			},
+			"21-22": {
+				"min": 0,
+				"max": 6.2,
+				"minName": "Juan Cala",
+				"maxName": "Lionel Messi"
+			}
+		}
+	},
+	"padjSCA": {
+		"label": "OP Shot-Creating Actions",
+		"mobileLabel": "OP Shot-Creating Actions",
+		"suffix": "per 100 touches",
+		"types": [
+			"average"
+		],
+		"isReversed": false,
+		"displayOrder": 18,
+		"precision": 2,
+		"step": 0.5,
+		"ranges": {
+			"18-19": {
+				"min": 0,
+				"max": 10.5,
+				"minName": "Thomas Vermaelen",
+				"maxName": "Robert Lewandowski"
+			},
+			"19-20": {
+				"min": 0,
+				"max": 11.5,
+				"minName": "Ragnar Klavan",
+				"maxName": "Edinson Cavani"
+			},
+			"20-21": {
+				"min": 0,
+				"max": 13,
+				"minName": "Christian Fuchs",
+				"maxName": "Victor Osimhen"
+			},
+			"21-22": {
+				"min": 0,
+				"max": 12.5,
+				"minName": "Raúl Albiol",
+				"maxName": "Ante Rebic"
+			}
+		}
+	},
+	"ppa": {
+		"label": "Passes into Box",
+		"mobileLabel": "Passes into Box",
+		"suffix": "per 90",
+		"types": [
+			"average"
+		],
+		"isReversed": false,
+		"displayOrder": 19,
+		"precision": 2,
+		"step": 0.2,
+		"ranges": {
+			"18-19": {
+				"min": 0,
+				"max": 4.8,
+				"minName": "Emiliano Moretti",
+				"maxName": "Lionel Messi"
+			},
+			"19-20": {
+				"min": 0,
+				"max": 5,
+				"minName": "Dante",
+				"maxName": "Neymar"
+			},
+			"20-21": {
+				"min": 0,
+				"max": 4.6,
+				"minName": "Hilton",
+				"maxName": "Lionel Messi"
+			},
+			"21-22": {
+				"min": 0,
+				"max": 4,
+				"minName": "Dante",
+				"maxName": "Lionel Messi"
+			}
+		}
+	},
+	"padjPPA": {
+		"label": "Passes into Box",
+		"mobileLabel": "Passes into Box",
+		"suffix": "per 100 touches",
+		"types": [
+			"average"
+		],
+		"isReversed": false,
+		"displayOrder": 20,
+		"precision": 2,
+		"step": 0.2,
+		"ranges": {
+			"18-19": {
+				"min": 0,
+				"max": 6,
+				"minName": "Dante",
+				"maxName": "Lionel Messi"
+			},
+			"19-20": {
+				"min": 0,
+				"max": 6,
+				"minName": "Adama Soumaoro",
+				"maxName": "Francisco Portillo"
+			},
+			"20-21": {
+				"min": 0,
+				"max": 6.4,
+				"minName": "Sergio Ramos",
+				"maxName": "Jony"
+			},
+			"21-22": {
+				"min": 0,
+				"max": 6.2,
+				"minName": "Dante",
+				"maxName": "Ante Rebic"
+			}
+		}
+	},
+	"cpa": {
+		"label": "Carries into Box",
+		"mobileLabel": "Carries into Box",
+		"suffix": "per 90",
+		"types": [
+			"average"
+		],
+		"isReversed": false,
+		"displayOrder": 21,
+		"precision": 2,
+		"step": 0.2,
+		"ranges": {
+			"18-19": {
+				"min": 0,
+				"max": 5.4,
+				"minName": "Emiliano Moretti",
+				"maxName": "Vinícius Júnior"
+			},
+			"19-20": {
+				"min": 0,
+				"max": 3.6,
+				"minName": "Rafael",
+				"maxName": "Ansu Fati"
+			},
+			"20-21": {
+				"min": 0,
+				"max": 3.4,
+				"minName": "James Milner",
+				"maxName": "Jack Grealish"
+			},
+			"21-22": {
+				"min": 0,
+				"max": 4.2,
+				"minName": "James Milner",
+				"maxName": "Jack Grealish"
+			}
+		}
+	},
+	"padjCPA": {
+		"label": "Carries into Box",
+		"mobileLabel": "Carries into Box",
+		"suffix": "per 100 touches",
+		"types": [
+			"average"
+		],
+		"isReversed": false,
+		"displayOrder": 22,
+		"precision": 2,
+		"step": 0.2,
+		"ranges": {
+			"18-19": {
+				"min": 0,
+				"max": 10.4,
+				"minName": "Emiliano Moretti",
+				"maxName": "Vinícius Júnior"
+			},
+			"19-20": {
+				"min": 0,
+				"max": 6.6,
+				"minName": "Rafael",
+				"maxName": "Hernâni"
+			},
+			"20-21": {
+				"min": 0,
+				"max": 6,
+				"minName": "James Milner",
+				"maxName": "Sheraldo Becker"
+			},
+			"21-22": {
+				"min": 0,
+				"max": 7.4,
+				"minName": "James Milner",
+				"maxName": "Jack Grealish"
+			}
+		}
+	},
+	"epa": {
+		"label": "Box Entries",
+		"mobileLabel": "Box Entries",
+		"suffix": "per 90",
+		"types": [
+			"average"
+		],
+		"isReversed": false,
+		"displayOrder": 23,
+		"precision": 2,
+		"step": 0.2,
+		"ranges": {
+			"18-19": {
+				"min": 0,
+				"max": 6.8,
+				"minName": "Emiliano Moretti",
+				"maxName": "Vinícius Júnior"
+			},
+			"19-20": {
+				"min": 0,
+				"max": 6.4,
+				"minName": "Dante",
+				"maxName": "Callum Hudson-Odoi"
+			},
+			"20-21": {
+				"min": 0,
+				"max": 6.8,
+				"minName": "Hilton",
+				"maxName": "Josip Ilicic"
+			},
+			"21-22": {
+				"min": 0,
+				"max": 6.2,
+				"minName": "Dante",
+				"maxName": "Jack Grealish"
+			}
+		}
+	},
+	"padjEPA": {
+		"label": "Box Entries",
+		"mobileLabel": "Box Entries",
+		"suffix": "per 100 touches",
+		"types": [
+			"average"
+		],
+		"isReversed": false,
+		"displayOrder": 24,
+		"precision": 2,
+		"step": 0.2,
+		"ranges": {
+			"18-19": {
+				"min": 0,
+				"max": 13,
+				"minName": "Dante",
+				"maxName": "Vinícius Júnior"
+			},
+			"19-20": {
+				"min": 0,
+				"max": 10,
+				"minName": "Adama Soumaoro",
+				"maxName": "Gervinho"
+			},
+			"20-21": {
+				"min": 0,
+				"max": 10.8,
+				"minName": "Sergio Ramos",
+				"maxName": "Jack Grealish"
+			},
+			"21-22": {
+				"min": 0,
+				"max": 10.8,
+				"minName": "Dante",
+				"maxName": "Jack Grealish"
+			}
+		}
+	},
+	"pft": {
+		"label": "Passes into Final 1/3",
+		"mobileLabel": "Passes into Final 1/3",
+		"suffix": "per 90",
+		"types": [
+			"average"
+		],
+		"isReversed": false,
+		"displayOrder": 25,
+		"precision": 2,
+		"step": 0.5,
+		"ranges": {
+			"18-19": {
+				"min": 0,
+				"max": 11.5,
+				"minName": "Bostjan Cesar",
+				"maxName": "Marco Verratti"
+			},
+			"19-20": {
+				"min": 0,
+				"max": 11,
+				"minName": "Teemu Pukki",
+				"maxName": "David Alaba"
+			},
+			"20-21": {
+				"min": 0,
+				"max": 12,
+				"minName": "Billy Sharp",
+				"maxName": "Toni Kroos"
+			},
+			"21-22": {
+				"min": 0,
+				"max": 11.5,
+				"minName": "Edinson Cavani",
+				"maxName": "Toni Kroos"
+			}
+		}
+	},
+	"padjPFT": {
+		"label": "Passes into Final 1/3",
+		"mobileLabel": "Passes into Final 1/3",
+		"suffix": "per 100 touches",
+		"types": [
+			"average"
+		],
+		"isReversed": false,
+		"displayOrder": 26,
+		"precision": 2,
+		"step": 0.5,
+		"ranges": {
+			"18-19": {
+				"min": 0,
+				"max": 11.5,
+				"minName": "Sergio León",
+				"maxName": "Daniele De Rossi"
+			},
+			"19-20": {
+				"min": 0,
+				"max": 11.5,
+				"minName": "Samuel Di Carmine",
+				"maxName": "David Alaba"
+			},
+			"20-21": {
+				"min": 0.5,
+				"max": 16,
+				"minName": "Juanmi",
+				"maxName": "Léo Sena"
+			},
+			"21-22": {
+				"min": 0,
+				"max": 12,
+				"minName": "Mitchell van Bergen",
+				"maxName": "Corentin Tolisso"
+			}
+		}
+	},
+	"cft": {
+		"label": "Carries into Final 1/3",
+		"mobileLabel": "Carries into Final 1/3",
+		"suffix": "per 90",
+		"types": [
+			"average"
+		],
+		"isReversed": false,
+		"displayOrder": 27,
+		"precision": 2,
+		"step": 0.5,
+		"ranges": {
+			"18-19": {
+				"min": 0,
+				"max": 5.5,
+				"minName": "Emiliano Moretti",
+				"maxName": "Lionel Messi"
+			},
+			"19-20": {
+				"min": 0,
+				"max": 6,
+				"minName": "Dante",
+				"maxName": "Papu Gómez"
+			},
+			"20-21": {
+				"min": 0,
+				"max": 6,
+				"minName": "Dante",
+				"maxName": "Lionel Messi"
+			},
+			"21-22": {
+				"min": 0,
+				"max": 5.5,
+				"minName": "Goran Pandev",
+				"maxName": "Lionel Messi"
+			}
+		}
+	},
+	"padjCFT": {
+		"label": "Carries into Final 1/3",
+		"mobileLabel": "Carries into Final 1/3",
+		"suffix": "per 100 touches",
+		"types": [
+			"average"
+		],
+		"isReversed": false,
+		"displayOrder": 28,
+		"precision": 2,
+		"step": 0.5,
+		"ranges": {
+			"18-19": {
+				"min": 0,
+				"max": 7.5,
+				"minName": "Emiliano Moretti",
+				"maxName": "Papu Gómez"
+			},
+			"19-20": {
+				"min": 0,
+				"max": 11,
+				"minName": "Dante",
+				"maxName": "Diego Perotti"
+			},
+			"20-21": {
+				"min": 0,
+				"max": 10,
+				"minName": "Hilton",
+				"maxName": "Riccardo Sottil"
+			},
+			"21-22": {
+				"min": 0,
+				"max": 9,
+				"minName": "Dante",
+				"maxName": "Bebé"
+			}
+		}
+	},
+	"eft": {
+		"label": "Final 1/3 Entries",
+		"mobileLabel": "Final 1/3 Entries",
+		"suffix": "per 90",
+		"types": [
+			"average"
+		],
+		"isReversed": false,
+		"displayOrder": 29,
+		"precision": 2,
+		"step": 0.5,
+		"ranges": {
+			"18-19": {
+				"min": 0,
+				"max": 15,
+				"minName": "Olivier Giroud",
+				"maxName": "Marco Verratti"
+			},
+			"19-20": {
+				"min": 0,
+				"max": 13.5,
+				"minName": "Samuel Di Carmine",
+				"maxName": "Luis Alberto"
+			},
+			"20-21": {
+				"min": 0,
+				"max": 15,
+				"minName": "Marcos Mauro",
+				"maxName": "Léo Sena"
+			},
+			"21-22": {
+				"min": 0,
+				"max": 14,
+				"minName": "Yoann Touzghar",
+				"maxName": "Lionel Messi"
+			}
+		}
+	},
+	"padjEFT": {
+		"label": "Final 1/3 Entries",
+		"mobileLabel": "Final 1/3 Entries",
+		"suffix": "per 100 touches",
+		"types": [
+			"average"
+		],
+		"isReversed": false,
+		"displayOrder": 30,
+		"precision": 2,
+		"step": 0.5,
+		"ranges": {
+			"18-19": {
+				"min": 1,
+				"max": 16,
+				"minName": "Bostjan Cesar",
+				"maxName": "Neymar"
+			},
+			"19-20": {
+				"min": 0.5,
+				"max": 17.5,
+				"minName": "Dénys Bain",
+				"maxName": "Luis Alberto"
+			},
+			"20-21": {
+				"min": 1,
+				"max": 20,
+				"minName": "Marcos Mauro",
+				"maxName": "Léo Sena"
+			},
+			"21-22": {
+				"min": 0.5,
+				"max": 17,
+				"minName": "Jemerson",
+				"maxName": "Lionel Messi"
+			}
+		}
+	},
+	"progPasses": {
+		"label": "Progressive Passes",
+		"mobileLabel": "Progressive Passes",
+		"suffix": "per 90",
+		"types": [
+			"average"
+		],
+		"isReversed": false,
+		"displayOrder": 31,
+		"precision": 2,
+		"step": 0.5,
+		"ranges": {
+			"18-19": {
+				"min": 0,
+				"max": 12,
+				"minName": "Rolando",
+				"maxName": "Cesc Fàbregas"
+			},
+			"19-20": {
+				"min": 0,
+				"max": 10.5,
+				"minName": "Alberto Paloschi",
+				"maxName": "Cesc Fàbregas"
+			},
+			"20-21": {
+				"min": 0,
+				"max": 10,
+				"minName": "Juanmi",
+				"maxName": "Lionel Messi"
+			},
+			"21-22": {
+				"min": 0,
+				"max": 11.5,
+				"minName": "Stéphane Bahoken",
+				"maxName": "Lionel Messi"
+			}
+		}
+	},
+	"padjProgPasses": {
+		"label": "Progressive Passes",
+		"mobileLabel": "Progressive Passes",
+		"suffix": "per 100 touches",
+		"types": [
+			"average"
+		],
+		"isReversed": false,
+		"displayOrder": 32,
+		"precision": 2,
+		"step": 0.5,
+		"ranges": {
+			"18-19": {
+				"min": 0.5,
+				"max": 13,
+				"minName": "Rolando",
+				"maxName": "Neymar"
+			},
+			"19-20": {
+				"min": 0,
+				"max": 13,
+				"minName": "Mariusz Stepinski",
+				"maxName": "Cesc Fàbregas"
+			},
+			"20-21": {
+				"min": 1,
+				"max": 13,
+				"minName": "Juanmi",
+				"maxName": "Luis Alberto"
+			},
+			"21-22": {
+				"min": 0,
+				"max": 14.5,
+				"minName": "Stéphane Bahoken",
+				"maxName": "Lionel Messi"
+			}
+		}
+	},
+	"progCarries": {
+		"label": "Progressive Carries",
+		"mobileLabel": "Progressive Carries",
+		"suffix": "per 90",
+		"types": [
+			"average"
+		],
+		"isReversed": false,
+		"displayOrder": 33,
+		"precision": 2,
+		"step": 0.5,
+		"ranges": {
+			"18-19": {
+				"min": 0,
+				"max": 17,
+				"minName": "Sam Vokes",
+				"maxName": "Eden Hazard"
+			},
+			"19-20": {
+				"min": 0,
+				"max": 15.5,
+				"minName": "Simon Kjaer",
+				"maxName": "Neymar"
+			},
+			"20-21": {
+				"min": 0,
+				"max": 16,
+				"minName": "Branislav Ivanovic",
+				"maxName": "Lionel Messi"
+			},
+			"21-22": {
+				"min": 0,
+				"max": 15,
+				"minName": "Olivier Giroud",
+				"maxName": "Ousmane Dembélé"
+			}
+		}
+	},
+	"padjProgCarries": {
+		"label": "Progressive Carries",
+		"mobileLabel": "Progressive Carries",
+		"suffix": "per 100 touches",
+		"types": [
+			"average"
+		],
+		"isReversed": false,
+		"displayOrder": 34,
+		"precision": 2,
+		"step": 0.5,
+		"ranges": {
+			"18-19": {
+				"min": 0.5,
+				"max": 24.5,
+				"minName": "Lee Peltier",
+				"maxName": "Vinícius Júnior"
+			},
+			"19-20": {
+				"min": 0,
+				"max": 24,
+				"minName": "Ljubomir Fejsa",
+				"maxName": "Adama Traoré"
+			},
+			"20-21": {
+				"min": 0,
+				"max": 24,
+				"minName": "Kevin Long",
+				"maxName": "Rayan Cherki"
+			},
+			"21-22": {
+				"min": 0,
+				"max": 25,
+				"minName": "Leonardo Pavoletti",
+				"maxName": "Jack Grealish"
+			}
+		}
+	},
+	"progPassesDistance": {
+		"label": "Progressive Passing Yards",
+		"mobileLabel": "Progressive Passing Yards",
+		"suffix": "per 90",
+		"types": [
+			"average"
+		],
+		"isReversed": false,
+		"displayOrder": 35,
+		"precision": 0,
+		"step": 50,
+		"ranges": {
+			"18-19": {
+				"min": 0,
+				"max": 650,
+				"minName": "Sergio Pellissier",
+				"maxName": "Jérôme Boateng"
+			},
+			"19-20": {
+				"min": 0,
+				"max": 600,
+				"minName": "Jimmy Briand",
+				"maxName": "Thiago Silva"
+			},
+			"20-21": {
+				"min": 0,
+				"max": 650,
+				"minName": "Klaas Jan Huntelaar",
+				"maxName": "Kevin Vogt"
+			},
+			"21-22": {
+				"min": 0,
+				"max": 600,
+				"minName": "Radamel Falcao",
+				"maxName": "Thiago Silva"
+			}
+		}
+	},
+	"padjProgPassesDistance": {
+		"label": "Progressive Passing Yards",
+		"mobileLabel": "Progressive Passing Yards",
+		"suffix": "per 100 touches",
+		"types": [
+			"average"
+		],
+		"isReversed": false,
+		"displayOrder": 36,
+		"precision": 0,
+		"step": 50,
+		"ranges": {
+			"18-19": {
+				"min": 50,
+				"max": 700,
+				"minName": "Fernando Llorente",
+				"maxName": "Darijo Srna"
+			},
+			"19-20": {
+				"min": 0,
+				"max": 750,
+				"minName": "Mariusz Stepinski",
+				"maxName": "Leonardo Bonucci"
+			},
+			"20-21": {
+				"min": 0,
+				"max": 750,
+				"minName": "Roberto Piccoli",
+				"maxName": "Kevin Vogt"
+			},
+			"21-22": {
+				"min": 50,
+				"max": 800,
+				"minName": "Radamel Falcao",
+				"maxName": "Stefan Strandberg"
+			}
+		}
+	},
+	"progCarriesDistance": {
+		"label": "Progressive Carry Yards",
+		"mobileLabel": "Progressive Carry Yards",
+		"suffix": "per 90",
+		"types": [
+			"average"
+		],
+		"isReversed": false,
+		"displayOrder": 37,
+		"precision": 0,
+		"step": 50,
+		"ranges": {
+			"18-19": {
+				"min": 0,
+				"max": 350,
+				"minName": "Sergio Pellissier",
+				"maxName": "Aymeric Laporte"
+			},
+			"19-20": {
+				"min": 0,
+				"max": 350,
+				"minName": "Jimmy Briand",
+				"maxName": "Aymeric Laporte"
+			},
+			"20-21": {
+				"min": 0,
+				"max": 350,
+				"minName": "Klaas Jan Huntelaar",
+				"maxName": "Ramiro Funes Mori"
+			},
+			"21-22": {
+				"min": 0,
+				"max": 350,
+				"minName": "Goran Pandev",
+				"maxName": "Aymeric Laporte"
+			}
+		}
+	},
+	"padjProgCarriesDistance": {
+		"label": "Progressive Carry Yards",
+		"mobileLabel": "Progressive Carry Yards",
+		"suffix": "per 100 touches",
+		"types": [
+			"average"
+		],
+		"isReversed": false,
+		"displayOrder": 38,
+		"precision": 0,
+		"step": 50,
+		"ranges": {
+			"18-19": {
+				"min": 0,
+				"max": 500,
+				"minName": "Fernando Llorente",
+				"maxName": "Yevhen Konoplyanka"
+			},
+			"19-20": {
+				"min": 0,
+				"max": 500,
+				"minName": "Olivier Giroud",
+				"maxName": "Diego Perotti"
+			},
+			"20-21": {
+				"min": 0,
+				"max": 550,
+				"minName": "Fernando Llorente",
+				"maxName": "Riccardo Sottil"
+			},
+			"21-22": {
+				"min": 0,
+				"max": 550,
+				"minName": "Edinson Cavani",
+				"maxName": "Riccardo Sottil"
+			}
+		}
+	},
+	"progDistance": {
+		"label": "Yards Progressed",
+		"mobileLabel": "Yards Progressed",
+		"suffix": "per 90",
+		"types": [
+			"average"
+		],
+		"isReversed": false,
+		"displayOrder": 39,
+		"precision": 0,
+		"step": 50,
+		"ranges": {
+			"18-19": {
+				"min": 0,
+				"max": 900,
+				"minName": "Daniel Ciofani",
+				"maxName": "Aymeric Laporte"
+			},
+			"19-20": {
+				"min": 0,
+				"max": 900,
+				"minName": "Jimmy Briand",
+				"maxName": "Aymeric Laporte"
+			},
+			"20-21": {
+				"min": 0,
+				"max": 850,
+				"minName": "Billy Sharp",
+				"maxName": "Kevin Vogt"
+			},
+			"21-22": {
+				"min": 0,
+				"max": 900,
+				"minName": "Radamel Falcao",
+				"maxName": "Aymeric Laporte"
+			}
+		}
+	},
+	"padjProgDistance": {
+		"label": "Yards Progressed",
+		"mobileLabel": "Yards Progressed",
+		"suffix": "per 100 touches",
+		"types": [
+			"average"
+		],
+		"isReversed": false,
+		"displayOrder": 40,
+		"precision": 0,
+		"step": 50,
+		"ranges": {
+			"18-19": {
+				"min": 50,
+				"max": 1000,
+				"minName": "Olivier Giroud",
+				"maxName": "Niklas Moisander"
+			},
+			"19-20": {
+				"min": 100,
+				"max": 950,
+				"minName": "Olivier Giroud",
+				"maxName": "Leonardo Bonucci"
+			},
+			"20-21": {
+				"min": 100,
+				"max": 1000,
+				"minName": "Fernando Llorente",
+				"maxName": "Kevin Vogt"
+			},
+			"21-22": {
+				"min": 100,
+				"max": 950,
+				"minName": "Edinson Cavani",
+				"maxName": "Stefan Strandberg"
+			}
+		}
+	},
+	"attPasses": {
+		"label": "Attempted Passes",
+		"mobileLabel": "Attempted Passes",
+		"suffix": "",
+		"types": [
+			"aggregate"
+		],
+		"isReversed": false,
+		"displayOrder": 41,
+		"precision": 0,
+		"step_agg": 100,
+		"ranges_agg": {
+			"18-19": {
+				"min": 0,
+				"max": 3900,
+				"minName": "Daniele Bonera",
+				"maxName": "Aymeric Laporte"
+			},
+			"19-20": {
+				"min": 0,
+				"max": 3900,
+				"minName": "Claudio Pizarro",
+				"maxName": "Trent Alexander-Arnold"
+			},
+			"20-21": {
+				"min": 0,
+				"max": 3900,
+				"minName": "Wes Morgan",
+				"maxName": "Andrew Robertson"
+			},
+			"21-22": {
+				"min": 0,
+				"max": 3200,
+				"minName": "Jimmy Briand",
+				"maxName": "João Cancelo"
+			}
+		}
+	},
+	"succPasses": {
+		"label": "Successful Passes",
+		"mobileLabel": "Successful Passes",
+		"suffix": "",
+		"types": [
+			"aggregate"
+		],
+		"isReversed": false,
+		"displayOrder": 42,
+		"precision": 0,
+		"step_agg": 100,
+		"ranges_agg": {
+			"18-19": {
+				"min": 0,
+				"max": 3600,
+				"minName": "Daniele Bonera",
+				"maxName": "Aymeric Laporte"
+			},
+			"19-20": {
+				"min": 0,
+				"max": 3500,
+				"minName": "Claudio Pizarro",
+				"maxName": "Virgil van Dijk"
+			},
+			"20-21": {
+				"min": 0,
+				"max": 3400,
+				"minName": "Wes Morgan",
+				"maxName": "Rúben Dias"
+			},
+			"21-22": {
+				"min": 0,
+				"max": 2900,
+				"minName": "Jimmy Briand",
+				"maxName": "William Saliba"
+			}
+		}
+	},
+	"passSuccRate": {
+		"label": "Pass Completion %",
+		"mobileLabel": "Pass Comp. %",
+		"suffix": "",
+		"types": [
+			"average"
+		],
+		"isReversed": false,
+		"displayOrder": 43,
+		"precision": 1,
+		"step": 5,
+		"ranges": {
+			"18-19": {
+				"min": 45,
+				"max": 100,
+				"minName": "Suk Hyun-Jun",
+				"maxName": "Javi García"
+			},
+			"19-20": {
+				"min": 50,
+				"max": 100,
+				"minName": "Joselu",
+				"maxName": "Thiago Silva"
+			},
+			"20-21": {
+				"min": 50,
+				"max": 100,
+				"minName": "Ádám Szalai",
+				"maxName": "Andrea Ranocchia"
+			},
+			"21-22": {
+				"min": 50,
+				"max": 100,
+				"minName": "Fabian Klos",
+				"maxName": "Leandro Paredes"
+			}
+		}
+	},
+	"passSuccRateAboveExpected": {
+		"label": "Pass Completion %",
+		"mobileLabel": "Pass Comp. %",
+		"suffix": "above expected",
+		"types": [
+			"average"
+		],
+		"isReversed": false,
+		"displayOrder": 43,
+		"precision": 2,
+		"step": 2,
+		"ranges": {
+			"18-19": {
+				"min": -14,
+				"max": 36,
+				"minName": "Remi Oudin",
+				"maxName": "Jordan Siebatcheu"
+			},
+			"19-20": {
+				"min": -10,
+				"max": 30,
+				"minName": "Carlos Fernández",
+				"maxName": "Alberto Paloschi"
+			},
+			"20-21": {
+				"min": -10,
+				"max": 24,
+				"minName": "Mathieu Cafaro",
+				"maxName": "Klaas Jan Huntelaar"
+			},
+			"21-22": {
+				"min": -12,
+				"max": 30,
+				"minName": "Ivan Toney",
+				"maxName": "Matheus Cunha"
+			}
+		}
+	},
+	"attLongPasses": {
+		"label": "Attempted Long Passes",
+		"mobileLabel": "Attempted Long Passes",
+		"suffix": "",
+		"types": [
+			"aggregate"
+		],
+		"isReversed": false,
+		"displayOrder": 44,
+		"precision": 0,
+		"step_agg": 50,
+		"ranges_agg": {
+			"18-19": {
+				"min": 0,
+				"max": 950,
+				"minName": "Claudio Pizarro",
+				"maxName": "Toby Alderweireld"
+			},
+			"19-20": {
+				"min": 0,
+				"max": 1150,
+				"minName": "Claudio Pizarro",
+				"maxName": "Trent Alexander-Arnold"
+			},
+			"20-21": {
+				"min": 0,
+				"max": 1000,
+				"minName": "Christian Maggio",
+				"maxName": "Trent Alexander-Arnold"
+			},
+			"21-22": {
+				"min": 0,
+				"max": 800,
+				"minName": "Zlatan Ibrahimovic",
+				"maxName": "Trent Alexander-Arnold"
+			}
+		}
+	},
+	"succLongPasses": {
+		"label": "Successful Long Passes",
+		"mobileLabel": "Successful Long Passes",
+		"suffix": "",
+		"types": [
+			"aggregate"
+		],
+		"isReversed": false,
+		"displayOrder": 45,
+		"precision": 0,
+		"step_agg": 50,
+		"ranges_agg": {
+			"18-19": {
+				"min": 0,
+				"max": 750,
+				"minName": "Claudio Pizarro",
+				"maxName": "Virgil van Dijk"
+			},
+			"19-20": {
+				"min": 0,
+				"max": 800,
+				"minName": "Claudio Pizarro",
+				"maxName": "Virgil van Dijk"
+			},
+			"20-21": {
+				"min": 0,
+				"max": 750,
+				"minName": "Christian Maggio",
+				"maxName": "Mats Hummels"
+			},
+			"21-22": {
+				"min": 0,
+				"max": 500,
+				"minName": "Zlatan Ibrahimovic",
+				"maxName": "Toni Kroos"
+			}
+		}
+	},
+	"longPassSuccRate": {
+		"label": "Long Pass Completion %",
+		"mobileLabel": "Long Pass Comp. %",
+		"suffix": "",
+		"types": [
+			"average"
+		],
+		"isReversed": false,
+		"displayOrder": 46,
+		"precision": 1,
+		"step": 5,
+		"ranges": {
+			"18-19": {
+				"min": 20,
+				"max": 95,
+				"minName": "Samuel Grandsir",
+				"maxName": "Vincent Kompany"
+			},
+			"19-20": {
+				"min": 15,
+				"max": 100,
+				"minName": "Luis Rioja",
+				"maxName": "John Stones"
+			},
+			"20-21": {
+				"min": 20,
+				"max": 100,
+				"minName": "Iván Alejo",
+				"maxName": "M'Bala Nzola"
+			},
+			"21-22": {
+				"min": 20,
+				"max": 95,
+				"minName": "Marc Albrighton",
+				"maxName": "Danilo Pereira"
+			}
+		}
+	},
+	"attDribbles": {
+		"label": "Attempted Dribbles",
+		"mobileLabel": "Attempted Dribbles",
+		"suffix": "",
+		"types": [
+			"aggregate"
+		],
+		"isReversed": false,
+		"displayOrder": 47,
+		"precision": 0,
+		"step_agg": 20,
+		"ranges_agg": {
+			"18-19": {
+				"min": 0,
+				"max": 320,
+				"minName": "Claudio Pizarro",
+				"maxName": "Lionel Messi"
+			},
+			"19-20": {
+				"min": 0,
+				"max": 360,
+				"minName": "Claudio Pizarro",
+				"maxName": "Lionel Messi"
+			},
+			"20-21": {
+				"min": 0,
+				"max": 300,
+				"minName": "Christian Maggio",
+				"maxName": "Lionel Messi"
+			},
+			"21-22": {
+				"min": 0,
+				"max": 260,
+				"minName": "Zlatan Ibrahimovic",
+				"maxName": "Vinícius Júnior"
+			}
+		}
+	},
+	"succDribbles": {
+		"label": "Successful Dribbles",
+		"mobileLabel": "Succ. Dribbles",
+		"suffix": "per 90",
+		"types": [
+			"aggregate",
+			"average"
+		],
+		"isReversed": false,
+		"displayOrder": 48,
+		"precision": 2,
+		"step": 0.2,
+		"step_agg": 10,
+		"ranges": {
+			"18-19": {
+				"min": 0,
+				"max": 7.4,
+				"minName": "Emiliano Moretti",
+				"maxName": "Sofiane Boufal"
+			},
+			"19-20": {
+				"min": 0,
+				"max": 6.4,
+				"minName": "Hilton",
+				"maxName": "Sofiane Boufal"
+			},
+			"20-21": {
+				"min": 0,
+				"max": 6.2,
+				"minName": "Dante",
+				"maxName": "Neymar"
+			},
+			"21-22": {
+				"min": 0,
+				"max": 5,
+				"minName": "Zlatan Ibrahimovic",
+				"maxName": "Adama Traoré"
+			}
+		},
+		"ranges_agg": {
+			"18-19": {
+				"min": 0,
+				"max": 200,
+				"minName": "Claudio Pizarro",
+				"maxName": "Lionel Messi"
+			},
+			"19-20": {
+				"min": 0,
+				"max": 250,
+				"minName": "Claudio Pizarro",
+				"maxName": "Lionel Messi"
+			},
+			"20-21": {
+				"min": 0,
+				"max": 190,
+				"minName": "Christian Maggio",
+				"maxName": "Lionel Messi"
+			},
+			"21-22": {
+				"min": 0,
+				"max": 130,
+				"minName": "Zlatan Ibrahimovic",
+				"maxName": "Vinícius Júnior"
+			}
+		}
+	},
+	"padjSuccDribbles": {
+		"label": "Successful Dribbles",
+		"mobileLabel": "Succ. Dribbles",
+		"suffix": "per 100 touches",
+		"types": [
+			"average"
+		],
+		"isReversed": false,
+		"displayOrder": 49,
+		"precision": 2,
+		"step": 0.5,
+		"ranges": {
+			"18-19": {
+				"min": 0,
+				"max": 13,
+				"minName": "Emiliano Moretti",
+				"maxName": "Sofiane Boufal"
+			},
+			"19-20": {
+				"min": 0,
+				"max": 13,
+				"minName": "Hilton",
+				"maxName": "Allan Saint-Maximin"
+			},
+			"20-21": {
+				"min": 0,
+				"max": 12.5,
+				"minName": "Dante",
+				"maxName": "Allan Saint-Maximin"
+			},
+			"21-22": {
+				"min": 0,
+				"max": 11.5,
+				"minName": "Zlatan Ibrahimovic",
+				"maxName": "Allan Saint-Maximin"
+			}
+		}
+	},
+	"dribbleSuccRate": {
+		"label": "Dribble Success %",
+		"mobileLabel": "Dribble Succ. %",
+		"suffix": "",
+		"types": [
+			"average"
+		],
+		"isReversed": false,
+		"displayOrder": 50,
+		"precision": 1,
+		"step": 5,
+		"ranges": {
+			"18-19": {
+				"min": 15,
+				"max": 100,
+				"minName": "Valère Germain",
+				"maxName": "Pirmin Schwegler"
+			},
+			"19-20": {
+				"min": 15,
+				"max": 100,
+				"minName": "Joan Sastre",
+				"maxName": "Dante"
+			},
+			"20-21": {
+				"min": 20,
+				"max": 100,
+				"minName": "Emile Smith Rowe",
+				"maxName": "Diego Godín"
+			},
+			"21-22": {
+				"min": 10,
+				"max": 100,
+				"minName": "Mads Roerslev",
+				"maxName": "Yoane Wissa"
+			}
+		}
+	},
+	"turnovers": {
+		"label": "Turnovers",
+		"mobileLabel": "Turnovers",
+		"suffix": "per 90",
+		"types": [
+			"average"
+		],
+		"isReversed": true,
+		"displayOrder": 51,
+		"precision": 2,
+		"step": 0.5,
+		"ranges": {
+			"18-19": {
+				"min": 0,
+				"max": 13,
+				"minName": "Emiliano Moretti",
+				"maxName": "Neymar"
+			},
+			"19-20": {
+				"min": 0,
+				"max": 13.5,
+				"minName": "Hilton",
+				"maxName": "Neymar"
+			},
+			"20-21": {
+				"min": 0,
+				"max": 13,
+				"minName": "Dante",
+				"maxName": "Neymar"
+			},
+			"21-22": {
+				"min": 0,
+				"max": 12.5,
+				"minName": "Dante",
+				"maxName": "Lucas Boyé"
+			}
+		}
+	},
+	"padjTurnovers": {
+		"label": "Turnovers",
+		"mobileLabel": "Turnovers",
+		"suffix": "per 100 touches",
+		"types": [
+			"average"
+		],
+		"isReversed": true,
+		"displayOrder": 52,
+		"precision": 2,
+		"step": 1,
+		"ranges": {
+			"18-19": {
+				"min": 0,
+				"max": 36,
+				"minName": "Emiliano Moretti",
+				"maxName": "Oumar Niasse"
+			},
+			"19-20": {
+				"min": 0,
+				"max": 27,
+				"minName": "Dante",
+				"maxName": "Rabbi Matondo"
+			},
+			"20-21": {
+				"min": 0,
+				"max": 26,
+				"minName": "Dante",
+				"maxName": "Opa Nguette"
+			},
+			"21-22": {
+				"min": 0,
+				"max": 30,
+				"minName": "Dante",
+				"maxName": "Jamie Leweling"
+			}
+		}
+	},
+	"turnoversBelowExpected": {
+		"label": "Turnovers",
+		"mobileLabel": "Turnovers",
+		"suffix": "below expected",
+		"types": [
+			"average"
+		],
+		"isReversed": false,
+		"displayOrder": 52,
+		"precision": 2,
+		"step": 0.5,
+		"ranges": {
+			"18-19": {
+				"min": -4,
+				"max": 6,
+				"minName": "Oumar Niasse",
+				"maxName": "Marko Rog"
+			},
+			"19-20": {
+				"min": -4,
+				"max": 7.5,
+				"minName": "Nicolas de Préville",
+				"maxName": "Rony Lopes"
+			},
+			"20-21": {
+				"min": -4,
+				"max": 5,
+				"minName": "Cucho Hernández",
+				"maxName": "Donny van de Beek"
+			},
+			"21-22": {
+				"min": -5,
+				"max": 7,
+				"minName": "Gerson Rodrigues",
+				"maxName": "Ansgar Knauff"
+			}
+		}
+	},
+	"succPressures": {
+		"label": "Successful Pressures",
+		"mobileLabel": "Succ. Pressures",
+		"suffix": "per 90",
+		"types": [
+			"average"
+		],
+		"isReversed": false,
+		"displayOrder": 53,
+		"precision": 2,
+		"step": 0.5,
+		"ranges": {
+			"18-19": {
+				"min": 0.5,
+				"max": 11.5,
+				"minName": "Scott Dann",
+				"maxName": "Sebastian Rode"
+			},
+			"19-20": {
+				"min": 1,
+				"max": 12,
+				"minName": "Gary Cahill",
+				"maxName": "Konrad Laimer"
+			},
+			"20-21": {
+				"min": 1,
+				"max": 9.5,
+				"minName": "Gary Cahill",
+				"maxName": "Sven Schipplock"
+			},
+			"21-22": {
+				"min": 1,
+				"max": 11.5,
+				"minName": "Shane Duffy",
+				"maxName": "Konrad Laimer"
+			}
+		}
+	},
+	"padjSuccPressures": {
+		"label": "Successful Pressures",
+		"mobileLabel": "Succ. Pressures",
+		"suffix": "per 90 (pAdj)",
+		"types": [
+			"average"
+		],
+		"isReversed": false,
+		"displayOrder": 54,
+		"precision": 2,
+		"step": 1,
+		"ranges": {
+			"18-19": {
+				"min": 0,
+				"max": 15,
+				"minName": "Scott Dann",
+				"maxName": "Arturo Vidal"
+			},
+			"19-20": {
+				"min": 0,
+				"max": 14,
+				"minName": "Scott Dann",
+				"maxName": "Arturo Vidal"
+			},
+			"20-21": {
+				"min": 0,
+				"max": 13,
+				"minName": "Gary Cahill",
+				"maxName": "Romain Del Castillo"
+			},
+			"21-22": {
+				"min": 0,
+				"max": 14,
+				"minName": "Dedryck Boyata",
+				"maxName": "Konrad Laimer"
+			}
+		}
+	},
+	"padjSuccPressures_att": {
+		"label": "Successful Pressures",
+		"mobileLabel": "Succ. Pressures",
+		"suffix": "per 90 (pAdj - FWs)",
+		"types": [
+			"average"
+		],
+		"isReversed": false,
+		"displayOrder": 55,
+		"precision": 2,
+		"step": 1,
+		"ranges": {
+			"18-19": {
+				"min": 0,
+				"max": 15,
+				"minName": "Scott Dann",
+				"maxName": "Arturo Vidal"
+			},
+			"19-20": {
+				"min": 0,
+				"max": 14,
+				"minName": "Mateo Pavlovic",
+				"maxName": "Arturo Vidal"
+			},
+			"20-21": {
+				"min": 0,
+				"max": 12,
+				"minName": "Scott Dann",
+				"maxName": "Morgan Sanson"
+			},
+			"21-22": {
+				"min": 0,
+				"max": 15,
+				"minName": "Dedryck Boyata",
+				"maxName": "Kalvin Phillips"
+			}
+		}
+	},
+	"padjSuccPressures_def": {
+		"label": "Successful Pressures",
+		"mobileLabel": "Succ. Pressures",
+		"suffix": "per 90 (pAdj - CBs)",
+		"types": [
+			"average"
+		],
+		"isReversed": false,
+		"displayOrder": 56,
+		"precision": 2,
+		"step": 1,
+		"ranges": {
+			"18-19": {
+				"min": 0,
+				"max": 15,
+				"minName": "Scott Dann",
+				"maxName": "Arturo Vidal"
+			},
+			"19-20": {
+				"min": 0,
+				"max": 15,
+				"minName": "Scott Dann",
+				"maxName": "Thomas Müller"
+			},
+			"20-21": {
+				"min": 0,
+				"max": 13,
+				"minName": "Gary Cahill",
+				"maxName": "Romain Del Castillo"
+			},
+			"21-22": {
+				"min": 0,
+				"max": 15,
+				"minName": "Dedryck Boyata",
+				"maxName": "Konrad Laimer"
+			}
+		}
+	},
+	"interceptions": {
+		"label": "Interceptions",
+		"mobileLabel": "Interceptions",
+		"suffix": "per 90",
+		"types": [
+			"average"
+		],
+		"isReversed": false,
+		"displayOrder": 57,
+		"precision": 2,
+		"step": 0.2,
+		"ranges": {
+			"18-19": {
+				"min": 0,
+				"max": 4.2,
+				"minName": "Claudio Pizarro",
+				"maxName": "Sol Bamba"
+			},
+			"19-20": {
+				"min": 0,
+				"max": 2.6,
+				"minName": "Zlatan Ibrahimovic",
+				"maxName": "Thomas Delaney"
+			},
+			"20-21": {
+				"min": 0,
+				"max": 3.6,
+				"minName": "Dante",
+				"maxName": "Milan Badelj"
+			},
+			"21-22": {
+				"min": 0,
+				"max": 4.6,
+				"minName": "Cristiano Ronaldo",
+				"maxName": "Exequiel Palacios"
+			}
+		}
+	},
+	"padjInterceptions": {
+		"label": "Interceptions",
+		"mobileLabel": "Interceptions",
+		"suffix": "per 90 (pAdj)",
+		"types": [
+			"average"
+		],
+		"isReversed": false,
+		"displayOrder": 58,
+		"precision": 2,
+		"step": 0.2,
+		"ranges": {
+			"18-19": {
+				"min": 0,
+				"max": 3.6,
+				"minName": "Claudio Pizarro",
+				"maxName": "Danilo"
+			},
+			"19-20": {
+				"min": 0,
+				"max": 3,
+				"minName": "Zlatan Ibrahimovic",
+				"maxName": "Thomas Delaney"
+			},
+			"20-21": {
+				"min": 0,
+				"max": 4.4,
+				"minName": "Fabio Quagliarella",
+				"maxName": "Diego Llorente"
+			},
+			"21-22": {
+				"min": 0,
+				"max": 5.8,
+				"minName": "Radamel Falcao",
+				"maxName": "Timo Hübers"
+			}
+		}
+	},
+	"padjInterceptions_def": {
+		"label": "Interceptions",
+		"mobileLabel": "Interceptions",
+		"suffix": "per 90 (pAdj - CBs)",
+		"types": [
+			"average"
+		],
+		"isReversed": false,
+		"displayOrder": 59,
+		"precision": 2,
+		"step": 0.2,
+		"ranges": {
+			"18-19": {
+				"min": 0,
+				"max": 3.6,
+				"minName": "Claudio Pizarro",
+				"maxName": "Danilo"
+			},
+			"19-20": {
+				"min": 0,
+				"max": 3.2,
+				"minName": "Zlatan Ibrahimovic",
+				"maxName": "Thomas Delaney"
+			},
+			"20-21": {
+				"min": 0,
+				"max": 4,
+				"minName": "Kevin Gameiro",
+				"maxName": "Leon Goretzka"
+			},
+			"21-22": {
+				"min": 0,
+				"max": 6,
+				"minName": "Cristiano Ronaldo",
+				"maxName": "Timo Hübers"
+			}
+		}
+	},
+	"succTackles": {
+		"label": "Successful Tackles",
+		"mobileLabel": "Succ. Tackles",
+		"suffix": "per 90",
+		"types": [
+			"average"
+		],
+		"isReversed": false,
+		"displayOrder": 60,
+		"precision": 2,
+		"step": 0.5,
+		"ranges": {
+			"18-19": {
+				"min": 0,
+				"max": 5.5,
+				"minName": "Sergio Pellissier",
+				"maxName": "Idrissa Gueye"
+			},
+			"19-20": {
+				"min": 0,
+				"max": 6,
+				"minName": "Zlatan Ibrahimovic",
+				"maxName": "Paulo Otávio"
+			},
+			"20-21": {
+				"min": 0,
+				"max": 5,
+				"minName": "Zlatan Ibrahimovic",
+				"maxName": "Laurent Abergel"
+			},
+			"21-22": {
+				"min": 0,
+				"max": 5,
+				"minName": "Zlatan Ibrahimovic",
+				"maxName": "Arturo Vidal"
+			}
+		}
+	},
+	"padjSuccTackles": {
+		"label": "Successful Tackles",
+		"mobileLabel": "Succ. Tackles",
+		"suffix": "per 90 (pAdj)",
+		"types": [
+			"average"
+		],
+		"isReversed": false,
+		"displayOrder": 61,
+		"precision": 2,
+		"step": 0.5,
+		"ranges": {
+			"18-19": {
+				"min": 0,
+				"max": 6.5,
+				"minName": "Sergio Pellissier",
+				"maxName": "Arturo Vidal"
+			},
+			"19-20": {
+				"min": 0,
+				"max": 6.5,
+				"minName": "Zlatan Ibrahimovic",
+				"maxName": "Idrissa Gueye"
+			},
+			"20-21": {
+				"min": 0,
+				"max": 6.5,
+				"minName": "Cristiano Ronaldo",
+				"maxName": "Valentin Rongier"
+			},
+			"21-22": {
+				"min": 0,
+				"max": 6.5,
+				"minName": "Zlatan Ibrahimovic",
+				"maxName": "Arturo Vidal"
+			}
+		}
+	},
+	"padjSuccTackles_def": {
+		"label": "Successful Tackles",
+		"mobileLabel": "Succ. Tackles",
+		"suffix": "per 90 (pAdj) - CBs",
+		"types": [
+			"average"
+		],
+		"isReversed": false,
+		"displayOrder": 62,
+		"precision": 2,
+		"step": 0.5,
+		"ranges": {
+			"18-19": {
+				"min": 0,
+				"max": 6.5,
+				"minName": "Sergio Pellissier",
+				"maxName": "Arturo Vidal"
+			},
+			"19-20": {
+				"min": 0,
+				"max": 7,
+				"minName": "Zlatan Ibrahimovic",
+				"maxName": "Paulo Otávio"
+			},
+			"20-21": {
+				"min": 0,
+				"max": 6.5,
+				"minName": "Zlatan Ibrahimovic",
+				"maxName": "Exequiel Palacios"
+			},
+			"21-22": {
+				"min": 0,
+				"max": 6.5,
+				"minName": "Zlatan Ibrahimovic",
+				"maxName": "James Milner"
+			}
+		}
+	},
+	"attDribbleTackles": {
+		"label": "Attempted Tackles vs Dribblers",
+		"mobileLabel": "Attempted Tackles vs Dribblers",
+		"suffix": "",
+		"types": [
+			"aggregate"
+		],
+		"isReversed": false,
+		"displayOrder": 63,
+		"precision": 0,
+		"step_agg": 10,
+		"ranges_agg": {
+			"18-19": {
+				"min": 0,
+				"max": 180,
+				"minName": "Claudio Pizarro",
+				"maxName": "Allan"
+			},
+			"19-20": {
+				"min": 0,
+				"max": 170,
+				"minName": "Claudio Pizarro",
+				"maxName": "João Moutinho"
+			},
+			"20-21": {
+				"min": 0,
+				"max": 180,
+				"minName": "Christian Maggio",
+				"maxName": "Laurent Abergel"
+			},
+			"21-22": {
+				"min": 0,
+				"max": 130,
+				"minName": "Zlatan Ibrahimovic",
+				"maxName": "Laurent Abergel"
+			}
+		}
+	},
+	"succDribbleTackles": {
+		"label": "Successful Tackles vs Dribblers",
+		"mobileLabel": "Successful Tackles vs Dribblers",
+		"suffix": "",
+		"types": [
+			"aggregate"
+		],
+		"isReversed": false,
+		"displayOrder": 64,
+		"precision": 0,
+		"step_agg": 5,
+		"ranges_agg": {
+			"18-19": {
+				"min": 0,
+				"max": 60,
+				"minName": "Claudio Pizarro",
+				"maxName": "Allan"
+			},
+			"19-20": {
+				"min": 0,
+				"max": 60,
+				"minName": "Claudio Pizarro",
+				"maxName": "Ricardo Pereira"
+			},
+			"20-21": {
+				"min": 0,
+				"max": 65,
+				"minName": "Christian Maggio",
+				"maxName": "Pierre-Emile Højbjerg"
+			},
+			"21-22": {
+				"min": 0,
+				"max": 55,
+				"minName": "Zlatan Ibrahimovic",
+				"maxName": "Reinildo"
+			}
+		}
+	},
+	"dribbleTackleRate": {
+		"label": "Tackle/Dribbled Past %",
+		"mobileLabel": "Tackle/ Dribbled Past %",
+		"suffix": "",
+		"types": [
+			"average"
+		],
+		"isReversed": false,
+		"displayOrder": 65,
+		"precision": 1,
+		"step": 5,
+		"ranges": {
+			"18-19": {
+				"min": 0,
+				"max": 90,
+				"minName": "Vedad Ibisevic",
+				"maxName": "Virgil van Dijk"
+			},
+			"19-20": {
+				"min": 0,
+				"max": 100,
+				"minName": "Goran Pandev",
+				"maxName": "Federico Peluso"
+			},
+			"20-21": {
+				"min": 0,
+				"max": 85,
+				"minName": "Fabio Quagliarella",
+				"maxName": "Ronald Araújo"
+			},
+			"21-22": {
+				"min": 0,
+				"max": 95,
+				"minName": "Burak Yilmaz",
+				"maxName": "Virgil van Dijk"
+			}
+		}
+	},
+	"fouls": {
+		"label": "Fouls Committed",
+		"mobileLabel": "Fouls Committed",
+		"suffix": "per 90",
+		"types": [
+			"average"
+		],
+		"isReversed": true,
+		"displayOrder": 66,
+		"precision": 2,
+		"step": 0.2,
+		"ranges": {
+			"18-19": {
+				"min": 0,
+				"max": 5.4,
+				"minName": "Andrea Raggi",
+				"maxName": "Anthony Lozano"
+			},
+			"19-20": {
+				"min": 0,
+				"max": 4,
+				"minName": "Mamadou Sakho",
+				"maxName": "Andrea Favilli"
+			},
+			"20-21": {
+				"min": 0,
+				"max": 5,
+				"minName": "Juan Mata",
+				"maxName": "Sven Schipplock"
+			},
+			"21-22": {
+				"min": 0,
+				"max": 4.2,
+				"minName": "Jesús Navas",
+				"maxName": "Fede San Emeterio"
+			}
+		}
+	},
+	"padjFouls": {
+		"label": "Fouls Committed",
+		"mobileLabel": "Fouls Committed",
+		"suffix": "per 90 (pAdj)",
+		"types": [
+			"average"
+		],
+		"isReversed": true,
+		"displayOrder": 67,
+		"precision": 2,
+		"step": 0.2,
+		"ranges": {
+			"18-19": {
+				"min": 0,
+				"max": 5.6,
+				"minName": "Andrea Raggi",
+				"maxName": "Anthony Lozano"
+			},
+			"19-20": {
+				"min": 0,
+				"max": 5.2,
+				"minName": "Mamadou Sakho",
+				"maxName": "Junior Firpo"
+			},
+			"20-21": {
+				"min": 0,
+				"max": 5,
+				"minName": "Juan Mata",
+				"maxName": "Mikel Merino"
+			},
+			"21-22": {
+				"min": 0,
+				"max": 5.6,
+				"minName": "Daniele Verde",
+				"maxName": "Karol Linetty"
+			}
+		}
+	},
+	"padjFouls_def": {
+		"label": "Fouls Committed",
+		"mobileLabel": "Fouls Committed",
+		"suffix": "per 90 (pAdj - CBs)",
+		"types": [
+			"average"
+		],
+		"isReversed": true,
+		"displayOrder": 68,
+		"precision": 2,
+		"step": 0.2,
+		"ranges": {
+			"18-19": {
+				"min": 0,
+				"max": 5.2,
+				"minName": "Andrea Raggi",
+				"maxName": "Anthony Lozano"
+			},
+			"19-20": {
+				"min": 0,
+				"max": 5,
+				"minName": "Mamadou Sakho",
+				"maxName": "Junior Firpo"
+			},
+			"20-21": {
+				"min": 0,
+				"max": 4.8,
+				"minName": "Juan Mata",
+				"maxName": "Fernandinho"
+			},
+			"21-22": {
+				"min": 0,
+				"max": 5.8,
+				"minName": "Daniele Verde",
+				"maxName": "Youssef Maleh"
+			}
+		}
+	},
+	"clearances": {
+		"label": "Clearances",
+		"mobileLabel": "Clearances",
+		"suffix": "per 90",
+		"types": [
+			"average"
+		],
+		"isReversed": false,
+		"displayOrder": 69,
+		"precision": 2,
+		"step": 0.5,
+		"ranges": {
+			"18-19": {
+				"min": 0,
+				"max": 10.5,
+				"minName": "Arjen Robben",
+				"maxName": "Martín Mantovani"
+			},
+			"19-20": {
+				"min": 0,
+				"max": 10,
+				"minName": "Santi Cazorla",
+				"maxName": "Xabier Etxeita"
+			},
+			"20-21": {
+				"min": 0,
+				"max": 10.5,
+				"minName": "Goran Pandev",
+				"maxName": "Pape Abou Cissé"
+			},
+			"21-22": {
+				"min": 0,
+				"max": 8.5,
+				"minName": "Goran Pandev",
+				"maxName": "Boubakar Kouyaté"
+			}
+		}
+	},
+	"padjClearances": {
+		"label": "Clearances",
+		"mobileLabel": "Clearances",
+		"suffix": "per 90 (pAdj)",
+		"types": [
+			"average"
+		],
+		"isReversed": false,
+		"displayOrder": 70,
+		"precision": 2,
+		"step": 0.5,
+		"ranges": {
+			"18-19": {
+				"min": 0,
+				"max": 11,
+				"minName": "Arjen Robben",
+				"maxName": "Martín Mantovani"
+			},
+			"19-20": {
+				"min": 0,
+				"max": 15,
+				"minName": "Santi Cazorla",
+				"maxName": "Joel Matip"
+			},
+			"20-21": {
+				"min": 0,
+				"max": 13.5,
+				"minName": "Goran Pandev",
+				"maxName": "Rhys Williams"
+			},
+			"21-22": {
+				"min": 0,
+				"max": 9.5,
+				"minName": "Aaron Lennon",
+				"maxName": "Bremer"
+			}
+		}
+	},
+	"padjClearances_def": {
+		"label": "Clearances",
+		"mobileLabel": "Clearances",
+		"suffix": "per 90 (pAdj - CBs)",
+		"types": [
+			"average"
+		],
+		"isReversed": false,
+		"displayOrder": 71,
+		"precision": 2,
+		"step": 0.5,
+		"ranges": {
+			"18-19": {
+				"min": 0,
+				"max": 12,
+				"minName": "Arjen Robben",
+				"maxName": "Willi Orban"
+			},
+			"19-20": {
+				"min": 0,
+				"max": 15.5,
+				"minName": "Santi Cazorla",
+				"maxName": "Xabier Etxeita"
+			},
+			"20-21": {
+				"min": 0,
+				"max": 14.5,
+				"minName": "Goran Pandev",
+				"maxName": "Soufiane Chakla"
+			},
+			"21-22": {
+				"min": 0,
+				"max": 8.5,
+				"minName": "Aaron Lennon",
+				"maxName": "Bremer"
+			}
+		}
+	},
+	"goalsAgainst": {
+		"label": "Goals Conceded",
+		"mobileLabel": "Goals Conceded",
+		"suffix": "",
+		"types": [
+			"aggregate"
+		],
+		"isReversed": false,
+		"displayOrder": 72,
+		"precision": 0,
+		"step_agg": 5,
+		"ranges_agg": {
+			"18-19": {
+				"min": 0,
+				"max": 70,
+				"minName": "Fraser Forster",
+				"maxName": "Michael Esser"
+			},
+			"19-20": {
+				"min": 0,
+				"max": 75,
+				"minName": "Daniele Padelli",
+				"maxName": "Gabriel Vasconcellos"
+			},
+			"20-21": {
+				"min": 0,
+				"max": 90,
+				"minName": "Daniele Padelli",
+				"maxName": "Alex Cordaz"
+			},
+			"21-22": {
+				"min": 0,
+				"max": 70,
+				"minName": "Asmir Begovic",
+				"maxName": "Illan Meslier"
+			}
+		}
+	},
+	"psxg": {
+		"label": "Post-Shot xG Faced",
+		"mobileLabel": "Post-Shot xG Faced",
+		"suffix": "",
+		"types": [
+			"aggregate"
+		],
+		"isReversed": false,
+		"displayOrder": 73,
+		"precision": 0,
+		"step_agg": 5,
+		"ranges_agg": {
+			"18-19": {
+				"min": 0,
+				"max": 75,
+				"minName": "Pepe Reina",
+				"maxName": "Neil Etheridge"
+			},
+			"19-20": {
+				"min": 0,
+				"max": 85,
+				"minName": "Daniele Padelli",
+				"maxName": "Gabriel Vasconcellos"
+			},
+			"20-21": {
+				"min": 0,
+				"max": 80,
+				"minName": "Rubén Martínez",
+				"maxName": "Sam Johnstone"
+			},
+			"21-22": {
+				"min": 0,
+				"max": 60,
+				"minName": "Wayne Hennessey",
+				"maxName": "Yann Sommer"
+			}
+		}
+	},
+	"sota": {
+		"label": "Shots on Target Faced",
+		"mobileLabel": "Shots on Target Faced",
+		"suffix": "",
+		"types": [
+			"aggregate"
+		],
+		"isReversed": false,
+		"displayOrder": 74,
+		"precision": 0,
+		"step_agg": 10,
+		"ranges_agg": {
+			"18-19": {
+				"min": 0,
+				"max": 210,
+				"minName": "Fraser Forster",
+				"maxName": "Kevin Trapp"
+			},
+			"19-20": {
+				"min": 0,
+				"max": 220,
+				"minName": "Daniele Padelli",
+				"maxName": "Gabriel Vasconcellos"
+			},
+			"20-21": {
+				"min": 0,
+				"max": 230,
+				"minName": "Rubén Martínez",
+				"maxName": "Sam Johnstone"
+			},
+			"21-22": {
+				"min": 0,
+				"max": 180,
+				"minName": "Asmir Begovic",
+				"maxName": "Lukás Hrádecky"
+			}
+		}
+	},
+	"gsaa": {
+		"label": "GSAA %",
+		"mobileLabel": "GSAA %",
+		"suffix": "",
+		"types": [
+			"average"
+		],
+		"isReversed": false,
+		"displayOrder": 75,
+		"precision": 2,
+		"step": 2.5,
+		"ranges": {
+			"18-19": {
+				"min": -17.5,
+				"max": 12.5,
+				"minName": "Karl-Johan Johnsson",
+				"maxName": "Antonio Mirante"
+			},
+			"19-20": {
+				"min": -15,
+				"max": 12.5,
+				"minName": "Angus Gunn",
+				"maxName": "Jessy Moulin"
+			},
+			"20-21": {
+				"min": -12.5,
+				"max": 10,
+				"minName": "Salvatore Sirigu",
+				"maxName": "David Ospina"
+			},
+			"21-22": {
+				"min": -15,
+				"max": 10,
+				"minName": "Arthur Desmas",
+				"maxName": "Alphonse Areola"
+			}
+		}
+	},
+	"attCrosses": {
+		"label": "Crosses Faced",
+		"mobileLabel": "Crosses Faced",
+		"suffix": "",
+		"types": [
+			"aggregate"
+		],
+		"isReversed": false,
+		"displayOrder": 76,
+		"precision": 0,
+		"step_agg": 20,
+		"ranges_agg": {
+			"18-19": {
+				"min": 0,
+				"max": 580,
+				"minName": "Fraser Forster",
+				"maxName": "Luigi Sepe"
+			},
+			"19-20": {
+				"min": 0,
+				"max": 460,
+				"minName": "Yohann Pelé",
+				"maxName": "Rui Patrício"
+			},
+			"20-21": {
+				"min": 0,
+				"max": 440,
+				"minName": "Rubén Martínez",
+				"maxName": "Sergio Asenjo"
+			},
+			"21-22": {
+				"min": 0,
+				"max": 340,
+				"minName": "Asmir Begovic",
+				"maxName": "Wojciech Szczesny"
+			}
+		}
+	},
+	"stoppedCrosses": {
+		"label": "Crosses Stopped",
+		"mobileLabel": "Crosses Stopped",
+		"suffix": "",
+		"types": [
+			"aggregate"
+		],
+		"isReversed": false,
+		"displayOrder": 77,
+		"precision": 0,
+		"step_agg": 5,
+		"ranges_agg": {
+			"18-19": {
+				"min": 0,
+				"max": 45,
+				"minName": "Pepe Reina",
+				"maxName": "Jan Oblak"
+			},
+			"19-20": {
+				"min": 0,
+				"max": 55,
+				"minName": "Gianluigi Buffon",
+				"maxName": "Nick Pope"
+			},
+			"20-21": {
+				"min": 0,
+				"max": 45,
+				"minName": "Gianluigi Buffon",
+				"maxName": "Sergio Asenjo"
+			},
+			"21-22": {
+				"min": 0,
+				"max": 35,
+				"minName": "Daniele Padelli",
+				"maxName": "Diego López"
+			}
+		}
+	},
+	"crossStopRate": {
+		"label": "Cross Stopping %",
+		"mobileLabel": "Cross Stopping %",
+		"suffix": "",
+		"types": [
+			"average"
+		],
+		"isReversed": false,
+		"displayOrder": 78,
+		"precision": 2,
+		"step": 2.5,
+		"ranges": {
+			"18-19": {
+				"min": 0,
+				"max": 17.5,
+				"minName": "Sven Ulreich",
+				"maxName": "Bobby Allain"
+			},
+			"19-20": {
+				"min": 0,
+				"max": 15,
+				"minName": "Gianluigi Buffon",
+				"maxName": "Miguel Ángel Moyá"
+			},
+			"20-21": {
+				"min": 0,
+				"max": 15,
+				"minName": "Gianluigi Buffon",
+				"maxName": "Nick Pope"
+			},
+			"21-22": {
+				"min": 0,
+				"max": 17.5,
+				"minName": "Claudio Bravo",
+				"maxName": "Alexandre Oukidja"
+			}
+		}
+	},
+	"attLaunchedPasses": {
+		"label": "Attempted Launched Passes",
+		"mobileLabel": "Attempted Launched Passes",
+		"suffix": "",
+		"types": [
+			"aggregate"
+		],
+		"isReversed": false,
+		"displayOrder": 79,
+		"precision": 0,
+		"step_agg": 50,
+		"ranges_agg": {
+			"18-19": {
+				"min": 0,
+				"max": 1150,
+				"minName": "Fraser Forster",
+				"maxName": "Neil Etheridge"
+			},
+			"19-20": {
+				"min": 0,
+				"max": 1100,
+				"minName": "Gianluigi Buffon",
+				"maxName": "David Soria"
+			},
+			"20-21": {
+				"min": 0,
+				"max": 1050,
+				"minName": "Daniele Padelli",
+				"maxName": "Stefan Ortega Moreno"
+			},
+			"21-22": {
+				"min": 0,
+				"max": 1000,
+				"minName": "Daniele Padelli",
+				"maxName": "Manuel Riemann"
+			}
+		}
+	},
+	"succLaunchedPasses": {
+		"label": "Successful Launched Passes",
+		"mobileLabel": "Successful Launched Passes",
+		"suffix": "",
+		"types": [
+			"aggregate"
+		],
+		"isReversed": false,
+		"displayOrder": 80,
+		"precision": 0,
+		"step_agg": 20,
+		"ranges_agg": {
+			"18-19": {
+				"min": 0,
+				"max": 500,
+				"minName": "Fraser Forster",
+				"maxName": "Kevin Trapp"
+			},
+			"19-20": {
+				"min": 0,
+				"max": 420,
+				"minName": "Daniele Padelli",
+				"maxName": "Rafal Gikiewicz"
+			},
+			"20-21": {
+				"min": 0,
+				"max": 500,
+				"minName": "Daniele Padelli",
+				"maxName": "Stefan Ortega Moreno"
+			},
+			"21-22": {
+				"min": 0,
+				"max": 480,
+				"minName": "Daniele Padelli",
+				"maxName": "Manuel Riemann"
+			}
+		}
+	},
+	"launchedPassSuccRate": {
+		"label": "Launched Pass Completion %",
+		"mobileLabel": "Launched Pass Completion %",
+		"suffix": "",
+		"types": [
+			"average"
+		],
+		"isReversed": false,
+		"displayOrder": 81,
+		"precision": 1,
+		"step": 5,
+		"ranges": {
+			"18-19": {
+				"min": 25,
+				"max": 60,
+				"minName": "Alex Meret",
+				"maxName": "Gianluigi Buffon"
+			},
+			"19-20": {
+				"min": 20,
+				"max": 65,
+				"minName": "Angus Gunn",
+				"maxName": "Manuel Neuer"
+			},
+			"20-21": {
+				"min": 25,
+				"max": 65,
+				"minName": "Fraser Forster",
+				"maxName": "Manuel Neuer"
+			},
+			"21-22": {
+				"min": 25,
+				"max": 65,
+				"minName": "Alex McCarthy",
+				"maxName": "Marc-André ter Stegen"
+			}
+		}
+	},
+	"gkPassSuccRateAboveExpected": {
+		"label": "Pass Completion %",
+		"mobileLabel": "Pass Comp. %",
+		"suffix": "above expected",
+		"types": [
+			"average"
+		],
+		"isReversed": false,
+		"displayOrder": 81,
+		"precision": 2,
+		"step": 2,
+		"ranges": {
+			"18-19": {
+				"min": -114,
+				"max": 56,
+				"minName": "Pietro Terracciano",
+				"maxName": "Danijel Subasic"
+			},
+			"19-20": {
+				"min": -184,
+				"max": 54,
+				"minName": "Alphonse Areola",
+				"maxName": "Roberto Jiménez"
+			},
+			"20-21": {
+				"min": -88,
+				"max": 56,
+				"minName": "Kepa Arrizabalaga",
+				"maxName": "Paulo Gazzaniga"
+			},
+			"21-22": {
+				"min": -68,
+				"max": 44,
+				"minName": "Alex Meret",
+				"maxName": "Alphonse Areola"
 			}
 		}
 	}

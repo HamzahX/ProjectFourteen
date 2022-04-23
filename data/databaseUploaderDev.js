@@ -83,9 +83,10 @@ var TOP_5_LEAGUE_TEAMS = {
     "fr": []
 };
 
-var TIMESTAMP = fs.statSync(path.join(__dirname, '/fbrefData/20-21/europaLeague_gk.json')).mtime;
+var PLAYER_DATA_TIMESTAMP = fs.statSync(path.join(__dirname, '/fbrefData/21-22/premierLeague.json')).mtime;
+var PERCENTILE_DATA_TIMESTAMP = fs.statSync(path.join(__dirname, '/percentileData/21-22/GKPercentiles.json')).mtime;
 
-console.log(TIMESTAMP);
+console.log(PLAYER_DATA_TIMESTAMP);
 
 let setup = async () => {
 
@@ -374,7 +375,7 @@ let uploadPlayers = async () => {
             stats: playerInfo["stats"],
             outfieldGKStats: playerInfo["outfieldGKStats"],
             lookupStats: playerInfo["lookupStats"],
-            lastUpdated: TIMESTAMP
+            lastUpdated: PLAYER_DATA_TIMESTAMP
         })
 
     }
@@ -422,7 +423,7 @@ let uploadPercentilesArrays = async () => {
                         season: season,
                         position: position,
                         stats: PERCENTILE_ARRAYS[season][position],
-                        lastUpdated: TIMESTAMP
+                        lastUpdated: PERCENTILE_DATA_TIMESTAMP
                     })
                 }
 
@@ -468,7 +469,7 @@ let uploadZScoreData = async () => {
                         season: season,
                         position: position,
                         data: Z_SCORE_DATA[season][position],
-                        lastUpdated: TIMESTAMP
+                        lastUpdated: PERCENTILE_DATA_TIMESTAMP
                     })
                 }
 

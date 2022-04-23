@@ -6,6 +6,7 @@ const utilities = require('../server/utilities.js');
 
 const mean = require('mathjs').mean;
 const std = require('mathjs').std;
+const median = require('mathjs').median;
 
 const scriptName = path.basename(__filename);
 const supportedSeasons = ["18-19", "19-20", "20-21", "21-22"];
@@ -69,124 +70,6 @@ let setup = async () => {
             PERCENTILE_DATA[position][stat] = [];
         }
     }
-
-    // FW_PERCENTILE_DATA = {
-    //     npg: [],
-    //     npxg: [],
-    //     npxgPerShot: [],
-    //     succAerials: [],
-    //     aerialSuccRate: [],
-    //     boxTouches: [],
-    //     padjBoxTouches: [],
-    //     xa: [],
-    //     padjXA: [],
-    //     ppa: [],
-    //     padjPPA: [],
-    //     succDribbles: [],
-    //     padjSuccDribbles: [],
-    //     dribbleSuccRate: [],
-    //     turnovers: [],
-    //     padjTurnovers: [],
-    //     succPressures: [],
-    //     padjSuccPressures: []
-    // };
-    //
-    // AM_PERCENTILE_DATA = {
-    //     npg: [],
-    //     npxg: [],
-    //     npxgPerShot: [],
-    //     xa: [],
-    //     padjXA: [],
-    //     sca: [],
-    //     padjSCA: [],
-    //     ppa: [],
-    //     padjPPA: [],
-    //     progDistance: [],
-    //     padjProgDistance: [],
-    //     passSuccRate: [],
-    //     succDribbles: [],
-    //     padjSuccDribbles: [],
-    //     dribbleSuccRate: [],
-    //     turnovers: [],
-    //     padjTurnovers: [],
-    //     succPressures: [],
-    //     padjSuccPressures: []
-    // };
-    //
-    // CM_PERCENTILE_DATA = {
-    //     xa: [],
-    //     padjXA: [],
-    //     sca:[],
-    //     padjSCA: [],
-    //     pft: [],
-    //     padjPFT: [],
-    //     progDistance: [],
-    //     padjProgDistance: [],
-    //     passSuccRate: [],
-    //     succDribbles: [],
-    //     padjSuccDribbles: [],
-    //     dribbleSuccRate: [],
-    //     turnovers: [],
-    //     padjTurnovers: [],
-    //     succPressures: [],
-    //     padjSuccPressures: [],
-    //     interceptions: [],
-    //     padjInterceptions: [],
-    //     succTackles: [],
-    //     padjSuccTackles: [],
-    //     dribbleTackleRate: []
-    // };
-    //
-    // FB_PERCENTILE_DATA = {
-    //     xa: [],
-    //     padjXA: [],
-    //     pft: [],
-    //     padjPFT: [],
-    //     progDistance: [],
-    //     padjProgDistance: [],
-    //     passSuccRate: [],
-    //     succDribbles: [],
-    //     padjSuccDribbles: [],
-    //     dribbleSuccRate: [],
-    //     turnovers: [],
-    //     padjTurnovers: [],
-    //     succPressures: [],
-    //     padjSuccPressures: [],
-    //     interceptions: [],
-    //     padjInterceptions: [],
-    //     succTackles: [],
-    //     padjSuccTackles: [],
-    //     dribbleTackleRate: [],
-    //     aerialSuccRate: []
-    // };
-    //
-    // CB_PERCENTILE_DATA = {
-    //     pft: [],
-    //     padjPFT: [],
-    //     progDistance: [],
-    //     padjProgDistance: [],
-    //     passSuccRate: [],
-    //     longPassSuccRate: [],
-    //     succPressures: [],
-    //     padjSuccPressures: [],
-    //     interceptions: [],
-    //     padjInterceptions: [],
-    //     succTackles: [],
-    //     padjSuccTackles: [],
-    //     dribbleTackleRate: [],
-    //     fouls: [],
-    //     padjFouls: [],
-    //     succAerials: [],
-    //     aerialSuccRate: [],
-    //     clearances: [],
-    //     padjClearances: []
-    // };
-    //
-    // GK_PERCENTILE_DATA = {
-    //     gsaa: [],
-    //     crossStopRate: [],
-    //     launchedPassSuccRate: []
-    // };
 
     Z_SCORE_INFO = {
         "FW": {},
@@ -396,6 +279,7 @@ let populateZScoreInfo = (position, statDict) => {
 
         Z_SCORE_INFO[position][stat]["mean"] = mean(statDict[stat]);
         Z_SCORE_INFO[position][stat]["stdDev"] = std(statDict[stat]);
+        Z_SCORE_INFO[position][stat]["median"] = median(statDict[stat]);
 
     }
 

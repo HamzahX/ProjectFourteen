@@ -4,6 +4,8 @@ const fs = require('fs');
 const countryCodes = require('./countryCodes.js');
 
 const mean = require('mathjs').mean;
+const mlr = require('ml-regression-multivariate-linear');
+const {intersect} = require("mathjs");
 
 const scriptName = path.basename(__filename);
 const supportedSeasons = ["18-19", "19-20", "20-21", "21-22"];
@@ -28,28 +30,10 @@ else {
 //globals to store mappings
 var FBREF_TO_WHOSCORED_PLAYERS;
 
-//globals to store fbref data
-var EPL; //fbref epl player data
-var EPL_GK; //fbref epl gk data
-
-//repeat for the other competitions
-var LA_LIGA;
-var LA_LIGA_GK;
-
-var SERIE_A;
-var SERIE_A_GK;
-
-var BUNDESLIGA;
-var BUNDESLIGA_GK;
-
-var LIGUE_1;
-var LIGUE_1_GK;
-
-var CHAMPIONS_LEAGUE;
-var CHAMPIONS_LEAGUE_GK;
-
-var EUROPA_LEAGUE;
-var EUROPA_LEAGUE_GK;
+let OUTFIELD_DATA = {};
+let OUTFIELD_DATA_SEARCHABLE_BY_CODE = {};
+let GK_DATA = {};
+let GK_DATA_SEARCHABLE_BY_CODE = {};
 
 var METADATA; //player metadata
 var PROCESSED; //player metadata + stats
@@ -66,11 +50,16 @@ var MEAN_POSSESSION_DIST_FROM_AVERAGE;
 var MEAN_TOUCHES_AGAINST_DISTANCES_FROM_AVERAGE = {};
 var ADJUSTMENT_COEFFICIENTS = {};
 
+var MLR_TURNOVERS;
+var MLR_PASS_COMPLETION;
+var MLR_GK_PASS_COMPLETION;
+
 let setup = async () => {
 
     return new Promise(async function(resolve, reject){
 
         METADATA = JSON.parse(fs.readFileSync(path.join(__dirname, '/playerData/metadata.json')));
+
         if (SEASON === "18-19"){
             PROCESSED = {};
         }
@@ -85,20 +74,29 @@ let setup = async () => {
         POSITION_DATA["CB"] = JSON.parse(fs.readFileSync(path.join(__dirname, `/positionData/${SEASON}/CBPercentilePlayers.json`)))['codes'];
         POSITION_DATA["GK"] = JSON.parse(fs.readFileSync(path.join(__dirname, `/positionData/${SEASON}/GKPercentilePlayers.json`)))['codes'];
 
-        EPL = JSON.parse(fs.readFileSync(path.join(__dirname, `fbrefData/${SEASON}/premierLeague.json`)));
-        EPL_GK = JSON.parse(fs.readFileSync(path.join(__dirname, `fbrefData/${SEASON}/premierLeague_gk.json`)));
-        LA_LIGA = JSON.parse(fs.readFileSync(path.join(__dirname, `fbrefData/${SEASON}/laLiga.json`)));
-        LA_LIGA_GK = JSON.parse(fs.readFileSync(path.join(__dirname, `fbrefData/${SEASON}/laLiga_gk.json`)));
-        SERIE_A = JSON.parse(fs.readFileSync(path.join(__dirname, `fbrefData/${SEASON}/serieA.json`)));
-        SERIE_A_GK = JSON.parse(fs.readFileSync(path.join(__dirname, `fbrefData/${SEASON}/serieA_gk.json`)));
-        BUNDESLIGA = JSON.parse(fs.readFileSync(path.join(__dirname, `fbrefData/${SEASON}/bundesliga.json`)));
-        BUNDESLIGA_GK = JSON.parse(fs.readFileSync(path.join(__dirname, `fbrefData/${SEASON}/bundesliga_gk.json`)));
-        LIGUE_1 = JSON.parse(fs.readFileSync(path.join(__dirname, `fbrefData/${SEASON}/ligue1.json`)));
-        LIGUE_1_GK = JSON.parse(fs.readFileSync(path.join(__dirname, `fbrefData/${SEASON}/ligue1_gk.json`)));
-        CHAMPIONS_LEAGUE = JSON.parse(fs.readFileSync(path.join(__dirname, `fbrefData/${SEASON}/championsLeague.json`)));
-        CHAMPIONS_LEAGUE_GK = JSON.parse(fs.readFileSync(path.join(__dirname, `fbrefData/${SEASON}/championsLeague_gk.json`)));
-        EUROPA_LEAGUE = JSON.parse(fs.readFileSync(path.join(__dirname, `fbrefData/${SEASON}/europaLeague.json`)));
-        EUROPA_LEAGUE_GK = JSON.parse(fs.readFileSync(path.join(__dirname, `fbrefData/${SEASON}/europaLeague_gk.json`)));
+        OUTFIELD_DATA["EPL"] = JSON.parse(fs.readFileSync(path.join(__dirname, `fbrefData/${SEASON}/premierLeague.json`)));
+        OUTFIELD_DATA["LA_LIGA"] = JSON.parse(fs.readFileSync(path.join(__dirname, `fbrefData/${SEASON}/laLiga.json`)));
+        OUTFIELD_DATA["SERIE_A"] = JSON.parse(fs.readFileSync(path.join(__dirname, `fbrefData/${SEASON}/serieA.json`)));
+        OUTFIELD_DATA["BUNDESLIGA"] = JSON.parse(fs.readFileSync(path.join(__dirname, `fbrefData/${SEASON}/bundesliga.json`)));
+        OUTFIELD_DATA["LIGUE_1"] = JSON.parse(fs.readFileSync(path.join(__dirname, `fbrefData/${SEASON}/ligue1.json`)));
+        OUTFIELD_DATA["CHAMPIONS_LEAGUE"] = JSON.parse(fs.readFileSync(path.join(__dirname, `fbrefData/${SEASON}/championsLeague.json`)));
+        OUTFIELD_DATA["EUROPA_LEAGUE"] = JSON.parse(fs.readFileSync(path.join(__dirname, `fbrefData/${SEASON}/europaLeague.json`)));
+
+        for (let competition in OUTFIELD_DATA){
+            OUTFIELD_DATA_SEARCHABLE_BY_CODE[competition] = Object.keys(OUTFIELD_DATA[competition]).map((key) => OUTFIELD_DATA[competition][key]);
+        }
+
+        GK_DATA["EPL"] = JSON.parse(fs.readFileSync(path.join(__dirname, `fbrefData/${SEASON}/premierLeague_gk.json`)));
+        GK_DATA["LA_LIGA"] = JSON.parse(fs.readFileSync(path.join(__dirname, `fbrefData/${SEASON}/laLiga_gk.json`)));
+        GK_DATA["SERIE_A"] = JSON.parse(fs.readFileSync(path.join(__dirname, `fbrefData/${SEASON}/serieA_gk.json`)));
+        GK_DATA["BUNDESLIGA"] = JSON.parse(fs.readFileSync(path.join(__dirname, `fbrefData/${SEASON}/bundesliga_gk.json`)));
+        GK_DATA["LIGUE_1"] = JSON.parse(fs.readFileSync(path.join(__dirname, `fbrefData/${SEASON}/ligue1_gk.json`)));
+        GK_DATA["CHAMPIONS_LEAGUE"] = JSON.parse(fs.readFileSync(path.join(__dirname, `fbrefData/${SEASON}/championsLeague_gk.json`)));
+        GK_DATA["EUROPA_LEAGUE"] = JSON.parse(fs.readFileSync(path.join(__dirname, `fbrefData/${SEASON}/europaLeague_gk.json`)));
+
+        for (let competition in GK_DATA){
+            GK_DATA_SEARCHABLE_BY_CODE[competition] = Object.keys(GK_DATA[competition]).map((key) => GK_DATA[competition][key]);
+        }
 
         FBREF_TO_WHOSCORED_PLAYERS = JSON.parse(fs.readFileSync(path.join(__dirname, '/playerMappingData/fbrefToWhoscored.json')));
         FBREF_TO_WHOSCORED_TEAMS = JSON.parse(fs.readFileSync(path.join(__dirname, '/teamMappingData/fbrefToWhoscored.json')));
@@ -173,13 +171,142 @@ let setup = async () => {
 
         }
 
-        //console.log(TOUCHES_AGAINST_BELOW_AVERAGE);
-        //console.log(MEAN_TOUCHES_AGAINST_DISTANCES_FROM_AVERAGE);
-        //console.log(ADJUSTMENT_COEFFICIENTS);
-
         resolve();
 
     });
+
+};
+
+
+let createMultipleRegressionModels = async () => {
+
+    let turnover_inputs = [];
+    let turnover_outputs = [];
+
+    let pass_completion_inputs = [];
+    let pass_completion_outputs = [];
+
+    let gk_pass_completion_inputs = [];
+    let gk_pass_completion_outputs = [];
+
+    let outfieldData = {};
+
+    outfieldData["EPL"] = JSON.parse(fs.readFileSync(path.join(__dirname, `fbrefData/${SEASON}/premierLeague.json`)));
+    outfieldData["LA_LIGA"] = JSON.parse(fs.readFileSync(path.join(__dirname, `fbrefData/${SEASON}/laLiga.json`)));
+    outfieldData["SERIE_A"] = JSON.parse(fs.readFileSync(path.join(__dirname, `fbrefData/${SEASON}/serieA.json`)));
+    outfieldData["BUNDESLIGA"] = JSON.parse(fs.readFileSync(path.join(__dirname, `fbrefData/${SEASON}/bundesliga.json`)));
+    outfieldData["LIGUE_1"] = JSON.parse(fs.readFileSync(path.join(__dirname, `fbrefData/${SEASON}/ligue1.json`)));
+    outfieldData["CHAMPIONS_LEAGUE"] = JSON.parse(fs.readFileSync(path.join(__dirname, `fbrefData/${SEASON}/championsLeague.json`)));
+    outfieldData["EUROPA_LEAGUE"] = JSON.parse(fs.readFileSync(path.join(__dirname, `fbrefData/${SEASON}/europaLeague.json`)));
+
+    let gkData = {};
+
+    gkData["EPL"] = JSON.parse(fs.readFileSync(path.join(__dirname, `fbrefData/${SEASON}/premierLeague_gk.json`)));
+    gkData["LA_LIGA"] = JSON.parse(fs.readFileSync(path.join(__dirname, `fbrefData/${SEASON}/laLiga_gk.json`)));
+    gkData["SERIE_A"] = JSON.parse(fs.readFileSync(path.join(__dirname, `fbrefData/${SEASON}/serieA_gk.json`)));
+    gkData["BUNDESLIGA"] = JSON.parse(fs.readFileSync(path.join(__dirname, `fbrefData/${SEASON}/bundesliga_gk.json`)));
+    gkData["LIGUE_1"] = JSON.parse(fs.readFileSync(path.join(__dirname, `fbrefData/${SEASON}/ligue1_gk.json`)));
+    gkData["CHAMPIONS_LEAGUE"] = JSON.parse(fs.readFileSync(path.join(__dirname, `fbrefData/${SEASON}/championsLeague_gk.json`)));
+    gkData["EUROPA_LEAGUE"] = JSON.parse(fs.readFileSync(path.join(__dirname, `fbrefData/${SEASON}/europaLeague_gk.json`)));
+
+    for (let competition in outfieldData) {
+
+        gkData[competition] = Object.keys(gkData[competition]).map((key) => gkData[competition][key]);
+
+        for (let player in outfieldData[competition]) {
+
+            let playerData = outfieldData[competition][player];
+
+            if (playerData["standard_Min"] < 900)
+                continue;
+
+            if (playerData["standard_Pos"] === "GK") {
+
+                let gkPlayerData = gkData[competition].filter(p => p["code"] === playerData["code"])[0];
+
+                if (gkPlayerData === undefined || gkPlayerData === null)
+                    continue;
+
+                gk_pass_completion_inputs.push(
+                    [
+                        playerData["passing_Att"],
+                        gkPlayerData["keeper_adv_Att__1"],
+                        gkPlayerData["keeper_adv_Att__2"],
+                        gkPlayerData["keeper_adv_AvgLen"],
+                        gkPlayerData["keeper_adv_AvgLen__1"],
+                        playerData["passing_types_Press"]
+                    ]
+                );
+
+                gk_pass_completion_outputs.push(
+                    [
+                        playerData["passing_Cmp"]
+                    ]
+                );
+
+            }
+            else {
+                turnover_inputs.push(
+                    [
+                        playerData["possession_Att"],
+                        playerData["possession_Def 3rd"],
+                        playerData["possession_Mid 3rd"],
+                        playerData["possession_Att 3rd"],
+                        playerData["possession_Att Pen"],
+                        playerData["possession_Prog"]
+                    ]
+                );
+
+                turnover_outputs.push(
+                    [
+                        playerData["possession_Dis"] +
+                        playerData["possession_Mis"] +
+                        playerData["possession_Att"] -
+                        playerData["possession_Succ"]
+                    ]
+                );
+
+                if (playerData["passing_Att"] < 1000)
+                    continue;
+
+                pass_completion_inputs.push(
+                    [
+                        playerData["passing_Att"],
+                        playerData["passing_Att__1"],
+                        playerData["passing_Att__2"],
+                        playerData["passing_Att__3"],
+                        playerData["passing_1/3"],
+                        playerData["passing_KP"],
+                        playerData["passing_Prog"],
+                        playerData["passing_types_Live"],
+                        playerData["passing_types_FK"],
+                        playerData["passing_types_Press"],
+                        playerData["passing_types_Sw"],
+                        playerData["passing_types_Crs"],
+                        playerData["passing_types_CK"],
+                        playerData["passing_types_Ground"],
+                        playerData["passing_types_Low"],
+                        playerData["passing_types_High"],
+                        playerData["passing_types_Head"],
+                        playerData["passing_types_TI"],
+                        playerData["passing_types_Other"]
+                    ]
+                );
+
+                pass_completion_outputs.push(
+                    [
+                        playerData["passing_Cmp"]
+                    ]
+                );
+            }
+
+        }
+
+    }
+
+    MLR_TURNOVERS = new mlr(turnover_inputs, turnover_outputs);
+    MLR_PASS_COMPLETION = new mlr(pass_completion_inputs, pass_completion_outputs);
+    MLR_GK_PASS_COMPLETION = new mlr(gk_pass_completion_inputs, gk_pass_completion_outputs);
 
 };
 
@@ -188,12 +315,12 @@ let processEPLData = async () => {
 
     let competitionName = "Premier League";
 
-    for (let player in EPL){
-        processEntry(player, EPL, competitionName, false)
+    for (let player in OUTFIELD_DATA["EPL"]){
+        processEntry(player, "EPL", competitionName, false)
     }
 
-    for (let gk in EPL_GK){
-        processEntry(gk, EPL_GK, competitionName, true)
+    for (let gk in GK_DATA["EPL"]){
+        processEntry(gk, "EPL", competitionName, true)
     }
 
 
@@ -204,12 +331,12 @@ let processLaLigaData = async () => {
 
     let competitionName = "La Liga";
 
-    for (let player in LA_LIGA){
-        processEntry(player, LA_LIGA, competitionName, false)
+    for (let player in OUTFIELD_DATA["LA_LIGA"]){
+        processEntry(player, "LA_LIGA", competitionName, false)
     }
 
-    for (let gk in LA_LIGA_GK){
-        processEntry(gk, LA_LIGA_GK, competitionName, true)
+    for (let gk in GK_DATA["LA_LIGA"]){
+        processEntry(gk, "LA_LIGA", competitionName, true)
     }
 
 
@@ -219,12 +346,12 @@ let processSerieAData = async () => {
 
     let competitionName = "Serie A";
 
-    for (let player in SERIE_A){
-        processEntry(player, SERIE_A, competitionName, false)
+    for (let player in OUTFIELD_DATA["SERIE_A"]){
+        processEntry(player, "SERIE_A", competitionName, false)
     }
 
-    for (let gk in SERIE_A_GK){
-        processEntry(gk, SERIE_A_GK, competitionName, true)
+    for (let gk in GK_DATA["SERIE_A"]){
+        processEntry(gk, "SERIE_A", competitionName, true)
     }
 
 
@@ -234,12 +361,12 @@ let processBundesligaData = async () => {
 
     let competitionName = "Bundesliga";
 
-    for (let player in BUNDESLIGA){
-        processEntry(player, BUNDESLIGA, competitionName, false)
+    for (let player in OUTFIELD_DATA["BUNDESLIGA"]){
+        processEntry(player, "BUNDESLIGA", competitionName, false)
     }
 
-    for (let gk in BUNDESLIGA_GK){
-        processEntry(gk, BUNDESLIGA_GK, competitionName, true)
+    for (let gk in GK_DATA["BUNDESLIGA"]){
+        processEntry(gk, "BUNDESLIGA", competitionName, true)
     }
 
 
@@ -249,12 +376,12 @@ let processLigue1Data = async () => {
 
     let competitionName = "Ligue 1";
 
-    for (let player in LIGUE_1){
-        processEntry(player, LIGUE_1, competitionName, false)
+    for (let player in OUTFIELD_DATA["LIGUE_1"]){
+        processEntry(player, "LIGUE_1", competitionName, false)
     }
 
-    for (let gk in LIGUE_1_GK){
-        processEntry(gk, LIGUE_1_GK, competitionName, true)
+    for (let gk in GK_DATA["LIGUE_1"]){
+        processEntry(gk, "LIGUE_1", competitionName, true)
     }
 
 
@@ -264,12 +391,12 @@ let processChampionsLeagueData = async () => {
 
     let competitionName = "Champions League";
 
-    for (let player in CHAMPIONS_LEAGUE){
-        processEntry(player, CHAMPIONS_LEAGUE, competitionName, false)
+    for (let player in OUTFIELD_DATA["CHAMPIONS_LEAGUE"]){
+        processEntry(player, "CHAMPIONS_LEAGUE", competitionName, false)
     }
 
-    for (let gk in CHAMPIONS_LEAGUE_GK){
-        processEntry(gk, CHAMPIONS_LEAGUE_GK, competitionName, true)
+    for (let gk in GK_DATA["CHAMPIONS_LEAGUE"]){
+        processEntry(gk, "CHAMPIONS_LEAGUE", competitionName, true)
     }
 
 
@@ -279,18 +406,25 @@ let processEuropaLeagueData = async () => {
 
     let competitionName = "Europa League";
 
-    for (let player in EUROPA_LEAGUE){
-        processEntry(player, EUROPA_LEAGUE, competitionName, false)
+    for (let player in OUTFIELD_DATA["EUROPA_LEAGUE"]){
+        processEntry(player, "EUROPA_LEAGUE", competitionName, false)
     }
 
-    for (let gk in EUROPA_LEAGUE_GK){
-        processEntry(gk, EUROPA_LEAGUE_GK, competitionName, true)
+    for (let gk in GK_DATA["EUROPA_LEAGUE"]){
+        processEntry(gk, "EUROPA_LEAGUE", competitionName, true)
     }
 
 };
 
 
-let processEntry = (aPlayer, competitionData, competitionName, isGoalkeeper) => {
+let processEntry = (aPlayer, competitionKey, competitionName, isGoalkeeper) => {
+
+    let competitionData;
+
+    if (isGoalkeeper)
+        competitionData = GK_DATA[competitionKey];
+    else
+        competitionData = OUTFIELD_DATA[competitionKey];
 
     let isCLorEL = false;
     if (competitionName === "Champions League" || competitionName === "Europa League"){
@@ -407,7 +541,7 @@ let processEntry = (aPlayer, competitionData, competitionName, isGoalkeeper) => 
         }
     }
 
-    let possession = POSSESSION_DATA[competitionName][whoscoredClubName];
+    //let possession = POSSESSION_DATA[competitionName][whoscoredClubName];
 
     let liveTouchesAgainstPer90BelowAverage = TOUCHES_AGAINST_BELOW_AVERAGE[competitionName][whoscoredClubName]["live_per90"];
 
@@ -418,6 +552,20 @@ let processEntry = (aPlayer, competitionData, competitionName, isGoalkeeper) => 
     //retrieve required stats from the fbref data (exported CSVs converted to JSON)
     let stats;
     if (isGoalkeeper){
+
+        let outfieldDataForPlayer = OUTFIELD_DATA_SEARCHABLE_BY_CODE[competitionKey].filter(p => p["code"] === entry["code"])[0];
+
+        let expectedCompletedPassesInputs = [
+            outfieldDataForPlayer["passing_Att"],
+            entry["keeper_adv_Att__1"],
+            entry["keeper_adv_Att__2"],
+            entry["keeper_adv_AvgLen"],
+            entry["keeper_adv_AvgLen__1"],
+            outfieldDataForPlayer["passing_types_Press"]
+        ];
+
+        let expectedCompletedPasses = MLR_GK_PASS_COMPLETION.predict(expectedCompletedPassesInputs)[0];
+
         stats = {
             minutes: entry["keeper_Min"],
             goalsAgainst: entry["keeper_adv_GA"] - entry["keeper_adv_OG"],
@@ -426,10 +574,64 @@ let processEntry = (aPlayer, competitionData, competitionName, isGoalkeeper) => 
             stoppedCrosses: entry["keeper_adv_Stp"],
             attCrosses: entry["keeper_adv_Opp"],
             succLaunchedPasses: entry["keeper_adv_Cmp"],
-            attLaunchedPasses: entry["keeper_adv_Att"]
+            attLaunchedPasses: entry["keeper_adv_Att"],
+            succPasses: outfieldDataForPlayer["passing_Cmp"],
+            expSuccPasses: expectedCompletedPasses,
+            attPasses: outfieldDataForPlayer["passing_Att"]
         }
+
     }
     else {
+
+        let expectedTurnoversInputs = [
+            entry["possession_Att"],
+            entry["possession_Def 3rd"],
+            entry["possession_Mid 3rd"],
+            entry["possession_Att 3rd"],
+            entry["possession_Att Pen"],
+            entry["possession_Prog"]
+        ];
+
+        let expectedTurnovers = entry["possession_Dis"] +
+            entry["possession_Mis"] +
+            entry["possession_Att"] -
+            entry["possession_Succ"];
+
+        try{
+            expectedTurnovers = MLR_TURNOVERS.predict(expectedTurnoversInputs)[0];
+        }
+        catch (e) {
+        }
+
+        let expectedCompletedPassesInputs = [
+            entry["passing_Att"],
+            entry["passing_Att__1"],
+            entry["passing_Att__2"],
+            entry["passing_Att__3"],
+            entry["passing_1/3"],
+            entry["passing_KP"],
+            entry["passing_Prog"],
+            entry["passing_types_Live"],
+            entry["passing_types_FK"],
+            entry["passing_types_Press"],
+            entry["passing_types_Sw"],
+            entry["passing_types_Crs"],
+            entry["passing_types_CK"],
+            entry["passing_types_Ground"],
+            entry["passing_types_Low"],
+            entry["passing_types_High"],
+            entry["passing_types_Head"],
+            entry["passing_types_TI"],
+            entry["passing_types_Other"]
+        ];
+
+        let expectedCompletedPasses = entry["passing_Cmp"];
+
+        try{
+            expectedCompletedPasses = MLR_PASS_COMPLETION.predict(expectedCompletedPassesInputs)[0];
+        }
+        catch (e) {
+        }
 
         stats = {
 
@@ -441,17 +643,27 @@ let processEntry = (aPlayer, competitionData, competitionName, isGoalkeeper) => 
             succAerials: entry["misc_Won"],
             attAerials: entry["misc_Won"] + entry["misc_Lost"],
             boxTouches: entry["possession_Att Pen"],
+            ppr: entry["possession_Prog__1"],
             xa: entry["passing_xA"],
             sca: entry["gca_SCA"] - entry["gca_PassDead"],
             ppa: entry["passing_PPA"],
+            cpa: entry["possession_CPA"],
             succDribbles: entry["possession_Succ"],
             attDribbles: entry["possession_Att"],
             timesDispossessed: entry["possession_Dis"],
             miscontrols: entry["possession_Mis"],
+            failedDribbles: entry["possession_Att"] - entry["possession_Succ"],
+            expTurnovers: expectedTurnovers,
+            progPasses: entry["passing_Prog"],
+            progCarries: entry["possession_Prog"],
+            progPassesDistance: entry["passing_PrgDist"],
+            progCarriesDistance: entry["possession_PrgDist"],
             progDistance: entry["passing_PrgDist"] + entry["possession_PrgDist"],
             succPasses: entry["passing_Cmp"],
+            expSuccPasses: expectedCompletedPasses,
             attPasses: entry["passing_Att"],
             pft: entry["passing_1/3"],
+            cft: entry["possession_1/3"],
             succLongPasses: entry["passing_Cmp__3"],
             attLongPasses: entry["passing_Att__3"],
 
@@ -551,6 +763,9 @@ let saveStats = async () => {
 
 console.time('stats filling');
 setup()
+    .then(async () => {
+        await createMultipleRegressionModels()
+    })
     .then(async () => {
         await processEPLData()
     })
