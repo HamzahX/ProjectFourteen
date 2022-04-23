@@ -4,25 +4,9 @@ const path = require('path');
 const fs = require('fs');
 const isEqual = require('lodash.isequal');
 
-const scriptName = path.basename(__filename);
-const supportedSeasons = ["18-19", "19-20", "20-21", "21-22"];
-
-var SEASON;
-//parse command line arguments to get the season
-let ARGS = process.argv.slice(2);
-if (ARGS.length !== 1){
-    console.log(`Incorrect number of args. Usage: node ${scriptName} <season>`);
-    process.exit(-1);
-}
-else {
-    if (!supportedSeasons.includes(ARGS[0])){
-        console.log("Incorrect season arg. Supported seasons are supportedSeason");
-        process.exit(-1);
-    }
-    else {
-        SEASON = ARGS[0];
-    }
-}
+const scraperArgumentValidator = require('./scraperArgumentValidator.js');
+const SEASON = scraperArgumentValidator.validateSeasonArgument();
+const supportedSeasons = scraperArgumentValidator.supportedSeasons;
 
 //function to launch a browser using puppeteer
 let browser;

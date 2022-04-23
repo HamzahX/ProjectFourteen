@@ -3,29 +3,13 @@ const puppeteer = require('puppeteer');
 const path = require('path');
 const fs = require('fs');
 const countryCodes = require('./countryCodes.js');
+const scraperArgumentValidator = require('./scraperArgumentValidator.js');
 
-const scriptName = path.basename(__filename);
-const supportedSeasons = ["18-19", "19-20", "20-21", "21-22"];
-const booleans = ["true", "false"];
+let SEASON;
+let ONLY_PROCESS;
 
-var SEASON;
-var ONLY_PROCESS;
-//parse command line arguments to get the season
-let ARGS = process.argv.slice(2);
-if (ARGS.length !== 2){
-    console.log(`Incorrect number of args. Usage: node ${scriptName} <season> <only_process_flag>`);
-    process.exit(-1);
-}
-else {
-    if (!supportedSeasons.includes(ARGS[0]) || !booleans.includes(ARGS[1])){
-        console.log("Incorrect season arg. Supported seasons are supportedSeason");
-        process.exit(-1);
-    }
-    else {
-        SEASON = ARGS[0];
-        ONLY_PROCESS = ARGS[1] === "true";
-    }
-}
+[SEASON, ONLY_PROCESS] = scraperArgumentValidator.validateSeasonAndProcessOnlyArguments();
+const supportedSeasons = scraperArgumentValidator.supportedSeasons;
 
 //globals
 var BROWSER;
