@@ -17,7 +17,9 @@ if (SEASON === "18-19"){
         "https://www.whoscored.com/Regions/81/Tournaments/3/Seasons/7405/Stages/16427/Fixtures/Germany-Bundesliga-2018-2019",
         "https://www.whoscored.com/Regions/74/Tournaments/22/Seasons/7344/Stages/16348/Fixtures/France-Ligue-1-2018-2019",
         "https://www.whoscored.com/Regions/250/Tournaments/12/Seasons/7352/Stages/16651/Show/Europe-Champions-League-2018-2019",
-        "https://www.whoscored.com/Regions/250/Tournaments/30/Seasons/7353/Stages/16786/Show/Europe-Europa-League-2018-2019"
+        "https://www.whoscored.com/Regions/250/Tournaments/12/Seasons/7352/Stages/16704/Show/Europe-Champions-League-2018-2019",
+        "https://www.whoscored.com/Regions/250/Tournaments/30/Seasons/7353/Stages/16786/Show/Europe-Europa-League-2018-2019",
+        "https://www.whoscored.com/Regions/250/Tournaments/30/Seasons/7353/Stages/16705/Show/Europe-Europa-League-2018-2019"
     ];
 }
 else if (SEASON === "19-20"){
@@ -28,7 +30,9 @@ else if (SEASON === "19-20"){
         "https://www.whoscored.com/Regions/81/Tournaments/3/Seasons/7872/Stages/17682/Fixtures/Germany-Bundesliga-2019-2020",
         "https://www.whoscored.com/Regions/74/Tournaments/22/Seasons/7814/Stages/17593/Fixtures/France-Ligue-1-2019-2020",
         "https://www.whoscored.com/Regions/250/Tournaments/12/Seasons/7804/Stages/18065/Show/Europe-Champions-League-2019-2020",
-        "https://www.whoscored.com/Regions/250/Tournaments/30/Seasons/7805/Stages/18066/Show/Europe-Europa-League-2019-2020"
+        "https://www.whoscored.com/Regions/250/Tournaments/12/Seasons/7804/Stages/17993/Show/Europe-Champions-League-2019-2020",
+        "https://www.whoscored.com/Regions/250/Tournaments/30/Seasons/7805/Stages/18066/Show/Europe-Europa-League-2019-2020",
+        "https://www.whoscored.com/Regions/250/Tournaments/30/Seasons/7805/Stages/17994/Show/Europe-Europa-League-2019-2020"
     ];
 }
 else if (SEASON === "20-21"){
@@ -39,7 +43,9 @@ else if (SEASON === "20-21"){
         "https://www.whoscored.com/Regions/81/Tournaments/3/Seasons/8279/Stages/18762/Fixtures/Germany-Bundesliga-2020-2021",
         "https://www.whoscored.com/Regions/74/Tournaments/22/Seasons/8185/Stages/18594/Fixtures/France-Ligue-1-2020-2021",
         "https://www.whoscored.com/Regions/250/Tournaments/12/Seasons/8177/Stages/19130/Show/Europe-Champions-League-2020-2021",
-        "https://www.whoscored.com/Regions/250/Tournaments/30/Seasons/8178/Stages/19164/Show/Europe-Europa-League-2020-2021"
+        "https://www.whoscored.com/Regions/250/Tournaments/12/Seasons/8177/Stages/19009/Show/Europe-Champions-League-2020-2021",
+        "https://www.whoscored.com/Regions/250/Tournaments/30/Seasons/8178/Stages/19164/Show/Europe-Europa-League-2020-2021",
+        "https://www.whoscored.com/Regions/250/Tournaments/30/Seasons/8178/Stages/19010/Show/Europe-Europa-League-2020-2021"
     ];
 }
 else if (SEASON === "21-22"){
@@ -68,7 +74,8 @@ let setup = async () => {
 
     BROWSER = await puppeteer.launch({
         headless: false,
-        args: ["--no-sandbox", "--disable-setuid-sandbox"]
+        args: ["--no-sandbox", "--disable-setuid-sandbox"],
+        defaultViewport: null
     });
 
     PAGE = await BROWSER.newPage();
@@ -105,6 +112,7 @@ let getMatchUrls = async() => {
 
     for (let i = 0; i < URLs.length; i++) {
         await PAGE.goto(URLs[i], {waitUntil: 'networkidle2'});
+        await PAGE.waitFor(5000);
         await scrapeMatchUrls();
     }
 
@@ -112,7 +120,12 @@ let getMatchUrls = async() => {
 
 let scrapeMatchUrls = async() => {
 
-    for (let i = 0; i < 20; i++) {
+    let hasPreviousPage = true;
+
+    let fixturesSelector = '#tournament-fixture';
+    await PAGE.waitForSelector(fixturesSelector);
+
+    while (hasPreviousPage) {
 
         let result = await PAGE.evaluate(() => {
 
@@ -140,10 +153,10 @@ let scrapeMatchUrls = async() => {
         if (await PAGE.$(selector) !== null){
             await PAGE.waitForSelector(selector);
             await PAGE.evaluate((selector) => document.querySelector(selector).click(), selector);
-            await PAGE.waitFor(3000);
+            await PAGE.waitFor(1500);
         }
         else {
-            break;
+            hasPreviousPage = false;
         }
 
     }
@@ -159,7 +172,15 @@ let main = async () => {
     await setup();
     await getMatchUrls();
 
-    await fs.writeFile(path.join(__dirname, `matchUrls/${SEASON}.json`), JSON.stringify(MATCH_URLs, null, '\t'), () => {});
+    fs.writeFileSync(
+        path.join(__dirname, `matchUrls/${SEASON}.json`),
+        JSON.stringify(MATCH_URLs, null, '\t'),
+        function(err) {
+            if (err) {
+                console.log(err);
+            }
+        }
+    );
 
     console.timeEnd('match url retrieval');
 
