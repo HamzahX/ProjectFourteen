@@ -63,7 +63,8 @@ let setup = async () => {
         console.time('browser launch');
         browser = await puppeteer.launch({
             headless: false,
-            args: ["--no-sandbox", "--disable-setuid-sandbox", '--disable-gpu']
+            args: ["--no-sandbox", "--disable-setuid-sandbox", '--disable-gpu'],
+            defaultViewport: null
         });
         page = await browser.newPage();
         await page.reload({ waitUntil: ["networkidle2"] });

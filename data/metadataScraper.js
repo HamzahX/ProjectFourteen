@@ -123,7 +123,8 @@ let setup = async () => {
         //headless = false; whoscored.com blocks headless requests
         BROWSER = await puppeteer.launch({
             headless: false,
-            args: ["--no-sandbox", "--disable-setuid-sandbox"]
+            args: ["--no-sandbox", "--disable-setuid-sandbox"],
+            defaultViewport: null
         });
         PAGE = await BROWSER.newPage();
         await PAGE.setDefaultNavigationTimeout(0);

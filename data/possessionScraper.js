@@ -80,7 +80,8 @@ let setup = async () => {
 
         BROWSER = await puppeteer.launch({
             headless: false,
-            args: ["--no-sandbox", "--disable-setuid-sandbox"]
+            args: ["--no-sandbox", "--disable-setuid-sandbox"],
+            defaultViewport: null
         });
         (async function loop() {
             for (let i=0; i<URLs.length; i++){
