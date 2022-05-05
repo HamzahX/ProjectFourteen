@@ -1,4 +1,4 @@
-# ProjectFourteen
+# ProjectFourteen (Football Slices)
 Football (soccer) stats scraper + analytics and visualization tool. Not hosted publicly. Please contact me at footballslices@gmail.com for temporary access to a private live version.
 
 This project was developed using the MERN stack (MongoDB, Express, React & Node.js)
