@@ -352,7 +352,8 @@ export function calculateStats(filteredStats, playerCode = undefined){
 
             statsPer90["gsaa"] = ((filteredStats["psxg"] - filteredStats["goalsAgainst"]) / filteredStats["sota"]) * 100;
             statsPer90["crossStopRate"] = (filteredStats["stoppedCrosses"] / filteredStats["attCrosses"]) * 100;
-            statsPer90["gkPassSuccRateAboveExpected"] = ((filteredStats["succPasses"] - filteredStats["expSuccPasses"]) / filteredStats["attPasses"]) * 100
+            //statsPer90["gkPassSuccRateAboveExpected"] = ((filteredStats["succPasses"] - filteredStats["expSuccPasses"]) / filteredStats["attPasses"]) * 100
+            statsPer90["launchedPassSuccRate"] = (filteredStats["succLaunchedPasses"] / filteredStats["attLaunchedPasses"]) * 100;
 
             break;
 
