@@ -33,7 +33,7 @@
         "padjProgPasses",
         "progCarries",
         "padjProgCarries",
-        "passSuccRateAboveExpected",
+        "passSuccRate",
         "succDribbles",
         "padjSuccDribbles",
         "turnoversBelowExpected",
@@ -51,7 +51,7 @@
         "padjProgPasses",
         "progCarries",
         "padjProgCarries",
-        "passSuccRateAboveExpected",
+        "passSuccRate",
         "succDribbles",
         "padjSuccDribbles",
         "turnoversBelowExpected",
@@ -72,7 +72,7 @@
         "padjProgPasses",
         "progCarries",
         "padjProgCarries",
-        "passSuccRateAboveExpected",
+        "passSuccRate",
         "succDribbles",
         "padjSuccDribbles",
         "turnoversBelowExpected",
@@ -92,7 +92,7 @@
         "padjProgPasses",
         "progCarries",
         "padjProgCarries",
-        "passSuccRateAboveExpected",
+        "passSuccRate",
         "longPassSuccRate",
         "succPressures",
         "padjSuccPressures_def",
@@ -109,6 +109,6 @@
     "GK": [
         "gsaa",
         "crossStopRate",
-        "gkPassSuccRateAboveExpected"
+        "launchedPassSuccRate"
     ]
 }
