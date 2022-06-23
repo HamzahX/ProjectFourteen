@@ -215,7 +215,7 @@ export function calculateStats(filteredStats, playerCode = undefined){
             statsPer90["npxg"] = filteredStats["npxg"] / minutesOverNinety;
             statsPer90["npxgPerShot"] = filteredStats["npxg"] / filteredStats["shots"];
             statsPer90["turnoversBelowExpected"] = (filteredStats["expTurnovers"] - (filteredStats["timesDispossessed"] + filteredStats["miscontrols"] + filteredStats["failedDribbles"])) / minutesOverNinety;
-            statsPer90["passSuccRateAboveExpected"] = ((filteredStats["succPasses"] - filteredStats["expSuccPasses"]) / filteredStats["attPasses"]) * 100
+            statsPer90["passSuccRate"] = (filteredStats["succPasses"] / filteredStats["attPasses"]) * 100;
 
             if (padjTypes['offensive']){
                 statsPer90["padjXA"] = filteredStats["xa"] / touchesOverHundred;
@@ -245,7 +245,7 @@ export function calculateStats(filteredStats, playerCode = undefined){
 
         case "CM":
 
-            statsPer90["passSuccRateAboveExpected"] = ((filteredStats["succPasses"] - filteredStats["expSuccPasses"]) / filteredStats["attPasses"]) * 100
+            statsPer90["passSuccRate"] = (filteredStats["succPasses"] / filteredStats["attPasses"]) * 100;
             statsPer90["dribbleTackleRate"] = (filteredStats["succDribbleTackles"] / filteredStats["attDribbleTackles"]) * 100;
             statsPer90["turnoversBelowExpected"] = (filteredStats["expTurnovers"] - (filteredStats["timesDispossessed"] + filteredStats["miscontrols"] + filteredStats["failedDribbles"])) / minutesOverNinety;
 
@@ -281,7 +281,7 @@ export function calculateStats(filteredStats, playerCode = undefined){
 
         case "FB":
 
-            statsPer90["passSuccRateAboveExpected"] = ((filteredStats["succPasses"] - filteredStats["expSuccPasses"]) / filteredStats["attPasses"]) * 100
+            statsPer90["passSuccRate"] = (filteredStats["succPasses"] / filteredStats["attPasses"]) * 100;
             statsPer90["dribbleTackleRate"] = (filteredStats["succDribbleTackles"] / filteredStats["attDribbleTackles"]) * 100;
             statsPer90["aerialSuccRate"] = (filteredStats["succAerials"] / filteredStats["attAerials"]) * 100;
             statsPer90["turnoversBelowExpected"] = (filteredStats["expTurnovers"] - (filteredStats["timesDispossessed"] + filteredStats["miscontrols"] + filteredStats["failedDribbles"])) / minutesOverNinety;
@@ -316,7 +316,7 @@ export function calculateStats(filteredStats, playerCode = undefined){
 
         case "CB":
 
-            statsPer90["passSuccRateAboveExpected"] = ((filteredStats["succPasses"] - filteredStats["expSuccPasses"]) / filteredStats["attPasses"]) * 100
+            statsPer90["passSuccRate"] = (filteredStats["succPasses"] / filteredStats["attPasses"]) * 100;
             statsPer90["longPassSuccRate"] = (filteredStats["succLongPasses"] / filteredStats["attLongPasses"]) * 100;
             statsPer90["dribbleTackleRate"] = (filteredStats["succDribbleTackles"] / filteredStats["attDribbleTackles"]) * 100;
             statsPer90["succAerials"] = filteredStats["succAerials"] / minutesOverNinety;
