@@ -201,7 +201,7 @@ let processEntry = (aPlayer, competitionData, competitionName, isGoalkeeper) => 
         apps = playerInfo['standard_MP'];
         mins = playerInfo['standard_Min'];
         club = playerInfo['standard_Squad'];
-        age = parseInt(playerInfo['standard_Age'].substring(0, playerInfo['standard_Age'].indexOf('-')));
+        age = playerInfo['standard_Age'];
         nationality = playerInfo['standard_Nation'].split(" ")[0];
     }
     else {
@@ -209,7 +209,7 @@ let processEntry = (aPlayer, competitionData, competitionName, isGoalkeeper) => 
         apps = playerInfo['keeper_MP'];
         mins = playerInfo['keeper_Min'];
         club = playerInfo['keeper_Squad'];
-        age = parseInt(playerInfo['keeper_Age'].substring(0, playerInfo['keeper_Age'].indexOf('-')));
+        age = playerInfo['keeper_Age'];
         nationality = playerInfo['keeper_Nation'].split(" ")[0];
     }
     if (apps < 4 && competitionName !== "Champions League" && competitionName !== "Europa League"){
@@ -410,6 +410,10 @@ let saveMapping = async () => {
                 for (let player in METADATA){
                     if (WHOSCORED_TO_FBREF_PLAYERS[player] === undefined && WHOSCORED_TO_FBREF_PLAYERS_NEW[player] === undefined){
                         UNFILLED_MAPPING[player] = player;
+                    }
+                    else
+                    {
+                        console.log(player);
                     }
                 }
                 await fs.writeFile(path.join(__dirname, `playerMappingData/unfilledMapping.json`), JSON.stringify(UNFILLED_MAPPING, null, '\t'), async function(err) {

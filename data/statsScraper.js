@@ -1,9 +1,14 @@
 //initialize constants
 const path = require('path');
 const fs = require('fs');
-const puppeteer = require('puppeteer');
 const csv2json = require('csvjson-csv2json');
 const merge = require('lodash.merge');
+
+const puppeteer = require('puppeteer-extra');
+const StealthPlugin = require('puppeteer-extra-plugin-stealth')
+puppeteer.use(StealthPlugin());
+
+const utilities = require('../server/utilities.js');
 
 const scriptName = path.basename(__filename);
 const supportedSeasons = ["18-19", "19-20", "20-21", "21-22"];
@@ -42,7 +47,8 @@ let setup = async () => {
 
         BROWSER = await puppeteer.launch({
             headless: false,
-            args: ["--no-sandbox", "--disable-setuid-sandbox"]
+            args: ["--no-sandbox", "--disable-setuid-sandbox", "--disable-site-isolation-trials"],
+            defaultViewport: null
         });
         (async function loop() {
             for (let i=0; i<TABLE_TYPES.length; i++){
@@ -478,16 +484,16 @@ let scrapeChampionsLeaguePages = async () => {
         }
         else {
             URLs = [
-                "https://fbref.com/en/comps/8/stats/Champions-League-Stats",
-                "https://fbref.com/en/comps/8/shooting/Champions-League-Stats",
-                "https://fbref.com/en/comps/8/passing/Champions-League-Stats",
-                "https://fbref.com/en/comps/8/passing_types/Champions-League-Stats",
-                "https://fbref.com/en/comps/8/gca/Champions-League-Stats",
-                "https://fbref.com/en/comps/8/defense/Champions-League-Stats",
-                "https://fbref.com/en/comps/8/possession/Champions-League-Stats",
-                "https://fbref.com/en/comps/8/misc/Champions-League-Stats",
-                "https://fbref.com/en/comps/8/keepers/Champions-League-Stats",
-                "https://fbref.com/en/comps/8/keepersadv/Champions-League-Stats",
+                "https://fbref.com/en/comps/8/11323/stats/2021-2022-Champions-League-Stats",
+                "https://fbref.com/en/comps/8/11323/shooting/2021-2022-Champions-League-Stats",
+                "https://fbref.com/en/comps/8/11323/passing/2021-2022-Champions-League-Stats",
+                "https://fbref.com/en/comps/8/11323/passing_types/2021-2022-Champions-League-Stats",
+                "https://fbref.com/en/comps/8/11323/gca/2021-2022-Champions-League-Stats",
+                "https://fbref.com/en/comps/8/11323/defense/2021-2022-Champions-League-Stats",
+                "https://fbref.com/en/comps/8/11323/possession/2021-2022-Champions-League-Stats",
+                "https://fbref.com/en/comps/8/11323/misc/2021-2022-Champions-League-Stats",
+                "https://fbref.com/en/comps/8/11323/keepers/2021-2022-Champions-League-Stats",
+                "https://fbref.com/en/comps/8/11323/keepersadv/2021-2022-Champions-League-Stats",
             ]
         }
         await loadPages(URLs);
@@ -572,13 +578,13 @@ let loadPages = async (URLs) => {
 
     return new Promise(async function (resolve, reject) {
 
-        let gotoPromises = [];
-        for (let i=0; i<URLs.length; i++){
-            gotoPromises.push(PAGES[i].goto(URLs[i], {waitUntil: 'networkidle2'}))
-        }
-
-        await Promise.all(gotoPromises);
-        resolve();
+        (async function loop() {
+            for (let i=0; i<URLs.length; i++){
+                await utilities.delay(4000);
+                await PAGES[i].goto(URLs[i], {waitUntil: 'networkidle2'});
+            }
+            resolve();
+        })();
 
     });
 
