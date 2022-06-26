@@ -1,7 +1,11 @@
 //initialize constants
-const puppeteer = require('puppeteer');
 const path = require('path');
 const fs = require('fs');
+const utilities = require("../server/utilities");
+
+const puppeteer = require('puppeteer-extra');
+const StealthPlugin = require('puppeteer-extra-plugin-stealth')
+puppeteer.use(StealthPlugin());
 
 const scriptName = path.basename(__filename);
 const supportedSeasons = ["18-19", "19-20", "20-21", "21-22"];
@@ -67,7 +71,7 @@ else {
         "https://fbref.com/en/comps/11/Serie-A-Stats",
         "https://fbref.com/en/comps/20/Bundesliga-Stats",
         "https://fbref.com/en/comps/13/Ligue-1-Stats",
-        "https://fbref.com/en/comps/8/possession/Champions-League-Stats",
+        "https://fbref.com/en/comps/8/11323/possession/2021-2022-Champions-League-Stats",
         "https://fbref.com/en/comps/19/possession/Europa-League-Stats"
     ];
 }
@@ -97,7 +101,8 @@ let setup = async () => {
 
         BROWSER = await puppeteer.launch({
             headless: false,
-            args: ["--no-sandbox", "--disable-setuid-sandbox"]
+            args: ["--no-sandbox", "--disable-setuid-sandbox", "--disable-site-isolation-trials"],
+            defaultViewport: null
         });
         (async function loop() {
             for (let i=0; i<URLs.length; i++){
@@ -143,13 +148,13 @@ let loadPages = async () => {
 
     return new Promise(async function (resolve, reject) {
 
-        let gotoPromises = [];
-        for (let i=0; i<URLs.length; i++){
-            gotoPromises.push(PAGES[i].goto(URLs[i], {waitUntil: 'networkidle2'}))
-        }
-
-        await Promise.all(gotoPromises);
-        resolve();
+        (async function loop() {
+            for (let i=0; i<URLs.length; i++){
+                await utilities.delay(3100);
+                await PAGES[i].goto(URLs[i], {waitUntil: 'networkidle2'});
+            }
+            resolve();
+        })();
 
     });
 

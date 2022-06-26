@@ -19,7 +19,8 @@
     "mathjs": "^8.1.0",
     "ml-regression-multivariate-linear": "^2.0.3",
     "mongodb": "^3.5.5",
-    "puppeteer": "^2.1.1"
+    "puppeteer-extra": "^3.3.0",
+    "puppeteer-extra-plugin-stealth": "^2.10.1"
   },
   "scripts": {
     "start": "node server/index.js",

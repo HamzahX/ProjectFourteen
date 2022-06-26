@@ -276,9 +276,12 @@ let truncateNum = (value, precision) => {
 
 };
 
+const delay = ms => new Promise(res => setTimeout(res, ms));
+
 module.exports = {
     aggregateStats,
     calculateAverageStats,
     getStatAverages,
-    calculatePercentileRanks
+    calculatePercentileRanks,
+    delay
 };
