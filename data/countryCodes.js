@@ -10,10 +10,10 @@ function cleanCountryCode(countryCode) {
     if (codeUpperCase === "GB-ENG" || codeUpperCase === "ENG") {
         countryCode = "_england"
     }
-    else if (codeUpperCase === "GB-SCT" || codeUpperCase === "SCO") {
+    else if (codeUpperCase === "GB-SCT" || codeUpperCase === "SCO" || codeUpperCase === "SCT") {
         countryCode = "_scotland"
     }
-    else if (codeUpperCase === "GB-WLS" || codeUpperCase === "WAL") {
+    else if (codeUpperCase === "GB-WLS" || codeUpperCase === "WAL" || codeUpperCase === "WLS") {
         countryCode = "_wales"
     }
     else if (codeUpperCase === "GB-NIR" || codeUpperCase === "NIR") {

@@ -145,6 +145,11 @@ function getStatAverages(aggregatedStats, isGoalkeeper) {
         averageStats["padjTurnovers"] = returnFinite((aggregatedStats["timesDispossessed"] + aggregatedStats["miscontrols"] + aggregatedStats["failedDribbles"]) / touchesOverHundred);
         averageStats["turnoversBelowExpected"] = returnFinite((aggregatedStats["expTurnovers"] - (aggregatedStats["timesDispossessed"] + aggregatedStats["miscontrols"] + aggregatedStats["failedDribbles"])) / minutesOverNinety);
 
+        averageStats["pressures"] = returnFinite(aggregatedStats["pressures"] / minutesOverNinety);
+        averageStats["padjPressures"] = returnFinite(aggregatedStats["padjPressures"] / minutesOverNinety);
+        averageStats["padjPressures_att"] = returnFinite(aggregatedStats["padjPressures_att"] / minutesOverNinety);
+        averageStats["padjPressures_def"] = returnFinite(aggregatedStats["padjPressures_def"] / minutesOverNinety);
+
         averageStats["succPressures"] = returnFinite(aggregatedStats["succPressures"] / minutesOverNinety);
         averageStats["padjSuccPressures"] = returnFinite(aggregatedStats["padjSuccPressures"] / minutesOverNinety);
         averageStats["padjSuccPressures_att"] = returnFinite(aggregatedStats["padjSuccPressures_att"] / minutesOverNinety);

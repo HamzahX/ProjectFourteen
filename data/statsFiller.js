@@ -667,6 +667,11 @@ let processEntry = (aPlayer, competitionKey, competitionName, isGoalkeeper) => {
             succLongPasses: entry["passing_Cmp__3"],
             attLongPasses: entry["passing_Att__3"],
 
+            pressures: entry["defense_Press"],
+            padjPressures: adjustForPossessionDefensive_2(entry["defense_Press"], liveTouchesAgainstPer90BelowAverage, "live_per90"),
+            padjPressures_def: adjustForPossessionDefensive_2(entry["defense_Press"], att2ThirdsTouchesAgainstPer90BelowAverage, "att2/3ds_per90"),
+            padjPressures_att: adjustForPossessionDefensive_2(entry["defense_Press"], def2ThirdsTouchesAgainstPer90BelowAverage, "def2/3ds_per90"),
+
             succPressures: entry["defense_Succ"],
             padjSuccPressures: adjustForPossessionDefensive_2(entry["defense_Succ"], liveTouchesAgainstPer90BelowAverage, "live_per90"),
             padjSuccPressures_def: adjustForPossessionDefensive_2(entry["defense_Succ"], att2ThirdsTouchesAgainstPer90BelowAverage, "att2/3ds_per90"),

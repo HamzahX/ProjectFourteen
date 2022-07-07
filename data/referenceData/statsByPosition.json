@@ -16,8 +16,8 @@
         "succDribbles",
         "padjSuccDribbles",
         "turnoversBelowExpected",
-        "succPressures",
-        "padjSuccPressures_att"
+        "pressures",
+        "padjPressures_att"
     ],
     "AM": [
         "npg",
@@ -37,8 +37,8 @@
         "succDribbles",
         "padjSuccDribbles",
         "turnoversBelowExpected",
-        "succPressures",
-        "padjSuccPressures"
+        "pressures",
+        "padjPressures"
     ],
     "CM": [
         "xa",
@@ -55,8 +55,8 @@
         "succDribbles",
         "padjSuccDribbles",
         "turnoversBelowExpected",
-        "succPressures",
-        "padjSuccPressures",
+        "pressures",
+        "padjPressures",
         "interceptions",
         "padjInterceptions",
         "succTackles",
@@ -76,8 +76,8 @@
         "succDribbles",
         "padjSuccDribbles",
         "turnoversBelowExpected",
-        "succPressures",
-        "padjSuccPressures",
+        "pressures",
+        "padjPressures",
         "interceptions",
         "padjInterceptions",
         "succTackles",
@@ -94,8 +94,8 @@
         "padjProgCarries",
         "passSuccRate",
         "longPassSuccRate",
-        "succPressures",
-        "padjSuccPressures_def",
+        "pressures",
+        "padjPressures_def",
         "interceptions",
         "padjInterceptions_def",
         "succTackles",
