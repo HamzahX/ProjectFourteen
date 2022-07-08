@@ -9,5 +9,5 @@ It consists of 3 main parts:
 - Web Client (client/)
 
 Future goals:
-- Develop and expected pass completion model based on match data from 18/19 onwards
+- Develop an expected pass completion model based on match data from 18/19 onwards
 - Add login and account workflow
