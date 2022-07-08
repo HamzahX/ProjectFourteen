@@ -201,10 +201,12 @@ export function calculateStats(filteredStats, playerCode = undefined){
             }
 
             if (padjTypes['defensive']){
-                statsPer90["padjSuccPressures_att"] = filteredStats["padjSuccPressures_att"] / minutesOverNinety;
+                //statsPer90["padjSuccPressures_att"] = filteredStats["padjSuccPressures_att"] / minutesOverNinety;
+                statsPer90["padjPressures_att"] = filteredStats["padjPressures_att"] / minutesOverNinety;
             }
             else {
-                statsPer90["succPressures"] = filteredStats["succPressures"] / minutesOverNinety;
+                //statsPer90["succPressures"] = filteredStats["succPressures"] / minutesOverNinety;
+                statsPer90["pressures"] = filteredStats["pressures"] / minutesOverNinety;
             }
 
             break;
@@ -235,10 +237,12 @@ export function calculateStats(filteredStats, playerCode = undefined){
             }
 
             if (padjTypes['defensive']){
-                statsPer90["padjSuccPressures"] = filteredStats["padjSuccPressures"] / minutesOverNinety;
+                //statsPer90["padjSuccPressures"] = filteredStats["padjSuccPressures"] / minutesOverNinety;
+                statsPer90["padjPressures"] = filteredStats["padjPressures"] / minutesOverNinety;
             }
             else {
-                statsPer90["succPressures"] = filteredStats["succPressures"] / minutesOverNinety;
+                //statsPer90["succPressures"] = filteredStats["succPressures"] / minutesOverNinety;
+                statsPer90["pressures"] = filteredStats["pressures"] / minutesOverNinety;
             }
 
             break;
@@ -267,12 +271,14 @@ export function calculateStats(filteredStats, playerCode = undefined){
             }
 
             if (padjTypes['defensive']){
-                statsPer90["padjSuccPressures"] = filteredStats["padjSuccPressures"] / minutesOverNinety;
+                //statsPer90["padjSuccPressures"] = filteredStats["padjSuccPressures"] / minutesOverNinety;
+                statsPer90["padjPressures"] = filteredStats["padjPressures"] / minutesOverNinety;
                 statsPer90["padjInterceptions"] = filteredStats["padjInterceptions"] / minutesOverNinety;
                 statsPer90["padjSuccTackles"] = filteredStats["padjSuccTackles"] / minutesOverNinety;
             }
             else {
-                statsPer90["succPressures"] = filteredStats["succPressures"] / minutesOverNinety;
+                //statsPer90["succPressures"] = filteredStats["succPressures"] / minutesOverNinety;
+                statsPer90["pressures"] = filteredStats["pressures"] / minutesOverNinety;
                 statsPer90["interceptions"] = filteredStats["interceptions"] / minutesOverNinety;
                 statsPer90["succTackles"] = filteredStats["succTackles"] / minutesOverNinety;
             }
@@ -302,12 +308,14 @@ export function calculateStats(filteredStats, playerCode = undefined){
             }
 
             if (padjTypes['defensive']){
-                statsPer90["padjSuccPressures"] = filteredStats["padjSuccPressures"] / minutesOverNinety;
+                //statsPer90["padjSuccPressures"] = filteredStats["padjSuccPressures"] / minutesOverNinety;
+                statsPer90["padjPressures"] = filteredStats["padjPressures"] / minutesOverNinety;
                 statsPer90["padjInterceptions"] = filteredStats["padjInterceptions"] / minutesOverNinety;
                 statsPer90["padjSuccTackles"] = filteredStats["padjSuccTackles"] / minutesOverNinety;
             }
             else {
-                statsPer90["succPressures"] = filteredStats["succPressures"] / minutesOverNinety;
+                //statsPer90["succPressures"] = filteredStats["succPressures"] / minutesOverNinety;
+                statsPer90["pressures"] = filteredStats["pressures"] / minutesOverNinety;
                 statsPer90["interceptions"] = filteredStats["interceptions"] / minutesOverNinety;
                 statsPer90["succTackles"] = filteredStats["succTackles"] / minutesOverNinety;
             }
@@ -334,13 +342,15 @@ export function calculateStats(filteredStats, playerCode = undefined){
             }
 
             if (padjTypes['defensive']){
-                statsPer90["padjSuccPressures_def"] = filteredStats["padjSuccPressures_def"] / minutesOverNinety;
+                //statsPer90["padjSuccPressures_def"] = filteredStats["padjSuccPressures_def"] / minutesOverNinety;
+                statsPer90["padjPressures_def"] = filteredStats["padjPressures_def"] / minutesOverNinety;
                 statsPer90["padjInterceptions_def"] = filteredStats["padjInterceptions_def"] / minutesOverNinety;
                 statsPer90["padjSuccTackles_def"] = filteredStats["padjSuccTackles_def"] / minutesOverNinety;
                 statsPer90["padjFouls_def"] = filteredStats["padjFouls_def"] / minutesOverNinety;
             }
             else {
-                statsPer90["succPressures"] = filteredStats["succPressures"] / minutesOverNinety;
+                //statsPer90["succPressures"] = filteredStats["succPressures"] / minutesOverNinety;
+                statsPer90["pressures"] = filteredStats["pressures"] / minutesOverNinety;
                 statsPer90["interceptions"] = filteredStats["interceptions"] / minutesOverNinety;
                 statsPer90["succTackles"] = filteredStats["succTackles"] / minutesOverNinety;
                 statsPer90["fouls"] = filteredStats["fouls"] / minutesOverNinety;

@@ -1819,44 +1819,6 @@
 			}
 		}
 	},
-	"passSuccRateAboveExpected": {
-		"label": "Pass Completion %",
-		"mobileLabel": "Pass Comp. %",
-		"suffix": "above expected",
-		"types": [
-			"average"
-		],
-		"isReversed": false,
-		"displayOrder": 43,
-		"precision": 2,
-		"step": 2,
-		"ranges": {
-			"18-19": {
-				"min": -14,
-				"max": 36,
-				"minName": "Remi Oudin",
-				"maxName": "Jordan Siebatcheu"
-			},
-			"19-20": {
-				"min": -10,
-				"max": 30,
-				"minName": "Carlos Fernández",
-				"maxName": "Alberto Paloschi"
-			},
-			"20-21": {
-				"min": -10,
-				"max": 24,
-				"minName": "Mathieu Cafaro",
-				"maxName": "Klaas Jan Huntelaar"
-			},
-			"21-22": {
-				"min": -12,
-				"max": 26,
-				"minName": "Patrick Wimmer",
-				"maxName": "Paco Alcácer"
-			}
-		}
-	},
 	"attLongPasses": {
 		"label": "Attempted Long Passes",
 		"mobileLabel": "Attempted Long Passes",
@@ -1865,7 +1827,7 @@
 			"aggregate"
 		],
 		"isReversed": false,
-		"displayOrder": 44,
+		"displayOrder": 45,
 		"precision": 0,
 		"step_agg": 50,
 		"ranges_agg": {
@@ -1903,7 +1865,7 @@
 			"aggregate"
 		],
 		"isReversed": false,
-		"displayOrder": 45,
+		"displayOrder": 46,
 		"precision": 0,
 		"step_agg": 50,
 		"ranges_agg": {
@@ -1941,7 +1903,7 @@
 			"average"
 		],
 		"isReversed": false,
-		"displayOrder": 46,
+		"displayOrder": 47,
 		"precision": 1,
 		"step": 5,
 		"ranges": {
@@ -1979,7 +1941,7 @@
 			"aggregate"
 		],
 		"isReversed": false,
-		"displayOrder": 47,
+		"displayOrder": 48,
 		"precision": 0,
 		"step_agg": 20,
 		"ranges_agg": {
@@ -2018,7 +1980,7 @@
 			"average"
 		],
 		"isReversed": false,
-		"displayOrder": 48,
+		"displayOrder": 49,
 		"precision": 2,
 		"step": 0.2,
 		"step_agg": 10,
@@ -2083,7 +2045,7 @@
 			"average"
 		],
 		"isReversed": false,
-		"displayOrder": 49,
+		"displayOrder": 50,
 		"precision": 2,
 		"step": 0.5,
 		"ranges": {
@@ -2121,7 +2083,7 @@
 			"average"
 		],
 		"isReversed": false,
-		"displayOrder": 50,
+		"displayOrder": 51,
 		"precision": 1,
 		"step": 5,
 		"ranges": {
@@ -2159,7 +2121,7 @@
 			"average"
 		],
 		"isReversed": true,
-		"displayOrder": 51,
+		"displayOrder": 52,
 		"precision": 2,
 		"step": 0.5,
 		"ranges": {
@@ -2197,7 +2159,7 @@
 			"average"
 		],
 		"isReversed": true,
-		"displayOrder": 52,
+		"displayOrder": 53,
 		"precision": 2,
 		"step": 1,
 		"ranges": {
@@ -2235,7 +2197,7 @@
 			"average"
 		],
 		"isReversed": false,
-		"displayOrder": 52,
+		"displayOrder": 54,
 		"precision": 2,
 		"step": 0.5,
 		"ranges": {
@@ -2265,6 +2227,158 @@
 			}
 		}
 	},
+	"pressures": {
+		"label": "Pressures",
+		"mobileLabel": "Pressures",
+		"suffix": "per 90",
+		"types": [
+			"average"
+		],
+		"isReversed": false,
+		"displayOrder": 55,
+		"precision": 1,
+		"step": 2,
+		"ranges": {
+			"18-19": {
+				"min": 2,
+				"max": 36,
+				"minName": "Ezequiel Garay",
+				"maxName": "Valon Behrami"
+			},
+			"19-20": {
+				"min": 2,
+				"max": 40,
+				"minName": "Scott Dann",
+				"maxName": "Maxence Caqueret"
+			},
+			"20-21": {
+				"min": 4,
+				"max": 42,
+				"minName": "Gary Cahill",
+				"maxName": "Sven Schipplock"
+			},
+			"21-22": {
+				"min": 2,
+				"max": 36,
+				"minName": "Virgil van Dijk",
+				"maxName": "Konrad Laimer"
+			}
+		}
+	},
+	"padjPressures": {
+		"label": "Pressures",
+		"mobileLabel": "Pressures",
+		"suffix": "per 90 (pAdj)",
+		"types": [
+			"average"
+		],
+		"isReversed": false,
+		"displayOrder": 56,
+		"precision": 1,
+		"step": 2,
+		"ranges": {
+			"18-19": {
+				"min": 2,
+				"max": 52,
+				"minName": "Ezequiel Garay",
+				"maxName": "Arturo Vidal"
+			},
+			"19-20": {
+				"min": 2,
+				"max": 46,
+				"minName": "Gary Cahill",
+				"maxName": "Gabriel Martinelli"
+			},
+			"20-21": {
+				"min": 2,
+				"max": 40,
+				"minName": "Gary Cahill",
+				"maxName": "Pedri"
+			},
+			"21-22": {
+				"min": 2,
+				"max": 44,
+				"minName": "Dedryck Boyata",
+				"maxName": "Augusto Solari"
+			}
+		}
+	},
+	"padjPressures_att": {
+		"label": "Pressures",
+		"mobileLabel": "Pressures",
+		"suffix": "per 90 (pAdj - FWs)",
+		"types": [
+			"average"
+		],
+		"isReversed": false,
+		"displayOrder": 57,
+		"precision": 1,
+		"step": 2,
+		"ranges": {
+			"18-19": {
+				"min": 2,
+				"max": 52,
+				"minName": "Ezequiel Garay",
+				"maxName": "Arturo Vidal"
+			},
+			"19-20": {
+				"min": 2,
+				"max": 50,
+				"minName": "Scott Dann",
+				"maxName": "Gabriel Martinelli"
+			},
+			"20-21": {
+				"min": 2,
+				"max": 40,
+				"minName": "Gary Cahill",
+				"maxName": "Dele Alli"
+			},
+			"21-22": {
+				"min": 2,
+				"max": 44,
+				"minName": "Dedryck Boyata",
+				"maxName": "Augusto Solari"
+			}
+		}
+	},
+	"padjPressures_def": {
+		"label": "Pressures",
+		"mobileLabel": "Pressures",
+		"suffix": "per 90 (pAdj - CBs)",
+		"types": [
+			"average"
+		],
+		"isReversed": false,
+		"displayOrder": 58,
+		"precision": 1,
+		"step": 2,
+		"ranges": {
+			"18-19": {
+				"min": 2,
+				"max": 50,
+				"minName": "Ezequiel Garay",
+				"maxName": "Arturo Vidal"
+			},
+			"19-20": {
+				"min": 2,
+				"max": 46,
+				"minName": "Gary Cahill",
+				"maxName": "Phil Foden"
+			},
+			"20-21": {
+				"min": 2,
+				"max": 38,
+				"minName": "Gary Cahill",
+				"maxName": "Diogo Jota"
+			},
+			"21-22": {
+				"min": 2,
+				"max": 46,
+				"minName": "Dedryck Boyata",
+				"maxName": "Konrad Laimer"
+			}
+		}
+	},
 	"succPressures": {
 		"label": "Successful Pressures",
 		"mobileLabel": "Succ. Pressures",
@@ -2273,7 +2387,7 @@
 			"average"
 		],
 		"isReversed": false,
-		"displayOrder": 53,
+		"displayOrder": 59,
 		"precision": 2,
 		"step": 0.5,
 		"ranges": {
@@ -2311,7 +2425,7 @@
 			"average"
 		],
 		"isReversed": false,
-		"displayOrder": 54,
+		"displayOrder": 60,
 		"precision": 2,
 		"step": 1,
 		"ranges": {
@@ -2349,7 +2463,7 @@
 			"average"
 		],
 		"isReversed": false,
-		"displayOrder": 55,
+		"displayOrder": 61,
 		"precision": 2,
 		"step": 1,
 		"ranges": {
@@ -2387,7 +2501,7 @@
 			"average"
 		],
 		"isReversed": false,
-		"displayOrder": 56,
+		"displayOrder": 62,
 		"precision": 2,
 		"step": 1,
 		"ranges": {
@@ -2425,7 +2539,7 @@
 			"average"
 		],
 		"isReversed": false,
-		"displayOrder": 57,
+		"displayOrder": 63,
 		"precision": 2,
 		"step": 0.2,
 		"ranges": {
@@ -2463,7 +2577,7 @@
 			"average"
 		],
 		"isReversed": false,
-		"displayOrder": 58,
+		"displayOrder": 64,
 		"precision": 2,
 		"step": 0.2,
 		"ranges": {
@@ -2501,7 +2615,7 @@
 			"average"
 		],
 		"isReversed": false,
-		"displayOrder": 59,
+		"displayOrder": 65,
 		"precision": 2,
 		"step": 0.2,
 		"ranges": {
@@ -2539,7 +2653,7 @@
 			"average"
 		],
 		"isReversed": false,
-		"displayOrder": 60,
+		"displayOrder": 66,
 		"precision": 2,
 		"step": 0.5,
 		"ranges": {
@@ -2577,7 +2691,7 @@
 			"average"
 		],
 		"isReversed": false,
-		"displayOrder": 61,
+		"displayOrder": 67,
 		"precision": 2,
 		"step": 0.5,
 		"ranges": {
@@ -2610,12 +2724,12 @@
 	"padjSuccTackles_def": {
 		"label": "Successful Tackles",
 		"mobileLabel": "Succ. Tackles",
-		"suffix": "per 90 (pAdj) - CBs",
+		"suffix": "per 90 (pAdj - CBs)",
 		"types": [
 			"average"
 		],
 		"isReversed": false,
-		"displayOrder": 62,
+		"displayOrder": 68,
 		"precision": 2,
 		"step": 0.5,
 		"ranges": {
@@ -2653,7 +2767,7 @@
 			"aggregate"
 		],
 		"isReversed": false,
-		"displayOrder": 63,
+		"displayOrder": 69,
 		"precision": 0,
 		"step_agg": 10,
 		"ranges_agg": {
@@ -2691,7 +2805,7 @@
 			"aggregate"
 		],
 		"isReversed": false,
-		"displayOrder": 64,
+		"displayOrder": 70,
 		"precision": 0,
 		"step_agg": 5,
 		"ranges_agg": {
@@ -2729,7 +2843,7 @@
 			"average"
 		],
 		"isReversed": false,
-		"displayOrder": 65,
+		"displayOrder": 71,
 		"precision": 1,
 		"step": 5,
 		"ranges": {
@@ -2767,7 +2881,7 @@
 			"average"
 		],
 		"isReversed": true,
-		"displayOrder": 66,
+		"displayOrder": 72,
 		"precision": 2,
 		"step": 0.2,
 		"ranges": {
@@ -2805,7 +2919,7 @@
 			"average"
 		],
 		"isReversed": true,
-		"displayOrder": 67,
+		"displayOrder": 73,
 		"precision": 2,
 		"step": 0.2,
 		"ranges": {
@@ -2843,7 +2957,7 @@
 			"average"
 		],
 		"isReversed": true,
-		"displayOrder": 68,
+		"displayOrder": 74,
 		"precision": 2,
 		"step": 0.2,
 		"ranges": {
@@ -2881,7 +2995,7 @@
 			"average"
 		],
 		"isReversed": false,
-		"displayOrder": 69,
+		"displayOrder": 75,
 		"precision": 2,
 		"step": 0.5,
 		"ranges": {
@@ -2919,7 +3033,7 @@
 			"average"
 		],
 		"isReversed": false,
-		"displayOrder": 70,
+		"displayOrder": 76,
 		"precision": 2,
 		"step": 0.5,
 		"ranges": {
@@ -2957,7 +3071,7 @@
 			"average"
 		],
 		"isReversed": false,
-		"displayOrder": 71,
+		"displayOrder": 77,
 		"precision": 2,
 		"step": 0.5,
 		"ranges": {
@@ -2995,7 +3109,7 @@
 			"aggregate"
 		],
 		"isReversed": false,
-		"displayOrder": 72,
+		"displayOrder": 78,
 		"precision": 0,
 		"step_agg": 5,
 		"ranges_agg": {
@@ -3033,7 +3147,7 @@
 			"aggregate"
 		],
 		"isReversed": false,
-		"displayOrder": 73,
+		"displayOrder": 79,
 		"precision": 0,
 		"step_agg": 5,
 		"ranges_agg": {
@@ -3071,7 +3185,7 @@
 			"aggregate"
 		],
 		"isReversed": false,
-		"displayOrder": 74,
+		"displayOrder": 80,
 		"precision": 0,
 		"step_agg": 10,
 		"ranges_agg": {
@@ -3109,7 +3223,7 @@
 			"average"
 		],
 		"isReversed": false,
-		"displayOrder": 75,
+		"displayOrder": 81,
 		"precision": 2,
 		"step": 2.5,
 		"ranges": {
@@ -3147,7 +3261,7 @@
 			"aggregate"
 		],
 		"isReversed": false,
-		"displayOrder": 76,
+		"displayOrder": 82,
 		"precision": 0,
 		"step_agg": 20,
 		"ranges_agg": {
@@ -3185,7 +3299,7 @@
 			"aggregate"
 		],
 		"isReversed": false,
-		"displayOrder": 77,
+		"displayOrder": 83,
 		"precision": 0,
 		"step_agg": 5,
 		"ranges_agg": {
@@ -3223,7 +3337,7 @@
 			"average"
 		],
 		"isReversed": false,
-		"displayOrder": 78,
+		"displayOrder": 84,
 		"precision": 2,
 		"step": 2.5,
 		"ranges": {
@@ -3261,7 +3375,7 @@
 			"aggregate"
 		],
 		"isReversed": false,
-		"displayOrder": 79,
+		"displayOrder": 85,
 		"precision": 0,
 		"step_agg": 50,
 		"ranges_agg": {
@@ -3299,7 +3413,7 @@
 			"aggregate"
 		],
 		"isReversed": false,
-		"displayOrder": 80,
+		"displayOrder": 86,
 		"precision": 0,
 		"step_agg": 20,
 		"ranges_agg": {
@@ -3337,7 +3451,7 @@
 			"average"
 		],
 		"isReversed": false,
-		"displayOrder": 81,
+		"displayOrder": 87,
 		"precision": 1,
 		"step": 5,
 		"ranges": {
@@ -3364,44 +3478,6 @@
 				"max": 60,
 				"minName": "Etrit Berisha",
 				"maxName": "Manuel Neuer"
-			}
-		}
-	},
-	"gkPassSuccRateAboveExpected": {
-		"label": "Pass Completion %",
-		"mobileLabel": "Pass Comp. %",
-		"suffix": "above expected",
-		"types": [
-			"average"
-		],
-		"isReversed": false,
-		"displayOrder": 81,
-		"precision": 2,
-		"step": 2,
-		"ranges": {
-			"18-19": {
-				"min": -114,
-				"max": 56,
-				"minName": "Pietro Terracciano",
-				"maxName": "Danijel Subasic"
-			},
-			"19-20": {
-				"min": -184,
-				"max": 54,
-				"minName": "Alphonse Areola",
-				"maxName": "Roberto Jiménez"
-			},
-			"20-21": {
-				"min": -88,
-				"max": 56,
-				"minName": "Mathew Ryan",
-				"maxName": "Paulo Gazzaniga"
-			},
-			"21-22": {
-				"min": -114,
-				"max": 44,
-				"minName": "Sven Ulreich",
-				"maxName": "Karl Darlow"
 			}
 		}
 	}

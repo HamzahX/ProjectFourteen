@@ -21,7 +21,7 @@ class SliceOptions extends Component {
         if (this.isMobile){
             this.positions = {
                 "FW": "FW",
-                "AM": "AM",
+                "AM": "AM / W",
                 "CM": "CM / DM",
                 "FB": "FB",
                 "CB": "CB",
