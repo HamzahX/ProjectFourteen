@@ -223,8 +223,8 @@ class Stats extends Component {
 
             for (let competition in playerData.stats[season]){
                 competitions[season].push(competition);
-                //only 2 most recent season in selected competitions
-                if (season === seasons[seasons.length - 1] || season === seasons[seasons.length - 2]){
+                //only most recent season in selected competitions
+                if (season === seasons[seasons.length - 1]){
                     selectedCompetitions[season].push(competition);
                 }
             }

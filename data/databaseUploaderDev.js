@@ -4,24 +4,23 @@ const fs = require('fs');
 const mongoClient = require('mongodb').MongoClient;
 const mongoURI = `mongodb+srv://hamzah:${process.env.MONGOPASSWORD}@cluster0-wz8lb.mongodb.net/test?retryWrites=true&w=majority`;
 const union = require('lodash/union');
-const keyBy = require('lodash.keyby');
 
 //globals
-var DB;
-var CLUBS_COLLECTION;
-var COUNTRIES_COLLECTION;
-var STATS_REFERENCE_COLLECTION;
-var STATS_BY_POSITION_COLLECTION;
-var PLAYERS_COLLECTION;
-var PERCENTILE_ARRAYS_COLLECTION;
-var Z_SCORE_DATA_COLLECTION;
+let DB;
+let CLUBS_COLLECTION;
+let COUNTRIES_COLLECTION;
+let STATS_REFERENCE_COLLECTION;
+let STATS_BY_POSITION_COLLECTION;
+let PLAYERS_COLLECTION;
+let PERCENTILE_ARRAYS_COLLECTION;
+let Z_SCORE_DATA_COLLECTION;
 
-var FBREF_TO_WHOSCORED_TEAMS;
-var COUNTRIES;
-var STATS_REFERENCE;
-var STATS_BY_POSITION;
-var PROCESSED;
-var PERCENTILE_ARRAYS = {
+let FBREF_TO_WHOSCORED_TEAMS;
+let COUNTRIES;
+let STATS_REFERENCE;
+let STATS_BY_POSITION;
+let PROCESSED;
+let PERCENTILE_ARRAYS = {
     "18-19": {
         'FW': {},
         'AM': {},
@@ -63,19 +62,14 @@ var PERCENTILE_ARRAYS = {
         'GK': {}
     }
 };
-var Z_SCORE_DATA = {};
-var POSSESSION_DATA = {
-    "18-19": {
-
-    },
-    "19-20": {
-
-    },
-    "20-21": {
-
-    }
+let Z_SCORE_DATA = {};
+let POSSESSION_DATA = {
+    "18-19": {},
+    "19-20": {},
+    "20-21": {},
+    "21-22": {}
 };
-var TOP_5_LEAGUE_TEAMS = {
+let TOP_5_LEAGUE_TEAMS = {
     "_england": [],
     "es": [],
     "it": [],
@@ -83,8 +77,8 @@ var TOP_5_LEAGUE_TEAMS = {
     "fr": []
 };
 
-var PLAYER_DATA_TIMESTAMP = fs.statSync(path.join(__dirname, '/fbrefData/21-22/premierLeague.json')).mtime;
-var PERCENTILE_DATA_TIMESTAMP = fs.statSync(path.join(__dirname, '/percentileData/21-22/GKPercentiles.json')).mtime;
+let PLAYER_DATA_TIMESTAMP = fs.statSync(path.join(__dirname, '/fbrefData/21-22/premierLeague.json')).mtime;
+let PERCENTILE_DATA_TIMESTAMP = fs.statSync(path.join(__dirname, '/percentileData/21-22/GKPercentiles.json')).mtime;
 
 console.log(PLAYER_DATA_TIMESTAMP);
 
@@ -137,34 +131,20 @@ let setup = async () => {
         }
     }
 
-    return new Promise(function(resolve, reject) {
+    console.time('database connection');
 
-        console.time('database connection');
+    const client = await mongoClient.connect(mongoURI, {useUnifiedTopology: true});
+    DB = client.db("ProjectFourteen");
 
-        mongoClient.connect(mongoURI, {useUnifiedTopology: true},function (err, client) {
+    CLUBS_COLLECTION = DB.collection("Clubs_Dev");
+    COUNTRIES_COLLECTION = DB.collection("Countries_Dev");
+    STATS_REFERENCE_COLLECTION = DB.collection("StatsReferenceData_Dev");
+    STATS_BY_POSITION_COLLECTION = DB.collection("StatsByPosition_Dev");
+    PLAYERS_COLLECTION = DB.collection("Players_Dev");
+    PERCENTILE_ARRAYS_COLLECTION = DB.collection("PercentileArrays_Dev");
+    Z_SCORE_DATA_COLLECTION = DB.collection("ZScoreData_Dev");
 
-            if (err) {
-                console.log(err);
-                reject();
-            }
-
-            DB = client.db("ProjectFourteen");
-
-            CLUBS_COLLECTION = DB.collection("Clubs_Dev");
-            COUNTRIES_COLLECTION = DB.collection("Countries_Dev");
-            STATS_REFERENCE_COLLECTION = DB.collection("StatsReferenceData_Dev");
-            STATS_BY_POSITION_COLLECTION = DB.collection("StatsByPosition_Dev");
-            PLAYERS_COLLECTION = DB.collection("Players_Dev");
-            PERCENTILE_ARRAYS_COLLECTION = DB.collection("PercentileArrays_Dev");
-            Z_SCORE_DATA_COLLECTION = DB.collection("ZScoreData_Dev");
-
-            console.timeEnd('database connection');
-
-            resolve();
-
-        })
-
-    });
+    console.timeEnd('database connection');
 
 };
 
@@ -201,20 +181,7 @@ let uploadClubs = async () => {
 
     }
 
-    return new Promise(async function(resolve, reject){
-
-        CLUBS_COLLECTION.deleteMany({}).then(
-            () => {
-                CLUBS_COLLECTION.insertMany(bulkInsertArray, async function(err, res) {
-                    if (err) {
-                        console.log(err);
-                    }
-                    resolve();
-                });
-            }
-        );
-
-    });
+    await uploadToDevCollection(CLUBS_COLLECTION, bulkInsertArray);
 
 };
 
@@ -254,20 +221,7 @@ let uploadCountries = async () => {
 
     }
 
-    return new Promise(async function(resolve, reject){
-
-        COUNTRIES_COLLECTION.deleteMany({}).then(
-            () => {
-                COUNTRIES_COLLECTION.insertMany(bulkInsertArray, async function(err, res) {
-                    if (err) {
-                        console.log(err);
-                    }
-                    resolve();
-                });
-            }
-        );
-
-    });
+    await uploadToDevCollection(COUNTRIES_COLLECTION, bulkInsertArray);
 
 };
 
@@ -297,20 +251,7 @@ let uploadStatsReference = async () => {
 
     }
 
-    return new Promise(async function (resolve, reject) {
-
-        STATS_REFERENCE_COLLECTION.deleteMany({}).then(
-            () => {
-                STATS_REFERENCE_COLLECTION.insertMany(bulkInsertArray, function(err, res) {
-                    if (err) {
-                        console.log(err);
-                    }
-                    resolve();
-                });
-            }
-        );
-
-    });
+    await uploadToDevCollection(STATS_REFERENCE_COLLECTION, bulkInsertArray);
 
 };
 
@@ -330,33 +271,20 @@ let uploadStatsByPosition = async () => {
 
     }
 
-    return new Promise(async function (resolve, reject) {
-
-        STATS_BY_POSITION_COLLECTION.deleteMany({}).then(
-            () => {
-                STATS_BY_POSITION_COLLECTION.insertMany(bulkInsertArray, function(err, res) {
-                    if (err) {
-                        console.log(err);
-                    }
-                    resolve();
-                });
-            }
-        );
-
-    });
+    await uploadToDevCollection(STATS_BY_POSITION_COLLECTION, bulkInsertArray);
 
 };
 
 
 let uploadPlayers = async () => {
 
-    let batch = PLAYERS_COLLECTION.initializeOrderedBulkOp();
+    let bulkInsertArray = [];
 
     for (let player in PROCESSED){
 
         let playerInfo = PROCESSED[player];
 
-        batch.insert({
+        bulkInsertArray.push({
             code: player,
             fbrefCode: playerInfo["fbrefCode"],
             fbrefURL: playerInfo["fbrefURL"],
@@ -380,151 +308,105 @@ let uploadPlayers = async () => {
 
     }
 
-    return new Promise(async function (resolve, reject) {
-
-        PLAYERS_COLLECTION.deleteMany({}).then(
-            () => {
-                batch.execute(function(err, result) {
-                    if (err){
-                        console.log(err);
-                    }
-                    resolve();
-                });
-            }
-        );
-
-    });
+    await uploadToDevCollection(PLAYERS_COLLECTION, bulkInsertArray);
 
 };
 
 
 let uploadPercentilesArrays = async () => {
 
-    return new Promise(function (resolve, reject) {
+    let bulkInsertArray = [];
 
-        (async function loop() {
+    for (let season in PERCENTILE_ARRAYS){
 
-            for (let season in PERCENTILE_ARRAYS){
-
-                let bulkInsertArray = [];
-
-                if (season === "combined"){
-                    for (let position in PERCENTILE_ARRAYS["18-19"]){
-                        for (let stat in PERCENTILE_ARRAYS["18-19"][position]){
-                            let combinedArray = [...PERCENTILE_ARRAYS["18-19"][position][stat], ...PERCENTILE_ARRAYS["19-20"][position][stat], ...PERCENTILE_ARRAYS["20-21"][position][stat]];
-                            combinedArray.sort(function(a, b){return a - b});
-                            PERCENTILE_ARRAYS["combined"][position][stat] = combinedArray;
-                        }
-                    }
+        if (season === "combined"){
+            for (let position in PERCENTILE_ARRAYS["18-19"]){
+                for (let stat in PERCENTILE_ARRAYS["18-19"][position]){
+                    let combinedArray = [
+                        ...PERCENTILE_ARRAYS["18-19"][position][stat],
+                        ...PERCENTILE_ARRAYS["19-20"][position][stat],
+                        ...PERCENTILE_ARRAYS["20-21"][position][stat],
+                        ...PERCENTILE_ARRAYS["21-22"][position][stat]
+                    ];
+                    combinedArray.sort(function(a, b){return a - b});
+                    PERCENTILE_ARRAYS["combined"][position][stat] = combinedArray;
                 }
-
-                for (let position in PERCENTILE_ARRAYS[season]){
-                    bulkInsertArray.push({
-                        season: season,
-                        position: position,
-                        stats: PERCENTILE_ARRAYS[season][position],
-                        lastUpdated: PERCENTILE_DATA_TIMESTAMP
-                    })
-                }
-
-                await new Promise(function (resolve, reject) {
-                    PERCENTILE_ARRAYS_COLLECTION.deleteMany({season: season}).then(
-                        () => {
-                            PERCENTILE_ARRAYS_COLLECTION.insertMany(bulkInsertArray, function(err, res) {
-                                if (err) {
-                                    console.log(err);
-                                }
-                                resolve();
-                            });
-                        }
-                    );
-                });
-
             }
+        }
 
-            resolve();
+        for (let position in PERCENTILE_ARRAYS[season]){
+            bulkInsertArray.push({
+                season: season,
+                position: position,
+                stats: PERCENTILE_ARRAYS[season][position],
+                lastUpdated: PERCENTILE_DATA_TIMESTAMP
+            })
+        }
 
-        })();
+    }
 
-    });
+    await uploadToDevCollection(PERCENTILE_ARRAYS_COLLECTION, bulkInsertArray);
 
 };
 
 
 let uploadZScoreData = async () => {
 
-    return new Promise(function (resolve, reject) {
+    let bulkInsertArray = [];
 
-        (async function loop() {
+    for (let season in PERCENTILE_ARRAYS){
 
-            for (let season in PERCENTILE_ARRAYS){
+        if (season === "combined")
+            continue;
 
-                if (season === "combined")
-                    continue;
+        for (let position in Z_SCORE_DATA[season]){
+            bulkInsertArray.push({
+                season: season,
+                position: position,
+                data: Z_SCORE_DATA[season][position],
+                lastUpdated: PERCENTILE_DATA_TIMESTAMP
+            })
+        }
 
-                let bulkInsertArray = [];
+    }
 
-                for (let position in Z_SCORE_DATA[season]){
-                    bulkInsertArray.push({
-                        season: season,
-                        position: position,
-                        data: Z_SCORE_DATA[season][position],
-                        lastUpdated: PERCENTILE_DATA_TIMESTAMP
-                    })
-                }
-
-                await new Promise(function (resolve, reject) {
-                    Z_SCORE_DATA_COLLECTION.deleteMany({season: season}).then(
-                        () => {
-                            Z_SCORE_DATA_COLLECTION.insertMany(bulkInsertArray, function(err, res) {
-                                if (err) {
-                                    console.log(err);
-                                }
-                                resolve();
-                            });
-                        }
-                    );
-                });
-
-            }
-
-            resolve();
-
-        })();
-
-    });
+    await uploadToDevCollection(Z_SCORE_DATA_COLLECTION, bulkInsertArray);
 
 };
 
 
-console.time('dev database uploading');
-setup()
-    .then(async () => {
-        await uploadClubs()
+let uploadToDevCollection = async(devCollection, bulkInsertArray) => {
+
+    await devCollection.deleteMany({});
+    await devCollection.insertMany(bulkInsertArray);
+
+};
+
+
+let main = async () => {
+
+    await setup();
+
+    console.time('dev database uploading');
+
+    await uploadClubs();
+    await uploadCountries();
+    await uploadStatsReference();
+    await uploadStatsByPosition();
+    await uploadPlayers();
+    await uploadPercentilesArrays();
+    await uploadZScoreData();
+
+    console.timeEnd('dev database uploading');
+
+};
+
+
+main()
+    .then(() => {
+        process.exit(0)
     })
-    .then(async () => {
-        await uploadCountries()
-    })
-    .then(async () => {
-        await uploadStatsReference()
-    })
-    .then(async () => {
-        await uploadStatsByPosition()
-    })
-    .then(async () => {
-        await uploadPlayers()
-    })
-    .then(async () => {
-        await uploadPercentilesArrays()
-    })
-    .then(async () => {
-        await uploadZScoreData()
-    })
-    .then(async () => {
-        console.timeEnd('dev database uploading');
-        process.exit(0);
-    })
-    .catch(async(anError) => {
+    .catch(async (anError) => {
         console.log(anError);
         process.exit(-1);
     });
